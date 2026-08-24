@@ -9,9 +9,11 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Core.CrossConnectArgs;
 import com.pulumi.oci.Core.inputs.CrossConnectState;
+import com.pulumi.oci.Core.outputs.CrossConnectLoaProperties;
 import com.pulumi.oci.Core.outputs.CrossConnectMacsecProperties;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
 import java.util.Optional;
@@ -56,6 +58,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Core.CrossConnectArgs;
  * import com.pulumi.oci.Core.inputs.CrossConnectMacsecPropertiesArgs;
  * import com.pulumi.oci.Core.inputs.CrossConnectMacsecPropertiesPrimaryKeyArgs;
+ * import com.pulumi.oci.Core.inputs.CrossConnectLoaPropertiesArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;
@@ -79,7 +82,10 @@ import javax.annotation.Nullable;
  *             .displayName(crossConnectDisplayName)
  *             .farCrossConnectOrCrossConnectGroupId(testCrossConnectGroup.id())
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .interfaceDownTimerValueInMilliseconds(crossConnectInterfaceDownTimerValueInMilliseconds)
  *             .interfaceName(crossConnectInterfaceName)
+ *             .isInterfaceHoldTimerEnabled(crossConnectIsInterfaceHoldTimerEnabled)
+ *             .isQosEnabled(crossConnectIsQosEnabled)
  *             .macsecProperties(CrossConnectMacsecPropertiesArgs.builder()
  *                 .state(crossConnectMacsecPropertiesState)
  *                 .encryptionCipher(crossConnectMacsecPropertiesEncryptionCipher)
@@ -91,6 +97,9 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .nearCrossConnectOrCrossConnectGroupId(testCrossConnectGroup.id())
  *             .ociPhysicalDeviceName(crossConnectOciPhysicalDeviceName)
+ *             .loaProperties(CrossConnectLoaPropertiesArgs.builder()
+ *                 .authorizedAgent(crossConnectLoaPropertiesAuthorizedAgent)
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -208,6 +217,20 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+     * 
+     */
+    @Export(name="interfaceDownTimerValueInMilliseconds", refs={Integer.class}, tree="[0]")
+    private Output<Integer> interfaceDownTimerValueInMilliseconds;
+
+    /**
+     * @return (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+     * 
+     */
+    public Output<Integer> interfaceDownTimerValueInMilliseconds() {
+        return this.interfaceDownTimerValueInMilliseconds;
+    }
+    /**
      * The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
      * 
      */
@@ -234,6 +257,48 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<Boolean>> isActive() {
         return Codegen.optional(this.isActive);
+    }
+    /**
+     * (Updatable) The flag to enable or disable the down timer for the interface.
+     * 
+     */
+    @Export(name="isInterfaceHoldTimerEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isInterfaceHoldTimerEnabled;
+
+    /**
+     * @return (Updatable) The flag to enable or disable the down timer for the interface.
+     * 
+     */
+    public Output<Boolean> isInterfaceHoldTimerEnabled() {
+        return this.isInterfaceHoldTimerEnabled;
+    }
+    /**
+     * When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+     * 
+     */
+    @Export(name="isQosEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isQosEnabled;
+
+    /**
+     * @return When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+     * 
+     */
+    public Output<Boolean> isQosEnabled() {
+        return this.isQosEnabled;
+    }
+    /**
+     * (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
+     * 
+     */
+    @Export(name="loaProperties", refs={CrossConnectLoaProperties.class}, tree="[0]")
+    private Output<CrossConnectLoaProperties> loaProperties;
+
+    /**
+     * @return (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
+     * 
+     */
+    public Output<CrossConnectLoaProperties> loaProperties() {
+        return this.loaProperties;
     }
     /**
      * The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`

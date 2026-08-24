@@ -27,7 +27,7 @@ class GetBootVolumeBackupResult:
     """
     A collection of values returned by getBootVolumeBackup.
     """
-    def __init__(__self__, boot_volume_backup_id=None, boot_volume_id=None, compartment_id=None, defined_tags=None, display_name=None, expiration_time=None, freeform_tags=None, id=None, image_id=None, kms_key_id=None, size_in_gbs=None, source_boot_volume_backup_id=None, source_details=None, source_type=None, state=None, system_tags=None, time_created=None, time_request_received=None, type=None, unique_size_in_gbs=None):
+    def __init__(__self__, boot_volume_backup_id=None, boot_volume_id=None, compartment_id=None, defined_tags=None, display_name=None, expiration_time=None, freeform_tags=None, id=None, image_id=None, is_indefinite_retention_enabled=None, is_prevent_deletion_enabled=None, is_retention_lock_enabled=None, kms_key_id=None, retention_periods=None, size_in_gbs=None, source_boot_volume_backup_id=None, source_details=None, source_type=None, state=None, system_tags=None, time_created=None, time_request_received=None, time_retention_expires_at=None, type=None, unique_size_in_gbs=None, volume_group_backup_id=None):
         if boot_volume_backup_id and not isinstance(boot_volume_backup_id, str):
             raise TypeError("Expected argument 'boot_volume_backup_id' to be a str")
         pulumi.set(__self__, "boot_volume_backup_id", boot_volume_backup_id)
@@ -55,9 +55,21 @@ class GetBootVolumeBackupResult:
         if image_id and not isinstance(image_id, str):
             raise TypeError("Expected argument 'image_id' to be a str")
         pulumi.set(__self__, "image_id", image_id)
+        if is_indefinite_retention_enabled and not isinstance(is_indefinite_retention_enabled, bool):
+            raise TypeError("Expected argument 'is_indefinite_retention_enabled' to be a bool")
+        pulumi.set(__self__, "is_indefinite_retention_enabled", is_indefinite_retention_enabled)
+        if is_prevent_deletion_enabled and not isinstance(is_prevent_deletion_enabled, bool):
+            raise TypeError("Expected argument 'is_prevent_deletion_enabled' to be a bool")
+        pulumi.set(__self__, "is_prevent_deletion_enabled", is_prevent_deletion_enabled)
+        if is_retention_lock_enabled and not isinstance(is_retention_lock_enabled, bool):
+            raise TypeError("Expected argument 'is_retention_lock_enabled' to be a bool")
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if kms_key_id and not isinstance(kms_key_id, str):
             raise TypeError("Expected argument 'kms_key_id' to be a str")
         pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if retention_periods and not isinstance(retention_periods, list):
+            raise TypeError("Expected argument 'retention_periods' to be a list")
+        pulumi.set(__self__, "retention_periods", retention_periods)
         if size_in_gbs and not isinstance(size_in_gbs, str):
             raise TypeError("Expected argument 'size_in_gbs' to be a str")
         pulumi.set(__self__, "size_in_gbs", size_in_gbs)
@@ -82,12 +94,18 @@ class GetBootVolumeBackupResult:
         if time_request_received and not isinstance(time_request_received, str):
             raise TypeError("Expected argument 'time_request_received' to be a str")
         pulumi.set(__self__, "time_request_received", time_request_received)
+        if time_retention_expires_at and not isinstance(time_retention_expires_at, str):
+            raise TypeError("Expected argument 'time_retention_expires_at' to be a str")
+        pulumi.set(__self__, "time_retention_expires_at", time_retention_expires_at)
         if type and not isinstance(type, str):
             raise TypeError("Expected argument 'type' to be a str")
         pulumi.set(__self__, "type", type)
         if unique_size_in_gbs and not isinstance(unique_size_in_gbs, str):
             raise TypeError("Expected argument 'unique_size_in_gbs' to be a str")
         pulumi.set(__self__, "unique_size_in_gbs", unique_size_in_gbs)
+        if volume_group_backup_id and not isinstance(volume_group_backup_id, str):
+            raise TypeError("Expected argument 'volume_group_backup_id' to be a str")
+        pulumi.set(__self__, "volume_group_backup_id", volume_group_backup_id)
 
     @_builtins.property
     @pulumi.getter(name="bootVolumeBackupId")
@@ -159,12 +177,44 @@ class GetBootVolumeBackupResult:
         return pulumi.get(self, "image_id")
 
     @_builtins.property
+    @pulumi.getter(name="isIndefiniteRetentionEnabled")
+    def is_indefinite_retention_enabled(self) -> _builtins.bool:
+        """
+        feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+        """
+        return pulumi.get(self, "is_indefinite_retention_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isPreventDeletionEnabled")
+    def is_prevent_deletion_enabled(self) -> _builtins.bool:
+        """
+        Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        """
+        return pulumi.get(self, "is_prevent_deletion_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        """
+        feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> _builtins.str:
         """
         The OCID of the Vault service master encryption assigned to the boot volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         """
         return pulumi.get(self, "kms_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="retentionPeriods")
+    def retention_periods(self) -> Sequence['outputs.GetBootVolumeBackupRetentionPeriodResult']:
+        """
+        This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        """
+        return pulumi.get(self, "retention_periods")
 
     @_builtins.property
     @pulumi.getter(name="sizeInGbs")
@@ -228,6 +278,14 @@ class GetBootVolumeBackupResult:
         return pulumi.get(self, "time_request_received")
 
     @_builtins.property
+    @pulumi.getter(name="timeRetentionExpiresAt")
+    def time_retention_expires_at(self) -> _builtins.str:
+        """
+        The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        """
+        return pulumi.get(self, "time_retention_expires_at")
+
+    @_builtins.property
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
@@ -242,6 +300,14 @@ class GetBootVolumeBackupResult:
         The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the boot volume and whether the backup is full or incremental.
         """
         return pulumi.get(self, "unique_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="volumeGroupBackupId")
+    def volume_group_backup_id(self) -> _builtins.str:
+        """
+        The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+        """
+        return pulumi.get(self, "volume_group_backup_id")
 
 
 class AwaitableGetBootVolumeBackupResult(GetBootVolumeBackupResult):
@@ -259,7 +325,11 @@ class AwaitableGetBootVolumeBackupResult(GetBootVolumeBackupResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             image_id=self.image_id,
+            is_indefinite_retention_enabled=self.is_indefinite_retention_enabled,
+            is_prevent_deletion_enabled=self.is_prevent_deletion_enabled,
+            is_retention_lock_enabled=self.is_retention_lock_enabled,
             kms_key_id=self.kms_key_id,
+            retention_periods=self.retention_periods,
             size_in_gbs=self.size_in_gbs,
             source_boot_volume_backup_id=self.source_boot_volume_backup_id,
             source_details=self.source_details,
@@ -268,8 +338,10 @@ class AwaitableGetBootVolumeBackupResult(GetBootVolumeBackupResult):
             system_tags=self.system_tags,
             time_created=self.time_created,
             time_request_received=self.time_request_received,
+            time_retention_expires_at=self.time_retention_expires_at,
             type=self.type,
-            unique_size_in_gbs=self.unique_size_in_gbs)
+            unique_size_in_gbs=self.unique_size_in_gbs,
+            volume_group_backup_id=self.volume_group_backup_id)
 
 
 def get_boot_volume_backup(boot_volume_backup_id: Optional[_builtins.str] = None,
@@ -306,7 +378,11 @@ def get_boot_volume_backup(boot_volume_backup_id: Optional[_builtins.str] = None
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         image_id=pulumi.get(__ret__, 'image_id'),
+        is_indefinite_retention_enabled=pulumi.get(__ret__, 'is_indefinite_retention_enabled'),
+        is_prevent_deletion_enabled=pulumi.get(__ret__, 'is_prevent_deletion_enabled'),
+        is_retention_lock_enabled=pulumi.get(__ret__, 'is_retention_lock_enabled'),
         kms_key_id=pulumi.get(__ret__, 'kms_key_id'),
+        retention_periods=pulumi.get(__ret__, 'retention_periods'),
         size_in_gbs=pulumi.get(__ret__, 'size_in_gbs'),
         source_boot_volume_backup_id=pulumi.get(__ret__, 'source_boot_volume_backup_id'),
         source_details=pulumi.get(__ret__, 'source_details'),
@@ -315,8 +391,10 @@ def get_boot_volume_backup(boot_volume_backup_id: Optional[_builtins.str] = None
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_request_received=pulumi.get(__ret__, 'time_request_received'),
+        time_retention_expires_at=pulumi.get(__ret__, 'time_retention_expires_at'),
         type=pulumi.get(__ret__, 'type'),
-        unique_size_in_gbs=pulumi.get(__ret__, 'unique_size_in_gbs'))
+        unique_size_in_gbs=pulumi.get(__ret__, 'unique_size_in_gbs'),
+        volume_group_backup_id=pulumi.get(__ret__, 'volume_group_backup_id'))
 def get_boot_volume_backup_output(boot_volume_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBootVolumeBackupResult]:
     """
@@ -350,7 +428,11 @@ def get_boot_volume_backup_output(boot_volume_backup_id: pulumi.Input[Optional[_
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         image_id=pulumi.get(__response__, 'image_id'),
+        is_indefinite_retention_enabled=pulumi.get(__response__, 'is_indefinite_retention_enabled'),
+        is_prevent_deletion_enabled=pulumi.get(__response__, 'is_prevent_deletion_enabled'),
+        is_retention_lock_enabled=pulumi.get(__response__, 'is_retention_lock_enabled'),
         kms_key_id=pulumi.get(__response__, 'kms_key_id'),
+        retention_periods=pulumi.get(__response__, 'retention_periods'),
         size_in_gbs=pulumi.get(__response__, 'size_in_gbs'),
         source_boot_volume_backup_id=pulumi.get(__response__, 'source_boot_volume_backup_id'),
         source_details=pulumi.get(__response__, 'source_details'),
@@ -359,5 +441,7 @@ def get_boot_volume_backup_output(boot_volume_backup_id: pulumi.Input[Optional[_
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_request_received=pulumi.get(__response__, 'time_request_received'),
+        time_retention_expires_at=pulumi.get(__response__, 'time_retention_expires_at'),
         type=pulumi.get(__response__, 'type'),
-        unique_size_in_gbs=pulumi.get(__response__, 'unique_size_in_gbs')))
+        unique_size_in_gbs=pulumi.get(__response__, 'unique_size_in_gbs'),
+        volume_group_backup_id=pulumi.get(__response__, 'volume_group_backup_id')))

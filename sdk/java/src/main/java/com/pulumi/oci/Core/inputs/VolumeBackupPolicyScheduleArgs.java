@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.inputs.VolumeBackupPolicyScheduleRetentionPeriodArgs;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -75,6 +77,36 @@ public final class VolumeBackupPolicyScheduleArgs extends com.pulumi.resources.R
      */
     public Optional<Output<Integer>> hourOfDay() {
         return Optional.ofNullable(this.hourOfDay);
+    }
+
+    /**
+     * (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+     * 
+     */
+    @Import(name="isPreventDeletionEnabled")
+    private @Nullable Output<Boolean> isPreventDeletionEnabled;
+
+    /**
+     * @return (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+     * 
+     */
+    public Optional<Output<Boolean>> isPreventDeletionEnabled() {
+        return Optional.ofNullable(this.isPreventDeletionEnabled);
+    }
+
+    /**
+     * (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+     * 
+     */
+    @Import(name="isRetentionLockEnabled")
+    private @Nullable Output<Boolean> isRetentionLockEnabled;
+
+    /**
+     * @return (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+     * 
+     */
+    public Optional<Output<Boolean>> isRetentionLockEnabled() {
+        return Optional.ofNullable(this.isRetentionLockEnabled);
     }
 
     /**
@@ -166,6 +198,21 @@ public final class VolumeBackupPolicyScheduleArgs extends com.pulumi.resources.R
     }
 
     /**
+     * (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     * 
+     */
+    @Import(name="retentionPeriod")
+    private @Nullable Output<VolumeBackupPolicyScheduleRetentionPeriodArgs> retentionPeriod;
+
+    /**
+     * @return (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     * 
+     */
+    public Optional<Output<VolumeBackupPolicyScheduleRetentionPeriodArgs>> retentionPeriod() {
+        return Optional.ofNullable(this.retentionPeriod);
+    }
+
+    /**
      * (Updatable) How long, in seconds, to keep the volume backups created by this schedule.
      * 
      */
@@ -214,10 +261,13 @@ public final class VolumeBackupPolicyScheduleArgs extends com.pulumi.resources.R
         this.dayOfMonth = $.dayOfMonth;
         this.dayOfWeek = $.dayOfWeek;
         this.hourOfDay = $.hourOfDay;
+        this.isPreventDeletionEnabled = $.isPreventDeletionEnabled;
+        this.isRetentionLockEnabled = $.isRetentionLockEnabled;
         this.month = $.month;
         this.offsetSeconds = $.offsetSeconds;
         this.offsetType = $.offsetType;
         this.period = $.period;
+        this.retentionPeriod = $.retentionPeriod;
         this.retentionSeconds = $.retentionSeconds;
         this.timeZone = $.timeZone;
     }
@@ -322,6 +372,48 @@ public final class VolumeBackupPolicyScheduleArgs extends com.pulumi.resources.R
          */
         public Builder hourOfDay(Integer hourOfDay) {
             return hourOfDay(Output.of(hourOfDay));
+        }
+
+        /**
+         * @param isPreventDeletionEnabled (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isPreventDeletionEnabled(@Nullable Output<Boolean> isPreventDeletionEnabled) {
+            $.isPreventDeletionEnabled = isPreventDeletionEnabled;
+            return this;
+        }
+
+        /**
+         * @param isPreventDeletionEnabled (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isPreventDeletionEnabled(Boolean isPreventDeletionEnabled) {
+            return isPreventDeletionEnabled(Output.of(isPreventDeletionEnabled));
+        }
+
+        /**
+         * @param isRetentionLockEnabled (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRetentionLockEnabled(@Nullable Output<Boolean> isRetentionLockEnabled) {
+            $.isRetentionLockEnabled = isRetentionLockEnabled;
+            return this;
+        }
+
+        /**
+         * @param isRetentionLockEnabled (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRetentionLockEnabled(Boolean isRetentionLockEnabled) {
+            return isRetentionLockEnabled(Output.of(isRetentionLockEnabled));
         }
 
         /**
@@ -434,6 +526,27 @@ public final class VolumeBackupPolicyScheduleArgs extends com.pulumi.resources.R
          */
         public Builder period(String period) {
             return period(Output.of(period));
+        }
+
+        /**
+         * @param retentionPeriod (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder retentionPeriod(@Nullable Output<VolumeBackupPolicyScheduleRetentionPeriodArgs> retentionPeriod) {
+            $.retentionPeriod = retentionPeriod;
+            return this;
+        }
+
+        /**
+         * @param retentionPeriod (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder retentionPeriod(VolumeBackupPolicyScheduleRetentionPeriodArgs retentionPeriod) {
+            return retentionPeriod(Output.of(retentionPeriod));
         }
 
         /**

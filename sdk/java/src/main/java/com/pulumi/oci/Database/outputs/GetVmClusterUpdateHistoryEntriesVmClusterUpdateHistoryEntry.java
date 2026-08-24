@@ -46,6 +46,11 @@ public final class GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry {
      */
     private String updateId;
     /**
+     * @return The OS update mode performed using this maintenance update.
+     * 
+     */
+    private String updateMode;
+    /**
      * @return A filter to return only resources that match the given update type exactly.
      * 
      */
@@ -102,6 +107,13 @@ public final class GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry {
         return this.updateId;
     }
     /**
+     * @return The OS update mode performed using this maintenance update.
+     * 
+     */
+    public String updateMode() {
+        return this.updateMode;
+    }
+    /**
      * @return A filter to return only resources that match the given update type exactly.
      * 
      */
@@ -125,6 +137,7 @@ public final class GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry {
         private String timeStarted;
         private String updateAction;
         private String updateId;
+        private String updateMode;
         private String updateType;
         public Builder() {}
         public Builder(GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry defaults) {
@@ -136,6 +149,7 @@ public final class GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry {
     	      this.timeStarted = defaults.timeStarted;
     	      this.updateAction = defaults.updateAction;
     	      this.updateId = defaults.updateId;
+    	      this.updateMode = defaults.updateMode;
     	      this.updateType = defaults.updateType;
         }
 
@@ -196,6 +210,14 @@ public final class GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry {
             return this;
         }
         @CustomType.Setter
+        public Builder updateMode(String updateMode) {
+            if (updateMode == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry", "updateMode");
+            }
+            this.updateMode = updateMode;
+            return this;
+        }
+        @CustomType.Setter
         public Builder updateType(String updateType) {
             if (updateType == null) {
               throw new MissingRequiredPropertyException("GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry", "updateType");
@@ -212,6 +234,7 @@ public final class GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry {
             _resultValue.timeStarted = timeStarted;
             _resultValue.updateAction = updateAction;
             _resultValue.updateId = updateId;
+            _resultValue.updateMode = updateMode;
             _resultValue.updateType = updateType;
             return _resultValue;
         }

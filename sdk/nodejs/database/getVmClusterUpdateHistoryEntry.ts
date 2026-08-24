@@ -77,6 +77,10 @@ export interface GetVmClusterUpdateHistoryEntryResult {
      */
     readonly updateId: string;
     /**
+     * The OS update mode performed using this maintenance update.
+     */
+    readonly updateMode: string;
+    /**
      * The type of VM cluster maintenance update.
      */
     readonly updateType: string;

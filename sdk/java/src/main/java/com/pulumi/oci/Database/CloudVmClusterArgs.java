@@ -9,6 +9,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.CloudVmClusterCloudAutomationUpdateDetailsArgs;
 import com.pulumi.oci.Database.inputs.CloudVmClusterDataCollectionOptionsArgs;
 import com.pulumi.oci.Database.inputs.CloudVmClusterFileSystemConfigurationDetailArgs;
+import com.pulumi.oci.Database.inputs.CloudVmClusterUpdateDetailsArgs;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -657,6 +658,21 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+     * 
+     */
+    @Import(name="updateDetails")
+    private @Nullable Output<CloudVmClusterUpdateDetailsArgs> updateDetails;
+
+    /**
+     * @return (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+     * 
+     */
+    public Optional<Output<CloudVmClusterUpdateDetailsArgs>> updateDetails() {
+        return Optional.ofNullable(this.updateDetails);
+    }
+
+    /**
      * (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
      * 
      */
@@ -750,6 +766,7 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         this.systemVersion = $.systemVersion;
         this.tdeKeyStoreType = $.tdeKeyStoreType;
         this.timeZone = $.timeZone;
+        this.updateDetails = $.updateDetails;
         this.vmBackupStorageType = $.vmBackupStorageType;
         this.vmClusterType = $.vmClusterType;
         this.vmFileSystemStorageType = $.vmFileSystemStorageType;
@@ -1690,6 +1707,27 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder timeZone(String timeZone) {
             return timeZone(Output.of(timeZone));
+        }
+
+        /**
+         * @param updateDetails (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder updateDetails(@Nullable Output<CloudVmClusterUpdateDetailsArgs> updateDetails) {
+            $.updateDetails = updateDetails;
+            return this;
+        }
+
+        /**
+         * @param updateDetails (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder updateDetails(CloudVmClusterUpdateDetailsArgs updateDetails) {
+            return updateDetails(Output.of(updateDetails));
         }
 
         /**

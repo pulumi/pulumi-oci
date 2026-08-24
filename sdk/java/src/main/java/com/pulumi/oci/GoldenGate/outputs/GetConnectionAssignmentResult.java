@@ -28,6 +28,11 @@ public final class GetConnectionAssignmentResult {
      */
     private String connectionId;
     /**
+     * @return The connection type.
+     * 
+     */
+    private String connectionType;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
      */
@@ -78,6 +83,13 @@ public final class GetConnectionAssignmentResult {
      */
     public String connectionId() {
         return this.connectionId;
+    }
+    /**
+     * @return The connection type.
+     * 
+     */
+    public String connectionType() {
+        return this.connectionType;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
@@ -131,6 +143,7 @@ public final class GetConnectionAssignmentResult {
         private String compartmentId;
         private String connectionAssignmentId;
         private String connectionId;
+        private String connectionType;
         private String deploymentId;
         private String id;
         private Boolean isLockOverride;
@@ -144,6 +157,7 @@ public final class GetConnectionAssignmentResult {
     	      this.compartmentId = defaults.compartmentId;
     	      this.connectionAssignmentId = defaults.connectionAssignmentId;
     	      this.connectionId = defaults.connectionId;
+    	      this.connectionType = defaults.connectionType;
     	      this.deploymentId = defaults.deploymentId;
     	      this.id = defaults.id;
     	      this.isLockOverride = defaults.isLockOverride;
@@ -182,6 +196,14 @@ public final class GetConnectionAssignmentResult {
               throw new MissingRequiredPropertyException("GetConnectionAssignmentResult", "connectionId");
             }
             this.connectionId = connectionId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder connectionType(String connectionType) {
+            if (connectionType == null) {
+              throw new MissingRequiredPropertyException("GetConnectionAssignmentResult", "connectionType");
+            }
+            this.connectionType = connectionType;
             return this;
         }
         @CustomType.Setter
@@ -238,6 +260,7 @@ public final class GetConnectionAssignmentResult {
             _resultValue.compartmentId = compartmentId;
             _resultValue.connectionAssignmentId = connectionAssignmentId;
             _resultValue.connectionId = connectionId;
+            _resultValue.connectionType = connectionType;
             _resultValue.deploymentId = deploymentId;
             _resultValue.id = id;
             _resultValue.isLockOverride = isLockOverride;

@@ -11,17 +11,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollection {
-    /**
-     * @return List of Autonomous container database backups.
-     * 
-     */
     private List<GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItem> items;
 
     private GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollection() {}
-    /**
-     * @return List of Autonomous container database backups.
-     * 
-     */
     public List<GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItem> items() {
         return this.items;
     }

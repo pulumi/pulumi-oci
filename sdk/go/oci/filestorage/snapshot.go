@@ -79,6 +79,8 @@ type Snapshot struct {
 
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
+	// Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+	ExclusiveBytes pulumi.StringOutput `pulumi:"exclusiveBytes"`
 	// (Updatable) The time when this snapshot will be deleted.
 	ExpirationTime pulumi.StringOutput `pulumi:"expirationTime"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
@@ -159,6 +161,8 @@ func GetSnapshot(ctx *pulumi.Context,
 type snapshotState struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+	ExclusiveBytes *string `pulumi:"exclusiveBytes"`
 	// (Updatable) The time when this snapshot will be deleted.
 	ExpirationTime *string `pulumi:"expirationTime"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
@@ -207,6 +211,8 @@ type snapshotState struct {
 type SnapshotState struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
+	// Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+	ExclusiveBytes pulumi.StringPtrInput
 	// (Updatable) The time when this snapshot will be deleted.
 	ExpirationTime pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
@@ -397,6 +403,11 @@ func (o SnapshotOutput) ToSnapshotOutputWithContext(ctx context.Context) Snapsho
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 func (o SnapshotOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+func (o SnapshotOutput) ExclusiveBytes() pulumi.StringOutput {
+	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.ExclusiveBytes }).(pulumi.StringOutput)
 }
 
 // (Updatable) The time when this snapshot will be deleted.

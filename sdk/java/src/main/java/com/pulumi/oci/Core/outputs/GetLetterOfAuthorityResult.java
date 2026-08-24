@@ -5,11 +5,18 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.outputs.GetLetterOfAuthorityExtensionDetail;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetLetterOfAuthorityResult {
+    /**
+     * @return Name of a customer authorized agent which will be appended to the LOA as &#39;Authorized Agent&#39;.
+     * 
+     */
+    private String authorizedAgent;
     /**
      * @return The name of the entity authorized by this Letter of Authority.
      * 
@@ -25,6 +32,11 @@ public final class GetLetterOfAuthorityResult {
      * 
      */
     private String crossConnectId;
+    /**
+     * @return Data related to the extension of the Expiry date of the LOA. It gives you number of remaining extensions along with a history of past extensions made on the LOA.
+     * 
+     */
+    private List<GetLetterOfAuthorityExtensionDetail> extensionDetails;
     /**
      * @return The address of the FastConnect location.
      * 
@@ -53,6 +65,13 @@ public final class GetLetterOfAuthorityResult {
 
     private GetLetterOfAuthorityResult() {}
     /**
+     * @return Name of a customer authorized agent which will be appended to the LOA as &#39;Authorized Agent&#39;.
+     * 
+     */
+    public String authorizedAgent() {
+        return this.authorizedAgent;
+    }
+    /**
      * @return The name of the entity authorized by this Letter of Authority.
      * 
      */
@@ -72,6 +91,13 @@ public final class GetLetterOfAuthorityResult {
      */
     public String crossConnectId() {
         return this.crossConnectId;
+    }
+    /**
+     * @return Data related to the extension of the Expiry date of the LOA. It gives you number of remaining extensions along with a history of past extensions made on the LOA.
+     * 
+     */
+    public List<GetLetterOfAuthorityExtensionDetail> extensionDetails() {
+        return this.extensionDetails;
     }
     /**
      * @return The address of the FastConnect location.
@@ -118,9 +144,11 @@ public final class GetLetterOfAuthorityResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String authorizedAgent;
         private String authorizedEntityName;
         private String circuitType;
         private String crossConnectId;
+        private List<GetLetterOfAuthorityExtensionDetail> extensionDetails;
         private String facilityLocation;
         private String id;
         private String portName;
@@ -129,9 +157,11 @@ public final class GetLetterOfAuthorityResult {
         public Builder() {}
         public Builder(GetLetterOfAuthorityResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.authorizedAgent = defaults.authorizedAgent;
     	      this.authorizedEntityName = defaults.authorizedEntityName;
     	      this.circuitType = defaults.circuitType;
     	      this.crossConnectId = defaults.crossConnectId;
+    	      this.extensionDetails = defaults.extensionDetails;
     	      this.facilityLocation = defaults.facilityLocation;
     	      this.id = defaults.id;
     	      this.portName = defaults.portName;
@@ -139,6 +169,14 @@ public final class GetLetterOfAuthorityResult {
     	      this.timeIssued = defaults.timeIssued;
         }
 
+        @CustomType.Setter
+        public Builder authorizedAgent(String authorizedAgent) {
+            if (authorizedAgent == null) {
+              throw new MissingRequiredPropertyException("GetLetterOfAuthorityResult", "authorizedAgent");
+            }
+            this.authorizedAgent = authorizedAgent;
+            return this;
+        }
         @CustomType.Setter
         public Builder authorizedEntityName(String authorizedEntityName) {
             if (authorizedEntityName == null) {
@@ -162,6 +200,17 @@ public final class GetLetterOfAuthorityResult {
             }
             this.crossConnectId = crossConnectId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder extensionDetails(List<GetLetterOfAuthorityExtensionDetail> extensionDetails) {
+            if (extensionDetails == null) {
+              throw new MissingRequiredPropertyException("GetLetterOfAuthorityResult", "extensionDetails");
+            }
+            this.extensionDetails = extensionDetails;
+            return this;
+        }
+        public Builder extensionDetails(GetLetterOfAuthorityExtensionDetail... extensionDetails) {
+            return extensionDetails(List.of(extensionDetails));
         }
         @CustomType.Setter
         public Builder facilityLocation(String facilityLocation) {
@@ -205,9 +254,11 @@ public final class GetLetterOfAuthorityResult {
         }
         public GetLetterOfAuthorityResult build() {
             final var _resultValue = new GetLetterOfAuthorityResult();
+            _resultValue.authorizedAgent = authorizedAgent;
             _resultValue.authorizedEntityName = authorizedEntityName;
             _resultValue.circuitType = circuitType;
             _resultValue.crossConnectId = crossConnectId;
+            _resultValue.extensionDetails = extensionDetails;
             _resultValue.facilityLocation = facilityLocation;
             _resultValue.id = id;
             _resultValue.portName = portName;

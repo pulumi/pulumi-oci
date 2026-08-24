@@ -5,8 +5,10 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Database.inputs.DatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestinationArgs;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -122,6 +124,21 @@ public final class DatabaseDbBackupConfigBackupDestinationDetailArgs extends com
     }
 
     /**
+     * Backup destination for the TDE wallet backups.
+     * 
+     */
+    @Import(name="tdeWalletBackupDestinations")
+    private @Nullable Output<List<DatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestinationArgs>> tdeWalletBackupDestinations;
+
+    /**
+     * @return Backup destination for the TDE wallet backups.
+     * 
+     */
+    public Optional<Output<List<DatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestinationArgs>>> tdeWalletBackupDestinations() {
+        return Optional.ofNullable(this.tdeWalletBackupDestinations);
+    }
+
+    /**
      * Type of the database backup destination.
      * 
      */
@@ -160,6 +177,7 @@ public final class DatabaseDbBackupConfigBackupDestinationDetailArgs extends com
         this.isRetentionLockEnabled = $.isRetentionLockEnabled;
         this.isZeroDataLossEnabled = $.isZeroDataLossEnabled;
         this.remoteRegion = $.remoteRegion;
+        this.tdeWalletBackupDestinations = $.tdeWalletBackupDestinations;
         this.type = $.type;
         this.vpcPassword = $.vpcPassword;
         this.vpcUser = $.vpcUser;
@@ -328,6 +346,37 @@ public final class DatabaseDbBackupConfigBackupDestinationDetailArgs extends com
          */
         public Builder remoteRegion(String remoteRegion) {
             return remoteRegion(Output.of(remoteRegion));
+        }
+
+        /**
+         * @param tdeWalletBackupDestinations Backup destination for the TDE wallet backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tdeWalletBackupDestinations(@Nullable Output<List<DatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestinationArgs>> tdeWalletBackupDestinations) {
+            $.tdeWalletBackupDestinations = tdeWalletBackupDestinations;
+            return this;
+        }
+
+        /**
+         * @param tdeWalletBackupDestinations Backup destination for the TDE wallet backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tdeWalletBackupDestinations(List<DatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestinationArgs> tdeWalletBackupDestinations) {
+            return tdeWalletBackupDestinations(Output.of(tdeWalletBackupDestinations));
+        }
+
+        /**
+         * @param tdeWalletBackupDestinations Backup destination for the TDE wallet backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tdeWalletBackupDestinations(DatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestinationArgs... tdeWalletBackupDestinations) {
+            return tdeWalletBackupDestinations(List.of(tdeWalletBackupDestinations));
         }
 
         /**

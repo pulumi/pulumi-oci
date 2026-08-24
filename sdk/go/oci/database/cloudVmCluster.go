@@ -93,9 +93,14 @@ import (
 //				SubscriptionId:           pulumi.Any(tenantSubscriptionId),
 //				SystemVersion:            pulumi.Any(cloudVmClusterSystemVersion),
 //				TimeZone:                 pulumi.Any(cloudVmClusterTimeZone),
-//				VmBackupStorageType:      pulumi.Any(cloudVmClusterVmBackupStorageType),
-//				VmClusterType:            pulumi.Any(cloudVmClusterVmClusterType),
-//				VmFileSystemStorageType:  pulumi.Any(cloudVmClusterVmFileSystemStorageType),
+//				UpdateDetails: &database.CloudVmClusterUpdateDetailsArgs{
+//					UpdateAction: pulumi.Any(cloudVmClusterUpdateDetailsUpdateAction),
+//					UpdateId:     pulumi.Any(cloudVmClusterUpdateDetailsUpdateId),
+//					UpdateMode:   pulumi.Any(cloudVmClusterUpdateDetailsUpdateMode),
+//				},
+//				VmBackupStorageType:     pulumi.Any(cloudVmClusterVmBackupStorageType),
+//				VmClusterType:           pulumi.Any(cloudVmClusterVmClusterType),
+//				VmFileSystemStorageType: pulumi.Any(cloudVmClusterVmFileSystemStorageType),
 //			})
 //			if err != nil {
 //				return err
@@ -196,6 +201,8 @@ type CloudVmCluster struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The port number configured for the listener on the cloud VM cluster.
 	ListenerPort pulumi.StringOutput `pulumi:"listenerPort"`
+	// Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+	LiveImageVersionDetails CloudVmClusterLiveImageVersionDetailArrayOutput `pulumi:"liveImageVersionDetails"`
 	// (Updatable) The memory to be allocated in GBs.
 	MemorySizeInGbs pulumi.IntOutput `pulumi:"memorySizeInGbs"`
 	// Details of the multi cloud identity connectors of the VM cluster.
@@ -207,6 +214,8 @@ type CloudVmCluster struct {
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
 	OcpuCount pulumi.Float64Output `pulumi:"ocpuCount"`
+	// Oracle Linux version for the respective Exadata Image.
+	OracleLinuxVersion pulumi.StringOutput `pulumi:"oracleLinuxVersion"`
 	// The private zone id in which DNS records need to be created.
 	PrivateZoneId pulumi.StringOutput `pulumi:"privateZoneId"`
 	// (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
@@ -251,6 +260,8 @@ type CloudVmCluster struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringOutput `pulumi:"timeZone"`
+	// (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+	UpdateDetails CloudVmClusterUpdateDetailsPtrOutput `pulumi:"updateDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
 	VipIds pulumi.StringArrayOutput `pulumi:"vipIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
@@ -405,6 +416,8 @@ type cloudVmClusterState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The port number configured for the listener on the cloud VM cluster.
 	ListenerPort *string `pulumi:"listenerPort"`
+	// Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+	LiveImageVersionDetails []CloudVmClusterLiveImageVersionDetail `pulumi:"liveImageVersionDetails"`
 	// (Updatable) The memory to be allocated in GBs.
 	MemorySizeInGbs *int `pulumi:"memorySizeInGbs"`
 	// Details of the multi cloud identity connectors of the VM cluster.
@@ -416,6 +429,8 @@ type cloudVmClusterState struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
 	OcpuCount *float64 `pulumi:"ocpuCount"`
+	// Oracle Linux version for the respective Exadata Image.
+	OracleLinuxVersion *string `pulumi:"oracleLinuxVersion"`
 	// The private zone id in which DNS records need to be created.
 	PrivateZoneId *string `pulumi:"privateZoneId"`
 	// (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
@@ -460,6 +475,8 @@ type cloudVmClusterState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone *string `pulumi:"timeZone"`
+	// (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+	UpdateDetails *CloudVmClusterUpdateDetails `pulumi:"updateDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
 	VipIds []string `pulumi:"vipIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
@@ -558,6 +575,8 @@ type CloudVmClusterState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// The port number configured for the listener on the cloud VM cluster.
 	ListenerPort pulumi.StringPtrInput
+	// Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+	LiveImageVersionDetails CloudVmClusterLiveImageVersionDetailArrayInput
 	// (Updatable) The memory to be allocated in GBs.
 	MemorySizeInGbs pulumi.IntPtrInput
 	// Details of the multi cloud identity connectors of the VM cluster.
@@ -569,6 +588,8 @@ type CloudVmClusterState struct {
 	NsgIds pulumi.StringArrayInput
 	// (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
 	OcpuCount pulumi.Float64PtrInput
+	// Oracle Linux version for the respective Exadata Image.
+	OracleLinuxVersion pulumi.StringPtrInput
 	// The private zone id in which DNS records need to be created.
 	PrivateZoneId pulumi.StringPtrInput
 	// (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
@@ -613,6 +634,8 @@ type CloudVmClusterState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringPtrInput
+	// (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+	UpdateDetails CloudVmClusterUpdateDetailsPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
 	VipIds pulumi.StringArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
@@ -734,6 +757,8 @@ type cloudVmClusterArgs struct {
 	TdeKeyStoreType *string `pulumi:"tdeKeyStoreType"`
 	// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone *string `pulumi:"timeZone"`
+	// (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+	UpdateDetails *CloudVmClusterUpdateDetails `pulumi:"updateDetails"`
 	// (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
 	VmBackupStorageType *string `pulumi:"vmBackupStorageType"`
 	// The vmcluster type for the VM cluster/Cloud VM cluster.
@@ -846,6 +871,8 @@ type CloudVmClusterArgs struct {
 	TdeKeyStoreType pulumi.StringPtrInput
 	// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringPtrInput
+	// (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+	UpdateDetails CloudVmClusterUpdateDetailsPtrInput
 	// (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
 	VmBackupStorageType pulumi.StringPtrInput
 	// The vmcluster type for the VM cluster/Cloud VM cluster.
@@ -1121,6 +1148,13 @@ func (o CloudVmClusterOutput) ListenerPort() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringOutput { return v.ListenerPort }).(pulumi.StringOutput)
 }
 
+// Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+func (o CloudVmClusterOutput) LiveImageVersionDetails() CloudVmClusterLiveImageVersionDetailArrayOutput {
+	return o.ApplyT(func(v *CloudVmCluster) CloudVmClusterLiveImageVersionDetailArrayOutput {
+		return v.LiveImageVersionDetails
+	}).(CloudVmClusterLiveImageVersionDetailArrayOutput)
+}
+
 // (Updatable) The memory to be allocated in GBs.
 func (o CloudVmClusterOutput) MemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudVmCluster) pulumi.IntOutput { return v.MemorySizeInGbs }).(pulumi.IntOutput)
@@ -1147,6 +1181,11 @@ func (o CloudVmClusterOutput) NsgIds() pulumi.StringArrayOutput {
 // (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
 func (o CloudVmClusterOutput) OcpuCount() pulumi.Float64Output {
 	return o.ApplyT(func(v *CloudVmCluster) pulumi.Float64Output { return v.OcpuCount }).(pulumi.Float64Output)
+}
+
+// Oracle Linux version for the respective Exadata Image.
+func (o CloudVmClusterOutput) OracleLinuxVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringOutput { return v.OracleLinuxVersion }).(pulumi.StringOutput)
 }
 
 // The private zone id in which DNS records need to be created.
@@ -1257,6 +1296,11 @@ func (o CloudVmClusterOutput) TimeCreated() pulumi.StringOutput {
 // The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 func (o CloudVmClusterOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringOutput { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+// (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+func (o CloudVmClusterOutput) UpdateDetails() CloudVmClusterUpdateDetailsPtrOutput {
+	return o.ApplyT(func(v *CloudVmCluster) CloudVmClusterUpdateDetailsPtrOutput { return v.UpdateDetails }).(CloudVmClusterUpdateDetailsPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.

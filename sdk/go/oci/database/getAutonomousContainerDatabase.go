@@ -62,7 +62,8 @@ type LookupAutonomousContainerDatabaseResult struct {
 	AssociatedBackupConfigurationDetails []GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetail `pulumi:"associatedBackupConfigurationDetails"`
 	AutonomousContainerDatabaseBackupId  string                                                              `pulumi:"autonomousContainerDatabaseBackupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
-	AutonomousContainerDatabaseId string `pulumi:"autonomousContainerDatabaseId"`
+	AutonomousContainerDatabaseId string   `pulumi:"autonomousContainerDatabaseId"`
+	AutonomousDatabasesToClones   []string `pulumi:"autonomousDatabasesToClones"`
 	// **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
 	AutonomousExadataInfrastructureId string `pulumi:"autonomousExadataInfrastructureId"`
 	// The OCID of the Autonomous VM Cluster.
@@ -75,6 +76,8 @@ type LookupAutonomousContainerDatabaseResult struct {
 	BackupConfigs []GetAutonomousContainerDatabaseBackupConfig `pulumi:"backupConfigs"`
 	// This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
 	BackupDestinationPropertiesLists []GetAutonomousContainerDatabaseBackupDestinationPropertiesList `pulumi:"backupDestinationPropertiesLists"`
+	CloneBandWidth                   string                                                          `pulumi:"cloneBandWidth"`
+	CloneType                        string                                                          `pulumi:"cloneType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
 	CloudAutonomousVmClusterId string `pulumi:"cloudAutonomousVmClusterId"`
 	// The OCID of the compartment.
@@ -183,8 +186,10 @@ type LookupAutonomousContainerDatabaseResult struct {
 	Role             string `pulumi:"role"`
 	RotateKeyTrigger bool   `pulumi:"rotateKeyTrigger"`
 	// The service level agreement type of the container database. The default is STANDARD.
-	ServiceLevelAgreementType string `pulumi:"serviceLevelAgreementType"`
-	Source                    string `pulumi:"source"`
+	ServiceLevelAgreementType               string `pulumi:"serviceLevelAgreementType"`
+	ShouldUseLatestAvailableBackupTimeStamp bool   `pulumi:"shouldUseLatestAvailableBackupTimeStamp"`
+	Source                                  string `pulumi:"source"`
+	SourceAutonomousContainerDatabaseId     string `pulumi:"sourceAutonomousContainerDatabaseId"`
 	// The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
 	StandbyMaintenanceBufferInDays int `pulumi:"standbyMaintenanceBufferInDays"`
 	// The current state of the Autonomous Container Database.
@@ -198,6 +203,7 @@ type LookupAutonomousContainerDatabaseResult struct {
 	TimeOfLastBackup string `pulumi:"timeOfLastBackup"`
 	// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
 	TimeSnapshotStandbyRevert string `pulumi:"timeSnapshotStandbyRevert"`
+	TimeStampToUseForCloning  string `pulumi:"timeStampToUseForCloning"`
 	// The number of CPUs allocated to the Autonomous VM cluster.
 	TotalCpus int `pulumi:"totalCpus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
@@ -258,6 +264,10 @@ func (o LookupAutonomousContainerDatabaseResultOutput) AutonomousContainerDataba
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.AutonomousContainerDatabaseId }).(pulumi.StringOutput)
 }
 
+func (o LookupAutonomousContainerDatabaseResultOutput) AutonomousDatabasesToClones() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) []string { return v.AutonomousDatabasesToClones }).(pulumi.StringArrayOutput)
+}
+
 // **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
 func (o LookupAutonomousContainerDatabaseResultOutput) AutonomousExadataInfrastructureId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.AutonomousExadataInfrastructureId }).(pulumi.StringOutput)
@@ -290,6 +300,14 @@ func (o LookupAutonomousContainerDatabaseResultOutput) BackupDestinationProperti
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) []GetAutonomousContainerDatabaseBackupDestinationPropertiesList {
 		return v.BackupDestinationPropertiesLists
 	}).(GetAutonomousContainerDatabaseBackupDestinationPropertiesListArrayOutput)
+}
+
+func (o LookupAutonomousContainerDatabaseResultOutput) CloneBandWidth() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.CloneBandWidth }).(pulumi.StringOutput)
+}
+
+func (o LookupAutonomousContainerDatabaseResultOutput) CloneType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.CloneType }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
@@ -608,8 +626,16 @@ func (o LookupAutonomousContainerDatabaseResultOutput) ServiceLevelAgreementType
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.ServiceLevelAgreementType }).(pulumi.StringOutput)
 }
 
+func (o LookupAutonomousContainerDatabaseResultOutput) ShouldUseLatestAvailableBackupTimeStamp() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) bool { return v.ShouldUseLatestAvailableBackupTimeStamp }).(pulumi.BoolOutput)
+}
+
 func (o LookupAutonomousContainerDatabaseResultOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.Source }).(pulumi.StringOutput)
+}
+
+func (o LookupAutonomousContainerDatabaseResultOutput) SourceAutonomousContainerDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.SourceAutonomousContainerDatabaseId }).(pulumi.StringOutput)
 }
 
 // The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
@@ -644,6 +670,10 @@ func (o LookupAutonomousContainerDatabaseResultOutput) TimeOfLastBackup() pulumi
 // The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
 func (o LookupAutonomousContainerDatabaseResultOutput) TimeSnapshotStandbyRevert() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.TimeSnapshotStandbyRevert }).(pulumi.StringOutput)
+}
+
+func (o LookupAutonomousContainerDatabaseResultOutput) TimeStampToUseForCloning() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.TimeStampToUseForCloning }).(pulumi.StringOutput)
 }
 
 // The number of CPUs allocated to the Autonomous VM cluster.

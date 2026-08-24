@@ -11,50 +11,50 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceAgentPluginsInstanceAgentPlugin {
     /**
-     * @return The optional message from the agent plugin
+     * @return An optional message from the plugin.
      * 
      */
     private String message;
     /**
-     * @return The plugin name
+     * @return The plugin name.
      * 
      */
     private String name;
     /**
-     * @return The plugin status
+     * @return The plugin status.
      * 
      */
     private String status;
     /**
-     * @return The last update time of the plugin in UTC
+     * @return The last updated time of the plugin, in UTC.
      * 
      */
     private String timeLastUpdatedUtc;
 
     private GetInstanceAgentPluginsInstanceAgentPlugin() {}
     /**
-     * @return The optional message from the agent plugin
+     * @return An optional message from the plugin.
      * 
      */
     public String message() {
         return this.message;
     }
     /**
-     * @return The plugin name
+     * @return The plugin name.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return The plugin status
+     * @return The plugin status.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return The last update time of the plugin in UTC
+     * @return The last updated time of the plugin, in UTC.
      * 
      */
     public String timeLastUpdatedUtc() {

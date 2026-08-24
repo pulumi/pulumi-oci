@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? DbSystemId { get; set; }
 
         /// <summary>
-        /// The failover readiness status of the Data Guard member.
+        /// The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
         /// </summary>
         [Input("failoverReadiness")]
         public Input<string>? FailoverReadiness { get; set; }
@@ -54,11 +54,29 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("failoverReadinessMessage")]
         public Input<string>? FailoverReadinessMessage { get; set; }
 
+        [Input("failoverTargets")]
+        private InputList<string>? _failoverTargets;
+
+        /// <summary>
+        /// Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+        /// </summary>
+        public InputList<string> FailoverTargets
+        {
+            get => _failoverTargets ?? (_failoverTargets = new InputList<string>());
+            set => _failoverTargets = value;
+        }
+
         /// <summary>
         /// True if active Data Guard is enabled.
         /// </summary>
         [Input("isActiveDataGuardEnabled")]
         public Input<bool>? IsActiveDataGuardEnabled { get; set; }
+
+        /// <summary>
+        /// The state of managed auto failover.
+        /// </summary>
+        [Input("managedAutoFailover")]
+        public Input<string>? ManagedAutoFailover { get; set; }
 
         /// <summary>
         /// The role of the reporting database in this Data Guard association.
@@ -68,6 +86,7 @@ namespace Pulumi.Oci.Database.Inputs
 
         /// <summary>
         /// The switchover readiness status of the Data Guard member.
+        /// * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
         /// </summary>
         [Input("switchoverReadiness")]
         public Input<string>? SwitchoverReadiness { get; set; }

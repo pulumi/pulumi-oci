@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetInstanceAgentPluginsFilter {
     /**
-     * @return The plugin name
+     * @return The plugin name.
      * 
      */
     private String name;
@@ -24,7 +24,7 @@ public final class GetInstanceAgentPluginsFilter {
 
     private GetInstanceAgentPluginsFilter() {}
     /**
-     * @return The plugin name
+     * @return The plugin name.
      * 
      */
     public String name() {

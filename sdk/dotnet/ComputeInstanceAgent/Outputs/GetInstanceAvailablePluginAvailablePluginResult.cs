@@ -14,19 +14,19 @@ namespace Pulumi.Oci.ComputeInstanceAgent.Outputs
     public sealed class GetInstanceAvailablePluginAvailablePluginResult
     {
         /// <summary>
-        /// Is the plugin enabled or disabled by default
+        /// Whether the plugin is enabled or disabled by default.
         /// </summary>
         public readonly bool IsEnabledByDefault;
         /// <summary>
-        /// Is the plugin supported or not
+        /// Whether the plugin is supported.
         /// </summary>
         public readonly bool IsSupported;
         /// <summary>
-        /// The plugin name
+        /// The plugin name.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// A brief description of the plugin functionality
+        /// A brief description of the plugin's functionality.
         /// </summary>
         public readonly string Summary;
 

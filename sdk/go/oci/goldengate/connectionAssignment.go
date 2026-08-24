@@ -63,6 +63,8 @@ type ConnectionAssignment struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	ConnectionId pulumi.StringOutput `pulumi:"connectionId"`
+	// The connection type.
+	ConnectionType pulumi.StringOutput `pulumi:"connectionType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId pulumi.StringOutput `pulumi:"deploymentId"`
 	// Whether to override locks (if any exist).
@@ -120,6 +122,8 @@ type connectionAssignmentState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	ConnectionId *string `pulumi:"connectionId"`
+	// The connection type.
+	ConnectionType *string `pulumi:"connectionType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId *string `pulumi:"deploymentId"`
 	// Whether to override locks (if any exist).
@@ -142,6 +146,8 @@ type ConnectionAssignmentState struct {
 	CompartmentId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	ConnectionId pulumi.StringPtrInput
+	// The connection type.
+	ConnectionType pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId pulumi.StringPtrInput
 	// Whether to override locks (if any exist).
@@ -286,6 +292,11 @@ func (o ConnectionAssignmentOutput) CompartmentId() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 func (o ConnectionAssignmentOutput) ConnectionId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ConnectionAssignment) pulumi.StringOutput { return v.ConnectionId }).(pulumi.StringOutput)
+}
+
+// The connection type.
+func (o ConnectionAssignmentOutput) ConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v *ConnectionAssignment) pulumi.StringOutput { return v.ConnectionType }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.

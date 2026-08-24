@@ -28,7 +28,7 @@ public final class GetInstanceAvailablePluginResult {
      */
     private String id;
     /**
-     * @return The plugin name
+     * @return The plugin name.
      * 
      */
     private @Nullable String name;
@@ -57,7 +57,7 @@ public final class GetInstanceAvailablePluginResult {
         return this.id;
     }
     /**
-     * @return The plugin name
+     * @return The plugin name.
      * 
      */
     public Optional<String> name() {

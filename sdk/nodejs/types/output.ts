@@ -5221,7 +5221,7 @@ export namespace Analytics {
          */
         capacityType: string;
         /**
-         * (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+         * (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
          */
         capacityValue: number;
     }
@@ -5232,7 +5232,7 @@ export namespace Analytics {
          */
         networkEndpointType: string;
         /**
-         * Network Security Group OCIDs for an Analytics instance.
+         * Network Security Group OCIDs for the Analytics instance.
          */
         networkSecurityGroupIds: string[];
         /**
@@ -5248,7 +5248,7 @@ export namespace Analytics {
          */
         whitelistedIps: string[];
         /**
-         * Oracle Cloud Services that are allowed to access this Analytics instance.
+         * Oracle Cloud services that are allowed to access this Analytics instance.
          */
         whitelistedServices: string[];
         /**
@@ -5270,28 +5270,51 @@ export namespace Analytics {
 
     export interface AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone {
         /**
-         * (Updatable) Description of private source dns zone.
+         * (Updatable) Description of the private source DNS zone.
          */
         description: string;
         /**
-         * (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+         * (Updatable) Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
          */
         dnsZone: string;
     }
 
     export interface AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost {
         /**
-         * (Updatable) Description of private source scan host zone.
+         * (Updatable) Description of private source SCAN host zone.
          */
         description: string;
         /**
-         * (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+         * (Updatable) Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
          */
         scanHostname: string;
         /**
-         * (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+         * (Updatable) Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
          */
         scanPort: number;
+    }
+
+    export interface AnalyticsInstanceResourceGroup {
+        /**
+         * Service instance capacity metadata (for example, OLPU count, number of users, and so on).
+         */
+        capacity: number;
+        /**
+         * (Updatable) Optional description.
+         */
+        description: string;
+        /**
+         * Meaningful name of resource group for end user
+         */
+        displayName: string;
+        /**
+         * Unique identifier and name of resource group.  Must be unique within the instance
+         */
+        id: string;
+        /**
+         * Meaningful name of resource group for end user
+         */
+        resourceName: string;
     }
 
     export interface GetAnalyticsInstanceCapacity {
@@ -5300,7 +5323,7 @@ export namespace Analytics {
          */
         capacityType: string;
         /**
-         * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+         * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
          */
         capacityValue: number;
     }
@@ -5311,15 +5334,15 @@ export namespace Analytics {
          */
         networkEndpointType: string;
         /**
-         * Network Security Group OCIDs for an Analytics instance.
+         * Network Security Group OCIDs for the Analytics instance.
          */
         networkSecurityGroupIds: string[];
         /**
-         * OCID of the customer subnet connected to private access channel.
+         * OCID of the customer subnet connected to the private access channel.
          */
         subnetId: string;
         /**
-         * OCID of the customer VCN peered with private access channel.
+         * OCID of the customer VCN peered with the private access channel.
          */
         vcnId: string;
         /**
@@ -5327,7 +5350,7 @@ export namespace Analytics {
          */
         whitelistedIps: string[];
         /**
-         * Oracle Cloud Services that are allowed to access this Analytics instance.
+         * Oracle Cloud services that are allowed to access this Analytics instance.
          */
         whitelistedServices: string[];
         /**
@@ -5338,7 +5361,7 @@ export namespace Analytics {
 
     export interface GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn {
         /**
-         * The Virtual Cloud Network OCID.
+         * Unique identifier and name of resource group.  Must be unique within the instance
          */
         id: string;
         /**
@@ -5349,34 +5372,93 @@ export namespace Analytics {
 
     export interface GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone {
         /**
-         * Description of private source scan host zone.
+         * Description of private source SCAN host zone.
          */
         description: string;
         /**
-         * Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+         * Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
          */
         dnsZone: string;
     }
 
     export interface GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost {
         /**
-         * Description of private source scan host zone.
+         * Description of private source SCAN host zone.
          */
         description: string;
         /**
-         * Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+         * Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
          */
         scanHostname: string;
         /**
-         * Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+         * Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
          */
         scanPort: number;
+    }
+
+    export interface GetAnalyticsInstanceResourceGroup {
+        /**
+         * The capacity (in OCPU's) to be allocated for this resource.
+         */
+        capacity: number;
+        /**
+         * Description of the vanity URL.
+         */
+        description: string;
+        /**
+         * Meaningful name of resource group for end user
+         */
+        displayName: string;
+        /**
+         * Unique identifier and name of resource group.  Must be unique within the instance
+         */
+        id: string;
+        /**
+         * Meaningful name of resource group for end user
+         */
+        resourceName: string;
+    }
+
+    export interface GetAnalyticsInstanceResourceGroupsFilter {
+        /**
+         * A filter to return only resources that match the given name exactly.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAnalyticsInstanceResourceGroupsInstanceResourceGroup {
+        /**
+         * The OCID of the Analytics instance.
+         */
+        analyticsInstanceId: string;
+        /**
+         * The capacity (in OCPU's) to be allocated for this resource.
+         */
+        capacity: number;
+        /**
+         * Optional description of the resource group
+         */
+        description: string;
+        /**
+         * Meaningful name of resource group for end user
+         */
+        displayName: string;
+        /**
+         * Unique identifier and name of resource group.  Must be unique within the instance
+         */
+        id: string;
+        /**
+         * Meaningful name of resource group for end user
+         */
+        resourceName: string;
     }
 
     export interface GetAnalyticsInstancesAnalyticsInstance {
         adminUser: string;
         /**
-         * Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+         * The capacity (in OCPU's) to be allocated for this resource.
          */
         capacities: outputs.Analytics.GetAnalyticsInstancesAnalyticsInstanceCapacity[];
         /**
@@ -5388,7 +5470,7 @@ export namespace Analytics {
          */
         definedTags: {[key: string]: string};
         /**
-         * Description of the vanity url.
+         * Description of the vanity URL.
          */
         description: string;
         /**
@@ -5412,12 +5494,12 @@ export namespace Analytics {
          */
         freeformTags: {[key: string]: string};
         /**
-         * The Virtual Cloud Network OCID.
+         * Unique identifier and name of resource group.  Must be unique within the instance
          */
         id: string;
         idcsAccessToken: string;
         /**
-         * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+         * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
          */
         kmsKeyId: string;
         /**
@@ -5433,7 +5515,11 @@ export namespace Analytics {
          */
         networkEndpointDetails: outputs.Analytics.GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail[];
         /**
-         * URL of the Analytics service.
+         * List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+         */
+        resourceGroups: outputs.Analytics.GetAnalyticsInstancesAnalyticsInstanceResourceGroup[];
+        /**
+         * URL of the Analytics instance.
          */
         serviceUrl: string;
         /**
@@ -5445,15 +5531,15 @@ export namespace Analytics {
          */
         systemTags: {[key: string]: string};
         /**
-         * The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+         * The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
          */
         timeCreated: string;
         /**
-         * The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+         * The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don't affect it.
          */
         timeUpdated: string;
         /**
-         * Analytics instance update channel.
+         * The Analytics instance update cycle.
          */
         updateChannel: string;
     }
@@ -5464,7 +5550,7 @@ export namespace Analytics {
          */
         capacityType: string;
         /**
-         * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+         * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
          */
         capacityValue: number;
     }
@@ -5475,15 +5561,15 @@ export namespace Analytics {
          */
         networkEndpointType: string;
         /**
-         * Network Security Group OCIDs for an Analytics instance.
+         * Network Security Group OCIDs for the Analytics instance.
          */
         networkSecurityGroupIds: string[];
         /**
-         * OCID of the customer subnet connected to private access channel.
+         * OCID of the customer subnet connected to the private access channel.
          */
         subnetId: string;
         /**
-         * OCID of the customer VCN peered with private access channel.
+         * OCID of the customer VCN peered with the private access channel.
          */
         vcnId: string;
         /**
@@ -5491,7 +5577,7 @@ export namespace Analytics {
          */
         whitelistedIps: string[];
         /**
-         * Oracle Cloud Services that are allowed to access this Analytics instance.
+         * Oracle Cloud services that are allowed to access this Analytics instance.
          */
         whitelistedServices: string[];
         /**
@@ -5502,13 +5588,36 @@ export namespace Analytics {
 
     export interface GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn {
         /**
-         * The Virtual Cloud Network OCID.
+         * Unique identifier and name of resource group.  Must be unique within the instance
          */
         id: string;
         /**
          * Source IP addresses or IP address ranges in ingress rules.
          */
         whitelistedIps: string[];
+    }
+
+    export interface GetAnalyticsInstancesAnalyticsInstanceResourceGroup {
+        /**
+         * The capacity (in OCPU's) to be allocated for this resource.
+         */
+        capacity: number;
+        /**
+         * Description of the vanity URL.
+         */
+        description: string;
+        /**
+         * Meaningful name of resource group for end user
+         */
+        displayName: string;
+        /**
+         * Unique identifier and name of resource group.  Must be unique within the instance
+         */
+        id: string;
+        /**
+         * Meaningful name of resource group for end user
+         */
+        resourceName: string;
     }
 
     export interface GetAnalyticsInstancesFilter {
@@ -17638,16 +17747,25 @@ export namespace Artifacts {
          * Total number of images.
          */
         imageCount: number;
+        /**
+         * List of container repositories.
+         */
         items: outputs.Artifacts.GetContainerRepositoriesContainerRepositoryCollectionItem[];
         /**
          * Total number of layers.
          */
         layerCount: number;
         /**
-         * Total storage in bytes consumed by layers.
+         * Total size of layers.
          */
         layersSizeInBytes: string;
+        /**
+         * The number of remaining items.
+         */
         remainingItemsCount: number;
+        /**
+         * Total number of repositories.
+         */
         repositoryCount: number;
     }
 
@@ -17697,7 +17815,7 @@ export namespace Artifacts {
          */
         layerCount: number;
         /**
-         * Total storage in bytes consumed by layers.
+         * Total size of layers.
          */
         layersSizeInBytes: string;
         /**
@@ -41704,7 +41822,7 @@ export namespace ComputeCloud {
 export namespace ComputeInstanceAgent {
     export interface GetInstanceAgentPluginsFilter {
         /**
-         * The plugin name
+         * The plugin name.
          */
         name: string;
         regex?: boolean;
@@ -41713,45 +41831,45 @@ export namespace ComputeInstanceAgent {
 
     export interface GetInstanceAgentPluginsInstanceAgentPlugin {
         /**
-         * The optional message from the agent plugin
+         * An optional message from the plugin.
          */
         message: string;
         /**
-         * The plugin name
+         * The plugin name.
          */
         name: string;
         /**
-         * The plugin status
+         * The plugin status.
          */
         status: string;
         /**
-         * The last update time of the plugin in UTC
+         * The last updated time of the plugin, in UTC.
          */
         timeLastUpdatedUtc: string;
     }
 
     export interface GetInstanceAvailablePluginAvailablePlugin {
         /**
-         * Is the plugin enabled or disabled by default
+         * Whether the plugin is enabled or disabled by default.
          */
         isEnabledByDefault: boolean;
         /**
-         * Is the plugin supported or not
+         * Whether the plugin is supported.
          */
         isSupported: boolean;
         /**
-         * The plugin name
+         * The plugin name.
          */
         name: string;
         /**
-         * A brief description of the plugin functionality
+         * A brief description of the plugin's functionality.
          */
         summary: string;
     }
 
     export interface GetInstanceAvailablePluginFilter {
         /**
-         * The plugin name
+         * The plugin name.
          */
         name: string;
         regex?: boolean;
@@ -46047,6 +46165,17 @@ export namespace Core {
         maxVpusPerGb: string;
     }
 
+    export interface BootVolumeBackupRetentionPeriod {
+        /**
+         * (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+         */
+        retentionTimeAmount: number;
+        /**
+         * (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+         */
+        retentionTimeUnit: string;
+    }
+
     export interface BootVolumeBackupSourceDetails {
         bootVolumeBackupId: string;
         /**
@@ -46851,6 +46980,10 @@ export namespace Core {
          */
         firmwareBundleId: string;
         /**
+         * (Updatable) Additional quick recycle settings.
+         */
+        quickRecycleSettings: outputs.Core.ComputeHostGroupConfigurationQuickRecycleSettings;
+        /**
          * (Updatable) Preferred recycle level for hosts associated with the reservation config.
          * * `SKIP_RECYCLE` - Skips host wipe.
          * * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
@@ -46864,6 +46997,13 @@ export namespace Core {
          * (Updatable) Either the platform name or compute shape that the configuration is targeting
          */
         target: string;
+    }
+
+    export interface ComputeHostGroupConfigurationQuickRecycleSettings {
+        /**
+         * (Updatable) Whether to wipe NVMe data during quick recycle.
+         */
+        nvmeWipe: boolean;
     }
 
     export interface ComputeHostRecycleDetail {
@@ -46894,9 +47034,6 @@ export namespace Core {
         primaryKey: outputs.Core.CrossConnectGroupMacsecPropertiesPrimaryKey;
         /**
          * (Updatable) Indicates whether or not MACsec is enabled.
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         state: string;
     }
@@ -46922,6 +47059,17 @@ export namespace Core {
          * NOTE: Only the latest secret version will be used.
          */
         connectivityAssociationNameSecretVersion: string;
+    }
+
+    export interface CrossConnectLoaProperties {
+        /**
+         * (Updatable) Name of a customer authorized agent to append to the LOA as `Authorized Agent`. Set this to an empty string to remove the current authorized agent.
+         */
+        authorizedAgent: string;
+        /**
+         * (Updatable) Terraform-managed count of self-service expiry extensions requested for the LOA. Increase this value by 1 to request one additional expiry extension. This value cannot be decreased or increased by more than 1 in a single update. The service enforces the maximum number of allowed extensions.
+         */
+        expiryExtensionCount?: number;
     }
 
     export interface CrossConnectMacsecProperties {
@@ -47487,6 +47635,17 @@ export namespace Core {
         maxVpusPerGb: string;
     }
 
+    export interface GetBootVolumeBackupRetentionPeriod {
+        /**
+         * The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+         */
+        retentionTimeAmount: number;
+        /**
+         * The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+         */
+        retentionTimeUnit: string;
+    }
+
     export interface GetBootVolumeBackupSourceDetail {
         /**
          * The OCID of the boot volume backup.
@@ -47533,9 +47692,25 @@ export namespace Core {
          */
         imageId: string;
         /**
+         * feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+         */
+        isIndefiniteRetentionEnabled: boolean;
+        /**
+         * Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+         */
+        isPreventDeletionEnabled: boolean;
+        /**
+         * feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+         */
+        isRetentionLockEnabled: boolean;
+        /**
          * The OCID of the Vault service master encryption assigned to the boot volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
          */
         kmsKeyId: string;
+        /**
+         * This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+         */
+        retentionPeriods: outputs.Core.GetBootVolumeBackupsBootVolumeBackupRetentionPeriod[];
         /**
          * The size of the boot volume, in GBs.
          */
@@ -47566,6 +47741,10 @@ export namespace Core {
          */
         timeRequestReceived: string;
         /**
+         * The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+         */
+        timeRetentionExpiresAt: string;
+        /**
          * The type of a volume backup. Supported values are 'FULL' or 'INCREMENTAL'.
          */
         type: string;
@@ -47573,6 +47752,21 @@ export namespace Core {
          * The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the boot volume and whether the backup is full or incremental.
          */
         uniqueSizeInGbs: string;
+        /**
+         * The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+         */
+        volumeGroupBackupId: string;
+    }
+
+    export interface GetBootVolumeBackupsBootVolumeBackupRetentionPeriod {
+        /**
+         * The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+         */
+        retentionTimeAmount: number;
+        /**
+         * The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+         */
+        retentionTimeUnit: string;
     }
 
     export interface GetBootVolumeBackupsBootVolumeBackupSourceDetail {
@@ -50190,6 +50384,10 @@ export namespace Core {
          */
         firmwareBundleId: string;
         /**
+         * Additional quick recycle settings.
+         */
+        quickRecycleSettings: outputs.Core.GetComputeHostGroupConfigurationQuickRecycleSetting[];
+        /**
          * Preferred recycle level for hosts associated with the reservation config.
          * * `SKIP_RECYCLE` - Skips host wipe.
          * * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
@@ -50203,6 +50401,13 @@ export namespace Core {
          * Either the platform name or compute shape that the configuration is targeting
          */
         target: string;
+    }
+
+    export interface GetComputeHostGroupConfigurationQuickRecycleSetting {
+        /**
+         * Whether to wipe NVMe data during quick recycle.
+         */
+        nvmeWipe: boolean;
     }
 
     export interface GetComputeHostGroupsComputeHostGroupCollection {
@@ -50266,6 +50471,10 @@ export namespace Core {
          */
         firmwareBundleId: string;
         /**
+         * Additional quick recycle settings.
+         */
+        quickRecycleSettings: outputs.Core.GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSetting[];
+        /**
          * Preferred recycle level for hosts associated with the reservation config.
          * * `SKIP_RECYCLE` - Skips host wipe.
          * * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
@@ -50279,6 +50488,13 @@ export namespace Core {
          * Either the platform name or compute shape that the configuration is targeting
          */
         target: string;
+    }
+
+    export interface GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSetting {
+        /**
+         * Whether to wipe NVMe data during quick recycle.
+         */
+        nvmeWipe: boolean;
     }
 
     export interface GetComputeHostGroupsFilter {
@@ -50669,9 +50885,25 @@ export namespace Core {
          */
         id: string;
         /**
+         * The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+         */
+        interfaceDownTimerValueInMilliseconds: number;
+        /**
+         * The flag to enable or disable the down timer for the interface.
+         */
+        isInterfaceHoldTimerEnabled: boolean;
+        /**
+         * The flag to enable or disable the Qos for the cross-connect-group.
+         */
+        isQosEnabled: boolean;
+        /**
          * Properties used for MACsec (if capable).
          */
         macsecProperties: outputs.Core.GetCrossConnectGroupsCrossConnectGroupMacsecProperty[];
+        /**
+         * Minimum number of active cross-connects required for the cross-connect group to be considered operational. If the number of active cross-connects falls below this value, the group is not considered operational. If this value was not explicitly set when the group was created or updated, it defaults to 1.
+         */
+        minimumLinks: number;
         /**
          * The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
          */
@@ -50732,6 +50964,11 @@ export namespace Core {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetCrossConnectLoaProperty {
+        authorizedAgent: string;
+        expiryExtensionCount: number;
     }
 
     export interface GetCrossConnectLocationsCrossConnectLocation {
@@ -50842,8 +51079,24 @@ export namespace Core {
          * The cross-connect's Oracle ID (OCID).
          */
         id: string;
+        /**
+         * The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+         */
+        interfaceDownTimerValueInMilliseconds: number;
+        /**
+         * The name of the FastConnect interface where this cross-connect is installed.
+         */
         interfaceName: string;
         isActive: boolean;
+        /**
+         * The flag to enable or disable the down timer for the interface.
+         */
+        isInterfaceHoldTimerEnabled: boolean;
+        /**
+         * The flag to enable or disable the Qos for the cross-connect.
+         */
+        isQosEnabled: boolean;
+        loaProperties: outputs.Core.GetCrossConnectsCrossConnectLoaProperty[];
         /**
          * The name of the FastConnect location where this cross-connect is installed.
          */
@@ -50877,6 +51130,11 @@ export namespace Core {
          * The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
          */
         timeCreated: string;
+    }
+
+    export interface GetCrossConnectsCrossConnectLoaProperty {
+        authorizedAgent: string;
+        expiryExtensionCount: number;
     }
 
     export interface GetCrossConnectsCrossConnectMacsecProperty {
@@ -57608,6 +57866,17 @@ export namespace Core {
         vnicId: string;
     }
 
+    export interface GetLetterOfAuthorityExtensionDetail {
+        /**
+         * Chronologically sorted list of date and time when the Letter of Authority's expiration was last updated,  most recent first, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). List is empty if the LOA's expiration date has never been extended.
+         */
+        histories: string[];
+        /**
+         * The number of self-service LOA expiry extensions still available.
+         */
+        remainingExtensions: string;
+    }
+
     export interface GetListingResourceVersionsAppCatalogListingResourceVersion {
         accessiblePorts: number[];
         allowedActions: string[];
@@ -59569,7 +59838,11 @@ export namespace Core {
          */
         oracleBgpAsn: number;
         /**
-         * The OCID of the service offered by the provider (if the customer is connecting via a provider).
+         * The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+         */
+        providerRemoteRegion: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if the customer is connecting via a provider).
          */
         providerServiceId: string;
         /**
@@ -59593,6 +59866,10 @@ export namespace Core {
          */
         region: string;
         /**
+         * Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+         */
+        remoteAccountId: string;
+        /**
          * The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
          */
         routingPolicies: string[];
@@ -59601,6 +59878,10 @@ export namespace Core {
          */
         serviceType: string;
         /**
+         * The Shared unique identifier for the connection between the multicloud interconnect providers
+         */
+        sharedConnectionUuid: string;
+        /**
          * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
          */
         state: string;
@@ -59608,6 +59889,10 @@ export namespace Core {
          * The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
          */
         timeCreated: string;
+        /**
+         * The current traffic mode for the Virtual Circuit. This indicates whether the traffic is drained for the associated Virtual Circuit or not.
+         */
+        trafficMode: string;
         /**
          * Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
          */
@@ -60055,6 +60340,14 @@ export namespace Core {
          */
         hourOfDay: number;
         /**
+         * Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+         */
+        isPreventDeletionEnabled: boolean;
+        /**
+         * feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+         */
+        isRetentionLockEnabled: boolean;
+        /**
          * The month of the year to schedule the volume backup.
          */
         month: string;
@@ -60071,6 +60364,10 @@ export namespace Core {
          */
         period: string;
         /**
+         * This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+         */
+        retentionPeriods: outputs.Core.GetVolumeBackupPoliciesVolumeBackupPolicyScheduleRetentionPeriod[];
+        /**
          * How long, in seconds, to keep the volume backups created by this schedule.
          */
         retentionSeconds: number;
@@ -60078,6 +60375,17 @@ export namespace Core {
          * Specifies what time zone is the schedule in
          */
         timeZone: string;
+    }
+
+    export interface GetVolumeBackupPoliciesVolumeBackupPolicyScheduleRetentionPeriod {
+        /**
+         * The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+         */
+        retentionTimeAmount: number;
+        /**
+         * The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+         */
+        retentionTimeUnit: string;
     }
 
     export interface GetVolumeBackupPolicyAssignmentsFilter {
@@ -60141,9 +60449,25 @@ export namespace Core {
          */
         id: string;
         /**
+         * feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+         */
+        isIndefiniteRetentionEnabled: boolean;
+        /**
+         * Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+         */
+        isPreventDeletionEnabled: boolean;
+        /**
+         * feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+         */
+        isRetentionLockEnabled: boolean;
+        /**
          * The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
          */
         kmsKeyId: string;
+        /**
+         * This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+         */
+        retentionPeriods: outputs.Core.GetVolumeBackupsVolumeBackupRetentionPeriod[];
         /**
          * The size of the volume, in GBs.
          */
@@ -60180,6 +60504,10 @@ export namespace Core {
          */
         timeRequestReceived: string;
         /**
+         * The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+         */
+        timeRetentionExpiresAt: string;
+        /**
          * The type of a volume backup. Supported values are 'FULL' or 'INCREMENTAL'.
          */
         type: string;
@@ -60194,9 +60522,24 @@ export namespace Core {
          */
         uniqueSizeInMbs: string;
         /**
+         * The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+         */
+        volumeGroupBackupId: string;
+        /**
          * The OCID of the volume.
          */
         volumeId: string;
+    }
+
+    export interface GetVolumeBackupsVolumeBackupRetentionPeriod {
+        /**
+         * The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+         */
+        retentionTimeAmount: number;
+        /**
+         * The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+         */
+        retentionTimeUnit: string;
     }
 
     export interface GetVolumeBackupsVolumeBackupSourceDetail {
@@ -60260,6 +60603,22 @@ export namespace Core {
          */
         id: string;
         /**
+         * feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+         */
+        isIndefiniteRetentionEnabled: boolean;
+        /**
+         * Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+         */
+        isPreventDeletionEnabled: boolean;
+        /**
+         * feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+         */
+        isRetentionLockEnabled: boolean;
+        /**
+         * This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+         */
+        retentionPeriods: outputs.Core.GetVolumeGroupBackupsVolumeGroupBackupRetentionPeriod[];
+        /**
          * The aggregate size of the volume group backup, in GBs.
          */
         sizeInGbs: string;
@@ -60289,6 +60648,10 @@ export namespace Core {
          */
         timeRequestReceived: string;
         /**
+         * The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+         */
+        timeRetentionExpiresAt: string;
+        /**
          * The type of backup.
          */
         type: string;
@@ -60308,6 +60671,17 @@ export namespace Core {
          * The OCID of the volume group.
          */
         volumeGroupId: string;
+    }
+
+    export interface GetVolumeGroupBackupsVolumeGroupBackupRetentionPeriod {
+        /**
+         * The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+         */
+        retentionTimeAmount: number;
+        /**
+         * The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+         */
+        retentionTimeUnit: string;
     }
 
     export interface GetVolumeGroupBackupsVolumeGroupBackupSourceDetail {
@@ -63970,6 +64344,14 @@ export namespace Core {
          */
         hourOfDay?: number;
         /**
+         * (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+         */
+        isPreventDeletionEnabled: boolean;
+        /**
+         * (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+         */
+        isRetentionLockEnabled: boolean;
+        /**
          * (Updatable) The month of the year to schedule the volume backup.
          */
         month?: string;
@@ -64000,6 +64382,10 @@ export namespace Core {
          */
         period: string;
         /**
+         * (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+         */
+        retentionPeriod: outputs.Core.VolumeBackupPolicyScheduleRetentionPeriod;
+        /**
          * (Updatable) How long, in seconds, to keep the volume backups created by this schedule.
          */
         retentionSeconds: number;
@@ -64013,6 +64399,28 @@ export namespace Core {
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         timeZone: string;
+    }
+
+    export interface VolumeBackupPolicyScheduleRetentionPeriod {
+        /**
+         * (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+         */
+        retentionTimeAmount: number;
+        /**
+         * (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+         */
+        retentionTimeUnit: string;
+    }
+
+    export interface VolumeBackupRetentionPeriod {
+        /**
+         * (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+         */
+        retentionTimeAmount: number;
+        /**
+         * (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+         */
+        retentionTimeUnit: string;
     }
 
     export interface VolumeBackupSourceDetails {
@@ -64054,6 +64462,17 @@ export namespace Core {
          * (Updatable) The OCID of the Vault service key which is the master encryption key for the cross region block volume replicas, which will be used in the destination region to encrypt the block volume replica's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
          */
         xrrKmsKeyId: string;
+    }
+
+    export interface VolumeGroupBackupRetentionPeriod {
+        /**
+         * (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+         */
+        retentionTimeAmount: number;
+        /**
+         * (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+         */
+        retentionTimeUnit: string;
     }
 
     export interface VolumeGroupBackupSourceDetails {
@@ -102586,7 +103005,7 @@ export namespace Database {
 
     export interface AutonomousDatabaseLocalStandbyDb {
         /**
-         * The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+         * (Updatable) The Autonomous Database Serverless instance's availability domain.
          */
         availabilityDomain: string;
         /**
@@ -102755,7 +103174,7 @@ export namespace Database {
 
     export interface AutonomousDatabaseStandbyDb {
         /**
-         * The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+         * (Updatable) The Autonomous Database Serverless instance's availability domain.
          */
         availabilityDomain: string;
         /**
@@ -103625,6 +104044,25 @@ export namespace Database {
         share: number;
     }
 
+    export interface CloudVmClusterLiveImageVersionDetail {
+        /**
+         * Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+         */
+        hasPendingUpdates: boolean;
+        /**
+         * The release date and time for the applied Live Exadata Image OS version.
+         */
+        timeReleased: string;
+        /**
+         * The OS live update mode performed most recently on the VM Cluster.
+         */
+        updateMode: string;
+        /**
+         * Live Exadata Image Version of the Guest OS Update applied.
+         */
+        version: string;
+    }
+
     export interface CloudVmClusterMultiCloudIdentityConnectorConfig {
         /**
          * Cloud provider
@@ -103634,6 +104072,21 @@ export namespace Database {
          * The OCID of the identity connector
          */
         id: string;
+    }
+
+    export interface CloudVmClusterUpdateDetails {
+        /**
+         * (Updatable) The update action. Supported values include `ROLLING_APPLY`, `NON_ROLLING_APPLY`, `PRECHECK`, and `ROLLBACK`.
+         */
+        updateAction?: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+         */
+        updateId?: string;
+        /**
+         * (Updatable) The OS update mode. Supported values are `ONLINE_HIGHCVSS`, `ONLINE_ALLCVSS`, `ONLINE_ALL_UPDATES`, `PENDING_UPDATES`, and `FULL_UPDATE`.
+         */
+        updateMode?: string;
     }
 
     export interface DataGuardAssociationDataCollectionOptions {
@@ -103672,6 +104125,10 @@ export namespace Database {
 
     export interface DatabaseDataGuardGroup {
         /**
+         * Specifies readiness of Managed Automatic failover.
+         */
+        managedAutoFailOverReadiness: string;
+        /**
          * List of Data Guard members, representing each database that is part of Data Guard.
          */
         members: outputs.Database.DatabaseDataGuardGroupMember[];
@@ -103703,7 +104160,7 @@ export namespace Database {
          */
         dbSystemId: string;
         /**
-         * The failover readiness status of the Data Guard member.
+         * The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
          */
         failoverReadiness: string;
         /**
@@ -103711,15 +104168,24 @@ export namespace Database {
          */
         failoverReadinessMessage: string;
         /**
+         * Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+         */
+        failoverTargets: string[];
+        /**
          * True if active Data Guard is enabled.
          */
         isActiveDataGuardEnabled: boolean;
+        /**
+         * The state of managed auto failover.
+         */
+        managedAutoFailover: string;
         /**
          * The role of the reporting database in this Data Guard association.
          */
         role: string;
         /**
          * The switchover readiness status of the Data Guard member.
+         * * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
          */
         switchoverReadiness: string;
         /**
@@ -103752,6 +104218,10 @@ export namespace Database {
          * A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
          */
         adminPassword: string;
+        /**
+         * The properties for defining auto failover configuration.
+         */
+        autoFailoverConfiguration: outputs.Database.DatabaseDatabaseAutoFailoverConfiguration;
         /**
          * The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
@@ -103847,6 +104317,10 @@ export namespace Database {
          */
         protectionMode?: string;
         /**
+         * The password for the VPC user that is used to access the Recovery Appliance, if the given backup is from a backup destination of type RECOVERY_APPLIANCE.
+         */
+        recoveryApplianceVpcPassword: string;
+        /**
          * Specifies a prefix for the `Oracle SID` of the database to be created.
          */
         sidPrefix: string;
@@ -103890,6 +104364,17 @@ export namespace Database {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
          */
         vmClusterId: string;
+    }
+
+    export interface DatabaseDatabaseAutoFailoverConfiguration {
+        /**
+         * Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+         */
+        failoverTargets: string[];
+        /**
+         * The state of managed auto failover.
+         */
+        managedAutoFailover: string;
     }
 
     export interface DatabaseDatabaseDbBackupConfig {
@@ -103957,11 +104442,26 @@ export namespace Database {
          */
         remoteRegion: string;
         /**
+         * Backup destination for the TDE wallet backups.
+         */
+        tdeWalletBackupDestination: outputs.Database.DatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination;
+        /**
          * Type of the database backup destination.
          */
         type?: string;
         vpcPassword?: string;
         vpcUser?: string;
+    }
+
+    export interface DatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         */
+        backupDestinationId: string;
+        /**
+         * Destination where TDE Wallet backups are to be placed.
+         */
+        backupDestinationType: string;
     }
 
     export interface DatabaseDatabaseEncryptionKeyLocationDetails {
@@ -104184,11 +104684,26 @@ export namespace Database {
          */
         remoteRegion: string;
         /**
+         * Backup destination for the TDE wallet backups.
+         */
+        tdeWalletBackupDestinations: outputs.Database.DatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination[];
+        /**
          * Type of the database backup destination.
          */
         type: string;
         vpcPassword: string;
         vpcUser: string;
+    }
+
+    export interface DatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         */
+        backupDestinationId: string;
+        /**
+         * Destination where TDE Wallet backups are to be placed.
+         */
+        backupDestinationType: string;
     }
 
     export interface DatabaseManagedSoftwareUpdateDetail {
@@ -104444,6 +104959,10 @@ export namespace Database {
 
     export interface DatabaseUpgradeDataGuardGroup {
         /**
+         * Specifies readiness of Managed Automatic failover.
+         */
+        managedAutoFailOverReadiness: string;
+        /**
          * List of Data Guard members, representing each database that is part of Data Guard.
          */
         members: outputs.Database.DatabaseUpgradeDataGuardGroupMember[];
@@ -104475,7 +104994,7 @@ export namespace Database {
          */
         dbSystemId: string;
         /**
-         * The failover readiness status of the Data Guard member.
+         * The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
          */
         failoverReadiness: string;
         /**
@@ -104483,15 +105002,24 @@ export namespace Database {
          */
         failoverReadinessMessage: string;
         /**
+         * Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+         */
+        failoverTargets: string[];
+        /**
          * True if active Data Guard is enabled.
          */
         isActiveDataGuardEnabled: boolean;
+        /**
+         * The state of managed auto failover.
+         */
+        managedAutoFailover: string;
         /**
          * The role of the reporting database in this Data Guard association.
          */
         role: string;
         /**
          * The switchover readiness status of the Data Guard member.
+         * * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
          */
         switchoverReadiness: string;
         /**
@@ -104715,6 +105243,10 @@ export namespace Database {
          */
         pluggableDatabases: string[];
         /**
+         * The password for the VPC user that is used to access the Recovery Appliance, if the given backup is from a backup destination of type RECOVERY_APPLIANCE.
+         */
+        recoveryApplianceVpcPassword: string;
+        /**
          * Specifies a prefix for the `Oracle SID` of the database to be created.
          */
         sidPrefix: string;
@@ -104815,6 +105347,10 @@ export namespace Database {
          */
         remoteRegion: string;
         /**
+         * Backup destination for the TDE wallet backups.
+         */
+        tdeWalletBackupDestination: outputs.Database.DbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination;
+        /**
          * Type of the database backup destination. Supported values: `NFS`.
          */
         type: string;
@@ -104822,7 +105358,21 @@ export namespace Database {
         vpcUser?: string;
     }
 
+    export interface DbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         */
+        backupDestinationId: string;
+        /**
+         * Destination where TDE Wallet backups are to be placed.
+         */
+        backupDestinationType: string;
+    }
+
     export interface DbHomeDatabaseEncryptionKeyLocationDetails {
+        /**
+         * Provide the key OCID of a registered AWS key.
+         */
         awsEncryptionKeyId: string;
         /**
          * Provide the key OCID of a registered Azure key.
@@ -105936,6 +106486,17 @@ export namespace Database {
         share: number;
     }
 
+    export interface ExadbVmClusterMultiCloudIdentityConnectorConfig {
+        /**
+         * Cloud provider
+         */
+        cloudProvider: string;
+        /**
+         * The OCID of the identity connector
+         */
+        id: string;
+    }
+
     export interface ExadbVmClusterNodeConfig {
         /**
          * (Updatable) The number of ECPUs to enable for each node.
@@ -106376,6 +106937,68 @@ export namespace Database {
         vpcUser: string;
     }
 
+    export interface GetAutonomousContainerDatabaseBackupAutonomousDatabase {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
+        compartmentId: string;
+        /**
+         * A user-friendly name for the backup. This name need not be unique.
+         */
+        displayName: string;
+        /**
+         * The current state of the backup.
+         */
+        state: string;
+    }
+
+    export interface GetAutonomousContainerDatabaseBackupBackupDestinationDetail {
+        /**
+         * Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+         */
+        backupRetentionPolicyOnTerminate: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+         */
+        dbrsPolicyId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
+         */
+        id: string;
+        /**
+         * Proxy URL to connect to object store.
+         */
+        internetProxy: string;
+        /**
+         * Indicates whether the backup destination is cross-region or local.
+         */
+        isRemote: boolean;
+        /**
+         * Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         */
+        isRetentionLockEnabled: boolean;
+        /**
+         * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+         */
+        isZeroDataLossEnabled: boolean;
+        /**
+         * The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         */
+        remoteRegion: string;
+        /**
+         * The type of backup.
+         */
+        type: string;
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+         */
+        vpcPassword: string;
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+         */
+        vpcUser: string;
+    }
+
     export interface GetAutonomousContainerDatabaseBackupConfig {
         /**
          * Backup destination details.
@@ -106441,10 +107064,35 @@ export namespace Database {
         timeAtWhichStorageDetailsAreUpdated: string;
     }
 
-    export interface GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollection {
+    export interface GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsAutonomousDatabaseInBackupCollection {
         /**
-         * List of Autonomous container database backups.
+         * The list of Autonomous Databases that are part of the Autonomous Container Database Backup.
          */
+        items: outputs.Database.GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsAutonomousDatabaseInBackupCollectionItem[];
+    }
+
+    export interface GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsAutonomousDatabaseInBackupCollectionItem {
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If not provided, uses the Autonomous Container Database's compartment.
+         */
+        compartmentId: string;
+        /**
+         * The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
+         */
+        displayName: string;
+        /**
+         * The current state of the Autonomous AI Database.
+         */
+        state: string;
+    }
+
+    export interface GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollection {
         items: outputs.Database.GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItem[];
     }
 
@@ -106462,9 +107110,17 @@ export namespace Database {
          */
         autonomousDatabases: outputs.Database.GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemAutonomousDatabase[];
         /**
+         * Backup destination details
+         */
+        backupDestinationDetails: outputs.Database.GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemBackupDestinationDetail[];
+        /**
          * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         compartmentId: string;
+        /**
+         * A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
+         */
+        dbVersion: string;
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
@@ -106532,6 +107188,57 @@ export namespace Database {
          * A filter to return only resources that match the entire display name given. The match is not case sensitive.
          */
         displayName: string;
+        /**
+         * A filter to return only resources that match the given lifecycle state exactly.
+         */
+        state: string;
+    }
+
+    export interface GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemBackupDestinationDetail {
+        /**
+         * Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+         */
+        backupRetentionPolicyOnTerminate: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+         */
+        dbrsPolicyId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
+         */
+        id: string;
+        /**
+         * Proxy URL to connect to object store.
+         */
+        internetProxy: string;
+        /**
+         * call for all remote backups
+         */
+        isRemote: boolean;
+        /**
+         * Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         */
+        isRetentionLockEnabled: boolean;
+        /**
+         * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+         */
+        isZeroDataLossEnabled: boolean;
+        /**
+         * The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         */
+        remoteRegion: string;
+        /**
+         * The type of backup.
+         */
+        type: string;
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+         */
+        vpcPassword: string;
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+         */
+        vpcUser: string;
     }
 
     export interface GetAutonomousContainerDatabaseBackupsFilter {
@@ -107113,6 +107820,7 @@ export namespace Database {
          */
         associatedBackupConfigurationDetails: outputs.Database.GetAutonomousContainerDatabasesAutonomousContainerDatabaseAssociatedBackupConfigurationDetail[];
         autonomousContainerDatabaseBackupId: string;
+        autonomousDatabasesToClones: string[];
         /**
          * The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
@@ -107137,6 +107845,8 @@ export namespace Database {
          * This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
          */
         backupDestinationPropertiesLists: outputs.Database.GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupDestinationPropertiesList[];
+        cloneBandWidth: string;
+        cloneType: string;
         /**
          * The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
@@ -107342,7 +108052,9 @@ export namespace Database {
          * A filter to return only resources that match the given service-level agreement type exactly.
          */
         serviceLevelAgreementType: string;
+        shouldUseLatestAvailableBackupTimeStamp: boolean;
         source: string;
+        sourceAutonomousContainerDatabaseId: string;
         /**
          * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
          */
@@ -107368,6 +108080,7 @@ export namespace Database {
          * The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
          */
         timeSnapshotStandbyRevert: string;
+        timeStampToUseForCloning: string;
         /**
          * The number of CPUs allocated to the Autonomous VM cluster.
          */
@@ -109070,6 +109783,10 @@ export namespace Database {
          */
         actualUsedDataStorageSizeInTbs: number;
         /**
+         * The Availability Domain which is planned for Scheduled Update
+         */
+        adScheduledForUpdate: string;
+        /**
          * Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ "gcpAccountName": "gcpName" }`
          */
         additionalAttributes: {[key: string]: string};
@@ -109297,6 +110014,7 @@ export namespace Database {
          * Autonomous AI Database for Developers are fixed-shape Autonomous AI Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
          */
         isDevTier: boolean;
+        isDisableAdUpdateSchedule: boolean;
         isDisableDbVersionUpgradeSchedule: boolean;
         /**
          * If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
@@ -109335,6 +110053,7 @@ export namespace Database {
          * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
          */
         isReplicateAutomaticBackups: boolean;
+        isScheduleAdUpdateToEarliest: boolean;
         isScheduleDbVersionUpgradeToEarliest: boolean;
         /**
          * @deprecated The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
@@ -109567,9 +110286,17 @@ export namespace Database {
          */
         timeDisasterRecoveryRoleChanged: string;
         /**
+         * The earliest date and time to which you can schedule an Autonomous Database availability domain update.
+         */
+        timeEarliestAvailableAdUpdate: string;
+        /**
          * The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
          */
         timeEarliestAvailableDbVersionUpgrade: string;
+        /**
+         * The latest date and time to which you can schedule an Autonomous Database availability domain update.
+         */
+        timeLatestAvailableAdUpdate: string;
         /**
          * The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
          */
@@ -109622,6 +110349,10 @@ export namespace Database {
          * The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
          */
         timeReclamationOfFreeAutonomousDatabase: string;
+        /**
+         * The date and time to which the Autonomous Database availability domain update is scheduled.
+         */
+        timeScheduledAdUpdate: string;
         /**
          * The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
          */
@@ -110304,6 +111035,10 @@ export namespace Database {
          */
         actualUsedDataStorageSizeInTbs: number;
         /**
+         * The Availability Domain which is planned for Scheduled Update
+         */
+        adScheduledForUpdate: string;
+        /**
          * Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ "gcpAccountName": "gcpName" }`
          */
         additionalAttributes: {[key: string]: string};
@@ -110758,9 +111493,17 @@ export namespace Database {
          */
         timeDisasterRecoveryRoleChanged: string;
         /**
+         * The earliest date and time to which you can schedule an Autonomous Database availability domain update.
+         */
+        timeEarliestAvailableAdUpdate: string;
+        /**
          * The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
          */
         timeEarliestAvailableDbVersionUpgrade: string;
+        /**
+         * The latest date and time to which you can schedule an Autonomous Database availability domain update.
+         */
+        timeLatestAvailableAdUpdate: string;
         /**
          * The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
          */
@@ -110810,6 +111553,10 @@ export namespace Database {
          * The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
          */
         timeReclamationOfFreeAutonomousDatabase: string;
+        /**
+         * The date and time to which the Autonomous Database availability domain update is scheduled.
+         */
+        timeScheduledAdUpdate: string;
         /**
          * The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
          */
@@ -114156,6 +114903,25 @@ export namespace Database {
         share: number;
     }
 
+    export interface GetCloudVmClusterLiveImageVersionDetail {
+        /**
+         * Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+         */
+        hasPendingUpdates: boolean;
+        /**
+         * The release date and time for the applied Live Exadata Image OS version.
+         */
+        timeReleased: string;
+        /**
+         * The OS live update mode performed most recently on the VM Cluster.
+         */
+        updateMode: string;
+        /**
+         * Live Exadata Image Version of the Guest OS Update applied.
+         */
+        version: string;
+    }
+
     export interface GetCloudVmClusterMultiCloudIdentityConnectorConfig {
         /**
          * Cloud provider
@@ -114165,6 +114931,15 @@ export namespace Database {
          * The OCID of the identity connector
          */
         id: string;
+    }
+
+    export interface GetCloudVmClusterUpdateDetail {
+        updateAction: string;
+        updateId: string;
+        /**
+         * The OS live update mode performed most recently on the VM Cluster.
+         */
+        updateMode: string;
     }
 
     export interface GetCloudVmClustersCloudVmCluster {
@@ -114291,6 +115066,10 @@ export namespace Database {
          */
         listenerPort: string;
         /**
+         * Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+         */
+        liveImageVersionDetails: outputs.Database.GetCloudVmClustersCloudVmClusterLiveImageVersionDetail[];
+        /**
          * The memory to be allocated in GBs.
          */
         memorySizeInGbs: number;
@@ -114311,6 +115090,10 @@ export namespace Database {
          * The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
          */
         ocpuCount: number;
+        /**
+         * Oracle Linux version for the respective Exadata Image.
+         */
+        oracleLinuxVersion: string;
         privateZoneId: string;
         /**
          * The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
@@ -114396,6 +115179,7 @@ export namespace Database {
          * The time zone of the cloud VM cluster. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
          */
         timeZone: string;
+        updateDetails: outputs.Database.GetCloudVmClustersCloudVmClusterUpdateDetail[];
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
          */
@@ -114508,6 +115292,25 @@ export namespace Database {
         share: number;
     }
 
+    export interface GetCloudVmClustersCloudVmClusterLiveImageVersionDetail {
+        /**
+         * Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+         */
+        hasPendingUpdates: boolean;
+        /**
+         * The release date and time for the applied Live Exadata Image OS version.
+         */
+        timeReleased: string;
+        /**
+         * The OS live update mode performed most recently on the VM Cluster.
+         */
+        updateMode: string;
+        /**
+         * Live Exadata Image Version of the Guest OS Update applied.
+         */
+        version: string;
+    }
+
     export interface GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfig {
         /**
          * Cloud provider
@@ -114517,6 +115320,15 @@ export namespace Database {
          * The OCID of the identity connector
          */
         id: string;
+    }
+
+    export interface GetCloudVmClustersCloudVmClusterUpdateDetail {
+        updateAction: string;
+        updateId: string;
+        /**
+         * The OS live update mode performed most recently on the VM Cluster.
+         */
+        updateMode: string;
     }
 
     export interface GetCloudVmClustersFilter {
@@ -114662,6 +115474,10 @@ export namespace Database {
 
     export interface GetDatabaseDataGuardGroup {
         /**
+         * Specifies readiness of Managed Automatic failover.
+         */
+        managedAutoFailOverReadiness: string;
+        /**
          * List of Data Guard members, representing each database that is part of Data Guard.
          */
         members: outputs.Database.GetDatabaseDataGuardGroupMember[];
@@ -114693,7 +115509,7 @@ export namespace Database {
          */
         dbSystemId: string;
         /**
-         * The failover readiness status of the Data Guard member.
+         * The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
          */
         failoverReadiness: string;
         /**
@@ -114701,15 +115517,24 @@ export namespace Database {
          */
         failoverReadinessMessage: string;
         /**
+         * Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+         */
+        failoverTargets: string[];
+        /**
          * True if active Data Guard is enabled.
          */
         isActiveDataGuardEnabled: boolean;
+        /**
+         * The state of managed auto failover.
+         */
+        managedAutoFailover: string;
         /**
          * The role of the reporting database in this Data Guard association.
          */
         role: string;
         /**
          * The switchover readiness status of the Data Guard member.
+         * * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
          */
         switchoverReadiness: string;
         /**
@@ -114739,6 +115564,7 @@ export namespace Database {
 
     export interface GetDatabaseDatabase {
         adminPassword: string;
+        autoFailoverConfigurations: outputs.Database.GetDatabaseDatabaseAutoFailoverConfiguration[];
         backupId: string;
         backupTdePassword: string;
         /**
@@ -114815,6 +115641,7 @@ export namespace Database {
          * The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
          */
         protectionMode: string;
+        recoveryApplianceVpcPassword: string;
         /**
          * Specifies a prefix for the `Oracle SID` of the database to be created.
          */
@@ -114843,6 +115670,17 @@ export namespace Database {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
          */
         vmClusterId: string;
+    }
+
+    export interface GetDatabaseDatabaseAutoFailoverConfiguration {
+        /**
+         * Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+         */
+        failoverTargets: string[];
+        /**
+         * The state of managed auto failover.
+         */
+        managedAutoFailover: string;
     }
 
     export interface GetDatabaseDatabaseDbBackupConfig {
@@ -114897,6 +115735,9 @@ export namespace Database {
          * Indicates whether the backup destination is cross-region or local region.
          */
         isRemote: boolean;
+        /**
+         * Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         */
         isRetentionLockEnabled: boolean;
         /**
          * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
@@ -114906,6 +115747,10 @@ export namespace Database {
          * The name of the remote region where the remote automatic incremental backups will be stored.
          */
         remoteRegion: string;
+        /**
+         * Backup destination for the TDE wallet backups.
+         */
+        tdeWalletBackupDestinations: outputs.Database.GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination[];
         /**
          * Type of the database backup destination.
          */
@@ -114918,6 +115763,17 @@ export namespace Database {
          * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
          */
         vpcUser: string;
+    }
+
+    export interface GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         */
+        backupDestinationId: string;
+        /**
+         * Destination where TDE Wallet backups are to be placed.
+         */
+        backupDestinationType: string;
     }
 
     export interface GetDatabaseDatabaseEncryptionKeyLocationDetail {
@@ -115123,6 +115979,9 @@ export namespace Database {
          * Indicates whether the backup destination is cross-region or local region.
          */
         isRemote: boolean;
+        /**
+         * Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         */
         isRetentionLockEnabled: boolean;
         /**
          * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
@@ -115132,6 +115991,10 @@ export namespace Database {
          * The name of the remote region where the remote automatic incremental backups will be stored.
          */
         remoteRegion: string;
+        /**
+         * Backup destination for the TDE wallet backups.
+         */
+        tdeWalletBackupDestinations: outputs.Database.GetDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination[];
         /**
          * Type of the database backup destination.
          */
@@ -115144,6 +116007,17 @@ export namespace Database {
          * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
          */
         vpcUser: string;
+    }
+
+    export interface GetDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         */
+        backupDestinationId: string;
+        /**
+         * Destination where TDE Wallet backups are to be placed.
+         */
+        backupDestinationType: string;
     }
 
     export interface GetDatabaseMaintenanceRunHistoriesFilter {
@@ -116479,6 +117353,10 @@ export namespace Database {
 
     export interface GetDatabasesDatabaseDataGuardGroup {
         /**
+         * Specifies readiness of Managed Automatic failover.
+         */
+        managedAutoFailOverReadiness: string;
+        /**
          * List of Data Guard members, representing each database that is part of Data Guard.
          */
         members: outputs.Database.GetDatabasesDatabaseDataGuardGroupMember[];
@@ -116510,7 +117388,7 @@ export namespace Database {
          */
         dbSystemId: string;
         /**
-         * The failover readiness status of the Data Guard member.
+         * The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
          */
         failoverReadiness: string;
         /**
@@ -116518,15 +117396,24 @@ export namespace Database {
          */
         failoverReadinessMessage: string;
         /**
+         * Filter the databases by failoverTargets param.
+         */
+        failoverTargets: string[];
+        /**
          * True if active Data Guard is enabled.
          */
         isActiveDataGuardEnabled: boolean;
+        /**
+         * Filter the databases by managed auto failover param.
+         */
+        managedAutoFailover: string;
         /**
          * The role of the reporting database in this Data Guard association.
          */
         role: string;
         /**
          * The switchover readiness status of the Data Guard member.
+         * * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
          */
         switchoverReadiness: string;
         /**
@@ -116556,6 +117443,7 @@ export namespace Database {
 
     export interface GetDatabasesDatabaseDatabase {
         adminPassword: string;
+        autoFailoverConfigurations: outputs.Database.GetDatabasesDatabaseDatabaseAutoFailoverConfiguration[];
         backupId: string;
         backupTdePassword: string;
         /**
@@ -116629,6 +117517,7 @@ export namespace Database {
          * The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
          */
         protectionMode: string;
+        recoveryApplianceVpcPassword: string;
         /**
          * Specifies a prefix for the `Oracle SID` of the database to be created.
          */
@@ -116657,6 +117546,17 @@ export namespace Database {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
          */
         vmClusterId: string;
+    }
+
+    export interface GetDatabasesDatabaseDatabaseAutoFailoverConfiguration {
+        /**
+         * Filter the databases by failoverTargets param.
+         */
+        failoverTargets: string[];
+        /**
+         * Filter the databases by managed auto failover param.
+         */
+        managedAutoFailover: string;
     }
 
     export interface GetDatabasesDatabaseDatabaseDbBackupConfig {
@@ -116724,11 +117624,26 @@ export namespace Database {
          */
         remoteRegion: string;
         /**
+         * Backup destination for the TDE wallet backups.
+         */
+        tdeWalletBackupDestinations: outputs.Database.GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination[];
+        /**
          * Type of the database backup destination.
          */
         type: string;
         vpcPassword: string;
         vpcUser: string;
+    }
+
+    export interface GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         */
+        backupDestinationId: string;
+        /**
+         * Destination where TDE Wallet backups are to be placed.
+         */
+        backupDestinationType: string;
     }
 
     export interface GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail {
@@ -116941,11 +117856,26 @@ export namespace Database {
          */
         remoteRegion: string;
         /**
+         * Backup destination for the TDE wallet backups.
+         */
+        tdeWalletBackupDestinations: outputs.Database.GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination[];
+        /**
          * Type of the database backup destination.
          */
         type: string;
         vpcPassword: string;
         vpcUser: string;
+    }
+
+    export interface GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         */
+        backupDestinationId: string;
+        /**
+         * Destination where TDE Wallet backups are to be placed.
+         */
+        backupDestinationType: string;
     }
 
     export interface GetDatabasesDatabaseManagedSoftwareUpdateDetail {
@@ -117169,6 +118099,7 @@ export namespace Database {
         oneOffPatches: string[];
         pdbName: string;
         pluggableDatabases: string[];
+        recoveryApplianceVpcPassword: string;
         sidPrefix: string;
         /**
          * The current state of the Database Home.
@@ -117215,9 +118146,15 @@ export namespace Database {
         isRemote: boolean;
         isRetentionLockEnabled: boolean;
         remoteRegion: string;
+        tdeWalletBackupDestinations: outputs.Database.GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination[];
         type: string;
         vpcPassword: string;
         vpcUser: string;
+    }
+
+    export interface GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination {
+        backupDestinationId: string;
+        backupDestinationType: string;
     }
 
     export interface GetDbHomeDatabaseEncryptionKeyLocationDetail {
@@ -117445,6 +118382,7 @@ export namespace Database {
         oneOffPatches: string[];
         pdbName: string;
         pluggableDatabases: string[];
+        recoveryApplianceVpcPassword: string;
         sidPrefix: string;
         /**
          * A filter to return only resources that match the given lifecycle state exactly.
@@ -117491,9 +118429,15 @@ export namespace Database {
         isRemote: boolean;
         isRetentionLockEnabled: boolean;
         remoteRegion: string;
+        tdeWalletBackupDestinations: outputs.Database.GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination[];
         type: string;
         vpcPassword: string;
         vpcUser: string;
+    }
+
+    export interface GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination {
+        backupDestinationId: string;
+        backupDestinationType: string;
     }
 
     export interface GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail {
@@ -119652,6 +120596,17 @@ export namespace Database {
         share: number;
     }
 
+    export interface GetExadbVmClusterMultiCloudIdentityConnectorConfig {
+        /**
+         * Cloud provider
+         */
+        cloudProvider: string;
+        /**
+         * The OCID of the identity connector
+         */
+        id: string;
+    }
+
     export interface GetExadbVmClusterNodeConfig {
         /**
          * The number of ECPUs to enable for each node.
@@ -119851,7 +120806,7 @@ export namespace Database {
          */
         hostname: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
+         * The OCID of the identity connector
          */
         id: string;
         /**
@@ -119875,6 +120830,10 @@ export namespace Database {
          */
         listenerPort: string;
         /**
+         * Details of the multi cloud identity connectors of the VM cluster.
+         */
+        multiCloudIdentityConnectorConfigs: outputs.Database.GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfig[];
+        /**
          * The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
          */
         nodeConfigs: outputs.Database.GetExadbVmClustersExadbVmClusterNodeConfig[];
@@ -119891,6 +120850,7 @@ export namespace Database {
          * The private zone ID in which you want DNS records to be created.
          */
         privateZoneId: string;
+        registerPkcsTrigger: number;
         /**
          * The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
          */
@@ -119948,6 +120908,10 @@ export namespace Database {
          */
         systemVersion: string;
         /**
+         * TDE keystore type
+         */
+        tdeKeyStoreType: string;
+        /**
          * The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
          */
         timeCreated: string;
@@ -119955,6 +120919,7 @@ export namespace Database {
          * The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
          */
         timeZone: string;
+        unregisterPkcsTrigger: number;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
          */
@@ -120012,6 +120977,17 @@ export namespace Database {
          * The relative priority of this database.
          */
         share: number;
+    }
+
+    export interface GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfig {
+        /**
+         * Cloud provider
+         */
+        cloudProvider: string;
+        /**
+         * The OCID of the identity connector
+         */
+        id: string;
     }
 
     export interface GetExadbVmClustersExadbVmClusterNodeConfig {
@@ -122509,6 +123485,25 @@ export namespace Database {
         mountPoint: string;
     }
 
+    export interface GetVmClusterLiveImageVersionDetail {
+        /**
+         * Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+         */
+        hasPendingUpdates: boolean;
+        /**
+         * The release date and time for the applied Live Exadata Image OS version.
+         */
+        timeReleased: string;
+        /**
+         * The OS live update mode performed most recently on the VM Cluster.
+         */
+        updateMode: string;
+        /**
+         * Live Exadata Image Version of the Guest OS Update applied.
+         */
+        version: string;
+    }
+
     export interface GetVmClusterNetworkDrScan {
         /**
          * The node host name.
@@ -122981,6 +123976,15 @@ export namespace Database {
         vipHostname: string;
     }
 
+    export interface GetVmClusterUpdateDetail {
+        updateAction: string;
+        updateId: string;
+        /**
+         * The OS live update mode performed most recently on the VM Cluster.
+         */
+        updateMode: string;
+    }
+
     export interface GetVmClusterUpdateHistoryEntriesFilter {
         name: string;
         regex?: boolean;
@@ -123017,6 +124021,10 @@ export namespace Database {
          */
         updateId: string;
         /**
+         * The OS update mode performed using this maintenance update.
+         */
+        updateMode: string;
+        /**
          * A filter to return only resources that match the given update type exactly.
          */
         updateType: string;
@@ -123034,6 +124042,10 @@ export namespace Database {
          */
         availableActions: string[];
         /**
+         * The possible update options that can be performed using this maintenance update (only valid for OS Update).
+         */
+        availableUpdateModes: string[];
+        /**
          * Details of the maintenance update package.
          */
         description: string;
@@ -123046,9 +124058,17 @@ export namespace Database {
          */
         lastAction: string;
         /**
+         * The update mode performed most recently using this maintenance update (only valid for OS Update).
+         */
+        lastUpdateMode: string;
+        /**
          * Descriptive text providing additional details about the lifecycle state.
          */
         lifecycleDetails: string;
+        /**
+         * Oracle Linux version for the respective Exadata Image.
+         */
+        oracleLinuxVersion: string;
         /**
          * A filter to return only resources that match the given lifecycle state exactly.
          */
@@ -123172,11 +124192,19 @@ export namespace Database {
          */
         lifecycleDetails: string;
         /**
+         * Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+         */
+        liveImageVersionDetails: outputs.Database.GetVmClustersVmClusterLiveImageVersionDetail[];
+        /**
          * The memory allocated in GBs.
          */
         memorySizeInGbs: number;
         ocpuCount: number;
         ocpusEnabled: number;
+        /**
+         * Oracle Linux version for the respective Exadata Image.
+         */
+        oracleLinuxVersion: string;
         /**
          * The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
          */
@@ -123217,6 +124245,7 @@ export namespace Database {
          * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
          */
         timeZone: string;
+        updateDetails: outputs.Database.GetVmClustersVmClusterUpdateDetail[];
         /**
          * Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL.
          */
@@ -123300,6 +124329,34 @@ export namespace Database {
          * The mount point of file system.
          */
         mountPoint: string;
+    }
+
+    export interface GetVmClustersVmClusterLiveImageVersionDetail {
+        /**
+         * Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+         */
+        hasPendingUpdates: boolean;
+        /**
+         * The release date and time for the applied Live Exadata Image OS version.
+         */
+        timeReleased: string;
+        /**
+         * The OS live update mode performed most recently on the VM Cluster.
+         */
+        updateMode: string;
+        /**
+         * Live Exadata Image Version of the Guest OS Update applied.
+         */
+        version: string;
+    }
+
+    export interface GetVmClustersVmClusterUpdateDetail {
+        updateAction: string;
+        updateId: string;
+        /**
+         * The OS live update mode performed most recently on the VM Cluster.
+         */
+        updateMode: string;
     }
 
     export interface KeyStoreAssociatedDatabase {
@@ -123800,6 +124857,25 @@ export namespace Database {
         mountPoint: string;
     }
 
+    export interface VmClusterLiveImageVersionDetail {
+        /**
+         * Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+         */
+        hasPendingUpdates: boolean;
+        /**
+         * The release date and time for the applied Live Exadata Image OS version.
+         */
+        timeReleased: string;
+        /**
+         * The OS live update mode performed most recently on the VM Cluster.
+         */
+        updateMode: string;
+        /**
+         * Live Exadata Image Version of the Guest OS Update applied.
+         */
+        version: string;
+    }
+
     export interface VmClusterNetworkDrScan {
         /**
          * (Updatable) The Disaster recovery SCAN hostname.
@@ -123971,6 +125047,21 @@ export namespace Database {
          * The mount point of file system.
          */
         mountPoint: string;
+    }
+
+    export interface VmClusterUpdateDetails {
+        /**
+         * (Updatable) The update action. Supported values include `ROLLING_APPLY`, `PRECHECK`, and `ROLLBACK`.
+         */
+        updateAction?: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+         */
+        updateId?: string;
+        /**
+         * (Updatable) The OS update mode. Supported values are `ONLINE_HIGHCVSS`, `ONLINE_ALLCVSS`, `ONLINE_ALL_UPDATES`, `PENDING_UPDATES`, and `FULL_UPDATE`.
+         */
+        updateMode?: string;
     }
 
 }
@@ -161124,6 +162215,10 @@ export namespace FileStorage {
          */
         compartmentId: string;
         /**
+         * Displays the compartment-level quota enforcement state affecting this file system.
+         */
+        compartmentQuotaEnforcementState: string;
+        /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
          */
         definedTags: {[key: string]: string};
@@ -162027,6 +163122,10 @@ export namespace FileStorage {
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
          */
         definedTags: {[key: string]: string};
+        /**
+         * Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+         */
+        exclusiveBytes: string;
         /**
          * The time when this snapshot will be deleted.
          */
@@ -177916,6 +179015,10 @@ export namespace GenerativeAi {
          */
         privateEndpointIp: string;
         /**
+         * Query by the resource type of Generative AI private endpoints.
+         */
+        resourceType: string;
+        /**
          * The lifecycle state of Generative AI private endpoints.
          */
         state: string;
@@ -177935,6 +179038,856 @@ export namespace GenerativeAi {
          * The date and time that the Generative AI private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
          */
         timeUpdated: string;
+    }
+
+    export interface GetHostedApplicationEnvironmentVariable {
+        /**
+         * Name of the environment variable.
+         */
+        name: string;
+        /**
+         * Type of the environment variable (PLAINTEXT or VAULT, no default value).
+         */
+        type: string;
+        /**
+         * Value of the environment variable.
+         */
+        value: string;
+    }
+
+    export interface GetHostedApplicationIamEnvironmentVariable {
+        /**
+         * Name of the environment variable.
+         */
+        name: string;
+        /**
+         * Type of the environment variable (PLAINTEXT or VAULT, no default value).
+         */
+        type: string;
+        /**
+         * Value of the environment variable.
+         */
+        value: string;
+    }
+
+    export interface GetHostedApplicationIamNetworkingConfig {
+        /**
+         * Inbound Networking configuration.
+         */
+        inboundNetworkingConfigs: outputs.GenerativeAi.GetHostedApplicationIamNetworkingConfigInboundNetworkingConfig[];
+        /**
+         * Outbound Networking configuration.
+         */
+        outboundNetworkingConfigs: outputs.GenerativeAi.GetHostedApplicationIamNetworkingConfigOutboundNetworkingConfig[];
+    }
+
+    export interface GetHostedApplicationIamNetworkingConfigInboundNetworkingConfig {
+        /**
+         * inbounding from public or private endpoint.
+         */
+        endpointMode: string;
+        /**
+         * The [OCID] of Private Endpoint when endpointMode=Private
+         */
+        privateEndpointId: string;
+    }
+
+    export interface GetHostedApplicationIamNetworkingConfigOutboundNetworkingConfig {
+        /**
+         * ocid of customer subnet when networkMode=Custom
+         */
+        customSubnetId: string;
+        /**
+         * outbounding to managed internet or customer network.
+         */
+        networkMode: string;
+        /**
+         * A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+         */
+        nsgIds: string[];
+    }
+
+    export interface GetHostedApplicationIamScalingConfig {
+        /**
+         * Maximum number of replicas allowed.
+         */
+        maxReplica: number;
+        /**
+         * Minimum number of replicas to keep running.
+         */
+        minReplica: number;
+        /**
+         * scaling type for application.
+         */
+        scalingType: string;
+        /**
+         * number of simultaneous requests that can be processed by each replica.
+         */
+        targetConcurrencyThreshold: number;
+        /**
+         * Scale up if average CPU utilization exceeds this threshold.
+         */
+        targetCpuThreshold: number;
+        /**
+         * Scale up if average memory utilization exceeds this threshold.
+         */
+        targetMemoryThreshold: number;
+        /**
+         * requests-per-second per replica of an application.
+         */
+        targetRpsThreshold: number;
+    }
+
+    export interface GetHostedApplicationIamStorageConfig {
+        /**
+         * The key of environment variable to store the database connection.
+         */
+        environmentVariableKey: string;
+        /**
+         * The [OCID] of ApplicationStorage.
+         */
+        storageId: string;
+    }
+
+    export interface GetHostedApplicationIamsFilter {
+        /**
+         * Name of the environment variable.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetHostedApplicationIamsHostedApplicationCollection {
+        items: outputs.GenerativeAi.GetHostedApplicationIamsHostedApplicationCollectionItem[];
+    }
+
+    export interface GetHostedApplicationIamsHostedApplicationCollectionItem {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * An optional description of the hosted application.
+         */
+        description: string;
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         */
+        displayName: string;
+        /**
+         * The list of environment variables for the Hosted Application. Defines a list of environment variables injected at runtime.
+         */
+        environmentVariables: outputs.GenerativeAi.GetHostedApplicationIamsHostedApplicationCollectionItemEnvironmentVariable[];
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted application.
+         */
+        id: string;
+        /**
+         * A message describing the current state of the endpoint in more detail that can provide actionable information.
+         */
+        lifecycleDetails: string;
+        /**
+         * Networking configuration.
+         */
+        networkingConfigs: outputs.GenerativeAi.GetHostedApplicationIamsHostedApplicationCollectionItemNetworkingConfig[];
+        /**
+         * The auto scaling configuration for the Hosted Application. Defines the minimum and maximum number of replicas. When unspecified, the service applies service-defined default scaling values.
+         */
+        scalingConfigs: outputs.GenerativeAi.GetHostedApplicationIamsHostedApplicationCollectionItemScalingConfig[];
+        /**
+         * A filter to return only the hosted applications that their lifecycle state matches the given lifecycle state.
+         */
+        state: string;
+        /**
+         * A list of storageConfigs managed by the Oracle Cloud Infrastructure GenAI Platform and attached to the application.
+         */
+        storageConfigs: outputs.GenerativeAi.GetHostedApplicationIamsHostedApplicationCollectionItemStorageConfig[];
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The date and time the hosted application was created, in the format defined by RFC 3339
+         */
+        timeCreated: string;
+        /**
+         * The date and time the hosted application was updated, in the format defined by RFC 3339
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetHostedApplicationIamsHostedApplicationCollectionItemEnvironmentVariable {
+        /**
+         * Name of the environment variable.
+         */
+        name: string;
+        /**
+         * Type of the environment variable (PLAINTEXT or VAULT, no default value).
+         */
+        type: string;
+        /**
+         * Value of the environment variable.
+         */
+        value: string;
+    }
+
+    export interface GetHostedApplicationIamsHostedApplicationCollectionItemNetworkingConfig {
+        /**
+         * Inbound Networking configuration.
+         */
+        inboundNetworkingConfigs: outputs.GenerativeAi.GetHostedApplicationIamsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfig[];
+        /**
+         * Outbound Networking configuration.
+         */
+        outboundNetworkingConfigs: outputs.GenerativeAi.GetHostedApplicationIamsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfig[];
+    }
+
+    export interface GetHostedApplicationIamsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfig {
+        /**
+         * inbounding from public or private endpoint.
+         */
+        endpointMode: string;
+        /**
+         * The [OCID] of Private Endpoint when endpointMode=Private
+         */
+        privateEndpointId: string;
+    }
+
+    export interface GetHostedApplicationIamsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfig {
+        /**
+         * ocid of customer subnet when networkMode=Custom
+         */
+        customSubnetId: string;
+        /**
+         * outbounding to managed internet or customer network.
+         */
+        networkMode: string;
+        /**
+         * A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+         */
+        nsgIds: string[];
+    }
+
+    export interface GetHostedApplicationIamsHostedApplicationCollectionItemScalingConfig {
+        /**
+         * Maximum number of replicas allowed.
+         */
+        maxReplica: number;
+        /**
+         * Minimum number of replicas to keep running.
+         */
+        minReplica: number;
+        /**
+         * scaling type for application.
+         */
+        scalingType: string;
+        /**
+         * number of simultaneous requests that can be processed by each replica.
+         */
+        targetConcurrencyThreshold: number;
+        /**
+         * Scale up if average CPU utilization exceeds this threshold.
+         */
+        targetCpuThreshold: number;
+        /**
+         * Scale up if average memory utilization exceeds this threshold.
+         */
+        targetMemoryThreshold: number;
+        /**
+         * requests-per-second per replica of an application.
+         */
+        targetRpsThreshold: number;
+    }
+
+    export interface GetHostedApplicationIamsHostedApplicationCollectionItemStorageConfig {
+        /**
+         * The key of environment variable to store the database connection.
+         */
+        environmentVariableKey: string;
+        /**
+         * The [OCID] of ApplicationStorage.
+         */
+        storageId: string;
+    }
+
+    export interface GetHostedApplicationInboundAuthConfig {
+        /**
+         * Oracle Identity Cloud Service (IDCS) configuration used  when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+         */
+        idcsConfigs: outputs.GenerativeAi.GetHostedApplicationInboundAuthConfigIdcsConfig[];
+        /**
+         * Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+         */
+        inboundAuthConfigType: string;
+    }
+
+    export interface GetHostedApplicationInboundAuthConfigIdcsConfig {
+        /**
+         * Audience for IDCS.
+         */
+        audience: string;
+        /**
+         * Domain URL for IDCS.
+         */
+        domainUrl: string;
+        /**
+         * Scope for IDCS.
+         */
+        scope: string;
+    }
+
+    export interface GetHostedApplicationNetworkingConfig {
+        /**
+         * Inbound Networking configuration.
+         */
+        inboundNetworkingConfigs: outputs.GenerativeAi.GetHostedApplicationNetworkingConfigInboundNetworkingConfig[];
+        /**
+         * Outbound Networking configuration.
+         */
+        outboundNetworkingConfigs: outputs.GenerativeAi.GetHostedApplicationNetworkingConfigOutboundNetworkingConfig[];
+    }
+
+    export interface GetHostedApplicationNetworkingConfigInboundNetworkingConfig {
+        /**
+         * inbounding from public or private endpoint.
+         */
+        endpointMode: string;
+        /**
+         * The [OCID] of Private Endpoint when endpointMode=Private
+         */
+        privateEndpointId: string;
+    }
+
+    export interface GetHostedApplicationNetworkingConfigOutboundNetworkingConfig {
+        /**
+         * ocid of customer subnet when networkMode=Custom
+         */
+        customSubnetId: string;
+        /**
+         * outbounding to managed internet or customer network.
+         */
+        networkMode: string;
+        /**
+         * A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+         */
+        nsgIds: string[];
+    }
+
+    export interface GetHostedApplicationScalingConfig {
+        /**
+         * Maximum number of replicas allowed.
+         */
+        maxReplica: number;
+        /**
+         * Minimum number of replicas to keep running.
+         */
+        minReplica: number;
+        /**
+         * scaling type for application.
+         */
+        scalingType: string;
+        /**
+         * number of simultaneous requests that can be processed by each replica.
+         */
+        targetConcurrencyThreshold: number;
+        /**
+         * Scale up if average CPU utilization exceeds this threshold.
+         */
+        targetCpuThreshold: number;
+        /**
+         * Scale up if average memory utilization exceeds this threshold.
+         */
+        targetMemoryThreshold: number;
+        /**
+         * requests-per-second per replica of an application.
+         */
+        targetRpsThreshold: number;
+    }
+
+    export interface GetHostedApplicationStorageConfig {
+        /**
+         * The key of environment variable to store the database connection.
+         */
+        environmentVariableKey: string;
+        /**
+         * The [OCID] of ApplicationStorage.
+         */
+        storageId: string;
+    }
+
+    export interface GetHostedApplicationStoragesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetHostedApplicationStoragesHostedApplicationStorageCollection {
+        items: outputs.GenerativeAi.GetHostedApplicationStoragesHostedApplicationStorageCollectionItem[];
+    }
+
+    export interface GetHostedApplicationStoragesHostedApplicationStorageCollectionItem {
+        /**
+         * A list of application OCID.
+         */
+        applicationIds: string[];
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * An optional description of the hosted application storage.
+         */
+        description: string;
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         */
+        displayName: string;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted application storage.
+         */
+        id: string;
+        /**
+         * A message describing the current state of the hosted application storage in more detail that can provide actionable information.
+         */
+        lifecycleDetails: string;
+        /**
+         * A filter to return only the hosted applications that their lifecycle state matches the given lifecycle state.
+         */
+        state: string;
+        /**
+         * type like Cache, Postgresql and ADB.
+         */
+        storageType: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The date and time the hosted application was created, in the format defined by RFC 3339
+         */
+        timeCreated: string;
+        /**
+         * The date and time the hosted application was updated, in the format defined by RFC 3339
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetHostedApplicationsFilter {
+        /**
+         * Name of the environment variable.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetHostedApplicationsHostedApplicationCollection {
+        items: outputs.GenerativeAi.GetHostedApplicationsHostedApplicationCollectionItem[];
+    }
+
+    export interface GetHostedApplicationsHostedApplicationCollectionItem {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * An optional description of the hosted application.
+         */
+        description: string;
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         */
+        displayName: string;
+        /**
+         * The list of environment variables for the Hosted Application.  Defines a list of environment variables injected at runtime.
+         */
+        environmentVariables: outputs.GenerativeAi.GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariable[];
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted application.
+         */
+        id: string;
+        /**
+         * The client-side inbound authentication configuration for the Hosted Application.  Defines the network access rules. When unspecified, the service applies the default inbound authentication configuration type.
+         */
+        inboundAuthConfigs: outputs.GenerativeAi.GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfig[];
+        /**
+         * A message describing the current state of the endpoint in more detail that can provide actionable information.
+         */
+        lifecycleDetails: string;
+        /**
+         * Networking configuration.
+         */
+        networkingConfigs: outputs.GenerativeAi.GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfig[];
+        /**
+         * The auto scaling configuration for the Hosted Application.  Defines the minimum and maximum number of replicas. When unspecified, the service applies service-defined default scaling values.
+         */
+        scalingConfigs: outputs.GenerativeAi.GetHostedApplicationsHostedApplicationCollectionItemScalingConfig[];
+        /**
+         * A filter to return only the hosted applications that their lifecycle state matches the given lifecycle state.
+         */
+        state: string;
+        /**
+         * A list of storageConfigs managed by the Oracle Cloud Infrastructure GenAI Platform and attached to the application.
+         */
+        storageConfigs: outputs.GenerativeAi.GetHostedApplicationsHostedApplicationCollectionItemStorageConfig[];
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The date and time the hosted application was created, in the format defined by RFC 3339
+         */
+        timeCreated: string;
+        /**
+         * The date and time the hosted application was updated, in the format defined by RFC 3339
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariable {
+        /**
+         * Name of the environment variable.
+         */
+        name: string;
+        /**
+         * Type of the environment variable (PLAINTEXT or VAULT, no default value).
+         */
+        type: string;
+        /**
+         * Value of the environment variable.
+         */
+        value: string;
+    }
+
+    export interface GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfig {
+        /**
+         * Oracle Identity Cloud Service (IDCS) configuration used  when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+         */
+        idcsConfigs: outputs.GenerativeAi.GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfig[];
+        /**
+         * Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+         */
+        inboundAuthConfigType: string;
+    }
+
+    export interface GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfig {
+        /**
+         * Audience for IDCS.
+         */
+        audience: string;
+        /**
+         * Domain URL for IDCS.
+         */
+        domainUrl: string;
+        /**
+         * Scope for IDCS.
+         */
+        scope: string;
+    }
+
+    export interface GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfig {
+        /**
+         * Inbound Networking configuration.
+         */
+        inboundNetworkingConfigs: outputs.GenerativeAi.GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfig[];
+        /**
+         * Outbound Networking configuration.
+         */
+        outboundNetworkingConfigs: outputs.GenerativeAi.GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfig[];
+    }
+
+    export interface GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfig {
+        /**
+         * inbounding from public or private endpoint.
+         */
+        endpointMode: string;
+        /**
+         * The [OCID] of Private Endpoint when endpointMode=Private
+         */
+        privateEndpointId: string;
+    }
+
+    export interface GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfig {
+        /**
+         * ocid of customer subnet when networkMode=Custom
+         */
+        customSubnetId: string;
+        /**
+         * outbounding to managed internet or customer network.
+         */
+        networkMode: string;
+        /**
+         * A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+         */
+        nsgIds: string[];
+    }
+
+    export interface GetHostedApplicationsHostedApplicationCollectionItemScalingConfig {
+        /**
+         * Maximum number of replicas allowed.
+         */
+        maxReplica: number;
+        /**
+         * Minimum number of replicas to keep running.
+         */
+        minReplica: number;
+        /**
+         * scaling type for application.
+         */
+        scalingType: string;
+        /**
+         * number of simultaneous requests that can be processed by each replica.
+         */
+        targetConcurrencyThreshold: number;
+        /**
+         * Scale up if average CPU utilization exceeds this threshold.
+         */
+        targetCpuThreshold: number;
+        /**
+         * Scale up if average memory utilization exceeds this threshold.
+         */
+        targetMemoryThreshold: number;
+        /**
+         * requests-per-second per replica of an application.
+         */
+        targetRpsThreshold: number;
+    }
+
+    export interface GetHostedApplicationsHostedApplicationCollectionItemStorageConfig {
+        /**
+         * The key of environment variable to store the database connection.
+         */
+        environmentVariableKey: string;
+        /**
+         * The [OCID] of ApplicationStorage.
+         */
+        storageId: string;
+    }
+
+    export interface GetHostedDeploymentActiveArtifact {
+        /**
+         * The type of the artifact.
+         */
+        artifactType: string;
+        /**
+         * image url.
+         */
+        containerUri: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+         */
+        hostedDeploymentId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+         */
+        id: string;
+        /**
+         * Optional flag that requires an Oracle Cloud Infrastructure Vulnerability Scanning Service compliance report for this artifact before it can become active. When not provided, the value defaults to false and the artifact is not blocked on a scan result.
+         */
+        isVulnerabilityScanRequired: boolean;
+        /**
+         * The current status of the artifact.
+         */
+        status: string;
+        /**
+         * image tag.
+         */
+        tag: string;
+        /**
+         * The date and time the hosted deployment was created, in the format defined by RFC 3339
+         */
+        timeCreated: string;
+    }
+
+    export interface GetHostedDeploymentArtifact {
+        /**
+         * The type of the artifact.
+         */
+        artifactType: string;
+        /**
+         * image url.
+         */
+        containerUri: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+         */
+        hostedDeploymentId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+         */
+        id: string;
+        /**
+         * Optional flag that requires an Oracle Cloud Infrastructure Vulnerability Scanning Service compliance report for this artifact before it can become active. When not provided, the value defaults to false and the artifact is not blocked on a scan result.
+         */
+        isVulnerabilityScanRequired: boolean;
+        /**
+         * The current status of the artifact.
+         */
+        status: string;
+        /**
+         * image tag.
+         */
+        tag: string;
+        /**
+         * The date and time the hosted deployment was created, in the format defined by RFC 3339
+         */
+        timeCreated: string;
+    }
+
+    export interface GetHostedDeploymentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetHostedDeploymentsHostedDeploymentCollection {
+        items: outputs.GenerativeAi.GetHostedDeploymentsHostedDeploymentCollectionItem[];
+    }
+
+    export interface GetHostedDeploymentsHostedDeploymentCollectionItem {
+        /**
+         * Container/artifact configuration for the deployment.
+         */
+        activeArtifacts: outputs.GenerativeAi.GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifact[];
+        /**
+         * array of Artifacts.
+         */
+        artifacts: outputs.GenerativeAi.GetHostedDeploymentsHostedDeploymentCollectionItemArtifact[];
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         */
+        displayName: string;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Hosted Application. The ID may refer to either an IAM-authenticated or non-IAM Hosted Application.
+         */
+        hostedApplicationId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+         */
+        id: string;
+        /**
+         * A filter to return only the hosted deployments that their lifecycle state matches the given lifecycle state.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The date and time the hosted deployment was created, in the format defined by RFC 3339
+         */
+        timeCreated: string;
+        /**
+         * The date and time the hosted deployment was updated, in the format defined by RFC 3339
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifact {
+        /**
+         * The type of the artifact.
+         */
+        artifactType: string;
+        /**
+         * image url.
+         */
+        containerUri: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+         */
+        hostedDeploymentId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+         */
+        id: string;
+        /**
+         * Optional flag that requires an Oracle Cloud Infrastructure Vulnerability Scanning Service compliance report for this artifact before it can become active. When not provided, the value defaults to false and the artifact is not blocked on a scan result.
+         */
+        isVulnerabilityScanRequired: boolean;
+        /**
+         * The current status of the artifact.
+         */
+        status: string;
+        /**
+         * image tag.
+         */
+        tag: string;
+        /**
+         * The date and time the hosted deployment was created, in the format defined by RFC 3339
+         */
+        timeCreated: string;
+    }
+
+    export interface GetHostedDeploymentsHostedDeploymentCollectionItemArtifact {
+        /**
+         * The type of the artifact.
+         */
+        artifactType: string;
+        /**
+         * image url.
+         */
+        containerUri: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+         */
+        hostedDeploymentId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+         */
+        id: string;
+        /**
+         * Optional flag that requires an Oracle Cloud Infrastructure Vulnerability Scanning Service compliance report for this artifact before it can become active. When not provided, the value defaults to false and the artifact is not blocked on a scan result.
+         */
+        isVulnerabilityScanRequired: boolean;
+        /**
+         * The current status of the artifact.
+         */
+        status: string;
+        /**
+         * image tag.
+         */
+        tag: string;
+        /**
+         * The date and time the hosted deployment was created, in the format defined by RFC 3339
+         */
+        timeCreated: string;
     }
 
     export interface GetImportedModelDataSource {
@@ -178556,6 +180509,296 @@ export namespace GenerativeAi {
         name: string;
     }
 
+    export interface HostedApplicationEnvironmentVariable {
+        /**
+         * (Updatable) Name of the environment variable.
+         */
+        name: string;
+        /**
+         * (Updatable) Type of the environment variable (PLAINTEXT or VAULT, no default value).
+         */
+        type: string;
+        /**
+         * (Updatable) Value of the environment variable.
+         */
+        value: string;
+    }
+
+    export interface HostedApplicationIamEnvironmentVariable {
+        /**
+         * (Updatable) Name of the environment variable.
+         */
+        name: string;
+        /**
+         * (Updatable) Type of the environment variable (PLAINTEXT or VAULT, no default value).
+         */
+        type: string;
+        /**
+         * (Updatable) Value of the environment variable.
+         */
+        value: string;
+    }
+
+    export interface HostedApplicationIamNetworkingConfig {
+        /**
+         * Inbound Networking configuration.
+         */
+        inboundNetworkingConfig: outputs.GenerativeAi.HostedApplicationIamNetworkingConfigInboundNetworkingConfig;
+        /**
+         * Outbound Networking configuration.
+         */
+        outboundNetworkingConfig: outputs.GenerativeAi.HostedApplicationIamNetworkingConfigOutboundNetworkingConfig;
+    }
+
+    export interface HostedApplicationIamNetworkingConfigInboundNetworkingConfig {
+        /**
+         * inbounding from public or private endpoint.
+         */
+        endpointMode: string;
+        /**
+         * The [OCID] of Private Endpoint when endpointMode=Private
+         */
+        privateEndpointId: string;
+    }
+
+    export interface HostedApplicationIamNetworkingConfigOutboundNetworkingConfig {
+        /**
+         * ocid of customer subnet when networkMode=Custom
+         */
+        customSubnetId: string;
+        /**
+         * outbounding to managed internet or customer network.
+         */
+        networkMode: string;
+        /**
+         * A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+         */
+        nsgIds: string[];
+    }
+
+    export interface HostedApplicationIamScalingConfig {
+        /**
+         * (Updatable) Maximum number of replicas allowed.
+         */
+        maxReplica: number;
+        /**
+         * (Updatable) Minimum number of replicas to keep running.
+         */
+        minReplica: number;
+        /**
+         * (Updatable) scaling type for application.
+         */
+        scalingType: string;
+        /**
+         * (Updatable) number of simultaneous requests that can be processed by each replica.
+         */
+        targetConcurrencyThreshold: number;
+        /**
+         * (Updatable) Scale up if average CPU utilization exceeds this threshold.
+         */
+        targetCpuThreshold: number;
+        /**
+         * (Updatable) Scale up if average memory utilization exceeds this threshold.
+         */
+        targetMemoryThreshold: number;
+        /**
+         * (Updatable) requests-per-second per replica of an application.
+         */
+        targetRpsThreshold: number;
+    }
+
+    export interface HostedApplicationIamStorageConfig {
+        /**
+         * The key of environment variable to store the database connection.
+         */
+        environmentVariableKey: string;
+        /**
+         * The [OCID] of ApplicationStorage.
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        storageId: string;
+    }
+
+    export interface HostedApplicationInboundAuthConfig {
+        /**
+         * (Updatable) Oracle Identity Cloud Service (IDCS) configuration used when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+         */
+        idcsConfig: outputs.GenerativeAi.HostedApplicationInboundAuthConfigIdcsConfig;
+        /**
+         * (Updatable) Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+         */
+        inboundAuthConfigType: string;
+    }
+
+    export interface HostedApplicationInboundAuthConfigIdcsConfig {
+        /**
+         * (Updatable) Audience for IDCS.
+         */
+        audience: string;
+        /**
+         * (Updatable) Domain URL for IDCS.
+         */
+        domainUrl: string;
+        /**
+         * (Updatable) Scope for IDCS.
+         */
+        scope: string;
+    }
+
+    export interface HostedApplicationNetworkingConfig {
+        /**
+         * Inbound Networking configuration.
+         */
+        inboundNetworkingConfig: outputs.GenerativeAi.HostedApplicationNetworkingConfigInboundNetworkingConfig;
+        /**
+         * Outbound Networking configuration.
+         */
+        outboundNetworkingConfig: outputs.GenerativeAi.HostedApplicationNetworkingConfigOutboundNetworkingConfig;
+    }
+
+    export interface HostedApplicationNetworkingConfigInboundNetworkingConfig {
+        /**
+         * inbounding from public or private endpoint.
+         */
+        endpointMode: string;
+        /**
+         * The [OCID] of Private Endpoint when endpointMode=Private
+         */
+        privateEndpointId: string;
+    }
+
+    export interface HostedApplicationNetworkingConfigOutboundNetworkingConfig {
+        /**
+         * ocid of customer subnet when networkMode=Custom
+         */
+        customSubnetId: string;
+        /**
+         * outbounding to managed internet or customer network.
+         */
+        networkMode: string;
+        /**
+         * A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+         */
+        nsgIds: string[];
+    }
+
+    export interface HostedApplicationScalingConfig {
+        /**
+         * (Updatable) Maximum number of replicas allowed.
+         */
+        maxReplica: number;
+        /**
+         * (Updatable) Minimum number of replicas to keep running.
+         */
+        minReplica: number;
+        /**
+         * (Updatable) scaling type for application.
+         */
+        scalingType: string;
+        /**
+         * (Updatable) number of simultaneous requests that can be processed by each replica.
+         */
+        targetConcurrencyThreshold: number;
+        /**
+         * (Updatable) Scale up if average CPU utilization exceeds this threshold.
+         */
+        targetCpuThreshold: number;
+        /**
+         * (Updatable) Scale up if average memory utilization exceeds this threshold.
+         */
+        targetMemoryThreshold: number;
+        /**
+         * (Updatable) requests-per-second per replica of an application.
+         */
+        targetRpsThreshold: number;
+    }
+
+    export interface HostedApplicationStorageConfig {
+        /**
+         * The key of environment variable to store the database connection.
+         */
+        environmentVariableKey: string;
+        /**
+         * The [OCID] of ApplicationStorage.
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        storageId: string;
+    }
+
+    export interface HostedDeploymentActiveArtifact {
+        /**
+         * (Updatable) The type of the artifact.
+         */
+        artifactType: string;
+        /**
+         * (Updatable) image url.
+         */
+        containerUri: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+         */
+        hostedDeploymentId: string;
+        /**
+         * (Updatable) if put artifact to a table, the id is needed
+         */
+        id: string;
+        /**
+         * (Updatable) Optional flag that requires an Oracle Cloud Infrastructure Vulnerability Scanning Service compliance report for this artifact before it can become active. When not provided, the value defaults to false and the artifact is not blocked on a scan result.
+         */
+        isVulnerabilityScanRequired: boolean;
+        /**
+         * (Updatable) The current status of the artifact.
+         */
+        status: string;
+        /**
+         * (Updatable) image tag.
+         */
+        tag: string;
+        /**
+         * (Updatable) The date and time the artifact was created.
+         */
+        timeCreated: string;
+    }
+
+    export interface HostedDeploymentArtifact {
+        /**
+         * The type of the artifact.
+         */
+        artifactType: string;
+        /**
+         * image url.
+         */
+        containerUri: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+         */
+        hostedDeploymentId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+         */
+        id: string;
+        /**
+         * Optional flag that requires an Oracle Cloud Infrastructure Vulnerability Scanning Service compliance report for this artifact before it can become active. When not provided, the value defaults to false and the artifact is not blocked on a scan result.
+         */
+        isVulnerabilityScanRequired: boolean;
+        /**
+         * The current status of the artifact.
+         */
+        status: string;
+        /**
+         * image tag.
+         */
+        tag: string;
+        /**
+         * The date and time the hosted deployment was created, in the format defined by RFC 3339
+         */
+        timeCreated: string;
+    }
+
     export interface ImportedModelDataSource {
         /**
          * Hugging Face access token to authenticate requests for restricted models.  This token will be securely stored in Oracle Cloud Infrastructure Vault.
@@ -178857,6 +181100,41 @@ export namespace GoldenGate {
         value: string;
     }
 
+    export interface ConnectionAuthDetails {
+        /**
+         * (Updatable) API key for the AI model connection. Deprecated: This field is deprecated and replaced by "apiKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         */
+        apiKey: string;
+        /**
+         * (Updatable) API key secret OCID for the AI model connection.
+         */
+        apiKeySecretId: string;
+        /**
+         * (Updatable) Authentication type used by the AI model connection.
+         */
+        authType: string;
+        /**
+         * (Updatable) Base URL of the AI model endpoint. If not specified, the default base URL for the selected AI provider will be used.
+         */
+        baseUrl: string;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Generative AI key fingerprint.
+         */
+        keyFingerprint: string;
+        /**
+         * (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+         */
+        region: string;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Generative AI tenancy OCID. If this value is not provided, or is updated to an empty value, it defaults to the tenancy OCID of the user who is executing the operation.
+         */
+        tenancyId: string;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Generative AI user OCID. If this value is not provided, or is updated to an empty value, it defaults to the OCID of the user who is executing the operation.
+         */
+        userId: string;
+    }
+
     export interface ConnectionBootstrapServer {
         /**
          * (Updatable) The name or address of a host.
@@ -178918,7 +181196,10 @@ export namespace GoldenGate {
          */
         propertiesSecretId: string;
         /**
-         * (Updatable) The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+         * (Updatable)
+         * * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
+         * * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+         * * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
          */
         uri: string;
     }
@@ -178951,11 +181232,14 @@ export namespace GoldenGate {
 
     export interface ConnectionStorage {
         /**
-         * (Updatable) Access key ID to access the Amazon S3 bucket.
+         * (Updatable)
+         * * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+         * * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+         *   Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
          */
         accessKeyId: string;
         /**
-         * (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
+         * (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @deprecated The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.
          */
@@ -178969,7 +181253,10 @@ export namespace GoldenGate {
          */
         accountName: string;
         /**
-         * (Updatable) Google Cloud Storage bucket where Iceberg stores metadata and data files.
+         * (Updatable)
+         * * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
+         * * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
+         * * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
          */
         bucket: string;
         /**
@@ -178977,7 +181264,11 @@ export namespace GoldenGate {
          */
         container: string;
         /**
-         * (Updatable) The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+         * (Updatable)
+         * * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
+         * * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+         * * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+         * * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
          */
         endpoint: string;
         /**
@@ -178993,17 +181284,22 @@ export namespace GoldenGate {
          */
         schemeType: string;
         /**
-         * (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
+         * (Updatable)
+         * * AMAZON_S3: Secret access key to access the Amazon S3 bucket.
+         * * OCI_OBJECT_STORAGE_S3_API: Secret Access Key from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+         *   Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @deprecated The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
          */
         secretAccessKey: string;
         /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+         * (Updatable)
+         * * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+         * * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
          */
         secretAccessKeySecretId: string;
         /**
-         * (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+         * (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @deprecated The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.
          */
@@ -179230,6 +181526,97 @@ export namespace GoldenGate {
         faultDomain: string;
     }
 
+    export interface GetAiModelsAiModelCollection {
+        /**
+         * An array of AI models.
+         */
+        items: outputs.GoldenGate.GetAiModelsAiModelCollectionItem[];
+    }
+
+    export interface GetAiModelsAiModelCollectionItem {
+        /**
+         * Metadata about this specific object.
+         */
+        description: string;
+        /**
+         * An object's Display Name.
+         */
+        displayName: string;
+        /**
+         * The identifier of the AI model offered by a provider.
+         */
+        key: string;
+        /**
+         * The AI provider type for which model information is requested.
+         */
+        providerType: string;
+    }
+
+    export interface GetAiModelsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAiProvidersAiProviderCollection {
+        /**
+         * An array of AI providers.
+         */
+        items: outputs.GoldenGate.GetAiProvidersAiProviderCollectionItem[];
+    }
+
+    export interface GetAiProvidersAiProviderCollectionItem {
+        /**
+         * Authentication types supported by the AI provider.
+         */
+        authTypes: string[];
+        /**
+         * Default base URL for the AI provider.
+         */
+        defaultBaseUrl: string;
+        /**
+         * Metadata about this specific object.
+         */
+        description: string;
+        /**
+         * An object's Display Name.
+         */
+        displayName: string;
+        /**
+         * List of AI models supported by this provider, when available. This field is null when the provider's models can be retrieved only after supplying additional context. For example, OCI_GENERATIVE_AI model availability may vary by region.
+         */
+        models: outputs.GoldenGate.GetAiProvidersAiProviderCollectionItemModel[];
+        /**
+         * AI Provider type used by the AI Model Connection.
+         */
+        providerType: string;
+    }
+
+    export interface GetAiProvidersAiProviderCollectionItemModel {
+        /**
+         * Metadata about this specific object.
+         */
+        description: string;
+        /**
+         * An object's Display Name.
+         */
+        displayName: string;
+        /**
+         * The identifier of the AI model offered by a provider.
+         */
+        key: string;
+        /**
+         * AI Provider type used by the AI Model Connection.
+         */
+        providerType: string;
+    }
+
+    export interface GetAiProvidersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
     export interface GetConnectionAdditionalAttribute {
         /**
          * The catalog name within Polaris where Iceberg tables are registered.
@@ -179258,6 +181645,10 @@ export namespace GoldenGate {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
          */
         connectionId: string;
+        /**
+         * The array of connection types.
+         */
+        connectionType: string;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
          */
@@ -179290,6 +181681,42 @@ export namespace GoldenGate {
         values: string[];
     }
 
+    export interface GetConnectionAuthDetail {
+        /**
+         * API key for the AI model connection. Deprecated: This field is deprecated and replaced by "apiKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         */
+        apiKey: string;
+        /**
+         * API key secret OCID for the AI model connection.
+         */
+        apiKeySecretId: string;
+        /**
+         * Authentication type used by the AI model connection.
+         */
+        authType: string;
+        /**
+         * Base URL of the AI model endpoint. If not specified, the default base URL for the selected AI provider will be used.
+         */
+        baseUrl: string;
+        /**
+         * Oracle Cloud Infrastructure Generative AI key fingerprint.
+         */
+        keyFingerprint: string;
+        /**
+         * The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+         */
+        region: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+         */
+        tenancyId: string;
+        /**
+         * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+         * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+         */
+        userId: string;
+    }
+
     export interface GetConnectionBootstrapServer {
         /**
          * The name or address of a host.
@@ -179317,7 +181744,9 @@ export namespace GoldenGate {
          */
         catalogType: string;
         /**
-         * Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+         * * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+         * * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+         * * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
          */
         clientId: string;
         /**
@@ -179325,7 +181754,10 @@ export namespace GoldenGate {
          */
         clientSecret: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
+         * * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+         * * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+         * * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+         *   Note: When provided, 'clientSecret' field must not be provided.
          */
         clientSecretSecretId: string;
         /**
@@ -179349,7 +181781,9 @@ export namespace GoldenGate {
          */
         propertiesSecretId: string;
         /**
-         * The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+         * * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
+         * * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+         * * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
          */
         uri: string;
     }
@@ -179382,7 +181816,9 @@ export namespace GoldenGate {
 
     export interface GetConnectionStorage {
         /**
-         * Access key ID to access the Amazon S3 bucket.
+         * * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+         * * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+         *   Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
          */
         accessKeyId: string;
         /**
@@ -179398,7 +181834,9 @@ export namespace GoldenGate {
          */
         accountName: string;
         /**
-         * Google Cloud Storage bucket where Iceberg stores metadata and data files.
+         * * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
+         * * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
+         * * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
          */
         bucket: string;
         /**
@@ -179406,7 +181844,10 @@ export namespace GoldenGate {
          */
         container: string;
         /**
-         * A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
+         * * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
+         * * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+         * * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+         * * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
          */
         endpoint: string;
         /**
@@ -179426,7 +181867,8 @@ export namespace GoldenGate {
          */
         secretAccessKey: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+         * * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+         * * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
          */
         secretAccessKeySecretId: string;
         /**
@@ -179449,7 +181891,9 @@ export namespace GoldenGate {
 
     export interface GetConnectionsConnectionCollectionItem {
         /**
-         * Access key ID to access the Amazon S3 bucket.
+         * * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+         * * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+         *   Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
          */
         accessKeyId: string;
         /**
@@ -179468,6 +181912,10 @@ export namespace GoldenGate {
          * An array of name-value pair attribute entries. Used as additional parameters in connection string.
          */
         additionalAttributes: outputs.GoldenGate.GetConnectionsConnectionCollectionItemAdditionalAttribute[];
+        /**
+         * Represents authentication details for an AI Model connection.
+         */
+        authDetails: outputs.GoldenGate.GetConnectionsConnectionCollectionItemAuthDetail[];
         /**
          * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
          */
@@ -179500,7 +181948,9 @@ export namespace GoldenGate {
          */
         catalogs: outputs.GoldenGate.GetConnectionsConnectionCollectionItemCatalog[];
         /**
-         * Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+         * * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+         * * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+         * * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
          */
         clientId: string;
         /**
@@ -179508,7 +181958,10 @@ export namespace GoldenGate {
          */
         clientSecret: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
+         * * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+         * * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+         * * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+         *   Note: When provided, 'clientSecret' field must not be provided.
          */
         clientSecretSecretId: string;
         /**
@@ -179542,6 +181995,7 @@ export namespace GoldenGate {
          * * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
          * * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
          * * DATABRICKS: Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
+         * * ORACLE_AI_DATA_PLATFORM: Connection URL. It must start with 'jdbc:spark://'
          */
         connectionUrl: string;
         /**
@@ -179585,7 +182039,10 @@ export namespace GoldenGate {
          */
         doesUseSecretIds: boolean;
         /**
-         * A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
+         * * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
+         * * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+         * * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+         * * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
          */
         endpoint: string;
         /**
@@ -179636,7 +182093,7 @@ export namespace GoldenGate {
          */
         jndiSecurityPrincipal: string;
         /**
-         * Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
+         * References the Oracle Cloud Infrastructure Vault key in the Oracle Cloud Infrastructure Vault identified by `vaultId`.
          */
         keyId: string;
         /**
@@ -179648,7 +182105,11 @@ export namespace GoldenGate {
          */
         keyStorePassword: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
+         * * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
+         * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
+         * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
+         * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
+         *   Note: When provided, 'keyStorePassword' field must not be provided.
          */
         keyStorePasswordSecretId: string;
         /**
@@ -179663,6 +182124,14 @@ export namespace GoldenGate {
          * Locks associated with this resource.
          */
         locks: outputs.GoldenGate.GetConnectionsConnectionCollectionItemLock[];
+        /**
+         * Maximum number of input characters supported by this AI model connection.
+         */
+        maxInputChars: number;
+        /**
+         * AI model identifier.
+         */
+        modelKey: string;
         /**
          * An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
          */
@@ -179704,6 +182173,10 @@ export namespace GoldenGate {
          */
         producerProperties: string;
         /**
+         * AI Provider type used by the AI Model Connection.
+         */
+        providerType: string;
+        /**
          * The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
          */
         publicKeyFingerprint: string;
@@ -179716,7 +182189,7 @@ export namespace GoldenGate {
          */
         region: string;
         /**
-         * Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+         * Controls the network traffic direction to the target: SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected. SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
          */
         routingMethod: string;
         /**
@@ -179732,7 +182205,8 @@ export namespace GoldenGate {
          */
         secretAccessKey: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+         * * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+         * * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
          */
         secretAccessKeySecretId: string;
         /**
@@ -179740,14 +182214,20 @@ export namespace GoldenGate {
          */
         securityAttributes: {[key: string]: string};
         /**
-         * Security Protocol to be provided for the following connection types:
-         * * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
-         * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+         * * DB2: Security protocol for the DB2 database.
+         * * ELASTICSEARCH: Security protocol for Elasticsearch.
+         * * JAVA_MESSAGE_SERVICE: Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
+         * * KAFKA: Security Type for Kafka.
+         * * MICROSOFT_SQLSERVER: Security Type for Microsoft SQL Server.
+         * * MONGODB: Security Type for MongoDB.
+         * * MYSQL: Security Type for MySQL.
+         * * POSTGRESQL: Security protocol for PostgreSQL.
+         * * REDIS: Security protocol for Redis.
          */
         securityProtocol: string;
         /**
-         * Comma separated list of server addresses, specified as host:port entries, where :port is optional. Example: `"server1.example.com:4000,server2.example.com:4000"`
-         * If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
+         * * ELASTICSEARCH: Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
+         * * REDIS: Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 6379. Used for establishing the initial connection to the Redis cluster. Example: `"server1.example.com:6379,server2.example.com:6379"`
          */
         servers: string;
         /**
@@ -179767,7 +182247,8 @@ export namespace GoldenGate {
          */
         shouldUseJndi: boolean;
         /**
-         * Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
+         * * KAFKA: Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
+         * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM, ORACLE_NOSQL: Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
          */
         shouldUseResourcePrincipal: boolean;
         /**
@@ -179775,11 +182256,14 @@ export namespace GoldenGate {
          */
         shouldValidateServerCertificate: boolean;
         /**
-         * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL). The supported file formats are .pem and .crt. In case of MYSQL and POSTGRESQL connections it is not included in GET responses if the `view=COMPACT` query parameter is specified.
+         * * MICROSOFT_SQLSERVER: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1-way SSL).
+         * * MYSQL: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+         * * POSTGRESQL: The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
          */
         sslCa: string;
         /**
-         * Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+         * * MYSQL: Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+         * * POSTGRESQL: The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
          */
         sslCert: string;
         /**
@@ -179799,7 +182283,8 @@ export namespace GoldenGate {
          */
         sslClientKeystoredbSecretId: string;
         /**
-         * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+         * * MYSQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+         * * POSTGRESQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
          */
         sslCrl: string;
         /**
@@ -179811,16 +182296,20 @@ export namespace GoldenGate {
          */
         sslKeyPassword: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
+         * * JAVA_MESSAGE_SERVICE, KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided.
+         * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
+         *   Note: When provided, 'sslKeyPassword' field must not be provided.
          */
         sslKeyPasswordSecretId: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
-         * * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
+         * * MYSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
+         * * POSTGRESQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
+         *   Note: When provided, 'sslKey' field must not be provided.
          */
         sslKeySecretId: string;
         /**
-         * SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
+         * * MYSQL: SSL modes for MySQL.
+         * * POSTGRESQL: SSL modes for PostgreSQL.
          */
         sslMode: string;
         /**
@@ -179906,7 +182395,11 @@ export namespace GoldenGate {
          */
         trustStorePassword: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
+         * * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
+         * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
+         * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
+         * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
+         *   Note: When provided, 'trustStorePassword' field must not be provided.
          */
         trustStorePasswordSecretId: string;
         /**
@@ -179918,7 +182411,8 @@ export namespace GoldenGate {
          */
         url: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+         * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+         * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
          */
         userId: string;
         /**
@@ -179926,7 +182420,7 @@ export namespace GoldenGate {
          */
         username: string;
         /**
-         * Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
+         * References the Oracle Cloud Infrastructure Vault that contains the customer-managed encryption key identified by `keyId`.
          */
         vaultId: string;
         /**
@@ -179948,6 +182442,42 @@ export namespace GoldenGate {
          * The value of the property entry.
          */
         value: string;
+    }
+
+    export interface GetConnectionsConnectionCollectionItemAuthDetail {
+        /**
+         * API key for the AI model connection. Deprecated: This field is deprecated and replaced by "apiKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         */
+        apiKey: string;
+        /**
+         * API key secret OCID for the AI model connection.
+         */
+        apiKeySecretId: string;
+        /**
+         * Authentication type used by the AI model connection.
+         */
+        authType: string;
+        /**
+         * Base URL of the AI model endpoint. If not specified, the default base URL for the selected AI provider will be used.
+         */
+        baseUrl: string;
+        /**
+         * Oracle Cloud Infrastructure Generative AI key fingerprint.
+         */
+        keyFingerprint: string;
+        /**
+         * The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+         */
+        region: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+         */
+        tenancyId: string;
+        /**
+         * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+         * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+         */
+        userId: string;
     }
 
     export interface GetConnectionsConnectionCollectionItemBootstrapServer {
@@ -179977,7 +182507,9 @@ export namespace GoldenGate {
          */
         catalogType: string;
         /**
-         * Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+         * * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+         * * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+         * * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
          */
         clientId: string;
         /**
@@ -179985,7 +182517,10 @@ export namespace GoldenGate {
          */
         clientSecret: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
+         * * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+         * * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+         * * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+         *   Note: When provided, 'clientSecret' field must not be provided.
          */
         clientSecretSecretId: string;
         /**
@@ -180009,7 +182544,9 @@ export namespace GoldenGate {
          */
         propertiesSecretId: string;
         /**
-         * The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+         * * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
+         * * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+         * * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
          */
         uri: string;
     }
@@ -180042,7 +182579,9 @@ export namespace GoldenGate {
 
     export interface GetConnectionsConnectionCollectionItemStorage {
         /**
-         * Access key ID to access the Amazon S3 bucket.
+         * * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+         * * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+         *   Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
          */
         accessKeyId: string;
         /**
@@ -180058,7 +182597,9 @@ export namespace GoldenGate {
          */
         accountName: string;
         /**
-         * Google Cloud Storage bucket where Iceberg stores metadata and data files.
+         * * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
+         * * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
+         * * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
          */
         bucket: string;
         /**
@@ -180066,7 +182607,10 @@ export namespace GoldenGate {
          */
         container: string;
         /**
-         * A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
+         * * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
+         * * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+         * * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+         * * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
          */
         endpoint: string;
         /**
@@ -180086,7 +182630,8 @@ export namespace GoldenGate {
          */
         secretAccessKey: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+         * * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+         * * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
          */
         secretAccessKeySecretId: string;
         /**
@@ -294907,6 +297452,10 @@ export namespace ResourceScheduler {
          */
         lastRunStatus: string;
         /**
+         * IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+         */
+        localTimeZone: string;
+        /**
          * This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
          */
         recurrenceDetails: string;
@@ -310409,6 +312958,17 @@ export namespace oci {
         managementPortalUri: string;
     }
 
+    export interface ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList {
+        /**
+         * (Updatable) id of the group.
+         */
+        groupIds: string[];
+        /**
+         * (Updatable) level of the group.
+         */
+        groupLevel: number;
+    }
+
     export interface ApiaccesscontrolPrivilegedApiControlPrivilegedOperationList {
         /**
          * (Updatable) name of the api which needs to be protected.
@@ -310433,6 +312993,10 @@ export namespace oci {
          * Comment specified by the approver of the request.
          */
         approvalComment: string;
+        /**
+         * The group level at which the approver approved.
+         */
+        approverGroupLevel: number;
         /**
          * The userId of the approver.
          */
@@ -313297,6 +315861,10 @@ export namespace oci {
          */
         apiMetadatas: outputs.oci.GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemApiMetadata[];
         /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
          */
         definedTags: {[key: string]: string};
@@ -313385,6 +315953,10 @@ export namespace oci {
          */
         apiName: string;
         /**
+         * List of the fields that is use while calling post or put for the data.
+         */
+        attributes: string[];
+        /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
          */
         definedTags: {[key: string]: string};
@@ -313397,7 +315969,7 @@ export namespace oci {
          */
         entityType: string;
         /**
-         * List of the fields that is use while calling post or put for the data.
+         * deprecated; Use attributes field instead.
          */
         fields: string[];
         /**
@@ -313448,6 +316020,17 @@ export namespace oci {
         values: string[];
     }
 
+    export interface GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelList {
+        /**
+         * id of the group.
+         */
+        groupIds: string[];
+        /**
+         * level of the group.
+         */
+        groupLevel: number;
+    }
+
     export interface GetApiaccesscontrolPrivilegedApiControlPrivilegedOperationList {
         /**
          * name of the api which needs to be protected.
@@ -313478,6 +316061,10 @@ export namespace oci {
          * List of IAM user group ids who can approve an privilegedApi request associated with a target resource under the governance of this operator control.
          */
         approverGroupIdLists: string[];
+        /**
+         * List of Group containing the levels at which the users belonging to the group can authorize.
+         */
+        approverGroupLevelLists: outputs.oci.GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelList[];
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          */
@@ -313539,7 +316126,7 @@ export namespace oci {
          */
         systemTags: {[key: string]: string};
         /**
-         * The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+         * The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
          */
         timeCreated: string;
         /**
@@ -313550,6 +316137,17 @@ export namespace oci {
          * The date and time the PrivilegedApiControl was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
          */
         timeUpdated: string;
+    }
+
+    export interface GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelList {
+        /**
+         * id of the group.
+         */
+        groupIds: string[];
+        /**
+         * level of the group.
+         */
+        groupLevel: number;
     }
 
     export interface GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemPrivilegedOperationList {
@@ -313576,6 +316174,10 @@ export namespace oci {
          * Comment specified by the approver of the request.
          */
         approvalComment: string;
+        /**
+         * The group level at which the approver approved.
+         */
+        approverGroupLevel: number;
         /**
          * The userId of the approver.
          */
@@ -313747,6 +316349,10 @@ export namespace oci {
          * Comment specified by the approver of the request.
          */
         approvalComment: string;
+        /**
+         * The group level at which the approver approved.
+         */
+        approverGroupLevel: number;
         /**
          * The userId of the approver.
          */
@@ -317235,6 +319841,71 @@ export namespace oci {
         timeCreated: string;
         /**
          * Time when the Oracle DB Google Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetDdfsInstancesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDdfsInstancesInstanceCollection {
+        items: outputs.oci.GetDdfsInstancesInstanceCollectionItem[];
+    }
+
+    export interface GetDdfsInstancesInstanceCollectionItem {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         */
+        displayName: string;
+        /**
+         * The HTTPS endpoint for the instance's Fast Healthcare Interoperability Resources (FHIR) service.  Example: `https://example.ddfs.oraclecloud.com/api/fhir`
+         */
+        fhirServiceEndpoint: string;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Instance.
+         */
+        id: string;
+        /**
+         * The Oracle Identity Cloud Service (IDCS) URL for the identity domain associated with the instance. Use the IDCS tenant URL from your identity domain configuration.  Example: `https://idcs-1234567890.identity.oraclecloud.com`
+         */
+        idcsUrl: string;
+        /**
+         * A message that describes the current state of the Instance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * The public IP address for the instance's FHIR service endpoint.
+         */
+        publicIp: string;
+        /**
+         * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.example-key": "example-value"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The date and time the Instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+         */
+        timeCreated: string;
+        /**
+         * The date and time the Instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
          */
         timeUpdated: string;
     }

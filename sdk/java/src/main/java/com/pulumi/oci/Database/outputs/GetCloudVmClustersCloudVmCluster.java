@@ -9,7 +9,9 @@ import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterCloudAuto
 import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterDataCollectionOption;
 import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetail;
 import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterIormConfigCache;
+import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterLiveImageVersionDetail;
 import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfig;
+import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterUpdateDetail;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -173,6 +175,11 @@ public final class GetCloudVmClustersCloudVmCluster {
      */
     private String listenerPort;
     /**
+     * @return Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+     * 
+     */
+    private List<GetCloudVmClustersCloudVmClusterLiveImageVersionDetail> liveImageVersionDetails;
+    /**
      * @return The memory to be allocated in GBs.
      * 
      */
@@ -198,6 +205,11 @@ public final class GetCloudVmClustersCloudVmCluster {
      * 
      */
     private Double ocpuCount;
+    /**
+     * @return Oracle Linux version for the respective Exadata Image.
+     * 
+     */
+    private String oracleLinuxVersion;
     private String privateZoneId;
     /**
      * @return The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
@@ -304,6 +316,7 @@ public final class GetCloudVmClustersCloudVmCluster {
      * 
      */
     private String timeZone;
+    private List<GetCloudVmClustersCloudVmClusterUpdateDetail> updateDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      * 
@@ -553,6 +566,13 @@ public final class GetCloudVmClustersCloudVmCluster {
         return this.listenerPort;
     }
     /**
+     * @return Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+     * 
+     */
+    public List<GetCloudVmClustersCloudVmClusterLiveImageVersionDetail> liveImageVersionDetails() {
+        return this.liveImageVersionDetails;
+    }
+    /**
      * @return The memory to be allocated in GBs.
      * 
      */
@@ -587,6 +607,13 @@ public final class GetCloudVmClustersCloudVmCluster {
      */
     public Double ocpuCount() {
         return this.ocpuCount;
+    }
+    /**
+     * @return Oracle Linux version for the respective Exadata Image.
+     * 
+     */
+    public String oracleLinuxVersion() {
+        return this.oracleLinuxVersion;
     }
     public String privateZoneId() {
         return this.privateZoneId;
@@ -738,6 +765,9 @@ public final class GetCloudVmClustersCloudVmCluster {
     public String timeZone() {
         return this.timeZone;
     }
+    public List<GetCloudVmClustersCloudVmClusterUpdateDetail> updateDetails() {
+        return this.updateDetails;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      * 
@@ -822,11 +852,13 @@ public final class GetCloudVmClustersCloudVmCluster {
         private String licenseModel;
         private String lifecycleDetails;
         private String listenerPort;
+        private List<GetCloudVmClustersCloudVmClusterLiveImageVersionDetail> liveImageVersionDetails;
         private Integer memorySizeInGbs;
         private List<GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfig> multiCloudIdentityConnectorConfigs;
         private Integer nodeCount;
         private List<String> nsgIds;
         private Double ocpuCount;
+        private String oracleLinuxVersion;
         private String privateZoneId;
         private Integer recoStoragePercentage;
         private String scanDnsName;
@@ -849,6 +881,7 @@ public final class GetCloudVmClustersCloudVmCluster {
         private String tdeKeyStoreType;
         private String timeCreated;
         private String timeZone;
+        private List<GetCloudVmClustersCloudVmClusterUpdateDetail> updateDetails;
         private List<String> vipIds;
         private List<String> vipv6ids;
         private String vmBackupStorageType;
@@ -890,11 +923,13 @@ public final class GetCloudVmClustersCloudVmCluster {
     	      this.licenseModel = defaults.licenseModel;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.listenerPort = defaults.listenerPort;
+    	      this.liveImageVersionDetails = defaults.liveImageVersionDetails;
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
     	      this.multiCloudIdentityConnectorConfigs = defaults.multiCloudIdentityConnectorConfigs;
     	      this.nodeCount = defaults.nodeCount;
     	      this.nsgIds = defaults.nsgIds;
     	      this.ocpuCount = defaults.ocpuCount;
+    	      this.oracleLinuxVersion = defaults.oracleLinuxVersion;
     	      this.privateZoneId = defaults.privateZoneId;
     	      this.recoStoragePercentage = defaults.recoStoragePercentage;
     	      this.scanDnsName = defaults.scanDnsName;
@@ -917,6 +952,7 @@ public final class GetCloudVmClustersCloudVmCluster {
     	      this.tdeKeyStoreType = defaults.tdeKeyStoreType;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
+    	      this.updateDetails = defaults.updateDetails;
     	      this.vipIds = defaults.vipIds;
     	      this.vipv6ids = defaults.vipv6ids;
     	      this.vmBackupStorageType = defaults.vmBackupStorageType;
@@ -1200,6 +1236,17 @@ public final class GetCloudVmClustersCloudVmCluster {
             return this;
         }
         @CustomType.Setter
+        public Builder liveImageVersionDetails(List<GetCloudVmClustersCloudVmClusterLiveImageVersionDetail> liveImageVersionDetails) {
+            if (liveImageVersionDetails == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "liveImageVersionDetails");
+            }
+            this.liveImageVersionDetails = liveImageVersionDetails;
+            return this;
+        }
+        public Builder liveImageVersionDetails(GetCloudVmClustersCloudVmClusterLiveImageVersionDetail... liveImageVersionDetails) {
+            return liveImageVersionDetails(List.of(liveImageVersionDetails));
+        }
+        @CustomType.Setter
         public Builder memorySizeInGbs(Integer memorySizeInGbs) {
             if (memorySizeInGbs == null) {
               throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "memorySizeInGbs");
@@ -1243,6 +1290,14 @@ public final class GetCloudVmClustersCloudVmCluster {
               throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "ocpuCount");
             }
             this.ocpuCount = ocpuCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder oracleLinuxVersion(String oracleLinuxVersion) {
+            if (oracleLinuxVersion == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "oracleLinuxVersion");
+            }
+            this.oracleLinuxVersion = oracleLinuxVersion;
             return this;
         }
         @CustomType.Setter
@@ -1431,6 +1486,17 @@ public final class GetCloudVmClustersCloudVmCluster {
             return this;
         }
         @CustomType.Setter
+        public Builder updateDetails(List<GetCloudVmClustersCloudVmClusterUpdateDetail> updateDetails) {
+            if (updateDetails == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "updateDetails");
+            }
+            this.updateDetails = updateDetails;
+            return this;
+        }
+        public Builder updateDetails(GetCloudVmClustersCloudVmClusterUpdateDetail... updateDetails) {
+            return updateDetails(List.of(updateDetails));
+        }
+        @CustomType.Setter
         public Builder vipIds(List<String> vipIds) {
             if (vipIds == null) {
               throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "vipIds");
@@ -1518,11 +1584,13 @@ public final class GetCloudVmClustersCloudVmCluster {
             _resultValue.licenseModel = licenseModel;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.listenerPort = listenerPort;
+            _resultValue.liveImageVersionDetails = liveImageVersionDetails;
             _resultValue.memorySizeInGbs = memorySizeInGbs;
             _resultValue.multiCloudIdentityConnectorConfigs = multiCloudIdentityConnectorConfigs;
             _resultValue.nodeCount = nodeCount;
             _resultValue.nsgIds = nsgIds;
             _resultValue.ocpuCount = ocpuCount;
+            _resultValue.oracleLinuxVersion = oracleLinuxVersion;
             _resultValue.privateZoneId = privateZoneId;
             _resultValue.recoStoragePercentage = recoStoragePercentage;
             _resultValue.scanDnsName = scanDnsName;
@@ -1545,6 +1613,7 @@ public final class GetCloudVmClustersCloudVmCluster {
             _resultValue.tdeKeyStoreType = tdeKeyStoreType;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeZone = timeZone;
+            _resultValue.updateDetails = updateDetails;
             _resultValue.vipIds = vipIds;
             _resultValue.vipv6ids = vipv6ids;
             _resultValue.vmBackupStorageType = vmBackupStorageType;

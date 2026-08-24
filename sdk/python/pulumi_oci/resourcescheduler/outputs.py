@@ -473,6 +473,7 @@ class GetSchedulesScheduleCollectionItemResult(dict):
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  last_run_status: _builtins.str,
+                 local_time_zone: _builtins.str,
                  recurrence_details: _builtins.str,
                  recurrence_type: _builtins.str,
                  resource_filters: Sequence['outputs.GetSchedulesScheduleCollectionItemResourceFilterResult'],
@@ -494,6 +495,7 @@ class GetSchedulesScheduleCollectionItemResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: This is the resource OCID.
         :param _builtins.str last_run_status: This is the status of the last work request.
+        :param _builtins.str local_time_zone: IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
         :param _builtins.str recurrence_details: This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
         :param _builtins.str recurrence_type: Type of recurrence of a schedule
         :param Sequence['GetSchedulesScheduleCollectionItemResourceFilterArgs'] resource_filters: This is a list of resources filters.  The schedule will be applied to resources matching all of them.
@@ -515,6 +517,7 @@ class GetSchedulesScheduleCollectionItemResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "last_run_status", last_run_status)
+        pulumi.set(__self__, "local_time_zone", local_time_zone)
         pulumi.set(__self__, "recurrence_details", recurrence_details)
         pulumi.set(__self__, "recurrence_type", recurrence_type)
         pulumi.set(__self__, "resource_filters", resource_filters)
@@ -591,6 +594,14 @@ class GetSchedulesScheduleCollectionItemResult(dict):
         This is the status of the last work request.
         """
         return pulumi.get(self, "last_run_status")
+
+    @_builtins.property
+    @pulumi.getter(name="localTimeZone")
+    def local_time_zone(self) -> _builtins.str:
+        """
+        IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+        """
+        return pulumi.get(self, "local_time_zone")
 
     @_builtins.property
     @pulumi.getter(name="recurrenceDetails")

@@ -156,6 +156,10 @@ namespace Pulumi.Oci.ResourceScheduler
         /// </summary>
         public readonly string LastRunStatus;
         /// <summary>
+        /// IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+        /// </summary>
+        public readonly string LocalTimeZone;
+        /// <summary>
         /// This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
         /// </summary>
         public readonly string RecurrenceDetails;
@@ -223,6 +227,8 @@ namespace Pulumi.Oci.ResourceScheduler
 
             string lastRunStatus,
 
+            string localTimeZone,
+
             string recurrenceDetails,
 
             string recurrenceType,
@@ -257,6 +263,7 @@ namespace Pulumi.Oci.ResourceScheduler
             FreeformTags = freeformTags;
             Id = id;
             LastRunStatus = lastRunStatus;
+            LocalTimeZone = localTimeZone;
             RecurrenceDetails = recurrenceDetails;
             RecurrenceType = recurrenceType;
             ResourceFilters = resourceFilters;

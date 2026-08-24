@@ -27,10 +27,13 @@ class GetSnapshotResult:
     """
     A collection of values returned by getSnapshot.
     """
-    def __init__(__self__, defined_tags=None, expiration_time=None, file_system_id=None, filesystem_snapshot_policy_id=None, freeform_tags=None, id=None, is_clone_source=None, is_lock_override=None, lifecycle_details=None, lock_duration_details=None, locks=None, name=None, provenance_id=None, snapshot_id=None, snapshot_time=None, snapshot_type=None, state=None, system_tags=None, time_created=None, time_locked=None):
+    def __init__(__self__, defined_tags=None, exclusive_bytes=None, expiration_time=None, file_system_id=None, filesystem_snapshot_policy_id=None, freeform_tags=None, id=None, is_clone_source=None, is_lock_override=None, lifecycle_details=None, lock_duration_details=None, locks=None, name=None, provenance_id=None, snapshot_id=None, snapshot_time=None, snapshot_type=None, state=None, system_tags=None, time_created=None, time_locked=None):
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
+        if exclusive_bytes and not isinstance(exclusive_bytes, str):
+            raise TypeError("Expected argument 'exclusive_bytes' to be a str")
+        pulumi.set(__self__, "exclusive_bytes", exclusive_bytes)
         if expiration_time and not isinstance(expiration_time, str):
             raise TypeError("Expected argument 'expiration_time' to be a str")
         pulumi.set(__self__, "expiration_time", expiration_time)
@@ -96,6 +99,14 @@ class GetSnapshotResult:
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="exclusiveBytes")
+    def exclusive_bytes(self) -> _builtins.str:
+        """
+        Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+        """
+        return pulumi.get(self, "exclusive_bytes")
 
     @_builtins.property
     @pulumi.getter(name="expirationTime")
@@ -254,6 +265,7 @@ class AwaitableGetSnapshotResult(GetSnapshotResult):
             yield self
         return GetSnapshotResult(
             defined_tags=self.defined_tags,
+            exclusive_bytes=self.exclusive_bytes,
             expiration_time=self.expiration_time,
             file_system_id=self.file_system_id,
             filesystem_snapshot_policy_id=self.filesystem_snapshot_policy_id,
@@ -301,6 +313,7 @@ def get_snapshot(snapshot_id: Optional[_builtins.str] = None,
 
     return AwaitableGetSnapshotResult(
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        exclusive_bytes=pulumi.get(__ret__, 'exclusive_bytes'),
         expiration_time=pulumi.get(__ret__, 'expiration_time'),
         file_system_id=pulumi.get(__ret__, 'file_system_id'),
         filesystem_snapshot_policy_id=pulumi.get(__ret__, 'filesystem_snapshot_policy_id'),
@@ -345,6 +358,7 @@ def get_snapshot_output(snapshot_id: pulumi.Input[Optional[_builtins.str]] = Non
     __ret__ = pulumi.runtime.invoke_output('oci:FileStorage/getSnapshot:getSnapshot', __args__, opts=opts, typ=GetSnapshotResult)
     return __ret__.apply(lambda __response__: GetSnapshotResult(
         defined_tags=pulumi.get(__response__, 'defined_tags'),
+        exclusive_bytes=pulumi.get(__response__, 'exclusive_bytes'),
         expiration_time=pulumi.get(__response__, 'expiration_time'),
         file_system_id=pulumi.get(__response__, 'file_system_id'),
         filesystem_snapshot_policy_id=pulumi.get(__response__, 'filesystem_snapshot_policy_id'),

@@ -58,7 +58,7 @@ namespace Pulumi.Oci.Artifacts.Outputs
         /// </summary>
         public readonly int LayerCount;
         /// <summary>
-        /// Total storage in bytes consumed by layers.
+        /// Total size of layers.
         /// </summary>
         public readonly string LayersSizeInBytes;
         /// <summary>

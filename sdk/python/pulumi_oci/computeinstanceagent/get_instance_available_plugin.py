@@ -81,7 +81,7 @@ class GetInstanceAvailablePluginResult:
     @pulumi.getter
     def name(self) -> Optional[_builtins.str]:
         """
-        The plugin name
+        The plugin name.
         """
         return pulumi.get(self, "name")
 
@@ -120,7 +120,7 @@ def get_instance_available_plugin(compartment_id: Optional[_builtins.str] = None
     """
     This data source provides the list of Instance Available Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
 
-    The API to get the list of plugins that are available.
+    Lists the Oracle Cloud Agent plugins that are available for compute instances in a specific compartment.
 
     ## Example Usage
 
@@ -128,15 +128,25 @@ def get_instance_available_plugin(compartment_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_available_plugins = oci.computeinstanceagent.get_instance_available_plugin(os_name=instance_available_plugin_os_name,
+    test_instance_available_plugins = oci.computeinstanceagent.get_instance_available_plugin(compartment_id=compartment_id,
+        os_name=instance_available_plugin_os_name,
         os_version=instance_available_plugin_os_version,
         name=instance_available_plugin_name)
     ```
 
 
-    :param _builtins.str name: The plugin name
-    :param _builtins.str os_name: The OS for which the plugin is supported. Examples of OperatingSystemQueryParam:OperatingSystemVersionQueryParam are as follows: 'CentOS' '6.10' , 'CentOS Linux' '7', 'CentOS Linux' '8', 'Oracle Linux Server' '6.10', 'Oracle Linux Server' '8.0', 'Red Hat Enterprise Linux Server' '7.8', 'Windows' '10', 'Windows' '2008ServerR2', 'Windows' '2012ServerR2', 'Windows' '7', 'Windows' '8.1'
-    :param _builtins.str os_version: The OS version for which the plugin is supported.
+    :param _builtins.str compartment_id: The ID of the compartment for which the plugins are available
+    :param _builtins.str name: The plugin name.
+    :param _builtins.str os_name: The image (OS) for the compute instance.
+           
+           If no match is found, all plugins are returned.
+           
+           Examples: `CentOS`, `Oracle Linux`, `Oracle Autonomous Linux`, `Canonical Ubuntu`, `Windows Server`
+    :param _builtins.str os_version: The OS version for the instance.
+           
+           If no match is found, all plugins are returned.
+           
+           Examples: `9.6`, `8` for CentOS and Oracle Linux. `22.04`, `22.04 Minimal` for Canonical Ubuntu. `2012 R2 Datacenter`, `2019 Standard` for Windows Server.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -164,7 +174,7 @@ def get_instance_available_plugin_output(compartment_id: pulumi.Input[Optional[_
     """
     This data source provides the list of Instance Available Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
 
-    The API to get the list of plugins that are available.
+    Lists the Oracle Cloud Agent plugins that are available for compute instances in a specific compartment.
 
     ## Example Usage
 
@@ -172,15 +182,25 @@ def get_instance_available_plugin_output(compartment_id: pulumi.Input[Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_available_plugins = oci.computeinstanceagent.get_instance_available_plugin(os_name=instance_available_plugin_os_name,
+    test_instance_available_plugins = oci.computeinstanceagent.get_instance_available_plugin(compartment_id=compartment_id,
+        os_name=instance_available_plugin_os_name,
         os_version=instance_available_plugin_os_version,
         name=instance_available_plugin_name)
     ```
 
 
-    :param _builtins.str name: The plugin name
-    :param _builtins.str os_name: The OS for which the plugin is supported. Examples of OperatingSystemQueryParam:OperatingSystemVersionQueryParam are as follows: 'CentOS' '6.10' , 'CentOS Linux' '7', 'CentOS Linux' '8', 'Oracle Linux Server' '6.10', 'Oracle Linux Server' '8.0', 'Red Hat Enterprise Linux Server' '7.8', 'Windows' '10', 'Windows' '2008ServerR2', 'Windows' '2012ServerR2', 'Windows' '7', 'Windows' '8.1'
-    :param _builtins.str os_version: The OS version for which the plugin is supported.
+    :param _builtins.str compartment_id: The ID of the compartment for which the plugins are available
+    :param _builtins.str name: The plugin name.
+    :param _builtins.str os_name: The image (OS) for the compute instance.
+           
+           If no match is found, all plugins are returned.
+           
+           Examples: `CentOS`, `Oracle Linux`, `Oracle Autonomous Linux`, `Canonical Ubuntu`, `Windows Server`
+    :param _builtins.str os_version: The OS version for the instance.
+           
+           If no match is found, all plugins are returned.
+           
+           Examples: `9.6`, `8` for CentOS and Oracle Linux. `22.04`, `22.04 Minimal` for Canonical Ubuntu. `2012 R2 Datacenter`, `2019 Standard` for Windows Server.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id

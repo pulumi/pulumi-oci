@@ -13,7 +13,7 @@ namespace Pulumi.Oci.ComputeInstanceAgent.Inputs
     public sealed class GetInstanceAvailablePluginFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The plugin name
+        /// The plugin name.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

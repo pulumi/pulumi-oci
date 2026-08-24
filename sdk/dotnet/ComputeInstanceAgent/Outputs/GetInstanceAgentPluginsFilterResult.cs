@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ComputeInstanceAgent.Outputs
     public sealed class GetInstanceAgentPluginsFilterResult
     {
         /// <summary>
-        /// The plugin name
+        /// The plugin name.
         /// </summary>
         public readonly string Name;
         public readonly bool? Regex;

@@ -12,6 +12,9 @@ namespace Pulumi.Oci.Database.Inputs
 
     public sealed class DbHomeDatabaseEncryptionKeyLocationDetailsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Provide the key OCID of a registered AWS key.
+        /// </summary>
         [Input("awsEncryptionKeyId")]
         public Input<string>? AwsEncryptionKeyId { get; set; }
 

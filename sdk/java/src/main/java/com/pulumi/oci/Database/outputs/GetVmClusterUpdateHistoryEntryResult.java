@@ -47,6 +47,11 @@ public final class GetVmClusterUpdateHistoryEntryResult {
      */
     private String updateId;
     /**
+     * @return The OS update mode performed using this maintenance update.
+     * 
+     */
+    private String updateMode;
+    /**
      * @return The type of VM cluster maintenance update.
      * 
      */
@@ -107,6 +112,13 @@ public final class GetVmClusterUpdateHistoryEntryResult {
         return this.updateId;
     }
     /**
+     * @return The OS update mode performed using this maintenance update.
+     * 
+     */
+    public String updateMode() {
+        return this.updateMode;
+    }
+    /**
      * @return The type of VM cluster maintenance update.
      * 
      */
@@ -134,6 +146,7 @@ public final class GetVmClusterUpdateHistoryEntryResult {
         private String updateAction;
         private String updateHistoryEntryId;
         private String updateId;
+        private String updateMode;
         private String updateType;
         private String vmClusterId;
         public Builder() {}
@@ -147,6 +160,7 @@ public final class GetVmClusterUpdateHistoryEntryResult {
     	      this.updateAction = defaults.updateAction;
     	      this.updateHistoryEntryId = defaults.updateHistoryEntryId;
     	      this.updateId = defaults.updateId;
+    	      this.updateMode = defaults.updateMode;
     	      this.updateType = defaults.updateType;
     	      this.vmClusterId = defaults.vmClusterId;
         }
@@ -216,6 +230,14 @@ public final class GetVmClusterUpdateHistoryEntryResult {
             return this;
         }
         @CustomType.Setter
+        public Builder updateMode(String updateMode) {
+            if (updateMode == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateHistoryEntryResult", "updateMode");
+            }
+            this.updateMode = updateMode;
+            return this;
+        }
+        @CustomType.Setter
         public Builder updateType(String updateType) {
             if (updateType == null) {
               throw new MissingRequiredPropertyException("GetVmClusterUpdateHistoryEntryResult", "updateType");
@@ -241,6 +263,7 @@ public final class GetVmClusterUpdateHistoryEntryResult {
             _resultValue.updateAction = updateAction;
             _resultValue.updateHistoryEntryId = updateHistoryEntryId;
             _resultValue.updateId = updateId;
+            _resultValue.updateMode = updateMode;
             _resultValue.updateType = updateType;
             _resultValue.vmClusterId = vmClusterId;
             return _resultValue;

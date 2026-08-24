@@ -17,9 +17,17 @@ public final class GetInstanceAvailablePluginPlainArgs extends com.pulumi.resour
 
     public static final GetInstanceAvailablePluginPlainArgs Empty = new GetInstanceAvailablePluginPlainArgs();
 
+    /**
+     * The ID of the compartment for which the plugins are available
+     * 
+     */
     @Import(name="compartmentId", required=true)
     private String compartmentId;
 
+    /**
+     * @return The ID of the compartment for which the plugins are available
+     * 
+     */
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -32,14 +40,14 @@ public final class GetInstanceAvailablePluginPlainArgs extends com.pulumi.resour
     }
 
     /**
-     * The plugin name
+     * The plugin name.
      * 
      */
     @Import(name="name")
     private @Nullable String name;
 
     /**
-     * @return The plugin name
+     * @return The plugin name.
      * 
      */
     public Optional<String> name() {
@@ -47,14 +55,22 @@ public final class GetInstanceAvailablePluginPlainArgs extends com.pulumi.resour
     }
 
     /**
-     * The OS for which the plugin is supported. Examples of OperatingSystemQueryParam:OperatingSystemVersionQueryParam are as follows: &#39;CentOS&#39; &#39;6.10&#39; , &#39;CentOS Linux&#39; &#39;7&#39;, &#39;CentOS Linux&#39; &#39;8&#39;, &#39;Oracle Linux Server&#39; &#39;6.10&#39;, &#39;Oracle Linux Server&#39; &#39;8.0&#39;, &#39;Red Hat Enterprise Linux Server&#39; &#39;7.8&#39;, &#39;Windows&#39; &#39;10&#39;, &#39;Windows&#39; &#39;2008ServerR2&#39;, &#39;Windows&#39; &#39;2012ServerR2&#39;, &#39;Windows&#39; &#39;7&#39;, &#39;Windows&#39; &#39;8.1&#39;
+     * The image (OS) for the compute instance.
+     * 
+     * If no match is found, all plugins are returned.
+     * 
+     * Examples: `CentOS`, `Oracle Linux`, `Oracle Autonomous Linux`, `Canonical Ubuntu`, `Windows Server`
      * 
      */
     @Import(name="osName", required=true)
     private String osName;
 
     /**
-     * @return The OS for which the plugin is supported. Examples of OperatingSystemQueryParam:OperatingSystemVersionQueryParam are as follows: &#39;CentOS&#39; &#39;6.10&#39; , &#39;CentOS Linux&#39; &#39;7&#39;, &#39;CentOS Linux&#39; &#39;8&#39;, &#39;Oracle Linux Server&#39; &#39;6.10&#39;, &#39;Oracle Linux Server&#39; &#39;8.0&#39;, &#39;Red Hat Enterprise Linux Server&#39; &#39;7.8&#39;, &#39;Windows&#39; &#39;10&#39;, &#39;Windows&#39; &#39;2008ServerR2&#39;, &#39;Windows&#39; &#39;2012ServerR2&#39;, &#39;Windows&#39; &#39;7&#39;, &#39;Windows&#39; &#39;8.1&#39;
+     * @return The image (OS) for the compute instance.
+     * 
+     * If no match is found, all plugins are returned.
+     * 
+     * Examples: `CentOS`, `Oracle Linux`, `Oracle Autonomous Linux`, `Canonical Ubuntu`, `Windows Server`
      * 
      */
     public String osName() {
@@ -62,14 +78,22 @@ public final class GetInstanceAvailablePluginPlainArgs extends com.pulumi.resour
     }
 
     /**
-     * The OS version for which the plugin is supported.
+     * The OS version for the instance.
+     * 
+     * If no match is found, all plugins are returned.
+     * 
+     * Examples: `9.6`, `8` for CentOS and Oracle Linux. `22.04`, `22.04 Minimal` for Canonical Ubuntu. `2012 R2 Datacenter`, `2019 Standard` for Windows Server.
      * 
      */
     @Import(name="osVersion", required=true)
     private String osVersion;
 
     /**
-     * @return The OS version for which the plugin is supported.
+     * @return The OS version for the instance.
+     * 
+     * If no match is found, all plugins are returned.
+     * 
+     * Examples: `9.6`, `8` for CentOS and Oracle Linux. `22.04`, `22.04 Minimal` for Canonical Ubuntu. `2012 R2 Datacenter`, `2019 Standard` for Windows Server.
      * 
      */
     public String osVersion() {
@@ -104,6 +128,12 @@ public final class GetInstanceAvailablePluginPlainArgs extends com.pulumi.resour
             $ = new GetInstanceAvailablePluginPlainArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param compartmentId The ID of the compartment for which the plugins are available
+         * 
+         * @return builder
+         * 
+         */
         public Builder compartmentId(String compartmentId) {
             $.compartmentId = compartmentId;
             return this;
@@ -119,7 +149,7 @@ public final class GetInstanceAvailablePluginPlainArgs extends com.pulumi.resour
         }
 
         /**
-         * @param name The plugin name
+         * @param name The plugin name.
          * 
          * @return builder
          * 
@@ -130,7 +160,11 @@ public final class GetInstanceAvailablePluginPlainArgs extends com.pulumi.resour
         }
 
         /**
-         * @param osName The OS for which the plugin is supported. Examples of OperatingSystemQueryParam:OperatingSystemVersionQueryParam are as follows: &#39;CentOS&#39; &#39;6.10&#39; , &#39;CentOS Linux&#39; &#39;7&#39;, &#39;CentOS Linux&#39; &#39;8&#39;, &#39;Oracle Linux Server&#39; &#39;6.10&#39;, &#39;Oracle Linux Server&#39; &#39;8.0&#39;, &#39;Red Hat Enterprise Linux Server&#39; &#39;7.8&#39;, &#39;Windows&#39; &#39;10&#39;, &#39;Windows&#39; &#39;2008ServerR2&#39;, &#39;Windows&#39; &#39;2012ServerR2&#39;, &#39;Windows&#39; &#39;7&#39;, &#39;Windows&#39; &#39;8.1&#39;
+         * @param osName The image (OS) for the compute instance.
+         * 
+         * If no match is found, all plugins are returned.
+         * 
+         * Examples: `CentOS`, `Oracle Linux`, `Oracle Autonomous Linux`, `Canonical Ubuntu`, `Windows Server`
          * 
          * @return builder
          * 
@@ -141,7 +175,11 @@ public final class GetInstanceAvailablePluginPlainArgs extends com.pulumi.resour
         }
 
         /**
-         * @param osVersion The OS version for which the plugin is supported.
+         * @param osVersion The OS version for the instance.
+         * 
+         * If no match is found, all plugins are returned.
+         * 
+         * Examples: `9.6`, `8` for CentOS and Oracle Linux. `22.04`, `22.04 Minimal` for Canonical Ubuntu. `2012 R2 Datacenter`, `2019 Standard` for Windows Server.
          * 
          * @return builder
          * 

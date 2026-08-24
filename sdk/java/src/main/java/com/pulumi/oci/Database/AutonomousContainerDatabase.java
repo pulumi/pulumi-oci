@@ -39,137 +39,6 @@ import javax.annotation.Nullable;
  * 
  * Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
  * 
- * ## Example Usage
- * 
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Database.AutonomousContainerDatabase;
- * import com.pulumi.oci.Database.AutonomousContainerDatabaseArgs;
- * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseBackupConfigArgs;
- * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs;
- * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseCustomerContactArgs;
- * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs;
- * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs;
- * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs;
- * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs;
- * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs;
- * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs;
- * import java.util.ArrayList;
- * import java.util.Arrays;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testAutonomousContainerDatabase = new AutonomousContainerDatabase("testAutonomousContainerDatabase", AutonomousContainerDatabaseArgs.builder()
- *             .displayName(autonomousContainerDatabaseDisplayName)
- *             .patchModel(autonomousContainerDatabasePatchModel)
- *             .autonomousContainerDatabaseBackupId(testAutonomousContainerDatabaseBackup.id())
- *             .autonomousExadataInfrastructureId(testAutonomousExadataInfrastructure.id())
- *             .autonomousVmClusterId(testAutonomousVmCluster.id())
- *             .backupConfig(AutonomousContainerDatabaseBackupConfigArgs.builder()
- *                 .backupDestinationDetails(AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs.builder()
- *                     .type(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsType)
- *                     .backupRetentionPolicyOnTerminate(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsBackupRetentionPolicyOnTerminate)
- *                     .dbrsPolicyId(testPolicy.id())
- *                     .id(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsId)
- *                     .internetProxy(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy)
- *                     .isRemote(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote)
- *                     .isRetentionLockEnabled(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled)
- *                     .remoteRegion(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion)
- *                     .vpcPassword(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword)
- *                     .vpcUser(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser)
- *                     .build())
- *                 .recoveryWindowInDays(autonomousContainerDatabaseBackupConfigRecoveryWindowInDays)
- *                 .build())
- *             .cloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
- *             .compartmentId(compartmentId)
- *             .customerContacts(AutonomousContainerDatabaseCustomerContactArgs.builder()
- *                 .email(autonomousContainerDatabaseCustomerContactsEmail)
- *                 .build())
- *             .databaseSoftwareImageId(testDatabaseSoftwareImage.id())
- *             .dbName(autonomousContainerDatabaseDbName)
- *             .dbSplitThreshold(autonomousContainerDatabaseDbSplitThreshold)
- *             .dbUniqueName(autonomousContainerDatabaseDbUniqueName)
- *             .dbVersion(autonomousContainerDatabaseDbVersion)
- *             .definedTags(Map.of("Operations.CostCenter", "42"))
- *             .distributionAffinity(autonomousContainerDatabaseDistributionAffinity)
- *             .encryptionKeyLocationDetails(AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs.builder()
- *                 .providerType(autonomousContainerDatabaseEncryptionKeyLocationDetailsProviderType)
- *                 .awsEncryptionKeyId(testKey.id())
- *                 .build())
- *             .fastStartFailOverLagLimitInSeconds(autonomousContainerDatabaseFastStartFailOverLagLimitInSeconds)
- *             .freeformTags(Map.of("Department", "Finance"))
- *             .isAutomaticFailoverEnabled(autonomousContainerDatabaseIsAutomaticFailoverEnabled)
- *             .isDstFileUpdateEnabled(autonomousContainerDatabaseIsDstFileUpdateEnabled)
- *             .keyStoreId(testKeyStore.id())
- *             .kmsKeyId(testKey.id())
- *             .kmsKeyVersionId(testKeyVersion.id())
- *             .maintenanceWindowDetails(AutonomousContainerDatabaseMaintenanceWindowDetailsArgs.builder()
- *                 .customActionTimeoutInMins(autonomousContainerDatabaseMaintenanceWindowDetailsCustomActionTimeoutInMins)
- *                 .daysOfWeeks(AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs.builder()
- *                     .name(autonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekName)
- *                     .build())
- *                 .hoursOfDays(autonomousContainerDatabaseMaintenanceWindowDetailsHoursOfDay)
- *                 .isCustomActionTimeoutEnabled(autonomousContainerDatabaseMaintenanceWindowDetailsIsCustomActionTimeoutEnabled)
- *                 .isMonthlyPatchingEnabled(autonomousContainerDatabaseMaintenanceWindowDetailsIsMonthlyPatchingEnabled)
- *                 .leadTimeInWeeks(autonomousContainerDatabaseMaintenanceWindowDetailsLeadTimeInWeeks)
- *                 .months(AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs.builder()
- *                     .name(autonomousContainerDatabaseMaintenanceWindowDetailsMonthsName)
- *                     .build())
- *                 .patchingMode(autonomousContainerDatabaseMaintenanceWindowDetailsPatchingMode)
- *                 .preference(autonomousContainerDatabaseMaintenanceWindowDetailsPreference)
- *                 .skipRus(autonomousContainerDatabaseMaintenanceWindowDetailsSkipRu)
- *                 .weeksOfMonths(autonomousContainerDatabaseMaintenanceWindowDetailsWeeksOfMonth)
- *                 .build())
- *             .netServicesArchitecture(autonomousContainerDatabaseNetServicesArchitecture)
- *             .okvEndPointGroupName(testGroup.name())
- *             .peerAutonomousContainerDatabaseBackupConfig(AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs.builder()
- *                 .backupDestinationDetails(AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs.builder()
- *                     .type(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType)
- *                     .backupRetentionPolicyOnTerminate(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsBackupRetentionPolicyOnTerminate)
- *                     .dbrsPolicyId(testPolicy.id())
- *                     .id(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId)
- *                     .internetProxy(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy)
- *                     .isRemote(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote)
- *                     .isRetentionLockEnabled(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled)
- *                     .remoteRegion(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion)
- *                     .vpcPassword(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword)
- *                     .vpcUser(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser)
- *                     .build())
- *                 .recoveryWindowInDays(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays)
- *                 .build())
- *             .peerAutonomousContainerDatabaseCompartmentId(testCompartment.id())
- *             .peerAutonomousContainerDatabaseDisplayName(autonomousContainerDatabasePeerAutonomousContainerDatabaseDisplayName)
- *             .peerAutonomousExadataInfrastructureId(testAutonomousExadataInfrastructure.id())
- *             .peerAutonomousVmClusterId(testAutonomousVmCluster.id())
- *             .peerCloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
- *             .peerDbUniqueName(autonomousContainerDatabasePeerDbUniqueName)
- *             .protectionMode(autonomousContainerDatabaseProtectionMode)
- *             .serviceLevelAgreementType(autonomousContainerDatabaseServiceLevelAgreementType)
- *             .source(autonomousContainerDatabaseSource)
- *             .standbyMaintenanceBufferInDays(autonomousContainerDatabaseStandbyMaintenanceBufferInDays)
- *             .vaultId(testVault.id())
- *             .versionPreference(autonomousContainerDatabaseVersionPreference)
- *             .vmFailoverReservation(autonomousContainerDatabaseVmFailoverReservation)
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
- * 
  * ## Import
  * 
  * AutonomousContainerDatabases can be imported using the `id`, e.g.
@@ -200,14 +69,28 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * 
      */
     @Export(name="autonomousContainerDatabaseBackupId", refs={String.class}, tree="[0]")
-    private Output<String> autonomousContainerDatabaseBackupId;
+    private Output</* @Nullable */ String> autonomousContainerDatabaseBackupId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
      * 
      */
-    public Output<String> autonomousContainerDatabaseBackupId() {
-        return this.autonomousContainerDatabaseBackupId;
+    public Output<Optional<String>> autonomousContainerDatabaseBackupId() {
+        return Codegen.optional(this.autonomousContainerDatabaseBackupId);
+    }
+    /**
+     * A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+     * 
+     */
+    @Export(name="autonomousDatabasesToClones", refs={List.class,String.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<String>> autonomousDatabasesToClones;
+
+    /**
+     * @return A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+     * 
+     */
+    public Output<Optional<List<String>>> autonomousDatabasesToClones() {
+        return Codegen.optional(this.autonomousDatabasesToClones);
     }
     /**
      * **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
@@ -292,6 +175,34 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      */
     public Output<List<AutonomousContainerDatabaseBackupDestinationPropertiesList>> backupDestinationPropertiesLists() {
         return this.backupDestinationPropertiesLists;
+    }
+    /**
+     * The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+     * 
+     */
+    @Export(name="cloneBandWidth", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> cloneBandWidth;
+
+    /**
+     * @return The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+     * 
+     */
+    public Output<Optional<String>> cloneBandWidth() {
+        return Codegen.optional(this.cloneBandWidth);
+    }
+    /**
+     * The Autonomous AI Database clone type.
+     * 
+     */
+    @Export(name="cloneType", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> cloneType;
+
+    /**
+     * @return The Autonomous AI Database clone type.
+     * 
+     */
+    public Output<Optional<String>> cloneType() {
+        return Codegen.optional(this.cloneType);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
@@ -1118,18 +1029,46 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.serviceLevelAgreementType;
     }
     /**
+     * If set to true, Oracle Cloud Infrastructure shall attempt to create a point in time to the latest available backup of the source Autonomous Container Database.
+     * 
+     */
+    @Export(name="shouldUseLatestAvailableBackupTimeStamp", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> shouldUseLatestAvailableBackupTimeStamp;
+
+    /**
+     * @return If set to true, Oracle Cloud Infrastructure shall attempt to create a point in time to the latest available backup of the source Autonomous Container Database.
+     * 
+     */
+    public Output<Optional<Boolean>> shouldUseLatestAvailableBackupTimeStamp() {
+        return Codegen.optional(this.shouldUseLatestAvailableBackupTimeStamp);
+    }
+    /**
      * The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
      * 
      */
     @Export(name="source", refs={String.class}, tree="[0]")
-    private Output<String> source;
+    private Output</* @Nullable */ String> source;
 
     /**
      * @return The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
      * 
      */
-    public Output<String> source() {
-        return this.source;
+    public Output<Optional<String>> source() {
+        return Codegen.optional(this.source);
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD that you will clone to create a new ACD.
+     * 
+     */
+    @Export(name="sourceAutonomousContainerDatabaseId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> sourceAutonomousContainerDatabaseId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD that you will clone to create a new ACD.
+     * 
+     */
+    public Output<Optional<String>> sourceAutonomousContainerDatabaseId() {
+        return Codegen.optional(this.sourceAutonomousContainerDatabaseId);
     }
     /**
      * (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
@@ -1234,6 +1173,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      */
     public Output<String> timeSnapshotStandbyRevert() {
         return this.timeSnapshotStandbyRevert;
+    }
+    /**
+     * The time stamp representing the point in time to which the Autonomous Container Database should be cloned from backup. And the requested timeStamp should be in the past.
+     * 
+     */
+    @Export(name="timeStampToUseForCloning", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> timeStampToUseForCloning;
+
+    /**
+     * @return The time stamp representing the point in time to which the Autonomous Container Database should be cloned from backup. And the requested timeStamp should be in the past.
+     * 
+     */
+    public Output<Optional<String>> timeStampToUseForCloning() {
+        return Codegen.optional(this.timeStampToUseForCloning);
     }
     /**
      * The number of CPUs allocated to the Autonomous VM cluster.

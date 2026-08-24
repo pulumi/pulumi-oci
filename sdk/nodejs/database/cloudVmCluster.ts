@@ -78,6 +78,11 @@ import * as utilities from "../utilities";
  *     subscriptionId: tenantSubscriptionId,
  *     systemVersion: cloudVmClusterSystemVersion,
  *     timeZone: cloudVmClusterTimeZone,
+ *     updateDetails: {
+ *         updateAction: cloudVmClusterUpdateDetailsUpdateAction,
+ *         updateId: cloudVmClusterUpdateDetailsUpdateId,
+ *         updateMode: cloudVmClusterUpdateDetailsUpdateMode,
+ *     },
  *     vmBackupStorageType: cloudVmClusterVmBackupStorageType,
  *     vmClusterType: cloudVmClusterVmClusterType,
  *     vmFileSystemStorageType: cloudVmClusterVmFileSystemStorageType,
@@ -261,6 +266,10 @@ export class CloudVmCluster extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly listenerPort: pulumi.Output<string>;
     /**
+     * Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+     */
+    declare public /*out*/ readonly liveImageVersionDetails: pulumi.Output<outputs.Database.CloudVmClusterLiveImageVersionDetail[]>;
+    /**
      * (Updatable) The memory to be allocated in GBs.
      */
     declare public readonly memorySizeInGbs: pulumi.Output<number>;
@@ -281,6 +290,10 @@ export class CloudVmCluster extends pulumi.CustomResource {
      * (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
      */
     declare public readonly ocpuCount: pulumi.Output<number>;
+    /**
+     * Oracle Linux version for the respective Exadata Image.
+     */
+    declare public /*out*/ readonly oracleLinuxVersion: pulumi.Output<string>;
     /**
      * The private zone id in which DNS records need to be created.
      */
@@ -370,6 +383,10 @@ export class CloudVmCluster extends pulumi.CustomResource {
      */
     declare public readonly timeZone: pulumi.Output<string>;
     /**
+     * (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+     */
+    declare public readonly updateDetails: pulumi.Output<outputs.Database.CloudVmClusterUpdateDetails | undefined>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      */
     declare public /*out*/ readonly vipIds: pulumi.Output<string[]>;
@@ -441,11 +458,13 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["licenseModel"] = state?.licenseModel;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["listenerPort"] = state?.listenerPort;
+            resourceInputs["liveImageVersionDetails"] = state?.liveImageVersionDetails;
             resourceInputs["memorySizeInGbs"] = state?.memorySizeInGbs;
             resourceInputs["multiCloudIdentityConnectorConfigs"] = state?.multiCloudIdentityConnectorConfigs;
             resourceInputs["nodeCount"] = state?.nodeCount;
             resourceInputs["nsgIds"] = state?.nsgIds;
             resourceInputs["ocpuCount"] = state?.ocpuCount;
+            resourceInputs["oracleLinuxVersion"] = state?.oracleLinuxVersion;
             resourceInputs["privateZoneId"] = state?.privateZoneId;
             resourceInputs["recoStoragePercentage"] = state?.recoStoragePercentage;
             resourceInputs["scanDnsName"] = state?.scanDnsName;
@@ -468,6 +487,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["tdeKeyStoreType"] = state?.tdeKeyStoreType;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeZone"] = state?.timeZone;
+            resourceInputs["updateDetails"] = state?.updateDetails;
             resourceInputs["vipIds"] = state?.vipIds;
             resourceInputs["vipv6ids"] = state?.vipv6ids;
             resourceInputs["vmBackupStorageType"] = state?.vmBackupStorageType;
@@ -543,6 +563,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["systemVersion"] = args?.systemVersion;
             resourceInputs["tdeKeyStoreType"] = args?.tdeKeyStoreType;
             resourceInputs["timeZone"] = args?.timeZone;
+            resourceInputs["updateDetails"] = args?.updateDetails;
             resourceInputs["vmBackupStorageType"] = args?.vmBackupStorageType;
             resourceInputs["vmClusterType"] = args?.vmClusterType;
             resourceInputs["vmFileSystemStorageType"] = args?.vmFileSystemStorageType;
@@ -553,7 +574,9 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["lastUpdateHistoryEntryId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["listenerPort"] = undefined /*out*/;
+            resourceInputs["liveImageVersionDetails"] = undefined /*out*/;
             resourceInputs["multiCloudIdentityConnectorConfigs"] = undefined /*out*/;
+            resourceInputs["oracleLinuxVersion"] = undefined /*out*/;
             resourceInputs["scanDnsName"] = undefined /*out*/;
             resourceInputs["scanDnsRecordId"] = undefined /*out*/;
             resourceInputs["scanIpIds"] = undefined /*out*/;
@@ -718,6 +741,10 @@ export interface CloudVmClusterState {
      */
     listenerPort?: pulumi.Input<string | undefined>;
     /**
+     * Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+     */
+    liveImageVersionDetails?: pulumi.Input<pulumi.Input<inputs.Database.CloudVmClusterLiveImageVersionDetail>[] | undefined>;
+    /**
      * (Updatable) The memory to be allocated in GBs.
      */
     memorySizeInGbs?: pulumi.Input<number | undefined>;
@@ -738,6 +765,10 @@ export interface CloudVmClusterState {
      * (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
      */
     ocpuCount?: pulumi.Input<number | undefined>;
+    /**
+     * Oracle Linux version for the respective Exadata Image.
+     */
+    oracleLinuxVersion?: pulumi.Input<string | undefined>;
     /**
      * The private zone id in which DNS records need to be created.
      */
@@ -826,6 +857,10 @@ export interface CloudVmClusterState {
      * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     timeZone?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+     */
+    updateDetails?: pulumi.Input<inputs.Database.CloudVmClusterUpdateDetails | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      */
@@ -1036,6 +1071,10 @@ export interface CloudVmClusterArgs {
      * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     timeZone?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+     */
+    updateDetails?: pulumi.Input<inputs.Database.CloudVmClusterUpdateDetails | undefined>;
     /**
      * (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
      */

@@ -35,6 +35,12 @@ namespace Pulumi.Oci.Database
         public Output<double> ActualUsedDataStorageSizeInTbs { get; private set; } = null!;
 
         /// <summary>
+        /// The Availability Domain which is planned for Scheduled Update
+        /// </summary>
+        [Output("adScheduledForUpdate")]
+        public Output<string> AdScheduledForUpdate { get; private set; } = null!;
+
+        /// <summary>
         /// Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ "gcpAccountName": "gcpName" }`
         /// </summary>
         [Output("additionalAttributes")]
@@ -107,7 +113,7 @@ namespace Pulumi.Oci.Database
         public Output<string> AutonomousMaintenanceScheduleType { get; private set; } = null!;
 
         /// <summary>
-        /// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+        /// (Updatable) The Autonomous Database Serverless instance's availability domain.
         /// </summary>
         [Output("availabilityDomain")]
         public Output<string> AvailabilityDomain { get; private set; } = null!;
@@ -414,6 +420,9 @@ namespace Pulumi.Oci.Database
         [Output("isDevTier")]
         public Output<bool> IsDevTier { get; private set; } = null!;
 
+        [Output("isDisableAdUpdateSchedule")]
+        public Output<bool> IsDisableAdUpdateSchedule { get; private set; } = null!;
+
         [Output("isDisableDbVersionUpgradeSchedule")]
         public Output<bool> IsDisableDbVersionUpgradeSchedule { get; private set; } = null!;
 
@@ -482,6 +491,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("isReplicateAutomaticBackups")]
         public Output<bool> IsReplicateAutomaticBackups { get; private set; } = null!;
+
+        [Output("isScheduleAdUpdateToEarliest")]
+        public Output<bool> IsScheduleAdUpdateToEarliest { get; private set; } = null!;
 
         [Output("isScheduleDbVersionUpgradeToEarliest")]
         public Output<bool> IsScheduleDbVersionUpgradeToEarliest { get; private set; } = null!;
@@ -895,10 +907,22 @@ namespace Pulumi.Oci.Database
         public Output<string> TimeDisasterRecoveryRoleChanged { get; private set; } = null!;
 
         /// <summary>
+        /// The earliest date and time to which you can schedule an Autonomous Database availability domain update.
+        /// </summary>
+        [Output("timeEarliestAvailableAdUpdate")]
+        public Output<string> TimeEarliestAvailableAdUpdate { get; private set; } = null!;
+
+        /// <summary>
         /// The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
         /// </summary>
         [Output("timeEarliestAvailableDbVersionUpgrade")]
         public Output<string> TimeEarliestAvailableDbVersionUpgrade { get; private set; } = null!;
+
+        /// <summary>
+        /// The latest date and time to which you can schedule an Autonomous Database availability domain update.
+        /// </summary>
+        [Output("timeLatestAvailableAdUpdate")]
+        public Output<string> TimeLatestAvailableAdUpdate { get; private set; } = null!;
 
         /// <summary>
         /// The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
@@ -977,6 +1001,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("timeReclamationOfFreeAutonomousDatabase")]
         public Output<string> TimeReclamationOfFreeAutonomousDatabase { get; private set; } = null!;
+
+        /// <summary>
+        /// The date and time to which the Autonomous Database availability domain update is scheduled.
+        /// </summary>
+        [Output("timeScheduledAdUpdate")]
+        public Output<string> TimeScheduledAdUpdate { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
@@ -1175,6 +1205,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("autonomousMaintenanceScheduleType")]
         public Input<string>? AutonomousMaintenanceScheduleType { get; set; }
+
+        /// <summary>
+        /// (Updatable) The Autonomous Database Serverless instance's availability domain.
+        /// </summary>
+        [Input("availabilityDomain")]
+        public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
         /// (Updatable) Retention period, in days, for long-term backups
@@ -1430,6 +1466,9 @@ namespace Pulumi.Oci.Database
         [Input("isDevTier")]
         public Input<bool>? IsDevTier { get; set; }
 
+        [Input("isDisableAdUpdateSchedule")]
+        public Input<bool>? IsDisableAdUpdateSchedule { get; set; }
+
         [Input("isDisableDbVersionUpgradeSchedule")]
         public Input<bool>? IsDisableDbVersionUpgradeSchedule { get; set; }
 
@@ -1480,6 +1519,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("isReplicateAutomaticBackups")]
         public Input<bool>? IsReplicateAutomaticBackups { get; set; }
+
+        [Input("isScheduleAdUpdateToEarliest")]
+        public Input<bool>? IsScheduleAdUpdateToEarliest { get; set; }
 
         [Input("isScheduleDbVersionUpgradeToEarliest")]
         public Input<bool>? IsScheduleDbVersionUpgradeToEarliest { get; set; }
@@ -1761,6 +1803,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? TimeOfAutoRefreshStart { get; set; }
 
         /// <summary>
+        /// The date and time to which the Autonomous Database availability domain update is scheduled.
+        /// </summary>
+        [Input("timeScheduledAdUpdate")]
+        public Input<string>? TimeScheduledAdUpdate { get; set; }
+
+        /// <summary>
         /// The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
         /// </summary>
         [Input("timeScheduledDbVersionUpgrade")]
@@ -1833,6 +1881,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("actualUsedDataStorageSizeInTbs")]
         public Input<double>? ActualUsedDataStorageSizeInTbs { get; set; }
+
+        /// <summary>
+        /// The Availability Domain which is planned for Scheduled Update
+        /// </summary>
+        [Input("adScheduledForUpdate")]
+        public Input<string>? AdScheduledForUpdate { get; set; }
 
         [Input("additionalAttributes")]
         private InputMap<string>? _additionalAttributes;
@@ -1929,7 +1983,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? AutonomousMaintenanceScheduleType { get; set; }
 
         /// <summary>
-        /// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+        /// (Updatable) The Autonomous Database Serverless instance's availability domain.
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
@@ -2302,6 +2356,9 @@ namespace Pulumi.Oci.Database
         [Input("isDevTier")]
         public Input<bool>? IsDevTier { get; set; }
 
+        [Input("isDisableAdUpdateSchedule")]
+        public Input<bool>? IsDisableAdUpdateSchedule { get; set; }
+
         [Input("isDisableDbVersionUpgradeSchedule")]
         public Input<bool>? IsDisableDbVersionUpgradeSchedule { get; set; }
 
@@ -2370,6 +2427,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("isReplicateAutomaticBackups")]
         public Input<bool>? IsReplicateAutomaticBackups { get; set; }
+
+        [Input("isScheduleAdUpdateToEarliest")]
+        public Input<bool>? IsScheduleAdUpdateToEarliest { get; set; }
 
         [Input("isScheduleDbVersionUpgradeToEarliest")]
         public Input<bool>? IsScheduleDbVersionUpgradeToEarliest { get; set; }
@@ -2867,10 +2927,22 @@ namespace Pulumi.Oci.Database
         public Input<string>? TimeDisasterRecoveryRoleChanged { get; set; }
 
         /// <summary>
+        /// The earliest date and time to which you can schedule an Autonomous Database availability domain update.
+        /// </summary>
+        [Input("timeEarliestAvailableAdUpdate")]
+        public Input<string>? TimeEarliestAvailableAdUpdate { get; set; }
+
+        /// <summary>
         /// The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
         /// </summary>
         [Input("timeEarliestAvailableDbVersionUpgrade")]
         public Input<string>? TimeEarliestAvailableDbVersionUpgrade { get; set; }
+
+        /// <summary>
+        /// The latest date and time to which you can schedule an Autonomous Database availability domain update.
+        /// </summary>
+        [Input("timeLatestAvailableAdUpdate")]
+        public Input<string>? TimeLatestAvailableAdUpdate { get; set; }
 
         /// <summary>
         /// The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
@@ -2949,6 +3021,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("timeReclamationOfFreeAutonomousDatabase")]
         public Input<string>? TimeReclamationOfFreeAutonomousDatabase { get; set; }
+
+        /// <summary>
+        /// The date and time to which the Autonomous Database availability domain update is scheduled.
+        /// </summary>
+        [Input("timeScheduledAdUpdate")]
+        public Input<string>? TimeScheduledAdUpdate { get; set; }
 
         /// <summary>
         /// The date and time the Autonomous AI Database scheduled to upgrade to 26ai.

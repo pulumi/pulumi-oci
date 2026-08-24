@@ -11,7 +11,9 @@ import java.util.Objects;
 @CustomType
 public final class GetConnectionStorage {
     /**
-     * @return Access key ID to access the Amazon S3 bucket.
+     * @return * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+     * * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+     *   Note: Despite the &#34;Id&#34; suffix, this value is not an Oracle Cloud Infrastructure OCID.
      * 
      */
     private String accessKeyId;
@@ -33,7 +35,9 @@ public final class GetConnectionStorage {
      */
     private String accountName;
     /**
-     * @return Google Cloud Storage bucket where Iceberg stores metadata and data files.
+     * @return * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
+     * * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
+     * * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
      * 
      */
     private String bucket;
@@ -43,7 +47,10 @@ public final class GetConnectionStorage {
      */
     private String container;
     /**
-     * @return A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
+     * @return * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: &#39;https://s3.amazonaws.com&#39;
+     * * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: &#39;https://my-azure-storage-account.blob.core.windows.net&#39;
+     * * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+     * * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: &#34;https://&lt;namespace&gt;.compat.objectstorage.&lt;region&gt;.&lt;domain&gt;&#34; Example: &#34;https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com&#34;
      * 
      */
     private String endpoint;
@@ -70,7 +77,8 @@ public final class GetConnectionStorage {
     @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
     private String secretAccessKey;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+     * @return * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+     * * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
      * 
      */
     private String secretAccessKeySecretId;
@@ -94,7 +102,9 @@ public final class GetConnectionStorage {
 
     private GetConnectionStorage() {}
     /**
-     * @return Access key ID to access the Amazon S3 bucket.
+     * @return * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+     * * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+     *   Note: Despite the &#34;Id&#34; suffix, this value is not an Oracle Cloud Infrastructure OCID.
      * 
      */
     public String accessKeyId() {
@@ -124,7 +134,9 @@ public final class GetConnectionStorage {
         return this.accountName;
     }
     /**
-     * @return Google Cloud Storage bucket where Iceberg stores metadata and data files.
+     * @return * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
+     * * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
+     * * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
      * 
      */
     public String bucket() {
@@ -138,7 +150,10 @@ public final class GetConnectionStorage {
         return this.container;
     }
     /**
-     * @return A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
+     * @return * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: &#39;https://s3.amazonaws.com&#39;
+     * * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: &#39;https://my-azure-storage-account.blob.core.windows.net&#39;
+     * * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+     * * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: &#34;https://&lt;namespace&gt;.compat.objectstorage.&lt;region&gt;.&lt;domain&gt;&#34; Example: &#34;https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com&#34;
      * 
      */
     public String endpoint() {
@@ -175,7 +190,8 @@ public final class GetConnectionStorage {
         return this.secretAccessKey;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+     * @return * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+     * * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
      * 
      */
     public String secretAccessKeySecretId() {

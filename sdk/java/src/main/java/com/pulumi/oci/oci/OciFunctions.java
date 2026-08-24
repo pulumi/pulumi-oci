@@ -129,6 +129,10 @@ import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingsArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeysArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeysPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDdfsInstanceArgs;
+import com.pulumi.oci.oci.inputs.GetDdfsInstancePlainArgs;
+import com.pulumi.oci.oci.inputs.GetDdfsInstancesArgs;
+import com.pulumi.oci.oci.inputs.GetDdfsInstancesPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDifStackArgs;
 import com.pulumi.oci.oci.inputs.GetDifStackPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDifStacksArgs;
@@ -357,6 +361,8 @@ import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbGcpKeyResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbGcpKeyRingResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbGcpKeyRingsResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbGcpKeysResult;
+import com.pulumi.oci.oci.outputs.GetDdfsInstanceResult;
+import com.pulumi.oci.oci.outputs.GetDdfsInstancesResult;
 import com.pulumi.oci.oci.outputs.GetDifStackResult;
 import com.pulumi.oci.oci.outputs.GetDifStacksResult;
 import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResult;
@@ -14640,6 +14646,531 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetDbmulticloudOracleDbGcpKeysResult> getDbmulticloudOracleDbGcpKeysPlain(GetDbmulticloudOracleDbGcpKeysPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbGcpKeys:getDbmulticloudOracleDbGcpKeys", TypeShape.of(GetDbmulticloudOracleDbGcpKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Instance resource in Oracle Cloud Infrastructure Ddfs service.
+     * 
+     * Gets information about an Instance.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDdfsInstanceArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstance = OciFunctions.getDdfsInstance(GetDdfsInstanceArgs.builder()
+     *             .instanceId(testInstanceOciDdfsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDdfsInstanceResult> getDdfsInstance(GetDdfsInstanceArgs args) {
+        return getDdfsInstance(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Instance resource in Oracle Cloud Infrastructure Ddfs service.
+     * 
+     * Gets information about an Instance.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDdfsInstanceArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstance = OciFunctions.getDdfsInstance(GetDdfsInstanceArgs.builder()
+     *             .instanceId(testInstanceOciDdfsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDdfsInstanceResult> getDdfsInstancePlain(GetDdfsInstancePlainArgs args) {
+        return getDdfsInstancePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Instance resource in Oracle Cloud Infrastructure Ddfs service.
+     * 
+     * Gets information about an Instance.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDdfsInstanceArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstance = OciFunctions.getDdfsInstance(GetDdfsInstanceArgs.builder()
+     *             .instanceId(testInstanceOciDdfsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDdfsInstanceResult> getDdfsInstance(GetDdfsInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDdfsInstance:getDdfsInstance", TypeShape.of(GetDdfsInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Instance resource in Oracle Cloud Infrastructure Ddfs service.
+     * 
+     * Gets information about an Instance.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDdfsInstanceArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstance = OciFunctions.getDdfsInstance(GetDdfsInstanceArgs.builder()
+     *             .instanceId(testInstanceOciDdfsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDdfsInstanceResult> getDdfsInstance(GetDdfsInstanceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDdfsInstance:getDdfsInstance", TypeShape.of(GetDdfsInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Instance resource in Oracle Cloud Infrastructure Ddfs service.
+     * 
+     * Gets information about an Instance.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDdfsInstanceArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstance = OciFunctions.getDdfsInstance(GetDdfsInstanceArgs.builder()
+     *             .instanceId(testInstanceOciDdfsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDdfsInstanceResult> getDdfsInstancePlain(GetDdfsInstancePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDdfsInstance:getDdfsInstance", TypeShape.of(GetDdfsInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Instances in Oracle Cloud Infrastructure Ddfs service.
+     * 
+     * Gets a list of Instances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDdfsInstancesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstances = OciFunctions.getDdfsInstances(GetDdfsInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(instanceDisplayName)
+     *             .id(instanceId)
+     *             .state(instanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDdfsInstancesResult> getDdfsInstances() {
+        return getDdfsInstances(GetDdfsInstancesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Instances in Oracle Cloud Infrastructure Ddfs service.
+     * 
+     * Gets a list of Instances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDdfsInstancesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstances = OciFunctions.getDdfsInstances(GetDdfsInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(instanceDisplayName)
+     *             .id(instanceId)
+     *             .state(instanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDdfsInstancesResult> getDdfsInstancesPlain() {
+        return getDdfsInstancesPlain(GetDdfsInstancesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Instances in Oracle Cloud Infrastructure Ddfs service.
+     * 
+     * Gets a list of Instances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDdfsInstancesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstances = OciFunctions.getDdfsInstances(GetDdfsInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(instanceDisplayName)
+     *             .id(instanceId)
+     *             .state(instanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDdfsInstancesResult> getDdfsInstances(GetDdfsInstancesArgs args) {
+        return getDdfsInstances(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Instances in Oracle Cloud Infrastructure Ddfs service.
+     * 
+     * Gets a list of Instances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDdfsInstancesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstances = OciFunctions.getDdfsInstances(GetDdfsInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(instanceDisplayName)
+     *             .id(instanceId)
+     *             .state(instanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDdfsInstancesResult> getDdfsInstancesPlain(GetDdfsInstancesPlainArgs args) {
+        return getDdfsInstancesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Instances in Oracle Cloud Infrastructure Ddfs service.
+     * 
+     * Gets a list of Instances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDdfsInstancesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstances = OciFunctions.getDdfsInstances(GetDdfsInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(instanceDisplayName)
+     *             .id(instanceId)
+     *             .state(instanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDdfsInstancesResult> getDdfsInstances(GetDdfsInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDdfsInstances:getDdfsInstances", TypeShape.of(GetDdfsInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Instances in Oracle Cloud Infrastructure Ddfs service.
+     * 
+     * Gets a list of Instances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDdfsInstancesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstances = OciFunctions.getDdfsInstances(GetDdfsInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(instanceDisplayName)
+     *             .id(instanceId)
+     *             .state(instanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDdfsInstancesResult> getDdfsInstances(GetDdfsInstancesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDdfsInstances:getDdfsInstances", TypeShape.of(GetDdfsInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Instances in Oracle Cloud Infrastructure Ddfs service.
+     * 
+     * Gets a list of Instances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDdfsInstancesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstances = OciFunctions.getDdfsInstances(GetDdfsInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(instanceDisplayName)
+     *             .id(instanceId)
+     *             .state(instanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDdfsInstancesResult> getDdfsInstancesPlain(GetDdfsInstancesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDdfsInstances:getDdfsInstances", TypeShape.of(GetDdfsInstancesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Dif service.

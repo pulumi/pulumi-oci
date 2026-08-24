@@ -9,8 +9,10 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Core.VolumeBackupArgs;
 import com.pulumi.oci.Core.inputs.VolumeBackupState;
+import com.pulumi.oci.Core.outputs.VolumeBackupRetentionPeriod;
 import com.pulumi.oci.Core.outputs.VolumeBackupSourceDetails;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Map;
 import java.util.Optional;
@@ -40,6 +42,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Core.VolumeBackup;
  * import com.pulumi.oci.Core.VolumeBackupArgs;
+ * import com.pulumi.oci.Core.inputs.VolumeBackupRetentionPeriodArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;
@@ -58,7 +61,14 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(volumeBackupDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .isIndefiniteRetentionEnabled(volumeBackupIsIndefiniteRetentionEnabled)
+ *             .isPreventDeletionEnabled(volumeBackupIsPreventDeletionEnabled)
+ *             .isRetentionLockEnabled(volumeBackupIsRetentionLockEnabled)
  *             .kmsKeyId(testKey.id())
+ *             .retentionPeriod(VolumeBackupRetentionPeriodArgs.builder()
+ *                 .retentionTimeAmount(volumeBackupRetentionPeriodRetentionTimeAmount)
+ *                 .retentionTimeUnit(volumeBackupRetentionPeriodRetentionTimeUnit)
+ *                 .build())
  *             .type(volumeBackupType)
  *             .build());
  * 
@@ -149,6 +159,48 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+     * 
+     */
+    @Export(name="isIndefiniteRetentionEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isIndefiniteRetentionEnabled;
+
+    /**
+     * @return (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+     * 
+     */
+    public Output<Boolean> isIndefiniteRetentionEnabled() {
+        return this.isIndefiniteRetentionEnabled;
+    }
+    /**
+     * (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+     * 
+     */
+    @Export(name="isPreventDeletionEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isPreventDeletionEnabled;
+
+    /**
+     * @return (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+     * 
+     */
+    public Output<Boolean> isPreventDeletionEnabled() {
+        return this.isPreventDeletionEnabled;
+    }
+    /**
+     * (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+     * 
+     */
+    @Export(name="isRetentionLockEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isRetentionLockEnabled;
+
+    /**
+     * @return (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+     * 
+     */
+    public Output<Boolean> isRetentionLockEnabled() {
+        return this.isRetentionLockEnabled;
+    }
+    /**
      * (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      * 
      */
@@ -161,6 +213,20 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
      */
     public Output<String> kmsKeyId() {
         return this.kmsKeyId;
+    }
+    /**
+     * (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     * 
+     */
+    @Export(name="retentionPeriod", refs={VolumeBackupRetentionPeriod.class}, tree="[0]")
+    private Output<VolumeBackupRetentionPeriod> retentionPeriod;
+
+    /**
+     * @return (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     * 
+     */
+    public Output<VolumeBackupRetentionPeriod> retentionPeriod() {
+        return this.retentionPeriod;
     }
     /**
      * The size of the volume, in GBs.
@@ -293,6 +359,20 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
         return this.timeRequestReceived;
     }
     /**
+     * The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     * 
+     */
+    @Export(name="timeRetentionExpiresAt", refs={String.class}, tree="[0]")
+    private Output<String> timeRetentionExpiresAt;
+
+    /**
+     * @return The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     * 
+     */
+    public Output<String> timeRetentionExpiresAt() {
+        return this.timeRetentionExpiresAt;
+    }
+    /**
      * The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are &#39;FULL&#39; or &#39;INCREMENTAL&#39;.
      * 
      */
@@ -337,6 +417,20 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
      */
     public Output<String> uniqueSizeInMbs() {
         return this.uniqueSizeInMbs;
+    }
+    /**
+     * The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+     * 
+     */
+    @Export(name="volumeGroupBackupId", refs={String.class}, tree="[0]")
+    private Output<String> volumeGroupBackupId;
+
+    /**
+     * @return The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+     * 
+     */
+    public Output<String> volumeGroupBackupId() {
+        return this.volumeGroupBackupId;
     }
     /**
      * The OCID of the volume that needs to be backed up.**Note: To create the resource either `volumeId` or `sourceDetails` is required to be set.

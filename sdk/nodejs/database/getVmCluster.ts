@@ -141,11 +141,19 @@ export interface GetVmClusterResult {
      */
     readonly lifecycleDetails: string;
     /**
+     * Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+     */
+    readonly liveImageVersionDetails: outputs.Database.GetVmClusterLiveImageVersionDetail[];
+    /**
      * The memory allocated in GBs.
      */
     readonly memorySizeInGbs: number;
     readonly ocpuCount: number;
     readonly ocpusEnabled: number;
+    /**
+     * Oracle Linux version for the respective Exadata Image.
+     */
+    readonly oracleLinuxVersion: string;
     /**
      * The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      */
@@ -186,6 +194,7 @@ export interface GetVmClusterResult {
      * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     readonly timeZone: string;
+    readonly updateDetails: outputs.Database.GetVmClusterUpdateDetail[];
     /**
      * Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL.
      */

@@ -55,6 +55,10 @@ export interface GetConnectionAssignmentResult {
      */
     readonly connectionId: string;
     /**
+     * The connection type.
+     */
+    readonly connectionType: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      */
     readonly deploymentId: string;

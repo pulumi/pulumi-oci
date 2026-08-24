@@ -13,22 +13,30 @@ public final class GetInstanceAgentPluginPlainArgs extends com.pulumi.resources.
 
     public static final GetInstanceAgentPluginPlainArgs Empty = new GetInstanceAgentPluginPlainArgs();
 
+    /**
+     * The ID of the compartment in which the instance resides
+     * 
+     */
     @Import(name="compartmentId", required=true)
     private String compartmentId;
 
+    /**
+     * @return The ID of the compartment in which the instance resides
+     * 
+     */
     public String compartmentId() {
         return this.compartmentId;
     }
 
     /**
-     * The OCID of the instance.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      * 
      */
     @Import(name="instanceagentId", required=true)
     private String instanceagentId;
 
     /**
-     * @return The OCID of the instance.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      * 
      */
     public String instanceagentId() {
@@ -76,13 +84,19 @@ public final class GetInstanceAgentPluginPlainArgs extends com.pulumi.resources.
             $ = new GetInstanceAgentPluginPlainArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param compartmentId The ID of the compartment in which the instance resides
+         * 
+         * @return builder
+         * 
+         */
         public Builder compartmentId(String compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
 
         /**
-         * @param instanceagentId The OCID of the instance.
+         * @param instanceagentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
          * 
          * @return builder
          * 

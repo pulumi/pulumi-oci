@@ -31,6 +31,7 @@ from .dbmulticloud_oracle_db_azure_vault import *
 from .dbmulticloud_oracle_db_azure_vault_association import *
 from .dbmulticloud_oracle_db_gcp_identity_connector import *
 from .dbmulticloud_oracle_db_gcp_key_ring import *
+from .ddfs_instance import *
 from .dif_stack import *
 from .distributed_database_distributed_autonomous_database import *
 from .distributed_database_distributed_database import *
@@ -96,6 +97,8 @@ from .get_dbmulticloud_oracle_db_gcp_key import *
 from .get_dbmulticloud_oracle_db_gcp_key_ring import *
 from .get_dbmulticloud_oracle_db_gcp_key_rings import *
 from .get_dbmulticloud_oracle_db_gcp_keys import *
+from .get_ddfs_instance import *
+from .get_ddfs_instances import *
 from .get_dif_stack import *
 from .get_dif_stacks import *
 from .get_distributed_database_distributed_autonomous_database import *

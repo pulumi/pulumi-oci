@@ -21,6 +21,11 @@ public final class GetSnapshotsSnapshot {
      */
     private Map<String,String> definedTags;
     /**
+     * @return Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+     * 
+     */
+    private String exclusiveBytes;
+    /**
      * @return The time when this snapshot will be deleted.
      * 
      */
@@ -117,6 +122,13 @@ public final class GetSnapshotsSnapshot {
      */
     public Map<String,String> definedTags() {
         return this.definedTags;
+    }
+    /**
+     * @return Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+     * 
+     */
+    public String exclusiveBytes() {
+        return this.exclusiveBytes;
     }
     /**
      * @return The time when this snapshot will be deleted.
@@ -254,6 +266,7 @@ public final class GetSnapshotsSnapshot {
     @CustomType.Builder
     public static final class Builder {
         private Map<String,String> definedTags;
+        private String exclusiveBytes;
         private String expirationTime;
         private String fileSystemId;
         private String filesystemSnapshotPolicyId;
@@ -276,6 +289,7 @@ public final class GetSnapshotsSnapshot {
         public Builder(GetSnapshotsSnapshot defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.definedTags = defaults.definedTags;
+    	      this.exclusiveBytes = defaults.exclusiveBytes;
     	      this.expirationTime = defaults.expirationTime;
     	      this.fileSystemId = defaults.fileSystemId;
     	      this.filesystemSnapshotPolicyId = defaults.filesystemSnapshotPolicyId;
@@ -302,6 +316,14 @@ public final class GetSnapshotsSnapshot {
               throw new MissingRequiredPropertyException("GetSnapshotsSnapshot", "definedTags");
             }
             this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder exclusiveBytes(String exclusiveBytes) {
+            if (exclusiveBytes == null) {
+              throw new MissingRequiredPropertyException("GetSnapshotsSnapshot", "exclusiveBytes");
+            }
+            this.exclusiveBytes = exclusiveBytes;
             return this;
         }
         @CustomType.Setter
@@ -457,6 +479,7 @@ public final class GetSnapshotsSnapshot {
         public GetSnapshotsSnapshot build() {
             final var _resultValue = new GetSnapshotsSnapshot();
             _resultValue.definedTags = definedTags;
+            _resultValue.exclusiveBytes = exclusiveBytes;
             _resultValue.expirationTime = expirationTime;
             _resultValue.fileSystemId = fileSystemId;
             _resultValue.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;

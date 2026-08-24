@@ -80,6 +80,7 @@ namespace Pulumi.Oci.Core
     ///         IpMtu = virtualCircuitIpMtu,
     ///         IsBfdEnabled = virtualCircuitIsBfdEnabled,
     ///         IsTransportMode = virtualCircuitIsTransportMode,
+    ///         ProviderRemoteRegion = virtualCircuitProviderRemoteRegion,
     ///         GatewayId = testGateway.Id,
     ///         ProviderServiceId = testFastConnectProviderServices.FastConnectProviderServices[0].Id,
     ///         ProviderServiceKeyName = virtualCircuitProviderServiceKeyName,
@@ -91,7 +92,9 @@ namespace Pulumi.Oci.Core
     ///             },
     ///         },
     ///         Region = virtualCircuitRegion,
+    ///         RemoteAccountId = testRemoteAccount.Id,
     ///         RoutingPolicies = virtualCircuitRoutingPolicy,
+    ///         TrafficMode = virtualCircuitTrafficMode,
     ///     });
     /// 
     /// });
@@ -211,6 +214,12 @@ namespace Pulumi.Oci.Core
         public Output<int> OracleBgpAsn { get; private set; } = null!;
 
         /// <summary>
+        /// The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+        /// </summary>
+        [Output("providerRemoteRegion")]
+        public Output<string> ProviderRemoteRegion { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
         /// </summary>
         [Output("providerServiceId")]
@@ -247,6 +256,12 @@ namespace Pulumi.Oci.Core
         public Output<string> Region { get; private set; } = null!;
 
         /// <summary>
+        /// Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+        /// </summary>
+        [Output("remoteAccountId")]
+        public Output<string> RemoteAccountId { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
         /// </summary>
         [Output("routingPolicies")]
@@ -259,6 +274,12 @@ namespace Pulumi.Oci.Core
         public Output<string> ServiceType { get; private set; } = null!;
 
         /// <summary>
+        /// The Shared unique identifier for the connection between the multicloud interconnect providers
+        /// </summary>
+        [Output("sharedConnectionUuid")]
+        public Output<string> SharedConnectionUuid { get; private set; } = null!;
+
+        /// <summary>
         /// The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
         /// </summary>
         [Output("state")]
@@ -269,6 +290,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+        /// </summary>
+        [Output("trafficMode")]
+        public Output<string> TrafficMode { get; private set; } = null!;
 
         /// <summary>
         /// The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16). 
@@ -429,6 +456,12 @@ namespace Pulumi.Oci.Core
         public Input<bool>? IsTransportMode { get; set; }
 
         /// <summary>
+        /// The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+        /// </summary>
+        [Input("providerRemoteRegion")]
+        public Input<string>? ProviderRemoteRegion { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
         /// </summary>
         [Input("providerServiceId")]
@@ -458,6 +491,12 @@ namespace Pulumi.Oci.Core
         [Input("region")]
         public Input<string>? Region { get; set; }
 
+        /// <summary>
+        /// Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+        /// </summary>
+        [Input("remoteAccountId")]
+        public Input<string>? RemoteAccountId { get; set; }
+
         [Input("routingPolicies")]
         private InputList<string>? _routingPolicies;
 
@@ -469,6 +508,12 @@ namespace Pulumi.Oci.Core
             get => _routingPolicies ?? (_routingPolicies = new InputList<string>());
             set => _routingPolicies = value;
         }
+
+        /// <summary>
+        /// (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+        /// </summary>
+        [Input("trafficMode")]
+        public Input<string>? TrafficMode { get; set; }
 
         /// <summary>
         /// The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16). 
@@ -609,6 +654,12 @@ namespace Pulumi.Oci.Core
         public Input<int>? OracleBgpAsn { get; set; }
 
         /// <summary>
+        /// The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+        /// </summary>
+        [Input("providerRemoteRegion")]
+        public Input<string>? ProviderRemoteRegion { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
         /// </summary>
         [Input("providerServiceId")]
@@ -650,6 +701,12 @@ namespace Pulumi.Oci.Core
         [Input("region")]
         public Input<string>? Region { get; set; }
 
+        /// <summary>
+        /// Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+        /// </summary>
+        [Input("remoteAccountId")]
+        public Input<string>? RemoteAccountId { get; set; }
+
         [Input("routingPolicies")]
         private InputList<string>? _routingPolicies;
 
@@ -669,6 +726,12 @@ namespace Pulumi.Oci.Core
         public Input<string>? ServiceType { get; set; }
 
         /// <summary>
+        /// The Shared unique identifier for the connection between the multicloud interconnect providers
+        /// </summary>
+        [Input("sharedConnectionUuid")]
+        public Input<string>? SharedConnectionUuid { get; set; }
+
+        /// <summary>
         /// The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
         /// </summary>
         [Input("state")]
@@ -679,6 +742,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+        /// </summary>
+        [Input("trafficMode")]
+        public Input<string>? TrafficMode { get; set; }
 
         /// <summary>
         /// The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16). 

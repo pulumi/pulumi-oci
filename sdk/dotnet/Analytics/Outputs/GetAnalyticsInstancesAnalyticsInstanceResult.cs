@@ -15,7 +15,7 @@ namespace Pulumi.Oci.Analytics.Outputs
     {
         public readonly string AdminUser;
         /// <summary>
-        /// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+        /// The capacity (in OCPU's) to be allocated for this resource.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAnalyticsInstancesAnalyticsInstanceCapacityResult> Capacities;
         /// <summary>
@@ -27,7 +27,7 @@ namespace Pulumi.Oci.Analytics.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
-        /// Description of the vanity url.
+        /// Description of the vanity URL.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -51,12 +51,12 @@ namespace Pulumi.Oci.Analytics.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// The Virtual Cloud Network OCID.
+        /// Unique identifier and name of resource group.  Must be unique within the instance
         /// </summary>
         public readonly string Id;
         public readonly string IdcsAccessToken;
         /// <summary>
-        /// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+        /// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
         /// </summary>
         public readonly string KmsKeyId;
         /// <summary>
@@ -72,7 +72,11 @@ namespace Pulumi.Oci.Analytics.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailResult> NetworkEndpointDetails;
         /// <summary>
-        /// URL of the Analytics service.
+        /// List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAnalyticsInstancesAnalyticsInstanceResourceGroupResult> ResourceGroups;
+        /// <summary>
+        /// URL of the Analytics instance.
         /// </summary>
         public readonly string ServiceUrl;
         /// <summary>
@@ -84,15 +88,15 @@ namespace Pulumi.Oci.Analytics.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
-        /// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+        /// The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+        /// The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don't affect it.
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// Analytics instance update channel.
+        /// The Analytics instance update cycle.
         /// </summary>
         public readonly string UpdateChannel;
 
@@ -130,6 +134,8 @@ namespace Pulumi.Oci.Analytics.Outputs
 
             ImmutableArray<Outputs.GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailResult> networkEndpointDetails,
 
+            ImmutableArray<Outputs.GetAnalyticsInstancesAnalyticsInstanceResourceGroupResult> resourceGroups,
+
             string serviceUrl,
 
             string state,
@@ -158,6 +164,7 @@ namespace Pulumi.Oci.Analytics.Outputs
             LicenseType = licenseType;
             Name = name;
             NetworkEndpointDetails = networkEndpointDetails;
+            ResourceGroups = resourceGroups;
             ServiceUrl = serviceUrl;
             State = state;
             SystemTags = systemTags;

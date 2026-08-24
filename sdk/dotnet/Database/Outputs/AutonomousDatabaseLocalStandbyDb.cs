@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class AutonomousDatabaseLocalStandbyDb
     {
         /// <summary>
-        /// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+        /// (Updatable) The Autonomous Database Serverless instance's availability domain.
         /// </summary>
         public readonly string? AvailabilityDomain;
         /// <summary>

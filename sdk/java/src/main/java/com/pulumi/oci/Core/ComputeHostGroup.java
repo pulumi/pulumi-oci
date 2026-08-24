@@ -37,6 +37,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Core.ComputeHostGroup;
  * import com.pulumi.oci.Core.ComputeHostGroupArgs;
  * import com.pulumi.oci.Core.inputs.ComputeHostGroupConfigurationArgs;
+ * import com.pulumi.oci.Core.inputs.ComputeHostGroupConfigurationQuickRecycleSettingsArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;
@@ -57,6 +58,9 @@ import javax.annotation.Nullable;
  *             .isTargetedPlacementRequired(computeHostGroupIsTargetedPlacementRequired)
  *             .configurations(ComputeHostGroupConfigurationArgs.builder()
  *                 .firmwareBundleId(testFirmwareBundle.id())
+ *                 .quickRecycleSettings(ComputeHostGroupConfigurationQuickRecycleSettingsArgs.builder()
+ *                     .nvmeWipe(computeHostGroupConfigurationsQuickRecycleSettingsNvmeWipe)
+ *                     .build())
  *                 .recycleLevel(computeHostGroupConfigurationsRecycleLevel)
  *                 .state(computeHostGroupConfigurationsState)
  *                 .target(computeHostGroupConfigurationsTarget)

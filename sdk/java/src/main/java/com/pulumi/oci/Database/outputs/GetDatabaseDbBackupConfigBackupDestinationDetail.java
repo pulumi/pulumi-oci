@@ -5,8 +5,10 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Database.outputs.GetDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -31,6 +33,10 @@ public final class GetDatabaseDbBackupConfigBackupDestinationDetail {
      * 
      */
     private Boolean isRemote;
+    /**
+     * @return Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+     * 
+     */
     private Boolean isRetentionLockEnabled;
     /**
      * @return Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
@@ -42,6 +48,11 @@ public final class GetDatabaseDbBackupConfigBackupDestinationDetail {
      * 
      */
     private String remoteRegion;
+    /**
+     * @return Backup destination for the TDE wallet backups.
+     * 
+     */
+    private List<GetDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination> tdeWalletBackupDestinations;
     /**
      * @return Type of the database backup destination.
      * 
@@ -87,6 +98,10 @@ public final class GetDatabaseDbBackupConfigBackupDestinationDetail {
     public Boolean isRemote() {
         return this.isRemote;
     }
+    /**
+     * @return Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+     * 
+     */
     public Boolean isRetentionLockEnabled() {
         return this.isRetentionLockEnabled;
     }
@@ -103,6 +118,13 @@ public final class GetDatabaseDbBackupConfigBackupDestinationDetail {
      */
     public String remoteRegion() {
         return this.remoteRegion;
+    }
+    /**
+     * @return Backup destination for the TDE wallet backups.
+     * 
+     */
+    public List<GetDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination> tdeWalletBackupDestinations() {
+        return this.tdeWalletBackupDestinations;
     }
     /**
      * @return Type of the database backup destination.
@@ -142,6 +164,7 @@ public final class GetDatabaseDbBackupConfigBackupDestinationDetail {
         private Boolean isRetentionLockEnabled;
         private Boolean isZeroDataLossEnabled;
         private String remoteRegion;
+        private List<GetDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination> tdeWalletBackupDestinations;
         private String type;
         private String vpcPassword;
         private String vpcUser;
@@ -155,6 +178,7 @@ public final class GetDatabaseDbBackupConfigBackupDestinationDetail {
     	      this.isRetentionLockEnabled = defaults.isRetentionLockEnabled;
     	      this.isZeroDataLossEnabled = defaults.isZeroDataLossEnabled;
     	      this.remoteRegion = defaults.remoteRegion;
+    	      this.tdeWalletBackupDestinations = defaults.tdeWalletBackupDestinations;
     	      this.type = defaults.type;
     	      this.vpcPassword = defaults.vpcPassword;
     	      this.vpcUser = defaults.vpcUser;
@@ -217,6 +241,17 @@ public final class GetDatabaseDbBackupConfigBackupDestinationDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder tdeWalletBackupDestinations(List<GetDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination> tdeWalletBackupDestinations) {
+            if (tdeWalletBackupDestinations == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseDbBackupConfigBackupDestinationDetail", "tdeWalletBackupDestinations");
+            }
+            this.tdeWalletBackupDestinations = tdeWalletBackupDestinations;
+            return this;
+        }
+        public Builder tdeWalletBackupDestinations(GetDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination... tdeWalletBackupDestinations) {
+            return tdeWalletBackupDestinations(List.of(tdeWalletBackupDestinations));
+        }
+        @CustomType.Setter
         public Builder type(String type) {
             if (type == null) {
               throw new MissingRequiredPropertyException("GetDatabaseDbBackupConfigBackupDestinationDetail", "type");
@@ -249,6 +284,7 @@ public final class GetDatabaseDbBackupConfigBackupDestinationDetail {
             _resultValue.isRetentionLockEnabled = isRetentionLockEnabled;
             _resultValue.isZeroDataLossEnabled = isZeroDataLossEnabled;
             _resultValue.remoteRegion = remoteRegion;
+            _resultValue.tdeWalletBackupDestinations = tdeWalletBackupDestinations;
             _resultValue.type = type;
             _resultValue.vpcPassword = vpcPassword;
             _resultValue.vpcUser = vpcUser;

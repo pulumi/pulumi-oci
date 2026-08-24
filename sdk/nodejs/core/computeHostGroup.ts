@@ -27,6 +27,9 @@ import * as utilities from "../utilities";
  *     isTargetedPlacementRequired: computeHostGroupIsTargetedPlacementRequired === "true",
  *     configurations: [{
  *         firmwareBundleId: testFirmwareBundle.id,
+ *         quickRecycleSettings: {
+ *             nvmeWipe: computeHostGroupConfigurationsQuickRecycleSettingsNvmeWipe === "true",
+ *         },
  *         recycleLevel: computeHostGroupConfigurationsRecycleLevel,
  *         state: computeHostGroupConfigurationsState,
  *         target: computeHostGroupConfigurationsTarget,

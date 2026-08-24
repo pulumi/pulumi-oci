@@ -18,6 +18,11 @@ public final class GetApiaccesscontrolApiMetadatasApiMetadataCollectionItem {
      */
     private String apiName;
     /**
+     * @return List of the fields that is use while calling post or put for the data.
+     * 
+     */
+    private List<String> attributes;
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
@@ -33,7 +38,7 @@ public final class GetApiaccesscontrolApiMetadatasApiMetadataCollectionItem {
      */
     private String entityType;
     /**
-     * @return List of the fields that is use while calling post or put for the data.
+     * @return deprecated; Use attributes field instead.
      * 
      */
     private List<String> fields;
@@ -97,6 +102,13 @@ public final class GetApiaccesscontrolApiMetadatasApiMetadataCollectionItem {
         return this.apiName;
     }
     /**
+     * @return List of the fields that is use while calling post or put for the data.
+     * 
+     */
+    public List<String> attributes() {
+        return this.attributes;
+    }
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
@@ -118,7 +130,7 @@ public final class GetApiaccesscontrolApiMetadatasApiMetadataCollectionItem {
         return this.entityType;
     }
     /**
-     * @return List of the fields that is use while calling post or put for the data.
+     * @return deprecated; Use attributes field instead.
      * 
      */
     public List<String> fields() {
@@ -205,6 +217,7 @@ public final class GetApiaccesscontrolApiMetadatasApiMetadataCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private String apiName;
+        private List<String> attributes;
         private Map<String,String> definedTags;
         private String displayName;
         private String entityType;
@@ -223,6 +236,7 @@ public final class GetApiaccesscontrolApiMetadatasApiMetadataCollectionItem {
         public Builder(GetApiaccesscontrolApiMetadatasApiMetadataCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apiName = defaults.apiName;
+    	      this.attributes = defaults.attributes;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.entityType = defaults.entityType;
@@ -246,6 +260,17 @@ public final class GetApiaccesscontrolApiMetadatasApiMetadataCollectionItem {
             }
             this.apiName = apiName;
             return this;
+        }
+        @CustomType.Setter
+        public Builder attributes(List<String> attributes) {
+            if (attributes == null) {
+              throw new MissingRequiredPropertyException("GetApiaccesscontrolApiMetadatasApiMetadataCollectionItem", "attributes");
+            }
+            this.attributes = attributes;
+            return this;
+        }
+        public Builder attributes(String... attributes) {
+            return attributes(List.of(attributes));
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,String> definedTags) {
@@ -365,6 +390,7 @@ public final class GetApiaccesscontrolApiMetadatasApiMetadataCollectionItem {
         public GetApiaccesscontrolApiMetadatasApiMetadataCollectionItem build() {
             final var _resultValue = new GetApiaccesscontrolApiMetadatasApiMetadataCollectionItem();
             _resultValue.apiName = apiName;
+            _resultValue.attributes = attributes;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.entityType = entityType;

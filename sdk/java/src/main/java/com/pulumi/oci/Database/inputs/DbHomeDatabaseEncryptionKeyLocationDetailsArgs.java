@@ -16,9 +16,17 @@ public final class DbHomeDatabaseEncryptionKeyLocationDetailsArgs extends com.pu
 
     public static final DbHomeDatabaseEncryptionKeyLocationDetailsArgs Empty = new DbHomeDatabaseEncryptionKeyLocationDetailsArgs();
 
+    /**
+     * Provide the key OCID of a registered AWS key.
+     * 
+     */
     @Import(name="awsEncryptionKeyId")
     private @Nullable Output<String> awsEncryptionKeyId;
 
+    /**
+     * @return Provide the key OCID of a registered AWS key.
+     * 
+     */
     public Optional<Output<String>> awsEncryptionKeyId() {
         return Optional.ofNullable(this.awsEncryptionKeyId);
     }
@@ -103,11 +111,23 @@ public final class DbHomeDatabaseEncryptionKeyLocationDetailsArgs extends com.pu
             $ = new DbHomeDatabaseEncryptionKeyLocationDetailsArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param awsEncryptionKeyId Provide the key OCID of a registered AWS key.
+         * 
+         * @return builder
+         * 
+         */
         public Builder awsEncryptionKeyId(@Nullable Output<String> awsEncryptionKeyId) {
             $.awsEncryptionKeyId = awsEncryptionKeyId;
             return this;
         }
 
+        /**
+         * @param awsEncryptionKeyId Provide the key OCID of a registered AWS key.
+         * 
+         * @return builder
+         * 
+         */
         public Builder awsEncryptionKeyId(String awsEncryptionKeyId) {
             return awsEncryptionKeyId(Output.of(awsEncryptionKeyId));
         }

@@ -52,6 +52,10 @@ export interface GetVmClusterUpdateResult {
      */
     readonly availableActions: string[];
     /**
+     * The possible update options that can be performed using this maintenance update (only valid for OS Update).
+     */
+    readonly availableUpdateModes: string[];
+    /**
      * Details of the maintenance update package.
      */
     readonly description: string;
@@ -64,9 +68,17 @@ export interface GetVmClusterUpdateResult {
      */
     readonly lastAction: string;
     /**
+     * The update mode performed most recently using this maintenance update (only valid for OS Update).
+     */
+    readonly lastUpdateMode: string;
+    /**
      * Descriptive text providing additional details about the lifecycle state.
      */
     readonly lifecycleDetails: string;
+    /**
+     * Oracle Linux version for the respective Exadata Image.
+     */
+    readonly oracleLinuxVersion: string;
     /**
      * The current state of the maintenance update. Dependent on value of `lastAction`.
      */

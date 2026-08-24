@@ -40,9 +40,15 @@ import * as utilities from "../utilities";
  *         dayOfMonth: Number(volumeBackupPolicySchedulesDayOfMonth),
  *         dayOfWeek: volumeBackupPolicySchedulesDayOfWeek,
  *         hourOfDay: Number(volumeBackupPolicySchedulesHourOfDay),
+ *         isPreventDeletionEnabled: volumeBackupPolicySchedulesIsPreventDeletionEnabled === "true",
+ *         isRetentionLockEnabled: volumeBackupPolicySchedulesIsRetentionLockEnabled === "true",
  *         month: volumeBackupPolicySchedulesMonth,
  *         offsetSeconds: Number(volumeBackupPolicySchedulesOffsetSeconds),
  *         offsetType: volumeBackupPolicySchedulesOffsetType,
+ *         retentionPeriod: {
+ *             retentionTimeAmount: Number(volumeBackupPolicySchedulesRetentionPeriodRetentionTimeAmount),
+ *             retentionTimeUnit: volumeBackupPolicySchedulesRetentionPeriodRetentionTimeUnit,
+ *         },
  *         timeZone: volumeBackupPolicySchedulesTimeZone,
  *     }],
  * });

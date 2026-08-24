@@ -19,6 +19,12 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? FirmwareBundleId { get; set; }
 
         /// <summary>
+        /// (Updatable) Additional quick recycle settings.
+        /// </summary>
+        [Input("quickRecycleSettings")]
+        public Input<Inputs.ComputeHostGroupConfigurationQuickRecycleSettingsArgs>? QuickRecycleSettings { get; set; }
+
+        /// <summary>
         /// (Updatable) Preferred recycle level for hosts associated with the reservation config.
         /// * `SKIP_RECYCLE` - Skips host wipe.
         /// * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.

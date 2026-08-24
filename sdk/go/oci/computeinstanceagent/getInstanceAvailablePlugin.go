@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Instance Available Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
 //
-// The API to get the list of plugins that are available.
+// Lists the Oracle Cloud Agent plugins that are available for compute instances in a specific compartment.
 //
 // ## Example Usage
 //
@@ -30,9 +30,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := computeinstanceagent.GetInstanceAvailablePlugin(ctx, &computeinstanceagent.GetInstanceAvailablePluginArgs{
-//				OsName:    instanceAvailablePluginOsName,
-//				OsVersion: instanceAvailablePluginOsVersion,
-//				Name:      pulumi.StringRef(instanceAvailablePluginName),
+//				CompartmentId: compartmentId,
+//				OsName:        instanceAvailablePluginOsName,
+//				OsVersion:     instanceAvailablePluginOsVersion,
+//				Name:          pulumi.StringRef(instanceAvailablePluginName),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -54,13 +55,22 @@ func GetInstanceAvailablePlugin(ctx *pulumi.Context, args *GetInstanceAvailableP
 
 // A collection of arguments for invoking getInstanceAvailablePlugin.
 type GetInstanceAvailablePluginArgs struct {
+	// The ID of the compartment for which the plugins are available
 	CompartmentId string                             `pulumi:"compartmentId"`
 	Filters       []GetInstanceAvailablePluginFilter `pulumi:"filters"`
-	// The plugin name
+	// The plugin name.
 	Name *string `pulumi:"name"`
-	// The OS for which the plugin is supported. Examples of OperatingSystemQueryParam:OperatingSystemVersionQueryParam are as follows: 'CentOS' '6.10' , 'CentOS Linux' '7', 'CentOS Linux' '8', 'Oracle Linux Server' '6.10', 'Oracle Linux Server' '8.0', 'Red Hat Enterprise Linux Server' '7.8', 'Windows' '10', 'Windows' '2008ServerR2', 'Windows' '2012ServerR2', 'Windows' '7', 'Windows' '8.1'
+	// The image (OS) for the compute instance.
+	//
+	// If no match is found, all plugins are returned.
+	//
+	// Examples: `CentOS`, `Oracle Linux`, `Oracle Autonomous Linux`, `Canonical Ubuntu`, `Windows Server`
 	OsName string `pulumi:"osName"`
-	// The OS version for which the plugin is supported.
+	// The OS version for the instance.
+	//
+	// If no match is found, all plugins are returned.
+	//
+	// Examples: `9.6`, `8` for CentOS and Oracle Linux. `22.04`, `22.04 Minimal` for Canonical Ubuntu. `2012 R2 Datacenter`, `2019 Standard` for Windows Server.
 	OsVersion string `pulumi:"osVersion"`
 }
 
@@ -72,7 +82,7 @@ type GetInstanceAvailablePluginResult struct {
 	Filters          []GetInstanceAvailablePluginFilter          `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The plugin name
+	// The plugin name.
 	Name      *string `pulumi:"name"`
 	OsName    string  `pulumi:"osName"`
 	OsVersion string  `pulumi:"osVersion"`
@@ -89,13 +99,22 @@ func GetInstanceAvailablePluginOutput(ctx *pulumi.Context, args GetInstanceAvail
 
 // A collection of arguments for invoking getInstanceAvailablePlugin.
 type GetInstanceAvailablePluginOutputArgs struct {
+	// The ID of the compartment for which the plugins are available
 	CompartmentId pulumi.StringInput                         `pulumi:"compartmentId"`
 	Filters       GetInstanceAvailablePluginFilterArrayInput `pulumi:"filters"`
-	// The plugin name
+	// The plugin name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// The OS for which the plugin is supported. Examples of OperatingSystemQueryParam:OperatingSystemVersionQueryParam are as follows: 'CentOS' '6.10' , 'CentOS Linux' '7', 'CentOS Linux' '8', 'Oracle Linux Server' '6.10', 'Oracle Linux Server' '8.0', 'Red Hat Enterprise Linux Server' '7.8', 'Windows' '10', 'Windows' '2008ServerR2', 'Windows' '2012ServerR2', 'Windows' '7', 'Windows' '8.1'
+	// The image (OS) for the compute instance.
+	//
+	// If no match is found, all plugins are returned.
+	//
+	// Examples: `CentOS`, `Oracle Linux`, `Oracle Autonomous Linux`, `Canonical Ubuntu`, `Windows Server`
 	OsName pulumi.StringInput `pulumi:"osName"`
-	// The OS version for which the plugin is supported.
+	// The OS version for the instance.
+	//
+	// If no match is found, all plugins are returned.
+	//
+	// Examples: `9.6`, `8` for CentOS and Oracle Linux. `22.04`, `22.04 Minimal` for Canonical Ubuntu. `2012 R2 Datacenter`, `2019 Standard` for Windows Server.
 	OsVersion pulumi.StringInput `pulumi:"osVersion"`
 }
 
@@ -138,7 +157,7 @@ func (o GetInstanceAvailablePluginResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceAvailablePluginResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The plugin name
+// The plugin name.
 func (o GetInstanceAvailablePluginResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetInstanceAvailablePluginResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }

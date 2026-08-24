@@ -14,7 +14,8 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// <summary>
         /// This data source provides the list of Instance Agent Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
         /// 
-        /// The API to get one or more plugin information.
+        /// Gets information about the Oracle Cloud Agent plugins that are available on a specific compute instance.
+        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -28,7 +29,8 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// {
         ///     var testInstanceAgentPlugins = Oci.ComputeInstanceAgent.GetInstanceAgentPlugins.Invoke(new()
         ///     {
-        ///         InstanceagentId = testInstanceagent.Id,
+        ///         CompartmentId = compartmentId,
+        ///         InstanceagentId = instanceagent.Id,
         ///         Name = instanceAgentPluginName,
         ///         Status = instanceAgentPluginStatus,
         ///     });
@@ -42,7 +44,8 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// <summary>
         /// This data source provides the list of Instance Agent Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
         /// 
-        /// The API to get one or more plugin information.
+        /// Gets information about the Oracle Cloud Agent plugins that are available on a specific compute instance.
+        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -56,7 +59,8 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// {
         ///     var testInstanceAgentPlugins = Oci.ComputeInstanceAgent.GetInstanceAgentPlugins.Invoke(new()
         ///     {
-        ///         InstanceagentId = testInstanceagent.Id,
+        ///         CompartmentId = compartmentId,
+        ///         InstanceagentId = instanceagent.Id,
         ///         Name = instanceAgentPluginName,
         ///         Status = instanceAgentPluginStatus,
         ///     });
@@ -70,7 +74,8 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// <summary>
         /// This data source provides the list of Instance Agent Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
         /// 
-        /// The API to get one or more plugin information.
+        /// Gets information about the Oracle Cloud Agent plugins that are available on a specific compute instance.
+        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -84,7 +89,8 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// {
         ///     var testInstanceAgentPlugins = Oci.ComputeInstanceAgent.GetInstanceAgentPlugins.Invoke(new()
         ///     {
-        ///         InstanceagentId = testInstanceagent.Id,
+        ///         CompartmentId = compartmentId,
+        ///         InstanceagentId = instanceagent.Id,
         ///         Name = instanceAgentPluginName,
         ///         Status = instanceAgentPluginStatus,
         ///     });
@@ -99,6 +105,9 @@ namespace Pulumi.Oci.ComputeInstanceAgent
 
     public sealed class GetInstanceAgentPluginsArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The ID of the compartment in which the instance resides
+        /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
 
@@ -111,19 +120,19 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         }
 
         /// <summary>
-        /// The OCID of the instance.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
         /// </summary>
         [Input("instanceagentId", required: true)]
         public string InstanceagentId { get; set; } = null!;
 
         /// <summary>
-        /// The plugin name
+        /// The plugin name.
         /// </summary>
         [Input("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// The plugin status
+        /// The plugin status.
         /// </summary>
         [Input("status")]
         public string? Status { get; set; }
@@ -136,6 +145,9 @@ namespace Pulumi.Oci.ComputeInstanceAgent
 
     public sealed class GetInstanceAgentPluginsInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The ID of the compartment in which the instance resides
+        /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
@@ -148,19 +160,19 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         }
 
         /// <summary>
-        /// The OCID of the instance.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
         /// </summary>
         [Input("instanceagentId", required: true)]
         public Input<string> InstanceagentId { get; set; } = null!;
 
         /// <summary>
-        /// The plugin name
+        /// The plugin name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The plugin status
+        /// The plugin status.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -187,11 +199,11 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         public readonly ImmutableArray<Outputs.GetInstanceAgentPluginsInstanceAgentPluginResult> InstanceAgentPlugins;
         public readonly string InstanceagentId;
         /// <summary>
-        /// The plugin name
+        /// The plugin name.
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// The plugin status Specified the plugin state on the instance * `RUNNING` - The plugin is in running state * `STOPPED` - The plugin is in stopped state * `NOT_SUPPORTED` - The plugin is not supported on this platform * `INVALID` - The plugin state is not recognizable by the service
+        /// The plugin status.
         /// </summary>
         public readonly string? Status;
 

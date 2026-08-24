@@ -197,6 +197,22 @@ namespace Pulumi.Oci.Database.Inputs
             set => _pluggableDatabases = value;
         }
 
+        [Input("recoveryApplianceVpcPassword")]
+        private Input<string>? _recoveryApplianceVpcPassword;
+
+        /// <summary>
+        /// The password for the VPC user that is used to access the Recovery Appliance, if the given backup is from a backup destination of type RECOVERY_APPLIANCE.
+        /// </summary>
+        public Input<string>? RecoveryApplianceVpcPassword
+        {
+            get => _recoveryApplianceVpcPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _recoveryApplianceVpcPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
         /// <summary>
         /// Specifies a prefix for the `Oracle SID` of the database to be created.
         /// </summary>

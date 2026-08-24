@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Database.outputs.DatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -47,6 +48,11 @@ public final class DatabaseDatabaseDbBackupConfigBackupDestinationDetail {
      * 
      */
     private @Nullable String remoteRegion;
+    /**
+     * @return Backup destination for the TDE wallet backups.
+     * 
+     */
+    private @Nullable DatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination tdeWalletBackupDestination;
     /**
      * @return Type of the database backup destination.
      * 
@@ -106,6 +112,13 @@ public final class DatabaseDatabaseDbBackupConfigBackupDestinationDetail {
         return Optional.ofNullable(this.remoteRegion);
     }
     /**
+     * @return Backup destination for the TDE wallet backups.
+     * 
+     */
+    public Optional<DatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination> tdeWalletBackupDestination() {
+        return Optional.ofNullable(this.tdeWalletBackupDestination);
+    }
+    /**
      * @return Type of the database backup destination.
      * 
      */
@@ -135,6 +148,7 @@ public final class DatabaseDatabaseDbBackupConfigBackupDestinationDetail {
         private @Nullable Boolean isRetentionLockEnabled;
         private @Nullable Boolean isZeroDataLossEnabled;
         private @Nullable String remoteRegion;
+        private @Nullable DatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination tdeWalletBackupDestination;
         private @Nullable String type;
         private @Nullable String vpcPassword;
         private @Nullable String vpcUser;
@@ -148,6 +162,7 @@ public final class DatabaseDatabaseDbBackupConfigBackupDestinationDetail {
     	      this.isRetentionLockEnabled = defaults.isRetentionLockEnabled;
     	      this.isZeroDataLossEnabled = defaults.isZeroDataLossEnabled;
     	      this.remoteRegion = defaults.remoteRegion;
+    	      this.tdeWalletBackupDestination = defaults.tdeWalletBackupDestination;
     	      this.type = defaults.type;
     	      this.vpcPassword = defaults.vpcPassword;
     	      this.vpcUser = defaults.vpcUser;
@@ -196,6 +211,12 @@ public final class DatabaseDatabaseDbBackupConfigBackupDestinationDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder tdeWalletBackupDestination(@Nullable DatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination tdeWalletBackupDestination) {
+
+            this.tdeWalletBackupDestination = tdeWalletBackupDestination;
+            return this;
+        }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
 
             this.type = type;
@@ -222,6 +243,7 @@ public final class DatabaseDatabaseDbBackupConfigBackupDestinationDetail {
             _resultValue.isRetentionLockEnabled = isRetentionLockEnabled;
             _resultValue.isZeroDataLossEnabled = isZeroDataLossEnabled;
             _resultValue.remoteRegion = remoteRegion;
+            _resultValue.tdeWalletBackupDestination = tdeWalletBackupDestination;
             _resultValue.type = type;
             _resultValue.vpcPassword = vpcPassword;
             _resultValue.vpcUser = vpcUser;

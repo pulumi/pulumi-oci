@@ -12,6 +12,8 @@ from .database_registration import *
 from .deployment import *
 from .deployment_backup import *
 from .deployment_certificate import *
+from .get_ai_models import *
+from .get_ai_providers import *
 from .get_connection import *
 from .get_connection_assignment import *
 from .get_connection_assignments import *

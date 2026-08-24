@@ -13,6 +13,11 @@ import java.util.Objects;
 @CustomType
 public final class GetDatabaseDataGuardGroup {
     /**
+     * @return Specifies readiness of Managed Automatic failover.
+     * 
+     */
+    private String managedAutoFailOverReadiness;
+    /**
      * @return List of Data Guard members, representing each database that is part of Data Guard.
      * 
      */
@@ -24,6 +29,13 @@ public final class GetDatabaseDataGuardGroup {
     private String protectionMode;
 
     private GetDatabaseDataGuardGroup() {}
+    /**
+     * @return Specifies readiness of Managed Automatic failover.
+     * 
+     */
+    public String managedAutoFailOverReadiness() {
+        return this.managedAutoFailOverReadiness;
+    }
     /**
      * @return List of Data Guard members, representing each database that is part of Data Guard.
      * 
@@ -48,15 +60,25 @@ public final class GetDatabaseDataGuardGroup {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String managedAutoFailOverReadiness;
         private List<GetDatabaseDataGuardGroupMember> members;
         private String protectionMode;
         public Builder() {}
         public Builder(GetDatabaseDataGuardGroup defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.managedAutoFailOverReadiness = defaults.managedAutoFailOverReadiness;
     	      this.members = defaults.members;
     	      this.protectionMode = defaults.protectionMode;
         }
 
+        @CustomType.Setter
+        public Builder managedAutoFailOverReadiness(String managedAutoFailOverReadiness) {
+            if (managedAutoFailOverReadiness == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseDataGuardGroup", "managedAutoFailOverReadiness");
+            }
+            this.managedAutoFailOverReadiness = managedAutoFailOverReadiness;
+            return this;
+        }
         @CustomType.Setter
         public Builder members(List<GetDatabaseDataGuardGroupMember> members) {
             if (members == null) {
@@ -78,6 +100,7 @@ public final class GetDatabaseDataGuardGroup {
         }
         public GetDatabaseDataGuardGroup build() {
             final var _resultValue = new GetDatabaseDataGuardGroup();
+            _resultValue.managedAutoFailOverReadiness = managedAutoFailOverReadiness;
             _resultValue.members = members;
             _resultValue.protectionMode = protectionMode;
             return _resultValue;

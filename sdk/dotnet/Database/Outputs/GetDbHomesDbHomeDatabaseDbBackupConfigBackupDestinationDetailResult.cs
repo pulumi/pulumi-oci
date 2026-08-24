@@ -22,6 +22,7 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly bool IsRemote;
         public readonly bool IsRetentionLockEnabled;
         public readonly string RemoteRegion;
+        public readonly ImmutableArray<Outputs.GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestinationResult> TdeWalletBackupDestinations;
         public readonly string Type;
         public readonly string VpcPassword;
         public readonly string VpcUser;
@@ -40,6 +41,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string remoteRegion,
 
+            ImmutableArray<Outputs.GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestinationResult> tdeWalletBackupDestinations,
+
             string type,
 
             string vpcPassword,
@@ -52,6 +55,7 @@ namespace Pulumi.Oci.Database.Outputs
             IsRemote = isRemote;
             IsRetentionLockEnabled = isRetentionLockEnabled;
             RemoteRegion = remoteRegion;
+            TdeWalletBackupDestinations = tdeWalletBackupDestinations;
             Type = type;
             VpcPassword = vpcPassword;
             VpcUser = vpcUser;

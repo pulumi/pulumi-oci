@@ -104,6 +104,20 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
+     * Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+     * 
+     */
+    @Export(name="exclusiveBytes", refs={String.class}, tree="[0]")
+    private Output<String> exclusiveBytes;
+
+    /**
+     * @return Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+     * 
+     */
+    public Output<String> exclusiveBytes() {
+        return this.exclusiveBytes;
+    }
+    /**
      * (Updatable) The time when this snapshot will be deleted.
      * 
      */

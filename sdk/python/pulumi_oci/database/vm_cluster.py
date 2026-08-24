@@ -48,6 +48,7 @@ class VmClusterArgs:
                  sparse_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
                  system_version: pulumi.Input[Optional[_builtins.str]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_details: pulumi.Input[Optional['VmClusterUpdateDetailsArgs']] = None,
                  vm_backup_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_file_system_storage_type: pulumi.Input[Optional[_builtins.str]] = None):
@@ -80,6 +81,7 @@ class VmClusterArgs:
         :param pulumi.Input[_builtins.int] sparse_storage_percentage: (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         :param pulumi.Input[_builtins.str] system_version: Operating system version of the image.
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input['VmClusterUpdateDetailsArgs'] update_details: (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `update_mode` for DomU live update modes or regular full OS update mode.
         :param pulumi.Input[_builtins.str] vm_backup_storage_type: (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
         :param pulumi.Input[_builtins.str] vm_cluster_type: The vmcluster type for the VM cluster/Cloud VM cluster.
         :param pulumi.Input[_builtins.str] vm_file_system_storage_type: Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
@@ -134,6 +136,8 @@ class VmClusterArgs:
             pulumi.set(__self__, "system_version", system_version)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
+        if update_details is not None:
+            pulumi.set(__self__, "update_details", update_details)
         if vm_backup_storage_type is not None:
             pulumi.set(__self__, "vm_backup_storage_type", vm_backup_storage_type)
         if vm_cluster_type is not None:
@@ -463,6 +467,18 @@ class VmClusterArgs:
         pulumi.set(self, "time_zone", value)
 
     @_builtins.property
+    @pulumi.getter(name="updateDetails")
+    def update_details(self) -> pulumi.Input[Optional['VmClusterUpdateDetailsArgs']]:
+        """
+        (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `update_mode` for DomU live update modes or regular full OS update mode.
+        """
+        return pulumi.get(self, "update_details")
+
+    @update_details.setter
+    def update_details(self, value: pulumi.Input[Optional['VmClusterUpdateDetailsArgs']]):
+        pulumi.set(self, "update_details", value)
+
+    @_builtins.property
     @pulumi.getter(name="vmBackupStorageType")
     def vm_backup_storage_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -529,9 +545,11 @@ class _VmClusterState:
                  last_patch_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 live_image_version_details: pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterLiveImageVersionDetailArgs']]]] = None,
                  memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
                  ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
                  ocpus_enabled: pulumi.Input[Optional[_builtins.float]] = None,
+                 oracle_linux_version: pulumi.Input[Optional[_builtins.str]] = None,
                  reco_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
                  sparse_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
@@ -542,6 +560,7 @@ class _VmClusterState:
                  system_version: pulumi.Input[Optional[_builtins.str]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_details: pulumi.Input[Optional['VmClusterUpdateDetailsArgs']] = None,
                  vm_backup_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -573,7 +592,9 @@ class _VmClusterState:
         :param pulumi.Input[_builtins.str] last_patch_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
+        :param pulumi.Input[Sequence[pulumi.Input['VmClusterLiveImageVersionDetailArgs']]] live_image_version_details: Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: (Updatable) The memory to be allocated in GBs.
+        :param pulumi.Input[_builtins.str] oracle_linux_version: Oracle Linux version for the respective Exadata Image.
         :param pulumi.Input[_builtins.int] reco_storage_percentage: (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         :param pulumi.Input[_builtins.str] shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         :param pulumi.Input[_builtins.int] sparse_storage_percentage: (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
@@ -584,6 +605,7 @@ class _VmClusterState:
         :param pulumi.Input[_builtins.str] system_version: Operating system version of the image.
         :param pulumi.Input[_builtins.str] time_created: The date and time that the VM cluster was created.
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input['VmClusterUpdateDetailsArgs'] update_details: (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `update_mode` for DomU live update modes or regular full OS update mode.
         :param pulumi.Input[_builtins.str] vm_backup_storage_type: (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
         :param pulumi.Input[_builtins.str] vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         :param pulumi.Input[_builtins.str] vm_cluster_type: The vmcluster type for the VM cluster/Cloud VM cluster.
@@ -640,12 +662,16 @@ class _VmClusterState:
             pulumi.set(__self__, "license_model", license_model)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if live_image_version_details is not None:
+            pulumi.set(__self__, "live_image_version_details", live_image_version_details)
         if memory_size_in_gbs is not None:
             pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         if ocpu_count is not None:
             pulumi.set(__self__, "ocpu_count", ocpu_count)
         if ocpus_enabled is not None:
             pulumi.set(__self__, "ocpus_enabled", ocpus_enabled)
+        if oracle_linux_version is not None:
+            pulumi.set(__self__, "oracle_linux_version", oracle_linux_version)
         if reco_storage_percentage is not None:
             pulumi.set(__self__, "reco_storage_percentage", reco_storage_percentage)
         if shape is not None:
@@ -666,6 +692,8 @@ class _VmClusterState:
             pulumi.set(__self__, "time_created", time_created)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
+        if update_details is not None:
+            pulumi.set(__self__, "update_details", update_details)
         if vm_backup_storage_type is not None:
             pulumi.set(__self__, "vm_backup_storage_type", vm_backup_storage_type)
         if vm_cluster_network_id is not None:
@@ -964,6 +992,18 @@ class _VmClusterState:
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
+    @pulumi.getter(name="liveImageVersionDetails")
+    def live_image_version_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterLiveImageVersionDetailArgs']]]]:
+        """
+        Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+        """
+        return pulumi.get(self, "live_image_version_details")
+
+    @live_image_version_details.setter
+    def live_image_version_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterLiveImageVersionDetailArgs']]]]):
+        pulumi.set(self, "live_image_version_details", value)
+
+    @_builtins.property
     @pulumi.getter(name="memorySizeInGbs")
     def memory_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
@@ -992,6 +1032,18 @@ class _VmClusterState:
     @ocpus_enabled.setter
     def ocpus_enabled(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "ocpus_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="oracleLinuxVersion")
+    def oracle_linux_version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Oracle Linux version for the respective Exadata Image.
+        """
+        return pulumi.get(self, "oracle_linux_version")
+
+    @oracle_linux_version.setter
+    def oracle_linux_version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "oracle_linux_version", value)
 
     @_builtins.property
     @pulumi.getter(name="recoStoragePercentage")
@@ -1114,6 +1166,18 @@ class _VmClusterState:
         pulumi.set(self, "time_zone", value)
 
     @_builtins.property
+    @pulumi.getter(name="updateDetails")
+    def update_details(self) -> pulumi.Input[Optional['VmClusterUpdateDetailsArgs']]:
+        """
+        (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `update_mode` for DomU live update modes or regular full OS update mode.
+        """
+        return pulumi.get(self, "update_details")
+
+    @update_details.setter
+    def update_details(self, value: pulumi.Input[Optional['VmClusterUpdateDetailsArgs']]):
+        pulumi.set(self, "update_details", value)
+
+    @_builtins.property
     @pulumi.getter(name="vmBackupStorageType")
     def vm_backup_storage_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -1197,6 +1261,7 @@ class VmCluster(pulumi.CustomResource):
                  ssh_public_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  system_version: pulumi.Input[Optional[_builtins.str]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_details: pulumi.Input[Optional[Union['VmClusterUpdateDetailsArgs', 'VmClusterUpdateDetailsArgsDict']]] = None,
                  vm_backup_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1262,6 +1327,11 @@ class VmCluster(pulumi.CustomResource):
             sparse_storage_percentage=int(vm_cluster_sparse_storage_percentage),
             system_version=vm_cluster_system_version,
             time_zone=vm_cluster_time_zone,
+            update_details={
+                "update_action": vm_cluster_update_details_update_action,
+                "update_id": vm_cluster_update_details_update_id,
+                "update_mode": vm_cluster_update_details_update_mode,
+            },
             vm_backup_storage_type=vm_cluster_vm_backup_storage_type,
             vm_cluster_type=vm_cluster_vm_cluster_type,
             vm_file_system_storage_type=vm_cluster_vm_file_system_storage_type)
@@ -1303,6 +1373,7 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.
         :param pulumi.Input[_builtins.str] system_version: Operating system version of the image.
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input[Union['VmClusterUpdateDetailsArgs', 'VmClusterUpdateDetailsArgsDict']] update_details: (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `update_mode` for DomU live update modes or regular full OS update mode.
         :param pulumi.Input[_builtins.str] vm_backup_storage_type: (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
         :param pulumi.Input[_builtins.str] vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         :param pulumi.Input[_builtins.str] vm_cluster_type: The vmcluster type for the VM cluster/Cloud VM cluster.
@@ -1377,6 +1448,11 @@ class VmCluster(pulumi.CustomResource):
             sparse_storage_percentage=int(vm_cluster_sparse_storage_percentage),
             system_version=vm_cluster_system_version,
             time_zone=vm_cluster_time_zone,
+            update_details={
+                "update_action": vm_cluster_update_details_update_action,
+                "update_id": vm_cluster_update_details_update_id,
+                "update_mode": vm_cluster_update_details_update_mode,
+            },
             vm_backup_storage_type=vm_cluster_vm_backup_storage_type,
             vm_cluster_type=vm_cluster_vm_cluster_type,
             vm_file_system_storage_type=vm_cluster_vm_file_system_storage_type)
@@ -1432,6 +1508,7 @@ class VmCluster(pulumi.CustomResource):
                  ssh_public_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  system_version: pulumi.Input[Optional[_builtins.str]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_details: pulumi.Input[Optional[Union['VmClusterUpdateDetailsArgs', 'VmClusterUpdateDetailsArgsDict']]] = None,
                  vm_backup_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1483,6 +1560,7 @@ class VmCluster(pulumi.CustomResource):
             __props__.__dict__["ssh_public_keys"] = ssh_public_keys
             __props__.__dict__["system_version"] = system_version
             __props__.__dict__["time_zone"] = time_zone
+            __props__.__dict__["update_details"] = update_details
             __props__.__dict__["vm_backup_storage_type"] = vm_backup_storage_type
             if vm_cluster_network_id is None and not opts.urn:
                 raise TypeError("Missing required property 'vm_cluster_network_id'")
@@ -1494,7 +1572,9 @@ class VmCluster(pulumi.CustomResource):
             __props__.__dict__["cpus_enabled"] = None
             __props__.__dict__["last_patch_history_entry_id"] = None
             __props__.__dict__["lifecycle_details"] = None
+            __props__.__dict__["live_image_version_details"] = None
             __props__.__dict__["ocpus_enabled"] = None
+            __props__.__dict__["oracle_linux_version"] = None
             __props__.__dict__["shape"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["storage_management_type"] = None
@@ -1534,9 +1614,11 @@ class VmCluster(pulumi.CustomResource):
             last_patch_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
             license_model: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            live_image_version_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterLiveImageVersionDetailArgs', 'VmClusterLiveImageVersionDetailArgsDict']]]]] = None,
             memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
             ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
             ocpus_enabled: pulumi.Input[Optional[_builtins.float]] = None,
+            oracle_linux_version: pulumi.Input[Optional[_builtins.str]] = None,
             reco_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
             shape: pulumi.Input[Optional[_builtins.str]] = None,
             sparse_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1547,6 +1629,7 @@ class VmCluster(pulumi.CustomResource):
             system_version: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            update_details: pulumi.Input[Optional[Union['VmClusterUpdateDetailsArgs', 'VmClusterUpdateDetailsArgsDict']]] = None,
             vm_backup_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
             vm_cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
             vm_cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1582,7 +1665,9 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] last_patch_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterLiveImageVersionDetailArgs', 'VmClusterLiveImageVersionDetailArgsDict']]]] live_image_version_details: Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: (Updatable) The memory to be allocated in GBs.
+        :param pulumi.Input[_builtins.str] oracle_linux_version: Oracle Linux version for the respective Exadata Image.
         :param pulumi.Input[_builtins.int] reco_storage_percentage: (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         :param pulumi.Input[_builtins.str] shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         :param pulumi.Input[_builtins.int] sparse_storage_percentage: (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
@@ -1593,6 +1678,7 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] system_version: Operating system version of the image.
         :param pulumi.Input[_builtins.str] time_created: The date and time that the VM cluster was created.
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input[Union['VmClusterUpdateDetailsArgs', 'VmClusterUpdateDetailsArgsDict']] update_details: (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `update_mode` for DomU live update modes or regular full OS update mode.
         :param pulumi.Input[_builtins.str] vm_backup_storage_type: (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
         :param pulumi.Input[_builtins.str] vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         :param pulumi.Input[_builtins.str] vm_cluster_type: The vmcluster type for the VM cluster/Cloud VM cluster.
@@ -1629,9 +1715,11 @@ class VmCluster(pulumi.CustomResource):
         __props__.__dict__["last_patch_history_entry_id"] = last_patch_history_entry_id
         __props__.__dict__["license_model"] = license_model
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["live_image_version_details"] = live_image_version_details
         __props__.__dict__["memory_size_in_gbs"] = memory_size_in_gbs
         __props__.__dict__["ocpu_count"] = ocpu_count
         __props__.__dict__["ocpus_enabled"] = ocpus_enabled
+        __props__.__dict__["oracle_linux_version"] = oracle_linux_version
         __props__.__dict__["reco_storage_percentage"] = reco_storage_percentage
         __props__.__dict__["shape"] = shape
         __props__.__dict__["sparse_storage_percentage"] = sparse_storage_percentage
@@ -1642,6 +1730,7 @@ class VmCluster(pulumi.CustomResource):
         __props__.__dict__["system_version"] = system_version
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_zone"] = time_zone
+        __props__.__dict__["update_details"] = update_details
         __props__.__dict__["vm_backup_storage_type"] = vm_backup_storage_type
         __props__.__dict__["vm_cluster_network_id"] = vm_cluster_network_id
         __props__.__dict__["vm_cluster_type"] = vm_cluster_type
@@ -1841,6 +1930,14 @@ class VmCluster(pulumi.CustomResource):
         return pulumi.get(self, "lifecycle_details")
 
     @_builtins.property
+    @pulumi.getter(name="liveImageVersionDetails")
+    def live_image_version_details(self) -> pulumi.Output[Sequence['outputs.VmClusterLiveImageVersionDetail']]:
+        """
+        Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+        """
+        return pulumi.get(self, "live_image_version_details")
+
+    @_builtins.property
     @pulumi.getter(name="memorySizeInGbs")
     def memory_size_in_gbs(self) -> pulumi.Output[_builtins.int]:
         """
@@ -1857,6 +1954,14 @@ class VmCluster(pulumi.CustomResource):
     @pulumi.getter(name="ocpusEnabled")
     def ocpus_enabled(self) -> pulumi.Output[_builtins.float]:
         return pulumi.get(self, "ocpus_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="oracleLinuxVersion")
+    def oracle_linux_version(self) -> pulumi.Output[_builtins.str]:
+        """
+        Oracle Linux version for the respective Exadata Image.
+        """
+        return pulumi.get(self, "oracle_linux_version")
 
     @_builtins.property
     @pulumi.getter(name="recoStoragePercentage")
@@ -1937,6 +2042,14 @@ class VmCluster(pulumi.CustomResource):
         The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
         return pulumi.get(self, "time_zone")
+
+    @_builtins.property
+    @pulumi.getter(name="updateDetails")
+    def update_details(self) -> pulumi.Output[Optional['outputs.VmClusterUpdateDetails']]:
+        """
+        (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `update_mode` for DomU live update modes or regular full OS update mode.
+        """
+        return pulumi.get(self, "update_details")
 
     @_builtins.property
     @pulumi.getter(name="vmBackupStorageType")

@@ -86,7 +86,7 @@ class GetInstanceAgentPluginsResult:
     @pulumi.getter
     def name(self) -> Optional[_builtins.str]:
         """
-        The plugin name
+        The plugin name.
         """
         return pulumi.get(self, "name")
 
@@ -94,7 +94,7 @@ class GetInstanceAgentPluginsResult:
     @pulumi.getter
     def status(self) -> Optional[_builtins.str]:
         """
-        The plugin status Specified the plugin state on the instance * `RUNNING` - The plugin is in running state * `STOPPED` - The plugin is in stopped state * `NOT_SUPPORTED` - The plugin is not supported on this platform * `INVALID` - The plugin state is not recognizable by the service
+        The plugin status.
         """
         return pulumi.get(self, "status")
 
@@ -123,7 +123,7 @@ def get_instance_agent_plugins(compartment_id: Optional[_builtins.str] = None,
     """
     This data source provides the list of Instance Agent Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
 
-    The API to get one or more plugin information.
+    Gets information about the Oracle Cloud Agent plugins that are available on a specific compute instance.
 
     ## Example Usage
 
@@ -131,15 +131,17 @@ def get_instance_agent_plugins(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_agent_plugins = oci.computeinstanceagent.get_instance_agent_plugins(instanceagent_id=test_instanceagent["id"],
+    test_instance_agent_plugins = oci.computeinstanceagent.get_instance_agent_plugins(compartment_id=compartment_id,
+        instanceagent_id=instanceagent["id"],
         name=instance_agent_plugin_name,
         status=instance_agent_plugin_status)
     ```
 
 
-    :param _builtins.str instanceagent_id: The OCID of the instance.
-    :param _builtins.str name: The plugin name
-    :param _builtins.str status: The plugin status
+    :param _builtins.str compartment_id: The ID of the compartment in which the instance resides
+    :param _builtins.str instanceagent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+    :param _builtins.str name: The plugin name.
+    :param _builtins.str status: The plugin status.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -167,7 +169,7 @@ def get_instance_agent_plugins_output(compartment_id: pulumi.Input[Optional[_bui
     """
     This data source provides the list of Instance Agent Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
 
-    The API to get one or more plugin information.
+    Gets information about the Oracle Cloud Agent plugins that are available on a specific compute instance.
 
     ## Example Usage
 
@@ -175,15 +177,17 @@ def get_instance_agent_plugins_output(compartment_id: pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_agent_plugins = oci.computeinstanceagent.get_instance_agent_plugins(instanceagent_id=test_instanceagent["id"],
+    test_instance_agent_plugins = oci.computeinstanceagent.get_instance_agent_plugins(compartment_id=compartment_id,
+        instanceagent_id=instanceagent["id"],
         name=instance_agent_plugin_name,
         status=instance_agent_plugin_status)
     ```
 
 
-    :param _builtins.str instanceagent_id: The OCID of the instance.
-    :param _builtins.str name: The plugin name
-    :param _builtins.str status: The plugin status
+    :param _builtins.str compartment_id: The ID of the compartment in which the instance resides
+    :param _builtins.str instanceagent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+    :param _builtins.str name: The plugin name.
+    :param _builtins.str status: The plugin status.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id

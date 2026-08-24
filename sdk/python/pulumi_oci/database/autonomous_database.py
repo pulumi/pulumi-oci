@@ -32,6 +32,7 @@ class AutonomousDatabaseArgs:
                  autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  autonomous_database_maintenance_window: pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs']] = None,
                  autonomous_maintenance_schedule_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  backup_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  byol_compute_count_limit: pulumi.Input[Optional[_builtins.float]] = None,
                  character_set: pulumi.Input[Optional[_builtins.str]] = None,
@@ -63,6 +64,7 @@ class AutonomousDatabaseArgs:
                  is_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_dedicated: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_dev_tier: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_disable_ad_update_schedule: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_disable_db_version_upgrade_schedule: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_disconnect_peer: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_free_tier: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -71,6 +73,7 @@ class AutonomousDatabaseArgs:
                  is_preview_version_with_service_terms_accepted: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_refreshable_clone: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_replicate_automatic_backups: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_schedule_ad_update_to_earliest: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_schedule_db_version_upgrade_to_earliest: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_shrink_only: pulumi.Input[Optional[_builtins.bool]] = None,
                  key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -109,6 +112,7 @@ class AutonomousDatabaseArgs:
                  switchover_to_remote_peer_id: pulumi.Input[Optional[_builtins.str]] = None,
                  time_maintenance_pause_until: pulumi.Input[Optional[_builtins.str]] = None,
                  time_of_auto_refresh_start: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_scheduled_ad_update: pulumi.Input[Optional[_builtins.str]] = None,
                  time_scheduled_db_version_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
                  timestamp: pulumi.Input[Optional[_builtins.str]] = None,
                  transportable_tablespace: pulumi.Input[Optional['AutonomousDatabaseTransportableTablespaceArgs']] = None,
@@ -130,6 +134,7 @@ class AutonomousDatabaseArgs:
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
         :param pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs'] autonomous_database_maintenance_window: (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         :param pulumi.Input[_builtins.str] autonomous_maintenance_schedule_type: (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
+        :param pulumi.Input[_builtins.str] availability_domain: (Updatable) The Autonomous Database Serverless instance's availability domain.
         :param pulumi.Input[_builtins.int] backup_retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
         :param pulumi.Input[_builtins.float] byol_compute_count_limit: (Updatable) The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
         :param pulumi.Input[_builtins.str] character_set: The character set for the Autonomous AI Database. The default is AL32UTF8. Allowed values for an Autonomous AI Database Serverless instance as as returned by [List Autonomous AI Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html)
@@ -273,6 +278,7 @@ class AutonomousDatabaseArgs:
         :param pulumi.Input[_builtins.str] switchover_to_remote_peer_id: (Updatable) It is applicable only when `dataguard_region_type` and `role` are set, and `is_dedicated` is false. For Autonomous Database Serverless instances, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to and the API is called from the remote region.
         :param pulumi.Input[_builtins.str] time_maintenance_pause_until: The date until which maintenance of Autonomous Database is temporarily paused.
         :param pulumi.Input[_builtins.str] time_of_auto_refresh_start: (Updatable) The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+        :param pulumi.Input[_builtins.str] time_scheduled_ad_update: The date and time to which the Autonomous Database availability domain update is scheduled.
         :param pulumi.Input[_builtins.str] time_scheduled_db_version_upgrade: The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
         :param pulumi.Input[_builtins.str] timestamp: The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
         :param pulumi.Input['AutonomousDatabaseTransportableTablespaceArgs'] transportable_tablespace: Details for importing transportable tablespace for an Autonomous Database.
@@ -307,6 +313,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "autonomous_database_maintenance_window", autonomous_database_maintenance_window)
         if autonomous_maintenance_schedule_type is not None:
             pulumi.set(__self__, "autonomous_maintenance_schedule_type", autonomous_maintenance_schedule_type)
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if backup_retention_period_in_days is not None:
             pulumi.set(__self__, "backup_retention_period_in_days", backup_retention_period_in_days)
         if byol_compute_count_limit is not None:
@@ -369,6 +377,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "is_dedicated", is_dedicated)
         if is_dev_tier is not None:
             pulumi.set(__self__, "is_dev_tier", is_dev_tier)
+        if is_disable_ad_update_schedule is not None:
+            pulumi.set(__self__, "is_disable_ad_update_schedule", is_disable_ad_update_schedule)
         if is_disable_db_version_upgrade_schedule is not None:
             pulumi.set(__self__, "is_disable_db_version_upgrade_schedule", is_disable_db_version_upgrade_schedule)
         if is_disconnect_peer is not None:
@@ -385,6 +395,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "is_refreshable_clone", is_refreshable_clone)
         if is_replicate_automatic_backups is not None:
             pulumi.set(__self__, "is_replicate_automatic_backups", is_replicate_automatic_backups)
+        if is_schedule_ad_update_to_earliest is not None:
+            pulumi.set(__self__, "is_schedule_ad_update_to_earliest", is_schedule_ad_update_to_earliest)
         if is_schedule_db_version_upgrade_to_earliest is not None:
             pulumi.set(__self__, "is_schedule_db_version_upgrade_to_earliest", is_schedule_db_version_upgrade_to_earliest)
         if is_shrink_only is not None:
@@ -464,6 +476,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "time_maintenance_pause_until", time_maintenance_pause_until)
         if time_of_auto_refresh_start is not None:
             pulumi.set(__self__, "time_of_auto_refresh_start", time_of_auto_refresh_start)
+        if time_scheduled_ad_update is not None:
+            pulumi.set(__self__, "time_scheduled_ad_update", time_scheduled_ad_update)
         if time_scheduled_db_version_upgrade is not None:
             pulumi.set(__self__, "time_scheduled_db_version_upgrade", time_scheduled_db_version_upgrade)
         if timestamp is not None:
@@ -610,6 +624,18 @@ class AutonomousDatabaseArgs:
     @autonomous_maintenance_schedule_type.setter
     def autonomous_maintenance_schedule_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_maintenance_schedule_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The Autonomous Database Serverless instance's availability domain.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @availability_domain.setter
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="backupRetentionPeriodInDays")
@@ -1010,6 +1036,15 @@ class AutonomousDatabaseArgs:
         pulumi.set(self, "is_dev_tier", value)
 
     @_builtins.property
+    @pulumi.getter(name="isDisableAdUpdateSchedule")
+    def is_disable_ad_update_schedule(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "is_disable_ad_update_schedule")
+
+    @is_disable_ad_update_schedule.setter
+    def is_disable_ad_update_schedule(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_disable_ad_update_schedule", value)
+
+    @_builtins.property
     @pulumi.getter(name="isDisableDbVersionUpgradeSchedule")
     def is_disable_db_version_upgrade_schedule(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_disable_db_version_upgrade_schedule")
@@ -1107,6 +1142,15 @@ class AutonomousDatabaseArgs:
     @is_replicate_automatic_backups.setter
     def is_replicate_automatic_backups(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_replicate_automatic_backups", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isScheduleAdUpdateToEarliest")
+    def is_schedule_ad_update_to_earliest(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "is_schedule_ad_update_to_earliest")
+
+    @is_schedule_ad_update_to_earliest.setter
+    def is_schedule_ad_update_to_earliest(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_schedule_ad_update_to_earliest", value)
 
     @_builtins.property
     @pulumi.getter(name="isScheduleDbVersionUpgradeToEarliest")
@@ -1587,6 +1631,18 @@ class AutonomousDatabaseArgs:
         pulumi.set(self, "time_of_auto_refresh_start", value)
 
     @_builtins.property
+    @pulumi.getter(name="timeScheduledAdUpdate")
+    def time_scheduled_ad_update(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date and time to which the Autonomous Database availability domain update is scheduled.
+        """
+        return pulumi.get(self, "time_scheduled_ad_update")
+
+    @time_scheduled_ad_update.setter
+    def time_scheduled_ad_update(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_scheduled_ad_update", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeScheduledDbVersionUpgrade")
     def time_scheduled_db_version_upgrade(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -1681,6 +1737,7 @@ class AutonomousDatabaseArgs:
 class _AutonomousDatabaseState:
     def __init__(__self__, *,
                  actual_used_data_storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 ad_scheduled_for_update: pulumi.Input[Optional[_builtins.str]] = None,
                  additional_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  admin_password: pulumi.Input[Optional[_builtins.str]] = None,
                  allocated_storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
@@ -1740,6 +1797,7 @@ class _AutonomousDatabaseState:
                  is_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_dedicated: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_dev_tier: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_disable_ad_update_schedule: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_disable_db_version_upgrade_schedule: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_disconnect_peer: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_free_tier: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1751,6 +1809,7 @@ class _AutonomousDatabaseState:
                  is_refreshable_clone: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_remote_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_replicate_automatic_backups: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_schedule_ad_update_to_earliest: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_schedule_db_version_upgrade_to_earliest: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_shrink_only: pulumi.Input[Optional[_builtins.bool]] = None,
                  key_history_entries: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseKeyHistoryEntryArgs']]]] = None,
@@ -1816,7 +1875,9 @@ class _AutonomousDatabaseState:
                  time_data_guard_role_changed: pulumi.Input[Optional[_builtins.str]] = None,
                  time_deletion_of_free_autonomous_database: pulumi.Input[Optional[_builtins.str]] = None,
                  time_disaster_recovery_role_changed: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_earliest_available_ad_update: pulumi.Input[Optional[_builtins.str]] = None,
                  time_earliest_available_db_version_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_latest_available_ad_update: pulumi.Input[Optional[_builtins.str]] = None,
                  time_latest_available_db_version_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
                  time_local_data_guard_enabled: pulumi.Input[Optional[_builtins.str]] = None,
                  time_maintenance_begin: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1830,6 +1891,7 @@ class _AutonomousDatabaseState:
                  time_of_last_switchover: pulumi.Input[Optional[_builtins.str]] = None,
                  time_of_next_refresh: pulumi.Input[Optional[_builtins.str]] = None,
                  time_reclamation_of_free_autonomous_database: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_scheduled_ad_update: pulumi.Input[Optional[_builtins.str]] = None,
                  time_scheduled_db_version_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
                  time_undeleted: pulumi.Input[Optional[_builtins.str]] = None,
                  time_until_reconnect_clone_enabled: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1847,6 +1909,7 @@ class _AutonomousDatabaseState:
         Input properties used for looking up and filtering AutonomousDatabase resources.
 
         :param pulumi.Input[_builtins.float] actual_used_data_storage_size_in_tbs: The current amount of storage in use for user and system data, in terabytes (TB).
+        :param pulumi.Input[_builtins.str] ad_scheduled_for_update: The Availability Domain which is planned for Scheduled Update
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_attributes: Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ "gcpAccountName": "gcpName" }`
         :param pulumi.Input[_builtins.str] admin_password: (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE".
         :param pulumi.Input[_builtins.float] allocated_storage_size_in_tbs: The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
@@ -1859,7 +1922,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
         :param pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs'] autonomous_database_maintenance_window: (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         :param pulumi.Input[_builtins.str] autonomous_maintenance_schedule_type: (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
-        :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+        :param pulumi.Input[_builtins.str] availability_domain: (Updatable) The Autonomous Database Serverless instance's availability domain.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] available_upgrade_versions: List of Oracle AI Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupConfigArgs']]] backup_configs: Autonomous AI Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
         :param pulumi.Input[_builtins.int] backup_retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
@@ -2048,7 +2111,9 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[_builtins.str] time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param pulumi.Input[_builtins.str] time_deletion_of_free_autonomous_database: The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
         :param pulumi.Input[_builtins.str] time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
+        :param pulumi.Input[_builtins.str] time_earliest_available_ad_update: The earliest date and time to which you can schedule an Autonomous Database availability domain update.
         :param pulumi.Input[_builtins.str] time_earliest_available_db_version_upgrade: The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
+        :param pulumi.Input[_builtins.str] time_latest_available_ad_update: The latest date and time to which you can schedule an Autonomous Database availability domain update.
         :param pulumi.Input[_builtins.str] time_latest_available_db_version_upgrade: The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
         :param pulumi.Input[_builtins.str] time_local_data_guard_enabled: The date and time that Autonomous Data Guard was enabled for an Autonomous AI Database where the standby was provisioned in the same region as the primary database.
         :param pulumi.Input[_builtins.str] time_maintenance_begin: The date and time when maintenance will begin.
@@ -2062,6 +2127,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[_builtins.str] time_of_last_switchover: The timestamp of the last switchover operation for the Autonomous AI Database.
         :param pulumi.Input[_builtins.str] time_of_next_refresh: The date and time of next refresh.
         :param pulumi.Input[_builtins.str] time_reclamation_of_free_autonomous_database: The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
+        :param pulumi.Input[_builtins.str] time_scheduled_ad_update: The date and time to which the Autonomous Database availability domain update is scheduled.
         :param pulumi.Input[_builtins.str] time_scheduled_db_version_upgrade: The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
         :param pulumi.Input[_builtins.str] time_undeleted: The date and time the Autonomous AI Database was most recently undeleted.
         :param pulumi.Input[_builtins.str] time_until_reconnect_clone_enabled: The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
@@ -2084,6 +2150,8 @@ class _AutonomousDatabaseState:
         """
         if actual_used_data_storage_size_in_tbs is not None:
             pulumi.set(__self__, "actual_used_data_storage_size_in_tbs", actual_used_data_storage_size_in_tbs)
+        if ad_scheduled_for_update is not None:
+            pulumi.set(__self__, "ad_scheduled_for_update", ad_scheduled_for_update)
         if additional_attributes is not None:
             pulumi.set(__self__, "additional_attributes", additional_attributes)
         if admin_password is not None:
@@ -2202,6 +2270,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "is_dedicated", is_dedicated)
         if is_dev_tier is not None:
             pulumi.set(__self__, "is_dev_tier", is_dev_tier)
+        if is_disable_ad_update_schedule is not None:
+            pulumi.set(__self__, "is_disable_ad_update_schedule", is_disable_ad_update_schedule)
         if is_disable_db_version_upgrade_schedule is not None:
             pulumi.set(__self__, "is_disable_db_version_upgrade_schedule", is_disable_db_version_upgrade_schedule)
         if is_disconnect_peer is not None:
@@ -2224,6 +2294,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "is_remote_data_guard_enabled", is_remote_data_guard_enabled)
         if is_replicate_automatic_backups is not None:
             pulumi.set(__self__, "is_replicate_automatic_backups", is_replicate_automatic_backups)
+        if is_schedule_ad_update_to_earliest is not None:
+            pulumi.set(__self__, "is_schedule_ad_update_to_earliest", is_schedule_ad_update_to_earliest)
         if is_schedule_db_version_upgrade_to_earliest is not None:
             pulumi.set(__self__, "is_schedule_db_version_upgrade_to_earliest", is_schedule_db_version_upgrade_to_earliest)
         if is_shrink_only is not None:
@@ -2357,8 +2429,12 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "time_deletion_of_free_autonomous_database", time_deletion_of_free_autonomous_database)
         if time_disaster_recovery_role_changed is not None:
             pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
+        if time_earliest_available_ad_update is not None:
+            pulumi.set(__self__, "time_earliest_available_ad_update", time_earliest_available_ad_update)
         if time_earliest_available_db_version_upgrade is not None:
             pulumi.set(__self__, "time_earliest_available_db_version_upgrade", time_earliest_available_db_version_upgrade)
+        if time_latest_available_ad_update is not None:
+            pulumi.set(__self__, "time_latest_available_ad_update", time_latest_available_ad_update)
         if time_latest_available_db_version_upgrade is not None:
             pulumi.set(__self__, "time_latest_available_db_version_upgrade", time_latest_available_db_version_upgrade)
         if time_local_data_guard_enabled is not None:
@@ -2385,6 +2461,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "time_of_next_refresh", time_of_next_refresh)
         if time_reclamation_of_free_autonomous_database is not None:
             pulumi.set(__self__, "time_reclamation_of_free_autonomous_database", time_reclamation_of_free_autonomous_database)
+        if time_scheduled_ad_update is not None:
+            pulumi.set(__self__, "time_scheduled_ad_update", time_scheduled_ad_update)
         if time_scheduled_db_version_upgrade is not None:
             pulumi.set(__self__, "time_scheduled_db_version_upgrade", time_scheduled_db_version_upgrade)
         if time_undeleted is not None:
@@ -2423,6 +2501,18 @@ class _AutonomousDatabaseState:
     @actual_used_data_storage_size_in_tbs.setter
     def actual_used_data_storage_size_in_tbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "actual_used_data_storage_size_in_tbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="adScheduledForUpdate")
+    def ad_scheduled_for_update(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The Availability Domain which is planned for Scheduled Update
+        """
+        return pulumi.get(self, "ad_scheduled_for_update")
+
+    @ad_scheduled_for_update.setter
+    def ad_scheduled_for_update(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ad_scheduled_for_update", value)
 
     @_builtins.property
     @pulumi.getter(name="additionalAttributes")
@@ -2572,7 +2662,7 @@ class _AutonomousDatabaseState:
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+        (Updatable) The Autonomous Database Serverless instance's availability domain.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -3159,6 +3249,15 @@ class _AutonomousDatabaseState:
         pulumi.set(self, "is_dev_tier", value)
 
     @_builtins.property
+    @pulumi.getter(name="isDisableAdUpdateSchedule")
+    def is_disable_ad_update_schedule(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "is_disable_ad_update_schedule")
+
+    @is_disable_ad_update_schedule.setter
+    def is_disable_ad_update_schedule(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_disable_ad_update_schedule", value)
+
+    @_builtins.property
     @pulumi.getter(name="isDisableDbVersionUpgradeSchedule")
     def is_disable_db_version_upgrade_schedule(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_disable_db_version_upgrade_schedule")
@@ -3292,6 +3391,15 @@ class _AutonomousDatabaseState:
     @is_replicate_automatic_backups.setter
     def is_replicate_automatic_backups(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_replicate_automatic_backups", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isScheduleAdUpdateToEarliest")
+    def is_schedule_ad_update_to_earliest(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "is_schedule_ad_update_to_earliest")
+
+    @is_schedule_ad_update_to_earliest.setter
+    def is_schedule_ad_update_to_earliest(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_schedule_ad_update_to_earliest", value)
 
     @_builtins.property
     @pulumi.getter(name="isScheduleDbVersionUpgradeToEarliest")
@@ -4096,6 +4204,18 @@ class _AutonomousDatabaseState:
         pulumi.set(self, "time_disaster_recovery_role_changed", value)
 
     @_builtins.property
+    @pulumi.getter(name="timeEarliestAvailableAdUpdate")
+    def time_earliest_available_ad_update(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The earliest date and time to which you can schedule an Autonomous Database availability domain update.
+        """
+        return pulumi.get(self, "time_earliest_available_ad_update")
+
+    @time_earliest_available_ad_update.setter
+    def time_earliest_available_ad_update(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_earliest_available_ad_update", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeEarliestAvailableDbVersionUpgrade")
     def time_earliest_available_db_version_upgrade(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -4106,6 +4226,18 @@ class _AutonomousDatabaseState:
     @time_earliest_available_db_version_upgrade.setter
     def time_earliest_available_db_version_upgrade(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_earliest_available_db_version_upgrade", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeLatestAvailableAdUpdate")
+    def time_latest_available_ad_update(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The latest date and time to which you can schedule an Autonomous Database availability domain update.
+        """
+        return pulumi.get(self, "time_latest_available_ad_update")
+
+    @time_latest_available_ad_update.setter
+    def time_latest_available_ad_update(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_latest_available_ad_update", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLatestAvailableDbVersionUpgrade")
@@ -4262,6 +4394,18 @@ class _AutonomousDatabaseState:
     @time_reclamation_of_free_autonomous_database.setter
     def time_reclamation_of_free_autonomous_database(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_reclamation_of_free_autonomous_database", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeScheduledAdUpdate")
+    def time_scheduled_ad_update(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date and time to which the Autonomous Database availability domain update is scheduled.
+        """
+        return pulumi.get(self, "time_scheduled_ad_update")
+
+    @time_scheduled_ad_update.setter
+    def time_scheduled_ad_update(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_scheduled_ad_update", value)
 
     @_builtins.property
     @pulumi.getter(name="timeScheduledDbVersionUpgrade")
@@ -4441,6 +4585,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  autonomous_database_maintenance_window: pulumi.Input[Optional[Union['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs', 'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict']]] = None,
                  autonomous_maintenance_schedule_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  backup_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  byol_compute_count_limit: pulumi.Input[Optional[_builtins.float]] = None,
                  character_set: pulumi.Input[Optional[_builtins.str]] = None,
@@ -4474,6 +4619,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  is_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_dedicated: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_dev_tier: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_disable_ad_update_schedule: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_disable_db_version_upgrade_schedule: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_disconnect_peer: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_free_tier: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -4482,6 +4628,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  is_preview_version_with_service_terms_accepted: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_refreshable_clone: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_replicate_automatic_backups: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_schedule_ad_update_to_earliest: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_schedule_db_version_upgrade_to_earliest: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_shrink_only: pulumi.Input[Optional[_builtins.bool]] = None,
                  key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -4520,6 +4667,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  switchover_to_remote_peer_id: pulumi.Input[Optional[_builtins.str]] = None,
                  time_maintenance_pause_until: pulumi.Input[Optional[_builtins.str]] = None,
                  time_of_auto_refresh_start: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_scheduled_ad_update: pulumi.Input[Optional[_builtins.str]] = None,
                  time_scheduled_db_version_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
                  timestamp: pulumi.Input[Optional[_builtins.str]] = None,
                  transportable_tablespace: pulumi.Input[Optional[Union['AutonomousDatabaseTransportableTablespaceArgs', 'AutonomousDatabaseTransportableTablespaceArgsDict']]] = None,
@@ -4556,6 +4704,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
         :param pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs', 'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict']] autonomous_database_maintenance_window: (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         :param pulumi.Input[_builtins.str] autonomous_maintenance_schedule_type: (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
+        :param pulumi.Input[_builtins.str] availability_domain: (Updatable) The Autonomous Database Serverless instance's availability domain.
         :param pulumi.Input[_builtins.int] backup_retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
         :param pulumi.Input[_builtins.float] byol_compute_count_limit: (Updatable) The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
         :param pulumi.Input[_builtins.str] character_set: The character set for the Autonomous AI Database. The default is AL32UTF8. Allowed values for an Autonomous AI Database Serverless instance as as returned by [List Autonomous AI Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html)
@@ -4701,6 +4850,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] switchover_to_remote_peer_id: (Updatable) It is applicable only when `dataguard_region_type` and `role` are set, and `is_dedicated` is false. For Autonomous Database Serverless instances, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to and the API is called from the remote region.
         :param pulumi.Input[_builtins.str] time_maintenance_pause_until: The date until which maintenance of Autonomous Database is temporarily paused.
         :param pulumi.Input[_builtins.str] time_of_auto_refresh_start: (Updatable) The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+        :param pulumi.Input[_builtins.str] time_scheduled_ad_update: The date and time to which the Autonomous Database availability domain update is scheduled.
         :param pulumi.Input[_builtins.str] time_scheduled_db_version_upgrade: The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
         :param pulumi.Input[_builtins.str] timestamp: The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
         :param pulumi.Input[Union['AutonomousDatabaseTransportableTablespaceArgs', 'AutonomousDatabaseTransportableTablespaceArgsDict']] transportable_tablespace: Details for importing transportable tablespace for an Autonomous Database.
@@ -4762,6 +4912,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  autonomous_database_maintenance_window: pulumi.Input[Optional[Union['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs', 'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict']]] = None,
                  autonomous_maintenance_schedule_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  backup_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  byol_compute_count_limit: pulumi.Input[Optional[_builtins.float]] = None,
                  character_set: pulumi.Input[Optional[_builtins.str]] = None,
@@ -4795,6 +4946,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  is_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_dedicated: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_dev_tier: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_disable_ad_update_schedule: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_disable_db_version_upgrade_schedule: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_disconnect_peer: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_free_tier: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -4803,6 +4955,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  is_preview_version_with_service_terms_accepted: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_refreshable_clone: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_replicate_automatic_backups: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_schedule_ad_update_to_earliest: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_schedule_db_version_upgrade_to_earliest: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_shrink_only: pulumi.Input[Optional[_builtins.bool]] = None,
                  key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -4841,6 +4994,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  switchover_to_remote_peer_id: pulumi.Input[Optional[_builtins.str]] = None,
                  time_maintenance_pause_until: pulumi.Input[Optional[_builtins.str]] = None,
                  time_of_auto_refresh_start: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_scheduled_ad_update: pulumi.Input[Optional[_builtins.str]] = None,
                  time_scheduled_db_version_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
                  timestamp: pulumi.Input[Optional[_builtins.str]] = None,
                  transportable_tablespace: pulumi.Input[Optional[Union['AutonomousDatabaseTransportableTablespaceArgs', 'AutonomousDatabaseTransportableTablespaceArgsDict']]] = None,
@@ -4866,6 +5020,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["autonomous_database_id"] = autonomous_database_id
             __props__.__dict__["autonomous_database_maintenance_window"] = autonomous_database_maintenance_window
             __props__.__dict__["autonomous_maintenance_schedule_type"] = autonomous_maintenance_schedule_type
+            __props__.__dict__["availability_domain"] = availability_domain
             __props__.__dict__["backup_retention_period_in_days"] = backup_retention_period_in_days
             __props__.__dict__["byol_compute_count_limit"] = byol_compute_count_limit
             __props__.__dict__["character_set"] = character_set
@@ -4903,6 +5058,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["is_data_guard_enabled"] = is_data_guard_enabled
             __props__.__dict__["is_dedicated"] = is_dedicated
             __props__.__dict__["is_dev_tier"] = is_dev_tier
+            __props__.__dict__["is_disable_ad_update_schedule"] = is_disable_ad_update_schedule
             __props__.__dict__["is_disable_db_version_upgrade_schedule"] = is_disable_db_version_upgrade_schedule
             __props__.__dict__["is_disconnect_peer"] = is_disconnect_peer
             __props__.__dict__["is_free_tier"] = is_free_tier
@@ -4911,6 +5067,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["is_preview_version_with_service_terms_accepted"] = is_preview_version_with_service_terms_accepted
             __props__.__dict__["is_refreshable_clone"] = is_refreshable_clone
             __props__.__dict__["is_replicate_automatic_backups"] = is_replicate_automatic_backups
+            __props__.__dict__["is_schedule_ad_update_to_earliest"] = is_schedule_ad_update_to_earliest
             __props__.__dict__["is_schedule_db_version_upgrade_to_earliest"] = is_schedule_db_version_upgrade_to_earliest
             __props__.__dict__["is_shrink_only"] = is_shrink_only
             __props__.__dict__["key_version_id"] = key_version_id
@@ -4949,6 +5106,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["switchover_to_remote_peer_id"] = switchover_to_remote_peer_id
             __props__.__dict__["time_maintenance_pause_until"] = time_maintenance_pause_until
             __props__.__dict__["time_of_auto_refresh_start"] = time_of_auto_refresh_start
+            __props__.__dict__["time_scheduled_ad_update"] = time_scheduled_ad_update
             __props__.__dict__["time_scheduled_db_version_upgrade"] = time_scheduled_db_version_upgrade
             __props__.__dict__["timestamp"] = timestamp
             __props__.__dict__["transportable_tablespace"] = transportable_tablespace
@@ -4957,10 +5115,10 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["vault_id"] = vault_id
             __props__.__dict__["whitelisted_ips"] = whitelisted_ips
             __props__.__dict__["actual_used_data_storage_size_in_tbs"] = None
+            __props__.__dict__["ad_scheduled_for_update"] = None
             __props__.__dict__["additional_attributes"] = None
             __props__.__dict__["allocated_storage_size_in_tbs"] = None
             __props__.__dict__["apex_details"] = None
-            __props__.__dict__["availability_domain"] = None
             __props__.__dict__["available_upgrade_versions"] = None
             __props__.__dict__["backup_configs"] = None
             __props__.__dict__["cluster_placement_group_id"] = None
@@ -5006,7 +5164,9 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["time_data_guard_role_changed"] = None
             __props__.__dict__["time_deletion_of_free_autonomous_database"] = None
             __props__.__dict__["time_disaster_recovery_role_changed"] = None
+            __props__.__dict__["time_earliest_available_ad_update"] = None
             __props__.__dict__["time_earliest_available_db_version_upgrade"] = None
+            __props__.__dict__["time_latest_available_ad_update"] = None
             __props__.__dict__["time_latest_available_db_version_upgrade"] = None
             __props__.__dict__["time_local_data_guard_enabled"] = None
             __props__.__dict__["time_maintenance_begin"] = None
@@ -5037,6 +5197,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             actual_used_data_storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+            ad_scheduled_for_update: pulumi.Input[Optional[_builtins.str]] = None,
             additional_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             admin_password: pulumi.Input[Optional[_builtins.str]] = None,
             allocated_storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
@@ -5096,6 +5257,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             is_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_dedicated: pulumi.Input[Optional[_builtins.bool]] = None,
             is_dev_tier: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_disable_ad_update_schedule: pulumi.Input[Optional[_builtins.bool]] = None,
             is_disable_db_version_upgrade_schedule: pulumi.Input[Optional[_builtins.bool]] = None,
             is_disconnect_peer: pulumi.Input[Optional[_builtins.bool]] = None,
             is_free_tier: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -5107,6 +5269,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             is_refreshable_clone: pulumi.Input[Optional[_builtins.bool]] = None,
             is_remote_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_replicate_automatic_backups: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_schedule_ad_update_to_earliest: pulumi.Input[Optional[_builtins.bool]] = None,
             is_schedule_db_version_upgrade_to_earliest: pulumi.Input[Optional[_builtins.bool]] = None,
             is_shrink_only: pulumi.Input[Optional[_builtins.bool]] = None,
             key_history_entries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseKeyHistoryEntryArgs', 'AutonomousDatabaseKeyHistoryEntryArgsDict']]]]] = None,
@@ -5172,7 +5335,9 @@ class AutonomousDatabase(pulumi.CustomResource):
             time_data_guard_role_changed: pulumi.Input[Optional[_builtins.str]] = None,
             time_deletion_of_free_autonomous_database: pulumi.Input[Optional[_builtins.str]] = None,
             time_disaster_recovery_role_changed: pulumi.Input[Optional[_builtins.str]] = None,
+            time_earliest_available_ad_update: pulumi.Input[Optional[_builtins.str]] = None,
             time_earliest_available_db_version_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
+            time_latest_available_ad_update: pulumi.Input[Optional[_builtins.str]] = None,
             time_latest_available_db_version_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
             time_local_data_guard_enabled: pulumi.Input[Optional[_builtins.str]] = None,
             time_maintenance_begin: pulumi.Input[Optional[_builtins.str]] = None,
@@ -5186,6 +5351,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             time_of_last_switchover: pulumi.Input[Optional[_builtins.str]] = None,
             time_of_next_refresh: pulumi.Input[Optional[_builtins.str]] = None,
             time_reclamation_of_free_autonomous_database: pulumi.Input[Optional[_builtins.str]] = None,
+            time_scheduled_ad_update: pulumi.Input[Optional[_builtins.str]] = None,
             time_scheduled_db_version_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
             time_undeleted: pulumi.Input[Optional[_builtins.str]] = None,
             time_until_reconnect_clone_enabled: pulumi.Input[Optional[_builtins.str]] = None,
@@ -5207,6 +5373,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.float] actual_used_data_storage_size_in_tbs: The current amount of storage in use for user and system data, in terabytes (TB).
+        :param pulumi.Input[_builtins.str] ad_scheduled_for_update: The Availability Domain which is planned for Scheduled Update
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_attributes: Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ "gcpAccountName": "gcpName" }`
         :param pulumi.Input[_builtins.str] admin_password: (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE".
         :param pulumi.Input[_builtins.float] allocated_storage_size_in_tbs: The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
@@ -5219,7 +5386,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
         :param pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs', 'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict']] autonomous_database_maintenance_window: (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         :param pulumi.Input[_builtins.str] autonomous_maintenance_schedule_type: (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
-        :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+        :param pulumi.Input[_builtins.str] availability_domain: (Updatable) The Autonomous Database Serverless instance's availability domain.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] available_upgrade_versions: List of Oracle AI Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseBackupConfigArgs', 'AutonomousDatabaseBackupConfigArgsDict']]]] backup_configs: Autonomous AI Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
         :param pulumi.Input[_builtins.int] backup_retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
@@ -5408,7 +5575,9 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param pulumi.Input[_builtins.str] time_deletion_of_free_autonomous_database: The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
         :param pulumi.Input[_builtins.str] time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
+        :param pulumi.Input[_builtins.str] time_earliest_available_ad_update: The earliest date and time to which you can schedule an Autonomous Database availability domain update.
         :param pulumi.Input[_builtins.str] time_earliest_available_db_version_upgrade: The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
+        :param pulumi.Input[_builtins.str] time_latest_available_ad_update: The latest date and time to which you can schedule an Autonomous Database availability domain update.
         :param pulumi.Input[_builtins.str] time_latest_available_db_version_upgrade: The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
         :param pulumi.Input[_builtins.str] time_local_data_guard_enabled: The date and time that Autonomous Data Guard was enabled for an Autonomous AI Database where the standby was provisioned in the same region as the primary database.
         :param pulumi.Input[_builtins.str] time_maintenance_begin: The date and time when maintenance will begin.
@@ -5422,6 +5591,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_of_last_switchover: The timestamp of the last switchover operation for the Autonomous AI Database.
         :param pulumi.Input[_builtins.str] time_of_next_refresh: The date and time of next refresh.
         :param pulumi.Input[_builtins.str] time_reclamation_of_free_autonomous_database: The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
+        :param pulumi.Input[_builtins.str] time_scheduled_ad_update: The date and time to which the Autonomous Database availability domain update is scheduled.
         :param pulumi.Input[_builtins.str] time_scheduled_db_version_upgrade: The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
         :param pulumi.Input[_builtins.str] time_undeleted: The date and time the Autonomous AI Database was most recently undeleted.
         :param pulumi.Input[_builtins.str] time_until_reconnect_clone_enabled: The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
@@ -5447,6 +5617,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__ = _AutonomousDatabaseState.__new__(_AutonomousDatabaseState)
 
         __props__.__dict__["actual_used_data_storage_size_in_tbs"] = actual_used_data_storage_size_in_tbs
+        __props__.__dict__["ad_scheduled_for_update"] = ad_scheduled_for_update
         __props__.__dict__["additional_attributes"] = additional_attributes
         __props__.__dict__["admin_password"] = admin_password
         __props__.__dict__["allocated_storage_size_in_tbs"] = allocated_storage_size_in_tbs
@@ -5506,6 +5677,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["is_data_guard_enabled"] = is_data_guard_enabled
         __props__.__dict__["is_dedicated"] = is_dedicated
         __props__.__dict__["is_dev_tier"] = is_dev_tier
+        __props__.__dict__["is_disable_ad_update_schedule"] = is_disable_ad_update_schedule
         __props__.__dict__["is_disable_db_version_upgrade_schedule"] = is_disable_db_version_upgrade_schedule
         __props__.__dict__["is_disconnect_peer"] = is_disconnect_peer
         __props__.__dict__["is_free_tier"] = is_free_tier
@@ -5517,6 +5689,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["is_refreshable_clone"] = is_refreshable_clone
         __props__.__dict__["is_remote_data_guard_enabled"] = is_remote_data_guard_enabled
         __props__.__dict__["is_replicate_automatic_backups"] = is_replicate_automatic_backups
+        __props__.__dict__["is_schedule_ad_update_to_earliest"] = is_schedule_ad_update_to_earliest
         __props__.__dict__["is_schedule_db_version_upgrade_to_earliest"] = is_schedule_db_version_upgrade_to_earliest
         __props__.__dict__["is_shrink_only"] = is_shrink_only
         __props__.__dict__["key_history_entries"] = key_history_entries
@@ -5582,7 +5755,9 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["time_data_guard_role_changed"] = time_data_guard_role_changed
         __props__.__dict__["time_deletion_of_free_autonomous_database"] = time_deletion_of_free_autonomous_database
         __props__.__dict__["time_disaster_recovery_role_changed"] = time_disaster_recovery_role_changed
+        __props__.__dict__["time_earliest_available_ad_update"] = time_earliest_available_ad_update
         __props__.__dict__["time_earliest_available_db_version_upgrade"] = time_earliest_available_db_version_upgrade
+        __props__.__dict__["time_latest_available_ad_update"] = time_latest_available_ad_update
         __props__.__dict__["time_latest_available_db_version_upgrade"] = time_latest_available_db_version_upgrade
         __props__.__dict__["time_local_data_guard_enabled"] = time_local_data_guard_enabled
         __props__.__dict__["time_maintenance_begin"] = time_maintenance_begin
@@ -5596,6 +5771,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["time_of_last_switchover"] = time_of_last_switchover
         __props__.__dict__["time_of_next_refresh"] = time_of_next_refresh
         __props__.__dict__["time_reclamation_of_free_autonomous_database"] = time_reclamation_of_free_autonomous_database
+        __props__.__dict__["time_scheduled_ad_update"] = time_scheduled_ad_update
         __props__.__dict__["time_scheduled_db_version_upgrade"] = time_scheduled_db_version_upgrade
         __props__.__dict__["time_undeleted"] = time_undeleted
         __props__.__dict__["time_until_reconnect_clone_enabled"] = time_until_reconnect_clone_enabled
@@ -5618,6 +5794,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         The current amount of storage in use for user and system data, in terabytes (TB).
         """
         return pulumi.get(self, "actual_used_data_storage_size_in_tbs")
+
+    @_builtins.property
+    @pulumi.getter(name="adScheduledForUpdate")
+    def ad_scheduled_for_update(self) -> pulumi.Output[_builtins.str]:
+        """
+        The Availability Domain which is planned for Scheduled Update
+        """
+        return pulumi.get(self, "ad_scheduled_for_update")
 
     @_builtins.property
     @pulumi.getter(name="additionalAttributes")
@@ -5719,7 +5903,7 @@ class AutonomousDatabase(pulumi.CustomResource):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[_builtins.str]:
         """
-        The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+        (Updatable) The Autonomous Database Serverless instance's availability domain.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -6118,6 +6302,11 @@ class AutonomousDatabase(pulumi.CustomResource):
         return pulumi.get(self, "is_dev_tier")
 
     @_builtins.property
+    @pulumi.getter(name="isDisableAdUpdateSchedule")
+    def is_disable_ad_update_schedule(self) -> pulumi.Output[_builtins.bool]:
+        return pulumi.get(self, "is_disable_ad_update_schedule")
+
+    @_builtins.property
     @pulumi.getter(name="isDisableDbVersionUpgradeSchedule")
     def is_disable_db_version_upgrade_schedule(self) -> pulumi.Output[_builtins.bool]:
         return pulumi.get(self, "is_disable_db_version_upgrade_schedule")
@@ -6207,6 +6396,11 @@ class AutonomousDatabase(pulumi.CustomResource):
         If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
         """
         return pulumi.get(self, "is_replicate_automatic_backups")
+
+    @_builtins.property
+    @pulumi.getter(name="isScheduleAdUpdateToEarliest")
+    def is_schedule_ad_update_to_earliest(self) -> pulumi.Output[_builtins.bool]:
+        return pulumi.get(self, "is_schedule_ad_update_to_earliest")
 
     @_builtins.property
     @pulumi.getter(name="isScheduleDbVersionUpgradeToEarliest")
@@ -6751,12 +6945,28 @@ class AutonomousDatabase(pulumi.CustomResource):
         return pulumi.get(self, "time_disaster_recovery_role_changed")
 
     @_builtins.property
+    @pulumi.getter(name="timeEarliestAvailableAdUpdate")
+    def time_earliest_available_ad_update(self) -> pulumi.Output[_builtins.str]:
+        """
+        The earliest date and time to which you can schedule an Autonomous Database availability domain update.
+        """
+        return pulumi.get(self, "time_earliest_available_ad_update")
+
+    @_builtins.property
     @pulumi.getter(name="timeEarliestAvailableDbVersionUpgrade")
     def time_earliest_available_db_version_upgrade(self) -> pulumi.Output[_builtins.str]:
         """
         The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
         """
         return pulumi.get(self, "time_earliest_available_db_version_upgrade")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLatestAvailableAdUpdate")
+    def time_latest_available_ad_update(self) -> pulumi.Output[_builtins.str]:
+        """
+        The latest date and time to which you can schedule an Autonomous Database availability domain update.
+        """
+        return pulumi.get(self, "time_latest_available_ad_update")
 
     @_builtins.property
     @pulumi.getter(name="timeLatestAvailableDbVersionUpgrade")
@@ -6861,6 +7071,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
         """
         return pulumi.get(self, "time_reclamation_of_free_autonomous_database")
+
+    @_builtins.property
+    @pulumi.getter(name="timeScheduledAdUpdate")
+    def time_scheduled_ad_update(self) -> pulumi.Output[_builtins.str]:
+        """
+        The date and time to which the Autonomous Database availability domain update is scheduled.
+        """
+        return pulumi.get(self, "time_scheduled_ad_update")
 
     @_builtins.property
     @pulumi.getter(name="timeScheduledDbVersionUpgrade")

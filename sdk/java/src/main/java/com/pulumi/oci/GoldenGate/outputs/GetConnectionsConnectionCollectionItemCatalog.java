@@ -21,7 +21,9 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
      */
     private String catalogType;
     /**
-     * @return Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+     * @return * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+     * * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+     * * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      * 
      */
     private String clientId;
@@ -33,7 +35,10 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
     @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
     private String clientSecret;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, &#39;clientSecret&#39; field must not be provided.
+     * @return * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     * * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+     * * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     *   Note: When provided, &#39;clientSecret&#39; field must not be provided.
      * 
      */
     private String clientSecretSecretId;
@@ -65,7 +70,9 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
      */
     private String propertiesSecretId;
     /**
-     * @return The URL endpoint for the Polaris API. e.g.: &#39;https://&lt;your-snowflake-account&gt;.snowflakecomputing.com/polaris/api/catalog&#39;
+     * @return * NESSIE: Nessie URI. e.g.: &#39;http://&lt;nessie-server&gt;.com:10001/api/v2&#39;
+     * * POLARIS: The URL endpoint for the Polaris API. e.g.: &#39;https://&lt;your-snowflake-account&gt;.snowflakecomputing.com/polaris/api/catalog&#39;
+     * * REST: The base URL for the REST Catalog API. e.g.: &#39;https://my-rest-catalog.example.com/api/v1&#39;
      * 
      */
     private String uri;
@@ -86,7 +93,9 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
         return this.catalogType;
     }
     /**
-     * @return Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+     * @return * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+     * * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+     * * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      * 
      */
     public String clientId() {
@@ -102,7 +111,10 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
         return this.clientSecret;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, &#39;clientSecret&#39; field must not be provided.
+     * @return * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     * * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+     * * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     *   Note: When provided, &#39;clientSecret&#39; field must not be provided.
      * 
      */
     public String clientSecretSecretId() {
@@ -146,7 +158,9 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
         return this.propertiesSecretId;
     }
     /**
-     * @return The URL endpoint for the Polaris API. e.g.: &#39;https://&lt;your-snowflake-account&gt;.snowflakecomputing.com/polaris/api/catalog&#39;
+     * @return * NESSIE: Nessie URI. e.g.: &#39;http://&lt;nessie-server&gt;.com:10001/api/v2&#39;
+     * * POLARIS: The URL endpoint for the Polaris API. e.g.: &#39;https://&lt;your-snowflake-account&gt;.snowflakecomputing.com/polaris/api/catalog&#39;
+     * * REST: The base URL for the REST Catalog API. e.g.: &#39;https://my-rest-catalog.example.com/api/v1&#39;
      * 
      */
     public String uri() {

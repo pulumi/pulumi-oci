@@ -26,6 +26,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string ConnectionId;
         /// <summary>
+        /// The array of connection types.
+        /// </summary>
+        public readonly string ConnectionType;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
         /// </summary>
         public readonly string DeploymentId;
@@ -55,6 +59,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string connectionId,
 
+            string connectionType,
+
             string deploymentId,
 
             string id,
@@ -70,6 +76,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             AliasName = aliasName;
             CompartmentId = compartmentId;
             ConnectionId = connectionId;
+            ConnectionType = connectionType;
             DeploymentId = deploymentId;
             Id = id;
             IsLockOverride = isLockOverride;

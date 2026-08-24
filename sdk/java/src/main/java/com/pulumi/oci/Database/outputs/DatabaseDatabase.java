@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Database.outputs.DatabaseDatabaseAutoFailoverConfiguration;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseDbBackupConfig;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseEncryptionKeyLocationDetails;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseManagedSoftwareUpdateDetail;
@@ -25,6 +26,11 @@ public final class DatabaseDatabase {
      * 
      */
     private @Nullable String adminPassword;
+    /**
+     * @return The properties for defining auto failover configuration.
+     * 
+     */
+    private @Nullable DatabaseDatabaseAutoFailoverConfiguration autoFailoverConfiguration;
     /**
      * @return The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -142,6 +148,11 @@ public final class DatabaseDatabase {
      */
     private @Nullable String protectionMode;
     /**
+     * @return The password for the VPC user that is used to access the Recovery Appliance, if the given backup is from a backup destination of type RECOVERY_APPLIANCE.
+     * 
+     */
+    private @Nullable String recoveryApplianceVpcPassword;
+    /**
      * @return Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
      */
@@ -202,6 +213,13 @@ public final class DatabaseDatabase {
      */
     public Optional<String> adminPassword() {
         return Optional.ofNullable(this.adminPassword);
+    }
+    /**
+     * @return The properties for defining auto failover configuration.
+     * 
+     */
+    public Optional<DatabaseDatabaseAutoFailoverConfiguration> autoFailoverConfiguration() {
+        return Optional.ofNullable(this.autoFailoverConfiguration);
     }
     /**
      * @return The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -364,6 +382,13 @@ public final class DatabaseDatabase {
         return Optional.ofNullable(this.protectionMode);
     }
     /**
+     * @return The password for the VPC user that is used to access the Recovery Appliance, if the given backup is from a backup destination of type RECOVERY_APPLIANCE.
+     * 
+     */
+    public Optional<String> recoveryApplianceVpcPassword() {
+        return Optional.ofNullable(this.recoveryApplianceVpcPassword);
+    }
+    /**
      * @return Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
      */
@@ -447,6 +472,7 @@ public final class DatabaseDatabase {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String adminPassword;
+        private @Nullable DatabaseDatabaseAutoFailoverConfiguration autoFailoverConfiguration;
         private @Nullable String backupId;
         private @Nullable String backupTdePassword;
         private @Nullable String characterSet;
@@ -469,6 +495,7 @@ public final class DatabaseDatabase {
         private @Nullable String pdbName;
         private @Nullable List<String> pluggableDatabases;
         private @Nullable String protectionMode;
+        private @Nullable String recoveryApplianceVpcPassword;
         private @Nullable String sidPrefix;
         private @Nullable String sourceDatabaseId;
         private @Nullable DatabaseDatabaseSourceEncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails;
@@ -483,6 +510,7 @@ public final class DatabaseDatabase {
         public Builder(DatabaseDatabase defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminPassword = defaults.adminPassword;
+    	      this.autoFailoverConfiguration = defaults.autoFailoverConfiguration;
     	      this.backupId = defaults.backupId;
     	      this.backupTdePassword = defaults.backupTdePassword;
     	      this.characterSet = defaults.characterSet;
@@ -505,6 +533,7 @@ public final class DatabaseDatabase {
     	      this.pdbName = defaults.pdbName;
     	      this.pluggableDatabases = defaults.pluggableDatabases;
     	      this.protectionMode = defaults.protectionMode;
+    	      this.recoveryApplianceVpcPassword = defaults.recoveryApplianceVpcPassword;
     	      this.sidPrefix = defaults.sidPrefix;
     	      this.sourceDatabaseId = defaults.sourceDatabaseId;
     	      this.sourceEncryptionKeyLocationDetails = defaults.sourceEncryptionKeyLocationDetails;
@@ -521,6 +550,12 @@ public final class DatabaseDatabase {
         public Builder adminPassword(@Nullable String adminPassword) {
 
             this.adminPassword = adminPassword;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder autoFailoverConfiguration(@Nullable DatabaseDatabaseAutoFailoverConfiguration autoFailoverConfiguration) {
+
+            this.autoFailoverConfiguration = autoFailoverConfiguration;
             return this;
         }
         @CustomType.Setter
@@ -662,6 +697,12 @@ public final class DatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder recoveryApplianceVpcPassword(@Nullable String recoveryApplianceVpcPassword) {
+
+            this.recoveryApplianceVpcPassword = recoveryApplianceVpcPassword;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sidPrefix(@Nullable String sidPrefix) {
 
             this.sidPrefix = sidPrefix;
@@ -724,6 +765,7 @@ public final class DatabaseDatabase {
         public DatabaseDatabase build() {
             final var _resultValue = new DatabaseDatabase();
             _resultValue.adminPassword = adminPassword;
+            _resultValue.autoFailoverConfiguration = autoFailoverConfiguration;
             _resultValue.backupId = backupId;
             _resultValue.backupTdePassword = backupTdePassword;
             _resultValue.characterSet = characterSet;
@@ -746,6 +788,7 @@ public final class DatabaseDatabase {
             _resultValue.pdbName = pdbName;
             _resultValue.pluggableDatabases = pluggableDatabases;
             _resultValue.protectionMode = protectionMode;
+            _resultValue.recoveryApplianceVpcPassword = recoveryApplianceVpcPassword;
             _resultValue.sidPrefix = sidPrefix;
             _resultValue.sourceDatabaseId = sourceDatabaseId;
             _resultValue.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;

@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Instance Agent Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
 //
-// The API to get one or more plugin information.
+// Gets information about the Oracle Cloud Agent plugins that are available on a specific compute instance.
 //
 // ## Example Usage
 //
@@ -30,7 +30,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := computeinstanceagent.GetInstanceAgentPlugins(ctx, &computeinstanceagent.GetInstanceAgentPluginsArgs{
-//				InstanceagentId: testInstanceagent.Id,
+//				CompartmentId:   compartmentId,
+//				InstanceagentId: instanceagent.Id,
 //				Name:            pulumi.StringRef(instanceAgentPluginName),
 //				Status:          pulumi.StringRef(instanceAgentPluginStatus),
 //			}, nil)
@@ -54,13 +55,14 @@ func GetInstanceAgentPlugins(ctx *pulumi.Context, args *GetInstanceAgentPluginsA
 
 // A collection of arguments for invoking getInstanceAgentPlugins.
 type GetInstanceAgentPluginsArgs struct {
+	// The ID of the compartment in which the instance resides
 	CompartmentId string                          `pulumi:"compartmentId"`
 	Filters       []GetInstanceAgentPluginsFilter `pulumi:"filters"`
-	// The OCID of the instance.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
 	InstanceagentId string `pulumi:"instanceagentId"`
-	// The plugin name
+	// The plugin name.
 	Name *string `pulumi:"name"`
-	// The plugin status
+	// The plugin status.
 	Status *string `pulumi:"status"`
 }
 
@@ -73,9 +75,9 @@ type GetInstanceAgentPluginsResult struct {
 	// The list of instance_agent_plugins.
 	InstanceAgentPlugins []GetInstanceAgentPluginsInstanceAgentPlugin `pulumi:"instanceAgentPlugins"`
 	InstanceagentId      string                                       `pulumi:"instanceagentId"`
-	// The plugin name
+	// The plugin name.
 	Name *string `pulumi:"name"`
-	// The plugin status Specified the plugin state on the instance * `RUNNING` - The plugin is in running state * `STOPPED` - The plugin is in stopped state * `NOT_SUPPORTED` - The plugin is not supported on this platform * `INVALID` - The plugin state is not recognizable by the service
+	// The plugin status.
 	Status *string `pulumi:"status"`
 }
 
@@ -90,13 +92,14 @@ func GetInstanceAgentPluginsOutput(ctx *pulumi.Context, args GetInstanceAgentPlu
 
 // A collection of arguments for invoking getInstanceAgentPlugins.
 type GetInstanceAgentPluginsOutputArgs struct {
+	// The ID of the compartment in which the instance resides
 	CompartmentId pulumi.StringInput                      `pulumi:"compartmentId"`
 	Filters       GetInstanceAgentPluginsFilterArrayInput `pulumi:"filters"`
-	// The OCID of the instance.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
 	InstanceagentId pulumi.StringInput `pulumi:"instanceagentId"`
-	// The plugin name
+	// The plugin name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// The plugin status
+	// The plugin status.
 	Status pulumi.StringPtrInput `pulumi:"status"`
 }
 
@@ -143,12 +146,12 @@ func (o GetInstanceAgentPluginsResultOutput) InstanceagentId() pulumi.StringOutp
 	return o.ApplyT(func(v GetInstanceAgentPluginsResult) string { return v.InstanceagentId }).(pulumi.StringOutput)
 }
 
-// The plugin name
+// The plugin name.
 func (o GetInstanceAgentPluginsResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetInstanceAgentPluginsResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// The plugin status Specified the plugin state on the instance * `RUNNING` - The plugin is in running state * `STOPPED` - The plugin is in stopped state * `NOT_SUPPORTED` - The plugin is not supported on this platform * `INVALID` - The plugin state is not recognizable by the service
+// The plugin status.
 func (o GetInstanceAgentPluginsResultOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetInstanceAgentPluginsResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }

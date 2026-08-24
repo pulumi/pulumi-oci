@@ -42,6 +42,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? RemoteRegion;
         /// <summary>
+        /// Backup destination for the TDE wallet backups.
+        /// </summary>
+        public readonly Outputs.DatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination? TdeWalletBackupDestination;
+        /// <summary>
         /// Type of the database backup destination.
         /// </summary>
         public readonly string? Type;
@@ -64,6 +68,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? remoteRegion,
 
+            Outputs.DatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination? tdeWalletBackupDestination,
+
             string? type,
 
             string? vpcPassword,
@@ -77,6 +83,7 @@ namespace Pulumi.Oci.Database.Outputs
             IsRetentionLockEnabled = isRetentionLockEnabled;
             IsZeroDataLossEnabled = isZeroDataLossEnabled;
             RemoteRegion = remoteRegion;
+            TdeWalletBackupDestination = tdeWalletBackupDestination;
             Type = type;
             VpcPassword = vpcPassword;
             VpcUser = vpcUser;

@@ -30,6 +30,8 @@ namespace Pulumi.Oci.GoldenGate
         ///     {
         ///         CompartmentId = compartmentId,
         ///         ConnectionId = testConnection.Id,
+        ///         ConnectionTypes = connectionAssignmentConnectionType,
+        ///         ConnectionTypeNotEqualTos = connectionAssignmentConnectionTypeNotEqualTo,
         ///         DeploymentId = testDeployment.Id,
         ///         Name = connectionAssignmentName,
         ///         State = connectionAssignmentState,
@@ -60,6 +62,8 @@ namespace Pulumi.Oci.GoldenGate
         ///     {
         ///         CompartmentId = compartmentId,
         ///         ConnectionId = testConnection.Id,
+        ///         ConnectionTypes = connectionAssignmentConnectionType,
+        ///         ConnectionTypeNotEqualTos = connectionAssignmentConnectionTypeNotEqualTo,
         ///         DeploymentId = testDeployment.Id,
         ///         Name = connectionAssignmentName,
         ///         State = connectionAssignmentState,
@@ -90,6 +94,8 @@ namespace Pulumi.Oci.GoldenGate
         ///     {
         ///         CompartmentId = compartmentId,
         ///         ConnectionId = testConnection.Id,
+        ///         ConnectionTypes = connectionAssignmentConnectionType,
+        ///         ConnectionTypeNotEqualTos = connectionAssignmentConnectionTypeNotEqualTo,
         ///         DeploymentId = testDeployment.Id,
         ///         Name = connectionAssignmentName,
         ///         State = connectionAssignmentState,
@@ -116,6 +122,30 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("connectionId")]
         public string? ConnectionId { get; set; }
+
+        [Input("connectionTypeNotEqualTos")]
+        private List<string>? _connectionTypeNotEqualTos;
+
+        /// <summary>
+        /// The array of connection types to exclude.
+        /// </summary>
+        public List<string> ConnectionTypeNotEqualTos
+        {
+            get => _connectionTypeNotEqualTos ?? (_connectionTypeNotEqualTos = new List<string>());
+            set => _connectionTypeNotEqualTos = value;
+        }
+
+        [Input("connectionTypes")]
+        private List<string>? _connectionTypes;
+
+        /// <summary>
+        /// The array of connection types.
+        /// </summary>
+        public List<string> ConnectionTypes
+        {
+            get => _connectionTypes ?? (_connectionTypes = new List<string>());
+            set => _connectionTypes = value;
+        }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
@@ -162,6 +192,30 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("connectionId")]
         public Input<string>? ConnectionId { get; set; }
+
+        [Input("connectionTypeNotEqualTos")]
+        private InputList<string>? _connectionTypeNotEqualTos;
+
+        /// <summary>
+        /// The array of connection types to exclude.
+        /// </summary>
+        public InputList<string> ConnectionTypeNotEqualTos
+        {
+            get => _connectionTypeNotEqualTos ?? (_connectionTypeNotEqualTos = new InputList<string>());
+            set => _connectionTypeNotEqualTos = value;
+        }
+
+        [Input("connectionTypes")]
+        private InputList<string>? _connectionTypes;
+
+        /// <summary>
+        /// The array of connection types.
+        /// </summary>
+        public InputList<string> ConnectionTypes
+        {
+            get => _connectionTypes ?? (_connectionTypes = new InputList<string>());
+            set => _connectionTypes = value;
+        }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
@@ -211,6 +265,11 @@ namespace Pulumi.Oci.GoldenGate
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
         /// </summary>
         public readonly string? ConnectionId;
+        public readonly ImmutableArray<string> ConnectionTypeNotEqualTos;
+        /// <summary>
+        /// The connection type.
+        /// </summary>
+        public readonly ImmutableArray<string> ConnectionTypes;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         /// </summary>
@@ -234,6 +293,10 @@ namespace Pulumi.Oci.GoldenGate
 
             string? connectionId,
 
+            ImmutableArray<string> connectionTypeNotEqualTos,
+
+            ImmutableArray<string> connectionTypes,
+
             string? deploymentId,
 
             ImmutableArray<Outputs.GetConnectionAssignmentsFilterResult> filters,
@@ -247,6 +310,8 @@ namespace Pulumi.Oci.GoldenGate
             CompartmentId = compartmentId;
             ConnectionAssignmentCollections = connectionAssignmentCollections;
             ConnectionId = connectionId;
+            ConnectionTypeNotEqualTos = connectionTypeNotEqualTos;
+            ConnectionTypes = connectionTypes;
             DeploymentId = deploymentId;
             Filters = filters;
             Id = id;

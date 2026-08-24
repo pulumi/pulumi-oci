@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? AdminPassword;
         /// <summary>
+        /// The properties for defining auto failover configuration.
+        /// </summary>
+        public readonly Outputs.DatabaseDatabaseAutoFailoverConfiguration? AutoFailoverConfiguration;
+        /// <summary>
         /// The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string? BackupId;
@@ -112,6 +116,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? ProtectionMode;
         /// <summary>
+        /// The password for the VPC user that is used to access the Recovery Appliance, if the given backup is from a backup destination of type RECOVERY_APPLIANCE.
+        /// </summary>
+        public readonly string? RecoveryApplianceVpcPassword;
+        /// <summary>
         /// Specifies a prefix for the `Oracle SID` of the database to be created.
         /// </summary>
         public readonly string? SidPrefix;
@@ -160,6 +168,8 @@ namespace Pulumi.Oci.Database.Outputs
         private DatabaseDatabase(
             string? adminPassword,
 
+            Outputs.DatabaseDatabaseAutoFailoverConfiguration? autoFailoverConfiguration,
+
             string? backupId,
 
             string? backupTdePassword,
@@ -204,6 +214,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? protectionMode,
 
+            string? recoveryApplianceVpcPassword,
+
             string? sidPrefix,
 
             string? sourceDatabaseId,
@@ -225,6 +237,7 @@ namespace Pulumi.Oci.Database.Outputs
             string? vmClusterId)
         {
             AdminPassword = adminPassword;
+            AutoFailoverConfiguration = autoFailoverConfiguration;
             BackupId = backupId;
             BackupTdePassword = backupTdePassword;
             CharacterSet = characterSet;
@@ -247,6 +260,7 @@ namespace Pulumi.Oci.Database.Outputs
             PdbName = pdbName;
             PluggableDatabases = pluggableDatabases;
             ProtectionMode = protectionMode;
+            RecoveryApplianceVpcPassword = recoveryApplianceVpcPassword;
             SidPrefix = sidPrefix;
             SourceDatabaseId = sourceDatabaseId;
             SourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;

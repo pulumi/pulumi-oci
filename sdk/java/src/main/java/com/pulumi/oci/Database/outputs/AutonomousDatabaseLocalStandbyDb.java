@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AutonomousDatabaseLocalStandbyDb {
     /**
-     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+     * @return (Updatable) The Autonomous Database Serverless instance&#39;s availability domain.
      * 
      */
     private @Nullable String availabilityDomain;
@@ -65,7 +65,7 @@ public final class AutonomousDatabaseLocalStandbyDb {
 
     private AutonomousDatabaseLocalStandbyDb() {}
     /**
-     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+     * @return (Updatable) The Autonomous Database Serverless instance&#39;s availability domain.
      * 
      */
     public Optional<String> availabilityDomain() {

@@ -111,11 +111,19 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetVmClustersVmClusterLiveImageVersionDetailResult> LiveImageVersionDetails;
+        /// <summary>
         /// The memory allocated in GBs.
         /// </summary>
         public readonly int MemorySizeInGbs;
         public readonly double OcpuCount;
         public readonly double OcpusEnabled;
+        /// <summary>
+        /// Oracle Linux version for the respective Exadata Image.
+        /// </summary>
+        public readonly string OracleLinuxVersion;
         /// <summary>
         /// The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         /// </summary>
@@ -156,6 +164,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         /// </summary>
         public readonly string TimeZone;
+        public readonly ImmutableArray<Outputs.GetVmClustersVmClusterUpdateDetailResult> UpdateDetails;
         /// <summary>
         /// Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL.
         /// </summary>
@@ -225,11 +234,15 @@ namespace Pulumi.Oci.Database.Outputs
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetVmClustersVmClusterLiveImageVersionDetailResult> liveImageVersionDetails,
+
             int memorySizeInGbs,
 
             double ocpuCount,
 
             double ocpusEnabled,
+
+            string oracleLinuxVersion,
 
             int recoStoragePercentage,
 
@@ -250,6 +263,8 @@ namespace Pulumi.Oci.Database.Outputs
             string timeCreated,
 
             string timeZone,
+
+            ImmutableArray<Outputs.GetVmClustersVmClusterUpdateDetailResult> updateDetails,
 
             string vmBackupStorageType,
 
@@ -284,9 +299,11 @@ namespace Pulumi.Oci.Database.Outputs
             LastPatchHistoryEntryId = lastPatchHistoryEntryId;
             LicenseModel = licenseModel;
             LifecycleDetails = lifecycleDetails;
+            LiveImageVersionDetails = liveImageVersionDetails;
             MemorySizeInGbs = memorySizeInGbs;
             OcpuCount = ocpuCount;
             OcpusEnabled = ocpusEnabled;
+            OracleLinuxVersion = oracleLinuxVersion;
             RecoStoragePercentage = recoStoragePercentage;
             Shape = shape;
             SparseStoragePercentage = sparseStoragePercentage;
@@ -297,6 +314,7 @@ namespace Pulumi.Oci.Database.Outputs
             SystemVersion = systemVersion;
             TimeCreated = timeCreated;
             TimeZone = timeZone;
+            UpdateDetails = updateDetails;
             VmBackupStorageType = vmBackupStorageType;
             VmClusterNetworkId = vmClusterNetworkId;
             VmClusterType = vmClusterType;

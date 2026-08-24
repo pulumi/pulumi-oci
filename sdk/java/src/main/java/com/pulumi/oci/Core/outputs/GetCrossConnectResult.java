@@ -5,8 +5,10 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.outputs.GetCrossConnectLoaProperty;
 import com.pulumi.oci.Core.outputs.GetCrossConnectMacsecProperty;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -51,8 +53,28 @@ public final class GetCrossConnectResult {
      * 
      */
     private String id;
+    /**
+     * @return The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+     * 
+     */
+    private Integer interfaceDownTimerValueInMilliseconds;
+    /**
+     * @return The name of the FastConnect interface where this cross-connect is installed.
+     * 
+     */
     private String interfaceName;
     private Boolean isActive;
+    /**
+     * @return The flag to enable or disable the down timer for the interface.
+     * 
+     */
+    private Boolean isInterfaceHoldTimerEnabled;
+    /**
+     * @return The flag to enable or disable the Qos for the cross-connect.
+     * 
+     */
+    private Boolean isQosEnabled;
+    private List<GetCrossConnectLoaProperty> loaProperties;
     /**
      * @return The name of the FastConnect location where this cross-connect is installed.
      * 
@@ -151,11 +173,39 @@ public final class GetCrossConnectResult {
     public String id() {
         return this.id;
     }
+    /**
+     * @return The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+     * 
+     */
+    public Integer interfaceDownTimerValueInMilliseconds() {
+        return this.interfaceDownTimerValueInMilliseconds;
+    }
+    /**
+     * @return The name of the FastConnect interface where this cross-connect is installed.
+     * 
+     */
     public String interfaceName() {
         return this.interfaceName;
     }
     public Boolean isActive() {
         return this.isActive;
+    }
+    /**
+     * @return The flag to enable or disable the down timer for the interface.
+     * 
+     */
+    public Boolean isInterfaceHoldTimerEnabled() {
+        return this.isInterfaceHoldTimerEnabled;
+    }
+    /**
+     * @return The flag to enable or disable the Qos for the cross-connect.
+     * 
+     */
+    public Boolean isQosEnabled() {
+        return this.isQosEnabled;
+    }
+    public List<GetCrossConnectLoaProperty> loaProperties() {
+        return this.loaProperties;
     }
     /**
      * @return The name of the FastConnect location where this cross-connect is installed.
@@ -235,8 +285,12 @@ public final class GetCrossConnectResult {
         private String farCrossConnectOrCrossConnectGroupId;
         private Map<String,String> freeformTags;
         private String id;
+        private Integer interfaceDownTimerValueInMilliseconds;
         private String interfaceName;
         private Boolean isActive;
+        private Boolean isInterfaceHoldTimerEnabled;
+        private Boolean isQosEnabled;
+        private List<GetCrossConnectLoaProperty> loaProperties;
         private String locationName;
         private List<GetCrossConnectMacsecProperty> macsecProperties;
         private String nearCrossConnectOrCrossConnectGroupId;
@@ -258,8 +312,12 @@ public final class GetCrossConnectResult {
     	      this.farCrossConnectOrCrossConnectGroupId = defaults.farCrossConnectOrCrossConnectGroupId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.interfaceDownTimerValueInMilliseconds = defaults.interfaceDownTimerValueInMilliseconds;
     	      this.interfaceName = defaults.interfaceName;
     	      this.isActive = defaults.isActive;
+    	      this.isInterfaceHoldTimerEnabled = defaults.isInterfaceHoldTimerEnabled;
+    	      this.isQosEnabled = defaults.isQosEnabled;
+    	      this.loaProperties = defaults.loaProperties;
     	      this.locationName = defaults.locationName;
     	      this.macsecProperties = defaults.macsecProperties;
     	      this.nearCrossConnectOrCrossConnectGroupId = defaults.nearCrossConnectOrCrossConnectGroupId;
@@ -344,6 +402,14 @@ public final class GetCrossConnectResult {
             return this;
         }
         @CustomType.Setter
+        public Builder interfaceDownTimerValueInMilliseconds(Integer interfaceDownTimerValueInMilliseconds) {
+            if (interfaceDownTimerValueInMilliseconds == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectResult", "interfaceDownTimerValueInMilliseconds");
+            }
+            this.interfaceDownTimerValueInMilliseconds = interfaceDownTimerValueInMilliseconds;
+            return this;
+        }
+        @CustomType.Setter
         public Builder interfaceName(String interfaceName) {
             if (interfaceName == null) {
               throw new MissingRequiredPropertyException("GetCrossConnectResult", "interfaceName");
@@ -358,6 +424,33 @@ public final class GetCrossConnectResult {
             }
             this.isActive = isActive;
             return this;
+        }
+        @CustomType.Setter
+        public Builder isInterfaceHoldTimerEnabled(Boolean isInterfaceHoldTimerEnabled) {
+            if (isInterfaceHoldTimerEnabled == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectResult", "isInterfaceHoldTimerEnabled");
+            }
+            this.isInterfaceHoldTimerEnabled = isInterfaceHoldTimerEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isQosEnabled(Boolean isQosEnabled) {
+            if (isQosEnabled == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectResult", "isQosEnabled");
+            }
+            this.isQosEnabled = isQosEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder loaProperties(List<GetCrossConnectLoaProperty> loaProperties) {
+            if (loaProperties == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectResult", "loaProperties");
+            }
+            this.loaProperties = loaProperties;
+            return this;
+        }
+        public Builder loaProperties(GetCrossConnectLoaProperty... loaProperties) {
+            return loaProperties(List.of(loaProperties));
         }
         @CustomType.Setter
         public Builder locationName(String locationName) {
@@ -445,8 +538,12 @@ public final class GetCrossConnectResult {
             _resultValue.farCrossConnectOrCrossConnectGroupId = farCrossConnectOrCrossConnectGroupId;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.interfaceDownTimerValueInMilliseconds = interfaceDownTimerValueInMilliseconds;
             _resultValue.interfaceName = interfaceName;
             _resultValue.isActive = isActive;
+            _resultValue.isInterfaceHoldTimerEnabled = isInterfaceHoldTimerEnabled;
+            _resultValue.isQosEnabled = isQosEnabled;
+            _resultValue.loaProperties = loaProperties;
             _resultValue.locationName = locationName;
             _resultValue.macsecProperties = macsecProperties;
             _resultValue.nearCrossConnectOrCrossConnectGroupId = nearCrossConnectOrCrossConnectGroupId;

@@ -104,6 +104,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<string> PluggableDatabases;
         /// <summary>
+        /// The password for the VPC user that is used to access the Recovery Appliance, if the given backup is from a backup destination of type RECOVERY_APPLIANCE.
+        /// </summary>
+        public readonly string? RecoveryApplianceVpcPassword;
+        /// <summary>
         /// Specifies a prefix for the `Oracle SID` of the database to be created.
         /// </summary>
         public readonly string? SidPrefix;
@@ -184,6 +188,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<string> pluggableDatabases,
 
+            string? recoveryApplianceVpcPassword,
+
             string? sidPrefix,
 
             string? state,
@@ -223,6 +229,7 @@ namespace Pulumi.Oci.Database.Outputs
             OneOffPatches = oneOffPatches;
             PdbName = pdbName;
             PluggableDatabases = pluggableDatabases;
+            RecoveryApplianceVpcPassword = recoveryApplianceVpcPassword;
             SidPrefix = sidPrefix;
             State = state;
             StorageSizeDetails = storageSizeDetails;

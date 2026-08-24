@@ -14,19 +14,19 @@ namespace Pulumi.Oci.ComputeInstanceAgent.Outputs
     public sealed class GetInstanceAgentPluginsInstanceAgentPluginResult
     {
         /// <summary>
-        /// The optional message from the agent plugin
+        /// An optional message from the plugin.
         /// </summary>
         public readonly string Message;
         /// <summary>
-        /// The plugin name
+        /// The plugin name.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// The plugin status
+        /// The plugin status.
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// The last update time of the plugin in UTC
+        /// The last updated time of the plugin, in UTC.
         /// </summary>
         public readonly string TimeLastUpdatedUtc;
 

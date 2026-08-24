@@ -27,7 +27,7 @@ class GetExadbVmClusterResult:
     """
     A collection of values returned by getExadbVmCluster.
     """
-    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cluster_name=None, cluster_placement_group_id=None, compartment_id=None, data_collection_options=None, defined_tags=None, display_name=None, domain=None, exadb_vm_cluster_id=None, exascale_db_storage_vault_id=None, freeform_tags=None, gi_version=None, grid_image_id=None, grid_image_type=None, hostname=None, id=None, iorm_config_caches=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, node_configs=None, node_resources=None, nsg_ids=None, private_zone_id=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, security_attributes=None, shape=None, shape_attribute=None, ssh_public_keys=None, state=None, subnet_id=None, subscription_id=None, system_tags=None, system_version=None, time_created=None, time_zone=None, vip_ids=None, zone_id=None):
+    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cluster_name=None, cluster_placement_group_id=None, compartment_id=None, data_collection_options=None, defined_tags=None, display_name=None, domain=None, exadb_vm_cluster_id=None, exascale_db_storage_vault_id=None, freeform_tags=None, gi_version=None, grid_image_id=None, grid_image_type=None, hostname=None, id=None, iorm_config_caches=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, multi_cloud_identity_connector_configs=None, node_configs=None, node_resources=None, nsg_ids=None, private_zone_id=None, register_pkcs_trigger=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, security_attributes=None, shape=None, shape_attribute=None, ssh_public_keys=None, state=None, subnet_id=None, subscription_id=None, system_tags=None, system_version=None, tde_key_store_type=None, time_created=None, time_zone=None, unregister_pkcs_trigger=None, vip_ids=None, zone_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -97,6 +97,9 @@ class GetExadbVmClusterResult:
         if listener_port and not isinstance(listener_port, str):
             raise TypeError("Expected argument 'listener_port' to be a str")
         pulumi.set(__self__, "listener_port", listener_port)
+        if multi_cloud_identity_connector_configs and not isinstance(multi_cloud_identity_connector_configs, list):
+            raise TypeError("Expected argument 'multi_cloud_identity_connector_configs' to be a list")
+        pulumi.set(__self__, "multi_cloud_identity_connector_configs", multi_cloud_identity_connector_configs)
         if node_configs and not isinstance(node_configs, list):
             raise TypeError("Expected argument 'node_configs' to be a list")
         pulumi.set(__self__, "node_configs", node_configs)
@@ -109,6 +112,9 @@ class GetExadbVmClusterResult:
         if private_zone_id and not isinstance(private_zone_id, str):
             raise TypeError("Expected argument 'private_zone_id' to be a str")
         pulumi.set(__self__, "private_zone_id", private_zone_id)
+        if register_pkcs_trigger and not isinstance(register_pkcs_trigger, int):
+            raise TypeError("Expected argument 'register_pkcs_trigger' to be a int")
+        pulumi.set(__self__, "register_pkcs_trigger", register_pkcs_trigger)
         if scan_dns_name and not isinstance(scan_dns_name, str):
             raise TypeError("Expected argument 'scan_dns_name' to be a str")
         pulumi.set(__self__, "scan_dns_name", scan_dns_name)
@@ -151,12 +157,18 @@ class GetExadbVmClusterResult:
         if system_version and not isinstance(system_version, str):
             raise TypeError("Expected argument 'system_version' to be a str")
         pulumi.set(__self__, "system_version", system_version)
+        if tde_key_store_type and not isinstance(tde_key_store_type, str):
+            raise TypeError("Expected argument 'tde_key_store_type' to be a str")
+        pulumi.set(__self__, "tde_key_store_type", tde_key_store_type)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
         if time_zone and not isinstance(time_zone, str):
             raise TypeError("Expected argument 'time_zone' to be a str")
         pulumi.set(__self__, "time_zone", time_zone)
+        if unregister_pkcs_trigger and not isinstance(unregister_pkcs_trigger, int):
+            raise TypeError("Expected argument 'unregister_pkcs_trigger' to be a int")
+        pulumi.set(__self__, "unregister_pkcs_trigger", unregister_pkcs_trigger)
         if vip_ids and not isinstance(vip_ids, list):
             raise TypeError("Expected argument 'vip_ids' to be a list")
         pulumi.set(__self__, "vip_ids", vip_ids)
@@ -301,7 +313,7 @@ class GetExadbVmClusterResult:
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
+        The OCID of the identity connector
         """
         return pulumi.get(self, "id")
 
@@ -346,6 +358,14 @@ class GetExadbVmClusterResult:
         return pulumi.get(self, "listener_port")
 
     @_builtins.property
+    @pulumi.getter(name="multiCloudIdentityConnectorConfigs")
+    def multi_cloud_identity_connector_configs(self) -> Sequence['outputs.GetExadbVmClusterMultiCloudIdentityConnectorConfigResult']:
+        """
+        Details of the multi cloud identity connectors of the VM cluster.
+        """
+        return pulumi.get(self, "multi_cloud_identity_connector_configs")
+
+    @_builtins.property
     @pulumi.getter(name="nodeConfigs")
     def node_configs(self) -> Sequence['outputs.GetExadbVmClusterNodeConfigResult']:
         """
@@ -377,6 +397,11 @@ class GetExadbVmClusterResult:
         The private zone ID in which you want DNS records to be created.
         """
         return pulumi.get(self, "private_zone_id")
+
+    @_builtins.property
+    @pulumi.getter(name="registerPkcsTrigger")
+    def register_pkcs_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "register_pkcs_trigger")
 
     @_builtins.property
     @pulumi.getter(name="scanDnsName")
@@ -491,6 +516,14 @@ class GetExadbVmClusterResult:
         return pulumi.get(self, "system_version")
 
     @_builtins.property
+    @pulumi.getter(name="tdeKeyStoreType")
+    def tde_key_store_type(self) -> _builtins.str:
+        """
+        TDE keystore type
+        """
+        return pulumi.get(self, "tde_key_store_type")
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
@@ -505,6 +538,11 @@ class GetExadbVmClusterResult:
         The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
         return pulumi.get(self, "time_zone")
+
+    @_builtins.property
+    @pulumi.getter(name="unregisterPkcsTrigger")
+    def unregister_pkcs_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "unregister_pkcs_trigger")
 
     @_builtins.property
     @pulumi.getter(name="vipIds")
@@ -552,10 +590,12 @@ class AwaitableGetExadbVmClusterResult(GetExadbVmClusterResult):
             license_model=self.license_model,
             lifecycle_details=self.lifecycle_details,
             listener_port=self.listener_port,
+            multi_cloud_identity_connector_configs=self.multi_cloud_identity_connector_configs,
             node_configs=self.node_configs,
             node_resources=self.node_resources,
             nsg_ids=self.nsg_ids,
             private_zone_id=self.private_zone_id,
+            register_pkcs_trigger=self.register_pkcs_trigger,
             scan_dns_name=self.scan_dns_name,
             scan_dns_record_id=self.scan_dns_record_id,
             scan_ip_ids=self.scan_ip_ids,
@@ -570,8 +610,10 @@ class AwaitableGetExadbVmClusterResult(GetExadbVmClusterResult):
             subscription_id=self.subscription_id,
             system_tags=self.system_tags,
             system_version=self.system_version,
+            tde_key_store_type=self.tde_key_store_type,
             time_created=self.time_created,
             time_zone=self.time_zone,
+            unregister_pkcs_trigger=self.unregister_pkcs_trigger,
             vip_ids=self.vip_ids,
             zone_id=self.zone_id)
 
@@ -624,10 +666,12 @@ def get_exadb_vm_cluster(exadb_vm_cluster_id: Optional[_builtins.str] = None,
         license_model=pulumi.get(__ret__, 'license_model'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         listener_port=pulumi.get(__ret__, 'listener_port'),
+        multi_cloud_identity_connector_configs=pulumi.get(__ret__, 'multi_cloud_identity_connector_configs'),
         node_configs=pulumi.get(__ret__, 'node_configs'),
         node_resources=pulumi.get(__ret__, 'node_resources'),
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         private_zone_id=pulumi.get(__ret__, 'private_zone_id'),
+        register_pkcs_trigger=pulumi.get(__ret__, 'register_pkcs_trigger'),
         scan_dns_name=pulumi.get(__ret__, 'scan_dns_name'),
         scan_dns_record_id=pulumi.get(__ret__, 'scan_dns_record_id'),
         scan_ip_ids=pulumi.get(__ret__, 'scan_ip_ids'),
@@ -642,8 +686,10 @@ def get_exadb_vm_cluster(exadb_vm_cluster_id: Optional[_builtins.str] = None,
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         system_version=pulumi.get(__ret__, 'system_version'),
+        tde_key_store_type=pulumi.get(__ret__, 'tde_key_store_type'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_zone=pulumi.get(__ret__, 'time_zone'),
+        unregister_pkcs_trigger=pulumi.get(__ret__, 'unregister_pkcs_trigger'),
         vip_ids=pulumi.get(__ret__, 'vip_ids'),
         zone_id=pulumi.get(__ret__, 'zone_id'))
 def get_exadb_vm_cluster_output(exadb_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -693,10 +739,12 @@ def get_exadb_vm_cluster_output(exadb_vm_cluster_id: pulumi.Input[Optional[_buil
         license_model=pulumi.get(__response__, 'license_model'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         listener_port=pulumi.get(__response__, 'listener_port'),
+        multi_cloud_identity_connector_configs=pulumi.get(__response__, 'multi_cloud_identity_connector_configs'),
         node_configs=pulumi.get(__response__, 'node_configs'),
         node_resources=pulumi.get(__response__, 'node_resources'),
         nsg_ids=pulumi.get(__response__, 'nsg_ids'),
         private_zone_id=pulumi.get(__response__, 'private_zone_id'),
+        register_pkcs_trigger=pulumi.get(__response__, 'register_pkcs_trigger'),
         scan_dns_name=pulumi.get(__response__, 'scan_dns_name'),
         scan_dns_record_id=pulumi.get(__response__, 'scan_dns_record_id'),
         scan_ip_ids=pulumi.get(__response__, 'scan_ip_ids'),
@@ -711,7 +759,9 @@ def get_exadb_vm_cluster_output(exadb_vm_cluster_id: pulumi.Input[Optional[_buil
         subscription_id=pulumi.get(__response__, 'subscription_id'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         system_version=pulumi.get(__response__, 'system_version'),
+        tde_key_store_type=pulumi.get(__response__, 'tde_key_store_type'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_zone=pulumi.get(__response__, 'time_zone'),
+        unregister_pkcs_trigger=pulumi.get(__response__, 'unregister_pkcs_trigger'),
         vip_ids=pulumi.get(__response__, 'vip_ids'),
         zone_id=pulumi.get(__response__, 'zone_id')))

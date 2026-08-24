@@ -19,6 +19,11 @@ public final class GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntit
      */
     private List<GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemApiMetadata> apiMetadatas;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * 
+     */
+    private String compartmentId;
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
@@ -46,6 +51,13 @@ public final class GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntit
      */
     public List<GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemApiMetadata> apiMetadatas() {
         return this.apiMetadatas;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * 
+     */
+    public String compartmentId() {
+        return this.compartmentId;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -86,6 +98,7 @@ public final class GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntit
     @CustomType.Builder
     public static final class Builder {
         private List<GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemApiMetadata> apiMetadatas;
+        private String compartmentId;
         private Map<String,String> definedTags;
         private String entityType;
         private Map<String,String> freeformTags;
@@ -94,6 +107,7 @@ public final class GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntit
         public Builder(GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apiMetadatas = defaults.apiMetadatas;
+    	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.entityType = defaults.entityType;
     	      this.freeformTags = defaults.freeformTags;
@@ -110,6 +124,14 @@ public final class GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntit
         }
         public Builder apiMetadatas(GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemApiMetadata... apiMetadatas) {
             return apiMetadatas(List.of(apiMetadatas));
+        }
+        @CustomType.Setter
+        public Builder compartmentId(String compartmentId) {
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
+            return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,String> definedTags) {
@@ -146,6 +168,7 @@ public final class GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntit
         public GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItem build() {
             final var _resultValue = new GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItem();
             _resultValue.apiMetadatas = apiMetadatas;
+            _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.entityType = entityType;
             _resultValue.freeformTags = freeformTags;

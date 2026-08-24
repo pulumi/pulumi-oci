@@ -41,6 +41,11 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Double actualUsedDataStorageSizeInTbs;
     /**
+     * @return The Availability Domain which is planned for Scheduled Update
+     * 
+     */
+    private String adScheduledForUpdate;
+    /**
      * @return Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ &#34;gcpAccountName&#34;: &#34;gcpName&#34; }`
      * 
      */
@@ -606,10 +611,20 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String timeDisasterRecoveryRoleChanged;
     /**
+     * @return The earliest date and time to which you can schedule an Autonomous Database availability domain update.
+     * 
+     */
+    private String timeEarliestAvailableAdUpdate;
+    /**
      * @return The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
      * 
      */
     private String timeEarliestAvailableDbVersionUpgrade;
+    /**
+     * @return The latest date and time to which you can schedule an Autonomous Database availability domain update.
+     * 
+     */
+    private String timeLatestAvailableAdUpdate;
     /**
      * @return The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
      * 
@@ -672,6 +687,11 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String timeReclamationOfFreeAutonomousDatabase;
     /**
+     * @return The date and time to which the Autonomous Database availability domain update is scheduled.
+     * 
+     */
+    private String timeScheduledAdUpdate;
+    /**
      * @return The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
      * 
      */
@@ -729,6 +749,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     public Double actualUsedDataStorageSizeInTbs() {
         return this.actualUsedDataStorageSizeInTbs;
+    }
+    /**
+     * @return The Availability Domain which is planned for Scheduled Update
+     * 
+     */
+    public String adScheduledForUpdate() {
+        return this.adScheduledForUpdate;
     }
     /**
      * @return Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ &#34;gcpAccountName&#34;: &#34;gcpName&#34; }`
@@ -1520,11 +1547,25 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.timeDisasterRecoveryRoleChanged;
     }
     /**
+     * @return The earliest date and time to which you can schedule an Autonomous Database availability domain update.
+     * 
+     */
+    public String timeEarliestAvailableAdUpdate() {
+        return this.timeEarliestAvailableAdUpdate;
+    }
+    /**
      * @return The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
      * 
      */
     public String timeEarliestAvailableDbVersionUpgrade() {
         return this.timeEarliestAvailableDbVersionUpgrade;
+    }
+    /**
+     * @return The latest date and time to which you can schedule an Autonomous Database availability domain update.
+     * 
+     */
+    public String timeLatestAvailableAdUpdate() {
+        return this.timeLatestAvailableAdUpdate;
     }
     /**
      * @return The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
@@ -1614,6 +1655,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.timeReclamationOfFreeAutonomousDatabase;
     }
     /**
+     * @return The date and time to which the Autonomous Database availability domain update is scheduled.
+     * 
+     */
+    public String timeScheduledAdUpdate() {
+        return this.timeScheduledAdUpdate;
+    }
+    /**
      * @return The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
      * 
      */
@@ -1694,6 +1742,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     @CustomType.Builder
     public static final class Builder {
         private Double actualUsedDataStorageSizeInTbs;
+        private String adScheduledForUpdate;
         private Map<String,String> additionalAttributes;
         private Double allocatedStorageSizeInTbs;
         private List<GetAutonomousDatabasesClonesAutonomousDatabaseApexDetail> apexDetails;
@@ -1806,7 +1855,9 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         private String timeDataGuardRoleChanged;
         private String timeDeletionOfFreeAutonomousDatabase;
         private String timeDisasterRecoveryRoleChanged;
+        private String timeEarliestAvailableAdUpdate;
         private String timeEarliestAvailableDbVersionUpgrade;
+        private String timeLatestAvailableAdUpdate;
         private String timeLatestAvailableDbVersionUpgrade;
         private String timeLocalDataGuardEnabled;
         private String timeMaintenanceBegin;
@@ -1820,6 +1871,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         private String timeOfLastSwitchover;
         private String timeOfNextRefresh;
         private String timeReclamationOfFreeAutonomousDatabase;
+        private String timeScheduledAdUpdate;
         private String timeScheduledDbVersionUpgrade;
         private String timeUndeleted;
         private String timeUntilReconnectCloneEnabled;
@@ -1834,6 +1886,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         public Builder(GetAutonomousDatabasesClonesAutonomousDatabase defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actualUsedDataStorageSizeInTbs = defaults.actualUsedDataStorageSizeInTbs;
+    	      this.adScheduledForUpdate = defaults.adScheduledForUpdate;
     	      this.additionalAttributes = defaults.additionalAttributes;
     	      this.allocatedStorageSizeInTbs = defaults.allocatedStorageSizeInTbs;
     	      this.apexDetails = defaults.apexDetails;
@@ -1946,7 +1999,9 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     	      this.timeDataGuardRoleChanged = defaults.timeDataGuardRoleChanged;
     	      this.timeDeletionOfFreeAutonomousDatabase = defaults.timeDeletionOfFreeAutonomousDatabase;
     	      this.timeDisasterRecoveryRoleChanged = defaults.timeDisasterRecoveryRoleChanged;
+    	      this.timeEarliestAvailableAdUpdate = defaults.timeEarliestAvailableAdUpdate;
     	      this.timeEarliestAvailableDbVersionUpgrade = defaults.timeEarliestAvailableDbVersionUpgrade;
+    	      this.timeLatestAvailableAdUpdate = defaults.timeLatestAvailableAdUpdate;
     	      this.timeLatestAvailableDbVersionUpgrade = defaults.timeLatestAvailableDbVersionUpgrade;
     	      this.timeLocalDataGuardEnabled = defaults.timeLocalDataGuardEnabled;
     	      this.timeMaintenanceBegin = defaults.timeMaintenanceBegin;
@@ -1960,6 +2015,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     	      this.timeOfLastSwitchover = defaults.timeOfLastSwitchover;
     	      this.timeOfNextRefresh = defaults.timeOfNextRefresh;
     	      this.timeReclamationOfFreeAutonomousDatabase = defaults.timeReclamationOfFreeAutonomousDatabase;
+    	      this.timeScheduledAdUpdate = defaults.timeScheduledAdUpdate;
     	      this.timeScheduledDbVersionUpgrade = defaults.timeScheduledDbVersionUpgrade;
     	      this.timeUndeleted = defaults.timeUndeleted;
     	      this.timeUntilReconnectCloneEnabled = defaults.timeUntilReconnectCloneEnabled;
@@ -1978,6 +2034,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "actualUsedDataStorageSizeInTbs");
             }
             this.actualUsedDataStorageSizeInTbs = actualUsedDataStorageSizeInTbs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder adScheduledForUpdate(String adScheduledForUpdate) {
+            if (adScheduledForUpdate == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "adScheduledForUpdate");
+            }
+            this.adScheduledForUpdate = adScheduledForUpdate;
             return this;
         }
         @CustomType.Setter
@@ -2952,11 +3016,27 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder timeEarliestAvailableAdUpdate(String timeEarliestAvailableAdUpdate) {
+            if (timeEarliestAvailableAdUpdate == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "timeEarliestAvailableAdUpdate");
+            }
+            this.timeEarliestAvailableAdUpdate = timeEarliestAvailableAdUpdate;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeEarliestAvailableDbVersionUpgrade(String timeEarliestAvailableDbVersionUpgrade) {
             if (timeEarliestAvailableDbVersionUpgrade == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "timeEarliestAvailableDbVersionUpgrade");
             }
             this.timeEarliestAvailableDbVersionUpgrade = timeEarliestAvailableDbVersionUpgrade;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeLatestAvailableAdUpdate(String timeLatestAvailableAdUpdate) {
+            if (timeLatestAvailableAdUpdate == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "timeLatestAvailableAdUpdate");
+            }
+            this.timeLatestAvailableAdUpdate = timeLatestAvailableAdUpdate;
             return this;
         }
         @CustomType.Setter
@@ -3064,6 +3144,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder timeScheduledAdUpdate(String timeScheduledAdUpdate) {
+            if (timeScheduledAdUpdate == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "timeScheduledAdUpdate");
+            }
+            this.timeScheduledAdUpdate = timeScheduledAdUpdate;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeScheduledDbVersionUpgrade(String timeScheduledDbVersionUpgrade) {
             if (timeScheduledDbVersionUpgrade == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "timeScheduledDbVersionUpgrade");
@@ -3155,6 +3243,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         public GetAutonomousDatabasesClonesAutonomousDatabase build() {
             final var _resultValue = new GetAutonomousDatabasesClonesAutonomousDatabase();
             _resultValue.actualUsedDataStorageSizeInTbs = actualUsedDataStorageSizeInTbs;
+            _resultValue.adScheduledForUpdate = adScheduledForUpdate;
             _resultValue.additionalAttributes = additionalAttributes;
             _resultValue.allocatedStorageSizeInTbs = allocatedStorageSizeInTbs;
             _resultValue.apexDetails = apexDetails;
@@ -3267,7 +3356,9 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             _resultValue.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
             _resultValue.timeDeletionOfFreeAutonomousDatabase = timeDeletionOfFreeAutonomousDatabase;
             _resultValue.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
+            _resultValue.timeEarliestAvailableAdUpdate = timeEarliestAvailableAdUpdate;
             _resultValue.timeEarliestAvailableDbVersionUpgrade = timeEarliestAvailableDbVersionUpgrade;
+            _resultValue.timeLatestAvailableAdUpdate = timeLatestAvailableAdUpdate;
             _resultValue.timeLatestAvailableDbVersionUpgrade = timeLatestAvailableDbVersionUpgrade;
             _resultValue.timeLocalDataGuardEnabled = timeLocalDataGuardEnabled;
             _resultValue.timeMaintenanceBegin = timeMaintenanceBegin;
@@ -3281,6 +3372,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             _resultValue.timeOfLastSwitchover = timeOfLastSwitchover;
             _resultValue.timeOfNextRefresh = timeOfNextRefresh;
             _resultValue.timeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
+            _resultValue.timeScheduledAdUpdate = timeScheduledAdUpdate;
             _resultValue.timeScheduledDbVersionUpgrade = timeScheduledDbVersionUpgrade;
             _resultValue.timeUndeleted = timeUndeleted;
             _resultValue.timeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;

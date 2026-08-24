@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
 //
-// Info for a specific Analytics instance.
+// Information about a specific Analytics instance.
 //
 // ## Example Usage
 //
@@ -52,7 +52,7 @@ func LookupAnalyticsInstance(ctx *pulumi.Context, args *LookupAnalyticsInstanceA
 
 // A collection of arguments for invoking getAnalyticsInstance.
 type LookupAnalyticsInstanceArgs struct {
-	// The OCID of the AnalyticsInstance.
+	// The OCID of the Analytics instance.
 	AnalyticsInstanceId string `pulumi:"analyticsInstanceId"`
 }
 
@@ -60,13 +60,13 @@ type LookupAnalyticsInstanceArgs struct {
 type LookupAnalyticsInstanceResult struct {
 	AdminUser           string `pulumi:"adminUser"`
 	AnalyticsInstanceId string `pulumi:"analyticsInstanceId"`
-	// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+	// The capacity (in OCPU's) to be allocated for this resource.
 	Capacities []GetAnalyticsInstanceCapacity `pulumi:"capacities"`
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// Description of the vanity url.
+	// Description of the vanity URL.
 	Description string `pulumi:"description"`
 	// Identity domain OCID.
 	DomainId string `pulumi:"domainId"`
@@ -74,32 +74,34 @@ type LookupAnalyticsInstanceResult struct {
 	EmailNotification string `pulumi:"emailNotification"`
 	// The feature set of an Analytics instance.
 	FeatureBundle string `pulumi:"featureBundle"`
-	// Analytics feature set.
+	// The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
 	FeatureSet string `pulumi:"featureSet"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The Virtual Cloud Network OCID.
+	// Unique identifier and name of resource group.  Must be unique within the instance
 	Id              string `pulumi:"id"`
 	IdcsAccessToken string `pulumi:"idcsAccessToken"`
-	// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+	// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The license used for the service.
 	LicenseType string `pulumi:"licenseType"`
-	// The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+	// The name of the Analytics instance. This name must be unique in the tenancy and can't be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
 	Name string `pulumi:"name"`
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails []GetAnalyticsInstanceNetworkEndpointDetail `pulumi:"networkEndpointDetails"`
-	// URL of the Analytics service.
+	// List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+	ResourceGroups []GetAnalyticsInstanceResourceGroupType `pulumi:"resourceGroups"`
+	// URL of the Analytics instance.
 	ServiceUrl string `pulumi:"serviceUrl"`
-	// The current state of an instance.
+	// The current state of the Analytics instance.
 	State string `pulumi:"state"`
 	// System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+	// The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+	// The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don't affect it.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Analytics instance update channel.
+	// The Analytics instance update cycle.
 	UpdateChannel string `pulumi:"updateChannel"`
 }
 
@@ -114,7 +116,7 @@ func LookupAnalyticsInstanceOutput(ctx *pulumi.Context, args LookupAnalyticsInst
 
 // A collection of arguments for invoking getAnalyticsInstance.
 type LookupAnalyticsInstanceOutputArgs struct {
-	// The OCID of the AnalyticsInstance.
+	// The OCID of the Analytics instance.
 	AnalyticsInstanceId pulumi.StringInput `pulumi:"analyticsInstanceId"`
 }
 
@@ -145,7 +147,7 @@ func (o LookupAnalyticsInstanceResultOutput) AnalyticsInstanceId() pulumi.String
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.AnalyticsInstanceId }).(pulumi.StringOutput)
 }
 
-// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+// The capacity (in OCPU's) to be allocated for this resource.
 func (o LookupAnalyticsInstanceResultOutput) Capacities() GetAnalyticsInstanceCapacityArrayOutput {
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) []GetAnalyticsInstanceCapacity { return v.Capacities }).(GetAnalyticsInstanceCapacityArrayOutput)
 }
@@ -160,7 +162,7 @@ func (o LookupAnalyticsInstanceResultOutput) DefinedTags() pulumi.StringMapOutpu
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// Description of the vanity url.
+// Description of the vanity URL.
 func (o LookupAnalyticsInstanceResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -180,7 +182,7 @@ func (o LookupAnalyticsInstanceResultOutput) FeatureBundle() pulumi.StringOutput
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.FeatureBundle }).(pulumi.StringOutput)
 }
 
-// Analytics feature set.
+// The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
 func (o LookupAnalyticsInstanceResultOutput) FeatureSet() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.FeatureSet }).(pulumi.StringOutput)
 }
@@ -190,7 +192,7 @@ func (o LookupAnalyticsInstanceResultOutput) FreeformTags() pulumi.StringMapOutp
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// The Virtual Cloud Network OCID.
+// Unique identifier and name of resource group.  Must be unique within the instance
 func (o LookupAnalyticsInstanceResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -199,7 +201,7 @@ func (o LookupAnalyticsInstanceResultOutput) IdcsAccessToken() pulumi.StringOutp
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.IdcsAccessToken }).(pulumi.StringOutput)
 }
 
-// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
 func (o LookupAnalyticsInstanceResultOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.KmsKeyId }).(pulumi.StringOutput)
 }
@@ -209,7 +211,7 @@ func (o LookupAnalyticsInstanceResultOutput) LicenseType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.LicenseType }).(pulumi.StringOutput)
 }
 
-// The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+// The name of the Analytics instance. This name must be unique in the tenancy and can't be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
 func (o LookupAnalyticsInstanceResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -221,12 +223,17 @@ func (o LookupAnalyticsInstanceResultOutput) NetworkEndpointDetails() GetAnalyti
 	}).(GetAnalyticsInstanceNetworkEndpointDetailArrayOutput)
 }
 
-// URL of the Analytics service.
+// List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+func (o LookupAnalyticsInstanceResultOutput) ResourceGroups() GetAnalyticsInstanceResourceGroupTypeArrayOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstanceResult) []GetAnalyticsInstanceResourceGroupType { return v.ResourceGroups }).(GetAnalyticsInstanceResourceGroupTypeArrayOutput)
+}
+
+// URL of the Analytics instance.
 func (o LookupAnalyticsInstanceResultOutput) ServiceUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.ServiceUrl }).(pulumi.StringOutput)
 }
 
-// The current state of an instance.
+// The current state of the Analytics instance.
 func (o LookupAnalyticsInstanceResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -236,17 +243,17 @@ func (o LookupAnalyticsInstanceResultOutput) SystemTags() pulumi.StringMapOutput
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+// The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 func (o LookupAnalyticsInstanceResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+// The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don't affect it.
 func (o LookupAnalyticsInstanceResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Analytics instance update channel.
+// The Analytics instance update cycle.
 func (o LookupAnalyticsInstanceResultOutput) UpdateChannel() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.UpdateChannel }).(pulumi.StringOutput)
 }

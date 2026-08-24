@@ -42,6 +42,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string UpdateId;
         /// <summary>
+        /// The OS update mode performed using this maintenance update.
+        /// </summary>
+        public readonly string UpdateMode;
+        /// <summary>
         /// A filter to return only resources that match the given update type exactly.
         /// </summary>
         public readonly string UpdateType;
@@ -62,6 +66,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string updateId,
 
+            string updateMode,
+
             string updateType)
         {
             Id = id;
@@ -71,6 +77,7 @@ namespace Pulumi.Oci.Database.Outputs
             TimeStarted = timeStarted;
             UpdateAction = updateAction;
             UpdateId = updateId;
+            UpdateMode = updateMode;
             UpdateType = updateType;
         }
     }

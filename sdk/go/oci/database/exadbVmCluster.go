@@ -147,6 +147,8 @@ type ExadbVmCluster struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The port number configured for the listener on the Exadata VM cluster on Exascale Infrastructure.
 	ListenerPort pulumi.StringOutput `pulumi:"listenerPort"`
+	// Details of the multi cloud identity connectors of the VM cluster.
+	MultiCloudIdentityConnectorConfigs ExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput `pulumi:"multiCloudIdentityConnectorConfigs"`
 	// (Updatable) The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
 	NodeConfig ExadbVmClusterNodeConfigOutput `pulumi:"nodeConfig"`
 	// Each `nodeResource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
@@ -156,6 +158,8 @@ type ExadbVmCluster struct {
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// The private zone ID in which you want DNS records to be created.
 	PrivateZoneId pulumi.StringOutput `pulumi:"privateZoneId"`
+	// (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+	RegisterPkcsTrigger pulumi.IntPtrOutput `pulumi:"registerPkcsTrigger"`
 	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
 	ScanDnsName pulumi.StringOutput `pulumi:"scanDnsName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
@@ -184,13 +188,17 @@ type ExadbVmCluster struct {
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// (Updatable) Operating system version of the image.
 	SystemVersion pulumi.StringOutput `pulumi:"systemVersion"`
+	// TDE keystore type
+	TdeKeyStoreType pulumi.StringOutput `pulumi:"tdeKeyStoreType"`
 	// The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+	TimeZone pulumi.StringOutput `pulumi:"timeZone"`
+	// (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimeZone pulumi.StringOutput `pulumi:"timeZone"`
+	UnregisterPkcsTrigger pulumi.IntPtrOutput `pulumi:"unregisterPkcsTrigger"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
 	VipIds pulumi.StringArrayOutput `pulumi:"vipIds"`
 	// The OCID of the zone with which the Exadata VM cluster on Exascale Infrastructure is associated.
@@ -308,6 +316,8 @@ type exadbVmClusterState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The port number configured for the listener on the Exadata VM cluster on Exascale Infrastructure.
 	ListenerPort *string `pulumi:"listenerPort"`
+	// Details of the multi cloud identity connectors of the VM cluster.
+	MultiCloudIdentityConnectorConfigs []ExadbVmClusterMultiCloudIdentityConnectorConfig `pulumi:"multiCloudIdentityConnectorConfigs"`
 	// (Updatable) The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
 	NodeConfig *ExadbVmClusterNodeConfig `pulumi:"nodeConfig"`
 	// Each `nodeResource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
@@ -317,6 +327,8 @@ type exadbVmClusterState struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// The private zone ID in which you want DNS records to be created.
 	PrivateZoneId *string `pulumi:"privateZoneId"`
+	// (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+	RegisterPkcsTrigger *int `pulumi:"registerPkcsTrigger"`
 	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
 	ScanDnsName *string `pulumi:"scanDnsName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
@@ -345,13 +357,17 @@ type exadbVmClusterState struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// (Updatable) Operating system version of the image.
 	SystemVersion *string `pulumi:"systemVersion"`
+	// TDE keystore type
+	TdeKeyStoreType *string `pulumi:"tdeKeyStoreType"`
 	// The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+	TimeZone *string `pulumi:"timeZone"`
+	// (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimeZone *string `pulumi:"timeZone"`
+	UnregisterPkcsTrigger *int `pulumi:"unregisterPkcsTrigger"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
 	VipIds []string `pulumi:"vipIds"`
 	// The OCID of the zone with which the Exadata VM cluster on Exascale Infrastructure is associated.
@@ -407,6 +423,8 @@ type ExadbVmClusterState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// The port number configured for the listener on the Exadata VM cluster on Exascale Infrastructure.
 	ListenerPort pulumi.StringPtrInput
+	// Details of the multi cloud identity connectors of the VM cluster.
+	MultiCloudIdentityConnectorConfigs ExadbVmClusterMultiCloudIdentityConnectorConfigArrayInput
 	// (Updatable) The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
 	NodeConfig ExadbVmClusterNodeConfigPtrInput
 	// Each `nodeResource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
@@ -416,6 +434,8 @@ type ExadbVmClusterState struct {
 	NsgIds pulumi.StringArrayInput
 	// The private zone ID in which you want DNS records to be created.
 	PrivateZoneId pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+	RegisterPkcsTrigger pulumi.IntPtrInput
 	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
 	ScanDnsName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
@@ -444,13 +464,17 @@ type ExadbVmClusterState struct {
 	SystemTags pulumi.StringMapInput
 	// (Updatable) Operating system version of the image.
 	SystemVersion pulumi.StringPtrInput
+	// TDE keystore type
+	TdeKeyStoreType pulumi.StringPtrInput
 	// The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
 	TimeCreated pulumi.StringPtrInput
 	// The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+	TimeZone pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimeZone pulumi.StringPtrInput
+	UnregisterPkcsTrigger pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
 	VipIds pulumi.StringArrayInput
 	// The OCID of the zone with which the Exadata VM cluster on Exascale Infrastructure is associated.
@@ -505,6 +529,8 @@ type exadbVmClusterArgs struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// The private zone ID in which you want DNS records to be created.
 	PrivateZoneId *string `pulumi:"privateZoneId"`
+	// (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+	RegisterPkcsTrigger *int `pulumi:"registerPkcsTrigger"`
 	// The TCP Single Client Access Name (SCAN) port. The default port is 1521.
 	ScanListenerPortTcp *int `pulumi:"scanListenerPortTcp"`
 	// The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
@@ -523,11 +549,15 @@ type exadbVmClusterArgs struct {
 	SubscriptionId *string `pulumi:"subscriptionId"`
 	// (Updatable) Operating system version of the image.
 	SystemVersion *string `pulumi:"systemVersion"`
+	// TDE keystore type
+	TdeKeyStoreType *string `pulumi:"tdeKeyStoreType"`
 	// The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+	TimeZone *string `pulumi:"timeZone"`
+	// (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimeZone *string `pulumi:"timeZone"`
+	UnregisterPkcsTrigger *int `pulumi:"unregisterPkcsTrigger"`
 }
 
 // The set of arguments for constructing a ExadbVmCluster resource.
@@ -575,6 +605,8 @@ type ExadbVmClusterArgs struct {
 	NsgIds pulumi.StringArrayInput
 	// The private zone ID in which you want DNS records to be created.
 	PrivateZoneId pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+	RegisterPkcsTrigger pulumi.IntPtrInput
 	// The TCP Single Client Access Name (SCAN) port. The default port is 1521.
 	ScanListenerPortTcp pulumi.IntPtrInput
 	// The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
@@ -593,11 +625,15 @@ type ExadbVmClusterArgs struct {
 	SubscriptionId pulumi.StringPtrInput
 	// (Updatable) Operating system version of the image.
 	SystemVersion pulumi.StringPtrInput
+	// TDE keystore type
+	TdeKeyStoreType pulumi.StringPtrInput
 	// The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+	TimeZone pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimeZone pulumi.StringPtrInput
+	UnregisterPkcsTrigger pulumi.IntPtrInput
 }
 
 func (ExadbVmClusterArgs) ElementType() reflect.Type {
@@ -798,6 +834,13 @@ func (o ExadbVmClusterOutput) ListenerPort() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadbVmCluster) pulumi.StringOutput { return v.ListenerPort }).(pulumi.StringOutput)
 }
 
+// Details of the multi cloud identity connectors of the VM cluster.
+func (o ExadbVmClusterOutput) MultiCloudIdentityConnectorConfigs() ExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return o.ApplyT(func(v *ExadbVmCluster) ExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+		return v.MultiCloudIdentityConnectorConfigs
+	}).(ExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput)
+}
+
 // (Updatable) The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
 func (o ExadbVmClusterOutput) NodeConfig() ExadbVmClusterNodeConfigOutput {
 	return o.ApplyT(func(v *ExadbVmCluster) ExadbVmClusterNodeConfigOutput { return v.NodeConfig }).(ExadbVmClusterNodeConfigOutput)
@@ -817,6 +860,11 @@ func (o ExadbVmClusterOutput) NsgIds() pulumi.StringArrayOutput {
 // The private zone ID in which you want DNS records to be created.
 func (o ExadbVmClusterOutput) PrivateZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadbVmCluster) pulumi.StringOutput { return v.PrivateZoneId }).(pulumi.StringOutput)
+}
+
+// (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+func (o ExadbVmClusterOutput) RegisterPkcsTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadbVmCluster) pulumi.IntPtrOutput { return v.RegisterPkcsTrigger }).(pulumi.IntPtrOutput)
 }
 
 // The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
@@ -889,17 +937,27 @@ func (o ExadbVmClusterOutput) SystemVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadbVmCluster) pulumi.StringOutput { return v.SystemVersion }).(pulumi.StringOutput)
 }
 
+// TDE keystore type
+func (o ExadbVmClusterOutput) TdeKeyStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v *ExadbVmCluster) pulumi.StringOutput { return v.TdeKeyStoreType }).(pulumi.StringOutput)
+}
+
 // The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
 func (o ExadbVmClusterOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadbVmCluster) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
 // The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+func (o ExadbVmClusterOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v *ExadbVmCluster) pulumi.StringOutput { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+// (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ExadbVmClusterOutput) TimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadbVmCluster) pulumi.StringOutput { return v.TimeZone }).(pulumi.StringOutput)
+func (o ExadbVmClusterOutput) UnregisterPkcsTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadbVmCluster) pulumi.IntPtrOutput { return v.UnregisterPkcsTrigger }).(pulumi.IntPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.

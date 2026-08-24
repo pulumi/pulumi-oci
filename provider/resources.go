@@ -158,6 +158,8 @@ const (
 	waasMod                         = "Waas"
 	wafMod                          = "Waf"
 	zprMod                          = "Zpr"
+
+	objectStorageNamespaceMetadataTok = "oci_objectstorage_namespace_metadata"
 )
 
 // A mapping between the terraform prefix and the pulumi module name.
@@ -1448,7 +1450,7 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_objectstorage_bucket":           {Tok: tfbridge.MakeDataSource(mainPkg, objectStorageMod, "getBucket")},
 			"oci_objectstorage_bucket_summaries": {Tok: tfbridge.MakeDataSource(mainPkg, objectStorageMod, "getBucketSummaries")},
 			"oci_objectstorage_namespace":        {Tok: tfbridge.MakeDataSource(mainPkg, objectStorageMod, "getNamespace")},
-			"oci_objectstorage_namespace_metadata": {
+			objectStorageNamespaceMetadataTok: {
 				Tok: tfbridge.MakeDataSource(mainPkg, objectStorageMod, "getNamespaceMetadata"),
 			},
 			"oci_objectstorage_object":                  {Tok: tfbridge.MakeDataSource(mainPkg, objectStorageMod, "getObject")},
@@ -1733,7 +1735,7 @@ func Provider() tfbridge.ProviderInfo {
 		"oci_datascience_model_artifact_import",
 		"oci_integration_oracle_managed_custom_endpoint",
 		"oci_integration_private_endpoint_outbound_connection",
-		"oci_objectstorage_namespace_metadata",
+		objectStorageNamespaceMetadataTok,
 		"oci_objectstorage_private_endpoint",
 	}
 	for _, tk := range resourcesMissingDocs {
@@ -1752,7 +1754,7 @@ func Provider() tfbridge.ProviderInfo {
 		"oci_data_safe_security_assessment_finding",
 		"oci_data_safe_target_database_role",
 		"oci_network_load_balancer_backend_set_health",
-		"oci_objectstorage_namespace_metadata",
+		objectStorageNamespaceMetadataTok,
 		"oci_objectstorage_private_endpoint",
 		"oci_objectstorage_private_endpoint_summaries",
 		"oci_vault_secret_version_sdk_v2",

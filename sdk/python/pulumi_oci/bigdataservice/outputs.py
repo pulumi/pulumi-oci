@@ -40,6 +40,8 @@ __all__ = [
     'BdsCapacityReportShapeAvailabilityDomainLevelCapacityReport',
     'BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailability',
     'BdsCapacityReportShapeAvailabilityShapeConfig',
+    'BdsCapacityReservationComputeCapacityReservations',
+    'BdsInstanceBdsCapacityReservationConfiguration',
     'BdsInstanceBdsClusterVersionSummary',
     'BdsInstanceCloudSqlDetail',
     'BdsInstanceCloudSqlDetailKerberosDetail',
@@ -113,10 +115,22 @@ __all__ = [
     'GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricResult',
     'GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdResult',
     'GetAutoScalingConfigurationsFilterResult',
+    'GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionResult',
+    'GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemResult',
+    'GetBdsCapacityReservationAssociatedConfigurationsFilterResult',
+    'GetBdsCapacityReservationComputeCapacityReservationResult',
+    'GetBdsCapacityReservationsBdsCapacityReservationCollectionResult',
+    'GetBdsCapacityReservationsBdsCapacityReservationCollectionItemResult',
+    'GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationResult',
+    'GetBdsCapacityReservationsFilterResult',
     'GetBdsClusterVersionsBdsClusterVersionResult',
     'GetBdsClusterVersionsFilterResult',
     'GetBdsInstanceApiKeysBdsApiKeyResult',
     'GetBdsInstanceApiKeysFilterResult',
+    'GetBdsInstanceBdsCapacityReservationConfigurationResult',
+    'GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionResult',
+    'GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemResult',
+    'GetBdsInstanceBdsCapacityReservationConfigurationsFilterResult',
     'GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationResult',
     'GetBdsInstanceBdsCertificateConfigurationsFilterResult',
     'GetBdsInstanceBdsClusterVersionSummaryResult',
@@ -176,6 +190,7 @@ __all__ = [
     'GetBdsInstanceWorkerNodeResult',
     'GetBdsInstanceWorkerNodeShapeConfigResult',
     'GetBdsInstancesBdsInstanceResult',
+    'GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationResult',
     'GetBdsInstancesBdsInstanceBdsClusterVersionSummaryResult',
     'GetBdsInstancesBdsInstanceCloudSqlDetailResult',
     'GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailResult',
@@ -1707,6 +1722,184 @@ class BdsCapacityReportShapeAvailabilityShapeConfig(dict):
 
 
 @pulumi.output_type
+class BdsCapacityReservationComputeCapacityReservations(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "domain1reservationId":
+            suggest = "domain1reservation_id"
+        elif key == "domain2reservationId":
+            suggest = "domain2reservation_id"
+        elif key == "domain3reservationId":
+            suggest = "domain3reservation_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BdsCapacityReservationComputeCapacityReservations. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BdsCapacityReservationComputeCapacityReservations.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BdsCapacityReservationComputeCapacityReservations.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 domain1reservation_id: Optional[_builtins.str] = None,
+                 domain2reservation_id: Optional[_builtins.str] = None,
+                 domain3reservation_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str domain1reservation_id: (Updatable) Compute capacity reservation OCID corresponding to AD1 for a multi-AD region or FD1 for a single-AD region.
+        :param _builtins.str domain2reservation_id: (Updatable) Compute capacity reservation OCID corresponding to AD2 for a multi-AD region or FD2 for a single-AD region.
+        :param _builtins.str domain3reservation_id: (Updatable) Compute capacity reservation OCID corresponding to AD3 for a multi-AD region or FD3 for a single-AD region.
+        """
+        if domain1reservation_id is not None:
+            pulumi.set(__self__, "domain1reservation_id", domain1reservation_id)
+        if domain2reservation_id is not None:
+            pulumi.set(__self__, "domain2reservation_id", domain2reservation_id)
+        if domain3reservation_id is not None:
+            pulumi.set(__self__, "domain3reservation_id", domain3reservation_id)
+
+    @_builtins.property
+    @pulumi.getter(name="domain1reservationId")
+    def domain1reservation_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Compute capacity reservation OCID corresponding to AD1 for a multi-AD region or FD1 for a single-AD region.
+        """
+        return pulumi.get(self, "domain1reservation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="domain2reservationId")
+    def domain2reservation_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Compute capacity reservation OCID corresponding to AD2 for a multi-AD region or FD2 for a single-AD region.
+        """
+        return pulumi.get(self, "domain2reservation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="domain3reservationId")
+    def domain3reservation_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Compute capacity reservation OCID corresponding to AD3 for a multi-AD region or FD3 for a single-AD region.
+        """
+        return pulumi.get(self, "domain3reservation_id")
+
+
+@pulumi.output_type
+class BdsInstanceBdsCapacityReservationConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "bdsCapacityReservationId":
+            suggest = "bds_capacity_reservation_id"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "bdsInstanceId":
+            suggest = "bds_instance_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeUpdated":
+            suggest = "time_updated"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BdsInstanceBdsCapacityReservationConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BdsInstanceBdsCapacityReservationConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BdsInstanceBdsCapacityReservationConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bds_capacity_reservation_id: _builtins.str,
+                 display_name: _builtins.str,
+                 bds_instance_id: Optional[_builtins.str] = None,
+                 id: Optional[_builtins.str] = None,
+                 state: Optional[_builtins.str] = None,
+                 time_created: Optional[_builtins.str] = None,
+                 time_updated: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str bds_capacity_reservation_id: The OCID of the BDS capacity reservation to associate with the BDS cluster.
+        :param _builtins.str display_name: A user-friendly name for the BDS capacity reservation configuration.
+        :param _builtins.str bds_instance_id: The OCID of the BDS cluster associated with the BDS capacity reservation.
+        :param _builtins.str id: The OCID of the Big Data Service resource.
+        :param _builtins.str state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+        :param _builtins.str time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+        :param _builtins.str time_updated: The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "bds_capacity_reservation_id", bds_capacity_reservation_id)
+        pulumi.set(__self__, "display_name", display_name)
+        if bds_instance_id is not None:
+            pulumi.set(__self__, "bds_instance_id", bds_instance_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="bdsCapacityReservationId")
+    def bds_capacity_reservation_id(self) -> _builtins.str:
+        """
+        The OCID of the BDS capacity reservation to associate with the BDS cluster.
+        """
+        return pulumi.get(self, "bds_capacity_reservation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A user-friendly name for the BDS capacity reservation configuration.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="bdsInstanceId")
+    def bds_instance_id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of the BDS cluster associated with the BDS capacity reservation.
+        """
+        return pulumi.get(self, "bds_instance_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of the Big Data Service resource.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[_builtins.str]:
+        """
+        The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
 class BdsInstanceBdsClusterVersionSummary(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -1728,21 +1921,22 @@ class BdsInstanceBdsClusterVersionSummary(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 bds_version: _builtins.str,
+                 bds_version: Optional[_builtins.str] = None,
                  odh_version: Optional[_builtins.str] = None):
         """
-        :param _builtins.str bds_version: BDS version to be used for cluster creation
-        :param _builtins.str odh_version: ODH version to be used for cluster creation
+        :param _builtins.str bds_version: BDS version to be used for cluster creation.
+        :param _builtins.str odh_version: ODH version to be used for cluster creation.
         """
-        pulumi.set(__self__, "bds_version", bds_version)
+        if bds_version is not None:
+            pulumi.set(__self__, "bds_version", bds_version)
         if odh_version is not None:
             pulumi.set(__self__, "odh_version", odh_version)
 
     @_builtins.property
     @pulumi.getter(name="bdsVersion")
-    def bds_version(self) -> _builtins.str:
+    def bds_version(self) -> Optional[_builtins.str]:
         """
-        BDS version to be used for cluster creation
+        BDS version to be used for cluster creation.
         """
         return pulumi.get(self, "bds_version")
 
@@ -1750,7 +1944,7 @@ class BdsInstanceBdsClusterVersionSummary(dict):
     @pulumi.getter(name="odhVersion")
     def odh_version(self) -> Optional[_builtins.str]:
         """
-        ODH version to be used for cluster creation
+        ODH version to be used for cluster creation.
         """
         return pulumi.get(self, "odh_version")
 
@@ -1794,7 +1988,7 @@ class BdsInstanceCloudSqlDetail(dict):
         """
         :param _builtins.str shape: Shape of the node
         :param _builtins.str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        :param _builtins.str ip_address: IP address of the node
+        :param _builtins.str ip_address: IP address of the node.
         :param _builtins.bool is_kerberos_mapped_to_database_users: Boolean flag specifying whether or not are Kerberos principals mapped to database users.
         :param Sequence['BdsInstanceCloudSqlDetailKerberosDetailArgs'] kerberos_details: Details about Kerberos principals
         :param _builtins.int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
@@ -1837,7 +2031,7 @@ class BdsInstanceCloudSqlDetail(dict):
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[_builtins.str]:
         """
-        IP address of the node
+        IP address of the node.
         """
         return pulumi.get(self, "ip_address")
 
@@ -2009,7 +2203,7 @@ class BdsInstanceClusterDetail(dict):
         :param _builtins.str jupyter_hub_url: The URL of the Jupyterhub.
         :param _builtins.str odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
         :param _builtins.str os_version: BDS-assigned Operating System version for the node.
-        :param _builtins.str time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
+        :param _builtins.str time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         :param _builtins.str time_refreshed: The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
         """
         if ambari_url is not None:
@@ -2151,7 +2345,7 @@ class BdsInstanceClusterDetail(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[_builtins.str]:
         """
-        The time the BDS instance was created. An RFC3339 formatted datetime string
+        The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -2196,10 +2390,11 @@ class BdsInstanceComputeOnlyWorkerNode(dict):
                  block_volume_size_in_gbs: Optional[_builtins.str] = None,
                  shape_config: Optional['outputs.BdsInstanceComputeOnlyWorkerNodeShapeConfig'] = None):
         """
-        :param _builtins.int number_of_nodes: Number of nodes that forming the cluster
+        :param _builtins.int number_of_nodes: The amount of worker nodes should be created
         :param _builtins.str shape: Shape of the node
         :param _builtins.str subnet_id: The OCID of the subnet in which the node should be created
         :param _builtins.str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        :param 'BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs' shape_config: The shape configuration requested for the node.
         """
         pulumi.set(__self__, "number_of_nodes", number_of_nodes)
         pulumi.set(__self__, "shape", shape)
@@ -2213,7 +2408,7 @@ class BdsInstanceComputeOnlyWorkerNode(dict):
     @pulumi.getter(name="numberOfNodes")
     def number_of_nodes(self) -> _builtins.int:
         """
-        Number of nodes that forming the cluster
+        The amount of worker nodes should be created
         """
         return pulumi.get(self, "number_of_nodes")
 
@@ -2244,6 +2439,9 @@ class BdsInstanceComputeOnlyWorkerNode(dict):
     @_builtins.property
     @pulumi.getter(name="shapeConfig")
     def shape_config(self) -> Optional['outputs.BdsInstanceComputeOnlyWorkerNodeShapeConfig']:
+        """
+        The shape configuration requested for the node.
+        """
         return pulumi.get(self, "shape_config")
 
 
@@ -2271,7 +2469,7 @@ class BdsInstanceComputeOnlyWorkerNodeShapeConfig(dict):
                  nvmes: Optional[_builtins.int] = None,
                  ocpus: Optional[_builtins.int] = None):
         """
-        :param _builtins.int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
+        :param _builtins.int memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param _builtins.int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param _builtins.int ocpus: The total number of OCPUs available to the node.
         """
@@ -2286,7 +2484,7 @@ class BdsInstanceComputeOnlyWorkerNodeShapeConfig(dict):
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[_builtins.int]:
         """
-        The total amount of memory available to the node, in gigabytes.
+        The total amount of memory available to the node, in gigabytes
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -2339,9 +2537,9 @@ class BdsInstanceEdgeNode(dict):
                  block_volume_size_in_gbs: Optional[_builtins.str] = None,
                  shape_config: Optional['outputs.BdsInstanceEdgeNodeShapeConfig'] = None):
         """
-        :param _builtins.int number_of_nodes: Number of nodes that forming the cluster
-        :param _builtins.str shape: Shape of the node
-        :param _builtins.str subnet_id: The OCID of the subnet in which the node should be created
+        :param _builtins.int number_of_nodes: The number of nodes that form the cluster.
+        :param _builtins.str shape: Shape of the node.
+        :param _builtins.str subnet_id: The OCID of the subnet in which the node is to be created.
         :param _builtins.str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         """
         pulumi.set(__self__, "number_of_nodes", number_of_nodes)
@@ -2356,7 +2554,7 @@ class BdsInstanceEdgeNode(dict):
     @pulumi.getter(name="numberOfNodes")
     def number_of_nodes(self) -> _builtins.int:
         """
-        Number of nodes that forming the cluster
+        The number of nodes that form the cluster.
         """
         return pulumi.get(self, "number_of_nodes")
 
@@ -2364,7 +2562,7 @@ class BdsInstanceEdgeNode(dict):
     @pulumi.getter
     def shape(self) -> _builtins.str:
         """
-        Shape of the node
+        Shape of the node.
         """
         return pulumi.get(self, "shape")
 
@@ -2372,7 +2570,7 @@ class BdsInstanceEdgeNode(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
         """
-        The OCID of the subnet in which the node should be created
+        The OCID of the subnet in which the node is to be created.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -2868,6 +3066,8 @@ class BdsInstanceKafkaBrokerNodeShapeConfig(dict):
         :param _builtins.int memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param _builtins.int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param _builtins.int ocpus: The total number of OCPUs available to the node.
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
@@ -2897,6 +3097,8 @@ class BdsInstanceKafkaBrokerNodeShapeConfig(dict):
     def ocpus(self) -> Optional[_builtins.int]:
         """
         The total number of OCPUs available to the node.
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "ocpus")
 
@@ -3073,8 +3275,8 @@ class BdsInstanceNetworkConfig(dict):
                  cidr_block: Optional[_builtins.str] = None,
                  is_nat_gateway_required: Optional[_builtins.bool] = None):
         """
-        :param _builtins.str cidr_block: (Updatable) The CIDR IP address block of the VCN.
-        :param _builtins.bool is_nat_gateway_required: (Updatable) A boolean flag whether to configure a NAT gateway.
+        :param _builtins.str cidr_block: The CIDR IP address block of the VCN.
+        :param _builtins.bool is_nat_gateway_required: A boolean flag whether to configure a NAT gateway.
         """
         if cidr_block is not None:
             pulumi.set(__self__, "cidr_block", cidr_block)
@@ -3085,7 +3287,7 @@ class BdsInstanceNetworkConfig(dict):
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> Optional[_builtins.str]:
         """
-        (Updatable) The CIDR IP address block of the VCN.
+        The CIDR IP address block of the VCN.
         """
         return pulumi.get(self, "cidr_block")
 
@@ -3093,7 +3295,7 @@ class BdsInstanceNetworkConfig(dict):
     @pulumi.getter(name="isNatGatewayRequired")
     def is_nat_gateway_required(self) -> Optional[_builtins.bool]:
         """
-        (Updatable) A boolean flag whether to configure a NAT gateway.
+        A boolean flag whether to configure a NAT gateway.
         """
         return pulumi.get(self, "is_nat_gateway_required")
 
@@ -3174,13 +3376,13 @@ class BdsInstanceNode(dict):
                  time_maintenance_reboot_due: Optional[_builtins.str] = None):
         """
         :param Sequence['BdsInstanceNodeAttachedBlockVolumeArgs'] attached_block_volumes: The list of block volumes attached to a given node.
-        :param _builtins.str availability_domain: The name of the availability domain the node is running in
+        :param _builtins.str availability_domain: The name of the availability domain in which the node is running.
         :param _builtins.str display_name: (Updatable) Name of the BDS instance
-        :param _builtins.str fault_domain: The name of the fault domain the node is running in
-        :param _builtins.str hostname: The fully-qualified hostname (FQDN) of the node
-        :param _builtins.str image_id: The OCID of the image from which the node was created
-        :param _builtins.str instance_id: The OCID of the underlying compute instance
-        :param _builtins.str ip_address: IP address of the node
+        :param _builtins.str fault_domain: The name of the fault domain in which the node is running.
+        :param _builtins.str hostname: The fully-qualified hostname (FQDN) of the node.
+        :param _builtins.str image_id: The OCID of the image from which the node was created.
+        :param _builtins.str instance_id: The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
+        :param _builtins.str ip_address: IP address of the node.
         :param _builtins.bool is_reboot_required: Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
         :param _builtins.float local_disks_total_size_in_gbs: The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
         :param _builtins.int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
@@ -3190,10 +3392,10 @@ class BdsInstanceNode(dict):
         :param _builtins.str odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
         :param _builtins.str os_version: BDS-assigned Operating System version for the node.
         :param _builtins.str shape: (Updatable) Shape of the node.
-        :param _builtins.str ssh_fingerprint: The fingerprint of the SSH key used for node access
-        :param _builtins.str state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
+        :param _builtins.str ssh_fingerprint: The fingerprint of the SSH key used for node access.
+        :param _builtins.str state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         :param _builtins.str subnet_id: The OCID of the subnet in which the node will be created.
-        :param _builtins.str time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
+        :param _builtins.str time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         :param _builtins.str time_maintenance_reboot_due: The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
         """
         if attached_block_volumes is not None:
@@ -3253,7 +3455,7 @@ class BdsInstanceNode(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[_builtins.str]:
         """
-        The name of the availability domain the node is running in
+        The name of the availability domain in which the node is running.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -3269,7 +3471,7 @@ class BdsInstanceNode(dict):
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> Optional[_builtins.str]:
         """
-        The name of the fault domain the node is running in
+        The name of the fault domain in which the node is running.
         """
         return pulumi.get(self, "fault_domain")
 
@@ -3277,7 +3479,7 @@ class BdsInstanceNode(dict):
     @pulumi.getter
     def hostname(self) -> Optional[_builtins.str]:
         """
-        The fully-qualified hostname (FQDN) of the node
+        The fully-qualified hostname (FQDN) of the node.
         """
         return pulumi.get(self, "hostname")
 
@@ -3285,7 +3487,7 @@ class BdsInstanceNode(dict):
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[_builtins.str]:
         """
-        The OCID of the image from which the node was created
+        The OCID of the image from which the node was created.
         """
         return pulumi.get(self, "image_id")
 
@@ -3293,7 +3495,7 @@ class BdsInstanceNode(dict):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[_builtins.str]:
         """
-        The OCID of the underlying compute instance
+        The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
         """
         return pulumi.get(self, "instance_id")
 
@@ -3301,7 +3503,7 @@ class BdsInstanceNode(dict):
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[_builtins.str]:
         """
-        IP address of the node
+        IP address of the node.
         """
         return pulumi.get(self, "ip_address")
 
@@ -3381,7 +3583,7 @@ class BdsInstanceNode(dict):
     @pulumi.getter(name="sshFingerprint")
     def ssh_fingerprint(self) -> Optional[_builtins.str]:
         """
-        The fingerprint of the SSH key used for node access
+        The fingerprint of the SSH key used for node access.
         """
         return pulumi.get(self, "ssh_fingerprint")
 
@@ -3389,7 +3591,7 @@ class BdsInstanceNode(dict):
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
-        (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
+        (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         """
         return pulumi.get(self, "state")
 
@@ -3405,7 +3607,7 @@ class BdsInstanceNode(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[_builtins.str]:
         """
-        The time the BDS instance was created. An RFC3339 formatted datetime string
+        The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -3988,8 +4190,8 @@ class BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig(dict):
                  node_type: Optional[_builtins.str] = None,
                  shape: Optional[_builtins.str] = None):
         """
-        :param _builtins.str node_type: BDS instance node type
-        :param _builtins.str shape: Shape of the node
+        :param _builtins.str node_type: Cluster node type.
+        :param _builtins.str shape: Shape of the node.
         """
         if node_type is not None:
             pulumi.set(__self__, "node_type", node_type)
@@ -4000,7 +4202,7 @@ class BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig(dict):
     @pulumi.getter(name="nodeType")
     def node_type(self) -> Optional[_builtins.str]:
         """
-        BDS instance node type
+        Cluster node type.
         """
         return pulumi.get(self, "node_type")
 
@@ -4008,7 +4210,7 @@ class BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig(dict):
     @pulumi.getter
     def shape(self) -> Optional[_builtins.str]:
         """
-        Shape of the node
+        Shape of the node.
         """
         return pulumi.get(self, "shape")
 
@@ -4192,10 +4394,11 @@ class BdsInstanceWorkerNode(dict):
                  block_volume_size_in_gbs: Optional[_builtins.str] = None,
                  shape_config: Optional['outputs.BdsInstanceWorkerNodeShapeConfig'] = None):
         """
-        :param _builtins.int number_of_nodes: Number of nodes that forming the cluster
+        :param _builtins.int number_of_nodes: The amount of worker nodes should be created, at least be 3.
         :param _builtins.str shape: Shape of the node
         :param _builtins.str subnet_id: The OCID of the subnet in which the node should be created
         :param _builtins.str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        :param 'BdsInstanceWorkerNodeShapeConfigArgs' shape_config: The shape configuration requested for the node.
         """
         pulumi.set(__self__, "number_of_nodes", number_of_nodes)
         pulumi.set(__self__, "shape", shape)
@@ -4209,7 +4412,7 @@ class BdsInstanceWorkerNode(dict):
     @pulumi.getter(name="numberOfNodes")
     def number_of_nodes(self) -> _builtins.int:
         """
-        Number of nodes that forming the cluster
+        The amount of worker nodes should be created, at least be 3.
         """
         return pulumi.get(self, "number_of_nodes")
 
@@ -4240,6 +4443,9 @@ class BdsInstanceWorkerNode(dict):
     @_builtins.property
     @pulumi.getter(name="shapeConfig")
     def shape_config(self) -> Optional['outputs.BdsInstanceWorkerNodeShapeConfig']:
+        """
+        The shape configuration requested for the node.
+        """
         return pulumi.get(self, "shape_config")
 
 
@@ -4267,7 +4473,7 @@ class BdsInstanceWorkerNodeShapeConfig(dict):
                  nvmes: Optional[_builtins.int] = None,
                  ocpus: Optional[_builtins.int] = None):
         """
-        :param _builtins.int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
+        :param _builtins.int memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param _builtins.int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param _builtins.int ocpus: The total number of OCPUs available to the node.
         """
@@ -4282,7 +4488,7 @@ class BdsInstanceWorkerNodeShapeConfig(dict):
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[_builtins.int]:
         """
-        The total amount of memory available to the node, in gigabytes.
+        The total amount of memory available to the node, in gigabytes
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -5794,6 +6000,371 @@ class GetAutoScalingConfigurationsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemResult']):
+        """
+        :param Sequence['GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArgs'] items: List of BDS capacity reservation configuration summaries associated with a BDS capacity reservation.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemResult']:
+        """
+        List of BDS capacity reservation configuration summaries associated with a BDS capacity reservation.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 bds_instance_id: _builtins.str,
+                 compartment_id: _builtins.str,
+                 display_name: _builtins.str,
+                 id: _builtins.str,
+                 state: _builtins.str,
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str bds_instance_id: The OCID of the BDS cluster linked through the BDS capacity reservation configuration.
+        :param _builtins.str compartment_id: The OCID of the compartment.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.str id: The OCID of the BDS capacity reservation configuration.
+        :param _builtins.str state: The lifecycle state of the BDS capacity reservation configuration.
+        :param _builtins.str time_created: The time the configuration was created, shown as an RFC 3339 formatted datetime string.
+        :param _builtins.str time_updated: The time the configuration was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "bds_instance_id", bds_instance_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="bdsInstanceId")
+    def bds_instance_id(self) -> _builtins.str:
+        """
+        The OCID of the BDS cluster linked through the BDS capacity reservation configuration.
+        """
+        return pulumi.get(self, "bds_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The OCID of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the BDS capacity reservation configuration.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The lifecycle state of the BDS capacity reservation configuration.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the configuration was created, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The time the configuration was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetBdsCapacityReservationAssociatedConfigurationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetBdsCapacityReservationComputeCapacityReservationResult(dict):
+    def __init__(__self__, *,
+                 domain1reservation_id: _builtins.str,
+                 domain2reservation_id: _builtins.str,
+                 domain3reservation_id: _builtins.str):
+        """
+        :param _builtins.str domain1reservation_id: Compute capacity reservation OCID corresponding to AD1 for a multi-AD region or FD1 for a single-AD region.
+        :param _builtins.str domain2reservation_id: Compute capacity reservation OCID corresponding to AD2 for a multi-AD region or FD2 for a single-AD region.
+        :param _builtins.str domain3reservation_id: Compute capacity reservation OCID corresponding to AD3 for a multi-AD region or FD3 for a single-AD region.
+        """
+        pulumi.set(__self__, "domain1reservation_id", domain1reservation_id)
+        pulumi.set(__self__, "domain2reservation_id", domain2reservation_id)
+        pulumi.set(__self__, "domain3reservation_id", domain3reservation_id)
+
+    @_builtins.property
+    @pulumi.getter(name="domain1reservationId")
+    def domain1reservation_id(self) -> _builtins.str:
+        """
+        Compute capacity reservation OCID corresponding to AD1 for a multi-AD region or FD1 for a single-AD region.
+        """
+        return pulumi.get(self, "domain1reservation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="domain2reservationId")
+    def domain2reservation_id(self) -> _builtins.str:
+        """
+        Compute capacity reservation OCID corresponding to AD2 for a multi-AD region or FD2 for a single-AD region.
+        """
+        return pulumi.get(self, "domain2reservation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="domain3reservationId")
+    def domain3reservation_id(self) -> _builtins.str:
+        """
+        Compute capacity reservation OCID corresponding to AD3 for a multi-AD region or FD3 for a single-AD region.
+        """
+        return pulumi.get(self, "domain3reservation_id")
+
+
+@pulumi.output_type
+class GetBdsCapacityReservationsBdsCapacityReservationCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetBdsCapacityReservationsBdsCapacityReservationCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetBdsCapacityReservationsBdsCapacityReservationCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetBdsCapacityReservationsBdsCapacityReservationCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 compute_capacity_reservations: Sequence['outputs.GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationResult'],
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The OCID of the compartment.
+        :param Sequence['GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArgs'] compute_capacity_reservations: Compute capacity reservation ID mappings by domain. For a multi-AD region, domain1, domain2, and domain3 correspond to AD1, AD2, and AD3 respectively. For a single-AD region, domain1, domain2, and domain3 correspond to FD1, FD2, and FD3 respectively.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
+        :param _builtins.str id: The OCID of the BDS capacity reservation.
+        :param _builtins.str state: The lifecycle state of the BDS capacity reservation.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.
+        :param _builtins.str time_created: The time the BDS capacity reservation was created, shown as an RFC 3339 formatted datetime string.
+        :param _builtins.str time_updated: The time the BDS capacity reservation was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_capacity_reservations", compute_capacity_reservations)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The OCID of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="computeCapacityReservations")
+    def compute_capacity_reservations(self) -> Sequence['outputs.GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationResult']:
+        """
+        Compute capacity reservation ID mappings by domain. For a multi-AD region, domain1, domain2, and domain3 correspond to AD1, AD2, and AD3 respectively. For a single-AD region, domain1, domain2, and domain3 correspond to FD1, FD2, and FD3 respectively.
+        """
+        return pulumi.get(self, "compute_capacity_reservations")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the BDS capacity reservation.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The lifecycle state of the BDS capacity reservation.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the BDS capacity reservation was created, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The time the BDS capacity reservation was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationResult(dict):
+    def __init__(__self__, *,
+                 domain1reservation_id: _builtins.str,
+                 domain2reservation_id: _builtins.str,
+                 domain3reservation_id: _builtins.str):
+        """
+        :param _builtins.str domain1reservation_id: Compute capacity reservation OCID corresponding to AD1 for a multi-AD region or FD1 for a single-AD region.
+        :param _builtins.str domain2reservation_id: Compute capacity reservation OCID corresponding to AD2 for a multi-AD region or FD2 for a single-AD region.
+        :param _builtins.str domain3reservation_id: Compute capacity reservation OCID corresponding to AD3 for a multi-AD region or FD3 for a single-AD region.
+        """
+        pulumi.set(__self__, "domain1reservation_id", domain1reservation_id)
+        pulumi.set(__self__, "domain2reservation_id", domain2reservation_id)
+        pulumi.set(__self__, "domain3reservation_id", domain3reservation_id)
+
+    @_builtins.property
+    @pulumi.getter(name="domain1reservationId")
+    def domain1reservation_id(self) -> _builtins.str:
+        """
+        Compute capacity reservation OCID corresponding to AD1 for a multi-AD region or FD1 for a single-AD region.
+        """
+        return pulumi.get(self, "domain1reservation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="domain2reservationId")
+    def domain2reservation_id(self) -> _builtins.str:
+        """
+        Compute capacity reservation OCID corresponding to AD2 for a multi-AD region or FD2 for a single-AD region.
+        """
+        return pulumi.get(self, "domain2reservation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="domain3reservationId")
+    def domain3reservation_id(self) -> _builtins.str:
+        """
+        Compute capacity reservation OCID corresponding to AD3 for a multi-AD region or FD3 for a single-AD region.
+        """
+        return pulumi.get(self, "domain3reservation_id")
+
+
+@pulumi.output_type
+class GetBdsCapacityReservationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetBdsClusterVersionsBdsClusterVersionResult(dict):
     def __init__(__self__, *,
                  bds_version: _builtins.str,
@@ -5986,6 +6557,233 @@ class GetBdsInstanceApiKeysBdsApiKeyResult(dict):
 
 @pulumi.output_type
 class GetBdsInstanceApiKeysFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetBdsInstanceBdsCapacityReservationConfigurationResult(dict):
+    def __init__(__self__, *,
+                 bds_capacity_reservation_id: _builtins.str,
+                 bds_instance_id: _builtins.str,
+                 display_name: _builtins.str,
+                 id: _builtins.str,
+                 state: _builtins.str,
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str bds_capacity_reservation_id: The OCID of the BDS capacity reservation associated with the BDS cluster.
+        :param _builtins.str bds_instance_id: The OCID of the cluster.
+        :param _builtins.str display_name: The name of the node.
+        :param _builtins.str id: The OCID of the Big Data Service resource.
+        :param _builtins.str state: The state of the cluster.
+        :param _builtins.str time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+        :param _builtins.str time_updated: The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "bds_capacity_reservation_id", bds_capacity_reservation_id)
+        pulumi.set(__self__, "bds_instance_id", bds_instance_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="bdsCapacityReservationId")
+    def bds_capacity_reservation_id(self) -> _builtins.str:
+        """
+        The OCID of the BDS capacity reservation associated with the BDS cluster.
+        """
+        return pulumi.get(self, "bds_capacity_reservation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="bdsInstanceId")
+    def bds_instance_id(self) -> _builtins.str:
+        """
+        The OCID of the cluster.
+        """
+        return pulumi.get(self, "bds_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The name of the node.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the Big Data Service resource.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The state of the cluster.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemResult']):
+        """
+        :param Sequence['GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArgs'] items: List of BDS capacity reservation configuration summaries for the specified BDS cluster.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemResult']:
+        """
+        List of BDS capacity reservation configuration summaries for the specified BDS cluster.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 activate_trigger: _builtins.int,
+                 bds_capacity_reservation_id: _builtins.str,
+                 bds_instance_id: _builtins.str,
+                 deactivate_trigger: _builtins.int,
+                 display_name: _builtins.str,
+                 id: _builtins.str,
+                 state: _builtins.str,
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str bds_capacity_reservation_id: The OCID of the BDS capacity reservation associated with the BDS cluster.
+        :param _builtins.str bds_instance_id: The OCID of the cluster.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.str id: The OCID of the BDS capacity reservation configuration.
+        :param _builtins.str state: The lifecycle state of the BDS capacity reservation configuration.
+        :param _builtins.str time_created: The time the BDS capacity reservation configuration was created, shown as an RFC 3339 formatted datetime string.
+        :param _builtins.str time_updated: The time the BDS capacity reservation configuration was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "activate_trigger", activate_trigger)
+        pulumi.set(__self__, "bds_capacity_reservation_id", bds_capacity_reservation_id)
+        pulumi.set(__self__, "bds_instance_id", bds_instance_id)
+        pulumi.set(__self__, "deactivate_trigger", deactivate_trigger)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="activateTrigger")
+    def activate_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "activate_trigger")
+
+    @_builtins.property
+    @pulumi.getter(name="bdsCapacityReservationId")
+    def bds_capacity_reservation_id(self) -> _builtins.str:
+        """
+        The OCID of the BDS capacity reservation associated with the BDS cluster.
+        """
+        return pulumi.get(self, "bds_capacity_reservation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="bdsInstanceId")
+    def bds_instance_id(self) -> _builtins.str:
+        """
+        The OCID of the cluster.
+        """
+        return pulumi.get(self, "bds_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="deactivateTrigger")
+    def deactivate_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "deactivate_trigger")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the BDS capacity reservation configuration.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The lifecycle state of the BDS capacity reservation configuration.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the BDS capacity reservation configuration was created, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The time the BDS capacity reservation configuration was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetBdsInstanceBdsCapacityReservationConfigurationsFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
@@ -9391,6 +10189,7 @@ class GetBdsInstanceWorkerNodeShapeConfigResult(dict):
 @pulumi.output_type
 class GetBdsInstancesBdsInstanceResult(dict):
     def __init__(__self__, *,
+                 bds_capacity_reservation_configurations: Sequence['outputs.GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationResult'],
                  bds_cluster_version_summaries: Sequence['outputs.GetBdsInstancesBdsInstanceBdsClusterVersionSummaryResult'],
                  bootstrap_script_url: _builtins.str,
                  cloud_sql_details: Sequence['outputs.GetBdsInstancesBdsInstanceCloudSqlDetailResult'],
@@ -9435,7 +10234,8 @@ class GetBdsInstancesBdsInstanceResult(dict):
                  util_nodes: Sequence['outputs.GetBdsInstancesBdsInstanceUtilNodeResult'],
                  worker_nodes: Sequence['outputs.GetBdsInstancesBdsInstanceWorkerNodeResult']):
         """
-        :param Sequence['GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArgs'] bds_cluster_version_summaries: Cluster version details including bds and odh version information.
+        :param Sequence['GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArgs'] bds_capacity_reservation_configurations: The list of BDS capacity reservation configurations associated with the cluster.
+        :param Sequence['GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArgs'] bds_cluster_version_summaries: Cluster version details including BDS and ODH version information.
         :param _builtins.str bootstrap_script_url: pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
         :param Sequence['GetBdsInstancesBdsInstanceCloudSqlDetailArgs'] cloud_sql_details: The information about added Cloud SQL capability
         :param Sequence['GetBdsInstancesBdsInstanceClusterDetailArgs'] cluster_details: Specific info about a Hadoop cluster
@@ -9463,6 +10263,7 @@ class GetBdsInstancesBdsInstanceResult(dict):
         :param _builtins.str time_earliest_certificate_expiration: The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
         :param _builtins.str time_updated: The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
         """
+        pulumi.set(__self__, "bds_capacity_reservation_configurations", bds_capacity_reservation_configurations)
         pulumi.set(__self__, "bds_cluster_version_summaries", bds_cluster_version_summaries)
         pulumi.set(__self__, "bootstrap_script_url", bootstrap_script_url)
         pulumi.set(__self__, "cloud_sql_details", cloud_sql_details)
@@ -9508,10 +10309,18 @@ class GetBdsInstancesBdsInstanceResult(dict):
         pulumi.set(__self__, "worker_nodes", worker_nodes)
 
     @_builtins.property
+    @pulumi.getter(name="bdsCapacityReservationConfigurations")
+    def bds_capacity_reservation_configurations(self) -> Sequence['outputs.GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationResult']:
+        """
+        The list of BDS capacity reservation configurations associated with the cluster.
+        """
+        return pulumi.get(self, "bds_capacity_reservation_configurations")
+
+    @_builtins.property
     @pulumi.getter(name="bdsClusterVersionSummaries")
     def bds_cluster_version_summaries(self) -> Sequence['outputs.GetBdsInstancesBdsInstanceBdsClusterVersionSummaryResult']:
         """
-        Cluster version details including bds and odh version information.
+        Cluster version details including BDS and ODH version information.
         """
         return pulumi.get(self, "bds_cluster_version_summaries")
 
@@ -9802,6 +10611,90 @@ class GetBdsInstancesBdsInstanceResult(dict):
     @pulumi.getter(name="workerNodes")
     def worker_nodes(self) -> Sequence['outputs.GetBdsInstancesBdsInstanceWorkerNodeResult']:
         return pulumi.get(self, "worker_nodes")
+
+
+@pulumi.output_type
+class GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationResult(dict):
+    def __init__(__self__, *,
+                 bds_capacity_reservation_id: _builtins.str,
+                 bds_instance_id: _builtins.str,
+                 display_name: _builtins.str,
+                 id: _builtins.str,
+                 state: _builtins.str,
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str bds_capacity_reservation_id: The OCID of the BDS capacity reservation associated with the BDS cluster.
+        :param _builtins.str bds_instance_id: The OCID of the BDS cluster associated with the BDS capacity reservation.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.str id: The OCID of the Big Data Service resource.
+        :param _builtins.str state: The state of the cluster.
+        :param _builtins.str time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+        :param _builtins.str time_updated: The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "bds_capacity_reservation_id", bds_capacity_reservation_id)
+        pulumi.set(__self__, "bds_instance_id", bds_instance_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="bdsCapacityReservationId")
+    def bds_capacity_reservation_id(self) -> _builtins.str:
+        """
+        The OCID of the BDS capacity reservation associated with the BDS cluster.
+        """
+        return pulumi.get(self, "bds_capacity_reservation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="bdsInstanceId")
+    def bds_instance_id(self) -> _builtins.str:
+        """
+        The OCID of the BDS cluster associated with the BDS capacity reservation.
+        """
+        return pulumi.get(self, "bds_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the Big Data Service resource.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The state of the cluster.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type

@@ -29,6 +29,7 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     nsgIds: recoveryServiceSubnetNsgIds,
+ *     securityAttributes: recoveryServiceSubnetSecurityAttributes,
  *     subnetId: testSubnet.id,
  *     subnets: recoveryServiceSubnetSubnets,
  * });
@@ -95,6 +96,10 @@ export class RecoveryServiceSubnet extends pulumi.CustomResource {
      */
     declare public readonly nsgIds: pulumi.Output<string[]>;
     /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    declare public readonly securityAttributes: pulumi.Output<string>;
+    /**
      * The current state of the recovery service subnet.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
@@ -147,6 +152,7 @@ export class RecoveryServiceSubnet extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["nsgIds"] = state?.nsgIds;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
             resourceInputs["state"] = state?.state;
             resourceInputs["subnetId"] = state?.subnetId;
             resourceInputs["subnets"] = state?.subnets;
@@ -170,6 +176,7 @@ export class RecoveryServiceSubnet extends pulumi.CustomResource {
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["nsgIds"] = args?.nsgIds;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
             resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["subnets"] = args?.subnets;
             resourceInputs["vcnId"] = args?.vcnId;
@@ -212,6 +219,10 @@ export interface RecoveryServiceSubnetState {
      * (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    securityAttributes?: pulumi.Input<string | undefined>;
     /**
      * The current state of the recovery service subnet.
      */
@@ -271,6 +282,10 @@ export interface RecoveryServiceSubnetArgs {
      * (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    securityAttributes?: pulumi.Input<string | undefined>;
     /**
      * Deprecated. One of the subnets associated with the Recovery Service subnet.
      *

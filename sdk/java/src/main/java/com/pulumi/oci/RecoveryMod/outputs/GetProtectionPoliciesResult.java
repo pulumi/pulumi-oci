@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.RecoveryMod.outputs.GetProtectionPoliciesFilter;
 import com.pulumi.oci.RecoveryMod.outputs.GetProtectionPoliciesProtectionPolicyCollection;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -19,7 +20,7 @@ public final class GetProtectionPoliciesResult {
      * @return The OCID of the compartment that contains the protection policy.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return A user provided name for the protection policy.
      * 
@@ -31,6 +32,11 @@ public final class GetProtectionPoliciesResult {
      * 
      */
     private String id;
+    /**
+     * @return Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+     * 
+     */
+    private @Nullable Boolean mustEnforceCloudLocality;
     private @Nullable String owner;
     /**
      * @return The list of protection_policy_collection.
@@ -49,8 +55,8 @@ public final class GetProtectionPoliciesResult {
      * @return The OCID of the compartment that contains the protection policy.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return A user provided name for the protection policy.
@@ -68,6 +74,13 @@ public final class GetProtectionPoliciesResult {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+     * 
+     */
+    public Optional<Boolean> mustEnforceCloudLocality() {
+        return Optional.ofNullable(this.mustEnforceCloudLocality);
     }
     public Optional<String> owner() {
         return Optional.ofNullable(this.owner);
@@ -99,10 +112,11 @@ public final class GetProtectionPoliciesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
+        private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetProtectionPoliciesFilter> filters;
         private String id;
+        private @Nullable Boolean mustEnforceCloudLocality;
         private @Nullable String owner;
         private List<GetProtectionPoliciesProtectionPolicyCollection> protectionPolicyCollections;
         private @Nullable String protectionPolicyId;
@@ -114,6 +128,7 @@ public final class GetProtectionPoliciesResult {
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.mustEnforceCloudLocality = defaults.mustEnforceCloudLocality;
     	      this.owner = defaults.owner;
     	      this.protectionPolicyCollections = defaults.protectionPolicyCollections;
     	      this.protectionPolicyId = defaults.protectionPolicyId;
@@ -121,10 +136,8 @@ public final class GetProtectionPoliciesResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            if (compartmentId == null) {
-              throw new MissingRequiredPropertyException("GetProtectionPoliciesResult", "compartmentId");
-            }
+        public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
@@ -149,6 +162,12 @@ public final class GetProtectionPoliciesResult {
               throw new MissingRequiredPropertyException("GetProtectionPoliciesResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder mustEnforceCloudLocality(@Nullable Boolean mustEnforceCloudLocality) {
+
+            this.mustEnforceCloudLocality = mustEnforceCloudLocality;
             return this;
         }
         @CustomType.Setter
@@ -186,6 +205,7 @@ public final class GetProtectionPoliciesResult {
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.mustEnforceCloudLocality = mustEnforceCloudLocality;
             _resultValue.owner = owner;
             _resultValue.protectionPolicyCollections = protectionPolicyCollections;
             _resultValue.protectionPolicyId = protectionPolicyId;

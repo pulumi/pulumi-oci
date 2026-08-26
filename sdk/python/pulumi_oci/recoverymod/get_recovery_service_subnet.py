@@ -26,7 +26,7 @@ class GetRecoveryServiceSubnetResult:
     """
     A collection of values returned by getRecoveryServiceSubnet.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, nsg_ids=None, recovery_service_subnet_id=None, state=None, subnet_id=None, subnets=None, system_tags=None, time_created=None, time_updated=None, vcn_id=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, nsg_ids=None, recovery_service_subnet_id=None, security_attributes=None, state=None, subnet_id=None, subnets=None, system_tags=None, time_created=None, time_updated=None, vcn_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -51,6 +51,9 @@ class GetRecoveryServiceSubnetResult:
         if recovery_service_subnet_id and not isinstance(recovery_service_subnet_id, str):
             raise TypeError("Expected argument 'recovery_service_subnet_id' to be a str")
         pulumi.set(__self__, "recovery_service_subnet_id", recovery_service_subnet_id)
+        if security_attributes and not isinstance(security_attributes, str):
+            raise TypeError("Expected argument 'security_attributes' to be a str")
+        pulumi.set(__self__, "security_attributes", security_attributes)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -135,6 +138,14 @@ class GetRecoveryServiceSubnetResult:
         return pulumi.get(self, "recovery_service_subnet_id")
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> _builtins.str:
+        """
+        Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -206,6 +217,7 @@ class AwaitableGetRecoveryServiceSubnetResult(GetRecoveryServiceSubnetResult):
             lifecycle_details=self.lifecycle_details,
             nsg_ids=self.nsg_ids,
             recovery_service_subnet_id=self.recovery_service_subnet_id,
+            security_attributes=self.security_attributes,
             state=self.state,
             subnet_id=self.subnet_id,
             subnets=self.subnets,
@@ -248,6 +260,7 @@ def get_recovery_service_subnet(recovery_service_subnet_id: Optional[_builtins.s
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         recovery_service_subnet_id=pulumi.get(__ret__, 'recovery_service_subnet_id'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         subnets=pulumi.get(__ret__, 'subnets'),
@@ -287,6 +300,7 @@ def get_recovery_service_subnet_output(recovery_service_subnet_id: pulumi.Input[
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         nsg_ids=pulumi.get(__response__, 'nsg_ids'),
         recovery_service_subnet_id=pulumi.get(__response__, 'recovery_service_subnet_id'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
         state=pulumi.get(__response__, 'state'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),
         subnets=pulumi.get(__response__, 'subnets'),

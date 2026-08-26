@@ -13,6 +13,571 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type BlueGreenDeploymentChannelDetails struct {
+	// The username for the replication applier of the target MySQL DB System.
+	ApplierUsername *string `pulumi:"applierUsername"`
+	// The password for the source DB system user used by the blue/green workflow to configure the replication channel. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
+	SourcePassword string `pulumi:"sourcePassword"`
+	// The username on the source DB system used by the blue/green workflow to configure the replication channel. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
+	SourceUsername string `pulumi:"sourceUsername"`
+	// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+	SslCaCertificate *BlueGreenDeploymentChannelDetailsSslCaCertificate `pulumi:"sslCaCertificate"`
+	// The SSL mode of the replication channel created by the blue/green workflow. `VERIFY_CA` and `VERIFY_IDENTITY` require `sslCaCertificate`. `REQUIRED` and `DISABLED` must not include `sslCaCertificate`.
+	SslMode string `pulumi:"sslMode"`
+}
+
+// BlueGreenDeploymentChannelDetailsInput is an input type that accepts BlueGreenDeploymentChannelDetailsArgs and BlueGreenDeploymentChannelDetailsOutput values.
+// You can construct a concrete instance of `BlueGreenDeploymentChannelDetailsInput` via:
+//
+//	BlueGreenDeploymentChannelDetailsArgs{...}
+type BlueGreenDeploymentChannelDetailsInput interface {
+	pulumi.Input
+
+	ToBlueGreenDeploymentChannelDetailsOutput() BlueGreenDeploymentChannelDetailsOutput
+	ToBlueGreenDeploymentChannelDetailsOutputWithContext(context.Context) BlueGreenDeploymentChannelDetailsOutput
+}
+
+type BlueGreenDeploymentChannelDetailsArgs struct {
+	// The username for the replication applier of the target MySQL DB System.
+	ApplierUsername pulumi.StringPtrInput `pulumi:"applierUsername"`
+	// The password for the source DB system user used by the blue/green workflow to configure the replication channel. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
+	SourcePassword pulumi.StringInput `pulumi:"sourcePassword"`
+	// The username on the source DB system used by the blue/green workflow to configure the replication channel. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
+	SourceUsername pulumi.StringInput `pulumi:"sourceUsername"`
+	// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+	SslCaCertificate BlueGreenDeploymentChannelDetailsSslCaCertificatePtrInput `pulumi:"sslCaCertificate"`
+	// The SSL mode of the replication channel created by the blue/green workflow. `VERIFY_CA` and `VERIFY_IDENTITY` require `sslCaCertificate`. `REQUIRED` and `DISABLED` must not include `sslCaCertificate`.
+	SslMode pulumi.StringInput `pulumi:"sslMode"`
+}
+
+func (BlueGreenDeploymentChannelDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BlueGreenDeploymentChannelDetails)(nil)).Elem()
+}
+
+func (i BlueGreenDeploymentChannelDetailsArgs) ToBlueGreenDeploymentChannelDetailsOutput() BlueGreenDeploymentChannelDetailsOutput {
+	return i.ToBlueGreenDeploymentChannelDetailsOutputWithContext(context.Background())
+}
+
+func (i BlueGreenDeploymentChannelDetailsArgs) ToBlueGreenDeploymentChannelDetailsOutputWithContext(ctx context.Context) BlueGreenDeploymentChannelDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BlueGreenDeploymentChannelDetailsOutput)
+}
+
+func (i BlueGreenDeploymentChannelDetailsArgs) ToBlueGreenDeploymentChannelDetailsPtrOutput() BlueGreenDeploymentChannelDetailsPtrOutput {
+	return i.ToBlueGreenDeploymentChannelDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i BlueGreenDeploymentChannelDetailsArgs) ToBlueGreenDeploymentChannelDetailsPtrOutputWithContext(ctx context.Context) BlueGreenDeploymentChannelDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BlueGreenDeploymentChannelDetailsOutput).ToBlueGreenDeploymentChannelDetailsPtrOutputWithContext(ctx)
+}
+
+// BlueGreenDeploymentChannelDetailsPtrInput is an input type that accepts BlueGreenDeploymentChannelDetailsArgs, BlueGreenDeploymentChannelDetailsPtr and BlueGreenDeploymentChannelDetailsPtrOutput values.
+// You can construct a concrete instance of `BlueGreenDeploymentChannelDetailsPtrInput` via:
+//
+//	        BlueGreenDeploymentChannelDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type BlueGreenDeploymentChannelDetailsPtrInput interface {
+	pulumi.Input
+
+	ToBlueGreenDeploymentChannelDetailsPtrOutput() BlueGreenDeploymentChannelDetailsPtrOutput
+	ToBlueGreenDeploymentChannelDetailsPtrOutputWithContext(context.Context) BlueGreenDeploymentChannelDetailsPtrOutput
+}
+
+type blueGreenDeploymentChannelDetailsPtrType BlueGreenDeploymentChannelDetailsArgs
+
+func BlueGreenDeploymentChannelDetailsPtr(v *BlueGreenDeploymentChannelDetailsArgs) BlueGreenDeploymentChannelDetailsPtrInput {
+	return (*blueGreenDeploymentChannelDetailsPtrType)(v)
+}
+
+func (*blueGreenDeploymentChannelDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BlueGreenDeploymentChannelDetails)(nil)).Elem()
+}
+
+func (i *blueGreenDeploymentChannelDetailsPtrType) ToBlueGreenDeploymentChannelDetailsPtrOutput() BlueGreenDeploymentChannelDetailsPtrOutput {
+	return i.ToBlueGreenDeploymentChannelDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *blueGreenDeploymentChannelDetailsPtrType) ToBlueGreenDeploymentChannelDetailsPtrOutputWithContext(ctx context.Context) BlueGreenDeploymentChannelDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BlueGreenDeploymentChannelDetailsPtrOutput)
+}
+
+type BlueGreenDeploymentChannelDetailsOutput struct{ *pulumi.OutputState }
+
+func (BlueGreenDeploymentChannelDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BlueGreenDeploymentChannelDetails)(nil)).Elem()
+}
+
+func (o BlueGreenDeploymentChannelDetailsOutput) ToBlueGreenDeploymentChannelDetailsOutput() BlueGreenDeploymentChannelDetailsOutput {
+	return o
+}
+
+func (o BlueGreenDeploymentChannelDetailsOutput) ToBlueGreenDeploymentChannelDetailsOutputWithContext(ctx context.Context) BlueGreenDeploymentChannelDetailsOutput {
+	return o
+}
+
+func (o BlueGreenDeploymentChannelDetailsOutput) ToBlueGreenDeploymentChannelDetailsPtrOutput() BlueGreenDeploymentChannelDetailsPtrOutput {
+	return o.ToBlueGreenDeploymentChannelDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o BlueGreenDeploymentChannelDetailsOutput) ToBlueGreenDeploymentChannelDetailsPtrOutputWithContext(ctx context.Context) BlueGreenDeploymentChannelDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BlueGreenDeploymentChannelDetails) *BlueGreenDeploymentChannelDetails {
+		return &v
+	}).(BlueGreenDeploymentChannelDetailsPtrOutput)
+}
+
+// The username for the replication applier of the target MySQL DB System.
+func (o BlueGreenDeploymentChannelDetailsOutput) ApplierUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BlueGreenDeploymentChannelDetails) *string { return v.ApplierUsername }).(pulumi.StringPtrOutput)
+}
+
+// The password for the source DB system user used by the blue/green workflow to configure the replication channel. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
+func (o BlueGreenDeploymentChannelDetailsOutput) SourcePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v BlueGreenDeploymentChannelDetails) string { return v.SourcePassword }).(pulumi.StringOutput)
+}
+
+// The username on the source DB system used by the blue/green workflow to configure the replication channel. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
+func (o BlueGreenDeploymentChannelDetailsOutput) SourceUsername() pulumi.StringOutput {
+	return o.ApplyT(func(v BlueGreenDeploymentChannelDetails) string { return v.SourceUsername }).(pulumi.StringOutput)
+}
+
+// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+func (o BlueGreenDeploymentChannelDetailsOutput) SslCaCertificate() BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput {
+	return o.ApplyT(func(v BlueGreenDeploymentChannelDetails) *BlueGreenDeploymentChannelDetailsSslCaCertificate {
+		return v.SslCaCertificate
+	}).(BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput)
+}
+
+// The SSL mode of the replication channel created by the blue/green workflow. `VERIFY_CA` and `VERIFY_IDENTITY` require `sslCaCertificate`. `REQUIRED` and `DISABLED` must not include `sslCaCertificate`.
+func (o BlueGreenDeploymentChannelDetailsOutput) SslMode() pulumi.StringOutput {
+	return o.ApplyT(func(v BlueGreenDeploymentChannelDetails) string { return v.SslMode }).(pulumi.StringOutput)
+}
+
+type BlueGreenDeploymentChannelDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (BlueGreenDeploymentChannelDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BlueGreenDeploymentChannelDetails)(nil)).Elem()
+}
+
+func (o BlueGreenDeploymentChannelDetailsPtrOutput) ToBlueGreenDeploymentChannelDetailsPtrOutput() BlueGreenDeploymentChannelDetailsPtrOutput {
+	return o
+}
+
+func (o BlueGreenDeploymentChannelDetailsPtrOutput) ToBlueGreenDeploymentChannelDetailsPtrOutputWithContext(ctx context.Context) BlueGreenDeploymentChannelDetailsPtrOutput {
+	return o
+}
+
+func (o BlueGreenDeploymentChannelDetailsPtrOutput) Elem() BlueGreenDeploymentChannelDetailsOutput {
+	return o.ApplyT(func(v *BlueGreenDeploymentChannelDetails) BlueGreenDeploymentChannelDetails {
+		if v != nil {
+			return *v
+		}
+		var ret BlueGreenDeploymentChannelDetails
+		return ret
+	}).(BlueGreenDeploymentChannelDetailsOutput)
+}
+
+// The username for the replication applier of the target MySQL DB System.
+func (o BlueGreenDeploymentChannelDetailsPtrOutput) ApplierUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BlueGreenDeploymentChannelDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ApplierUsername
+	}).(pulumi.StringPtrOutput)
+}
+
+// The password for the source DB system user used by the blue/green workflow to configure the replication channel. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
+func (o BlueGreenDeploymentChannelDetailsPtrOutput) SourcePassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BlueGreenDeploymentChannelDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SourcePassword
+	}).(pulumi.StringPtrOutput)
+}
+
+// The username on the source DB system used by the blue/green workflow to configure the replication channel. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
+func (o BlueGreenDeploymentChannelDetailsPtrOutput) SourceUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BlueGreenDeploymentChannelDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SourceUsername
+	}).(pulumi.StringPtrOutput)
+}
+
+// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+func (o BlueGreenDeploymentChannelDetailsPtrOutput) SslCaCertificate() BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput {
+	return o.ApplyT(func(v *BlueGreenDeploymentChannelDetails) *BlueGreenDeploymentChannelDetailsSslCaCertificate {
+		if v == nil {
+			return nil
+		}
+		return v.SslCaCertificate
+	}).(BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput)
+}
+
+// The SSL mode of the replication channel created by the blue/green workflow. `VERIFY_CA` and `VERIFY_IDENTITY` require `sslCaCertificate`. `REQUIRED` and `DISABLED` must not include `sslCaCertificate`.
+func (o BlueGreenDeploymentChannelDetailsPtrOutput) SslMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BlueGreenDeploymentChannelDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SslMode
+	}).(pulumi.StringPtrOutput)
+}
+
+type BlueGreenDeploymentChannelDetailsSslCaCertificate struct {
+	// The type of CA certificate.
+	CertificateType string `pulumi:"certificateType"`
+	// The string containing the CA certificate in PEM format.
+	Contents string `pulumi:"contents"`
+}
+
+// BlueGreenDeploymentChannelDetailsSslCaCertificateInput is an input type that accepts BlueGreenDeploymentChannelDetailsSslCaCertificateArgs and BlueGreenDeploymentChannelDetailsSslCaCertificateOutput values.
+// You can construct a concrete instance of `BlueGreenDeploymentChannelDetailsSslCaCertificateInput` via:
+//
+//	BlueGreenDeploymentChannelDetailsSslCaCertificateArgs{...}
+type BlueGreenDeploymentChannelDetailsSslCaCertificateInput interface {
+	pulumi.Input
+
+	ToBlueGreenDeploymentChannelDetailsSslCaCertificateOutput() BlueGreenDeploymentChannelDetailsSslCaCertificateOutput
+	ToBlueGreenDeploymentChannelDetailsSslCaCertificateOutputWithContext(context.Context) BlueGreenDeploymentChannelDetailsSslCaCertificateOutput
+}
+
+type BlueGreenDeploymentChannelDetailsSslCaCertificateArgs struct {
+	// The type of CA certificate.
+	CertificateType pulumi.StringInput `pulumi:"certificateType"`
+	// The string containing the CA certificate in PEM format.
+	Contents pulumi.StringInput `pulumi:"contents"`
+}
+
+func (BlueGreenDeploymentChannelDetailsSslCaCertificateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BlueGreenDeploymentChannelDetailsSslCaCertificate)(nil)).Elem()
+}
+
+func (i BlueGreenDeploymentChannelDetailsSslCaCertificateArgs) ToBlueGreenDeploymentChannelDetailsSslCaCertificateOutput() BlueGreenDeploymentChannelDetailsSslCaCertificateOutput {
+	return i.ToBlueGreenDeploymentChannelDetailsSslCaCertificateOutputWithContext(context.Background())
+}
+
+func (i BlueGreenDeploymentChannelDetailsSslCaCertificateArgs) ToBlueGreenDeploymentChannelDetailsSslCaCertificateOutputWithContext(ctx context.Context) BlueGreenDeploymentChannelDetailsSslCaCertificateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BlueGreenDeploymentChannelDetailsSslCaCertificateOutput)
+}
+
+func (i BlueGreenDeploymentChannelDetailsSslCaCertificateArgs) ToBlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput() BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput {
+	return i.ToBlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutputWithContext(context.Background())
+}
+
+func (i BlueGreenDeploymentChannelDetailsSslCaCertificateArgs) ToBlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutputWithContext(ctx context.Context) BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BlueGreenDeploymentChannelDetailsSslCaCertificateOutput).ToBlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutputWithContext(ctx)
+}
+
+// BlueGreenDeploymentChannelDetailsSslCaCertificatePtrInput is an input type that accepts BlueGreenDeploymentChannelDetailsSslCaCertificateArgs, BlueGreenDeploymentChannelDetailsSslCaCertificatePtr and BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput values.
+// You can construct a concrete instance of `BlueGreenDeploymentChannelDetailsSslCaCertificatePtrInput` via:
+//
+//	        BlueGreenDeploymentChannelDetailsSslCaCertificateArgs{...}
+//
+//	or:
+//
+//	        nil
+type BlueGreenDeploymentChannelDetailsSslCaCertificatePtrInput interface {
+	pulumi.Input
+
+	ToBlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput() BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput
+	ToBlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutputWithContext(context.Context) BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput
+}
+
+type blueGreenDeploymentChannelDetailsSslCaCertificatePtrType BlueGreenDeploymentChannelDetailsSslCaCertificateArgs
+
+func BlueGreenDeploymentChannelDetailsSslCaCertificatePtr(v *BlueGreenDeploymentChannelDetailsSslCaCertificateArgs) BlueGreenDeploymentChannelDetailsSslCaCertificatePtrInput {
+	return (*blueGreenDeploymentChannelDetailsSslCaCertificatePtrType)(v)
+}
+
+func (*blueGreenDeploymentChannelDetailsSslCaCertificatePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BlueGreenDeploymentChannelDetailsSslCaCertificate)(nil)).Elem()
+}
+
+func (i *blueGreenDeploymentChannelDetailsSslCaCertificatePtrType) ToBlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput() BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput {
+	return i.ToBlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutputWithContext(context.Background())
+}
+
+func (i *blueGreenDeploymentChannelDetailsSslCaCertificatePtrType) ToBlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutputWithContext(ctx context.Context) BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput)
+}
+
+type BlueGreenDeploymentChannelDetailsSslCaCertificateOutput struct{ *pulumi.OutputState }
+
+func (BlueGreenDeploymentChannelDetailsSslCaCertificateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BlueGreenDeploymentChannelDetailsSslCaCertificate)(nil)).Elem()
+}
+
+func (o BlueGreenDeploymentChannelDetailsSslCaCertificateOutput) ToBlueGreenDeploymentChannelDetailsSslCaCertificateOutput() BlueGreenDeploymentChannelDetailsSslCaCertificateOutput {
+	return o
+}
+
+func (o BlueGreenDeploymentChannelDetailsSslCaCertificateOutput) ToBlueGreenDeploymentChannelDetailsSslCaCertificateOutputWithContext(ctx context.Context) BlueGreenDeploymentChannelDetailsSslCaCertificateOutput {
+	return o
+}
+
+func (o BlueGreenDeploymentChannelDetailsSslCaCertificateOutput) ToBlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput() BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput {
+	return o.ToBlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutputWithContext(context.Background())
+}
+
+func (o BlueGreenDeploymentChannelDetailsSslCaCertificateOutput) ToBlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutputWithContext(ctx context.Context) BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BlueGreenDeploymentChannelDetailsSslCaCertificate) *BlueGreenDeploymentChannelDetailsSslCaCertificate {
+		return &v
+	}).(BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput)
+}
+
+// The type of CA certificate.
+func (o BlueGreenDeploymentChannelDetailsSslCaCertificateOutput) CertificateType() pulumi.StringOutput {
+	return o.ApplyT(func(v BlueGreenDeploymentChannelDetailsSslCaCertificate) string { return v.CertificateType }).(pulumi.StringOutput)
+}
+
+// The string containing the CA certificate in PEM format.
+func (o BlueGreenDeploymentChannelDetailsSslCaCertificateOutput) Contents() pulumi.StringOutput {
+	return o.ApplyT(func(v BlueGreenDeploymentChannelDetailsSslCaCertificate) string { return v.Contents }).(pulumi.StringOutput)
+}
+
+type BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput struct{ *pulumi.OutputState }
+
+func (BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BlueGreenDeploymentChannelDetailsSslCaCertificate)(nil)).Elem()
+}
+
+func (o BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput) ToBlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput() BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput {
+	return o
+}
+
+func (o BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput) ToBlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutputWithContext(ctx context.Context) BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput {
+	return o
+}
+
+func (o BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput) Elem() BlueGreenDeploymentChannelDetailsSslCaCertificateOutput {
+	return o.ApplyT(func(v *BlueGreenDeploymentChannelDetailsSslCaCertificate) BlueGreenDeploymentChannelDetailsSslCaCertificate {
+		if v != nil {
+			return *v
+		}
+		var ret BlueGreenDeploymentChannelDetailsSslCaCertificate
+		return ret
+	}).(BlueGreenDeploymentChannelDetailsSslCaCertificateOutput)
+}
+
+// The type of CA certificate.
+func (o BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput) CertificateType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BlueGreenDeploymentChannelDetailsSslCaCertificate) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CertificateType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The string containing the CA certificate in PEM format.
+func (o BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput) Contents() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BlueGreenDeploymentChannelDetailsSslCaCertificate) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Contents
+	}).(pulumi.StringPtrOutput)
+}
+
+type BlueGreenDeploymentTargetDbSystemDetails struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration to apply to the target DB System. If omitted, the target DB System inherits the source DB System configuration.
+	ConfigurationId *string `pulumi:"configurationId"`
+	// Initial data storage size in GiBs for the target DB System. If omitted, the target DB System uses the source DB System storage size.
+	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
+	// Target MySQL engine version.
+	MysqlVersion string `pulumi:"mysqlVersion"`
+	// The shape of the target DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
+	ShapeName *string `pulumi:"shapeName"`
+}
+
+// BlueGreenDeploymentTargetDbSystemDetailsInput is an input type that accepts BlueGreenDeploymentTargetDbSystemDetailsArgs and BlueGreenDeploymentTargetDbSystemDetailsOutput values.
+// You can construct a concrete instance of `BlueGreenDeploymentTargetDbSystemDetailsInput` via:
+//
+//	BlueGreenDeploymentTargetDbSystemDetailsArgs{...}
+type BlueGreenDeploymentTargetDbSystemDetailsInput interface {
+	pulumi.Input
+
+	ToBlueGreenDeploymentTargetDbSystemDetailsOutput() BlueGreenDeploymentTargetDbSystemDetailsOutput
+	ToBlueGreenDeploymentTargetDbSystemDetailsOutputWithContext(context.Context) BlueGreenDeploymentTargetDbSystemDetailsOutput
+}
+
+type BlueGreenDeploymentTargetDbSystemDetailsArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration to apply to the target DB System. If omitted, the target DB System inherits the source DB System configuration.
+	ConfigurationId pulumi.StringPtrInput `pulumi:"configurationId"`
+	// Initial data storage size in GiBs for the target DB System. If omitted, the target DB System uses the source DB System storage size.
+	DataStorageSizeInGb pulumi.IntPtrInput `pulumi:"dataStorageSizeInGb"`
+	// Target MySQL engine version.
+	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
+	// The shape of the target DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
+	ShapeName pulumi.StringPtrInput `pulumi:"shapeName"`
+}
+
+func (BlueGreenDeploymentTargetDbSystemDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BlueGreenDeploymentTargetDbSystemDetails)(nil)).Elem()
+}
+
+func (i BlueGreenDeploymentTargetDbSystemDetailsArgs) ToBlueGreenDeploymentTargetDbSystemDetailsOutput() BlueGreenDeploymentTargetDbSystemDetailsOutput {
+	return i.ToBlueGreenDeploymentTargetDbSystemDetailsOutputWithContext(context.Background())
+}
+
+func (i BlueGreenDeploymentTargetDbSystemDetailsArgs) ToBlueGreenDeploymentTargetDbSystemDetailsOutputWithContext(ctx context.Context) BlueGreenDeploymentTargetDbSystemDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BlueGreenDeploymentTargetDbSystemDetailsOutput)
+}
+
+func (i BlueGreenDeploymentTargetDbSystemDetailsArgs) ToBlueGreenDeploymentTargetDbSystemDetailsPtrOutput() BlueGreenDeploymentTargetDbSystemDetailsPtrOutput {
+	return i.ToBlueGreenDeploymentTargetDbSystemDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i BlueGreenDeploymentTargetDbSystemDetailsArgs) ToBlueGreenDeploymentTargetDbSystemDetailsPtrOutputWithContext(ctx context.Context) BlueGreenDeploymentTargetDbSystemDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BlueGreenDeploymentTargetDbSystemDetailsOutput).ToBlueGreenDeploymentTargetDbSystemDetailsPtrOutputWithContext(ctx)
+}
+
+// BlueGreenDeploymentTargetDbSystemDetailsPtrInput is an input type that accepts BlueGreenDeploymentTargetDbSystemDetailsArgs, BlueGreenDeploymentTargetDbSystemDetailsPtr and BlueGreenDeploymentTargetDbSystemDetailsPtrOutput values.
+// You can construct a concrete instance of `BlueGreenDeploymentTargetDbSystemDetailsPtrInput` via:
+//
+//	        BlueGreenDeploymentTargetDbSystemDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type BlueGreenDeploymentTargetDbSystemDetailsPtrInput interface {
+	pulumi.Input
+
+	ToBlueGreenDeploymentTargetDbSystemDetailsPtrOutput() BlueGreenDeploymentTargetDbSystemDetailsPtrOutput
+	ToBlueGreenDeploymentTargetDbSystemDetailsPtrOutputWithContext(context.Context) BlueGreenDeploymentTargetDbSystemDetailsPtrOutput
+}
+
+type blueGreenDeploymentTargetDbSystemDetailsPtrType BlueGreenDeploymentTargetDbSystemDetailsArgs
+
+func BlueGreenDeploymentTargetDbSystemDetailsPtr(v *BlueGreenDeploymentTargetDbSystemDetailsArgs) BlueGreenDeploymentTargetDbSystemDetailsPtrInput {
+	return (*blueGreenDeploymentTargetDbSystemDetailsPtrType)(v)
+}
+
+func (*blueGreenDeploymentTargetDbSystemDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BlueGreenDeploymentTargetDbSystemDetails)(nil)).Elem()
+}
+
+func (i *blueGreenDeploymentTargetDbSystemDetailsPtrType) ToBlueGreenDeploymentTargetDbSystemDetailsPtrOutput() BlueGreenDeploymentTargetDbSystemDetailsPtrOutput {
+	return i.ToBlueGreenDeploymentTargetDbSystemDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *blueGreenDeploymentTargetDbSystemDetailsPtrType) ToBlueGreenDeploymentTargetDbSystemDetailsPtrOutputWithContext(ctx context.Context) BlueGreenDeploymentTargetDbSystemDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BlueGreenDeploymentTargetDbSystemDetailsPtrOutput)
+}
+
+type BlueGreenDeploymentTargetDbSystemDetailsOutput struct{ *pulumi.OutputState }
+
+func (BlueGreenDeploymentTargetDbSystemDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BlueGreenDeploymentTargetDbSystemDetails)(nil)).Elem()
+}
+
+func (o BlueGreenDeploymentTargetDbSystemDetailsOutput) ToBlueGreenDeploymentTargetDbSystemDetailsOutput() BlueGreenDeploymentTargetDbSystemDetailsOutput {
+	return o
+}
+
+func (o BlueGreenDeploymentTargetDbSystemDetailsOutput) ToBlueGreenDeploymentTargetDbSystemDetailsOutputWithContext(ctx context.Context) BlueGreenDeploymentTargetDbSystemDetailsOutput {
+	return o
+}
+
+func (o BlueGreenDeploymentTargetDbSystemDetailsOutput) ToBlueGreenDeploymentTargetDbSystemDetailsPtrOutput() BlueGreenDeploymentTargetDbSystemDetailsPtrOutput {
+	return o.ToBlueGreenDeploymentTargetDbSystemDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o BlueGreenDeploymentTargetDbSystemDetailsOutput) ToBlueGreenDeploymentTargetDbSystemDetailsPtrOutputWithContext(ctx context.Context) BlueGreenDeploymentTargetDbSystemDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BlueGreenDeploymentTargetDbSystemDetails) *BlueGreenDeploymentTargetDbSystemDetails {
+		return &v
+	}).(BlueGreenDeploymentTargetDbSystemDetailsPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration to apply to the target DB System. If omitted, the target DB System inherits the source DB System configuration.
+func (o BlueGreenDeploymentTargetDbSystemDetailsOutput) ConfigurationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BlueGreenDeploymentTargetDbSystemDetails) *string { return v.ConfigurationId }).(pulumi.StringPtrOutput)
+}
+
+// Initial data storage size in GiBs for the target DB System. If omitted, the target DB System uses the source DB System storage size.
+func (o BlueGreenDeploymentTargetDbSystemDetailsOutput) DataStorageSizeInGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BlueGreenDeploymentTargetDbSystemDetails) *int { return v.DataStorageSizeInGb }).(pulumi.IntPtrOutput)
+}
+
+// Target MySQL engine version.
+func (o BlueGreenDeploymentTargetDbSystemDetailsOutput) MysqlVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v BlueGreenDeploymentTargetDbSystemDetails) string { return v.MysqlVersion }).(pulumi.StringOutput)
+}
+
+// The shape of the target DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
+func (o BlueGreenDeploymentTargetDbSystemDetailsOutput) ShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BlueGreenDeploymentTargetDbSystemDetails) *string { return v.ShapeName }).(pulumi.StringPtrOutput)
+}
+
+type BlueGreenDeploymentTargetDbSystemDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (BlueGreenDeploymentTargetDbSystemDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BlueGreenDeploymentTargetDbSystemDetails)(nil)).Elem()
+}
+
+func (o BlueGreenDeploymentTargetDbSystemDetailsPtrOutput) ToBlueGreenDeploymentTargetDbSystemDetailsPtrOutput() BlueGreenDeploymentTargetDbSystemDetailsPtrOutput {
+	return o
+}
+
+func (o BlueGreenDeploymentTargetDbSystemDetailsPtrOutput) ToBlueGreenDeploymentTargetDbSystemDetailsPtrOutputWithContext(ctx context.Context) BlueGreenDeploymentTargetDbSystemDetailsPtrOutput {
+	return o
+}
+
+func (o BlueGreenDeploymentTargetDbSystemDetailsPtrOutput) Elem() BlueGreenDeploymentTargetDbSystemDetailsOutput {
+	return o.ApplyT(func(v *BlueGreenDeploymentTargetDbSystemDetails) BlueGreenDeploymentTargetDbSystemDetails {
+		if v != nil {
+			return *v
+		}
+		var ret BlueGreenDeploymentTargetDbSystemDetails
+		return ret
+	}).(BlueGreenDeploymentTargetDbSystemDetailsOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration to apply to the target DB System. If omitted, the target DB System inherits the source DB System configuration.
+func (o BlueGreenDeploymentTargetDbSystemDetailsPtrOutput) ConfigurationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BlueGreenDeploymentTargetDbSystemDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ConfigurationId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Initial data storage size in GiBs for the target DB System. If omitted, the target DB System uses the source DB System storage size.
+func (o BlueGreenDeploymentTargetDbSystemDetailsPtrOutput) DataStorageSizeInGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BlueGreenDeploymentTargetDbSystemDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.DataStorageSizeInGb
+	}).(pulumi.IntPtrOutput)
+}
+
+// Target MySQL engine version.
+func (o BlueGreenDeploymentTargetDbSystemDetailsPtrOutput) MysqlVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BlueGreenDeploymentTargetDbSystemDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.MysqlVersion
+	}).(pulumi.StringPtrOutput)
+}
+
+// The shape of the target DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
+func (o BlueGreenDeploymentTargetDbSystemDetailsPtrOutput) ShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BlueGreenDeploymentTargetDbSystemDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ShapeName
+	}).(pulumi.StringPtrOutput)
+}
+
 type ChannelSource struct {
 	// (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
 	AnonymousTransactionsHandling *ChannelSourceAnonymousTransactionsHandling `pulumi:"anonymousTransactionsHandling"`
@@ -13988,6 +14553,1194 @@ func (o ReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput) Ind
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ReplicaTelemetryConfigurationLogDestinationConfiguration {
 		return vs[0].([]ReplicaTelemetryConfigurationLogDestinationConfiguration)[vs[1].(int)]
 	}).(ReplicaTelemetryConfigurationLogDestinationConfigurationOutput)
+}
+
+type GetBlueGreenDeploymentChannelDetail struct {
+	ApplierUsername   string                                                `pulumi:"applierUsername"`
+	SourcePassword    string                                                `pulumi:"sourcePassword"`
+	SourceUsername    string                                                `pulumi:"sourceUsername"`
+	SslCaCertificates []GetBlueGreenDeploymentChannelDetailSslCaCertificate `pulumi:"sslCaCertificates"`
+	// SSL mode used for the replication channel created by the blue/green workflow.
+	SslMode string `pulumi:"sslMode"`
+}
+
+// GetBlueGreenDeploymentChannelDetailInput is an input type that accepts GetBlueGreenDeploymentChannelDetailArgs and GetBlueGreenDeploymentChannelDetailOutput values.
+// You can construct a concrete instance of `GetBlueGreenDeploymentChannelDetailInput` via:
+//
+//	GetBlueGreenDeploymentChannelDetailArgs{...}
+type GetBlueGreenDeploymentChannelDetailInput interface {
+	pulumi.Input
+
+	ToGetBlueGreenDeploymentChannelDetailOutput() GetBlueGreenDeploymentChannelDetailOutput
+	ToGetBlueGreenDeploymentChannelDetailOutputWithContext(context.Context) GetBlueGreenDeploymentChannelDetailOutput
+}
+
+type GetBlueGreenDeploymentChannelDetailArgs struct {
+	ApplierUsername   pulumi.StringInput                                            `pulumi:"applierUsername"`
+	SourcePassword    pulumi.StringInput                                            `pulumi:"sourcePassword"`
+	SourceUsername    pulumi.StringInput                                            `pulumi:"sourceUsername"`
+	SslCaCertificates GetBlueGreenDeploymentChannelDetailSslCaCertificateArrayInput `pulumi:"sslCaCertificates"`
+	// SSL mode used for the replication channel created by the blue/green workflow.
+	SslMode pulumi.StringInput `pulumi:"sslMode"`
+}
+
+func (GetBlueGreenDeploymentChannelDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBlueGreenDeploymentChannelDetail)(nil)).Elem()
+}
+
+func (i GetBlueGreenDeploymentChannelDetailArgs) ToGetBlueGreenDeploymentChannelDetailOutput() GetBlueGreenDeploymentChannelDetailOutput {
+	return i.ToGetBlueGreenDeploymentChannelDetailOutputWithContext(context.Background())
+}
+
+func (i GetBlueGreenDeploymentChannelDetailArgs) ToGetBlueGreenDeploymentChannelDetailOutputWithContext(ctx context.Context) GetBlueGreenDeploymentChannelDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBlueGreenDeploymentChannelDetailOutput)
+}
+
+// GetBlueGreenDeploymentChannelDetailArrayInput is an input type that accepts GetBlueGreenDeploymentChannelDetailArray and GetBlueGreenDeploymentChannelDetailArrayOutput values.
+// You can construct a concrete instance of `GetBlueGreenDeploymentChannelDetailArrayInput` via:
+//
+//	GetBlueGreenDeploymentChannelDetailArray{ GetBlueGreenDeploymentChannelDetailArgs{...} }
+type GetBlueGreenDeploymentChannelDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetBlueGreenDeploymentChannelDetailArrayOutput() GetBlueGreenDeploymentChannelDetailArrayOutput
+	ToGetBlueGreenDeploymentChannelDetailArrayOutputWithContext(context.Context) GetBlueGreenDeploymentChannelDetailArrayOutput
+}
+
+type GetBlueGreenDeploymentChannelDetailArray []GetBlueGreenDeploymentChannelDetailInput
+
+func (GetBlueGreenDeploymentChannelDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBlueGreenDeploymentChannelDetail)(nil)).Elem()
+}
+
+func (i GetBlueGreenDeploymentChannelDetailArray) ToGetBlueGreenDeploymentChannelDetailArrayOutput() GetBlueGreenDeploymentChannelDetailArrayOutput {
+	return i.ToGetBlueGreenDeploymentChannelDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetBlueGreenDeploymentChannelDetailArray) ToGetBlueGreenDeploymentChannelDetailArrayOutputWithContext(ctx context.Context) GetBlueGreenDeploymentChannelDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBlueGreenDeploymentChannelDetailArrayOutput)
+}
+
+type GetBlueGreenDeploymentChannelDetailOutput struct{ *pulumi.OutputState }
+
+func (GetBlueGreenDeploymentChannelDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBlueGreenDeploymentChannelDetail)(nil)).Elem()
+}
+
+func (o GetBlueGreenDeploymentChannelDetailOutput) ToGetBlueGreenDeploymentChannelDetailOutput() GetBlueGreenDeploymentChannelDetailOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentChannelDetailOutput) ToGetBlueGreenDeploymentChannelDetailOutputWithContext(ctx context.Context) GetBlueGreenDeploymentChannelDetailOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentChannelDetailOutput) ApplierUsername() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentChannelDetail) string { return v.ApplierUsername }).(pulumi.StringOutput)
+}
+
+func (o GetBlueGreenDeploymentChannelDetailOutput) SourcePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentChannelDetail) string { return v.SourcePassword }).(pulumi.StringOutput)
+}
+
+func (o GetBlueGreenDeploymentChannelDetailOutput) SourceUsername() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentChannelDetail) string { return v.SourceUsername }).(pulumi.StringOutput)
+}
+
+func (o GetBlueGreenDeploymentChannelDetailOutput) SslCaCertificates() GetBlueGreenDeploymentChannelDetailSslCaCertificateArrayOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentChannelDetail) []GetBlueGreenDeploymentChannelDetailSslCaCertificate {
+		return v.SslCaCertificates
+	}).(GetBlueGreenDeploymentChannelDetailSslCaCertificateArrayOutput)
+}
+
+// SSL mode used for the replication channel created by the blue/green workflow.
+func (o GetBlueGreenDeploymentChannelDetailOutput) SslMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentChannelDetail) string { return v.SslMode }).(pulumi.StringOutput)
+}
+
+type GetBlueGreenDeploymentChannelDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBlueGreenDeploymentChannelDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBlueGreenDeploymentChannelDetail)(nil)).Elem()
+}
+
+func (o GetBlueGreenDeploymentChannelDetailArrayOutput) ToGetBlueGreenDeploymentChannelDetailArrayOutput() GetBlueGreenDeploymentChannelDetailArrayOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentChannelDetailArrayOutput) ToGetBlueGreenDeploymentChannelDetailArrayOutputWithContext(ctx context.Context) GetBlueGreenDeploymentChannelDetailArrayOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentChannelDetailArrayOutput) Index(i pulumi.IntInput) GetBlueGreenDeploymentChannelDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBlueGreenDeploymentChannelDetail {
+		return vs[0].([]GetBlueGreenDeploymentChannelDetail)[vs[1].(int)]
+	}).(GetBlueGreenDeploymentChannelDetailOutput)
+}
+
+type GetBlueGreenDeploymentChannelDetailSslCaCertificate struct {
+	CertificateType string `pulumi:"certificateType"`
+	Contents        string `pulumi:"contents"`
+}
+
+// GetBlueGreenDeploymentChannelDetailSslCaCertificateInput is an input type that accepts GetBlueGreenDeploymentChannelDetailSslCaCertificateArgs and GetBlueGreenDeploymentChannelDetailSslCaCertificateOutput values.
+// You can construct a concrete instance of `GetBlueGreenDeploymentChannelDetailSslCaCertificateInput` via:
+//
+//	GetBlueGreenDeploymentChannelDetailSslCaCertificateArgs{...}
+type GetBlueGreenDeploymentChannelDetailSslCaCertificateInput interface {
+	pulumi.Input
+
+	ToGetBlueGreenDeploymentChannelDetailSslCaCertificateOutput() GetBlueGreenDeploymentChannelDetailSslCaCertificateOutput
+	ToGetBlueGreenDeploymentChannelDetailSslCaCertificateOutputWithContext(context.Context) GetBlueGreenDeploymentChannelDetailSslCaCertificateOutput
+}
+
+type GetBlueGreenDeploymentChannelDetailSslCaCertificateArgs struct {
+	CertificateType pulumi.StringInput `pulumi:"certificateType"`
+	Contents        pulumi.StringInput `pulumi:"contents"`
+}
+
+func (GetBlueGreenDeploymentChannelDetailSslCaCertificateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBlueGreenDeploymentChannelDetailSslCaCertificate)(nil)).Elem()
+}
+
+func (i GetBlueGreenDeploymentChannelDetailSslCaCertificateArgs) ToGetBlueGreenDeploymentChannelDetailSslCaCertificateOutput() GetBlueGreenDeploymentChannelDetailSslCaCertificateOutput {
+	return i.ToGetBlueGreenDeploymentChannelDetailSslCaCertificateOutputWithContext(context.Background())
+}
+
+func (i GetBlueGreenDeploymentChannelDetailSslCaCertificateArgs) ToGetBlueGreenDeploymentChannelDetailSslCaCertificateOutputWithContext(ctx context.Context) GetBlueGreenDeploymentChannelDetailSslCaCertificateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBlueGreenDeploymentChannelDetailSslCaCertificateOutput)
+}
+
+// GetBlueGreenDeploymentChannelDetailSslCaCertificateArrayInput is an input type that accepts GetBlueGreenDeploymentChannelDetailSslCaCertificateArray and GetBlueGreenDeploymentChannelDetailSslCaCertificateArrayOutput values.
+// You can construct a concrete instance of `GetBlueGreenDeploymentChannelDetailSslCaCertificateArrayInput` via:
+//
+//	GetBlueGreenDeploymentChannelDetailSslCaCertificateArray{ GetBlueGreenDeploymentChannelDetailSslCaCertificateArgs{...} }
+type GetBlueGreenDeploymentChannelDetailSslCaCertificateArrayInput interface {
+	pulumi.Input
+
+	ToGetBlueGreenDeploymentChannelDetailSslCaCertificateArrayOutput() GetBlueGreenDeploymentChannelDetailSslCaCertificateArrayOutput
+	ToGetBlueGreenDeploymentChannelDetailSslCaCertificateArrayOutputWithContext(context.Context) GetBlueGreenDeploymentChannelDetailSslCaCertificateArrayOutput
+}
+
+type GetBlueGreenDeploymentChannelDetailSslCaCertificateArray []GetBlueGreenDeploymentChannelDetailSslCaCertificateInput
+
+func (GetBlueGreenDeploymentChannelDetailSslCaCertificateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBlueGreenDeploymentChannelDetailSslCaCertificate)(nil)).Elem()
+}
+
+func (i GetBlueGreenDeploymentChannelDetailSslCaCertificateArray) ToGetBlueGreenDeploymentChannelDetailSslCaCertificateArrayOutput() GetBlueGreenDeploymentChannelDetailSslCaCertificateArrayOutput {
+	return i.ToGetBlueGreenDeploymentChannelDetailSslCaCertificateArrayOutputWithContext(context.Background())
+}
+
+func (i GetBlueGreenDeploymentChannelDetailSslCaCertificateArray) ToGetBlueGreenDeploymentChannelDetailSslCaCertificateArrayOutputWithContext(ctx context.Context) GetBlueGreenDeploymentChannelDetailSslCaCertificateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBlueGreenDeploymentChannelDetailSslCaCertificateArrayOutput)
+}
+
+type GetBlueGreenDeploymentChannelDetailSslCaCertificateOutput struct{ *pulumi.OutputState }
+
+func (GetBlueGreenDeploymentChannelDetailSslCaCertificateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBlueGreenDeploymentChannelDetailSslCaCertificate)(nil)).Elem()
+}
+
+func (o GetBlueGreenDeploymentChannelDetailSslCaCertificateOutput) ToGetBlueGreenDeploymentChannelDetailSslCaCertificateOutput() GetBlueGreenDeploymentChannelDetailSslCaCertificateOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentChannelDetailSslCaCertificateOutput) ToGetBlueGreenDeploymentChannelDetailSslCaCertificateOutputWithContext(ctx context.Context) GetBlueGreenDeploymentChannelDetailSslCaCertificateOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentChannelDetailSslCaCertificateOutput) CertificateType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentChannelDetailSslCaCertificate) string { return v.CertificateType }).(pulumi.StringOutput)
+}
+
+func (o GetBlueGreenDeploymentChannelDetailSslCaCertificateOutput) Contents() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentChannelDetailSslCaCertificate) string { return v.Contents }).(pulumi.StringOutput)
+}
+
+type GetBlueGreenDeploymentChannelDetailSslCaCertificateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBlueGreenDeploymentChannelDetailSslCaCertificateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBlueGreenDeploymentChannelDetailSslCaCertificate)(nil)).Elem()
+}
+
+func (o GetBlueGreenDeploymentChannelDetailSslCaCertificateArrayOutput) ToGetBlueGreenDeploymentChannelDetailSslCaCertificateArrayOutput() GetBlueGreenDeploymentChannelDetailSslCaCertificateArrayOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentChannelDetailSslCaCertificateArrayOutput) ToGetBlueGreenDeploymentChannelDetailSslCaCertificateArrayOutputWithContext(ctx context.Context) GetBlueGreenDeploymentChannelDetailSslCaCertificateArrayOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentChannelDetailSslCaCertificateArrayOutput) Index(i pulumi.IntInput) GetBlueGreenDeploymentChannelDetailSslCaCertificateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBlueGreenDeploymentChannelDetailSslCaCertificate {
+		return vs[0].([]GetBlueGreenDeploymentChannelDetailSslCaCertificate)[vs[1].(int)]
+	}).(GetBlueGreenDeploymentChannelDetailSslCaCertificateOutput)
+}
+
+type GetBlueGreenDeploymentTargetDbSystemDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration applied to the target DB System.
+	ConfigurationId string `pulumi:"configurationId"`
+	// Initial data storage size in GiBs for the target DB System.
+	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
+	// Target MySQL engine version.
+	MysqlVersion string `pulumi:"mysqlVersion"`
+	// The shape of the target DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
+	ShapeName string `pulumi:"shapeName"`
+}
+
+// GetBlueGreenDeploymentTargetDbSystemDetailInput is an input type that accepts GetBlueGreenDeploymentTargetDbSystemDetailArgs and GetBlueGreenDeploymentTargetDbSystemDetailOutput values.
+// You can construct a concrete instance of `GetBlueGreenDeploymentTargetDbSystemDetailInput` via:
+//
+//	GetBlueGreenDeploymentTargetDbSystemDetailArgs{...}
+type GetBlueGreenDeploymentTargetDbSystemDetailInput interface {
+	pulumi.Input
+
+	ToGetBlueGreenDeploymentTargetDbSystemDetailOutput() GetBlueGreenDeploymentTargetDbSystemDetailOutput
+	ToGetBlueGreenDeploymentTargetDbSystemDetailOutputWithContext(context.Context) GetBlueGreenDeploymentTargetDbSystemDetailOutput
+}
+
+type GetBlueGreenDeploymentTargetDbSystemDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration applied to the target DB System.
+	ConfigurationId pulumi.StringInput `pulumi:"configurationId"`
+	// Initial data storage size in GiBs for the target DB System.
+	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
+	// Target MySQL engine version.
+	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
+	// The shape of the target DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
+	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+}
+
+func (GetBlueGreenDeploymentTargetDbSystemDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBlueGreenDeploymentTargetDbSystemDetail)(nil)).Elem()
+}
+
+func (i GetBlueGreenDeploymentTargetDbSystemDetailArgs) ToGetBlueGreenDeploymentTargetDbSystemDetailOutput() GetBlueGreenDeploymentTargetDbSystemDetailOutput {
+	return i.ToGetBlueGreenDeploymentTargetDbSystemDetailOutputWithContext(context.Background())
+}
+
+func (i GetBlueGreenDeploymentTargetDbSystemDetailArgs) ToGetBlueGreenDeploymentTargetDbSystemDetailOutputWithContext(ctx context.Context) GetBlueGreenDeploymentTargetDbSystemDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBlueGreenDeploymentTargetDbSystemDetailOutput)
+}
+
+// GetBlueGreenDeploymentTargetDbSystemDetailArrayInput is an input type that accepts GetBlueGreenDeploymentTargetDbSystemDetailArray and GetBlueGreenDeploymentTargetDbSystemDetailArrayOutput values.
+// You can construct a concrete instance of `GetBlueGreenDeploymentTargetDbSystemDetailArrayInput` via:
+//
+//	GetBlueGreenDeploymentTargetDbSystemDetailArray{ GetBlueGreenDeploymentTargetDbSystemDetailArgs{...} }
+type GetBlueGreenDeploymentTargetDbSystemDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetBlueGreenDeploymentTargetDbSystemDetailArrayOutput() GetBlueGreenDeploymentTargetDbSystemDetailArrayOutput
+	ToGetBlueGreenDeploymentTargetDbSystemDetailArrayOutputWithContext(context.Context) GetBlueGreenDeploymentTargetDbSystemDetailArrayOutput
+}
+
+type GetBlueGreenDeploymentTargetDbSystemDetailArray []GetBlueGreenDeploymentTargetDbSystemDetailInput
+
+func (GetBlueGreenDeploymentTargetDbSystemDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBlueGreenDeploymentTargetDbSystemDetail)(nil)).Elem()
+}
+
+func (i GetBlueGreenDeploymentTargetDbSystemDetailArray) ToGetBlueGreenDeploymentTargetDbSystemDetailArrayOutput() GetBlueGreenDeploymentTargetDbSystemDetailArrayOutput {
+	return i.ToGetBlueGreenDeploymentTargetDbSystemDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetBlueGreenDeploymentTargetDbSystemDetailArray) ToGetBlueGreenDeploymentTargetDbSystemDetailArrayOutputWithContext(ctx context.Context) GetBlueGreenDeploymentTargetDbSystemDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBlueGreenDeploymentTargetDbSystemDetailArrayOutput)
+}
+
+type GetBlueGreenDeploymentTargetDbSystemDetailOutput struct{ *pulumi.OutputState }
+
+func (GetBlueGreenDeploymentTargetDbSystemDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBlueGreenDeploymentTargetDbSystemDetail)(nil)).Elem()
+}
+
+func (o GetBlueGreenDeploymentTargetDbSystemDetailOutput) ToGetBlueGreenDeploymentTargetDbSystemDetailOutput() GetBlueGreenDeploymentTargetDbSystemDetailOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentTargetDbSystemDetailOutput) ToGetBlueGreenDeploymentTargetDbSystemDetailOutputWithContext(ctx context.Context) GetBlueGreenDeploymentTargetDbSystemDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration applied to the target DB System.
+func (o GetBlueGreenDeploymentTargetDbSystemDetailOutput) ConfigurationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentTargetDbSystemDetail) string { return v.ConfigurationId }).(pulumi.StringOutput)
+}
+
+// Initial data storage size in GiBs for the target DB System.
+func (o GetBlueGreenDeploymentTargetDbSystemDetailOutput) DataStorageSizeInGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentTargetDbSystemDetail) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+}
+
+// Target MySQL engine version.
+func (o GetBlueGreenDeploymentTargetDbSystemDetailOutput) MysqlVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentTargetDbSystemDetail) string { return v.MysqlVersion }).(pulumi.StringOutput)
+}
+
+// The shape of the target DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
+func (o GetBlueGreenDeploymentTargetDbSystemDetailOutput) ShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentTargetDbSystemDetail) string { return v.ShapeName }).(pulumi.StringOutput)
+}
+
+type GetBlueGreenDeploymentTargetDbSystemDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBlueGreenDeploymentTargetDbSystemDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBlueGreenDeploymentTargetDbSystemDetail)(nil)).Elem()
+}
+
+func (o GetBlueGreenDeploymentTargetDbSystemDetailArrayOutput) ToGetBlueGreenDeploymentTargetDbSystemDetailArrayOutput() GetBlueGreenDeploymentTargetDbSystemDetailArrayOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentTargetDbSystemDetailArrayOutput) ToGetBlueGreenDeploymentTargetDbSystemDetailArrayOutputWithContext(ctx context.Context) GetBlueGreenDeploymentTargetDbSystemDetailArrayOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentTargetDbSystemDetailArrayOutput) Index(i pulumi.IntInput) GetBlueGreenDeploymentTargetDbSystemDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBlueGreenDeploymentTargetDbSystemDetail {
+		return vs[0].([]GetBlueGreenDeploymentTargetDbSystemDetail)[vs[1].(int)]
+	}).(GetBlueGreenDeploymentTargetDbSystemDetailOutput)
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollection struct {
+	Items []GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem `pulumi:"items"`
+}
+
+// GetBlueGreenDeploymentsBlueGreenDeploymentCollectionInput is an input type that accepts GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArgs and GetBlueGreenDeploymentsBlueGreenDeploymentCollectionOutput values.
+// You can construct a concrete instance of `GetBlueGreenDeploymentsBlueGreenDeploymentCollectionInput` via:
+//
+//	GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArgs{...}
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionInput interface {
+	pulumi.Input
+
+	ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionOutput
+	ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionOutputWithContext(context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionOutput
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArgs struct {
+	Items GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBlueGreenDeploymentsBlueGreenDeploymentCollection)(nil)).Elem()
+}
+
+func (i GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArgs) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionOutput {
+	return i.ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionOutputWithContext(context.Background())
+}
+
+func (i GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArgs) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionOutput)
+}
+
+// GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayInput is an input type that accepts GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArray and GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayOutput values.
+// You can construct a concrete instance of `GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayInput` via:
+//
+//	GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArray{ GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArgs{...} }
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayOutput
+	ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayOutputWithContext(context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayOutput
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArray []GetBlueGreenDeploymentsBlueGreenDeploymentCollectionInput
+
+func (GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBlueGreenDeploymentsBlueGreenDeploymentCollection)(nil)).Elem()
+}
+
+func (i GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArray) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayOutput {
+	return i.ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArray) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayOutput)
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetBlueGreenDeploymentsBlueGreenDeploymentCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBlueGreenDeploymentsBlueGreenDeploymentCollection)(nil)).Elem()
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionOutput) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionOutput) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionOutput) Items() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollection) []GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem {
+		return v.Items
+	}).(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayOutput)
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBlueGreenDeploymentsBlueGreenDeploymentCollection)(nil)).Elem()
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayOutput) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayOutput) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayOutput) Index(i pulumi.IntInput) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBlueGreenDeploymentsBlueGreenDeploymentCollection {
+		return vs[0].([]GetBlueGreenDeploymentsBlueGreenDeploymentCollection)[vs[1].(int)]
+	}).(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionOutput)
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem struct {
+	// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that currently owns the client-facing VIP and serves traffic.
+	ActiveDbSystemId string                                                                  `pulumi:"activeDbSystemId"`
+	ChannelDetails   []GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetail `pulumi:"channelDetails"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Whether to delete the target DB System when this Blue/Green deployment is deleted.
+	DeleteTargetDbSystemOnDelete bool `pulumi:"deleteTargetDbSystemOnDelete"`
+	// Filters deployments by display name.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the blue/green deployment.
+	Id string `pulumi:"id"`
+	// Additional lifecycle details.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Replication channel [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	ReplicationChannelId string `pulumi:"replicationChannelId"`
+	// Source DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) filter.
+	SourceDbSystemId string `pulumi:"sourceDbSystemId"`
+	// SSL mode used for the replication channel created by the blue/green workflow.
+	SslMode string `pulumi:"sslMode"`
+	// Filters deployments by lifecycle state.
+	State string `pulumi:"state"`
+	// Stage of the most recent switchover workflow. `SWITCHOVER_FAILED` indicates terminal switchover failure.
+	SwitchoverStatus  string `pulumi:"switchoverStatus"`
+	SwitchoverTrigger int    `pulumi:"switchoverTrigger"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// Target DB System details for a blue/green deployment.
+	TargetDbSystemDetails []GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetail `pulumi:"targetDbSystemDetails"`
+	// Target DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) filter.
+	TargetDbSystemId string `pulumi:"targetDbSystemId"`
+	// The time the deployment was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the deployment was last updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemInput is an input type that accepts GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArgs and GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput values.
+// You can construct a concrete instance of `GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemInput` via:
+//
+//	GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArgs{...}
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput
+	ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutputWithContext(context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArgs struct {
+	// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that currently owns the client-facing VIP and serves traffic.
+	ActiveDbSystemId pulumi.StringInput                                                              `pulumi:"activeDbSystemId"`
+	ChannelDetails   GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayInput `pulumi:"channelDetails"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Whether to delete the target DB System when this Blue/Green deployment is deleted.
+	DeleteTargetDbSystemOnDelete pulumi.BoolInput `pulumi:"deleteTargetDbSystemOnDelete"`
+	// Filters deployments by display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the blue/green deployment.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Additional lifecycle details.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Replication channel [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	ReplicationChannelId pulumi.StringInput `pulumi:"replicationChannelId"`
+	// Source DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) filter.
+	SourceDbSystemId pulumi.StringInput `pulumi:"sourceDbSystemId"`
+	// SSL mode used for the replication channel created by the blue/green workflow.
+	SslMode pulumi.StringInput `pulumi:"sslMode"`
+	// Filters deployments by lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// Stage of the most recent switchover workflow. `SWITCHOVER_FAILED` indicates terminal switchover failure.
+	SwitchoverStatus  pulumi.StringInput `pulumi:"switchoverStatus"`
+	SwitchoverTrigger pulumi.IntInput    `pulumi:"switchoverTrigger"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Target DB System details for a blue/green deployment.
+	TargetDbSystemDetails GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayInput `pulumi:"targetDbSystemDetails"`
+	// Target DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) filter.
+	TargetDbSystemId pulumi.StringInput `pulumi:"targetDbSystemId"`
+	// The time the deployment was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the deployment was last updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem)(nil)).Elem()
+}
+
+func (i GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArgs) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput {
+	return i.ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArgs) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput)
+}
+
+// GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayInput is an input type that accepts GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArray and GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayInput` via:
+//
+//	GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArray{ GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArgs{...} }
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayOutput
+	ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayOutputWithContext(context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayOutput
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArray []GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemInput
+
+func (GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem)(nil)).Elem()
+}
+
+func (i GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArray) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayOutput {
+	return i.ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArray) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayOutput)
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem)(nil)).Elem()
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput {
+	return o
+}
+
+// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that currently owns the client-facing VIP and serves traffic.
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput) ActiveDbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem) string { return v.ActiveDbSystemId }).(pulumi.StringOutput)
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput) ChannelDetails() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem) []GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetail {
+		return v.ChannelDetails
+	}).(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Whether to delete the target DB System when this Blue/Green deployment is deleted.
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput) DeleteTargetDbSystemOnDelete() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem) bool {
+		return v.DeleteTargetDbSystemOnDelete
+	}).(pulumi.BoolOutput)
+}
+
+// Filters deployments by display name.
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the blue/green deployment.
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Additional lifecycle details.
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Replication channel [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput) ReplicationChannelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem) string { return v.ReplicationChannelId }).(pulumi.StringOutput)
+}
+
+// Source DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) filter.
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput) SourceDbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem) string { return v.SourceDbSystemId }).(pulumi.StringOutput)
+}
+
+// SSL mode used for the replication channel created by the blue/green workflow.
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput) SslMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem) string { return v.SslMode }).(pulumi.StringOutput)
+}
+
+// Filters deployments by lifecycle state.
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Stage of the most recent switchover workflow. `SWITCHOVER_FAILED` indicates terminal switchover failure.
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput) SwitchoverStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem) string { return v.SwitchoverStatus }).(pulumi.StringOutput)
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput) SwitchoverTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem) int { return v.SwitchoverTrigger }).(pulumi.IntOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Target DB System details for a blue/green deployment.
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput) TargetDbSystemDetails() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem) []GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetail {
+		return v.TargetDbSystemDetails
+	}).(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayOutput)
+}
+
+// Target DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) filter.
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput) TargetDbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem) string { return v.TargetDbSystemId }).(pulumi.StringOutput)
+}
+
+// The time the deployment was created.
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the deployment was last updated.
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem)(nil)).Elem()
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayOutput) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayOutput) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem {
+		return vs[0].([]GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem)[vs[1].(int)]
+	}).(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput)
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetail struct {
+	ApplierUsername   string                                                                                  `pulumi:"applierUsername"`
+	SourcePassword    string                                                                                  `pulumi:"sourcePassword"`
+	SourceUsername    string                                                                                  `pulumi:"sourceUsername"`
+	SslCaCertificates []GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificate `pulumi:"sslCaCertificates"`
+	// SSL mode used for the replication channel created by the blue/green workflow.
+	SslMode string `pulumi:"sslMode"`
+}
+
+// GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailInput is an input type that accepts GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArgs and GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutput values.
+// You can construct a concrete instance of `GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailInput` via:
+//
+//	GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArgs{...}
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailInput interface {
+	pulumi.Input
+
+	ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutput
+	ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutputWithContext(context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutput
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArgs struct {
+	ApplierUsername   pulumi.StringInput                                                                              `pulumi:"applierUsername"`
+	SourcePassword    pulumi.StringInput                                                                              `pulumi:"sourcePassword"`
+	SourceUsername    pulumi.StringInput                                                                              `pulumi:"sourceUsername"`
+	SslCaCertificates GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayInput `pulumi:"sslCaCertificates"`
+	// SSL mode used for the replication channel created by the blue/green workflow.
+	SslMode pulumi.StringInput `pulumi:"sslMode"`
+}
+
+func (GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetail)(nil)).Elem()
+}
+
+func (i GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArgs) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutput {
+	return i.ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutputWithContext(context.Background())
+}
+
+func (i GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArgs) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutput)
+}
+
+// GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayInput is an input type that accepts GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArray and GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayOutput values.
+// You can construct a concrete instance of `GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayInput` via:
+//
+//	GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArray{ GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArgs{...} }
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayOutput
+	ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayOutputWithContext(context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayOutput
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArray []GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailInput
+
+func (GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetail)(nil)).Elem()
+}
+
+func (i GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArray) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayOutput {
+	return i.ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArray) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayOutput)
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutput struct{ *pulumi.OutputState }
+
+func (GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetail)(nil)).Elem()
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutput) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutput) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutput) ApplierUsername() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetail) string {
+		return v.ApplierUsername
+	}).(pulumi.StringOutput)
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutput) SourcePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetail) string {
+		return v.SourcePassword
+	}).(pulumi.StringOutput)
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutput) SourceUsername() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetail) string {
+		return v.SourceUsername
+	}).(pulumi.StringOutput)
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutput) SslCaCertificates() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetail) []GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificate {
+		return v.SslCaCertificates
+	}).(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayOutput)
+}
+
+// SSL mode used for the replication channel created by the blue/green workflow.
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutput) SslMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetail) string { return v.SslMode }).(pulumi.StringOutput)
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetail)(nil)).Elem()
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayOutput) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayOutput) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayOutput) Index(i pulumi.IntInput) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetail {
+		return vs[0].([]GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetail)[vs[1].(int)]
+	}).(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutput)
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificate struct {
+	CertificateType string `pulumi:"certificateType"`
+	Contents        string `pulumi:"contents"`
+}
+
+// GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateInput is an input type that accepts GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArgs and GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutput values.
+// You can construct a concrete instance of `GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateInput` via:
+//
+//	GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArgs{...}
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateInput interface {
+	pulumi.Input
+
+	ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutput
+	ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutputWithContext(context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutput
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArgs struct {
+	CertificateType pulumi.StringInput `pulumi:"certificateType"`
+	Contents        pulumi.StringInput `pulumi:"contents"`
+}
+
+func (GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificate)(nil)).Elem()
+}
+
+func (i GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArgs) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutput {
+	return i.ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutputWithContext(context.Background())
+}
+
+func (i GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArgs) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutput)
+}
+
+// GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayInput is an input type that accepts GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArray and GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayOutput values.
+// You can construct a concrete instance of `GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayInput` via:
+//
+//	GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArray{ GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArgs{...} }
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayInput interface {
+	pulumi.Input
+
+	ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayOutput
+	ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayOutputWithContext(context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayOutput
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArray []GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateInput
+
+func (GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificate)(nil)).Elem()
+}
+
+func (i GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArray) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayOutput {
+	return i.ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayOutputWithContext(context.Background())
+}
+
+func (i GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArray) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayOutput)
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutput struct{ *pulumi.OutputState }
+
+func (GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificate)(nil)).Elem()
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutput) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutput) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutput) CertificateType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificate) string {
+		return v.CertificateType
+	}).(pulumi.StringOutput)
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutput) Contents() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificate) string {
+		return v.Contents
+	}).(pulumi.StringOutput)
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificate)(nil)).Elem()
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayOutput) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayOutput) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayOutput) Index(i pulumi.IntInput) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificate {
+		return vs[0].([]GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificate)[vs[1].(int)]
+	}).(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutput)
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration applied to the target DB System.
+	ConfigurationId string `pulumi:"configurationId"`
+	// Initial data storage size in GiBs for the target DB System.
+	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
+	// Target MySQL engine version.
+	MysqlVersion string `pulumi:"mysqlVersion"`
+	// The shape of the target DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
+	ShapeName string `pulumi:"shapeName"`
+}
+
+// GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailInput is an input type that accepts GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArgs and GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutput values.
+// You can construct a concrete instance of `GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailInput` via:
+//
+//	GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArgs{...}
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailInput interface {
+	pulumi.Input
+
+	ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutput
+	ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutputWithContext(context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutput
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration applied to the target DB System.
+	ConfigurationId pulumi.StringInput `pulumi:"configurationId"`
+	// Initial data storage size in GiBs for the target DB System.
+	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
+	// Target MySQL engine version.
+	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
+	// The shape of the target DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
+	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+}
+
+func (GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetail)(nil)).Elem()
+}
+
+func (i GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArgs) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutput {
+	return i.ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutputWithContext(context.Background())
+}
+
+func (i GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArgs) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutput)
+}
+
+// GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayInput is an input type that accepts GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArray and GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayOutput values.
+// You can construct a concrete instance of `GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayInput` via:
+//
+//	GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArray{ GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArgs{...} }
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayOutput
+	ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayOutputWithContext(context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayOutput
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArray []GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailInput
+
+func (GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetail)(nil)).Elem()
+}
+
+func (i GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArray) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayOutput {
+	return i.ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArray) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayOutput)
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutput struct{ *pulumi.OutputState }
+
+func (GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetail)(nil)).Elem()
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutput) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutput) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration applied to the target DB System.
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutput) ConfigurationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetail) string {
+		return v.ConfigurationId
+	}).(pulumi.StringOutput)
+}
+
+// Initial data storage size in GiBs for the target DB System.
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutput) DataStorageSizeInGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetail) int {
+		return v.DataStorageSizeInGb
+	}).(pulumi.IntOutput)
+}
+
+// Target MySQL engine version.
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutput) MysqlVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetail) string {
+		return v.MysqlVersion
+	}).(pulumi.StringOutput)
+}
+
+// The shape of the target DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutput) ShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetail) string {
+		return v.ShapeName
+	}).(pulumi.StringOutput)
+}
+
+type GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetail)(nil)).Elem()
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayOutput) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayOutput() GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayOutput) ToGetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayOutput) Index(i pulumi.IntInput) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetail {
+		return vs[0].([]GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetail)[vs[1].(int)]
+	}).(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutput)
+}
+
+type GetBlueGreenDeploymentsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetBlueGreenDeploymentsFilterInput is an input type that accepts GetBlueGreenDeploymentsFilterArgs and GetBlueGreenDeploymentsFilterOutput values.
+// You can construct a concrete instance of `GetBlueGreenDeploymentsFilterInput` via:
+//
+//	GetBlueGreenDeploymentsFilterArgs{...}
+type GetBlueGreenDeploymentsFilterInput interface {
+	pulumi.Input
+
+	ToGetBlueGreenDeploymentsFilterOutput() GetBlueGreenDeploymentsFilterOutput
+	ToGetBlueGreenDeploymentsFilterOutputWithContext(context.Context) GetBlueGreenDeploymentsFilterOutput
+}
+
+type GetBlueGreenDeploymentsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetBlueGreenDeploymentsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBlueGreenDeploymentsFilter)(nil)).Elem()
+}
+
+func (i GetBlueGreenDeploymentsFilterArgs) ToGetBlueGreenDeploymentsFilterOutput() GetBlueGreenDeploymentsFilterOutput {
+	return i.ToGetBlueGreenDeploymentsFilterOutputWithContext(context.Background())
+}
+
+func (i GetBlueGreenDeploymentsFilterArgs) ToGetBlueGreenDeploymentsFilterOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBlueGreenDeploymentsFilterOutput)
+}
+
+// GetBlueGreenDeploymentsFilterArrayInput is an input type that accepts GetBlueGreenDeploymentsFilterArray and GetBlueGreenDeploymentsFilterArrayOutput values.
+// You can construct a concrete instance of `GetBlueGreenDeploymentsFilterArrayInput` via:
+//
+//	GetBlueGreenDeploymentsFilterArray{ GetBlueGreenDeploymentsFilterArgs{...} }
+type GetBlueGreenDeploymentsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBlueGreenDeploymentsFilterArrayOutput() GetBlueGreenDeploymentsFilterArrayOutput
+	ToGetBlueGreenDeploymentsFilterArrayOutputWithContext(context.Context) GetBlueGreenDeploymentsFilterArrayOutput
+}
+
+type GetBlueGreenDeploymentsFilterArray []GetBlueGreenDeploymentsFilterInput
+
+func (GetBlueGreenDeploymentsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBlueGreenDeploymentsFilter)(nil)).Elem()
+}
+
+func (i GetBlueGreenDeploymentsFilterArray) ToGetBlueGreenDeploymentsFilterArrayOutput() GetBlueGreenDeploymentsFilterArrayOutput {
+	return i.ToGetBlueGreenDeploymentsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBlueGreenDeploymentsFilterArray) ToGetBlueGreenDeploymentsFilterArrayOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBlueGreenDeploymentsFilterArrayOutput)
+}
+
+type GetBlueGreenDeploymentsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBlueGreenDeploymentsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBlueGreenDeploymentsFilter)(nil)).Elem()
+}
+
+func (o GetBlueGreenDeploymentsFilterOutput) ToGetBlueGreenDeploymentsFilterOutput() GetBlueGreenDeploymentsFilterOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentsFilterOutput) ToGetBlueGreenDeploymentsFilterOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsFilterOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetBlueGreenDeploymentsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetBlueGreenDeploymentsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBlueGreenDeploymentsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetBlueGreenDeploymentsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBlueGreenDeploymentsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBlueGreenDeploymentsFilter)(nil)).Elem()
+}
+
+func (o GetBlueGreenDeploymentsFilterArrayOutput) ToGetBlueGreenDeploymentsFilterArrayOutput() GetBlueGreenDeploymentsFilterArrayOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentsFilterArrayOutput) ToGetBlueGreenDeploymentsFilterArrayOutputWithContext(ctx context.Context) GetBlueGreenDeploymentsFilterArrayOutput {
+	return o
+}
+
+func (o GetBlueGreenDeploymentsFilterArrayOutput) Index(i pulumi.IntInput) GetBlueGreenDeploymentsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBlueGreenDeploymentsFilter {
+		return vs[0].([]GetBlueGreenDeploymentsFilter)[vs[1].(int)]
+	}).(GetBlueGreenDeploymentsFilterOutput)
 }
 
 type GetChannelSource struct {
@@ -34413,6 +36166,12 @@ func (o GetShapesShapeArrayOutput) Index(i pulumi.IntInput) GetShapesShapeOutput
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*BlueGreenDeploymentChannelDetailsInput)(nil)).Elem(), BlueGreenDeploymentChannelDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BlueGreenDeploymentChannelDetailsPtrInput)(nil)).Elem(), BlueGreenDeploymentChannelDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BlueGreenDeploymentChannelDetailsSslCaCertificateInput)(nil)).Elem(), BlueGreenDeploymentChannelDetailsSslCaCertificateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BlueGreenDeploymentChannelDetailsSslCaCertificatePtrInput)(nil)).Elem(), BlueGreenDeploymentChannelDetailsSslCaCertificateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BlueGreenDeploymentTargetDbSystemDetailsInput)(nil)).Elem(), BlueGreenDeploymentTargetDbSystemDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BlueGreenDeploymentTargetDbSystemDetailsPtrInput)(nil)).Elem(), BlueGreenDeploymentTargetDbSystemDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ChannelSourceInput)(nil)).Elem(), ChannelSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ChannelSourcePtrInput)(nil)).Elem(), ChannelSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ChannelSourceAnonymousTransactionsHandlingInput)(nil)).Elem(), ChannelSourceAnonymousTransactionsHandlingArgs{})
@@ -34559,6 +36318,24 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaTelemetryConfigurationLogArrayInput)(nil)).Elem(), ReplicaTelemetryConfigurationLogArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaTelemetryConfigurationLogDestinationConfigurationInput)(nil)).Elem(), ReplicaTelemetryConfigurationLogDestinationConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaTelemetryConfigurationLogDestinationConfigurationArrayInput)(nil)).Elem(), ReplicaTelemetryConfigurationLogDestinationConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBlueGreenDeploymentChannelDetailInput)(nil)).Elem(), GetBlueGreenDeploymentChannelDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBlueGreenDeploymentChannelDetailArrayInput)(nil)).Elem(), GetBlueGreenDeploymentChannelDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBlueGreenDeploymentChannelDetailSslCaCertificateInput)(nil)).Elem(), GetBlueGreenDeploymentChannelDetailSslCaCertificateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBlueGreenDeploymentChannelDetailSslCaCertificateArrayInput)(nil)).Elem(), GetBlueGreenDeploymentChannelDetailSslCaCertificateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBlueGreenDeploymentTargetDbSystemDetailInput)(nil)).Elem(), GetBlueGreenDeploymentTargetDbSystemDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBlueGreenDeploymentTargetDbSystemDetailArrayInput)(nil)).Elem(), GetBlueGreenDeploymentTargetDbSystemDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBlueGreenDeploymentsBlueGreenDeploymentCollectionInput)(nil)).Elem(), GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayInput)(nil)).Elem(), GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemInput)(nil)).Elem(), GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayInput)(nil)).Elem(), GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailInput)(nil)).Elem(), GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayInput)(nil)).Elem(), GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateInput)(nil)).Elem(), GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayInput)(nil)).Elem(), GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailInput)(nil)).Elem(), GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayInput)(nil)).Elem(), GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBlueGreenDeploymentsFilterInput)(nil)).Elem(), GetBlueGreenDeploymentsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBlueGreenDeploymentsFilterArrayInput)(nil)).Elem(), GetBlueGreenDeploymentsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelSourceInput)(nil)).Elem(), GetChannelSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelSourceArrayInput)(nil)).Elem(), GetChannelSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelSourceAnonymousTransactionsHandlingInput)(nil)).Elem(), GetChannelSourceAnonymousTransactionsHandlingArgs{})
@@ -34839,6 +36616,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesFilterArrayInput)(nil)).Elem(), GetShapesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeInput)(nil)).Elem(), GetShapesShapeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeArrayInput)(nil)).Elem(), GetShapesShapeArray{})
+	pulumi.RegisterOutputType(BlueGreenDeploymentChannelDetailsOutput{})
+	pulumi.RegisterOutputType(BlueGreenDeploymentChannelDetailsPtrOutput{})
+	pulumi.RegisterOutputType(BlueGreenDeploymentChannelDetailsSslCaCertificateOutput{})
+	pulumi.RegisterOutputType(BlueGreenDeploymentChannelDetailsSslCaCertificatePtrOutput{})
+	pulumi.RegisterOutputType(BlueGreenDeploymentTargetDbSystemDetailsOutput{})
+	pulumi.RegisterOutputType(BlueGreenDeploymentTargetDbSystemDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ChannelSourceOutput{})
 	pulumi.RegisterOutputType(ChannelSourcePtrOutput{})
 	pulumi.RegisterOutputType(ChannelSourceAnonymousTransactionsHandlingOutput{})
@@ -34985,6 +36768,24 @@ func init() {
 	pulumi.RegisterOutputType(ReplicaTelemetryConfigurationLogArrayOutput{})
 	pulumi.RegisterOutputType(ReplicaTelemetryConfigurationLogDestinationConfigurationOutput{})
 	pulumi.RegisterOutputType(ReplicaTelemetryConfigurationLogDestinationConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetBlueGreenDeploymentChannelDetailOutput{})
+	pulumi.RegisterOutputType(GetBlueGreenDeploymentChannelDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetBlueGreenDeploymentChannelDetailSslCaCertificateOutput{})
+	pulumi.RegisterOutputType(GetBlueGreenDeploymentChannelDetailSslCaCertificateArrayOutput{})
+	pulumi.RegisterOutputType(GetBlueGreenDeploymentTargetDbSystemDetailOutput{})
+	pulumi.RegisterOutputType(GetBlueGreenDeploymentTargetDbSystemDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionOutput{})
+	pulumi.RegisterOutputType(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailOutput{})
+	pulumi.RegisterOutputType(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateOutput{})
+	pulumi.RegisterOutputType(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateArrayOutput{})
+	pulumi.RegisterOutputType(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailOutput{})
+	pulumi.RegisterOutputType(GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetBlueGreenDeploymentsFilterOutput{})
+	pulumi.RegisterOutputType(GetBlueGreenDeploymentsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetChannelSourceOutput{})
 	pulumi.RegisterOutputType(GetChannelSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetChannelSourceAnonymousTransactionsHandlingOutput{})

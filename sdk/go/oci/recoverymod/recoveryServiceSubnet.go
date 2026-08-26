@@ -43,9 +43,10 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"bar-key": pulumi.String("value"),
 //				},
-//				NsgIds:   pulumi.Any(recoveryServiceSubnetNsgIds),
-//				SubnetId: pulumi.Any(testSubnet.Id),
-//				Subnets:  pulumi.Any(recoveryServiceSubnetSubnets),
+//				NsgIds:             pulumi.Any(recoveryServiceSubnetNsgIds),
+//				SecurityAttributes: pulumi.Any(recoveryServiceSubnetSecurityAttributes),
+//				SubnetId:           pulumi.Any(testSubnet.Id),
+//				Subnets:            pulumi.Any(recoveryServiceSubnetSubnets),
 //			})
 //			if err != nil {
 //				return err
@@ -78,6 +79,8 @@ type RecoveryServiceSubnet struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringOutput `pulumi:"securityAttributes"`
 	// The current state of the recovery service subnet.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Deprecated. One of the subnets associated with the Recovery Service subnet.
@@ -150,6 +153,8 @@ type recoveryServiceSubnetState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
 	NsgIds []string `pulumi:"nsgIds"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes *string `pulumi:"securityAttributes"`
 	// The current state of the recovery service subnet.
 	State *string `pulumi:"state"`
 	// Deprecated. One of the subnets associated with the Recovery Service subnet.
@@ -184,6 +189,8 @@ type RecoveryServiceSubnetState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
 	NsgIds pulumi.StringArrayInput
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringPtrInput
 	// The current state of the recovery service subnet.
 	State pulumi.StringPtrInput
 	// Deprecated. One of the subnets associated with the Recovery Service subnet.
@@ -220,6 +227,8 @@ type recoveryServiceSubnetArgs struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
 	NsgIds []string `pulumi:"nsgIds"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes *string `pulumi:"securityAttributes"`
 	// Deprecated. One of the subnets associated with the Recovery Service subnet.
 	//
 	// Deprecated: The 'subnet_id' field has been deprecated. Please use 'subnets' instead.
@@ -245,6 +254,8 @@ type RecoveryServiceSubnetArgs struct {
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
 	NsgIds pulumi.StringArrayInput
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringPtrInput
 	// Deprecated. One of the subnets associated with the Recovery Service subnet.
 	//
 	// Deprecated: The 'subnet_id' field has been deprecated. Please use 'subnets' instead.
@@ -373,6 +384,11 @@ func (o RecoveryServiceSubnetOutput) LifecycleDetails() pulumi.StringOutput {
 // (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
 func (o RecoveryServiceSubnetOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *RecoveryServiceSubnet) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o RecoveryServiceSubnetOutput) SecurityAttributes() pulumi.StringOutput {
+	return o.ApplyT(func(v *RecoveryServiceSubnet) pulumi.StringOutput { return v.SecurityAttributes }).(pulumi.StringOutput)
 }
 
 // The current state of the recovery service subnet.

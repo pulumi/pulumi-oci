@@ -44,9 +44,16 @@ export interface GetBdsInstanceArgs {
  */
 export interface GetBdsInstanceResult {
     /**
-     * Cluster version details including bds and odh version information.
+     * The list of BDS capacity reservation configurations associated with the cluster.
+     */
+    readonly bdsCapacityReservationConfigurations: outputs.BigDataService.GetBdsInstanceBdsCapacityReservationConfiguration[];
+    /**
+     * Cluster version details including BDS and ODH version information.
      */
     readonly bdsClusterVersionSummaries: outputs.BigDataService.GetBdsInstanceBdsClusterVersionSummary[];
+    /**
+     * The OCID of the BDS cluster associated with the BDS capacity reservation.
+     */
     readonly bdsInstanceId: string;
     /**
      * pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.

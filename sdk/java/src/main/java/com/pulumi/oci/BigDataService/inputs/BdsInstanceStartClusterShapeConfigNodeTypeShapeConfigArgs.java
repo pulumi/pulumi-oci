@@ -16,14 +16,14 @@ public final class BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs ext
     public static final BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs Empty = new BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs();
 
     /**
-     * BDS instance node type
+     * Cluster node type.
      * 
      */
     @Import(name="nodeType")
     private @Nullable Output<String> nodeType;
 
     /**
-     * @return BDS instance node type
+     * @return Cluster node type.
      * 
      */
     public Optional<Output<String>> nodeType() {
@@ -31,14 +31,14 @@ public final class BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs ext
     }
 
     /**
-     * Shape of the node
+     * Shape of the node.
      * 
      */
     @Import(name="shape")
     private @Nullable Output<String> shape;
 
     /**
-     * @return Shape of the node
+     * @return Shape of the node.
      * 
      */
     public Optional<Output<String>> shape() {
@@ -71,7 +71,7 @@ public final class BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs ext
         }
 
         /**
-         * @param nodeType BDS instance node type
+         * @param nodeType Cluster node type.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs ext
         }
 
         /**
-         * @param nodeType BDS instance node type
+         * @param nodeType Cluster node type.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs ext
         }
 
         /**
-         * @param shape Shape of the node
+         * @param shape Shape of the node.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs ext
         }
 
         /**
-         * @param shape Shape of the node
+         * @param shape Shape of the node.
          * 
          * @return builder
          * 

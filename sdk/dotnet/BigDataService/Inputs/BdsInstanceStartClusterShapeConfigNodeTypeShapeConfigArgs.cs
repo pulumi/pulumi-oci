@@ -13,13 +13,13 @@ namespace Pulumi.Oci.BigDataService.Inputs
     public sealed class BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// BDS instance node type
+        /// Cluster node type.
         /// </summary>
         [Input("nodeType")]
         public Input<string>? NodeType { get; set; }
 
         /// <summary>
-        /// Shape of the node
+        /// Shape of the node.
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }

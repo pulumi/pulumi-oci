@@ -16,6 +16,9 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'BlueGreenDeploymentChannelDetails',
+    'BlueGreenDeploymentChannelDetailsSslCaCertificate',
+    'BlueGreenDeploymentTargetDbSystemDetails',
     'ChannelSource',
     'ChannelSourceAnonymousTransactionsHandling',
     'ChannelSourceSslCaCertificate',
@@ -89,6 +92,15 @@ __all__ = [
     'ReplicaTelemetryConfiguration',
     'ReplicaTelemetryConfigurationLog',
     'ReplicaTelemetryConfigurationLogDestinationConfiguration',
+    'GetBlueGreenDeploymentChannelDetailResult',
+    'GetBlueGreenDeploymentChannelDetailSslCaCertificateResult',
+    'GetBlueGreenDeploymentTargetDbSystemDetailResult',
+    'GetBlueGreenDeploymentsBlueGreenDeploymentCollectionResult',
+    'GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemResult',
+    'GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailResult',
+    'GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateResult',
+    'GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailResult',
+    'GetBlueGreenDeploymentsFilterResult',
     'GetChannelSourceResult',
     'GetChannelSourceAnonymousTransactionsHandlingResult',
     'GetChannelSourceSslCaCertificateResult',
@@ -230,6 +242,218 @@ __all__ = [
     'GetShapesFilterResult',
     'GetShapesShapeResult',
 ]
+
+@pulumi.output_type
+class BlueGreenDeploymentChannelDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sourcePassword":
+            suggest = "source_password"
+        elif key == "sourceUsername":
+            suggest = "source_username"
+        elif key == "sslMode":
+            suggest = "ssl_mode"
+        elif key == "applierUsername":
+            suggest = "applier_username"
+        elif key == "sslCaCertificate":
+            suggest = "ssl_ca_certificate"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BlueGreenDeploymentChannelDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BlueGreenDeploymentChannelDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BlueGreenDeploymentChannelDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 source_password: _builtins.str,
+                 source_username: _builtins.str,
+                 ssl_mode: _builtins.str,
+                 applier_username: Optional[_builtins.str] = None,
+                 ssl_ca_certificate: Optional['outputs.BlueGreenDeploymentChannelDetailsSslCaCertificate'] = None):
+        """
+        :param _builtins.str source_password: The password for the source DB system user used by the blue/green workflow to configure the replication channel. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
+        :param _builtins.str source_username: The username on the source DB system used by the blue/green workflow to configure the replication channel. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
+        :param _builtins.str ssl_mode: The SSL mode of the replication channel created by the blue/green workflow. `VERIFY_CA` and `VERIFY_IDENTITY` require `sslCaCertificate`. `REQUIRED` and `DISABLED` must not include `sslCaCertificate`.
+        :param _builtins.str applier_username: The username for the replication applier of the target MySQL DB System.
+        :param 'BlueGreenDeploymentChannelDetailsSslCaCertificateArgs' ssl_ca_certificate: The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+        """
+        pulumi.set(__self__, "source_password", source_password)
+        pulumi.set(__self__, "source_username", source_username)
+        pulumi.set(__self__, "ssl_mode", ssl_mode)
+        if applier_username is not None:
+            pulumi.set(__self__, "applier_username", applier_username)
+        if ssl_ca_certificate is not None:
+            pulumi.set(__self__, "ssl_ca_certificate", ssl_ca_certificate)
+
+    @_builtins.property
+    @pulumi.getter(name="sourcePassword")
+    def source_password(self) -> _builtins.str:
+        """
+        The password for the source DB system user used by the blue/green workflow to configure the replication channel. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
+        """
+        return pulumi.get(self, "source_password")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceUsername")
+    def source_username(self) -> _builtins.str:
+        """
+        The username on the source DB system used by the blue/green workflow to configure the replication channel. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
+        """
+        return pulumi.get(self, "source_username")
+
+    @_builtins.property
+    @pulumi.getter(name="sslMode")
+    def ssl_mode(self) -> _builtins.str:
+        """
+        The SSL mode of the replication channel created by the blue/green workflow. `VERIFY_CA` and `VERIFY_IDENTITY` require `sslCaCertificate`. `REQUIRED` and `DISABLED` must not include `sslCaCertificate`.
+        """
+        return pulumi.get(self, "ssl_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="applierUsername")
+    def applier_username(self) -> Optional[_builtins.str]:
+        """
+        The username for the replication applier of the target MySQL DB System.
+        """
+        return pulumi.get(self, "applier_username")
+
+    @_builtins.property
+    @pulumi.getter(name="sslCaCertificate")
+    def ssl_ca_certificate(self) -> Optional['outputs.BlueGreenDeploymentChannelDetailsSslCaCertificate']:
+        """
+        The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+        """
+        return pulumi.get(self, "ssl_ca_certificate")
+
+
+@pulumi.output_type
+class BlueGreenDeploymentChannelDetailsSslCaCertificate(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "certificateType":
+            suggest = "certificate_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BlueGreenDeploymentChannelDetailsSslCaCertificate. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BlueGreenDeploymentChannelDetailsSslCaCertificate.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BlueGreenDeploymentChannelDetailsSslCaCertificate.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 certificate_type: _builtins.str,
+                 contents: _builtins.str):
+        """
+        :param _builtins.str certificate_type: The type of CA certificate.
+        :param _builtins.str contents: The string containing the CA certificate in PEM format.
+        """
+        pulumi.set(__self__, "certificate_type", certificate_type)
+        pulumi.set(__self__, "contents", contents)
+
+    @_builtins.property
+    @pulumi.getter(name="certificateType")
+    def certificate_type(self) -> _builtins.str:
+        """
+        The type of CA certificate.
+        """
+        return pulumi.get(self, "certificate_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def contents(self) -> _builtins.str:
+        """
+        The string containing the CA certificate in PEM format.
+        """
+        return pulumi.get(self, "contents")
+
+
+@pulumi.output_type
+class BlueGreenDeploymentTargetDbSystemDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "mysqlVersion":
+            suggest = "mysql_version"
+        elif key == "configurationId":
+            suggest = "configuration_id"
+        elif key == "dataStorageSizeInGb":
+            suggest = "data_storage_size_in_gb"
+        elif key == "shapeName":
+            suggest = "shape_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BlueGreenDeploymentTargetDbSystemDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BlueGreenDeploymentTargetDbSystemDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BlueGreenDeploymentTargetDbSystemDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 mysql_version: _builtins.str,
+                 configuration_id: Optional[_builtins.str] = None,
+                 data_storage_size_in_gb: Optional[_builtins.int] = None,
+                 shape_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str mysql_version: Target MySQL engine version.
+        :param _builtins.str configuration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration to apply to the target DB System. If omitted, the target DB System inherits the source DB System configuration.
+        :param _builtins.int data_storage_size_in_gb: Initial data storage size in GiBs for the target DB System. If omitted, the target DB System uses the source DB System storage size.
+        :param _builtins.str shape_name: The shape of the target DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
+        """
+        pulumi.set(__self__, "mysql_version", mysql_version)
+        if configuration_id is not None:
+            pulumi.set(__self__, "configuration_id", configuration_id)
+        if data_storage_size_in_gb is not None:
+            pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        if shape_name is not None:
+            pulumi.set(__self__, "shape_name", shape_name)
+
+    @_builtins.property
+    @pulumi.getter(name="mysqlVersion")
+    def mysql_version(self) -> _builtins.str:
+        """
+        Target MySQL engine version.
+        """
+        return pulumi.get(self, "mysql_version")
+
+    @_builtins.property
+    @pulumi.getter(name="configurationId")
+    def configuration_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration to apply to the target DB System. If omitted, the target DB System inherits the source DB System configuration.
+        """
+        return pulumi.get(self, "configuration_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dataStorageSizeInGb")
+    def data_storage_size_in_gb(self) -> Optional[_builtins.int]:
+        """
+        Initial data storage size in GiBs for the target DB System. If omitted, the target DB System uses the source DB System storage size.
+        """
+        return pulumi.get(self, "data_storage_size_in_gb")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> Optional[_builtins.str]:
+        """
+        The shape of the target DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
+        """
+        return pulumi.get(self, "shape_name")
+
 
 @pulumi.output_type
 class ChannelSource(dict):
@@ -7547,6 +7771,496 @@ class ReplicaTelemetryConfigurationLogDestinationConfiguration(dict):
         Value of the destination configuration variable.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetBlueGreenDeploymentChannelDetailResult(dict):
+    def __init__(__self__, *,
+                 applier_username: _builtins.str,
+                 source_password: _builtins.str,
+                 source_username: _builtins.str,
+                 ssl_ca_certificates: Sequence['outputs.GetBlueGreenDeploymentChannelDetailSslCaCertificateResult'],
+                 ssl_mode: _builtins.str):
+        """
+        :param _builtins.str ssl_mode: SSL mode used for the replication channel created by the blue/green workflow.
+        """
+        pulumi.set(__self__, "applier_username", applier_username)
+        pulumi.set(__self__, "source_password", source_password)
+        pulumi.set(__self__, "source_username", source_username)
+        pulumi.set(__self__, "ssl_ca_certificates", ssl_ca_certificates)
+        pulumi.set(__self__, "ssl_mode", ssl_mode)
+
+    @_builtins.property
+    @pulumi.getter(name="applierUsername")
+    def applier_username(self) -> _builtins.str:
+        return pulumi.get(self, "applier_username")
+
+    @_builtins.property
+    @pulumi.getter(name="sourcePassword")
+    def source_password(self) -> _builtins.str:
+        return pulumi.get(self, "source_password")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceUsername")
+    def source_username(self) -> _builtins.str:
+        return pulumi.get(self, "source_username")
+
+    @_builtins.property
+    @pulumi.getter(name="sslCaCertificates")
+    def ssl_ca_certificates(self) -> Sequence['outputs.GetBlueGreenDeploymentChannelDetailSslCaCertificateResult']:
+        return pulumi.get(self, "ssl_ca_certificates")
+
+    @_builtins.property
+    @pulumi.getter(name="sslMode")
+    def ssl_mode(self) -> _builtins.str:
+        """
+        SSL mode used for the replication channel created by the blue/green workflow.
+        """
+        return pulumi.get(self, "ssl_mode")
+
+
+@pulumi.output_type
+class GetBlueGreenDeploymentChannelDetailSslCaCertificateResult(dict):
+    def __init__(__self__, *,
+                 certificate_type: _builtins.str,
+                 contents: _builtins.str):
+        pulumi.set(__self__, "certificate_type", certificate_type)
+        pulumi.set(__self__, "contents", contents)
+
+    @_builtins.property
+    @pulumi.getter(name="certificateType")
+    def certificate_type(self) -> _builtins.str:
+        return pulumi.get(self, "certificate_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def contents(self) -> _builtins.str:
+        return pulumi.get(self, "contents")
+
+
+@pulumi.output_type
+class GetBlueGreenDeploymentTargetDbSystemDetailResult(dict):
+    def __init__(__self__, *,
+                 configuration_id: _builtins.str,
+                 data_storage_size_in_gb: _builtins.int,
+                 mysql_version: _builtins.str,
+                 shape_name: _builtins.str):
+        """
+        :param _builtins.str configuration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration applied to the target DB System.
+        :param _builtins.int data_storage_size_in_gb: Initial data storage size in GiBs for the target DB System.
+        :param _builtins.str mysql_version: Target MySQL engine version.
+        :param _builtins.str shape_name: The shape of the target DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
+        """
+        pulumi.set(__self__, "configuration_id", configuration_id)
+        pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        pulumi.set(__self__, "mysql_version", mysql_version)
+        pulumi.set(__self__, "shape_name", shape_name)
+
+    @_builtins.property
+    @pulumi.getter(name="configurationId")
+    def configuration_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration applied to the target DB System.
+        """
+        return pulumi.get(self, "configuration_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dataStorageSizeInGb")
+    def data_storage_size_in_gb(self) -> _builtins.int:
+        """
+        Initial data storage size in GiBs for the target DB System.
+        """
+        return pulumi.get(self, "data_storage_size_in_gb")
+
+    @_builtins.property
+    @pulumi.getter(name="mysqlVersion")
+    def mysql_version(self) -> _builtins.str:
+        """
+        Target MySQL engine version.
+        """
+        return pulumi.get(self, "mysql_version")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> _builtins.str:
+        """
+        The shape of the target DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
+        """
+        return pulumi.get(self, "shape_name")
+
+
+@pulumi.output_type
+class GetBlueGreenDeploymentsBlueGreenDeploymentCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 active_db_system_id: _builtins.str,
+                 channel_details: Sequence['outputs.GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailResult'],
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 delete_target_db_system_on_delete: _builtins.bool,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 replication_channel_id: _builtins.str,
+                 source_db_system_id: _builtins.str,
+                 ssl_mode: _builtins.str,
+                 state: _builtins.str,
+                 switchover_status: _builtins.str,
+                 switchover_trigger: _builtins.int,
+                 system_tags: Mapping[str, _builtins.str],
+                 target_db_system_details: Sequence['outputs.GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailResult'],
+                 target_db_system_id: _builtins.str,
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str active_db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that currently owns the client-facing VIP and serves traffic.
+        :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param _builtins.bool delete_target_db_system_on_delete: Whether to delete the target DB System when this Blue/Green deployment is deleted.
+        :param _builtins.str display_name: Filters deployments by display name.
+        :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the blue/green deployment.
+        :param _builtins.str lifecycle_details: Additional lifecycle details.
+        :param _builtins.str replication_channel_id: Replication channel [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param _builtins.str source_db_system_id: Source DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) filter.
+        :param _builtins.str ssl_mode: SSL mode used for the replication channel created by the blue/green workflow.
+        :param _builtins.str state: Filters deployments by lifecycle state.
+        :param _builtins.str switchover_status: Stage of the most recent switchover workflow. `SWITCHOVER_FAILED` indicates terminal switchover failure.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Sequence['GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailArgs'] target_db_system_details: Target DB System details for a blue/green deployment.
+        :param _builtins.str target_db_system_id: Target DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) filter.
+        :param _builtins.str time_created: The time the deployment was created.
+        :param _builtins.str time_updated: The time the deployment was last updated.
+        """
+        pulumi.set(__self__, "active_db_system_id", active_db_system_id)
+        pulumi.set(__self__, "channel_details", channel_details)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "delete_target_db_system_on_delete", delete_target_db_system_on_delete)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "replication_channel_id", replication_channel_id)
+        pulumi.set(__self__, "source_db_system_id", source_db_system_id)
+        pulumi.set(__self__, "ssl_mode", ssl_mode)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "switchover_status", switchover_status)
+        pulumi.set(__self__, "switchover_trigger", switchover_trigger)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_db_system_details", target_db_system_details)
+        pulumi.set(__self__, "target_db_system_id", target_db_system_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="activeDbSystemId")
+    def active_db_system_id(self) -> _builtins.str:
+        """
+        The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that currently owns the client-facing VIP and serves traffic.
+        """
+        return pulumi.get(self, "active_db_system_id")
+
+    @_builtins.property
+    @pulumi.getter(name="channelDetails")
+    def channel_details(self) -> Sequence['outputs.GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailResult']:
+        return pulumi.get(self, "channel_details")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="deleteTargetDbSystemOnDelete")
+    def delete_target_db_system_on_delete(self) -> _builtins.bool:
+        """
+        Whether to delete the target DB System when this Blue/Green deployment is deleted.
+        """
+        return pulumi.get(self, "delete_target_db_system_on_delete")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        Filters deployments by display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the blue/green deployment.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        Additional lifecycle details.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="replicationChannelId")
+    def replication_channel_id(self) -> _builtins.str:
+        """
+        Replication channel [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "replication_channel_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceDbSystemId")
+    def source_db_system_id(self) -> _builtins.str:
+        """
+        Source DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) filter.
+        """
+        return pulumi.get(self, "source_db_system_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sslMode")
+    def ssl_mode(self) -> _builtins.str:
+        """
+        SSL mode used for the replication channel created by the blue/green workflow.
+        """
+        return pulumi.get(self, "ssl_mode")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        Filters deployments by lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="switchoverStatus")
+    def switchover_status(self) -> _builtins.str:
+        """
+        Stage of the most recent switchover workflow. `SWITCHOVER_FAILED` indicates terminal switchover failure.
+        """
+        return pulumi.get(self, "switchover_status")
+
+    @_builtins.property
+    @pulumi.getter(name="switchoverTrigger")
+    def switchover_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "switchover_trigger")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="targetDbSystemDetails")
+    def target_db_system_details(self) -> Sequence['outputs.GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailResult']:
+        """
+        Target DB System details for a blue/green deployment.
+        """
+        return pulumi.get(self, "target_db_system_details")
+
+    @_builtins.property
+    @pulumi.getter(name="targetDbSystemId")
+    def target_db_system_id(self) -> _builtins.str:
+        """
+        Target DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) filter.
+        """
+        return pulumi.get(self, "target_db_system_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the deployment was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The time the deployment was last updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailResult(dict):
+    def __init__(__self__, *,
+                 applier_username: _builtins.str,
+                 source_password: _builtins.str,
+                 source_username: _builtins.str,
+                 ssl_ca_certificates: Sequence['outputs.GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateResult'],
+                 ssl_mode: _builtins.str):
+        """
+        :param _builtins.str ssl_mode: SSL mode used for the replication channel created by the blue/green workflow.
+        """
+        pulumi.set(__self__, "applier_username", applier_username)
+        pulumi.set(__self__, "source_password", source_password)
+        pulumi.set(__self__, "source_username", source_username)
+        pulumi.set(__self__, "ssl_ca_certificates", ssl_ca_certificates)
+        pulumi.set(__self__, "ssl_mode", ssl_mode)
+
+    @_builtins.property
+    @pulumi.getter(name="applierUsername")
+    def applier_username(self) -> _builtins.str:
+        return pulumi.get(self, "applier_username")
+
+    @_builtins.property
+    @pulumi.getter(name="sourcePassword")
+    def source_password(self) -> _builtins.str:
+        return pulumi.get(self, "source_password")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceUsername")
+    def source_username(self) -> _builtins.str:
+        return pulumi.get(self, "source_username")
+
+    @_builtins.property
+    @pulumi.getter(name="sslCaCertificates")
+    def ssl_ca_certificates(self) -> Sequence['outputs.GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateResult']:
+        return pulumi.get(self, "ssl_ca_certificates")
+
+    @_builtins.property
+    @pulumi.getter(name="sslMode")
+    def ssl_mode(self) -> _builtins.str:
+        """
+        SSL mode used for the replication channel created by the blue/green workflow.
+        """
+        return pulumi.get(self, "ssl_mode")
+
+
+@pulumi.output_type
+class GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificateResult(dict):
+    def __init__(__self__, *,
+                 certificate_type: _builtins.str,
+                 contents: _builtins.str):
+        pulumi.set(__self__, "certificate_type", certificate_type)
+        pulumi.set(__self__, "contents", contents)
+
+    @_builtins.property
+    @pulumi.getter(name="certificateType")
+    def certificate_type(self) -> _builtins.str:
+        return pulumi.get(self, "certificate_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def contents(self) -> _builtins.str:
+        return pulumi.get(self, "contents")
+
+
+@pulumi.output_type
+class GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetailResult(dict):
+    def __init__(__self__, *,
+                 configuration_id: _builtins.str,
+                 data_storage_size_in_gb: _builtins.int,
+                 mysql_version: _builtins.str,
+                 shape_name: _builtins.str):
+        """
+        :param _builtins.str configuration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration applied to the target DB System.
+        :param _builtins.int data_storage_size_in_gb: Initial data storage size in GiBs for the target DB System.
+        :param _builtins.str mysql_version: Target MySQL engine version.
+        :param _builtins.str shape_name: The shape of the target DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
+        """
+        pulumi.set(__self__, "configuration_id", configuration_id)
+        pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        pulumi.set(__self__, "mysql_version", mysql_version)
+        pulumi.set(__self__, "shape_name", shape_name)
+
+    @_builtins.property
+    @pulumi.getter(name="configurationId")
+    def configuration_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration applied to the target DB System.
+        """
+        return pulumi.get(self, "configuration_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dataStorageSizeInGb")
+    def data_storage_size_in_gb(self) -> _builtins.int:
+        """
+        Initial data storage size in GiBs for the target DB System.
+        """
+        return pulumi.get(self, "data_storage_size_in_gb")
+
+    @_builtins.property
+    @pulumi.getter(name="mysqlVersion")
+    def mysql_version(self) -> _builtins.str:
+        """
+        Target MySQL engine version.
+        """
+        return pulumi.get(self, "mysql_version")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> _builtins.str:
+        """
+        The shape of the target DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
+        """
+        return pulumi.get(self, "shape_name")
+
+
+@pulumi.output_type
+class GetBlueGreenDeploymentsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
 
 
 @pulumi.output_type

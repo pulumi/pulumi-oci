@@ -14,7 +14,11 @@ namespace Pulumi.Oci.BigDataService.Outputs
     public sealed class GetBdsInstancesBdsInstanceResult
     {
         /// <summary>
-        /// Cluster version details including bds and odh version information.
+        /// The list of BDS capacity reservation configurations associated with the cluster.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationResult> BdsCapacityReservationConfigurations;
+        /// <summary>
+        /// Cluster version details including BDS and ODH version information.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBdsInstancesBdsInstanceBdsClusterVersionSummaryResult> BdsClusterVersionSummaries;
         /// <summary>
@@ -140,6 +144,8 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
         [OutputConstructor]
         private GetBdsInstancesBdsInstanceResult(
+            ImmutableArray<Outputs.GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationResult> bdsCapacityReservationConfigurations,
+
             ImmutableArray<Outputs.GetBdsInstancesBdsInstanceBdsClusterVersionSummaryResult> bdsClusterVersionSummaries,
 
             string bootstrapScriptUrl,
@@ -226,6 +232,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             ImmutableArray<Outputs.GetBdsInstancesBdsInstanceWorkerNodeResult> workerNodes)
         {
+            BdsCapacityReservationConfigurations = bdsCapacityReservationConfigurations;
             BdsClusterVersionSummaries = bdsClusterVersionSummaries;
             BootstrapScriptUrl = bootstrapScriptUrl;
             CloudSqlDetails = cloudSqlDetails;

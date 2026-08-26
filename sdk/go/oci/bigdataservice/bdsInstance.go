@@ -34,12 +34,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := bigdataservice.NewBdsInstance(ctx, "test_bds_instance", &bigdataservice.BdsInstanceArgs{
-//				ClusterPublicKey:   pulumi.Any(bdsInstanceClusterPublicKey),
-//				ClusterVersion:     pulumi.Any(bdsInstanceClusterVersion),
-//				CompartmentId:      pulumi.Any(compartmentId),
-//				DisplayName:        pulumi.Any(bdsInstanceDisplayName),
-//				IsHighAvailability: pulumi.Any(bdsInstanceIsHighAvailability),
-//				IsSecure:           pulumi.Any(bdsInstanceIsSecure),
+//				ClusterAdminPassword: pulumi.Any(bdsInstanceClusterAdminPassword),
+//				ClusterPublicKey:     pulumi.Any(bdsInstanceClusterPublicKey),
+//				ClusterVersion:       pulumi.Any(bdsInstanceClusterVersion),
+//				CompartmentId:        pulumi.Any(compartmentId),
+//				DisplayName:          pulumi.Any(bdsInstanceDisplayName),
+//				IsHighAvailability:   pulumi.Any(bdsInstanceIsHighAvailability),
+//				IsSecure:             pulumi.Any(bdsInstanceIsSecure),
 //				MasterNode: &bigdataservice.BdsInstanceMasterNodeArgs{
 //					Shape:                pulumi.Any(bdsInstanceNodesShape),
 //					SubnetId:             pulumi.Any(testSubnet.Id),
@@ -106,12 +107,17 @@ import (
 //						Ocpus:       pulumi.Any(bdsInstanceNodesShapeConfigOcpus),
 //					},
 //				},
+//				BdsCapacityReservationConfigurations: bigdataservice.BdsInstanceBdsCapacityReservationConfigurationTypeArray{
+//					&bigdataservice.BdsInstanceBdsCapacityReservationConfigurationTypeArgs{
+//						BdsCapacityReservationId: pulumi.Any(testBdsCapacityReservation.Id),
+//						DisplayName:              pulumi.Any(bdsInstanceBdsCapacityReservationConfigurationsDisplayName),
+//					},
+//				},
 //				BdsClusterVersionSummary: &bigdataservice.BdsInstanceBdsClusterVersionSummaryArgs{
 //					BdsVersion: pulumi.Any(bdsInstanceBdsClusterVersionSummaryBdsVersion),
 //					OdhVersion: pulumi.Any(bdsInstanceBdsClusterVersionSummaryOdhVersion),
 //				},
 //				BootstrapScriptUrl:        pulumi.Any(bdsInstanceBootstrapScriptUrl),
-//				ClusterAdminPassword:      pulumi.Any(bdsInstanceClusterAdminPassword),
 //				ClusterProfile:            pulumi.Any(bdsInstanceClusterProfile),
 //				DefinedTags:               pulumi.Any(bdsInstanceDefinedTags),
 //				FreeformTags:              pulumi.Any(bdsInstanceFreeformTags),
@@ -123,7 +129,6 @@ import (
 //					CidrBlock:            pulumi.Any(bdsInstanceNetworkConfigCidrBlock),
 //					IsNatGatewayRequired: pulumi.Any(bdsInstanceNetworkConfigIsNatGatewayRequired),
 //				},
-//				SecretId: pulumi.Any(testSecret.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -144,7 +149,9 @@ import (
 type BdsInstance struct {
 	pulumi.CustomResourceState
 
-	// Cluster version details including bds and odh version information.
+	// Optional BDS capacity reservation configurations to associate with the cluster during creation.
+	BdsCapacityReservationConfigurations BdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput `pulumi:"bdsCapacityReservationConfigurations"`
+	// Cluster version details including BDS and ODH version information. When this block is specified, provide at least one of `bdsVersion` or `odhVersion`; if both values are null, the service rejects the request.
 	BdsClusterVersionSummary BdsInstanceBdsClusterVersionSummaryOutput `pulumi:"bdsClusterVersionSummary"`
 	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
 	BootstrapScriptUrl pulumi.StringOutput `pulumi:"bootstrapScriptUrl"`
@@ -161,7 +168,8 @@ type BdsInstance struct {
 	// Version of the Hadoop distribution
 	ClusterVersion pulumi.StringOutput `pulumi:"clusterVersion"`
 	// (Updatable) The OCID of the compartment
-	CompartmentId         pulumi.StringOutput                       `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// The compute-only worker node in the BDS instance
 	ComputeOnlyWorkerNode BdsInstanceComputeOnlyWorkerNodePtrOutput `pulumi:"computeOnlyWorkerNode"`
 	// The user who created the cluster.
 	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
@@ -195,32 +203,33 @@ type BdsInstance struct {
 	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
 	// The master node in the BDS instance
 	MasterNode BdsInstanceMasterNodeOutput `pulumi:"masterNode"`
-	// (Updatable) Additional configuration of the user's network.
+	// Additional configuration of the user's network.
 	NetworkConfig BdsInstanceNetworkConfigOutput `pulumi:"networkConfig"`
 	// The list of nodes in the Big Data Service cluster.
 	Nodes BdsInstanceNodeArrayOutput `pulumi:"nodes"`
-	// Number of nodes that forming the cluster
+	// The number of nodes that form the cluster.
 	NumberOfNodes pulumi.IntOutput `pulumi:"numberOfNodes"`
 	// Number of nodes that require a maintenance reboot
 	NumberOfNodesRequiringMaintenanceReboot pulumi.IntOutput `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
-	// (Updatable) The version of the patch to be upated.
+	// (Updatable) The version of the patch to be updated.
 	OsPatchVersion pulumi.StringPtrOutput `pulumi:"osPatchVersion"`
 	// (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
 	RemoveNode  pulumi.StringPtrOutput   `pulumi:"removeNode"`
 	RemoveNodes pulumi.StringArrayOutput `pulumi:"removeNodes"`
-	// The secretId for the clusterAdminPassword.
+	// (Updatable) The secretId for the clusterAdminPassword.
 	SecretId                 pulumi.StringOutput                           `pulumi:"secretId"`
 	StartClusterShapeConfigs BdsInstanceStartClusterShapeConfigArrayOutput `pulumi:"startClusterShapeConfigs"`
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State pulumi.StringOutput `pulumi:"state"`
-	// The time the BDS instance was created. An RFC3339 formatted datetime string
+	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
 	TimeEarliestCertificateExpiration pulumi.StringOutput `pulumi:"timeEarliestCertificateExpiration"`
-	// The time the BDS instance was updated. An RFC3339 formatted datetime string
+	// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// The utility node in the BDS instance
-	UtilNode   BdsInstanceUtilNodeOutput   `pulumi:"utilNode"`
+	UtilNode BdsInstanceUtilNodeOutput `pulumi:"utilNode"`
+	// The worker node in the BDS instance
 	WorkerNode BdsInstanceWorkerNodeOutput `pulumi:"workerNode"`
 }
 
@@ -288,7 +297,9 @@ func GetBdsInstance(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering BdsInstance resources.
 type bdsInstanceState struct {
-	// Cluster version details including bds and odh version information.
+	// Optional BDS capacity reservation configurations to associate with the cluster during creation.
+	BdsCapacityReservationConfigurations []BdsInstanceBdsCapacityReservationConfigurationType `pulumi:"bdsCapacityReservationConfigurations"`
+	// Cluster version details including BDS and ODH version information. When this block is specified, provide at least one of `bdsVersion` or `odhVersion`; if both values are null, the service rejects the request.
 	BdsClusterVersionSummary *BdsInstanceBdsClusterVersionSummary `pulumi:"bdsClusterVersionSummary"`
 	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
 	BootstrapScriptUrl *string `pulumi:"bootstrapScriptUrl"`
@@ -305,7 +316,8 @@ type bdsInstanceState struct {
 	// Version of the Hadoop distribution
 	ClusterVersion *string `pulumi:"clusterVersion"`
 	// (Updatable) The OCID of the compartment
-	CompartmentId         *string                           `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
+	// The compute-only worker node in the BDS instance
 	ComputeOnlyWorkerNode *BdsInstanceComputeOnlyWorkerNode `pulumi:"computeOnlyWorkerNode"`
 	// The user who created the cluster.
 	CreatedBy *string `pulumi:"createdBy"`
@@ -339,37 +351,40 @@ type bdsInstanceState struct {
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The master node in the BDS instance
 	MasterNode *BdsInstanceMasterNode `pulumi:"masterNode"`
-	// (Updatable) Additional configuration of the user's network.
+	// Additional configuration of the user's network.
 	NetworkConfig *BdsInstanceNetworkConfig `pulumi:"networkConfig"`
 	// The list of nodes in the Big Data Service cluster.
 	Nodes []BdsInstanceNode `pulumi:"nodes"`
-	// Number of nodes that forming the cluster
+	// The number of nodes that form the cluster.
 	NumberOfNodes *int `pulumi:"numberOfNodes"`
 	// Number of nodes that require a maintenance reboot
 	NumberOfNodesRequiringMaintenanceReboot *int `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
-	// (Updatable) The version of the patch to be upated.
+	// (Updatable) The version of the patch to be updated.
 	OsPatchVersion *string `pulumi:"osPatchVersion"`
 	// (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
 	RemoveNode  *string  `pulumi:"removeNode"`
 	RemoveNodes []string `pulumi:"removeNodes"`
-	// The secretId for the clusterAdminPassword.
+	// (Updatable) The secretId for the clusterAdminPassword.
 	SecretId                 *string                              `pulumi:"secretId"`
 	StartClusterShapeConfigs []BdsInstanceStartClusterShapeConfig `pulumi:"startClusterShapeConfigs"`
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State *string `pulumi:"state"`
-	// The time the BDS instance was created. An RFC3339 formatted datetime string
+	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
 	TimeEarliestCertificateExpiration *string `pulumi:"timeEarliestCertificateExpiration"`
-	// The time the BDS instance was updated. An RFC3339 formatted datetime string
+	// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The utility node in the BDS instance
-	UtilNode   *BdsInstanceUtilNode   `pulumi:"utilNode"`
+	UtilNode *BdsInstanceUtilNode `pulumi:"utilNode"`
+	// The worker node in the BDS instance
 	WorkerNode *BdsInstanceWorkerNode `pulumi:"workerNode"`
 }
 
 type BdsInstanceState struct {
-	// Cluster version details including bds and odh version information.
+	// Optional BDS capacity reservation configurations to associate with the cluster during creation.
+	BdsCapacityReservationConfigurations BdsInstanceBdsCapacityReservationConfigurationTypeArrayInput
+	// Cluster version details including BDS and ODH version information. When this block is specified, provide at least one of `bdsVersion` or `odhVersion`; if both values are null, the service rejects the request.
 	BdsClusterVersionSummary BdsInstanceBdsClusterVersionSummaryPtrInput
 	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
 	BootstrapScriptUrl pulumi.StringPtrInput
@@ -386,7 +401,8 @@ type BdsInstanceState struct {
 	// Version of the Hadoop distribution
 	ClusterVersion pulumi.StringPtrInput
 	// (Updatable) The OCID of the compartment
-	CompartmentId         pulumi.StringPtrInput
+	CompartmentId pulumi.StringPtrInput
+	// The compute-only worker node in the BDS instance
 	ComputeOnlyWorkerNode BdsInstanceComputeOnlyWorkerNodePtrInput
 	// The user who created the cluster.
 	CreatedBy pulumi.StringPtrInput
@@ -420,32 +436,33 @@ type BdsInstanceState struct {
 	KmsKeyId pulumi.StringPtrInput
 	// The master node in the BDS instance
 	MasterNode BdsInstanceMasterNodePtrInput
-	// (Updatable) Additional configuration of the user's network.
+	// Additional configuration of the user's network.
 	NetworkConfig BdsInstanceNetworkConfigPtrInput
 	// The list of nodes in the Big Data Service cluster.
 	Nodes BdsInstanceNodeArrayInput
-	// Number of nodes that forming the cluster
+	// The number of nodes that form the cluster.
 	NumberOfNodes pulumi.IntPtrInput
 	// Number of nodes that require a maintenance reboot
 	NumberOfNodesRequiringMaintenanceReboot pulumi.IntPtrInput
-	// (Updatable) The version of the patch to be upated.
+	// (Updatable) The version of the patch to be updated.
 	OsPatchVersion pulumi.StringPtrInput
 	// (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
 	RemoveNode  pulumi.StringPtrInput
 	RemoveNodes pulumi.StringArrayInput
-	// The secretId for the clusterAdminPassword.
+	// (Updatable) The secretId for the clusterAdminPassword.
 	SecretId                 pulumi.StringPtrInput
 	StartClusterShapeConfigs BdsInstanceStartClusterShapeConfigArrayInput
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State pulumi.StringPtrInput
-	// The time the BDS instance was created. An RFC3339 formatted datetime string
+	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
 	TimeEarliestCertificateExpiration pulumi.StringPtrInput
-	// The time the BDS instance was updated. An RFC3339 formatted datetime string
+	// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
 	// The utility node in the BDS instance
-	UtilNode   BdsInstanceUtilNodePtrInput
+	UtilNode BdsInstanceUtilNodePtrInput
+	// The worker node in the BDS instance
 	WorkerNode BdsInstanceWorkerNodePtrInput
 }
 
@@ -454,7 +471,9 @@ func (BdsInstanceState) ElementType() reflect.Type {
 }
 
 type bdsInstanceArgs struct {
-	// Cluster version details including bds and odh version information.
+	// Optional BDS capacity reservation configurations to associate with the cluster during creation.
+	BdsCapacityReservationConfigurations []BdsInstanceBdsCapacityReservationConfigurationType `pulumi:"bdsCapacityReservationConfigurations"`
+	// Cluster version details including BDS and ODH version information. When this block is specified, provide at least one of `bdsVersion` or `odhVersion`; if both values are null, the service rejects the request.
 	BdsClusterVersionSummary *BdsInstanceBdsClusterVersionSummary `pulumi:"bdsClusterVersionSummary"`
 	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
 	BootstrapScriptUrl *string `pulumi:"bootstrapScriptUrl"`
@@ -469,7 +488,8 @@ type bdsInstanceArgs struct {
 	// Version of the Hadoop distribution
 	ClusterVersion string `pulumi:"clusterVersion"`
 	// (Updatable) The OCID of the compartment
-	CompartmentId         string                            `pulumi:"compartmentId"`
+	CompartmentId string `pulumi:"compartmentId"`
+	// The compute-only worker node in the BDS instance
 	ComputeOnlyWorkerNode *BdsInstanceComputeOnlyWorkerNode `pulumi:"computeOnlyWorkerNode"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -501,26 +521,29 @@ type bdsInstanceArgs struct {
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The master node in the BDS instance
 	MasterNode BdsInstanceMasterNode `pulumi:"masterNode"`
-	// (Updatable) Additional configuration of the user's network.
+	// Additional configuration of the user's network.
 	NetworkConfig *BdsInstanceNetworkConfig `pulumi:"networkConfig"`
-	// (Updatable) The version of the patch to be upated.
+	// (Updatable) The version of the patch to be updated.
 	OsPatchVersion *string `pulumi:"osPatchVersion"`
 	// (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
 	RemoveNode  *string  `pulumi:"removeNode"`
 	RemoveNodes []string `pulumi:"removeNodes"`
-	// The secretId for the clusterAdminPassword.
+	// (Updatable) The secretId for the clusterAdminPassword.
 	SecretId                 *string                              `pulumi:"secretId"`
 	StartClusterShapeConfigs []BdsInstanceStartClusterShapeConfig `pulumi:"startClusterShapeConfigs"`
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State *string `pulumi:"state"`
 	// The utility node in the BDS instance
-	UtilNode   BdsInstanceUtilNode   `pulumi:"utilNode"`
+	UtilNode BdsInstanceUtilNode `pulumi:"utilNode"`
+	// The worker node in the BDS instance
 	WorkerNode BdsInstanceWorkerNode `pulumi:"workerNode"`
 }
 
 // The set of arguments for constructing a BdsInstance resource.
 type BdsInstanceArgs struct {
-	// Cluster version details including bds and odh version information.
+	// Optional BDS capacity reservation configurations to associate with the cluster during creation.
+	BdsCapacityReservationConfigurations BdsInstanceBdsCapacityReservationConfigurationTypeArrayInput
+	// Cluster version details including BDS and ODH version information. When this block is specified, provide at least one of `bdsVersion` or `odhVersion`; if both values are null, the service rejects the request.
 	BdsClusterVersionSummary BdsInstanceBdsClusterVersionSummaryPtrInput
 	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
 	BootstrapScriptUrl pulumi.StringPtrInput
@@ -535,7 +558,8 @@ type BdsInstanceArgs struct {
 	// Version of the Hadoop distribution
 	ClusterVersion pulumi.StringInput
 	// (Updatable) The OCID of the compartment
-	CompartmentId         pulumi.StringInput
+	CompartmentId pulumi.StringInput
+	// The compute-only worker node in the BDS instance
 	ComputeOnlyWorkerNode BdsInstanceComputeOnlyWorkerNodePtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
@@ -567,20 +591,21 @@ type BdsInstanceArgs struct {
 	KmsKeyId pulumi.StringPtrInput
 	// The master node in the BDS instance
 	MasterNode BdsInstanceMasterNodeInput
-	// (Updatable) Additional configuration of the user's network.
+	// Additional configuration of the user's network.
 	NetworkConfig BdsInstanceNetworkConfigPtrInput
-	// (Updatable) The version of the patch to be upated.
+	// (Updatable) The version of the patch to be updated.
 	OsPatchVersion pulumi.StringPtrInput
 	// (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
 	RemoveNode  pulumi.StringPtrInput
 	RemoveNodes pulumi.StringArrayInput
-	// The secretId for the clusterAdminPassword.
+	// (Updatable) The secretId for the clusterAdminPassword.
 	SecretId                 pulumi.StringPtrInput
 	StartClusterShapeConfigs BdsInstanceStartClusterShapeConfigArrayInput
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State pulumi.StringPtrInput
 	// The utility node in the BDS instance
-	UtilNode   BdsInstanceUtilNodeInput
+	UtilNode BdsInstanceUtilNodeInput
+	// The worker node in the BDS instance
 	WorkerNode BdsInstanceWorkerNodeInput
 }
 
@@ -671,7 +696,14 @@ func (o BdsInstanceOutput) ToBdsInstanceOutputWithContext(ctx context.Context) B
 	return o
 }
 
-// Cluster version details including bds and odh version information.
+// Optional BDS capacity reservation configurations to associate with the cluster during creation.
+func (o BdsInstanceOutput) BdsCapacityReservationConfigurations() BdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput {
+	return o.ApplyT(func(v *BdsInstance) BdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput {
+		return v.BdsCapacityReservationConfigurations
+	}).(BdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput)
+}
+
+// Cluster version details including BDS and ODH version information. When this block is specified, provide at least one of `bdsVersion` or `odhVersion`; if both values are null, the service rejects the request.
 func (o BdsInstanceOutput) BdsClusterVersionSummary() BdsInstanceBdsClusterVersionSummaryOutput {
 	return o.ApplyT(func(v *BdsInstance) BdsInstanceBdsClusterVersionSummaryOutput { return v.BdsClusterVersionSummary }).(BdsInstanceBdsClusterVersionSummaryOutput)
 }
@@ -716,6 +748,7 @@ func (o BdsInstanceOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The compute-only worker node in the BDS instance
 func (o BdsInstanceOutput) ComputeOnlyWorkerNode() BdsInstanceComputeOnlyWorkerNodePtrOutput {
 	return o.ApplyT(func(v *BdsInstance) BdsInstanceComputeOnlyWorkerNodePtrOutput { return v.ComputeOnlyWorkerNode }).(BdsInstanceComputeOnlyWorkerNodePtrOutput)
 }
@@ -803,7 +836,7 @@ func (o BdsInstanceOutput) MasterNode() BdsInstanceMasterNodeOutput {
 	return o.ApplyT(func(v *BdsInstance) BdsInstanceMasterNodeOutput { return v.MasterNode }).(BdsInstanceMasterNodeOutput)
 }
 
-// (Updatable) Additional configuration of the user's network.
+// Additional configuration of the user's network.
 func (o BdsInstanceOutput) NetworkConfig() BdsInstanceNetworkConfigOutput {
 	return o.ApplyT(func(v *BdsInstance) BdsInstanceNetworkConfigOutput { return v.NetworkConfig }).(BdsInstanceNetworkConfigOutput)
 }
@@ -813,7 +846,7 @@ func (o BdsInstanceOutput) Nodes() BdsInstanceNodeArrayOutput {
 	return o.ApplyT(func(v *BdsInstance) BdsInstanceNodeArrayOutput { return v.Nodes }).(BdsInstanceNodeArrayOutput)
 }
 
-// Number of nodes that forming the cluster
+// The number of nodes that form the cluster.
 func (o BdsInstanceOutput) NumberOfNodes() pulumi.IntOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.IntOutput { return v.NumberOfNodes }).(pulumi.IntOutput)
 }
@@ -823,7 +856,7 @@ func (o BdsInstanceOutput) NumberOfNodesRequiringMaintenanceReboot() pulumi.IntO
 	return o.ApplyT(func(v *BdsInstance) pulumi.IntOutput { return v.NumberOfNodesRequiringMaintenanceReboot }).(pulumi.IntOutput)
 }
 
-// (Updatable) The version of the patch to be upated.
+// (Updatable) The version of the patch to be updated.
 func (o BdsInstanceOutput) OsPatchVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.StringPtrOutput { return v.OsPatchVersion }).(pulumi.StringPtrOutput)
 }
@@ -837,7 +870,7 @@ func (o BdsInstanceOutput) RemoveNodes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.StringArrayOutput { return v.RemoveNodes }).(pulumi.StringArrayOutput)
 }
 
-// The secretId for the clusterAdminPassword.
+// (Updatable) The secretId for the clusterAdminPassword.
 func (o BdsInstanceOutput) SecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.SecretId }).(pulumi.StringOutput)
 }
@@ -851,7 +884,7 @@ func (o BdsInstanceOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
-// The time the BDS instance was created. An RFC3339 formatted datetime string
+// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 func (o BdsInstanceOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
@@ -861,7 +894,7 @@ func (o BdsInstanceOutput) TimeEarliestCertificateExpiration() pulumi.StringOutp
 	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.TimeEarliestCertificateExpiration }).(pulumi.StringOutput)
 }
 
-// The time the BDS instance was updated. An RFC3339 formatted datetime string
+// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
 func (o BdsInstanceOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -871,6 +904,7 @@ func (o BdsInstanceOutput) UtilNode() BdsInstanceUtilNodeOutput {
 	return o.ApplyT(func(v *BdsInstance) BdsInstanceUtilNodeOutput { return v.UtilNode }).(BdsInstanceUtilNodeOutput)
 }
 
+// The worker node in the BDS instance
 func (o BdsInstanceOutput) WorkerNode() BdsInstanceWorkerNodeOutput {
 	return o.ApplyT(func(v *BdsInstance) BdsInstanceWorkerNodeOutput { return v.WorkerNode }).(BdsInstanceWorkerNodeOutput)
 }

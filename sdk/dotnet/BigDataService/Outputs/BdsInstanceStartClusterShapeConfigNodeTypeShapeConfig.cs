@@ -14,11 +14,11 @@ namespace Pulumi.Oci.BigDataService.Outputs
     public sealed class BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig
     {
         /// <summary>
-        /// BDS instance node type
+        /// Cluster node type.
         /// </summary>
         public readonly string? NodeType;
         /// <summary>
-        /// Shape of the node
+        /// Shape of the node.
         /// </summary>
         public readonly string? Shape;
 

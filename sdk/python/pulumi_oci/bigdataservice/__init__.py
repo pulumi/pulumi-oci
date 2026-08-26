@@ -8,9 +8,11 @@ import typing
 # Export this package's modules as members:
 from .auto_scaling_configuration import *
 from .bds_capacity_report import *
+from .bds_capacity_reservation import *
 from .bds_cluster_admin_password_reset_action import *
 from .bds_instance import *
 from .bds_instance_api_key import *
+from .bds_instance_bds_capacity_reservation_configuration import *
 from .bds_instance_bds_certificate_configuration import *
 from .bds_instance_execute_bootstrap_script_action import *
 from .bds_instance_identity_configuration import *
@@ -26,10 +28,15 @@ from .bds_instance_resource_principal_configuration import *
 from .bds_instance_software_update_action import *
 from .get_auto_scaling_configuration import *
 from .get_auto_scaling_configurations import *
+from .get_bds_capacity_reservation import *
+from .get_bds_capacity_reservation_associated_configurations import *
+from .get_bds_capacity_reservations import *
 from .get_bds_cluster_versions import *
 from .get_bds_instance import *
 from .get_bds_instance_api_key import *
 from .get_bds_instance_api_keys import *
+from .get_bds_instance_bds_capacity_reservation_configuration import *
+from .get_bds_instance_bds_capacity_reservation_configurations import *
 from .get_bds_instance_bds_certificate_configuration import *
 from .get_bds_instance_bds_certificate_configurations import *
 from .get_bds_instance_get_os_patch import *

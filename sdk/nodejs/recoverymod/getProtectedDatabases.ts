@@ -12,22 +12,9 @@ import * as utilities from "../utilities";
  * Lists the protected databases based on the specified parameters.
  *
  * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testProtectedDatabases = oci.recoverymod.getProtectedDatabases({
- *     compartmentId: compartmentId,
- *     displayName: protectedDatabaseDisplayName,
- *     id: protectedDatabaseId,
- *     protectionPolicyId: testProtectionPolicy.id,
- *     recoveryServiceSubnetId: testRecoveryServiceSubnet.id,
- *     state: protectedDatabaseState,
- * });
- * ```
  */
-export function getProtectedDatabases(args: GetProtectedDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetProtectedDatabasesResult> {
+export function getProtectedDatabases(args?: GetProtectedDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetProtectedDatabasesResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:RecoveryMod/getProtectedDatabases:getProtectedDatabases", {
         "compartmentId": args.compartmentId,
@@ -47,7 +34,7 @@ export interface GetProtectedDatabasesArgs {
     /**
      * The compartment OCID.
      */
-    compartmentId: string;
+    compartmentId?: string;
     /**
      * A filter to return only resources that match the entire 'displayname' given.
      */
@@ -78,7 +65,7 @@ export interface GetProtectedDatabasesResult {
     /**
      * The OCID of the compartment that contains the protected database.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The protected database name. You can change the displayName. Avoid entering confidential information.
      */
@@ -111,22 +98,9 @@ export interface GetProtectedDatabasesResult {
  * Lists the protected databases based on the specified parameters.
  *
  * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testProtectedDatabases = oci.recoverymod.getProtectedDatabases({
- *     compartmentId: compartmentId,
- *     displayName: protectedDatabaseDisplayName,
- *     id: protectedDatabaseId,
- *     protectionPolicyId: testProtectionPolicy.id,
- *     recoveryServiceSubnetId: testRecoveryServiceSubnet.id,
- *     state: protectedDatabaseState,
- * });
- * ```
  */
-export function getProtectedDatabasesOutput(args: GetProtectedDatabasesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProtectedDatabasesResult> {
+export function getProtectedDatabasesOutput(args?: GetProtectedDatabasesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProtectedDatabasesResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:RecoveryMod/getProtectedDatabases:getProtectedDatabases", {
         "compartmentId": args.compartmentId,
@@ -146,7 +120,7 @@ export interface GetProtectedDatabasesOutputArgs {
     /**
      * The compartment OCID.
      */
-    compartmentId: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire 'displayname' given.
      */

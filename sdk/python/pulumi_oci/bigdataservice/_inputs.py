@@ -63,6 +63,10 @@ __all__ = [
     'BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgsDict',
     'BdsCapacityReportShapeAvailabilityShapeConfigArgs',
     'BdsCapacityReportShapeAvailabilityShapeConfigArgsDict',
+    'BdsCapacityReservationComputeCapacityReservationsArgs',
+    'BdsCapacityReservationComputeCapacityReservationsArgsDict',
+    'BdsInstanceBdsCapacityReservationConfigurationArgs',
+    'BdsInstanceBdsCapacityReservationConfigurationArgsDict',
     'BdsInstanceBdsClusterVersionSummaryArgs',
     'BdsInstanceBdsClusterVersionSummaryArgsDict',
     'BdsInstanceCloudSqlDetailArgs',
@@ -127,10 +131,16 @@ __all__ = [
     'BdsInstanceWorkerNodeShapeConfigArgsDict',
     'GetAutoScalingConfigurationsFilterArgs',
     'GetAutoScalingConfigurationsFilterArgsDict',
+    'GetBdsCapacityReservationAssociatedConfigurationsFilterArgs',
+    'GetBdsCapacityReservationAssociatedConfigurationsFilterArgsDict',
+    'GetBdsCapacityReservationsFilterArgs',
+    'GetBdsCapacityReservationsFilterArgsDict',
     'GetBdsClusterVersionsFilterArgs',
     'GetBdsClusterVersionsFilterArgsDict',
     'GetBdsInstanceApiKeysFilterArgs',
     'GetBdsInstanceApiKeysFilterArgsDict',
+    'GetBdsInstanceBdsCapacityReservationConfigurationsFilterArgs',
+    'GetBdsInstanceBdsCapacityReservationConfigurationsFilterArgsDict',
     'GetBdsInstanceBdsCertificateConfigurationsFilterArgs',
     'GetBdsInstanceBdsCertificateConfigurationsFilterArgsDict',
     'GetBdsInstanceGetOsPatchFilterArgs',
@@ -1873,46 +1883,263 @@ class BdsCapacityReportShapeAvailabilityShapeConfigArgs:
         pulumi.set(self, "ocpus", value)
 
 
-class BdsInstanceBdsClusterVersionSummaryArgsDict(TypedDict):
-    bds_version: pulumi.Input[_builtins.str]
+class BdsCapacityReservationComputeCapacityReservationsArgsDict(TypedDict):
+    domain1reservation_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    BDS version to be used for cluster creation
+    (Updatable) Compute capacity reservation OCID corresponding to AD1 for a multi-AD region or FD1 for a single-AD region.
+    """
+    domain2reservation_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Compute capacity reservation OCID corresponding to AD2 for a multi-AD region or FD2 for a single-AD region.
+    """
+    domain3reservation_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Compute capacity reservation OCID corresponding to AD3 for a multi-AD region or FD3 for a single-AD region.
+    """
+
+@pulumi.input_type
+class BdsCapacityReservationComputeCapacityReservationsArgs:
+    def __init__(__self__, *,
+                 domain1reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain2reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain3reservation_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] domain1reservation_id: (Updatable) Compute capacity reservation OCID corresponding to AD1 for a multi-AD region or FD1 for a single-AD region.
+        :param pulumi.Input[_builtins.str] domain2reservation_id: (Updatable) Compute capacity reservation OCID corresponding to AD2 for a multi-AD region or FD2 for a single-AD region.
+        :param pulumi.Input[_builtins.str] domain3reservation_id: (Updatable) Compute capacity reservation OCID corresponding to AD3 for a multi-AD region or FD3 for a single-AD region.
+        """
+        if domain1reservation_id is not None:
+            pulumi.set(__self__, "domain1reservation_id", domain1reservation_id)
+        if domain2reservation_id is not None:
+            pulumi.set(__self__, "domain2reservation_id", domain2reservation_id)
+        if domain3reservation_id is not None:
+            pulumi.set(__self__, "domain3reservation_id", domain3reservation_id)
+
+    @_builtins.property
+    @pulumi.getter(name="domain1reservationId")
+    def domain1reservation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Compute capacity reservation OCID corresponding to AD1 for a multi-AD region or FD1 for a single-AD region.
+        """
+        return pulumi.get(self, "domain1reservation_id")
+
+    @domain1reservation_id.setter
+    def domain1reservation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "domain1reservation_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="domain2reservationId")
+    def domain2reservation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Compute capacity reservation OCID corresponding to AD2 for a multi-AD region or FD2 for a single-AD region.
+        """
+        return pulumi.get(self, "domain2reservation_id")
+
+    @domain2reservation_id.setter
+    def domain2reservation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "domain2reservation_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="domain3reservationId")
+    def domain3reservation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Compute capacity reservation OCID corresponding to AD3 for a multi-AD region or FD3 for a single-AD region.
+        """
+        return pulumi.get(self, "domain3reservation_id")
+
+    @domain3reservation_id.setter
+    def domain3reservation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "domain3reservation_id", value)
+
+
+class BdsInstanceBdsCapacityReservationConfigurationArgsDict(TypedDict):
+    bds_capacity_reservation_id: pulumi.Input[_builtins.str]
+    """
+    The OCID of the BDS capacity reservation to associate with the BDS cluster.
+    """
+    display_name: pulumi.Input[_builtins.str]
+    """
+    A user-friendly name for the BDS capacity reservation configuration.
+    """
+    bds_instance_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The OCID of the BDS cluster associated with the BDS capacity reservation.
+    """
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The OCID of the Big Data Service resource.
+    """
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+    """
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+    """
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+    """
+
+@pulumi.input_type
+class BdsInstanceBdsCapacityReservationConfigurationArgs:
+    def __init__(__self__, *,
+                 bds_capacity_reservation_id: pulumi.Input[_builtins.str],
+                 display_name: pulumi.Input[_builtins.str],
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] bds_capacity_reservation_id: The OCID of the BDS capacity reservation to associate with the BDS cluster.
+        :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the BDS capacity reservation configuration.
+        :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the BDS cluster associated with the BDS capacity reservation.
+        :param pulumi.Input[_builtins.str] id: The OCID of the Big Data Service resource.
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+        :param pulumi.Input[_builtins.str] time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+        :param pulumi.Input[_builtins.str] time_updated: The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "bds_capacity_reservation_id", bds_capacity_reservation_id)
+        pulumi.set(__self__, "display_name", display_name)
+        if bds_instance_id is not None:
+            pulumi.set(__self__, "bds_instance_id", bds_instance_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="bdsCapacityReservationId")
+    def bds_capacity_reservation_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The OCID of the BDS capacity reservation to associate with the BDS cluster.
+        """
+        return pulumi.get(self, "bds_capacity_reservation_id")
+
+    @bds_capacity_reservation_id.setter
+    def bds_capacity_reservation_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "bds_capacity_reservation_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        A user-friendly name for the BDS capacity reservation configuration.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="bdsInstanceId")
+    def bds_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The OCID of the BDS cluster associated with the BDS capacity reservation.
+        """
+        return pulumi.get(self, "bds_instance_id")
+
+    @bds_instance_id.setter
+    def bds_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "bds_instance_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The OCID of the Big Data Service resource.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "state", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_updated", value)
+
+
+class BdsInstanceBdsClusterVersionSummaryArgsDict(TypedDict):
+    bds_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    BDS version to be used for cluster creation.
     """
     odh_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    ODH version to be used for cluster creation
+    ODH version to be used for cluster creation.
     """
 
 @pulumi.input_type
 class BdsInstanceBdsClusterVersionSummaryArgs:
     def __init__(__self__, *,
-                 bds_version: pulumi.Input[_builtins.str],
+                 bds_version: pulumi.Input[Optional[_builtins.str]] = None,
                  odh_version: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] bds_version: BDS version to be used for cluster creation
-        :param pulumi.Input[_builtins.str] odh_version: ODH version to be used for cluster creation
+        :param pulumi.Input[_builtins.str] bds_version: BDS version to be used for cluster creation.
+        :param pulumi.Input[_builtins.str] odh_version: ODH version to be used for cluster creation.
         """
-        pulumi.set(__self__, "bds_version", bds_version)
+        if bds_version is not None:
+            pulumi.set(__self__, "bds_version", bds_version)
         if odh_version is not None:
             pulumi.set(__self__, "odh_version", odh_version)
 
     @_builtins.property
     @pulumi.getter(name="bdsVersion")
-    def bds_version(self) -> pulumi.Input[_builtins.str]:
+    def bds_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        BDS version to be used for cluster creation
+        BDS version to be used for cluster creation.
         """
         return pulumi.get(self, "bds_version")
 
     @bds_version.setter
-    def bds_version(self, value: pulumi.Input[_builtins.str]):
+    def bds_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bds_version", value)
 
     @_builtins.property
     @pulumi.getter(name="odhVersion")
     def odh_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        ODH version to be used for cluster creation
+        ODH version to be used for cluster creation.
         """
         return pulumi.get(self, "odh_version")
 
@@ -1932,7 +2159,7 @@ class BdsInstanceCloudSqlDetailArgsDict(TypedDict):
     """
     ip_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    IP address of the node
+    IP address of the node.
     """
     is_kerberos_mapped_to_database_users: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
@@ -1969,7 +2196,7 @@ class BdsInstanceCloudSqlDetailArgs:
         """
         :param pulumi.Input[_builtins.str] shape: Shape of the node
         :param pulumi.Input[_builtins.str] block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        :param pulumi.Input[_builtins.str] ip_address: IP address of the node
+        :param pulumi.Input[_builtins.str] ip_address: IP address of the node.
         :param pulumi.Input[_builtins.bool] is_kerberos_mapped_to_database_users: Boolean flag specifying whether or not are Kerberos principals mapped to database users.
         :param pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailKerberosDetailArgs']]] kerberos_details: Details about Kerberos principals
         :param pulumi.Input[_builtins.int] memory_in_gbs: The total amount of memory available to the node, in gigabytes.
@@ -2020,7 +2247,7 @@ class BdsInstanceCloudSqlDetailArgs:
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        IP address of the node
+        IP address of the node.
         """
         return pulumi.get(self, "ip_address")
 
@@ -2193,7 +2420,7 @@ class BdsInstanceClusterDetailArgsDict(TypedDict):
     """
     time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The time the BDS instance was created. An RFC3339 formatted datetime string
+    The time the cluster was created, shown as an RFC 3339 formatted datetime string.
     """
     time_refreshed: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -2232,7 +2459,7 @@ class BdsInstanceClusterDetailArgs:
         :param pulumi.Input[_builtins.str] jupyter_hub_url: The URL of the Jupyterhub.
         :param pulumi.Input[_builtins.str] odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
         :param pulumi.Input[_builtins.str] os_version: BDS-assigned Operating System version for the node.
-        :param pulumi.Input[_builtins.str] time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_refreshed: The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
         """
         if ambari_url is not None:
@@ -2426,7 +2653,7 @@ class BdsInstanceClusterDetailArgs:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The time the BDS instance was created. An RFC3339 formatted datetime string
+        The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -2450,7 +2677,7 @@ class BdsInstanceClusterDetailArgs:
 class BdsInstanceComputeOnlyWorkerNodeArgsDict(TypedDict):
     number_of_nodes: pulumi.Input[_builtins.int]
     """
-    Number of nodes that forming the cluster
+    The amount of worker nodes should be created
     """
     shape: pulumi.Input[_builtins.str]
     """
@@ -2465,6 +2692,9 @@ class BdsInstanceComputeOnlyWorkerNodeArgsDict(TypedDict):
     The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
     """
     shape_config: NotRequired[pulumi.Input[Optional['BdsInstanceComputeOnlyWorkerNodeShapeConfigArgsDict']]]
+    """
+    The shape configuration requested for the node.
+    """
 
 @pulumi.input_type
 class BdsInstanceComputeOnlyWorkerNodeArgs:
@@ -2475,10 +2705,11 @@ class BdsInstanceComputeOnlyWorkerNodeArgs:
                  block_volume_size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
                  shape_config: pulumi.Input[Optional['BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs']] = None):
         """
-        :param pulumi.Input[_builtins.int] number_of_nodes: Number of nodes that forming the cluster
+        :param pulumi.Input[_builtins.int] number_of_nodes: The amount of worker nodes should be created
         :param pulumi.Input[_builtins.str] shape: Shape of the node
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet in which the node should be created
         :param pulumi.Input[_builtins.str] block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        :param pulumi.Input['BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs'] shape_config: The shape configuration requested for the node.
         """
         pulumi.set(__self__, "number_of_nodes", number_of_nodes)
         pulumi.set(__self__, "shape", shape)
@@ -2492,7 +2723,7 @@ class BdsInstanceComputeOnlyWorkerNodeArgs:
     @pulumi.getter(name="numberOfNodes")
     def number_of_nodes(self) -> pulumi.Input[_builtins.int]:
         """
-        Number of nodes that forming the cluster
+        The amount of worker nodes should be created
         """
         return pulumi.get(self, "number_of_nodes")
 
@@ -2539,6 +2770,9 @@ class BdsInstanceComputeOnlyWorkerNodeArgs:
     @_builtins.property
     @pulumi.getter(name="shapeConfig")
     def shape_config(self) -> pulumi.Input[Optional['BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs']]:
+        """
+        The shape configuration requested for the node.
+        """
         return pulumi.get(self, "shape_config")
 
     @shape_config.setter
@@ -2549,7 +2783,7 @@ class BdsInstanceComputeOnlyWorkerNodeArgs:
 class BdsInstanceComputeOnlyWorkerNodeShapeConfigArgsDict(TypedDict):
     memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
-    The total amount of memory available to the node, in gigabytes.
+    The total amount of memory available to the node, in gigabytes
     """
     nvmes: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
@@ -2567,7 +2801,7 @@ class BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs:
                  nvmes: pulumi.Input[Optional[_builtins.int]] = None,
                  ocpus: pulumi.Input[Optional[_builtins.int]] = None):
         """
-        :param pulumi.Input[_builtins.int] memory_in_gbs: The total amount of memory available to the node, in gigabytes.
+        :param pulumi.Input[_builtins.int] memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param pulumi.Input[_builtins.int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param pulumi.Input[_builtins.int] ocpus: The total number of OCPUs available to the node.
         """
@@ -2582,7 +2816,7 @@ class BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs:
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        The total amount of memory available to the node, in gigabytes.
+        The total amount of memory available to the node, in gigabytes
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -2618,15 +2852,15 @@ class BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs:
 class BdsInstanceEdgeNodeArgsDict(TypedDict):
     number_of_nodes: pulumi.Input[_builtins.int]
     """
-    Number of nodes that forming the cluster
+    The number of nodes that form the cluster.
     """
     shape: pulumi.Input[_builtins.str]
     """
-    Shape of the node
+    Shape of the node.
     """
     subnet_id: pulumi.Input[_builtins.str]
     """
-    The OCID of the subnet in which the node should be created
+    The OCID of the subnet in which the node is to be created.
     """
     block_volume_size_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -2643,9 +2877,9 @@ class BdsInstanceEdgeNodeArgs:
                  block_volume_size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
                  shape_config: pulumi.Input[Optional['BdsInstanceEdgeNodeShapeConfigArgs']] = None):
         """
-        :param pulumi.Input[_builtins.int] number_of_nodes: Number of nodes that forming the cluster
-        :param pulumi.Input[_builtins.str] shape: Shape of the node
-        :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet in which the node should be created
+        :param pulumi.Input[_builtins.int] number_of_nodes: The number of nodes that form the cluster.
+        :param pulumi.Input[_builtins.str] shape: Shape of the node.
+        :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet in which the node is to be created.
         :param pulumi.Input[_builtins.str] block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         """
         pulumi.set(__self__, "number_of_nodes", number_of_nodes)
@@ -2660,7 +2894,7 @@ class BdsInstanceEdgeNodeArgs:
     @pulumi.getter(name="numberOfNodes")
     def number_of_nodes(self) -> pulumi.Input[_builtins.int]:
         """
-        Number of nodes that forming the cluster
+        The number of nodes that form the cluster.
         """
         return pulumi.get(self, "number_of_nodes")
 
@@ -2672,7 +2906,7 @@ class BdsInstanceEdgeNodeArgs:
     @pulumi.getter
     def shape(self) -> pulumi.Input[_builtins.str]:
         """
-        Shape of the node
+        Shape of the node.
         """
         return pulumi.get(self, "shape")
 
@@ -2684,7 +2918,7 @@ class BdsInstanceEdgeNodeArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The OCID of the subnet in which the node should be created
+        The OCID of the subnet in which the node is to be created.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -3250,6 +3484,8 @@ class BdsInstanceKafkaBrokerNodeShapeConfigArgsDict(TypedDict):
     ocpus: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The total number of OCPUs available to the node.
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
 
 @pulumi.input_type
@@ -3262,6 +3498,8 @@ class BdsInstanceKafkaBrokerNodeShapeConfigArgs:
         :param pulumi.Input[_builtins.int] memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param pulumi.Input[_builtins.int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param pulumi.Input[_builtins.int] ocpus: The total number of OCPUs available to the node.
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
@@ -3299,6 +3537,8 @@ class BdsInstanceKafkaBrokerNodeShapeConfigArgs:
     def ocpus(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total number of OCPUs available to the node.
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "ocpus")
 
@@ -3485,11 +3725,11 @@ class BdsInstanceMasterNodeShapeConfigArgs:
 class BdsInstanceNetworkConfigArgsDict(TypedDict):
     cidr_block: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) The CIDR IP address block of the VCN.
+    The CIDR IP address block of the VCN.
     """
     is_nat_gateway_required: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
-    (Updatable) A boolean flag whether to configure a NAT gateway.
+    A boolean flag whether to configure a NAT gateway.
     """
 
 @pulumi.input_type
@@ -3498,8 +3738,8 @@ class BdsInstanceNetworkConfigArgs:
                  cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
                  is_nat_gateway_required: pulumi.Input[Optional[_builtins.bool]] = None):
         """
-        :param pulumi.Input[_builtins.str] cidr_block: (Updatable) The CIDR IP address block of the VCN.
-        :param pulumi.Input[_builtins.bool] is_nat_gateway_required: (Updatable) A boolean flag whether to configure a NAT gateway.
+        :param pulumi.Input[_builtins.str] cidr_block: The CIDR IP address block of the VCN.
+        :param pulumi.Input[_builtins.bool] is_nat_gateway_required: A boolean flag whether to configure a NAT gateway.
         """
         if cidr_block is not None:
             pulumi.set(__self__, "cidr_block", cidr_block)
@@ -3510,7 +3750,7 @@ class BdsInstanceNetworkConfigArgs:
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The CIDR IP address block of the VCN.
+        The CIDR IP address block of the VCN.
         """
         return pulumi.get(self, "cidr_block")
 
@@ -3522,7 +3762,7 @@ class BdsInstanceNetworkConfigArgs:
     @pulumi.getter(name="isNatGatewayRequired")
     def is_nat_gateway_required(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        (Updatable) A boolean flag whether to configure a NAT gateway.
+        A boolean flag whether to configure a NAT gateway.
         """
         return pulumi.get(self, "is_nat_gateway_required")
 
@@ -3538,7 +3778,7 @@ class BdsInstanceNodeArgsDict(TypedDict):
     """
     availability_domain: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The name of the availability domain the node is running in
+    The name of the availability domain in which the node is running.
     """
     display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -3546,23 +3786,23 @@ class BdsInstanceNodeArgsDict(TypedDict):
     """
     fault_domain: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The name of the fault domain the node is running in
+    The name of the fault domain in which the node is running.
     """
     hostname: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The fully-qualified hostname (FQDN) of the node
+    The fully-qualified hostname (FQDN) of the node.
     """
     image_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The OCID of the image from which the node was created
+    The OCID of the image from which the node was created.
     """
     instance_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The OCID of the underlying compute instance
+    The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
     """
     ip_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    IP address of the node
+    IP address of the node.
     """
     is_reboot_required: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
@@ -3602,11 +3842,11 @@ class BdsInstanceNodeArgsDict(TypedDict):
     """
     ssh_fingerprint: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The fingerprint of the SSH key used for node access
+    The fingerprint of the SSH key used for node access.
     """
     state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
+    (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
     """
     subnet_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -3614,7 +3854,7 @@ class BdsInstanceNodeArgsDict(TypedDict):
     """
     time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The time the BDS instance was created. An RFC3339 formatted datetime string
+    The time the cluster was created, shown as an RFC 3339 formatted datetime string.
     """
     time_maintenance_reboot_due: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -3648,13 +3888,13 @@ class BdsInstanceNodeArgs:
                  time_maintenance_reboot_due: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['BdsInstanceNodeAttachedBlockVolumeArgs']]] attached_block_volumes: The list of block volumes attached to a given node.
-        :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain the node is running in
+        :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain in which the node is running.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Name of the BDS instance
-        :param pulumi.Input[_builtins.str] fault_domain: The name of the fault domain the node is running in
-        :param pulumi.Input[_builtins.str] hostname: The fully-qualified hostname (FQDN) of the node
-        :param pulumi.Input[_builtins.str] image_id: The OCID of the image from which the node was created
-        :param pulumi.Input[_builtins.str] instance_id: The OCID of the underlying compute instance
-        :param pulumi.Input[_builtins.str] ip_address: IP address of the node
+        :param pulumi.Input[_builtins.str] fault_domain: The name of the fault domain in which the node is running.
+        :param pulumi.Input[_builtins.str] hostname: The fully-qualified hostname (FQDN) of the node.
+        :param pulumi.Input[_builtins.str] image_id: The OCID of the image from which the node was created.
+        :param pulumi.Input[_builtins.str] instance_id: The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
+        :param pulumi.Input[_builtins.str] ip_address: IP address of the node.
         :param pulumi.Input[_builtins.bool] is_reboot_required: Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
         :param pulumi.Input[_builtins.float] local_disks_total_size_in_gbs: The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
         :param pulumi.Input[_builtins.int] memory_in_gbs: The total amount of memory available to the node, in gigabytes.
@@ -3664,10 +3904,10 @@ class BdsInstanceNodeArgs:
         :param pulumi.Input[_builtins.str] odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
         :param pulumi.Input[_builtins.str] os_version: BDS-assigned Operating System version for the node.
         :param pulumi.Input[_builtins.str] shape: (Updatable) Shape of the node.
-        :param pulumi.Input[_builtins.str] ssh_fingerprint: The fingerprint of the SSH key used for node access
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
+        :param pulumi.Input[_builtins.str] ssh_fingerprint: The fingerprint of the SSH key used for node access.
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet in which the node will be created.
-        :param pulumi.Input[_builtins.str] time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_maintenance_reboot_due: The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
         """
         if attached_block_volumes is not None:
@@ -3731,7 +3971,7 @@ class BdsInstanceNodeArgs:
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The name of the availability domain the node is running in
+        The name of the availability domain in which the node is running.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -3755,7 +3995,7 @@ class BdsInstanceNodeArgs:
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The name of the fault domain the node is running in
+        The name of the fault domain in which the node is running.
         """
         return pulumi.get(self, "fault_domain")
 
@@ -3767,7 +4007,7 @@ class BdsInstanceNodeArgs:
     @pulumi.getter
     def hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The fully-qualified hostname (FQDN) of the node
+        The fully-qualified hostname (FQDN) of the node.
         """
         return pulumi.get(self, "hostname")
 
@@ -3779,7 +4019,7 @@ class BdsInstanceNodeArgs:
     @pulumi.getter(name="imageId")
     def image_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The OCID of the image from which the node was created
+        The OCID of the image from which the node was created.
         """
         return pulumi.get(self, "image_id")
 
@@ -3791,7 +4031,7 @@ class BdsInstanceNodeArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The OCID of the underlying compute instance
+        The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
         """
         return pulumi.get(self, "instance_id")
 
@@ -3803,7 +4043,7 @@ class BdsInstanceNodeArgs:
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        IP address of the node
+        IP address of the node.
         """
         return pulumi.get(self, "ip_address")
 
@@ -3923,7 +4163,7 @@ class BdsInstanceNodeArgs:
     @pulumi.getter(name="sshFingerprint")
     def ssh_fingerprint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The fingerprint of the SSH key used for node access
+        The fingerprint of the SSH key used for node access.
         """
         return pulumi.get(self, "ssh_fingerprint")
 
@@ -3935,7 +4175,7 @@ class BdsInstanceNodeArgs:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
+        (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         """
         return pulumi.get(self, "state")
 
@@ -3959,7 +4199,7 @@ class BdsInstanceNodeArgs:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The time the BDS instance was created. An RFC3339 formatted datetime string
+        The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -4590,11 +4830,11 @@ class BdsInstanceStartClusterShapeConfigArgs:
 class BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgsDict(TypedDict):
     node_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    BDS instance node type
+    Cluster node type.
     """
     shape: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    Shape of the node
+    Shape of the node.
     """
 
 @pulumi.input_type
@@ -4603,8 +4843,8 @@ class BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs:
                  node_type: pulumi.Input[Optional[_builtins.str]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] node_type: BDS instance node type
-        :param pulumi.Input[_builtins.str] shape: Shape of the node
+        :param pulumi.Input[_builtins.str] node_type: Cluster node type.
+        :param pulumi.Input[_builtins.str] shape: Shape of the node.
         """
         if node_type is not None:
             pulumi.set(__self__, "node_type", node_type)
@@ -4615,7 +4855,7 @@ class BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs:
     @pulumi.getter(name="nodeType")
     def node_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        BDS instance node type
+        Cluster node type.
         """
         return pulumi.get(self, "node_type")
 
@@ -4627,7 +4867,7 @@ class BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs:
     @pulumi.getter
     def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Shape of the node
+        Shape of the node.
         """
         return pulumi.get(self, "shape")
 
@@ -4814,7 +5054,7 @@ class BdsInstanceUtilNodeShapeConfigArgs:
 class BdsInstanceWorkerNodeArgsDict(TypedDict):
     number_of_nodes: pulumi.Input[_builtins.int]
     """
-    Number of nodes that forming the cluster
+    The amount of worker nodes should be created, at least be 3.
     """
     shape: pulumi.Input[_builtins.str]
     """
@@ -4829,6 +5069,9 @@ class BdsInstanceWorkerNodeArgsDict(TypedDict):
     The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
     """
     shape_config: NotRequired[pulumi.Input[Optional['BdsInstanceWorkerNodeShapeConfigArgsDict']]]
+    """
+    The shape configuration requested for the node.
+    """
 
 @pulumi.input_type
 class BdsInstanceWorkerNodeArgs:
@@ -4839,10 +5082,11 @@ class BdsInstanceWorkerNodeArgs:
                  block_volume_size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
                  shape_config: pulumi.Input[Optional['BdsInstanceWorkerNodeShapeConfigArgs']] = None):
         """
-        :param pulumi.Input[_builtins.int] number_of_nodes: Number of nodes that forming the cluster
+        :param pulumi.Input[_builtins.int] number_of_nodes: The amount of worker nodes should be created, at least be 3.
         :param pulumi.Input[_builtins.str] shape: Shape of the node
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet in which the node should be created
         :param pulumi.Input[_builtins.str] block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+        :param pulumi.Input['BdsInstanceWorkerNodeShapeConfigArgs'] shape_config: The shape configuration requested for the node.
         """
         pulumi.set(__self__, "number_of_nodes", number_of_nodes)
         pulumi.set(__self__, "shape", shape)
@@ -4856,7 +5100,7 @@ class BdsInstanceWorkerNodeArgs:
     @pulumi.getter(name="numberOfNodes")
     def number_of_nodes(self) -> pulumi.Input[_builtins.int]:
         """
-        Number of nodes that forming the cluster
+        The amount of worker nodes should be created, at least be 3.
         """
         return pulumi.get(self, "number_of_nodes")
 
@@ -4903,6 +5147,9 @@ class BdsInstanceWorkerNodeArgs:
     @_builtins.property
     @pulumi.getter(name="shapeConfig")
     def shape_config(self) -> pulumi.Input[Optional['BdsInstanceWorkerNodeShapeConfigArgs']]:
+        """
+        The shape configuration requested for the node.
+        """
         return pulumi.get(self, "shape_config")
 
     @shape_config.setter
@@ -4913,7 +5160,7 @@ class BdsInstanceWorkerNodeArgs:
 class BdsInstanceWorkerNodeShapeConfigArgsDict(TypedDict):
     memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
-    The total amount of memory available to the node, in gigabytes.
+    The total amount of memory available to the node, in gigabytes
     """
     nvmes: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
@@ -4931,7 +5178,7 @@ class BdsInstanceWorkerNodeShapeConfigArgs:
                  nvmes: pulumi.Input[Optional[_builtins.int]] = None,
                  ocpus: pulumi.Input[Optional[_builtins.int]] = None):
         """
-        :param pulumi.Input[_builtins.int] memory_in_gbs: The total amount of memory available to the node, in gigabytes.
+        :param pulumi.Input[_builtins.int] memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param pulumi.Input[_builtins.int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param pulumi.Input[_builtins.int] ocpus: The total number of OCPUs available to the node.
         """
@@ -4946,7 +5193,7 @@ class BdsInstanceWorkerNodeShapeConfigArgs:
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        The total amount of memory available to the node, in gigabytes.
+        The total amount of memory available to the node, in gigabytes
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -4986,6 +5233,94 @@ class GetAutoScalingConfigurationsFilterArgsDict(TypedDict):
 
 @pulumi.input_type
 class GetAutoScalingConfigurationsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetBdsCapacityReservationAssociatedConfigurationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetBdsCapacityReservationAssociatedConfigurationsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetBdsCapacityReservationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetBdsCapacityReservationsFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
@@ -5074,6 +5409,50 @@ class GetBdsInstanceApiKeysFilterArgsDict(TypedDict):
 
 @pulumi.input_type
 class GetBdsInstanceApiKeysFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetBdsInstanceBdsCapacityReservationConfigurationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetBdsInstanceBdsCapacityReservationConfigurationsFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

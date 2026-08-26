@@ -20,18 +20,18 @@ public final class BdsInstanceEdgeNode {
      */
     private @Nullable String blockVolumeSizeInGbs;
     /**
-     * @return Number of nodes that forming the cluster
+     * @return The number of nodes that form the cluster.
      * 
      */
     private Integer numberOfNodes;
     /**
-     * @return Shape of the node
+     * @return Shape of the node.
      * 
      */
     private String shape;
     private @Nullable BdsInstanceEdgeNodeShapeConfig shapeConfig;
     /**
-     * @return The OCID of the subnet in which the node should be created
+     * @return The OCID of the subnet in which the node is to be created.
      * 
      */
     private String subnetId;
@@ -45,14 +45,14 @@ public final class BdsInstanceEdgeNode {
         return Optional.ofNullable(this.blockVolumeSizeInGbs);
     }
     /**
-     * @return Number of nodes that forming the cluster
+     * @return The number of nodes that form the cluster.
      * 
      */
     public Integer numberOfNodes() {
         return this.numberOfNodes;
     }
     /**
-     * @return Shape of the node
+     * @return Shape of the node.
      * 
      */
     public String shape() {
@@ -62,7 +62,7 @@ public final class BdsInstanceEdgeNode {
         return Optional.ofNullable(this.shapeConfig);
     }
     /**
-     * @return The OCID of the subnet in which the node should be created
+     * @return The OCID of the subnet in which the node is to be created.
      * 
      */
     public String subnetId() {

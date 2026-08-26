@@ -36,14 +36,14 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * IP address of the node
+     * IP address of the node.
      * 
      */
     @Import(name="ipAddress")
     private @Nullable Output<String> ipAddress;
 
     /**
-     * @return IP address of the node
+     * @return IP address of the node.
      * 
      */
     public Optional<Output<String>> ipAddress() {
@@ -193,7 +193,7 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ipAddress IP address of the node
+         * @param ipAddress IP address of the node.
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ipAddress IP address of the node
+         * @param ipAddress IP address of the node.
          * 
          * @return builder
          * 

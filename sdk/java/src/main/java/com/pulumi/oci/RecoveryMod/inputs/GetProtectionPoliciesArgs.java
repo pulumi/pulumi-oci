@@ -5,8 +5,8 @@ package com.pulumi.oci.RecoveryMod.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.RecoveryMod.inputs.GetProtectionPoliciesFilterArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -22,15 +22,15 @@ public final class GetProtectionPoliciesArgs extends com.pulumi.resources.Invoke
      * The compartment OCID.
      * 
      */
-    @Import(name="compartmentId", required=true)
-    private Output<String> compartmentId;
+    @Import(name="compartmentId")
+    private @Nullable Output<String> compartmentId;
 
     /**
      * @return The compartment OCID.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Optional<Output<String>> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
 
     /**
@@ -53,6 +53,21 @@ public final class GetProtectionPoliciesArgs extends com.pulumi.resources.Invoke
 
     public Optional<Output<List<GetProtectionPoliciesFilterArgs>>> filters() {
         return Optional.ofNullable(this.filters);
+    }
+
+    /**
+     * A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
+     * 
+     */
+    @Import(name="mustEnforceCloudLocality")
+    private @Nullable Output<Boolean> mustEnforceCloudLocality;
+
+    /**
+     * @return A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
+     * 
+     */
+    public Optional<Output<Boolean>> mustEnforceCloudLocality() {
+        return Optional.ofNullable(this.mustEnforceCloudLocality);
     }
 
     /**
@@ -106,6 +121,7 @@ public final class GetProtectionPoliciesArgs extends com.pulumi.resources.Invoke
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.mustEnforceCloudLocality = $.mustEnforceCloudLocality;
         this.owner = $.owner;
         this.protectionPolicyId = $.protectionPolicyId;
         this.state = $.state;
@@ -135,7 +151,7 @@ public final class GetProtectionPoliciesArgs extends com.pulumi.resources.Invoke
          * @return builder
          * 
          */
-        public Builder compartmentId(Output<String> compartmentId) {
+        public Builder compartmentId(@Nullable Output<String> compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
@@ -182,6 +198,27 @@ public final class GetProtectionPoliciesArgs extends com.pulumi.resources.Invoke
 
         public Builder filters(GetProtectionPoliciesFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param mustEnforceCloudLocality A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mustEnforceCloudLocality(@Nullable Output<Boolean> mustEnforceCloudLocality) {
+            $.mustEnforceCloudLocality = mustEnforceCloudLocality;
+            return this;
+        }
+
+        /**
+         * @param mustEnforceCloudLocality A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mustEnforceCloudLocality(Boolean mustEnforceCloudLocality) {
+            return mustEnforceCloudLocality(Output.of(mustEnforceCloudLocality));
         }
 
         /**
@@ -248,9 +285,6 @@ public final class GetProtectionPoliciesArgs extends com.pulumi.resources.Invoke
         }
 
         public GetProtectionPoliciesArgs build() {
-            if ($.compartmentId == null) {
-                throw new MissingRequiredPropertyException("GetProtectionPoliciesArgs", "compartmentId");
-            }
             return $;
         }
     }

@@ -18,7 +18,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.BdsInstanceNodeAttachedBlockVolume> AttachedBlockVolumes;
         /// <summary>
-        /// The name of the availability domain the node is running in
+        /// The name of the availability domain in which the node is running.
         /// </summary>
         public readonly string? AvailabilityDomain;
         /// <summary>
@@ -26,23 +26,23 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
-        /// The name of the fault domain the node is running in
+        /// The name of the fault domain in which the node is running.
         /// </summary>
         public readonly string? FaultDomain;
         /// <summary>
-        /// The fully-qualified hostname (FQDN) of the node
+        /// The fully-qualified hostname (FQDN) of the node.
         /// </summary>
         public readonly string? Hostname;
         /// <summary>
-        /// The OCID of the image from which the node was created
+        /// The OCID of the image from which the node was created.
         /// </summary>
         public readonly string? ImageId;
         /// <summary>
-        /// The OCID of the underlying compute instance
+        /// The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
         /// </summary>
         public readonly string? InstanceId;
         /// <summary>
-        /// IP address of the node
+        /// IP address of the node.
         /// </summary>
         public readonly string? IpAddress;
         /// <summary>
@@ -82,11 +82,11 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly string? Shape;
         /// <summary>
-        /// The fingerprint of the SSH key used for node access
+        /// The fingerprint of the SSH key used for node access.
         /// </summary>
         public readonly string? SshFingerprint;
         /// <summary>
-        /// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
+        /// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         /// </summary>
         public readonly string? State;
         /// <summary>
@@ -94,7 +94,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly string? SubnetId;
         /// <summary>
-        /// The time the BDS instance was created. An RFC3339 formatted datetime string
+        /// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         /// </summary>
         public readonly string? TimeCreated;
         /// <summary>

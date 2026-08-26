@@ -91,7 +91,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public Input<string>? OsVersion { get; set; }
 
         /// <summary>
-        /// The time the BDS instance was created. An RFC3339 formatted datetime string
+        /// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }

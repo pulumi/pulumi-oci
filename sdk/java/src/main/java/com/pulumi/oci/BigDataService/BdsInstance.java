@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.BigDataService.BdsInstanceArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceState;
+import com.pulumi.oci.BigDataService.outputs.BdsInstanceBdsCapacityReservationConfiguration;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceBdsClusterVersionSummary;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceCloudSqlDetail;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceClusterDetail;
@@ -61,6 +62,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.BigDataService.inputs.BdsInstanceEdgeNodeShapeConfigArgs;
  * import com.pulumi.oci.BigDataService.inputs.BdsInstanceKafkaBrokerNodeArgs;
  * import com.pulumi.oci.BigDataService.inputs.BdsInstanceKafkaBrokerNodeShapeConfigArgs;
+ * import com.pulumi.oci.BigDataService.inputs.BdsInstanceBdsCapacityReservationConfigurationArgs;
  * import com.pulumi.oci.BigDataService.inputs.BdsInstanceBdsClusterVersionSummaryArgs;
  * import com.pulumi.oci.BigDataService.inputs.BdsInstanceNetworkConfigArgs;
  * import java.util.ArrayList;
@@ -77,6 +79,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBdsInstance = new BdsInstance("testBdsInstance", BdsInstanceArgs.builder()
+ *             .clusterAdminPassword(bdsInstanceClusterAdminPassword)
  *             .clusterPublicKey(bdsInstanceClusterPublicKey)
  *             .clusterVersion(bdsInstanceClusterVersion)
  *             .compartmentId(compartmentId)
@@ -149,12 +152,15 @@ import javax.annotation.Nullable;
  *                     .ocpus(bdsInstanceNodesShapeConfigOcpus)
  *                     .build())
  *                 .build())
+ *             .bdsCapacityReservationConfigurations(BdsInstanceBdsCapacityReservationConfigurationArgs.builder()
+ *                 .bdsCapacityReservationId(testBdsCapacityReservation.id())
+ *                 .displayName(bdsInstanceBdsCapacityReservationConfigurationsDisplayName)
+ *                 .build())
  *             .bdsClusterVersionSummary(BdsInstanceBdsClusterVersionSummaryArgs.builder()
  *                 .bdsVersion(bdsInstanceBdsClusterVersionSummaryBdsVersion)
  *                 .odhVersion(bdsInstanceBdsClusterVersionSummaryOdhVersion)
  *                 .build())
  *             .bootstrapScriptUrl(bdsInstanceBootstrapScriptUrl)
- *             .clusterAdminPassword(bdsInstanceClusterAdminPassword)
  *             .clusterProfile(bdsInstanceClusterProfile)
  *             .definedTags(bdsInstanceDefinedTags)
  *             .freeformTags(bdsInstanceFreeformTags)
@@ -166,7 +172,6 @@ import javax.annotation.Nullable;
  *                 .cidrBlock(bdsInstanceNetworkConfigCidrBlock)
  *                 .isNatGatewayRequired(bdsInstanceNetworkConfigIsNatGatewayRequired)
  *                 .build())
- *             .secretId(testSecret.id())
  *             .build());
  * 
  *     }
@@ -186,14 +191,28 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:BigDataService/bdsInstance:BdsInstance")
 public class BdsInstance extends com.pulumi.resources.CustomResource {
     /**
-     * Cluster version details including bds and odh version information.
+     * Optional BDS capacity reservation configurations to associate with the cluster during creation.
+     * 
+     */
+    @Export(name="bdsCapacityReservationConfigurations", refs={List.class,BdsInstanceBdsCapacityReservationConfiguration.class}, tree="[0,1]")
+    private Output<List<BdsInstanceBdsCapacityReservationConfiguration>> bdsCapacityReservationConfigurations;
+
+    /**
+     * @return Optional BDS capacity reservation configurations to associate with the cluster during creation.
+     * 
+     */
+    public Output<List<BdsInstanceBdsCapacityReservationConfiguration>> bdsCapacityReservationConfigurations() {
+        return this.bdsCapacityReservationConfigurations;
+    }
+    /**
+     * Cluster version details including BDS and ODH version information. When this block is specified, provide at least one of `bdsVersion` or `odhVersion`; if both values are null, the service rejects the request.
      * 
      */
     @Export(name="bdsClusterVersionSummary", refs={BdsInstanceBdsClusterVersionSummary.class}, tree="[0]")
     private Output<BdsInstanceBdsClusterVersionSummary> bdsClusterVersionSummary;
 
     /**
-     * @return Cluster version details including bds and odh version information.
+     * @return Cluster version details including BDS and ODH version information. When this block is specified, provide at least one of `bdsVersion` or `odhVersion`; if both values are null, the service rejects the request.
      * 
      */
     public Output<BdsInstanceBdsClusterVersionSummary> bdsClusterVersionSummary() {
@@ -311,9 +330,17 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
+    /**
+     * The compute-only worker node in the BDS instance
+     * 
+     */
     @Export(name="computeOnlyWorkerNode", refs={BdsInstanceComputeOnlyWorkerNode.class}, tree="[0]")
     private Output</* @Nullable */ BdsInstanceComputeOnlyWorkerNode> computeOnlyWorkerNode;
 
+    /**
+     * @return The compute-only worker node in the BDS instance
+     * 
+     */
     public Output<Optional<BdsInstanceComputeOnlyWorkerNode>> computeOnlyWorkerNode() {
         return Codegen.optional(this.computeOnlyWorkerNode);
     }
@@ -540,14 +567,14 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
         return this.masterNode;
     }
     /**
-     * (Updatable) Additional configuration of the user&#39;s network.
+     * Additional configuration of the user&#39;s network.
      * 
      */
     @Export(name="networkConfig", refs={BdsInstanceNetworkConfig.class}, tree="[0]")
     private Output<BdsInstanceNetworkConfig> networkConfig;
 
     /**
-     * @return (Updatable) Additional configuration of the user&#39;s network.
+     * @return Additional configuration of the user&#39;s network.
      * 
      */
     public Output<BdsInstanceNetworkConfig> networkConfig() {
@@ -568,14 +595,14 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
         return this.nodes;
     }
     /**
-     * Number of nodes that forming the cluster
+     * The number of nodes that form the cluster.
      * 
      */
     @Export(name="numberOfNodes", refs={Integer.class}, tree="[0]")
     private Output<Integer> numberOfNodes;
 
     /**
-     * @return Number of nodes that forming the cluster
+     * @return The number of nodes that form the cluster.
      * 
      */
     public Output<Integer> numberOfNodes() {
@@ -596,14 +623,14 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
         return this.numberOfNodesRequiringMaintenanceReboot;
     }
     /**
-     * (Updatable) The version of the patch to be upated.
+     * (Updatable) The version of the patch to be updated.
      * 
      */
     @Export(name="osPatchVersion", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> osPatchVersion;
 
     /**
-     * @return (Updatable) The version of the patch to be upated.
+     * @return (Updatable) The version of the patch to be updated.
      * 
      */
     public Output<Optional<String>> osPatchVersion() {
@@ -630,14 +657,14 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.removeNodes);
     }
     /**
-     * The secretId for the clusterAdminPassword.
+     * (Updatable) The secretId for the clusterAdminPassword.
      * 
      */
     @Export(name="secretId", refs={String.class}, tree="[0]")
     private Output<String> secretId;
 
     /**
-     * @return The secretId for the clusterAdminPassword.
+     * @return (Updatable) The secretId for the clusterAdminPassword.
      * 
      */
     public Output<String> secretId() {
@@ -664,14 +691,14 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
         return this.state;
     }
     /**
-     * The time the BDS instance was created. An RFC3339 formatted datetime string
+     * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The time the BDS instance was created. An RFC3339 formatted datetime string
+     * @return The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
     public Output<String> timeCreated() {
@@ -692,14 +719,14 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
         return this.timeEarliestCertificateExpiration;
     }
     /**
-     * The time the BDS instance was updated. An RFC3339 formatted datetime string
+     * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return The time the BDS instance was updated. An RFC3339 formatted datetime string
+     * @return The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
      * 
      */
     public Output<String> timeUpdated() {
@@ -719,9 +746,17 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
     public Output<BdsInstanceUtilNode> utilNode() {
         return this.utilNode;
     }
+    /**
+     * The worker node in the BDS instance
+     * 
+     */
     @Export(name="workerNode", refs={BdsInstanceWorkerNode.class}, tree="[0]")
     private Output<BdsInstanceWorkerNode> workerNode;
 
+    /**
+     * @return The worker node in the BDS instance
+     * 
+     */
     public Output<BdsInstanceWorkerNode> workerNode() {
         return this.workerNode;
     }

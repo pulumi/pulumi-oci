@@ -31,6 +31,7 @@ namespace Pulumi.Oci.RecoveryMod
         ///     {
         ///         CompartmentId = compartmentId,
         ///         DisplayName = protectionPolicyDisplayName,
+        ///         MustEnforceCloudLocality = protectionPolicyMustEnforceCloudLocality,
         ///         Owner = protectionPolicyOwner,
         ///         ProtectionPolicyId = testProtectionPolicy.Id,
         ///         State = protectionPolicyState,
@@ -39,7 +40,7 @@ namespace Pulumi.Oci.RecoveryMod
         /// });
         /// ```
         /// </summary>
-        public static Task<GetProtectionPoliciesResult> InvokeAsync(GetProtectionPoliciesArgs args, InvokeOptions? options = null)
+        public static Task<GetProtectionPoliciesResult> InvokeAsync(GetProtectionPoliciesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProtectionPoliciesResult>("oci:RecoveryMod/getProtectionPolicies:getProtectionPolicies", args ?? new GetProtectionPoliciesArgs(), options.WithDefaults());
 
         /// <summary>
@@ -62,6 +63,7 @@ namespace Pulumi.Oci.RecoveryMod
         ///     {
         ///         CompartmentId = compartmentId,
         ///         DisplayName = protectionPolicyDisplayName,
+        ///         MustEnforceCloudLocality = protectionPolicyMustEnforceCloudLocality,
         ///         Owner = protectionPolicyOwner,
         ///         ProtectionPolicyId = testProtectionPolicy.Id,
         ///         State = protectionPolicyState,
@@ -70,7 +72,7 @@ namespace Pulumi.Oci.RecoveryMod
         /// });
         /// ```
         /// </summary>
-        public static Output<GetProtectionPoliciesResult> Invoke(GetProtectionPoliciesInvokeArgs args, InvokeOptions? options = null)
+        public static Output<GetProtectionPoliciesResult> Invoke(GetProtectionPoliciesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectionPoliciesResult>("oci:RecoveryMod/getProtectionPolicies:getProtectionPolicies", args ?? new GetProtectionPoliciesInvokeArgs(), options.WithDefaults());
 
         /// <summary>
@@ -93,6 +95,7 @@ namespace Pulumi.Oci.RecoveryMod
         ///     {
         ///         CompartmentId = compartmentId,
         ///         DisplayName = protectionPolicyDisplayName,
+        ///         MustEnforceCloudLocality = protectionPolicyMustEnforceCloudLocality,
         ///         Owner = protectionPolicyOwner,
         ///         ProtectionPolicyId = testProtectionPolicy.Id,
         ///         State = protectionPolicyState,
@@ -111,8 +114,8 @@ namespace Pulumi.Oci.RecoveryMod
         /// <summary>
         /// The compartment OCID.
         /// </summary>
-        [Input("compartmentId", required: true)]
-        public string CompartmentId { get; set; } = null!;
+        [Input("compartmentId")]
+        public string? CompartmentId { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the entire 'displayname' given.
@@ -127,6 +130,12 @@ namespace Pulumi.Oci.RecoveryMod
             get => _filters ?? (_filters = new List<Inputs.GetProtectionPoliciesFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
+        /// </summary>
+        [Input("mustEnforceCloudLocality")]
+        public bool? MustEnforceCloudLocality { get; set; }
 
         /// <summary>
         /// A filter to return only the policies that match the owner as 'Customer' or 'Oracle'.
@@ -157,8 +166,8 @@ namespace Pulumi.Oci.RecoveryMod
         /// <summary>
         /// The compartment OCID.
         /// </summary>
-        [Input("compartmentId", required: true)]
-        public Input<string> CompartmentId { get; set; } = null!;
+        [Input("compartmentId")]
+        public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the entire 'displayname' given.
@@ -173,6 +182,12 @@ namespace Pulumi.Oci.RecoveryMod
             get => _filters ?? (_filters = new InputList<Inputs.GetProtectionPoliciesFilterInputArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
+        /// </summary>
+        [Input("mustEnforceCloudLocality")]
+        public Input<bool>? MustEnforceCloudLocality { get; set; }
 
         /// <summary>
         /// A filter to return only the policies that match the owner as 'Customer' or 'Oracle'.
@@ -205,7 +220,7 @@ namespace Pulumi.Oci.RecoveryMod
         /// <summary>
         /// The OCID of the compartment that contains the protection policy.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// A user provided name for the protection policy.
         /// </summary>
@@ -215,6 +230,10 @@ namespace Pulumi.Oci.RecoveryMod
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+        /// </summary>
+        public readonly bool? MustEnforceCloudLocality;
         public readonly string? Owner;
         /// <summary>
         /// The list of protection_policy_collection.
@@ -228,13 +247,15 @@ namespace Pulumi.Oci.RecoveryMod
 
         [OutputConstructor]
         private GetProtectionPoliciesResult(
-            string compartmentId,
+            string? compartmentId,
 
             string? displayName,
 
             ImmutableArray<Outputs.GetProtectionPoliciesFilterResult> filters,
 
             string id,
+
+            bool? mustEnforceCloudLocality,
 
             string? owner,
 
@@ -248,6 +269,7 @@ namespace Pulumi.Oci.RecoveryMod
             DisplayName = displayName;
             Filters = filters;
             Id = id;
+            MustEnforceCloudLocality = mustEnforceCloudLocality;
             Owner = owner;
             ProtectionPolicyCollections = protectionPolicyCollections;
             ProtectionPolicyId = protectionPolicyId;

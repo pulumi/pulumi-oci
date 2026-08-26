@@ -153,6 +153,10 @@ namespace Pulumi.Oci.RecoveryMod
         public readonly ImmutableArray<string> NsgIds;
         public readonly string RecoveryServiceSubnetId;
         /// <summary>
+        /// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public readonly string SecurityAttributes;
+        /// <summary>
         /// The current state of the recovery service subnet.
         /// </summary>
         public readonly string State;
@@ -199,6 +203,8 @@ namespace Pulumi.Oci.RecoveryMod
 
             string recoveryServiceSubnetId,
 
+            string securityAttributes,
+
             string state,
 
             string subnetId,
@@ -221,6 +227,7 @@ namespace Pulumi.Oci.RecoveryMod
             LifecycleDetails = lifecycleDetails;
             NsgIds = nsgIds;
             RecoveryServiceSubnetId = recoveryServiceSubnetId;
+            SecurityAttributes = securityAttributes;
             State = state;
             SubnetId = subnetId;
             Subnets = subnets;

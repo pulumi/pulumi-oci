@@ -56,7 +56,7 @@ class GetProtectedDatabasesResult:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> _builtins.str:
+    def compartment_id(self) -> Optional[_builtins.str]:
         """
         The OCID of the compartment that contains the protected database.
         """
@@ -147,18 +147,6 @@ def get_protected_databases(compartment_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_protected_databases = oci.recoverymod.get_protected_databases(compartment_id=compartment_id,
-        display_name=protected_database_display_name,
-        id=protected_database_id,
-        protection_policy_id=test_protection_policy["id"],
-        recovery_service_subnet_id=test_recovery_service_subnet["id"],
-        state=protected_database_state)
-    ```
-
 
     :param _builtins.str compartment_id: The compartment OCID.
     :param _builtins.str display_name: A filter to return only resources that match the entire 'displayname' given.
@@ -187,7 +175,7 @@ def get_protected_databases(compartment_id: Optional[_builtins.str] = None,
         protection_policy_id=pulumi.get(__ret__, 'protection_policy_id'),
         recovery_service_subnet_id=pulumi.get(__ret__, 'recovery_service_subnet_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_protected_databases_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_protected_databases_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProtectedDatabasesFilterArgs', 'GetProtectedDatabasesFilterArgsDict']]]]] = None,
                                    id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
@@ -201,18 +189,6 @@ def get_protected_databases_output(compartment_id: pulumi.Input[Optional[_builti
     Lists the protected databases based on the specified parameters.
 
     ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_protected_databases = oci.recoverymod.get_protected_databases(compartment_id=compartment_id,
-        display_name=protected_database_display_name,
-        id=protected_database_id,
-        protection_policy_id=test_protection_policy["id"],
-        recovery_service_subnet_id=test_recovery_service_subnet["id"],
-        state=protected_database_state)
-    ```
 
 
     :param _builtins.str compartment_id: The compartment OCID.

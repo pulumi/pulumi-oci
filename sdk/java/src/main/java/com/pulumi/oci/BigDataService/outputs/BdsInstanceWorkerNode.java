@@ -20,7 +20,7 @@ public final class BdsInstanceWorkerNode {
      */
     private @Nullable String blockVolumeSizeInGbs;
     /**
-     * @return Number of nodes that forming the cluster
+     * @return The amount of worker nodes should be created, at least be 3.
      * 
      */
     private Integer numberOfNodes;
@@ -29,6 +29,10 @@ public final class BdsInstanceWorkerNode {
      * 
      */
     private String shape;
+    /**
+     * @return The shape configuration requested for the node.
+     * 
+     */
     private @Nullable BdsInstanceWorkerNodeShapeConfig shapeConfig;
     /**
      * @return The OCID of the subnet in which the node should be created
@@ -45,7 +49,7 @@ public final class BdsInstanceWorkerNode {
         return Optional.ofNullable(this.blockVolumeSizeInGbs);
     }
     /**
-     * @return Number of nodes that forming the cluster
+     * @return The amount of worker nodes should be created, at least be 3.
      * 
      */
     public Integer numberOfNodes() {
@@ -58,6 +62,10 @@ public final class BdsInstanceWorkerNode {
     public String shape() {
         return this.shape;
     }
+    /**
+     * @return The shape configuration requested for the node.
+     * 
+     */
     public Optional<BdsInstanceWorkerNodeShapeConfig> shapeConfig() {
         return Optional.ofNullable(this.shapeConfig);
     }

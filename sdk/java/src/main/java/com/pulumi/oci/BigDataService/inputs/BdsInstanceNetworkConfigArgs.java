@@ -17,14 +17,14 @@ public final class BdsInstanceNetworkConfigArgs extends com.pulumi.resources.Res
     public static final BdsInstanceNetworkConfigArgs Empty = new BdsInstanceNetworkConfigArgs();
 
     /**
-     * (Updatable) The CIDR IP address block of the VCN.
+     * The CIDR IP address block of the VCN.
      * 
      */
     @Import(name="cidrBlock")
     private @Nullable Output<String> cidrBlock;
 
     /**
-     * @return (Updatable) The CIDR IP address block of the VCN.
+     * @return The CIDR IP address block of the VCN.
      * 
      */
     public Optional<Output<String>> cidrBlock() {
@@ -32,14 +32,14 @@ public final class BdsInstanceNetworkConfigArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) A boolean flag whether to configure a NAT gateway.
+     * A boolean flag whether to configure a NAT gateway.
      * 
      */
     @Import(name="isNatGatewayRequired")
     private @Nullable Output<Boolean> isNatGatewayRequired;
 
     /**
-     * @return (Updatable) A boolean flag whether to configure a NAT gateway.
+     * @return A boolean flag whether to configure a NAT gateway.
      * 
      */
     public Optional<Output<Boolean>> isNatGatewayRequired() {
@@ -72,7 +72,7 @@ public final class BdsInstanceNetworkConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param cidrBlock (Updatable) The CIDR IP address block of the VCN.
+         * @param cidrBlock The CIDR IP address block of the VCN.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class BdsInstanceNetworkConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param cidrBlock (Updatable) The CIDR IP address block of the VCN.
+         * @param cidrBlock The CIDR IP address block of the VCN.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class BdsInstanceNetworkConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param isNatGatewayRequired (Updatable) A boolean flag whether to configure a NAT gateway.
+         * @param isNatGatewayRequired A boolean flag whether to configure a NAT gateway.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class BdsInstanceNetworkConfigArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param isNatGatewayRequired (Updatable) A boolean flag whether to configure a NAT gateway.
+         * @param isNatGatewayRequired A boolean flag whether to configure a NAT gateway.
          * 
          * @return builder
          * 

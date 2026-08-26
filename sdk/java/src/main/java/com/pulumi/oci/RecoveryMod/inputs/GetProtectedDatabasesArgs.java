@@ -5,7 +5,6 @@ package com.pulumi.oci.RecoveryMod.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.RecoveryMod.inputs.GetProtectedDatabasesFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -22,15 +21,15 @@ public final class GetProtectedDatabasesArgs extends com.pulumi.resources.Invoke
      * The compartment OCID.
      * 
      */
-    @Import(name="compartmentId", required=true)
-    private Output<String> compartmentId;
+    @Import(name="compartmentId")
+    private @Nullable Output<String> compartmentId;
 
     /**
      * @return The compartment OCID.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Optional<Output<String>> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
 
     /**
@@ -151,7 +150,7 @@ public final class GetProtectedDatabasesArgs extends com.pulumi.resources.Invoke
          * @return builder
          * 
          */
-        public Builder compartmentId(Output<String> compartmentId) {
+        public Builder compartmentId(@Nullable Output<String> compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
@@ -285,9 +284,6 @@ public final class GetProtectedDatabasesArgs extends com.pulumi.resources.Invoke
         }
 
         public GetProtectedDatabasesArgs build() {
-            if ($.compartmentId == null) {
-                throw new MissingRequiredPropertyException("GetProtectedDatabasesArgs", "compartmentId");
-            }
             return $;
         }
     }

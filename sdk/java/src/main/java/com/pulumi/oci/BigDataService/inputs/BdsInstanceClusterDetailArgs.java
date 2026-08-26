@@ -211,14 +211,14 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * The time the BDS instance was created. An RFC3339 formatted datetime string
+     * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The time the BDS instance was created. An RFC3339 formatted datetime string
+     * @return The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -552,7 +552,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param timeCreated The time the BDS instance was created. An RFC3339 formatted datetime string
+         * @param timeCreated The time the cluster was created, shown as an RFC 3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -563,7 +563,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param timeCreated The time the BDS instance was created. An RFC3339 formatted datetime string
+         * @param timeCreated The time the cluster was created, shown as an RFC 3339 formatted datetime string.
          * 
          * @return builder
          * 

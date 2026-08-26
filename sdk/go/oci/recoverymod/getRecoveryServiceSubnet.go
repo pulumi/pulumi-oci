@@ -73,6 +73,8 @@ type LookupRecoveryServiceSubnetResult struct {
 	// A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
 	NsgIds                  []string `pulumi:"nsgIds"`
 	RecoveryServiceSubnetId string   `pulumi:"recoveryServiceSubnetId"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes string `pulumi:"securityAttributes"`
 	// The current state of the recovery service subnet.
 	State string `pulumi:"state"`
 	// Deprecated. One of the subnets associated with the Recovery Service subnet.
@@ -162,6 +164,11 @@ func (o LookupRecoveryServiceSubnetResultOutput) NsgIds() pulumi.StringArrayOutp
 
 func (o LookupRecoveryServiceSubnetResultOutput) RecoveryServiceSubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRecoveryServiceSubnetResult) string { return v.RecoveryServiceSubnetId }).(pulumi.StringOutput)
+}
+
+// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o LookupRecoveryServiceSubnetResultOutput) SecurityAttributes() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRecoveryServiceSubnetResult) string { return v.SecurityAttributes }).(pulumi.StringOutput)
 }
 
 // The current state of the recovery service subnet.

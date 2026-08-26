@@ -39,7 +39,7 @@ namespace Pulumi.Oci.RecoveryMod
         /// });
         /// ```
         /// </summary>
-        public static Task<GetRecoveryServiceSubnetsResult> InvokeAsync(GetRecoveryServiceSubnetsArgs args, InvokeOptions? options = null)
+        public static Task<GetRecoveryServiceSubnetsResult> InvokeAsync(GetRecoveryServiceSubnetsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRecoveryServiceSubnetsResult>("oci:RecoveryMod/getRecoveryServiceSubnets:getRecoveryServiceSubnets", args ?? new GetRecoveryServiceSubnetsArgs(), options.WithDefaults());
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Pulumi.Oci.RecoveryMod
         /// });
         /// ```
         /// </summary>
-        public static Output<GetRecoveryServiceSubnetsResult> Invoke(GetRecoveryServiceSubnetsInvokeArgs args, InvokeOptions? options = null)
+        public static Output<GetRecoveryServiceSubnetsResult> Invoke(GetRecoveryServiceSubnetsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRecoveryServiceSubnetsResult>("oci:RecoveryMod/getRecoveryServiceSubnets:getRecoveryServiceSubnets", args ?? new GetRecoveryServiceSubnetsInvokeArgs(), options.WithDefaults());
 
         /// <summary>
@@ -111,8 +111,8 @@ namespace Pulumi.Oci.RecoveryMod
         /// <summary>
         /// The compartment OCID.
         /// </summary>
-        [Input("compartmentId", required: true)]
-        public string CompartmentId { get; set; } = null!;
+        [Input("compartmentId")]
+        public string? CompartmentId { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the entire 'displayname' given.
@@ -157,8 +157,8 @@ namespace Pulumi.Oci.RecoveryMod
         /// <summary>
         /// The compartment OCID.
         /// </summary>
-        [Input("compartmentId", required: true)]
-        public Input<string> CompartmentId { get; set; } = null!;
+        [Input("compartmentId")]
+        public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the entire 'displayname' given.
@@ -205,7 +205,7 @@ namespace Pulumi.Oci.RecoveryMod
         /// <summary>
         /// The compartment OCID.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// A user-provided name for the recovery service subnet.
         /// </summary>
@@ -230,7 +230,7 @@ namespace Pulumi.Oci.RecoveryMod
 
         [OutputConstructor]
         private GetRecoveryServiceSubnetsResult(
-            string compartmentId,
+            string? compartmentId,
 
             string? displayName,
 

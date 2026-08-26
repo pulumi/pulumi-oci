@@ -19,7 +19,7 @@ public final class GetProtectedDatabasesResult {
      * @return The OCID of the compartment that contains the protected database.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The protected database name. You can change the displayName. Avoid entering confidential information.
      * 
@@ -57,8 +57,8 @@ public final class GetProtectedDatabasesResult {
      * @return The OCID of the compartment that contains the protected database.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The protected database name. You can change the displayName. Avoid entering confidential information.
@@ -115,7 +115,7 @@ public final class GetProtectedDatabasesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
+        private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetProtectedDatabasesFilter> filters;
         private @Nullable String id;
@@ -137,10 +137,8 @@ public final class GetProtectedDatabasesResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            if (compartmentId == null) {
-              throw new MissingRequiredPropertyException("GetProtectedDatabasesResult", "compartmentId");
-            }
+        public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }

@@ -22,7 +22,7 @@ public final class BdsInstanceNode {
      */
     private @Nullable List<BdsInstanceNodeAttachedBlockVolume> attachedBlockVolumes;
     /**
-     * @return The name of the availability domain the node is running in
+     * @return The name of the availability domain in which the node is running.
      * 
      */
     private @Nullable String availabilityDomain;
@@ -32,27 +32,27 @@ public final class BdsInstanceNode {
      */
     private @Nullable String displayName;
     /**
-     * @return The name of the fault domain the node is running in
+     * @return The name of the fault domain in which the node is running.
      * 
      */
     private @Nullable String faultDomain;
     /**
-     * @return The fully-qualified hostname (FQDN) of the node
+     * @return The fully-qualified hostname (FQDN) of the node.
      * 
      */
     private @Nullable String hostname;
     /**
-     * @return The OCID of the image from which the node was created
+     * @return The OCID of the image from which the node was created.
      * 
      */
     private @Nullable String imageId;
     /**
-     * @return The OCID of the underlying compute instance
+     * @return The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
      * 
      */
     private @Nullable String instanceId;
     /**
-     * @return IP address of the node
+     * @return IP address of the node.
      * 
      */
     private @Nullable String ipAddress;
@@ -102,12 +102,12 @@ public final class BdsInstanceNode {
      */
     private @Nullable String shape;
     /**
-     * @return The fingerprint of the SSH key used for node access
+     * @return The fingerprint of the SSH key used for node access.
      * 
      */
     private @Nullable String sshFingerprint;
     /**
-     * @return (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
+     * @return (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      * 
      */
     private @Nullable String state;
@@ -117,7 +117,7 @@ public final class BdsInstanceNode {
      */
     private @Nullable String subnetId;
     /**
-     * @return The time the BDS instance was created. An RFC3339 formatted datetime string
+     * @return The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
     private @Nullable String timeCreated;
@@ -136,7 +136,7 @@ public final class BdsInstanceNode {
         return this.attachedBlockVolumes == null ? List.of() : this.attachedBlockVolumes;
     }
     /**
-     * @return The name of the availability domain the node is running in
+     * @return The name of the availability domain in which the node is running.
      * 
      */
     public Optional<String> availabilityDomain() {
@@ -150,35 +150,35 @@ public final class BdsInstanceNode {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return The name of the fault domain the node is running in
+     * @return The name of the fault domain in which the node is running.
      * 
      */
     public Optional<String> faultDomain() {
         return Optional.ofNullable(this.faultDomain);
     }
     /**
-     * @return The fully-qualified hostname (FQDN) of the node
+     * @return The fully-qualified hostname (FQDN) of the node.
      * 
      */
     public Optional<String> hostname() {
         return Optional.ofNullable(this.hostname);
     }
     /**
-     * @return The OCID of the image from which the node was created
+     * @return The OCID of the image from which the node was created.
      * 
      */
     public Optional<String> imageId() {
         return Optional.ofNullable(this.imageId);
     }
     /**
-     * @return The OCID of the underlying compute instance
+     * @return The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
      * 
      */
     public Optional<String> instanceId() {
         return Optional.ofNullable(this.instanceId);
     }
     /**
-     * @return IP address of the node
+     * @return IP address of the node.
      * 
      */
     public Optional<String> ipAddress() {
@@ -248,14 +248,14 @@ public final class BdsInstanceNode {
         return Optional.ofNullable(this.shape);
     }
     /**
-     * @return The fingerprint of the SSH key used for node access
+     * @return The fingerprint of the SSH key used for node access.
      * 
      */
     public Optional<String> sshFingerprint() {
         return Optional.ofNullable(this.sshFingerprint);
     }
     /**
-     * @return (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
+     * @return (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      * 
      */
     public Optional<String> state() {
@@ -269,7 +269,7 @@ public final class BdsInstanceNode {
         return Optional.ofNullable(this.subnetId);
     }
     /**
-     * @return The time the BDS instance was created. An RFC3339 formatted datetime string
+     * @return The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
     public Optional<String> timeCreated() {

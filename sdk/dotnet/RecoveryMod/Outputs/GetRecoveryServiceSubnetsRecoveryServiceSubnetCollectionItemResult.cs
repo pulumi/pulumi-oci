@@ -42,6 +42,10 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
         /// <summary>
+        /// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public readonly string SecurityAttributes;
+        /// <summary>
         /// A filter to return only the resources that match the specified lifecycle state.
         /// </summary>
         public readonly string State;
@@ -86,6 +90,8 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
 
             ImmutableArray<string> nsgIds,
 
+            string securityAttributes,
+
             string state,
 
             string subnetId,
@@ -107,6 +113,7 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
             Id = id;
             LifecycleDetails = lifecycleDetails;
             NsgIds = nsgIds;
+            SecurityAttributes = securityAttributes;
             State = state;
             SubnetId = subnetId;
             Subnets = subnets;

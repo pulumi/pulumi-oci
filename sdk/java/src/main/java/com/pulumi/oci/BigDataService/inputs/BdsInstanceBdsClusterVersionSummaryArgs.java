@@ -5,7 +5,6 @@ package com.pulumi.oci.BigDataService.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -17,29 +16,29 @@ public final class BdsInstanceBdsClusterVersionSummaryArgs extends com.pulumi.re
     public static final BdsInstanceBdsClusterVersionSummaryArgs Empty = new BdsInstanceBdsClusterVersionSummaryArgs();
 
     /**
-     * BDS version to be used for cluster creation
+     * BDS version to be used for cluster creation.
      * 
      */
-    @Import(name="bdsVersion", required=true)
-    private Output<String> bdsVersion;
+    @Import(name="bdsVersion")
+    private @Nullable Output<String> bdsVersion;
 
     /**
-     * @return BDS version to be used for cluster creation
+     * @return BDS version to be used for cluster creation.
      * 
      */
-    public Output<String> bdsVersion() {
-        return this.bdsVersion;
+    public Optional<Output<String>> bdsVersion() {
+        return Optional.ofNullable(this.bdsVersion);
     }
 
     /**
-     * ODH version to be used for cluster creation
+     * ODH version to be used for cluster creation.
      * 
      */
     @Import(name="odhVersion")
     private @Nullable Output<String> odhVersion;
 
     /**
-     * @return ODH version to be used for cluster creation
+     * @return ODH version to be used for cluster creation.
      * 
      */
     public Optional<Output<String>> odhVersion() {
@@ -72,18 +71,18 @@ public final class BdsInstanceBdsClusterVersionSummaryArgs extends com.pulumi.re
         }
 
         /**
-         * @param bdsVersion BDS version to be used for cluster creation
+         * @param bdsVersion BDS version to be used for cluster creation.
          * 
          * @return builder
          * 
          */
-        public Builder bdsVersion(Output<String> bdsVersion) {
+        public Builder bdsVersion(@Nullable Output<String> bdsVersion) {
             $.bdsVersion = bdsVersion;
             return this;
         }
 
         /**
-         * @param bdsVersion BDS version to be used for cluster creation
+         * @param bdsVersion BDS version to be used for cluster creation.
          * 
          * @return builder
          * 
@@ -93,7 +92,7 @@ public final class BdsInstanceBdsClusterVersionSummaryArgs extends com.pulumi.re
         }
 
         /**
-         * @param odhVersion ODH version to be used for cluster creation
+         * @param odhVersion ODH version to be used for cluster creation.
          * 
          * @return builder
          * 
@@ -104,7 +103,7 @@ public final class BdsInstanceBdsClusterVersionSummaryArgs extends com.pulumi.re
         }
 
         /**
-         * @param odhVersion ODH version to be used for cluster creation
+         * @param odhVersion ODH version to be used for cluster creation.
          * 
          * @return builder
          * 
@@ -114,9 +113,6 @@ public final class BdsInstanceBdsClusterVersionSummaryArgs extends com.pulumi.re
         }
 
         public BdsInstanceBdsClusterVersionSummaryArgs build() {
-            if ($.bdsVersion == null) {
-                throw new MissingRequiredPropertyException("BdsInstanceBdsClusterVersionSummaryArgs", "bdsVersion");
-            }
             return $;
         }
     }

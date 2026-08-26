@@ -58,9 +58,12 @@ type LookupBdsInstanceArgs struct {
 
 // A collection of values returned by getBdsInstance.
 type LookupBdsInstanceResult struct {
-	// Cluster version details including bds and odh version information.
+	// The list of BDS capacity reservation configurations associated with the cluster.
+	BdsCapacityReservationConfigurations []GetBdsInstanceBdsCapacityReservationConfigurationType `pulumi:"bdsCapacityReservationConfigurations"`
+	// Cluster version details including BDS and ODH version information.
 	BdsClusterVersionSummaries []GetBdsInstanceBdsClusterVersionSummary `pulumi:"bdsClusterVersionSummaries"`
-	BdsInstanceId              string                                   `pulumi:"bdsInstanceId"`
+	// The OCID of the BDS cluster associated with the BDS capacity reservation.
+	BdsInstanceId string `pulumi:"bdsInstanceId"`
 	// pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
 	BootstrapScriptUrl string `pulumi:"bootstrapScriptUrl"`
 	// The information about added Cloud SQL capability
@@ -165,13 +168,21 @@ func (o LookupBdsInstanceResultOutput) ToLookupBdsInstanceResultOutputWithContex
 	return o
 }
 
-// Cluster version details including bds and odh version information.
+// The list of BDS capacity reservation configurations associated with the cluster.
+func (o LookupBdsInstanceResultOutput) BdsCapacityReservationConfigurations() GetBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) []GetBdsInstanceBdsCapacityReservationConfigurationType {
+		return v.BdsCapacityReservationConfigurations
+	}).(GetBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput)
+}
+
+// Cluster version details including BDS and ODH version information.
 func (o LookupBdsInstanceResultOutput) BdsClusterVersionSummaries() GetBdsInstanceBdsClusterVersionSummaryArrayOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) []GetBdsInstanceBdsClusterVersionSummary {
 		return v.BdsClusterVersionSummaries
 	}).(GetBdsInstanceBdsClusterVersionSummaryArrayOutput)
 }
 
+// The OCID of the BDS cluster associated with the BDS capacity reservation.
 func (o LookupBdsInstanceResultOutput) BdsInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.BdsInstanceId }).(pulumi.StringOutput)
 }

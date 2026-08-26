@@ -30,7 +30,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := recoverymod.GetRecoveryServiceSubnets(ctx, &recoverymod.GetRecoveryServiceSubnetsArgs{
-//				CompartmentId: compartmentId,
+//				CompartmentId: pulumi.StringRef(compartmentId),
 //				DisplayName:   pulumi.StringRef(recoveryServiceSubnetDisplayName),
 //				Id:            pulumi.StringRef(recoveryServiceSubnetId),
 //				State:         pulumi.StringRef(recoveryServiceSubnetState),
@@ -57,7 +57,7 @@ func GetRecoveryServiceSubnets(ctx *pulumi.Context, args *GetRecoveryServiceSubn
 // A collection of arguments for invoking getRecoveryServiceSubnets.
 type GetRecoveryServiceSubnetsArgs struct {
 	// The compartment OCID.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire 'displayname' given.
 	DisplayName *string                           `pulumi:"displayName"`
 	Filters     []GetRecoveryServiceSubnetsFilter `pulumi:"filters"`
@@ -72,7 +72,7 @@ type GetRecoveryServiceSubnetsArgs struct {
 // A collection of values returned by getRecoveryServiceSubnets.
 type GetRecoveryServiceSubnetsResult struct {
 	// The compartment OCID.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// A user-provided name for the recovery service subnet.
 	DisplayName *string                           `pulumi:"displayName"`
 	Filters     []GetRecoveryServiceSubnetsFilter `pulumi:"filters"`
@@ -98,7 +98,7 @@ func GetRecoveryServiceSubnetsOutput(ctx *pulumi.Context, args GetRecoveryServic
 // A collection of arguments for invoking getRecoveryServiceSubnets.
 type GetRecoveryServiceSubnetsOutputArgs struct {
 	// The compartment OCID.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire 'displayname' given.
 	DisplayName pulumi.StringPtrInput                     `pulumi:"displayName"`
 	Filters     GetRecoveryServiceSubnetsFilterArrayInput `pulumi:"filters"`
@@ -130,8 +130,8 @@ func (o GetRecoveryServiceSubnetsResultOutput) ToGetRecoveryServiceSubnetsResult
 }
 
 // The compartment OCID.
-func (o GetRecoveryServiceSubnetsResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecoveryServiceSubnetsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetRecoveryServiceSubnetsResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecoveryServiceSubnetsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // A user-provided name for the recovery service subnet.

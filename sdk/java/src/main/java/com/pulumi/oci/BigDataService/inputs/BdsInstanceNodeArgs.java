@@ -36,14 +36,14 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The name of the availability domain the node is running in
+     * The name of the availability domain in which the node is running.
      * 
      */
     @Import(name="availabilityDomain")
     private @Nullable Output<String> availabilityDomain;
 
     /**
-     * @return The name of the availability domain the node is running in
+     * @return The name of the availability domain in which the node is running.
      * 
      */
     public Optional<Output<String>> availabilityDomain() {
@@ -66,14 +66,14 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The name of the fault domain the node is running in
+     * The name of the fault domain in which the node is running.
      * 
      */
     @Import(name="faultDomain")
     private @Nullable Output<String> faultDomain;
 
     /**
-     * @return The name of the fault domain the node is running in
+     * @return The name of the fault domain in which the node is running.
      * 
      */
     public Optional<Output<String>> faultDomain() {
@@ -81,14 +81,14 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The fully-qualified hostname (FQDN) of the node
+     * The fully-qualified hostname (FQDN) of the node.
      * 
      */
     @Import(name="hostname")
     private @Nullable Output<String> hostname;
 
     /**
-     * @return The fully-qualified hostname (FQDN) of the node
+     * @return The fully-qualified hostname (FQDN) of the node.
      * 
      */
     public Optional<Output<String>> hostname() {
@@ -96,14 +96,14 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The OCID of the image from which the node was created
+     * The OCID of the image from which the node was created.
      * 
      */
     @Import(name="imageId")
     private @Nullable Output<String> imageId;
 
     /**
-     * @return The OCID of the image from which the node was created
+     * @return The OCID of the image from which the node was created.
      * 
      */
     public Optional<Output<String>> imageId() {
@@ -111,14 +111,14 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The OCID of the underlying compute instance
+     * The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return The OCID of the underlying compute instance
+     * @return The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -126,14 +126,14 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * IP address of the node
+     * IP address of the node.
      * 
      */
     @Import(name="ipAddress")
     private @Nullable Output<String> ipAddress;
 
     /**
-     * @return IP address of the node
+     * @return IP address of the node.
      * 
      */
     public Optional<Output<String>> ipAddress() {
@@ -276,14 +276,14 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The fingerprint of the SSH key used for node access
+     * The fingerprint of the SSH key used for node access.
      * 
      */
     @Import(name="sshFingerprint")
     private @Nullable Output<String> sshFingerprint;
 
     /**
-     * @return The fingerprint of the SSH key used for node access
+     * @return The fingerprint of the SSH key used for node access.
      * 
      */
     public Optional<Output<String>> sshFingerprint() {
@@ -291,14 +291,14 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
+     * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
+     * @return (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      * 
      */
     public Optional<Output<String>> state() {
@@ -321,14 +321,14 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The time the BDS instance was created. An RFC3339 formatted datetime string
+     * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The time the BDS instance was created. An RFC3339 formatted datetime string
+     * @return The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -427,7 +427,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param availabilityDomain The name of the availability domain the node is running in
+         * @param availabilityDomain The name of the availability domain in which the node is running.
          * 
          * @return builder
          * 
@@ -438,7 +438,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param availabilityDomain The name of the availability domain the node is running in
+         * @param availabilityDomain The name of the availability domain in which the node is running.
          * 
          * @return builder
          * 
@@ -469,7 +469,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param faultDomain The name of the fault domain the node is running in
+         * @param faultDomain The name of the fault domain in which the node is running.
          * 
          * @return builder
          * 
@@ -480,7 +480,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param faultDomain The name of the fault domain the node is running in
+         * @param faultDomain The name of the fault domain in which the node is running.
          * 
          * @return builder
          * 
@@ -490,7 +490,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param hostname The fully-qualified hostname (FQDN) of the node
+         * @param hostname The fully-qualified hostname (FQDN) of the node.
          * 
          * @return builder
          * 
@@ -501,7 +501,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param hostname The fully-qualified hostname (FQDN) of the node
+         * @param hostname The fully-qualified hostname (FQDN) of the node.
          * 
          * @return builder
          * 
@@ -511,7 +511,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param imageId The OCID of the image from which the node was created
+         * @param imageId The OCID of the image from which the node was created.
          * 
          * @return builder
          * 
@@ -522,7 +522,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param imageId The OCID of the image from which the node was created
+         * @param imageId The OCID of the image from which the node was created.
          * 
          * @return builder
          * 
@@ -532,7 +532,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param instanceId The OCID of the underlying compute instance
+         * @param instanceId The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
          * 
          * @return builder
          * 
@@ -543,7 +543,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param instanceId The OCID of the underlying compute instance
+         * @param instanceId The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
          * 
          * @return builder
          * 
@@ -553,7 +553,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param ipAddress IP address of the node
+         * @param ipAddress IP address of the node.
          * 
          * @return builder
          * 
@@ -564,7 +564,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param ipAddress IP address of the node
+         * @param ipAddress IP address of the node.
          * 
          * @return builder
          * 
@@ -763,7 +763,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param sshFingerprint The fingerprint of the SSH key used for node access
+         * @param sshFingerprint The fingerprint of the SSH key used for node access.
          * 
          * @return builder
          * 
@@ -774,7 +774,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param sshFingerprint The fingerprint of the SSH key used for node access
+         * @param sshFingerprint The fingerprint of the SSH key used for node access.
          * 
          * @return builder
          * 
@@ -784,7 +784,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param state (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
+         * @param state (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
          * 
          * @return builder
          * 
@@ -795,7 +795,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param state (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
+         * @param state (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
          * 
          * @return builder
          * 
@@ -826,7 +826,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param timeCreated The time the BDS instance was created. An RFC3339 formatted datetime string
+         * @param timeCreated The time the cluster was created, shown as an RFC 3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -837,7 +837,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param timeCreated The time the BDS instance was created. An RFC3339 formatted datetime string
+         * @param timeCreated The time the cluster was created, shown as an RFC 3339 formatted datetime string.
          * 
          * @return builder
          * 

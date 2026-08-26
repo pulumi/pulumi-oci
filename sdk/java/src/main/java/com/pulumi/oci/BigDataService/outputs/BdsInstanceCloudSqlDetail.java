@@ -22,7 +22,7 @@ public final class BdsInstanceCloudSqlDetail {
      */
     private @Nullable String blockVolumeSizeInGbs;
     /**
-     * @return IP address of the node
+     * @return IP address of the node.
      * 
      */
     private @Nullable String ipAddress;
@@ -66,7 +66,7 @@ public final class BdsInstanceCloudSqlDetail {
         return Optional.ofNullable(this.blockVolumeSizeInGbs);
     }
     /**
-     * @return IP address of the node
+     * @return IP address of the node.
      * 
      */
     public Optional<String> ipAddress() {

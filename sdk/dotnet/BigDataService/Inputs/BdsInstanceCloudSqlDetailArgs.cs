@@ -19,7 +19,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public Input<string>? BlockVolumeSizeInGbs { get; set; }
 
         /// <summary>
-        /// IP address of the node
+        /// IP address of the node.
         /// </summary>
         [Input("ipAddress")]
         public Input<string>? IpAddress { get; set; }

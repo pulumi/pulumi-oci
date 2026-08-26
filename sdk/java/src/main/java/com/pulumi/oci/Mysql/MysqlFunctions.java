@@ -8,6 +8,10 @@ import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
+import com.pulumi.oci.Mysql.inputs.GetBlueGreenDeploymentArgs;
+import com.pulumi.oci.Mysql.inputs.GetBlueGreenDeploymentPlainArgs;
+import com.pulumi.oci.Mysql.inputs.GetBlueGreenDeploymentsArgs;
+import com.pulumi.oci.Mysql.inputs.GetBlueGreenDeploymentsPlainArgs;
 import com.pulumi.oci.Mysql.inputs.GetChannelArgs;
 import com.pulumi.oci.Mysql.inputs.GetChannelPlainArgs;
 import com.pulumi.oci.Mysql.inputs.GetChannelsArgs;
@@ -36,6 +40,8 @@ import com.pulumi.oci.Mysql.inputs.GetReplicasArgs;
 import com.pulumi.oci.Mysql.inputs.GetReplicasPlainArgs;
 import com.pulumi.oci.Mysql.inputs.GetShapesArgs;
 import com.pulumi.oci.Mysql.inputs.GetShapesPlainArgs;
+import com.pulumi.oci.Mysql.outputs.GetBlueGreenDeploymentResult;
+import com.pulumi.oci.Mysql.outputs.GetBlueGreenDeploymentsResult;
 import com.pulumi.oci.Mysql.outputs.GetChannelResult;
 import com.pulumi.oci.Mysql.outputs.GetChannelsResult;
 import com.pulumi.oci.Mysql.outputs.GetDbSystemMaintenanceEventsResult;
@@ -54,6 +60,446 @@ import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class MysqlFunctions {
+    /**
+     * This data source provides details about a specific Blue Green Deployment resource in Oracle Cloud Infrastructure MySQL Database service.
+     * 
+     * Gets a blue/green deployment by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetBlueGreenDeploymentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlueGreenDeployment = MysqlFunctions.getBlueGreenDeployment(GetBlueGreenDeploymentArgs.builder()
+     *             .blueGreenDeploymentId(testBlueGreenDeploymentOciMysqlBlueGreenDeployment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBlueGreenDeploymentResult> getBlueGreenDeployment(GetBlueGreenDeploymentArgs args) {
+        return getBlueGreenDeployment(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Blue Green Deployment resource in Oracle Cloud Infrastructure MySQL Database service.
+     * 
+     * Gets a blue/green deployment by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetBlueGreenDeploymentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlueGreenDeployment = MysqlFunctions.getBlueGreenDeployment(GetBlueGreenDeploymentArgs.builder()
+     *             .blueGreenDeploymentId(testBlueGreenDeploymentOciMysqlBlueGreenDeployment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBlueGreenDeploymentResult> getBlueGreenDeploymentPlain(GetBlueGreenDeploymentPlainArgs args) {
+        return getBlueGreenDeploymentPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Blue Green Deployment resource in Oracle Cloud Infrastructure MySQL Database service.
+     * 
+     * Gets a blue/green deployment by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetBlueGreenDeploymentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlueGreenDeployment = MysqlFunctions.getBlueGreenDeployment(GetBlueGreenDeploymentArgs.builder()
+     *             .blueGreenDeploymentId(testBlueGreenDeploymentOciMysqlBlueGreenDeployment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBlueGreenDeploymentResult> getBlueGreenDeployment(GetBlueGreenDeploymentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Mysql/getBlueGreenDeployment:getBlueGreenDeployment", TypeShape.of(GetBlueGreenDeploymentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Blue Green Deployment resource in Oracle Cloud Infrastructure MySQL Database service.
+     * 
+     * Gets a blue/green deployment by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetBlueGreenDeploymentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlueGreenDeployment = MysqlFunctions.getBlueGreenDeployment(GetBlueGreenDeploymentArgs.builder()
+     *             .blueGreenDeploymentId(testBlueGreenDeploymentOciMysqlBlueGreenDeployment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBlueGreenDeploymentResult> getBlueGreenDeployment(GetBlueGreenDeploymentArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Mysql/getBlueGreenDeployment:getBlueGreenDeployment", TypeShape.of(GetBlueGreenDeploymentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Blue Green Deployment resource in Oracle Cloud Infrastructure MySQL Database service.
+     * 
+     * Gets a blue/green deployment by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetBlueGreenDeploymentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlueGreenDeployment = MysqlFunctions.getBlueGreenDeployment(GetBlueGreenDeploymentArgs.builder()
+     *             .blueGreenDeploymentId(testBlueGreenDeploymentOciMysqlBlueGreenDeployment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBlueGreenDeploymentResult> getBlueGreenDeploymentPlain(GetBlueGreenDeploymentPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Mysql/getBlueGreenDeployment:getBlueGreenDeployment", TypeShape.of(GetBlueGreenDeploymentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Blue Green Deployments in Oracle Cloud Infrastructure MySQL Database service.
+     * 
+     * Lists blue/green deployments in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetBlueGreenDeploymentsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlueGreenDeployments = MysqlFunctions.getBlueGreenDeployments(GetBlueGreenDeploymentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(blueGreenDeploymentDisplayName)
+     *             .sourceDbSystemId(testMysqlDbSystem.id())
+     *             .state(blueGreenDeploymentState)
+     *             .targetDbSystemId(testMysqlDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBlueGreenDeploymentsResult> getBlueGreenDeployments(GetBlueGreenDeploymentsArgs args) {
+        return getBlueGreenDeployments(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Blue Green Deployments in Oracle Cloud Infrastructure MySQL Database service.
+     * 
+     * Lists blue/green deployments in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetBlueGreenDeploymentsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlueGreenDeployments = MysqlFunctions.getBlueGreenDeployments(GetBlueGreenDeploymentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(blueGreenDeploymentDisplayName)
+     *             .sourceDbSystemId(testMysqlDbSystem.id())
+     *             .state(blueGreenDeploymentState)
+     *             .targetDbSystemId(testMysqlDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBlueGreenDeploymentsResult> getBlueGreenDeploymentsPlain(GetBlueGreenDeploymentsPlainArgs args) {
+        return getBlueGreenDeploymentsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Blue Green Deployments in Oracle Cloud Infrastructure MySQL Database service.
+     * 
+     * Lists blue/green deployments in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetBlueGreenDeploymentsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlueGreenDeployments = MysqlFunctions.getBlueGreenDeployments(GetBlueGreenDeploymentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(blueGreenDeploymentDisplayName)
+     *             .sourceDbSystemId(testMysqlDbSystem.id())
+     *             .state(blueGreenDeploymentState)
+     *             .targetDbSystemId(testMysqlDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBlueGreenDeploymentsResult> getBlueGreenDeployments(GetBlueGreenDeploymentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Mysql/getBlueGreenDeployments:getBlueGreenDeployments", TypeShape.of(GetBlueGreenDeploymentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Blue Green Deployments in Oracle Cloud Infrastructure MySQL Database service.
+     * 
+     * Lists blue/green deployments in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetBlueGreenDeploymentsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlueGreenDeployments = MysqlFunctions.getBlueGreenDeployments(GetBlueGreenDeploymentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(blueGreenDeploymentDisplayName)
+     *             .sourceDbSystemId(testMysqlDbSystem.id())
+     *             .state(blueGreenDeploymentState)
+     *             .targetDbSystemId(testMysqlDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBlueGreenDeploymentsResult> getBlueGreenDeployments(GetBlueGreenDeploymentsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Mysql/getBlueGreenDeployments:getBlueGreenDeployments", TypeShape.of(GetBlueGreenDeploymentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Blue Green Deployments in Oracle Cloud Infrastructure MySQL Database service.
+     * 
+     * Lists blue/green deployments in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetBlueGreenDeploymentsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlueGreenDeployments = MysqlFunctions.getBlueGreenDeployments(GetBlueGreenDeploymentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(blueGreenDeploymentDisplayName)
+     *             .sourceDbSystemId(testMysqlDbSystem.id())
+     *             .state(blueGreenDeploymentState)
+     *             .targetDbSystemId(testMysqlDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBlueGreenDeploymentsResult> getBlueGreenDeploymentsPlain(GetBlueGreenDeploymentsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Mysql/getBlueGreenDeployments:getBlueGreenDeployments", TypeShape.of(GetBlueGreenDeploymentsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Channel resource in Oracle Cloud Infrastructure MySQL Database service.
      * 

@@ -16,35 +16,6 @@ import (
 // Lists the protected databases based on the specified parameters.
 //
 // ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/recoverymod"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := recoverymod.GetProtectedDatabases(ctx, &recoverymod.GetProtectedDatabasesArgs{
-//				CompartmentId:           compartmentId,
-//				DisplayName:             pulumi.StringRef(protectedDatabaseDisplayName),
-//				Id:                      pulumi.StringRef(protectedDatabaseId),
-//				ProtectionPolicyId:      pulumi.StringRef(testProtectionPolicy.Id),
-//				RecoveryServiceSubnetId: pulumi.StringRef(testRecoveryServiceSubnet.Id),
-//				State:                   pulumi.StringRef(protectedDatabaseState),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func GetProtectedDatabases(ctx *pulumi.Context, args *GetProtectedDatabasesArgs, opts ...pulumi.InvokeOption) (*GetProtectedDatabasesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetProtectedDatabasesResult
@@ -58,7 +29,7 @@ func GetProtectedDatabases(ctx *pulumi.Context, args *GetProtectedDatabasesArgs,
 // A collection of arguments for invoking getProtectedDatabases.
 type GetProtectedDatabasesArgs struct {
 	// The compartment OCID.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire 'displayname' given.
 	DisplayName *string                       `pulumi:"displayName"`
 	Filters     []GetProtectedDatabasesFilter `pulumi:"filters"`
@@ -75,7 +46,7 @@ type GetProtectedDatabasesArgs struct {
 // A collection of values returned by getProtectedDatabases.
 type GetProtectedDatabasesResult struct {
 	// The OCID of the compartment that contains the protected database.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The protected database name. You can change the displayName. Avoid entering confidential information.
 	DisplayName *string                       `pulumi:"displayName"`
 	Filters     []GetProtectedDatabasesFilter `pulumi:"filters"`
@@ -103,7 +74,7 @@ func GetProtectedDatabasesOutput(ctx *pulumi.Context, args GetProtectedDatabases
 // A collection of arguments for invoking getProtectedDatabases.
 type GetProtectedDatabasesOutputArgs struct {
 	// The compartment OCID.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire 'displayname' given.
 	DisplayName pulumi.StringPtrInput                 `pulumi:"displayName"`
 	Filters     GetProtectedDatabasesFilterArrayInput `pulumi:"filters"`
@@ -137,8 +108,8 @@ func (o GetProtectedDatabasesResultOutput) ToGetProtectedDatabasesResultOutputWi
 }
 
 // The OCID of the compartment that contains the protected database.
-func (o GetProtectedDatabasesResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetProtectedDatabasesResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The protected database name. You can change the displayName. Avoid entering confidential information.

@@ -5592,13 +5592,59 @@ export namespace BigDataService {
         ocpus?: pulumi.Input<number | undefined>;
     }
 
+    export interface BdsCapacityReservationComputeCapacityReservations {
+        /**
+         * (Updatable) Compute capacity reservation OCID corresponding to AD1 for a multi-AD region or FD1 for a single-AD region.
+         */
+        domain1reservationId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Compute capacity reservation OCID corresponding to AD2 for a multi-AD region or FD2 for a single-AD region.
+         */
+        domain2reservationId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Compute capacity reservation OCID corresponding to AD3 for a multi-AD region or FD3 for a single-AD region.
+         */
+        domain3reservationId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface BdsInstanceBdsCapacityReservationConfiguration {
+        /**
+         * The OCID of the BDS capacity reservation to associate with the BDS cluster.
+         */
+        bdsCapacityReservationId: pulumi.Input<string>;
+        /**
+         * The OCID of the BDS cluster associated with the BDS capacity reservation.
+         */
+        bdsInstanceId?: pulumi.Input<string | undefined>;
+        /**
+         * A user-friendly name for the BDS capacity reservation configuration.
+         */
+        displayName: pulumi.Input<string>;
+        /**
+         * The OCID of the Big Data Service resource.
+         */
+        id?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+         */
+        state?: pulumi.Input<string | undefined>;
+        /**
+         * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+    }
+
     export interface BdsInstanceBdsClusterVersionSummary {
         /**
-         * BDS version to be used for cluster creation
+         * BDS version to be used for cluster creation.
          */
-        bdsVersion: pulumi.Input<string>;
+        bdsVersion?: pulumi.Input<string | undefined>;
         /**
-         * ODH version to be used for cluster creation
+         * ODH version to be used for cluster creation.
          */
         odhVersion?: pulumi.Input<string | undefined>;
     }
@@ -5609,7 +5655,7 @@ export namespace BigDataService {
          */
         blockVolumeSizeInGbs?: pulumi.Input<string | undefined>;
         /**
-         * IP address of the node
+         * IP address of the node.
          */
         ipAddress?: pulumi.Input<string | undefined>;
         /**
@@ -5703,7 +5749,7 @@ export namespace BigDataService {
          */
         osVersion?: pulumi.Input<string | undefined>;
         /**
-         * The time the BDS instance was created. An RFC3339 formatted datetime string
+         * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
          */
         timeCreated?: pulumi.Input<string | undefined>;
         /**
@@ -5718,13 +5764,16 @@ export namespace BigDataService {
          */
         blockVolumeSizeInGbs?: pulumi.Input<string | undefined>;
         /**
-         * Number of nodes that forming the cluster
+         * The amount of worker nodes should be created
          */
         numberOfNodes: pulumi.Input<number>;
         /**
          * Shape of the node
          */
         shape: pulumi.Input<string>;
+        /**
+         * The shape configuration requested for the node.
+         */
         shapeConfig?: pulumi.Input<inputs.BigDataService.BdsInstanceComputeOnlyWorkerNodeShapeConfig | undefined>;
         /**
          * The OCID of the subnet in which the node should be created
@@ -5734,7 +5783,7 @@ export namespace BigDataService {
 
     export interface BdsInstanceComputeOnlyWorkerNodeShapeConfig {
         /**
-         * The total amount of memory available to the node, in gigabytes.
+         * The total amount of memory available to the node, in gigabytes
          */
         memoryInGbs?: pulumi.Input<number | undefined>;
         /**
@@ -5753,16 +5802,16 @@ export namespace BigDataService {
          */
         blockVolumeSizeInGbs?: pulumi.Input<string | undefined>;
         /**
-         * Number of nodes that forming the cluster
+         * The number of nodes that form the cluster.
          */
         numberOfNodes: pulumi.Input<number>;
         /**
-         * Shape of the node
+         * Shape of the node.
          */
         shape: pulumi.Input<string>;
         shapeConfig?: pulumi.Input<inputs.BigDataService.BdsInstanceEdgeNodeShapeConfig | undefined>;
         /**
-         * The OCID of the subnet in which the node should be created
+         * The OCID of the subnet in which the node is to be created.
          */
         subnetId: pulumi.Input<string>;
     }
@@ -5889,6 +5938,8 @@ export namespace BigDataService {
         nvmes?: pulumi.Input<number | undefined>;
         /**
          * The total number of OCPUs available to the node.
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         ocpus?: pulumi.Input<number | undefined>;
     }
@@ -5933,11 +5984,11 @@ export namespace BigDataService {
 
     export interface BdsInstanceNetworkConfig {
         /**
-         * (Updatable) The CIDR IP address block of the VCN.
+         * The CIDR IP address block of the VCN.
          */
         cidrBlock?: pulumi.Input<string | undefined>;
         /**
-         * (Updatable) A boolean flag whether to configure a NAT gateway.
+         * A boolean flag whether to configure a NAT gateway.
          */
         isNatGatewayRequired?: pulumi.Input<boolean | undefined>;
     }
@@ -5948,7 +5999,7 @@ export namespace BigDataService {
          */
         attachedBlockVolumes?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceNodeAttachedBlockVolume>[] | undefined>;
         /**
-         * The name of the availability domain the node is running in
+         * The name of the availability domain in which the node is running.
          */
         availabilityDomain?: pulumi.Input<string | undefined>;
         /**
@@ -5956,23 +6007,23 @@ export namespace BigDataService {
          */
         displayName?: pulumi.Input<string | undefined>;
         /**
-         * The name of the fault domain the node is running in
+         * The name of the fault domain in which the node is running.
          */
         faultDomain?: pulumi.Input<string | undefined>;
         /**
-         * The fully-qualified hostname (FQDN) of the node
+         * The fully-qualified hostname (FQDN) of the node.
          */
         hostname?: pulumi.Input<string | undefined>;
         /**
-         * The OCID of the image from which the node was created
+         * The OCID of the image from which the node was created.
          */
         imageId?: pulumi.Input<string | undefined>;
         /**
-         * The OCID of the underlying compute instance
+         * The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
          */
         instanceId?: pulumi.Input<string | undefined>;
         /**
-         * IP address of the node
+         * IP address of the node.
          */
         ipAddress?: pulumi.Input<string | undefined>;
         /**
@@ -6012,11 +6063,11 @@ export namespace BigDataService {
          */
         shape?: pulumi.Input<string | undefined>;
         /**
-         * The fingerprint of the SSH key used for node access
+         * The fingerprint of the SSH key used for node access.
          */
         sshFingerprint?: pulumi.Input<string | undefined>;
         /**
-         * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
+         * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
          */
         state?: pulumi.Input<string | undefined>;
         /**
@@ -6024,7 +6075,7 @@ export namespace BigDataService {
          */
         subnetId?: pulumi.Input<string | undefined>;
         /**
-         * The time the BDS instance was created. An RFC3339 formatted datetime string
+         * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
          */
         timeCreated?: pulumi.Input<string | undefined>;
         /**
@@ -6167,11 +6218,11 @@ export namespace BigDataService {
 
     export interface BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig {
         /**
-         * BDS instance node type
+         * Cluster node type.
          */
         nodeType?: pulumi.Input<string | undefined>;
         /**
-         * Shape of the node
+         * Shape of the node.
          */
         shape?: pulumi.Input<string | undefined>;
     }
@@ -6220,13 +6271,16 @@ export namespace BigDataService {
          */
         blockVolumeSizeInGbs?: pulumi.Input<string | undefined>;
         /**
-         * Number of nodes that forming the cluster
+         * The amount of worker nodes should be created, at least be 3.
          */
         numberOfNodes: pulumi.Input<number>;
         /**
          * Shape of the node
          */
         shape: pulumi.Input<string>;
+        /**
+         * The shape configuration requested for the node.
+         */
         shapeConfig?: pulumi.Input<inputs.BigDataService.BdsInstanceWorkerNodeShapeConfig | undefined>;
         /**
          * The OCID of the subnet in which the node should be created
@@ -6236,7 +6290,7 @@ export namespace BigDataService {
 
     export interface BdsInstanceWorkerNodeShapeConfig {
         /**
-         * The total amount of memory available to the node, in gigabytes.
+         * The total amount of memory available to the node, in gigabytes
          */
         memoryInGbs?: pulumi.Input<number | undefined>;
         /**
@@ -6261,6 +6315,30 @@ export namespace BigDataService {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetBdsCapacityReservationAssociatedConfigurationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBdsCapacityReservationAssociatedConfigurationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetBdsCapacityReservationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBdsCapacityReservationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetBdsClusterVersionsFilter {
         name: string;
         regex?: boolean;
@@ -6280,6 +6358,18 @@ export namespace BigDataService {
     }
 
     export interface GetBdsInstanceApiKeysFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetBdsInstanceBdsCapacityReservationConfigurationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBdsInstanceBdsCapacityReservationConfigurationsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean | undefined>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -89083,6 +89173,59 @@ export namespace Monitoring {
 }
 
 export namespace Mysql {
+    export interface BlueGreenDeploymentChannelDetails {
+        /**
+         * The username for the replication applier of the target MySQL DB System.
+         */
+        applierUsername?: pulumi.Input<string | undefined>;
+        /**
+         * The password for the source DB system user used by the blue/green workflow to configure the replication channel. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
+         */
+        sourcePassword: pulumi.Input<string>;
+        /**
+         * The username on the source DB system used by the blue/green workflow to configure the replication channel. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
+         */
+        sourceUsername: pulumi.Input<string>;
+        /**
+         * The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+         */
+        sslCaCertificate?: pulumi.Input<inputs.Mysql.BlueGreenDeploymentChannelDetailsSslCaCertificate | undefined>;
+        /**
+         * The SSL mode of the replication channel created by the blue/green workflow. `VERIFY_CA` and `VERIFY_IDENTITY` require `sslCaCertificate`. `REQUIRED` and `DISABLED` must not include `sslCaCertificate`.
+         */
+        sslMode: pulumi.Input<string>;
+    }
+
+    export interface BlueGreenDeploymentChannelDetailsSslCaCertificate {
+        /**
+         * The type of CA certificate.
+         */
+        certificateType: pulumi.Input<string>;
+        /**
+         * The string containing the CA certificate in PEM format.
+         */
+        contents: pulumi.Input<string>;
+    }
+
+    export interface BlueGreenDeploymentTargetDbSystemDetails {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration to apply to the target DB System. If omitted, the target DB System inherits the source DB System configuration.
+         */
+        configurationId?: pulumi.Input<string | undefined>;
+        /**
+         * Initial data storage size in GiBs for the target DB System. If omitted, the target DB System uses the source DB System storage size.
+         */
+        dataStorageSizeInGb?: pulumi.Input<number | undefined>;
+        /**
+         * Target MySQL engine version.
+         */
+        mysqlVersion: pulumi.Input<string>;
+        /**
+         * The shape of the target DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
+         */
+        shapeName?: pulumi.Input<string | undefined>;
+    }
+
     export interface ChannelSource {
         /**
          * (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
@@ -89197,6 +89340,18 @@ export namespace Mysql {
          * (Updatable) The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
          */
         value: pulumi.Input<string>;
+    }
+
+    export interface GetBlueGreenDeploymentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBlueGreenDeploymentsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetChannelsFilter {

@@ -25,12 +25,16 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AutoScalingConfiguration{}
 	case "oci:BigDataService/bdsCapacityReport:BdsCapacityReport":
 		r = &BdsCapacityReport{}
+	case "oci:BigDataService/bdsCapacityReservation:BdsCapacityReservation":
+		r = &BdsCapacityReservation{}
 	case "oci:BigDataService/bdsClusterAdminPasswordResetAction:BdsClusterAdminPasswordResetAction":
 		r = &BdsClusterAdminPasswordResetAction{}
 	case "oci:BigDataService/bdsInstance:BdsInstance":
 		r = &BdsInstance{}
 	case "oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey":
 		r = &BdsInstanceApiKey{}
+	case "oci:BigDataService/bdsInstanceBdsCapacityReservationConfiguration:BdsInstanceBdsCapacityReservationConfiguration":
+		r = &BdsInstanceBdsCapacityReservationConfiguration{}
 	case "oci:BigDataService/bdsInstanceBdsCertificateConfiguration:BdsInstanceBdsCertificateConfiguration":
 		r = &BdsInstanceBdsCertificateConfiguration{}
 	case "oci:BigDataService/bdsInstanceExecuteBootstrapScriptAction:BdsInstanceExecuteBootstrapScriptAction":
@@ -82,6 +86,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"BigDataService/bdsCapacityReservation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"BigDataService/bdsClusterAdminPasswordResetAction",
 		&module{version},
 	)
@@ -93,6 +102,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"BigDataService/bdsInstanceApiKey",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"BigDataService/bdsInstanceBdsCapacityReservationConfiguration",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

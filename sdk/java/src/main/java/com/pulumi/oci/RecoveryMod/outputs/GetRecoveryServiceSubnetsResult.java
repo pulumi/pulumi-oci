@@ -19,7 +19,7 @@ public final class GetRecoveryServiceSubnetsResult {
      * @return The compartment OCID.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return A user-provided name for the recovery service subnet.
      * 
@@ -52,8 +52,8 @@ public final class GetRecoveryServiceSubnetsResult {
      * @return The compartment OCID.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return A user-provided name for the recovery service subnet.
@@ -103,7 +103,7 @@ public final class GetRecoveryServiceSubnetsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
+        private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetRecoveryServiceSubnetsFilter> filters;
         private @Nullable String id;
@@ -123,10 +123,8 @@ public final class GetRecoveryServiceSubnetsResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            if (compartmentId == null) {
-              throw new MissingRequiredPropertyException("GetRecoveryServiceSubnetsResult", "compartmentId");
-            }
+        public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }

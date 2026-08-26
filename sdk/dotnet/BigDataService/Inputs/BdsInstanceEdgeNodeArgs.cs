@@ -19,13 +19,13 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public Input<string>? BlockVolumeSizeInGbs { get; set; }
 
         /// <summary>
-        /// Number of nodes that forming the cluster
+        /// The number of nodes that form the cluster.
         /// </summary>
         [Input("numberOfNodes", required: true)]
         public Input<int> NumberOfNodes { get; set; } = null!;
 
         /// <summary>
-        /// Shape of the node
+        /// Shape of the node.
         /// </summary>
         [Input("shape", required: true)]
         public Input<string> Shape { get; set; } = null!;
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public Input<Inputs.BdsInstanceEdgeNodeShapeConfigArgs>? ShapeConfig { get; set; }
 
         /// <summary>
-        /// The OCID of the subnet in which the node should be created
+        /// The OCID of the subnet in which the node is to be created.
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;

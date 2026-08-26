@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBdsInstance = new oci.bigdataservice.BdsInstance("test_bds_instance", {
+ *     clusterAdminPassword: bdsInstanceClusterAdminPassword,
  *     clusterPublicKey: bdsInstanceClusterPublicKey,
  *     clusterVersion: bdsInstanceClusterVersion,
  *     compartmentId: compartmentId,
@@ -93,12 +94,15 @@ import * as utilities from "../utilities";
  *             ocpus: Number(bdsInstanceNodesShapeConfigOcpus),
  *         },
  *     },
+ *     bdsCapacityReservationConfigurations: [{
+ *         bdsCapacityReservationId: testBdsCapacityReservation.id,
+ *         displayName: bdsInstanceBdsCapacityReservationConfigurationsDisplayName,
+ *     }],
  *     bdsClusterVersionSummary: {
  *         bdsVersion: bdsInstanceBdsClusterVersionSummaryBdsVersion,
  *         odhVersion: bdsInstanceBdsClusterVersionSummaryOdhVersion,
  *     },
  *     bootstrapScriptUrl: bdsInstanceBootstrapScriptUrl,
- *     clusterAdminPassword: bdsInstanceClusterAdminPassword,
  *     clusterProfile: bdsInstanceClusterProfile,
  *     definedTags: bdsInstanceDefinedTags,
  *     freeformTags: bdsInstanceFreeformTags,
@@ -110,7 +114,6 @@ import * as utilities from "../utilities";
  *         cidrBlock: bdsInstanceNetworkConfigCidrBlock,
  *         isNatGatewayRequired: bdsInstanceNetworkConfigIsNatGatewayRequired === "true",
  *     },
- *     secretId: testSecret.id,
  * });
  * ```
  *
@@ -151,7 +154,11 @@ export class BdsInstance extends pulumi.CustomResource {
     }
 
     /**
-     * Cluster version details including bds and odh version information.
+     * Optional BDS capacity reservation configurations to associate with the cluster during creation.
+     */
+    declare public readonly bdsCapacityReservationConfigurations: pulumi.Output<outputs.BigDataService.BdsInstanceBdsCapacityReservationConfiguration[]>;
+    /**
+     * Cluster version details including BDS and ODH version information. When this block is specified, provide at least one of `bdsVersion` or `odhVersion`; if both values are null, the service rejects the request.
      */
     declare public readonly bdsClusterVersionSummary: pulumi.Output<outputs.BigDataService.BdsInstanceBdsClusterVersionSummary>;
     /**
@@ -186,6 +193,9 @@ export class BdsInstance extends pulumi.CustomResource {
      * (Updatable) The OCID of the compartment
      */
     declare public readonly compartmentId: pulumi.Output<string>;
+    /**
+     * The compute-only worker node in the BDS instance
+     */
     declare public readonly computeOnlyWorkerNode: pulumi.Output<outputs.BigDataService.BdsInstanceComputeOnlyWorkerNode | undefined>;
     /**
      * The user who created the cluster.
@@ -250,7 +260,7 @@ export class BdsInstance extends pulumi.CustomResource {
      */
     declare public readonly masterNode: pulumi.Output<outputs.BigDataService.BdsInstanceMasterNode>;
     /**
-     * (Updatable) Additional configuration of the user's network.
+     * Additional configuration of the user's network.
      */
     declare public readonly networkConfig: pulumi.Output<outputs.BigDataService.BdsInstanceNetworkConfig>;
     /**
@@ -258,7 +268,7 @@ export class BdsInstance extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly nodes: pulumi.Output<outputs.BigDataService.BdsInstanceNode[]>;
     /**
-     * Number of nodes that forming the cluster
+     * The number of nodes that form the cluster.
      */
     declare public /*out*/ readonly numberOfNodes: pulumi.Output<number>;
     /**
@@ -266,7 +276,7 @@ export class BdsInstance extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly numberOfNodesRequiringMaintenanceReboot: pulumi.Output<number>;
     /**
-     * (Updatable) The version of the patch to be upated.
+     * (Updatable) The version of the patch to be updated.
      */
     declare public readonly osPatchVersion: pulumi.Output<string | undefined>;
     /**
@@ -275,7 +285,7 @@ export class BdsInstance extends pulumi.CustomResource {
     declare public readonly removeNode: pulumi.Output<string | undefined>;
     declare public readonly removeNodes: pulumi.Output<string[] | undefined>;
     /**
-     * The secretId for the clusterAdminPassword.
+     * (Updatable) The secretId for the clusterAdminPassword.
      */
     declare public readonly secretId: pulumi.Output<string>;
     declare public readonly startClusterShapeConfigs: pulumi.Output<outputs.BigDataService.BdsInstanceStartClusterShapeConfig[] | undefined>;
@@ -284,7 +294,7 @@ export class BdsInstance extends pulumi.CustomResource {
      */
     declare public readonly state: pulumi.Output<string>;
     /**
-     * The time the BDS instance was created. An RFC3339 formatted datetime string
+     * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
@@ -292,13 +302,16 @@ export class BdsInstance extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly timeEarliestCertificateExpiration: pulumi.Output<string>;
     /**
-     * The time the BDS instance was updated. An RFC3339 formatted datetime string
+     * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
      */
     declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The utility node in the BDS instance
      */
     declare public readonly utilNode: pulumi.Output<outputs.BigDataService.BdsInstanceUtilNode>;
+    /**
+     * The worker node in the BDS instance
+     */
     declare public readonly workerNode: pulumi.Output<outputs.BigDataService.BdsInstanceWorkerNode>;
 
     /**
@@ -314,6 +327,7 @@ export class BdsInstance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BdsInstanceState | undefined;
+            resourceInputs["bdsCapacityReservationConfigurations"] = state?.bdsCapacityReservationConfigurations;
             resourceInputs["bdsClusterVersionSummary"] = state?.bdsClusterVersionSummary;
             resourceInputs["bootstrapScriptUrl"] = state?.bootstrapScriptUrl;
             resourceInputs["cloudSqlDetails"] = state?.cloudSqlDetails;
@@ -385,6 +399,7 @@ export class BdsInstance extends pulumi.CustomResource {
             if (args?.workerNode === undefined && !opts.urn) {
                 throw new Error("Missing required property 'workerNode'");
             }
+            resourceInputs["bdsCapacityReservationConfigurations"] = args?.bdsCapacityReservationConfigurations;
             resourceInputs["bdsClusterVersionSummary"] = args?.bdsClusterVersionSummary;
             resourceInputs["bootstrapScriptUrl"] = args?.bootstrapScriptUrl;
             resourceInputs["cloudSqlDetails"] = args?.cloudSqlDetails;
@@ -440,7 +455,11 @@ export class BdsInstance extends pulumi.CustomResource {
  */
 export interface BdsInstanceState {
     /**
-     * Cluster version details including bds and odh version information.
+     * Optional BDS capacity reservation configurations to associate with the cluster during creation.
+     */
+    bdsCapacityReservationConfigurations?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceBdsCapacityReservationConfiguration>[] | undefined>;
+    /**
+     * Cluster version details including BDS and ODH version information. When this block is specified, provide at least one of `bdsVersion` or `odhVersion`; if both values are null, the service rejects the request.
      */
     bdsClusterVersionSummary?: pulumi.Input<inputs.BigDataService.BdsInstanceBdsClusterVersionSummary | undefined>;
     /**
@@ -475,6 +494,9 @@ export interface BdsInstanceState {
      * (Updatable) The OCID of the compartment
      */
     compartmentId?: pulumi.Input<string | undefined>;
+    /**
+     * The compute-only worker node in the BDS instance
+     */
     computeOnlyWorkerNode?: pulumi.Input<inputs.BigDataService.BdsInstanceComputeOnlyWorkerNode | undefined>;
     /**
      * The user who created the cluster.
@@ -539,7 +561,7 @@ export interface BdsInstanceState {
      */
     masterNode?: pulumi.Input<inputs.BigDataService.BdsInstanceMasterNode | undefined>;
     /**
-     * (Updatable) Additional configuration of the user's network.
+     * Additional configuration of the user's network.
      */
     networkConfig?: pulumi.Input<inputs.BigDataService.BdsInstanceNetworkConfig | undefined>;
     /**
@@ -547,7 +569,7 @@ export interface BdsInstanceState {
      */
     nodes?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceNode>[] | undefined>;
     /**
-     * Number of nodes that forming the cluster
+     * The number of nodes that form the cluster.
      */
     numberOfNodes?: pulumi.Input<number | undefined>;
     /**
@@ -555,7 +577,7 @@ export interface BdsInstanceState {
      */
     numberOfNodesRequiringMaintenanceReboot?: pulumi.Input<number | undefined>;
     /**
-     * (Updatable) The version of the patch to be upated.
+     * (Updatable) The version of the patch to be updated.
      */
     osPatchVersion?: pulumi.Input<string | undefined>;
     /**
@@ -564,7 +586,7 @@ export interface BdsInstanceState {
     removeNode?: pulumi.Input<string | undefined>;
     removeNodes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * The secretId for the clusterAdminPassword.
+     * (Updatable) The secretId for the clusterAdminPassword.
      */
     secretId?: pulumi.Input<string | undefined>;
     startClusterShapeConfigs?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceStartClusterShapeConfig>[] | undefined>;
@@ -573,7 +595,7 @@ export interface BdsInstanceState {
      */
     state?: pulumi.Input<string | undefined>;
     /**
-     * The time the BDS instance was created. An RFC3339 formatted datetime string
+     * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      */
     timeCreated?: pulumi.Input<string | undefined>;
     /**
@@ -581,13 +603,16 @@ export interface BdsInstanceState {
      */
     timeEarliestCertificateExpiration?: pulumi.Input<string | undefined>;
     /**
-     * The time the BDS instance was updated. An RFC3339 formatted datetime string
+     * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
      */
     timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The utility node in the BDS instance
      */
     utilNode?: pulumi.Input<inputs.BigDataService.BdsInstanceUtilNode | undefined>;
+    /**
+     * The worker node in the BDS instance
+     */
     workerNode?: pulumi.Input<inputs.BigDataService.BdsInstanceWorkerNode | undefined>;
 }
 
@@ -596,7 +621,11 @@ export interface BdsInstanceState {
  */
 export interface BdsInstanceArgs {
     /**
-     * Cluster version details including bds and odh version information.
+     * Optional BDS capacity reservation configurations to associate with the cluster during creation.
+     */
+    bdsCapacityReservationConfigurations?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceBdsCapacityReservationConfiguration>[] | undefined>;
+    /**
+     * Cluster version details including BDS and ODH version information. When this block is specified, provide at least one of `bdsVersion` or `odhVersion`; if both values are null, the service rejects the request.
      */
     bdsClusterVersionSummary?: pulumi.Input<inputs.BigDataService.BdsInstanceBdsClusterVersionSummary | undefined>;
     /**
@@ -627,6 +656,9 @@ export interface BdsInstanceArgs {
      * (Updatable) The OCID of the compartment
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * The compute-only worker node in the BDS instance
+     */
     computeOnlyWorkerNode?: pulumi.Input<inputs.BigDataService.BdsInstanceComputeOnlyWorkerNode | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -687,11 +719,11 @@ export interface BdsInstanceArgs {
      */
     masterNode: pulumi.Input<inputs.BigDataService.BdsInstanceMasterNode>;
     /**
-     * (Updatable) Additional configuration of the user's network.
+     * Additional configuration of the user's network.
      */
     networkConfig?: pulumi.Input<inputs.BigDataService.BdsInstanceNetworkConfig | undefined>;
     /**
-     * (Updatable) The version of the patch to be upated.
+     * (Updatable) The version of the patch to be updated.
      */
     osPatchVersion?: pulumi.Input<string | undefined>;
     /**
@@ -700,7 +732,7 @@ export interface BdsInstanceArgs {
     removeNode?: pulumi.Input<string | undefined>;
     removeNodes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * The secretId for the clusterAdminPassword.
+     * (Updatable) The secretId for the clusterAdminPassword.
      */
     secretId?: pulumi.Input<string | undefined>;
     startClusterShapeConfigs?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceStartClusterShapeConfig>[] | undefined>;
@@ -712,5 +744,8 @@ export interface BdsInstanceArgs {
      * The utility node in the BDS instance
      */
     utilNode: pulumi.Input<inputs.BigDataService.BdsInstanceUtilNode>;
+    /**
+     * The worker node in the BDS instance
+     */
     workerNode: pulumi.Input<inputs.BigDataService.BdsInstanceWorkerNode>;
 }

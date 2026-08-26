@@ -840,7 +840,7 @@ class GetProtectionPoliciesProtectionPolicyCollectionItemResult(dict):
         :param _builtins.str id: The protection policy OCID.
         :param _builtins.bool is_predefined_policy: Set to TRUE if the policy is Oracle-defined, and FALSE for a user-defined custom policy. You can modify only the custom policies.
         :param _builtins.str lifecycle_details: Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
-        :param _builtins.bool must_enforce_cloud_locality: Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+        :param _builtins.bool must_enforce_cloud_locality: A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
         :param _builtins.str policy_locked_date_time: An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
         :param _builtins.str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
         :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -930,7 +930,7 @@ class GetProtectionPoliciesProtectionPolicyCollectionItemResult(dict):
     @pulumi.getter(name="mustEnforceCloudLocality")
     def must_enforce_cloud_locality(self) -> _builtins.bool:
         """
-        Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+        A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
         """
         return pulumi.get(self, "must_enforce_cloud_locality")
 
@@ -1024,6 +1024,7 @@ class GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemResult(dict):
                  id: _builtins.str,
                  lifecycle_details: _builtins.str,
                  nsg_ids: Sequence[_builtins.str],
+                 security_attributes: _builtins.str,
                  state: _builtins.str,
                  subnet_id: _builtins.str,
                  subnets: Sequence[_builtins.str],
@@ -1039,6 +1040,7 @@ class GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemResult(dict):
         :param _builtins.str id: The recovery service subnet OCID.
         :param _builtins.str lifecycle_details: Detailed description about the current lifecycle state of the recovery service subnet. For example, it can be used to provide actionable information for a resource in a Failed state
         :param Sequence[_builtins.str] nsg_ids: A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+        :param _builtins.str security_attributes: Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param _builtins.str state: A filter to return only the resources that match the specified lifecycle state.
         :param _builtins.str subnet_id: Deprecated. One of the subnets associated with the Recovery Service subnet.
         :param Sequence[_builtins.str] subnets: A list of OCIDs of all the subnets associated with the Recovery Service subnet.
@@ -1054,6 +1056,7 @@ class GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "subnets", subnets)
@@ -1117,6 +1120,14 @@ class GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemResult(dict):
         A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
         """
         return pulumi.get(self, "nsg_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> _builtins.str:
+        """
+        Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter

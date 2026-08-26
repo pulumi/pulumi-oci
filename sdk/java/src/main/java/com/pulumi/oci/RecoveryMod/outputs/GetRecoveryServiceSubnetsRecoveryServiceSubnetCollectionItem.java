@@ -48,6 +48,11 @@ public final class GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem 
      */
     private List<String> nsgIds;
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    private String securityAttributes;
+    /**
      * @return A filter to return only the resources that match the specified lifecycle state.
      * 
      */
@@ -138,6 +143,13 @@ public final class GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem 
         return this.nsgIds;
     }
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public String securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return A filter to return only the resources that match the specified lifecycle state.
      * 
      */
@@ -207,6 +219,7 @@ public final class GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem 
         private String id;
         private String lifecycleDetails;
         private List<String> nsgIds;
+        private String securityAttributes;
         private String state;
         private String subnetId;
         private List<String> subnets;
@@ -224,6 +237,7 @@ public final class GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem 
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.nsgIds = defaults.nsgIds;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.subnets = defaults.subnets;
@@ -293,6 +307,14 @@ public final class GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem 
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
+        public Builder securityAttributes(String securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem", "state");
@@ -360,6 +382,7 @@ public final class GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem 
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.nsgIds = nsgIds;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
             _resultValue.subnets = subnets;

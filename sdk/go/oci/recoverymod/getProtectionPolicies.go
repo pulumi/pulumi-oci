@@ -30,11 +30,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := recoverymod.GetProtectionPolicies(ctx, &recoverymod.GetProtectionPoliciesArgs{
-//				CompartmentId:      compartmentId,
-//				DisplayName:        pulumi.StringRef(protectionPolicyDisplayName),
-//				Owner:              pulumi.StringRef(protectionPolicyOwner),
-//				ProtectionPolicyId: pulumi.StringRef(testProtectionPolicy.Id),
-//				State:              pulumi.StringRef(protectionPolicyState),
+//				CompartmentId:            pulumi.StringRef(compartmentId),
+//				DisplayName:              pulumi.StringRef(protectionPolicyDisplayName),
+//				MustEnforceCloudLocality: pulumi.BoolRef(protectionPolicyMustEnforceCloudLocality),
+//				Owner:                    pulumi.StringRef(protectionPolicyOwner),
+//				ProtectionPolicyId:       pulumi.StringRef(testProtectionPolicy.Id),
+//				State:                    pulumi.StringRef(protectionPolicyState),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -57,10 +58,12 @@ func GetProtectionPolicies(ctx *pulumi.Context, args *GetProtectionPoliciesArgs,
 // A collection of arguments for invoking getProtectionPolicies.
 type GetProtectionPoliciesArgs struct {
 	// The compartment OCID.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire 'displayname' given.
 	DisplayName *string                       `pulumi:"displayName"`
 	Filters     []GetProtectionPoliciesFilter `pulumi:"filters"`
+	// A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
+	MustEnforceCloudLocality *bool `pulumi:"mustEnforceCloudLocality"`
 	// A filter to return only the policies that match the owner as 'Customer' or 'Oracle'.
 	Owner *string `pulumi:"owner"`
 	// The protection policy OCID.
@@ -72,13 +75,15 @@ type GetProtectionPoliciesArgs struct {
 // A collection of values returned by getProtectionPolicies.
 type GetProtectionPoliciesResult struct {
 	// The OCID of the compartment that contains the protection policy.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// A user provided name for the protection policy.
 	DisplayName *string                       `pulumi:"displayName"`
 	Filters     []GetProtectionPoliciesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id    string  `pulumi:"id"`
-	Owner *string `pulumi:"owner"`
+	Id string `pulumi:"id"`
+	// Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+	MustEnforceCloudLocality *bool   `pulumi:"mustEnforceCloudLocality"`
+	Owner                    *string `pulumi:"owner"`
 	// The list of protection_policy_collection.
 	ProtectionPolicyCollections []GetProtectionPoliciesProtectionPolicyCollection `pulumi:"protectionPolicyCollections"`
 	ProtectionPolicyId          *string                                           `pulumi:"protectionPolicyId"`
@@ -98,10 +103,12 @@ func GetProtectionPoliciesOutput(ctx *pulumi.Context, args GetProtectionPolicies
 // A collection of arguments for invoking getProtectionPolicies.
 type GetProtectionPoliciesOutputArgs struct {
 	// The compartment OCID.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire 'displayname' given.
 	DisplayName pulumi.StringPtrInput                 `pulumi:"displayName"`
 	Filters     GetProtectionPoliciesFilterArrayInput `pulumi:"filters"`
+	// A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
+	MustEnforceCloudLocality pulumi.BoolPtrInput `pulumi:"mustEnforceCloudLocality"`
 	// A filter to return only the policies that match the owner as 'Customer' or 'Oracle'.
 	Owner pulumi.StringPtrInput `pulumi:"owner"`
 	// The protection policy OCID.
@@ -130,8 +137,8 @@ func (o GetProtectionPoliciesResultOutput) ToGetProtectionPoliciesResultOutputWi
 }
 
 // The OCID of the compartment that contains the protection policy.
-func (o GetProtectionPoliciesResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectionPoliciesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetProtectionPoliciesResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectionPoliciesResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // A user provided name for the protection policy.
@@ -146,6 +153,11 @@ func (o GetProtectionPoliciesResultOutput) Filters() GetProtectionPoliciesFilter
 // The provider-assigned unique ID for this managed resource.
 func (o GetProtectionPoliciesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProtectionPoliciesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+func (o GetProtectionPoliciesResultOutput) MustEnforceCloudLocality() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetProtectionPoliciesResult) *bool { return v.MustEnforceCloudLocality }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetProtectionPoliciesResultOutput) Owner() pulumi.StringPtrOutput {

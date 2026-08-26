@@ -6,7 +6,10 @@ import builtins as _builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .blue_green_deployment import *
 from .channel import *
+from .get_blue_green_deployment import *
+from .get_blue_green_deployments import *
 from .get_channel import *
 from .get_channels import *
 from .get_db_system_maintenance_events import *

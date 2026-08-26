@@ -124,9 +124,16 @@ namespace Pulumi.Oci.BigDataService
     public sealed class GetBdsInstanceResult
     {
         /// <summary>
-        /// Cluster version details including bds and odh version information.
+        /// The list of BDS capacity reservation configurations associated with the cluster.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetBdsInstanceBdsCapacityReservationConfigurationResult> BdsCapacityReservationConfigurations;
+        /// <summary>
+        /// Cluster version details including BDS and ODH version information.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBdsInstanceBdsClusterVersionSummaryResult> BdsClusterVersionSummaries;
+        /// <summary>
+        /// The OCID of the BDS cluster associated with the BDS capacity reservation.
+        /// </summary>
         public readonly string BdsInstanceId;
         /// <summary>
         /// pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
@@ -251,6 +258,8 @@ namespace Pulumi.Oci.BigDataService
 
         [OutputConstructor]
         private GetBdsInstanceResult(
+            ImmutableArray<Outputs.GetBdsInstanceBdsCapacityReservationConfigurationResult> bdsCapacityReservationConfigurations,
+
             ImmutableArray<Outputs.GetBdsInstanceBdsClusterVersionSummaryResult> bdsClusterVersionSummaries,
 
             string bdsInstanceId,
@@ -339,6 +348,7 @@ namespace Pulumi.Oci.BigDataService
 
             ImmutableArray<Outputs.GetBdsInstanceWorkerNodeResult> workerNodes)
         {
+            BdsCapacityReservationConfigurations = bdsCapacityReservationConfigurations;
             BdsClusterVersionSummaries = bdsClusterVersionSummaries;
             BdsInstanceId = bdsInstanceId;
             BootstrapScriptUrl = bootstrapScriptUrl;

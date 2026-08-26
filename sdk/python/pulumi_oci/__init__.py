@@ -791,6 +791,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "BigDataService/bdsCapacityReservation",
+  "fqn": "pulumi_oci.bigdataservice",
+  "classes": {
+   "oci:BigDataService/bdsCapacityReservation:BdsCapacityReservation": "BdsCapacityReservation"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "BigDataService/bdsClusterAdminPasswordResetAction",
   "fqn": "pulumi_oci.bigdataservice",
   "classes": {
@@ -811,6 +819,14 @@ _utilities.register(
   "fqn": "pulumi_oci.bigdataservice",
   "classes": {
    "oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey": "BdsInstanceApiKey"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "BigDataService/bdsInstanceBdsCapacityReservationConfiguration",
+  "fqn": "pulumi_oci.bigdataservice",
+  "classes": {
+   "oci:BigDataService/bdsInstanceBdsCapacityReservationConfiguration:BdsInstanceBdsCapacityReservationConfiguration": "BdsInstanceBdsCapacityReservationConfiguration"
   }
  },
  {
@@ -6267,6 +6283,14 @@ _utilities.register(
   "fqn": "pulumi_oci.monitoring",
   "classes": {
    "oci:Monitoring/alarmSuppression:AlarmSuppression": "AlarmSuppression"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Mysql/blueGreenDeployment",
+  "fqn": "pulumi_oci.mysql",
+  "classes": {
+   "oci:Mysql/blueGreenDeployment:BlueGreenDeployment": "BlueGreenDeployment"
   }
  },
  {

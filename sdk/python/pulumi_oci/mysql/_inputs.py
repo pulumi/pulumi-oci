@@ -15,6 +15,12 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'BlueGreenDeploymentChannelDetailsArgs',
+    'BlueGreenDeploymentChannelDetailsArgsDict',
+    'BlueGreenDeploymentChannelDetailsSslCaCertificateArgs',
+    'BlueGreenDeploymentChannelDetailsSslCaCertificateArgsDict',
+    'BlueGreenDeploymentTargetDbSystemDetailsArgs',
+    'BlueGreenDeploymentTargetDbSystemDetailsArgsDict',
     'ChannelSourceArgs',
     'ChannelSourceArgsDict',
     'ChannelSourceAnonymousTransactionsHandlingArgs',
@@ -161,6 +167,8 @@ __all__ = [
     'ReplicaTelemetryConfigurationLogArgsDict',
     'ReplicaTelemetryConfigurationLogDestinationConfigurationArgs',
     'ReplicaTelemetryConfigurationLogDestinationConfigurationArgsDict',
+    'GetBlueGreenDeploymentsFilterArgs',
+    'GetBlueGreenDeploymentsFilterArgsDict',
     'GetChannelsFilterArgs',
     'GetChannelsFilterArgsDict',
     'GetDbSystemMaintenanceEventsFilterArgs',
@@ -178,6 +186,247 @@ __all__ = [
     'GetShapesFilterArgs',
     'GetShapesFilterArgsDict',
 ]
+
+class BlueGreenDeploymentChannelDetailsArgsDict(TypedDict):
+    source_password: pulumi.Input[_builtins.str]
+    """
+    The password for the source DB system user used by the blue/green workflow to configure the replication channel. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
+    """
+    source_username: pulumi.Input[_builtins.str]
+    """
+    The username on the source DB system used by the blue/green workflow to configure the replication channel. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
+    """
+    ssl_mode: pulumi.Input[_builtins.str]
+    """
+    The SSL mode of the replication channel created by the blue/green workflow. `VERIFY_CA` and `VERIFY_IDENTITY` require `sslCaCertificate`. `REQUIRED` and `DISABLED` must not include `sslCaCertificate`.
+    """
+    applier_username: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The username for the replication applier of the target MySQL DB System.
+    """
+    ssl_ca_certificate: NotRequired[pulumi.Input[Optional['BlueGreenDeploymentChannelDetailsSslCaCertificateArgsDict']]]
+    """
+    The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+    """
+
+@pulumi.input_type
+class BlueGreenDeploymentChannelDetailsArgs:
+    def __init__(__self__, *,
+                 source_password: pulumi.Input[_builtins.str],
+                 source_username: pulumi.Input[_builtins.str],
+                 ssl_mode: pulumi.Input[_builtins.str],
+                 applier_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_ca_certificate: pulumi.Input[Optional['BlueGreenDeploymentChannelDetailsSslCaCertificateArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.str] source_password: The password for the source DB system user used by the blue/green workflow to configure the replication channel. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
+        :param pulumi.Input[_builtins.str] source_username: The username on the source DB system used by the blue/green workflow to configure the replication channel. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
+        :param pulumi.Input[_builtins.str] ssl_mode: The SSL mode of the replication channel created by the blue/green workflow. `VERIFY_CA` and `VERIFY_IDENTITY` require `sslCaCertificate`. `REQUIRED` and `DISABLED` must not include `sslCaCertificate`.
+        :param pulumi.Input[_builtins.str] applier_username: The username for the replication applier of the target MySQL DB System.
+        :param pulumi.Input['BlueGreenDeploymentChannelDetailsSslCaCertificateArgs'] ssl_ca_certificate: The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+        """
+        pulumi.set(__self__, "source_password", source_password)
+        pulumi.set(__self__, "source_username", source_username)
+        pulumi.set(__self__, "ssl_mode", ssl_mode)
+        if applier_username is not None:
+            pulumi.set(__self__, "applier_username", applier_username)
+        if ssl_ca_certificate is not None:
+            pulumi.set(__self__, "ssl_ca_certificate", ssl_ca_certificate)
+
+    @_builtins.property
+    @pulumi.getter(name="sourcePassword")
+    def source_password(self) -> pulumi.Input[_builtins.str]:
+        """
+        The password for the source DB system user used by the blue/green workflow to configure the replication channel. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
+        """
+        return pulumi.get(self, "source_password")
+
+    @source_password.setter
+    def source_password(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "source_password", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceUsername")
+    def source_username(self) -> pulumi.Input[_builtins.str]:
+        """
+        The username on the source DB system used by the blue/green workflow to configure the replication channel. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
+        """
+        return pulumi.get(self, "source_username")
+
+    @source_username.setter
+    def source_username(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "source_username", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sslMode")
+    def ssl_mode(self) -> pulumi.Input[_builtins.str]:
+        """
+        The SSL mode of the replication channel created by the blue/green workflow. `VERIFY_CA` and `VERIFY_IDENTITY` require `sslCaCertificate`. `REQUIRED` and `DISABLED` must not include `sslCaCertificate`.
+        """
+        return pulumi.get(self, "ssl_mode")
+
+    @ssl_mode.setter
+    def ssl_mode(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "ssl_mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="applierUsername")
+    def applier_username(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The username for the replication applier of the target MySQL DB System.
+        """
+        return pulumi.get(self, "applier_username")
+
+    @applier_username.setter
+    def applier_username(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "applier_username", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sslCaCertificate")
+    def ssl_ca_certificate(self) -> pulumi.Input[Optional['BlueGreenDeploymentChannelDetailsSslCaCertificateArgs']]:
+        """
+        The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+        """
+        return pulumi.get(self, "ssl_ca_certificate")
+
+    @ssl_ca_certificate.setter
+    def ssl_ca_certificate(self, value: pulumi.Input[Optional['BlueGreenDeploymentChannelDetailsSslCaCertificateArgs']]):
+        pulumi.set(self, "ssl_ca_certificate", value)
+
+
+class BlueGreenDeploymentChannelDetailsSslCaCertificateArgsDict(TypedDict):
+    certificate_type: pulumi.Input[_builtins.str]
+    """
+    The type of CA certificate.
+    """
+    contents: pulumi.Input[_builtins.str]
+    """
+    The string containing the CA certificate in PEM format.
+    """
+
+@pulumi.input_type
+class BlueGreenDeploymentChannelDetailsSslCaCertificateArgs:
+    def __init__(__self__, *,
+                 certificate_type: pulumi.Input[_builtins.str],
+                 contents: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] certificate_type: The type of CA certificate.
+        :param pulumi.Input[_builtins.str] contents: The string containing the CA certificate in PEM format.
+        """
+        pulumi.set(__self__, "certificate_type", certificate_type)
+        pulumi.set(__self__, "contents", contents)
+
+    @_builtins.property
+    @pulumi.getter(name="certificateType")
+    def certificate_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        The type of CA certificate.
+        """
+        return pulumi.get(self, "certificate_type")
+
+    @certificate_type.setter
+    def certificate_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "certificate_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def contents(self) -> pulumi.Input[_builtins.str]:
+        """
+        The string containing the CA certificate in PEM format.
+        """
+        return pulumi.get(self, "contents")
+
+    @contents.setter
+    def contents(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "contents", value)
+
+
+class BlueGreenDeploymentTargetDbSystemDetailsArgsDict(TypedDict):
+    mysql_version: pulumi.Input[_builtins.str]
+    """
+    Target MySQL engine version.
+    """
+    configuration_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration to apply to the target DB System. If omitted, the target DB System inherits the source DB System configuration.
+    """
+    data_storage_size_in_gb: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Initial data storage size in GiBs for the target DB System. If omitted, the target DB System uses the source DB System storage size.
+    """
+    shape_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The shape of the target DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
+    """
+
+@pulumi.input_type
+class BlueGreenDeploymentTargetDbSystemDetailsArgs:
+    def __init__(__self__, *,
+                 mysql_version: pulumi.Input[_builtins.str],
+                 configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
+                 shape_name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] mysql_version: Target MySQL engine version.
+        :param pulumi.Input[_builtins.str] configuration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration to apply to the target DB System. If omitted, the target DB System inherits the source DB System configuration.
+        :param pulumi.Input[_builtins.int] data_storage_size_in_gb: Initial data storage size in GiBs for the target DB System. If omitted, the target DB System uses the source DB System storage size.
+        :param pulumi.Input[_builtins.str] shape_name: The shape of the target DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
+        """
+        pulumi.set(__self__, "mysql_version", mysql_version)
+        if configuration_id is not None:
+            pulumi.set(__self__, "configuration_id", configuration_id)
+        if data_storage_size_in_gb is not None:
+            pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        if shape_name is not None:
+            pulumi.set(__self__, "shape_name", shape_name)
+
+    @_builtins.property
+    @pulumi.getter(name="mysqlVersion")
+    def mysql_version(self) -> pulumi.Input[_builtins.str]:
+        """
+        Target MySQL engine version.
+        """
+        return pulumi.get(self, "mysql_version")
+
+    @mysql_version.setter
+    def mysql_version(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "mysql_version", value)
+
+    @_builtins.property
+    @pulumi.getter(name="configurationId")
+    def configuration_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration to apply to the target DB System. If omitted, the target DB System inherits the source DB System configuration.
+        """
+        return pulumi.get(self, "configuration_id")
+
+    @configuration_id.setter
+    def configuration_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "configuration_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dataStorageSizeInGb")
+    def data_storage_size_in_gb(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Initial data storage size in GiBs for the target DB System. If omitted, the target DB System uses the source DB System storage size.
+        """
+        return pulumi.get(self, "data_storage_size_in_gb")
+
+    @data_storage_size_in_gb.setter
+    def data_storage_size_in_gb(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "data_storage_size_in_gb", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The shape of the target DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
+        """
+        return pulumi.get(self, "shape_name")
+
+    @shape_name.setter
+    def shape_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "shape_name", value)
+
 
 class ChannelSourceArgsDict(TypedDict):
     hostname: pulumi.Input[_builtins.str]
@@ -9631,6 +9880,50 @@ class ReplicaTelemetryConfigurationLogDestinationConfigurationArgs:
     @value.setter
     def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
+
+
+class GetBlueGreenDeploymentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetBlueGreenDeploymentsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
 
 
 class GetChannelsFilterArgsDict(TypedDict):

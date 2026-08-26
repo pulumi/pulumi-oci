@@ -41,6 +41,7 @@ namespace Pulumi.Oci.RecoveryMod
     ///             { "bar-key", "value" },
     ///         },
     ///         NsgIds = recoveryServiceSubnetNsgIds,
+    ///         SecurityAttributes = recoveryServiceSubnetSecurityAttributes,
     ///         SubnetId = testSubnet.Id,
     ///         Subnets = recoveryServiceSubnetSubnets,
     ///     });
@@ -94,6 +95,12 @@ namespace Pulumi.Oci.RecoveryMod
         /// </summary>
         [Output("nsgIds")]
         public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        [Output("securityAttributes")]
+        public Output<string> SecurityAttributes { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the recovery service subnet.
@@ -236,6 +243,12 @@ namespace Pulumi.Oci.RecoveryMod
         }
 
         /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        [Input("securityAttributes")]
+        public Input<string>? SecurityAttributes { get; set; }
+
+        /// <summary>
         /// Deprecated. One of the subnets associated with the Recovery Service subnet.
         /// </summary>
         [Input("subnetId")]
@@ -324,6 +337,12 @@ namespace Pulumi.Oci.RecoveryMod
             get => _nsgIds ?? (_nsgIds = new InputList<string>());
             set => _nsgIds = value;
         }
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        [Input("securityAttributes")]
+        public Input<string>? SecurityAttributes { get; set; }
 
         /// <summary>
         /// The current state of the recovery service subnet.

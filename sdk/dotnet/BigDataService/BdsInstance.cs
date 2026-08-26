@@ -29,6 +29,7 @@ namespace Pulumi.Oci.BigDataService
     /// {
     ///     var testBdsInstance = new Oci.BigDataService.BdsInstance("test_bds_instance", new()
     ///     {
+    ///         ClusterAdminPassword = bdsInstanceClusterAdminPassword,
     ///         ClusterPublicKey = bdsInstanceClusterPublicKey,
     ///         ClusterVersion = bdsInstanceClusterVersion,
     ///         CompartmentId = compartmentId,
@@ -113,13 +114,20 @@ namespace Pulumi.Oci.BigDataService
     ///                 Ocpus = bdsInstanceNodesShapeConfigOcpus,
     ///             },
     ///         },
+    ///         BdsCapacityReservationConfigurations = new[]
+    ///         {
+    ///             new Oci.BigDataService.Inputs.BdsInstanceBdsCapacityReservationConfigurationArgs
+    ///             {
+    ///                 BdsCapacityReservationId = testBdsCapacityReservation.Id,
+    ///                 DisplayName = bdsInstanceBdsCapacityReservationConfigurationsDisplayName,
+    ///             },
+    ///         },
     ///         BdsClusterVersionSummary = new Oci.BigDataService.Inputs.BdsInstanceBdsClusterVersionSummaryArgs
     ///         {
     ///             BdsVersion = bdsInstanceBdsClusterVersionSummaryBdsVersion,
     ///             OdhVersion = bdsInstanceBdsClusterVersionSummaryOdhVersion,
     ///         },
     ///         BootstrapScriptUrl = bdsInstanceBootstrapScriptUrl,
-    ///         ClusterAdminPassword = bdsInstanceClusterAdminPassword,
     ///         ClusterProfile = bdsInstanceClusterProfile,
     ///         DefinedTags = bdsInstanceDefinedTags,
     ///         FreeformTags = bdsInstanceFreeformTags,
@@ -132,7 +140,6 @@ namespace Pulumi.Oci.BigDataService
     ///             CidrBlock = bdsInstanceNetworkConfigCidrBlock,
     ///             IsNatGatewayRequired = bdsInstanceNetworkConfigIsNatGatewayRequired,
     ///         },
-    ///         SecretId = testSecret.Id,
     ///     });
     /// 
     /// });
@@ -150,7 +157,13 @@ namespace Pulumi.Oci.BigDataService
     public partial class BdsInstance : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Cluster version details including bds and odh version information.
+        /// Optional BDS capacity reservation configurations to associate with the cluster during creation.
+        /// </summary>
+        [Output("bdsCapacityReservationConfigurations")]
+        public Output<ImmutableArray<Outputs.BdsInstanceBdsCapacityReservationConfiguration>> BdsCapacityReservationConfigurations { get; private set; } = null!;
+
+        /// <summary>
+        /// Cluster version details including BDS and ODH version information. When this block is specified, provide at least one of `BdsVersion` or `OdhVersion`; if both values are null, the service rejects the request.
         /// </summary>
         [Output("bdsClusterVersionSummary")]
         public Output<Outputs.BdsInstanceBdsClusterVersionSummary> BdsClusterVersionSummary { get; private set; } = null!;
@@ -203,6 +216,9 @@ namespace Pulumi.Oci.BigDataService
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
+        /// <summary>
+        /// The compute-only worker node in the BDS instance
+        /// </summary>
         [Output("computeOnlyWorkerNode")]
         public Output<Outputs.BdsInstanceComputeOnlyWorkerNode?> ComputeOnlyWorkerNode { get; private set; } = null!;
 
@@ -303,7 +319,7 @@ namespace Pulumi.Oci.BigDataService
         public Output<Outputs.BdsInstanceMasterNode> MasterNode { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Additional configuration of the user's network.
+        /// Additional configuration of the user's network.
         /// </summary>
         [Output("networkConfig")]
         public Output<Outputs.BdsInstanceNetworkConfig> NetworkConfig { get; private set; } = null!;
@@ -315,7 +331,7 @@ namespace Pulumi.Oci.BigDataService
         public Output<ImmutableArray<Outputs.BdsInstanceNode>> Nodes { get; private set; } = null!;
 
         /// <summary>
-        /// Number of nodes that forming the cluster
+        /// The number of nodes that form the cluster.
         /// </summary>
         [Output("numberOfNodes")]
         public Output<int> NumberOfNodes { get; private set; } = null!;
@@ -327,7 +343,7 @@ namespace Pulumi.Oci.BigDataService
         public Output<int> NumberOfNodesRequiringMaintenanceReboot { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The version of the patch to be upated.
+        /// (Updatable) The version of the patch to be updated.
         /// </summary>
         [Output("osPatchVersion")]
         public Output<string?> OsPatchVersion { get; private set; } = null!;
@@ -342,7 +358,7 @@ namespace Pulumi.Oci.BigDataService
         public Output<ImmutableArray<string>> RemoveNodes { get; private set; } = null!;
 
         /// <summary>
-        /// The secretId for the clusterAdminPassword.
+        /// (Updatable) The secretId for the clusterAdminPassword.
         /// </summary>
         [Output("secretId")]
         public Output<string> SecretId { get; private set; } = null!;
@@ -357,7 +373,7 @@ namespace Pulumi.Oci.BigDataService
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// The time the BDS instance was created. An RFC3339 formatted datetime string
+        /// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
@@ -369,7 +385,7 @@ namespace Pulumi.Oci.BigDataService
         public Output<string> TimeEarliestCertificateExpiration { get; private set; } = null!;
 
         /// <summary>
-        /// The time the BDS instance was updated. An RFC3339 formatted datetime string
+        /// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
@@ -380,6 +396,9 @@ namespace Pulumi.Oci.BigDataService
         [Output("utilNode")]
         public Output<Outputs.BdsInstanceUtilNode> UtilNode { get; private set; } = null!;
 
+        /// <summary>
+        /// The worker node in the BDS instance
+        /// </summary>
         [Output("workerNode")]
         public Output<Outputs.BdsInstanceWorkerNode> WorkerNode { get; private set; } = null!;
 
@@ -433,8 +452,20 @@ namespace Pulumi.Oci.BigDataService
 
     public sealed class BdsInstanceArgs : global::Pulumi.ResourceArgs
     {
+        [Input("bdsCapacityReservationConfigurations")]
+        private InputList<Inputs.BdsInstanceBdsCapacityReservationConfigurationArgs>? _bdsCapacityReservationConfigurations;
+
         /// <summary>
-        /// Cluster version details including bds and odh version information.
+        /// Optional BDS capacity reservation configurations to associate with the cluster during creation.
+        /// </summary>
+        public InputList<Inputs.BdsInstanceBdsCapacityReservationConfigurationArgs> BdsCapacityReservationConfigurations
+        {
+            get => _bdsCapacityReservationConfigurations ?? (_bdsCapacityReservationConfigurations = new InputList<Inputs.BdsInstanceBdsCapacityReservationConfigurationArgs>());
+            set => _bdsCapacityReservationConfigurations = value;
+        }
+
+        /// <summary>
+        /// Cluster version details including BDS and ODH version information. When this block is specified, provide at least one of `BdsVersion` or `OdhVersion`; if both values are null, the service rejects the request.
         /// </summary>
         [Input("bdsClusterVersionSummary")]
         public Input<Inputs.BdsInstanceBdsClusterVersionSummaryArgs>? BdsClusterVersionSummary { get; set; }
@@ -497,6 +528,9 @@ namespace Pulumi.Oci.BigDataService
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        /// <summary>
+        /// The compute-only worker node in the BDS instance
+        /// </summary>
         [Input("computeOnlyWorkerNode")]
         public Input<Inputs.BdsInstanceComputeOnlyWorkerNodeArgs>? ComputeOnlyWorkerNode { get; set; }
 
@@ -609,13 +643,13 @@ namespace Pulumi.Oci.BigDataService
         public Input<Inputs.BdsInstanceMasterNodeArgs> MasterNode { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Additional configuration of the user's network.
+        /// Additional configuration of the user's network.
         /// </summary>
         [Input("networkConfig")]
         public Input<Inputs.BdsInstanceNetworkConfigArgs>? NetworkConfig { get; set; }
 
         /// <summary>
-        /// (Updatable) The version of the patch to be upated.
+        /// (Updatable) The version of the patch to be updated.
         /// </summary>
         [Input("osPatchVersion")]
         public Input<string>? OsPatchVersion { get; set; }
@@ -635,7 +669,7 @@ namespace Pulumi.Oci.BigDataService
         }
 
         /// <summary>
-        /// The secretId for the clusterAdminPassword.
+        /// (Updatable) The secretId for the clusterAdminPassword.
         /// </summary>
         [Input("secretId")]
         public Input<string>? SecretId { get; set; }
@@ -660,6 +694,9 @@ namespace Pulumi.Oci.BigDataService
         [Input("utilNode", required: true)]
         public Input<Inputs.BdsInstanceUtilNodeArgs> UtilNode { get; set; } = null!;
 
+        /// <summary>
+        /// The worker node in the BDS instance
+        /// </summary>
         [Input("workerNode", required: true)]
         public Input<Inputs.BdsInstanceWorkerNodeArgs> WorkerNode { get; set; } = null!;
 
@@ -671,8 +708,20 @@ namespace Pulumi.Oci.BigDataService
 
     public sealed class BdsInstanceState : global::Pulumi.ResourceArgs
     {
+        [Input("bdsCapacityReservationConfigurations")]
+        private InputList<Inputs.BdsInstanceBdsCapacityReservationConfigurationGetArgs>? _bdsCapacityReservationConfigurations;
+
         /// <summary>
-        /// Cluster version details including bds and odh version information.
+        /// Optional BDS capacity reservation configurations to associate with the cluster during creation.
+        /// </summary>
+        public InputList<Inputs.BdsInstanceBdsCapacityReservationConfigurationGetArgs> BdsCapacityReservationConfigurations
+        {
+            get => _bdsCapacityReservationConfigurations ?? (_bdsCapacityReservationConfigurations = new InputList<Inputs.BdsInstanceBdsCapacityReservationConfigurationGetArgs>());
+            set => _bdsCapacityReservationConfigurations = value;
+        }
+
+        /// <summary>
+        /// Cluster version details including BDS and ODH version information. When this block is specified, provide at least one of `BdsVersion` or `OdhVersion`; if both values are null, the service rejects the request.
         /// </summary>
         [Input("bdsClusterVersionSummary")]
         public Input<Inputs.BdsInstanceBdsClusterVersionSummaryGetArgs>? BdsClusterVersionSummary { get; set; }
@@ -747,6 +796,9 @@ namespace Pulumi.Oci.BigDataService
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
+        /// <summary>
+        /// The compute-only worker node in the BDS instance
+        /// </summary>
         [Input("computeOnlyWorkerNode")]
         public Input<Inputs.BdsInstanceComputeOnlyWorkerNodeGetArgs>? ComputeOnlyWorkerNode { get; set; }
 
@@ -865,7 +917,7 @@ namespace Pulumi.Oci.BigDataService
         public Input<Inputs.BdsInstanceMasterNodeGetArgs>? MasterNode { get; set; }
 
         /// <summary>
-        /// (Updatable) Additional configuration of the user's network.
+        /// Additional configuration of the user's network.
         /// </summary>
         [Input("networkConfig")]
         public Input<Inputs.BdsInstanceNetworkConfigGetArgs>? NetworkConfig { get; set; }
@@ -883,7 +935,7 @@ namespace Pulumi.Oci.BigDataService
         }
 
         /// <summary>
-        /// Number of nodes that forming the cluster
+        /// The number of nodes that form the cluster.
         /// </summary>
         [Input("numberOfNodes")]
         public Input<int>? NumberOfNodes { get; set; }
@@ -895,7 +947,7 @@ namespace Pulumi.Oci.BigDataService
         public Input<int>? NumberOfNodesRequiringMaintenanceReboot { get; set; }
 
         /// <summary>
-        /// (Updatable) The version of the patch to be upated.
+        /// (Updatable) The version of the patch to be updated.
         /// </summary>
         [Input("osPatchVersion")]
         public Input<string>? OsPatchVersion { get; set; }
@@ -915,7 +967,7 @@ namespace Pulumi.Oci.BigDataService
         }
 
         /// <summary>
-        /// The secretId for the clusterAdminPassword.
+        /// (Updatable) The secretId for the clusterAdminPassword.
         /// </summary>
         [Input("secretId")]
         public Input<string>? SecretId { get; set; }
@@ -935,7 +987,7 @@ namespace Pulumi.Oci.BigDataService
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The time the BDS instance was created. An RFC3339 formatted datetime string
+        /// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
@@ -947,7 +999,7 @@ namespace Pulumi.Oci.BigDataService
         public Input<string>? TimeEarliestCertificateExpiration { get; set; }
 
         /// <summary>
-        /// The time the BDS instance was updated. An RFC3339 formatted datetime string
+        /// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
@@ -958,6 +1010,9 @@ namespace Pulumi.Oci.BigDataService
         [Input("utilNode")]
         public Input<Inputs.BdsInstanceUtilNodeGetArgs>? UtilNode { get; set; }
 
+        /// <summary>
+        /// The worker node in the BDS instance
+        /// </summary>
         [Input("workerNode")]
         public Input<Inputs.BdsInstanceWorkerNodeGetArgs>? WorkerNode { get; set; }
 

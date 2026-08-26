@@ -3736,10 +3736,336 @@ func (o BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput) Ocpus() pulumi.I
 	}).(pulumi.IntPtrOutput)
 }
 
+type BdsCapacityReservationComputeCapacityReservations struct {
+	// (Updatable) Compute capacity reservation OCID corresponding to AD1 for a multi-AD region or FD1 for a single-AD region.
+	Domain1reservationId *string `pulumi:"domain1reservationId"`
+	// (Updatable) Compute capacity reservation OCID corresponding to AD2 for a multi-AD region or FD2 for a single-AD region.
+	Domain2reservationId *string `pulumi:"domain2reservationId"`
+	// (Updatable) Compute capacity reservation OCID corresponding to AD3 for a multi-AD region or FD3 for a single-AD region.
+	Domain3reservationId *string `pulumi:"domain3reservationId"`
+}
+
+// BdsCapacityReservationComputeCapacityReservationsInput is an input type that accepts BdsCapacityReservationComputeCapacityReservationsArgs and BdsCapacityReservationComputeCapacityReservationsOutput values.
+// You can construct a concrete instance of `BdsCapacityReservationComputeCapacityReservationsInput` via:
+//
+//	BdsCapacityReservationComputeCapacityReservationsArgs{...}
+type BdsCapacityReservationComputeCapacityReservationsInput interface {
+	pulumi.Input
+
+	ToBdsCapacityReservationComputeCapacityReservationsOutput() BdsCapacityReservationComputeCapacityReservationsOutput
+	ToBdsCapacityReservationComputeCapacityReservationsOutputWithContext(context.Context) BdsCapacityReservationComputeCapacityReservationsOutput
+}
+
+type BdsCapacityReservationComputeCapacityReservationsArgs struct {
+	// (Updatable) Compute capacity reservation OCID corresponding to AD1 for a multi-AD region or FD1 for a single-AD region.
+	Domain1reservationId pulumi.StringPtrInput `pulumi:"domain1reservationId"`
+	// (Updatable) Compute capacity reservation OCID corresponding to AD2 for a multi-AD region or FD2 for a single-AD region.
+	Domain2reservationId pulumi.StringPtrInput `pulumi:"domain2reservationId"`
+	// (Updatable) Compute capacity reservation OCID corresponding to AD3 for a multi-AD region or FD3 for a single-AD region.
+	Domain3reservationId pulumi.StringPtrInput `pulumi:"domain3reservationId"`
+}
+
+func (BdsCapacityReservationComputeCapacityReservationsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsCapacityReservationComputeCapacityReservations)(nil)).Elem()
+}
+
+func (i BdsCapacityReservationComputeCapacityReservationsArgs) ToBdsCapacityReservationComputeCapacityReservationsOutput() BdsCapacityReservationComputeCapacityReservationsOutput {
+	return i.ToBdsCapacityReservationComputeCapacityReservationsOutputWithContext(context.Background())
+}
+
+func (i BdsCapacityReservationComputeCapacityReservationsArgs) ToBdsCapacityReservationComputeCapacityReservationsOutputWithContext(ctx context.Context) BdsCapacityReservationComputeCapacityReservationsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsCapacityReservationComputeCapacityReservationsOutput)
+}
+
+func (i BdsCapacityReservationComputeCapacityReservationsArgs) ToBdsCapacityReservationComputeCapacityReservationsPtrOutput() BdsCapacityReservationComputeCapacityReservationsPtrOutput {
+	return i.ToBdsCapacityReservationComputeCapacityReservationsPtrOutputWithContext(context.Background())
+}
+
+func (i BdsCapacityReservationComputeCapacityReservationsArgs) ToBdsCapacityReservationComputeCapacityReservationsPtrOutputWithContext(ctx context.Context) BdsCapacityReservationComputeCapacityReservationsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsCapacityReservationComputeCapacityReservationsOutput).ToBdsCapacityReservationComputeCapacityReservationsPtrOutputWithContext(ctx)
+}
+
+// BdsCapacityReservationComputeCapacityReservationsPtrInput is an input type that accepts BdsCapacityReservationComputeCapacityReservationsArgs, BdsCapacityReservationComputeCapacityReservationsPtr and BdsCapacityReservationComputeCapacityReservationsPtrOutput values.
+// You can construct a concrete instance of `BdsCapacityReservationComputeCapacityReservationsPtrInput` via:
+//
+//	        BdsCapacityReservationComputeCapacityReservationsArgs{...}
+//
+//	or:
+//
+//	        nil
+type BdsCapacityReservationComputeCapacityReservationsPtrInput interface {
+	pulumi.Input
+
+	ToBdsCapacityReservationComputeCapacityReservationsPtrOutput() BdsCapacityReservationComputeCapacityReservationsPtrOutput
+	ToBdsCapacityReservationComputeCapacityReservationsPtrOutputWithContext(context.Context) BdsCapacityReservationComputeCapacityReservationsPtrOutput
+}
+
+type bdsCapacityReservationComputeCapacityReservationsPtrType BdsCapacityReservationComputeCapacityReservationsArgs
+
+func BdsCapacityReservationComputeCapacityReservationsPtr(v *BdsCapacityReservationComputeCapacityReservationsArgs) BdsCapacityReservationComputeCapacityReservationsPtrInput {
+	return (*bdsCapacityReservationComputeCapacityReservationsPtrType)(v)
+}
+
+func (*bdsCapacityReservationComputeCapacityReservationsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsCapacityReservationComputeCapacityReservations)(nil)).Elem()
+}
+
+func (i *bdsCapacityReservationComputeCapacityReservationsPtrType) ToBdsCapacityReservationComputeCapacityReservationsPtrOutput() BdsCapacityReservationComputeCapacityReservationsPtrOutput {
+	return i.ToBdsCapacityReservationComputeCapacityReservationsPtrOutputWithContext(context.Background())
+}
+
+func (i *bdsCapacityReservationComputeCapacityReservationsPtrType) ToBdsCapacityReservationComputeCapacityReservationsPtrOutputWithContext(ctx context.Context) BdsCapacityReservationComputeCapacityReservationsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsCapacityReservationComputeCapacityReservationsPtrOutput)
+}
+
+type BdsCapacityReservationComputeCapacityReservationsOutput struct{ *pulumi.OutputState }
+
+func (BdsCapacityReservationComputeCapacityReservationsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsCapacityReservationComputeCapacityReservations)(nil)).Elem()
+}
+
+func (o BdsCapacityReservationComputeCapacityReservationsOutput) ToBdsCapacityReservationComputeCapacityReservationsOutput() BdsCapacityReservationComputeCapacityReservationsOutput {
+	return o
+}
+
+func (o BdsCapacityReservationComputeCapacityReservationsOutput) ToBdsCapacityReservationComputeCapacityReservationsOutputWithContext(ctx context.Context) BdsCapacityReservationComputeCapacityReservationsOutput {
+	return o
+}
+
+func (o BdsCapacityReservationComputeCapacityReservationsOutput) ToBdsCapacityReservationComputeCapacityReservationsPtrOutput() BdsCapacityReservationComputeCapacityReservationsPtrOutput {
+	return o.ToBdsCapacityReservationComputeCapacityReservationsPtrOutputWithContext(context.Background())
+}
+
+func (o BdsCapacityReservationComputeCapacityReservationsOutput) ToBdsCapacityReservationComputeCapacityReservationsPtrOutputWithContext(ctx context.Context) BdsCapacityReservationComputeCapacityReservationsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsCapacityReservationComputeCapacityReservations) *BdsCapacityReservationComputeCapacityReservations {
+		return &v
+	}).(BdsCapacityReservationComputeCapacityReservationsPtrOutput)
+}
+
+// (Updatable) Compute capacity reservation OCID corresponding to AD1 for a multi-AD region or FD1 for a single-AD region.
+func (o BdsCapacityReservationComputeCapacityReservationsOutput) Domain1reservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsCapacityReservationComputeCapacityReservations) *string { return v.Domain1reservationId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Compute capacity reservation OCID corresponding to AD2 for a multi-AD region or FD2 for a single-AD region.
+func (o BdsCapacityReservationComputeCapacityReservationsOutput) Domain2reservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsCapacityReservationComputeCapacityReservations) *string { return v.Domain2reservationId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Compute capacity reservation OCID corresponding to AD3 for a multi-AD region or FD3 for a single-AD region.
+func (o BdsCapacityReservationComputeCapacityReservationsOutput) Domain3reservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsCapacityReservationComputeCapacityReservations) *string { return v.Domain3reservationId }).(pulumi.StringPtrOutput)
+}
+
+type BdsCapacityReservationComputeCapacityReservationsPtrOutput struct{ *pulumi.OutputState }
+
+func (BdsCapacityReservationComputeCapacityReservationsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsCapacityReservationComputeCapacityReservations)(nil)).Elem()
+}
+
+func (o BdsCapacityReservationComputeCapacityReservationsPtrOutput) ToBdsCapacityReservationComputeCapacityReservationsPtrOutput() BdsCapacityReservationComputeCapacityReservationsPtrOutput {
+	return o
+}
+
+func (o BdsCapacityReservationComputeCapacityReservationsPtrOutput) ToBdsCapacityReservationComputeCapacityReservationsPtrOutputWithContext(ctx context.Context) BdsCapacityReservationComputeCapacityReservationsPtrOutput {
+	return o
+}
+
+func (o BdsCapacityReservationComputeCapacityReservationsPtrOutput) Elem() BdsCapacityReservationComputeCapacityReservationsOutput {
+	return o.ApplyT(func(v *BdsCapacityReservationComputeCapacityReservations) BdsCapacityReservationComputeCapacityReservations {
+		if v != nil {
+			return *v
+		}
+		var ret BdsCapacityReservationComputeCapacityReservations
+		return ret
+	}).(BdsCapacityReservationComputeCapacityReservationsOutput)
+}
+
+// (Updatable) Compute capacity reservation OCID corresponding to AD1 for a multi-AD region or FD1 for a single-AD region.
+func (o BdsCapacityReservationComputeCapacityReservationsPtrOutput) Domain1reservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsCapacityReservationComputeCapacityReservations) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Domain1reservationId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Compute capacity reservation OCID corresponding to AD2 for a multi-AD region or FD2 for a single-AD region.
+func (o BdsCapacityReservationComputeCapacityReservationsPtrOutput) Domain2reservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsCapacityReservationComputeCapacityReservations) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Domain2reservationId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Compute capacity reservation OCID corresponding to AD3 for a multi-AD region or FD3 for a single-AD region.
+func (o BdsCapacityReservationComputeCapacityReservationsPtrOutput) Domain3reservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsCapacityReservationComputeCapacityReservations) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Domain3reservationId
+	}).(pulumi.StringPtrOutput)
+}
+
+type BdsInstanceBdsCapacityReservationConfigurationType struct {
+	// The OCID of the BDS capacity reservation to associate with the BDS cluster.
+	BdsCapacityReservationId string `pulumi:"bdsCapacityReservationId"`
+	// The OCID of the BDS cluster associated with the BDS capacity reservation.
+	BdsInstanceId *string `pulumi:"bdsInstanceId"`
+	// A user-friendly name for the BDS capacity reservation configuration.
+	DisplayName string `pulumi:"displayName"`
+	// The OCID of the Big Data Service resource.
+	Id *string `pulumi:"id"`
+	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+	State *string `pulumi:"state"`
+	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated *string `pulumi:"timeUpdated"`
+}
+
+// BdsInstanceBdsCapacityReservationConfigurationTypeInput is an input type that accepts BdsInstanceBdsCapacityReservationConfigurationTypeArgs and BdsInstanceBdsCapacityReservationConfigurationTypeOutput values.
+// You can construct a concrete instance of `BdsInstanceBdsCapacityReservationConfigurationTypeInput` via:
+//
+//	BdsInstanceBdsCapacityReservationConfigurationTypeArgs{...}
+type BdsInstanceBdsCapacityReservationConfigurationTypeInput interface {
+	pulumi.Input
+
+	ToBdsInstanceBdsCapacityReservationConfigurationTypeOutput() BdsInstanceBdsCapacityReservationConfigurationTypeOutput
+	ToBdsInstanceBdsCapacityReservationConfigurationTypeOutputWithContext(context.Context) BdsInstanceBdsCapacityReservationConfigurationTypeOutput
+}
+
+type BdsInstanceBdsCapacityReservationConfigurationTypeArgs struct {
+	// The OCID of the BDS capacity reservation to associate with the BDS cluster.
+	BdsCapacityReservationId pulumi.StringInput `pulumi:"bdsCapacityReservationId"`
+	// The OCID of the BDS cluster associated with the BDS capacity reservation.
+	BdsInstanceId pulumi.StringPtrInput `pulumi:"bdsInstanceId"`
+	// A user-friendly name for the BDS capacity reservation configuration.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The OCID of the Big Data Service resource.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+	State pulumi.StringPtrInput `pulumi:"state"`
+	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
+}
+
+func (BdsInstanceBdsCapacityReservationConfigurationTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceBdsCapacityReservationConfigurationType)(nil)).Elem()
+}
+
+func (i BdsInstanceBdsCapacityReservationConfigurationTypeArgs) ToBdsInstanceBdsCapacityReservationConfigurationTypeOutput() BdsInstanceBdsCapacityReservationConfigurationTypeOutput {
+	return i.ToBdsInstanceBdsCapacityReservationConfigurationTypeOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceBdsCapacityReservationConfigurationTypeArgs) ToBdsInstanceBdsCapacityReservationConfigurationTypeOutputWithContext(ctx context.Context) BdsInstanceBdsCapacityReservationConfigurationTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceBdsCapacityReservationConfigurationTypeOutput)
+}
+
+// BdsInstanceBdsCapacityReservationConfigurationTypeArrayInput is an input type that accepts BdsInstanceBdsCapacityReservationConfigurationTypeArray and BdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput values.
+// You can construct a concrete instance of `BdsInstanceBdsCapacityReservationConfigurationTypeArrayInput` via:
+//
+//	BdsInstanceBdsCapacityReservationConfigurationTypeArray{ BdsInstanceBdsCapacityReservationConfigurationTypeArgs{...} }
+type BdsInstanceBdsCapacityReservationConfigurationTypeArrayInput interface {
+	pulumi.Input
+
+	ToBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput() BdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput
+	ToBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutputWithContext(context.Context) BdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput
+}
+
+type BdsInstanceBdsCapacityReservationConfigurationTypeArray []BdsInstanceBdsCapacityReservationConfigurationTypeInput
+
+func (BdsInstanceBdsCapacityReservationConfigurationTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BdsInstanceBdsCapacityReservationConfigurationType)(nil)).Elem()
+}
+
+func (i BdsInstanceBdsCapacityReservationConfigurationTypeArray) ToBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput() BdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput {
+	return i.ToBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceBdsCapacityReservationConfigurationTypeArray) ToBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutputWithContext(ctx context.Context) BdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput)
+}
+
+type BdsInstanceBdsCapacityReservationConfigurationTypeOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceBdsCapacityReservationConfigurationTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceBdsCapacityReservationConfigurationType)(nil)).Elem()
+}
+
+func (o BdsInstanceBdsCapacityReservationConfigurationTypeOutput) ToBdsInstanceBdsCapacityReservationConfigurationTypeOutput() BdsInstanceBdsCapacityReservationConfigurationTypeOutput {
+	return o
+}
+
+func (o BdsInstanceBdsCapacityReservationConfigurationTypeOutput) ToBdsInstanceBdsCapacityReservationConfigurationTypeOutputWithContext(ctx context.Context) BdsInstanceBdsCapacityReservationConfigurationTypeOutput {
+	return o
+}
+
+// The OCID of the BDS capacity reservation to associate with the BDS cluster.
+func (o BdsInstanceBdsCapacityReservationConfigurationTypeOutput) BdsCapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v BdsInstanceBdsCapacityReservationConfigurationType) string { return v.BdsCapacityReservationId }).(pulumi.StringOutput)
+}
+
+// The OCID of the BDS cluster associated with the BDS capacity reservation.
+func (o BdsInstanceBdsCapacityReservationConfigurationTypeOutput) BdsInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceBdsCapacityReservationConfigurationType) *string { return v.BdsInstanceId }).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the BDS capacity reservation configuration.
+func (o BdsInstanceBdsCapacityReservationConfigurationTypeOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v BdsInstanceBdsCapacityReservationConfigurationType) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The OCID of the Big Data Service resource.
+func (o BdsInstanceBdsCapacityReservationConfigurationTypeOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceBdsCapacityReservationConfigurationType) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+func (o BdsInstanceBdsCapacityReservationConfigurationTypeOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceBdsCapacityReservationConfigurationType) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+func (o BdsInstanceBdsCapacityReservationConfigurationTypeOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceBdsCapacityReservationConfigurationType) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+func (o BdsInstanceBdsCapacityReservationConfigurationTypeOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceBdsCapacityReservationConfigurationType) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
+}
+
+type BdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BdsInstanceBdsCapacityReservationConfigurationType)(nil)).Elem()
+}
+
+func (o BdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput) ToBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput() BdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput {
+	return o
+}
+
+func (o BdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput) ToBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutputWithContext(ctx context.Context) BdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput {
+	return o
+}
+
+func (o BdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput) Index(i pulumi.IntInput) BdsInstanceBdsCapacityReservationConfigurationTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BdsInstanceBdsCapacityReservationConfigurationType {
+		return vs[0].([]BdsInstanceBdsCapacityReservationConfigurationType)[vs[1].(int)]
+	}).(BdsInstanceBdsCapacityReservationConfigurationTypeOutput)
+}
+
 type BdsInstanceBdsClusterVersionSummary struct {
-	// BDS version to be used for cluster creation
-	BdsVersion string `pulumi:"bdsVersion"`
-	// ODH version to be used for cluster creation
+	// BDS version to be used for cluster creation.
+	BdsVersion *string `pulumi:"bdsVersion"`
+	// ODH version to be used for cluster creation.
 	OdhVersion *string `pulumi:"odhVersion"`
 }
 
@@ -3755,9 +4081,9 @@ type BdsInstanceBdsClusterVersionSummaryInput interface {
 }
 
 type BdsInstanceBdsClusterVersionSummaryArgs struct {
-	// BDS version to be used for cluster creation
-	BdsVersion pulumi.StringInput `pulumi:"bdsVersion"`
-	// ODH version to be used for cluster creation
+	// BDS version to be used for cluster creation.
+	BdsVersion pulumi.StringPtrInput `pulumi:"bdsVersion"`
+	// ODH version to be used for cluster creation.
 	OdhVersion pulumi.StringPtrInput `pulumi:"odhVersion"`
 }
 
@@ -3838,12 +4164,12 @@ func (o BdsInstanceBdsClusterVersionSummaryOutput) ToBdsInstanceBdsClusterVersio
 	}).(BdsInstanceBdsClusterVersionSummaryPtrOutput)
 }
 
-// BDS version to be used for cluster creation
-func (o BdsInstanceBdsClusterVersionSummaryOutput) BdsVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v BdsInstanceBdsClusterVersionSummary) string { return v.BdsVersion }).(pulumi.StringOutput)
+// BDS version to be used for cluster creation.
+func (o BdsInstanceBdsClusterVersionSummaryOutput) BdsVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceBdsClusterVersionSummary) *string { return v.BdsVersion }).(pulumi.StringPtrOutput)
 }
 
-// ODH version to be used for cluster creation
+// ODH version to be used for cluster creation.
 func (o BdsInstanceBdsClusterVersionSummaryOutput) OdhVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceBdsClusterVersionSummary) *string { return v.OdhVersion }).(pulumi.StringPtrOutput)
 }
@@ -3872,17 +4198,17 @@ func (o BdsInstanceBdsClusterVersionSummaryPtrOutput) Elem() BdsInstanceBdsClust
 	}).(BdsInstanceBdsClusterVersionSummaryOutput)
 }
 
-// BDS version to be used for cluster creation
+// BDS version to be used for cluster creation.
 func (o BdsInstanceBdsClusterVersionSummaryPtrOutput) BdsVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceBdsClusterVersionSummary) *string {
 		if v == nil {
 			return nil
 		}
-		return &v.BdsVersion
+		return v.BdsVersion
 	}).(pulumi.StringPtrOutput)
 }
 
-// ODH version to be used for cluster creation
+// ODH version to be used for cluster creation.
 func (o BdsInstanceBdsClusterVersionSummaryPtrOutput) OdhVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceBdsClusterVersionSummary) *string {
 		if v == nil {
@@ -3895,7 +4221,7 @@ func (o BdsInstanceBdsClusterVersionSummaryPtrOutput) OdhVersion() pulumi.String
 type BdsInstanceCloudSqlDetail struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs *string `pulumi:"blockVolumeSizeInGbs"`
-	// IP address of the node
+	// IP address of the node.
 	IpAddress *string `pulumi:"ipAddress"`
 	// Boolean flag specifying whether or not are Kerberos principals mapped to database users.
 	IsKerberosMappedToDatabaseUsers *bool `pulumi:"isKerberosMappedToDatabaseUsers"`
@@ -3925,7 +4251,7 @@ type BdsInstanceCloudSqlDetailInput interface {
 type BdsInstanceCloudSqlDetailArgs struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs pulumi.StringPtrInput `pulumi:"blockVolumeSizeInGbs"`
-	// IP address of the node
+	// IP address of the node.
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// Boolean flag specifying whether or not are Kerberos principals mapped to database users.
 	IsKerberosMappedToDatabaseUsers pulumi.BoolPtrInput `pulumi:"isKerberosMappedToDatabaseUsers"`
@@ -3997,7 +4323,7 @@ func (o BdsInstanceCloudSqlDetailOutput) BlockVolumeSizeInGbs() pulumi.StringPtr
 	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) *string { return v.BlockVolumeSizeInGbs }).(pulumi.StringPtrOutput)
 }
 
-// IP address of the node
+// IP address of the node.
 func (o BdsInstanceCloudSqlDetailOutput) IpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
@@ -4185,7 +4511,7 @@ type BdsInstanceClusterDetail struct {
 	OdhVersion *string `pulumi:"odhVersion"`
 	// BDS-assigned Operating System version for the node.
 	OsVersion *string `pulumi:"osVersion"`
-	// The time the BDS instance was created. An RFC3339 formatted datetime string
+	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
 	TimeRefreshed *string `pulumi:"timeRefreshed"`
@@ -4229,7 +4555,7 @@ type BdsInstanceClusterDetailArgs struct {
 	OdhVersion pulumi.StringPtrInput `pulumi:"odhVersion"`
 	// BDS-assigned Operating System version for the node.
 	OsVersion pulumi.StringPtrInput `pulumi:"osVersion"`
-	// The time the BDS instance was created. An RFC3339 formatted datetime string
+	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
 	TimeRefreshed pulumi.StringPtrInput `pulumi:"timeRefreshed"`
@@ -4351,7 +4677,7 @@ func (o BdsInstanceClusterDetailOutput) OsVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.OsVersion }).(pulumi.StringPtrOutput)
 }
 
-// The time the BDS instance was created. An RFC3339 formatted datetime string
+// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 func (o BdsInstanceClusterDetailOutput) TimeCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
@@ -4384,10 +4710,11 @@ func (o BdsInstanceClusterDetailArrayOutput) Index(i pulumi.IntInput) BdsInstanc
 type BdsInstanceComputeOnlyWorkerNode struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs *string `pulumi:"blockVolumeSizeInGbs"`
-	// Number of nodes that forming the cluster
+	// The amount of worker nodes should be created
 	NumberOfNodes int `pulumi:"numberOfNodes"`
 	// Shape of the node
-	Shape       string                                       `pulumi:"shape"`
+	Shape string `pulumi:"shape"`
+	// The shape configuration requested for the node.
 	ShapeConfig *BdsInstanceComputeOnlyWorkerNodeShapeConfig `pulumi:"shapeConfig"`
 	// The OCID of the subnet in which the node should be created
 	SubnetId string `pulumi:"subnetId"`
@@ -4407,10 +4734,11 @@ type BdsInstanceComputeOnlyWorkerNodeInput interface {
 type BdsInstanceComputeOnlyWorkerNodeArgs struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs pulumi.StringPtrInput `pulumi:"blockVolumeSizeInGbs"`
-	// Number of nodes that forming the cluster
+	// The amount of worker nodes should be created
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
 	// Shape of the node
-	Shape       pulumi.StringInput                                  `pulumi:"shape"`
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// The shape configuration requested for the node.
 	ShapeConfig BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrInput `pulumi:"shapeConfig"`
 	// The OCID of the subnet in which the node should be created
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
@@ -4498,7 +4826,7 @@ func (o BdsInstanceComputeOnlyWorkerNodeOutput) BlockVolumeSizeInGbs() pulumi.St
 	return o.ApplyT(func(v BdsInstanceComputeOnlyWorkerNode) *string { return v.BlockVolumeSizeInGbs }).(pulumi.StringPtrOutput)
 }
 
-// Number of nodes that forming the cluster
+// The amount of worker nodes should be created
 func (o BdsInstanceComputeOnlyWorkerNodeOutput) NumberOfNodes() pulumi.IntOutput {
 	return o.ApplyT(func(v BdsInstanceComputeOnlyWorkerNode) int { return v.NumberOfNodes }).(pulumi.IntOutput)
 }
@@ -4508,6 +4836,7 @@ func (o BdsInstanceComputeOnlyWorkerNodeOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v BdsInstanceComputeOnlyWorkerNode) string { return v.Shape }).(pulumi.StringOutput)
 }
 
+// The shape configuration requested for the node.
 func (o BdsInstanceComputeOnlyWorkerNodeOutput) ShapeConfig() BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput {
 	return o.ApplyT(func(v BdsInstanceComputeOnlyWorkerNode) *BdsInstanceComputeOnlyWorkerNodeShapeConfig {
 		return v.ShapeConfig
@@ -4553,7 +4882,7 @@ func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) BlockVolumeSizeInGbs() pulumi
 	}).(pulumi.StringPtrOutput)
 }
 
-// Number of nodes that forming the cluster
+// The amount of worker nodes should be created
 func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) NumberOfNodes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceComputeOnlyWorkerNode) *int {
 		if v == nil {
@@ -4573,6 +4902,7 @@ func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) Shape() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
+// The shape configuration requested for the node.
 func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) ShapeConfig() BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceComputeOnlyWorkerNode) *BdsInstanceComputeOnlyWorkerNodeShapeConfig {
 		if v == nil {
@@ -4593,7 +4923,7 @@ func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) SubnetId() pulumi.StringPtrOu
 }
 
 type BdsInstanceComputeOnlyWorkerNodeShapeConfig struct {
-	// The total amount of memory available to the node, in gigabytes.
+	// The total amount of memory available to the node, in gigabytes
 	MemoryInGbs *int `pulumi:"memoryInGbs"`
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes *int `pulumi:"nvmes"`
@@ -4613,7 +4943,7 @@ type BdsInstanceComputeOnlyWorkerNodeShapeConfigInput interface {
 }
 
 type BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs struct {
-	// The total amount of memory available to the node, in gigabytes.
+	// The total amount of memory available to the node, in gigabytes
 	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
@@ -4698,7 +5028,7 @@ func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ToBdsInstanceComputeO
 	}).(BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput)
 }
 
-// The total amount of memory available to the node, in gigabytes.
+// The total amount of memory available to the node, in gigabytes
 func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) MemoryInGbs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceComputeOnlyWorkerNodeShapeConfig) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
 }
@@ -4737,7 +5067,7 @@ func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) Elem() BdsInstance
 	}).(BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput)
 }
 
-// The total amount of memory available to the node, in gigabytes.
+// The total amount of memory available to the node, in gigabytes
 func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) MemoryInGbs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceComputeOnlyWorkerNodeShapeConfig) *int {
 		if v == nil {
@@ -4770,12 +5100,12 @@ func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) Ocpus() pulumi.Int
 type BdsInstanceEdgeNode struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs *string `pulumi:"blockVolumeSizeInGbs"`
-	// Number of nodes that forming the cluster
+	// The number of nodes that form the cluster.
 	NumberOfNodes int `pulumi:"numberOfNodes"`
-	// Shape of the node
+	// Shape of the node.
 	Shape       string                          `pulumi:"shape"`
 	ShapeConfig *BdsInstanceEdgeNodeShapeConfig `pulumi:"shapeConfig"`
-	// The OCID of the subnet in which the node should be created
+	// The OCID of the subnet in which the node is to be created.
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -4793,12 +5123,12 @@ type BdsInstanceEdgeNodeInput interface {
 type BdsInstanceEdgeNodeArgs struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs pulumi.StringPtrInput `pulumi:"blockVolumeSizeInGbs"`
-	// Number of nodes that forming the cluster
+	// The number of nodes that form the cluster.
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
-	// Shape of the node
+	// Shape of the node.
 	Shape       pulumi.StringInput                     `pulumi:"shape"`
 	ShapeConfig BdsInstanceEdgeNodeShapeConfigPtrInput `pulumi:"shapeConfig"`
-	// The OCID of the subnet in which the node should be created
+	// The OCID of the subnet in which the node is to be created.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -4884,12 +5214,12 @@ func (o BdsInstanceEdgeNodeOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOutput
 	return o.ApplyT(func(v BdsInstanceEdgeNode) *string { return v.BlockVolumeSizeInGbs }).(pulumi.StringPtrOutput)
 }
 
-// Number of nodes that forming the cluster
+// The number of nodes that form the cluster.
 func (o BdsInstanceEdgeNodeOutput) NumberOfNodes() pulumi.IntOutput {
 	return o.ApplyT(func(v BdsInstanceEdgeNode) int { return v.NumberOfNodes }).(pulumi.IntOutput)
 }
 
-// Shape of the node
+// Shape of the node.
 func (o BdsInstanceEdgeNodeOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v BdsInstanceEdgeNode) string { return v.Shape }).(pulumi.StringOutput)
 }
@@ -4898,7 +5228,7 @@ func (o BdsInstanceEdgeNodeOutput) ShapeConfig() BdsInstanceEdgeNodeShapeConfigP
 	return o.ApplyT(func(v BdsInstanceEdgeNode) *BdsInstanceEdgeNodeShapeConfig { return v.ShapeConfig }).(BdsInstanceEdgeNodeShapeConfigPtrOutput)
 }
 
-// The OCID of the subnet in which the node should be created
+// The OCID of the subnet in which the node is to be created.
 func (o BdsInstanceEdgeNodeOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v BdsInstanceEdgeNode) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -4937,7 +5267,7 @@ func (o BdsInstanceEdgeNodePtrOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// Number of nodes that forming the cluster
+// The number of nodes that form the cluster.
 func (o BdsInstanceEdgeNodePtrOutput) NumberOfNodes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceEdgeNode) *int {
 		if v == nil {
@@ -4947,7 +5277,7 @@ func (o BdsInstanceEdgeNodePtrOutput) NumberOfNodes() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// Shape of the node
+// Shape of the node.
 func (o BdsInstanceEdgeNodePtrOutput) Shape() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceEdgeNode) *string {
 		if v == nil {
@@ -4966,7 +5296,7 @@ func (o BdsInstanceEdgeNodePtrOutput) ShapeConfig() BdsInstanceEdgeNodeShapeConf
 	}).(BdsInstanceEdgeNodeShapeConfigPtrOutput)
 }
 
-// The OCID of the subnet in which the node should be created
+// The OCID of the subnet in which the node is to be created.
 func (o BdsInstanceEdgeNodePtrOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceEdgeNode) *string {
 		if v == nil {
@@ -5960,6 +6290,8 @@ type BdsInstanceKafkaBrokerNodeShapeConfig struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus *int `pulumi:"ocpus"`
 }
 
@@ -5980,6 +6312,8 @@ type BdsInstanceKafkaBrokerNodeShapeConfigArgs struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
 }
 
@@ -6071,6 +6405,8 @@ func (o BdsInstanceKafkaBrokerNodeShapeConfigOutput) Nvmes() pulumi.IntPtrOutput
 }
 
 // The total number of OCPUs available to the node.
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceKafkaBrokerNodeShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceKafkaBrokerNodeShapeConfig) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
 }
@@ -6120,6 +6456,8 @@ func (o BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput) Nvmes() pulumi.IntPtrOut
 }
 
 // The total number of OCPUs available to the node.
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceKafkaBrokerNodeShapeConfig) *int {
 		if v == nil {
@@ -6518,9 +6856,9 @@ func (o BdsInstanceMasterNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
 }
 
 type BdsInstanceNetworkConfig struct {
-	// (Updatable) The CIDR IP address block of the VCN.
+	// The CIDR IP address block of the VCN.
 	CidrBlock *string `pulumi:"cidrBlock"`
-	// (Updatable) A boolean flag whether to configure a NAT gateway.
+	// A boolean flag whether to configure a NAT gateway.
 	IsNatGatewayRequired *bool `pulumi:"isNatGatewayRequired"`
 }
 
@@ -6536,9 +6874,9 @@ type BdsInstanceNetworkConfigInput interface {
 }
 
 type BdsInstanceNetworkConfigArgs struct {
-	// (Updatable) The CIDR IP address block of the VCN.
+	// The CIDR IP address block of the VCN.
 	CidrBlock pulumi.StringPtrInput `pulumi:"cidrBlock"`
-	// (Updatable) A boolean flag whether to configure a NAT gateway.
+	// A boolean flag whether to configure a NAT gateway.
 	IsNatGatewayRequired pulumi.BoolPtrInput `pulumi:"isNatGatewayRequired"`
 }
 
@@ -6619,12 +6957,12 @@ func (o BdsInstanceNetworkConfigOutput) ToBdsInstanceNetworkConfigPtrOutputWithC
 	}).(BdsInstanceNetworkConfigPtrOutput)
 }
 
-// (Updatable) The CIDR IP address block of the VCN.
+// The CIDR IP address block of the VCN.
 func (o BdsInstanceNetworkConfigOutput) CidrBlock() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNetworkConfig) *string { return v.CidrBlock }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A boolean flag whether to configure a NAT gateway.
+// A boolean flag whether to configure a NAT gateway.
 func (o BdsInstanceNetworkConfigOutput) IsNatGatewayRequired() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNetworkConfig) *bool { return v.IsNatGatewayRequired }).(pulumi.BoolPtrOutput)
 }
@@ -6653,7 +6991,7 @@ func (o BdsInstanceNetworkConfigPtrOutput) Elem() BdsInstanceNetworkConfigOutput
 	}).(BdsInstanceNetworkConfigOutput)
 }
 
-// (Updatable) The CIDR IP address block of the VCN.
+// The CIDR IP address block of the VCN.
 func (o BdsInstanceNetworkConfigPtrOutput) CidrBlock() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceNetworkConfig) *string {
 		if v == nil {
@@ -6663,7 +7001,7 @@ func (o BdsInstanceNetworkConfigPtrOutput) CidrBlock() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A boolean flag whether to configure a NAT gateway.
+// A boolean flag whether to configure a NAT gateway.
 func (o BdsInstanceNetworkConfigPtrOutput) IsNatGatewayRequired() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceNetworkConfig) *bool {
 		if v == nil {
@@ -6676,19 +7014,19 @@ func (o BdsInstanceNetworkConfigPtrOutput) IsNatGatewayRequired() pulumi.BoolPtr
 type BdsInstanceNode struct {
 	// The list of block volumes attached to a given node.
 	AttachedBlockVolumes []BdsInstanceNodeAttachedBlockVolume `pulumi:"attachedBlockVolumes"`
-	// The name of the availability domain the node is running in
+	// The name of the availability domain in which the node is running.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// (Updatable) Name of the BDS instance
 	DisplayName *string `pulumi:"displayName"`
-	// The name of the fault domain the node is running in
+	// The name of the fault domain in which the node is running.
 	FaultDomain *string `pulumi:"faultDomain"`
-	// The fully-qualified hostname (FQDN) of the node
+	// The fully-qualified hostname (FQDN) of the node.
 	Hostname *string `pulumi:"hostname"`
-	// The OCID of the image from which the node was created
+	// The OCID of the image from which the node was created.
 	ImageId *string `pulumi:"imageId"`
-	// The OCID of the underlying compute instance
+	// The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
 	InstanceId *string `pulumi:"instanceId"`
-	// IP address of the node
+	// IP address of the node.
 	IpAddress *string `pulumi:"ipAddress"`
 	// Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
 	IsRebootRequired *bool `pulumi:"isRebootRequired"`
@@ -6708,13 +7046,13 @@ type BdsInstanceNode struct {
 	OsVersion *string `pulumi:"osVersion"`
 	// (Updatable) Shape of the node.
 	Shape *string `pulumi:"shape"`
-	// The fingerprint of the SSH key used for node access
+	// The fingerprint of the SSH key used for node access.
 	SshFingerprint *string `pulumi:"sshFingerprint"`
-	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
+	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State *string `pulumi:"state"`
 	// The OCID of the subnet in which the node will be created.
 	SubnetId *string `pulumi:"subnetId"`
-	// The time the BDS instance was created. An RFC3339 formatted datetime string
+	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
 	TimeMaintenanceRebootDue *string `pulumi:"timeMaintenanceRebootDue"`
@@ -6734,19 +7072,19 @@ type BdsInstanceNodeInput interface {
 type BdsInstanceNodeArgs struct {
 	// The list of block volumes attached to a given node.
 	AttachedBlockVolumes BdsInstanceNodeAttachedBlockVolumeArrayInput `pulumi:"attachedBlockVolumes"`
-	// The name of the availability domain the node is running in
+	// The name of the availability domain in which the node is running.
 	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// (Updatable) Name of the BDS instance
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// The name of the fault domain the node is running in
+	// The name of the fault domain in which the node is running.
 	FaultDomain pulumi.StringPtrInput `pulumi:"faultDomain"`
-	// The fully-qualified hostname (FQDN) of the node
+	// The fully-qualified hostname (FQDN) of the node.
 	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
-	// The OCID of the image from which the node was created
+	// The OCID of the image from which the node was created.
 	ImageId pulumi.StringPtrInput `pulumi:"imageId"`
-	// The OCID of the underlying compute instance
+	// The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
-	// IP address of the node
+	// IP address of the node.
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
 	IsRebootRequired pulumi.BoolPtrInput `pulumi:"isRebootRequired"`
@@ -6766,13 +7104,13 @@ type BdsInstanceNodeArgs struct {
 	OsVersion pulumi.StringPtrInput `pulumi:"osVersion"`
 	// (Updatable) Shape of the node.
 	Shape pulumi.StringPtrInput `pulumi:"shape"`
-	// The fingerprint of the SSH key used for node access
+	// The fingerprint of the SSH key used for node access.
 	SshFingerprint pulumi.StringPtrInput `pulumi:"sshFingerprint"`
-	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
+	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// The OCID of the subnet in which the node will be created.
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
-	// The time the BDS instance was created. An RFC3339 formatted datetime string
+	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
 	TimeMaintenanceRebootDue pulumi.StringPtrInput `pulumi:"timeMaintenanceRebootDue"`
@@ -6834,7 +7172,7 @@ func (o BdsInstanceNodeOutput) AttachedBlockVolumes() BdsInstanceNodeAttachedBlo
 	return o.ApplyT(func(v BdsInstanceNode) []BdsInstanceNodeAttachedBlockVolume { return v.AttachedBlockVolumes }).(BdsInstanceNodeAttachedBlockVolumeArrayOutput)
 }
 
-// The name of the availability domain the node is running in
+// The name of the availability domain in which the node is running.
 func (o BdsInstanceNodeOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
@@ -6844,27 +7182,27 @@ func (o BdsInstanceNodeOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// The name of the fault domain the node is running in
+// The name of the fault domain in which the node is running.
 func (o BdsInstanceNodeOutput) FaultDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.FaultDomain }).(pulumi.StringPtrOutput)
 }
 
-// The fully-qualified hostname (FQDN) of the node
+// The fully-qualified hostname (FQDN) of the node.
 func (o BdsInstanceNodeOutput) Hostname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the image from which the node was created
+// The OCID of the image from which the node was created.
 func (o BdsInstanceNodeOutput) ImageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.ImageId }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the underlying compute instance
+// The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
 func (o BdsInstanceNodeOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
-// IP address of the node
+// IP address of the node.
 func (o BdsInstanceNodeOutput) IpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
@@ -6914,12 +7252,12 @@ func (o BdsInstanceNodeOutput) Shape() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
-// The fingerprint of the SSH key used for node access
+// The fingerprint of the SSH key used for node access.
 func (o BdsInstanceNodeOutput) SshFingerprint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.SshFingerprint }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
+// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 func (o BdsInstanceNodeOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.State }).(pulumi.StringPtrOutput)
 }
@@ -6929,7 +7267,7 @@ func (o BdsInstanceNodeOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
-// The time the BDS instance was created. An RFC3339 formatted datetime string
+// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 func (o BdsInstanceNodeOutput) TimeCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
@@ -8282,9 +8620,9 @@ func (o BdsInstanceStartClusterShapeConfigArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig struct {
-	// BDS instance node type
+	// Cluster node type.
 	NodeType *string `pulumi:"nodeType"`
-	// Shape of the node
+	// Shape of the node.
 	Shape *string `pulumi:"shape"`
 }
 
@@ -8300,9 +8638,9 @@ type BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigInput interface {
 }
 
 type BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs struct {
-	// BDS instance node type
+	// Cluster node type.
 	NodeType pulumi.StringPtrInput `pulumi:"nodeType"`
-	// Shape of the node
+	// Shape of the node.
 	Shape pulumi.StringPtrInput `pulumi:"shape"`
 }
 
@@ -8357,12 +8695,12 @@ func (o BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput) ToBdsInstan
 	return o
 }
 
-// BDS instance node type
+// Cluster node type.
 func (o BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput) NodeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig) *string { return v.NodeType }).(pulumi.StringPtrOutput)
 }
 
-// Shape of the node
+// Shape of the node.
 func (o BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput) Shape() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
@@ -8778,10 +9116,11 @@ func (o BdsInstanceUtilNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
 type BdsInstanceWorkerNode struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs *string `pulumi:"blockVolumeSizeInGbs"`
-	// Number of nodes that forming the cluster
+	// The amount of worker nodes should be created, at least be 3.
 	NumberOfNodes int `pulumi:"numberOfNodes"`
 	// Shape of the node
-	Shape       string                            `pulumi:"shape"`
+	Shape string `pulumi:"shape"`
+	// The shape configuration requested for the node.
 	ShapeConfig *BdsInstanceWorkerNodeShapeConfig `pulumi:"shapeConfig"`
 	// The OCID of the subnet in which the node should be created
 	SubnetId string `pulumi:"subnetId"`
@@ -8801,10 +9140,11 @@ type BdsInstanceWorkerNodeInput interface {
 type BdsInstanceWorkerNodeArgs struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs pulumi.StringPtrInput `pulumi:"blockVolumeSizeInGbs"`
-	// Number of nodes that forming the cluster
+	// The amount of worker nodes should be created, at least be 3.
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
 	// Shape of the node
-	Shape       pulumi.StringInput                       `pulumi:"shape"`
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// The shape configuration requested for the node.
 	ShapeConfig BdsInstanceWorkerNodeShapeConfigPtrInput `pulumi:"shapeConfig"`
 	// The OCID of the subnet in which the node should be created
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
@@ -8892,7 +9232,7 @@ func (o BdsInstanceWorkerNodeOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOutp
 	return o.ApplyT(func(v BdsInstanceWorkerNode) *string { return v.BlockVolumeSizeInGbs }).(pulumi.StringPtrOutput)
 }
 
-// Number of nodes that forming the cluster
+// The amount of worker nodes should be created, at least be 3.
 func (o BdsInstanceWorkerNodeOutput) NumberOfNodes() pulumi.IntOutput {
 	return o.ApplyT(func(v BdsInstanceWorkerNode) int { return v.NumberOfNodes }).(pulumi.IntOutput)
 }
@@ -8902,6 +9242,7 @@ func (o BdsInstanceWorkerNodeOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v BdsInstanceWorkerNode) string { return v.Shape }).(pulumi.StringOutput)
 }
 
+// The shape configuration requested for the node.
 func (o BdsInstanceWorkerNodeOutput) ShapeConfig() BdsInstanceWorkerNodeShapeConfigPtrOutput {
 	return o.ApplyT(func(v BdsInstanceWorkerNode) *BdsInstanceWorkerNodeShapeConfig { return v.ShapeConfig }).(BdsInstanceWorkerNodeShapeConfigPtrOutput)
 }
@@ -8945,7 +9286,7 @@ func (o BdsInstanceWorkerNodePtrOutput) BlockVolumeSizeInGbs() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// Number of nodes that forming the cluster
+// The amount of worker nodes should be created, at least be 3.
 func (o BdsInstanceWorkerNodePtrOutput) NumberOfNodes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceWorkerNode) *int {
 		if v == nil {
@@ -8965,6 +9306,7 @@ func (o BdsInstanceWorkerNodePtrOutput) Shape() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// The shape configuration requested for the node.
 func (o BdsInstanceWorkerNodePtrOutput) ShapeConfig() BdsInstanceWorkerNodeShapeConfigPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceWorkerNode) *BdsInstanceWorkerNodeShapeConfig {
 		if v == nil {
@@ -8985,7 +9327,7 @@ func (o BdsInstanceWorkerNodePtrOutput) SubnetId() pulumi.StringPtrOutput {
 }
 
 type BdsInstanceWorkerNodeShapeConfig struct {
-	// The total amount of memory available to the node, in gigabytes.
+	// The total amount of memory available to the node, in gigabytes
 	MemoryInGbs *int `pulumi:"memoryInGbs"`
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes *int `pulumi:"nvmes"`
@@ -9005,7 +9347,7 @@ type BdsInstanceWorkerNodeShapeConfigInput interface {
 }
 
 type BdsInstanceWorkerNodeShapeConfigArgs struct {
-	// The total amount of memory available to the node, in gigabytes.
+	// The total amount of memory available to the node, in gigabytes
 	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
@@ -9090,7 +9432,7 @@ func (o BdsInstanceWorkerNodeShapeConfigOutput) ToBdsInstanceWorkerNodeShapeConf
 	}).(BdsInstanceWorkerNodeShapeConfigPtrOutput)
 }
 
-// The total amount of memory available to the node, in gigabytes.
+// The total amount of memory available to the node, in gigabytes
 func (o BdsInstanceWorkerNodeShapeConfigOutput) MemoryInGbs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceWorkerNodeShapeConfig) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
 }
@@ -9129,7 +9471,7 @@ func (o BdsInstanceWorkerNodeShapeConfigPtrOutput) Elem() BdsInstanceWorkerNodeS
 	}).(BdsInstanceWorkerNodeShapeConfigOutput)
 }
 
-// The total amount of memory available to the node, in gigabytes.
+// The total amount of memory available to the node, in gigabytes
 func (o BdsInstanceWorkerNodeShapeConfigPtrOutput) MemoryInGbs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceWorkerNodeShapeConfig) *int {
 		if v == nil {
@@ -14064,6 +14406,1000 @@ func (o GetAutoScalingConfigurationsFilterArrayOutput) Index(i pulumi.IntInput) 
 	}).(GetAutoScalingConfigurationsFilterOutput)
 }
 
+type GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollection struct {
+	// List of BDS capacity reservation configuration summaries associated with a BDS capacity reservation.
+	Items []GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItem `pulumi:"items"`
+}
+
+// GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionInput is an input type that accepts GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArgs and GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionOutput values.
+// You can construct a concrete instance of `GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionInput` via:
+//
+//	GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArgs{...}
+type GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionInput interface {
+	pulumi.Input
+
+	ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionOutput() GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionOutput
+	ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionOutputWithContext(context.Context) GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionOutput
+}
+
+type GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArgs struct {
+	// List of BDS capacity reservation configuration summaries associated with a BDS capacity reservation.
+	Items GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollection)(nil)).Elem()
+}
+
+func (i GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArgs) ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionOutput() GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionOutput {
+	return i.ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionOutputWithContext(context.Background())
+}
+
+func (i GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArgs) ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionOutputWithContext(ctx context.Context) GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionOutput)
+}
+
+// GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayInput is an input type that accepts GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArray and GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayOutput values.
+// You can construct a concrete instance of `GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayInput` via:
+//
+//	GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArray{ GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArgs{...} }
+type GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayOutput() GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayOutput
+	ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayOutputWithContext(context.Context) GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayOutput
+}
+
+type GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArray []GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionInput
+
+func (GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollection)(nil)).Elem()
+}
+
+func (i GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArray) ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayOutput() GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayOutput {
+	return i.ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArray) ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayOutputWithContext(ctx context.Context) GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayOutput)
+}
+
+type GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollection)(nil)).Elem()
+}
+
+func (o GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionOutput) ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionOutput() GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionOutput) ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionOutputWithContext(ctx context.Context) GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionOutput {
+	return o
+}
+
+// List of BDS capacity reservation configuration summaries associated with a BDS capacity reservation.
+func (o GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionOutput) Items() GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollection) []GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItem {
+		return v.Items
+	}).(GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayOutput)
+}
+
+type GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollection)(nil)).Elem()
+}
+
+func (o GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayOutput) ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayOutput() GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayOutput) ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayOutputWithContext(ctx context.Context) GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayOutput) Index(i pulumi.IntInput) GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollection {
+		return vs[0].([]GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollection)[vs[1].(int)]
+	}).(GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionOutput)
+}
+
+type GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItem struct {
+	// The OCID of the BDS cluster linked through the BDS capacity reservation configuration.
+	BdsInstanceId string `pulumi:"bdsInstanceId"`
+	// The OCID of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// The OCID of the BDS capacity reservation configuration.
+	Id string `pulumi:"id"`
+	// The lifecycle state of the BDS capacity reservation configuration.
+	State string `pulumi:"state"`
+	// The time the configuration was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the configuration was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemInput is an input type that accepts GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArgs and GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput values.
+// You can construct a concrete instance of `GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemInput` via:
+//
+//	GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArgs{...}
+type GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput() GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput
+	ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutputWithContext(context.Context) GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput
+}
+
+type GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArgs struct {
+	// The OCID of the BDS cluster linked through the BDS capacity reservation configuration.
+	BdsInstanceId pulumi.StringInput `pulumi:"bdsInstanceId"`
+	// The OCID of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The OCID of the BDS capacity reservation configuration.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The lifecycle state of the BDS capacity reservation configuration.
+	State pulumi.StringInput `pulumi:"state"`
+	// The time the configuration was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the configuration was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItem)(nil)).Elem()
+}
+
+func (i GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArgs) ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput() GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput {
+	return i.ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArgs) ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutputWithContext(ctx context.Context) GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput)
+}
+
+// GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayInput is an input type that accepts GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArray and GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayInput` via:
+//
+//	GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArray{ GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArgs{...} }
+type GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayOutput() GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayOutput
+	ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayOutputWithContext(context.Context) GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayOutput
+}
+
+type GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArray []GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemInput
+
+func (GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItem)(nil)).Elem()
+}
+
+func (i GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArray) ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayOutput() GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayOutput {
+	return i.ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArray) ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayOutputWithContext(ctx context.Context) GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayOutput)
+}
+
+type GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItem)(nil)).Elem()
+}
+
+func (o GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput) ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput() GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput) ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutputWithContext(ctx context.Context) GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput {
+	return o
+}
+
+// The OCID of the BDS cluster linked through the BDS capacity reservation configuration.
+func (o GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput) BdsInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItem) string {
+		return v.BdsInstanceId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the compartment.
+func (o GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the BDS capacity reservation configuration.
+func (o GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItem) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// The lifecycle state of the BDS capacity reservation configuration.
+func (o GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// The time the configuration was created, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The time the configuration was updated, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItem)(nil)).Elem()
+}
+
+func (o GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayOutput) ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayOutput() GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayOutput) ToGetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayOutputWithContext(ctx context.Context) GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItem {
+		return vs[0].([]GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItem)[vs[1].(int)]
+	}).(GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput)
+}
+
+type GetBdsCapacityReservationAssociatedConfigurationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetBdsCapacityReservationAssociatedConfigurationsFilterInput is an input type that accepts GetBdsCapacityReservationAssociatedConfigurationsFilterArgs and GetBdsCapacityReservationAssociatedConfigurationsFilterOutput values.
+// You can construct a concrete instance of `GetBdsCapacityReservationAssociatedConfigurationsFilterInput` via:
+//
+//	GetBdsCapacityReservationAssociatedConfigurationsFilterArgs{...}
+type GetBdsCapacityReservationAssociatedConfigurationsFilterInput interface {
+	pulumi.Input
+
+	ToGetBdsCapacityReservationAssociatedConfigurationsFilterOutput() GetBdsCapacityReservationAssociatedConfigurationsFilterOutput
+	ToGetBdsCapacityReservationAssociatedConfigurationsFilterOutputWithContext(context.Context) GetBdsCapacityReservationAssociatedConfigurationsFilterOutput
+}
+
+type GetBdsCapacityReservationAssociatedConfigurationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetBdsCapacityReservationAssociatedConfigurationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsCapacityReservationAssociatedConfigurationsFilter)(nil)).Elem()
+}
+
+func (i GetBdsCapacityReservationAssociatedConfigurationsFilterArgs) ToGetBdsCapacityReservationAssociatedConfigurationsFilterOutput() GetBdsCapacityReservationAssociatedConfigurationsFilterOutput {
+	return i.ToGetBdsCapacityReservationAssociatedConfigurationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetBdsCapacityReservationAssociatedConfigurationsFilterArgs) ToGetBdsCapacityReservationAssociatedConfigurationsFilterOutputWithContext(ctx context.Context) GetBdsCapacityReservationAssociatedConfigurationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsCapacityReservationAssociatedConfigurationsFilterOutput)
+}
+
+// GetBdsCapacityReservationAssociatedConfigurationsFilterArrayInput is an input type that accepts GetBdsCapacityReservationAssociatedConfigurationsFilterArray and GetBdsCapacityReservationAssociatedConfigurationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetBdsCapacityReservationAssociatedConfigurationsFilterArrayInput` via:
+//
+//	GetBdsCapacityReservationAssociatedConfigurationsFilterArray{ GetBdsCapacityReservationAssociatedConfigurationsFilterArgs{...} }
+type GetBdsCapacityReservationAssociatedConfigurationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsCapacityReservationAssociatedConfigurationsFilterArrayOutput() GetBdsCapacityReservationAssociatedConfigurationsFilterArrayOutput
+	ToGetBdsCapacityReservationAssociatedConfigurationsFilterArrayOutputWithContext(context.Context) GetBdsCapacityReservationAssociatedConfigurationsFilterArrayOutput
+}
+
+type GetBdsCapacityReservationAssociatedConfigurationsFilterArray []GetBdsCapacityReservationAssociatedConfigurationsFilterInput
+
+func (GetBdsCapacityReservationAssociatedConfigurationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsCapacityReservationAssociatedConfigurationsFilter)(nil)).Elem()
+}
+
+func (i GetBdsCapacityReservationAssociatedConfigurationsFilterArray) ToGetBdsCapacityReservationAssociatedConfigurationsFilterArrayOutput() GetBdsCapacityReservationAssociatedConfigurationsFilterArrayOutput {
+	return i.ToGetBdsCapacityReservationAssociatedConfigurationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsCapacityReservationAssociatedConfigurationsFilterArray) ToGetBdsCapacityReservationAssociatedConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetBdsCapacityReservationAssociatedConfigurationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsCapacityReservationAssociatedConfigurationsFilterArrayOutput)
+}
+
+type GetBdsCapacityReservationAssociatedConfigurationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBdsCapacityReservationAssociatedConfigurationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsCapacityReservationAssociatedConfigurationsFilter)(nil)).Elem()
+}
+
+func (o GetBdsCapacityReservationAssociatedConfigurationsFilterOutput) ToGetBdsCapacityReservationAssociatedConfigurationsFilterOutput() GetBdsCapacityReservationAssociatedConfigurationsFilterOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationAssociatedConfigurationsFilterOutput) ToGetBdsCapacityReservationAssociatedConfigurationsFilterOutputWithContext(ctx context.Context) GetBdsCapacityReservationAssociatedConfigurationsFilterOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationAssociatedConfigurationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationAssociatedConfigurationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetBdsCapacityReservationAssociatedConfigurationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationAssociatedConfigurationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetBdsCapacityReservationAssociatedConfigurationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationAssociatedConfigurationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetBdsCapacityReservationAssociatedConfigurationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsCapacityReservationAssociatedConfigurationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsCapacityReservationAssociatedConfigurationsFilter)(nil)).Elem()
+}
+
+func (o GetBdsCapacityReservationAssociatedConfigurationsFilterArrayOutput) ToGetBdsCapacityReservationAssociatedConfigurationsFilterArrayOutput() GetBdsCapacityReservationAssociatedConfigurationsFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationAssociatedConfigurationsFilterArrayOutput) ToGetBdsCapacityReservationAssociatedConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetBdsCapacityReservationAssociatedConfigurationsFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationAssociatedConfigurationsFilterArrayOutput) Index(i pulumi.IntInput) GetBdsCapacityReservationAssociatedConfigurationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsCapacityReservationAssociatedConfigurationsFilter {
+		return vs[0].([]GetBdsCapacityReservationAssociatedConfigurationsFilter)[vs[1].(int)]
+	}).(GetBdsCapacityReservationAssociatedConfigurationsFilterOutput)
+}
+
+type GetBdsCapacityReservationComputeCapacityReservation struct {
+	// Compute capacity reservation OCID corresponding to AD1 for a multi-AD region or FD1 for a single-AD region.
+	Domain1reservationId string `pulumi:"domain1reservationId"`
+	// Compute capacity reservation OCID corresponding to AD2 for a multi-AD region or FD2 for a single-AD region.
+	Domain2reservationId string `pulumi:"domain2reservationId"`
+	// Compute capacity reservation OCID corresponding to AD3 for a multi-AD region or FD3 for a single-AD region.
+	Domain3reservationId string `pulumi:"domain3reservationId"`
+}
+
+// GetBdsCapacityReservationComputeCapacityReservationInput is an input type that accepts GetBdsCapacityReservationComputeCapacityReservationArgs and GetBdsCapacityReservationComputeCapacityReservationOutput values.
+// You can construct a concrete instance of `GetBdsCapacityReservationComputeCapacityReservationInput` via:
+//
+//	GetBdsCapacityReservationComputeCapacityReservationArgs{...}
+type GetBdsCapacityReservationComputeCapacityReservationInput interface {
+	pulumi.Input
+
+	ToGetBdsCapacityReservationComputeCapacityReservationOutput() GetBdsCapacityReservationComputeCapacityReservationOutput
+	ToGetBdsCapacityReservationComputeCapacityReservationOutputWithContext(context.Context) GetBdsCapacityReservationComputeCapacityReservationOutput
+}
+
+type GetBdsCapacityReservationComputeCapacityReservationArgs struct {
+	// Compute capacity reservation OCID corresponding to AD1 for a multi-AD region or FD1 for a single-AD region.
+	Domain1reservationId pulumi.StringInput `pulumi:"domain1reservationId"`
+	// Compute capacity reservation OCID corresponding to AD2 for a multi-AD region or FD2 for a single-AD region.
+	Domain2reservationId pulumi.StringInput `pulumi:"domain2reservationId"`
+	// Compute capacity reservation OCID corresponding to AD3 for a multi-AD region or FD3 for a single-AD region.
+	Domain3reservationId pulumi.StringInput `pulumi:"domain3reservationId"`
+}
+
+func (GetBdsCapacityReservationComputeCapacityReservationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsCapacityReservationComputeCapacityReservation)(nil)).Elem()
+}
+
+func (i GetBdsCapacityReservationComputeCapacityReservationArgs) ToGetBdsCapacityReservationComputeCapacityReservationOutput() GetBdsCapacityReservationComputeCapacityReservationOutput {
+	return i.ToGetBdsCapacityReservationComputeCapacityReservationOutputWithContext(context.Background())
+}
+
+func (i GetBdsCapacityReservationComputeCapacityReservationArgs) ToGetBdsCapacityReservationComputeCapacityReservationOutputWithContext(ctx context.Context) GetBdsCapacityReservationComputeCapacityReservationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsCapacityReservationComputeCapacityReservationOutput)
+}
+
+// GetBdsCapacityReservationComputeCapacityReservationArrayInput is an input type that accepts GetBdsCapacityReservationComputeCapacityReservationArray and GetBdsCapacityReservationComputeCapacityReservationArrayOutput values.
+// You can construct a concrete instance of `GetBdsCapacityReservationComputeCapacityReservationArrayInput` via:
+//
+//	GetBdsCapacityReservationComputeCapacityReservationArray{ GetBdsCapacityReservationComputeCapacityReservationArgs{...} }
+type GetBdsCapacityReservationComputeCapacityReservationArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsCapacityReservationComputeCapacityReservationArrayOutput() GetBdsCapacityReservationComputeCapacityReservationArrayOutput
+	ToGetBdsCapacityReservationComputeCapacityReservationArrayOutputWithContext(context.Context) GetBdsCapacityReservationComputeCapacityReservationArrayOutput
+}
+
+type GetBdsCapacityReservationComputeCapacityReservationArray []GetBdsCapacityReservationComputeCapacityReservationInput
+
+func (GetBdsCapacityReservationComputeCapacityReservationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsCapacityReservationComputeCapacityReservation)(nil)).Elem()
+}
+
+func (i GetBdsCapacityReservationComputeCapacityReservationArray) ToGetBdsCapacityReservationComputeCapacityReservationArrayOutput() GetBdsCapacityReservationComputeCapacityReservationArrayOutput {
+	return i.ToGetBdsCapacityReservationComputeCapacityReservationArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsCapacityReservationComputeCapacityReservationArray) ToGetBdsCapacityReservationComputeCapacityReservationArrayOutputWithContext(ctx context.Context) GetBdsCapacityReservationComputeCapacityReservationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsCapacityReservationComputeCapacityReservationArrayOutput)
+}
+
+type GetBdsCapacityReservationComputeCapacityReservationOutput struct{ *pulumi.OutputState }
+
+func (GetBdsCapacityReservationComputeCapacityReservationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsCapacityReservationComputeCapacityReservation)(nil)).Elem()
+}
+
+func (o GetBdsCapacityReservationComputeCapacityReservationOutput) ToGetBdsCapacityReservationComputeCapacityReservationOutput() GetBdsCapacityReservationComputeCapacityReservationOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationComputeCapacityReservationOutput) ToGetBdsCapacityReservationComputeCapacityReservationOutputWithContext(ctx context.Context) GetBdsCapacityReservationComputeCapacityReservationOutput {
+	return o
+}
+
+// Compute capacity reservation OCID corresponding to AD1 for a multi-AD region or FD1 for a single-AD region.
+func (o GetBdsCapacityReservationComputeCapacityReservationOutput) Domain1reservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationComputeCapacityReservation) string { return v.Domain1reservationId }).(pulumi.StringOutput)
+}
+
+// Compute capacity reservation OCID corresponding to AD2 for a multi-AD region or FD2 for a single-AD region.
+func (o GetBdsCapacityReservationComputeCapacityReservationOutput) Domain2reservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationComputeCapacityReservation) string { return v.Domain2reservationId }).(pulumi.StringOutput)
+}
+
+// Compute capacity reservation OCID corresponding to AD3 for a multi-AD region or FD3 for a single-AD region.
+func (o GetBdsCapacityReservationComputeCapacityReservationOutput) Domain3reservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationComputeCapacityReservation) string { return v.Domain3reservationId }).(pulumi.StringOutput)
+}
+
+type GetBdsCapacityReservationComputeCapacityReservationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsCapacityReservationComputeCapacityReservationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsCapacityReservationComputeCapacityReservation)(nil)).Elem()
+}
+
+func (o GetBdsCapacityReservationComputeCapacityReservationArrayOutput) ToGetBdsCapacityReservationComputeCapacityReservationArrayOutput() GetBdsCapacityReservationComputeCapacityReservationArrayOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationComputeCapacityReservationArrayOutput) ToGetBdsCapacityReservationComputeCapacityReservationArrayOutputWithContext(ctx context.Context) GetBdsCapacityReservationComputeCapacityReservationArrayOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationComputeCapacityReservationArrayOutput) Index(i pulumi.IntInput) GetBdsCapacityReservationComputeCapacityReservationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsCapacityReservationComputeCapacityReservation {
+		return vs[0].([]GetBdsCapacityReservationComputeCapacityReservation)[vs[1].(int)]
+	}).(GetBdsCapacityReservationComputeCapacityReservationOutput)
+}
+
+type GetBdsCapacityReservationsBdsCapacityReservationCollection struct {
+	Items []GetBdsCapacityReservationsBdsCapacityReservationCollectionItem `pulumi:"items"`
+}
+
+// GetBdsCapacityReservationsBdsCapacityReservationCollectionInput is an input type that accepts GetBdsCapacityReservationsBdsCapacityReservationCollectionArgs and GetBdsCapacityReservationsBdsCapacityReservationCollectionOutput values.
+// You can construct a concrete instance of `GetBdsCapacityReservationsBdsCapacityReservationCollectionInput` via:
+//
+//	GetBdsCapacityReservationsBdsCapacityReservationCollectionArgs{...}
+type GetBdsCapacityReservationsBdsCapacityReservationCollectionInput interface {
+	pulumi.Input
+
+	ToGetBdsCapacityReservationsBdsCapacityReservationCollectionOutput() GetBdsCapacityReservationsBdsCapacityReservationCollectionOutput
+	ToGetBdsCapacityReservationsBdsCapacityReservationCollectionOutputWithContext(context.Context) GetBdsCapacityReservationsBdsCapacityReservationCollectionOutput
+}
+
+type GetBdsCapacityReservationsBdsCapacityReservationCollectionArgs struct {
+	Items GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetBdsCapacityReservationsBdsCapacityReservationCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsCapacityReservationsBdsCapacityReservationCollection)(nil)).Elem()
+}
+
+func (i GetBdsCapacityReservationsBdsCapacityReservationCollectionArgs) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionOutput() GetBdsCapacityReservationsBdsCapacityReservationCollectionOutput {
+	return i.ToGetBdsCapacityReservationsBdsCapacityReservationCollectionOutputWithContext(context.Background())
+}
+
+func (i GetBdsCapacityReservationsBdsCapacityReservationCollectionArgs) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionOutputWithContext(ctx context.Context) GetBdsCapacityReservationsBdsCapacityReservationCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsCapacityReservationsBdsCapacityReservationCollectionOutput)
+}
+
+// GetBdsCapacityReservationsBdsCapacityReservationCollectionArrayInput is an input type that accepts GetBdsCapacityReservationsBdsCapacityReservationCollectionArray and GetBdsCapacityReservationsBdsCapacityReservationCollectionArrayOutput values.
+// You can construct a concrete instance of `GetBdsCapacityReservationsBdsCapacityReservationCollectionArrayInput` via:
+//
+//	GetBdsCapacityReservationsBdsCapacityReservationCollectionArray{ GetBdsCapacityReservationsBdsCapacityReservationCollectionArgs{...} }
+type GetBdsCapacityReservationsBdsCapacityReservationCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsCapacityReservationsBdsCapacityReservationCollectionArrayOutput() GetBdsCapacityReservationsBdsCapacityReservationCollectionArrayOutput
+	ToGetBdsCapacityReservationsBdsCapacityReservationCollectionArrayOutputWithContext(context.Context) GetBdsCapacityReservationsBdsCapacityReservationCollectionArrayOutput
+}
+
+type GetBdsCapacityReservationsBdsCapacityReservationCollectionArray []GetBdsCapacityReservationsBdsCapacityReservationCollectionInput
+
+func (GetBdsCapacityReservationsBdsCapacityReservationCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsCapacityReservationsBdsCapacityReservationCollection)(nil)).Elem()
+}
+
+func (i GetBdsCapacityReservationsBdsCapacityReservationCollectionArray) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionArrayOutput() GetBdsCapacityReservationsBdsCapacityReservationCollectionArrayOutput {
+	return i.ToGetBdsCapacityReservationsBdsCapacityReservationCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsCapacityReservationsBdsCapacityReservationCollectionArray) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionArrayOutputWithContext(ctx context.Context) GetBdsCapacityReservationsBdsCapacityReservationCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsCapacityReservationsBdsCapacityReservationCollectionArrayOutput)
+}
+
+type GetBdsCapacityReservationsBdsCapacityReservationCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetBdsCapacityReservationsBdsCapacityReservationCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsCapacityReservationsBdsCapacityReservationCollection)(nil)).Elem()
+}
+
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionOutput) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionOutput() GetBdsCapacityReservationsBdsCapacityReservationCollectionOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionOutput) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionOutputWithContext(ctx context.Context) GetBdsCapacityReservationsBdsCapacityReservationCollectionOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionOutput) Items() GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationsBdsCapacityReservationCollection) []GetBdsCapacityReservationsBdsCapacityReservationCollectionItem {
+		return v.Items
+	}).(GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayOutput)
+}
+
+type GetBdsCapacityReservationsBdsCapacityReservationCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsCapacityReservationsBdsCapacityReservationCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsCapacityReservationsBdsCapacityReservationCollection)(nil)).Elem()
+}
+
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionArrayOutput) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionArrayOutput() GetBdsCapacityReservationsBdsCapacityReservationCollectionArrayOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionArrayOutput) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionArrayOutputWithContext(ctx context.Context) GetBdsCapacityReservationsBdsCapacityReservationCollectionArrayOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionArrayOutput) Index(i pulumi.IntInput) GetBdsCapacityReservationsBdsCapacityReservationCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsCapacityReservationsBdsCapacityReservationCollection {
+		return vs[0].([]GetBdsCapacityReservationsBdsCapacityReservationCollection)[vs[1].(int)]
+	}).(GetBdsCapacityReservationsBdsCapacityReservationCollectionOutput)
+}
+
+type GetBdsCapacityReservationsBdsCapacityReservationCollectionItem struct {
+	// The OCID of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Compute capacity reservation ID mappings by domain. For a multi-AD region, domain1, domain2, and domain3 correspond to AD1, AD2, and AD3 respectively. For a single-AD region, domain1, domain2, and domain3 correspond to FD1, FD2, and FD3 respectively.
+	ComputeCapacityReservations []GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservation `pulumi:"computeCapacityReservations"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the BDS capacity reservation.
+	Id string `pulumi:"id"`
+	// The lifecycle state of the BDS capacity reservation.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces.
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The time the BDS capacity reservation was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the BDS capacity reservation was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetBdsCapacityReservationsBdsCapacityReservationCollectionItemInput is an input type that accepts GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArgs and GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput values.
+// You can construct a concrete instance of `GetBdsCapacityReservationsBdsCapacityReservationCollectionItemInput` via:
+//
+//	GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArgs{...}
+type GetBdsCapacityReservationsBdsCapacityReservationCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput() GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput
+	ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutputWithContext(context.Context) GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput
+}
+
+type GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArgs struct {
+	// The OCID of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Compute capacity reservation ID mappings by domain. For a multi-AD region, domain1, domain2, and domain3 correspond to AD1, AD2, and AD3 respectively. For a single-AD region, domain1, domain2, and domain3 correspond to FD1, FD2, and FD3 respectively.
+	ComputeCapacityReservations GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayInput `pulumi:"computeCapacityReservations"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the BDS capacity reservation.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The lifecycle state of the BDS capacity reservation.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces.
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The time the BDS capacity reservation was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the BDS capacity reservation was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsCapacityReservationsBdsCapacityReservationCollectionItem)(nil)).Elem()
+}
+
+func (i GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArgs) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput() GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput {
+	return i.ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArgs) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutputWithContext(ctx context.Context) GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput)
+}
+
+// GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayInput is an input type that accepts GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArray and GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayInput` via:
+//
+//	GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArray{ GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArgs{...} }
+type GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayOutput() GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayOutput
+	ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayOutputWithContext(context.Context) GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayOutput
+}
+
+type GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArray []GetBdsCapacityReservationsBdsCapacityReservationCollectionItemInput
+
+func (GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsCapacityReservationsBdsCapacityReservationCollectionItem)(nil)).Elem()
+}
+
+func (i GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArray) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayOutput() GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayOutput {
+	return i.ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArray) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayOutputWithContext(ctx context.Context) GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayOutput)
+}
+
+type GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsCapacityReservationsBdsCapacityReservationCollectionItem)(nil)).Elem()
+}
+
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput() GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutputWithContext(ctx context.Context) GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput {
+	return o
+}
+
+// The OCID of the compartment.
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationsBdsCapacityReservationCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Compute capacity reservation ID mappings by domain. For a multi-AD region, domain1, domain2, and domain3 correspond to AD1, AD2, and AD3 respectively. For a single-AD region, domain1, domain2, and domain3 correspond to FD1, FD2, and FD3 respectively.
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput) ComputeCapacityReservations() GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationsBdsCapacityReservationCollectionItem) []GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservation {
+		return v.ComputeCapacityReservations
+	}).(GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationsBdsCapacityReservationCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationsBdsCapacityReservationCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationsBdsCapacityReservationCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the BDS capacity reservation.
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationsBdsCapacityReservationCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The lifecycle state of the BDS capacity reservation.
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationsBdsCapacityReservationCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces.
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationsBdsCapacityReservationCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The time the BDS capacity reservation was created, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationsBdsCapacityReservationCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the BDS capacity reservation was updated, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationsBdsCapacityReservationCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsCapacityReservationsBdsCapacityReservationCollectionItem)(nil)).Elem()
+}
+
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayOutput) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayOutput() GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayOutput) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayOutputWithContext(ctx context.Context) GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsCapacityReservationsBdsCapacityReservationCollectionItem {
+		return vs[0].([]GetBdsCapacityReservationsBdsCapacityReservationCollectionItem)[vs[1].(int)]
+	}).(GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput)
+}
+
+type GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservation struct {
+	// Compute capacity reservation OCID corresponding to AD1 for a multi-AD region or FD1 for a single-AD region.
+	Domain1reservationId string `pulumi:"domain1reservationId"`
+	// Compute capacity reservation OCID corresponding to AD2 for a multi-AD region or FD2 for a single-AD region.
+	Domain2reservationId string `pulumi:"domain2reservationId"`
+	// Compute capacity reservation OCID corresponding to AD3 for a multi-AD region or FD3 for a single-AD region.
+	Domain3reservationId string `pulumi:"domain3reservationId"`
+}
+
+// GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationInput is an input type that accepts GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArgs and GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutput values.
+// You can construct a concrete instance of `GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationInput` via:
+//
+//	GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArgs{...}
+type GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationInput interface {
+	pulumi.Input
+
+	ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutput() GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutput
+	ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutputWithContext(context.Context) GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutput
+}
+
+type GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArgs struct {
+	// Compute capacity reservation OCID corresponding to AD1 for a multi-AD region or FD1 for a single-AD region.
+	Domain1reservationId pulumi.StringInput `pulumi:"domain1reservationId"`
+	// Compute capacity reservation OCID corresponding to AD2 for a multi-AD region or FD2 for a single-AD region.
+	Domain2reservationId pulumi.StringInput `pulumi:"domain2reservationId"`
+	// Compute capacity reservation OCID corresponding to AD3 for a multi-AD region or FD3 for a single-AD region.
+	Domain3reservationId pulumi.StringInput `pulumi:"domain3reservationId"`
+}
+
+func (GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservation)(nil)).Elem()
+}
+
+func (i GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArgs) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutput() GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutput {
+	return i.ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutputWithContext(context.Background())
+}
+
+func (i GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArgs) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutputWithContext(ctx context.Context) GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutput)
+}
+
+// GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayInput is an input type that accepts GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArray and GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayOutput values.
+// You can construct a concrete instance of `GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayInput` via:
+//
+//	GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArray{ GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArgs{...} }
+type GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayOutput() GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayOutput
+	ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayOutputWithContext(context.Context) GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayOutput
+}
+
+type GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArray []GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationInput
+
+func (GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservation)(nil)).Elem()
+}
+
+func (i GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArray) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayOutput() GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayOutput {
+	return i.ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArray) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayOutputWithContext(ctx context.Context) GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayOutput)
+}
+
+type GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutput struct{ *pulumi.OutputState }
+
+func (GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservation)(nil)).Elem()
+}
+
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutput) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutput() GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutput) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutputWithContext(ctx context.Context) GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutput {
+	return o
+}
+
+// Compute capacity reservation OCID corresponding to AD1 for a multi-AD region or FD1 for a single-AD region.
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutput) Domain1reservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservation) string {
+		return v.Domain1reservationId
+	}).(pulumi.StringOutput)
+}
+
+// Compute capacity reservation OCID corresponding to AD2 for a multi-AD region or FD2 for a single-AD region.
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutput) Domain2reservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservation) string {
+		return v.Domain2reservationId
+	}).(pulumi.StringOutput)
+}
+
+// Compute capacity reservation OCID corresponding to AD3 for a multi-AD region or FD3 for a single-AD region.
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutput) Domain3reservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservation) string {
+		return v.Domain3reservationId
+	}).(pulumi.StringOutput)
+}
+
+type GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservation)(nil)).Elem()
+}
+
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayOutput) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayOutput() GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayOutput) ToGetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayOutputWithContext(ctx context.Context) GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayOutput) Index(i pulumi.IntInput) GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservation {
+		return vs[0].([]GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservation)[vs[1].(int)]
+	}).(GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutput)
+}
+
+type GetBdsCapacityReservationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetBdsCapacityReservationsFilterInput is an input type that accepts GetBdsCapacityReservationsFilterArgs and GetBdsCapacityReservationsFilterOutput values.
+// You can construct a concrete instance of `GetBdsCapacityReservationsFilterInput` via:
+//
+//	GetBdsCapacityReservationsFilterArgs{...}
+type GetBdsCapacityReservationsFilterInput interface {
+	pulumi.Input
+
+	ToGetBdsCapacityReservationsFilterOutput() GetBdsCapacityReservationsFilterOutput
+	ToGetBdsCapacityReservationsFilterOutputWithContext(context.Context) GetBdsCapacityReservationsFilterOutput
+}
+
+type GetBdsCapacityReservationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetBdsCapacityReservationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsCapacityReservationsFilter)(nil)).Elem()
+}
+
+func (i GetBdsCapacityReservationsFilterArgs) ToGetBdsCapacityReservationsFilterOutput() GetBdsCapacityReservationsFilterOutput {
+	return i.ToGetBdsCapacityReservationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetBdsCapacityReservationsFilterArgs) ToGetBdsCapacityReservationsFilterOutputWithContext(ctx context.Context) GetBdsCapacityReservationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsCapacityReservationsFilterOutput)
+}
+
+// GetBdsCapacityReservationsFilterArrayInput is an input type that accepts GetBdsCapacityReservationsFilterArray and GetBdsCapacityReservationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetBdsCapacityReservationsFilterArrayInput` via:
+//
+//	GetBdsCapacityReservationsFilterArray{ GetBdsCapacityReservationsFilterArgs{...} }
+type GetBdsCapacityReservationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsCapacityReservationsFilterArrayOutput() GetBdsCapacityReservationsFilterArrayOutput
+	ToGetBdsCapacityReservationsFilterArrayOutputWithContext(context.Context) GetBdsCapacityReservationsFilterArrayOutput
+}
+
+type GetBdsCapacityReservationsFilterArray []GetBdsCapacityReservationsFilterInput
+
+func (GetBdsCapacityReservationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsCapacityReservationsFilter)(nil)).Elem()
+}
+
+func (i GetBdsCapacityReservationsFilterArray) ToGetBdsCapacityReservationsFilterArrayOutput() GetBdsCapacityReservationsFilterArrayOutput {
+	return i.ToGetBdsCapacityReservationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsCapacityReservationsFilterArray) ToGetBdsCapacityReservationsFilterArrayOutputWithContext(ctx context.Context) GetBdsCapacityReservationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsCapacityReservationsFilterArrayOutput)
+}
+
+type GetBdsCapacityReservationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBdsCapacityReservationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsCapacityReservationsFilter)(nil)).Elem()
+}
+
+func (o GetBdsCapacityReservationsFilterOutput) ToGetBdsCapacityReservationsFilterOutput() GetBdsCapacityReservationsFilterOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationsFilterOutput) ToGetBdsCapacityReservationsFilterOutputWithContext(ctx context.Context) GetBdsCapacityReservationsFilterOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetBdsCapacityReservationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetBdsCapacityReservationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBdsCapacityReservationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetBdsCapacityReservationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsCapacityReservationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsCapacityReservationsFilter)(nil)).Elem()
+}
+
+func (o GetBdsCapacityReservationsFilterArrayOutput) ToGetBdsCapacityReservationsFilterArrayOutput() GetBdsCapacityReservationsFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationsFilterArrayOutput) ToGetBdsCapacityReservationsFilterArrayOutputWithContext(ctx context.Context) GetBdsCapacityReservationsFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsCapacityReservationsFilterArrayOutput) Index(i pulumi.IntInput) GetBdsCapacityReservationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsCapacityReservationsFilter {
+		return vs[0].([]GetBdsCapacityReservationsFilter)[vs[1].(int)]
+	}).(GetBdsCapacityReservationsFilterOutput)
+}
+
 type GetBdsClusterVersionsBdsClusterVersion struct {
 	// BDS version to be used for cluster creation
 	BdsVersion string `pulumi:"bdsVersion"`
@@ -14573,6 +15909,545 @@ func (o GetBdsInstanceApiKeysFilterArrayOutput) Index(i pulumi.IntInput) GetBdsI
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceApiKeysFilter {
 		return vs[0].([]GetBdsInstanceApiKeysFilter)[vs[1].(int)]
 	}).(GetBdsInstanceApiKeysFilterOutput)
+}
+
+type GetBdsInstanceBdsCapacityReservationConfigurationType struct {
+	// The OCID of the BDS capacity reservation associated with the BDS cluster.
+	BdsCapacityReservationId string `pulumi:"bdsCapacityReservationId"`
+	// The OCID of the cluster.
+	BdsInstanceId string `pulumi:"bdsInstanceId"`
+	// The name of the node.
+	DisplayName string `pulumi:"displayName"`
+	// The OCID of the Big Data Service resource.
+	Id string `pulumi:"id"`
+	// The state of the cluster.
+	State string `pulumi:"state"`
+	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetBdsInstanceBdsCapacityReservationConfigurationTypeInput is an input type that accepts GetBdsInstanceBdsCapacityReservationConfigurationTypeArgs and GetBdsInstanceBdsCapacityReservationConfigurationTypeOutput values.
+// You can construct a concrete instance of `GetBdsInstanceBdsCapacityReservationConfigurationTypeInput` via:
+//
+//	GetBdsInstanceBdsCapacityReservationConfigurationTypeArgs{...}
+type GetBdsInstanceBdsCapacityReservationConfigurationTypeInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceBdsCapacityReservationConfigurationTypeOutput() GetBdsInstanceBdsCapacityReservationConfigurationTypeOutput
+	ToGetBdsInstanceBdsCapacityReservationConfigurationTypeOutputWithContext(context.Context) GetBdsInstanceBdsCapacityReservationConfigurationTypeOutput
+}
+
+type GetBdsInstanceBdsCapacityReservationConfigurationTypeArgs struct {
+	// The OCID of the BDS capacity reservation associated with the BDS cluster.
+	BdsCapacityReservationId pulumi.StringInput `pulumi:"bdsCapacityReservationId"`
+	// The OCID of the cluster.
+	BdsInstanceId pulumi.StringInput `pulumi:"bdsInstanceId"`
+	// The name of the node.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The OCID of the Big Data Service resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The state of the cluster.
+	State pulumi.StringInput `pulumi:"state"`
+	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetBdsInstanceBdsCapacityReservationConfigurationTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceBdsCapacityReservationConfigurationType)(nil)).Elem()
+}
+
+func (i GetBdsInstanceBdsCapacityReservationConfigurationTypeArgs) ToGetBdsInstanceBdsCapacityReservationConfigurationTypeOutput() GetBdsInstanceBdsCapacityReservationConfigurationTypeOutput {
+	return i.ToGetBdsInstanceBdsCapacityReservationConfigurationTypeOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceBdsCapacityReservationConfigurationTypeArgs) ToGetBdsInstanceBdsCapacityReservationConfigurationTypeOutputWithContext(ctx context.Context) GetBdsInstanceBdsCapacityReservationConfigurationTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceBdsCapacityReservationConfigurationTypeOutput)
+}
+
+// GetBdsInstanceBdsCapacityReservationConfigurationTypeArrayInput is an input type that accepts GetBdsInstanceBdsCapacityReservationConfigurationTypeArray and GetBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceBdsCapacityReservationConfigurationTypeArrayInput` via:
+//
+//	GetBdsInstanceBdsCapacityReservationConfigurationTypeArray{ GetBdsInstanceBdsCapacityReservationConfigurationTypeArgs{...} }
+type GetBdsInstanceBdsCapacityReservationConfigurationTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput() GetBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput
+	ToGetBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutputWithContext(context.Context) GetBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput
+}
+
+type GetBdsInstanceBdsCapacityReservationConfigurationTypeArray []GetBdsInstanceBdsCapacityReservationConfigurationTypeInput
+
+func (GetBdsInstanceBdsCapacityReservationConfigurationTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceBdsCapacityReservationConfigurationType)(nil)).Elem()
+}
+
+func (i GetBdsInstanceBdsCapacityReservationConfigurationTypeArray) ToGetBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput() GetBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput {
+	return i.ToGetBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceBdsCapacityReservationConfigurationTypeArray) ToGetBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutputWithContext(ctx context.Context) GetBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput)
+}
+
+type GetBdsInstanceBdsCapacityReservationConfigurationTypeOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceBdsCapacityReservationConfigurationTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceBdsCapacityReservationConfigurationType)(nil)).Elem()
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationTypeOutput) ToGetBdsInstanceBdsCapacityReservationConfigurationTypeOutput() GetBdsInstanceBdsCapacityReservationConfigurationTypeOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationTypeOutput) ToGetBdsInstanceBdsCapacityReservationConfigurationTypeOutputWithContext(ctx context.Context) GetBdsInstanceBdsCapacityReservationConfigurationTypeOutput {
+	return o
+}
+
+// The OCID of the BDS capacity reservation associated with the BDS cluster.
+func (o GetBdsInstanceBdsCapacityReservationConfigurationTypeOutput) BdsCapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCapacityReservationConfigurationType) string {
+		return v.BdsCapacityReservationId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the cluster.
+func (o GetBdsInstanceBdsCapacityReservationConfigurationTypeOutput) BdsInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCapacityReservationConfigurationType) string { return v.BdsInstanceId }).(pulumi.StringOutput)
+}
+
+// The name of the node.
+func (o GetBdsInstanceBdsCapacityReservationConfigurationTypeOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCapacityReservationConfigurationType) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The OCID of the Big Data Service resource.
+func (o GetBdsInstanceBdsCapacityReservationConfigurationTypeOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCapacityReservationConfigurationType) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The state of the cluster.
+func (o GetBdsInstanceBdsCapacityReservationConfigurationTypeOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCapacityReservationConfigurationType) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceBdsCapacityReservationConfigurationTypeOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCapacityReservationConfigurationType) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceBdsCapacityReservationConfigurationTypeOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCapacityReservationConfigurationType) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceBdsCapacityReservationConfigurationType)(nil)).Elem()
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput) ToGetBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput() GetBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput) ToGetBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutputWithContext(ctx context.Context) GetBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceBdsCapacityReservationConfigurationTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceBdsCapacityReservationConfigurationType {
+		return vs[0].([]GetBdsInstanceBdsCapacityReservationConfigurationType)[vs[1].(int)]
+	}).(GetBdsInstanceBdsCapacityReservationConfigurationTypeOutput)
+}
+
+type GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollection struct {
+	// List of BDS capacity reservation configuration summaries for the specified BDS cluster.
+	Items []GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItem `pulumi:"items"`
+}
+
+// GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionInput is an input type that accepts GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArgs and GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionOutput values.
+// You can construct a concrete instance of `GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionInput` via:
+//
+//	GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArgs{...}
+type GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionOutput() GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionOutput
+	ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionOutputWithContext(context.Context) GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionOutput
+}
+
+type GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArgs struct {
+	// List of BDS capacity reservation configuration summaries for the specified BDS cluster.
+	Items GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollection)(nil)).Elem()
+}
+
+func (i GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArgs) ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionOutput() GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionOutput {
+	return i.ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArgs) ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionOutputWithContext(ctx context.Context) GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionOutput)
+}
+
+// GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayInput is an input type that accepts GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArray and GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayInput` via:
+//
+//	GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArray{ GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArgs{...} }
+type GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayOutput() GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayOutput
+	ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayOutputWithContext(context.Context) GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayOutput
+}
+
+type GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArray []GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionInput
+
+func (GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollection)(nil)).Elem()
+}
+
+func (i GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArray) ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayOutput() GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayOutput {
+	return i.ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArray) ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayOutputWithContext(ctx context.Context) GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayOutput)
+}
+
+type GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollection)(nil)).Elem()
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionOutput) ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionOutput() GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionOutput) ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionOutputWithContext(ctx context.Context) GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionOutput {
+	return o
+}
+
+// List of BDS capacity reservation configuration summaries for the specified BDS cluster.
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionOutput) Items() GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollection) []GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItem {
+		return v.Items
+	}).(GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayOutput)
+}
+
+type GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollection)(nil)).Elem()
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayOutput) ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayOutput() GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayOutput) ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayOutputWithContext(ctx context.Context) GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollection {
+		return vs[0].([]GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollection)[vs[1].(int)]
+	}).(GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionOutput)
+}
+
+type GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItem struct {
+	ActivateTrigger int `pulumi:"activateTrigger"`
+	// The OCID of the BDS capacity reservation associated with the BDS cluster.
+	BdsCapacityReservationId string `pulumi:"bdsCapacityReservationId"`
+	// The OCID of the cluster.
+	BdsInstanceId     string `pulumi:"bdsInstanceId"`
+	DeactivateTrigger int    `pulumi:"deactivateTrigger"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// The OCID of the BDS capacity reservation configuration.
+	Id string `pulumi:"id"`
+	// The lifecycle state of the BDS capacity reservation configuration.
+	State string `pulumi:"state"`
+	// The time the BDS capacity reservation configuration was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the BDS capacity reservation configuration was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemInput is an input type that accepts GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArgs and GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput values.
+// You can construct a concrete instance of `GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemInput` via:
+//
+//	GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArgs{...}
+type GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput() GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput
+	ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutputWithContext(context.Context) GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput
+}
+
+type GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArgs struct {
+	ActivateTrigger pulumi.IntInput `pulumi:"activateTrigger"`
+	// The OCID of the BDS capacity reservation associated with the BDS cluster.
+	BdsCapacityReservationId pulumi.StringInput `pulumi:"bdsCapacityReservationId"`
+	// The OCID of the cluster.
+	BdsInstanceId     pulumi.StringInput `pulumi:"bdsInstanceId"`
+	DeactivateTrigger pulumi.IntInput    `pulumi:"deactivateTrigger"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The OCID of the BDS capacity reservation configuration.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The lifecycle state of the BDS capacity reservation configuration.
+	State pulumi.StringInput `pulumi:"state"`
+	// The time the BDS capacity reservation configuration was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the BDS capacity reservation configuration was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItem)(nil)).Elem()
+}
+
+func (i GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArgs) ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput() GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput {
+	return i.ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArgs) ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutputWithContext(ctx context.Context) GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput)
+}
+
+// GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayInput is an input type that accepts GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArray and GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayInput` via:
+//
+//	GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArray{ GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArgs{...} }
+type GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayOutput() GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayOutput
+	ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayOutputWithContext(context.Context) GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayOutput
+}
+
+type GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArray []GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemInput
+
+func (GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItem)(nil)).Elem()
+}
+
+func (i GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArray) ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayOutput() GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayOutput {
+	return i.ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArray) ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayOutputWithContext(ctx context.Context) GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayOutput)
+}
+
+type GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItem)(nil)).Elem()
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput) ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput() GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput) ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutputWithContext(ctx context.Context) GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput) ActivateTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItem) int {
+		return v.ActivateTrigger
+	}).(pulumi.IntOutput)
+}
+
+// The OCID of the BDS capacity reservation associated with the BDS cluster.
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput) BdsCapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItem) string {
+		return v.BdsCapacityReservationId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the cluster.
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput) BdsInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItem) string {
+		return v.BdsInstanceId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput) DeactivateTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItem) int {
+		return v.DeactivateTrigger
+	}).(pulumi.IntOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the BDS capacity reservation configuration.
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItem) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// The lifecycle state of the BDS capacity reservation configuration.
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// The time the BDS capacity reservation configuration was created, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The time the BDS capacity reservation configuration was updated, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItem)(nil)).Elem()
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayOutput) ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayOutput() GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayOutput) ToGetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayOutputWithContext(ctx context.Context) GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItem {
+		return vs[0].([]GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItem)[vs[1].(int)]
+	}).(GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput)
+}
+
+type GetBdsInstanceBdsCapacityReservationConfigurationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetBdsInstanceBdsCapacityReservationConfigurationsFilterInput is an input type that accepts GetBdsInstanceBdsCapacityReservationConfigurationsFilterArgs and GetBdsInstanceBdsCapacityReservationConfigurationsFilterOutput values.
+// You can construct a concrete instance of `GetBdsInstanceBdsCapacityReservationConfigurationsFilterInput` via:
+//
+//	GetBdsInstanceBdsCapacityReservationConfigurationsFilterArgs{...}
+type GetBdsInstanceBdsCapacityReservationConfigurationsFilterInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceBdsCapacityReservationConfigurationsFilterOutput() GetBdsInstanceBdsCapacityReservationConfigurationsFilterOutput
+	ToGetBdsInstanceBdsCapacityReservationConfigurationsFilterOutputWithContext(context.Context) GetBdsInstanceBdsCapacityReservationConfigurationsFilterOutput
+}
+
+type GetBdsInstanceBdsCapacityReservationConfigurationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetBdsInstanceBdsCapacityReservationConfigurationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceBdsCapacityReservationConfigurationsFilter)(nil)).Elem()
+}
+
+func (i GetBdsInstanceBdsCapacityReservationConfigurationsFilterArgs) ToGetBdsInstanceBdsCapacityReservationConfigurationsFilterOutput() GetBdsInstanceBdsCapacityReservationConfigurationsFilterOutput {
+	return i.ToGetBdsInstanceBdsCapacityReservationConfigurationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceBdsCapacityReservationConfigurationsFilterArgs) ToGetBdsInstanceBdsCapacityReservationConfigurationsFilterOutputWithContext(ctx context.Context) GetBdsInstanceBdsCapacityReservationConfigurationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceBdsCapacityReservationConfigurationsFilterOutput)
+}
+
+// GetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayInput is an input type that accepts GetBdsInstanceBdsCapacityReservationConfigurationsFilterArray and GetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayInput` via:
+//
+//	GetBdsInstanceBdsCapacityReservationConfigurationsFilterArray{ GetBdsInstanceBdsCapacityReservationConfigurationsFilterArgs{...} }
+type GetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayOutput() GetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayOutput
+	ToGetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayOutputWithContext(context.Context) GetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayOutput
+}
+
+type GetBdsInstanceBdsCapacityReservationConfigurationsFilterArray []GetBdsInstanceBdsCapacityReservationConfigurationsFilterInput
+
+func (GetBdsInstanceBdsCapacityReservationConfigurationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceBdsCapacityReservationConfigurationsFilter)(nil)).Elem()
+}
+
+func (i GetBdsInstanceBdsCapacityReservationConfigurationsFilterArray) ToGetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayOutput() GetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayOutput {
+	return i.ToGetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceBdsCapacityReservationConfigurationsFilterArray) ToGetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayOutput)
+}
+
+type GetBdsInstanceBdsCapacityReservationConfigurationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceBdsCapacityReservationConfigurationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceBdsCapacityReservationConfigurationsFilter)(nil)).Elem()
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsFilterOutput) ToGetBdsInstanceBdsCapacityReservationConfigurationsFilterOutput() GetBdsInstanceBdsCapacityReservationConfigurationsFilterOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsFilterOutput) ToGetBdsInstanceBdsCapacityReservationConfigurationsFilterOutputWithContext(ctx context.Context) GetBdsInstanceBdsCapacityReservationConfigurationsFilterOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCapacityReservationConfigurationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCapacityReservationConfigurationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCapacityReservationConfigurationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceBdsCapacityReservationConfigurationsFilter)(nil)).Elem()
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayOutput) ToGetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayOutput() GetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayOutput) ToGetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceBdsCapacityReservationConfigurationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceBdsCapacityReservationConfigurationsFilter {
+		return vs[0].([]GetBdsInstanceBdsCapacityReservationConfigurationsFilter)[vs[1].(int)]
+	}).(GetBdsInstanceBdsCapacityReservationConfigurationsFilterOutput)
 }
 
 type GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration struct {
@@ -22293,7 +24168,9 @@ func (o GetBdsInstanceWorkerNodeShapeConfigArrayOutput) Index(i pulumi.IntInput)
 }
 
 type GetBdsInstancesBdsInstance struct {
-	// Cluster version details including bds and odh version information.
+	// The list of BDS capacity reservation configurations associated with the cluster.
+	BdsCapacityReservationConfigurations []GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration `pulumi:"bdsCapacityReservationConfigurations"`
+	// Cluster version details including BDS and ODH version information.
 	BdsClusterVersionSummaries []GetBdsInstancesBdsInstanceBdsClusterVersionSummary `pulumi:"bdsClusterVersionSummaries"`
 	// pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
 	BootstrapScriptUrl string `pulumi:"bootstrapScriptUrl"`
@@ -22377,7 +24254,9 @@ type GetBdsInstancesBdsInstanceInput interface {
 }
 
 type GetBdsInstancesBdsInstanceArgs struct {
-	// Cluster version details including bds and odh version information.
+	// The list of BDS capacity reservation configurations associated with the cluster.
+	BdsCapacityReservationConfigurations GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayInput `pulumi:"bdsCapacityReservationConfigurations"`
+	// Cluster version details including BDS and ODH version information.
 	BdsClusterVersionSummaries GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayInput `pulumi:"bdsClusterVersionSummaries"`
 	// pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
 	BootstrapScriptUrl pulumi.StringInput `pulumi:"bootstrapScriptUrl"`
@@ -22500,7 +24379,14 @@ func (o GetBdsInstancesBdsInstanceOutput) ToGetBdsInstancesBdsInstanceOutputWith
 	return o
 }
 
-// Cluster version details including bds and odh version information.
+// The list of BDS capacity reservation configurations associated with the cluster.
+func (o GetBdsInstancesBdsInstanceOutput) BdsCapacityReservationConfigurations() GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) []GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration {
+		return v.BdsCapacityReservationConfigurations
+	}).(GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayOutput)
+}
+
+// Cluster version details including BDS and ODH version information.
 func (o GetBdsInstancesBdsInstanceOutput) BdsClusterVersionSummaries() GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) []GetBdsInstancesBdsInstanceBdsClusterVersionSummary {
 		return v.BdsClusterVersionSummaries
@@ -22727,6 +24613,159 @@ func (o GetBdsInstancesBdsInstanceArrayOutput) Index(i pulumi.IntInput) GetBdsIn
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstancesBdsInstance {
 		return vs[0].([]GetBdsInstancesBdsInstance)[vs[1].(int)]
 	}).(GetBdsInstancesBdsInstanceOutput)
+}
+
+type GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration struct {
+	// The OCID of the BDS capacity reservation associated with the BDS cluster.
+	BdsCapacityReservationId string `pulumi:"bdsCapacityReservationId"`
+	// The OCID of the BDS cluster associated with the BDS capacity reservation.
+	BdsInstanceId string `pulumi:"bdsInstanceId"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// The OCID of the Big Data Service resource.
+	Id string `pulumi:"id"`
+	// The state of the cluster.
+	State string `pulumi:"state"`
+	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationInput is an input type that accepts GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArgs and GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationInput` via:
+//
+//	GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArgs{...}
+type GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput() GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput
+	ToGetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutputWithContext(context.Context) GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput
+}
+
+type GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArgs struct {
+	// The OCID of the BDS capacity reservation associated with the BDS cluster.
+	BdsCapacityReservationId pulumi.StringInput `pulumi:"bdsCapacityReservationId"`
+	// The OCID of the BDS cluster associated with the BDS capacity reservation.
+	BdsInstanceId pulumi.StringInput `pulumi:"bdsInstanceId"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The OCID of the Big Data Service resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The state of the cluster.
+	State pulumi.StringInput `pulumi:"state"`
+	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArgs) ToGetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput() GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput {
+	return i.ToGetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArgs) ToGetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput)
+}
+
+// GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayInput is an input type that accepts GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArray and GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayInput` via:
+//
+//	GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArray{ GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArgs{...} }
+type GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayOutput() GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayOutput
+	ToGetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayOutputWithContext(context.Context) GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayOutput
+}
+
+type GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArray []GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationInput
+
+func (GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArray) ToGetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayOutput() GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayOutput {
+	return i.ToGetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArray) ToGetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayOutput)
+}
+
+type GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput) ToGetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput() GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput) ToGetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput {
+	return o
+}
+
+// The OCID of the BDS capacity reservation associated with the BDS cluster.
+func (o GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput) BdsCapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration) string {
+		return v.BdsCapacityReservationId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the BDS cluster associated with the BDS capacity reservation.
+func (o GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput) BdsInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration) string { return v.BdsInstanceId }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The OCID of the Big Data Service resource.
+func (o GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The state of the cluster.
+func (o GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayOutput) ToGetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayOutput() GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayOutput) ToGetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration {
+		return vs[0].([]GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration)[vs[1].(int)]
+	}).(GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput)
 }
 
 type GetBdsInstancesBdsInstanceBdsClusterVersionSummary struct {
@@ -25660,6 +27699,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayInput)(nil)).Elem(), BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsCapacityReportShapeAvailabilityShapeConfigInput)(nil)).Elem(), BdsCapacityReportShapeAvailabilityShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsCapacityReportShapeAvailabilityShapeConfigPtrInput)(nil)).Elem(), BdsCapacityReportShapeAvailabilityShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsCapacityReservationComputeCapacityReservationsInput)(nil)).Elem(), BdsCapacityReservationComputeCapacityReservationsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsCapacityReservationComputeCapacityReservationsPtrInput)(nil)).Elem(), BdsCapacityReservationComputeCapacityReservationsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceBdsCapacityReservationConfigurationTypeInput)(nil)).Elem(), BdsInstanceBdsCapacityReservationConfigurationTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceBdsCapacityReservationConfigurationTypeArrayInput)(nil)).Elem(), BdsInstanceBdsCapacityReservationConfigurationTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceBdsClusterVersionSummaryInput)(nil)).Elem(), BdsInstanceBdsClusterVersionSummaryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceBdsClusterVersionSummaryPtrInput)(nil)).Elem(), BdsInstanceBdsClusterVersionSummaryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceCloudSqlDetailInput)(nil)).Elem(), BdsInstanceCloudSqlDetailArgs{})
@@ -25806,6 +27849,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArrayInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsFilterInput)(nil)).Elem(), GetAutoScalingConfigurationsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsFilterArrayInput)(nil)).Elem(), GetAutoScalingConfigurationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionInput)(nil)).Elem(), GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayInput)(nil)).Elem(), GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemInput)(nil)).Elem(), GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayInput)(nil)).Elem(), GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsCapacityReservationAssociatedConfigurationsFilterInput)(nil)).Elem(), GetBdsCapacityReservationAssociatedConfigurationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsCapacityReservationAssociatedConfigurationsFilterArrayInput)(nil)).Elem(), GetBdsCapacityReservationAssociatedConfigurationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsCapacityReservationComputeCapacityReservationInput)(nil)).Elem(), GetBdsCapacityReservationComputeCapacityReservationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsCapacityReservationComputeCapacityReservationArrayInput)(nil)).Elem(), GetBdsCapacityReservationComputeCapacityReservationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsCapacityReservationsBdsCapacityReservationCollectionInput)(nil)).Elem(), GetBdsCapacityReservationsBdsCapacityReservationCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsCapacityReservationsBdsCapacityReservationCollectionArrayInput)(nil)).Elem(), GetBdsCapacityReservationsBdsCapacityReservationCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsCapacityReservationsBdsCapacityReservationCollectionItemInput)(nil)).Elem(), GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayInput)(nil)).Elem(), GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationInput)(nil)).Elem(), GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayInput)(nil)).Elem(), GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsCapacityReservationsFilterInput)(nil)).Elem(), GetBdsCapacityReservationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsCapacityReservationsFilterArrayInput)(nil)).Elem(), GetBdsCapacityReservationsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsClusterVersionsBdsClusterVersionInput)(nil)).Elem(), GetBdsClusterVersionsBdsClusterVersionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsClusterVersionsBdsClusterVersionArrayInput)(nil)).Elem(), GetBdsClusterVersionsBdsClusterVersionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsClusterVersionsFilterInput)(nil)).Elem(), GetBdsClusterVersionsFilterArgs{})
@@ -25814,6 +27873,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceApiKeysBdsApiKeyArrayInput)(nil)).Elem(), GetBdsInstanceApiKeysBdsApiKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceApiKeysFilterInput)(nil)).Elem(), GetBdsInstanceApiKeysFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceApiKeysFilterArrayInput)(nil)).Elem(), GetBdsInstanceApiKeysFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceBdsCapacityReservationConfigurationTypeInput)(nil)).Elem(), GetBdsInstanceBdsCapacityReservationConfigurationTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceBdsCapacityReservationConfigurationTypeArrayInput)(nil)).Elem(), GetBdsInstanceBdsCapacityReservationConfigurationTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionInput)(nil)).Elem(), GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayInput)(nil)).Elem(), GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemInput)(nil)).Elem(), GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayInput)(nil)).Elem(), GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceBdsCapacityReservationConfigurationsFilterInput)(nil)).Elem(), GetBdsInstanceBdsCapacityReservationConfigurationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayInput)(nil)).Elem(), GetBdsInstanceBdsCapacityReservationConfigurationsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationInput)(nil)).Elem(), GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayInput)(nil)).Elem(), GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceBdsCertificateConfigurationsFilterInput)(nil)).Elem(), GetBdsInstanceBdsCertificateConfigurationsFilterArgs{})
@@ -25932,6 +27999,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceWorkerNodeShapeConfigArrayInput)(nil)).Elem(), GetBdsInstanceWorkerNodeShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceInput)(nil)).Elem(), GetBdsInstancesBdsInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationInput)(nil)).Elem(), GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceBdsClusterVersionSummaryInput)(nil)).Elem(), GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceCloudSqlDetailInput)(nil)).Elem(), GetBdsInstancesBdsInstanceCloudSqlDetailArgs{})
@@ -26022,6 +28091,10 @@ func init() {
 	pulumi.RegisterOutputType(BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutput{})
 	pulumi.RegisterOutputType(BdsCapacityReportShapeAvailabilityShapeConfigOutput{})
 	pulumi.RegisterOutputType(BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput{})
+	pulumi.RegisterOutputType(BdsCapacityReservationComputeCapacityReservationsOutput{})
+	pulumi.RegisterOutputType(BdsCapacityReservationComputeCapacityReservationsPtrOutput{})
+	pulumi.RegisterOutputType(BdsInstanceBdsCapacityReservationConfigurationTypeOutput{})
+	pulumi.RegisterOutputType(BdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput{})
 	pulumi.RegisterOutputType(BdsInstanceBdsClusterVersionSummaryOutput{})
 	pulumi.RegisterOutputType(BdsInstanceBdsClusterVersionSummaryPtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceCloudSqlDetailOutput{})
@@ -26168,6 +28241,22 @@ func init() {
 	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutput{})
 	pulumi.RegisterOutputType(GetAutoScalingConfigurationsFilterOutput{})
 	pulumi.RegisterOutputType(GetAutoScalingConfigurationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionOutput{})
+	pulumi.RegisterOutputType(GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsCapacityReservationAssociatedConfigurationsFilterOutput{})
+	pulumi.RegisterOutputType(GetBdsCapacityReservationAssociatedConfigurationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsCapacityReservationComputeCapacityReservationOutput{})
+	pulumi.RegisterOutputType(GetBdsCapacityReservationComputeCapacityReservationArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsCapacityReservationsBdsCapacityReservationCollectionOutput{})
+	pulumi.RegisterOutputType(GetBdsCapacityReservationsBdsCapacityReservationCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsCapacityReservationsBdsCapacityReservationCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetBdsCapacityReservationsBdsCapacityReservationCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationOutput{})
+	pulumi.RegisterOutputType(GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservationArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsCapacityReservationsFilterOutput{})
+	pulumi.RegisterOutputType(GetBdsCapacityReservationsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsClusterVersionsBdsClusterVersionOutput{})
 	pulumi.RegisterOutputType(GetBdsClusterVersionsBdsClusterVersionArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsClusterVersionsFilterOutput{})
@@ -26176,6 +28265,14 @@ func init() {
 	pulumi.RegisterOutputType(GetBdsInstanceApiKeysBdsApiKeyArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceApiKeysFilterOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceApiKeysFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceBdsCapacityReservationConfigurationTypeOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceBdsCapacityReservationConfigurationTypeArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceBdsCapacityReservationConfigurationsFilterOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceBdsCapacityReservationConfigurationsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceBdsCertificateConfigurationsFilterOutput{})
@@ -26294,6 +28391,8 @@ func init() {
 	pulumi.RegisterOutputType(GetBdsInstanceWorkerNodeShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceBdsCapacityReservationConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceBdsClusterVersionSummaryOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceBdsClusterVersionSummaryArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceCloudSqlDetailOutput{})

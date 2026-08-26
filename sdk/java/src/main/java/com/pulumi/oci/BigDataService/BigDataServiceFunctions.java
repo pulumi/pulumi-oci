@@ -12,6 +12,12 @@ import com.pulumi.oci.BigDataService.inputs.GetAutoScalingConfigurationArgs;
 import com.pulumi.oci.BigDataService.inputs.GetAutoScalingConfigurationPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetAutoScalingConfigurationsArgs;
 import com.pulumi.oci.BigDataService.inputs.GetAutoScalingConfigurationsPlainArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsCapacityReservationArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsCapacityReservationAssociatedConfigurationsArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsCapacityReservationAssociatedConfigurationsPlainArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsCapacityReservationPlainArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsCapacityReservationsArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsCapacityReservationsPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsClusterVersionsArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsClusterVersionsPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyArgs;
@@ -19,6 +25,10 @@ import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeysArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeysPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCapacityReservationConfigurationArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCapacityReservationConfigurationPlainArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCapacityReservationConfigurationsArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCapacityReservationConfigurationsPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCertificateConfigurationArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCertificateConfigurationPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCertificateConfigurationsArgs;
@@ -64,9 +74,14 @@ import com.pulumi.oci.BigDataService.inputs.GetBdsInstancesArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstancesPlainArgs;
 import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationResult;
 import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationsResult;
+import com.pulumi.oci.BigDataService.outputs.GetBdsCapacityReservationAssociatedConfigurationsResult;
+import com.pulumi.oci.BigDataService.outputs.GetBdsCapacityReservationResult;
+import com.pulumi.oci.BigDataService.outputs.GetBdsCapacityReservationsResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsClusterVersionsResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceApiKeyResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceApiKeysResult;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceBdsCapacityReservationConfigurationResult;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceBdsCapacityReservationConfigurationsResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceBdsCertificateConfigurationResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceBdsCertificateConfigurationsResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceGetOsPatchResult;
@@ -322,6 +337,661 @@ public final class BigDataServiceFunctions {
     }
     public static CompletableFuture<GetAutoScalingConfigurationsResult> getAutoScalingConfigurationsPlain(GetAutoScalingConfigurationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:BigDataService/getAutoScalingConfigurations:getAutoScalingConfigurations", TypeShape.of(GetAutoScalingConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Capacity Reservation resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the BDS capacity reservation identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsCapacityReservationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsCapacityReservation = BigDataServiceFunctions.getBdsCapacityReservation(GetBdsCapacityReservationArgs.builder()
+     *             .bdsCapacityReservationId(testBdsCapacityReservationOciBdsBdsCapacityReservation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBdsCapacityReservationResult> getBdsCapacityReservation(GetBdsCapacityReservationArgs args) {
+        return getBdsCapacityReservation(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Bds Capacity Reservation resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the BDS capacity reservation identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsCapacityReservationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsCapacityReservation = BigDataServiceFunctions.getBdsCapacityReservation(GetBdsCapacityReservationArgs.builder()
+     *             .bdsCapacityReservationId(testBdsCapacityReservationOciBdsBdsCapacityReservation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBdsCapacityReservationResult> getBdsCapacityReservationPlain(GetBdsCapacityReservationPlainArgs args) {
+        return getBdsCapacityReservationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Bds Capacity Reservation resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the BDS capacity reservation identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsCapacityReservationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsCapacityReservation = BigDataServiceFunctions.getBdsCapacityReservation(GetBdsCapacityReservationArgs.builder()
+     *             .bdsCapacityReservationId(testBdsCapacityReservationOciBdsBdsCapacityReservation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBdsCapacityReservationResult> getBdsCapacityReservation(GetBdsCapacityReservationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsCapacityReservation:getBdsCapacityReservation", TypeShape.of(GetBdsCapacityReservationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Capacity Reservation resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the BDS capacity reservation identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsCapacityReservationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsCapacityReservation = BigDataServiceFunctions.getBdsCapacityReservation(GetBdsCapacityReservationArgs.builder()
+     *             .bdsCapacityReservationId(testBdsCapacityReservationOciBdsBdsCapacityReservation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBdsCapacityReservationResult> getBdsCapacityReservation(GetBdsCapacityReservationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsCapacityReservation:getBdsCapacityReservation", TypeShape.of(GetBdsCapacityReservationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Capacity Reservation resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the BDS capacity reservation identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsCapacityReservationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsCapacityReservation = BigDataServiceFunctions.getBdsCapacityReservation(GetBdsCapacityReservationArgs.builder()
+     *             .bdsCapacityReservationId(testBdsCapacityReservationOciBdsBdsCapacityReservation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBdsCapacityReservationResult> getBdsCapacityReservationPlain(GetBdsCapacityReservationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsCapacityReservation:getBdsCapacityReservation", TypeShape.of(GetBdsCapacityReservationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Capacity Reservation Associated Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns a list of BDS capacity reservation configurations associated with the specified BDS capacity reservation.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsCapacityReservationAssociatedConfigurationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsCapacityReservationAssociatedConfigurations = BigDataServiceFunctions.getBdsCapacityReservationAssociatedConfigurations(GetBdsCapacityReservationAssociatedConfigurationsArgs.builder()
+     *             .bdsCapacityReservationId(testBdsCapacityReservation.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(bdsCapacityReservationAssociatedConfigurationDisplayName)
+     *             .state(bdsCapacityReservationAssociatedConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBdsCapacityReservationAssociatedConfigurationsResult> getBdsCapacityReservationAssociatedConfigurations(GetBdsCapacityReservationAssociatedConfigurationsArgs args) {
+        return getBdsCapacityReservationAssociatedConfigurations(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Capacity Reservation Associated Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns a list of BDS capacity reservation configurations associated with the specified BDS capacity reservation.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsCapacityReservationAssociatedConfigurationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsCapacityReservationAssociatedConfigurations = BigDataServiceFunctions.getBdsCapacityReservationAssociatedConfigurations(GetBdsCapacityReservationAssociatedConfigurationsArgs.builder()
+     *             .bdsCapacityReservationId(testBdsCapacityReservation.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(bdsCapacityReservationAssociatedConfigurationDisplayName)
+     *             .state(bdsCapacityReservationAssociatedConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBdsCapacityReservationAssociatedConfigurationsResult> getBdsCapacityReservationAssociatedConfigurationsPlain(GetBdsCapacityReservationAssociatedConfigurationsPlainArgs args) {
+        return getBdsCapacityReservationAssociatedConfigurationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Capacity Reservation Associated Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns a list of BDS capacity reservation configurations associated with the specified BDS capacity reservation.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsCapacityReservationAssociatedConfigurationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsCapacityReservationAssociatedConfigurations = BigDataServiceFunctions.getBdsCapacityReservationAssociatedConfigurations(GetBdsCapacityReservationAssociatedConfigurationsArgs.builder()
+     *             .bdsCapacityReservationId(testBdsCapacityReservation.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(bdsCapacityReservationAssociatedConfigurationDisplayName)
+     *             .state(bdsCapacityReservationAssociatedConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBdsCapacityReservationAssociatedConfigurationsResult> getBdsCapacityReservationAssociatedConfigurations(GetBdsCapacityReservationAssociatedConfigurationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsCapacityReservationAssociatedConfigurations:getBdsCapacityReservationAssociatedConfigurations", TypeShape.of(GetBdsCapacityReservationAssociatedConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Capacity Reservation Associated Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns a list of BDS capacity reservation configurations associated with the specified BDS capacity reservation.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsCapacityReservationAssociatedConfigurationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsCapacityReservationAssociatedConfigurations = BigDataServiceFunctions.getBdsCapacityReservationAssociatedConfigurations(GetBdsCapacityReservationAssociatedConfigurationsArgs.builder()
+     *             .bdsCapacityReservationId(testBdsCapacityReservation.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(bdsCapacityReservationAssociatedConfigurationDisplayName)
+     *             .state(bdsCapacityReservationAssociatedConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBdsCapacityReservationAssociatedConfigurationsResult> getBdsCapacityReservationAssociatedConfigurations(GetBdsCapacityReservationAssociatedConfigurationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsCapacityReservationAssociatedConfigurations:getBdsCapacityReservationAssociatedConfigurations", TypeShape.of(GetBdsCapacityReservationAssociatedConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Capacity Reservation Associated Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns a list of BDS capacity reservation configurations associated with the specified BDS capacity reservation.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsCapacityReservationAssociatedConfigurationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsCapacityReservationAssociatedConfigurations = BigDataServiceFunctions.getBdsCapacityReservationAssociatedConfigurations(GetBdsCapacityReservationAssociatedConfigurationsArgs.builder()
+     *             .bdsCapacityReservationId(testBdsCapacityReservation.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(bdsCapacityReservationAssociatedConfigurationDisplayName)
+     *             .state(bdsCapacityReservationAssociatedConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBdsCapacityReservationAssociatedConfigurationsResult> getBdsCapacityReservationAssociatedConfigurationsPlain(GetBdsCapacityReservationAssociatedConfigurationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsCapacityReservationAssociatedConfigurations:getBdsCapacityReservationAssociatedConfigurations", TypeShape.of(GetBdsCapacityReservationAssociatedConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Capacity Reservations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns a list of BDS capacity reservations in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsCapacityReservationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsCapacityReservations = BigDataServiceFunctions.getBdsCapacityReservations(GetBdsCapacityReservationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(bdsCapacityReservationDisplayName)
+     *             .state(bdsCapacityReservationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBdsCapacityReservationsResult> getBdsCapacityReservations(GetBdsCapacityReservationsArgs args) {
+        return getBdsCapacityReservations(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Capacity Reservations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns a list of BDS capacity reservations in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsCapacityReservationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsCapacityReservations = BigDataServiceFunctions.getBdsCapacityReservations(GetBdsCapacityReservationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(bdsCapacityReservationDisplayName)
+     *             .state(bdsCapacityReservationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBdsCapacityReservationsResult> getBdsCapacityReservationsPlain(GetBdsCapacityReservationsPlainArgs args) {
+        return getBdsCapacityReservationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Capacity Reservations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns a list of BDS capacity reservations in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsCapacityReservationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsCapacityReservations = BigDataServiceFunctions.getBdsCapacityReservations(GetBdsCapacityReservationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(bdsCapacityReservationDisplayName)
+     *             .state(bdsCapacityReservationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBdsCapacityReservationsResult> getBdsCapacityReservations(GetBdsCapacityReservationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsCapacityReservations:getBdsCapacityReservations", TypeShape.of(GetBdsCapacityReservationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Capacity Reservations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns a list of BDS capacity reservations in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsCapacityReservationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsCapacityReservations = BigDataServiceFunctions.getBdsCapacityReservations(GetBdsCapacityReservationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(bdsCapacityReservationDisplayName)
+     *             .state(bdsCapacityReservationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBdsCapacityReservationsResult> getBdsCapacityReservations(GetBdsCapacityReservationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsCapacityReservations:getBdsCapacityReservations", TypeShape.of(GetBdsCapacityReservationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Capacity Reservations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns a list of BDS capacity reservations in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsCapacityReservationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsCapacityReservations = BigDataServiceFunctions.getBdsCapacityReservations(GetBdsCapacityReservationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(bdsCapacityReservationDisplayName)
+     *             .state(bdsCapacityReservationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBdsCapacityReservationsResult> getBdsCapacityReservationsPlain(GetBdsCapacityReservationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsCapacityReservations:getBdsCapacityReservations", TypeShape.of(GetBdsCapacityReservationsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Bds Cluster Versions in Oracle Cloud Infrastructure Big Data Service service.
@@ -1249,6 +1919,466 @@ public final class BigDataServiceFunctions {
      */
     public static CompletableFuture<GetBdsInstanceApiKeysResult> getBdsInstanceApiKeysPlain(GetBdsInstanceApiKeysPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceApiKeys:getBdsInstanceApiKeys", TypeShape.of(GetBdsInstanceApiKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Bds Capacity Reservation Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the BDS capacity reservation configuration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.std.StdFunctions;
+     * import com.pulumi.std.inputs.RegexArgs;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCapacityReservationConfigurationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App }{{@code
+     *     public static void main(String[] args) }{{@code
+     *         Pulumi.run(App::stack);
+     *     }}{@code
+     * 
+     *     public static void stack(Context ctx) }{{@code
+     *         final var testBdsInstanceBdsCapacityReservationConfiguration = BigDataServiceFunctions.getBdsInstanceBdsCapacityReservationConfiguration(GetBdsInstanceBdsCapacityReservationConfigurationArgs.builder()
+     *             .bdsCapacityReservationConfigurationId(StdFunctions.regex(RegexArgs.builder()
+     *                 .pattern(".*}&#47;{@code bdsCapacityReservationConfigurations/([^/]+)$")
+     *                 .string(testBdsInstanceBdsCapacityReservationConfigurationOciBdsBdsInstanceBdsCapacityReservationConfiguration.id())
+     *                 .build()).result()[0])
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .build());
+     * 
+     *     }}{@code
+     * }}{@code
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBdsInstanceBdsCapacityReservationConfigurationResult> getBdsInstanceBdsCapacityReservationConfiguration(GetBdsInstanceBdsCapacityReservationConfigurationArgs args) {
+        return getBdsInstanceBdsCapacityReservationConfiguration(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Bds Capacity Reservation Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the BDS capacity reservation configuration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.std.StdFunctions;
+     * import com.pulumi.std.inputs.RegexArgs;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCapacityReservationConfigurationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App }{{@code
+     *     public static void main(String[] args) }{{@code
+     *         Pulumi.run(App::stack);
+     *     }}{@code
+     * 
+     *     public static void stack(Context ctx) }{{@code
+     *         final var testBdsInstanceBdsCapacityReservationConfiguration = BigDataServiceFunctions.getBdsInstanceBdsCapacityReservationConfiguration(GetBdsInstanceBdsCapacityReservationConfigurationArgs.builder()
+     *             .bdsCapacityReservationConfigurationId(StdFunctions.regex(RegexArgs.builder()
+     *                 .pattern(".*}&#47;{@code bdsCapacityReservationConfigurations/([^/]+)$")
+     *                 .string(testBdsInstanceBdsCapacityReservationConfigurationOciBdsBdsInstanceBdsCapacityReservationConfiguration.id())
+     *                 .build()).result()[0])
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .build());
+     * 
+     *     }}{@code
+     * }}{@code
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceBdsCapacityReservationConfigurationResult> getBdsInstanceBdsCapacityReservationConfigurationPlain(GetBdsInstanceBdsCapacityReservationConfigurationPlainArgs args) {
+        return getBdsInstanceBdsCapacityReservationConfigurationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Bds Capacity Reservation Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the BDS capacity reservation configuration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.std.StdFunctions;
+     * import com.pulumi.std.inputs.RegexArgs;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCapacityReservationConfigurationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App }{{@code
+     *     public static void main(String[] args) }{{@code
+     *         Pulumi.run(App::stack);
+     *     }}{@code
+     * 
+     *     public static void stack(Context ctx) }{{@code
+     *         final var testBdsInstanceBdsCapacityReservationConfiguration = BigDataServiceFunctions.getBdsInstanceBdsCapacityReservationConfiguration(GetBdsInstanceBdsCapacityReservationConfigurationArgs.builder()
+     *             .bdsCapacityReservationConfigurationId(StdFunctions.regex(RegexArgs.builder()
+     *                 .pattern(".*}&#47;{@code bdsCapacityReservationConfigurations/([^/]+)$")
+     *                 .string(testBdsInstanceBdsCapacityReservationConfigurationOciBdsBdsInstanceBdsCapacityReservationConfiguration.id())
+     *                 .build()).result()[0])
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .build());
+     * 
+     *     }}{@code
+     * }}{@code
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBdsInstanceBdsCapacityReservationConfigurationResult> getBdsInstanceBdsCapacityReservationConfiguration(GetBdsInstanceBdsCapacityReservationConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceBdsCapacityReservationConfiguration:getBdsInstanceBdsCapacityReservationConfiguration", TypeShape.of(GetBdsInstanceBdsCapacityReservationConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Bds Capacity Reservation Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the BDS capacity reservation configuration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.std.StdFunctions;
+     * import com.pulumi.std.inputs.RegexArgs;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCapacityReservationConfigurationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App }{{@code
+     *     public static void main(String[] args) }{{@code
+     *         Pulumi.run(App::stack);
+     *     }}{@code
+     * 
+     *     public static void stack(Context ctx) }{{@code
+     *         final var testBdsInstanceBdsCapacityReservationConfiguration = BigDataServiceFunctions.getBdsInstanceBdsCapacityReservationConfiguration(GetBdsInstanceBdsCapacityReservationConfigurationArgs.builder()
+     *             .bdsCapacityReservationConfigurationId(StdFunctions.regex(RegexArgs.builder()
+     *                 .pattern(".*}&#47;{@code bdsCapacityReservationConfigurations/([^/]+)$")
+     *                 .string(testBdsInstanceBdsCapacityReservationConfigurationOciBdsBdsInstanceBdsCapacityReservationConfiguration.id())
+     *                 .build()).result()[0])
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .build());
+     * 
+     *     }}{@code
+     * }}{@code
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBdsInstanceBdsCapacityReservationConfigurationResult> getBdsInstanceBdsCapacityReservationConfiguration(GetBdsInstanceBdsCapacityReservationConfigurationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceBdsCapacityReservationConfiguration:getBdsInstanceBdsCapacityReservationConfiguration", TypeShape.of(GetBdsInstanceBdsCapacityReservationConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Bds Capacity Reservation Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the BDS capacity reservation configuration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.std.StdFunctions;
+     * import com.pulumi.std.inputs.RegexArgs;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCapacityReservationConfigurationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App }{{@code
+     *     public static void main(String[] args) }{{@code
+     *         Pulumi.run(App::stack);
+     *     }}{@code
+     * 
+     *     public static void stack(Context ctx) }{{@code
+     *         final var testBdsInstanceBdsCapacityReservationConfiguration = BigDataServiceFunctions.getBdsInstanceBdsCapacityReservationConfiguration(GetBdsInstanceBdsCapacityReservationConfigurationArgs.builder()
+     *             .bdsCapacityReservationConfigurationId(StdFunctions.regex(RegexArgs.builder()
+     *                 .pattern(".*}&#47;{@code bdsCapacityReservationConfigurations/([^/]+)$")
+     *                 .string(testBdsInstanceBdsCapacityReservationConfigurationOciBdsBdsInstanceBdsCapacityReservationConfiguration.id())
+     *                 .build()).result()[0])
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .build());
+     * 
+     *     }}{@code
+     * }}{@code
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceBdsCapacityReservationConfigurationResult> getBdsInstanceBdsCapacityReservationConfigurationPlain(GetBdsInstanceBdsCapacityReservationConfigurationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceBdsCapacityReservationConfiguration:getBdsInstanceBdsCapacityReservationConfiguration", TypeShape.of(GetBdsInstanceBdsCapacityReservationConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Bds Capacity Reservation Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns a list of BDS capacity reservation configurations for the specified BDS cluster.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCapacityReservationConfigurationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceBdsCapacityReservationConfigurations = BigDataServiceFunctions.getBdsInstanceBdsCapacityReservationConfigurations(GetBdsInstanceBdsCapacityReservationConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceBdsCapacityReservationConfigurationDisplayName)
+     *             .state(bdsInstanceBdsCapacityReservationConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBdsInstanceBdsCapacityReservationConfigurationsResult> getBdsInstanceBdsCapacityReservationConfigurations(GetBdsInstanceBdsCapacityReservationConfigurationsArgs args) {
+        return getBdsInstanceBdsCapacityReservationConfigurations(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Instance Bds Capacity Reservation Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns a list of BDS capacity reservation configurations for the specified BDS cluster.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCapacityReservationConfigurationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceBdsCapacityReservationConfigurations = BigDataServiceFunctions.getBdsInstanceBdsCapacityReservationConfigurations(GetBdsInstanceBdsCapacityReservationConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceBdsCapacityReservationConfigurationDisplayName)
+     *             .state(bdsInstanceBdsCapacityReservationConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceBdsCapacityReservationConfigurationsResult> getBdsInstanceBdsCapacityReservationConfigurationsPlain(GetBdsInstanceBdsCapacityReservationConfigurationsPlainArgs args) {
+        return getBdsInstanceBdsCapacityReservationConfigurationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Instance Bds Capacity Reservation Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns a list of BDS capacity reservation configurations for the specified BDS cluster.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCapacityReservationConfigurationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceBdsCapacityReservationConfigurations = BigDataServiceFunctions.getBdsInstanceBdsCapacityReservationConfigurations(GetBdsInstanceBdsCapacityReservationConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceBdsCapacityReservationConfigurationDisplayName)
+     *             .state(bdsInstanceBdsCapacityReservationConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBdsInstanceBdsCapacityReservationConfigurationsResult> getBdsInstanceBdsCapacityReservationConfigurations(GetBdsInstanceBdsCapacityReservationConfigurationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceBdsCapacityReservationConfigurations:getBdsInstanceBdsCapacityReservationConfigurations", TypeShape.of(GetBdsInstanceBdsCapacityReservationConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Bds Capacity Reservation Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns a list of BDS capacity reservation configurations for the specified BDS cluster.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCapacityReservationConfigurationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceBdsCapacityReservationConfigurations = BigDataServiceFunctions.getBdsInstanceBdsCapacityReservationConfigurations(GetBdsInstanceBdsCapacityReservationConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceBdsCapacityReservationConfigurationDisplayName)
+     *             .state(bdsInstanceBdsCapacityReservationConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBdsInstanceBdsCapacityReservationConfigurationsResult> getBdsInstanceBdsCapacityReservationConfigurations(GetBdsInstanceBdsCapacityReservationConfigurationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceBdsCapacityReservationConfigurations:getBdsInstanceBdsCapacityReservationConfigurations", TypeShape.of(GetBdsInstanceBdsCapacityReservationConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Bds Capacity Reservation Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns a list of BDS capacity reservation configurations for the specified BDS cluster.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCapacityReservationConfigurationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceBdsCapacityReservationConfigurations = BigDataServiceFunctions.getBdsInstanceBdsCapacityReservationConfigurations(GetBdsInstanceBdsCapacityReservationConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceBdsCapacityReservationConfigurationDisplayName)
+     *             .state(bdsInstanceBdsCapacityReservationConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceBdsCapacityReservationConfigurationsResult> getBdsInstanceBdsCapacityReservationConfigurationsPlain(GetBdsInstanceBdsCapacityReservationConfigurationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceBdsCapacityReservationConfigurations:getBdsInstanceBdsCapacityReservationConfigurations", TypeShape.of(GetBdsInstanceBdsCapacityReservationConfigurationsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Bds Instance Bds Certificate Configuration resource in Oracle Cloud Infrastructure Big Data Service service.

@@ -4,7 +4,6 @@
 package com.pulumi.oci.RecoveryMod.inputs;
 
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.RecoveryMod.inputs.GetRecoveryServiceSubnetsFilter;
 import java.lang.String;
 import java.util.List;
@@ -21,15 +20,15 @@ public final class GetRecoveryServiceSubnetsPlainArgs extends com.pulumi.resourc
      * The compartment OCID.
      * 
      */
-    @Import(name="compartmentId", required=true)
-    private String compartmentId;
+    @Import(name="compartmentId")
+    private @Nullable String compartmentId;
 
     /**
      * @return The compartment OCID.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
 
     /**
@@ -134,7 +133,7 @@ public final class GetRecoveryServiceSubnetsPlainArgs extends com.pulumi.resourc
          * @return builder
          * 
          */
-        public Builder compartmentId(String compartmentId) {
+        public Builder compartmentId(@Nullable String compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
@@ -193,9 +192,6 @@ public final class GetRecoveryServiceSubnetsPlainArgs extends com.pulumi.resourc
         }
 
         public GetRecoveryServiceSubnetsPlainArgs build() {
-            if ($.compartmentId == null) {
-                throw new MissingRequiredPropertyException("GetRecoveryServiceSubnetsPlainArgs", "compartmentId");
-            }
             return $;
         }
     }

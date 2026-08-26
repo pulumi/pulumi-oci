@@ -46,7 +46,7 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+        /// A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
         /// </summary>
         public readonly bool MustEnforceCloudLocality;
         /// <summary>

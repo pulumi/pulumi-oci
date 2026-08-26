@@ -13,13 +13,13 @@ namespace Pulumi.Oci.BigDataService.Inputs
     public sealed class BdsInstanceBdsClusterVersionSummaryGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// BDS version to be used for cluster creation
+        /// BDS version to be used for cluster creation.
         /// </summary>
-        [Input("bdsVersion", required: true)]
-        public Input<string> BdsVersion { get; set; } = null!;
+        [Input("bdsVersion")]
+        public Input<string>? BdsVersion { get; set; }
 
         /// <summary>
-        /// ODH version to be used for cluster creation
+        /// ODH version to be used for cluster creation.
         /// </summary>
         [Input("odhVersion")]
         public Input<string>? OdhVersion { get; set; }

@@ -77,7 +77,7 @@ public final class BdsInstanceClusterDetail {
      */
     private @Nullable String osVersion;
     /**
-     * @return The time the BDS instance was created. An RFC3339 formatted datetime string
+     * @return The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
     private @Nullable String timeCreated;
@@ -180,7 +180,7 @@ public final class BdsInstanceClusterDetail {
         return Optional.ofNullable(this.osVersion);
     }
     /**
-     * @return The time the BDS instance was created. An RFC3339 formatted datetime string
+     * @return The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
     public Optional<String> timeCreated() {

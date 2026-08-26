@@ -18,16 +18,16 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly string? BlockVolumeSizeInGbs;
         /// <summary>
-        /// Number of nodes that forming the cluster
+        /// The number of nodes that form the cluster.
         /// </summary>
         public readonly int NumberOfNodes;
         /// <summary>
-        /// Shape of the node
+        /// Shape of the node.
         /// </summary>
         public readonly string Shape;
         public readonly Outputs.BdsInstanceEdgeNodeShapeConfig? ShapeConfig;
         /// <summary>
-        /// The OCID of the subnet in which the node should be created
+        /// The OCID of the subnet in which the node is to be created.
         /// </summary>
         public readonly string SubnetId;
 

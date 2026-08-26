@@ -5,10 +5,25 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { BlueGreenDeploymentArgs, BlueGreenDeploymentState } from "./blueGreenDeployment";
+export type BlueGreenDeployment = import("./blueGreenDeployment").BlueGreenDeployment;
+export const BlueGreenDeployment: typeof import("./blueGreenDeployment").BlueGreenDeployment = null as any;
+utilities.lazyLoad(exports, ["BlueGreenDeployment"], () => require("./blueGreenDeployment"));
+
 export { ChannelArgs, ChannelState } from "./channel";
 export type Channel = import("./channel").Channel;
 export const Channel: typeof import("./channel").Channel = null as any;
 utilities.lazyLoad(exports, ["Channel"], () => require("./channel"));
+
+export { GetBlueGreenDeploymentArgs, GetBlueGreenDeploymentResult, GetBlueGreenDeploymentOutputArgs } from "./getBlueGreenDeployment";
+export const getBlueGreenDeployment: typeof import("./getBlueGreenDeployment").getBlueGreenDeployment = null as any;
+export const getBlueGreenDeploymentOutput: typeof import("./getBlueGreenDeployment").getBlueGreenDeploymentOutput = null as any;
+utilities.lazyLoad(exports, ["getBlueGreenDeployment","getBlueGreenDeploymentOutput"], () => require("./getBlueGreenDeployment"));
+
+export { GetBlueGreenDeploymentsArgs, GetBlueGreenDeploymentsResult, GetBlueGreenDeploymentsOutputArgs } from "./getBlueGreenDeployments";
+export const getBlueGreenDeployments: typeof import("./getBlueGreenDeployments").getBlueGreenDeployments = null as any;
+export const getBlueGreenDeploymentsOutput: typeof import("./getBlueGreenDeployments").getBlueGreenDeploymentsOutput = null as any;
+utilities.lazyLoad(exports, ["getBlueGreenDeployments","getBlueGreenDeploymentsOutput"], () => require("./getBlueGreenDeployments"));
 
 export { GetChannelArgs, GetChannelResult, GetChannelOutputArgs } from "./getChannel";
 export const getChannel: typeof import("./getChannel").getChannel = null as any;
@@ -110,6 +125,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:Mysql/blueGreenDeployment:BlueGreenDeployment":
+                return new BlueGreenDeployment(name, <any>undefined, { urn })
             case "oci:Mysql/channel:Channel":
                 return new Channel(name, <any>undefined, { urn })
             case "oci:Mysql/heatWaveCluster:HeatWaveCluster":
@@ -127,6 +144,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "Mysql/blueGreenDeployment", _module)
 pulumi.runtime.registerResourceModule("oci", "Mysql/channel", _module)
 pulumi.runtime.registerResourceModule("oci", "Mysql/heatWaveCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Mysql/mysqlBackup", _module)

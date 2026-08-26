@@ -34,14 +34,14 @@ public final class BdsInstanceEdgeNodeArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * Number of nodes that forming the cluster
+     * The number of nodes that form the cluster.
      * 
      */
     @Import(name="numberOfNodes", required=true)
     private Output<Integer> numberOfNodes;
 
     /**
-     * @return Number of nodes that forming the cluster
+     * @return The number of nodes that form the cluster.
      * 
      */
     public Output<Integer> numberOfNodes() {
@@ -49,14 +49,14 @@ public final class BdsInstanceEdgeNodeArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * Shape of the node
+     * Shape of the node.
      * 
      */
     @Import(name="shape", required=true)
     private Output<String> shape;
 
     /**
-     * @return Shape of the node
+     * @return Shape of the node.
      * 
      */
     public Output<String> shape() {
@@ -71,14 +71,14 @@ public final class BdsInstanceEdgeNodeArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The OCID of the subnet in which the node should be created
+     * The OCID of the subnet in which the node is to be created.
      * 
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
 
     /**
-     * @return The OCID of the subnet in which the node should be created
+     * @return The OCID of the subnet in which the node is to be created.
      * 
      */
     public Output<String> subnetId() {
@@ -135,7 +135,7 @@ public final class BdsInstanceEdgeNodeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param numberOfNodes Number of nodes that forming the cluster
+         * @param numberOfNodes The number of nodes that form the cluster.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class BdsInstanceEdgeNodeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param numberOfNodes Number of nodes that forming the cluster
+         * @param numberOfNodes The number of nodes that form the cluster.
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class BdsInstanceEdgeNodeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param shape Shape of the node
+         * @param shape Shape of the node.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class BdsInstanceEdgeNodeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param shape Shape of the node
+         * @param shape Shape of the node.
          * 
          * @return builder
          * 
@@ -186,7 +186,7 @@ public final class BdsInstanceEdgeNodeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param subnetId The OCID of the subnet in which the node should be created
+         * @param subnetId The OCID of the subnet in which the node is to be created.
          * 
          * @return builder
          * 
@@ -197,7 +197,7 @@ public final class BdsInstanceEdgeNodeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param subnetId The OCID of the subnet in which the node should be created
+         * @param subnetId The OCID of the subnet in which the node is to be created.
          * 
          * @return builder
          * 

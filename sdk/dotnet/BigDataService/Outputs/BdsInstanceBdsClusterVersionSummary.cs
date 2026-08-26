@@ -14,17 +14,17 @@ namespace Pulumi.Oci.BigDataService.Outputs
     public sealed class BdsInstanceBdsClusterVersionSummary
     {
         /// <summary>
-        /// BDS version to be used for cluster creation
+        /// BDS version to be used for cluster creation.
         /// </summary>
-        public readonly string BdsVersion;
+        public readonly string? BdsVersion;
         /// <summary>
-        /// ODH version to be used for cluster creation
+        /// ODH version to be used for cluster creation.
         /// </summary>
         public readonly string? OdhVersion;
 
         [OutputConstructor]
         private BdsInstanceBdsClusterVersionSummary(
-            string bdsVersion,
+            string? bdsVersion,
 
             string? odhVersion)
         {

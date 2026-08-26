@@ -26,7 +26,8 @@ import * as utilities from "../utilities";
  * });
  * ```
  */
-export function getRecoveryServiceSubnets(args: GetRecoveryServiceSubnetsArgs, opts?: pulumi.InvokeOptions): Promise<GetRecoveryServiceSubnetsResult> {
+export function getRecoveryServiceSubnets(args?: GetRecoveryServiceSubnetsArgs, opts?: pulumi.InvokeOptions): Promise<GetRecoveryServiceSubnetsResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:RecoveryMod/getRecoveryServiceSubnets:getRecoveryServiceSubnets", {
         "compartmentId": args.compartmentId,
@@ -45,7 +46,7 @@ export interface GetRecoveryServiceSubnetsArgs {
     /**
      * The compartment OCID.
      */
-    compartmentId: string;
+    compartmentId?: string;
     /**
      * A filter to return only resources that match the entire 'displayname' given.
      */
@@ -72,7 +73,7 @@ export interface GetRecoveryServiceSubnetsResult {
     /**
      * The compartment OCID.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * A user-provided name for the recovery service subnet.
      */
@@ -115,7 +116,8 @@ export interface GetRecoveryServiceSubnetsResult {
  * });
  * ```
  */
-export function getRecoveryServiceSubnetsOutput(args: GetRecoveryServiceSubnetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRecoveryServiceSubnetsResult> {
+export function getRecoveryServiceSubnetsOutput(args?: GetRecoveryServiceSubnetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRecoveryServiceSubnetsResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:RecoveryMod/getRecoveryServiceSubnets:getRecoveryServiceSubnets", {
         "compartmentId": args.compartmentId,
@@ -134,7 +136,7 @@ export interface GetRecoveryServiceSubnetsOutputArgs {
     /**
      * The compartment OCID.
      */
-    compartmentId: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire 'displayname' given.
      */

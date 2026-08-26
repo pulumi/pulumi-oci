@@ -1559,7 +1559,7 @@ type GetProtectionPoliciesProtectionPolicyCollectionItem struct {
 	IsPredefinedPolicy bool `pulumi:"isPredefinedPolicy"`
 	// Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+	// A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
 	MustEnforceCloudLocality bool `pulumi:"mustEnforceCloudLocality"`
 	// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
 	PolicyLockedDateTime string `pulumi:"policyLockedDateTime"`
@@ -1601,7 +1601,7 @@ type GetProtectionPoliciesProtectionPolicyCollectionItemArgs struct {
 	IsPredefinedPolicy pulumi.BoolInput `pulumi:"isPredefinedPolicy"`
 	// Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+	// A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
 	MustEnforceCloudLocality pulumi.BoolInput `pulumi:"mustEnforceCloudLocality"`
 	// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
 	PolicyLockedDateTime pulumi.StringInput `pulumi:"policyLockedDateTime"`
@@ -1706,7 +1706,7 @@ func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) LifecycleDeta
 	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+// A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
 func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) MustEnforceCloudLocality() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) bool { return v.MustEnforceCloudLocality }).(pulumi.BoolOutput)
 }
@@ -1973,6 +1973,8 @@ type GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
 	NsgIds []string `pulumi:"nsgIds"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes string `pulumi:"securityAttributes"`
 	// A filter to return only the resources that match the specified lifecycle state.
 	State string `pulumi:"state"`
 	// Deprecated. One of the subnets associated with the Recovery Service subnet.
@@ -2017,6 +2019,8 @@ type GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringInput `pulumi:"securityAttributes"`
 	// A filter to return only the resources that match the specified lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// Deprecated. One of the subnets associated with the Recovery Service subnet.
@@ -2123,6 +2127,13 @@ func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) Life
 // A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
 func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) SecurityAttributes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) string {
+		return v.SecurityAttributes
+	}).(pulumi.StringOutput)
 }
 
 // A filter to return only the resources that match the specified lifecycle state.

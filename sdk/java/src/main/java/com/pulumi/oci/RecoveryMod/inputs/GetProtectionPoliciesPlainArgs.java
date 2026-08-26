@@ -4,8 +4,8 @@
 package com.pulumi.oci.RecoveryMod.inputs;
 
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.RecoveryMod.inputs.GetProtectionPoliciesFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -21,15 +21,15 @@ public final class GetProtectionPoliciesPlainArgs extends com.pulumi.resources.I
      * The compartment OCID.
      * 
      */
-    @Import(name="compartmentId", required=true)
-    private String compartmentId;
+    @Import(name="compartmentId")
+    private @Nullable String compartmentId;
 
     /**
      * @return The compartment OCID.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
 
     /**
@@ -52,6 +52,21 @@ public final class GetProtectionPoliciesPlainArgs extends com.pulumi.resources.I
 
     public Optional<List<GetProtectionPoliciesFilter>> filters() {
         return Optional.ofNullable(this.filters);
+    }
+
+    /**
+     * A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
+     * 
+     */
+    @Import(name="mustEnforceCloudLocality")
+    private @Nullable Boolean mustEnforceCloudLocality;
+
+    /**
+     * @return A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
+     * 
+     */
+    public Optional<Boolean> mustEnforceCloudLocality() {
+        return Optional.ofNullable(this.mustEnforceCloudLocality);
     }
 
     /**
@@ -105,6 +120,7 @@ public final class GetProtectionPoliciesPlainArgs extends com.pulumi.resources.I
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.mustEnforceCloudLocality = $.mustEnforceCloudLocality;
         this.owner = $.owner;
         this.protectionPolicyId = $.protectionPolicyId;
         this.state = $.state;
@@ -134,7 +150,7 @@ public final class GetProtectionPoliciesPlainArgs extends com.pulumi.resources.I
          * @return builder
          * 
          */
-        public Builder compartmentId(String compartmentId) {
+        public Builder compartmentId(@Nullable String compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
@@ -157,6 +173,17 @@ public final class GetProtectionPoliciesPlainArgs extends com.pulumi.resources.I
 
         public Builder filters(GetProtectionPoliciesFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param mustEnforceCloudLocality A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mustEnforceCloudLocality(@Nullable Boolean mustEnforceCloudLocality) {
+            $.mustEnforceCloudLocality = mustEnforceCloudLocality;
+            return this;
         }
 
         /**
@@ -193,9 +220,6 @@ public final class GetProtectionPoliciesPlainArgs extends com.pulumi.resources.I
         }
 
         public GetProtectionPoliciesPlainArgs build() {
-            if ($.compartmentId == null) {
-                throw new MissingRequiredPropertyException("GetProtectionPoliciesPlainArgs", "compartmentId");
-            }
             return $;
         }
     }

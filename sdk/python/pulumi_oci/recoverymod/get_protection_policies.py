@@ -28,7 +28,7 @@ class GetProtectionPoliciesResult:
     """
     A collection of values returned by getProtectionPolicies.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, owner=None, protection_policy_collections=None, protection_policy_id=None, state=None):
+    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, must_enforce_cloud_locality=None, owner=None, protection_policy_collections=None, protection_policy_id=None, state=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -41,6 +41,9 @@ class GetProtectionPoliciesResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if must_enforce_cloud_locality and not isinstance(must_enforce_cloud_locality, bool):
+            raise TypeError("Expected argument 'must_enforce_cloud_locality' to be a bool")
+        pulumi.set(__self__, "must_enforce_cloud_locality", must_enforce_cloud_locality)
         if owner and not isinstance(owner, str):
             raise TypeError("Expected argument 'owner' to be a str")
         pulumi.set(__self__, "owner", owner)
@@ -56,7 +59,7 @@ class GetProtectionPoliciesResult:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> _builtins.str:
+    def compartment_id(self) -> Optional[_builtins.str]:
         """
         The OCID of the compartment that contains the protection policy.
         """
@@ -82,6 +85,14 @@ class GetProtectionPoliciesResult:
         The provider-assigned unique ID for this managed resource.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="mustEnforceCloudLocality")
+    def must_enforce_cloud_locality(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+        """
+        return pulumi.get(self, "must_enforce_cloud_locality")
 
     @_builtins.property
     @pulumi.getter
@@ -120,6 +131,7 @@ class AwaitableGetProtectionPoliciesResult(GetProtectionPoliciesResult):
             display_name=self.display_name,
             filters=self.filters,
             id=self.id,
+            must_enforce_cloud_locality=self.must_enforce_cloud_locality,
             owner=self.owner,
             protection_policy_collections=self.protection_policy_collections,
             protection_policy_id=self.protection_policy_id,
@@ -129,6 +141,7 @@ class AwaitableGetProtectionPoliciesResult(GetProtectionPoliciesResult):
 def get_protection_policies(compartment_id: Optional[_builtins.str] = None,
                             display_name: Optional[_builtins.str] = None,
                             filters: Optional[Sequence[Union['GetProtectionPoliciesFilterArgs', 'GetProtectionPoliciesFilterArgsDict']]] = None,
+                            must_enforce_cloud_locality: Optional[_builtins.bool] = None,
                             owner: Optional[_builtins.str] = None,
                             protection_policy_id: Optional[_builtins.str] = None,
                             state: Optional[_builtins.str] = None,
@@ -146,6 +159,7 @@ def get_protection_policies(compartment_id: Optional[_builtins.str] = None,
 
     test_protection_policies = oci.recoverymod.get_protection_policies(compartment_id=compartment_id,
         display_name=protection_policy_display_name,
+        must_enforce_cloud_locality=protection_policy_must_enforce_cloud_locality == "true",
         owner=protection_policy_owner,
         protection_policy_id=test_protection_policy["id"],
         state=protection_policy_state)
@@ -154,6 +168,7 @@ def get_protection_policies(compartment_id: Optional[_builtins.str] = None,
 
     :param _builtins.str compartment_id: The compartment OCID.
     :param _builtins.str display_name: A filter to return only resources that match the entire 'displayname' given.
+    :param _builtins.bool must_enforce_cloud_locality: A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
     :param _builtins.str owner: A filter to return only the policies that match the owner as 'Customer' or 'Oracle'.
     :param _builtins.str protection_policy_id: The protection policy OCID.
     :param _builtins.str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
@@ -162,6 +177,7 @@ def get_protection_policies(compartment_id: Optional[_builtins.str] = None,
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['mustEnforceCloudLocality'] = must_enforce_cloud_locality
     __args__['owner'] = owner
     __args__['protectionPolicyId'] = protection_policy_id
     __args__['state'] = state
@@ -173,13 +189,15 @@ def get_protection_policies(compartment_id: Optional[_builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        must_enforce_cloud_locality=pulumi.get(__ret__, 'must_enforce_cloud_locality'),
         owner=pulumi.get(__ret__, 'owner'),
         protection_policy_collections=pulumi.get(__ret__, 'protection_policy_collections'),
         protection_policy_id=pulumi.get(__ret__, 'protection_policy_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_protection_policies_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_protection_policies_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProtectionPoliciesFilterArgs', 'GetProtectionPoliciesFilterArgsDict']]]]] = None,
+                                   must_enforce_cloud_locality: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                    owner: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    protection_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
@@ -197,6 +215,7 @@ def get_protection_policies_output(compartment_id: pulumi.Input[Optional[_builti
 
     test_protection_policies = oci.recoverymod.get_protection_policies(compartment_id=compartment_id,
         display_name=protection_policy_display_name,
+        must_enforce_cloud_locality=protection_policy_must_enforce_cloud_locality == "true",
         owner=protection_policy_owner,
         protection_policy_id=test_protection_policy["id"],
         state=protection_policy_state)
@@ -205,6 +224,7 @@ def get_protection_policies_output(compartment_id: pulumi.Input[Optional[_builti
 
     :param _builtins.str compartment_id: The compartment OCID.
     :param _builtins.str display_name: A filter to return only resources that match the entire 'displayname' given.
+    :param _builtins.bool must_enforce_cloud_locality: A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
     :param _builtins.str owner: A filter to return only the policies that match the owner as 'Customer' or 'Oracle'.
     :param _builtins.str protection_policy_id: The protection policy OCID.
     :param _builtins.str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
@@ -213,6 +233,7 @@ def get_protection_policies_output(compartment_id: pulumi.Input[Optional[_builti
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['mustEnforceCloudLocality'] = must_enforce_cloud_locality
     __args__['owner'] = owner
     __args__['protectionPolicyId'] = protection_policy_id
     __args__['state'] = state
@@ -223,6 +244,7 @@ def get_protection_policies_output(compartment_id: pulumi.Input[Optional[_builti
         display_name=pulumi.get(__response__, 'display_name'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
+        must_enforce_cloud_locality=pulumi.get(__response__, 'must_enforce_cloud_locality'),
         owner=pulumi.get(__response__, 'owner'),
         protection_policy_collections=pulumi.get(__response__, 'protection_policy_collections'),
         protection_policy_id=pulumi.get(__response__, 'protection_policy_id'),

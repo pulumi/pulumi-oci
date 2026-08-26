@@ -53,7 +53,7 @@ class GetRecoveryServiceSubnetsResult:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> _builtins.str:
+    def compartment_id(self) -> Optional[_builtins.str]:
         """
         The compartment OCID.
         """
@@ -170,7 +170,7 @@ def get_recovery_service_subnets(compartment_id: Optional[_builtins.str] = None,
         recovery_service_subnet_collections=pulumi.get(__ret__, 'recovery_service_subnet_collections'),
         state=pulumi.get(__ret__, 'state'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_recovery_service_subnets_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_recovery_service_subnets_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRecoveryServiceSubnetsFilterArgs', 'GetRecoveryServiceSubnetsFilterArgsDict']]]]] = None,
                                         id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

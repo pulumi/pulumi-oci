@@ -71,6 +71,10 @@ export interface GetRecoveryServiceSubnetResult {
     readonly nsgIds: string[];
     readonly recoveryServiceSubnetId: string;
     /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    readonly securityAttributes: string;
+    /**
      * The current state of the recovery service subnet.
      */
     readonly state: string;

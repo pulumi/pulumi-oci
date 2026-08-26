@@ -5,6 +5,7 @@ package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesBdsInstanceBdsClusterVersionSummary;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesBdsInstanceCloudSqlDetail;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesBdsInstanceClusterDetail;
@@ -27,7 +28,12 @@ import java.util.Objects;
 @CustomType
 public final class GetBdsInstancesBdsInstance {
     /**
-     * @return Cluster version details including bds and odh version information.
+     * @return The list of BDS capacity reservation configurations associated with the cluster.
+     * 
+     */
+    private List<GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration> bdsCapacityReservationConfigurations;
+    /**
+     * @return Cluster version details including BDS and ODH version information.
      * 
      */
     private List<GetBdsInstancesBdsInstanceBdsClusterVersionSummary> bdsClusterVersionSummaries;
@@ -180,7 +186,14 @@ public final class GetBdsInstancesBdsInstance {
 
     private GetBdsInstancesBdsInstance() {}
     /**
-     * @return Cluster version details including bds and odh version information.
+     * @return The list of BDS capacity reservation configurations associated with the cluster.
+     * 
+     */
+    public List<GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration> bdsCapacityReservationConfigurations() {
+        return this.bdsCapacityReservationConfigurations;
+    }
+    /**
+     * @return Cluster version details including BDS and ODH version information.
      * 
      */
     public List<GetBdsInstancesBdsInstanceBdsClusterVersionSummary> bdsClusterVersionSummaries() {
@@ -426,6 +439,7 @@ public final class GetBdsInstancesBdsInstance {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration> bdsCapacityReservationConfigurations;
         private List<GetBdsInstancesBdsInstanceBdsClusterVersionSummary> bdsClusterVersionSummaries;
         private String bootstrapScriptUrl;
         private List<GetBdsInstancesBdsInstanceCloudSqlDetail> cloudSqlDetails;
@@ -472,6 +486,7 @@ public final class GetBdsInstancesBdsInstance {
         public Builder() {}
         public Builder(GetBdsInstancesBdsInstance defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.bdsCapacityReservationConfigurations = defaults.bdsCapacityReservationConfigurations;
     	      this.bdsClusterVersionSummaries = defaults.bdsClusterVersionSummaries;
     	      this.bootstrapScriptUrl = defaults.bootstrapScriptUrl;
     	      this.cloudSqlDetails = defaults.cloudSqlDetails;
@@ -517,6 +532,17 @@ public final class GetBdsInstancesBdsInstance {
     	      this.workerNodes = defaults.workerNodes;
         }
 
+        @CustomType.Setter
+        public Builder bdsCapacityReservationConfigurations(List<GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration> bdsCapacityReservationConfigurations) {
+            if (bdsCapacityReservationConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "bdsCapacityReservationConfigurations");
+            }
+            this.bdsCapacityReservationConfigurations = bdsCapacityReservationConfigurations;
+            return this;
+        }
+        public Builder bdsCapacityReservationConfigurations(GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration... bdsCapacityReservationConfigurations) {
+            return bdsCapacityReservationConfigurations(List.of(bdsCapacityReservationConfigurations));
+        }
         @CustomType.Setter
         public Builder bdsClusterVersionSummaries(List<GetBdsInstancesBdsInstanceBdsClusterVersionSummary> bdsClusterVersionSummaries) {
             if (bdsClusterVersionSummaries == null) {
@@ -905,6 +931,7 @@ public final class GetBdsInstancesBdsInstance {
         }
         public GetBdsInstancesBdsInstance build() {
             final var _resultValue = new GetBdsInstancesBdsInstance();
+            _resultValue.bdsCapacityReservationConfigurations = bdsCapacityReservationConfigurations;
             _resultValue.bdsClusterVersionSummaries = bdsClusterVersionSummaries;
             _resultValue.bootstrapScriptUrl = bootstrapScriptUrl;
             _resultValue.cloudSqlDetails = cloudSqlDetails;

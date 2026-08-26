@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig {
     /**
-     * @return BDS instance node type
+     * @return Cluster node type.
      * 
      */
     private @Nullable String nodeType;
     /**
-     * @return Shape of the node
+     * @return Shape of the node.
      * 
      */
     private @Nullable String shape;
 
     private BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig() {}
     /**
-     * @return BDS instance node type
+     * @return Cluster node type.
      * 
      */
     public Optional<String> nodeType() {
         return Optional.ofNullable(this.nodeType);
     }
     /**
-     * @return Shape of the node
+     * @return Shape of the node.
      * 
      */
     public Optional<String> shape() {

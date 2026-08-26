@@ -34,14 +34,14 @@ public final class BdsInstanceWorkerNodeArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * Number of nodes that forming the cluster
+     * The amount of worker nodes should be created, at least be 3.
      * 
      */
     @Import(name="numberOfNodes", required=true)
     private Output<Integer> numberOfNodes;
 
     /**
-     * @return Number of nodes that forming the cluster
+     * @return The amount of worker nodes should be created, at least be 3.
      * 
      */
     public Output<Integer> numberOfNodes() {
@@ -63,9 +63,17 @@ public final class BdsInstanceWorkerNodeArgs extends com.pulumi.resources.Resour
         return this.shape;
     }
 
+    /**
+     * The shape configuration requested for the node.
+     * 
+     */
     @Import(name="shapeConfig")
     private @Nullable Output<BdsInstanceWorkerNodeShapeConfigArgs> shapeConfig;
 
+    /**
+     * @return The shape configuration requested for the node.
+     * 
+     */
     public Optional<Output<BdsInstanceWorkerNodeShapeConfigArgs>> shapeConfig() {
         return Optional.ofNullable(this.shapeConfig);
     }
@@ -135,7 +143,7 @@ public final class BdsInstanceWorkerNodeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param numberOfNodes Number of nodes that forming the cluster
+         * @param numberOfNodes The amount of worker nodes should be created, at least be 3.
          * 
          * @return builder
          * 
@@ -146,7 +154,7 @@ public final class BdsInstanceWorkerNodeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param numberOfNodes Number of nodes that forming the cluster
+         * @param numberOfNodes The amount of worker nodes should be created, at least be 3.
          * 
          * @return builder
          * 
@@ -176,11 +184,23 @@ public final class BdsInstanceWorkerNodeArgs extends com.pulumi.resources.Resour
             return shape(Output.of(shape));
         }
 
+        /**
+         * @param shapeConfig The shape configuration requested for the node.
+         * 
+         * @return builder
+         * 
+         */
         public Builder shapeConfig(@Nullable Output<BdsInstanceWorkerNodeShapeConfigArgs> shapeConfig) {
             $.shapeConfig = shapeConfig;
             return this;
         }
 
+        /**
+         * @param shapeConfig The shape configuration requested for the node.
+         * 
+         * @return builder
+         * 
+         */
         public Builder shapeConfig(BdsInstanceWorkerNodeShapeConfigArgs shapeConfig) {
             return shapeConfig(Output.of(shapeConfig));
         }

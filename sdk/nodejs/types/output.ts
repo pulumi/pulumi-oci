@@ -19472,13 +19472,59 @@ export namespace BigDataService {
         ocpus: number;
     }
 
+    export interface BdsCapacityReservationComputeCapacityReservations {
+        /**
+         * (Updatable) Compute capacity reservation OCID corresponding to AD1 for a multi-AD region or FD1 for a single-AD region.
+         */
+        domain1reservationId: string;
+        /**
+         * (Updatable) Compute capacity reservation OCID corresponding to AD2 for a multi-AD region or FD2 for a single-AD region.
+         */
+        domain2reservationId: string;
+        /**
+         * (Updatable) Compute capacity reservation OCID corresponding to AD3 for a multi-AD region or FD3 for a single-AD region.
+         */
+        domain3reservationId: string;
+    }
+
+    export interface BdsInstanceBdsCapacityReservationConfiguration {
+        /**
+         * The OCID of the BDS capacity reservation to associate with the BDS cluster.
+         */
+        bdsCapacityReservationId: string;
+        /**
+         * The OCID of the BDS cluster associated with the BDS capacity reservation.
+         */
+        bdsInstanceId: string;
+        /**
+         * A user-friendly name for the BDS capacity reservation configuration.
+         */
+        displayName: string;
+        /**
+         * The OCID of the Big Data Service resource.
+         */
+        id: string;
+        /**
+         * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+         */
+        state: string;
+        /**
+         * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+         */
+        timeUpdated: string;
+    }
+
     export interface BdsInstanceBdsClusterVersionSummary {
         /**
-         * BDS version to be used for cluster creation
+         * BDS version to be used for cluster creation.
          */
         bdsVersion: string;
         /**
-         * ODH version to be used for cluster creation
+         * ODH version to be used for cluster creation.
          */
         odhVersion: string;
     }
@@ -19489,7 +19535,7 @@ export namespace BigDataService {
          */
         blockVolumeSizeInGbs: string;
         /**
-         * IP address of the node
+         * IP address of the node.
          */
         ipAddress: string;
         /**
@@ -19583,7 +19629,7 @@ export namespace BigDataService {
          */
         osVersion: string;
         /**
-         * The time the BDS instance was created. An RFC3339 formatted datetime string
+         * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
          */
         timeCreated: string;
         /**
@@ -19598,13 +19644,16 @@ export namespace BigDataService {
          */
         blockVolumeSizeInGbs?: string;
         /**
-         * Number of nodes that forming the cluster
+         * The amount of worker nodes should be created
          */
         numberOfNodes: number;
         /**
          * Shape of the node
          */
         shape: string;
+        /**
+         * The shape configuration requested for the node.
+         */
         shapeConfig?: outputs.BigDataService.BdsInstanceComputeOnlyWorkerNodeShapeConfig;
         /**
          * The OCID of the subnet in which the node should be created
@@ -19614,7 +19663,7 @@ export namespace BigDataService {
 
     export interface BdsInstanceComputeOnlyWorkerNodeShapeConfig {
         /**
-         * The total amount of memory available to the node, in gigabytes.
+         * The total amount of memory available to the node, in gigabytes
          */
         memoryInGbs?: number;
         /**
@@ -19633,16 +19682,16 @@ export namespace BigDataService {
          */
         blockVolumeSizeInGbs?: string;
         /**
-         * Number of nodes that forming the cluster
+         * The number of nodes that form the cluster.
          */
         numberOfNodes: number;
         /**
-         * Shape of the node
+         * Shape of the node.
          */
         shape: string;
         shapeConfig: outputs.BigDataService.BdsInstanceEdgeNodeShapeConfig;
         /**
-         * The OCID of the subnet in which the node should be created
+         * The OCID of the subnet in which the node is to be created.
          */
         subnetId: string;
     }
@@ -19769,6 +19818,8 @@ export namespace BigDataService {
         nvmes: number;
         /**
          * The total number of OCPUs available to the node.
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         ocpus?: number;
     }
@@ -19813,11 +19864,11 @@ export namespace BigDataService {
 
     export interface BdsInstanceNetworkConfig {
         /**
-         * (Updatable) The CIDR IP address block of the VCN.
+         * The CIDR IP address block of the VCN.
          */
         cidrBlock: string;
         /**
-         * (Updatable) A boolean flag whether to configure a NAT gateway.
+         * A boolean flag whether to configure a NAT gateway.
          */
         isNatGatewayRequired: boolean;
     }
@@ -19828,7 +19879,7 @@ export namespace BigDataService {
          */
         attachedBlockVolumes: outputs.BigDataService.BdsInstanceNodeAttachedBlockVolume[];
         /**
-         * The name of the availability domain the node is running in
+         * The name of the availability domain in which the node is running.
          */
         availabilityDomain: string;
         /**
@@ -19836,23 +19887,23 @@ export namespace BigDataService {
          */
         displayName: string;
         /**
-         * The name of the fault domain the node is running in
+         * The name of the fault domain in which the node is running.
          */
         faultDomain: string;
         /**
-         * The fully-qualified hostname (FQDN) of the node
+         * The fully-qualified hostname (FQDN) of the node.
          */
         hostname: string;
         /**
-         * The OCID of the image from which the node was created
+         * The OCID of the image from which the node was created.
          */
         imageId: string;
         /**
-         * The OCID of the underlying compute instance
+         * The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
          */
         instanceId: string;
         /**
-         * IP address of the node
+         * IP address of the node.
          */
         ipAddress: string;
         /**
@@ -19892,11 +19943,11 @@ export namespace BigDataService {
          */
         shape: string;
         /**
-         * The fingerprint of the SSH key used for node access
+         * The fingerprint of the SSH key used for node access.
          */
         sshFingerprint: string;
         /**
-         * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
+         * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
          */
         state: string;
         /**
@@ -19904,7 +19955,7 @@ export namespace BigDataService {
          */
         subnetId: string;
         /**
-         * The time the BDS instance was created. An RFC3339 formatted datetime string
+         * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
          */
         timeCreated: string;
         /**
@@ -20047,11 +20098,11 @@ export namespace BigDataService {
 
     export interface BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig {
         /**
-         * BDS instance node type
+         * Cluster node type.
          */
         nodeType?: string;
         /**
-         * Shape of the node
+         * Shape of the node.
          */
         shape?: string;
     }
@@ -20100,13 +20151,16 @@ export namespace BigDataService {
          */
         blockVolumeSizeInGbs?: string;
         /**
-         * Number of nodes that forming the cluster
+         * The amount of worker nodes should be created, at least be 3.
          */
         numberOfNodes: number;
         /**
          * Shape of the node
          */
         shape: string;
+        /**
+         * The shape configuration requested for the node.
+         */
         shapeConfig?: outputs.BigDataService.BdsInstanceWorkerNodeShapeConfig;
         /**
          * The OCID of the subnet in which the node should be created
@@ -20116,7 +20170,7 @@ export namespace BigDataService {
 
     export interface BdsInstanceWorkerNodeShapeConfig {
         /**
-         * The total amount of memory available to the node, in gigabytes.
+         * The total amount of memory available to the node, in gigabytes
          */
         memoryInGbs?: number;
         /**
@@ -20585,6 +20639,133 @@ export namespace BigDataService {
         values: string[];
     }
 
+    export interface GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollection {
+        /**
+         * List of BDS capacity reservation configuration summaries associated with a BDS capacity reservation.
+         */
+        items: outputs.BigDataService.GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItem[];
+    }
+
+    export interface GetBdsCapacityReservationAssociatedConfigurationsBdsCapacityReservationAssociatedConfigurationCollectionItem {
+        /**
+         * The OCID of the BDS cluster linked through the BDS capacity reservation configuration.
+         */
+        bdsInstanceId: string;
+        /**
+         * The OCID of the compartment.
+         */
+        compartmentId: string;
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * The OCID of the BDS capacity reservation configuration.
+         */
+        id: string;
+        /**
+         * The lifecycle state of the BDS capacity reservation configuration.
+         */
+        state: string;
+        /**
+         * The time the configuration was created, shown as an RFC 3339 formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time the configuration was updated, shown as an RFC 3339 formatted datetime string.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetBdsCapacityReservationAssociatedConfigurationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBdsCapacityReservationComputeCapacityReservation {
+        /**
+         * Compute capacity reservation OCID corresponding to AD1 for a multi-AD region or FD1 for a single-AD region.
+         */
+        domain1reservationId: string;
+        /**
+         * Compute capacity reservation OCID corresponding to AD2 for a multi-AD region or FD2 for a single-AD region.
+         */
+        domain2reservationId: string;
+        /**
+         * Compute capacity reservation OCID corresponding to AD3 for a multi-AD region or FD3 for a single-AD region.
+         */
+        domain3reservationId: string;
+    }
+
+    export interface GetBdsCapacityReservationsBdsCapacityReservationCollection {
+        items: outputs.BigDataService.GetBdsCapacityReservationsBdsCapacityReservationCollectionItem[];
+    }
+
+    export interface GetBdsCapacityReservationsBdsCapacityReservationCollectionItem {
+        /**
+         * The OCID of the compartment.
+         */
+        compartmentId: string;
+        /**
+         * Compute capacity reservation ID mappings by domain. For a multi-AD region, domain1, domain2, and domain3 correspond to AD1, AD2, and AD3 respectively. For a single-AD region, domain1, domain2, and domain3 correspond to FD1, FD2, and FD3 respectively.
+         */
+        computeCapacityReservations: outputs.BigDataService.GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservation[];
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The OCID of the BDS capacity reservation.
+         */
+        id: string;
+        /**
+         * The lifecycle state of the BDS capacity reservation.
+         */
+        state: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The time the BDS capacity reservation was created, shown as an RFC 3339 formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time the BDS capacity reservation was updated, shown as an RFC 3339 formatted datetime string.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetBdsCapacityReservationsBdsCapacityReservationCollectionItemComputeCapacityReservation {
+        /**
+         * Compute capacity reservation OCID corresponding to AD1 for a multi-AD region or FD1 for a single-AD region.
+         */
+        domain1reservationId: string;
+        /**
+         * Compute capacity reservation OCID corresponding to AD2 for a multi-AD region or FD2 for a single-AD region.
+         */
+        domain2reservationId: string;
+        /**
+         * Compute capacity reservation OCID corresponding to AD3 for a multi-AD region or FD3 for a single-AD region.
+         */
+        domain3reservationId: string;
+    }
+
+    export interface GetBdsCapacityReservationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
     export interface GetBdsClusterVersionsBdsClusterVersion {
         /**
          * BDS version to be used for cluster creation
@@ -20651,6 +20832,83 @@ export namespace BigDataService {
     }
 
     export interface GetBdsInstanceApiKeysFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBdsInstanceBdsCapacityReservationConfiguration {
+        /**
+         * The OCID of the BDS capacity reservation associated with the BDS cluster.
+         */
+        bdsCapacityReservationId: string;
+        /**
+         * The OCID of the cluster.
+         */
+        bdsInstanceId: string;
+        /**
+         * The name of the node.
+         */
+        displayName: string;
+        /**
+         * The OCID of the Big Data Service resource.
+         */
+        id: string;
+        /**
+         * The state of the cluster.
+         */
+        state: string;
+        /**
+         * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollection {
+        /**
+         * List of BDS capacity reservation configuration summaries for the specified BDS cluster.
+         */
+        items: outputs.BigDataService.GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItem[];
+    }
+
+    export interface GetBdsInstanceBdsCapacityReservationConfigurationsBdsCapacityReservationConfigurationCollectionItem {
+        activateTrigger: number;
+        /**
+         * The OCID of the BDS capacity reservation associated with the BDS cluster.
+         */
+        bdsCapacityReservationId: string;
+        /**
+         * The OCID of the cluster.
+         */
+        bdsInstanceId: string;
+        deactivateTrigger: number;
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * The OCID of the BDS capacity reservation configuration.
+         */
+        id: string;
+        /**
+         * The lifecycle state of the BDS capacity reservation configuration.
+         */
+        state: string;
+        /**
+         * The time the BDS capacity reservation configuration was created, shown as an RFC 3339 formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time the BDS capacity reservation configuration was updated, shown as an RFC 3339 formatted datetime string.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetBdsInstanceBdsCapacityReservationConfigurationsFilter {
         name: string;
         regex?: boolean;
         values: string[];
@@ -21818,7 +22076,11 @@ export namespace BigDataService {
 
     export interface GetBdsInstancesBdsInstance {
         /**
-         * Cluster version details including bds and odh version information.
+         * The list of BDS capacity reservation configurations associated with the cluster.
+         */
+        bdsCapacityReservationConfigurations: outputs.BigDataService.GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration[];
+        /**
+         * Cluster version details including BDS and ODH version information.
          */
         bdsClusterVersionSummaries: outputs.BigDataService.GetBdsInstancesBdsInstanceBdsClusterVersionSummary[];
         /**
@@ -21941,6 +22203,37 @@ export namespace BigDataService {
         timeUpdated: string;
         utilNodes: outputs.BigDataService.GetBdsInstancesBdsInstanceUtilNode[];
         workerNodes: outputs.BigDataService.GetBdsInstancesBdsInstanceWorkerNode[];
+    }
+
+    export interface GetBdsInstancesBdsInstanceBdsCapacityReservationConfiguration {
+        /**
+         * The OCID of the BDS capacity reservation associated with the BDS cluster.
+         */
+        bdsCapacityReservationId: string;
+        /**
+         * The OCID of the BDS cluster associated with the BDS capacity reservation.
+         */
+        bdsInstanceId: string;
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * The OCID of the Big Data Service resource.
+         */
+        id: string;
+        /**
+         * The state of the cluster.
+         */
+        state: string;
+        /**
+         * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+         */
+        timeUpdated: string;
     }
 
     export interface GetBdsInstancesBdsInstanceBdsClusterVersionSummary {
@@ -263215,6 +263508,59 @@ export namespace Monitoring {
 }
 
 export namespace Mysql {
+    export interface BlueGreenDeploymentChannelDetails {
+        /**
+         * The username for the replication applier of the target MySQL DB System.
+         */
+        applierUsername: string;
+        /**
+         * The password for the source DB system user used by the blue/green workflow to configure the replication channel. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
+         */
+        sourcePassword: string;
+        /**
+         * The username on the source DB system used by the blue/green workflow to configure the replication channel. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
+         */
+        sourceUsername: string;
+        /**
+         * The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+         */
+        sslCaCertificate: outputs.Mysql.BlueGreenDeploymentChannelDetailsSslCaCertificate;
+        /**
+         * The SSL mode of the replication channel created by the blue/green workflow. `VERIFY_CA` and `VERIFY_IDENTITY` require `sslCaCertificate`. `REQUIRED` and `DISABLED` must not include `sslCaCertificate`.
+         */
+        sslMode: string;
+    }
+
+    export interface BlueGreenDeploymentChannelDetailsSslCaCertificate {
+        /**
+         * The type of CA certificate.
+         */
+        certificateType: string;
+        /**
+         * The string containing the CA certificate in PEM format.
+         */
+        contents: string;
+    }
+
+    export interface BlueGreenDeploymentTargetDbSystemDetails {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration to apply to the target DB System. If omitted, the target DB System inherits the source DB System configuration.
+         */
+        configurationId: string;
+        /**
+         * Initial data storage size in GiBs for the target DB System. If omitted, the target DB System uses the source DB System storage size.
+         */
+        dataStorageSizeInGb: number;
+        /**
+         * Target MySQL engine version.
+         */
+        mysqlVersion: string;
+        /**
+         * The shape of the target DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
+         */
+        shapeName: string;
+    }
+
     export interface ChannelSource {
         /**
          * (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
@@ -263329,6 +263675,163 @@ export namespace Mysql {
          * (Updatable) The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
          */
         value: string;
+    }
+
+    export interface GetBlueGreenDeploymentChannelDetail {
+        applierUsername: string;
+        sourcePassword: string;
+        sourceUsername: string;
+        sslCaCertificates: outputs.Mysql.GetBlueGreenDeploymentChannelDetailSslCaCertificate[];
+        /**
+         * SSL mode used for the replication channel created by the blue/green workflow.
+         */
+        sslMode: string;
+    }
+
+    export interface GetBlueGreenDeploymentChannelDetailSslCaCertificate {
+        certificateType: string;
+        contents: string;
+    }
+
+    export interface GetBlueGreenDeploymentTargetDbSystemDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration applied to the target DB System.
+         */
+        configurationId: string;
+        /**
+         * Initial data storage size in GiBs for the target DB System.
+         */
+        dataStorageSizeInGb: number;
+        /**
+         * Target MySQL engine version.
+         */
+        mysqlVersion: string;
+        /**
+         * The shape of the target DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
+         */
+        shapeName: string;
+    }
+
+    export interface GetBlueGreenDeploymentsBlueGreenDeploymentCollection {
+        items: outputs.Mysql.GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem[];
+    }
+
+    export interface GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItem {
+        /**
+         * The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that currently owns the client-facing VIP and serves traffic.
+         */
+        activeDbSystemId: string;
+        channelDetails: outputs.Mysql.GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetail[];
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * Whether to delete the target DB System when this Blue/Green deployment is deleted.
+         */
+        deleteTargetDbSystemOnDelete: boolean;
+        /**
+         * Filters deployments by display name.
+         */
+        displayName: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the blue/green deployment.
+         */
+        id: string;
+        /**
+         * Additional lifecycle details.
+         */
+        lifecycleDetails: string;
+        /**
+         * Replication channel [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        replicationChannelId: string;
+        /**
+         * Source DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) filter.
+         */
+        sourceDbSystemId: string;
+        /**
+         * SSL mode used for the replication channel created by the blue/green workflow.
+         */
+        sslMode: string;
+        /**
+         * Filters deployments by lifecycle state.
+         */
+        state: string;
+        /**
+         * Stage of the most recent switchover workflow. `SWITCHOVER_FAILED` indicates terminal switchover failure.
+         */
+        switchoverStatus: string;
+        switchoverTrigger: number;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * Target DB System details for a blue/green deployment.
+         */
+        targetDbSystemDetails: outputs.Mysql.GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetail[];
+        /**
+         * Target DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) filter.
+         */
+        targetDbSystemId: string;
+        /**
+         * The time the deployment was created.
+         */
+        timeCreated: string;
+        /**
+         * The time the deployment was last updated.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetail {
+        applierUsername: string;
+        sourcePassword: string;
+        sourceUsername: string;
+        sslCaCertificates: outputs.Mysql.GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificate[];
+        /**
+         * SSL mode used for the replication channel created by the blue/green workflow.
+         */
+        sslMode: string;
+    }
+
+    export interface GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemChannelDetailSslCaCertificate {
+        certificateType: string;
+        contents: string;
+    }
+
+    export interface GetBlueGreenDeploymentsBlueGreenDeploymentCollectionItemTargetDbSystemDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration applied to the target DB System.
+         */
+        configurationId: string;
+        /**
+         * Initial data storage size in GiBs for the target DB System.
+         */
+        dataStorageSizeInGb: number;
+        /**
+         * Target MySQL engine version.
+         */
+        mysqlVersion: string;
+        /**
+         * The shape of the target DB System. The shape determines resources allocated to the DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
+         */
+        shapeName: string;
+    }
+
+    export interface GetBlueGreenDeploymentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetChannelSource {
@@ -296282,7 +296785,7 @@ export namespace RecoveryMod {
          */
         lifecycleDetails: string;
         /**
-         * Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+         * A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
          */
         mustEnforceCloudLocality: boolean;
         /**
@@ -296346,6 +296849,10 @@ export namespace RecoveryMod {
          * A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
          */
         nsgIds: string[];
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+         */
+        securityAttributes: string;
         /**
          * A filter to return only the resources that match the specified lifecycle state.
          */

@@ -15,6 +15,11 @@ export type BdsCapacityReport = import("./bdsCapacityReport").BdsCapacityReport;
 export const BdsCapacityReport: typeof import("./bdsCapacityReport").BdsCapacityReport = null as any;
 utilities.lazyLoad(exports, ["BdsCapacityReport"], () => require("./bdsCapacityReport"));
 
+export { BdsCapacityReservationArgs, BdsCapacityReservationState } from "./bdsCapacityReservation";
+export type BdsCapacityReservation = import("./bdsCapacityReservation").BdsCapacityReservation;
+export const BdsCapacityReservation: typeof import("./bdsCapacityReservation").BdsCapacityReservation = null as any;
+utilities.lazyLoad(exports, ["BdsCapacityReservation"], () => require("./bdsCapacityReservation"));
+
 export { BdsClusterAdminPasswordResetActionArgs, BdsClusterAdminPasswordResetActionState } from "./bdsClusterAdminPasswordResetAction";
 export type BdsClusterAdminPasswordResetAction = import("./bdsClusterAdminPasswordResetAction").BdsClusterAdminPasswordResetAction;
 export const BdsClusterAdminPasswordResetAction: typeof import("./bdsClusterAdminPasswordResetAction").BdsClusterAdminPasswordResetAction = null as any;
@@ -29,6 +34,11 @@ export { BdsInstanceApiKeyArgs, BdsInstanceApiKeyState } from "./bdsInstanceApiK
 export type BdsInstanceApiKey = import("./bdsInstanceApiKey").BdsInstanceApiKey;
 export const BdsInstanceApiKey: typeof import("./bdsInstanceApiKey").BdsInstanceApiKey = null as any;
 utilities.lazyLoad(exports, ["BdsInstanceApiKey"], () => require("./bdsInstanceApiKey"));
+
+export { BdsInstanceBdsCapacityReservationConfigurationArgs, BdsInstanceBdsCapacityReservationConfigurationState } from "./bdsInstanceBdsCapacityReservationConfiguration";
+export type BdsInstanceBdsCapacityReservationConfiguration = import("./bdsInstanceBdsCapacityReservationConfiguration").BdsInstanceBdsCapacityReservationConfiguration;
+export const BdsInstanceBdsCapacityReservationConfiguration: typeof import("./bdsInstanceBdsCapacityReservationConfiguration").BdsInstanceBdsCapacityReservationConfiguration = null as any;
+utilities.lazyLoad(exports, ["BdsInstanceBdsCapacityReservationConfiguration"], () => require("./bdsInstanceBdsCapacityReservationConfiguration"));
 
 export { BdsInstanceBdsCertificateConfigurationArgs, BdsInstanceBdsCertificateConfigurationState } from "./bdsInstanceBdsCertificateConfiguration";
 export type BdsInstanceBdsCertificateConfiguration = import("./bdsInstanceBdsCertificateConfiguration").BdsInstanceBdsCertificateConfiguration;
@@ -105,6 +115,21 @@ export const getAutoScalingConfigurations: typeof import("./getAutoScalingConfig
 export const getAutoScalingConfigurationsOutput: typeof import("./getAutoScalingConfigurations").getAutoScalingConfigurationsOutput = null as any;
 utilities.lazyLoad(exports, ["getAutoScalingConfigurations","getAutoScalingConfigurationsOutput"], () => require("./getAutoScalingConfigurations"));
 
+export { GetBdsCapacityReservationArgs, GetBdsCapacityReservationResult, GetBdsCapacityReservationOutputArgs } from "./getBdsCapacityReservation";
+export const getBdsCapacityReservation: typeof import("./getBdsCapacityReservation").getBdsCapacityReservation = null as any;
+export const getBdsCapacityReservationOutput: typeof import("./getBdsCapacityReservation").getBdsCapacityReservationOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsCapacityReservation","getBdsCapacityReservationOutput"], () => require("./getBdsCapacityReservation"));
+
+export { GetBdsCapacityReservationAssociatedConfigurationsArgs, GetBdsCapacityReservationAssociatedConfigurationsResult, GetBdsCapacityReservationAssociatedConfigurationsOutputArgs } from "./getBdsCapacityReservationAssociatedConfigurations";
+export const getBdsCapacityReservationAssociatedConfigurations: typeof import("./getBdsCapacityReservationAssociatedConfigurations").getBdsCapacityReservationAssociatedConfigurations = null as any;
+export const getBdsCapacityReservationAssociatedConfigurationsOutput: typeof import("./getBdsCapacityReservationAssociatedConfigurations").getBdsCapacityReservationAssociatedConfigurationsOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsCapacityReservationAssociatedConfigurations","getBdsCapacityReservationAssociatedConfigurationsOutput"], () => require("./getBdsCapacityReservationAssociatedConfigurations"));
+
+export { GetBdsCapacityReservationsArgs, GetBdsCapacityReservationsResult, GetBdsCapacityReservationsOutputArgs } from "./getBdsCapacityReservations";
+export const getBdsCapacityReservations: typeof import("./getBdsCapacityReservations").getBdsCapacityReservations = null as any;
+export const getBdsCapacityReservationsOutput: typeof import("./getBdsCapacityReservations").getBdsCapacityReservationsOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsCapacityReservations","getBdsCapacityReservationsOutput"], () => require("./getBdsCapacityReservations"));
+
 export { GetBdsClusterVersionsArgs, GetBdsClusterVersionsResult, GetBdsClusterVersionsOutputArgs } from "./getBdsClusterVersions";
 export const getBdsClusterVersions: typeof import("./getBdsClusterVersions").getBdsClusterVersions = null as any;
 export const getBdsClusterVersionsOutput: typeof import("./getBdsClusterVersions").getBdsClusterVersionsOutput = null as any;
@@ -124,6 +149,16 @@ export { GetBdsInstanceApiKeysArgs, GetBdsInstanceApiKeysResult, GetBdsInstanceA
 export const getBdsInstanceApiKeys: typeof import("./getBdsInstanceApiKeys").getBdsInstanceApiKeys = null as any;
 export const getBdsInstanceApiKeysOutput: typeof import("./getBdsInstanceApiKeys").getBdsInstanceApiKeysOutput = null as any;
 utilities.lazyLoad(exports, ["getBdsInstanceApiKeys","getBdsInstanceApiKeysOutput"], () => require("./getBdsInstanceApiKeys"));
+
+export { GetBdsInstanceBdsCapacityReservationConfigurationArgs, GetBdsInstanceBdsCapacityReservationConfigurationResult, GetBdsInstanceBdsCapacityReservationConfigurationOutputArgs } from "./getBdsInstanceBdsCapacityReservationConfiguration";
+export const getBdsInstanceBdsCapacityReservationConfiguration: typeof import("./getBdsInstanceBdsCapacityReservationConfiguration").getBdsInstanceBdsCapacityReservationConfiguration = null as any;
+export const getBdsInstanceBdsCapacityReservationConfigurationOutput: typeof import("./getBdsInstanceBdsCapacityReservationConfiguration").getBdsInstanceBdsCapacityReservationConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstanceBdsCapacityReservationConfiguration","getBdsInstanceBdsCapacityReservationConfigurationOutput"], () => require("./getBdsInstanceBdsCapacityReservationConfiguration"));
+
+export { GetBdsInstanceBdsCapacityReservationConfigurationsArgs, GetBdsInstanceBdsCapacityReservationConfigurationsResult, GetBdsInstanceBdsCapacityReservationConfigurationsOutputArgs } from "./getBdsInstanceBdsCapacityReservationConfigurations";
+export const getBdsInstanceBdsCapacityReservationConfigurations: typeof import("./getBdsInstanceBdsCapacityReservationConfigurations").getBdsInstanceBdsCapacityReservationConfigurations = null as any;
+export const getBdsInstanceBdsCapacityReservationConfigurationsOutput: typeof import("./getBdsInstanceBdsCapacityReservationConfigurations").getBdsInstanceBdsCapacityReservationConfigurationsOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstanceBdsCapacityReservationConfigurations","getBdsInstanceBdsCapacityReservationConfigurationsOutput"], () => require("./getBdsInstanceBdsCapacityReservationConfigurations"));
 
 export { GetBdsInstanceBdsCertificateConfigurationArgs, GetBdsInstanceBdsCertificateConfigurationResult, GetBdsInstanceBdsCertificateConfigurationOutputArgs } from "./getBdsInstanceBdsCertificateConfiguration";
 export const getBdsInstanceBdsCertificateConfiguration: typeof import("./getBdsInstanceBdsCertificateConfiguration").getBdsInstanceBdsCertificateConfiguration = null as any;
@@ -239,12 +274,16 @@ const _module = {
                 return new AutoScalingConfiguration(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsCapacityReport:BdsCapacityReport":
                 return new BdsCapacityReport(name, <any>undefined, { urn })
+            case "oci:BigDataService/bdsCapacityReservation:BdsCapacityReservation":
+                return new BdsCapacityReservation(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsClusterAdminPasswordResetAction:BdsClusterAdminPasswordResetAction":
                 return new BdsClusterAdminPasswordResetAction(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstance:BdsInstance":
                 return new BdsInstance(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey":
                 return new BdsInstanceApiKey(name, <any>undefined, { urn })
+            case "oci:BigDataService/bdsInstanceBdsCapacityReservationConfiguration:BdsInstanceBdsCapacityReservationConfiguration":
+                return new BdsInstanceBdsCapacityReservationConfiguration(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstanceBdsCertificateConfiguration:BdsInstanceBdsCertificateConfiguration":
                 return new BdsInstanceBdsCertificateConfiguration(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstanceExecuteBootstrapScriptAction:BdsInstanceExecuteBootstrapScriptAction":
@@ -278,9 +317,11 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("oci", "BigDataService/autoScalingConfiguration", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsCapacityReport", _module)
+pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsCapacityReservation", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsClusterAdminPasswordResetAction", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceApiKey", _module)
+pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceBdsCapacityReservationConfiguration", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceBdsCertificateConfiguration", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceExecuteBootstrapScriptAction", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceIdentityConfiguration", _module)

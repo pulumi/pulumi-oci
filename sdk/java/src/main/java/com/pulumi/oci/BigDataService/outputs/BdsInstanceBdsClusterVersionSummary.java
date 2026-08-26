@@ -4,7 +4,6 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -13,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class BdsInstanceBdsClusterVersionSummary {
     /**
-     * @return BDS version to be used for cluster creation
+     * @return BDS version to be used for cluster creation.
      * 
      */
-    private String bdsVersion;
+    private @Nullable String bdsVersion;
     /**
-     * @return ODH version to be used for cluster creation
+     * @return ODH version to be used for cluster creation.
      * 
      */
     private @Nullable String odhVersion;
 
     private BdsInstanceBdsClusterVersionSummary() {}
     /**
-     * @return BDS version to be used for cluster creation
+     * @return BDS version to be used for cluster creation.
      * 
      */
-    public String bdsVersion() {
-        return this.bdsVersion;
+    public Optional<String> bdsVersion() {
+        return Optional.ofNullable(this.bdsVersion);
     }
     /**
-     * @return ODH version to be used for cluster creation
+     * @return ODH version to be used for cluster creation.
      * 
      */
     public Optional<String> odhVersion() {
@@ -48,7 +47,7 @@ public final class BdsInstanceBdsClusterVersionSummary {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bdsVersion;
+        private @Nullable String bdsVersion;
         private @Nullable String odhVersion;
         public Builder() {}
         public Builder(BdsInstanceBdsClusterVersionSummary defaults) {
@@ -58,10 +57,8 @@ public final class BdsInstanceBdsClusterVersionSummary {
         }
 
         @CustomType.Setter
-        public Builder bdsVersion(String bdsVersion) {
-            if (bdsVersion == null) {
-              throw new MissingRequiredPropertyException("BdsInstanceBdsClusterVersionSummary", "bdsVersion");
-            }
+        public Builder bdsVersion(@Nullable String bdsVersion) {
+
             this.bdsVersion = bdsVersion;
             return this;
         }

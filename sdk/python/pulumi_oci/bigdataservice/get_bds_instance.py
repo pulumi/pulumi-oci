@@ -27,7 +27,10 @@ class GetBdsInstanceResult:
     """
     A collection of values returned by getBdsInstance.
     """
-    def __init__(__self__, bds_cluster_version_summaries=None, bds_instance_id=None, bootstrap_script_url=None, cloud_sql_details=None, cluster_admin_password=None, cluster_details=None, cluster_profile=None, cluster_public_key=None, cluster_version=None, compartment_id=None, compute_only_worker_nodes=None, created_by=None, defined_tags=None, display_name=None, edge_nodes=None, freeform_tags=None, id=None, ignore_existing_nodes_shapes=None, is_cloud_sql_configured=None, is_force_remove_enabled=None, is_force_stop_jobs=None, is_high_availability=None, is_kafka_configured=None, is_secret_reused=None, is_secure=None, kafka_broker_nodes=None, kerberos_realm_name=None, kms_key_id=None, master_nodes=None, network_configs=None, nodes=None, number_of_nodes=None, number_of_nodes_requiring_maintenance_reboot=None, os_patch_version=None, remove_node=None, remove_nodes=None, secret_id=None, start_cluster_shape_configs=None, state=None, time_created=None, time_earliest_certificate_expiration=None, time_updated=None, util_nodes=None, worker_nodes=None):
+    def __init__(__self__, bds_capacity_reservation_configurations=None, bds_cluster_version_summaries=None, bds_instance_id=None, bootstrap_script_url=None, cloud_sql_details=None, cluster_admin_password=None, cluster_details=None, cluster_profile=None, cluster_public_key=None, cluster_version=None, compartment_id=None, compute_only_worker_nodes=None, created_by=None, defined_tags=None, display_name=None, edge_nodes=None, freeform_tags=None, id=None, ignore_existing_nodes_shapes=None, is_cloud_sql_configured=None, is_force_remove_enabled=None, is_force_stop_jobs=None, is_high_availability=None, is_kafka_configured=None, is_secret_reused=None, is_secure=None, kafka_broker_nodes=None, kerberos_realm_name=None, kms_key_id=None, master_nodes=None, network_configs=None, nodes=None, number_of_nodes=None, number_of_nodes_requiring_maintenance_reboot=None, os_patch_version=None, remove_node=None, remove_nodes=None, secret_id=None, start_cluster_shape_configs=None, state=None, time_created=None, time_earliest_certificate_expiration=None, time_updated=None, util_nodes=None, worker_nodes=None):
+        if bds_capacity_reservation_configurations and not isinstance(bds_capacity_reservation_configurations, list):
+            raise TypeError("Expected argument 'bds_capacity_reservation_configurations' to be a list")
+        pulumi.set(__self__, "bds_capacity_reservation_configurations", bds_capacity_reservation_configurations)
         if bds_cluster_version_summaries and not isinstance(bds_cluster_version_summaries, list):
             raise TypeError("Expected argument 'bds_cluster_version_summaries' to be a list")
         pulumi.set(__self__, "bds_cluster_version_summaries", bds_cluster_version_summaries)
@@ -162,16 +165,27 @@ class GetBdsInstanceResult:
         pulumi.set(__self__, "worker_nodes", worker_nodes)
 
     @_builtins.property
+    @pulumi.getter(name="bdsCapacityReservationConfigurations")
+    def bds_capacity_reservation_configurations(self) -> Sequence['outputs.GetBdsInstanceBdsCapacityReservationConfigurationResult']:
+        """
+        The list of BDS capacity reservation configurations associated with the cluster.
+        """
+        return pulumi.get(self, "bds_capacity_reservation_configurations")
+
+    @_builtins.property
     @pulumi.getter(name="bdsClusterVersionSummaries")
     def bds_cluster_version_summaries(self) -> Sequence['outputs.GetBdsInstanceBdsClusterVersionSummaryResult']:
         """
-        Cluster version details including bds and odh version information.
+        Cluster version details including BDS and ODH version information.
         """
         return pulumi.get(self, "bds_cluster_version_summaries")
 
     @_builtins.property
     @pulumi.getter(name="bdsInstanceId")
     def bds_instance_id(self) -> _builtins.str:
+        """
+        The OCID of the BDS cluster associated with the BDS capacity reservation.
+        """
         return pulumi.get(self, "bds_instance_id")
 
     @_builtins.property
@@ -469,6 +483,7 @@ class AwaitableGetBdsInstanceResult(GetBdsInstanceResult):
         if False:
             yield self
         return GetBdsInstanceResult(
+            bds_capacity_reservation_configurations=self.bds_capacity_reservation_configurations,
             bds_cluster_version_summaries=self.bds_cluster_version_summaries,
             bds_instance_id=self.bds_instance_id,
             bootstrap_script_url=self.bootstrap_script_url,
@@ -540,6 +555,7 @@ def get_bds_instance(bds_instance_id: Optional[_builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('oci:BigDataService/getBdsInstance:getBdsInstance', __args__, opts=opts, typ=GetBdsInstanceResult).value
 
     return AwaitableGetBdsInstanceResult(
+        bds_capacity_reservation_configurations=pulumi.get(__ret__, 'bds_capacity_reservation_configurations'),
         bds_cluster_version_summaries=pulumi.get(__ret__, 'bds_cluster_version_summaries'),
         bds_instance_id=pulumi.get(__ret__, 'bds_instance_id'),
         bootstrap_script_url=pulumi.get(__ret__, 'bootstrap_script_url'),
@@ -608,6 +624,7 @@ def get_bds_instance_output(bds_instance_id: pulumi.Input[Optional[_builtins.str
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:BigDataService/getBdsInstance:getBdsInstance', __args__, opts=opts, typ=GetBdsInstanceResult)
     return __ret__.apply(lambda __response__: GetBdsInstanceResult(
+        bds_capacity_reservation_configurations=pulumi.get(__response__, 'bds_capacity_reservation_configurations'),
         bds_cluster_version_summaries=pulumi.get(__response__, 'bds_cluster_version_summaries'),
         bds_instance_id=pulumi.get(__response__, 'bds_instance_id'),
         bootstrap_script_url=pulumi.get(__response__, 'bootstrap_script_url'),

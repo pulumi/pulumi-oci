@@ -18,7 +18,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly string? BlockVolumeSizeInGbs;
         /// <summary>
-        /// IP address of the node
+        /// IP address of the node.
         /// </summary>
         public readonly string? IpAddress;
         /// <summary>

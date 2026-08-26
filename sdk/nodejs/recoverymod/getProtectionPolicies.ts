@@ -20,18 +20,21 @@ import * as utilities from "../utilities";
  * const testProtectionPolicies = oci.recoverymod.getProtectionPolicies({
  *     compartmentId: compartmentId,
  *     displayName: protectionPolicyDisplayName,
+ *     mustEnforceCloudLocality: protectionPolicyMustEnforceCloudLocality === "true",
  *     owner: protectionPolicyOwner,
  *     protectionPolicyId: testProtectionPolicy.id,
  *     state: protectionPolicyState,
  * });
  * ```
  */
-export function getProtectionPolicies(args: GetProtectionPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetProtectionPoliciesResult> {
+export function getProtectionPolicies(args?: GetProtectionPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetProtectionPoliciesResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:RecoveryMod/getProtectionPolicies:getProtectionPolicies", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "filters": args.filters,
+        "mustEnforceCloudLocality": args.mustEnforceCloudLocality,
         "owner": args.owner,
         "protectionPolicyId": args.protectionPolicyId,
         "state": args.state,
@@ -45,12 +48,16 @@ export interface GetProtectionPoliciesArgs {
     /**
      * The compartment OCID.
      */
-    compartmentId: string;
+    compartmentId?: string;
     /**
      * A filter to return only resources that match the entire 'displayname' given.
      */
     displayName?: string;
     filters?: inputs.RecoveryMod.GetProtectionPoliciesFilter[];
+    /**
+     * A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
+     */
+    mustEnforceCloudLocality?: boolean;
     /**
      * A filter to return only the policies that match the owner as 'Customer' or 'Oracle'.
      */
@@ -72,7 +79,7 @@ export interface GetProtectionPoliciesResult {
     /**
      * The OCID of the compartment that contains the protection policy.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * A user provided name for the protection policy.
      */
@@ -82,6 +89,10 @@ export interface GetProtectionPoliciesResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+     */
+    readonly mustEnforceCloudLocality?: boolean;
     readonly owner?: string;
     /**
      * The list of protection_policy_collection.
@@ -107,18 +118,21 @@ export interface GetProtectionPoliciesResult {
  * const testProtectionPolicies = oci.recoverymod.getProtectionPolicies({
  *     compartmentId: compartmentId,
  *     displayName: protectionPolicyDisplayName,
+ *     mustEnforceCloudLocality: protectionPolicyMustEnforceCloudLocality === "true",
  *     owner: protectionPolicyOwner,
  *     protectionPolicyId: testProtectionPolicy.id,
  *     state: protectionPolicyState,
  * });
  * ```
  */
-export function getProtectionPoliciesOutput(args: GetProtectionPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProtectionPoliciesResult> {
+export function getProtectionPoliciesOutput(args?: GetProtectionPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProtectionPoliciesResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:RecoveryMod/getProtectionPolicies:getProtectionPolicies", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "filters": args.filters,
+        "mustEnforceCloudLocality": args.mustEnforceCloudLocality,
         "owner": args.owner,
         "protectionPolicyId": args.protectionPolicyId,
         "state": args.state,
@@ -132,12 +146,16 @@ export interface GetProtectionPoliciesOutputArgs {
     /**
      * The compartment OCID.
      */
-    compartmentId: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire 'displayname' given.
      */
     displayName?: pulumi.Input<string | undefined>;
     filters?: pulumi.Input<pulumi.Input<inputs.RecoveryMod.GetProtectionPoliciesFilterArgs>[] | undefined>;
+    /**
+     * A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
+     */
+    mustEnforceCloudLocality?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only the policies that match the owner as 'Customer' or 'Oracle'.
      */

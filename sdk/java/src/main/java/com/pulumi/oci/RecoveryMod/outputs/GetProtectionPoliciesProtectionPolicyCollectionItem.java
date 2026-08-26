@@ -54,7 +54,7 @@ public final class GetProtectionPoliciesProtectionPolicyCollectionItem {
      */
     private String lifecycleDetails;
     /**
-     * @return Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+     * @return A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
      * 
      */
     private Boolean mustEnforceCloudLocality;
@@ -142,7 +142,7 @@ public final class GetProtectionPoliciesProtectionPolicyCollectionItem {
         return this.lifecycleDetails;
     }
     /**
-     * @return Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+     * @return A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
      * 
      */
     public Boolean mustEnforceCloudLocality() {

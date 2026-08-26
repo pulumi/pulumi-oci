@@ -18,29 +18,8 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// 
         /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var testProtectedDatabases = Oci.RecoveryMod.GetProtectedDatabases.Invoke(new()
-        ///     {
-        ///         CompartmentId = compartmentId,
-        ///         DisplayName = protectedDatabaseDisplayName,
-        ///         Id = protectedDatabaseId,
-        ///         ProtectionPolicyId = testProtectionPolicy.Id,
-        ///         RecoveryServiceSubnetId = testRecoveryServiceSubnet.Id,
-        ///         State = protectedDatabaseState,
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
-        public static Task<GetProtectedDatabasesResult> InvokeAsync(GetProtectedDatabasesArgs args, InvokeOptions? options = null)
+        public static Task<GetProtectedDatabasesResult> InvokeAsync(GetProtectedDatabasesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProtectedDatabasesResult>("oci:RecoveryMod/getProtectedDatabases:getProtectedDatabases", args ?? new GetProtectedDatabasesArgs(), options.WithDefaults());
 
         /// <summary>
@@ -50,29 +29,8 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// 
         /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var testProtectedDatabases = Oci.RecoveryMod.GetProtectedDatabases.Invoke(new()
-        ///     {
-        ///         CompartmentId = compartmentId,
-        ///         DisplayName = protectedDatabaseDisplayName,
-        ///         Id = protectedDatabaseId,
-        ///         ProtectionPolicyId = testProtectionPolicy.Id,
-        ///         RecoveryServiceSubnetId = testRecoveryServiceSubnet.Id,
-        ///         State = protectedDatabaseState,
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
-        public static Output<GetProtectedDatabasesResult> Invoke(GetProtectedDatabasesInvokeArgs args, InvokeOptions? options = null)
+        public static Output<GetProtectedDatabasesResult> Invoke(GetProtectedDatabasesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectedDatabasesResult>("oci:RecoveryMod/getProtectedDatabases:getProtectedDatabases", args ?? new GetProtectedDatabasesInvokeArgs(), options.WithDefaults());
 
         /// <summary>
@@ -82,27 +40,6 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// 
         /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var testProtectedDatabases = Oci.RecoveryMod.GetProtectedDatabases.Invoke(new()
-        ///     {
-        ///         CompartmentId = compartmentId,
-        ///         DisplayName = protectedDatabaseDisplayName,
-        ///         Id = protectedDatabaseId,
-        ///         ProtectionPolicyId = testProtectionPolicy.Id,
-        ///         RecoveryServiceSubnetId = testRecoveryServiceSubnet.Id,
-        ///         State = protectedDatabaseState,
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetProtectedDatabasesResult> Invoke(GetProtectedDatabasesInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectedDatabasesResult>("oci:RecoveryMod/getProtectedDatabases:getProtectedDatabases", args ?? new GetProtectedDatabasesInvokeArgs(), options.WithDefaults());
@@ -114,8 +51,8 @@ namespace Pulumi.Oci.RecoveryMod
         /// <summary>
         /// The compartment OCID.
         /// </summary>
-        [Input("compartmentId", required: true)]
-        public string CompartmentId { get; set; } = null!;
+        [Input("compartmentId")]
+        public string? CompartmentId { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the entire 'displayname' given.
@@ -166,8 +103,8 @@ namespace Pulumi.Oci.RecoveryMod
         /// <summary>
         /// The compartment OCID.
         /// </summary>
-        [Input("compartmentId", required: true)]
-        public Input<string> CompartmentId { get; set; } = null!;
+        [Input("compartmentId")]
+        public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the entire 'displayname' given.
@@ -220,7 +157,7 @@ namespace Pulumi.Oci.RecoveryMod
         /// <summary>
         /// The OCID of the compartment that contains the protected database.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The protected database name. You can change the displayName. Avoid entering confidential information.
         /// </summary>
@@ -249,7 +186,7 @@ namespace Pulumi.Oci.RecoveryMod
 
         [OutputConstructor]
         private GetProtectedDatabasesResult(
-            string compartmentId,
+            string? compartmentId,
 
             string? displayName,
 

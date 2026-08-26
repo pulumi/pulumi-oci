@@ -1951,6 +1951,15 @@
                     }
                 }
             },
+            "oci_bds_bds_capacity_reservation": {
+                "current": "oci:BigDataService/bdsCapacityReservation:BdsCapacityReservation",
+                "majorVersion": 4,
+                "fields": {
+                    "compute_capacity_reservations": {
+                        "maxItemsOne": true
+                    }
+                }
+            },
             "oci_bds_bds_cluster_admin_password_reset_action": {
                 "current": "oci:BigDataService/bdsClusterAdminPasswordResetAction:BdsClusterAdminPasswordResetAction",
                 "majorVersion": 4
@@ -1959,6 +1968,9 @@
                 "current": "oci:BigDataService/bdsInstance:BdsInstance",
                 "majorVersion": 4,
                 "fields": {
+                    "bds_capacity_reservation_configurations": {
+                        "maxItemsOne": false
+                    },
                     "bds_cluster_version_summary": {
                         "maxItemsOne": true
                     },
@@ -2068,6 +2080,10 @@
             },
             "oci_bds_bds_instance_api_key": {
                 "current": "oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey",
+                "majorVersion": 4
+            },
+            "oci_bds_bds_instance_bds_capacity_reservation_configuration": {
+                "current": "oci:BigDataService/bdsInstanceBdsCapacityReservationConfiguration:BdsInstanceBdsCapacityReservationConfiguration",
                 "majorVersion": 4
             },
             "oci_bds_bds_instance_bds_certificate_configuration": {
@@ -19680,6 +19696,25 @@
                     }
                 }
             },
+            "oci_mysql_blue_green_deployment": {
+                "current": "oci:Mysql/blueGreenDeployment:BlueGreenDeployment",
+                "majorVersion": 4,
+                "fields": {
+                    "channel_details": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "ssl_ca_certificate": {
+                                    "maxItemsOne": true
+                                }
+                            }
+                        }
+                    },
+                    "target_db_system_details": {
+                        "maxItemsOne": true
+                    }
+                }
+            },
             "oci_mysql_channel": {
                 "current": "oci:Mysql/channel:Channel",
                 "majorVersion": 4,
@@ -29970,6 +30005,74 @@
                     }
                 }
             },
+            "oci_bds_bds_capacity_reservation": {
+                "current": "oci:BigDataService/getBdsCapacityReservation:getBdsCapacityReservation",
+                "majorVersion": 4,
+                "fields": {
+                    "compute_capacity_reservations": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_bds_bds_capacity_reservation_associated_configurations": {
+                "current": "oci:BigDataService/getBdsCapacityReservationAssociatedConfigurations:getBdsCapacityReservationAssociatedConfigurations",
+                "majorVersion": 4,
+                "fields": {
+                    "bds_capacity_reservation_associated_configuration_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_bds_bds_capacity_reservations": {
+                "current": "oci:BigDataService/getBdsCapacityReservations:getBdsCapacityReservations",
+                "majorVersion": 4,
+                "fields": {
+                    "bds_capacity_reservation_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "compute_capacity_reservations": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "oci_bds_bds_cluster_versions": {
                 "current": "oci:BigDataService/getBdsClusterVersions:getBdsClusterVersions",
                 "majorVersion": 4,
@@ -29993,6 +30096,9 @@
                 "current": "oci:BigDataService/getBdsInstance:getBdsInstance",
                 "majorVersion": 4,
                 "fields": {
+                    "bds_capacity_reservation_configurations": {
+                        "maxItemsOne": false
+                    },
                     "bds_cluster_version_summary": {
                         "maxItemsOne": false
                     },
@@ -30110,6 +30216,36 @@
                 "fields": {
                     "bds_api_keys": {
                         "maxItemsOne": false
+                    },
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_bds_bds_instance_bds_capacity_reservation_configuration": {
+                "current": "oci:BigDataService/getBdsInstanceBdsCapacityReservationConfiguration:getBdsInstanceBdsCapacityReservationConfiguration",
+                "majorVersion": 4
+            },
+            "oci_bds_bds_instance_bds_capacity_reservation_configurations": {
+                "current": "oci:BigDataService/getBdsInstanceBdsCapacityReservationConfigurations:getBdsInstanceBdsCapacityReservationConfigurations",
+                "majorVersion": 4,
+                "fields": {
+                    "bds_capacity_reservation_configuration_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
                     },
                     "filter": {
                         "maxItemsOne": false,
@@ -30459,6 +30595,9 @@
                         "maxItemsOne": false,
                         "elem": {
                             "fields": {
+                                "bds_capacity_reservation_configurations": {
+                                    "maxItemsOne": false
+                                },
                                 "bds_cluster_version_summary": {
                                     "maxItemsOne": false
                                 },
@@ -88432,6 +88571,68 @@
                         "elem": {
                             "fields": {
                                 "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_mysql_blue_green_deployment": {
+                "current": "oci:Mysql/getBlueGreenDeployment:getBlueGreenDeployment",
+                "majorVersion": 4,
+                "fields": {
+                    "channel_details": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "ssl_ca_certificate": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "target_db_system_details": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_mysql_blue_green_deployments": {
+                "current": "oci:Mysql/getBlueGreenDeployments:getBlueGreenDeployments",
+                "majorVersion": 4,
+                "fields": {
+                    "blue_green_deployment_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "channel_details": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "ssl_ca_certificate": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "target_db_system_details": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
                                     "maxItemsOne": false
                                 }
                             }

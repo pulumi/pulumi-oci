@@ -87,12 +87,8 @@ type LookupClusterNetworkResult struct {
 }
 
 func LookupClusterNetworkOutput(ctx *pulumi.Context, args LookupClusterNetworkOutputArgs, opts ...pulumi.InvokeOption) LookupClusterNetworkResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupClusterNetworkResultOutput, error) {
-			args := v.(LookupClusterNetworkArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getClusterNetwork:getClusterNetwork", args, LookupClusterNetworkResultOutput{}, options).(LookupClusterNetworkResultOutput), nil
-		}).(LookupClusterNetworkResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getClusterNetwork:getClusterNetwork", args, LookupClusterNetworkResultOutput{}, options).(LookupClusterNetworkResultOutput)
 }
 
 // A collection of arguments for invoking getClusterNetwork.

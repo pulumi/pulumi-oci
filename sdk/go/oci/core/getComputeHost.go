@@ -118,12 +118,8 @@ type LookupComputeHostResult struct {
 }
 
 func LookupComputeHostOutput(ctx *pulumi.Context, args LookupComputeHostOutputArgs, opts ...pulumi.InvokeOption) LookupComputeHostResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupComputeHostResultOutput, error) {
-			args := v.(LookupComputeHostArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getComputeHost:getComputeHost", args, LookupComputeHostResultOutput{}, options).(LookupComputeHostResultOutput), nil
-		}).(LookupComputeHostResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getComputeHost:getComputeHost", args, LookupComputeHostResultOutput{}, options).(LookupComputeHostResultOutput)
 }
 
 // A collection of arguments for invoking getComputeHost.

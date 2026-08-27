@@ -111,12 +111,8 @@ type LookupInstanceMaintenanceEventResult struct {
 }
 
 func LookupInstanceMaintenanceEventOutput(ctx *pulumi.Context, args LookupInstanceMaintenanceEventOutputArgs, opts ...pulumi.InvokeOption) LookupInstanceMaintenanceEventResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupInstanceMaintenanceEventResultOutput, error) {
-			args := v.(LookupInstanceMaintenanceEventArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getInstanceMaintenanceEvent:getInstanceMaintenanceEvent", args, LookupInstanceMaintenanceEventResultOutput{}, options).(LookupInstanceMaintenanceEventResultOutput), nil
-		}).(LookupInstanceMaintenanceEventResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getInstanceMaintenanceEvent:getInstanceMaintenanceEvent", args, LookupInstanceMaintenanceEventResultOutput{}, options).(LookupInstanceMaintenanceEventResultOutput)
 }
 
 // A collection of arguments for invoking getInstanceMaintenanceEvent.

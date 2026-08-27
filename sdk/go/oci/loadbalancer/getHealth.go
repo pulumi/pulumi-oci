@@ -82,12 +82,8 @@ type GetHealthResult struct {
 }
 
 func GetHealthOutput(ctx *pulumi.Context, args GetHealthOutputArgs, opts ...pulumi.InvokeOption) GetHealthResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetHealthResultOutput, error) {
-			args := v.(GetHealthArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LoadBalancer/getHealth:getHealth", args, GetHealthResultOutput{}, options).(GetHealthResultOutput), nil
-		}).(GetHealthResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LoadBalancer/getHealth:getHealth", args, GetHealthResultOutput{}, options).(GetHealthResultOutput)
 }
 
 // A collection of arguments for invoking getHealth.

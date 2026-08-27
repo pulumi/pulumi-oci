@@ -75,12 +75,8 @@ type GetExternalMySqlDatabasesResult struct {
 }
 
 func GetExternalMySqlDatabasesOutput(ctx *pulumi.Context, args GetExternalMySqlDatabasesOutputArgs, opts ...pulumi.InvokeOption) GetExternalMySqlDatabasesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetExternalMySqlDatabasesResultOutput, error) {
-			args := v.(GetExternalMySqlDatabasesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalMySqlDatabases:getExternalMySqlDatabases", args, GetExternalMySqlDatabasesResultOutput{}, options).(GetExternalMySqlDatabasesResultOutput), nil
-		}).(GetExternalMySqlDatabasesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getExternalMySqlDatabases:getExternalMySqlDatabases", args, GetExternalMySqlDatabasesResultOutput{}, options).(GetExternalMySqlDatabasesResultOutput)
 }
 
 // A collection of arguments for invoking getExternalMySqlDatabases.

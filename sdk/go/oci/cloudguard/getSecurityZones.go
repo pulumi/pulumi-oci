@@ -91,12 +91,8 @@ type GetSecurityZonesResult struct {
 }
 
 func GetSecurityZonesOutput(ctx *pulumi.Context, args GetSecurityZonesOutputArgs, opts ...pulumi.InvokeOption) GetSecurityZonesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSecurityZonesResultOutput, error) {
-			args := v.(GetSecurityZonesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CloudGuard/getSecurityZones:getSecurityZones", args, GetSecurityZonesResultOutput{}, options).(GetSecurityZonesResultOutput), nil
-		}).(GetSecurityZonesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CloudGuard/getSecurityZones:getSecurityZones", args, GetSecurityZonesResultOutput{}, options).(GetSecurityZonesResultOutput)
 }
 
 // A collection of arguments for invoking getSecurityZones.

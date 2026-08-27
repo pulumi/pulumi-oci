@@ -108,12 +108,8 @@ type LookupDomainsMySupportAccountResult struct {
 }
 
 func LookupDomainsMySupportAccountOutput(ctx *pulumi.Context, args LookupDomainsMySupportAccountOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsMySupportAccountResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDomainsMySupportAccountResultOutput, error) {
-			args := v.(LookupDomainsMySupportAccountArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsMySupportAccount:getDomainsMySupportAccount", args, LookupDomainsMySupportAccountResultOutput{}, options).(LookupDomainsMySupportAccountResultOutput), nil
-		}).(LookupDomainsMySupportAccountResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsMySupportAccount:getDomainsMySupportAccount", args, LookupDomainsMySupportAccountResultOutput{}, options).(LookupDomainsMySupportAccountResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsMySupportAccount.

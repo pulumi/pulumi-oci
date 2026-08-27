@@ -68,12 +68,8 @@ type GetNotebookSessionShapesResult struct {
 }
 
 func GetNotebookSessionShapesOutput(ctx *pulumi.Context, args GetNotebookSessionShapesOutputArgs, opts ...pulumi.InvokeOption) GetNotebookSessionShapesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetNotebookSessionShapesResultOutput, error) {
-			args := v.(GetNotebookSessionShapesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataScience/getNotebookSessionShapes:getNotebookSessionShapes", args, GetNotebookSessionShapesResultOutput{}, options).(GetNotebookSessionShapesResultOutput), nil
-		}).(GetNotebookSessionShapesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataScience/getNotebookSessionShapes:getNotebookSessionShapes", args, GetNotebookSessionShapesResultOutput{}, options).(GetNotebookSessionShapesResultOutput)
 }
 
 // A collection of arguments for invoking getNotebookSessionShapes.

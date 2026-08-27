@@ -70,12 +70,8 @@ type GetRepositoryAuthorResult struct {
 }
 
 func GetRepositoryAuthorOutput(ctx *pulumi.Context, args GetRepositoryAuthorOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryAuthorResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRepositoryAuthorResultOutput, error) {
-			args := v.(GetRepositoryAuthorArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DevOps/getRepositoryAuthor:getRepositoryAuthor", args, GetRepositoryAuthorResultOutput{}, options).(GetRepositoryAuthorResultOutput), nil
-		}).(GetRepositoryAuthorResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DevOps/getRepositoryAuthor:getRepositoryAuthor", args, GetRepositoryAuthorResultOutput{}, options).(GetRepositoryAuthorResultOutput)
 }
 
 // A collection of arguments for invoking getRepositoryAuthor.

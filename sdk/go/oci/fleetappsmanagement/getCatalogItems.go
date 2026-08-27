@@ -102,12 +102,8 @@ type GetCatalogItemsResult struct {
 }
 
 func GetCatalogItemsOutput(ctx *pulumi.Context, args GetCatalogItemsOutputArgs, opts ...pulumi.InvokeOption) GetCatalogItemsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCatalogItemsResultOutput, error) {
-			args := v.(GetCatalogItemsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getCatalogItems:getCatalogItems", args, GetCatalogItemsResultOutput{}, options).(GetCatalogItemsResultOutput), nil
-		}).(GetCatalogItemsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getCatalogItems:getCatalogItems", args, GetCatalogItemsResultOutput{}, options).(GetCatalogItemsResultOutput)
 }
 
 // A collection of arguments for invoking getCatalogItems.

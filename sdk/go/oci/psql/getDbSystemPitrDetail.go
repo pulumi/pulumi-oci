@@ -68,12 +68,8 @@ type GetDbSystemPitrDetailResult struct {
 }
 
 func GetDbSystemPitrDetailOutput(ctx *pulumi.Context, args GetDbSystemPitrDetailOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemPitrDetailResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbSystemPitrDetailResultOutput, error) {
-			args := v.(GetDbSystemPitrDetailArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Psql/getDbSystemPitrDetail:getDbSystemPitrDetail", args, GetDbSystemPitrDetailResultOutput{}, options).(GetDbSystemPitrDetailResultOutput), nil
-		}).(GetDbSystemPitrDetailResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Psql/getDbSystemPitrDetail:getDbSystemPitrDetail", args, GetDbSystemPitrDetailResultOutput{}, options).(GetDbSystemPitrDetailResultOutput)
 }
 
 // A collection of arguments for invoking getDbSystemPitrDetail.

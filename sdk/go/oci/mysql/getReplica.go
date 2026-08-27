@@ -116,12 +116,8 @@ type LookupReplicaResult struct {
 }
 
 func LookupReplicaOutput(ctx *pulumi.Context, args LookupReplicaOutputArgs, opts ...pulumi.InvokeOption) LookupReplicaResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupReplicaResultOutput, error) {
-			args := v.(LookupReplicaArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Mysql/getReplica:getReplica", args, LookupReplicaResultOutput{}, options).(LookupReplicaResultOutput), nil
-		}).(LookupReplicaResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Mysql/getReplica:getReplica", args, LookupReplicaResultOutput{}, options).(LookupReplicaResultOutput)
 }
 
 // A collection of arguments for invoking getReplica.

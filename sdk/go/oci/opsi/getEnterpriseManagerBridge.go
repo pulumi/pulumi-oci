@@ -90,12 +90,8 @@ type LookupEnterpriseManagerBridgeResult struct {
 }
 
 func LookupEnterpriseManagerBridgeOutput(ctx *pulumi.Context, args LookupEnterpriseManagerBridgeOutputArgs, opts ...pulumi.InvokeOption) LookupEnterpriseManagerBridgeResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupEnterpriseManagerBridgeResultOutput, error) {
-			args := v.(LookupEnterpriseManagerBridgeArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Opsi/getEnterpriseManagerBridge:getEnterpriseManagerBridge", args, LookupEnterpriseManagerBridgeResultOutput{}, options).(LookupEnterpriseManagerBridgeResultOutput), nil
-		}).(LookupEnterpriseManagerBridgeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Opsi/getEnterpriseManagerBridge:getEnterpriseManagerBridge", args, LookupEnterpriseManagerBridgeResultOutput{}, options).(LookupEnterpriseManagerBridgeResultOutput)
 }
 
 // A collection of arguments for invoking getEnterpriseManagerBridge.

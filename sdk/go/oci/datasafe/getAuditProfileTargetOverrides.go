@@ -72,12 +72,8 @@ type GetAuditProfileTargetOverridesResult struct {
 }
 
 func GetAuditProfileTargetOverridesOutput(ctx *pulumi.Context, args GetAuditProfileTargetOverridesOutputArgs, opts ...pulumi.InvokeOption) GetAuditProfileTargetOverridesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAuditProfileTargetOverridesResultOutput, error) {
-			args := v.(GetAuditProfileTargetOverridesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getAuditProfileTargetOverrides:getAuditProfileTargetOverrides", args, GetAuditProfileTargetOverridesResultOutput{}, options).(GetAuditProfileTargetOverridesResultOutput), nil
-		}).(GetAuditProfileTargetOverridesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getAuditProfileTargetOverrides:getAuditProfileTargetOverrides", args, GetAuditProfileTargetOverridesResultOutput{}, options).(GetAuditProfileTargetOverridesResultOutput)
 }
 
 // A collection of arguments for invoking getAuditProfileTargetOverrides.

@@ -96,12 +96,8 @@ type GetDomainsOauthClientCertificatesResult struct {
 }
 
 func GetDomainsOauthClientCertificatesOutput(ctx *pulumi.Context, args GetDomainsOauthClientCertificatesOutputArgs, opts ...pulumi.InvokeOption) GetDomainsOauthClientCertificatesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsOauthClientCertificatesResultOutput, error) {
-			args := v.(GetDomainsOauthClientCertificatesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsOauthClientCertificates:getDomainsOauthClientCertificates", args, GetDomainsOauthClientCertificatesResultOutput{}, options).(GetDomainsOauthClientCertificatesResultOutput), nil
-		}).(GetDomainsOauthClientCertificatesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsOauthClientCertificates:getDomainsOauthClientCertificates", args, GetDomainsOauthClientCertificatesResultOutput{}, options).(GetDomainsOauthClientCertificatesResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsOauthClientCertificates.

@@ -93,12 +93,8 @@ type GetDbmulticloudOracleDbAzureVaultAssociationsResult struct {
 }
 
 func GetDbmulticloudOracleDbAzureVaultAssociationsOutput(ctx *pulumi.Context, args GetDbmulticloudOracleDbAzureVaultAssociationsOutputArgs, opts ...pulumi.InvokeOption) GetDbmulticloudOracleDbAzureVaultAssociationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbmulticloudOracleDbAzureVaultAssociationsResultOutput, error) {
-			args := v.(GetDbmulticloudOracleDbAzureVaultAssociationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbAzureVaultAssociations:getDbmulticloudOracleDbAzureVaultAssociations", args, GetDbmulticloudOracleDbAzureVaultAssociationsResultOutput{}, options).(GetDbmulticloudOracleDbAzureVaultAssociationsResultOutput), nil
-		}).(GetDbmulticloudOracleDbAzureVaultAssociationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbAzureVaultAssociations:getDbmulticloudOracleDbAzureVaultAssociations", args, GetDbmulticloudOracleDbAzureVaultAssociationsResultOutput{}, options).(GetDbmulticloudOracleDbAzureVaultAssociationsResultOutput)
 }
 
 // A collection of arguments for invoking getDbmulticloudOracleDbAzureVaultAssociations.

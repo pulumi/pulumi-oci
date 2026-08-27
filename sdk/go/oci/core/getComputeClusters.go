@@ -80,12 +80,8 @@ type GetComputeClustersResult struct {
 }
 
 func GetComputeClustersOutput(ctx *pulumi.Context, args GetComputeClustersOutputArgs, opts ...pulumi.InvokeOption) GetComputeClustersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetComputeClustersResultOutput, error) {
-			args := v.(GetComputeClustersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getComputeClusters:getComputeClusters", args, GetComputeClustersResultOutput{}, options).(GetComputeClustersResultOutput), nil
-		}).(GetComputeClustersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getComputeClusters:getComputeClusters", args, GetComputeClustersResultOutput{}, options).(GetComputeClustersResultOutput)
 }
 
 // A collection of arguments for invoking getComputeClusters.

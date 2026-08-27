@@ -157,12 +157,8 @@ type LookupExadbVmClusterResult struct {
 }
 
 func LookupExadbVmClusterOutput(ctx *pulumi.Context, args LookupExadbVmClusterOutputArgs, opts ...pulumi.InvokeOption) LookupExadbVmClusterResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupExadbVmClusterResultOutput, error) {
-			args := v.(LookupExadbVmClusterArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getExadbVmCluster:getExadbVmCluster", args, LookupExadbVmClusterResultOutput{}, options).(LookupExadbVmClusterResultOutput), nil
-		}).(LookupExadbVmClusterResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getExadbVmCluster:getExadbVmCluster", args, LookupExadbVmClusterResultOutput{}, options).(LookupExadbVmClusterResultOutput)
 }
 
 // A collection of arguments for invoking getExadbVmCluster.

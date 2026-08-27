@@ -87,12 +87,8 @@ type GetDesktopPoolsResult struct {
 }
 
 func GetDesktopPoolsOutput(ctx *pulumi.Context, args GetDesktopPoolsOutputArgs, opts ...pulumi.InvokeOption) GetDesktopPoolsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDesktopPoolsResultOutput, error) {
-			args := v.(GetDesktopPoolsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Desktops/getDesktopPools:getDesktopPools", args, GetDesktopPoolsResultOutput{}, options).(GetDesktopPoolsResultOutput), nil
-		}).(GetDesktopPoolsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Desktops/getDesktopPools:getDesktopPools", args, GetDesktopPoolsResultOutput{}, options).(GetDesktopPoolsResultOutput)
 }
 
 // A collection of arguments for invoking getDesktopPools.

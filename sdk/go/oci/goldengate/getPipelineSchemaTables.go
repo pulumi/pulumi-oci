@@ -82,12 +82,8 @@ type GetPipelineSchemaTablesResult struct {
 }
 
 func GetPipelineSchemaTablesOutput(ctx *pulumi.Context, args GetPipelineSchemaTablesOutputArgs, opts ...pulumi.InvokeOption) GetPipelineSchemaTablesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPipelineSchemaTablesResultOutput, error) {
-			args := v.(GetPipelineSchemaTablesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GoldenGate/getPipelineSchemaTables:getPipelineSchemaTables", args, GetPipelineSchemaTablesResultOutput{}, options).(GetPipelineSchemaTablesResultOutput), nil
-		}).(GetPipelineSchemaTablesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GoldenGate/getPipelineSchemaTables:getPipelineSchemaTables", args, GetPipelineSchemaTablesResultOutput{}, options).(GetPipelineSchemaTablesResultOutput)
 }
 
 // A collection of arguments for invoking getPipelineSchemaTables.

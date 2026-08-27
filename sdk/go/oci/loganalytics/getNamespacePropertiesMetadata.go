@@ -86,12 +86,8 @@ type GetNamespacePropertiesMetadataResult struct {
 }
 
 func GetNamespacePropertiesMetadataOutput(ctx *pulumi.Context, args GetNamespacePropertiesMetadataOutputArgs, opts ...pulumi.InvokeOption) GetNamespacePropertiesMetadataResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetNamespacePropertiesMetadataResultOutput, error) {
-			args := v.(GetNamespacePropertiesMetadataArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LogAnalytics/getNamespacePropertiesMetadata:getNamespacePropertiesMetadata", args, GetNamespacePropertiesMetadataResultOutput{}, options).(GetNamespacePropertiesMetadataResultOutput), nil
-		}).(GetNamespacePropertiesMetadataResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LogAnalytics/getNamespacePropertiesMetadata:getNamespacePropertiesMetadata", args, GetNamespacePropertiesMetadataResultOutput{}, options).(GetNamespacePropertiesMetadataResultOutput)
 }
 
 // A collection of arguments for invoking getNamespacePropertiesMetadata.

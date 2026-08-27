@@ -68,12 +68,8 @@ type GetManagementDashboardsExportResult struct {
 }
 
 func GetManagementDashboardsExportOutput(ctx *pulumi.Context, args GetManagementDashboardsExportOutputArgs, opts ...pulumi.InvokeOption) GetManagementDashboardsExportResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagementDashboardsExportResultOutput, error) {
-			args := v.(GetManagementDashboardsExportArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ManagementDashboard/getManagementDashboardsExport:getManagementDashboardsExport", args, GetManagementDashboardsExportResultOutput{}, options).(GetManagementDashboardsExportResultOutput), nil
-		}).(GetManagementDashboardsExportResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ManagementDashboard/getManagementDashboardsExport:getManagementDashboardsExport", args, GetManagementDashboardsExportResultOutput{}, options).(GetManagementDashboardsExportResultOutput)
 }
 
 // A collection of arguments for invoking getManagementDashboardsExport.

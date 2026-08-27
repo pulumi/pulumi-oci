@@ -85,12 +85,8 @@ type GetRepositoryCommitResult struct {
 }
 
 func GetRepositoryCommitOutput(ctx *pulumi.Context, args GetRepositoryCommitOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryCommitResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRepositoryCommitResultOutput, error) {
-			args := v.(GetRepositoryCommitArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DevOps/getRepositoryCommit:getRepositoryCommit", args, GetRepositoryCommitResultOutput{}, options).(GetRepositoryCommitResultOutput), nil
-		}).(GetRepositoryCommitResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DevOps/getRepositoryCommit:getRepositoryCommit", args, GetRepositoryCommitResultOutput{}, options).(GetRepositoryCommitResultOutput)
 }
 
 // A collection of arguments for invoking getRepositoryCommit.

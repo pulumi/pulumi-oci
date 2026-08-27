@@ -98,12 +98,8 @@ type LookupExternalExadataStorageConnectorResult struct {
 }
 
 func LookupExternalExadataStorageConnectorOutput(ctx *pulumi.Context, args LookupExternalExadataStorageConnectorOutputArgs, opts ...pulumi.InvokeOption) LookupExternalExadataStorageConnectorResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupExternalExadataStorageConnectorResultOutput, error) {
-			args := v.(LookupExternalExadataStorageConnectorArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalExadataStorageConnector:getExternalExadataStorageConnector", args, LookupExternalExadataStorageConnectorResultOutput{}, options).(LookupExternalExadataStorageConnectorResultOutput), nil
-		}).(LookupExternalExadataStorageConnectorResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getExternalExadataStorageConnector:getExternalExadataStorageConnector", args, LookupExternalExadataStorageConnectorResultOutput{}, options).(LookupExternalExadataStorageConnectorResultOutput)
 }
 
 // A collection of arguments for invoking getExternalExadataStorageConnector.

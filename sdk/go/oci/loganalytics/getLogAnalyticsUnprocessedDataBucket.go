@@ -73,12 +73,8 @@ type GetLogAnalyticsUnprocessedDataBucketResult struct {
 }
 
 func GetLogAnalyticsUnprocessedDataBucketOutput(ctx *pulumi.Context, args GetLogAnalyticsUnprocessedDataBucketOutputArgs, opts ...pulumi.InvokeOption) GetLogAnalyticsUnprocessedDataBucketResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetLogAnalyticsUnprocessedDataBucketResultOutput, error) {
-			args := v.(GetLogAnalyticsUnprocessedDataBucketArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsUnprocessedDataBucket:getLogAnalyticsUnprocessedDataBucket", args, GetLogAnalyticsUnprocessedDataBucketResultOutput{}, options).(GetLogAnalyticsUnprocessedDataBucketResultOutput), nil
-		}).(GetLogAnalyticsUnprocessedDataBucketResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsUnprocessedDataBucket:getLogAnalyticsUnprocessedDataBucket", args, GetLogAnalyticsUnprocessedDataBucketResultOutput{}, options).(GetLogAnalyticsUnprocessedDataBucketResultOutput)
 }
 
 // A collection of arguments for invoking getLogAnalyticsUnprocessedDataBucket.

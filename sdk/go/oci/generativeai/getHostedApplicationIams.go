@@ -82,12 +82,8 @@ type GetHostedApplicationIamsResult struct {
 }
 
 func GetHostedApplicationIamsOutput(ctx *pulumi.Context, args GetHostedApplicationIamsOutputArgs, opts ...pulumi.InvokeOption) GetHostedApplicationIamsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetHostedApplicationIamsResultOutput, error) {
-			args := v.(GetHostedApplicationIamsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GenerativeAi/getHostedApplicationIams:getHostedApplicationIams", args, GetHostedApplicationIamsResultOutput{}, options).(GetHostedApplicationIamsResultOutput), nil
-		}).(GetHostedApplicationIamsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GenerativeAi/getHostedApplicationIams:getHostedApplicationIams", args, GetHostedApplicationIamsResultOutput{}, options).(GetHostedApplicationIamsResultOutput)
 }
 
 // A collection of arguments for invoking getHostedApplicationIams.

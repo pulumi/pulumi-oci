@@ -68,12 +68,8 @@ type GetMarketplaceMetadataPublicKeysResult struct {
 }
 
 func GetMarketplaceMetadataPublicKeysOutput(ctx *pulumi.Context, args GetMarketplaceMetadataPublicKeysOutputArgs, opts ...pulumi.InvokeOption) GetMarketplaceMetadataPublicKeysResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMarketplaceMetadataPublicKeysResultOutput, error) {
-			args := v.(GetMarketplaceMetadataPublicKeysArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Marketplace/getMarketplaceMetadataPublicKeys:getMarketplaceMetadataPublicKeys", args, GetMarketplaceMetadataPublicKeysResultOutput{}, options).(GetMarketplaceMetadataPublicKeysResultOutput), nil
-		}).(GetMarketplaceMetadataPublicKeysResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Marketplace/getMarketplaceMetadataPublicKeys:getMarketplaceMetadataPublicKeys", args, GetMarketplaceMetadataPublicKeysResultOutput{}, options).(GetMarketplaceMetadataPublicKeysResultOutput)
 }
 
 // A collection of arguments for invoking getMarketplaceMetadataPublicKeys.

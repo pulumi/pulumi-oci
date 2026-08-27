@@ -81,12 +81,8 @@ type GetDynamicGroupsResult struct {
 }
 
 func GetDynamicGroupsOutput(ctx *pulumi.Context, args GetDynamicGroupsOutputArgs, opts ...pulumi.InvokeOption) GetDynamicGroupsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDynamicGroupsResultOutput, error) {
-			args := v.(GetDynamicGroupsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDynamicGroups:getDynamicGroups", args, GetDynamicGroupsResultOutput{}, options).(GetDynamicGroupsResultOutput), nil
-		}).(GetDynamicGroupsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDynamicGroups:getDynamicGroups", args, GetDynamicGroupsResultOutput{}, options).(GetDynamicGroupsResultOutput)
 }
 
 // A collection of arguments for invoking getDynamicGroups.

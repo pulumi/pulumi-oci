@@ -69,12 +69,8 @@ type GetAppCatalogListingResourceVersionsResult struct {
 }
 
 func GetAppCatalogListingResourceVersionsOutput(ctx *pulumi.Context, args GetAppCatalogListingResourceVersionsOutputArgs, opts ...pulumi.InvokeOption) GetAppCatalogListingResourceVersionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAppCatalogListingResourceVersionsResultOutput, error) {
-			args := v.(GetAppCatalogListingResourceVersionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getAppCatalogListingResourceVersions:getAppCatalogListingResourceVersions", args, GetAppCatalogListingResourceVersionsResultOutput{}, options).(GetAppCatalogListingResourceVersionsResultOutput), nil
-		}).(GetAppCatalogListingResourceVersionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getAppCatalogListingResourceVersions:getAppCatalogListingResourceVersions", args, GetAppCatalogListingResourceVersionsResultOutput{}, options).(GetAppCatalogListingResourceVersionsResultOutput)
 }
 
 // A collection of arguments for invoking getAppCatalogListingResourceVersions.

@@ -69,12 +69,8 @@ type GetPbfListingTriggersResult struct {
 }
 
 func GetPbfListingTriggersOutput(ctx *pulumi.Context, args GetPbfListingTriggersOutputArgs, opts ...pulumi.InvokeOption) GetPbfListingTriggersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPbfListingTriggersResultOutput, error) {
-			args := v.(GetPbfListingTriggersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Functions/getPbfListingTriggers:getPbfListingTriggers", args, GetPbfListingTriggersResultOutput{}, options).(GetPbfListingTriggersResultOutput), nil
-		}).(GetPbfListingTriggersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Functions/getPbfListingTriggers:getPbfListingTriggers", args, GetPbfListingTriggersResultOutput{}, options).(GetPbfListingTriggersResultOutput)
 }
 
 // A collection of arguments for invoking getPbfListingTriggers.

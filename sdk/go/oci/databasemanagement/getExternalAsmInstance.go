@@ -94,12 +94,8 @@ type LookupExternalAsmInstanceResult struct {
 }
 
 func LookupExternalAsmInstanceOutput(ctx *pulumi.Context, args LookupExternalAsmInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupExternalAsmInstanceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupExternalAsmInstanceResultOutput, error) {
-			args := v.(LookupExternalAsmInstanceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalAsmInstance:getExternalAsmInstance", args, LookupExternalAsmInstanceResultOutput{}, options).(LookupExternalAsmInstanceResultOutput), nil
-		}).(LookupExternalAsmInstanceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getExternalAsmInstance:getExternalAsmInstance", args, LookupExternalAsmInstanceResultOutput{}, options).(LookupExternalAsmInstanceResultOutput)
 }
 
 // A collection of arguments for invoking getExternalAsmInstance.

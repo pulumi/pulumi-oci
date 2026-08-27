@@ -100,12 +100,8 @@ type GetNamespaceTemplateResult struct {
 }
 
 func GetNamespaceTemplateOutput(ctx *pulumi.Context, args GetNamespaceTemplateOutputArgs, opts ...pulumi.InvokeOption) GetNamespaceTemplateResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetNamespaceTemplateResultOutput, error) {
-			args := v.(GetNamespaceTemplateArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LogAnalytics/getNamespaceTemplate:getNamespaceTemplate", args, GetNamespaceTemplateResultOutput{}, options).(GetNamespaceTemplateResultOutput), nil
-		}).(GetNamespaceTemplateResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LogAnalytics/getNamespaceTemplate:getNamespaceTemplate", args, GetNamespaceTemplateResultOutput{}, options).(GetNamespaceTemplateResultOutput)
 }
 
 // A collection of arguments for invoking getNamespaceTemplate.

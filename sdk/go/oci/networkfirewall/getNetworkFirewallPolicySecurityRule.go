@@ -62,12 +62,8 @@ type LookupNetworkFirewallPolicySecurityRuleResult struct {
 }
 
 func LookupNetworkFirewallPolicySecurityRuleOutput(ctx *pulumi.Context, args LookupNetworkFirewallPolicySecurityRuleOutputArgs, opts ...pulumi.InvokeOption) LookupNetworkFirewallPolicySecurityRuleResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupNetworkFirewallPolicySecurityRuleResultOutput, error) {
-			args := v.(LookupNetworkFirewallPolicySecurityRuleArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicySecurityRule:getNetworkFirewallPolicySecurityRule", args, LookupNetworkFirewallPolicySecurityRuleResultOutput{}, options).(LookupNetworkFirewallPolicySecurityRuleResultOutput), nil
-		}).(LookupNetworkFirewallPolicySecurityRuleResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicySecurityRule:getNetworkFirewallPolicySecurityRule", args, LookupNetworkFirewallPolicySecurityRuleResultOutput{}, options).(LookupNetworkFirewallPolicySecurityRuleResultOutput)
 }
 
 // A collection of arguments for invoking getNetworkFirewallPolicySecurityRule.

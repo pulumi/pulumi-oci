@@ -152,12 +152,8 @@ type GetDomainsAccountMgmtInfoResult struct {
 }
 
 func GetDomainsAccountMgmtInfoOutput(ctx *pulumi.Context, args GetDomainsAccountMgmtInfoOutputArgs, opts ...pulumi.InvokeOption) GetDomainsAccountMgmtInfoResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsAccountMgmtInfoResultOutput, error) {
-			args := v.(GetDomainsAccountMgmtInfoArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsAccountMgmtInfo:getDomainsAccountMgmtInfo", args, GetDomainsAccountMgmtInfoResultOutput{}, options).(GetDomainsAccountMgmtInfoResultOutput), nil
-		}).(GetDomainsAccountMgmtInfoResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsAccountMgmtInfo:getDomainsAccountMgmtInfo", args, GetDomainsAccountMgmtInfoResultOutput{}, options).(GetDomainsAccountMgmtInfoResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsAccountMgmtInfo.

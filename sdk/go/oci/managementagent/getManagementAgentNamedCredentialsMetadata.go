@@ -70,12 +70,8 @@ type GetManagementAgentNamedCredentialsMetadataResult struct {
 }
 
 func GetManagementAgentNamedCredentialsMetadataOutput(ctx *pulumi.Context, args GetManagementAgentNamedCredentialsMetadataOutputArgs, opts ...pulumi.InvokeOption) GetManagementAgentNamedCredentialsMetadataResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagementAgentNamedCredentialsMetadataResultOutput, error) {
-			args := v.(GetManagementAgentNamedCredentialsMetadataArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ManagementAgent/getManagementAgentNamedCredentialsMetadata:getManagementAgentNamedCredentialsMetadata", args, GetManagementAgentNamedCredentialsMetadataResultOutput{}, options).(GetManagementAgentNamedCredentialsMetadataResultOutput), nil
-		}).(GetManagementAgentNamedCredentialsMetadataResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ManagementAgent/getManagementAgentNamedCredentialsMetadata:getManagementAgentNamedCredentialsMetadata", args, GetManagementAgentNamedCredentialsMetadataResultOutput{}, options).(GetManagementAgentNamedCredentialsMetadataResultOutput)
 }
 
 // A collection of arguments for invoking getManagementAgentNamedCredentialsMetadata.

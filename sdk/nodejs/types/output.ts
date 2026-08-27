@@ -187661,7 +187661,6 @@ export namespace Identity {
     }
 
     export interface DomainsAppRadiusPolicy {
-        _ref: string;
         /**
          * (Updatable) Identifier of the Policy.
          *
@@ -198205,20 +198204,6 @@ export namespace Identity {
 
     export interface DomainsIdentityProofingProviderIdcsLockedBy {
         /**
-         * (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-         *
-         * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: false
-         * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
-         * * returned: default
-         * * type: string
-         * * uniqueness: none
-         */
-        _ref: string;
-        /**
          * (Updatable) The displayName of the User or App who locked this Resource.
          *
          * **SCIM++ Properties:**
@@ -198532,20 +198517,6 @@ export namespace Identity {
     }
 
     export interface DomainsIdentityProofingProviderTemplateIdcsLockedBy {
-        /**
-         * (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-         *
-         * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: false
-         * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
-         * * returned: default
-         * * type: string
-         * * uniqueness: none
-         */
-        _ref: string;
         /**
          * (Updatable) The displayName of the User or App who locked this Resource.
          *
@@ -215954,7 +215925,6 @@ export namespace Identity {
     }
 
     export interface GetDomainsAppRadiusPolicy {
-        _ref: string;
         /**
          * ID of the AppRole.
          */
@@ -219165,7 +219135,6 @@ export namespace Identity {
     }
 
     export interface GetDomainsAppsAppRadiusPolicy {
-        _ref: string;
         /**
          * ID of the AppRole.
          */
@@ -225500,10 +225469,6 @@ export namespace Identity {
 
     export interface GetDomainsIdentityProofingProviderIdcsLockedBy {
         /**
-         * The URI of the SCIM resource that represents the User or App who Locked this Resource.
-         */
-        _ref: string;
-        /**
          * The displayName of the User or App who locked this Resource.
          */
         display: string;
@@ -225611,10 +225576,6 @@ export namespace Identity {
     }
 
     export interface GetDomainsIdentityProofingProviderTemplateIdcsLockedBy {
-        /**
-         * The URI of the SCIM resource that represents the User or App who Locked this Resource.
-         */
-        _ref: string;
         /**
          * The displayName of the User or App who locked this Resource.
          */
@@ -225811,10 +225772,6 @@ export namespace Identity {
     }
 
     export interface GetDomainsIdentityProofingProviderTemplatesIdentityProofingProviderTemplateIdcsLockedBy {
-        /**
-         * The URI of the SCIM resource that represents the User or App who Locked this Resource.
-         */
-        _ref: string;
         /**
          * The displayName of the User or App who locked this Resource.
          */
@@ -226030,10 +225987,6 @@ export namespace Identity {
     }
 
     export interface GetDomainsIdentityProofingProvidersIdentityProofingProviderIdcsLockedBy {
-        /**
-         * The URI of the SCIM resource that represents the User or App who Locked this Resource.
-         */
-        _ref: string;
         /**
          * The displayName of the User or App who locked this Resource.
          */

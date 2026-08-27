@@ -119,12 +119,8 @@ type GetAttributeSetsResult struct {
 }
 
 func GetAttributeSetsOutput(ctx *pulumi.Context, args GetAttributeSetsOutputArgs, opts ...pulumi.InvokeOption) GetAttributeSetsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAttributeSetsResultOutput, error) {
-			args := v.(GetAttributeSetsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getAttributeSets:getAttributeSets", args, GetAttributeSetsResultOutput{}, options).(GetAttributeSetsResultOutput), nil
-		}).(GetAttributeSetsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getAttributeSets:getAttributeSets", args, GetAttributeSetsResultOutput{}, options).(GetAttributeSetsResultOutput)
 }
 
 // A collection of arguments for invoking getAttributeSets.

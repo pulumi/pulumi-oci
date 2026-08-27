@@ -88,12 +88,8 @@ type GetProvisionsResult struct {
 }
 
 func GetProvisionsOutput(ctx *pulumi.Context, args GetProvisionsOutputArgs, opts ...pulumi.InvokeOption) GetProvisionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetProvisionsResultOutput, error) {
-			args := v.(GetProvisionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getProvisions:getProvisions", args, GetProvisionsResultOutput{}, options).(GetProvisionsResultOutput), nil
-		}).(GetProvisionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getProvisions:getProvisions", args, GetProvisionsResultOutput{}, options).(GetProvisionsResultOutput)
 }
 
 // A collection of arguments for invoking getProvisions.

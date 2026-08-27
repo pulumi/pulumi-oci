@@ -79,12 +79,8 @@ type GetFleetBlocklistsResult struct {
 }
 
 func GetFleetBlocklistsOutput(ctx *pulumi.Context, args GetFleetBlocklistsOutputArgs, opts ...pulumi.InvokeOption) GetFleetBlocklistsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFleetBlocklistsResultOutput, error) {
-			args := v.(GetFleetBlocklistsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getFleetBlocklists:getFleetBlocklists", args, GetFleetBlocklistsResultOutput{}, options).(GetFleetBlocklistsResultOutput), nil
-		}).(GetFleetBlocklistsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getFleetBlocklists:getFleetBlocklists", args, GetFleetBlocklistsResultOutput{}, options).(GetFleetBlocklistsResultOutput)
 }
 
 // A collection of arguments for invoking getFleetBlocklists.

@@ -66,12 +66,8 @@ type LookupApiValidationResult struct {
 }
 
 func LookupApiValidationOutput(ctx *pulumi.Context, args LookupApiValidationOutputArgs, opts ...pulumi.InvokeOption) LookupApiValidationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupApiValidationResultOutput, error) {
-			args := v.(LookupApiValidationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ApiGateway/getApiValidation:getApiValidation", args, LookupApiValidationResultOutput{}, options).(LookupApiValidationResultOutput), nil
-		}).(LookupApiValidationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ApiGateway/getApiValidation:getApiValidation", args, LookupApiValidationResultOutput{}, options).(LookupApiValidationResultOutput)
 }
 
 // A collection of arguments for invoking getApiValidation.

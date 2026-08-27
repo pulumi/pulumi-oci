@@ -86,12 +86,8 @@ type LookupVisionPrivateEndpointResult struct {
 }
 
 func LookupVisionPrivateEndpointOutput(ctx *pulumi.Context, args LookupVisionPrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupVisionPrivateEndpointResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupVisionPrivateEndpointResultOutput, error) {
-			args := v.(LookupVisionPrivateEndpointArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:AiVision/getVisionPrivateEndpoint:getVisionPrivateEndpoint", args, LookupVisionPrivateEndpointResultOutput{}, options).(LookupVisionPrivateEndpointResultOutput), nil
-		}).(LookupVisionPrivateEndpointResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:AiVision/getVisionPrivateEndpoint:getVisionPrivateEndpoint", args, LookupVisionPrivateEndpointResultOutput{}, options).(LookupVisionPrivateEndpointResultOutput)
 }
 
 // A collection of arguments for invoking getVisionPrivateEndpoint.

@@ -74,12 +74,8 @@ type GetProcessSetsResult struct {
 }
 
 func GetProcessSetsOutput(ctx *pulumi.Context, args GetProcessSetsOutputArgs, opts ...pulumi.InvokeOption) GetProcessSetsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetProcessSetsResultOutput, error) {
-			args := v.(GetProcessSetsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:StackMonitoring/getProcessSets:getProcessSets", args, GetProcessSetsResultOutput{}, options).(GetProcessSetsResultOutput), nil
-		}).(GetProcessSetsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:StackMonitoring/getProcessSets:getProcessSets", args, GetProcessSetsResultOutput{}, options).(GetProcessSetsResultOutput)
 }
 
 // A collection of arguments for invoking getProcessSets.

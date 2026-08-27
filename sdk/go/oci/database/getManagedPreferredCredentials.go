@@ -68,12 +68,8 @@ type GetManagedPreferredCredentialsResult struct {
 }
 
 func GetManagedPreferredCredentialsOutput(ctx *pulumi.Context, args GetManagedPreferredCredentialsOutputArgs, opts ...pulumi.InvokeOption) GetManagedPreferredCredentialsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedPreferredCredentialsResultOutput, error) {
-			args := v.(GetManagedPreferredCredentialsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getManagedPreferredCredentials:getManagedPreferredCredentials", args, GetManagedPreferredCredentialsResultOutput{}, options).(GetManagedPreferredCredentialsResultOutput), nil
-		}).(GetManagedPreferredCredentialsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getManagedPreferredCredentials:getManagedPreferredCredentials", args, GetManagedPreferredCredentialsResultOutput{}, options).(GetManagedPreferredCredentialsResultOutput)
 }
 
 // A collection of arguments for invoking getManagedPreferredCredentials.

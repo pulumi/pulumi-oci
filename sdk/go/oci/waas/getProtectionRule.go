@@ -82,12 +82,8 @@ type LookupProtectionRuleResult struct {
 }
 
 func LookupProtectionRuleOutput(ctx *pulumi.Context, args LookupProtectionRuleOutputArgs, opts ...pulumi.InvokeOption) LookupProtectionRuleResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupProtectionRuleResultOutput, error) {
-			args := v.(LookupProtectionRuleArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Waas/getProtectionRule:getProtectionRule", args, LookupProtectionRuleResultOutput{}, options).(LookupProtectionRuleResultOutput), nil
-		}).(LookupProtectionRuleResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Waas/getProtectionRule:getProtectionRule", args, LookupProtectionRuleResultOutput{}, options).(LookupProtectionRuleResultOutput)
 }
 
 // A collection of arguments for invoking getProtectionRule.

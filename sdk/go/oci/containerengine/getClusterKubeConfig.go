@@ -78,12 +78,8 @@ type GetClusterKubeConfigResult struct {
 }
 
 func GetClusterKubeConfigOutput(ctx *pulumi.Context, args GetClusterKubeConfigOutputArgs, opts ...pulumi.InvokeOption) GetClusterKubeConfigResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetClusterKubeConfigResultOutput, error) {
-			args := v.(GetClusterKubeConfigArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ContainerEngine/getClusterKubeConfig:getClusterKubeConfig", args, GetClusterKubeConfigResultOutput{}, options).(GetClusterKubeConfigResultOutput), nil
-		}).(GetClusterKubeConfigResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ContainerEngine/getClusterKubeConfig:getClusterKubeConfig", args, GetClusterKubeConfigResultOutput{}, options).(GetClusterKubeConfigResultOutput)
 }
 
 // A collection of arguments for invoking getClusterKubeConfig.

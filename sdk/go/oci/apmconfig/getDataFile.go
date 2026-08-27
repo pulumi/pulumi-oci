@@ -84,12 +84,8 @@ type LookupDataFileResult struct {
 }
 
 func LookupDataFileOutput(ctx *pulumi.Context, args LookupDataFileOutputArgs, opts ...pulumi.InvokeOption) LookupDataFileResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDataFileResultOutput, error) {
-			args := v.(LookupDataFileArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ApmConfig/getDataFile:getDataFile", args, LookupDataFileResultOutput{}, options).(LookupDataFileResultOutput), nil
-		}).(LookupDataFileResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ApmConfig/getDataFile:getDataFile", args, LookupDataFileResultOutput{}, options).(LookupDataFileResultOutput)
 }
 
 // A collection of arguments for invoking getDataFile.

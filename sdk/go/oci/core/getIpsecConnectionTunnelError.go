@@ -78,12 +78,8 @@ type GetIpsecConnectionTunnelErrorResult struct {
 }
 
 func GetIpsecConnectionTunnelErrorOutput(ctx *pulumi.Context, args GetIpsecConnectionTunnelErrorOutputArgs, opts ...pulumi.InvokeOption) GetIpsecConnectionTunnelErrorResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetIpsecConnectionTunnelErrorResultOutput, error) {
-			args := v.(GetIpsecConnectionTunnelErrorArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getIpsecConnectionTunnelError:getIpsecConnectionTunnelError", args, GetIpsecConnectionTunnelErrorResultOutput{}, options).(GetIpsecConnectionTunnelErrorResultOutput), nil
-		}).(GetIpsecConnectionTunnelErrorResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getIpsecConnectionTunnelError:getIpsecConnectionTunnelError", args, GetIpsecConnectionTunnelErrorResultOutput{}, options).(GetIpsecConnectionTunnelErrorResultOutput)
 }
 
 // A collection of arguments for invoking getIpsecConnectionTunnelError.

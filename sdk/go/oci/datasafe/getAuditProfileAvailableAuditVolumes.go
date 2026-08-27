@@ -90,12 +90,8 @@ type GetAuditProfileAvailableAuditVolumesResult struct {
 }
 
 func GetAuditProfileAvailableAuditVolumesOutput(ctx *pulumi.Context, args GetAuditProfileAvailableAuditVolumesOutputArgs, opts ...pulumi.InvokeOption) GetAuditProfileAvailableAuditVolumesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAuditProfileAvailableAuditVolumesResultOutput, error) {
-			args := v.(GetAuditProfileAvailableAuditVolumesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getAuditProfileAvailableAuditVolumes:getAuditProfileAvailableAuditVolumes", args, GetAuditProfileAvailableAuditVolumesResultOutput{}, options).(GetAuditProfileAvailableAuditVolumesResultOutput), nil
-		}).(GetAuditProfileAvailableAuditVolumesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getAuditProfileAvailableAuditVolumes:getAuditProfileAvailableAuditVolumes", args, GetAuditProfileAvailableAuditVolumesResultOutput{}, options).(GetAuditProfileAvailableAuditVolumesResultOutput)
 }
 
 // A collection of arguments for invoking getAuditProfileAvailableAuditVolumes.

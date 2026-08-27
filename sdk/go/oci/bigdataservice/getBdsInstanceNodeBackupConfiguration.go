@@ -87,12 +87,8 @@ type LookupBdsInstanceNodeBackupConfigurationResult struct {
 }
 
 func LookupBdsInstanceNodeBackupConfigurationOutput(ctx *pulumi.Context, args LookupBdsInstanceNodeBackupConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupBdsInstanceNodeBackupConfigurationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBdsInstanceNodeBackupConfigurationResultOutput, error) {
-			args := v.(LookupBdsInstanceNodeBackupConfigurationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:BigDataService/getBdsInstanceNodeBackupConfiguration:getBdsInstanceNodeBackupConfiguration", args, LookupBdsInstanceNodeBackupConfigurationResultOutput{}, options).(LookupBdsInstanceNodeBackupConfigurationResultOutput), nil
-		}).(LookupBdsInstanceNodeBackupConfigurationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:BigDataService/getBdsInstanceNodeBackupConfiguration:getBdsInstanceNodeBackupConfiguration", args, LookupBdsInstanceNodeBackupConfigurationResultOutput{}, options).(LookupBdsInstanceNodeBackupConfigurationResultOutput)
 }
 
 // A collection of arguments for invoking getBdsInstanceNodeBackupConfiguration.

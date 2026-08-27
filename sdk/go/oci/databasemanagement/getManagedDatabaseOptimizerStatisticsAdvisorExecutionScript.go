@@ -74,12 +74,8 @@ type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult struct {
 }
 
 func GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptOutput(ctx *pulumi.Context, args GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResultOutput, error) {
-			args := v.(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript:getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript", args, GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResultOutput{}, options).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResultOutput), nil
-		}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript:getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript", args, GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResultOutput{}, options).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResultOutput)
 }
 
 // A collection of arguments for invoking getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript.

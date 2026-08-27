@@ -83,12 +83,8 @@ type GetNotificationTopicsResult struct {
 }
 
 func GetNotificationTopicsOutput(ctx *pulumi.Context, args GetNotificationTopicsOutputArgs, opts ...pulumi.InvokeOption) GetNotificationTopicsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetNotificationTopicsResultOutput, error) {
-			args := v.(GetNotificationTopicsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Ons/getNotificationTopics:getNotificationTopics", args, GetNotificationTopicsResultOutput{}, options).(GetNotificationTopicsResultOutput), nil
-		}).(GetNotificationTopicsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Ons/getNotificationTopics:getNotificationTopics", args, GetNotificationTopicsResultOutput{}, options).(GetNotificationTopicsResultOutput)
 }
 
 // A collection of arguments for invoking getNotificationTopics.

@@ -83,12 +83,8 @@ type GetOrganizationTenancyResult struct {
 }
 
 func GetOrganizationTenancyOutput(ctx *pulumi.Context, args GetOrganizationTenancyOutputArgs, opts ...pulumi.InvokeOption) GetOrganizationTenancyResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetOrganizationTenancyResultOutput, error) {
-			args := v.(GetOrganizationTenancyArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Tenantmanagercontrolplane/getOrganizationTenancy:getOrganizationTenancy", args, GetOrganizationTenancyResultOutput{}, options).(GetOrganizationTenancyResultOutput), nil
-		}).(GetOrganizationTenancyResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Tenantmanagercontrolplane/getOrganizationTenancy:getOrganizationTenancy", args, GetOrganizationTenancyResultOutput{}, options).(GetOrganizationTenancyResultOutput)
 }
 
 // A collection of arguments for invoking getOrganizationTenancy.

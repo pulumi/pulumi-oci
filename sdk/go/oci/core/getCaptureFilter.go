@@ -82,12 +82,8 @@ type LookupCaptureFilterResult struct {
 }
 
 func LookupCaptureFilterOutput(ctx *pulumi.Context, args LookupCaptureFilterOutputArgs, opts ...pulumi.InvokeOption) LookupCaptureFilterResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupCaptureFilterResultOutput, error) {
-			args := v.(LookupCaptureFilterArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getCaptureFilter:getCaptureFilter", args, LookupCaptureFilterResultOutput{}, options).(LookupCaptureFilterResultOutput), nil
-		}).(LookupCaptureFilterResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getCaptureFilter:getCaptureFilter", args, LookupCaptureFilterResultOutput{}, options).(LookupCaptureFilterResultOutput)
 }
 
 // A collection of arguments for invoking getCaptureFilter.

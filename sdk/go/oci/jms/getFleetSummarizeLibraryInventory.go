@@ -48,12 +48,8 @@ type GetFleetSummarizeLibraryInventoryResult struct {
 }
 
 func GetFleetSummarizeLibraryInventoryOutput(ctx *pulumi.Context, args GetFleetSummarizeLibraryInventoryOutputArgs, opts ...pulumi.InvokeOption) GetFleetSummarizeLibraryInventoryResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFleetSummarizeLibraryInventoryResultOutput, error) {
-			args := v.(GetFleetSummarizeLibraryInventoryArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getFleetSummarizeLibraryInventory:getFleetSummarizeLibraryInventory", args, GetFleetSummarizeLibraryInventoryResultOutput{}, options).(GetFleetSummarizeLibraryInventoryResultOutput), nil
-		}).(GetFleetSummarizeLibraryInventoryResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getFleetSummarizeLibraryInventory:getFleetSummarizeLibraryInventory", args, GetFleetSummarizeLibraryInventoryResultOutput{}, options).(GetFleetSummarizeLibraryInventoryResultOutput)
 }
 
 // A collection of arguments for invoking getFleetSummarizeLibraryInventory.

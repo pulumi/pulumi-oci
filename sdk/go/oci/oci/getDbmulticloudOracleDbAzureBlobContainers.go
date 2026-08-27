@@ -93,12 +93,8 @@ type GetDbmulticloudOracleDbAzureBlobContainersResult struct {
 }
 
 func GetDbmulticloudOracleDbAzureBlobContainersOutput(ctx *pulumi.Context, args GetDbmulticloudOracleDbAzureBlobContainersOutputArgs, opts ...pulumi.InvokeOption) GetDbmulticloudOracleDbAzureBlobContainersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbmulticloudOracleDbAzureBlobContainersResultOutput, error) {
-			args := v.(GetDbmulticloudOracleDbAzureBlobContainersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbAzureBlobContainers:getDbmulticloudOracleDbAzureBlobContainers", args, GetDbmulticloudOracleDbAzureBlobContainersResultOutput{}, options).(GetDbmulticloudOracleDbAzureBlobContainersResultOutput), nil
-		}).(GetDbmulticloudOracleDbAzureBlobContainersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbAzureBlobContainers:getDbmulticloudOracleDbAzureBlobContainers", args, GetDbmulticloudOracleDbAzureBlobContainersResultOutput{}, options).(GetDbmulticloudOracleDbAzureBlobContainersResultOutput)
 }
 
 // A collection of arguments for invoking getDbmulticloudOracleDbAzureBlobContainers.

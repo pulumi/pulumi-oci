@@ -100,12 +100,8 @@ type LookupByolAllocationResult struct {
 }
 
 func LookupByolAllocationOutput(ctx *pulumi.Context, args LookupByolAllocationOutputArgs, opts ...pulumi.InvokeOption) LookupByolAllocationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupByolAllocationResultOutput, error) {
-			args := v.(LookupByolAllocationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Ocvp/getByolAllocation:getByolAllocation", args, LookupByolAllocationResultOutput{}, options).(LookupByolAllocationResultOutput), nil
-		}).(LookupByolAllocationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Ocvp/getByolAllocation:getByolAllocation", args, LookupByolAllocationResultOutput{}, options).(LookupByolAllocationResultOutput)
 }
 
 // A collection of arguments for invoking getByolAllocation.

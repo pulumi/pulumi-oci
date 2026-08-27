@@ -69,12 +69,8 @@ type GetCpesResult struct {
 }
 
 func GetCpesOutput(ctx *pulumi.Context, args GetCpesOutputArgs, opts ...pulumi.InvokeOption) GetCpesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCpesResultOutput, error) {
-			args := v.(GetCpesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getCpes:getCpes", args, GetCpesResultOutput{}, options).(GetCpesResultOutput), nil
-		}).(GetCpesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getCpes:getCpes", args, GetCpesResultOutput{}, options).(GetCpesResultOutput)
 }
 
 // A collection of arguments for invoking getCpes.

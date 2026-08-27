@@ -86,12 +86,8 @@ type GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult s
 }
 
 func GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOutput(ctx *pulumi.Context, args GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput, error) {
-			args := v.(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison:getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison", args, GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput{}, options).(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput), nil
-		}).(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison:getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison", args, GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput{}, options).(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput)
 }
 
 // A collection of arguments for invoking getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison.

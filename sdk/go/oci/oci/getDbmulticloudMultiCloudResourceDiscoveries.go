@@ -97,12 +97,8 @@ type GetDbmulticloudMultiCloudResourceDiscoveriesResult struct {
 }
 
 func GetDbmulticloudMultiCloudResourceDiscoveriesOutput(ctx *pulumi.Context, args GetDbmulticloudMultiCloudResourceDiscoveriesOutputArgs, opts ...pulumi.InvokeOption) GetDbmulticloudMultiCloudResourceDiscoveriesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbmulticloudMultiCloudResourceDiscoveriesResultOutput, error) {
-			args := v.(GetDbmulticloudMultiCloudResourceDiscoveriesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDbmulticloudMultiCloudResourceDiscoveries:getDbmulticloudMultiCloudResourceDiscoveries", args, GetDbmulticloudMultiCloudResourceDiscoveriesResultOutput{}, options).(GetDbmulticloudMultiCloudResourceDiscoveriesResultOutput), nil
-		}).(GetDbmulticloudMultiCloudResourceDiscoveriesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDbmulticloudMultiCloudResourceDiscoveries:getDbmulticloudMultiCloudResourceDiscoveries", args, GetDbmulticloudMultiCloudResourceDiscoveriesResultOutput{}, options).(GetDbmulticloudMultiCloudResourceDiscoveriesResultOutput)
 }
 
 // A collection of arguments for invoking getDbmulticloudMultiCloudResourceDiscoveries.

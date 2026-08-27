@@ -92,12 +92,8 @@ type LookupCloudDbHomeResult struct {
 }
 
 func LookupCloudDbHomeOutput(ctx *pulumi.Context, args LookupCloudDbHomeOutputArgs, opts ...pulumi.InvokeOption) LookupCloudDbHomeResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupCloudDbHomeResultOutput, error) {
-			args := v.(LookupCloudDbHomeArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getCloudDbHome:getCloudDbHome", args, LookupCloudDbHomeResultOutput{}, options).(LookupCloudDbHomeResultOutput), nil
-		}).(LookupCloudDbHomeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getCloudDbHome:getCloudDbHome", args, LookupCloudDbHomeResultOutput{}, options).(LookupCloudDbHomeResultOutput)
 }
 
 // A collection of arguments for invoking getCloudDbHome.

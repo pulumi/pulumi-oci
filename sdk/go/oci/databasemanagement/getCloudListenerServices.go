@@ -78,12 +78,8 @@ type GetCloudListenerServicesResult struct {
 }
 
 func GetCloudListenerServicesOutput(ctx *pulumi.Context, args GetCloudListenerServicesOutputArgs, opts ...pulumi.InvokeOption) GetCloudListenerServicesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCloudListenerServicesResultOutput, error) {
-			args := v.(GetCloudListenerServicesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getCloudListenerServices:getCloudListenerServices", args, GetCloudListenerServicesResultOutput{}, options).(GetCloudListenerServicesResultOutput), nil
-		}).(GetCloudListenerServicesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getCloudListenerServices:getCloudListenerServices", args, GetCloudListenerServicesResultOutput{}, options).(GetCloudListenerServicesResultOutput)
 }
 
 // A collection of arguments for invoking getCloudListenerServices.

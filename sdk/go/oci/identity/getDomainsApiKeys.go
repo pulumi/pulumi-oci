@@ -104,12 +104,8 @@ type GetDomainsApiKeysResult struct {
 }
 
 func GetDomainsApiKeysOutput(ctx *pulumi.Context, args GetDomainsApiKeysOutputArgs, opts ...pulumi.InvokeOption) GetDomainsApiKeysResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsApiKeysResultOutput, error) {
-			args := v.(GetDomainsApiKeysArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsApiKeys:getDomainsApiKeys", args, GetDomainsApiKeysResultOutput{}, options).(GetDomainsApiKeysResultOutput), nil
-		}).(GetDomainsApiKeysResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsApiKeys:getDomainsApiKeys", args, GetDomainsApiKeysResultOutput{}, options).(GetDomainsApiKeysResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsApiKeys.

@@ -118,12 +118,8 @@ type LookupProvisionResult struct {
 }
 
 func LookupProvisionOutput(ctx *pulumi.Context, args LookupProvisionOutputArgs, opts ...pulumi.InvokeOption) LookupProvisionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupProvisionResultOutput, error) {
-			args := v.(LookupProvisionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getProvision:getProvision", args, LookupProvisionResultOutput{}, options).(LookupProvisionResultOutput), nil
-		}).(LookupProvisionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getProvision:getProvision", args, LookupProvisionResultOutput{}, options).(LookupProvisionResultOutput)
 }
 
 // A collection of arguments for invoking getProvision.

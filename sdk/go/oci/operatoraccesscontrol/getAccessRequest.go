@@ -138,12 +138,8 @@ type GetAccessRequestResult struct {
 }
 
 func GetAccessRequestOutput(ctx *pulumi.Context, args GetAccessRequestOutputArgs, opts ...pulumi.InvokeOption) GetAccessRequestResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAccessRequestResultOutput, error) {
-			args := v.(GetAccessRequestArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OperatorAccessControl/getAccessRequest:getAccessRequest", args, GetAccessRequestResultOutput{}, options).(GetAccessRequestResultOutput), nil
-		}).(GetAccessRequestResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OperatorAccessControl/getAccessRequest:getAccessRequest", args, GetAccessRequestResultOutput{}, options).(GetAccessRequestResultOutput)
 }
 
 // A collection of arguments for invoking getAccessRequest.

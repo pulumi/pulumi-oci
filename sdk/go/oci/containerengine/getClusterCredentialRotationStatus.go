@@ -70,12 +70,8 @@ type GetClusterCredentialRotationStatusResult struct {
 }
 
 func GetClusterCredentialRotationStatusOutput(ctx *pulumi.Context, args GetClusterCredentialRotationStatusOutputArgs, opts ...pulumi.InvokeOption) GetClusterCredentialRotationStatusResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetClusterCredentialRotationStatusResultOutput, error) {
-			args := v.(GetClusterCredentialRotationStatusArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ContainerEngine/getClusterCredentialRotationStatus:getClusterCredentialRotationStatus", args, GetClusterCredentialRotationStatusResultOutput{}, options).(GetClusterCredentialRotationStatusResultOutput), nil
-		}).(GetClusterCredentialRotationStatusResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ContainerEngine/getClusterCredentialRotationStatus:getClusterCredentialRotationStatus", args, GetClusterCredentialRotationStatusResultOutput{}, options).(GetClusterCredentialRotationStatusResultOutput)
 }
 
 // A collection of arguments for invoking getClusterCredentialRotationStatus.

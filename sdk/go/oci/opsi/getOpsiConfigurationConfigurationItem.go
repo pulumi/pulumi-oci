@@ -85,12 +85,8 @@ type GetOpsiConfigurationConfigurationItemResult struct {
 }
 
 func GetOpsiConfigurationConfigurationItemOutput(ctx *pulumi.Context, args GetOpsiConfigurationConfigurationItemOutputArgs, opts ...pulumi.InvokeOption) GetOpsiConfigurationConfigurationItemResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetOpsiConfigurationConfigurationItemResultOutput, error) {
-			args := v.(GetOpsiConfigurationConfigurationItemArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Opsi/getOpsiConfigurationConfigurationItem:getOpsiConfigurationConfigurationItem", args, GetOpsiConfigurationConfigurationItemResultOutput{}, options).(GetOpsiConfigurationConfigurationItemResultOutput), nil
-		}).(GetOpsiConfigurationConfigurationItemResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Opsi/getOpsiConfigurationConfigurationItem:getOpsiConfigurationConfigurationItem", args, GetOpsiConfigurationConfigurationItemResultOutput{}, options).(GetOpsiConfigurationConfigurationItemResultOutput)
 }
 
 // A collection of arguments for invoking getOpsiConfigurationConfigurationItem.

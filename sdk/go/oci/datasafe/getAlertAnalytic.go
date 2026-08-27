@@ -103,12 +103,8 @@ type GetAlertAnalyticResult struct {
 }
 
 func GetAlertAnalyticOutput(ctx *pulumi.Context, args GetAlertAnalyticOutputArgs, opts ...pulumi.InvokeOption) GetAlertAnalyticResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAlertAnalyticResultOutput, error) {
-			args := v.(GetAlertAnalyticArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getAlertAnalytic:getAlertAnalytic", args, GetAlertAnalyticResultOutput{}, options).(GetAlertAnalyticResultOutput), nil
-		}).(GetAlertAnalyticResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getAlertAnalytic:getAlertAnalytic", args, GetAlertAnalyticResultOutput{}, options).(GetAlertAnalyticResultOutput)
 }
 
 // A collection of arguments for invoking getAlertAnalytic.

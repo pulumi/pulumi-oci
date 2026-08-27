@@ -89,12 +89,8 @@ type GetAnalyticsInstancesResult struct {
 }
 
 func GetAnalyticsInstancesOutput(ctx *pulumi.Context, args GetAnalyticsInstancesOutputArgs, opts ...pulumi.InvokeOption) GetAnalyticsInstancesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAnalyticsInstancesResultOutput, error) {
-			args := v.(GetAnalyticsInstancesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Analytics/getAnalyticsInstances:getAnalyticsInstances", args, GetAnalyticsInstancesResultOutput{}, options).(GetAnalyticsInstancesResultOutput), nil
-		}).(GetAnalyticsInstancesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Analytics/getAnalyticsInstances:getAnalyticsInstances", args, GetAnalyticsInstancesResultOutput{}, options).(GetAnalyticsInstancesResultOutput)
 }
 
 // A collection of arguments for invoking getAnalyticsInstances.

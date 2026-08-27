@@ -130,12 +130,8 @@ type LookupLogAnalyticsObjectCollectionRuleResult struct {
 }
 
 func LookupLogAnalyticsObjectCollectionRuleOutput(ctx *pulumi.Context, args LookupLogAnalyticsObjectCollectionRuleOutputArgs, opts ...pulumi.InvokeOption) LookupLogAnalyticsObjectCollectionRuleResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupLogAnalyticsObjectCollectionRuleResultOutput, error) {
-			args := v.(LookupLogAnalyticsObjectCollectionRuleArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsObjectCollectionRule:getLogAnalyticsObjectCollectionRule", args, LookupLogAnalyticsObjectCollectionRuleResultOutput{}, options).(LookupLogAnalyticsObjectCollectionRuleResultOutput), nil
-		}).(LookupLogAnalyticsObjectCollectionRuleResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsObjectCollectionRule:getLogAnalyticsObjectCollectionRule", args, LookupLogAnalyticsObjectCollectionRuleResultOutput{}, options).(LookupLogAnalyticsObjectCollectionRuleResultOutput)
 }
 
 // A collection of arguments for invoking getLogAnalyticsObjectCollectionRule.

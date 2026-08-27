@@ -83,12 +83,8 @@ type GetFileSystemQuotaRulesResult struct {
 }
 
 func GetFileSystemQuotaRulesOutput(ctx *pulumi.Context, args GetFileSystemQuotaRulesOutputArgs, opts ...pulumi.InvokeOption) GetFileSystemQuotaRulesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFileSystemQuotaRulesResultOutput, error) {
-			args := v.(GetFileSystemQuotaRulesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FileStorage/getFileSystemQuotaRules:getFileSystemQuotaRules", args, GetFileSystemQuotaRulesResultOutput{}, options).(GetFileSystemQuotaRulesResultOutput), nil
-		}).(GetFileSystemQuotaRulesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FileStorage/getFileSystemQuotaRules:getFileSystemQuotaRules", args, GetFileSystemQuotaRulesResultOutput{}, options).(GetFileSystemQuotaRulesResultOutput)
 }
 
 // A collection of arguments for invoking getFileSystemQuotaRules.

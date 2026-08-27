@@ -78,12 +78,8 @@ type GetDbCredentialsResult struct {
 }
 
 func GetDbCredentialsOutput(ctx *pulumi.Context, args GetDbCredentialsOutputArgs, opts ...pulumi.InvokeOption) GetDbCredentialsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbCredentialsResultOutput, error) {
-			args := v.(GetDbCredentialsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDbCredentials:getDbCredentials", args, GetDbCredentialsResultOutput{}, options).(GetDbCredentialsResultOutput), nil
-		}).(GetDbCredentialsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDbCredentials:getDbCredentials", args, GetDbCredentialsResultOutput{}, options).(GetDbCredentialsResultOutput)
 }
 
 // A collection of arguments for invoking getDbCredentials.

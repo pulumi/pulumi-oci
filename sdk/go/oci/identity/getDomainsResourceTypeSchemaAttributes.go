@@ -109,12 +109,8 @@ type GetDomainsResourceTypeSchemaAttributesResult struct {
 }
 
 func GetDomainsResourceTypeSchemaAttributesOutput(ctx *pulumi.Context, args GetDomainsResourceTypeSchemaAttributesOutputArgs, opts ...pulumi.InvokeOption) GetDomainsResourceTypeSchemaAttributesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsResourceTypeSchemaAttributesResultOutput, error) {
-			args := v.(GetDomainsResourceTypeSchemaAttributesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsResourceTypeSchemaAttributes:getDomainsResourceTypeSchemaAttributes", args, GetDomainsResourceTypeSchemaAttributesResultOutput{}, options).(GetDomainsResourceTypeSchemaAttributesResultOutput), nil
-		}).(GetDomainsResourceTypeSchemaAttributesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsResourceTypeSchemaAttributes:getDomainsResourceTypeSchemaAttributes", args, GetDomainsResourceTypeSchemaAttributesResultOutput{}, options).(GetDomainsResourceTypeSchemaAttributesResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsResourceTypeSchemaAttributes.

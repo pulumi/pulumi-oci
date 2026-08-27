@@ -71,12 +71,8 @@ type GetIdpGroupMappingsResult struct {
 }
 
 func GetIdpGroupMappingsOutput(ctx *pulumi.Context, args GetIdpGroupMappingsOutputArgs, opts ...pulumi.InvokeOption) GetIdpGroupMappingsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetIdpGroupMappingsResultOutput, error) {
-			args := v.(GetIdpGroupMappingsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getIdpGroupMappings:getIdpGroupMappings", args, GetIdpGroupMappingsResultOutput{}, options).(GetIdpGroupMappingsResultOutput), nil
-		}).(GetIdpGroupMappingsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getIdpGroupMappings:getIdpGroupMappings", args, GetIdpGroupMappingsResultOutput{}, options).(GetIdpGroupMappingsResultOutput)
 }
 
 // A collection of arguments for invoking getIdpGroupMappings.

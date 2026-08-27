@@ -74,12 +74,8 @@ type GetComputeGlobalImageCapabilitySchemasResult struct {
 }
 
 func GetComputeGlobalImageCapabilitySchemasOutput(ctx *pulumi.Context, args GetComputeGlobalImageCapabilitySchemasOutputArgs, opts ...pulumi.InvokeOption) GetComputeGlobalImageCapabilitySchemasResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetComputeGlobalImageCapabilitySchemasResultOutput, error) {
-			args := v.(GetComputeGlobalImageCapabilitySchemasArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getComputeGlobalImageCapabilitySchemas:getComputeGlobalImageCapabilitySchemas", args, GetComputeGlobalImageCapabilitySchemasResultOutput{}, options).(GetComputeGlobalImageCapabilitySchemasResultOutput), nil
-		}).(GetComputeGlobalImageCapabilitySchemasResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getComputeGlobalImageCapabilitySchemas:getComputeGlobalImageCapabilitySchemas", args, GetComputeGlobalImageCapabilitySchemasResultOutput{}, options).(GetComputeGlobalImageCapabilitySchemasResultOutput)
 }
 
 // A collection of arguments for invoking getComputeGlobalImageCapabilitySchemas.

@@ -73,12 +73,8 @@ type GetReplicationStatusResult struct {
 }
 
 func GetReplicationStatusOutput(ctx *pulumi.Context, args GetReplicationStatusOutputArgs, opts ...pulumi.InvokeOption) GetReplicationStatusResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetReplicationStatusResultOutput, error) {
-			args := v.(GetReplicationStatusArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Kms/getReplicationStatus:getReplicationStatus", args, GetReplicationStatusResultOutput{}, options).(GetReplicationStatusResultOutput), nil
-		}).(GetReplicationStatusResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Kms/getReplicationStatus:getReplicationStatus", args, GetReplicationStatusResultOutput{}, options).(GetReplicationStatusResultOutput)
 }
 
 // A collection of arguments for invoking getReplicationStatus.

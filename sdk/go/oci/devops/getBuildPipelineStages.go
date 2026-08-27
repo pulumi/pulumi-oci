@@ -87,12 +87,8 @@ type GetBuildPipelineStagesResult struct {
 }
 
 func GetBuildPipelineStagesOutput(ctx *pulumi.Context, args GetBuildPipelineStagesOutputArgs, opts ...pulumi.InvokeOption) GetBuildPipelineStagesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBuildPipelineStagesResultOutput, error) {
-			args := v.(GetBuildPipelineStagesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DevOps/getBuildPipelineStages:getBuildPipelineStages", args, GetBuildPipelineStagesResultOutput{}, options).(GetBuildPipelineStagesResultOutput), nil
-		}).(GetBuildPipelineStagesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DevOps/getBuildPipelineStages:getBuildPipelineStages", args, GetBuildPipelineStagesResultOutput{}, options).(GetBuildPipelineStagesResultOutput)
 }
 
 // A collection of arguments for invoking getBuildPipelineStages.

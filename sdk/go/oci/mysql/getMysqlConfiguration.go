@@ -98,12 +98,8 @@ type LookupMysqlConfigurationResult struct {
 }
 
 func LookupMysqlConfigurationOutput(ctx *pulumi.Context, args LookupMysqlConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupMysqlConfigurationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupMysqlConfigurationResultOutput, error) {
-			args := v.(LookupMysqlConfigurationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Mysql/getMysqlConfiguration:getMysqlConfiguration", args, LookupMysqlConfigurationResultOutput{}, options).(LookupMysqlConfigurationResultOutput), nil
-		}).(LookupMysqlConfigurationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Mysql/getMysqlConfiguration:getMysqlConfiguration", args, LookupMysqlConfigurationResultOutput{}, options).(LookupMysqlConfigurationResultOutput)
 }
 
 // A collection of arguments for invoking getMysqlConfiguration.

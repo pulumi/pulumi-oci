@@ -68,12 +68,8 @@ type GetModelDeploymentShapesResult struct {
 }
 
 func GetModelDeploymentShapesOutput(ctx *pulumi.Context, args GetModelDeploymentShapesOutputArgs, opts ...pulumi.InvokeOption) GetModelDeploymentShapesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetModelDeploymentShapesResultOutput, error) {
-			args := v.(GetModelDeploymentShapesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataScience/getModelDeploymentShapes:getModelDeploymentShapes", args, GetModelDeploymentShapesResultOutput{}, options).(GetModelDeploymentShapesResultOutput), nil
-		}).(GetModelDeploymentShapesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataScience/getModelDeploymentShapes:getModelDeploymentShapes", args, GetModelDeploymentShapesResultOutput{}, options).(GetModelDeploymentShapesResultOutput)
 }
 
 // A collection of arguments for invoking getModelDeploymentShapes.

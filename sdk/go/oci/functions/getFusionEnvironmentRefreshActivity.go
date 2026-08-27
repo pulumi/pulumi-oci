@@ -92,12 +92,8 @@ type GetFusionEnvironmentRefreshActivityResult struct {
 }
 
 func GetFusionEnvironmentRefreshActivityOutput(ctx *pulumi.Context, args GetFusionEnvironmentRefreshActivityOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentRefreshActivityResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFusionEnvironmentRefreshActivityResultOutput, error) {
-			args := v.(GetFusionEnvironmentRefreshActivityArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Functions/getFusionEnvironmentRefreshActivity:getFusionEnvironmentRefreshActivity", args, GetFusionEnvironmentRefreshActivityResultOutput{}, options).(GetFusionEnvironmentRefreshActivityResultOutput), nil
-		}).(GetFusionEnvironmentRefreshActivityResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Functions/getFusionEnvironmentRefreshActivity:getFusionEnvironmentRefreshActivity", args, GetFusionEnvironmentRefreshActivityResultOutput{}, options).(GetFusionEnvironmentRefreshActivityResultOutput)
 }
 
 // A collection of arguments for invoking getFusionEnvironmentRefreshActivity.

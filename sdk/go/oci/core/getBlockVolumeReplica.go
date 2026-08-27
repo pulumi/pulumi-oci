@@ -87,12 +87,8 @@ type GetBlockVolumeReplicaResult struct {
 }
 
 func GetBlockVolumeReplicaOutput(ctx *pulumi.Context, args GetBlockVolumeReplicaOutputArgs, opts ...pulumi.InvokeOption) GetBlockVolumeReplicaResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBlockVolumeReplicaResultOutput, error) {
-			args := v.(GetBlockVolumeReplicaArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getBlockVolumeReplica:getBlockVolumeReplica", args, GetBlockVolumeReplicaResultOutput{}, options).(GetBlockVolumeReplicaResultOutput), nil
-		}).(GetBlockVolumeReplicaResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getBlockVolumeReplica:getBlockVolumeReplica", args, GetBlockVolumeReplicaResultOutput{}, options).(GetBlockVolumeReplicaResultOutput)
 }
 
 // A collection of arguments for invoking getBlockVolumeReplica.

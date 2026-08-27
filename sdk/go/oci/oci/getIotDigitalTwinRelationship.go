@@ -90,12 +90,8 @@ type LookupIotDigitalTwinRelationshipResult struct {
 }
 
 func LookupIotDigitalTwinRelationshipOutput(ctx *pulumi.Context, args LookupIotDigitalTwinRelationshipOutputArgs, opts ...pulumi.InvokeOption) LookupIotDigitalTwinRelationshipResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupIotDigitalTwinRelationshipResultOutput, error) {
-			args := v.(LookupIotDigitalTwinRelationshipArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getIotDigitalTwinRelationship:getIotDigitalTwinRelationship", args, LookupIotDigitalTwinRelationshipResultOutput{}, options).(LookupIotDigitalTwinRelationshipResultOutput), nil
-		}).(LookupIotDigitalTwinRelationshipResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getIotDigitalTwinRelationship:getIotDigitalTwinRelationship", args, LookupIotDigitalTwinRelationshipResultOutput{}, options).(LookupIotDigitalTwinRelationshipResultOutput)
 }
 
 // A collection of arguments for invoking getIotDigitalTwinRelationship.

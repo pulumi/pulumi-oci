@@ -87,12 +87,8 @@ type GetFilesystemSnapshotPoliciesResult struct {
 }
 
 func GetFilesystemSnapshotPoliciesOutput(ctx *pulumi.Context, args GetFilesystemSnapshotPoliciesOutputArgs, opts ...pulumi.InvokeOption) GetFilesystemSnapshotPoliciesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFilesystemSnapshotPoliciesResultOutput, error) {
-			args := v.(GetFilesystemSnapshotPoliciesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FileStorage/getFilesystemSnapshotPolicies:getFilesystemSnapshotPolicies", args, GetFilesystemSnapshotPoliciesResultOutput{}, options).(GetFilesystemSnapshotPoliciesResultOutput), nil
-		}).(GetFilesystemSnapshotPoliciesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FileStorage/getFilesystemSnapshotPolicies:getFilesystemSnapshotPolicies", args, GetFilesystemSnapshotPoliciesResultOutput{}, options).(GetFilesystemSnapshotPoliciesResultOutput)
 }
 
 // A collection of arguments for invoking getFilesystemSnapshotPolicies.

@@ -88,12 +88,8 @@ type GetJavaReleasesResult struct {
 }
 
 func GetJavaReleasesOutput(ctx *pulumi.Context, args GetJavaReleasesOutputArgs, opts ...pulumi.InvokeOption) GetJavaReleasesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetJavaReleasesResultOutput, error) {
-			args := v.(GetJavaReleasesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getJavaReleases:getJavaReleases", args, GetJavaReleasesResultOutput{}, options).(GetJavaReleasesResultOutput), nil
-		}).(GetJavaReleasesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getJavaReleases:getJavaReleases", args, GetJavaReleasesResultOutput{}, options).(GetJavaReleasesResultOutput)
 }
 
 // A collection of arguments for invoking getJavaReleases.

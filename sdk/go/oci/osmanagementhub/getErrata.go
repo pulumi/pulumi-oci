@@ -92,12 +92,8 @@ type GetErrataResult struct {
 }
 
 func GetErrataOutput(ctx *pulumi.Context, args GetErrataOutputArgs, opts ...pulumi.InvokeOption) GetErrataResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetErrataResultOutput, error) {
-			args := v.(GetErrataArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getErrata:getErrata", args, GetErrataResultOutput{}, options).(GetErrataResultOutput), nil
-		}).(GetErrataResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getErrata:getErrata", args, GetErrataResultOutput{}, options).(GetErrataResultOutput)
 }
 
 // A collection of arguments for invoking getErrata.

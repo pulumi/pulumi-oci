@@ -81,12 +81,8 @@ type LookupRepositoryRefResult struct {
 }
 
 func LookupRepositoryRefOutput(ctx *pulumi.Context, args LookupRepositoryRefOutputArgs, opts ...pulumi.InvokeOption) LookupRepositoryRefResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupRepositoryRefResultOutput, error) {
-			args := v.(LookupRepositoryRefArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DevOps/getRepositoryRef:getRepositoryRef", args, LookupRepositoryRefResultOutput{}, options).(LookupRepositoryRefResultOutput), nil
-		}).(LookupRepositoryRefResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DevOps/getRepositoryRef:getRepositoryRef", args, LookupRepositoryRefResultOutput{}, options).(LookupRepositoryRefResultOutput)
 }
 
 // A collection of arguments for invoking getRepositoryRef.

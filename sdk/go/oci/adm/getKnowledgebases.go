@@ -83,12 +83,8 @@ type GetKnowledgebasesResult struct {
 }
 
 func GetKnowledgebasesOutput(ctx *pulumi.Context, args GetKnowledgebasesOutputArgs, opts ...pulumi.InvokeOption) GetKnowledgebasesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetKnowledgebasesResultOutput, error) {
-			args := v.(GetKnowledgebasesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Adm/getKnowledgebases:getKnowledgebases", args, GetKnowledgebasesResultOutput{}, options).(GetKnowledgebasesResultOutput), nil
-		}).(GetKnowledgebasesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Adm/getKnowledgebases:getKnowledgebases", args, GetKnowledgebasesResultOutput{}, options).(GetKnowledgebasesResultOutput)
 }
 
 // A collection of arguments for invoking getKnowledgebases.

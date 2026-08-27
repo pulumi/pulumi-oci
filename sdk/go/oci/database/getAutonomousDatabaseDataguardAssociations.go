@@ -69,12 +69,8 @@ type GetAutonomousDatabaseDataguardAssociationsResult struct {
 }
 
 func GetAutonomousDatabaseDataguardAssociationsOutput(ctx *pulumi.Context, args GetAutonomousDatabaseDataguardAssociationsOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousDatabaseDataguardAssociationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAutonomousDatabaseDataguardAssociationsResultOutput, error) {
-			args := v.(GetAutonomousDatabaseDataguardAssociationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getAutonomousDatabaseDataguardAssociations:getAutonomousDatabaseDataguardAssociations", args, GetAutonomousDatabaseDataguardAssociationsResultOutput{}, options).(GetAutonomousDatabaseDataguardAssociationsResultOutput), nil
-		}).(GetAutonomousDatabaseDataguardAssociationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getAutonomousDatabaseDataguardAssociations:getAutonomousDatabaseDataguardAssociations", args, GetAutonomousDatabaseDataguardAssociationsResultOutput{}, options).(GetAutonomousDatabaseDataguardAssociationsResultOutput)
 }
 
 // A collection of arguments for invoking getAutonomousDatabaseDataguardAssociations.

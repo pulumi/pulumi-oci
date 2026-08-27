@@ -104,12 +104,8 @@ type LookupSchedulerDefinitionResult struct {
 }
 
 func LookupSchedulerDefinitionOutput(ctx *pulumi.Context, args LookupSchedulerDefinitionOutputArgs, opts ...pulumi.InvokeOption) LookupSchedulerDefinitionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupSchedulerDefinitionResultOutput, error) {
-			args := v.(LookupSchedulerDefinitionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getSchedulerDefinition:getSchedulerDefinition", args, LookupSchedulerDefinitionResultOutput{}, options).(LookupSchedulerDefinitionResultOutput), nil
-		}).(LookupSchedulerDefinitionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getSchedulerDefinition:getSchedulerDefinition", args, LookupSchedulerDefinitionResultOutput{}, options).(LookupSchedulerDefinitionResultOutput)
 }
 
 // A collection of arguments for invoking getSchedulerDefinition.

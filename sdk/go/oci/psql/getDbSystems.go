@@ -87,12 +87,8 @@ type GetDbSystemsResult struct {
 }
 
 func GetDbSystemsOutput(ctx *pulumi.Context, args GetDbSystemsOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbSystemsResultOutput, error) {
-			args := v.(GetDbSystemsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Psql/getDbSystems:getDbSystems", args, GetDbSystemsResultOutput{}, options).(GetDbSystemsResultOutput), nil
-		}).(GetDbSystemsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Psql/getDbSystems:getDbSystems", args, GetDbSystemsResultOutput{}, options).(GetDbSystemsResultOutput)
 }
 
 // A collection of arguments for invoking getDbSystems.

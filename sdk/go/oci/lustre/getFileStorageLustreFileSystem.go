@@ -116,12 +116,8 @@ type LookupFileStorageLustreFileSystemResult struct {
 }
 
 func LookupFileStorageLustreFileSystemOutput(ctx *pulumi.Context, args LookupFileStorageLustreFileSystemOutputArgs, opts ...pulumi.InvokeOption) LookupFileStorageLustreFileSystemResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupFileStorageLustreFileSystemResultOutput, error) {
-			args := v.(LookupFileStorageLustreFileSystemArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Lustre/getFileStorageLustreFileSystem:getFileStorageLustreFileSystem", args, LookupFileStorageLustreFileSystemResultOutput{}, options).(LookupFileStorageLustreFileSystemResultOutput), nil
-		}).(LookupFileStorageLustreFileSystemResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Lustre/getFileStorageLustreFileSystem:getFileStorageLustreFileSystem", args, LookupFileStorageLustreFileSystemResultOutput{}, options).(LookupFileStorageLustreFileSystemResultOutput)
 }
 
 // A collection of arguments for invoking getFileStorageLustreFileSystem.

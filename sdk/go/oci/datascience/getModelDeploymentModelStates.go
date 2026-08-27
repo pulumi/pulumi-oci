@@ -92,12 +92,8 @@ type GetModelDeploymentModelStatesResult struct {
 }
 
 func GetModelDeploymentModelStatesOutput(ctx *pulumi.Context, args GetModelDeploymentModelStatesOutputArgs, opts ...pulumi.InvokeOption) GetModelDeploymentModelStatesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetModelDeploymentModelStatesResultOutput, error) {
-			args := v.(GetModelDeploymentModelStatesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataScience/getModelDeploymentModelStates:getModelDeploymentModelStates", args, GetModelDeploymentModelStatesResultOutput{}, options).(GetModelDeploymentModelStatesResultOutput), nil
-		}).(GetModelDeploymentModelStatesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataScience/getModelDeploymentModelStates:getModelDeploymentModelStates", args, GetModelDeploymentModelStatesResultOutput{}, options).(GetModelDeploymentModelStatesResultOutput)
 }
 
 // A collection of arguments for invoking getModelDeploymentModelStates.

@@ -98,12 +98,8 @@ type LookupDrPlanResult struct {
 }
 
 func LookupDrPlanOutput(ctx *pulumi.Context, args LookupDrPlanOutputArgs, opts ...pulumi.InvokeOption) LookupDrPlanResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDrPlanResultOutput, error) {
-			args := v.(LookupDrPlanArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DisasterRecovery/getDrPlan:getDrPlan", args, LookupDrPlanResultOutput{}, options).(LookupDrPlanResultOutput), nil
-		}).(LookupDrPlanResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DisasterRecovery/getDrPlan:getDrPlan", args, LookupDrPlanResultOutput{}, options).(LookupDrPlanResultOutput)
 }
 
 // A collection of arguments for invoking getDrPlan.

@@ -81,12 +81,8 @@ type GetAgentAgentsResult struct {
 }
 
 func GetAgentAgentsOutput(ctx *pulumi.Context, args GetAgentAgentsOutputArgs, opts ...pulumi.InvokeOption) GetAgentAgentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAgentAgentsResultOutput, error) {
-			args := v.(GetAgentAgentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GenerativeAi/getAgentAgents:getAgentAgents", args, GetAgentAgentsResultOutput{}, options).(GetAgentAgentsResultOutput), nil
-		}).(GetAgentAgentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GenerativeAi/getAgentAgents:getAgentAgents", args, GetAgentAgentsResultOutput{}, options).(GetAgentAgentsResultOutput)
 }
 
 // A collection of arguments for invoking getAgentAgents.

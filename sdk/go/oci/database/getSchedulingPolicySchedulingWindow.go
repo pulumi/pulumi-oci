@@ -89,12 +89,8 @@ type LookupSchedulingPolicySchedulingWindowResult struct {
 }
 
 func LookupSchedulingPolicySchedulingWindowOutput(ctx *pulumi.Context, args LookupSchedulingPolicySchedulingWindowOutputArgs, opts ...pulumi.InvokeOption) LookupSchedulingPolicySchedulingWindowResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupSchedulingPolicySchedulingWindowResultOutput, error) {
-			args := v.(LookupSchedulingPolicySchedulingWindowArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getSchedulingPolicySchedulingWindow:getSchedulingPolicySchedulingWindow", args, LookupSchedulingPolicySchedulingWindowResultOutput{}, options).(LookupSchedulingPolicySchedulingWindowResultOutput), nil
-		}).(LookupSchedulingPolicySchedulingWindowResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getSchedulingPolicySchedulingWindow:getSchedulingPolicySchedulingWindow", args, LookupSchedulingPolicySchedulingWindowResultOutput{}, options).(LookupSchedulingPolicySchedulingWindowResultOutput)
 }
 
 // A collection of arguments for invoking getSchedulingPolicySchedulingWindow.

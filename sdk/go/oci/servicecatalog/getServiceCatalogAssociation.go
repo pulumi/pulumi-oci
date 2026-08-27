@@ -72,12 +72,8 @@ type GetServiceCatalogAssociationResult struct {
 }
 
 func GetServiceCatalogAssociationOutput(ctx *pulumi.Context, args GetServiceCatalogAssociationOutputArgs, opts ...pulumi.InvokeOption) GetServiceCatalogAssociationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetServiceCatalogAssociationResultOutput, error) {
-			args := v.(GetServiceCatalogAssociationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ServiceCatalog/getServiceCatalogAssociation:getServiceCatalogAssociation", args, GetServiceCatalogAssociationResultOutput{}, options).(GetServiceCatalogAssociationResultOutput), nil
-		}).(GetServiceCatalogAssociationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ServiceCatalog/getServiceCatalogAssociation:getServiceCatalogAssociation", args, GetServiceCatalogAssociationResultOutput{}, options).(GetServiceCatalogAssociationResultOutput)
 }
 
 // A collection of arguments for invoking getServiceCatalogAssociation.

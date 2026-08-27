@@ -69,12 +69,8 @@ type GetDistributedDatabaseDistributedDatabaseRaftMetricResult struct {
 }
 
 func GetDistributedDatabaseDistributedDatabaseRaftMetricOutput(ctx *pulumi.Context, args GetDistributedDatabaseDistributedDatabaseRaftMetricOutputArgs, opts ...pulumi.InvokeOption) GetDistributedDatabaseDistributedDatabaseRaftMetricResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDistributedDatabaseDistributedDatabaseRaftMetricResultOutput, error) {
-			args := v.(GetDistributedDatabaseDistributedDatabaseRaftMetricArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDistributedDatabaseDistributedDatabaseRaftMetric:getDistributedDatabaseDistributedDatabaseRaftMetric", args, GetDistributedDatabaseDistributedDatabaseRaftMetricResultOutput{}, options).(GetDistributedDatabaseDistributedDatabaseRaftMetricResultOutput), nil
-		}).(GetDistributedDatabaseDistributedDatabaseRaftMetricResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDistributedDatabaseDistributedDatabaseRaftMetric:getDistributedDatabaseDistributedDatabaseRaftMetric", args, GetDistributedDatabaseDistributedDatabaseRaftMetricResultOutput{}, options).(GetDistributedDatabaseDistributedDatabaseRaftMetricResultOutput)
 }
 
 // A collection of arguments for invoking getDistributedDatabaseDistributedDatabaseRaftMetric.

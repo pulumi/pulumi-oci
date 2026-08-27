@@ -83,12 +83,8 @@ type GetEmailOutboundIpsResult struct {
 }
 
 func GetEmailOutboundIpsOutput(ctx *pulumi.Context, args GetEmailOutboundIpsOutputArgs, opts ...pulumi.InvokeOption) GetEmailOutboundIpsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetEmailOutboundIpsResultOutput, error) {
-			args := v.(GetEmailOutboundIpsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Email/getEmailOutboundIps:getEmailOutboundIps", args, GetEmailOutboundIpsResultOutput{}, options).(GetEmailOutboundIpsResultOutput), nil
-		}).(GetEmailOutboundIpsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Email/getEmailOutboundIps:getEmailOutboundIps", args, GetEmailOutboundIpsResultOutput{}, options).(GetEmailOutboundIpsResultOutput)
 }
 
 // A collection of arguments for invoking getEmailOutboundIps.

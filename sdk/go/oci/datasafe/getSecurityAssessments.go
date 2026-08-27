@@ -155,12 +155,8 @@ type GetSecurityAssessmentsResult struct {
 }
 
 func GetSecurityAssessmentsOutput(ctx *pulumi.Context, args GetSecurityAssessmentsOutputArgs, opts ...pulumi.InvokeOption) GetSecurityAssessmentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSecurityAssessmentsResultOutput, error) {
-			args := v.(GetSecurityAssessmentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getSecurityAssessments:getSecurityAssessments", args, GetSecurityAssessmentsResultOutput{}, options).(GetSecurityAssessmentsResultOutput), nil
-		}).(GetSecurityAssessmentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getSecurityAssessments:getSecurityAssessments", args, GetSecurityAssessmentsResultOutput{}, options).(GetSecurityAssessmentsResultOutput)
 }
 
 // A collection of arguments for invoking getSecurityAssessments.

@@ -114,12 +114,8 @@ type LookupManagementSavedSearchResult struct {
 }
 
 func LookupManagementSavedSearchOutput(ctx *pulumi.Context, args LookupManagementSavedSearchOutputArgs, opts ...pulumi.InvokeOption) LookupManagementSavedSearchResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupManagementSavedSearchResultOutput, error) {
-			args := v.(LookupManagementSavedSearchArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ManagementDashboard/getManagementSavedSearch:getManagementSavedSearch", args, LookupManagementSavedSearchResultOutput{}, options).(LookupManagementSavedSearchResultOutput), nil
-		}).(LookupManagementSavedSearchResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ManagementDashboard/getManagementSavedSearch:getManagementSavedSearch", args, LookupManagementSavedSearchResultOutput{}, options).(LookupManagementSavedSearchResultOutput)
 }
 
 // A collection of arguments for invoking getManagementSavedSearch.

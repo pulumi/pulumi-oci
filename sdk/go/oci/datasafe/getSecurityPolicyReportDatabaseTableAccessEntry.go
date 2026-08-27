@@ -112,12 +112,8 @@ type GetSecurityPolicyReportDatabaseTableAccessEntryResult struct {
 }
 
 func GetSecurityPolicyReportDatabaseTableAccessEntryOutput(ctx *pulumi.Context, args GetSecurityPolicyReportDatabaseTableAccessEntryOutputArgs, opts ...pulumi.InvokeOption) GetSecurityPolicyReportDatabaseTableAccessEntryResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSecurityPolicyReportDatabaseTableAccessEntryResultOutput, error) {
-			args := v.(GetSecurityPolicyReportDatabaseTableAccessEntryArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getSecurityPolicyReportDatabaseTableAccessEntry:getSecurityPolicyReportDatabaseTableAccessEntry", args, GetSecurityPolicyReportDatabaseTableAccessEntryResultOutput{}, options).(GetSecurityPolicyReportDatabaseTableAccessEntryResultOutput), nil
-		}).(GetSecurityPolicyReportDatabaseTableAccessEntryResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getSecurityPolicyReportDatabaseTableAccessEntry:getSecurityPolicyReportDatabaseTableAccessEntry", args, GetSecurityPolicyReportDatabaseTableAccessEntryResultOutput{}, options).(GetSecurityPolicyReportDatabaseTableAccessEntryResultOutput)
 }
 
 // A collection of arguments for invoking getSecurityPolicyReportDatabaseTableAccessEntry.

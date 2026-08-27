@@ -79,12 +79,8 @@ type GetCrossConnectGroupsResult struct {
 }
 
 func GetCrossConnectGroupsOutput(ctx *pulumi.Context, args GetCrossConnectGroupsOutputArgs, opts ...pulumi.InvokeOption) GetCrossConnectGroupsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCrossConnectGroupsResultOutput, error) {
-			args := v.(GetCrossConnectGroupsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getCrossConnectGroups:getCrossConnectGroups", args, GetCrossConnectGroupsResultOutput{}, options).(GetCrossConnectGroupsResultOutput), nil
-		}).(GetCrossConnectGroupsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getCrossConnectGroups:getCrossConnectGroups", args, GetCrossConnectGroupsResultOutput{}, options).(GetCrossConnectGroupsResultOutput)
 }
 
 // A collection of arguments for invoking getCrossConnectGroups.

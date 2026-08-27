@@ -109,12 +109,8 @@ type GetSecurityPolicyReportsResult struct {
 }
 
 func GetSecurityPolicyReportsOutput(ctx *pulumi.Context, args GetSecurityPolicyReportsOutputArgs, opts ...pulumi.InvokeOption) GetSecurityPolicyReportsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSecurityPolicyReportsResultOutput, error) {
-			args := v.(GetSecurityPolicyReportsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getSecurityPolicyReports:getSecurityPolicyReports", args, GetSecurityPolicyReportsResultOutput{}, options).(GetSecurityPolicyReportsResultOutput), nil
-		}).(GetSecurityPolicyReportsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getSecurityPolicyReports:getSecurityPolicyReports", args, GetSecurityPolicyReportsResultOutput{}, options).(GetSecurityPolicyReportsResultOutput)
 }
 
 // A collection of arguments for invoking getSecurityPolicyReports.

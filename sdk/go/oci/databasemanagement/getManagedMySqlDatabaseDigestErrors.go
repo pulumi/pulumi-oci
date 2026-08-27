@@ -73,12 +73,8 @@ type GetManagedMySqlDatabaseDigestErrorsResult struct {
 }
 
 func GetManagedMySqlDatabaseDigestErrorsOutput(ctx *pulumi.Context, args GetManagedMySqlDatabaseDigestErrorsOutputArgs, opts ...pulumi.InvokeOption) GetManagedMySqlDatabaseDigestErrorsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedMySqlDatabaseDigestErrorsResultOutput, error) {
-			args := v.(GetManagedMySqlDatabaseDigestErrorsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedMySqlDatabaseDigestErrors:getManagedMySqlDatabaseDigestErrors", args, GetManagedMySqlDatabaseDigestErrorsResultOutput{}, options).(GetManagedMySqlDatabaseDigestErrorsResultOutput), nil
-		}).(GetManagedMySqlDatabaseDigestErrorsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getManagedMySqlDatabaseDigestErrors:getManagedMySqlDatabaseDigestErrors", args, GetManagedMySqlDatabaseDigestErrorsResultOutput{}, options).(GetManagedMySqlDatabaseDigestErrorsResultOutput)
 }
 
 // A collection of arguments for invoking getManagedMySqlDatabaseDigestErrors.

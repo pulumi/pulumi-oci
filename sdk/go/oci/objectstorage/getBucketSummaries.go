@@ -82,12 +82,8 @@ type GetBucketSummariesResult struct {
 }
 
 func GetBucketSummariesOutput(ctx *pulumi.Context, args GetBucketSummariesOutputArgs, opts ...pulumi.InvokeOption) GetBucketSummariesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBucketSummariesResultOutput, error) {
-			args := v.(GetBucketSummariesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ObjectStorage/getBucketSummaries:getBucketSummaries", args, GetBucketSummariesResultOutput{}, options).(GetBucketSummariesResultOutput), nil
-		}).(GetBucketSummariesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ObjectStorage/getBucketSummaries:getBucketSummaries", args, GetBucketSummariesResultOutput{}, options).(GetBucketSummariesResultOutput)
 }
 
 // A collection of arguments for invoking getBucketSummaries.

@@ -106,12 +106,8 @@ type GetDomainsPoliciesResult struct {
 }
 
 func GetDomainsPoliciesOutput(ctx *pulumi.Context, args GetDomainsPoliciesOutputArgs, opts ...pulumi.InvokeOption) GetDomainsPoliciesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsPoliciesResultOutput, error) {
-			args := v.(GetDomainsPoliciesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsPolicies:getDomainsPolicies", args, GetDomainsPoliciesResultOutput{}, options).(GetDomainsPoliciesResultOutput), nil
-		}).(GetDomainsPoliciesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsPolicies:getDomainsPolicies", args, GetDomainsPoliciesResultOutput{}, options).(GetDomainsPoliciesResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsPolicies.

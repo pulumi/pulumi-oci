@@ -105,12 +105,8 @@ type GetObjectVersionsResult struct {
 }
 
 func GetObjectVersionsOutput(ctx *pulumi.Context, args GetObjectVersionsOutputArgs, opts ...pulumi.InvokeOption) GetObjectVersionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetObjectVersionsResultOutput, error) {
-			args := v.(GetObjectVersionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ObjectStorage/getObjectVersions:getObjectVersions", args, GetObjectVersionsResultOutput{}, options).(GetObjectVersionsResultOutput), nil
-		}).(GetObjectVersionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ObjectStorage/getObjectVersions:getObjectVersions", args, GetObjectVersionsResultOutput{}, options).(GetObjectVersionsResultOutput)
 }
 
 // A collection of arguments for invoking getObjectVersions.

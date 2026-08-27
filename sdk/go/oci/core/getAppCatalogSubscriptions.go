@@ -74,12 +74,8 @@ type GetAppCatalogSubscriptionsResult struct {
 }
 
 func GetAppCatalogSubscriptionsOutput(ctx *pulumi.Context, args GetAppCatalogSubscriptionsOutputArgs, opts ...pulumi.InvokeOption) GetAppCatalogSubscriptionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAppCatalogSubscriptionsResultOutput, error) {
-			args := v.(GetAppCatalogSubscriptionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getAppCatalogSubscriptions:getAppCatalogSubscriptions", args, GetAppCatalogSubscriptionsResultOutput{}, options).(GetAppCatalogSubscriptionsResultOutput), nil
-		}).(GetAppCatalogSubscriptionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getAppCatalogSubscriptions:getAppCatalogSubscriptions", args, GetAppCatalogSubscriptionsResultOutput{}, options).(GetAppCatalogSubscriptionsResultOutput)
 }
 
 // A collection of arguments for invoking getAppCatalogSubscriptions.

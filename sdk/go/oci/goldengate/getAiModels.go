@@ -83,12 +83,8 @@ type GetAiModelsResult struct {
 }
 
 func GetAiModelsOutput(ctx *pulumi.Context, args GetAiModelsOutputArgs, opts ...pulumi.InvokeOption) GetAiModelsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAiModelsResultOutput, error) {
-			args := v.(GetAiModelsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GoldenGate/getAiModels:getAiModels", args, GetAiModelsResultOutput{}, options).(GetAiModelsResultOutput), nil
-		}).(GetAiModelsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GoldenGate/getAiModels:getAiModels", args, GetAiModelsResultOutput{}, options).(GetAiModelsResultOutput)
 }
 
 // A collection of arguments for invoking getAiModels.

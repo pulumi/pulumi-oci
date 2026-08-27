@@ -75,12 +75,8 @@ type GetManagedDatabaseUserRoleResult struct {
 }
 
 func GetManagedDatabaseUserRoleOutput(ctx *pulumi.Context, args GetManagedDatabaseUserRoleOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseUserRoleResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabaseUserRoleResultOutput, error) {
-			args := v.(GetManagedDatabaseUserRoleArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseUserRole:getManagedDatabaseUserRole", args, GetManagedDatabaseUserRoleResultOutput{}, options).(GetManagedDatabaseUserRoleResultOutput), nil
-		}).(GetManagedDatabaseUserRoleResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseUserRole:getManagedDatabaseUserRole", args, GetManagedDatabaseUserRoleResultOutput{}, options).(GetManagedDatabaseUserRoleResultOutput)
 }
 
 // A collection of arguments for invoking getManagedDatabaseUserRole.

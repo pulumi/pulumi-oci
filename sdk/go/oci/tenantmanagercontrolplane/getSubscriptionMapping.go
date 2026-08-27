@@ -78,12 +78,8 @@ type LookupSubscriptionMappingResult struct {
 }
 
 func LookupSubscriptionMappingOutput(ctx *pulumi.Context, args LookupSubscriptionMappingOutputArgs, opts ...pulumi.InvokeOption) LookupSubscriptionMappingResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupSubscriptionMappingResultOutput, error) {
-			args := v.(LookupSubscriptionMappingArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Tenantmanagercontrolplane/getSubscriptionMapping:getSubscriptionMapping", args, LookupSubscriptionMappingResultOutput{}, options).(LookupSubscriptionMappingResultOutput), nil
-		}).(LookupSubscriptionMappingResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Tenantmanagercontrolplane/getSubscriptionMapping:getSubscriptionMapping", args, LookupSubscriptionMappingResultOutput{}, options).(LookupSubscriptionMappingResultOutput)
 }
 
 // A collection of arguments for invoking getSubscriptionMapping.

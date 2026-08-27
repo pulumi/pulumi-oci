@@ -84,12 +84,8 @@ type GetDesktopResult struct {
 }
 
 func GetDesktopOutput(ctx *pulumi.Context, args GetDesktopOutputArgs, opts ...pulumi.InvokeOption) GetDesktopResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDesktopResultOutput, error) {
-			args := v.(GetDesktopArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Desktops/getDesktop:getDesktop", args, GetDesktopResultOutput{}, options).(GetDesktopResultOutput), nil
-		}).(GetDesktopResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Desktops/getDesktop:getDesktop", args, GetDesktopResultOutput{}, options).(GetDesktopResultOutput)
 }
 
 // A collection of arguments for invoking getDesktop.

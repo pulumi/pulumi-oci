@@ -74,12 +74,8 @@ type GetWlmsWlsDomainServerInstalledPatchesResult struct {
 }
 
 func GetWlmsWlsDomainServerInstalledPatchesOutput(ctx *pulumi.Context, args GetWlmsWlsDomainServerInstalledPatchesOutputArgs, opts ...pulumi.InvokeOption) GetWlmsWlsDomainServerInstalledPatchesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetWlmsWlsDomainServerInstalledPatchesResultOutput, error) {
-			args := v.(GetWlmsWlsDomainServerInstalledPatchesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getWlmsWlsDomainServerInstalledPatches:getWlmsWlsDomainServerInstalledPatches", args, GetWlmsWlsDomainServerInstalledPatchesResultOutput{}, options).(GetWlmsWlsDomainServerInstalledPatchesResultOutput), nil
-		}).(GetWlmsWlsDomainServerInstalledPatchesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getWlmsWlsDomainServerInstalledPatches:getWlmsWlsDomainServerInstalledPatches", args, GetWlmsWlsDomainServerInstalledPatchesResultOutput{}, options).(GetWlmsWlsDomainServerInstalledPatchesResultOutput)
 }
 
 // A collection of arguments for invoking getWlmsWlsDomainServerInstalledPatches.

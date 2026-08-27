@@ -107,12 +107,8 @@ type GetDomainsMyRequestsResult struct {
 }
 
 func GetDomainsMyRequestsOutput(ctx *pulumi.Context, args GetDomainsMyRequestsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMyRequestsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsMyRequestsResultOutput, error) {
-			args := v.(GetDomainsMyRequestsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsMyRequests:getDomainsMyRequests", args, GetDomainsMyRequestsResultOutput{}, options).(GetDomainsMyRequestsResultOutput), nil
-		}).(GetDomainsMyRequestsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsMyRequests:getDomainsMyRequests", args, GetDomainsMyRequestsResultOutput{}, options).(GetDomainsMyRequestsResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsMyRequests.

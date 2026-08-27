@@ -72,12 +72,8 @@ type GetReplicationPoliciesResult struct {
 }
 
 func GetReplicationPoliciesOutput(ctx *pulumi.Context, args GetReplicationPoliciesOutputArgs, opts ...pulumi.InvokeOption) GetReplicationPoliciesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetReplicationPoliciesResultOutput, error) {
-			args := v.(GetReplicationPoliciesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ObjectStorage/getReplicationPolicies:getReplicationPolicies", args, GetReplicationPoliciesResultOutput{}, options).(GetReplicationPoliciesResultOutput), nil
-		}).(GetReplicationPoliciesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ObjectStorage/getReplicationPolicies:getReplicationPolicies", args, GetReplicationPoliciesResultOutput{}, options).(GetReplicationPoliciesResultOutput)
 }
 
 // A collection of arguments for invoking getReplicationPolicies.

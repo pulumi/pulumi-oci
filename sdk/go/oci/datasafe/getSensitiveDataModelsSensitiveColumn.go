@@ -114,12 +114,8 @@ type LookupSensitiveDataModelsSensitiveColumnResult struct {
 }
 
 func LookupSensitiveDataModelsSensitiveColumnOutput(ctx *pulumi.Context, args LookupSensitiveDataModelsSensitiveColumnOutputArgs, opts ...pulumi.InvokeOption) LookupSensitiveDataModelsSensitiveColumnResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupSensitiveDataModelsSensitiveColumnResultOutput, error) {
-			args := v.(LookupSensitiveDataModelsSensitiveColumnArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getSensitiveDataModelsSensitiveColumn:getSensitiveDataModelsSensitiveColumn", args, LookupSensitiveDataModelsSensitiveColumnResultOutput{}, options).(LookupSensitiveDataModelsSensitiveColumnResultOutput), nil
-		}).(LookupSensitiveDataModelsSensitiveColumnResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getSensitiveDataModelsSensitiveColumn:getSensitiveDataModelsSensitiveColumn", args, LookupSensitiveDataModelsSensitiveColumnResultOutput{}, options).(LookupSensitiveDataModelsSensitiveColumnResultOutput)
 }
 
 // A collection of arguments for invoking getSensitiveDataModelsSensitiveColumn.

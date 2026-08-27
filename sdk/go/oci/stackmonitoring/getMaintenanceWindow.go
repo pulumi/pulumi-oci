@@ -90,12 +90,8 @@ type LookupMaintenanceWindowResult struct {
 }
 
 func LookupMaintenanceWindowOutput(ctx *pulumi.Context, args LookupMaintenanceWindowOutputArgs, opts ...pulumi.InvokeOption) LookupMaintenanceWindowResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupMaintenanceWindowResultOutput, error) {
-			args := v.(LookupMaintenanceWindowArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:StackMonitoring/getMaintenanceWindow:getMaintenanceWindow", args, LookupMaintenanceWindowResultOutput{}, options).(LookupMaintenanceWindowResultOutput), nil
-		}).(LookupMaintenanceWindowResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:StackMonitoring/getMaintenanceWindow:getMaintenanceWindow", args, LookupMaintenanceWindowResultOutput{}, options).(LookupMaintenanceWindowResultOutput)
 }
 
 // A collection of arguments for invoking getMaintenanceWindow.

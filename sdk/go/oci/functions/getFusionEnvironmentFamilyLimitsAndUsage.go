@@ -70,12 +70,8 @@ type GetFusionEnvironmentFamilyLimitsAndUsageResult struct {
 }
 
 func GetFusionEnvironmentFamilyLimitsAndUsageOutput(ctx *pulumi.Context, args GetFusionEnvironmentFamilyLimitsAndUsageOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentFamilyLimitsAndUsageResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFusionEnvironmentFamilyLimitsAndUsageResultOutput, error) {
-			args := v.(GetFusionEnvironmentFamilyLimitsAndUsageArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Functions/getFusionEnvironmentFamilyLimitsAndUsage:getFusionEnvironmentFamilyLimitsAndUsage", args, GetFusionEnvironmentFamilyLimitsAndUsageResultOutput{}, options).(GetFusionEnvironmentFamilyLimitsAndUsageResultOutput), nil
-		}).(GetFusionEnvironmentFamilyLimitsAndUsageResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Functions/getFusionEnvironmentFamilyLimitsAndUsage:getFusionEnvironmentFamilyLimitsAndUsage", args, GetFusionEnvironmentFamilyLimitsAndUsageResultOutput{}, options).(GetFusionEnvironmentFamilyLimitsAndUsageResultOutput)
 }
 
 // A collection of arguments for invoking getFusionEnvironmentFamilyLimitsAndUsage.

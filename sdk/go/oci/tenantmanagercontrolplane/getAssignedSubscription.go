@@ -116,12 +116,8 @@ type GetAssignedSubscriptionResult struct {
 }
 
 func GetAssignedSubscriptionOutput(ctx *pulumi.Context, args GetAssignedSubscriptionOutputArgs, opts ...pulumi.InvokeOption) GetAssignedSubscriptionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAssignedSubscriptionResultOutput, error) {
-			args := v.(GetAssignedSubscriptionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Tenantmanagercontrolplane/getAssignedSubscription:getAssignedSubscription", args, GetAssignedSubscriptionResultOutput{}, options).(GetAssignedSubscriptionResultOutput), nil
-		}).(GetAssignedSubscriptionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Tenantmanagercontrolplane/getAssignedSubscription:getAssignedSubscription", args, GetAssignedSubscriptionResultOutput{}, options).(GetAssignedSubscriptionResultOutput)
 }
 
 // A collection of arguments for invoking getAssignedSubscription.

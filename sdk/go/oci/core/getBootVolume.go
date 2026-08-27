@@ -109,12 +109,8 @@ type LookupBootVolumeResult struct {
 }
 
 func LookupBootVolumeOutput(ctx *pulumi.Context, args LookupBootVolumeOutputArgs, opts ...pulumi.InvokeOption) LookupBootVolumeResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBootVolumeResultOutput, error) {
-			args := v.(LookupBootVolumeArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getBootVolume:getBootVolume", args, LookupBootVolumeResultOutput{}, options).(LookupBootVolumeResultOutput), nil
-		}).(LookupBootVolumeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getBootVolume:getBootVolume", args, LookupBootVolumeResultOutput{}, options).(LookupBootVolumeResultOutput)
 }
 
 // A collection of arguments for invoking getBootVolume.

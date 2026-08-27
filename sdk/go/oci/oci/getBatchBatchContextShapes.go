@@ -76,12 +76,8 @@ type GetBatchBatchContextShapesResult struct {
 }
 
 func GetBatchBatchContextShapesOutput(ctx *pulumi.Context, args GetBatchBatchContextShapesOutputArgs, opts ...pulumi.InvokeOption) GetBatchBatchContextShapesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBatchBatchContextShapesResultOutput, error) {
-			args := v.(GetBatchBatchContextShapesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getBatchBatchContextShapes:getBatchBatchContextShapes", args, GetBatchBatchContextShapesResultOutput{}, options).(GetBatchBatchContextShapesResultOutput), nil
-		}).(GetBatchBatchContextShapesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getBatchBatchContextShapes:getBatchBatchContextShapes", args, GetBatchBatchContextShapesResultOutput{}, options).(GetBatchBatchContextShapesResultOutput)
 }
 
 // A collection of arguments for invoking getBatchBatchContextShapes.

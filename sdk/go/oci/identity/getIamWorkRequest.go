@@ -84,12 +84,8 @@ type GetIamWorkRequestResult struct {
 }
 
 func GetIamWorkRequestOutput(ctx *pulumi.Context, args GetIamWorkRequestOutputArgs, opts ...pulumi.InvokeOption) GetIamWorkRequestResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetIamWorkRequestResultOutput, error) {
-			args := v.(GetIamWorkRequestArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getIamWorkRequest:getIamWorkRequest", args, GetIamWorkRequestResultOutput{}, options).(GetIamWorkRequestResultOutput), nil
-		}).(GetIamWorkRequestResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getIamWorkRequest:getIamWorkRequest", args, GetIamWorkRequestResultOutput{}, options).(GetIamWorkRequestResultOutput)
 }
 
 // A collection of arguments for invoking getIamWorkRequest.

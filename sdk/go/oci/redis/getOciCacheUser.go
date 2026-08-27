@@ -88,12 +88,8 @@ type LookupOciCacheUserResult struct {
 }
 
 func LookupOciCacheUserOutput(ctx *pulumi.Context, args LookupOciCacheUserOutputArgs, opts ...pulumi.InvokeOption) LookupOciCacheUserResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupOciCacheUserResultOutput, error) {
-			args := v.(LookupOciCacheUserArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Redis/getOciCacheUser:getOciCacheUser", args, LookupOciCacheUserResultOutput{}, options).(LookupOciCacheUserResultOutput), nil
-		}).(LookupOciCacheUserResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Redis/getOciCacheUser:getOciCacheUser", args, LookupOciCacheUserResultOutput{}, options).(LookupOciCacheUserResultOutput)
 }
 
 // A collection of arguments for invoking getOciCacheUser.

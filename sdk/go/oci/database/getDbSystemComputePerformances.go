@@ -68,12 +68,8 @@ type GetDbSystemComputePerformancesResult struct {
 }
 
 func GetDbSystemComputePerformancesOutput(ctx *pulumi.Context, args GetDbSystemComputePerformancesOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemComputePerformancesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbSystemComputePerformancesResultOutput, error) {
-			args := v.(GetDbSystemComputePerformancesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getDbSystemComputePerformances:getDbSystemComputePerformances", args, GetDbSystemComputePerformancesResultOutput{}, options).(GetDbSystemComputePerformancesResultOutput), nil
-		}).(GetDbSystemComputePerformancesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getDbSystemComputePerformances:getDbSystemComputePerformances", args, GetDbSystemComputePerformancesResultOutput{}, options).(GetDbSystemComputePerformancesResultOutput)
 }
 
 // A collection of arguments for invoking getDbSystemComputePerformances.

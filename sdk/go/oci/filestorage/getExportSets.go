@@ -87,12 +87,8 @@ type GetExportSetsResult struct {
 }
 
 func GetExportSetsOutput(ctx *pulumi.Context, args GetExportSetsOutputArgs, opts ...pulumi.InvokeOption) GetExportSetsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetExportSetsResultOutput, error) {
-			args := v.(GetExportSetsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FileStorage/getExportSets:getExportSets", args, GetExportSetsResultOutput{}, options).(GetExportSetsResultOutput), nil
-		}).(GetExportSetsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FileStorage/getExportSets:getExportSets", args, GetExportSetsResultOutput{}, options).(GetExportSetsResultOutput)
 }
 
 // A collection of arguments for invoking getExportSets.

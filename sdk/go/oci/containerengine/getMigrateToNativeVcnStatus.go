@@ -36,12 +36,8 @@ type GetMigrateToNativeVcnStatusResult struct {
 }
 
 func GetMigrateToNativeVcnStatusOutput(ctx *pulumi.Context, args GetMigrateToNativeVcnStatusOutputArgs, opts ...pulumi.InvokeOption) GetMigrateToNativeVcnStatusResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMigrateToNativeVcnStatusResultOutput, error) {
-			args := v.(GetMigrateToNativeVcnStatusArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ContainerEngine/getMigrateToNativeVcnStatus:getMigrateToNativeVcnStatus", args, GetMigrateToNativeVcnStatusResultOutput{}, options).(GetMigrateToNativeVcnStatusResultOutput), nil
-		}).(GetMigrateToNativeVcnStatusResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ContainerEngine/getMigrateToNativeVcnStatus:getMigrateToNativeVcnStatus", args, GetMigrateToNativeVcnStatusResultOutput{}, options).(GetMigrateToNativeVcnStatusResultOutput)
 }
 
 // A collection of arguments for invoking getMigrateToNativeVcnStatus.

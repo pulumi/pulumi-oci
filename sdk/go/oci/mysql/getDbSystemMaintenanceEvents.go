@@ -96,12 +96,8 @@ type GetDbSystemMaintenanceEventsResult struct {
 }
 
 func GetDbSystemMaintenanceEventsOutput(ctx *pulumi.Context, args GetDbSystemMaintenanceEventsOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemMaintenanceEventsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbSystemMaintenanceEventsResultOutput, error) {
-			args := v.(GetDbSystemMaintenanceEventsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Mysql/getDbSystemMaintenanceEvents:getDbSystemMaintenanceEvents", args, GetDbSystemMaintenanceEventsResultOutput{}, options).(GetDbSystemMaintenanceEventsResultOutput), nil
-		}).(GetDbSystemMaintenanceEventsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Mysql/getDbSystemMaintenanceEvents:getDbSystemMaintenanceEvents", args, GetDbSystemMaintenanceEventsResultOutput{}, options).(GetDbSystemMaintenanceEventsResultOutput)
 }
 
 // A collection of arguments for invoking getDbSystemMaintenanceEvents.

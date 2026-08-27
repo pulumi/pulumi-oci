@@ -70,12 +70,8 @@ type GetCostTrackingTagsResult struct {
 }
 
 func GetCostTrackingTagsOutput(ctx *pulumi.Context, args GetCostTrackingTagsOutputArgs, opts ...pulumi.InvokeOption) GetCostTrackingTagsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCostTrackingTagsResultOutput, error) {
-			args := v.(GetCostTrackingTagsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getCostTrackingTags:getCostTrackingTags", args, GetCostTrackingTagsResultOutput{}, options).(GetCostTrackingTagsResultOutput), nil
-		}).(GetCostTrackingTagsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getCostTrackingTags:getCostTrackingTags", args, GetCostTrackingTagsResultOutput{}, options).(GetCostTrackingTagsResultOutput)
 }
 
 // A collection of arguments for invoking getCostTrackingTags.

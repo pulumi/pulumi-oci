@@ -78,12 +78,8 @@ type LookupConnectHarnessResult struct {
 }
 
 func LookupConnectHarnessOutput(ctx *pulumi.Context, args LookupConnectHarnessOutputArgs, opts ...pulumi.InvokeOption) LookupConnectHarnessResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupConnectHarnessResultOutput, error) {
-			args := v.(LookupConnectHarnessArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Streaming/getConnectHarness:getConnectHarness", args, LookupConnectHarnessResultOutput{}, options).(LookupConnectHarnessResultOutput), nil
-		}).(LookupConnectHarnessResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Streaming/getConnectHarness:getConnectHarness", args, LookupConnectHarnessResultOutput{}, options).(LookupConnectHarnessResultOutput)
 }
 
 // A collection of arguments for invoking getConnectHarness.

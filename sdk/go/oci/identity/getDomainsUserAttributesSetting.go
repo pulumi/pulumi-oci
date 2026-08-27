@@ -112,12 +112,8 @@ type GetDomainsUserAttributesSettingResult struct {
 }
 
 func GetDomainsUserAttributesSettingOutput(ctx *pulumi.Context, args GetDomainsUserAttributesSettingOutputArgs, opts ...pulumi.InvokeOption) GetDomainsUserAttributesSettingResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsUserAttributesSettingResultOutput, error) {
-			args := v.(GetDomainsUserAttributesSettingArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsUserAttributesSetting:getDomainsUserAttributesSetting", args, GetDomainsUserAttributesSettingResultOutput{}, options).(GetDomainsUserAttributesSettingResultOutput), nil
-		}).(GetDomainsUserAttributesSettingResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsUserAttributesSetting:getDomainsUserAttributesSetting", args, GetDomainsUserAttributesSettingResultOutput{}, options).(GetDomainsUserAttributesSettingResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsUserAttributesSetting.

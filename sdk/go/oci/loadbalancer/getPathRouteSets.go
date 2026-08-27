@@ -68,12 +68,8 @@ type GetPathRouteSetsResult struct {
 }
 
 func GetPathRouteSetsOutput(ctx *pulumi.Context, args GetPathRouteSetsOutputArgs, opts ...pulumi.InvokeOption) GetPathRouteSetsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPathRouteSetsResultOutput, error) {
-			args := v.(GetPathRouteSetsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LoadBalancer/getPathRouteSets:getPathRouteSets", args, GetPathRouteSetsResultOutput{}, options).(GetPathRouteSetsResultOutput), nil
-		}).(GetPathRouteSetsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LoadBalancer/getPathRouteSets:getPathRouteSets", args, GetPathRouteSetsResultOutput{}, options).(GetPathRouteSetsResultOutput)
 }
 
 // A collection of arguments for invoking getPathRouteSets.

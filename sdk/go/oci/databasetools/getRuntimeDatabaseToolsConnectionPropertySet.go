@@ -99,12 +99,8 @@ type LookupRuntimeDatabaseToolsConnectionPropertySetResult struct {
 }
 
 func LookupRuntimeDatabaseToolsConnectionPropertySetOutput(ctx *pulumi.Context, args LookupRuntimeDatabaseToolsConnectionPropertySetOutputArgs, opts ...pulumi.InvokeOption) LookupRuntimeDatabaseToolsConnectionPropertySetResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupRuntimeDatabaseToolsConnectionPropertySetResultOutput, error) {
-			args := v.(LookupRuntimeDatabaseToolsConnectionPropertySetArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionPropertySet:getRuntimeDatabaseToolsConnectionPropertySet", args, LookupRuntimeDatabaseToolsConnectionPropertySetResultOutput{}, options).(LookupRuntimeDatabaseToolsConnectionPropertySetResultOutput), nil
-		}).(LookupRuntimeDatabaseToolsConnectionPropertySetResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionPropertySet:getRuntimeDatabaseToolsConnectionPropertySet", args, LookupRuntimeDatabaseToolsConnectionPropertySetResultOutput{}, options).(LookupRuntimeDatabaseToolsConnectionPropertySetResultOutput)
 }
 
 // A collection of arguments for invoking getRuntimeDatabaseToolsConnectionPropertySet.

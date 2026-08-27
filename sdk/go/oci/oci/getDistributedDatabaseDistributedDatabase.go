@@ -129,12 +129,8 @@ type LookupDistributedDatabaseDistributedDatabaseResult struct {
 }
 
 func LookupDistributedDatabaseDistributedDatabaseOutput(ctx *pulumi.Context, args LookupDistributedDatabaseDistributedDatabaseOutputArgs, opts ...pulumi.InvokeOption) LookupDistributedDatabaseDistributedDatabaseResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDistributedDatabaseDistributedDatabaseResultOutput, error) {
-			args := v.(LookupDistributedDatabaseDistributedDatabaseArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDistributedDatabaseDistributedDatabase:getDistributedDatabaseDistributedDatabase", args, LookupDistributedDatabaseDistributedDatabaseResultOutput{}, options).(LookupDistributedDatabaseDistributedDatabaseResultOutput), nil
-		}).(LookupDistributedDatabaseDistributedDatabaseResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDistributedDatabaseDistributedDatabase:getDistributedDatabaseDistributedDatabase", args, LookupDistributedDatabaseDistributedDatabaseResultOutput{}, options).(LookupDistributedDatabaseDistributedDatabaseResultOutput)
 }
 
 // A collection of arguments for invoking getDistributedDatabaseDistributedDatabase.

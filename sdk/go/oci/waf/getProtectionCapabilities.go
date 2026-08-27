@@ -94,12 +94,8 @@ type GetProtectionCapabilitiesResult struct {
 }
 
 func GetProtectionCapabilitiesOutput(ctx *pulumi.Context, args GetProtectionCapabilitiesOutputArgs, opts ...pulumi.InvokeOption) GetProtectionCapabilitiesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetProtectionCapabilitiesResultOutput, error) {
-			args := v.(GetProtectionCapabilitiesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Waf/getProtectionCapabilities:getProtectionCapabilities", args, GetProtectionCapabilitiesResultOutput{}, options).(GetProtectionCapabilitiesResultOutput), nil
-		}).(GetProtectionCapabilitiesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Waf/getProtectionCapabilities:getProtectionCapabilities", args, GetProtectionCapabilitiesResultOutput{}, options).(GetProtectionCapabilitiesResultOutput)
 }
 
 // A collection of arguments for invoking getProtectionCapabilities.

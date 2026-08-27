@@ -88,12 +88,8 @@ type GetDbConnectionBundlesResult struct {
 }
 
 func GetDbConnectionBundlesOutput(ctx *pulumi.Context, args GetDbConnectionBundlesOutputArgs, opts ...pulumi.InvokeOption) GetDbConnectionBundlesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbConnectionBundlesResultOutput, error) {
-			args := v.(GetDbConnectionBundlesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getDbConnectionBundles:getDbConnectionBundles", args, GetDbConnectionBundlesResultOutput{}, options).(GetDbConnectionBundlesResultOutput), nil
-		}).(GetDbConnectionBundlesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getDbConnectionBundles:getDbConnectionBundles", args, GetDbConnectionBundlesResultOutput{}, options).(GetDbConnectionBundlesResultOutput)
 }
 
 // A collection of arguments for invoking getDbConnectionBundles.

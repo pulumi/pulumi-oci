@@ -86,12 +86,8 @@ type GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult struct {
 }
 
 func GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsOutput(ctx *pulumi.Context, args GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResultOutput, error) {
-			args := v.(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksRecommendations:getManagedDatabaseSqlTuningAdvisorTasksRecommendations", args, GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResultOutput{}, options).(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResultOutput), nil
-		}).(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksRecommendations:getManagedDatabaseSqlTuningAdvisorTasksRecommendations", args, GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResultOutput{}, options).(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResultOutput)
 }
 
 // A collection of arguments for invoking getManagedDatabaseSqlTuningAdvisorTasksRecommendations.

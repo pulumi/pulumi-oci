@@ -92,12 +92,8 @@ type GetProtectionPoliciesResult struct {
 }
 
 func GetProtectionPoliciesOutput(ctx *pulumi.Context, args GetProtectionPoliciesOutputArgs, opts ...pulumi.InvokeOption) GetProtectionPoliciesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetProtectionPoliciesResultOutput, error) {
-			args := v.(GetProtectionPoliciesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:RecoveryMod/getProtectionPolicies:getProtectionPolicies", args, GetProtectionPoliciesResultOutput{}, options).(GetProtectionPoliciesResultOutput), nil
-		}).(GetProtectionPoliciesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:RecoveryMod/getProtectionPolicies:getProtectionPolicies", args, GetProtectionPoliciesResultOutput{}, options).(GetProtectionPoliciesResultOutput)
 }
 
 // A collection of arguments for invoking getProtectionPolicies.

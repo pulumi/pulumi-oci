@@ -74,12 +74,8 @@ type GetExternalDbSystemDiscoveriesResult struct {
 }
 
 func GetExternalDbSystemDiscoveriesOutput(ctx *pulumi.Context, args GetExternalDbSystemDiscoveriesOutputArgs, opts ...pulumi.InvokeOption) GetExternalDbSystemDiscoveriesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetExternalDbSystemDiscoveriesResultOutput, error) {
-			args := v.(GetExternalDbSystemDiscoveriesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalDbSystemDiscoveries:getExternalDbSystemDiscoveries", args, GetExternalDbSystemDiscoveriesResultOutput{}, options).(GetExternalDbSystemDiscoveriesResultOutput), nil
-		}).(GetExternalDbSystemDiscoveriesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getExternalDbSystemDiscoveries:getExternalDbSystemDiscoveries", args, GetExternalDbSystemDiscoveriesResultOutput{}, options).(GetExternalDbSystemDiscoveriesResultOutput)
 }
 
 // A collection of arguments for invoking getExternalDbSystemDiscoveries.

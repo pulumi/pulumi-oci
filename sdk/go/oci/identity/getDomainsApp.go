@@ -320,12 +320,8 @@ type LookupDomainsAppResult struct {
 }
 
 func LookupDomainsAppOutput(ctx *pulumi.Context, args LookupDomainsAppOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsAppResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDomainsAppResultOutput, error) {
-			args := v.(LookupDomainsAppArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsApp:getDomainsApp", args, LookupDomainsAppResultOutput{}, options).(LookupDomainsAppResultOutput), nil
-		}).(LookupDomainsAppResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsApp:getDomainsApp", args, LookupDomainsAppResultOutput{}, options).(LookupDomainsAppResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsApp.

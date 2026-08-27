@@ -62,12 +62,8 @@ type LookupBackendSetResult struct {
 }
 
 func LookupBackendSetOutput(ctx *pulumi.Context, args LookupBackendSetOutputArgs, opts ...pulumi.InvokeOption) LookupBackendSetResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBackendSetResultOutput, error) {
-			args := v.(LookupBackendSetArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", args, LookupBackendSetResultOutput{}, options).(LookupBackendSetResultOutput), nil
-		}).(LookupBackendSetResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", args, LookupBackendSetResultOutput{}, options).(LookupBackendSetResultOutput)
 }
 
 // A collection of arguments for invoking getBackendSet.

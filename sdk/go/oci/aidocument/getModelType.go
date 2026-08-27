@@ -76,12 +76,8 @@ type GetModelTypeResult struct {
 }
 
 func GetModelTypeOutput(ctx *pulumi.Context, args GetModelTypeOutputArgs, opts ...pulumi.InvokeOption) GetModelTypeResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetModelTypeResultOutput, error) {
-			args := v.(GetModelTypeArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:AiDocument/getModelType:getModelType", args, GetModelTypeResultOutput{}, options).(GetModelTypeResultOutput), nil
-		}).(GetModelTypeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:AiDocument/getModelType:getModelType", args, GetModelTypeResultOutput{}, options).(GetModelTypeResultOutput)
 }
 
 // A collection of arguments for invoking getModelType.

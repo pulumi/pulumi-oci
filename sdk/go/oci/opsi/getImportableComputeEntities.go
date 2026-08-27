@@ -73,12 +73,8 @@ type GetImportableComputeEntitiesResult struct {
 }
 
 func GetImportableComputeEntitiesOutput(ctx *pulumi.Context, args GetImportableComputeEntitiesOutputArgs, opts ...pulumi.InvokeOption) GetImportableComputeEntitiesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetImportableComputeEntitiesResultOutput, error) {
-			args := v.(GetImportableComputeEntitiesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Opsi/getImportableComputeEntities:getImportableComputeEntities", args, GetImportableComputeEntitiesResultOutput{}, options).(GetImportableComputeEntitiesResultOutput), nil
-		}).(GetImportableComputeEntitiesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Opsi/getImportableComputeEntities:getImportableComputeEntities", args, GetImportableComputeEntitiesResultOutput{}, options).(GetImportableComputeEntitiesResultOutput)
 }
 
 // A collection of arguments for invoking getImportableComputeEntities.

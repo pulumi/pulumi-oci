@@ -88,12 +88,8 @@ type LookupMonitoredResourceTaskResult struct {
 }
 
 func LookupMonitoredResourceTaskOutput(ctx *pulumi.Context, args LookupMonitoredResourceTaskOutputArgs, opts ...pulumi.InvokeOption) LookupMonitoredResourceTaskResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupMonitoredResourceTaskResultOutput, error) {
-			args := v.(LookupMonitoredResourceTaskArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:StackMonitoring/getMonitoredResourceTask:getMonitoredResourceTask", args, LookupMonitoredResourceTaskResultOutput{}, options).(LookupMonitoredResourceTaskResultOutput), nil
-		}).(LookupMonitoredResourceTaskResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:StackMonitoring/getMonitoredResourceTask:getMonitoredResourceTask", args, LookupMonitoredResourceTaskResultOutput{}, options).(LookupMonitoredResourceTaskResultOutput)
 }
 
 // A collection of arguments for invoking getMonitoredResourceTask.

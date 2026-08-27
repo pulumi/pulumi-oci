@@ -80,12 +80,8 @@ type GetSubscriptionRedemptionsResult struct {
 }
 
 func GetSubscriptionRedemptionsOutput(ctx *pulumi.Context, args GetSubscriptionRedemptionsOutputArgs, opts ...pulumi.InvokeOption) GetSubscriptionRedemptionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSubscriptionRedemptionsResultOutput, error) {
-			args := v.(GetSubscriptionRedemptionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:UsageProxy/getSubscriptionRedemptions:getSubscriptionRedemptions", args, GetSubscriptionRedemptionsResultOutput{}, options).(GetSubscriptionRedemptionsResultOutput), nil
-		}).(GetSubscriptionRedemptionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:UsageProxy/getSubscriptionRedemptions:getSubscriptionRedemptions", args, GetSubscriptionRedemptionsResultOutput{}, options).(GetSubscriptionRedemptionsResultOutput)
 }
 
 // A collection of arguments for invoking getSubscriptionRedemptions.

@@ -113,12 +113,8 @@ type GetInstallationSitesResult struct {
 }
 
 func GetInstallationSitesOutput(ctx *pulumi.Context, args GetInstallationSitesOutputArgs, opts ...pulumi.InvokeOption) GetInstallationSitesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetInstallationSitesResultOutput, error) {
-			args := v.(GetInstallationSitesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getInstallationSites:getInstallationSites", args, GetInstallationSitesResultOutput{}, options).(GetInstallationSitesResultOutput), nil
-		}).(GetInstallationSitesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getInstallationSites:getInstallationSites", args, GetInstallationSitesResultOutput{}, options).(GetInstallationSitesResultOutput)
 }
 
 // A collection of arguments for invoking getInstallationSites.

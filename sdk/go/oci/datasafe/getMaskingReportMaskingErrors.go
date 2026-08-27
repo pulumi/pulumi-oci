@@ -73,12 +73,8 @@ type GetMaskingReportMaskingErrorsResult struct {
 }
 
 func GetMaskingReportMaskingErrorsOutput(ctx *pulumi.Context, args GetMaskingReportMaskingErrorsOutputArgs, opts ...pulumi.InvokeOption) GetMaskingReportMaskingErrorsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMaskingReportMaskingErrorsResultOutput, error) {
-			args := v.(GetMaskingReportMaskingErrorsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getMaskingReportMaskingErrors:getMaskingReportMaskingErrors", args, GetMaskingReportMaskingErrorsResultOutput{}, options).(GetMaskingReportMaskingErrorsResultOutput), nil
-		}).(GetMaskingReportMaskingErrorsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getMaskingReportMaskingErrors:getMaskingReportMaskingErrors", args, GetMaskingReportMaskingErrorsResultOutput{}, options).(GetMaskingReportMaskingErrorsResultOutput)
 }
 
 // A collection of arguments for invoking getMaskingReportMaskingErrors.

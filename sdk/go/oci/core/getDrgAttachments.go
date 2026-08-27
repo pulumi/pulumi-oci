@@ -107,12 +107,8 @@ type GetDrgAttachmentsResult struct {
 }
 
 func GetDrgAttachmentsOutput(ctx *pulumi.Context, args GetDrgAttachmentsOutputArgs, opts ...pulumi.InvokeOption) GetDrgAttachmentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDrgAttachmentsResultOutput, error) {
-			args := v.(GetDrgAttachmentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getDrgAttachments:getDrgAttachments", args, GetDrgAttachmentsResultOutput{}, options).(GetDrgAttachmentsResultOutput), nil
-		}).(GetDrgAttachmentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getDrgAttachments:getDrgAttachments", args, GetDrgAttachmentsResultOutput{}, options).(GetDrgAttachmentsResultOutput)
 }
 
 // A collection of arguments for invoking getDrgAttachments.

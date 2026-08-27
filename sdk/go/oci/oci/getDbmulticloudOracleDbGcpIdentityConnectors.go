@@ -84,12 +84,8 @@ type GetDbmulticloudOracleDbGcpIdentityConnectorsResult struct {
 }
 
 func GetDbmulticloudOracleDbGcpIdentityConnectorsOutput(ctx *pulumi.Context, args GetDbmulticloudOracleDbGcpIdentityConnectorsOutputArgs, opts ...pulumi.InvokeOption) GetDbmulticloudOracleDbGcpIdentityConnectorsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbmulticloudOracleDbGcpIdentityConnectorsResultOutput, error) {
-			args := v.(GetDbmulticloudOracleDbGcpIdentityConnectorsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbGcpIdentityConnectors:getDbmulticloudOracleDbGcpIdentityConnectors", args, GetDbmulticloudOracleDbGcpIdentityConnectorsResultOutput{}, options).(GetDbmulticloudOracleDbGcpIdentityConnectorsResultOutput), nil
-		}).(GetDbmulticloudOracleDbGcpIdentityConnectorsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbGcpIdentityConnectors:getDbmulticloudOracleDbGcpIdentityConnectors", args, GetDbmulticloudOracleDbGcpIdentityConnectorsResultOutput{}, options).(GetDbmulticloudOracleDbGcpIdentityConnectorsResultOutput)
 }
 
 // A collection of arguments for invoking getDbmulticloudOracleDbGcpIdentityConnectors.

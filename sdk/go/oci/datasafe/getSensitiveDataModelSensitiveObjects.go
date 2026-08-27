@@ -83,12 +83,8 @@ type GetSensitiveDataModelSensitiveObjectsResult struct {
 }
 
 func GetSensitiveDataModelSensitiveObjectsOutput(ctx *pulumi.Context, args GetSensitiveDataModelSensitiveObjectsOutputArgs, opts ...pulumi.InvokeOption) GetSensitiveDataModelSensitiveObjectsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSensitiveDataModelSensitiveObjectsResultOutput, error) {
-			args := v.(GetSensitiveDataModelSensitiveObjectsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getSensitiveDataModelSensitiveObjects:getSensitiveDataModelSensitiveObjects", args, GetSensitiveDataModelSensitiveObjectsResultOutput{}, options).(GetSensitiveDataModelSensitiveObjectsResultOutput), nil
-		}).(GetSensitiveDataModelSensitiveObjectsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getSensitiveDataModelSensitiveObjects:getSensitiveDataModelSensitiveObjects", args, GetSensitiveDataModelSensitiveObjectsResultOutput{}, options).(GetSensitiveDataModelSensitiveObjectsResultOutput)
 }
 
 // A collection of arguments for invoking getSensitiveDataModelSensitiveObjects.

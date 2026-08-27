@@ -77,12 +77,8 @@ type GetPodShapesResult struct {
 }
 
 func GetPodShapesOutput(ctx *pulumi.Context, args GetPodShapesOutputArgs, opts ...pulumi.InvokeOption) GetPodShapesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPodShapesResultOutput, error) {
-			args := v.(GetPodShapesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ContainerEngine/getPodShapes:getPodShapes", args, GetPodShapesResultOutput{}, options).(GetPodShapesResultOutput), nil
-		}).(GetPodShapesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ContainerEngine/getPodShapes:getPodShapes", args, GetPodShapesResultOutput{}, options).(GetPodShapesResultOutput)
 }
 
 // A collection of arguments for invoking getPodShapes.

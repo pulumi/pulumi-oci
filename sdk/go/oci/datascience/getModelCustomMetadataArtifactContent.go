@@ -72,12 +72,8 @@ type GetModelCustomMetadataArtifactContentResult struct {
 }
 
 func GetModelCustomMetadataArtifactContentOutput(ctx *pulumi.Context, args GetModelCustomMetadataArtifactContentOutputArgs, opts ...pulumi.InvokeOption) GetModelCustomMetadataArtifactContentResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetModelCustomMetadataArtifactContentResultOutput, error) {
-			args := v.(GetModelCustomMetadataArtifactContentArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataScience/getModelCustomMetadataArtifactContent:getModelCustomMetadataArtifactContent", args, GetModelCustomMetadataArtifactContentResultOutput{}, options).(GetModelCustomMetadataArtifactContentResultOutput), nil
-		}).(GetModelCustomMetadataArtifactContentResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataScience/getModelCustomMetadataArtifactContent:getModelCustomMetadataArtifactContent", args, GetModelCustomMetadataArtifactContentResultOutput{}, options).(GetModelCustomMetadataArtifactContentResultOutput)
 }
 
 // A collection of arguments for invoking getModelCustomMetadataArtifactContent.

@@ -96,12 +96,8 @@ type GetRecommendedPatchesResult struct {
 }
 
 func GetRecommendedPatchesOutput(ctx *pulumi.Context, args GetRecommendedPatchesOutputArgs, opts ...pulumi.InvokeOption) GetRecommendedPatchesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRecommendedPatchesResultOutput, error) {
-			args := v.(GetRecommendedPatchesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getRecommendedPatches:getRecommendedPatches", args, GetRecommendedPatchesResultOutput{}, options).(GetRecommendedPatchesResultOutput), nil
-		}).(GetRecommendedPatchesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getRecommendedPatches:getRecommendedPatches", args, GetRecommendedPatchesResultOutput{}, options).(GetRecommendedPatchesResultOutput)
 }
 
 // A collection of arguments for invoking getRecommendedPatches.

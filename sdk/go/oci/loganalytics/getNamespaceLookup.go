@@ -112,12 +112,8 @@ type LookupNamespaceLookupResult struct {
 }
 
 func LookupNamespaceLookupOutput(ctx *pulumi.Context, args LookupNamespaceLookupOutputArgs, opts ...pulumi.InvokeOption) LookupNamespaceLookupResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupNamespaceLookupResultOutput, error) {
-			args := v.(LookupNamespaceLookupArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LogAnalytics/getNamespaceLookup:getNamespaceLookup", args, LookupNamespaceLookupResultOutput{}, options).(LookupNamespaceLookupResultOutput), nil
-		}).(LookupNamespaceLookupResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LogAnalytics/getNamespaceLookup:getNamespaceLookup", args, LookupNamespaceLookupResultOutput{}, options).(LookupNamespaceLookupResultOutput)
 }
 
 // A collection of arguments for invoking getNamespaceLookup.

@@ -74,12 +74,8 @@ type GetProtectedDatabaseFetchConfigurationResult struct {
 }
 
 func GetProtectedDatabaseFetchConfigurationOutput(ctx *pulumi.Context, args GetProtectedDatabaseFetchConfigurationOutputArgs, opts ...pulumi.InvokeOption) GetProtectedDatabaseFetchConfigurationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetProtectedDatabaseFetchConfigurationResultOutput, error) {
-			args := v.(GetProtectedDatabaseFetchConfigurationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:RecoveryMod/getProtectedDatabaseFetchConfiguration:getProtectedDatabaseFetchConfiguration", args, GetProtectedDatabaseFetchConfigurationResultOutput{}, options).(GetProtectedDatabaseFetchConfigurationResultOutput), nil
-		}).(GetProtectedDatabaseFetchConfigurationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:RecoveryMod/getProtectedDatabaseFetchConfiguration:getProtectedDatabaseFetchConfiguration", args, GetProtectedDatabaseFetchConfigurationResultOutput{}, options).(GetProtectedDatabaseFetchConfigurationResultOutput)
 }
 
 // A collection of arguments for invoking getProtectedDatabaseFetchConfiguration.

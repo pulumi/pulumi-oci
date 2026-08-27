@@ -92,12 +92,8 @@ type LookupWorkspaceFolderResult struct {
 }
 
 func LookupWorkspaceFolderOutput(ctx *pulumi.Context, args LookupWorkspaceFolderOutputArgs, opts ...pulumi.InvokeOption) LookupWorkspaceFolderResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupWorkspaceFolderResultOutput, error) {
-			args := v.(LookupWorkspaceFolderArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataIntegration/getWorkspaceFolder:getWorkspaceFolder", args, LookupWorkspaceFolderResultOutput{}, options).(LookupWorkspaceFolderResultOutput), nil
-		}).(LookupWorkspaceFolderResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataIntegration/getWorkspaceFolder:getWorkspaceFolder", args, LookupWorkspaceFolderResultOutput{}, options).(LookupWorkspaceFolderResultOutput)
 }
 
 // A collection of arguments for invoking getWorkspaceFolder.

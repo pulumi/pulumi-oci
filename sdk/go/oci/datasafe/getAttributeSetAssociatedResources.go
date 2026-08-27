@@ -78,12 +78,8 @@ type GetAttributeSetAssociatedResourcesResult struct {
 }
 
 func GetAttributeSetAssociatedResourcesOutput(ctx *pulumi.Context, args GetAttributeSetAssociatedResourcesOutputArgs, opts ...pulumi.InvokeOption) GetAttributeSetAssociatedResourcesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAttributeSetAssociatedResourcesResultOutput, error) {
-			args := v.(GetAttributeSetAssociatedResourcesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getAttributeSetAssociatedResources:getAttributeSetAssociatedResources", args, GetAttributeSetAssociatedResourcesResultOutput{}, options).(GetAttributeSetAssociatedResourcesResultOutput), nil
-		}).(GetAttributeSetAssociatedResourcesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getAttributeSetAssociatedResources:getAttributeSetAssociatedResources", args, GetAttributeSetAssociatedResourcesResultOutput{}, options).(GetAttributeSetAssociatedResourcesResultOutput)
 }
 
 // A collection of arguments for invoking getAttributeSetAssociatedResources.

@@ -83,12 +83,8 @@ type GetSoftwareSourceAvailableSoftwarePackagesResult struct {
 }
 
 func GetSoftwareSourceAvailableSoftwarePackagesOutput(ctx *pulumi.Context, args GetSoftwareSourceAvailableSoftwarePackagesOutputArgs, opts ...pulumi.InvokeOption) GetSoftwareSourceAvailableSoftwarePackagesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSoftwareSourceAvailableSoftwarePackagesResultOutput, error) {
-			args := v.(GetSoftwareSourceAvailableSoftwarePackagesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getSoftwareSourceAvailableSoftwarePackages:getSoftwareSourceAvailableSoftwarePackages", args, GetSoftwareSourceAvailableSoftwarePackagesResultOutput{}, options).(GetSoftwareSourceAvailableSoftwarePackagesResultOutput), nil
-		}).(GetSoftwareSourceAvailableSoftwarePackagesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getSoftwareSourceAvailableSoftwarePackages:getSoftwareSourceAvailableSoftwarePackages", args, GetSoftwareSourceAvailableSoftwarePackagesResultOutput{}, options).(GetSoftwareSourceAvailableSoftwarePackagesResultOutput)
 }
 
 // A collection of arguments for invoking getSoftwareSourceAvailableSoftwarePackages.

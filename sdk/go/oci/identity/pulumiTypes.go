@@ -8745,7 +8745,6 @@ func (o DomainsAppProtectableSecondaryAudienceArrayOutput) Index(i pulumi.IntInp
 }
 
 type DomainsAppRadiusPolicy struct {
-	_ref *string `pulumi:"_ref"`
 	// (Updatable) Identifier of the Policy.
 	//
 	// **Added In:** 2209070044
@@ -8774,7 +8773,6 @@ type DomainsAppRadiusPolicyInput interface {
 }
 
 type DomainsAppRadiusPolicyArgs struct {
-	_ref pulumi.StringPtrInput `pulumi:"_ref"`
 	// (Updatable) Identifier of the Policy.
 	//
 	// **Added In:** 2209070044
@@ -8868,10 +8866,6 @@ func (o DomainsAppRadiusPolicyOutput) ToDomainsAppRadiusPolicyPtrOutputWithConte
 	}).(DomainsAppRadiusPolicyPtrOutput)
 }
 
-func (o DomainsAppRadiusPolicyOutput) _ref() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v DomainsAppRadiusPolicy) *string { return v._ref }).(pulumi.StringPtrOutput)
-}
-
 // (Updatable) Identifier of the Policy.
 //
 // **Added In:** 2209070044
@@ -8911,15 +8905,6 @@ func (o DomainsAppRadiusPolicyPtrOutput) Elem() DomainsAppRadiusPolicyOutput {
 		var ret DomainsAppRadiusPolicy
 		return ret
 	}).(DomainsAppRadiusPolicyOutput)
-}
-
-func (o DomainsAppRadiusPolicyPtrOutput) _ref() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *DomainsAppRadiusPolicy) *string {
-		if v == nil {
-			return nil
-		}
-		return v._ref
-	}).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Identifier of the Policy.
@@ -58712,18 +58697,6 @@ func (o DomainsIdentityProofingProviderIdcsLastModifiedByArrayOutput) Index(i pu
 }
 
 type DomainsIdentityProofingProviderIdcsLockedBy struct {
-	// (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-	//
-	// **SCIM++ Properties:**
-	// * caseExact: true
-	// * idcsSearchable: false
-	// * multiValued: false
-	// * mutability: readOnly
-	// * required: false
-	// * returned: default
-	// * type: string
-	// * uniqueness: none
-	_ref *string `pulumi:"_ref"`
 	// (Updatable) The displayName of the User or App who locked this Resource.
 	//
 	// **SCIM++ Properties:**
@@ -58785,18 +58758,6 @@ type DomainsIdentityProofingProviderIdcsLockedByInput interface {
 }
 
 type DomainsIdentityProofingProviderIdcsLockedByArgs struct {
-	// (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-	//
-	// **SCIM++ Properties:**
-	// * caseExact: true
-	// * idcsSearchable: false
-	// * multiValued: false
-	// * mutability: readOnly
-	// * required: false
-	// * returned: default
-	// * type: string
-	// * uniqueness: none
-	_ref pulumi.StringPtrInput `pulumi:"_ref"`
 	// (Updatable) The displayName of the User or App who locked this Resource.
 	//
 	// **SCIM++ Properties:**
@@ -58895,21 +58856,6 @@ func (o DomainsIdentityProofingProviderIdcsLockedByOutput) ToDomainsIdentityProo
 
 func (o DomainsIdentityProofingProviderIdcsLockedByOutput) ToDomainsIdentityProofingProviderIdcsLockedByOutputWithContext(ctx context.Context) DomainsIdentityProofingProviderIdcsLockedByOutput {
 	return o
-}
-
-// (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-//
-// **SCIM++ Properties:**
-// * caseExact: true
-// * idcsSearchable: false
-// * multiValued: false
-// * mutability: readOnly
-// * required: false
-// * returned: default
-// * type: string
-// * uniqueness: none
-func (o DomainsIdentityProofingProviderIdcsLockedByOutput) _ref() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v DomainsIdentityProofingProviderIdcsLockedBy) *string { return v._ref }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The displayName of the User or App who locked this Resource.
@@ -60107,18 +60053,6 @@ func (o DomainsIdentityProofingProviderTemplateIdcsLastModifiedByArrayOutput) In
 }
 
 type DomainsIdentityProofingProviderTemplateIdcsLockedBy struct {
-	// (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-	//
-	// **SCIM++ Properties:**
-	// * caseExact: true
-	// * idcsSearchable: false
-	// * multiValued: false
-	// * mutability: readOnly
-	// * required: false
-	// * returned: default
-	// * type: string
-	// * uniqueness: none
-	_ref *string `pulumi:"_ref"`
 	// (Updatable) The displayName of the User or App who locked this Resource.
 	//
 	// **SCIM++ Properties:**
@@ -60180,18 +60114,6 @@ type DomainsIdentityProofingProviderTemplateIdcsLockedByInput interface {
 }
 
 type DomainsIdentityProofingProviderTemplateIdcsLockedByArgs struct {
-	// (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-	//
-	// **SCIM++ Properties:**
-	// * caseExact: true
-	// * idcsSearchable: false
-	// * multiValued: false
-	// * mutability: readOnly
-	// * required: false
-	// * returned: default
-	// * type: string
-	// * uniqueness: none
-	_ref pulumi.StringPtrInput `pulumi:"_ref"`
 	// (Updatable) The displayName of the User or App who locked this Resource.
 	//
 	// **SCIM++ Properties:**
@@ -60290,21 +60212,6 @@ func (o DomainsIdentityProofingProviderTemplateIdcsLockedByOutput) ToDomainsIden
 
 func (o DomainsIdentityProofingProviderTemplateIdcsLockedByOutput) ToDomainsIdentityProofingProviderTemplateIdcsLockedByOutputWithContext(ctx context.Context) DomainsIdentityProofingProviderTemplateIdcsLockedByOutput {
 	return o
-}
-
-// (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-//
-// **SCIM++ Properties:**
-// * caseExact: true
-// * idcsSearchable: false
-// * multiValued: false
-// * mutability: readOnly
-// * required: false
-// * returned: default
-// * type: string
-// * uniqueness: none
-func (o DomainsIdentityProofingProviderTemplateIdcsLockedByOutput) _ref() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v DomainsIdentityProofingProviderTemplateIdcsLockedBy) *string { return v._ref }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The displayName of the User or App who locked this Resource.

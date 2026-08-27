@@ -136,12 +136,8 @@ type GetProfilesResult struct {
 }
 
 func GetProfilesOutput(ctx *pulumi.Context, args GetProfilesOutputArgs, opts ...pulumi.InvokeOption) GetProfilesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetProfilesResultOutput, error) {
-			args := v.(GetProfilesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getProfiles:getProfiles", args, GetProfilesResultOutput{}, options).(GetProfilesResultOutput), nil
-		}).(GetProfilesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getProfiles:getProfiles", args, GetProfilesResultOutput{}, options).(GetProfilesResultOutput)
 }
 
 // A collection of arguments for invoking getProfiles.

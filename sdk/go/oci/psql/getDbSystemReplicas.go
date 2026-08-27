@@ -68,12 +68,8 @@ type GetDbSystemReplicasResult struct {
 }
 
 func GetDbSystemReplicasOutput(ctx *pulumi.Context, args GetDbSystemReplicasOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemReplicasResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbSystemReplicasResultOutput, error) {
-			args := v.(GetDbSystemReplicasArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Psql/getDbSystemReplicas:getDbSystemReplicas", args, GetDbSystemReplicasResultOutput{}, options).(GetDbSystemReplicasResultOutput), nil
-		}).(GetDbSystemReplicasResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Psql/getDbSystemReplicas:getDbSystemReplicas", args, GetDbSystemReplicasResultOutput{}, options).(GetDbSystemReplicasResultOutput)
 }
 
 // A collection of arguments for invoking getDbSystemReplicas.

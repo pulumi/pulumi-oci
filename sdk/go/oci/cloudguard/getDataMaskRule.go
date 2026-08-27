@@ -92,12 +92,8 @@ type LookupDataMaskRuleResult struct {
 }
 
 func LookupDataMaskRuleOutput(ctx *pulumi.Context, args LookupDataMaskRuleOutputArgs, opts ...pulumi.InvokeOption) LookupDataMaskRuleResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDataMaskRuleResultOutput, error) {
-			args := v.(LookupDataMaskRuleArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CloudGuard/getDataMaskRule:getDataMaskRule", args, LookupDataMaskRuleResultOutput{}, options).(LookupDataMaskRuleResultOutput), nil
-		}).(LookupDataMaskRuleResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CloudGuard/getDataMaskRule:getDataMaskRule", args, LookupDataMaskRuleResultOutput{}, options).(LookupDataMaskRuleResultOutput)
 }
 
 // A collection of arguments for invoking getDataMaskRule.

@@ -86,12 +86,8 @@ type LookupSdmMaskingPolicyDifferenceResult struct {
 }
 
 func LookupSdmMaskingPolicyDifferenceOutput(ctx *pulumi.Context, args LookupSdmMaskingPolicyDifferenceOutputArgs, opts ...pulumi.InvokeOption) LookupSdmMaskingPolicyDifferenceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupSdmMaskingPolicyDifferenceResultOutput, error) {
-			args := v.(LookupSdmMaskingPolicyDifferenceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getSdmMaskingPolicyDifference:getSdmMaskingPolicyDifference", args, LookupSdmMaskingPolicyDifferenceResultOutput{}, options).(LookupSdmMaskingPolicyDifferenceResultOutput), nil
-		}).(LookupSdmMaskingPolicyDifferenceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getSdmMaskingPolicyDifference:getSdmMaskingPolicyDifference", args, LookupSdmMaskingPolicyDifferenceResultOutput{}, options).(LookupSdmMaskingPolicyDifferenceResultOutput)
 }
 
 // A collection of arguments for invoking getSdmMaskingPolicyDifference.

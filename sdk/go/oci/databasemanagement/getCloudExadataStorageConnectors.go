@@ -77,12 +77,8 @@ type GetCloudExadataStorageConnectorsResult struct {
 }
 
 func GetCloudExadataStorageConnectorsOutput(ctx *pulumi.Context, args GetCloudExadataStorageConnectorsOutputArgs, opts ...pulumi.InvokeOption) GetCloudExadataStorageConnectorsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCloudExadataStorageConnectorsResultOutput, error) {
-			args := v.(GetCloudExadataStorageConnectorsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getCloudExadataStorageConnectors:getCloudExadataStorageConnectors", args, GetCloudExadataStorageConnectorsResultOutput{}, options).(GetCloudExadataStorageConnectorsResultOutput), nil
-		}).(GetCloudExadataStorageConnectorsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getCloudExadataStorageConnectors:getCloudExadataStorageConnectors", args, GetCloudExadataStorageConnectorsResultOutput{}, options).(GetCloudExadataStorageConnectorsResultOutput)
 }
 
 // A collection of arguments for invoking getCloudExadataStorageConnectors.

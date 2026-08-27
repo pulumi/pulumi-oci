@@ -79,12 +79,8 @@ type GetAlertRulesResult struct {
 }
 
 func GetAlertRulesOutput(ctx *pulumi.Context, args GetAlertRulesOutputArgs, opts ...pulumi.InvokeOption) GetAlertRulesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAlertRulesResultOutput, error) {
-			args := v.(GetAlertRulesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Budget/getAlertRules:getAlertRules", args, GetAlertRulesResultOutput{}, options).(GetAlertRulesResultOutput), nil
-		}).(GetAlertRulesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Budget/getAlertRules:getAlertRules", args, GetAlertRulesResultOutput{}, options).(GetAlertRulesResultOutput)
 }
 
 // A collection of arguments for invoking getAlertRules.

@@ -132,12 +132,8 @@ type LookupDataGuardAssociationResult struct {
 }
 
 func LookupDataGuardAssociationOutput(ctx *pulumi.Context, args LookupDataGuardAssociationOutputArgs, opts ...pulumi.InvokeOption) LookupDataGuardAssociationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDataGuardAssociationResultOutput, error) {
-			args := v.(LookupDataGuardAssociationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getDataGuardAssociation:getDataGuardAssociation", args, LookupDataGuardAssociationResultOutput{}, options).(LookupDataGuardAssociationResultOutput), nil
-		}).(LookupDataGuardAssociationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getDataGuardAssociation:getDataGuardAssociation", args, LookupDataGuardAssociationResultOutput{}, options).(LookupDataGuardAssociationResultOutput)
 }
 
 // A collection of arguments for invoking getDataGuardAssociation.

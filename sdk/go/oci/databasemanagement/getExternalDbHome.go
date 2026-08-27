@@ -90,12 +90,8 @@ type LookupExternalDbHomeResult struct {
 }
 
 func LookupExternalDbHomeOutput(ctx *pulumi.Context, args LookupExternalDbHomeOutputArgs, opts ...pulumi.InvokeOption) LookupExternalDbHomeResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupExternalDbHomeResultOutput, error) {
-			args := v.(LookupExternalDbHomeArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalDbHome:getExternalDbHome", args, LookupExternalDbHomeResultOutput{}, options).(LookupExternalDbHomeResultOutput), nil
-		}).(LookupExternalDbHomeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getExternalDbHome:getExternalDbHome", args, LookupExternalDbHomeResultOutput{}, options).(LookupExternalDbHomeResultOutput)
 }
 
 // A collection of arguments for invoking getExternalDbHome.

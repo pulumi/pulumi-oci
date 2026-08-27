@@ -77,12 +77,8 @@ type GetOpensearchVersionsResult struct {
 }
 
 func GetOpensearchVersionsOutput(ctx *pulumi.Context, args GetOpensearchVersionsOutputArgs, opts ...pulumi.InvokeOption) GetOpensearchVersionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetOpensearchVersionsResultOutput, error) {
-			args := v.(GetOpensearchVersionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Opensearch/getOpensearchVersions:getOpensearchVersions", args, GetOpensearchVersionsResultOutput{}, options).(GetOpensearchVersionsResultOutput), nil
-		}).(GetOpensearchVersionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Opensearch/getOpensearchVersions:getOpensearchVersions", args, GetOpensearchVersionsResultOutput{}, options).(GetOpensearchVersionsResultOutput)
 }
 
 // A collection of arguments for invoking getOpensearchVersions.

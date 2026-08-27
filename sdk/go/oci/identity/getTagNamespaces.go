@@ -78,12 +78,8 @@ type GetTagNamespacesResult struct {
 }
 
 func GetTagNamespacesOutput(ctx *pulumi.Context, args GetTagNamespacesOutputArgs, opts ...pulumi.InvokeOption) GetTagNamespacesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetTagNamespacesResultOutput, error) {
-			args := v.(GetTagNamespacesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getTagNamespaces:getTagNamespaces", args, GetTagNamespacesResultOutput{}, options).(GetTagNamespacesResultOutput), nil
-		}).(GetTagNamespacesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getTagNamespaces:getTagNamespaces", args, GetTagNamespacesResultOutput{}, options).(GetTagNamespacesResultOutput)
 }
 
 // A collection of arguments for invoking getTagNamespaces.

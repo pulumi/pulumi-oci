@@ -80,12 +80,8 @@ type LookupDrgRouteDistributionResult struct {
 }
 
 func LookupDrgRouteDistributionOutput(ctx *pulumi.Context, args LookupDrgRouteDistributionOutputArgs, opts ...pulumi.InvokeOption) LookupDrgRouteDistributionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDrgRouteDistributionResultOutput, error) {
-			args := v.(LookupDrgRouteDistributionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getDrgRouteDistribution:getDrgRouteDistribution", args, LookupDrgRouteDistributionResultOutput{}, options).(LookupDrgRouteDistributionResultOutput), nil
-		}).(LookupDrgRouteDistributionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getDrgRouteDistribution:getDrgRouteDistribution", args, LookupDrgRouteDistributionResultOutput{}, options).(LookupDrgRouteDistributionResultOutput)
 }
 
 // A collection of arguments for invoking getDrgRouteDistribution.

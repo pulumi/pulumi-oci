@@ -86,12 +86,8 @@ type LookupSenderResult struct {
 }
 
 func LookupSenderOutput(ctx *pulumi.Context, args LookupSenderOutputArgs, opts ...pulumi.InvokeOption) LookupSenderResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupSenderResultOutput, error) {
-			args := v.(LookupSenderArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Email/getSender:getSender", args, LookupSenderResultOutput{}, options).(LookupSenderResultOutput), nil
-		}).(LookupSenderResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Email/getSender:getSender", args, LookupSenderResultOutput{}, options).(LookupSenderResultOutput)
 }
 
 // A collection of arguments for invoking getSender.

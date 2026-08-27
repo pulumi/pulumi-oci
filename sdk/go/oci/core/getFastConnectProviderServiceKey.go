@@ -75,12 +75,8 @@ type GetFastConnectProviderServiceKeyResult struct {
 }
 
 func GetFastConnectProviderServiceKeyOutput(ctx *pulumi.Context, args GetFastConnectProviderServiceKeyOutputArgs, opts ...pulumi.InvokeOption) GetFastConnectProviderServiceKeyResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFastConnectProviderServiceKeyResultOutput, error) {
-			args := v.(GetFastConnectProviderServiceKeyArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getFastConnectProviderServiceKey:getFastConnectProviderServiceKey", args, GetFastConnectProviderServiceKeyResultOutput{}, options).(GetFastConnectProviderServiceKeyResultOutput), nil
-		}).(GetFastConnectProviderServiceKeyResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getFastConnectProviderServiceKey:getFastConnectProviderServiceKey", args, GetFastConnectProviderServiceKeyResultOutput{}, options).(GetFastConnectProviderServiceKeyResultOutput)
 }
 
 // A collection of arguments for invoking getFastConnectProviderServiceKey.

@@ -122,12 +122,8 @@ type GetDeploymentUpgradeResult struct {
 }
 
 func GetDeploymentUpgradeOutput(ctx *pulumi.Context, args GetDeploymentUpgradeOutputArgs, opts ...pulumi.InvokeOption) GetDeploymentUpgradeResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDeploymentUpgradeResultOutput, error) {
-			args := v.(GetDeploymentUpgradeArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GoldenGate/getDeploymentUpgrade:getDeploymentUpgrade", args, GetDeploymentUpgradeResultOutput{}, options).(GetDeploymentUpgradeResultOutput), nil
-		}).(GetDeploymentUpgradeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GoldenGate/getDeploymentUpgrade:getDeploymentUpgrade", args, GetDeploymentUpgradeResultOutput{}, options).(GetDeploymentUpgradeResultOutput)
 }
 
 // A collection of arguments for invoking getDeploymentUpgrade.

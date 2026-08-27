@@ -81,12 +81,8 @@ type GetManagedInstanceAvailablePackagesResult struct {
 }
 
 func GetManagedInstanceAvailablePackagesOutput(ctx *pulumi.Context, args GetManagedInstanceAvailablePackagesOutputArgs, opts ...pulumi.InvokeOption) GetManagedInstanceAvailablePackagesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedInstanceAvailablePackagesResultOutput, error) {
-			args := v.(GetManagedInstanceAvailablePackagesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getManagedInstanceAvailablePackages:getManagedInstanceAvailablePackages", args, GetManagedInstanceAvailablePackagesResultOutput{}, options).(GetManagedInstanceAvailablePackagesResultOutput), nil
-		}).(GetManagedInstanceAvailablePackagesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getManagedInstanceAvailablePackages:getManagedInstanceAvailablePackages", args, GetManagedInstanceAvailablePackagesResultOutput{}, options).(GetManagedInstanceAvailablePackagesResultOutput)
 }
 
 // A collection of arguments for invoking getManagedInstanceAvailablePackages.

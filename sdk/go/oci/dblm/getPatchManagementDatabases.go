@@ -105,12 +105,8 @@ type GetPatchManagementDatabasesResult struct {
 }
 
 func GetPatchManagementDatabasesOutput(ctx *pulumi.Context, args GetPatchManagementDatabasesOutputArgs, opts ...pulumi.InvokeOption) GetPatchManagementDatabasesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPatchManagementDatabasesResultOutput, error) {
-			args := v.(GetPatchManagementDatabasesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Dblm/getPatchManagementDatabases:getPatchManagementDatabases", args, GetPatchManagementDatabasesResultOutput{}, options).(GetPatchManagementDatabasesResultOutput), nil
-		}).(GetPatchManagementDatabasesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Dblm/getPatchManagementDatabases:getPatchManagementDatabases", args, GetPatchManagementDatabasesResultOutput{}, options).(GetPatchManagementDatabasesResultOutput)
 }
 
 // A collection of arguments for invoking getPatchManagementDatabases.

@@ -73,12 +73,8 @@ type LookupRuntimeDatabaseToolsConnectionCredentialExecuteGranteeResult struct {
 }
 
 func LookupRuntimeDatabaseToolsConnectionCredentialExecuteGranteeOutput(ctx *pulumi.Context, args LookupRuntimeDatabaseToolsConnectionCredentialExecuteGranteeOutputArgs, opts ...pulumi.InvokeOption) LookupRuntimeDatabaseToolsConnectionCredentialExecuteGranteeResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupRuntimeDatabaseToolsConnectionCredentialExecuteGranteeResultOutput, error) {
-			args := v.(LookupRuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee:getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee", args, LookupRuntimeDatabaseToolsConnectionCredentialExecuteGranteeResultOutput{}, options).(LookupRuntimeDatabaseToolsConnectionCredentialExecuteGranteeResultOutput), nil
-		}).(LookupRuntimeDatabaseToolsConnectionCredentialExecuteGranteeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee:getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee", args, LookupRuntimeDatabaseToolsConnectionCredentialExecuteGranteeResultOutput{}, options).(LookupRuntimeDatabaseToolsConnectionCredentialExecuteGranteeResultOutput)
 }
 
 // A collection of arguments for invoking getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee.

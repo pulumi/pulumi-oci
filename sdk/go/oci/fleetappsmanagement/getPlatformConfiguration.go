@@ -90,12 +90,8 @@ type LookupPlatformConfigurationResult struct {
 }
 
 func LookupPlatformConfigurationOutput(ctx *pulumi.Context, args LookupPlatformConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupPlatformConfigurationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupPlatformConfigurationResultOutput, error) {
-			args := v.(LookupPlatformConfigurationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getPlatformConfiguration:getPlatformConfiguration", args, LookupPlatformConfigurationResultOutput{}, options).(LookupPlatformConfigurationResultOutput), nil
-		}).(LookupPlatformConfigurationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getPlatformConfiguration:getPlatformConfiguration", args, LookupPlatformConfigurationResultOutput{}, options).(LookupPlatformConfigurationResultOutput)
 }
 
 // A collection of arguments for invoking getPlatformConfiguration.

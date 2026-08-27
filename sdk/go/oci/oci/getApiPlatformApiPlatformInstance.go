@@ -88,12 +88,8 @@ type LookupApiPlatformApiPlatformInstanceResult struct {
 }
 
 func LookupApiPlatformApiPlatformInstanceOutput(ctx *pulumi.Context, args LookupApiPlatformApiPlatformInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupApiPlatformApiPlatformInstanceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupApiPlatformApiPlatformInstanceResultOutput, error) {
-			args := v.(LookupApiPlatformApiPlatformInstanceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getApiPlatformApiPlatformInstance:getApiPlatformApiPlatformInstance", args, LookupApiPlatformApiPlatformInstanceResultOutput{}, options).(LookupApiPlatformApiPlatformInstanceResultOutput), nil
-		}).(LookupApiPlatformApiPlatformInstanceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getApiPlatformApiPlatformInstance:getApiPlatformApiPlatformInstance", args, LookupApiPlatformApiPlatformInstanceResultOutput{}, options).(LookupApiPlatformApiPlatformInstanceResultOutput)
 }
 
 // A collection of arguments for invoking getApiPlatformApiPlatformInstance.

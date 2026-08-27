@@ -88,12 +88,8 @@ type LookupDedicatedVantagePointResult struct {
 }
 
 func LookupDedicatedVantagePointOutput(ctx *pulumi.Context, args LookupDedicatedVantagePointOutputArgs, opts ...pulumi.InvokeOption) LookupDedicatedVantagePointResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDedicatedVantagePointResultOutput, error) {
-			args := v.(LookupDedicatedVantagePointArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ApmSynthetics/getDedicatedVantagePoint:getDedicatedVantagePoint", args, LookupDedicatedVantagePointResultOutput{}, options).(LookupDedicatedVantagePointResultOutput), nil
-		}).(LookupDedicatedVantagePointResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ApmSynthetics/getDedicatedVantagePoint:getDedicatedVantagePoint", args, LookupDedicatedVantagePointResultOutput{}, options).(LookupDedicatedVantagePointResultOutput)
 }
 
 // A collection of arguments for invoking getDedicatedVantagePoint.

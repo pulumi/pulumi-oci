@@ -69,12 +69,8 @@ type GetCnvDnsResolverAssociationResult struct {
 }
 
 func GetCnvDnsResolverAssociationOutput(ctx *pulumi.Context, args GetCnvDnsResolverAssociationOutputArgs, opts ...pulumi.InvokeOption) GetCnvDnsResolverAssociationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCnvDnsResolverAssociationResultOutput, error) {
-			args := v.(GetCnvDnsResolverAssociationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getCnvDnsResolverAssociation:getCnvDnsResolverAssociation", args, GetCnvDnsResolverAssociationResultOutput{}, options).(GetCnvDnsResolverAssociationResultOutput), nil
-		}).(GetCnvDnsResolverAssociationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getCnvDnsResolverAssociation:getCnvDnsResolverAssociation", args, GetCnvDnsResolverAssociationResultOutput{}, options).(GetCnvDnsResolverAssociationResultOutput)
 }
 
 // A collection of arguments for invoking getCnvDnsResolverAssociation.

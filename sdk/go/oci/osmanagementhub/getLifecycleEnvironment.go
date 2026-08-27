@@ -95,12 +95,8 @@ type LookupLifecycleEnvironmentResult struct {
 }
 
 func LookupLifecycleEnvironmentOutput(ctx *pulumi.Context, args LookupLifecycleEnvironmentOutputArgs, opts ...pulumi.InvokeOption) LookupLifecycleEnvironmentResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupLifecycleEnvironmentResultOutput, error) {
-			args := v.(LookupLifecycleEnvironmentArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getLifecycleEnvironment:getLifecycleEnvironment", args, LookupLifecycleEnvironmentResultOutput{}, options).(LookupLifecycleEnvironmentResultOutput), nil
-		}).(LookupLifecycleEnvironmentResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getLifecycleEnvironment:getLifecycleEnvironment", args, LookupLifecycleEnvironmentResultOutput{}, options).(LookupLifecycleEnvironmentResultOutput)
 }
 
 // A collection of arguments for invoking getLifecycleEnvironment.

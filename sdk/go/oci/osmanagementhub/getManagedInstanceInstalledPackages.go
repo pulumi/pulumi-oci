@@ -89,12 +89,8 @@ type GetManagedInstanceInstalledPackagesResult struct {
 }
 
 func GetManagedInstanceInstalledPackagesOutput(ctx *pulumi.Context, args GetManagedInstanceInstalledPackagesOutputArgs, opts ...pulumi.InvokeOption) GetManagedInstanceInstalledPackagesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedInstanceInstalledPackagesResultOutput, error) {
-			args := v.(GetManagedInstanceInstalledPackagesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getManagedInstanceInstalledPackages:getManagedInstanceInstalledPackages", args, GetManagedInstanceInstalledPackagesResultOutput{}, options).(GetManagedInstanceInstalledPackagesResultOutput), nil
-		}).(GetManagedInstanceInstalledPackagesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getManagedInstanceInstalledPackages:getManagedInstanceInstalledPackages", args, GetManagedInstanceInstalledPackagesResultOutput{}, options).(GetManagedInstanceInstalledPackagesResultOutput)
 }
 
 // A collection of arguments for invoking getManagedInstanceInstalledPackages.

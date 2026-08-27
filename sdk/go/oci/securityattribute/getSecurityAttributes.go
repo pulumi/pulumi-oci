@@ -74,12 +74,8 @@ type GetSecurityAttributesResult struct {
 }
 
 func GetSecurityAttributesOutput(ctx *pulumi.Context, args GetSecurityAttributesOutputArgs, opts ...pulumi.InvokeOption) GetSecurityAttributesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSecurityAttributesResultOutput, error) {
-			args := v.(GetSecurityAttributesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:SecurityAttribute/getSecurityAttributes:getSecurityAttributes", args, GetSecurityAttributesResultOutput{}, options).(GetSecurityAttributesResultOutput), nil
-		}).(GetSecurityAttributesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:SecurityAttribute/getSecurityAttributes:getSecurityAttributes", args, GetSecurityAttributesResultOutput{}, options).(GetSecurityAttributesResultOutput)
 }
 
 // A collection of arguments for invoking getSecurityAttributes.

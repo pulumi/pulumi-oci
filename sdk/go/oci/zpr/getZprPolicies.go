@@ -79,12 +79,8 @@ type GetZprPoliciesResult struct {
 }
 
 func GetZprPoliciesOutput(ctx *pulumi.Context, args GetZprPoliciesOutputArgs, opts ...pulumi.InvokeOption) GetZprPoliciesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetZprPoliciesResultOutput, error) {
-			args := v.(GetZprPoliciesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Zpr/getZprPolicies:getZprPolicies", args, GetZprPoliciesResultOutput{}, options).(GetZprPoliciesResultOutput), nil
-		}).(GetZprPoliciesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Zpr/getZprPolicies:getZprPolicies", args, GetZprPoliciesResultOutput{}, options).(GetZprPoliciesResultOutput)
 }
 
 // A collection of arguments for invoking getZprPolicies.

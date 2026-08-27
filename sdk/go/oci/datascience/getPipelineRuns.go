@@ -92,12 +92,8 @@ type GetPipelineRunsResult struct {
 }
 
 func GetPipelineRunsOutput(ctx *pulumi.Context, args GetPipelineRunsOutputArgs, opts ...pulumi.InvokeOption) GetPipelineRunsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPipelineRunsResultOutput, error) {
-			args := v.(GetPipelineRunsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataScience/getPipelineRuns:getPipelineRuns", args, GetPipelineRunsResultOutput{}, options).(GetPipelineRunsResultOutput), nil
-		}).(GetPipelineRunsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataScience/getPipelineRuns:getPipelineRuns", args, GetPipelineRunsResultOutput{}, options).(GetPipelineRunsResultOutput)
 }
 
 // A collection of arguments for invoking getPipelineRuns.

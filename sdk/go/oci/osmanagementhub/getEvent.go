@@ -106,12 +106,8 @@ type LookupEventResult struct {
 }
 
 func LookupEventOutput(ctx *pulumi.Context, args LookupEventOutputArgs, opts ...pulumi.InvokeOption) LookupEventResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupEventResultOutput, error) {
-			args := v.(LookupEventArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getEvent:getEvent", args, LookupEventResultOutput{}, options).(LookupEventResultOutput), nil
-		}).(LookupEventResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getEvent:getEvent", args, LookupEventResultOutput{}, options).(LookupEventResultOutput)
 }
 
 // A collection of arguments for invoking getEvent.

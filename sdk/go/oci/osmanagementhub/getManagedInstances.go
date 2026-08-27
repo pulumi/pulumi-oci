@@ -132,12 +132,8 @@ type GetManagedInstancesResult struct {
 }
 
 func GetManagedInstancesOutput(ctx *pulumi.Context, args GetManagedInstancesOutputArgs, opts ...pulumi.InvokeOption) GetManagedInstancesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedInstancesResultOutput, error) {
-			args := v.(GetManagedInstancesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getManagedInstances:getManagedInstances", args, GetManagedInstancesResultOutput{}, options).(GetManagedInstancesResultOutput), nil
-		}).(GetManagedInstancesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getManagedInstances:getManagedInstances", args, GetManagedInstancesResultOutput{}, options).(GetManagedInstancesResultOutput)
 }
 
 // A collection of arguments for invoking getManagedInstances.

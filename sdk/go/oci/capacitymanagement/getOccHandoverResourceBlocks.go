@@ -91,12 +91,8 @@ type GetOccHandoverResourceBlocksResult struct {
 }
 
 func GetOccHandoverResourceBlocksOutput(ctx *pulumi.Context, args GetOccHandoverResourceBlocksOutputArgs, opts ...pulumi.InvokeOption) GetOccHandoverResourceBlocksResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetOccHandoverResourceBlocksResultOutput, error) {
-			args := v.(GetOccHandoverResourceBlocksArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CapacityManagement/getOccHandoverResourceBlocks:getOccHandoverResourceBlocks", args, GetOccHandoverResourceBlocksResultOutput{}, options).(GetOccHandoverResourceBlocksResultOutput), nil
-		}).(GetOccHandoverResourceBlocksResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CapacityManagement/getOccHandoverResourceBlocks:getOccHandoverResourceBlocks", args, GetOccHandoverResourceBlocksResultOutput{}, options).(GetOccHandoverResourceBlocksResultOutput)
 }
 
 // A collection of arguments for invoking getOccHandoverResourceBlocks.

@@ -110,12 +110,8 @@ type LookupProtectedDatabaseResult struct {
 }
 
 func LookupProtectedDatabaseOutput(ctx *pulumi.Context, args LookupProtectedDatabaseOutputArgs, opts ...pulumi.InvokeOption) LookupProtectedDatabaseResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupProtectedDatabaseResultOutput, error) {
-			args := v.(LookupProtectedDatabaseArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:RecoveryMod/getProtectedDatabase:getProtectedDatabase", args, LookupProtectedDatabaseResultOutput{}, options).(LookupProtectedDatabaseResultOutput), nil
-		}).(LookupProtectedDatabaseResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:RecoveryMod/getProtectedDatabase:getProtectedDatabase", args, LookupProtectedDatabaseResultOutput{}, options).(LookupProtectedDatabaseResultOutput)
 }
 
 // A collection of arguments for invoking getProtectedDatabase.

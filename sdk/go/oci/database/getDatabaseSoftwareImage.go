@@ -99,12 +99,8 @@ type LookupDatabaseSoftwareImageResult struct {
 }
 
 func LookupDatabaseSoftwareImageOutput(ctx *pulumi.Context, args LookupDatabaseSoftwareImageOutputArgs, opts ...pulumi.InvokeOption) LookupDatabaseSoftwareImageResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDatabaseSoftwareImageResultOutput, error) {
-			args := v.(LookupDatabaseSoftwareImageArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getDatabaseSoftwareImage:getDatabaseSoftwareImage", args, LookupDatabaseSoftwareImageResultOutput{}, options).(LookupDatabaseSoftwareImageResultOutput), nil
-		}).(LookupDatabaseSoftwareImageResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getDatabaseSoftwareImage:getDatabaseSoftwareImage", args, LookupDatabaseSoftwareImageResultOutput{}, options).(LookupDatabaseSoftwareImageResultOutput)
 }
 
 // A collection of arguments for invoking getDatabaseSoftwareImage.

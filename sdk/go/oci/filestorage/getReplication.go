@@ -101,12 +101,8 @@ type LookupReplicationResult struct {
 }
 
 func LookupReplicationOutput(ctx *pulumi.Context, args LookupReplicationOutputArgs, opts ...pulumi.InvokeOption) LookupReplicationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupReplicationResultOutput, error) {
-			args := v.(LookupReplicationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FileStorage/getReplication:getReplication", args, LookupReplicationResultOutput{}, options).(LookupReplicationResultOutput), nil
-		}).(LookupReplicationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FileStorage/getReplication:getReplication", args, LookupReplicationResultOutput{}, options).(LookupReplicationResultOutput)
 }
 
 // A collection of arguments for invoking getReplication.

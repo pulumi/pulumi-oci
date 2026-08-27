@@ -69,12 +69,8 @@ type GetInstanceCredentialsResult struct {
 }
 
 func GetInstanceCredentialsOutput(ctx *pulumi.Context, args GetInstanceCredentialsOutputArgs, opts ...pulumi.InvokeOption) GetInstanceCredentialsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetInstanceCredentialsResultOutput, error) {
-			args := v.(GetInstanceCredentialsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getInstanceCredentials:getInstanceCredentials", args, GetInstanceCredentialsResultOutput{}, options).(GetInstanceCredentialsResultOutput), nil
-		}).(GetInstanceCredentialsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getInstanceCredentials:getInstanceCredentials", args, GetInstanceCredentialsResultOutput{}, options).(GetInstanceCredentialsResultOutput)
 }
 
 // A collection of arguments for invoking getInstanceCredentials.

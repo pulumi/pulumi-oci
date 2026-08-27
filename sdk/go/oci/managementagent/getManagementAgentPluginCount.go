@@ -71,12 +71,8 @@ type GetManagementAgentPluginCountResult struct {
 }
 
 func GetManagementAgentPluginCountOutput(ctx *pulumi.Context, args GetManagementAgentPluginCountOutputArgs, opts ...pulumi.InvokeOption) GetManagementAgentPluginCountResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagementAgentPluginCountResultOutput, error) {
-			args := v.(GetManagementAgentPluginCountArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ManagementAgent/getManagementAgentPluginCount:getManagementAgentPluginCount", args, GetManagementAgentPluginCountResultOutput{}, options).(GetManagementAgentPluginCountResultOutput), nil
-		}).(GetManagementAgentPluginCountResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ManagementAgent/getManagementAgentPluginCount:getManagementAgentPluginCount", args, GetManagementAgentPluginCountResultOutput{}, options).(GetManagementAgentPluginCountResultOutput)
 }
 
 // A collection of arguments for invoking getManagementAgentPluginCount.

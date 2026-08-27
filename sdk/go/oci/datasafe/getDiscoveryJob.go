@@ -114,12 +114,8 @@ type GetDiscoveryJobResult struct {
 }
 
 func GetDiscoveryJobOutput(ctx *pulumi.Context, args GetDiscoveryJobOutputArgs, opts ...pulumi.InvokeOption) GetDiscoveryJobResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDiscoveryJobResultOutput, error) {
-			args := v.(GetDiscoveryJobArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getDiscoveryJob:getDiscoveryJob", args, GetDiscoveryJobResultOutput{}, options).(GetDiscoveryJobResultOutput), nil
-		}).(GetDiscoveryJobResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getDiscoveryJob:getDiscoveryJob", args, GetDiscoveryJobResultOutput{}, options).(GetDiscoveryJobResultOutput)
 }
 
 // A collection of arguments for invoking getDiscoveryJob.

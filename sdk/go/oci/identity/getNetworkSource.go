@@ -86,12 +86,8 @@ type LookupNetworkSourceResult struct {
 }
 
 func LookupNetworkSourceOutput(ctx *pulumi.Context, args LookupNetworkSourceOutputArgs, opts ...pulumi.InvokeOption) LookupNetworkSourceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupNetworkSourceResultOutput, error) {
-			args := v.(LookupNetworkSourceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getNetworkSource:getNetworkSource", args, LookupNetworkSourceResultOutput{}, options).(LookupNetworkSourceResultOutput), nil
-		}).(LookupNetworkSourceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getNetworkSource:getNetworkSource", args, LookupNetworkSourceResultOutput{}, options).(LookupNetworkSourceResultOutput)
 }
 
 // A collection of arguments for invoking getNetworkSource.

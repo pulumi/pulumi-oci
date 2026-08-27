@@ -74,12 +74,8 @@ type GetSubscriptionRewardsResult struct {
 }
 
 func GetSubscriptionRewardsOutput(ctx *pulumi.Context, args GetSubscriptionRewardsOutputArgs, opts ...pulumi.InvokeOption) GetSubscriptionRewardsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSubscriptionRewardsResultOutput, error) {
-			args := v.(GetSubscriptionRewardsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:UsageProxy/getSubscriptionRewards:getSubscriptionRewards", args, GetSubscriptionRewardsResultOutput{}, options).(GetSubscriptionRewardsResultOutput), nil
-		}).(GetSubscriptionRewardsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:UsageProxy/getSubscriptionRewards:getSubscriptionRewards", args, GetSubscriptionRewardsResultOutput{}, options).(GetSubscriptionRewardsResultOutput)
 }
 
 // A collection of arguments for invoking getSubscriptionRewards.

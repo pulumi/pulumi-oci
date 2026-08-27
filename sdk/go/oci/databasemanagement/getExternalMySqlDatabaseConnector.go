@@ -106,12 +106,8 @@ type LookupExternalMySqlDatabaseConnectorResult struct {
 }
 
 func LookupExternalMySqlDatabaseConnectorOutput(ctx *pulumi.Context, args LookupExternalMySqlDatabaseConnectorOutputArgs, opts ...pulumi.InvokeOption) LookupExternalMySqlDatabaseConnectorResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupExternalMySqlDatabaseConnectorResultOutput, error) {
-			args := v.(LookupExternalMySqlDatabaseConnectorArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalMySqlDatabaseConnector:getExternalMySqlDatabaseConnector", args, LookupExternalMySqlDatabaseConnectorResultOutput{}, options).(LookupExternalMySqlDatabaseConnectorResultOutput), nil
-		}).(LookupExternalMySqlDatabaseConnectorResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getExternalMySqlDatabaseConnector:getExternalMySqlDatabaseConnector", args, LookupExternalMySqlDatabaseConnectorResultOutput{}, options).(LookupExternalMySqlDatabaseConnectorResultOutput)
 }
 
 // A collection of arguments for invoking getExternalMySqlDatabaseConnector.

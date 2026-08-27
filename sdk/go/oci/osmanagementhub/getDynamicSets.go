@@ -82,12 +82,8 @@ type GetDynamicSetsResult struct {
 }
 
 func GetDynamicSetsOutput(ctx *pulumi.Context, args GetDynamicSetsOutputArgs, opts ...pulumi.InvokeOption) GetDynamicSetsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDynamicSetsResultOutput, error) {
-			args := v.(GetDynamicSetsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getDynamicSets:getDynamicSets", args, GetDynamicSetsResultOutput{}, options).(GetDynamicSetsResultOutput), nil
-		}).(GetDynamicSetsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getDynamicSets:getDynamicSets", args, GetDynamicSetsResultOutput{}, options).(GetDynamicSetsResultOutput)
 }
 
 // A collection of arguments for invoking getDynamicSets.

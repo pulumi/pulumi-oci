@@ -64,12 +64,8 @@ type GetOccAvailabilityCatalogContentResult struct {
 }
 
 func GetOccAvailabilityCatalogContentOutput(ctx *pulumi.Context, args GetOccAvailabilityCatalogContentOutputArgs, opts ...pulumi.InvokeOption) GetOccAvailabilityCatalogContentResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetOccAvailabilityCatalogContentResultOutput, error) {
-			args := v.(GetOccAvailabilityCatalogContentArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CapacityManagement/getOccAvailabilityCatalogContent:getOccAvailabilityCatalogContent", args, GetOccAvailabilityCatalogContentResultOutput{}, options).(GetOccAvailabilityCatalogContentResultOutput), nil
-		}).(GetOccAvailabilityCatalogContentResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CapacityManagement/getOccAvailabilityCatalogContent:getOccAvailabilityCatalogContent", args, GetOccAvailabilityCatalogContentResultOutput{}, options).(GetOccAvailabilityCatalogContentResultOutput)
 }
 
 // A collection of arguments for invoking getOccAvailabilityCatalogContent.

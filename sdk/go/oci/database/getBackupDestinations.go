@@ -74,12 +74,8 @@ type GetBackupDestinationsResult struct {
 }
 
 func GetBackupDestinationsOutput(ctx *pulumi.Context, args GetBackupDestinationsOutputArgs, opts ...pulumi.InvokeOption) GetBackupDestinationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBackupDestinationsResultOutput, error) {
-			args := v.(GetBackupDestinationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getBackupDestinations:getBackupDestinations", args, GetBackupDestinationsResultOutput{}, options).(GetBackupDestinationsResultOutput), nil
-		}).(GetBackupDestinationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getBackupDestinations:getBackupDestinations", args, GetBackupDestinationsResultOutput{}, options).(GetBackupDestinationsResultOutput)
 }
 
 // A collection of arguments for invoking getBackupDestinations.

@@ -74,12 +74,8 @@ type GetIpInventorySubnetCidrResult struct {
 }
 
 func GetIpInventorySubnetCidrOutput(ctx *pulumi.Context, args GetIpInventorySubnetCidrOutputArgs, opts ...pulumi.InvokeOption) GetIpInventorySubnetCidrResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetIpInventorySubnetCidrResultOutput, error) {
-			args := v.(GetIpInventorySubnetCidrArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getIpInventorySubnetCidr:getIpInventorySubnetCidr", args, GetIpInventorySubnetCidrResultOutput{}, options).(GetIpInventorySubnetCidrResultOutput), nil
-		}).(GetIpInventorySubnetCidrResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getIpInventorySubnetCidr:getIpInventorySubnetCidr", args, GetIpInventorySubnetCidrResultOutput{}, options).(GetIpInventorySubnetCidrResultOutput)
 }
 
 // A collection of arguments for invoking getIpInventorySubnetCidr.

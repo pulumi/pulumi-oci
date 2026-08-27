@@ -100,12 +100,8 @@ type GetMysqlConfigurationsResult struct {
 }
 
 func GetMysqlConfigurationsOutput(ctx *pulumi.Context, args GetMysqlConfigurationsOutputArgs, opts ...pulumi.InvokeOption) GetMysqlConfigurationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMysqlConfigurationsResultOutput, error) {
-			args := v.(GetMysqlConfigurationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Mysql/getMysqlConfigurations:getMysqlConfigurations", args, GetMysqlConfigurationsResultOutput{}, options).(GetMysqlConfigurationsResultOutput), nil
-		}).(GetMysqlConfigurationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Mysql/getMysqlConfigurations:getMysqlConfigurations", args, GetMysqlConfigurationsResultOutput{}, options).(GetMysqlConfigurationsResultOutput)
 }
 
 // A collection of arguments for invoking getMysqlConfigurations.

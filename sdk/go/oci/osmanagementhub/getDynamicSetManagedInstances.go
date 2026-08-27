@@ -86,12 +86,8 @@ type GetDynamicSetManagedInstancesResult struct {
 }
 
 func GetDynamicSetManagedInstancesOutput(ctx *pulumi.Context, args GetDynamicSetManagedInstancesOutputArgs, opts ...pulumi.InvokeOption) GetDynamicSetManagedInstancesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDynamicSetManagedInstancesResultOutput, error) {
-			args := v.(GetDynamicSetManagedInstancesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getDynamicSetManagedInstances:getDynamicSetManagedInstances", args, GetDynamicSetManagedInstancesResultOutput{}, options).(GetDynamicSetManagedInstancesResultOutput), nil
-		}).(GetDynamicSetManagedInstancesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getDynamicSetManagedInstances:getDynamicSetManagedInstances", args, GetDynamicSetManagedInstancesResultOutput{}, options).(GetDynamicSetManagedInstancesResultOutput)
 }
 
 // A collection of arguments for invoking getDynamicSetManagedInstances.

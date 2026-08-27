@@ -75,12 +75,8 @@ type GetLocalPeeringGatewaysResult struct {
 }
 
 func GetLocalPeeringGatewaysOutput(ctx *pulumi.Context, args GetLocalPeeringGatewaysOutputArgs, opts ...pulumi.InvokeOption) GetLocalPeeringGatewaysResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetLocalPeeringGatewaysResultOutput, error) {
-			args := v.(GetLocalPeeringGatewaysArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getLocalPeeringGateways:getLocalPeeringGateways", args, GetLocalPeeringGatewaysResultOutput{}, options).(GetLocalPeeringGatewaysResultOutput), nil
-		}).(GetLocalPeeringGatewaysResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getLocalPeeringGateways:getLocalPeeringGateways", args, GetLocalPeeringGatewaysResultOutput{}, options).(GetLocalPeeringGatewaysResultOutput)
 }
 
 // A collection of arguments for invoking getLocalPeeringGateways.

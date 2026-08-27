@@ -79,12 +79,8 @@ type GetApplicationVipsResult struct {
 }
 
 func GetApplicationVipsOutput(ctx *pulumi.Context, args GetApplicationVipsOutputArgs, opts ...pulumi.InvokeOption) GetApplicationVipsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetApplicationVipsResultOutput, error) {
-			args := v.(GetApplicationVipsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getApplicationVips:getApplicationVips", args, GetApplicationVipsResultOutput{}, options).(GetApplicationVipsResultOutput), nil
-		}).(GetApplicationVipsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getApplicationVips:getApplicationVips", args, GetApplicationVipsResultOutput{}, options).(GetApplicationVipsResultOutput)
 }
 
 // A collection of arguments for invoking getApplicationVips.

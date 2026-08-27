@@ -79,12 +79,8 @@ type GetSchedulingPoliciesResult struct {
 }
 
 func GetSchedulingPoliciesOutput(ctx *pulumi.Context, args GetSchedulingPoliciesOutputArgs, opts ...pulumi.InvokeOption) GetSchedulingPoliciesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSchedulingPoliciesResultOutput, error) {
-			args := v.(GetSchedulingPoliciesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getSchedulingPolicies:getSchedulingPolicies", args, GetSchedulingPoliciesResultOutput{}, options).(GetSchedulingPoliciesResultOutput), nil
-		}).(GetSchedulingPoliciesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getSchedulingPolicies:getSchedulingPolicies", args, GetSchedulingPoliciesResultOutput{}, options).(GetSchedulingPoliciesResultOutput)
 }
 
 // A collection of arguments for invoking getSchedulingPolicies.

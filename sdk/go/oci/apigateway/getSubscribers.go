@@ -79,12 +79,8 @@ type GetSubscribersResult struct {
 }
 
 func GetSubscribersOutput(ctx *pulumi.Context, args GetSubscribersOutputArgs, opts ...pulumi.InvokeOption) GetSubscribersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSubscribersResultOutput, error) {
-			args := v.(GetSubscribersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ApiGateway/getSubscribers:getSubscribers", args, GetSubscribersResultOutput{}, options).(GetSubscribersResultOutput), nil
-		}).(GetSubscribersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ApiGateway/getSubscribers:getSubscribers", args, GetSubscribersResultOutput{}, options).(GetSubscribersResultOutput)
 }
 
 // A collection of arguments for invoking getSubscribers.

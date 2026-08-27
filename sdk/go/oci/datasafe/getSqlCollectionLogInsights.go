@@ -82,12 +82,8 @@ type GetSqlCollectionLogInsightsResult struct {
 }
 
 func GetSqlCollectionLogInsightsOutput(ctx *pulumi.Context, args GetSqlCollectionLogInsightsOutputArgs, opts ...pulumi.InvokeOption) GetSqlCollectionLogInsightsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSqlCollectionLogInsightsResultOutput, error) {
-			args := v.(GetSqlCollectionLogInsightsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getSqlCollectionLogInsights:getSqlCollectionLogInsights", args, GetSqlCollectionLogInsightsResultOutput{}, options).(GetSqlCollectionLogInsightsResultOutput), nil
-		}).(GetSqlCollectionLogInsightsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getSqlCollectionLogInsights:getSqlCollectionLogInsights", args, GetSqlCollectionLogInsightsResultOutput{}, options).(GetSqlCollectionLogInsightsResultOutput)
 }
 
 // A collection of arguments for invoking getSqlCollectionLogInsights.

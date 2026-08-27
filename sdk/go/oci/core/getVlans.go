@@ -84,12 +84,8 @@ type GetVlansResult struct {
 }
 
 func GetVlansOutput(ctx *pulumi.Context, args GetVlansOutputArgs, opts ...pulumi.InvokeOption) GetVlansResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVlansResultOutput, error) {
-			args := v.(GetVlansArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getVlans:getVlans", args, GetVlansResultOutput{}, options).(GetVlansResultOutput), nil
-		}).(GetVlansResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getVlans:getVlans", args, GetVlansResultOutput{}, options).(GetVlansResultOutput)
 }
 
 // A collection of arguments for invoking getVlans.

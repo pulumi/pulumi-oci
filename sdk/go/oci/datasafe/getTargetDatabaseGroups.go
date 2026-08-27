@@ -107,12 +107,8 @@ type GetTargetDatabaseGroupsResult struct {
 }
 
 func GetTargetDatabaseGroupsOutput(ctx *pulumi.Context, args GetTargetDatabaseGroupsOutputArgs, opts ...pulumi.InvokeOption) GetTargetDatabaseGroupsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetTargetDatabaseGroupsResultOutput, error) {
-			args := v.(GetTargetDatabaseGroupsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getTargetDatabaseGroups:getTargetDatabaseGroups", args, GetTargetDatabaseGroupsResultOutput{}, options).(GetTargetDatabaseGroupsResultOutput), nil
-		}).(GetTargetDatabaseGroupsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getTargetDatabaseGroups:getTargetDatabaseGroups", args, GetTargetDatabaseGroupsResultOutput{}, options).(GetTargetDatabaseGroupsResultOutput)
 }
 
 // A collection of arguments for invoking getTargetDatabaseGroups.

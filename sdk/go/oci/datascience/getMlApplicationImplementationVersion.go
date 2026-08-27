@@ -96,12 +96,8 @@ type GetMlApplicationImplementationVersionResult struct {
 }
 
 func GetMlApplicationImplementationVersionOutput(ctx *pulumi.Context, args GetMlApplicationImplementationVersionOutputArgs, opts ...pulumi.InvokeOption) GetMlApplicationImplementationVersionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMlApplicationImplementationVersionResultOutput, error) {
-			args := v.(GetMlApplicationImplementationVersionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataScience/getMlApplicationImplementationVersion:getMlApplicationImplementationVersion", args, GetMlApplicationImplementationVersionResultOutput{}, options).(GetMlApplicationImplementationVersionResultOutput), nil
-		}).(GetMlApplicationImplementationVersionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataScience/getMlApplicationImplementationVersion:getMlApplicationImplementationVersion", args, GetMlApplicationImplementationVersionResultOutput{}, options).(GetMlApplicationImplementationVersionResultOutput)
 }
 
 // A collection of arguments for invoking getMlApplicationImplementationVersion.

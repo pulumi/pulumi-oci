@@ -72,12 +72,8 @@ type GetRepositoryProtectedBranchesResult struct {
 }
 
 func GetRepositoryProtectedBranchesOutput(ctx *pulumi.Context, args GetRepositoryProtectedBranchesOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryProtectedBranchesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRepositoryProtectedBranchesResultOutput, error) {
-			args := v.(GetRepositoryProtectedBranchesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DevOps/getRepositoryProtectedBranches:getRepositoryProtectedBranches", args, GetRepositoryProtectedBranchesResultOutput{}, options).(GetRepositoryProtectedBranchesResultOutput), nil
-		}).(GetRepositoryProtectedBranchesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DevOps/getRepositoryProtectedBranches:getRepositoryProtectedBranches", args, GetRepositoryProtectedBranchesResultOutput{}, options).(GetRepositoryProtectedBranchesResultOutput)
 }
 
 // A collection of arguments for invoking getRepositoryProtectedBranches.

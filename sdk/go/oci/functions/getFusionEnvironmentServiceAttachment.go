@@ -90,12 +90,8 @@ type GetFusionEnvironmentServiceAttachmentResult struct {
 }
 
 func GetFusionEnvironmentServiceAttachmentOutput(ctx *pulumi.Context, args GetFusionEnvironmentServiceAttachmentOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentServiceAttachmentResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFusionEnvironmentServiceAttachmentResultOutput, error) {
-			args := v.(GetFusionEnvironmentServiceAttachmentArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Functions/getFusionEnvironmentServiceAttachment:getFusionEnvironmentServiceAttachment", args, GetFusionEnvironmentServiceAttachmentResultOutput{}, options).(GetFusionEnvironmentServiceAttachmentResultOutput), nil
-		}).(GetFusionEnvironmentServiceAttachmentResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Functions/getFusionEnvironmentServiceAttachment:getFusionEnvironmentServiceAttachment", args, GetFusionEnvironmentServiceAttachmentResultOutput{}, options).(GetFusionEnvironmentServiceAttachmentResultOutput)
 }
 
 // A collection of arguments for invoking getFusionEnvironmentServiceAttachment.

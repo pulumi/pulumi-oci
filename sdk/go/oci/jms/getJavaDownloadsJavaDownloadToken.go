@@ -100,12 +100,8 @@ type LookupJavaDownloadsJavaDownloadTokenResult struct {
 }
 
 func LookupJavaDownloadsJavaDownloadTokenOutput(ctx *pulumi.Context, args LookupJavaDownloadsJavaDownloadTokenOutputArgs, opts ...pulumi.InvokeOption) LookupJavaDownloadsJavaDownloadTokenResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupJavaDownloadsJavaDownloadTokenResultOutput, error) {
-			args := v.(LookupJavaDownloadsJavaDownloadTokenArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getJavaDownloadsJavaDownloadToken:getJavaDownloadsJavaDownloadToken", args, LookupJavaDownloadsJavaDownloadTokenResultOutput{}, options).(LookupJavaDownloadsJavaDownloadTokenResultOutput), nil
-		}).(LookupJavaDownloadsJavaDownloadTokenResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getJavaDownloadsJavaDownloadToken:getJavaDownloadsJavaDownloadToken", args, LookupJavaDownloadsJavaDownloadTokenResultOutput{}, options).(LookupJavaDownloadsJavaDownloadTokenResultOutput)
 }
 
 // A collection of arguments for invoking getJavaDownloadsJavaDownloadToken.

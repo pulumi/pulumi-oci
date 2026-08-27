@@ -84,12 +84,8 @@ type GetLimitDefinitionsResult struct {
 }
 
 func GetLimitDefinitionsOutput(ctx *pulumi.Context, args GetLimitDefinitionsOutputArgs, opts ...pulumi.InvokeOption) GetLimitDefinitionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetLimitDefinitionsResultOutput, error) {
-			args := v.(GetLimitDefinitionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Limits/getLimitDefinitions:getLimitDefinitions", args, GetLimitDefinitionsResultOutput{}, options).(GetLimitDefinitionsResultOutput), nil
-		}).(GetLimitDefinitionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Limits/getLimitDefinitions:getLimitDefinitions", args, GetLimitDefinitionsResultOutput{}, options).(GetLimitDefinitionsResultOutput)
 }
 
 // A collection of arguments for invoking getLimitDefinitions.

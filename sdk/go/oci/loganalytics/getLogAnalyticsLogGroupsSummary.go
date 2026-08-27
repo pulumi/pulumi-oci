@@ -69,12 +69,8 @@ type GetLogAnalyticsLogGroupsSummaryResult struct {
 }
 
 func GetLogAnalyticsLogGroupsSummaryOutput(ctx *pulumi.Context, args GetLogAnalyticsLogGroupsSummaryOutputArgs, opts ...pulumi.InvokeOption) GetLogAnalyticsLogGroupsSummaryResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetLogAnalyticsLogGroupsSummaryResultOutput, error) {
-			args := v.(GetLogAnalyticsLogGroupsSummaryArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsLogGroupsSummary:getLogAnalyticsLogGroupsSummary", args, GetLogAnalyticsLogGroupsSummaryResultOutput{}, options).(GetLogAnalyticsLogGroupsSummaryResultOutput), nil
-		}).(GetLogAnalyticsLogGroupsSummaryResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsLogGroupsSummary:getLogAnalyticsLogGroupsSummary", args, GetLogAnalyticsLogGroupsSummaryResultOutput{}, options).(GetLogAnalyticsLogGroupsSummaryResultOutput)
 }
 
 // A collection of arguments for invoking getLogAnalyticsLogGroupsSummary.

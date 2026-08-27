@@ -86,12 +86,8 @@ type LookupOdaPrivateEndpointResult struct {
 }
 
 func LookupOdaPrivateEndpointOutput(ctx *pulumi.Context, args LookupOdaPrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupOdaPrivateEndpointResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupOdaPrivateEndpointResultOutput, error) {
-			args := v.(LookupOdaPrivateEndpointArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Oda/getOdaPrivateEndpoint:getOdaPrivateEndpoint", args, LookupOdaPrivateEndpointResultOutput{}, options).(LookupOdaPrivateEndpointResultOutput), nil
-		}).(LookupOdaPrivateEndpointResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Oda/getOdaPrivateEndpoint:getOdaPrivateEndpoint", args, LookupOdaPrivateEndpointResultOutput{}, options).(LookupOdaPrivateEndpointResultOutput)
 }
 
 // A collection of arguments for invoking getOdaPrivateEndpoint.

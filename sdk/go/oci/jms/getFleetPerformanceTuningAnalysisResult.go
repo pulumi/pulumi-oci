@@ -99,12 +99,8 @@ type GetFleetPerformanceTuningAnalysisResultResult struct {
 }
 
 func GetFleetPerformanceTuningAnalysisResultOutput(ctx *pulumi.Context, args GetFleetPerformanceTuningAnalysisResultOutputArgs, opts ...pulumi.InvokeOption) GetFleetPerformanceTuningAnalysisResultResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFleetPerformanceTuningAnalysisResultResultOutput, error) {
-			args := v.(GetFleetPerformanceTuningAnalysisResultArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getFleetPerformanceTuningAnalysisResult:getFleetPerformanceTuningAnalysisResult", args, GetFleetPerformanceTuningAnalysisResultResultOutput{}, options).(GetFleetPerformanceTuningAnalysisResultResultOutput), nil
-		}).(GetFleetPerformanceTuningAnalysisResultResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getFleetPerformanceTuningAnalysisResult:getFleetPerformanceTuningAnalysisResult", args, GetFleetPerformanceTuningAnalysisResultResultOutput{}, options).(GetFleetPerformanceTuningAnalysisResultResultOutput)
 }
 
 // A collection of arguments for invoking getFleetPerformanceTuningAnalysisResult.

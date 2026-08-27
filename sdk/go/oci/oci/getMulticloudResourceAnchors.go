@@ -109,12 +109,8 @@ type GetMulticloudResourceAnchorsResult struct {
 }
 
 func GetMulticloudResourceAnchorsOutput(ctx *pulumi.Context, args GetMulticloudResourceAnchorsOutputArgs, opts ...pulumi.InvokeOption) GetMulticloudResourceAnchorsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMulticloudResourceAnchorsResultOutput, error) {
-			args := v.(GetMulticloudResourceAnchorsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getMulticloudResourceAnchors:getMulticloudResourceAnchors", args, GetMulticloudResourceAnchorsResultOutput{}, options).(GetMulticloudResourceAnchorsResultOutput), nil
-		}).(GetMulticloudResourceAnchorsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getMulticloudResourceAnchors:getMulticloudResourceAnchors", args, GetMulticloudResourceAnchorsResultOutput{}, options).(GetMulticloudResourceAnchorsResultOutput)
 }
 
 // A collection of arguments for invoking getMulticloudResourceAnchors.

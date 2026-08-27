@@ -82,12 +82,8 @@ type GetStreamDistributionChannelsResult struct {
 }
 
 func GetStreamDistributionChannelsOutput(ctx *pulumi.Context, args GetStreamDistributionChannelsOutputArgs, opts ...pulumi.InvokeOption) GetStreamDistributionChannelsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetStreamDistributionChannelsResultOutput, error) {
-			args := v.(GetStreamDistributionChannelsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:MediaServices/getStreamDistributionChannels:getStreamDistributionChannels", args, GetStreamDistributionChannelsResultOutput{}, options).(GetStreamDistributionChannelsResultOutput), nil
-		}).(GetStreamDistributionChannelsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:MediaServices/getStreamDistributionChannels:getStreamDistributionChannels", args, GetStreamDistributionChannelsResultOutput{}, options).(GetStreamDistributionChannelsResultOutput)
 }
 
 // A collection of arguments for invoking getStreamDistributionChannels.

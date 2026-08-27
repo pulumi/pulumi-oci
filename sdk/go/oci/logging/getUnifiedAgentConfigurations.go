@@ -91,12 +91,8 @@ type GetUnifiedAgentConfigurationsResult struct {
 }
 
 func GetUnifiedAgentConfigurationsOutput(ctx *pulumi.Context, args GetUnifiedAgentConfigurationsOutputArgs, opts ...pulumi.InvokeOption) GetUnifiedAgentConfigurationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetUnifiedAgentConfigurationsResultOutput, error) {
-			args := v.(GetUnifiedAgentConfigurationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Logging/getUnifiedAgentConfigurations:getUnifiedAgentConfigurations", args, GetUnifiedAgentConfigurationsResultOutput{}, options).(GetUnifiedAgentConfigurationsResultOutput), nil
-		}).(GetUnifiedAgentConfigurationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Logging/getUnifiedAgentConfigurations:getUnifiedAgentConfigurations", args, GetUnifiedAgentConfigurationsResultOutput{}, options).(GetUnifiedAgentConfigurationsResultOutput)
 }
 
 // A collection of arguments for invoking getUnifiedAgentConfigurations.

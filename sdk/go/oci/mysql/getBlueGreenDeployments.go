@@ -89,12 +89,8 @@ type GetBlueGreenDeploymentsResult struct {
 }
 
 func GetBlueGreenDeploymentsOutput(ctx *pulumi.Context, args GetBlueGreenDeploymentsOutputArgs, opts ...pulumi.InvokeOption) GetBlueGreenDeploymentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBlueGreenDeploymentsResultOutput, error) {
-			args := v.(GetBlueGreenDeploymentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Mysql/getBlueGreenDeployments:getBlueGreenDeployments", args, GetBlueGreenDeploymentsResultOutput{}, options).(GetBlueGreenDeploymentsResultOutput), nil
-		}).(GetBlueGreenDeploymentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Mysql/getBlueGreenDeployments:getBlueGreenDeployments", args, GetBlueGreenDeploymentsResultOutput{}, options).(GetBlueGreenDeploymentsResultOutput)
 }
 
 // A collection of arguments for invoking getBlueGreenDeployments.

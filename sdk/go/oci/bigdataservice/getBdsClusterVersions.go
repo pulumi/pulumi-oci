@@ -63,12 +63,8 @@ type GetBdsClusterVersionsResult struct {
 }
 
 func GetBdsClusterVersionsOutput(ctx *pulumi.Context, args GetBdsClusterVersionsOutputArgs, opts ...pulumi.InvokeOption) GetBdsClusterVersionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBdsClusterVersionsResultOutput, error) {
-			args := v.(GetBdsClusterVersionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:BigDataService/getBdsClusterVersions:getBdsClusterVersions", args, GetBdsClusterVersionsResultOutput{}, options).(GetBdsClusterVersionsResultOutput), nil
-		}).(GetBdsClusterVersionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:BigDataService/getBdsClusterVersions:getBdsClusterVersions", args, GetBdsClusterVersionsResultOutput{}, options).(GetBdsClusterVersionsResultOutput)
 }
 
 // A collection of arguments for invoking getBdsClusterVersions.

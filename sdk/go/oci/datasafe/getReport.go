@@ -98,12 +98,8 @@ type LookupReportResult struct {
 }
 
 func LookupReportOutput(ctx *pulumi.Context, args LookupReportOutputArgs, opts ...pulumi.InvokeOption) LookupReportResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupReportResultOutput, error) {
-			args := v.(LookupReportArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getReport:getReport", args, LookupReportResultOutput{}, options).(LookupReportResultOutput), nil
-		}).(LookupReportResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getReport:getReport", args, LookupReportResultOutput{}, options).(LookupReportResultOutput)
 }
 
 // A collection of arguments for invoking getReport.

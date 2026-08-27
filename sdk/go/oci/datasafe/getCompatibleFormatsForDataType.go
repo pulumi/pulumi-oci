@@ -63,10 +63,8 @@ type GetCompatibleFormatsForDataTypeResult struct {
 }
 
 func GetCompatibleFormatsForDataTypeOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetCompatibleFormatsForDataTypeResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetCompatibleFormatsForDataTypeResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("oci:DataSafe/getCompatibleFormatsForDataType:getCompatibleFormatsForDataType", nil, GetCompatibleFormatsForDataTypeResultOutput{}, options).(GetCompatibleFormatsForDataTypeResultOutput), nil
-	}).(GetCompatibleFormatsForDataTypeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getCompatibleFormatsForDataType:getCompatibleFormatsForDataType", nil, GetCompatibleFormatsForDataTypeResultOutput{}, options).(GetCompatibleFormatsForDataTypeResultOutput)
 }
 
 // A collection of values returned by getCompatibleFormatsForDataType.

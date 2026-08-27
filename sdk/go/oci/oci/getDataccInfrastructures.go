@@ -79,12 +79,8 @@ type GetDataccInfrastructuresResult struct {
 }
 
 func GetDataccInfrastructuresOutput(ctx *pulumi.Context, args GetDataccInfrastructuresOutputArgs, opts ...pulumi.InvokeOption) GetDataccInfrastructuresResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDataccInfrastructuresResultOutput, error) {
-			args := v.(GetDataccInfrastructuresArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDataccInfrastructures:getDataccInfrastructures", args, GetDataccInfrastructuresResultOutput{}, options).(GetDataccInfrastructuresResultOutput), nil
-		}).(GetDataccInfrastructuresResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDataccInfrastructures:getDataccInfrastructures", args, GetDataccInfrastructuresResultOutput{}, options).(GetDataccInfrastructuresResultOutput)
 }
 
 // A collection of arguments for invoking getDataccInfrastructures.

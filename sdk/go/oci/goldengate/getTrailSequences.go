@@ -82,12 +82,8 @@ type GetTrailSequencesResult struct {
 }
 
 func GetTrailSequencesOutput(ctx *pulumi.Context, args GetTrailSequencesOutputArgs, opts ...pulumi.InvokeOption) GetTrailSequencesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetTrailSequencesResultOutput, error) {
-			args := v.(GetTrailSequencesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GoldenGate/getTrailSequences:getTrailSequences", args, GetTrailSequencesResultOutput{}, options).(GetTrailSequencesResultOutput), nil
-		}).(GetTrailSequencesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GoldenGate/getTrailSequences:getTrailSequences", args, GetTrailSequencesResultOutput{}, options).(GetTrailSequencesResultOutput)
 }
 
 // A collection of arguments for invoking getTrailSequences.

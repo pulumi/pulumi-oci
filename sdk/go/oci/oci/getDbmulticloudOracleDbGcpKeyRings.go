@@ -87,12 +87,8 @@ type GetDbmulticloudOracleDbGcpKeyRingsResult struct {
 }
 
 func GetDbmulticloudOracleDbGcpKeyRingsOutput(ctx *pulumi.Context, args GetDbmulticloudOracleDbGcpKeyRingsOutputArgs, opts ...pulumi.InvokeOption) GetDbmulticloudOracleDbGcpKeyRingsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbmulticloudOracleDbGcpKeyRingsResultOutput, error) {
-			args := v.(GetDbmulticloudOracleDbGcpKeyRingsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbGcpKeyRings:getDbmulticloudOracleDbGcpKeyRings", args, GetDbmulticloudOracleDbGcpKeyRingsResultOutput{}, options).(GetDbmulticloudOracleDbGcpKeyRingsResultOutput), nil
-		}).(GetDbmulticloudOracleDbGcpKeyRingsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbGcpKeyRings:getDbmulticloudOracleDbGcpKeyRings", args, GetDbmulticloudOracleDbGcpKeyRingsResultOutput{}, options).(GetDbmulticloudOracleDbGcpKeyRingsResultOutput)
 }
 
 // A collection of arguments for invoking getDbmulticloudOracleDbGcpKeyRings.

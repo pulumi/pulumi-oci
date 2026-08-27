@@ -53,12 +53,8 @@ type LookupNetworkFirewallPolicyAddressListResult struct {
 }
 
 func LookupNetworkFirewallPolicyAddressListOutput(ctx *pulumi.Context, args LookupNetworkFirewallPolicyAddressListOutputArgs, opts ...pulumi.InvokeOption) LookupNetworkFirewallPolicyAddressListResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupNetworkFirewallPolicyAddressListResultOutput, error) {
-			args := v.(LookupNetworkFirewallPolicyAddressListArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyAddressList:getNetworkFirewallPolicyAddressList", args, LookupNetworkFirewallPolicyAddressListResultOutput{}, options).(LookupNetworkFirewallPolicyAddressListResultOutput), nil
-		}).(LookupNetworkFirewallPolicyAddressListResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyAddressList:getNetworkFirewallPolicyAddressList", args, LookupNetworkFirewallPolicyAddressListResultOutput{}, options).(LookupNetworkFirewallPolicyAddressListResultOutput)
 }
 
 // A collection of arguments for invoking getNetworkFirewallPolicyAddressList.

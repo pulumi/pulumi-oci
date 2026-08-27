@@ -94,12 +94,8 @@ type GetWebAppFirewallPolicyResult struct {
 }
 
 func GetWebAppFirewallPolicyOutput(ctx *pulumi.Context, args GetWebAppFirewallPolicyOutputArgs, opts ...pulumi.InvokeOption) GetWebAppFirewallPolicyResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetWebAppFirewallPolicyResultOutput, error) {
-			args := v.(GetWebAppFirewallPolicyArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Waf/getWebAppFirewallPolicy:getWebAppFirewallPolicy", args, GetWebAppFirewallPolicyResultOutput{}, options).(GetWebAppFirewallPolicyResultOutput), nil
-		}).(GetWebAppFirewallPolicyResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Waf/getWebAppFirewallPolicy:getWebAppFirewallPolicy", args, GetWebAppFirewallPolicyResultOutput{}, options).(GetWebAppFirewallPolicyResultOutput)
 }
 
 // A collection of arguments for invoking getWebAppFirewallPolicy.

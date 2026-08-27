@@ -79,12 +79,8 @@ type GetFirmwareBundleResult struct {
 }
 
 func GetFirmwareBundleOutput(ctx *pulumi.Context, args GetFirmwareBundleOutputArgs, opts ...pulumi.InvokeOption) GetFirmwareBundleResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFirmwareBundleResultOutput, error) {
-			args := v.(GetFirmwareBundleArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getFirmwareBundle:getFirmwareBundle", args, GetFirmwareBundleResultOutput{}, options).(GetFirmwareBundleResultOutput), nil
-		}).(GetFirmwareBundleResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getFirmwareBundle:getFirmwareBundle", args, GetFirmwareBundleResultOutput{}, options).(GetFirmwareBundleResultOutput)
 }
 
 // A collection of arguments for invoking getFirmwareBundle.

@@ -72,12 +72,8 @@ type GetDatabaseMaintenanceRunHistoryResult struct {
 }
 
 func GetDatabaseMaintenanceRunHistoryOutput(ctx *pulumi.Context, args GetDatabaseMaintenanceRunHistoryOutputArgs, opts ...pulumi.InvokeOption) GetDatabaseMaintenanceRunHistoryResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDatabaseMaintenanceRunHistoryResultOutput, error) {
-			args := v.(GetDatabaseMaintenanceRunHistoryArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getDatabaseMaintenanceRunHistory:getDatabaseMaintenanceRunHistory", args, GetDatabaseMaintenanceRunHistoryResultOutput{}, options).(GetDatabaseMaintenanceRunHistoryResultOutput), nil
-		}).(GetDatabaseMaintenanceRunHistoryResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getDatabaseMaintenanceRunHistory:getDatabaseMaintenanceRunHistory", args, GetDatabaseMaintenanceRunHistoryResultOutput{}, options).(GetDatabaseMaintenanceRunHistoryResultOutput)
 }
 
 // A collection of arguments for invoking getDatabaseMaintenanceRunHistory.

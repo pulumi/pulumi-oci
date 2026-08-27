@@ -84,12 +84,8 @@ type LookupPluggableDatabaseSnapshotResult struct {
 }
 
 func LookupPluggableDatabaseSnapshotOutput(ctx *pulumi.Context, args LookupPluggableDatabaseSnapshotOutputArgs, opts ...pulumi.InvokeOption) LookupPluggableDatabaseSnapshotResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupPluggableDatabaseSnapshotResultOutput, error) {
-			args := v.(LookupPluggableDatabaseSnapshotArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getPluggableDatabaseSnapshot:getPluggableDatabaseSnapshot", args, LookupPluggableDatabaseSnapshotResultOutput{}, options).(LookupPluggableDatabaseSnapshotResultOutput), nil
-		}).(LookupPluggableDatabaseSnapshotResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getPluggableDatabaseSnapshot:getPluggableDatabaseSnapshot", args, LookupPluggableDatabaseSnapshotResultOutput{}, options).(LookupPluggableDatabaseSnapshotResultOutput)
 }
 
 // A collection of arguments for invoking getPluggableDatabaseSnapshot.

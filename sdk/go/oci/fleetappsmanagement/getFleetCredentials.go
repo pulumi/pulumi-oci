@@ -100,12 +100,8 @@ type GetFleetCredentialsResult struct {
 }
 
 func GetFleetCredentialsOutput(ctx *pulumi.Context, args GetFleetCredentialsOutputArgs, opts ...pulumi.InvokeOption) GetFleetCredentialsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFleetCredentialsResultOutput, error) {
-			args := v.(GetFleetCredentialsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getFleetCredentials:getFleetCredentials", args, GetFleetCredentialsResultOutput{}, options).(GetFleetCredentialsResultOutput), nil
-		}).(GetFleetCredentialsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getFleetCredentials:getFleetCredentials", args, GetFleetCredentialsResultOutput{}, options).(GetFleetCredentialsResultOutput)
 }
 
 // A collection of arguments for invoking getFleetCredentials.

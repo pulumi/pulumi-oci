@@ -71,12 +71,8 @@ type GetDeploymentTypeResult struct {
 }
 
 func GetDeploymentTypeOutput(ctx *pulumi.Context, args GetDeploymentTypeOutputArgs, opts ...pulumi.InvokeOption) GetDeploymentTypeResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDeploymentTypeResultOutput, error) {
-			args := v.(GetDeploymentTypeArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GoldenGate/getDeploymentType:getDeploymentType", args, GetDeploymentTypeResultOutput{}, options).(GetDeploymentTypeResultOutput), nil
-		}).(GetDeploymentTypeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GoldenGate/getDeploymentType:getDeploymentType", args, GetDeploymentTypeResultOutput{}, options).(GetDeploymentTypeResultOutput)
 }
 
 // A collection of arguments for invoking getDeploymentType.

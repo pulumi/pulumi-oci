@@ -156,12 +156,8 @@ type LookupDataccInfrastructureResult struct {
 }
 
 func LookupDataccInfrastructureOutput(ctx *pulumi.Context, args LookupDataccInfrastructureOutputArgs, opts ...pulumi.InvokeOption) LookupDataccInfrastructureResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDataccInfrastructureResultOutput, error) {
-			args := v.(LookupDataccInfrastructureArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDataccInfrastructure:getDataccInfrastructure", args, LookupDataccInfrastructureResultOutput{}, options).(LookupDataccInfrastructureResultOutput), nil
-		}).(LookupDataccInfrastructureResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDataccInfrastructure:getDataccInfrastructure", args, LookupDataccInfrastructureResultOutput{}, options).(LookupDataccInfrastructureResultOutput)
 }
 
 // A collection of arguments for invoking getDataccInfrastructure.

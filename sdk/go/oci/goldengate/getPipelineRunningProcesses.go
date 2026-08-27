@@ -68,12 +68,8 @@ type GetPipelineRunningProcessesResult struct {
 }
 
 func GetPipelineRunningProcessesOutput(ctx *pulumi.Context, args GetPipelineRunningProcessesOutputArgs, opts ...pulumi.InvokeOption) GetPipelineRunningProcessesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPipelineRunningProcessesResultOutput, error) {
-			args := v.(GetPipelineRunningProcessesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GoldenGate/getPipelineRunningProcesses:getPipelineRunningProcesses", args, GetPipelineRunningProcessesResultOutput{}, options).(GetPipelineRunningProcessesResultOutput), nil
-		}).(GetPipelineRunningProcessesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GoldenGate/getPipelineRunningProcesses:getPipelineRunningProcesses", args, GetPipelineRunningProcessesResultOutput{}, options).(GetPipelineRunningProcessesResultOutput)
 }
 
 // A collection of arguments for invoking getPipelineRunningProcesses.

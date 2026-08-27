@@ -99,12 +99,8 @@ type GetTargetDatabasesColumnsResult struct {
 }
 
 func GetTargetDatabasesColumnsOutput(ctx *pulumi.Context, args GetTargetDatabasesColumnsOutputArgs, opts ...pulumi.InvokeOption) GetTargetDatabasesColumnsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetTargetDatabasesColumnsResultOutput, error) {
-			args := v.(GetTargetDatabasesColumnsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getTargetDatabasesColumns:getTargetDatabasesColumns", args, GetTargetDatabasesColumnsResultOutput{}, options).(GetTargetDatabasesColumnsResultOutput), nil
-		}).(GetTargetDatabasesColumnsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getTargetDatabasesColumns:getTargetDatabasesColumns", args, GetTargetDatabasesColumnsResultOutput{}, options).(GetTargetDatabasesColumnsResultOutput)
 }
 
 // A collection of arguments for invoking getTargetDatabasesColumns.

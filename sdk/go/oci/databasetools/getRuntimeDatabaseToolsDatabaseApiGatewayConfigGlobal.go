@@ -93,12 +93,8 @@ type LookupRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalResult struct {
 }
 
 func LookupRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalOutput(ctx *pulumi.Context, args LookupRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalOutputArgs, opts ...pulumi.InvokeOption) LookupRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalResultOutput, error) {
-			args := v.(LookupRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal:getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal", args, LookupRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalResultOutput{}, options).(LookupRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalResultOutput), nil
-		}).(LookupRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal:getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal", args, LookupRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalResultOutput{}, options).(LookupRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalResultOutput)
 }
 
 // A collection of arguments for invoking getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal.

@@ -13,7 +13,6 @@ namespace Pulumi.Oci.Identity.Outputs
     [OutputType]
     public sealed class DomainsAppRadiusPolicy
     {
-        public readonly string? _ref;
         /// <summary>
         /// (Updatable) Identifier of the Policy.
         /// 
@@ -32,12 +31,8 @@ namespace Pulumi.Oci.Identity.Outputs
         public readonly string Value;
 
         [OutputConstructor]
-        private DomainsAppRadiusPolicy(
-            string? _ref,
-
-            string value)
+        private DomainsAppRadiusPolicy(string value)
         {
-            this._ref = _ref;
             Value = value;
         }
     }

@@ -97,12 +97,8 @@ type GetInstanceMaintenanceEventsResult struct {
 }
 
 func GetInstanceMaintenanceEventsOutput(ctx *pulumi.Context, args GetInstanceMaintenanceEventsOutputArgs, opts ...pulumi.InvokeOption) GetInstanceMaintenanceEventsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetInstanceMaintenanceEventsResultOutput, error) {
-			args := v.(GetInstanceMaintenanceEventsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getInstanceMaintenanceEvents:getInstanceMaintenanceEvents", args, GetInstanceMaintenanceEventsResultOutput{}, options).(GetInstanceMaintenanceEventsResultOutput), nil
-		}).(GetInstanceMaintenanceEventsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getInstanceMaintenanceEvents:getInstanceMaintenanceEvents", args, GetInstanceMaintenanceEventsResultOutput{}, options).(GetInstanceMaintenanceEventsResultOutput)
 }
 
 // A collection of arguments for invoking getInstanceMaintenanceEvents.

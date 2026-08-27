@@ -96,12 +96,8 @@ type GetContainersResult struct {
 }
 
 func GetContainersOutput(ctx *pulumi.Context, args GetContainersOutputArgs, opts ...pulumi.InvokeOption) GetContainersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetContainersResultOutput, error) {
-			args := v.(GetContainersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataScience/getContainers:getContainers", args, GetContainersResultOutput{}, options).(GetContainersResultOutput), nil
-		}).(GetContainersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataScience/getContainers:getContainers", args, GetContainersResultOutput{}, options).(GetContainersResultOutput)
 }
 
 // A collection of arguments for invoking getContainers.

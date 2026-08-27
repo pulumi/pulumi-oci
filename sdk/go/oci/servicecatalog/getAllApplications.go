@@ -102,12 +102,8 @@ type GetAllApplicationsResult struct {
 }
 
 func GetAllApplicationsOutput(ctx *pulumi.Context, args GetAllApplicationsOutputArgs, opts ...pulumi.InvokeOption) GetAllApplicationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAllApplicationsResultOutput, error) {
-			args := v.(GetAllApplicationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ServiceCatalog/getAllApplications:getAllApplications", args, GetAllApplicationsResultOutput{}, options).(GetAllApplicationsResultOutput), nil
-		}).(GetAllApplicationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ServiceCatalog/getAllApplications:getAllApplications", args, GetAllApplicationsResultOutput{}, options).(GetAllApplicationsResultOutput)
 }
 
 // A collection of arguments for invoking getAllApplications.

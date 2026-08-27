@@ -69,12 +69,8 @@ type GetConfigurationResult struct {
 }
 
 func GetConfigurationOutput(ctx *pulumi.Context, args GetConfigurationOutputArgs, opts ...pulumi.InvokeOption) GetConfigurationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetConfigurationResultOutput, error) {
-			args := v.(GetConfigurationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Email/getConfiguration:getConfiguration", args, GetConfigurationResultOutput{}, options).(GetConfigurationResultOutput), nil
-		}).(GetConfigurationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Email/getConfiguration:getConfiguration", args, GetConfigurationResultOutput{}, options).(GetConfigurationResultOutput)
 }
 
 // A collection of arguments for invoking getConfiguration.

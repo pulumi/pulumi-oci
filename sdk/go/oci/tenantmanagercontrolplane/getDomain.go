@@ -86,12 +86,8 @@ type GetDomainResult struct {
 }
 
 func GetDomainOutput(ctx *pulumi.Context, args GetDomainOutputArgs, opts ...pulumi.InvokeOption) GetDomainResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainResultOutput, error) {
-			args := v.(GetDomainArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Tenantmanagercontrolplane/getDomain:getDomain", args, GetDomainResultOutput{}, options).(GetDomainResultOutput), nil
-		}).(GetDomainResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Tenantmanagercontrolplane/getDomain:getDomain", args, GetDomainResultOutput{}, options).(GetDomainResultOutput)
 }
 
 // A collection of arguments for invoking getDomain.

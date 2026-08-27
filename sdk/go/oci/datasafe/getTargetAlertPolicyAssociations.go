@@ -112,12 +112,8 @@ type GetTargetAlertPolicyAssociationsResult struct {
 }
 
 func GetTargetAlertPolicyAssociationsOutput(ctx *pulumi.Context, args GetTargetAlertPolicyAssociationsOutputArgs, opts ...pulumi.InvokeOption) GetTargetAlertPolicyAssociationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetTargetAlertPolicyAssociationsResultOutput, error) {
-			args := v.(GetTargetAlertPolicyAssociationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getTargetAlertPolicyAssociations:getTargetAlertPolicyAssociations", args, GetTargetAlertPolicyAssociationsResultOutput{}, options).(GetTargetAlertPolicyAssociationsResultOutput), nil
-		}).(GetTargetAlertPolicyAssociationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getTargetAlertPolicyAssociations:getTargetAlertPolicyAssociations", args, GetTargetAlertPolicyAssociationsResultOutput{}, options).(GetTargetAlertPolicyAssociationsResultOutput)
 }
 
 // A collection of arguments for invoking getTargetAlertPolicyAssociations.

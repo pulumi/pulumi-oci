@@ -68,12 +68,8 @@ type GetScheduledActionParamsResult struct {
 }
 
 func GetScheduledActionParamsOutput(ctx *pulumi.Context, args GetScheduledActionParamsOutputArgs, opts ...pulumi.InvokeOption) GetScheduledActionParamsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetScheduledActionParamsResultOutput, error) {
-			args := v.(GetScheduledActionParamsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getScheduledActionParams:getScheduledActionParams", args, GetScheduledActionParamsResultOutput{}, options).(GetScheduledActionParamsResultOutput), nil
-		}).(GetScheduledActionParamsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getScheduledActionParams:getScheduledActionParams", args, GetScheduledActionParamsResultOutput{}, options).(GetScheduledActionParamsResultOutput)
 }
 
 // A collection of arguments for invoking getScheduledActionParams.

@@ -136,12 +136,8 @@ type LookupDomainsAppRoleResult struct {
 }
 
 func LookupDomainsAppRoleOutput(ctx *pulumi.Context, args LookupDomainsAppRoleOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsAppRoleResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDomainsAppRoleResultOutput, error) {
-			args := v.(LookupDomainsAppRoleArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsAppRole:getDomainsAppRole", args, LookupDomainsAppRoleResultOutput{}, options).(LookupDomainsAppRoleResultOutput), nil
-		}).(LookupDomainsAppRoleResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsAppRole:getDomainsAppRole", args, LookupDomainsAppRoleResultOutput{}, options).(LookupDomainsAppRoleResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsAppRole.

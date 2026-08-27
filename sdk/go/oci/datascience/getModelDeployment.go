@@ -138,12 +138,8 @@ type LookupModelDeploymentResult struct {
 }
 
 func LookupModelDeploymentOutput(ctx *pulumi.Context, args LookupModelDeploymentOutputArgs, opts ...pulumi.InvokeOption) LookupModelDeploymentResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupModelDeploymentResultOutput, error) {
-			args := v.(LookupModelDeploymentArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataScience/getModelDeployment:getModelDeployment", args, LookupModelDeploymentResultOutput{}, options).(LookupModelDeploymentResultOutput), nil
-		}).(LookupModelDeploymentResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataScience/getModelDeployment:getModelDeployment", args, LookupModelDeploymentResultOutput{}, options).(LookupModelDeploymentResultOutput)
 }
 
 // A collection of arguments for invoking getModelDeployment.

@@ -74,12 +74,8 @@ type GetCloudDbSystemDiscoveriesResult struct {
 }
 
 func GetCloudDbSystemDiscoveriesOutput(ctx *pulumi.Context, args GetCloudDbSystemDiscoveriesOutputArgs, opts ...pulumi.InvokeOption) GetCloudDbSystemDiscoveriesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCloudDbSystemDiscoveriesResultOutput, error) {
-			args := v.(GetCloudDbSystemDiscoveriesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getCloudDbSystemDiscoveries:getCloudDbSystemDiscoveries", args, GetCloudDbSystemDiscoveriesResultOutput{}, options).(GetCloudDbSystemDiscoveriesResultOutput), nil
-		}).(GetCloudDbSystemDiscoveriesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getCloudDbSystemDiscoveries:getCloudDbSystemDiscoveries", args, GetCloudDbSystemDiscoveriesResultOutput{}, options).(GetCloudDbSystemDiscoveriesResultOutput)
 }
 
 // A collection of arguments for invoking getCloudDbSystemDiscoveries.

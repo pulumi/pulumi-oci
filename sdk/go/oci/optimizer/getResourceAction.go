@@ -102,12 +102,8 @@ type LookupResourceActionResult struct {
 }
 
 func LookupResourceActionOutput(ctx *pulumi.Context, args LookupResourceActionOutputArgs, opts ...pulumi.InvokeOption) LookupResourceActionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupResourceActionResultOutput, error) {
-			args := v.(LookupResourceActionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Optimizer/getResourceAction:getResourceAction", args, LookupResourceActionResultOutput{}, options).(LookupResourceActionResultOutput), nil
-		}).(LookupResourceActionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Optimizer/getResourceAction:getResourceAction", args, LookupResourceActionResultOutput{}, options).(LookupResourceActionResultOutput)
 }
 
 // A collection of arguments for invoking getResourceAction.

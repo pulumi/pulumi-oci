@@ -82,12 +82,8 @@ type GetConnectionDatabaseconnectiontypesResult struct {
 }
 
 func GetConnectionDatabaseconnectiontypesOutput(ctx *pulumi.Context, args GetConnectionDatabaseconnectiontypesOutputArgs, opts ...pulumi.InvokeOption) GetConnectionDatabaseconnectiontypesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetConnectionDatabaseconnectiontypesResultOutput, error) {
-			args := v.(GetConnectionDatabaseconnectiontypesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseMigration/getConnectionDatabaseconnectiontypes:getConnectionDatabaseconnectiontypes", args, GetConnectionDatabaseconnectiontypesResultOutput{}, options).(GetConnectionDatabaseconnectiontypesResultOutput), nil
-		}).(GetConnectionDatabaseconnectiontypesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseMigration/getConnectionDatabaseconnectiontypes:getConnectionDatabaseconnectiontypes", args, GetConnectionDatabaseconnectiontypesResultOutput{}, options).(GetConnectionDatabaseconnectiontypesResultOutput)
 }
 
 // A collection of arguments for invoking getConnectionDatabaseconnectiontypes.

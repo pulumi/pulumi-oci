@@ -68,12 +68,8 @@ type GetComputeTargetShapesResult struct {
 }
 
 func GetComputeTargetShapesOutput(ctx *pulumi.Context, args GetComputeTargetShapesOutputArgs, opts ...pulumi.InvokeOption) GetComputeTargetShapesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetComputeTargetShapesResultOutput, error) {
-			args := v.(GetComputeTargetShapesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataScience/getComputeTargetShapes:getComputeTargetShapes", args, GetComputeTargetShapesResultOutput{}, options).(GetComputeTargetShapesResultOutput), nil
-		}).(GetComputeTargetShapesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataScience/getComputeTargetShapes:getComputeTargetShapes", args, GetComputeTargetShapesResultOutput{}, options).(GetComputeTargetShapesResultOutput)
 }
 
 // A collection of arguments for invoking getComputeTargetShapes.

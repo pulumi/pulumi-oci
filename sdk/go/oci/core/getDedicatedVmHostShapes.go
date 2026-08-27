@@ -77,12 +77,8 @@ type GetDedicatedVmHostShapesResult struct {
 }
 
 func GetDedicatedVmHostShapesOutput(ctx *pulumi.Context, args GetDedicatedVmHostShapesOutputArgs, opts ...pulumi.InvokeOption) GetDedicatedVmHostShapesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDedicatedVmHostShapesResultOutput, error) {
-			args := v.(GetDedicatedVmHostShapesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getDedicatedVmHostShapes:getDedicatedVmHostShapes", args, GetDedicatedVmHostShapesResultOutput{}, options).(GetDedicatedVmHostShapesResultOutput), nil
-		}).(GetDedicatedVmHostShapesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getDedicatedVmHostShapes:getDedicatedVmHostShapes", args, GetDedicatedVmHostShapesResultOutput{}, options).(GetDedicatedVmHostShapesResultOutput)
 }
 
 // A collection of arguments for invoking getDedicatedVmHostShapes.

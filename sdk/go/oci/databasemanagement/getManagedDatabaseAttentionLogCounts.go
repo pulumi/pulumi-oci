@@ -97,12 +97,8 @@ type GetManagedDatabaseAttentionLogCountsResult struct {
 }
 
 func GetManagedDatabaseAttentionLogCountsOutput(ctx *pulumi.Context, args GetManagedDatabaseAttentionLogCountsOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseAttentionLogCountsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabaseAttentionLogCountsResultOutput, error) {
-			args := v.(GetManagedDatabaseAttentionLogCountsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseAttentionLogCounts:getManagedDatabaseAttentionLogCounts", args, GetManagedDatabaseAttentionLogCountsResultOutput{}, options).(GetManagedDatabaseAttentionLogCountsResultOutput), nil
-		}).(GetManagedDatabaseAttentionLogCountsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseAttentionLogCounts:getManagedDatabaseAttentionLogCounts", args, GetManagedDatabaseAttentionLogCountsResultOutput{}, options).(GetManagedDatabaseAttentionLogCountsResultOutput)
 }
 
 // A collection of arguments for invoking getManagedDatabaseAttentionLogCounts.

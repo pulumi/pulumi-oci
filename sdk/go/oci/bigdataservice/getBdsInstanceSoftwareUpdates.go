@@ -68,12 +68,8 @@ type GetBdsInstanceSoftwareUpdatesResult struct {
 }
 
 func GetBdsInstanceSoftwareUpdatesOutput(ctx *pulumi.Context, args GetBdsInstanceSoftwareUpdatesOutputArgs, opts ...pulumi.InvokeOption) GetBdsInstanceSoftwareUpdatesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBdsInstanceSoftwareUpdatesResultOutput, error) {
-			args := v.(GetBdsInstanceSoftwareUpdatesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:BigDataService/getBdsInstanceSoftwareUpdates:getBdsInstanceSoftwareUpdates", args, GetBdsInstanceSoftwareUpdatesResultOutput{}, options).(GetBdsInstanceSoftwareUpdatesResultOutput), nil
-		}).(GetBdsInstanceSoftwareUpdatesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:BigDataService/getBdsInstanceSoftwareUpdates:getBdsInstanceSoftwareUpdates", args, GetBdsInstanceSoftwareUpdatesResultOutput{}, options).(GetBdsInstanceSoftwareUpdatesResultOutput)
 }
 
 // A collection of arguments for invoking getBdsInstanceSoftwareUpdates.

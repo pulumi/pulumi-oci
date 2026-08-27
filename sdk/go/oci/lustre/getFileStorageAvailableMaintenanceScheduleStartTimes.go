@@ -79,12 +79,8 @@ type GetFileStorageAvailableMaintenanceScheduleStartTimesResult struct {
 }
 
 func GetFileStorageAvailableMaintenanceScheduleStartTimesOutput(ctx *pulumi.Context, args GetFileStorageAvailableMaintenanceScheduleStartTimesOutputArgs, opts ...pulumi.InvokeOption) GetFileStorageAvailableMaintenanceScheduleStartTimesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFileStorageAvailableMaintenanceScheduleStartTimesResultOutput, error) {
-			args := v.(GetFileStorageAvailableMaintenanceScheduleStartTimesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Lustre/getFileStorageAvailableMaintenanceScheduleStartTimes:getFileStorageAvailableMaintenanceScheduleStartTimes", args, GetFileStorageAvailableMaintenanceScheduleStartTimesResultOutput{}, options).(GetFileStorageAvailableMaintenanceScheduleStartTimesResultOutput), nil
-		}).(GetFileStorageAvailableMaintenanceScheduleStartTimesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Lustre/getFileStorageAvailableMaintenanceScheduleStartTimes:getFileStorageAvailableMaintenanceScheduleStartTimes", args, GetFileStorageAvailableMaintenanceScheduleStartTimesResultOutput{}, options).(GetFileStorageAvailableMaintenanceScheduleStartTimesResultOutput)
 }
 
 // A collection of arguments for invoking getFileStorageAvailableMaintenanceScheduleStartTimes.

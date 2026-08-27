@@ -110,12 +110,8 @@ type LookupDifStackResult struct {
 }
 
 func LookupDifStackOutput(ctx *pulumi.Context, args LookupDifStackOutputArgs, opts ...pulumi.InvokeOption) LookupDifStackResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDifStackResultOutput, error) {
-			args := v.(LookupDifStackArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDifStack:getDifStack", args, LookupDifStackResultOutput{}, options).(LookupDifStackResultOutput), nil
-		}).(LookupDifStackResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDifStack:getDifStack", args, LookupDifStackResultOutput{}, options).(LookupDifStackResultOutput)
 }
 
 // A collection of arguments for invoking getDifStack.

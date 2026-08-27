@@ -80,12 +80,8 @@ type GetServiceGatewaysResult struct {
 }
 
 func GetServiceGatewaysOutput(ctx *pulumi.Context, args GetServiceGatewaysOutputArgs, opts ...pulumi.InvokeOption) GetServiceGatewaysResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetServiceGatewaysResultOutput, error) {
-			args := v.(GetServiceGatewaysArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getServiceGateways:getServiceGateways", args, GetServiceGatewaysResultOutput{}, options).(GetServiceGatewaysResultOutput), nil
-		}).(GetServiceGatewaysResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getServiceGateways:getServiceGateways", args, GetServiceGatewaysResultOutput{}, options).(GetServiceGatewaysResultOutput)
 }
 
 // A collection of arguments for invoking getServiceGateways.

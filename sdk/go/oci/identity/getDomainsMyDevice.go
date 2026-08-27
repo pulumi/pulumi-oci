@@ -160,12 +160,8 @@ type GetDomainsMyDeviceResult struct {
 }
 
 func GetDomainsMyDeviceOutput(ctx *pulumi.Context, args GetDomainsMyDeviceOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMyDeviceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsMyDeviceResultOutput, error) {
-			args := v.(GetDomainsMyDeviceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsMyDevice:getDomainsMyDevice", args, GetDomainsMyDeviceResultOutput{}, options).(GetDomainsMyDeviceResultOutput), nil
-		}).(GetDomainsMyDeviceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsMyDevice:getDomainsMyDevice", args, GetDomainsMyDeviceResultOutput{}, options).(GetDomainsMyDeviceResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsMyDevice.

@@ -74,12 +74,8 @@ type GetExternalDbSystemsResult struct {
 }
 
 func GetExternalDbSystemsOutput(ctx *pulumi.Context, args GetExternalDbSystemsOutputArgs, opts ...pulumi.InvokeOption) GetExternalDbSystemsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetExternalDbSystemsResultOutput, error) {
-			args := v.(GetExternalDbSystemsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalDbSystems:getExternalDbSystems", args, GetExternalDbSystemsResultOutput{}, options).(GetExternalDbSystemsResultOutput), nil
-		}).(GetExternalDbSystemsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getExternalDbSystems:getExternalDbSystems", args, GetExternalDbSystemsResultOutput{}, options).(GetExternalDbSystemsResultOutput)
 }
 
 // A collection of arguments for invoking getExternalDbSystems.

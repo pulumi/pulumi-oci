@@ -94,12 +94,8 @@ type GetDbManagementPrivateEndpointsResult struct {
 }
 
 func GetDbManagementPrivateEndpointsOutput(ctx *pulumi.Context, args GetDbManagementPrivateEndpointsOutputArgs, opts ...pulumi.InvokeOption) GetDbManagementPrivateEndpointsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbManagementPrivateEndpointsResultOutput, error) {
-			args := v.(GetDbManagementPrivateEndpointsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getDbManagementPrivateEndpoints:getDbManagementPrivateEndpoints", args, GetDbManagementPrivateEndpointsResultOutput{}, options).(GetDbManagementPrivateEndpointsResultOutput), nil
-		}).(GetDbManagementPrivateEndpointsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getDbManagementPrivateEndpoints:getDbManagementPrivateEndpoints", args, GetDbManagementPrivateEndpointsResultOutput{}, options).(GetDbManagementPrivateEndpointsResultOutput)
 }
 
 // A collection of arguments for invoking getDbManagementPrivateEndpoints.

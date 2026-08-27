@@ -75,12 +75,8 @@ type GetManagedDatabaseUserObjectPrivilegeResult struct {
 }
 
 func GetManagedDatabaseUserObjectPrivilegeOutput(ctx *pulumi.Context, args GetManagedDatabaseUserObjectPrivilegeOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseUserObjectPrivilegeResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabaseUserObjectPrivilegeResultOutput, error) {
-			args := v.(GetManagedDatabaseUserObjectPrivilegeArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseUserObjectPrivilege:getManagedDatabaseUserObjectPrivilege", args, GetManagedDatabaseUserObjectPrivilegeResultOutput{}, options).(GetManagedDatabaseUserObjectPrivilegeResultOutput), nil
-		}).(GetManagedDatabaseUserObjectPrivilegeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseUserObjectPrivilege:getManagedDatabaseUserObjectPrivilege", args, GetManagedDatabaseUserObjectPrivilegeResultOutput{}, options).(GetManagedDatabaseUserObjectPrivilegeResultOutput)
 }
 
 // A collection of arguments for invoking getManagedDatabaseUserObjectPrivilege.

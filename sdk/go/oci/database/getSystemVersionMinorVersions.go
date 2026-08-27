@@ -88,12 +88,8 @@ type GetSystemVersionMinorVersionsResult struct {
 }
 
 func GetSystemVersionMinorVersionsOutput(ctx *pulumi.Context, args GetSystemVersionMinorVersionsOutputArgs, opts ...pulumi.InvokeOption) GetSystemVersionMinorVersionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSystemVersionMinorVersionsResultOutput, error) {
-			args := v.(GetSystemVersionMinorVersionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getSystemVersionMinorVersions:getSystemVersionMinorVersions", args, GetSystemVersionMinorVersionsResultOutput{}, options).(GetSystemVersionMinorVersionsResultOutput), nil
-		}).(GetSystemVersionMinorVersionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getSystemVersionMinorVersions:getSystemVersionMinorVersions", args, GetSystemVersionMinorVersionsResultOutput{}, options).(GetSystemVersionMinorVersionsResultOutput)
 }
 
 // A collection of arguments for invoking getSystemVersionMinorVersions.

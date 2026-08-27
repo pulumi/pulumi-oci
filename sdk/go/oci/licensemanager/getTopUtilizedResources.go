@@ -74,12 +74,8 @@ type GetTopUtilizedResourcesResult struct {
 }
 
 func GetTopUtilizedResourcesOutput(ctx *pulumi.Context, args GetTopUtilizedResourcesOutputArgs, opts ...pulumi.InvokeOption) GetTopUtilizedResourcesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetTopUtilizedResourcesResultOutput, error) {
-			args := v.(GetTopUtilizedResourcesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LicenseManager/getTopUtilizedResources:getTopUtilizedResources", args, GetTopUtilizedResourcesResultOutput{}, options).(GetTopUtilizedResourcesResultOutput), nil
-		}).(GetTopUtilizedResourcesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LicenseManager/getTopUtilizedResources:getTopUtilizedResources", args, GetTopUtilizedResourcesResultOutput{}, options).(GetTopUtilizedResourcesResultOutput)
 }
 
 // A collection of arguments for invoking getTopUtilizedResources.

@@ -82,12 +82,8 @@ type LookupArtifactByPathResult struct {
 }
 
 func LookupArtifactByPathOutput(ctx *pulumi.Context, args LookupArtifactByPathOutputArgs, opts ...pulumi.InvokeOption) LookupArtifactByPathResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupArtifactByPathResultOutput, error) {
-			args := v.(LookupArtifactByPathArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GenericArtifactsContent/getArtifactByPath:getArtifactByPath", args, LookupArtifactByPathResultOutput{}, options).(LookupArtifactByPathResultOutput), nil
-		}).(LookupArtifactByPathResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GenericArtifactsContent/getArtifactByPath:getArtifactByPath", args, LookupArtifactByPathResultOutput{}, options).(LookupArtifactByPathResultOutput)
 }
 
 // A collection of arguments for invoking getArtifactByPath.

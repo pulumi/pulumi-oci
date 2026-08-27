@@ -115,12 +115,8 @@ type LookupDatabaseRegistrationResult struct {
 }
 
 func LookupDatabaseRegistrationOutput(ctx *pulumi.Context, args LookupDatabaseRegistrationOutputArgs, opts ...pulumi.InvokeOption) LookupDatabaseRegistrationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDatabaseRegistrationResultOutput, error) {
-			args := v.(LookupDatabaseRegistrationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GoldenGate/getDatabaseRegistration:getDatabaseRegistration", args, LookupDatabaseRegistrationResultOutput{}, options).(LookupDatabaseRegistrationResultOutput), nil
-		}).(LookupDatabaseRegistrationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GoldenGate/getDatabaseRegistration:getDatabaseRegistration", args, LookupDatabaseRegistrationResultOutput{}, options).(LookupDatabaseRegistrationResultOutput)
 }
 
 // A collection of arguments for invoking getDatabaseRegistration.

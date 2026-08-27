@@ -78,12 +78,8 @@ type GetPrivateApplicationsResult struct {
 }
 
 func GetPrivateApplicationsOutput(ctx *pulumi.Context, args GetPrivateApplicationsOutputArgs, opts ...pulumi.InvokeOption) GetPrivateApplicationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPrivateApplicationsResultOutput, error) {
-			args := v.(GetPrivateApplicationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ServiceCatalog/getPrivateApplications:getPrivateApplications", args, GetPrivateApplicationsResultOutput{}, options).(GetPrivateApplicationsResultOutput), nil
-		}).(GetPrivateApplicationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ServiceCatalog/getPrivateApplications:getPrivateApplications", args, GetPrivateApplicationsResultOutput{}, options).(GetPrivateApplicationsResultOutput)
 }
 
 // A collection of arguments for invoking getPrivateApplications.

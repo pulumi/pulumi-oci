@@ -70,12 +70,8 @@ type GetFileStorageAvailableOverrideMaintenanceStartTimesResult struct {
 }
 
 func GetFileStorageAvailableOverrideMaintenanceStartTimesOutput(ctx *pulumi.Context, args GetFileStorageAvailableOverrideMaintenanceStartTimesOutputArgs, opts ...pulumi.InvokeOption) GetFileStorageAvailableOverrideMaintenanceStartTimesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFileStorageAvailableOverrideMaintenanceStartTimesResultOutput, error) {
-			args := v.(GetFileStorageAvailableOverrideMaintenanceStartTimesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Lustre/getFileStorageAvailableOverrideMaintenanceStartTimes:getFileStorageAvailableOverrideMaintenanceStartTimes", args, GetFileStorageAvailableOverrideMaintenanceStartTimesResultOutput{}, options).(GetFileStorageAvailableOverrideMaintenanceStartTimesResultOutput), nil
-		}).(GetFileStorageAvailableOverrideMaintenanceStartTimesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Lustre/getFileStorageAvailableOverrideMaintenanceStartTimes:getFileStorageAvailableOverrideMaintenanceStartTimes", args, GetFileStorageAvailableOverrideMaintenanceStartTimesResultOutput{}, options).(GetFileStorageAvailableOverrideMaintenanceStartTimesResultOutput)
 }
 
 // A collection of arguments for invoking getFileStorageAvailableOverrideMaintenanceStartTimes.

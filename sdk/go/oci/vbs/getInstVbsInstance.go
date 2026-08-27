@@ -91,12 +91,8 @@ type LookupInstVbsInstanceResult struct {
 }
 
 func LookupInstVbsInstanceOutput(ctx *pulumi.Context, args LookupInstVbsInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupInstVbsInstanceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupInstVbsInstanceResultOutput, error) {
-			args := v.(LookupInstVbsInstanceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Vbs/getInstVbsInstance:getInstVbsInstance", args, LookupInstVbsInstanceResultOutput{}, options).(LookupInstVbsInstanceResultOutput), nil
-		}).(LookupInstVbsInstanceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Vbs/getInstVbsInstance:getInstVbsInstance", args, LookupInstVbsInstanceResultOutput{}, options).(LookupInstVbsInstanceResultOutput)
 }
 
 // A collection of arguments for invoking getInstVbsInstance.

@@ -11,11 +11,6 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainsIdentityProofingProviderIdcsLockedBy {
     /**
-     * @return The URI of the SCIM resource that represents the User or App who Locked this Resource.
-     * 
-     */
-    private String _ref;
-    /**
      * @return The displayName of the User or App who locked this Resource.
      * 
      */
@@ -37,13 +32,6 @@ public final class GetDomainsIdentityProofingProviderIdcsLockedBy {
     private String value;
 
     private GetDomainsIdentityProofingProviderIdcsLockedBy() {}
-    /**
-     * @return The URI of the SCIM resource that represents the User or App who Locked this Resource.
-     * 
-     */
-    public String _ref() {
-        return this._ref;
-    }
     /**
      * @return The displayName of the User or App who locked this Resource.
      * 
@@ -82,7 +70,6 @@ public final class GetDomainsIdentityProofingProviderIdcsLockedBy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String _ref;
         private String display;
         private String ocid;
         private String type;
@@ -90,21 +77,12 @@ public final class GetDomainsIdentityProofingProviderIdcsLockedBy {
         public Builder() {}
         public Builder(GetDomainsIdentityProofingProviderIdcsLockedBy defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this._ref = defaults._ref;
     	      this.display = defaults.display;
     	      this.ocid = defaults.ocid;
     	      this.type = defaults.type;
     	      this.value = defaults.value;
         }
 
-        @CustomType.Setter
-        public Builder _ref(String _ref) {
-            if (_ref == null) {
-              throw new MissingRequiredPropertyException("GetDomainsIdentityProofingProviderIdcsLockedBy", "_ref");
-            }
-            this._ref = _ref;
-            return this;
-        }
         @CustomType.Setter
         public Builder display(String display) {
             if (display == null) {
@@ -139,7 +117,6 @@ public final class GetDomainsIdentityProofingProviderIdcsLockedBy {
         }
         public GetDomainsIdentityProofingProviderIdcsLockedBy build() {
             final var _resultValue = new GetDomainsIdentityProofingProviderIdcsLockedBy();
-            _resultValue._ref = _ref;
             _resultValue.display = display;
             _resultValue.ocid = ocid;
             _resultValue.type = type;

@@ -69,12 +69,8 @@ type GetComputeHostGroupsResult struct {
 }
 
 func GetComputeHostGroupsOutput(ctx *pulumi.Context, args GetComputeHostGroupsOutputArgs, opts ...pulumi.InvokeOption) GetComputeHostGroupsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetComputeHostGroupsResultOutput, error) {
-			args := v.(GetComputeHostGroupsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getComputeHostGroups:getComputeHostGroups", args, GetComputeHostGroupsResultOutput{}, options).(GetComputeHostGroupsResultOutput), nil
-		}).(GetComputeHostGroupsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getComputeHostGroups:getComputeHostGroups", args, GetComputeHostGroupsResultOutput{}, options).(GetComputeHostGroupsResultOutput)
 }
 
 // A collection of arguments for invoking getComputeHostGroups.

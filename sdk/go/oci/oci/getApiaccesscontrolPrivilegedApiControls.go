@@ -87,12 +87,8 @@ type GetApiaccesscontrolPrivilegedApiControlsResult struct {
 }
 
 func GetApiaccesscontrolPrivilegedApiControlsOutput(ctx *pulumi.Context, args GetApiaccesscontrolPrivilegedApiControlsOutputArgs, opts ...pulumi.InvokeOption) GetApiaccesscontrolPrivilegedApiControlsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetApiaccesscontrolPrivilegedApiControlsResultOutput, error) {
-			args := v.(GetApiaccesscontrolPrivilegedApiControlsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getApiaccesscontrolPrivilegedApiControls:getApiaccesscontrolPrivilegedApiControls", args, GetApiaccesscontrolPrivilegedApiControlsResultOutput{}, options).(GetApiaccesscontrolPrivilegedApiControlsResultOutput), nil
-		}).(GetApiaccesscontrolPrivilegedApiControlsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getApiaccesscontrolPrivilegedApiControls:getApiaccesscontrolPrivilegedApiControls", args, GetApiaccesscontrolPrivilegedApiControlsResultOutput{}, options).(GetApiaccesscontrolPrivilegedApiControlsResultOutput)
 }
 
 // A collection of arguments for invoking getApiaccesscontrolPrivilegedApiControls.

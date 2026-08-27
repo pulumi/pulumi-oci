@@ -72,12 +72,8 @@ type GetVaultUsageResult struct {
 }
 
 func GetVaultUsageOutput(ctx *pulumi.Context, args GetVaultUsageOutputArgs, opts ...pulumi.InvokeOption) GetVaultUsageResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVaultUsageResultOutput, error) {
-			args := v.(GetVaultUsageArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Kms/getVaultUsage:getVaultUsage", args, GetVaultUsageResultOutput{}, options).(GetVaultUsageResultOutput), nil
-		}).(GetVaultUsageResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Kms/getVaultUsage:getVaultUsage", args, GetVaultUsageResultOutput{}, options).(GetVaultUsageResultOutput)
 }
 
 // A collection of arguments for invoking getVaultUsage.

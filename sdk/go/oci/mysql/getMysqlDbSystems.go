@@ -104,12 +104,8 @@ type GetMysqlDbSystemsResult struct {
 }
 
 func GetMysqlDbSystemsOutput(ctx *pulumi.Context, args GetMysqlDbSystemsOutputArgs, opts ...pulumi.InvokeOption) GetMysqlDbSystemsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMysqlDbSystemsResultOutput, error) {
-			args := v.(GetMysqlDbSystemsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Mysql/getMysqlDbSystems:getMysqlDbSystems", args, GetMysqlDbSystemsResultOutput{}, options).(GetMysqlDbSystemsResultOutput), nil
-		}).(GetMysqlDbSystemsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Mysql/getMysqlDbSystems:getMysqlDbSystems", args, GetMysqlDbSystemsResultOutput{}, options).(GetMysqlDbSystemsResultOutput)
 }
 
 // A collection of arguments for invoking getMysqlDbSystems.

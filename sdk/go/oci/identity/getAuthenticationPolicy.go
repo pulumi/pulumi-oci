@@ -69,12 +69,8 @@ type LookupAuthenticationPolicyResult struct {
 }
 
 func LookupAuthenticationPolicyOutput(ctx *pulumi.Context, args LookupAuthenticationPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupAuthenticationPolicyResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAuthenticationPolicyResultOutput, error) {
-			args := v.(LookupAuthenticationPolicyArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getAuthenticationPolicy:getAuthenticationPolicy", args, LookupAuthenticationPolicyResultOutput{}, options).(LookupAuthenticationPolicyResultOutput), nil
-		}).(LookupAuthenticationPolicyResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getAuthenticationPolicy:getAuthenticationPolicy", args, LookupAuthenticationPolicyResultOutput{}, options).(LookupAuthenticationPolicyResultOutput)
 }
 
 // A collection of arguments for invoking getAuthenticationPolicy.

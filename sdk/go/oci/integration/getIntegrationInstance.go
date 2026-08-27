@@ -137,12 +137,8 @@ type LookupIntegrationInstanceResult struct {
 }
 
 func LookupIntegrationInstanceOutput(ctx *pulumi.Context, args LookupIntegrationInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupIntegrationInstanceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupIntegrationInstanceResultOutput, error) {
-			args := v.(LookupIntegrationInstanceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Integration/getIntegrationInstance:getIntegrationInstance", args, LookupIntegrationInstanceResultOutput{}, options).(LookupIntegrationInstanceResultOutput), nil
-		}).(LookupIntegrationInstanceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Integration/getIntegrationInstance:getIntegrationInstance", args, LookupIntegrationInstanceResultOutput{}, options).(LookupIntegrationInstanceResultOutput)
 }
 
 // A collection of arguments for invoking getIntegrationInstance.

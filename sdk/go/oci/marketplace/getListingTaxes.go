@@ -72,12 +72,8 @@ type GetListingTaxesResult struct {
 }
 
 func GetListingTaxesOutput(ctx *pulumi.Context, args GetListingTaxesOutputArgs, opts ...pulumi.InvokeOption) GetListingTaxesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetListingTaxesResultOutput, error) {
-			args := v.(GetListingTaxesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Marketplace/getListingTaxes:getListingTaxes", args, GetListingTaxesResultOutput{}, options).(GetListingTaxesResultOutput), nil
-		}).(GetListingTaxesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Marketplace/getListingTaxes:getListingTaxes", args, GetListingTaxesResultOutput{}, options).(GetListingTaxesResultOutput)
 }
 
 // A collection of arguments for invoking getListingTaxes.

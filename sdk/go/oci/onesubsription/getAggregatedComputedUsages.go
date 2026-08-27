@@ -59,12 +59,8 @@ type GetAggregatedComputedUsagesResult struct {
 }
 
 func GetAggregatedComputedUsagesOutput(ctx *pulumi.Context, args GetAggregatedComputedUsagesOutputArgs, opts ...pulumi.InvokeOption) GetAggregatedComputedUsagesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAggregatedComputedUsagesResultOutput, error) {
-			args := v.(GetAggregatedComputedUsagesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OneSubsription/getAggregatedComputedUsages:getAggregatedComputedUsages", args, GetAggregatedComputedUsagesResultOutput{}, options).(GetAggregatedComputedUsagesResultOutput), nil
-		}).(GetAggregatedComputedUsagesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OneSubsription/getAggregatedComputedUsages:getAggregatedComputedUsages", args, GetAggregatedComputedUsagesResultOutput{}, options).(GetAggregatedComputedUsagesResultOutput)
 }
 
 // A collection of arguments for invoking getAggregatedComputedUsages.

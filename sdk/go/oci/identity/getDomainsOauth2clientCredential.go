@@ -126,12 +126,8 @@ type LookupDomainsOauth2clientCredentialResult struct {
 }
 
 func LookupDomainsOauth2clientCredentialOutput(ctx *pulumi.Context, args LookupDomainsOauth2clientCredentialOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsOauth2clientCredentialResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDomainsOauth2clientCredentialResultOutput, error) {
-			args := v.(LookupDomainsOauth2clientCredentialArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsOauth2clientCredential:getDomainsOauth2clientCredential", args, LookupDomainsOauth2clientCredentialResultOutput{}, options).(LookupDomainsOauth2clientCredentialResultOutput), nil
-		}).(LookupDomainsOauth2clientCredentialResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsOauth2clientCredential:getDomainsOauth2clientCredential", args, LookupDomainsOauth2clientCredentialResultOutput{}, options).(LookupDomainsOauth2clientCredentialResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsOauth2clientCredential.

@@ -76,12 +76,8 @@ type GetLogAnalyticsEntityAssociationsListResult struct {
 }
 
 func GetLogAnalyticsEntityAssociationsListOutput(ctx *pulumi.Context, args GetLogAnalyticsEntityAssociationsListOutputArgs, opts ...pulumi.InvokeOption) GetLogAnalyticsEntityAssociationsListResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetLogAnalyticsEntityAssociationsListResultOutput, error) {
-			args := v.(GetLogAnalyticsEntityAssociationsListArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsEntityAssociationsList:getLogAnalyticsEntityAssociationsList", args, GetLogAnalyticsEntityAssociationsListResultOutput{}, options).(GetLogAnalyticsEntityAssociationsListResultOutput), nil
-		}).(GetLogAnalyticsEntityAssociationsListResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsEntityAssociationsList:getLogAnalyticsEntityAssociationsList", args, GetLogAnalyticsEntityAssociationsListResultOutput{}, options).(GetLogAnalyticsEntityAssociationsListResultOutput)
 }
 
 // A collection of arguments for invoking getLogAnalyticsEntityAssociationsList.

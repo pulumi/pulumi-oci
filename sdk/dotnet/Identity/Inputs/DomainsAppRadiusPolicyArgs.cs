@@ -12,9 +12,6 @@ namespace Pulumi.Oci.Identity.Inputs
 
     public sealed class DomainsAppRadiusPolicyArgs : global::Pulumi.ResourceArgs
     {
-        [Input("_ref")]
-        public Input<string>? _ref { get; set; }
-
         /// <summary>
         /// (Updatable) Identifier of the Policy.
         /// 

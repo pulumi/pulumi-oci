@@ -94,12 +94,8 @@ type LookupDbmulticloudOracleDbAzureConnectorResult struct {
 }
 
 func LookupDbmulticloudOracleDbAzureConnectorOutput(ctx *pulumi.Context, args LookupDbmulticloudOracleDbAzureConnectorOutputArgs, opts ...pulumi.InvokeOption) LookupDbmulticloudOracleDbAzureConnectorResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDbmulticloudOracleDbAzureConnectorResultOutput, error) {
-			args := v.(LookupDbmulticloudOracleDbAzureConnectorArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbAzureConnector:getDbmulticloudOracleDbAzureConnector", args, LookupDbmulticloudOracleDbAzureConnectorResultOutput{}, options).(LookupDbmulticloudOracleDbAzureConnectorResultOutput), nil
-		}).(LookupDbmulticloudOracleDbAzureConnectorResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbAzureConnector:getDbmulticloudOracleDbAzureConnector", args, LookupDbmulticloudOracleDbAzureConnectorResultOutput{}, options).(LookupDbmulticloudOracleDbAzureConnectorResultOutput)
 }
 
 // A collection of arguments for invoking getDbmulticloudOracleDbAzureConnector.

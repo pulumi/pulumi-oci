@@ -92,12 +92,8 @@ type GetDbmulticloudOracleDbAzureKeyResult struct {
 }
 
 func GetDbmulticloudOracleDbAzureKeyOutput(ctx *pulumi.Context, args GetDbmulticloudOracleDbAzureKeyOutputArgs, opts ...pulumi.InvokeOption) GetDbmulticloudOracleDbAzureKeyResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbmulticloudOracleDbAzureKeyResultOutput, error) {
-			args := v.(GetDbmulticloudOracleDbAzureKeyArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbAzureKey:getDbmulticloudOracleDbAzureKey", args, GetDbmulticloudOracleDbAzureKeyResultOutput{}, options).(GetDbmulticloudOracleDbAzureKeyResultOutput), nil
-		}).(GetDbmulticloudOracleDbAzureKeyResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbAzureKey:getDbmulticloudOracleDbAzureKey", args, GetDbmulticloudOracleDbAzureKeyResultOutput{}, options).(GetDbmulticloudOracleDbAzureKeyResultOutput)
 }
 
 // A collection of arguments for invoking getDbmulticloudOracleDbAzureKey.

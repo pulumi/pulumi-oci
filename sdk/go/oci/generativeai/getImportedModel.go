@@ -81,12 +81,8 @@ type LookupImportedModelResult struct {
 }
 
 func LookupImportedModelOutput(ctx *pulumi.Context, args LookupImportedModelOutputArgs, opts ...pulumi.InvokeOption) LookupImportedModelResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupImportedModelResultOutput, error) {
-			args := v.(LookupImportedModelArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GenerativeAi/getImportedModel:getImportedModel", args, LookupImportedModelResultOutput{}, options).(LookupImportedModelResultOutput), nil
-		}).(LookupImportedModelResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GenerativeAi/getImportedModel:getImportedModel", args, LookupImportedModelResultOutput{}, options).(LookupImportedModelResultOutput)
 }
 
 // A collection of arguments for invoking getImportedModel.

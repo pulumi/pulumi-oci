@@ -81,12 +81,8 @@ type GetLetterOfAuthorityResult struct {
 }
 
 func GetLetterOfAuthorityOutput(ctx *pulumi.Context, args GetLetterOfAuthorityOutputArgs, opts ...pulumi.InvokeOption) GetLetterOfAuthorityResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetLetterOfAuthorityResultOutput, error) {
-			args := v.(GetLetterOfAuthorityArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getLetterOfAuthority:getLetterOfAuthority", args, GetLetterOfAuthorityResultOutput{}, options).(GetLetterOfAuthorityResultOutput), nil
-		}).(GetLetterOfAuthorityResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getLetterOfAuthority:getLetterOfAuthority", args, GetLetterOfAuthorityResultOutput{}, options).(GetLetterOfAuthorityResultOutput)
 }
 
 // A collection of arguments for invoking getLetterOfAuthority.

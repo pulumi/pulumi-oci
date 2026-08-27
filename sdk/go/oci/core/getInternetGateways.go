@@ -85,12 +85,8 @@ type GetInternetGatewaysResult struct {
 }
 
 func GetInternetGatewaysOutput(ctx *pulumi.Context, args GetInternetGatewaysOutputArgs, opts ...pulumi.InvokeOption) GetInternetGatewaysResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetInternetGatewaysResultOutput, error) {
-			args := v.(GetInternetGatewaysArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getInternetGateways:getInternetGateways", args, GetInternetGatewaysResultOutput{}, options).(GetInternetGatewaysResultOutput), nil
-		}).(GetInternetGatewaysResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getInternetGateways:getInternetGateways", args, GetInternetGatewaysResultOutput{}, options).(GetInternetGatewaysResultOutput)
 }
 
 // A collection of arguments for invoking getInternetGateways.

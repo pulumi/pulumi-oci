@@ -82,12 +82,8 @@ type GetProfileAvailableSoftwareSourcesResult struct {
 }
 
 func GetProfileAvailableSoftwareSourcesOutput(ctx *pulumi.Context, args GetProfileAvailableSoftwareSourcesOutputArgs, opts ...pulumi.InvokeOption) GetProfileAvailableSoftwareSourcesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetProfileAvailableSoftwareSourcesResultOutput, error) {
-			args := v.(GetProfileAvailableSoftwareSourcesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getProfileAvailableSoftwareSources:getProfileAvailableSoftwareSources", args, GetProfileAvailableSoftwareSourcesResultOutput{}, options).(GetProfileAvailableSoftwareSourcesResultOutput), nil
-		}).(GetProfileAvailableSoftwareSourcesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getProfileAvailableSoftwareSources:getProfileAvailableSoftwareSources", args, GetProfileAvailableSoftwareSourcesResultOutput{}, options).(GetProfileAvailableSoftwareSourcesResultOutput)
 }
 
 // A collection of arguments for invoking getProfileAvailableSoftwareSources.

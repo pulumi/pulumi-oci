@@ -82,12 +82,8 @@ type GetSupportedVmwareSoftwareVersionsResult struct {
 }
 
 func GetSupportedVmwareSoftwareVersionsOutput(ctx *pulumi.Context, args GetSupportedVmwareSoftwareVersionsOutputArgs, opts ...pulumi.InvokeOption) GetSupportedVmwareSoftwareVersionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSupportedVmwareSoftwareVersionsResultOutput, error) {
-			args := v.(GetSupportedVmwareSoftwareVersionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Ocvp/getSupportedVmwareSoftwareVersions:getSupportedVmwareSoftwareVersions", args, GetSupportedVmwareSoftwareVersionsResultOutput{}, options).(GetSupportedVmwareSoftwareVersionsResultOutput), nil
-		}).(GetSupportedVmwareSoftwareVersionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Ocvp/getSupportedVmwareSoftwareVersions:getSupportedVmwareSoftwareVersions", args, GetSupportedVmwareSoftwareVersionsResultOutput{}, options).(GetSupportedVmwareSoftwareVersionsResultOutput)
 }
 
 // A collection of arguments for invoking getSupportedVmwareSoftwareVersions.

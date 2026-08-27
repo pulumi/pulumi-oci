@@ -96,12 +96,8 @@ type GetRepositoryFileDiffResult struct {
 }
 
 func GetRepositoryFileDiffOutput(ctx *pulumi.Context, args GetRepositoryFileDiffOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryFileDiffResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRepositoryFileDiffResultOutput, error) {
-			args := v.(GetRepositoryFileDiffArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DevOps/getRepositoryFileDiff:getRepositoryFileDiff", args, GetRepositoryFileDiffResultOutput{}, options).(GetRepositoryFileDiffResultOutput), nil
-		}).(GetRepositoryFileDiffResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DevOps/getRepositoryFileDiff:getRepositoryFileDiff", args, GetRepositoryFileDiffResultOutput{}, options).(GetRepositoryFileDiffResultOutput)
 }
 
 // A collection of arguments for invoking getRepositoryFileDiff.

@@ -95,12 +95,8 @@ type GetNamedCredentialsResult struct {
 }
 
 func GetNamedCredentialsOutput(ctx *pulumi.Context, args GetNamedCredentialsOutputArgs, opts ...pulumi.InvokeOption) GetNamedCredentialsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetNamedCredentialsResultOutput, error) {
-			args := v.(GetNamedCredentialsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ManagementAgent/getNamedCredentials:getNamedCredentials", args, GetNamedCredentialsResultOutput{}, options).(GetNamedCredentialsResultOutput), nil
-		}).(GetNamedCredentialsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ManagementAgent/getNamedCredentials:getNamedCredentials", args, GetNamedCredentialsResultOutput{}, options).(GetNamedCredentialsResultOutput)
 }
 
 // A collection of arguments for invoking getNamedCredentials.

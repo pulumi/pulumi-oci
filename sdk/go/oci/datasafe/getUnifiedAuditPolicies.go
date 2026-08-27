@@ -131,12 +131,8 @@ type GetUnifiedAuditPoliciesResult struct {
 }
 
 func GetUnifiedAuditPoliciesOutput(ctx *pulumi.Context, args GetUnifiedAuditPoliciesOutputArgs, opts ...pulumi.InvokeOption) GetUnifiedAuditPoliciesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetUnifiedAuditPoliciesResultOutput, error) {
-			args := v.(GetUnifiedAuditPoliciesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getUnifiedAuditPolicies:getUnifiedAuditPolicies", args, GetUnifiedAuditPoliciesResultOutput{}, options).(GetUnifiedAuditPoliciesResultOutput), nil
-		}).(GetUnifiedAuditPoliciesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getUnifiedAuditPolicies:getUnifiedAuditPolicies", args, GetUnifiedAuditPoliciesResultOutput{}, options).(GetUnifiedAuditPoliciesResultOutput)
 }
 
 // A collection of arguments for invoking getUnifiedAuditPolicies.

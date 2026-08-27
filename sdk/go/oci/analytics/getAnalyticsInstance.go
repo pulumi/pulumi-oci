@@ -106,12 +106,8 @@ type LookupAnalyticsInstanceResult struct {
 }
 
 func LookupAnalyticsInstanceOutput(ctx *pulumi.Context, args LookupAnalyticsInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupAnalyticsInstanceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAnalyticsInstanceResultOutput, error) {
-			args := v.(LookupAnalyticsInstanceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Analytics/getAnalyticsInstance:getAnalyticsInstance", args, LookupAnalyticsInstanceResultOutput{}, options).(LookupAnalyticsInstanceResultOutput), nil
-		}).(LookupAnalyticsInstanceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Analytics/getAnalyticsInstance:getAnalyticsInstance", args, LookupAnalyticsInstanceResultOutput{}, options).(LookupAnalyticsInstanceResultOutput)
 }
 
 // A collection of arguments for invoking getAnalyticsInstance.

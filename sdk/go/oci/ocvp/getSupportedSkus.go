@@ -73,12 +73,8 @@ type GetSupportedSkusResult struct {
 }
 
 func GetSupportedSkusOutput(ctx *pulumi.Context, args GetSupportedSkusOutputArgs, opts ...pulumi.InvokeOption) GetSupportedSkusResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSupportedSkusResultOutput, error) {
-			args := v.(GetSupportedSkusArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Ocvp/getSupportedSkus:getSupportedSkus", args, GetSupportedSkusResultOutput{}, options).(GetSupportedSkusResultOutput), nil
-		}).(GetSupportedSkusResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Ocvp/getSupportedSkus:getSupportedSkus", args, GetSupportedSkusResultOutput{}, options).(GetSupportedSkusResultOutput)
 }
 
 // A collection of arguments for invoking getSupportedSkus.

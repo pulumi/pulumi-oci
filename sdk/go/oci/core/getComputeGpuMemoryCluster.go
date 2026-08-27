@@ -92,12 +92,8 @@ type LookupComputeGpuMemoryClusterResult struct {
 }
 
 func LookupComputeGpuMemoryClusterOutput(ctx *pulumi.Context, args LookupComputeGpuMemoryClusterOutputArgs, opts ...pulumi.InvokeOption) LookupComputeGpuMemoryClusterResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupComputeGpuMemoryClusterResultOutput, error) {
-			args := v.(LookupComputeGpuMemoryClusterArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getComputeGpuMemoryCluster:getComputeGpuMemoryCluster", args, LookupComputeGpuMemoryClusterResultOutput{}, options).(LookupComputeGpuMemoryClusterResultOutput), nil
-		}).(LookupComputeGpuMemoryClusterResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getComputeGpuMemoryCluster:getComputeGpuMemoryCluster", args, LookupComputeGpuMemoryClusterResultOutput{}, options).(LookupComputeGpuMemoryClusterResultOutput)
 }
 
 // A collection of arguments for invoking getComputeGpuMemoryCluster.

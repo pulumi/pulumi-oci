@@ -94,12 +94,8 @@ type GetManagedInstanceUpdatablePackagesResult struct {
 }
 
 func GetManagedInstanceUpdatablePackagesOutput(ctx *pulumi.Context, args GetManagedInstanceUpdatablePackagesOutputArgs, opts ...pulumi.InvokeOption) GetManagedInstanceUpdatablePackagesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedInstanceUpdatablePackagesResultOutput, error) {
-			args := v.(GetManagedInstanceUpdatablePackagesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getManagedInstanceUpdatablePackages:getManagedInstanceUpdatablePackages", args, GetManagedInstanceUpdatablePackagesResultOutput{}, options).(GetManagedInstanceUpdatablePackagesResultOutput), nil
-		}).(GetManagedInstanceUpdatablePackagesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getManagedInstanceUpdatablePackages:getManagedInstanceUpdatablePackages", args, GetManagedInstanceUpdatablePackagesResultOutput{}, options).(GetManagedInstanceUpdatablePackagesResultOutput)
 }
 
 // A collection of arguments for invoking getManagedInstanceUpdatablePackages.

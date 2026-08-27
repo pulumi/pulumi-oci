@@ -76,12 +76,8 @@ type GetLicenseMetricResult struct {
 }
 
 func GetLicenseMetricOutput(ctx *pulumi.Context, args GetLicenseMetricOutputArgs, opts ...pulumi.InvokeOption) GetLicenseMetricResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetLicenseMetricResultOutput, error) {
-			args := v.(GetLicenseMetricArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LicenseManager/getLicenseMetric:getLicenseMetric", args, GetLicenseMetricResultOutput{}, options).(GetLicenseMetricResultOutput), nil
-		}).(GetLicenseMetricResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LicenseManager/getLicenseMetric:getLicenseMetric", args, GetLicenseMetricResultOutput{}, options).(GetLicenseMetricResultOutput)
 }
 
 // A collection of arguments for invoking getLicenseMetric.

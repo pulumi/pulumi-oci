@@ -132,12 +132,8 @@ type LookupDomainsConditionResult struct {
 }
 
 func LookupDomainsConditionOutput(ctx *pulumi.Context, args LookupDomainsConditionOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsConditionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDomainsConditionResultOutput, error) {
-			args := v.(LookupDomainsConditionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsCondition:getDomainsCondition", args, LookupDomainsConditionResultOutput{}, options).(LookupDomainsConditionResultOutput), nil
-		}).(LookupDomainsConditionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsCondition:getDomainsCondition", args, LookupDomainsConditionResultOutput{}, options).(LookupDomainsConditionResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsCondition.

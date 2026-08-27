@@ -88,12 +88,8 @@ type GetDbmulticloudOracleDbAzureConnectorsResult struct {
 }
 
 func GetDbmulticloudOracleDbAzureConnectorsOutput(ctx *pulumi.Context, args GetDbmulticloudOracleDbAzureConnectorsOutputArgs, opts ...pulumi.InvokeOption) GetDbmulticloudOracleDbAzureConnectorsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbmulticloudOracleDbAzureConnectorsResultOutput, error) {
-			args := v.(GetDbmulticloudOracleDbAzureConnectorsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbAzureConnectors:getDbmulticloudOracleDbAzureConnectors", args, GetDbmulticloudOracleDbAzureConnectorsResultOutput{}, options).(GetDbmulticloudOracleDbAzureConnectorsResultOutput), nil
-		}).(GetDbmulticloudOracleDbAzureConnectorsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbAzureConnectors:getDbmulticloudOracleDbAzureConnectors", args, GetDbmulticloudOracleDbAzureConnectorsResultOutput{}, options).(GetDbmulticloudOracleDbAzureConnectorsResultOutput)
 }
 
 // A collection of arguments for invoking getDbmulticloudOracleDbAzureConnectors.

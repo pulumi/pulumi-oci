@@ -78,12 +78,8 @@ type GetGdpGdpPipelinesResult struct {
 }
 
 func GetGdpGdpPipelinesOutput(ctx *pulumi.Context, args GetGdpGdpPipelinesOutputArgs, opts ...pulumi.InvokeOption) GetGdpGdpPipelinesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetGdpGdpPipelinesResultOutput, error) {
-			args := v.(GetGdpGdpPipelinesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getGdpGdpPipelines:getGdpGdpPipelines", args, GetGdpGdpPipelinesResultOutput{}, options).(GetGdpGdpPipelinesResultOutput), nil
-		}).(GetGdpGdpPipelinesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getGdpGdpPipelines:getGdpGdpPipelines", args, GetGdpGdpPipelinesResultOutput{}, options).(GetGdpGdpPipelinesResultOutput)
 }
 
 // A collection of arguments for invoking getGdpGdpPipelines.

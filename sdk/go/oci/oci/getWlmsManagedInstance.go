@@ -84,12 +84,8 @@ type GetWlmsManagedInstanceResult struct {
 }
 
 func GetWlmsManagedInstanceOutput(ctx *pulumi.Context, args GetWlmsManagedInstanceOutputArgs, opts ...pulumi.InvokeOption) GetWlmsManagedInstanceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetWlmsManagedInstanceResultOutput, error) {
-			args := v.(GetWlmsManagedInstanceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getWlmsManagedInstance:getWlmsManagedInstance", args, GetWlmsManagedInstanceResultOutput{}, options).(GetWlmsManagedInstanceResultOutput), nil
-		}).(GetWlmsManagedInstanceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getWlmsManagedInstance:getWlmsManagedInstance", args, GetWlmsManagedInstanceResultOutput{}, options).(GetWlmsManagedInstanceResultOutput)
 }
 
 // A collection of arguments for invoking getWlmsManagedInstance.

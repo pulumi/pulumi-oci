@@ -84,12 +84,8 @@ type GetObjectHeadResult struct {
 }
 
 func GetObjectHeadOutput(ctx *pulumi.Context, args GetObjectHeadOutputArgs, opts ...pulumi.InvokeOption) GetObjectHeadResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetObjectHeadResultOutput, error) {
-			args := v.(GetObjectHeadArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ObjectStorage/getObjectHead:getObjectHead", args, GetObjectHeadResultOutput{}, options).(GetObjectHeadResultOutput), nil
-		}).(GetObjectHeadResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ObjectStorage/getObjectHead:getObjectHead", args, GetObjectHeadResultOutput{}, options).(GetObjectHeadResultOutput)
 }
 
 // A collection of arguments for invoking getObjectHead.

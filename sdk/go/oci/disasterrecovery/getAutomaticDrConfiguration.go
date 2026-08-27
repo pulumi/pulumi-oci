@@ -96,12 +96,8 @@ type LookupAutomaticDrConfigurationResult struct {
 }
 
 func LookupAutomaticDrConfigurationOutput(ctx *pulumi.Context, args LookupAutomaticDrConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupAutomaticDrConfigurationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAutomaticDrConfigurationResultOutput, error) {
-			args := v.(LookupAutomaticDrConfigurationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DisasterRecovery/getAutomaticDrConfiguration:getAutomaticDrConfiguration", args, LookupAutomaticDrConfigurationResultOutput{}, options).(LookupAutomaticDrConfigurationResultOutput), nil
-		}).(LookupAutomaticDrConfigurationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DisasterRecovery/getAutomaticDrConfiguration:getAutomaticDrConfiguration", args, LookupAutomaticDrConfigurationResultOutput{}, options).(LookupAutomaticDrConfigurationResultOutput)
 }
 
 // A collection of arguments for invoking getAutomaticDrConfiguration.

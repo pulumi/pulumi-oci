@@ -82,12 +82,8 @@ type GetTsigKeysResult struct {
 }
 
 func GetTsigKeysOutput(ctx *pulumi.Context, args GetTsigKeysOutputArgs, opts ...pulumi.InvokeOption) GetTsigKeysResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetTsigKeysResultOutput, error) {
-			args := v.(GetTsigKeysArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Dns/getTsigKeys:getTsigKeys", args, GetTsigKeysResultOutput{}, options).(GetTsigKeysResultOutput), nil
-		}).(GetTsigKeysResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Dns/getTsigKeys:getTsigKeys", args, GetTsigKeysResultOutput{}, options).(GetTsigKeysResultOutput)
 }
 
 // A collection of arguments for invoking getTsigKeys.

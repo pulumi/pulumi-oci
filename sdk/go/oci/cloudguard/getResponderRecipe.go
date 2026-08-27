@@ -92,12 +92,8 @@ type LookupResponderRecipeResult struct {
 }
 
 func LookupResponderRecipeOutput(ctx *pulumi.Context, args LookupResponderRecipeOutputArgs, opts ...pulumi.InvokeOption) LookupResponderRecipeResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupResponderRecipeResultOutput, error) {
-			args := v.(LookupResponderRecipeArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CloudGuard/getResponderRecipe:getResponderRecipe", args, LookupResponderRecipeResultOutput{}, options).(LookupResponderRecipeResultOutput), nil
-		}).(LookupResponderRecipeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CloudGuard/getResponderRecipe:getResponderRecipe", args, LookupResponderRecipeResultOutput{}, options).(LookupResponderRecipeResultOutput)
 }
 
 // A collection of arguments for invoking getResponderRecipe.

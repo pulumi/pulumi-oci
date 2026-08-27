@@ -106,12 +106,8 @@ type GetDomainsAppsResult struct {
 }
 
 func GetDomainsAppsOutput(ctx *pulumi.Context, args GetDomainsAppsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsAppsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsAppsResultOutput, error) {
-			args := v.(GetDomainsAppsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsApps:getDomainsApps", args, GetDomainsAppsResultOutput{}, options).(GetDomainsAppsResultOutput), nil
-		}).(GetDomainsAppsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsApps:getDomainsApps", args, GetDomainsAppsResultOutput{}, options).(GetDomainsAppsResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsApps.

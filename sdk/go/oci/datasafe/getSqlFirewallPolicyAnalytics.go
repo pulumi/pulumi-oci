@@ -109,12 +109,8 @@ type GetSqlFirewallPolicyAnalyticsResult struct {
 }
 
 func GetSqlFirewallPolicyAnalyticsOutput(ctx *pulumi.Context, args GetSqlFirewallPolicyAnalyticsOutputArgs, opts ...pulumi.InvokeOption) GetSqlFirewallPolicyAnalyticsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSqlFirewallPolicyAnalyticsResultOutput, error) {
-			args := v.(GetSqlFirewallPolicyAnalyticsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getSqlFirewallPolicyAnalytics:getSqlFirewallPolicyAnalytics", args, GetSqlFirewallPolicyAnalyticsResultOutput{}, options).(GetSqlFirewallPolicyAnalyticsResultOutput), nil
-		}).(GetSqlFirewallPolicyAnalyticsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getSqlFirewallPolicyAnalytics:getSqlFirewallPolicyAnalytics", args, GetSqlFirewallPolicyAnalyticsResultOutput{}, options).(GetSqlFirewallPolicyAnalyticsResultOutput)
 }
 
 // A collection of arguments for invoking getSqlFirewallPolicyAnalytics.

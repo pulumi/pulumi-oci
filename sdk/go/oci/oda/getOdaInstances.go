@@ -84,12 +84,8 @@ type GetOdaInstancesResult struct {
 }
 
 func GetOdaInstancesOutput(ctx *pulumi.Context, args GetOdaInstancesOutputArgs, opts ...pulumi.InvokeOption) GetOdaInstancesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetOdaInstancesResultOutput, error) {
-			args := v.(GetOdaInstancesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Oda/getOdaInstances:getOdaInstances", args, GetOdaInstancesResultOutput{}, options).(GetOdaInstancesResultOutput), nil
-		}).(GetOdaInstancesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Oda/getOdaInstances:getOdaInstances", args, GetOdaInstancesResultOutput{}, options).(GetOdaInstancesResultOutput)
 }
 
 // A collection of arguments for invoking getOdaInstances.

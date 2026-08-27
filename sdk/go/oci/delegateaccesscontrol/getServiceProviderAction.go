@@ -84,12 +84,8 @@ type GetServiceProviderActionResult struct {
 }
 
 func GetServiceProviderActionOutput(ctx *pulumi.Context, args GetServiceProviderActionOutputArgs, opts ...pulumi.InvokeOption) GetServiceProviderActionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetServiceProviderActionResultOutput, error) {
-			args := v.(GetServiceProviderActionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DelegateAccessControl/getServiceProviderAction:getServiceProviderAction", args, GetServiceProviderActionResultOutput{}, options).(GetServiceProviderActionResultOutput), nil
-		}).(GetServiceProviderActionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DelegateAccessControl/getServiceProviderAction:getServiceProviderAction", args, GetServiceProviderActionResultOutput{}, options).(GetServiceProviderActionResultOutput)
 }
 
 // A collection of arguments for invoking getServiceProviderAction.

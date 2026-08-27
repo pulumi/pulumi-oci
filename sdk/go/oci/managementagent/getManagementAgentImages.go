@@ -81,12 +81,8 @@ type GetManagementAgentImagesResult struct {
 }
 
 func GetManagementAgentImagesOutput(ctx *pulumi.Context, args GetManagementAgentImagesOutputArgs, opts ...pulumi.InvokeOption) GetManagementAgentImagesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagementAgentImagesResultOutput, error) {
-			args := v.(GetManagementAgentImagesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ManagementAgent/getManagementAgentImages:getManagementAgentImages", args, GetManagementAgentImagesResultOutput{}, options).(GetManagementAgentImagesResultOutput), nil
-		}).(GetManagementAgentImagesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ManagementAgent/getManagementAgentImages:getManagementAgentImages", args, GetManagementAgentImagesResultOutput{}, options).(GetManagementAgentImagesResultOutput)
 }
 
 // A collection of arguments for invoking getManagementAgentImages.

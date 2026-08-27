@@ -101,12 +101,8 @@ type LookupSqlCollectionResult struct {
 }
 
 func LookupSqlCollectionOutput(ctx *pulumi.Context, args LookupSqlCollectionOutputArgs, opts ...pulumi.InvokeOption) LookupSqlCollectionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupSqlCollectionResultOutput, error) {
-			args := v.(LookupSqlCollectionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getSqlCollection:getSqlCollection", args, LookupSqlCollectionResultOutput{}, options).(LookupSqlCollectionResultOutput), nil
-		}).(LookupSqlCollectionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getSqlCollection:getSqlCollection", args, LookupSqlCollectionResultOutput{}, options).(LookupSqlCollectionResultOutput)
 }
 
 // A collection of arguments for invoking getSqlCollection.

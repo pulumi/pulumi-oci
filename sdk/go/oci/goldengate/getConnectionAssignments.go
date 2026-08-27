@@ -97,12 +97,8 @@ type GetConnectionAssignmentsResult struct {
 }
 
 func GetConnectionAssignmentsOutput(ctx *pulumi.Context, args GetConnectionAssignmentsOutputArgs, opts ...pulumi.InvokeOption) GetConnectionAssignmentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetConnectionAssignmentsResultOutput, error) {
-			args := v.(GetConnectionAssignmentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GoldenGate/getConnectionAssignments:getConnectionAssignments", args, GetConnectionAssignmentsResultOutput{}, options).(GetConnectionAssignmentsResultOutput), nil
-		}).(GetConnectionAssignmentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GoldenGate/getConnectionAssignments:getConnectionAssignments", args, GetConnectionAssignmentsResultOutput{}, options).(GetConnectionAssignmentsResultOutput)
 }
 
 // A collection of arguments for invoking getConnectionAssignments.

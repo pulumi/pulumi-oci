@@ -86,12 +86,8 @@ type LookupStreamGroupResult struct {
 }
 
 func LookupStreamGroupOutput(ctx *pulumi.Context, args LookupStreamGroupOutputArgs, opts ...pulumi.InvokeOption) LookupStreamGroupResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupStreamGroupResultOutput, error) {
-			args := v.(LookupStreamGroupArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:AiVision/getStreamGroup:getStreamGroup", args, LookupStreamGroupResultOutput{}, options).(LookupStreamGroupResultOutput), nil
-		}).(LookupStreamGroupResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:AiVision/getStreamGroup:getStreamGroup", args, LookupStreamGroupResultOutput{}, options).(LookupStreamGroupResultOutput)
 }
 
 // A collection of arguments for invoking getStreamGroup.

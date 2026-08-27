@@ -69,12 +69,8 @@ type GetManagedMySqlDatabaseHighAvailabilityMembersResult struct {
 }
 
 func GetManagedMySqlDatabaseHighAvailabilityMembersOutput(ctx *pulumi.Context, args GetManagedMySqlDatabaseHighAvailabilityMembersOutputArgs, opts ...pulumi.InvokeOption) GetManagedMySqlDatabaseHighAvailabilityMembersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedMySqlDatabaseHighAvailabilityMembersResultOutput, error) {
-			args := v.(GetManagedMySqlDatabaseHighAvailabilityMembersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedMySqlDatabaseHighAvailabilityMembers:getManagedMySqlDatabaseHighAvailabilityMembers", args, GetManagedMySqlDatabaseHighAvailabilityMembersResultOutput{}, options).(GetManagedMySqlDatabaseHighAvailabilityMembersResultOutput), nil
-		}).(GetManagedMySqlDatabaseHighAvailabilityMembersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getManagedMySqlDatabaseHighAvailabilityMembers:getManagedMySqlDatabaseHighAvailabilityMembers", args, GetManagedMySqlDatabaseHighAvailabilityMembersResultOutput{}, options).(GetManagedMySqlDatabaseHighAvailabilityMembersResultOutput)
 }
 
 // A collection of arguments for invoking getManagedMySqlDatabaseHighAvailabilityMembers.

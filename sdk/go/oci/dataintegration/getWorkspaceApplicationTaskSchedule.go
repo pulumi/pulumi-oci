@@ -122,12 +122,8 @@ type LookupWorkspaceApplicationTaskScheduleResult struct {
 }
 
 func LookupWorkspaceApplicationTaskScheduleOutput(ctx *pulumi.Context, args LookupWorkspaceApplicationTaskScheduleOutputArgs, opts ...pulumi.InvokeOption) LookupWorkspaceApplicationTaskScheduleResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupWorkspaceApplicationTaskScheduleResultOutput, error) {
-			args := v.(LookupWorkspaceApplicationTaskScheduleArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataIntegration/getWorkspaceApplicationTaskSchedule:getWorkspaceApplicationTaskSchedule", args, LookupWorkspaceApplicationTaskScheduleResultOutput{}, options).(LookupWorkspaceApplicationTaskScheduleResultOutput), nil
-		}).(LookupWorkspaceApplicationTaskScheduleResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataIntegration/getWorkspaceApplicationTaskSchedule:getWorkspaceApplicationTaskSchedule", args, LookupWorkspaceApplicationTaskScheduleResultOutput{}, options).(LookupWorkspaceApplicationTaskScheduleResultOutput)
 }
 
 // A collection of arguments for invoking getWorkspaceApplicationTaskSchedule.

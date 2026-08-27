@@ -72,12 +72,8 @@ type GetNamespaceFieldUsageResult struct {
 }
 
 func GetNamespaceFieldUsageOutput(ctx *pulumi.Context, args GetNamespaceFieldUsageOutputArgs, opts ...pulumi.InvokeOption) GetNamespaceFieldUsageResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetNamespaceFieldUsageResultOutput, error) {
-			args := v.(GetNamespaceFieldUsageArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LogAnalytics/getNamespaceFieldUsage:getNamespaceFieldUsage", args, GetNamespaceFieldUsageResultOutput{}, options).(GetNamespaceFieldUsageResultOutput), nil
-		}).(GetNamespaceFieldUsageResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LogAnalytics/getNamespaceFieldUsage:getNamespaceFieldUsage", args, GetNamespaceFieldUsageResultOutput{}, options).(GetNamespaceFieldUsageResultOutput)
 }
 
 // A collection of arguments for invoking getNamespaceFieldUsage.

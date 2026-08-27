@@ -73,12 +73,8 @@ type GetNetworkSecurityGroupSecurityRulesResult struct {
 }
 
 func GetNetworkSecurityGroupSecurityRulesOutput(ctx *pulumi.Context, args GetNetworkSecurityGroupSecurityRulesOutputArgs, opts ...pulumi.InvokeOption) GetNetworkSecurityGroupSecurityRulesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetNetworkSecurityGroupSecurityRulesResultOutput, error) {
-			args := v.(GetNetworkSecurityGroupSecurityRulesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getNetworkSecurityGroupSecurityRules:getNetworkSecurityGroupSecurityRules", args, GetNetworkSecurityGroupSecurityRulesResultOutput{}, options).(GetNetworkSecurityGroupSecurityRulesResultOutput), nil
-		}).(GetNetworkSecurityGroupSecurityRulesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getNetworkSecurityGroupSecurityRules:getNetworkSecurityGroupSecurityRules", args, GetNetworkSecurityGroupSecurityRulesResultOutput{}, options).(GetNetworkSecurityGroupSecurityRulesResultOutput)
 }
 
 // A collection of arguments for invoking getNetworkSecurityGroupSecurityRules.

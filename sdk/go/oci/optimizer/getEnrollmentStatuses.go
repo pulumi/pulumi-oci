@@ -79,12 +79,8 @@ type GetEnrollmentStatusesResult struct {
 }
 
 func GetEnrollmentStatusesOutput(ctx *pulumi.Context, args GetEnrollmentStatusesOutputArgs, opts ...pulumi.InvokeOption) GetEnrollmentStatusesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetEnrollmentStatusesResultOutput, error) {
-			args := v.(GetEnrollmentStatusesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Optimizer/getEnrollmentStatuses:getEnrollmentStatuses", args, GetEnrollmentStatusesResultOutput{}, options).(GetEnrollmentStatusesResultOutput), nil
-		}).(GetEnrollmentStatusesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Optimizer/getEnrollmentStatuses:getEnrollmentStatuses", args, GetEnrollmentStatusesResultOutput{}, options).(GetEnrollmentStatusesResultOutput)
 }
 
 // A collection of arguments for invoking getEnrollmentStatuses.

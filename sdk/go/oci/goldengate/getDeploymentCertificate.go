@@ -107,12 +107,8 @@ type LookupDeploymentCertificateResult struct {
 }
 
 func LookupDeploymentCertificateOutput(ctx *pulumi.Context, args LookupDeploymentCertificateOutputArgs, opts ...pulumi.InvokeOption) LookupDeploymentCertificateResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDeploymentCertificateResultOutput, error) {
-			args := v.(LookupDeploymentCertificateArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GoldenGate/getDeploymentCertificate:getDeploymentCertificate", args, LookupDeploymentCertificateResultOutput{}, options).(LookupDeploymentCertificateResultOutput), nil
-		}).(LookupDeploymentCertificateResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GoldenGate/getDeploymentCertificate:getDeploymentCertificate", args, LookupDeploymentCertificateResultOutput{}, options).(LookupDeploymentCertificateResultOutput)
 }
 
 // A collection of arguments for invoking getDeploymentCertificate.

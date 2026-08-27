@@ -77,12 +77,8 @@ type GetResourceAnalyticsTenancyAttachmentsResult struct {
 }
 
 func GetResourceAnalyticsTenancyAttachmentsOutput(ctx *pulumi.Context, args GetResourceAnalyticsTenancyAttachmentsOutputArgs, opts ...pulumi.InvokeOption) GetResourceAnalyticsTenancyAttachmentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetResourceAnalyticsTenancyAttachmentsResultOutput, error) {
-			args := v.(GetResourceAnalyticsTenancyAttachmentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getResourceAnalyticsTenancyAttachments:getResourceAnalyticsTenancyAttachments", args, GetResourceAnalyticsTenancyAttachmentsResultOutput{}, options).(GetResourceAnalyticsTenancyAttachmentsResultOutput), nil
-		}).(GetResourceAnalyticsTenancyAttachmentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getResourceAnalyticsTenancyAttachments:getResourceAnalyticsTenancyAttachments", args, GetResourceAnalyticsTenancyAttachmentsResultOutput{}, options).(GetResourceAnalyticsTenancyAttachmentsResultOutput)
 }
 
 // A collection of arguments for invoking getResourceAnalyticsTenancyAttachments.

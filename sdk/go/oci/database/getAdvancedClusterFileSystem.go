@@ -94,12 +94,8 @@ type LookupAdvancedClusterFileSystemResult struct {
 }
 
 func LookupAdvancedClusterFileSystemOutput(ctx *pulumi.Context, args LookupAdvancedClusterFileSystemOutputArgs, opts ...pulumi.InvokeOption) LookupAdvancedClusterFileSystemResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAdvancedClusterFileSystemResultOutput, error) {
-			args := v.(LookupAdvancedClusterFileSystemArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getAdvancedClusterFileSystem:getAdvancedClusterFileSystem", args, LookupAdvancedClusterFileSystemResultOutput{}, options).(LookupAdvancedClusterFileSystemResultOutput), nil
-		}).(LookupAdvancedClusterFileSystemResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getAdvancedClusterFileSystem:getAdvancedClusterFileSystem", args, LookupAdvancedClusterFileSystemResultOutput{}, options).(LookupAdvancedClusterFileSystemResultOutput)
 }
 
 // A collection of arguments for invoking getAdvancedClusterFileSystem.

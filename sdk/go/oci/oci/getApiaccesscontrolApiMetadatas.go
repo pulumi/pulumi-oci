@@ -82,12 +82,8 @@ type GetApiaccesscontrolApiMetadatasResult struct {
 }
 
 func GetApiaccesscontrolApiMetadatasOutput(ctx *pulumi.Context, args GetApiaccesscontrolApiMetadatasOutputArgs, opts ...pulumi.InvokeOption) GetApiaccesscontrolApiMetadatasResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetApiaccesscontrolApiMetadatasResultOutput, error) {
-			args := v.(GetApiaccesscontrolApiMetadatasArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getApiaccesscontrolApiMetadatas:getApiaccesscontrolApiMetadatas", args, GetApiaccesscontrolApiMetadatasResultOutput{}, options).(GetApiaccesscontrolApiMetadatasResultOutput), nil
-		}).(GetApiaccesscontrolApiMetadatasResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getApiaccesscontrolApiMetadatas:getApiaccesscontrolApiMetadatas", args, GetApiaccesscontrolApiMetadatasResultOutput{}, options).(GetApiaccesscontrolApiMetadatasResultOutput)
 }
 
 // A collection of arguments for invoking getApiaccesscontrolApiMetadatas.

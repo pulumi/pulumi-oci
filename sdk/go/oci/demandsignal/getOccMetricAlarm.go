@@ -94,12 +94,8 @@ type LookupOccMetricAlarmResult struct {
 }
 
 func LookupOccMetricAlarmOutput(ctx *pulumi.Context, args LookupOccMetricAlarmOutputArgs, opts ...pulumi.InvokeOption) LookupOccMetricAlarmResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupOccMetricAlarmResultOutput, error) {
-			args := v.(LookupOccMetricAlarmArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DemandSignal/getOccMetricAlarm:getOccMetricAlarm", args, LookupOccMetricAlarmResultOutput{}, options).(LookupOccMetricAlarmResultOutput), nil
-		}).(LookupOccMetricAlarmResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DemandSignal/getOccMetricAlarm:getOccMetricAlarm", args, LookupOccMetricAlarmResultOutput{}, options).(LookupOccMetricAlarmResultOutput)
 }
 
 // A collection of arguments for invoking getOccMetricAlarm.

@@ -89,12 +89,8 @@ type GetSenderInvitationsResult struct {
 }
 
 func GetSenderInvitationsOutput(ctx *pulumi.Context, args GetSenderInvitationsOutputArgs, opts ...pulumi.InvokeOption) GetSenderInvitationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSenderInvitationsResultOutput, error) {
-			args := v.(GetSenderInvitationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Tenantmanagercontrolplane/getSenderInvitations:getSenderInvitations", args, GetSenderInvitationsResultOutput{}, options).(GetSenderInvitationsResultOutput), nil
-		}).(GetSenderInvitationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Tenantmanagercontrolplane/getSenderInvitations:getSenderInvitations", args, GetSenderInvitationsResultOutput{}, options).(GetSenderInvitationsResultOutput)
 }
 
 // A collection of arguments for invoking getSenderInvitations.

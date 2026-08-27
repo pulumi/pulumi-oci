@@ -71,12 +71,8 @@ type LookupRuleSetResult struct {
 }
 
 func LookupRuleSetOutput(ctx *pulumi.Context, args LookupRuleSetOutputArgs, opts ...pulumi.InvokeOption) LookupRuleSetResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupRuleSetResultOutput, error) {
-			args := v.(LookupRuleSetArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LoadBalancer/getRuleSet:getRuleSet", args, LookupRuleSetResultOutput{}, options).(LookupRuleSetResultOutput), nil
-		}).(LookupRuleSetResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LoadBalancer/getRuleSet:getRuleSet", args, LookupRuleSetResultOutput{}, options).(LookupRuleSetResultOutput)
 }
 
 // A collection of arguments for invoking getRuleSet.

@@ -84,12 +84,8 @@ type GetSchedulingPolicySchedulingWindowsResult struct {
 }
 
 func GetSchedulingPolicySchedulingWindowsOutput(ctx *pulumi.Context, args GetSchedulingPolicySchedulingWindowsOutputArgs, opts ...pulumi.InvokeOption) GetSchedulingPolicySchedulingWindowsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSchedulingPolicySchedulingWindowsResultOutput, error) {
-			args := v.(GetSchedulingPolicySchedulingWindowsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getSchedulingPolicySchedulingWindows:getSchedulingPolicySchedulingWindows", args, GetSchedulingPolicySchedulingWindowsResultOutput{}, options).(GetSchedulingPolicySchedulingWindowsResultOutput), nil
-		}).(GetSchedulingPolicySchedulingWindowsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getSchedulingPolicySchedulingWindows:getSchedulingPolicySchedulingWindows", args, GetSchedulingPolicySchedulingWindowsResultOutput{}, options).(GetSchedulingPolicySchedulingWindowsResultOutput)
 }
 
 // A collection of arguments for invoking getSchedulingPolicySchedulingWindows.

@@ -86,12 +86,8 @@ type LookupSensitiveTypesExportResult struct {
 }
 
 func LookupSensitiveTypesExportOutput(ctx *pulumi.Context, args LookupSensitiveTypesExportOutputArgs, opts ...pulumi.InvokeOption) LookupSensitiveTypesExportResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupSensitiveTypesExportResultOutput, error) {
-			args := v.(LookupSensitiveTypesExportArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getSensitiveTypesExport:getSensitiveTypesExport", args, LookupSensitiveTypesExportResultOutput{}, options).(LookupSensitiveTypesExportResultOutput), nil
-		}).(LookupSensitiveTypesExportResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getSensitiveTypesExport:getSensitiveTypesExport", args, LookupSensitiveTypesExportResultOutput{}, options).(LookupSensitiveTypesExportResultOutput)
 }
 
 // A collection of arguments for invoking getSensitiveTypesExport.

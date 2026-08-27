@@ -89,12 +89,8 @@ type GetDomainsKmsiSettingsResult struct {
 }
 
 func GetDomainsKmsiSettingsOutput(ctx *pulumi.Context, args GetDomainsKmsiSettingsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsKmsiSettingsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsKmsiSettingsResultOutput, error) {
-			args := v.(GetDomainsKmsiSettingsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsKmsiSettings:getDomainsKmsiSettings", args, GetDomainsKmsiSettingsResultOutput{}, options).(GetDomainsKmsiSettingsResultOutput), nil
-		}).(GetDomainsKmsiSettingsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsKmsiSettings:getDomainsKmsiSettings", args, GetDomainsKmsiSettingsResultOutput{}, options).(GetDomainsKmsiSettingsResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsKmsiSettings.

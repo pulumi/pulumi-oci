@@ -93,12 +93,8 @@ type GetDrProtectionGroupsResult struct {
 }
 
 func GetDrProtectionGroupsOutput(ctx *pulumi.Context, args GetDrProtectionGroupsOutputArgs, opts ...pulumi.InvokeOption) GetDrProtectionGroupsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDrProtectionGroupsResultOutput, error) {
-			args := v.(GetDrProtectionGroupsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DisasterRecovery/getDrProtectionGroups:getDrProtectionGroups", args, GetDrProtectionGroupsResultOutput{}, options).(GetDrProtectionGroupsResultOutput), nil
-		}).(GetDrProtectionGroupsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DisasterRecovery/getDrProtectionGroups:getDrProtectionGroups", args, GetDrProtectionGroupsResultOutput{}, options).(GetDrProtectionGroupsResultOutput)
 }
 
 // A collection of arguments for invoking getDrProtectionGroups.

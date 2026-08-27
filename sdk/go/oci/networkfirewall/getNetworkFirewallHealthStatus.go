@@ -66,12 +66,8 @@ type GetNetworkFirewallHealthStatusResult struct {
 }
 
 func GetNetworkFirewallHealthStatusOutput(ctx *pulumi.Context, args GetNetworkFirewallHealthStatusOutputArgs, opts ...pulumi.InvokeOption) GetNetworkFirewallHealthStatusResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetNetworkFirewallHealthStatusResultOutput, error) {
-			args := v.(GetNetworkFirewallHealthStatusArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:NetworkFirewall/getNetworkFirewallHealthStatus:getNetworkFirewallHealthStatus", args, GetNetworkFirewallHealthStatusResultOutput{}, options).(GetNetworkFirewallHealthStatusResultOutput), nil
-		}).(GetNetworkFirewallHealthStatusResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:NetworkFirewall/getNetworkFirewallHealthStatus:getNetworkFirewallHealthStatus", args, GetNetworkFirewallHealthStatusResultOutput{}, options).(GetNetworkFirewallHealthStatusResultOutput)
 }
 
 // A collection of arguments for invoking getNetworkFirewallHealthStatus.

@@ -72,12 +72,8 @@ type GetSupportedCommitmentsResult struct {
 }
 
 func GetSupportedCommitmentsOutput(ctx *pulumi.Context, args GetSupportedCommitmentsOutputArgs, opts ...pulumi.InvokeOption) GetSupportedCommitmentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSupportedCommitmentsResultOutput, error) {
-			args := v.(GetSupportedCommitmentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Ocvp/getSupportedCommitments:getSupportedCommitments", args, GetSupportedCommitmentsResultOutput{}, options).(GetSupportedCommitmentsResultOutput), nil
-		}).(GetSupportedCommitmentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Ocvp/getSupportedCommitments:getSupportedCommitments", args, GetSupportedCommitmentsResultOutput{}, options).(GetSupportedCommitmentsResultOutput)
 }
 
 // A collection of arguments for invoking getSupportedCommitments.

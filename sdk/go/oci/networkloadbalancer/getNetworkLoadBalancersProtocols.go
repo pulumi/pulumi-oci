@@ -64,12 +64,8 @@ type GetNetworkLoadBalancersProtocolsResult struct {
 }
 
 func GetNetworkLoadBalancersProtocolsOutput(ctx *pulumi.Context, args GetNetworkLoadBalancersProtocolsOutputArgs, opts ...pulumi.InvokeOption) GetNetworkLoadBalancersProtocolsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetNetworkLoadBalancersProtocolsResultOutput, error) {
-			args := v.(GetNetworkLoadBalancersProtocolsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:NetworkLoadBalancer/getNetworkLoadBalancersProtocols:getNetworkLoadBalancersProtocols", args, GetNetworkLoadBalancersProtocolsResultOutput{}, options).(GetNetworkLoadBalancersProtocolsResultOutput), nil
-		}).(GetNetworkLoadBalancersProtocolsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:NetworkLoadBalancer/getNetworkLoadBalancersProtocols:getNetworkLoadBalancersProtocols", args, GetNetworkLoadBalancersProtocolsResultOutput{}, options).(GetNetworkLoadBalancersProtocolsResultOutput)
 }
 
 // A collection of arguments for invoking getNetworkLoadBalancersProtocols.

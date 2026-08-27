@@ -69,12 +69,8 @@ type GetManagedDatabaseTableStatisticsResult struct {
 }
 
 func GetManagedDatabaseTableStatisticsOutput(ctx *pulumi.Context, args GetManagedDatabaseTableStatisticsOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseTableStatisticsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabaseTableStatisticsResultOutput, error) {
-			args := v.(GetManagedDatabaseTableStatisticsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseTableStatistics:getManagedDatabaseTableStatistics", args, GetManagedDatabaseTableStatisticsResultOutput{}, options).(GetManagedDatabaseTableStatisticsResultOutput), nil
-		}).(GetManagedDatabaseTableStatisticsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseTableStatistics:getManagedDatabaseTableStatistics", args, GetManagedDatabaseTableStatisticsResultOutput{}, options).(GetManagedDatabaseTableStatisticsResultOutput)
 }
 
 // A collection of arguments for invoking getManagedDatabaseTableStatistics.

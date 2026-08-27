@@ -80,12 +80,8 @@ type LookupHeatWaveClusterResult struct {
 }
 
 func LookupHeatWaveClusterOutput(ctx *pulumi.Context, args LookupHeatWaveClusterOutputArgs, opts ...pulumi.InvokeOption) LookupHeatWaveClusterResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupHeatWaveClusterResultOutput, error) {
-			args := v.(LookupHeatWaveClusterArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Mysql/getHeatWaveCluster:getHeatWaveCluster", args, LookupHeatWaveClusterResultOutput{}, options).(LookupHeatWaveClusterResultOutput), nil
-		}).(LookupHeatWaveClusterResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Mysql/getHeatWaveCluster:getHeatWaveCluster", args, LookupHeatWaveClusterResultOutput{}, options).(LookupHeatWaveClusterResultOutput)
 }
 
 // A collection of arguments for invoking getHeatWaveCluster.

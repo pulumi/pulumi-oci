@@ -68,12 +68,8 @@ type GetInsightCapabilitiesResult struct {
 }
 
 func GetInsightCapabilitiesOutput(ctx *pulumi.Context, args GetInsightCapabilitiesOutputArgs, opts ...pulumi.InvokeOption) GetInsightCapabilitiesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetInsightCapabilitiesResultOutput, error) {
-			args := v.(GetInsightCapabilitiesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Psql/getInsightCapabilities:getInsightCapabilities", args, GetInsightCapabilitiesResultOutput{}, options).(GetInsightCapabilitiesResultOutput), nil
-		}).(GetInsightCapabilitiesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Psql/getInsightCapabilities:getInsightCapabilities", args, GetInsightCapabilitiesResultOutput{}, options).(GetInsightCapabilitiesResultOutput)
 }
 
 // A collection of arguments for invoking getInsightCapabilities.

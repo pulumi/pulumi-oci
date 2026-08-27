@@ -45,12 +45,8 @@ type GetCleanEnergyUsageResult struct {
 }
 
 func GetCleanEnergyUsageOutput(ctx *pulumi.Context, args GetCleanEnergyUsageOutputArgs, opts ...pulumi.InvokeOption) GetCleanEnergyUsageResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCleanEnergyUsageResultOutput, error) {
-			args := v.(GetCleanEnergyUsageArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:MeteringComputation/getCleanEnergyUsage:getCleanEnergyUsage", args, GetCleanEnergyUsageResultOutput{}, options).(GetCleanEnergyUsageResultOutput), nil
-		}).(GetCleanEnergyUsageResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:MeteringComputation/getCleanEnergyUsage:getCleanEnergyUsage", args, GetCleanEnergyUsageResultOutput{}, options).(GetCleanEnergyUsageResultOutput)
 }
 
 // A collection of arguments for invoking getCleanEnergyUsage.

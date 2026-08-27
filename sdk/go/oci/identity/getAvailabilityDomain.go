@@ -73,12 +73,8 @@ type GetAvailabilityDomainResult struct {
 }
 
 func GetAvailabilityDomainOutput(ctx *pulumi.Context, args GetAvailabilityDomainOutputArgs, opts ...pulumi.InvokeOption) GetAvailabilityDomainResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAvailabilityDomainResultOutput, error) {
-			args := v.(GetAvailabilityDomainArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getAvailabilityDomain:getAvailabilityDomain", args, GetAvailabilityDomainResultOutput{}, options).(GetAvailabilityDomainResultOutput), nil
-		}).(GetAvailabilityDomainResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getAvailabilityDomain:getAvailabilityDomain", args, GetAvailabilityDomainResultOutput{}, options).(GetAvailabilityDomainResultOutput)
 }
 
 // A collection of arguments for invoking getAvailabilityDomain.

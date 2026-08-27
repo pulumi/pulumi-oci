@@ -73,12 +73,8 @@ type GetExadbVmClusterUpdateHistoryEntriesResult struct {
 }
 
 func GetExadbVmClusterUpdateHistoryEntriesOutput(ctx *pulumi.Context, args GetExadbVmClusterUpdateHistoryEntriesOutputArgs, opts ...pulumi.InvokeOption) GetExadbVmClusterUpdateHistoryEntriesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetExadbVmClusterUpdateHistoryEntriesResultOutput, error) {
-			args := v.(GetExadbVmClusterUpdateHistoryEntriesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getExadbVmClusterUpdateHistoryEntries:getExadbVmClusterUpdateHistoryEntries", args, GetExadbVmClusterUpdateHistoryEntriesResultOutput{}, options).(GetExadbVmClusterUpdateHistoryEntriesResultOutput), nil
-		}).(GetExadbVmClusterUpdateHistoryEntriesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getExadbVmClusterUpdateHistoryEntries:getExadbVmClusterUpdateHistoryEntries", args, GetExadbVmClusterUpdateHistoryEntriesResultOutput{}, options).(GetExadbVmClusterUpdateHistoryEntriesResultOutput)
 }
 
 // A collection of arguments for invoking getExadbVmClusterUpdateHistoryEntries.

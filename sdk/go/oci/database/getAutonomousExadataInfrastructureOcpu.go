@@ -70,12 +70,8 @@ type GetAutonomousExadataInfrastructureOcpuResult struct {
 }
 
 func GetAutonomousExadataInfrastructureOcpuOutput(ctx *pulumi.Context, args GetAutonomousExadataInfrastructureOcpuOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousExadataInfrastructureOcpuResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAutonomousExadataInfrastructureOcpuResultOutput, error) {
-			args := v.(GetAutonomousExadataInfrastructureOcpuArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getAutonomousExadataInfrastructureOcpu:getAutonomousExadataInfrastructureOcpu", args, GetAutonomousExadataInfrastructureOcpuResultOutput{}, options).(GetAutonomousExadataInfrastructureOcpuResultOutput), nil
-		}).(GetAutonomousExadataInfrastructureOcpuResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getAutonomousExadataInfrastructureOcpu:getAutonomousExadataInfrastructureOcpu", args, GetAutonomousExadataInfrastructureOcpuResultOutput{}, options).(GetAutonomousExadataInfrastructureOcpuResultOutput)
 }
 
 // A collection of arguments for invoking getAutonomousExadataInfrastructureOcpu.

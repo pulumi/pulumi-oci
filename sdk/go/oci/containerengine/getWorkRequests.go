@@ -86,12 +86,8 @@ type GetWorkRequestsResult struct {
 }
 
 func GetWorkRequestsOutput(ctx *pulumi.Context, args GetWorkRequestsOutputArgs, opts ...pulumi.InvokeOption) GetWorkRequestsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetWorkRequestsResultOutput, error) {
-			args := v.(GetWorkRequestsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ContainerEngine/getWorkRequests:getWorkRequests", args, GetWorkRequestsResultOutput{}, options).(GetWorkRequestsResultOutput), nil
-		}).(GetWorkRequestsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ContainerEngine/getWorkRequests:getWorkRequests", args, GetWorkRequestsResultOutput{}, options).(GetWorkRequestsResultOutput)
 }
 
 // A collection of arguments for invoking getWorkRequests.

@@ -106,12 +106,8 @@ type GetDomainsMappedAttributesResult struct {
 }
 
 func GetDomainsMappedAttributesOutput(ctx *pulumi.Context, args GetDomainsMappedAttributesOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMappedAttributesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsMappedAttributesResultOutput, error) {
-			args := v.(GetDomainsMappedAttributesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsMappedAttributes:getDomainsMappedAttributes", args, GetDomainsMappedAttributesResultOutput{}, options).(GetDomainsMappedAttributesResultOutput), nil
-		}).(GetDomainsMappedAttributesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsMappedAttributes:getDomainsMappedAttributes", args, GetDomainsMappedAttributesResultOutput{}, options).(GetDomainsMappedAttributesResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsMappedAttributes.

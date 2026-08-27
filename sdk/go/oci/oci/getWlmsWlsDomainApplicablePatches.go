@@ -68,12 +68,8 @@ type GetWlmsWlsDomainApplicablePatchesResult struct {
 }
 
 func GetWlmsWlsDomainApplicablePatchesOutput(ctx *pulumi.Context, args GetWlmsWlsDomainApplicablePatchesOutputArgs, opts ...pulumi.InvokeOption) GetWlmsWlsDomainApplicablePatchesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetWlmsWlsDomainApplicablePatchesResultOutput, error) {
-			args := v.(GetWlmsWlsDomainApplicablePatchesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getWlmsWlsDomainApplicablePatches:getWlmsWlsDomainApplicablePatches", args, GetWlmsWlsDomainApplicablePatchesResultOutput{}, options).(GetWlmsWlsDomainApplicablePatchesResultOutput), nil
-		}).(GetWlmsWlsDomainApplicablePatchesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getWlmsWlsDomainApplicablePatches:getWlmsWlsDomainApplicablePatches", args, GetWlmsWlsDomainApplicablePatchesResultOutput{}, options).(GetWlmsWlsDomainApplicablePatchesResultOutput)
 }
 
 // A collection of arguments for invoking getWlmsWlsDomainApplicablePatches.

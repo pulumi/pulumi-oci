@@ -54,12 +54,8 @@ type LookupSensitiveDataModelReferentialRelationResult struct {
 }
 
 func LookupSensitiveDataModelReferentialRelationOutput(ctx *pulumi.Context, args LookupSensitiveDataModelReferentialRelationOutputArgs, opts ...pulumi.InvokeOption) LookupSensitiveDataModelReferentialRelationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupSensitiveDataModelReferentialRelationResultOutput, error) {
-			args := v.(LookupSensitiveDataModelReferentialRelationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getSensitiveDataModelReferentialRelation:getSensitiveDataModelReferentialRelation", args, LookupSensitiveDataModelReferentialRelationResultOutput{}, options).(LookupSensitiveDataModelReferentialRelationResultOutput), nil
-		}).(LookupSensitiveDataModelReferentialRelationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getSensitiveDataModelReferentialRelation:getSensitiveDataModelReferentialRelation", args, LookupSensitiveDataModelReferentialRelationResultOutput{}, options).(LookupSensitiveDataModelReferentialRelationResultOutput)
 }
 
 // A collection of arguments for invoking getSensitiveDataModelReferentialRelation.

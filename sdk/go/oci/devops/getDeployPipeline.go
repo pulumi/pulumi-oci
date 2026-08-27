@@ -92,12 +92,8 @@ type LookupDeployPipelineResult struct {
 }
 
 func LookupDeployPipelineOutput(ctx *pulumi.Context, args LookupDeployPipelineOutputArgs, opts ...pulumi.InvokeOption) LookupDeployPipelineResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDeployPipelineResultOutput, error) {
-			args := v.(LookupDeployPipelineArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DevOps/getDeployPipeline:getDeployPipeline", args, LookupDeployPipelineResultOutput{}, options).(LookupDeployPipelineResultOutput), nil
-		}).(LookupDeployPipelineResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DevOps/getDeployPipeline:getDeployPipeline", args, LookupDeployPipelineResultOutput{}, options).(LookupDeployPipelineResultOutput)
 }
 
 // A collection of arguments for invoking getDeployPipeline.

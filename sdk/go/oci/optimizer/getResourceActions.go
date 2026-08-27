@@ -126,12 +126,8 @@ type GetResourceActionsResult struct {
 }
 
 func GetResourceActionsOutput(ctx *pulumi.Context, args GetResourceActionsOutputArgs, opts ...pulumi.InvokeOption) GetResourceActionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetResourceActionsResultOutput, error) {
-			args := v.(GetResourceActionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Optimizer/getResourceActions:getResourceActions", args, GetResourceActionsResultOutput{}, options).(GetResourceActionsResultOutput), nil
-		}).(GetResourceActionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Optimizer/getResourceActions:getResourceActions", args, GetResourceActionsResultOutput{}, options).(GetResourceActionsResultOutput)
 }
 
 // A collection of arguments for invoking getResourceActions.

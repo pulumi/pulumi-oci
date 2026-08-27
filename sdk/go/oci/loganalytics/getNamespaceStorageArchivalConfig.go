@@ -67,12 +67,8 @@ type LookupNamespaceStorageArchivalConfigResult struct {
 }
 
 func LookupNamespaceStorageArchivalConfigOutput(ctx *pulumi.Context, args LookupNamespaceStorageArchivalConfigOutputArgs, opts ...pulumi.InvokeOption) LookupNamespaceStorageArchivalConfigResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupNamespaceStorageArchivalConfigResultOutput, error) {
-			args := v.(LookupNamespaceStorageArchivalConfigArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LogAnalytics/getNamespaceStorageArchivalConfig:getNamespaceStorageArchivalConfig", args, LookupNamespaceStorageArchivalConfigResultOutput{}, options).(LookupNamespaceStorageArchivalConfigResultOutput), nil
-		}).(LookupNamespaceStorageArchivalConfigResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LogAnalytics/getNamespaceStorageArchivalConfig:getNamespaceStorageArchivalConfig", args, LookupNamespaceStorageArchivalConfigResultOutput{}, options).(LookupNamespaceStorageArchivalConfigResultOutput)
 }
 
 // A collection of arguments for invoking getNamespaceStorageArchivalConfig.

@@ -115,12 +115,8 @@ type GetSqlCollectionAnalyticsResult struct {
 }
 
 func GetSqlCollectionAnalyticsOutput(ctx *pulumi.Context, args GetSqlCollectionAnalyticsOutputArgs, opts ...pulumi.InvokeOption) GetSqlCollectionAnalyticsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSqlCollectionAnalyticsResultOutput, error) {
-			args := v.(GetSqlCollectionAnalyticsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getSqlCollectionAnalytics:getSqlCollectionAnalytics", args, GetSqlCollectionAnalyticsResultOutput{}, options).(GetSqlCollectionAnalyticsResultOutput), nil
-		}).(GetSqlCollectionAnalyticsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getSqlCollectionAnalytics:getSqlCollectionAnalytics", args, GetSqlCollectionAnalyticsResultOutput{}, options).(GetSqlCollectionAnalyticsResultOutput)
 }
 
 // A collection of arguments for invoking getSqlCollectionAnalytics.

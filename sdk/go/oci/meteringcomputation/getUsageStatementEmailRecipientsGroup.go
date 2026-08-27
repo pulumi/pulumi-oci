@@ -77,12 +77,8 @@ type LookupUsageStatementEmailRecipientsGroupResult struct {
 }
 
 func LookupUsageStatementEmailRecipientsGroupOutput(ctx *pulumi.Context, args LookupUsageStatementEmailRecipientsGroupOutputArgs, opts ...pulumi.InvokeOption) LookupUsageStatementEmailRecipientsGroupResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupUsageStatementEmailRecipientsGroupResultOutput, error) {
-			args := v.(LookupUsageStatementEmailRecipientsGroupArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:MeteringComputation/getUsageStatementEmailRecipientsGroup:getUsageStatementEmailRecipientsGroup", args, LookupUsageStatementEmailRecipientsGroupResultOutput{}, options).(LookupUsageStatementEmailRecipientsGroupResultOutput), nil
-		}).(LookupUsageStatementEmailRecipientsGroupResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:MeteringComputation/getUsageStatementEmailRecipientsGroup:getUsageStatementEmailRecipientsGroup", args, LookupUsageStatementEmailRecipientsGroupResultOutput{}, options).(LookupUsageStatementEmailRecipientsGroupResultOutput)
 }
 
 // A collection of arguments for invoking getUsageStatementEmailRecipientsGroup.

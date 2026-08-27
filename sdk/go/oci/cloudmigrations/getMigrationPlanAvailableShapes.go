@@ -85,12 +85,8 @@ type GetMigrationPlanAvailableShapesResult struct {
 }
 
 func GetMigrationPlanAvailableShapesOutput(ctx *pulumi.Context, args GetMigrationPlanAvailableShapesOutputArgs, opts ...pulumi.InvokeOption) GetMigrationPlanAvailableShapesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMigrationPlanAvailableShapesResultOutput, error) {
-			args := v.(GetMigrationPlanAvailableShapesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CloudMigrations/getMigrationPlanAvailableShapes:getMigrationPlanAvailableShapes", args, GetMigrationPlanAvailableShapesResultOutput{}, options).(GetMigrationPlanAvailableShapesResultOutput), nil
-		}).(GetMigrationPlanAvailableShapesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CloudMigrations/getMigrationPlanAvailableShapes:getMigrationPlanAvailableShapes", args, GetMigrationPlanAvailableShapesResultOutput{}, options).(GetMigrationPlanAvailableShapesResultOutput)
 }
 
 // A collection of arguments for invoking getMigrationPlanAvailableShapes.

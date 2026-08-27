@@ -78,12 +78,8 @@ type GetRecipesResult struct {
 }
 
 func GetRecipesOutput(ctx *pulumi.Context, args GetRecipesOutputArgs, opts ...pulumi.InvokeOption) GetRecipesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRecipesResultOutput, error) {
-			args := v.(GetRecipesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GoldenGate/getRecipes:getRecipes", args, GetRecipesResultOutput{}, options).(GetRecipesResultOutput), nil
-		}).(GetRecipesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GoldenGate/getRecipes:getRecipes", args, GetRecipesResultOutput{}, options).(GetRecipesResultOutput)
 }
 
 // A collection of arguments for invoking getRecipes.

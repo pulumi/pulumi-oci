@@ -81,12 +81,8 @@ type LookupAcceptedAgreementResult struct {
 }
 
 func LookupAcceptedAgreementOutput(ctx *pulumi.Context, args LookupAcceptedAgreementOutputArgs, opts ...pulumi.InvokeOption) LookupAcceptedAgreementResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAcceptedAgreementResultOutput, error) {
-			args := v.(LookupAcceptedAgreementArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Marketplace/getAcceptedAgreement:getAcceptedAgreement", args, LookupAcceptedAgreementResultOutput{}, options).(LookupAcceptedAgreementResultOutput), nil
-		}).(LookupAcceptedAgreementResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Marketplace/getAcceptedAgreement:getAcceptedAgreement", args, LookupAcceptedAgreementResultOutput{}, options).(LookupAcceptedAgreementResultOutput)
 }
 
 // A collection of arguments for invoking getAcceptedAgreement.

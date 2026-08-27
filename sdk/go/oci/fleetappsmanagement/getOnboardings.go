@@ -78,12 +78,8 @@ type GetOnboardingsResult struct {
 }
 
 func GetOnboardingsOutput(ctx *pulumi.Context, args GetOnboardingsOutputArgs, opts ...pulumi.InvokeOption) GetOnboardingsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetOnboardingsResultOutput, error) {
-			args := v.(GetOnboardingsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getOnboardings:getOnboardings", args, GetOnboardingsResultOutput{}, options).(GetOnboardingsResultOutput), nil
-		}).(GetOnboardingsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getOnboardings:getOnboardings", args, GetOnboardingsResultOutput{}, options).(GetOnboardingsResultOutput)
 }
 
 // A collection of arguments for invoking getOnboardings.

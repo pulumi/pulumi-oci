@@ -86,12 +86,8 @@ type GetDatabaseToolsEndpointServiceResult struct {
 }
 
 func GetDatabaseToolsEndpointServiceOutput(ctx *pulumi.Context, args GetDatabaseToolsEndpointServiceOutputArgs, opts ...pulumi.InvokeOption) GetDatabaseToolsEndpointServiceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDatabaseToolsEndpointServiceResultOutput, error) {
-			args := v.(GetDatabaseToolsEndpointServiceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseTools/getDatabaseToolsEndpointService:getDatabaseToolsEndpointService", args, GetDatabaseToolsEndpointServiceResultOutput{}, options).(GetDatabaseToolsEndpointServiceResultOutput), nil
-		}).(GetDatabaseToolsEndpointServiceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseTools/getDatabaseToolsEndpointService:getDatabaseToolsEndpointService", args, GetDatabaseToolsEndpointServiceResultOutput{}, options).(GetDatabaseToolsEndpointServiceResultOutput)
 }
 
 // A collection of arguments for invoking getDatabaseToolsEndpointService.

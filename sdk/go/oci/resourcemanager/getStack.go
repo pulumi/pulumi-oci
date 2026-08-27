@@ -88,12 +88,8 @@ type GetStackResult struct {
 }
 
 func GetStackOutput(ctx *pulumi.Context, args GetStackOutputArgs, opts ...pulumi.InvokeOption) GetStackResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetStackResultOutput, error) {
-			args := v.(GetStackArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ResourceManager/getStack:getStack", args, GetStackResultOutput{}, options).(GetStackResultOutput), nil
-		}).(GetStackResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ResourceManager/getStack:getStack", args, GetStackResultOutput{}, options).(GetStackResultOutput)
 }
 
 // A collection of arguments for invoking getStack.

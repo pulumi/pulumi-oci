@@ -105,12 +105,8 @@ type GetWlmsManagedInstanceServerResult struct {
 }
 
 func GetWlmsManagedInstanceServerOutput(ctx *pulumi.Context, args GetWlmsManagedInstanceServerOutputArgs, opts ...pulumi.InvokeOption) GetWlmsManagedInstanceServerResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetWlmsManagedInstanceServerResultOutput, error) {
-			args := v.(GetWlmsManagedInstanceServerArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getWlmsManagedInstanceServer:getWlmsManagedInstanceServer", args, GetWlmsManagedInstanceServerResultOutput{}, options).(GetWlmsManagedInstanceServerResultOutput), nil
-		}).(GetWlmsManagedInstanceServerResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getWlmsManagedInstanceServer:getWlmsManagedInstanceServer", args, GetWlmsManagedInstanceServerResultOutput{}, options).(GetWlmsManagedInstanceServerResultOutput)
 }
 
 // A collection of arguments for invoking getWlmsManagedInstanceServer.

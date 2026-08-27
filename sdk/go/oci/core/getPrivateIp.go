@@ -104,12 +104,8 @@ type LookupPrivateIpResult struct {
 }
 
 func LookupPrivateIpOutput(ctx *pulumi.Context, args LookupPrivateIpOutputArgs, opts ...pulumi.InvokeOption) LookupPrivateIpResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupPrivateIpResultOutput, error) {
-			args := v.(LookupPrivateIpArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getPrivateIp:getPrivateIp", args, LookupPrivateIpResultOutput{}, options).(LookupPrivateIpResultOutput), nil
-		}).(LookupPrivateIpResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getPrivateIp:getPrivateIp", args, LookupPrivateIpResultOutput{}, options).(LookupPrivateIpResultOutput)
 }
 
 // A collection of arguments for invoking getPrivateIp.

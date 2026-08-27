@@ -8,20 +8,11 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 
 public final class DomainsAppRadiusPolicyArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final DomainsAppRadiusPolicyArgs Empty = new DomainsAppRadiusPolicyArgs();
-
-    @Import(name="_ref")
-    private @Nullable Output<String> _ref;
-
-    public Optional<Output<String>> _ref() {
-        return Optional.ofNullable(this._ref);
-    }
 
     /**
      * (Updatable) Identifier of the Policy.
@@ -65,7 +56,6 @@ public final class DomainsAppRadiusPolicyArgs extends com.pulumi.resources.Resou
     private DomainsAppRadiusPolicyArgs() {}
 
     private DomainsAppRadiusPolicyArgs(DomainsAppRadiusPolicyArgs $) {
-        this._ref = $._ref;
         this.value = $.value;
     }
 
@@ -85,15 +75,6 @@ public final class DomainsAppRadiusPolicyArgs extends com.pulumi.resources.Resou
 
         public Builder(DomainsAppRadiusPolicyArgs defaults) {
             $ = new DomainsAppRadiusPolicyArgs(Objects.requireNonNull(defaults));
-        }
-
-        public Builder _ref(@Nullable Output<String> _ref) {
-            $._ref = _ref;
-            return this;
-        }
-
-        public Builder _ref(String _ref) {
-            return _ref(Output.of(_ref));
         }
 
         /**

@@ -78,12 +78,8 @@ type GetVantagePointsResult struct {
 }
 
 func GetVantagePointsOutput(ctx *pulumi.Context, args GetVantagePointsOutputArgs, opts ...pulumi.InvokeOption) GetVantagePointsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVantagePointsResultOutput, error) {
-			args := v.(GetVantagePointsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ApmSynthetics/getVantagePoints:getVantagePoints", args, GetVantagePointsResultOutput{}, options).(GetVantagePointsResultOutput), nil
-		}).(GetVantagePointsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ApmSynthetics/getVantagePoints:getVantagePoints", args, GetVantagePointsResultOutput{}, options).(GetVantagePointsResultOutput)
 }
 
 // A collection of arguments for invoking getVantagePoints.

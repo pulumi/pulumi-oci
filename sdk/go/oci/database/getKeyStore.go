@@ -89,12 +89,8 @@ type LookupKeyStoreResult struct {
 }
 
 func LookupKeyStoreOutput(ctx *pulumi.Context, args LookupKeyStoreOutputArgs, opts ...pulumi.InvokeOption) LookupKeyStoreResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupKeyStoreResultOutput, error) {
-			args := v.(LookupKeyStoreArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getKeyStore:getKeyStore", args, LookupKeyStoreResultOutput{}, options).(LookupKeyStoreResultOutput), nil
-		}).(LookupKeyStoreResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getKeyStore:getKeyStore", args, LookupKeyStoreResultOutput{}, options).(LookupKeyStoreResultOutput)
 }
 
 // A collection of arguments for invoking getKeyStore.

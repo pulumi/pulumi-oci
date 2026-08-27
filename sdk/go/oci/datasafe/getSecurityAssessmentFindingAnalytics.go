@@ -112,12 +112,8 @@ type GetSecurityAssessmentFindingAnalyticsResult struct {
 }
 
 func GetSecurityAssessmentFindingAnalyticsOutput(ctx *pulumi.Context, args GetSecurityAssessmentFindingAnalyticsOutputArgs, opts ...pulumi.InvokeOption) GetSecurityAssessmentFindingAnalyticsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSecurityAssessmentFindingAnalyticsResultOutput, error) {
-			args := v.(GetSecurityAssessmentFindingAnalyticsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getSecurityAssessmentFindingAnalytics:getSecurityAssessmentFindingAnalytics", args, GetSecurityAssessmentFindingAnalyticsResultOutput{}, options).(GetSecurityAssessmentFindingAnalyticsResultOutput), nil
-		}).(GetSecurityAssessmentFindingAnalyticsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getSecurityAssessmentFindingAnalytics:getSecurityAssessmentFindingAnalytics", args, GetSecurityAssessmentFindingAnalyticsResultOutput{}, options).(GetSecurityAssessmentFindingAnalyticsResultOutput)
 }
 
 // A collection of arguments for invoking getSecurityAssessmentFindingAnalytics.

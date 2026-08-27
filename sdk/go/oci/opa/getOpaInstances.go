@@ -82,12 +82,8 @@ type GetOpaInstancesResult struct {
 }
 
 func GetOpaInstancesOutput(ctx *pulumi.Context, args GetOpaInstancesOutputArgs, opts ...pulumi.InvokeOption) GetOpaInstancesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetOpaInstancesResultOutput, error) {
-			args := v.(GetOpaInstancesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Opa/getOpaInstances:getOpaInstances", args, GetOpaInstancesResultOutput{}, options).(GetOpaInstancesResultOutput), nil
-		}).(GetOpaInstancesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Opa/getOpaInstances:getOpaInstances", args, GetOpaInstancesResultOutput{}, options).(GetOpaInstancesResultOutput)
 }
 
 // A collection of arguments for invoking getOpaInstances.

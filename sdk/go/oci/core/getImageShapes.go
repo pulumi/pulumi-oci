@@ -69,12 +69,8 @@ type GetImageShapesResult struct {
 }
 
 func GetImageShapesOutput(ctx *pulumi.Context, args GetImageShapesOutputArgs, opts ...pulumi.InvokeOption) GetImageShapesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetImageShapesResultOutput, error) {
-			args := v.(GetImageShapesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getImageShapes:getImageShapes", args, GetImageShapesResultOutput{}, options).(GetImageShapesResultOutput), nil
-		}).(GetImageShapesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getImageShapes:getImageShapes", args, GetImageShapesResultOutput{}, options).(GetImageShapesResultOutput)
 }
 
 // A collection of arguments for invoking getImageShapes.

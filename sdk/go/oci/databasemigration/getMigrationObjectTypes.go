@@ -70,12 +70,8 @@ type GetMigrationObjectTypesResult struct {
 }
 
 func GetMigrationObjectTypesOutput(ctx *pulumi.Context, args GetMigrationObjectTypesOutputArgs, opts ...pulumi.InvokeOption) GetMigrationObjectTypesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMigrationObjectTypesResultOutput, error) {
-			args := v.(GetMigrationObjectTypesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes", args, GetMigrationObjectTypesResultOutput{}, options).(GetMigrationObjectTypesResultOutput), nil
-		}).(GetMigrationObjectTypesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes", args, GetMigrationObjectTypesResultOutput{}, options).(GetMigrationObjectTypesResultOutput)
 }
 
 // A collection of arguments for invoking getMigrationObjectTypes.

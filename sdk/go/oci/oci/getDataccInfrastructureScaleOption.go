@@ -67,12 +67,8 @@ type GetDataccInfrastructureScaleOptionResult struct {
 }
 
 func GetDataccInfrastructureScaleOptionOutput(ctx *pulumi.Context, args GetDataccInfrastructureScaleOptionOutputArgs, opts ...pulumi.InvokeOption) GetDataccInfrastructureScaleOptionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDataccInfrastructureScaleOptionResultOutput, error) {
-			args := v.(GetDataccInfrastructureScaleOptionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDataccInfrastructureScaleOption:getDataccInfrastructureScaleOption", args, GetDataccInfrastructureScaleOptionResultOutput{}, options).(GetDataccInfrastructureScaleOptionResultOutput), nil
-		}).(GetDataccInfrastructureScaleOptionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDataccInfrastructureScaleOption:getDataccInfrastructureScaleOption", args, GetDataccInfrastructureScaleOptionResultOutput{}, options).(GetDataccInfrastructureScaleOptionResultOutput)
 }
 
 // A collection of arguments for invoking getDataccInfrastructureScaleOption.

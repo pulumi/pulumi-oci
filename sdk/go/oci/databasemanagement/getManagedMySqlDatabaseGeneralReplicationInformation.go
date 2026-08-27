@@ -99,12 +99,8 @@ type GetManagedMySqlDatabaseGeneralReplicationInformationResult struct {
 }
 
 func GetManagedMySqlDatabaseGeneralReplicationInformationOutput(ctx *pulumi.Context, args GetManagedMySqlDatabaseGeneralReplicationInformationOutputArgs, opts ...pulumi.InvokeOption) GetManagedMySqlDatabaseGeneralReplicationInformationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedMySqlDatabaseGeneralReplicationInformationResultOutput, error) {
-			args := v.(GetManagedMySqlDatabaseGeneralReplicationInformationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedMySqlDatabaseGeneralReplicationInformation:getManagedMySqlDatabaseGeneralReplicationInformation", args, GetManagedMySqlDatabaseGeneralReplicationInformationResultOutput{}, options).(GetManagedMySqlDatabaseGeneralReplicationInformationResultOutput), nil
-		}).(GetManagedMySqlDatabaseGeneralReplicationInformationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getManagedMySqlDatabaseGeneralReplicationInformation:getManagedMySqlDatabaseGeneralReplicationInformation", args, GetManagedMySqlDatabaseGeneralReplicationInformationResultOutput{}, options).(GetManagedMySqlDatabaseGeneralReplicationInformationResultOutput)
 }
 
 // A collection of arguments for invoking getManagedMySqlDatabaseGeneralReplicationInformation.

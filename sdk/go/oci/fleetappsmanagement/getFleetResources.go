@@ -85,12 +85,8 @@ type GetFleetResourcesResult struct {
 }
 
 func GetFleetResourcesOutput(ctx *pulumi.Context, args GetFleetResourcesOutputArgs, opts ...pulumi.InvokeOption) GetFleetResourcesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFleetResourcesResultOutput, error) {
-			args := v.(GetFleetResourcesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getFleetResources:getFleetResources", args, GetFleetResourcesResultOutput{}, options).(GetFleetResourcesResultOutput), nil
-		}).(GetFleetResourcesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getFleetResources:getFleetResources", args, GetFleetResourcesResultOutput{}, options).(GetFleetResourcesResultOutput)
 }
 
 // A collection of arguments for invoking getFleetResources.

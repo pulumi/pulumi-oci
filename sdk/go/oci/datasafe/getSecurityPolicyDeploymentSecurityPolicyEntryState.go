@@ -84,12 +84,8 @@ type GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult struct {
 }
 
 func GetSecurityPolicyDeploymentSecurityPolicyEntryStateOutput(ctx *pulumi.Context, args GetSecurityPolicyDeploymentSecurityPolicyEntryStateOutputArgs, opts ...pulumi.InvokeOption) GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput, error) {
-			args := v.(GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getSecurityPolicyDeploymentSecurityPolicyEntryState:getSecurityPolicyDeploymentSecurityPolicyEntryState", args, GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput{}, options).(GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput), nil
-		}).(GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getSecurityPolicyDeploymentSecurityPolicyEntryState:getSecurityPolicyDeploymentSecurityPolicyEntryState", args, GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput{}, options).(GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput)
 }
 
 // A collection of arguments for invoking getSecurityPolicyDeploymentSecurityPolicyEntryState.

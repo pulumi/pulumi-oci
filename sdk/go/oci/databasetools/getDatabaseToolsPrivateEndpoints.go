@@ -89,12 +89,8 @@ type GetDatabaseToolsPrivateEndpointsResult struct {
 }
 
 func GetDatabaseToolsPrivateEndpointsOutput(ctx *pulumi.Context, args GetDatabaseToolsPrivateEndpointsOutputArgs, opts ...pulumi.InvokeOption) GetDatabaseToolsPrivateEndpointsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDatabaseToolsPrivateEndpointsResultOutput, error) {
-			args := v.(GetDatabaseToolsPrivateEndpointsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseTools/getDatabaseToolsPrivateEndpoints:getDatabaseToolsPrivateEndpoints", args, GetDatabaseToolsPrivateEndpointsResultOutput{}, options).(GetDatabaseToolsPrivateEndpointsResultOutput), nil
-		}).(GetDatabaseToolsPrivateEndpointsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseTools/getDatabaseToolsPrivateEndpoints:getDatabaseToolsPrivateEndpoints", args, GetDatabaseToolsPrivateEndpointsResultOutput{}, options).(GetDatabaseToolsPrivateEndpointsResultOutput)
 }
 
 // A collection of arguments for invoking getDatabaseToolsPrivateEndpoints.

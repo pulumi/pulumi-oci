@@ -77,12 +77,8 @@ type GetNamespaceParserActionsResult struct {
 }
 
 func GetNamespaceParserActionsOutput(ctx *pulumi.Context, args GetNamespaceParserActionsOutputArgs, opts ...pulumi.InvokeOption) GetNamespaceParserActionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetNamespaceParserActionsResultOutput, error) {
-			args := v.(GetNamespaceParserActionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LogAnalytics/getNamespaceParserActions:getNamespaceParserActions", args, GetNamespaceParserActionsResultOutput{}, options).(GetNamespaceParserActionsResultOutput), nil
-		}).(GetNamespaceParserActionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LogAnalytics/getNamespaceParserActions:getNamespaceParserActions", args, GetNamespaceParserActionsResultOutput{}, options).(GetNamespaceParserActionsResultOutput)
 }
 
 // A collection of arguments for invoking getNamespaceParserActions.

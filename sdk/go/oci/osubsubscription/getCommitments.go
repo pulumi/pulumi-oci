@@ -80,12 +80,8 @@ type GetCommitmentsResult struct {
 }
 
 func GetCommitmentsOutput(ctx *pulumi.Context, args GetCommitmentsOutputArgs, opts ...pulumi.InvokeOption) GetCommitmentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCommitmentsResultOutput, error) {
-			args := v.(GetCommitmentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsubSubscription/getCommitments:getCommitments", args, GetCommitmentsResultOutput{}, options).(GetCommitmentsResultOutput), nil
-		}).(GetCommitmentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsubSubscription/getCommitments:getCommitments", args, GetCommitmentsResultOutput{}, options).(GetCommitmentsResultOutput)
 }
 
 // A collection of arguments for invoking getCommitments.

@@ -65,12 +65,8 @@ type GetApiContentResult struct {
 }
 
 func GetApiContentOutput(ctx *pulumi.Context, args GetApiContentOutputArgs, opts ...pulumi.InvokeOption) GetApiContentResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetApiContentResultOutput, error) {
-			args := v.(GetApiContentArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ApiGateway/getApiContent:getApiContent", args, GetApiContentResultOutput{}, options).(GetApiContentResultOutput), nil
-		}).(GetApiContentResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ApiGateway/getApiContent:getApiContent", args, GetApiContentResultOutput{}, options).(GetApiContentResultOutput)
 }
 
 // A collection of arguments for invoking getApiContent.

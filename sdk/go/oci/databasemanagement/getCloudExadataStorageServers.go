@@ -77,12 +77,8 @@ type GetCloudExadataStorageServersResult struct {
 }
 
 func GetCloudExadataStorageServersOutput(ctx *pulumi.Context, args GetCloudExadataStorageServersOutputArgs, opts ...pulumi.InvokeOption) GetCloudExadataStorageServersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCloudExadataStorageServersResultOutput, error) {
-			args := v.(GetCloudExadataStorageServersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getCloudExadataStorageServers:getCloudExadataStorageServers", args, GetCloudExadataStorageServersResultOutput{}, options).(GetCloudExadataStorageServersResultOutput), nil
-		}).(GetCloudExadataStorageServersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getCloudExadataStorageServers:getCloudExadataStorageServers", args, GetCloudExadataStorageServersResultOutput{}, options).(GetCloudExadataStorageServersResultOutput)
 }
 
 // A collection of arguments for invoking getCloudExadataStorageServers.

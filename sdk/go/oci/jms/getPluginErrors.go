@@ -94,12 +94,8 @@ type GetPluginErrorsResult struct {
 }
 
 func GetPluginErrorsOutput(ctx *pulumi.Context, args GetPluginErrorsOutputArgs, opts ...pulumi.InvokeOption) GetPluginErrorsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPluginErrorsResultOutput, error) {
-			args := v.(GetPluginErrorsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getPluginErrors:getPluginErrors", args, GetPluginErrorsResultOutput{}, options).(GetPluginErrorsResultOutput), nil
-		}).(GetPluginErrorsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getPluginErrors:getPluginErrors", args, GetPluginErrorsResultOutput{}, options).(GetPluginErrorsResultOutput)
 }
 
 // A collection of arguments for invoking getPluginErrors.

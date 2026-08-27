@@ -87,12 +87,8 @@ type GetLibraryMaskingFormatResult struct {
 }
 
 func GetLibraryMaskingFormatOutput(ctx *pulumi.Context, args GetLibraryMaskingFormatOutputArgs, opts ...pulumi.InvokeOption) GetLibraryMaskingFormatResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetLibraryMaskingFormatResultOutput, error) {
-			args := v.(GetLibraryMaskingFormatArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getLibraryMaskingFormat:getLibraryMaskingFormat", args, GetLibraryMaskingFormatResultOutput{}, options).(GetLibraryMaskingFormatResultOutput), nil
-		}).(GetLibraryMaskingFormatResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getLibraryMaskingFormat:getLibraryMaskingFormat", args, GetLibraryMaskingFormatResultOutput{}, options).(GetLibraryMaskingFormatResultOutput)
 }
 
 // A collection of arguments for invoking getLibraryMaskingFormat.

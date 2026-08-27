@@ -43,12 +43,8 @@ type GetShapeResult struct {
 }
 
 func GetShapeOutput(ctx *pulumi.Context, args GetShapeOutputArgs, opts ...pulumi.InvokeOption) GetShapeResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetShapeResultOutput, error) {
-			args := v.(GetShapeArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getShape:getShape", args, GetShapeResultOutput{}, options).(GetShapeResultOutput), nil
-		}).(GetShapeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getShape:getShape", args, GetShapeResultOutput{}, options).(GetShapeResultOutput)
 }
 
 // A collection of arguments for invoking getShape.

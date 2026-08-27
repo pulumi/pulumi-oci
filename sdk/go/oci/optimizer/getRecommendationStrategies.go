@@ -83,12 +83,8 @@ type GetRecommendationStrategiesResult struct {
 }
 
 func GetRecommendationStrategiesOutput(ctx *pulumi.Context, args GetRecommendationStrategiesOutputArgs, opts ...pulumi.InvokeOption) GetRecommendationStrategiesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRecommendationStrategiesResultOutput, error) {
-			args := v.(GetRecommendationStrategiesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Optimizer/getRecommendationStrategies:getRecommendationStrategies", args, GetRecommendationStrategiesResultOutput{}, options).(GetRecommendationStrategiesResultOutput), nil
-		}).(GetRecommendationStrategiesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Optimizer/getRecommendationStrategies:getRecommendationStrategies", args, GetRecommendationStrategiesResultOutput{}, options).(GetRecommendationStrategiesResultOutput)
 }
 
 // A collection of arguments for invoking getRecommendationStrategies.

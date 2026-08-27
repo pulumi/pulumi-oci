@@ -103,12 +103,8 @@ type LookupDbHomeResult struct {
 }
 
 func LookupDbHomeOutput(ctx *pulumi.Context, args LookupDbHomeOutputArgs, opts ...pulumi.InvokeOption) LookupDbHomeResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDbHomeResultOutput, error) {
-			args := v.(LookupDbHomeArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getDbHome:getDbHome", args, LookupDbHomeResultOutput{}, options).(LookupDbHomeResultOutput), nil
-		}).(LookupDbHomeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getDbHome:getDbHome", args, LookupDbHomeResultOutput{}, options).(LookupDbHomeResultOutput)
 }
 
 // A collection of arguments for invoking getDbHome.

@@ -97,12 +97,8 @@ type GetPlatformConfigurationsResult struct {
 }
 
 func GetPlatformConfigurationsOutput(ctx *pulumi.Context, args GetPlatformConfigurationsOutputArgs, opts ...pulumi.InvokeOption) GetPlatformConfigurationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPlatformConfigurationsResultOutput, error) {
-			args := v.(GetPlatformConfigurationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getPlatformConfigurations:getPlatformConfigurations", args, GetPlatformConfigurationsResultOutput{}, options).(GetPlatformConfigurationsResultOutput), nil
-		}).(GetPlatformConfigurationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getPlatformConfigurations:getPlatformConfigurations", args, GetPlatformConfigurationsResultOutput{}, options).(GetPlatformConfigurationsResultOutput)
 }
 
 // A collection of arguments for invoking getPlatformConfigurations.

@@ -206,12 +206,8 @@ type LookupDomainsSettingResult struct {
 }
 
 func LookupDomainsSettingOutput(ctx *pulumi.Context, args LookupDomainsSettingOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsSettingResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDomainsSettingResultOutput, error) {
-			args := v.(LookupDomainsSettingArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsSetting:getDomainsSetting", args, LookupDomainsSettingResultOutput{}, options).(LookupDomainsSettingResultOutput), nil
-		}).(LookupDomainsSettingResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsSetting:getDomainsSetting", args, LookupDomainsSettingResultOutput{}, options).(LookupDomainsSettingResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsSetting.

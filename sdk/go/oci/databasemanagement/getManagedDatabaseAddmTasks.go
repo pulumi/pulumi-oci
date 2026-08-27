@@ -78,12 +78,8 @@ type GetManagedDatabaseAddmTasksResult struct {
 }
 
 func GetManagedDatabaseAddmTasksOutput(ctx *pulumi.Context, args GetManagedDatabaseAddmTasksOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseAddmTasksResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabaseAddmTasksResultOutput, error) {
-			args := v.(GetManagedDatabaseAddmTasksArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseAddmTasks:getManagedDatabaseAddmTasks", args, GetManagedDatabaseAddmTasksResultOutput{}, options).(GetManagedDatabaseAddmTasksResultOutput), nil
-		}).(GetManagedDatabaseAddmTasksResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseAddmTasks:getManagedDatabaseAddmTasks", args, GetManagedDatabaseAddmTasksResultOutput{}, options).(GetManagedDatabaseAddmTasksResultOutput)
 }
 
 // A collection of arguments for invoking getManagedDatabaseAddmTasks.

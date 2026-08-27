@@ -91,12 +91,8 @@ type LookupEmailIpPoolResult struct {
 }
 
 func LookupEmailIpPoolOutput(ctx *pulumi.Context, args LookupEmailIpPoolOutputArgs, opts ...pulumi.InvokeOption) LookupEmailIpPoolResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupEmailIpPoolResultOutput, error) {
-			args := v.(LookupEmailIpPoolArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Email/getEmailIpPool:getEmailIpPool", args, LookupEmailIpPoolResultOutput{}, options).(LookupEmailIpPoolResultOutput), nil
-		}).(LookupEmailIpPoolResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Email/getEmailIpPool:getEmailIpPool", args, LookupEmailIpPoolResultOutput{}, options).(LookupEmailIpPoolResultOutput)
 }
 
 // A collection of arguments for invoking getEmailIpPool.

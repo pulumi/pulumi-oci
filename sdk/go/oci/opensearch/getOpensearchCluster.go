@@ -212,12 +212,8 @@ type GetOpensearchClusterResult struct {
 }
 
 func GetOpensearchClusterOutput(ctx *pulumi.Context, args GetOpensearchClusterOutputArgs, opts ...pulumi.InvokeOption) GetOpensearchClusterResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetOpensearchClusterResultOutput, error) {
-			args := v.(GetOpensearchClusterArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Opensearch/getOpensearchCluster:getOpensearchCluster", args, GetOpensearchClusterResultOutput{}, options).(GetOpensearchClusterResultOutput), nil
-		}).(GetOpensearchClusterResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Opensearch/getOpensearchCluster:getOpensearchCluster", args, GetOpensearchClusterResultOutput{}, options).(GetOpensearchClusterResultOutput)
 }
 
 // A collection of arguments for invoking getOpensearchCluster.

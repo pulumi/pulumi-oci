@@ -45,12 +45,8 @@ type GetPsaPrivateServiceAccessesResult struct {
 }
 
 func GetPsaPrivateServiceAccessesOutput(ctx *pulumi.Context, args GetPsaPrivateServiceAccessesOutputArgs, opts ...pulumi.InvokeOption) GetPsaPrivateServiceAccessesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPsaPrivateServiceAccessesResultOutput, error) {
-			args := v.(GetPsaPrivateServiceAccessesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getPsaPrivateServiceAccesses:getPsaPrivateServiceAccesses", args, GetPsaPrivateServiceAccessesResultOutput{}, options).(GetPsaPrivateServiceAccessesResultOutput), nil
-		}).(GetPsaPrivateServiceAccessesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getPsaPrivateServiceAccesses:getPsaPrivateServiceAccesses", args, GetPsaPrivateServiceAccessesResultOutput{}, options).(GetPsaPrivateServiceAccessesResultOutput)
 }
 
 // A collection of arguments for invoking getPsaPrivateServiceAccesses.

@@ -71,12 +71,8 @@ type GetFleetExportStatusResult struct {
 }
 
 func GetFleetExportStatusOutput(ctx *pulumi.Context, args GetFleetExportStatusOutputArgs, opts ...pulumi.InvokeOption) GetFleetExportStatusResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFleetExportStatusResultOutput, error) {
-			args := v.(GetFleetExportStatusArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getFleetExportStatus:getFleetExportStatus", args, GetFleetExportStatusResultOutput{}, options).(GetFleetExportStatusResultOutput), nil
-		}).(GetFleetExportStatusResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getFleetExportStatus:getFleetExportStatus", args, GetFleetExportStatusResultOutput{}, options).(GetFleetExportStatusResultOutput)
 }
 
 // A collection of arguments for invoking getFleetExportStatus.

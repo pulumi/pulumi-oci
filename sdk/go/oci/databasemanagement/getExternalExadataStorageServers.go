@@ -77,12 +77,8 @@ type GetExternalExadataStorageServersResult struct {
 }
 
 func GetExternalExadataStorageServersOutput(ctx *pulumi.Context, args GetExternalExadataStorageServersOutputArgs, opts ...pulumi.InvokeOption) GetExternalExadataStorageServersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetExternalExadataStorageServersResultOutput, error) {
-			args := v.(GetExternalExadataStorageServersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalExadataStorageServers:getExternalExadataStorageServers", args, GetExternalExadataStorageServersResultOutput{}, options).(GetExternalExadataStorageServersResultOutput), nil
-		}).(GetExternalExadataStorageServersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getExternalExadataStorageServers:getExternalExadataStorageServers", args, GetExternalExadataStorageServersResultOutput{}, options).(GetExternalExadataStorageServersResultOutput)
 }
 
 // A collection of arguments for invoking getExternalExadataStorageServers.

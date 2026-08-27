@@ -106,12 +106,8 @@ type LookupMigrationAssetResult struct {
 }
 
 func LookupMigrationAssetOutput(ctx *pulumi.Context, args LookupMigrationAssetOutputArgs, opts ...pulumi.InvokeOption) LookupMigrationAssetResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupMigrationAssetResultOutput, error) {
-			args := v.(LookupMigrationAssetArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CloudMigrations/getMigrationAsset:getMigrationAsset", args, LookupMigrationAssetResultOutput{}, options).(LookupMigrationAssetResultOutput), nil
-		}).(LookupMigrationAssetResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CloudMigrations/getMigrationAsset:getMigrationAsset", args, LookupMigrationAssetResultOutput{}, options).(LookupMigrationAssetResultOutput)
 }
 
 // A collection of arguments for invoking getMigrationAsset.

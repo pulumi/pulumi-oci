@@ -82,12 +82,8 @@ type GetManagedKafkaKafkaClustersResult struct {
 }
 
 func GetManagedKafkaKafkaClustersOutput(ctx *pulumi.Context, args GetManagedKafkaKafkaClustersOutputArgs, opts ...pulumi.InvokeOption) GetManagedKafkaKafkaClustersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedKafkaKafkaClustersResultOutput, error) {
-			args := v.(GetManagedKafkaKafkaClustersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getManagedKafkaKafkaClusters:getManagedKafkaKafkaClusters", args, GetManagedKafkaKafkaClustersResultOutput{}, options).(GetManagedKafkaKafkaClustersResultOutput), nil
-		}).(GetManagedKafkaKafkaClustersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getManagedKafkaKafkaClusters:getManagedKafkaKafkaClusters", args, GetManagedKafkaKafkaClustersResultOutput{}, options).(GetManagedKafkaKafkaClustersResultOutput)
 }
 
 // A collection of arguments for invoking getManagedKafkaKafkaClusters.

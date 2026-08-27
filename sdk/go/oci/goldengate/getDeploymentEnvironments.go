@@ -68,12 +68,8 @@ type GetDeploymentEnvironmentsResult struct {
 }
 
 func GetDeploymentEnvironmentsOutput(ctx *pulumi.Context, args GetDeploymentEnvironmentsOutputArgs, opts ...pulumi.InvokeOption) GetDeploymentEnvironmentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDeploymentEnvironmentsResultOutput, error) {
-			args := v.(GetDeploymentEnvironmentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GoldenGate/getDeploymentEnvironments:getDeploymentEnvironments", args, GetDeploymentEnvironmentsResultOutput{}, options).(GetDeploymentEnvironmentsResultOutput), nil
-		}).(GetDeploymentEnvironmentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GoldenGate/getDeploymentEnvironments:getDeploymentEnvironments", args, GetDeploymentEnvironmentsResultOutput{}, options).(GetDeploymentEnvironmentsResultOutput)
 }
 
 // A collection of arguments for invoking getDeploymentEnvironments.

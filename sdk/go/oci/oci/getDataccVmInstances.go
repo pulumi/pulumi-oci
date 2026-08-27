@@ -88,12 +88,8 @@ type GetDataccVmInstancesResult struct {
 }
 
 func GetDataccVmInstancesOutput(ctx *pulumi.Context, args GetDataccVmInstancesOutputArgs, opts ...pulumi.InvokeOption) GetDataccVmInstancesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDataccVmInstancesResultOutput, error) {
-			args := v.(GetDataccVmInstancesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDataccVmInstances:getDataccVmInstances", args, GetDataccVmInstancesResultOutput{}, options).(GetDataccVmInstancesResultOutput), nil
-		}).(GetDataccVmInstancesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDataccVmInstances:getDataccVmInstances", args, GetDataccVmInstancesResultOutput{}, options).(GetDataccVmInstancesResultOutput)
 }
 
 // A collection of arguments for invoking getDataccVmInstances.

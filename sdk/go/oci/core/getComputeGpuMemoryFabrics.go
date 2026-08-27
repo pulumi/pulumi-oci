@@ -100,12 +100,8 @@ type GetComputeGpuMemoryFabricsResult struct {
 }
 
 func GetComputeGpuMemoryFabricsOutput(ctx *pulumi.Context, args GetComputeGpuMemoryFabricsOutputArgs, opts ...pulumi.InvokeOption) GetComputeGpuMemoryFabricsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetComputeGpuMemoryFabricsResultOutput, error) {
-			args := v.(GetComputeGpuMemoryFabricsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getComputeGpuMemoryFabrics:getComputeGpuMemoryFabrics", args, GetComputeGpuMemoryFabricsResultOutput{}, options).(GetComputeGpuMemoryFabricsResultOutput), nil
-		}).(GetComputeGpuMemoryFabricsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getComputeGpuMemoryFabrics:getComputeGpuMemoryFabrics", args, GetComputeGpuMemoryFabricsResultOutput{}, options).(GetComputeGpuMemoryFabricsResultOutput)
 }
 
 // A collection of arguments for invoking getComputeGpuMemoryFabrics.

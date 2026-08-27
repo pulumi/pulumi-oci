@@ -76,12 +76,8 @@ type LookupAnalyticsInstanceResourceGroupResult struct {
 }
 
 func LookupAnalyticsInstanceResourceGroupOutput(ctx *pulumi.Context, args LookupAnalyticsInstanceResourceGroupOutputArgs, opts ...pulumi.InvokeOption) LookupAnalyticsInstanceResourceGroupResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAnalyticsInstanceResourceGroupResultOutput, error) {
-			args := v.(LookupAnalyticsInstanceResourceGroupArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Analytics/getAnalyticsInstanceResourceGroup:getAnalyticsInstanceResourceGroup", args, LookupAnalyticsInstanceResourceGroupResultOutput{}, options).(LookupAnalyticsInstanceResourceGroupResultOutput), nil
-		}).(LookupAnalyticsInstanceResourceGroupResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Analytics/getAnalyticsInstanceResourceGroup:getAnalyticsInstanceResourceGroup", args, LookupAnalyticsInstanceResourceGroupResultOutput{}, options).(LookupAnalyticsInstanceResourceGroupResultOutput)
 }
 
 // A collection of arguments for invoking getAnalyticsInstanceResourceGroup.

@@ -76,12 +76,8 @@ type GetInvoiceLineComputedUsagesResult struct {
 }
 
 func GetInvoiceLineComputedUsagesOutput(ctx *pulumi.Context, args GetInvoiceLineComputedUsagesOutputArgs, opts ...pulumi.InvokeOption) GetInvoiceLineComputedUsagesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetInvoiceLineComputedUsagesResultOutput, error) {
-			args := v.(GetInvoiceLineComputedUsagesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OneSubsription/getInvoiceLineComputedUsages:getInvoiceLineComputedUsages", args, GetInvoiceLineComputedUsagesResultOutput{}, options).(GetInvoiceLineComputedUsagesResultOutput), nil
-		}).(GetInvoiceLineComputedUsagesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OneSubsription/getInvoiceLineComputedUsages:getInvoiceLineComputedUsages", args, GetInvoiceLineComputedUsagesResultOutput{}, options).(GetInvoiceLineComputedUsagesResultOutput)
 }
 
 // A collection of arguments for invoking getInvoiceLineComputedUsages.

@@ -68,12 +68,8 @@ type GetRepositoryMirrorRecordsResult struct {
 }
 
 func GetRepositoryMirrorRecordsOutput(ctx *pulumi.Context, args GetRepositoryMirrorRecordsOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryMirrorRecordsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRepositoryMirrorRecordsResultOutput, error) {
-			args := v.(GetRepositoryMirrorRecordsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DevOps/getRepositoryMirrorRecords:getRepositoryMirrorRecords", args, GetRepositoryMirrorRecordsResultOutput{}, options).(GetRepositoryMirrorRecordsResultOutput), nil
-		}).(GetRepositoryMirrorRecordsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DevOps/getRepositoryMirrorRecords:getRepositoryMirrorRecords", args, GetRepositoryMirrorRecordsResultOutput{}, options).(GetRepositoryMirrorRecordsResultOutput)
 }
 
 // A collection of arguments for invoking getRepositoryMirrorRecords.

@@ -77,12 +77,8 @@ type GetCompatibleFormatsForSensitiveTypeResult struct {
 }
 
 func GetCompatibleFormatsForSensitiveTypeOutput(ctx *pulumi.Context, args GetCompatibleFormatsForSensitiveTypeOutputArgs, opts ...pulumi.InvokeOption) GetCompatibleFormatsForSensitiveTypeResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCompatibleFormatsForSensitiveTypeResultOutput, error) {
-			args := v.(GetCompatibleFormatsForSensitiveTypeArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getCompatibleFormatsForSensitiveType:getCompatibleFormatsForSensitiveType", args, GetCompatibleFormatsForSensitiveTypeResultOutput{}, options).(GetCompatibleFormatsForSensitiveTypeResultOutput), nil
-		}).(GetCompatibleFormatsForSensitiveTypeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getCompatibleFormatsForSensitiveType:getCompatibleFormatsForSensitiveType", args, GetCompatibleFormatsForSensitiveTypeResultOutput{}, options).(GetCompatibleFormatsForSensitiveTypeResultOutput)
 }
 
 // A collection of arguments for invoking getCompatibleFormatsForSensitiveType.

@@ -78,12 +78,8 @@ type GetRepositoryFileLineResult struct {
 }
 
 func GetRepositoryFileLineOutput(ctx *pulumi.Context, args GetRepositoryFileLineOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryFileLineResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRepositoryFileLineResultOutput, error) {
-			args := v.(GetRepositoryFileLineArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DevOps/getRepositoryFileLine:getRepositoryFileLine", args, GetRepositoryFileLineResultOutput{}, options).(GetRepositoryFileLineResultOutput), nil
-		}).(GetRepositoryFileLineResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DevOps/getRepositoryFileLine:getRepositoryFileLine", args, GetRepositoryFileLineResultOutput{}, options).(GetRepositoryFileLineResultOutput)
 }
 
 // A collection of arguments for invoking getRepositoryFileLine.

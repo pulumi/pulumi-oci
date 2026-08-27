@@ -90,12 +90,8 @@ type LookupEmailDomainResult struct {
 }
 
 func LookupEmailDomainOutput(ctx *pulumi.Context, args LookupEmailDomainOutputArgs, opts ...pulumi.InvokeOption) LookupEmailDomainResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupEmailDomainResultOutput, error) {
-			args := v.(LookupEmailDomainArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Email/getEmailDomain:getEmailDomain", args, LookupEmailDomainResultOutput{}, options).(LookupEmailDomainResultOutput), nil
-		}).(LookupEmailDomainResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Email/getEmailDomain:getEmailDomain", args, LookupEmailDomainResultOutput{}, options).(LookupEmailDomainResultOutput)
 }
 
 // A collection of arguments for invoking getEmailDomain.

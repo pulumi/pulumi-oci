@@ -84,12 +84,8 @@ type GetAutonomousPatchResult struct {
 }
 
 func GetAutonomousPatchOutput(ctx *pulumi.Context, args GetAutonomousPatchOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousPatchResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAutonomousPatchResultOutput, error) {
-			args := v.(GetAutonomousPatchArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getAutonomousPatch:getAutonomousPatch", args, GetAutonomousPatchResultOutput{}, options).(GetAutonomousPatchResultOutput), nil
-		}).(GetAutonomousPatchResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getAutonomousPatch:getAutonomousPatch", args, GetAutonomousPatchResultOutput{}, options).(GetAutonomousPatchResultOutput)
 }
 
 // A collection of arguments for invoking getAutonomousPatch.

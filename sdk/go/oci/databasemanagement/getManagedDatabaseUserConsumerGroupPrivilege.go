@@ -75,12 +75,8 @@ type GetManagedDatabaseUserConsumerGroupPrivilegeResult struct {
 }
 
 func GetManagedDatabaseUserConsumerGroupPrivilegeOutput(ctx *pulumi.Context, args GetManagedDatabaseUserConsumerGroupPrivilegeOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseUserConsumerGroupPrivilegeResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabaseUserConsumerGroupPrivilegeResultOutput, error) {
-			args := v.(GetManagedDatabaseUserConsumerGroupPrivilegeArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseUserConsumerGroupPrivilege:getManagedDatabaseUserConsumerGroupPrivilege", args, GetManagedDatabaseUserConsumerGroupPrivilegeResultOutput{}, options).(GetManagedDatabaseUserConsumerGroupPrivilegeResultOutput), nil
-		}).(GetManagedDatabaseUserConsumerGroupPrivilegeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseUserConsumerGroupPrivilege:getManagedDatabaseUserConsumerGroupPrivilege", args, GetManagedDatabaseUserConsumerGroupPrivilegeResultOutput{}, options).(GetManagedDatabaseUserConsumerGroupPrivilegeResultOutput)
 }
 
 // A collection of arguments for invoking getManagedDatabaseUserConsumerGroupPrivilege.

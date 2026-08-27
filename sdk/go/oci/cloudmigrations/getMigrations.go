@@ -83,12 +83,8 @@ type GetMigrationsResult struct {
 }
 
 func GetMigrationsOutput(ctx *pulumi.Context, args GetMigrationsOutputArgs, opts ...pulumi.InvokeOption) GetMigrationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMigrationsResultOutput, error) {
-			args := v.(GetMigrationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CloudMigrations/getMigrations:getMigrations", args, GetMigrationsResultOutput{}, options).(GetMigrationsResultOutput), nil
-		}).(GetMigrationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CloudMigrations/getMigrations:getMigrations", args, GetMigrationsResultOutput{}, options).(GetMigrationsResultOutput)
 }
 
 // A collection of arguments for invoking getMigrations.

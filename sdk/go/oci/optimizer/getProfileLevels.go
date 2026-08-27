@@ -84,12 +84,8 @@ type GetProfileLevelsResult struct {
 }
 
 func GetProfileLevelsOutput(ctx *pulumi.Context, args GetProfileLevelsOutputArgs, opts ...pulumi.InvokeOption) GetProfileLevelsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetProfileLevelsResultOutput, error) {
-			args := v.(GetProfileLevelsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Optimizer/getProfileLevels:getProfileLevels", args, GetProfileLevelsResultOutput{}, options).(GetProfileLevelsResultOutput), nil
-		}).(GetProfileLevelsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Optimizer/getProfileLevels:getProfileLevels", args, GetProfileLevelsResultOutput{}, options).(GetProfileLevelsResultOutput)
 }
 
 // A collection of arguments for invoking getProfileLevels.

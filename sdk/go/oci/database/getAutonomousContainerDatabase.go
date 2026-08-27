@@ -215,12 +215,8 @@ type LookupAutonomousContainerDatabaseResult struct {
 }
 
 func LookupAutonomousContainerDatabaseOutput(ctx *pulumi.Context, args LookupAutonomousContainerDatabaseOutputArgs, opts ...pulumi.InvokeOption) LookupAutonomousContainerDatabaseResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAutonomousContainerDatabaseResultOutput, error) {
-			args := v.(LookupAutonomousContainerDatabaseArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getAutonomousContainerDatabase:getAutonomousContainerDatabase", args, LookupAutonomousContainerDatabaseResultOutput{}, options).(LookupAutonomousContainerDatabaseResultOutput), nil
-		}).(LookupAutonomousContainerDatabaseResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getAutonomousContainerDatabase:getAutonomousContainerDatabase", args, LookupAutonomousContainerDatabaseResultOutput{}, options).(LookupAutonomousContainerDatabaseResultOutput)
 }
 
 // A collection of arguments for invoking getAutonomousContainerDatabase.

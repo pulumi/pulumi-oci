@@ -124,12 +124,8 @@ type LookupDbNodeResult struct {
 }
 
 func LookupDbNodeOutput(ctx *pulumi.Context, args LookupDbNodeOutputArgs, opts ...pulumi.InvokeOption) LookupDbNodeResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDbNodeResultOutput, error) {
-			args := v.(LookupDbNodeArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getDbNode:getDbNode", args, LookupDbNodeResultOutput{}, options).(LookupDbNodeResultOutput), nil
-		}).(LookupDbNodeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getDbNode:getDbNode", args, LookupDbNodeResultOutput{}, options).(LookupDbNodeResultOutput)
 }
 
 // A collection of arguments for invoking getDbNode.

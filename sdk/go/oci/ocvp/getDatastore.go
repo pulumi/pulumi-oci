@@ -92,12 +92,8 @@ type LookupDatastoreResult struct {
 }
 
 func LookupDatastoreOutput(ctx *pulumi.Context, args LookupDatastoreOutputArgs, opts ...pulumi.InvokeOption) LookupDatastoreResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDatastoreResultOutput, error) {
-			args := v.(LookupDatastoreArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Ocvp/getDatastore:getDatastore", args, LookupDatastoreResultOutput{}, options).(LookupDatastoreResultOutput), nil
-		}).(LookupDatastoreResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Ocvp/getDatastore:getDatastore", args, LookupDatastoreResultOutput{}, options).(LookupDatastoreResultOutput)
 }
 
 // A collection of arguments for invoking getDatastore.

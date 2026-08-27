@@ -89,12 +89,8 @@ type GetCustomProtectionRulesResult struct {
 }
 
 func GetCustomProtectionRulesOutput(ctx *pulumi.Context, args GetCustomProtectionRulesOutputArgs, opts ...pulumi.InvokeOption) GetCustomProtectionRulesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCustomProtectionRulesResultOutput, error) {
-			args := v.(GetCustomProtectionRulesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Waas/getCustomProtectionRules:getCustomProtectionRules", args, GetCustomProtectionRulesResultOutput{}, options).(GetCustomProtectionRulesResultOutput), nil
-		}).(GetCustomProtectionRulesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Waas/getCustomProtectionRules:getCustomProtectionRules", args, GetCustomProtectionRulesResultOutput{}, options).(GetCustomProtectionRulesResultOutput)
 }
 
 // A collection of arguments for invoking getCustomProtectionRules.

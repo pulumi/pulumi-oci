@@ -89,12 +89,8 @@ type GetDesktopsResult struct {
 }
 
 func GetDesktopsOutput(ctx *pulumi.Context, args GetDesktopsOutputArgs, opts ...pulumi.InvokeOption) GetDesktopsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDesktopsResultOutput, error) {
-			args := v.(GetDesktopsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Desktops/getDesktops:getDesktops", args, GetDesktopsResultOutput{}, options).(GetDesktopsResultOutput), nil
-		}).(GetDesktopsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Desktops/getDesktops:getDesktops", args, GetDesktopsResultOutput{}, options).(GetDesktopsResultOutput)
 }
 
 // A collection of arguments for invoking getDesktops.

@@ -80,12 +80,8 @@ type GetRepositoryObjectResult struct {
 }
 
 func GetRepositoryObjectOutput(ctx *pulumi.Context, args GetRepositoryObjectOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryObjectResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRepositoryObjectResultOutput, error) {
-			args := v.(GetRepositoryObjectArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DevOps/getRepositoryObject:getRepositoryObject", args, GetRepositoryObjectResultOutput{}, options).(GetRepositoryObjectResultOutput), nil
-		}).(GetRepositoryObjectResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DevOps/getRepositoryObject:getRepositoryObject", args, GetRepositoryObjectResultOutput{}, options).(GetRepositoryObjectResultOutput)
 }
 
 // A collection of arguments for invoking getRepositoryObject.

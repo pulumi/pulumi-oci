@@ -97,12 +97,8 @@ type LookupOutboundConnectorResult struct {
 }
 
 func LookupOutboundConnectorOutput(ctx *pulumi.Context, args LookupOutboundConnectorOutputArgs, opts ...pulumi.InvokeOption) LookupOutboundConnectorResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupOutboundConnectorResultOutput, error) {
-			args := v.(LookupOutboundConnectorArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FileStorage/getOutboundConnector:getOutboundConnector", args, LookupOutboundConnectorResultOutput{}, options).(LookupOutboundConnectorResultOutput), nil
-		}).(LookupOutboundConnectorResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FileStorage/getOutboundConnector:getOutboundConnector", args, LookupOutboundConnectorResultOutput{}, options).(LookupOutboundConnectorResultOutput)
 }
 
 // A collection of arguments for invoking getOutboundConnector.

@@ -97,12 +97,8 @@ type GetFleetLibraryApplicationsResult struct {
 }
 
 func GetFleetLibraryApplicationsOutput(ctx *pulumi.Context, args GetFleetLibraryApplicationsOutputArgs, opts ...pulumi.InvokeOption) GetFleetLibraryApplicationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFleetLibraryApplicationsResultOutput, error) {
-			args := v.(GetFleetLibraryApplicationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getFleetLibraryApplications:getFleetLibraryApplications", args, GetFleetLibraryApplicationsResultOutput{}, options).(GetFleetLibraryApplicationsResultOutput), nil
-		}).(GetFleetLibraryApplicationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getFleetLibraryApplications:getFleetLibraryApplications", args, GetFleetLibraryApplicationsResultOutput{}, options).(GetFleetLibraryApplicationsResultOutput)
 }
 
 // A collection of arguments for invoking getFleetLibraryApplications.

@@ -96,12 +96,8 @@ type GetManagedMySqlDatabaseSqlDataResult struct {
 }
 
 func GetManagedMySqlDatabaseSqlDataOutput(ctx *pulumi.Context, args GetManagedMySqlDatabaseSqlDataOutputArgs, opts ...pulumi.InvokeOption) GetManagedMySqlDatabaseSqlDataResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedMySqlDatabaseSqlDataResultOutput, error) {
-			args := v.(GetManagedMySqlDatabaseSqlDataArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedMySqlDatabaseSqlData:getManagedMySqlDatabaseSqlData", args, GetManagedMySqlDatabaseSqlDataResultOutput{}, options).(GetManagedMySqlDatabaseSqlDataResultOutput), nil
-		}).(GetManagedMySqlDatabaseSqlDataResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getManagedMySqlDatabaseSqlData:getManagedMySqlDatabaseSqlData", args, GetManagedMySqlDatabaseSqlDataResultOutput{}, options).(GetManagedMySqlDatabaseSqlDataResultOutput)
 }
 
 // A collection of arguments for invoking getManagedMySqlDatabaseSqlData.

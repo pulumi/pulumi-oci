@@ -105,12 +105,8 @@ type GetProfileVersionResult struct {
 }
 
 func GetProfileVersionOutput(ctx *pulumi.Context, args GetProfileVersionOutputArgs, opts ...pulumi.InvokeOption) GetProfileVersionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetProfileVersionResultOutput, error) {
-			args := v.(GetProfileVersionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getProfileVersion:getProfileVersion", args, GetProfileVersionResultOutput{}, options).(GetProfileVersionResultOutput), nil
-		}).(GetProfileVersionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getProfileVersion:getProfileVersion", args, GetProfileVersionResultOutput{}, options).(GetProfileVersionResultOutput)
 }
 
 // A collection of arguments for invoking getProfileVersion.

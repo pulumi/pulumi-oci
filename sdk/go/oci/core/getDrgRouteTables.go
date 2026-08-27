@@ -86,12 +86,8 @@ type GetDrgRouteTablesResult struct {
 }
 
 func GetDrgRouteTablesOutput(ctx *pulumi.Context, args GetDrgRouteTablesOutputArgs, opts ...pulumi.InvokeOption) GetDrgRouteTablesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDrgRouteTablesResultOutput, error) {
-			args := v.(GetDrgRouteTablesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getDrgRouteTables:getDrgRouteTables", args, GetDrgRouteTablesResultOutput{}, options).(GetDrgRouteTablesResultOutput), nil
-		}).(GetDrgRouteTablesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getDrgRouteTables:getDrgRouteTables", args, GetDrgRouteTablesResultOutput{}, options).(GetDrgRouteTablesResultOutput)
 }
 
 // A collection of arguments for invoking getDrgRouteTables.

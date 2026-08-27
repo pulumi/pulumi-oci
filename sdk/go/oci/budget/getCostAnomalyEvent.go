@@ -98,12 +98,8 @@ type LookupCostAnomalyEventResult struct {
 }
 
 func LookupCostAnomalyEventOutput(ctx *pulumi.Context, args LookupCostAnomalyEventOutputArgs, opts ...pulumi.InvokeOption) LookupCostAnomalyEventResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupCostAnomalyEventResultOutput, error) {
-			args := v.(LookupCostAnomalyEventArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Budget/getCostAnomalyEvent:getCostAnomalyEvent", args, LookupCostAnomalyEventResultOutput{}, options).(LookupCostAnomalyEventResultOutput), nil
-		}).(LookupCostAnomalyEventResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Budget/getCostAnomalyEvent:getCostAnomalyEvent", args, LookupCostAnomalyEventResultOutput{}, options).(LookupCostAnomalyEventResultOutput)
 }
 
 // A collection of arguments for invoking getCostAnomalyEvent.

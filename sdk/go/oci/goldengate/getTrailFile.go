@@ -78,12 +78,8 @@ type GetTrailFileResult struct {
 }
 
 func GetTrailFileOutput(ctx *pulumi.Context, args GetTrailFileOutputArgs, opts ...pulumi.InvokeOption) GetTrailFileResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetTrailFileResultOutput, error) {
-			args := v.(GetTrailFileArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GoldenGate/getTrailFile:getTrailFile", args, GetTrailFileResultOutput{}, options).(GetTrailFileResultOutput), nil
-		}).(GetTrailFileResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GoldenGate/getTrailFile:getTrailFile", args, GetTrailFileResultOutput{}, options).(GetTrailFileResultOutput)
 }
 
 // A collection of arguments for invoking getTrailFile.

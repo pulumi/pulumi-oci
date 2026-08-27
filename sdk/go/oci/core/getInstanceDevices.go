@@ -78,12 +78,8 @@ type GetInstanceDevicesResult struct {
 }
 
 func GetInstanceDevicesOutput(ctx *pulumi.Context, args GetInstanceDevicesOutputArgs, opts ...pulumi.InvokeOption) GetInstanceDevicesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetInstanceDevicesResultOutput, error) {
-			args := v.(GetInstanceDevicesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getInstanceDevices:getInstanceDevices", args, GetInstanceDevicesResultOutput{}, options).(GetInstanceDevicesResultOutput), nil
-		}).(GetInstanceDevicesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getInstanceDevices:getInstanceDevices", args, GetInstanceDevicesResultOutput{}, options).(GetInstanceDevicesResultOutput)
 }
 
 // A collection of arguments for invoking getInstanceDevices.

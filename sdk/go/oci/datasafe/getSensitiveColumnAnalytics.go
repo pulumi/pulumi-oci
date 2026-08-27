@@ -127,12 +127,8 @@ type GetSensitiveColumnAnalyticsResult struct {
 }
 
 func GetSensitiveColumnAnalyticsOutput(ctx *pulumi.Context, args GetSensitiveColumnAnalyticsOutputArgs, opts ...pulumi.InvokeOption) GetSensitiveColumnAnalyticsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSensitiveColumnAnalyticsResultOutput, error) {
-			args := v.(GetSensitiveColumnAnalyticsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getSensitiveColumnAnalytics:getSensitiveColumnAnalytics", args, GetSensitiveColumnAnalyticsResultOutput{}, options).(GetSensitiveColumnAnalyticsResultOutput), nil
-		}).(GetSensitiveColumnAnalyticsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getSensitiveColumnAnalytics:getSensitiveColumnAnalytics", args, GetSensitiveColumnAnalyticsResultOutput{}, options).(GetSensitiveColumnAnalyticsResultOutput)
 }
 
 // A collection of arguments for invoking getSensitiveColumnAnalytics.

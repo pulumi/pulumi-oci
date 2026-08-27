@@ -77,12 +77,8 @@ type GetManagedMySqlDatabaseBinaryLogInformationResult struct {
 }
 
 func GetManagedMySqlDatabaseBinaryLogInformationOutput(ctx *pulumi.Context, args GetManagedMySqlDatabaseBinaryLogInformationOutputArgs, opts ...pulumi.InvokeOption) GetManagedMySqlDatabaseBinaryLogInformationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedMySqlDatabaseBinaryLogInformationResultOutput, error) {
-			args := v.(GetManagedMySqlDatabaseBinaryLogInformationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedMySqlDatabaseBinaryLogInformation:getManagedMySqlDatabaseBinaryLogInformation", args, GetManagedMySqlDatabaseBinaryLogInformationResultOutput{}, options).(GetManagedMySqlDatabaseBinaryLogInformationResultOutput), nil
-		}).(GetManagedMySqlDatabaseBinaryLogInformationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getManagedMySqlDatabaseBinaryLogInformation:getManagedMySqlDatabaseBinaryLogInformation", args, GetManagedMySqlDatabaseBinaryLogInformationResultOutput{}, options).(GetManagedMySqlDatabaseBinaryLogInformationResultOutput)
 }
 
 // A collection of arguments for invoking getManagedMySqlDatabaseBinaryLogInformation.

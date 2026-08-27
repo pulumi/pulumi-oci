@@ -4436,7 +4436,6 @@ func (o GetDomainsAppProtectableSecondaryAudienceArrayOutput) Index(i pulumi.Int
 }
 
 type GetDomainsAppRadiusPolicy struct {
-	_ref string `pulumi:"_ref"`
 	// ID of the AppRole.
 	Value string `pulumi:"value"`
 }
@@ -4453,7 +4452,6 @@ type GetDomainsAppRadiusPolicyInput interface {
 }
 
 type GetDomainsAppRadiusPolicyArgs struct {
-	_ref pulumi.StringInput `pulumi:"_ref"`
 	// ID of the AppRole.
 	Value pulumi.StringInput `pulumi:"value"`
 }
@@ -4507,10 +4505,6 @@ func (o GetDomainsAppRadiusPolicyOutput) ToGetDomainsAppRadiusPolicyOutput() Get
 
 func (o GetDomainsAppRadiusPolicyOutput) ToGetDomainsAppRadiusPolicyOutputWithContext(ctx context.Context) GetDomainsAppRadiusPolicyOutput {
 	return o
-}
-
-func (o GetDomainsAppRadiusPolicyOutput) _ref() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsAppRadiusPolicy) string { return v._ref }).(pulumi.StringOutput)
 }
 
 // ID of the AppRole.
@@ -21411,7 +21405,6 @@ func (o GetDomainsAppsAppProtectableSecondaryAudienceArrayOutput) Index(i pulumi
 }
 
 type GetDomainsAppsAppRadiusPolicy struct {
-	_ref string `pulumi:"_ref"`
 	// ID of the AppRole.
 	Value string `pulumi:"value"`
 }
@@ -21428,7 +21421,6 @@ type GetDomainsAppsAppRadiusPolicyInput interface {
 }
 
 type GetDomainsAppsAppRadiusPolicyArgs struct {
-	_ref pulumi.StringInput `pulumi:"_ref"`
 	// ID of the AppRole.
 	Value pulumi.StringInput `pulumi:"value"`
 }
@@ -21482,10 +21474,6 @@ func (o GetDomainsAppsAppRadiusPolicyOutput) ToGetDomainsAppsAppRadiusPolicyOutp
 
 func (o GetDomainsAppsAppRadiusPolicyOutput) ToGetDomainsAppsAppRadiusPolicyOutputWithContext(ctx context.Context) GetDomainsAppsAppRadiusPolicyOutput {
 	return o
-}
-
-func (o GetDomainsAppsAppRadiusPolicyOutput) _ref() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsAppsAppRadiusPolicy) string { return v._ref }).(pulumi.StringOutput)
 }
 
 // ID of the AppRole.
@@ -58166,8 +58154,6 @@ func (o GetDomainsIdentityProofingProviderIdcsLastModifiedByArrayOutput) Index(i
 }
 
 type GetDomainsIdentityProofingProviderIdcsLockedBy struct {
-	// The URI of the SCIM resource that represents the User or App who Locked this Resource.
-	_ref string `pulumi:"_ref"`
 	// The displayName of the User or App who locked this Resource.
 	Display string `pulumi:"display"`
 	// Unique Oracle Cloud Infrastructure identifier (OCID) for the SCIM Resource.
@@ -58190,8 +58176,6 @@ type GetDomainsIdentityProofingProviderIdcsLockedByInput interface {
 }
 
 type GetDomainsIdentityProofingProviderIdcsLockedByArgs struct {
-	// The URI of the SCIM resource that represents the User or App who Locked this Resource.
-	_ref pulumi.StringInput `pulumi:"_ref"`
 	// The displayName of the User or App who locked this Resource.
 	Display pulumi.StringInput `pulumi:"display"`
 	// Unique Oracle Cloud Infrastructure identifier (OCID) for the SCIM Resource.
@@ -58251,11 +58235,6 @@ func (o GetDomainsIdentityProofingProviderIdcsLockedByOutput) ToGetDomainsIdenti
 
 func (o GetDomainsIdentityProofingProviderIdcsLockedByOutput) ToGetDomainsIdentityProofingProviderIdcsLockedByOutputWithContext(ctx context.Context) GetDomainsIdentityProofingProviderIdcsLockedByOutput {
 	return o
-}
-
-// The URI of the SCIM resource that represents the User or App who Locked this Resource.
-func (o GetDomainsIdentityProofingProviderIdcsLockedByOutput) _ref() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsIdentityProofingProviderIdcsLockedBy) string { return v._ref }).(pulumi.StringOutput)
 }
 
 // The displayName of the User or App who locked this Resource.
@@ -58913,8 +58892,6 @@ func (o GetDomainsIdentityProofingProviderTemplateIdcsLastModifiedByArrayOutput)
 }
 
 type GetDomainsIdentityProofingProviderTemplateIdcsLockedBy struct {
-	// The URI of the SCIM resource that represents the User or App who Locked this Resource.
-	_ref string `pulumi:"_ref"`
 	// The displayName of the User or App who locked this Resource.
 	Display string `pulumi:"display"`
 	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -58937,8 +58914,6 @@ type GetDomainsIdentityProofingProviderTemplateIdcsLockedByInput interface {
 }
 
 type GetDomainsIdentityProofingProviderTemplateIdcsLockedByArgs struct {
-	// The URI of the SCIM resource that represents the User or App who Locked this Resource.
-	_ref pulumi.StringInput `pulumi:"_ref"`
 	// The displayName of the User or App who locked this Resource.
 	Display pulumi.StringInput `pulumi:"display"`
 	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -58998,11 +58973,6 @@ func (o GetDomainsIdentityProofingProviderTemplateIdcsLockedByOutput) ToGetDomai
 
 func (o GetDomainsIdentityProofingProviderTemplateIdcsLockedByOutput) ToGetDomainsIdentityProofingProviderTemplateIdcsLockedByOutputWithContext(ctx context.Context) GetDomainsIdentityProofingProviderTemplateIdcsLockedByOutput {
 	return o
-}
-
-// The URI of the SCIM resource that represents the User or App who Locked this Resource.
-func (o GetDomainsIdentityProofingProviderTemplateIdcsLockedByOutput) _ref() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsIdentityProofingProviderTemplateIdcsLockedBy) string { return v._ref }).(pulumi.StringOutput)
 }
 
 // The displayName of the User or App who locked this Resource.
@@ -59932,8 +59902,6 @@ func (o GetDomainsIdentityProofingProviderTemplatesIdentityProofingProviderTempl
 }
 
 type GetDomainsIdentityProofingProviderTemplatesIdentityProofingProviderTemplateIdcsLockedBy struct {
-	// The URI of the SCIM resource that represents the User or App who Locked this Resource.
-	_ref string `pulumi:"_ref"`
 	// The displayName of the User or App who locked this Resource.
 	Display string `pulumi:"display"`
 	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -59956,8 +59924,6 @@ type GetDomainsIdentityProofingProviderTemplatesIdentityProofingProviderTemplate
 }
 
 type GetDomainsIdentityProofingProviderTemplatesIdentityProofingProviderTemplateIdcsLockedByArgs struct {
-	// The URI of the SCIM resource that represents the User or App who Locked this Resource.
-	_ref pulumi.StringInput `pulumi:"_ref"`
 	// The displayName of the User or App who locked this Resource.
 	Display pulumi.StringInput `pulumi:"display"`
 	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -60017,13 +59983,6 @@ func (o GetDomainsIdentityProofingProviderTemplatesIdentityProofingProviderTempl
 
 func (o GetDomainsIdentityProofingProviderTemplatesIdentityProofingProviderTemplateIdcsLockedByOutput) ToGetDomainsIdentityProofingProviderTemplatesIdentityProofingProviderTemplateIdcsLockedByOutputWithContext(ctx context.Context) GetDomainsIdentityProofingProviderTemplatesIdentityProofingProviderTemplateIdcsLockedByOutput {
 	return o
-}
-
-// The URI of the SCIM resource that represents the User or App who Locked this Resource.
-func (o GetDomainsIdentityProofingProviderTemplatesIdentityProofingProviderTemplateIdcsLockedByOutput) _ref() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsIdentityProofingProviderTemplatesIdentityProofingProviderTemplateIdcsLockedBy) string {
-		return v._ref
-	}).(pulumi.StringOutput)
 }
 
 // The displayName of the User or App who locked this Resource.
@@ -61065,8 +61024,6 @@ func (o GetDomainsIdentityProofingProvidersIdentityProofingProviderIdcsLastModif
 }
 
 type GetDomainsIdentityProofingProvidersIdentityProofingProviderIdcsLockedBy struct {
-	// The URI of the SCIM resource that represents the User or App who Locked this Resource.
-	_ref string `pulumi:"_ref"`
 	// The displayName of the User or App who locked this Resource.
 	Display string `pulumi:"display"`
 	// Unique Oracle Cloud Infrastructure identifier (OCID) for the SCIM Resource.
@@ -61089,8 +61046,6 @@ type GetDomainsIdentityProofingProvidersIdentityProofingProviderIdcsLockedByInpu
 }
 
 type GetDomainsIdentityProofingProvidersIdentityProofingProviderIdcsLockedByArgs struct {
-	// The URI of the SCIM resource that represents the User or App who Locked this Resource.
-	_ref pulumi.StringInput `pulumi:"_ref"`
 	// The displayName of the User or App who locked this Resource.
 	Display pulumi.StringInput `pulumi:"display"`
 	// Unique Oracle Cloud Infrastructure identifier (OCID) for the SCIM Resource.
@@ -61150,11 +61105,6 @@ func (o GetDomainsIdentityProofingProvidersIdentityProofingProviderIdcsLockedByO
 
 func (o GetDomainsIdentityProofingProvidersIdentityProofingProviderIdcsLockedByOutput) ToGetDomainsIdentityProofingProvidersIdentityProofingProviderIdcsLockedByOutputWithContext(ctx context.Context) GetDomainsIdentityProofingProvidersIdentityProofingProviderIdcsLockedByOutput {
 	return o
-}
-
-// The URI of the SCIM resource that represents the User or App who Locked this Resource.
-func (o GetDomainsIdentityProofingProvidersIdentityProofingProviderIdcsLockedByOutput) _ref() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsIdentityProofingProvidersIdentityProofingProviderIdcsLockedBy) string { return v._ref }).(pulumi.StringOutput)
 }
 
 // The displayName of the User or App who locked this Resource.

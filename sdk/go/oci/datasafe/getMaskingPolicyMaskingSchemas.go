@@ -73,12 +73,8 @@ type GetMaskingPolicyMaskingSchemasResult struct {
 }
 
 func GetMaskingPolicyMaskingSchemasOutput(ctx *pulumi.Context, args GetMaskingPolicyMaskingSchemasOutputArgs, opts ...pulumi.InvokeOption) GetMaskingPolicyMaskingSchemasResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMaskingPolicyMaskingSchemasResultOutput, error) {
-			args := v.(GetMaskingPolicyMaskingSchemasArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getMaskingPolicyMaskingSchemas:getMaskingPolicyMaskingSchemas", args, GetMaskingPolicyMaskingSchemasResultOutput{}, options).(GetMaskingPolicyMaskingSchemasResultOutput), nil
-		}).(GetMaskingPolicyMaskingSchemasResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getMaskingPolicyMaskingSchemas:getMaskingPolicyMaskingSchemas", args, GetMaskingPolicyMaskingSchemasResultOutput{}, options).(GetMaskingPolicyMaskingSchemasResultOutput)
 }
 
 // A collection of arguments for invoking getMaskingPolicyMaskingSchemas.

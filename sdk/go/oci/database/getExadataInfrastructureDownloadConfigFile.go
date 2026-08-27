@@ -70,12 +70,8 @@ type GetExadataInfrastructureDownloadConfigFileResult struct {
 }
 
 func GetExadataInfrastructureDownloadConfigFileOutput(ctx *pulumi.Context, args GetExadataInfrastructureDownloadConfigFileOutputArgs, opts ...pulumi.InvokeOption) GetExadataInfrastructureDownloadConfigFileResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetExadataInfrastructureDownloadConfigFileResultOutput, error) {
-			args := v.(GetExadataInfrastructureDownloadConfigFileArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getExadataInfrastructureDownloadConfigFile:getExadataInfrastructureDownloadConfigFile", args, GetExadataInfrastructureDownloadConfigFileResultOutput{}, options).(GetExadataInfrastructureDownloadConfigFileResultOutput), nil
-		}).(GetExadataInfrastructureDownloadConfigFileResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getExadataInfrastructureDownloadConfigFile:getExadataInfrastructureDownloadConfigFile", args, GetExadataInfrastructureDownloadConfigFileResultOutput{}, options).(GetExadataInfrastructureDownloadConfigFileResultOutput)
 }
 
 // A collection of arguments for invoking getExadataInfrastructureDownloadConfigFile.

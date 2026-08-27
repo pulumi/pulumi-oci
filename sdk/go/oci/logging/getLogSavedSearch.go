@@ -82,12 +82,8 @@ type LookupLogSavedSearchResult struct {
 }
 
 func LookupLogSavedSearchOutput(ctx *pulumi.Context, args LookupLogSavedSearchOutputArgs, opts ...pulumi.InvokeOption) LookupLogSavedSearchResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupLogSavedSearchResultOutput, error) {
-			args := v.(LookupLogSavedSearchArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Logging/getLogSavedSearch:getLogSavedSearch", args, LookupLogSavedSearchResultOutput{}, options).(LookupLogSavedSearchResultOutput), nil
-		}).(LookupLogSavedSearchResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Logging/getLogSavedSearch:getLogSavedSearch", args, LookupLogSavedSearchResultOutput{}, options).(LookupLogSavedSearchResultOutput)
 }
 
 // A collection of arguments for invoking getLogSavedSearch.

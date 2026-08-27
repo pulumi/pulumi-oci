@@ -73,12 +73,8 @@ type GetIpsecStatusResult struct {
 }
 
 func GetIpsecStatusOutput(ctx *pulumi.Context, args GetIpsecStatusOutputArgs, opts ...pulumi.InvokeOption) GetIpsecStatusResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetIpsecStatusResultOutput, error) {
-			args := v.(GetIpsecStatusArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getIpsecStatus:getIpsecStatus", args, GetIpsecStatusResultOutput{}, options).(GetIpsecStatusResultOutput), nil
-		}).(GetIpsecStatusResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getIpsecStatus:getIpsecStatus", args, GetIpsecStatusResultOutput{}, options).(GetIpsecStatusResultOutput)
 }
 
 // A collection of arguments for invoking getIpsecStatus.

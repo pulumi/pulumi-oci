@@ -80,12 +80,8 @@ type GetDeploymentDisasterRecoveryPrecheckReportResult struct {
 }
 
 func GetDeploymentDisasterRecoveryPrecheckReportOutput(ctx *pulumi.Context, args GetDeploymentDisasterRecoveryPrecheckReportOutputArgs, opts ...pulumi.InvokeOption) GetDeploymentDisasterRecoveryPrecheckReportResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDeploymentDisasterRecoveryPrecheckReportResultOutput, error) {
-			args := v.(GetDeploymentDisasterRecoveryPrecheckReportArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GoldenGate/getDeploymentDisasterRecoveryPrecheckReport:getDeploymentDisasterRecoveryPrecheckReport", args, GetDeploymentDisasterRecoveryPrecheckReportResultOutput{}, options).(GetDeploymentDisasterRecoveryPrecheckReportResultOutput), nil
-		}).(GetDeploymentDisasterRecoveryPrecheckReportResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GoldenGate/getDeploymentDisasterRecoveryPrecheckReport:getDeploymentDisasterRecoveryPrecheckReport", args, GetDeploymentDisasterRecoveryPrecheckReportResultOutput{}, options).(GetDeploymentDisasterRecoveryPrecheckReportResultOutput)
 }
 
 // A collection of arguments for invoking getDeploymentDisasterRecoveryPrecheckReport.

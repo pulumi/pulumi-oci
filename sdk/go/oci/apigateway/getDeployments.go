@@ -84,12 +84,8 @@ type GetDeploymentsResult struct {
 }
 
 func GetDeploymentsOutput(ctx *pulumi.Context, args GetDeploymentsOutputArgs, opts ...pulumi.InvokeOption) GetDeploymentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDeploymentsResultOutput, error) {
-			args := v.(GetDeploymentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ApiGateway/getDeployments:getDeployments", args, GetDeploymentsResultOutput{}, options).(GetDeploymentsResultOutput), nil
-		}).(GetDeploymentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ApiGateway/getDeployments:getDeployments", args, GetDeploymentsResultOutput{}, options).(GetDeploymentsResultOutput)
 }
 
 // A collection of arguments for invoking getDeployments.

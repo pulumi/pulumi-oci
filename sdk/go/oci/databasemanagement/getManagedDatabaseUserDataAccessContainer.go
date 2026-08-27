@@ -75,12 +75,8 @@ type GetManagedDatabaseUserDataAccessContainerResult struct {
 }
 
 func GetManagedDatabaseUserDataAccessContainerOutput(ctx *pulumi.Context, args GetManagedDatabaseUserDataAccessContainerOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseUserDataAccessContainerResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabaseUserDataAccessContainerResultOutput, error) {
-			args := v.(GetManagedDatabaseUserDataAccessContainerArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseUserDataAccessContainer:getManagedDatabaseUserDataAccessContainer", args, GetManagedDatabaseUserDataAccessContainerResultOutput{}, options).(GetManagedDatabaseUserDataAccessContainerResultOutput), nil
-		}).(GetManagedDatabaseUserDataAccessContainerResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseUserDataAccessContainer:getManagedDatabaseUserDataAccessContainer", args, GetManagedDatabaseUserDataAccessContainerResultOutput{}, options).(GetManagedDatabaseUserDataAccessContainerResultOutput)
 }
 
 // A collection of arguments for invoking getManagedDatabaseUserDataAccessContainer.

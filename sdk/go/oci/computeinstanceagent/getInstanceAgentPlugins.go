@@ -82,12 +82,8 @@ type GetInstanceAgentPluginsResult struct {
 }
 
 func GetInstanceAgentPluginsOutput(ctx *pulumi.Context, args GetInstanceAgentPluginsOutputArgs, opts ...pulumi.InvokeOption) GetInstanceAgentPluginsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetInstanceAgentPluginsResultOutput, error) {
-			args := v.(GetInstanceAgentPluginsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ComputeInstanceAgent/getInstanceAgentPlugins:getInstanceAgentPlugins", args, GetInstanceAgentPluginsResultOutput{}, options).(GetInstanceAgentPluginsResultOutput), nil
-		}).(GetInstanceAgentPluginsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ComputeInstanceAgent/getInstanceAgentPlugins:getInstanceAgentPlugins", args, GetInstanceAgentPluginsResultOutput{}, options).(GetInstanceAgentPluginsResultOutput)
 }
 
 // A collection of arguments for invoking getInstanceAgentPlugins.

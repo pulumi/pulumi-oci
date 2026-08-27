@@ -97,12 +97,8 @@ type GetIotDigitalTwinRelationshipsResult struct {
 }
 
 func GetIotDigitalTwinRelationshipsOutput(ctx *pulumi.Context, args GetIotDigitalTwinRelationshipsOutputArgs, opts ...pulumi.InvokeOption) GetIotDigitalTwinRelationshipsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetIotDigitalTwinRelationshipsResultOutput, error) {
-			args := v.(GetIotDigitalTwinRelationshipsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getIotDigitalTwinRelationships:getIotDigitalTwinRelationships", args, GetIotDigitalTwinRelationshipsResultOutput{}, options).(GetIotDigitalTwinRelationshipsResultOutput), nil
-		}).(GetIotDigitalTwinRelationshipsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getIotDigitalTwinRelationships:getIotDigitalTwinRelationships", args, GetIotDigitalTwinRelationshipsResultOutput{}, options).(GetIotDigitalTwinRelationshipsResultOutput)
 }
 
 // A collection of arguments for invoking getIotDigitalTwinRelationships.

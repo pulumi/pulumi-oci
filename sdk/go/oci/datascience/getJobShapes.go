@@ -68,12 +68,8 @@ type GetJobShapesResult struct {
 }
 
 func GetJobShapesOutput(ctx *pulumi.Context, args GetJobShapesOutputArgs, opts ...pulumi.InvokeOption) GetJobShapesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetJobShapesResultOutput, error) {
-			args := v.(GetJobShapesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataScience/getJobShapes:getJobShapes", args, GetJobShapesResultOutput{}, options).(GetJobShapesResultOutput), nil
-		}).(GetJobShapesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataScience/getJobShapes:getJobShapes", args, GetJobShapesResultOutput{}, options).(GetJobShapesResultOutput)
 }
 
 // A collection of arguments for invoking getJobShapes.

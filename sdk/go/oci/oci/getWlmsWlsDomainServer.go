@@ -105,12 +105,8 @@ type GetWlmsWlsDomainServerResult struct {
 }
 
 func GetWlmsWlsDomainServerOutput(ctx *pulumi.Context, args GetWlmsWlsDomainServerOutputArgs, opts ...pulumi.InvokeOption) GetWlmsWlsDomainServerResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetWlmsWlsDomainServerResultOutput, error) {
-			args := v.(GetWlmsWlsDomainServerArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getWlmsWlsDomainServer:getWlmsWlsDomainServer", args, GetWlmsWlsDomainServerResultOutput{}, options).(GetWlmsWlsDomainServerResultOutput), nil
-		}).(GetWlmsWlsDomainServerResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getWlmsWlsDomainServer:getWlmsWlsDomainServer", args, GetWlmsWlsDomainServerResultOutput{}, options).(GetWlmsWlsDomainServerResultOutput)
 }
 
 // A collection of arguments for invoking getWlmsWlsDomainServer.

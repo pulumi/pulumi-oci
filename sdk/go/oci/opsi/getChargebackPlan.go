@@ -94,12 +94,8 @@ type LookupChargebackPlanResult struct {
 }
 
 func LookupChargebackPlanOutput(ctx *pulumi.Context, args LookupChargebackPlanOutputArgs, opts ...pulumi.InvokeOption) LookupChargebackPlanResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupChargebackPlanResultOutput, error) {
-			args := v.(LookupChargebackPlanArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Opsi/getChargebackPlan:getChargebackPlan", args, LookupChargebackPlanResultOutput{}, options).(LookupChargebackPlanResultOutput), nil
-		}).(LookupChargebackPlanResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Opsi/getChargebackPlan:getChargebackPlan", args, LookupChargebackPlanResultOutput{}, options).(LookupChargebackPlanResultOutput)
 }
 
 // A collection of arguments for invoking getChargebackPlan.

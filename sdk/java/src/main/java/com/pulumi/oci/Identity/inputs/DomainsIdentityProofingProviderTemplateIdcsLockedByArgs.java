@@ -16,41 +16,6 @@ public final class DomainsIdentityProofingProviderTemplateIdcsLockedByArgs exten
     public static final DomainsIdentityProofingProviderTemplateIdcsLockedByArgs Empty = new DomainsIdentityProofingProviderTemplateIdcsLockedByArgs();
 
     /**
-     * (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-     * 
-     * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
-     * * type: string
-     * * uniqueness: none
-     * 
-     */
-    @Import(name="_ref")
-    private @Nullable Output<String> _ref;
-
-    /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-     * 
-     * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
-     * * type: string
-     * * uniqueness: none
-     * 
-     */
-    public Optional<Output<String>> _ref() {
-        return Optional.ofNullable(this._ref);
-    }
-
-    /**
      * (Updatable) The displayName of the User or App who locked this Resource.
      * 
      * **SCIM++ Properties:**
@@ -191,7 +156,6 @@ public final class DomainsIdentityProofingProviderTemplateIdcsLockedByArgs exten
     private DomainsIdentityProofingProviderTemplateIdcsLockedByArgs() {}
 
     private DomainsIdentityProofingProviderTemplateIdcsLockedByArgs(DomainsIdentityProofingProviderTemplateIdcsLockedByArgs $) {
-        this._ref = $._ref;
         this.display = $.display;
         this.ocid = $.ocid;
         this.type = $.type;
@@ -214,47 +178,6 @@ public final class DomainsIdentityProofingProviderTemplateIdcsLockedByArgs exten
 
         public Builder(DomainsIdentityProofingProviderTemplateIdcsLockedByArgs defaults) {
             $ = new DomainsIdentityProofingProviderTemplateIdcsLockedByArgs(Objects.requireNonNull(defaults));
-        }
-
-        /**
-         * @param _ref (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-         * 
-         * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: false
-         * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
-         * * returned: default
-         * * type: string
-         * * uniqueness: none
-         * 
-         * @return builder
-         * 
-         */
-        public Builder _ref(@Nullable Output<String> _ref) {
-            $._ref = _ref;
-            return this;
-        }
-
-        /**
-         * @param _ref (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-         * 
-         * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: false
-         * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
-         * * returned: default
-         * * type: string
-         * * uniqueness: none
-         * 
-         * @return builder
-         * 
-         */
-        public Builder _ref(String _ref) {
-            return _ref(Output.of(_ref));
         }
 
         /**

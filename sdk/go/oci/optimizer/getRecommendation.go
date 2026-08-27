@@ -94,12 +94,8 @@ type LookupRecommendationResult struct {
 }
 
 func LookupRecommendationOutput(ctx *pulumi.Context, args LookupRecommendationOutputArgs, opts ...pulumi.InvokeOption) LookupRecommendationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupRecommendationResultOutput, error) {
-			args := v.(LookupRecommendationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Optimizer/getRecommendation:getRecommendation", args, LookupRecommendationResultOutput{}, options).(LookupRecommendationResultOutput), nil
-		}).(LookupRecommendationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Optimizer/getRecommendation:getRecommendation", args, LookupRecommendationResultOutput{}, options).(LookupRecommendationResultOutput)
 }
 
 // A collection of arguments for invoking getRecommendation.

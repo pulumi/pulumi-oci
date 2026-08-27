@@ -84,12 +84,8 @@ type GetRepositoryPathsResult struct {
 }
 
 func GetRepositoryPathsOutput(ctx *pulumi.Context, args GetRepositoryPathsOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryPathsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRepositoryPathsResultOutput, error) {
-			args := v.(GetRepositoryPathsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DevOps/getRepositoryPaths:getRepositoryPaths", args, GetRepositoryPathsResultOutput{}, options).(GetRepositoryPathsResultOutput), nil
-		}).(GetRepositoryPathsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DevOps/getRepositoryPaths:getRepositoryPaths", args, GetRepositoryPathsResultOutput{}, options).(GetRepositoryPathsResultOutput)
 }
 
 // A collection of arguments for invoking getRepositoryPaths.

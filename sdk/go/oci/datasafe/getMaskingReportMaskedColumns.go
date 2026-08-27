@@ -98,12 +98,8 @@ type GetMaskingReportMaskedColumnsResult struct {
 }
 
 func GetMaskingReportMaskedColumnsOutput(ctx *pulumi.Context, args GetMaskingReportMaskedColumnsOutputArgs, opts ...pulumi.InvokeOption) GetMaskingReportMaskedColumnsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMaskingReportMaskedColumnsResultOutput, error) {
-			args := v.(GetMaskingReportMaskedColumnsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getMaskingReportMaskedColumns:getMaskingReportMaskedColumns", args, GetMaskingReportMaskedColumnsResultOutput{}, options).(GetMaskingReportMaskedColumnsResultOutput), nil
-		}).(GetMaskingReportMaskedColumnsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getMaskingReportMaskedColumns:getMaskingReportMaskedColumns", args, GetMaskingReportMaskedColumnsResultOutput{}, options).(GetMaskingReportMaskedColumnsResultOutput)
 }
 
 // A collection of arguments for invoking getMaskingReportMaskedColumns.

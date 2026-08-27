@@ -88,12 +88,8 @@ type GetTraceSnapshotDataResult struct {
 }
 
 func GetTraceSnapshotDataOutput(ctx *pulumi.Context, args GetTraceSnapshotDataOutputArgs, opts ...pulumi.InvokeOption) GetTraceSnapshotDataResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetTraceSnapshotDataResultOutput, error) {
-			args := v.(GetTraceSnapshotDataArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ApmTraces/getTraceSnapshotData:getTraceSnapshotData", args, GetTraceSnapshotDataResultOutput{}, options).(GetTraceSnapshotDataResultOutput), nil
-		}).(GetTraceSnapshotDataResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ApmTraces/getTraceSnapshotData:getTraceSnapshotData", args, GetTraceSnapshotDataResultOutput{}, options).(GetTraceSnapshotDataResultOutput)
 }
 
 // A collection of arguments for invoking getTraceSnapshotData.

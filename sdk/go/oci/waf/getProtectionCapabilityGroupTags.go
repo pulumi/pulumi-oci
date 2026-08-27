@@ -77,12 +77,8 @@ type GetProtectionCapabilityGroupTagsResult struct {
 }
 
 func GetProtectionCapabilityGroupTagsOutput(ctx *pulumi.Context, args GetProtectionCapabilityGroupTagsOutputArgs, opts ...pulumi.InvokeOption) GetProtectionCapabilityGroupTagsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetProtectionCapabilityGroupTagsResultOutput, error) {
-			args := v.(GetProtectionCapabilityGroupTagsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Waf/getProtectionCapabilityGroupTags:getProtectionCapabilityGroupTags", args, GetProtectionCapabilityGroupTagsResultOutput{}, options).(GetProtectionCapabilityGroupTagsResultOutput), nil
-		}).(GetProtectionCapabilityGroupTagsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Waf/getProtectionCapabilityGroupTags:getProtectionCapabilityGroupTags", args, GetProtectionCapabilityGroupTagsResultOutput{}, options).(GetProtectionCapabilityGroupTagsResultOutput)
 }
 
 // A collection of arguments for invoking getProtectionCapabilityGroupTags.

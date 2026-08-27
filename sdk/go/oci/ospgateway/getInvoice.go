@@ -121,12 +121,8 @@ type GetInvoiceResult struct {
 }
 
 func GetInvoiceOutput(ctx *pulumi.Context, args GetInvoiceOutputArgs, opts ...pulumi.InvokeOption) GetInvoiceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetInvoiceResultOutput, error) {
-			args := v.(GetInvoiceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OspGateway/getInvoice:getInvoice", args, GetInvoiceResultOutput{}, options).(GetInvoiceResultOutput), nil
-		}).(GetInvoiceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OspGateway/getInvoice:getInvoice", args, GetInvoiceResultOutput{}, options).(GetInvoiceResultOutput)
 }
 
 // A collection of arguments for invoking getInvoice.

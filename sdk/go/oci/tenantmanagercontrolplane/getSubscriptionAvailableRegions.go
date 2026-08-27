@@ -68,12 +68,8 @@ type GetSubscriptionAvailableRegionsResult struct {
 }
 
 func GetSubscriptionAvailableRegionsOutput(ctx *pulumi.Context, args GetSubscriptionAvailableRegionsOutputArgs, opts ...pulumi.InvokeOption) GetSubscriptionAvailableRegionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSubscriptionAvailableRegionsResultOutput, error) {
-			args := v.(GetSubscriptionAvailableRegionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Tenantmanagercontrolplane/getSubscriptionAvailableRegions:getSubscriptionAvailableRegions", args, GetSubscriptionAvailableRegionsResultOutput{}, options).(GetSubscriptionAvailableRegionsResultOutput), nil
-		}).(GetSubscriptionAvailableRegionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Tenantmanagercontrolplane/getSubscriptionAvailableRegions:getSubscriptionAvailableRegions", args, GetSubscriptionAvailableRegionsResultOutput{}, options).(GetSubscriptionAvailableRegionsResultOutput)
 }
 
 // A collection of arguments for invoking getSubscriptionAvailableRegions.

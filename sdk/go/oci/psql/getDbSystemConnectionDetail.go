@@ -72,12 +72,8 @@ type GetDbSystemConnectionDetailResult struct {
 }
 
 func GetDbSystemConnectionDetailOutput(ctx *pulumi.Context, args GetDbSystemConnectionDetailOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemConnectionDetailResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbSystemConnectionDetailResultOutput, error) {
-			args := v.(GetDbSystemConnectionDetailArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Psql/getDbSystemConnectionDetail:getDbSystemConnectionDetail", args, GetDbSystemConnectionDetailResultOutput{}, options).(GetDbSystemConnectionDetailResultOutput), nil
-		}).(GetDbSystemConnectionDetailResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Psql/getDbSystemConnectionDetail:getDbSystemConnectionDetail", args, GetDbSystemConnectionDetailResultOutput{}, options).(GetDbSystemConnectionDetailResultOutput)
 }
 
 // A collection of arguments for invoking getDbSystemConnectionDetail.

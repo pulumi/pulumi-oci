@@ -74,12 +74,8 @@ type GetAutoScalingConfigurationsResult struct {
 }
 
 func GetAutoScalingConfigurationsOutput(ctx *pulumi.Context, args GetAutoScalingConfigurationsOutputArgs, opts ...pulumi.InvokeOption) GetAutoScalingConfigurationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAutoScalingConfigurationsResultOutput, error) {
-			args := v.(GetAutoScalingConfigurationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Autoscaling/getAutoScalingConfigurations:getAutoScalingConfigurations", args, GetAutoScalingConfigurationsResultOutput{}, options).(GetAutoScalingConfigurationsResultOutput), nil
-		}).(GetAutoScalingConfigurationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Autoscaling/getAutoScalingConfigurations:getAutoScalingConfigurations", args, GetAutoScalingConfigurationsResultOutput{}, options).(GetAutoScalingConfigurationsResultOutput)
 }
 
 // A collection of arguments for invoking getAutoScalingConfigurations.

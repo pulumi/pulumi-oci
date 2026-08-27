@@ -84,12 +84,8 @@ type GetExecutionWindowsResult struct {
 }
 
 func GetExecutionWindowsOutput(ctx *pulumi.Context, args GetExecutionWindowsOutputArgs, opts ...pulumi.InvokeOption) GetExecutionWindowsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetExecutionWindowsResultOutput, error) {
-			args := v.(GetExecutionWindowsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getExecutionWindows:getExecutionWindows", args, GetExecutionWindowsResultOutput{}, options).(GetExecutionWindowsResultOutput), nil
-		}).(GetExecutionWindowsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getExecutionWindows:getExecutionWindows", args, GetExecutionWindowsResultOutput{}, options).(GetExecutionWindowsResultOutput)
 }
 
 // A collection of arguments for invoking getExecutionWindows.

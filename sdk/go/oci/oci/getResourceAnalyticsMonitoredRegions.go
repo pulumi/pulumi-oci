@@ -77,12 +77,8 @@ type GetResourceAnalyticsMonitoredRegionsResult struct {
 }
 
 func GetResourceAnalyticsMonitoredRegionsOutput(ctx *pulumi.Context, args GetResourceAnalyticsMonitoredRegionsOutputArgs, opts ...pulumi.InvokeOption) GetResourceAnalyticsMonitoredRegionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetResourceAnalyticsMonitoredRegionsResultOutput, error) {
-			args := v.(GetResourceAnalyticsMonitoredRegionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getResourceAnalyticsMonitoredRegions:getResourceAnalyticsMonitoredRegions", args, GetResourceAnalyticsMonitoredRegionsResultOutput{}, options).(GetResourceAnalyticsMonitoredRegionsResultOutput), nil
-		}).(GetResourceAnalyticsMonitoredRegionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getResourceAnalyticsMonitoredRegions:getResourceAnalyticsMonitoredRegions", args, GetResourceAnalyticsMonitoredRegionsResultOutput{}, options).(GetResourceAnalyticsMonitoredRegionsResultOutput)
 }
 
 // A collection of arguments for invoking getResourceAnalyticsMonitoredRegions.

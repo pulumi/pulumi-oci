@@ -90,12 +90,8 @@ type LookupDatabaseToolsIdentityResult struct {
 }
 
 func LookupDatabaseToolsIdentityOutput(ctx *pulumi.Context, args LookupDatabaseToolsIdentityOutputArgs, opts ...pulumi.InvokeOption) LookupDatabaseToolsIdentityResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDatabaseToolsIdentityResultOutput, error) {
-			args := v.(LookupDatabaseToolsIdentityArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseTools/getDatabaseToolsIdentity:getDatabaseToolsIdentity", args, LookupDatabaseToolsIdentityResultOutput{}, options).(LookupDatabaseToolsIdentityResultOutput), nil
-		}).(LookupDatabaseToolsIdentityResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseTools/getDatabaseToolsIdentity:getDatabaseToolsIdentity", args, LookupDatabaseToolsIdentityResultOutput{}, options).(LookupDatabaseToolsIdentityResultOutput)
 }
 
 // A collection of arguments for invoking getDatabaseToolsIdentity.

@@ -70,12 +70,8 @@ type GetAuthTokensResult struct {
 }
 
 func GetAuthTokensOutput(ctx *pulumi.Context, args GetAuthTokensOutputArgs, opts ...pulumi.InvokeOption) GetAuthTokensResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAuthTokensResultOutput, error) {
-			args := v.(GetAuthTokensArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getAuthTokens:getAuthTokens", args, GetAuthTokensResultOutput{}, options).(GetAuthTokensResultOutput), nil
-		}).(GetAuthTokensResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getAuthTokens:getAuthTokens", args, GetAuthTokensResultOutput{}, options).(GetAuthTokensResultOutput)
 }
 
 // A collection of arguments for invoking getAuthTokens.

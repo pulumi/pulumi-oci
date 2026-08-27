@@ -152,12 +152,8 @@ type LookupInvokeRunResult struct {
 }
 
 func LookupInvokeRunOutput(ctx *pulumi.Context, args LookupInvokeRunOutputArgs, opts ...pulumi.InvokeOption) LookupInvokeRunResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupInvokeRunResultOutput, error) {
-			args := v.(LookupInvokeRunArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataFlow/getInvokeRun:getInvokeRun", args, LookupInvokeRunResultOutput{}, options).(LookupInvokeRunResultOutput), nil
-		}).(LookupInvokeRunResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataFlow/getInvokeRun:getInvokeRun", args, LookupInvokeRunResultOutput{}, options).(LookupInvokeRunResultOutput)
 }
 
 // A collection of arguments for invoking getInvokeRun.

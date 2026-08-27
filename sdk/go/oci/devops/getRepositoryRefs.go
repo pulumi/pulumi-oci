@@ -84,12 +84,8 @@ type GetRepositoryRefsResult struct {
 }
 
 func GetRepositoryRefsOutput(ctx *pulumi.Context, args GetRepositoryRefsOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryRefsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRepositoryRefsResultOutput, error) {
-			args := v.(GetRepositoryRefsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DevOps/getRepositoryRefs:getRepositoryRefs", args, GetRepositoryRefsResultOutput{}, options).(GetRepositoryRefsResultOutput), nil
-		}).(GetRepositoryRefsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DevOps/getRepositoryRefs:getRepositoryRefs", args, GetRepositoryRefsResultOutput{}, options).(GetRepositoryRefsResultOutput)
 }
 
 // A collection of arguments for invoking getRepositoryRefs.

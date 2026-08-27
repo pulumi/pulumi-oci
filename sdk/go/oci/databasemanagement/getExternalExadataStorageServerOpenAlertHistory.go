@@ -66,12 +66,8 @@ type GetExternalExadataStorageServerOpenAlertHistoryResult struct {
 }
 
 func GetExternalExadataStorageServerOpenAlertHistoryOutput(ctx *pulumi.Context, args GetExternalExadataStorageServerOpenAlertHistoryOutputArgs, opts ...pulumi.InvokeOption) GetExternalExadataStorageServerOpenAlertHistoryResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetExternalExadataStorageServerOpenAlertHistoryResultOutput, error) {
-			args := v.(GetExternalExadataStorageServerOpenAlertHistoryArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalExadataStorageServerOpenAlertHistory:getExternalExadataStorageServerOpenAlertHistory", args, GetExternalExadataStorageServerOpenAlertHistoryResultOutput{}, options).(GetExternalExadataStorageServerOpenAlertHistoryResultOutput), nil
-		}).(GetExternalExadataStorageServerOpenAlertHistoryResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getExternalExadataStorageServerOpenAlertHistory:getExternalExadataStorageServerOpenAlertHistory", args, GetExternalExadataStorageServerOpenAlertHistoryResultOutput{}, options).(GetExternalExadataStorageServerOpenAlertHistoryResultOutput)
 }
 
 // A collection of arguments for invoking getExternalExadataStorageServerOpenAlertHistory.

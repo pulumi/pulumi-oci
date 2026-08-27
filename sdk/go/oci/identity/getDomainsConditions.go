@@ -106,12 +106,8 @@ type GetDomainsConditionsResult struct {
 }
 
 func GetDomainsConditionsOutput(ctx *pulumi.Context, args GetDomainsConditionsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsConditionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsConditionsResultOutput, error) {
-			args := v.(GetDomainsConditionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsConditions:getDomainsConditions", args, GetDomainsConditionsResultOutput{}, options).(GetDomainsConditionsResultOutput), nil
-		}).(GetDomainsConditionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsConditions:getDomainsConditions", args, GetDomainsConditionsResultOutput{}, options).(GetDomainsConditionsResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsConditions.

@@ -87,12 +87,8 @@ type LookupApplicationVipResult struct {
 }
 
 func LookupApplicationVipOutput(ctx *pulumi.Context, args LookupApplicationVipOutputArgs, opts ...pulumi.InvokeOption) LookupApplicationVipResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupApplicationVipResultOutput, error) {
-			args := v.(LookupApplicationVipArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getApplicationVip:getApplicationVip", args, LookupApplicationVipResultOutput{}, options).(LookupApplicationVipResultOutput), nil
-		}).(LookupApplicationVipResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getApplicationVip:getApplicationVip", args, LookupApplicationVipResultOutput{}, options).(LookupApplicationVipResultOutput)
 }
 
 // A collection of arguments for invoking getApplicationVip.

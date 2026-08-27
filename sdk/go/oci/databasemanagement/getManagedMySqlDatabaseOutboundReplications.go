@@ -69,12 +69,8 @@ type GetManagedMySqlDatabaseOutboundReplicationsResult struct {
 }
 
 func GetManagedMySqlDatabaseOutboundReplicationsOutput(ctx *pulumi.Context, args GetManagedMySqlDatabaseOutboundReplicationsOutputArgs, opts ...pulumi.InvokeOption) GetManagedMySqlDatabaseOutboundReplicationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedMySqlDatabaseOutboundReplicationsResultOutput, error) {
-			args := v.(GetManagedMySqlDatabaseOutboundReplicationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedMySqlDatabaseOutboundReplications:getManagedMySqlDatabaseOutboundReplications", args, GetManagedMySqlDatabaseOutboundReplicationsResultOutput{}, options).(GetManagedMySqlDatabaseOutboundReplicationsResultOutput), nil
-		}).(GetManagedMySqlDatabaseOutboundReplicationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getManagedMySqlDatabaseOutboundReplications:getManagedMySqlDatabaseOutboundReplications", args, GetManagedMySqlDatabaseOutboundReplicationsResultOutput{}, options).(GetManagedMySqlDatabaseOutboundReplicationsResultOutput)
 }
 
 // A collection of arguments for invoking getManagedMySqlDatabaseOutboundReplications.

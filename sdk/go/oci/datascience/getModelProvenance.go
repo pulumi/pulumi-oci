@@ -75,12 +75,8 @@ type LookupModelProvenanceResult struct {
 }
 
 func LookupModelProvenanceOutput(ctx *pulumi.Context, args LookupModelProvenanceOutputArgs, opts ...pulumi.InvokeOption) LookupModelProvenanceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupModelProvenanceResultOutput, error) {
-			args := v.(LookupModelProvenanceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataScience/getModelProvenance:getModelProvenance", args, LookupModelProvenanceResultOutput{}, options).(LookupModelProvenanceResultOutput), nil
-		}).(LookupModelProvenanceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataScience/getModelProvenance:getModelProvenance", args, LookupModelProvenanceResultOutput{}, options).(LookupModelProvenanceResultOutput)
 }
 
 // A collection of arguments for invoking getModelProvenance.

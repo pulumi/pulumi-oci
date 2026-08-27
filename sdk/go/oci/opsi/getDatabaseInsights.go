@@ -116,12 +116,8 @@ type GetDatabaseInsightsResult struct {
 }
 
 func GetDatabaseInsightsOutput(ctx *pulumi.Context, args GetDatabaseInsightsOutputArgs, opts ...pulumi.InvokeOption) GetDatabaseInsightsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDatabaseInsightsResultOutput, error) {
-			args := v.(GetDatabaseInsightsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Opsi/getDatabaseInsights:getDatabaseInsights", args, GetDatabaseInsightsResultOutput{}, options).(GetDatabaseInsightsResultOutput), nil
-		}).(GetDatabaseInsightsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Opsi/getDatabaseInsights:getDatabaseInsights", args, GetDatabaseInsightsResultOutput{}, options).(GetDatabaseInsightsResultOutput)
 }
 
 // A collection of arguments for invoking getDatabaseInsights.

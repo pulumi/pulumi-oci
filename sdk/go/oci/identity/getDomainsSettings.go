@@ -91,12 +91,8 @@ type GetDomainsSettingsResult struct {
 }
 
 func GetDomainsSettingsOutput(ctx *pulumi.Context, args GetDomainsSettingsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsSettingsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsSettingsResultOutput, error) {
-			args := v.(GetDomainsSettingsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsSettings:getDomainsSettings", args, GetDomainsSettingsResultOutput{}, options).(GetDomainsSettingsResultOutput), nil
-		}).(GetDomainsSettingsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsSettings:getDomainsSettings", args, GetDomainsSettingsResultOutput{}, options).(GetDomainsSettingsResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsSettings.

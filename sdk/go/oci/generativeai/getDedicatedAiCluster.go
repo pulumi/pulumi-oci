@@ -91,12 +91,8 @@ type LookupDedicatedAiClusterResult struct {
 }
 
 func LookupDedicatedAiClusterOutput(ctx *pulumi.Context, args LookupDedicatedAiClusterOutputArgs, opts ...pulumi.InvokeOption) LookupDedicatedAiClusterResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDedicatedAiClusterResultOutput, error) {
-			args := v.(LookupDedicatedAiClusterArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GenerativeAi/getDedicatedAiCluster:getDedicatedAiCluster", args, LookupDedicatedAiClusterResultOutput{}, options).(LookupDedicatedAiClusterResultOutput), nil
-		}).(LookupDedicatedAiClusterResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GenerativeAi/getDedicatedAiCluster:getDedicatedAiCluster", args, LookupDedicatedAiClusterResultOutput{}, options).(LookupDedicatedAiClusterResultOutput)
 }
 
 // A collection of arguments for invoking getDedicatedAiCluster.

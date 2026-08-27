@@ -92,12 +92,8 @@ type GetIotDigitalTwinAdaptersResult struct {
 }
 
 func GetIotDigitalTwinAdaptersOutput(ctx *pulumi.Context, args GetIotDigitalTwinAdaptersOutputArgs, opts ...pulumi.InvokeOption) GetIotDigitalTwinAdaptersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetIotDigitalTwinAdaptersResultOutput, error) {
-			args := v.(GetIotDigitalTwinAdaptersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getIotDigitalTwinAdapters:getIotDigitalTwinAdapters", args, GetIotDigitalTwinAdaptersResultOutput{}, options).(GetIotDigitalTwinAdaptersResultOutput), nil
-		}).(GetIotDigitalTwinAdaptersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getIotDigitalTwinAdapters:getIotDigitalTwinAdapters", args, GetIotDigitalTwinAdaptersResultOutput{}, options).(GetIotDigitalTwinAdaptersResultOutput)
 }
 
 // A collection of arguments for invoking getIotDigitalTwinAdapters.

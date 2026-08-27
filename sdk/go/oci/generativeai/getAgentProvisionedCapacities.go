@@ -83,12 +83,8 @@ type GetAgentProvisionedCapacitiesResult struct {
 }
 
 func GetAgentProvisionedCapacitiesOutput(ctx *pulumi.Context, args GetAgentProvisionedCapacitiesOutputArgs, opts ...pulumi.InvokeOption) GetAgentProvisionedCapacitiesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAgentProvisionedCapacitiesResultOutput, error) {
-			args := v.(GetAgentProvisionedCapacitiesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GenerativeAi/getAgentProvisionedCapacities:getAgentProvisionedCapacities", args, GetAgentProvisionedCapacitiesResultOutput{}, options).(GetAgentProvisionedCapacitiesResultOutput), nil
-		}).(GetAgentProvisionedCapacitiesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GenerativeAi/getAgentProvisionedCapacities:getAgentProvisionedCapacities", args, GetAgentProvisionedCapacitiesResultOutput{}, options).(GetAgentProvisionedCapacitiesResultOutput)
 }
 
 // A collection of arguments for invoking getAgentProvisionedCapacities.

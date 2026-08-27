@@ -90,12 +90,8 @@ type GetAiDataPlatformAiDataPlatformsResult struct {
 }
 
 func GetAiDataPlatformAiDataPlatformsOutput(ctx *pulumi.Context, args GetAiDataPlatformAiDataPlatformsOutputArgs, opts ...pulumi.InvokeOption) GetAiDataPlatformAiDataPlatformsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAiDataPlatformAiDataPlatformsResultOutput, error) {
-			args := v.(GetAiDataPlatformAiDataPlatformsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getAiDataPlatformAiDataPlatforms:getAiDataPlatformAiDataPlatforms", args, GetAiDataPlatformAiDataPlatformsResultOutput{}, options).(GetAiDataPlatformAiDataPlatformsResultOutput), nil
-		}).(GetAiDataPlatformAiDataPlatformsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getAiDataPlatformAiDataPlatforms:getAiDataPlatformAiDataPlatforms", args, GetAiDataPlatformAiDataPlatformsResultOutput{}, options).(GetAiDataPlatformAiDataPlatformsResultOutput)
 }
 
 // A collection of arguments for invoking getAiDataPlatformAiDataPlatforms.

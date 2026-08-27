@@ -72,12 +72,8 @@ type GetRepositoryObjectContentResult struct {
 }
 
 func GetRepositoryObjectContentOutput(ctx *pulumi.Context, args GetRepositoryObjectContentOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryObjectContentResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRepositoryObjectContentResultOutput, error) {
-			args := v.(GetRepositoryObjectContentArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DevOps/getRepositoryObjectContent:getRepositoryObjectContent", args, GetRepositoryObjectContentResultOutput{}, options).(GetRepositoryObjectContentResultOutput), nil
-		}).(GetRepositoryObjectContentResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DevOps/getRepositoryObjectContent:getRepositoryObjectContent", args, GetRepositoryObjectContentResultOutput{}, options).(GetRepositoryObjectContentResultOutput)
 }
 
 // A collection of arguments for invoking getRepositoryObjectContent.

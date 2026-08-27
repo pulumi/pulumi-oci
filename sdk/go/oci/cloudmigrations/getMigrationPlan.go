@@ -96,12 +96,8 @@ type LookupMigrationPlanResult struct {
 }
 
 func LookupMigrationPlanOutput(ctx *pulumi.Context, args LookupMigrationPlanOutputArgs, opts ...pulumi.InvokeOption) LookupMigrationPlanResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupMigrationPlanResultOutput, error) {
-			args := v.(LookupMigrationPlanArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CloudMigrations/getMigrationPlan:getMigrationPlan", args, LookupMigrationPlanResultOutput{}, options).(LookupMigrationPlanResultOutput), nil
-		}).(LookupMigrationPlanResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CloudMigrations/getMigrationPlan:getMigrationPlan", args, LookupMigrationPlanResultOutput{}, options).(LookupMigrationPlanResultOutput)
 }
 
 // A collection of arguments for invoking getMigrationPlan.

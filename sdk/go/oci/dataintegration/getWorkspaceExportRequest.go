@@ -103,12 +103,8 @@ type LookupWorkspaceExportRequestResult struct {
 }
 
 func LookupWorkspaceExportRequestOutput(ctx *pulumi.Context, args LookupWorkspaceExportRequestOutputArgs, opts ...pulumi.InvokeOption) LookupWorkspaceExportRequestResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupWorkspaceExportRequestResultOutput, error) {
-			args := v.(LookupWorkspaceExportRequestArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataIntegration/getWorkspaceExportRequest:getWorkspaceExportRequest", args, LookupWorkspaceExportRequestResultOutput{}, options).(LookupWorkspaceExportRequestResultOutput), nil
-		}).(LookupWorkspaceExportRequestResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataIntegration/getWorkspaceExportRequest:getWorkspaceExportRequest", args, LookupWorkspaceExportRequestResultOutput{}, options).(LookupWorkspaceExportRequestResultOutput)
 }
 
 // A collection of arguments for invoking getWorkspaceExportRequest.

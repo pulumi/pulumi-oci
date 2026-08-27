@@ -82,12 +82,8 @@ type GetManagedInstanceGroupAvailableSoftwareSourcesResult struct {
 }
 
 func GetManagedInstanceGroupAvailableSoftwareSourcesOutput(ctx *pulumi.Context, args GetManagedInstanceGroupAvailableSoftwareSourcesOutputArgs, opts ...pulumi.InvokeOption) GetManagedInstanceGroupAvailableSoftwareSourcesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedInstanceGroupAvailableSoftwareSourcesResultOutput, error) {
-			args := v.(GetManagedInstanceGroupAvailableSoftwareSourcesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getManagedInstanceGroupAvailableSoftwareSources:getManagedInstanceGroupAvailableSoftwareSources", args, GetManagedInstanceGroupAvailableSoftwareSourcesResultOutput{}, options).(GetManagedInstanceGroupAvailableSoftwareSourcesResultOutput), nil
-		}).(GetManagedInstanceGroupAvailableSoftwareSourcesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getManagedInstanceGroupAvailableSoftwareSources:getManagedInstanceGroupAvailableSoftwareSources", args, GetManagedInstanceGroupAvailableSoftwareSourcesResultOutput{}, options).(GetManagedInstanceGroupAvailableSoftwareSourcesResultOutput)
 }
 
 // A collection of arguments for invoking getManagedInstanceGroupAvailableSoftwareSources.

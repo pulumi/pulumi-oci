@@ -90,12 +90,8 @@ type GetCertificateAuthoritiesResult struct {
 }
 
 func GetCertificateAuthoritiesOutput(ctx *pulumi.Context, args GetCertificateAuthoritiesOutputArgs, opts ...pulumi.InvokeOption) GetCertificateAuthoritiesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCertificateAuthoritiesResultOutput, error) {
-			args := v.(GetCertificateAuthoritiesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CertificatesManagement/getCertificateAuthorities:getCertificateAuthorities", args, GetCertificateAuthoritiesResultOutput{}, options).(GetCertificateAuthoritiesResultOutput), nil
-		}).(GetCertificateAuthoritiesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CertificatesManagement/getCertificateAuthorities:getCertificateAuthorities", args, GetCertificateAuthoritiesResultOutput{}, options).(GetCertificateAuthoritiesResultOutput)
 }
 
 // A collection of arguments for invoking getCertificateAuthorities.

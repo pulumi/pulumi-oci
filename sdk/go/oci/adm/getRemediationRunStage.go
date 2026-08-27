@@ -93,12 +93,8 @@ type LookupRemediationRunStageResult struct {
 }
 
 func LookupRemediationRunStageOutput(ctx *pulumi.Context, args LookupRemediationRunStageOutputArgs, opts ...pulumi.InvokeOption) LookupRemediationRunStageResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupRemediationRunStageResultOutput, error) {
-			args := v.(LookupRemediationRunStageArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Adm/getRemediationRunStage:getRemediationRunStage", args, LookupRemediationRunStageResultOutput{}, options).(LookupRemediationRunStageResultOutput), nil
-		}).(LookupRemediationRunStageResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Adm/getRemediationRunStage:getRemediationRunStage", args, LookupRemediationRunStageResultOutput{}, options).(LookupRemediationRunStageResultOutput)
 }
 
 // A collection of arguments for invoking getRemediationRunStage.

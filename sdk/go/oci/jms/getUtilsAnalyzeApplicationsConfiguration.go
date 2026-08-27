@@ -67,12 +67,8 @@ type LookupUtilsAnalyzeApplicationsConfigurationResult struct {
 }
 
 func LookupUtilsAnalyzeApplicationsConfigurationOutput(ctx *pulumi.Context, args LookupUtilsAnalyzeApplicationsConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupUtilsAnalyzeApplicationsConfigurationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupUtilsAnalyzeApplicationsConfigurationResultOutput, error) {
-			args := v.(LookupUtilsAnalyzeApplicationsConfigurationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getUtilsAnalyzeApplicationsConfiguration:getUtilsAnalyzeApplicationsConfiguration", args, LookupUtilsAnalyzeApplicationsConfigurationResultOutput{}, options).(LookupUtilsAnalyzeApplicationsConfigurationResultOutput), nil
-		}).(LookupUtilsAnalyzeApplicationsConfigurationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getUtilsAnalyzeApplicationsConfiguration:getUtilsAnalyzeApplicationsConfiguration", args, LookupUtilsAnalyzeApplicationsConfigurationResultOutput{}, options).(LookupUtilsAnalyzeApplicationsConfigurationResultOutput)
 }
 
 // A collection of arguments for invoking getUtilsAnalyzeApplicationsConfiguration.

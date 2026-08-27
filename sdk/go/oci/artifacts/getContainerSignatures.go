@@ -110,12 +110,8 @@ type GetContainerSignaturesResult struct {
 }
 
 func GetContainerSignaturesOutput(ctx *pulumi.Context, args GetContainerSignaturesOutputArgs, opts ...pulumi.InvokeOption) GetContainerSignaturesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetContainerSignaturesResultOutput, error) {
-			args := v.(GetContainerSignaturesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Artifacts/getContainerSignatures:getContainerSignatures", args, GetContainerSignaturesResultOutput{}, options).(GetContainerSignaturesResultOutput), nil
-		}).(GetContainerSignaturesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Artifacts/getContainerSignatures:getContainerSignatures", args, GetContainerSignaturesResultOutput{}, options).(GetContainerSignaturesResultOutput)
 }
 
 // A collection of arguments for invoking getContainerSignatures.

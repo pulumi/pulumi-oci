@@ -62,12 +62,8 @@ type LookupNetworkFirewallPolicyDecryptionRuleResult struct {
 }
 
 func LookupNetworkFirewallPolicyDecryptionRuleOutput(ctx *pulumi.Context, args LookupNetworkFirewallPolicyDecryptionRuleOutputArgs, opts ...pulumi.InvokeOption) LookupNetworkFirewallPolicyDecryptionRuleResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupNetworkFirewallPolicyDecryptionRuleResultOutput, error) {
-			args := v.(LookupNetworkFirewallPolicyDecryptionRuleArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRule:getNetworkFirewallPolicyDecryptionRule", args, LookupNetworkFirewallPolicyDecryptionRuleResultOutput{}, options).(LookupNetworkFirewallPolicyDecryptionRuleResultOutput), nil
-		}).(LookupNetworkFirewallPolicyDecryptionRuleResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRule:getNetworkFirewallPolicyDecryptionRule", args, LookupNetworkFirewallPolicyDecryptionRuleResultOutput{}, options).(LookupNetworkFirewallPolicyDecryptionRuleResultOutput)
 }
 
 // A collection of arguments for invoking getNetworkFirewallPolicyDecryptionRule.

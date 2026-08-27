@@ -68,12 +68,8 @@ type GetDbHomePatchHistoryEntriesResult struct {
 }
 
 func GetDbHomePatchHistoryEntriesOutput(ctx *pulumi.Context, args GetDbHomePatchHistoryEntriesOutputArgs, opts ...pulumi.InvokeOption) GetDbHomePatchHistoryEntriesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbHomePatchHistoryEntriesResultOutput, error) {
-			args := v.(GetDbHomePatchHistoryEntriesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getDbHomePatchHistoryEntries:getDbHomePatchHistoryEntries", args, GetDbHomePatchHistoryEntriesResultOutput{}, options).(GetDbHomePatchHistoryEntriesResultOutput), nil
-		}).(GetDbHomePatchHistoryEntriesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getDbHomePatchHistoryEntries:getDbHomePatchHistoryEntries", args, GetDbHomePatchHistoryEntriesResultOutput{}, options).(GetDbHomePatchHistoryEntriesResultOutput)
 }
 
 // A collection of arguments for invoking getDbHomePatchHistoryEntries.

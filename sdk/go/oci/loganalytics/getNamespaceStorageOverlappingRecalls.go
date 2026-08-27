@@ -78,12 +78,8 @@ type GetNamespaceStorageOverlappingRecallsResult struct {
 }
 
 func GetNamespaceStorageOverlappingRecallsOutput(ctx *pulumi.Context, args GetNamespaceStorageOverlappingRecallsOutputArgs, opts ...pulumi.InvokeOption) GetNamespaceStorageOverlappingRecallsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetNamespaceStorageOverlappingRecallsResultOutput, error) {
-			args := v.(GetNamespaceStorageOverlappingRecallsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LogAnalytics/getNamespaceStorageOverlappingRecalls:getNamespaceStorageOverlappingRecalls", args, GetNamespaceStorageOverlappingRecallsResultOutput{}, options).(GetNamespaceStorageOverlappingRecallsResultOutput), nil
-		}).(GetNamespaceStorageOverlappingRecallsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LogAnalytics/getNamespaceStorageOverlappingRecalls:getNamespaceStorageOverlappingRecalls", args, GetNamespaceStorageOverlappingRecallsResultOutput{}, options).(GetNamespaceStorageOverlappingRecallsResultOutput)
 }
 
 // A collection of arguments for invoking getNamespaceStorageOverlappingRecalls.

@@ -80,12 +80,8 @@ type GetVolumeGroupBackupsResult struct {
 }
 
 func GetVolumeGroupBackupsOutput(ctx *pulumi.Context, args GetVolumeGroupBackupsOutputArgs, opts ...pulumi.InvokeOption) GetVolumeGroupBackupsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVolumeGroupBackupsResultOutput, error) {
-			args := v.(GetVolumeGroupBackupsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getVolumeGroupBackups:getVolumeGroupBackups", args, GetVolumeGroupBackupsResultOutput{}, options).(GetVolumeGroupBackupsResultOutput), nil
-		}).(GetVolumeGroupBackupsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getVolumeGroupBackups:getVolumeGroupBackups", args, GetVolumeGroupBackupsResultOutput{}, options).(GetVolumeGroupBackupsResultOutput)
 }
 
 // A collection of arguments for invoking getVolumeGroupBackups.

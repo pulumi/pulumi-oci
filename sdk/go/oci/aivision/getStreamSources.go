@@ -82,12 +82,8 @@ type GetStreamSourcesResult struct {
 }
 
 func GetStreamSourcesOutput(ctx *pulumi.Context, args GetStreamSourcesOutputArgs, opts ...pulumi.InvokeOption) GetStreamSourcesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetStreamSourcesResultOutput, error) {
-			args := v.(GetStreamSourcesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:AiVision/getStreamSources:getStreamSources", args, GetStreamSourcesResultOutput{}, options).(GetStreamSourcesResultOutput), nil
-		}).(GetStreamSourcesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:AiVision/getStreamSources:getStreamSources", args, GetStreamSourcesResultOutput{}, options).(GetStreamSourcesResultOutput)
 }
 
 // A collection of arguments for invoking getStreamSources.

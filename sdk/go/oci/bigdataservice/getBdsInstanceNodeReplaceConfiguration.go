@@ -86,12 +86,8 @@ type LookupBdsInstanceNodeReplaceConfigurationResult struct {
 }
 
 func LookupBdsInstanceNodeReplaceConfigurationOutput(ctx *pulumi.Context, args LookupBdsInstanceNodeReplaceConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupBdsInstanceNodeReplaceConfigurationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBdsInstanceNodeReplaceConfigurationResultOutput, error) {
-			args := v.(LookupBdsInstanceNodeReplaceConfigurationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:BigDataService/getBdsInstanceNodeReplaceConfiguration:getBdsInstanceNodeReplaceConfiguration", args, LookupBdsInstanceNodeReplaceConfigurationResultOutput{}, options).(LookupBdsInstanceNodeReplaceConfigurationResultOutput), nil
-		}).(LookupBdsInstanceNodeReplaceConfigurationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:BigDataService/getBdsInstanceNodeReplaceConfiguration:getBdsInstanceNodeReplaceConfiguration", args, LookupBdsInstanceNodeReplaceConfigurationResultOutput{}, options).(LookupBdsInstanceNodeReplaceConfigurationResultOutput)
 }
 
 // A collection of arguments for invoking getBdsInstanceNodeReplaceConfiguration.

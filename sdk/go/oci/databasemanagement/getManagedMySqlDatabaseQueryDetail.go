@@ -75,12 +75,8 @@ type GetManagedMySqlDatabaseQueryDetailResult struct {
 }
 
 func GetManagedMySqlDatabaseQueryDetailOutput(ctx *pulumi.Context, args GetManagedMySqlDatabaseQueryDetailOutputArgs, opts ...pulumi.InvokeOption) GetManagedMySqlDatabaseQueryDetailResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedMySqlDatabaseQueryDetailResultOutput, error) {
-			args := v.(GetManagedMySqlDatabaseQueryDetailArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedMySqlDatabaseQueryDetail:getManagedMySqlDatabaseQueryDetail", args, GetManagedMySqlDatabaseQueryDetailResultOutput{}, options).(GetManagedMySqlDatabaseQueryDetailResultOutput), nil
-		}).(GetManagedMySqlDatabaseQueryDetailResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getManagedMySqlDatabaseQueryDetail:getManagedMySqlDatabaseQueryDetail", args, GetManagedMySqlDatabaseQueryDetailResultOutput{}, options).(GetManagedMySqlDatabaseQueryDetailResultOutput)
 }
 
 // A collection of arguments for invoking getManagedMySqlDatabaseQueryDetail.

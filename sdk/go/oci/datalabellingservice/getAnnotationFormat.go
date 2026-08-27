@@ -66,12 +66,8 @@ type GetAnnotationFormatResult struct {
 }
 
 func GetAnnotationFormatOutput(ctx *pulumi.Context, args GetAnnotationFormatOutputArgs, opts ...pulumi.InvokeOption) GetAnnotationFormatResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAnnotationFormatResultOutput, error) {
-			args := v.(GetAnnotationFormatArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataLabellingService/getAnnotationFormat:getAnnotationFormat", args, GetAnnotationFormatResultOutput{}, options).(GetAnnotationFormatResultOutput), nil
-		}).(GetAnnotationFormatResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataLabellingService/getAnnotationFormat:getAnnotationFormat", args, GetAnnotationFormatResultOutput{}, options).(GetAnnotationFormatResultOutput)
 }
 
 // A collection of arguments for invoking getAnnotationFormat.

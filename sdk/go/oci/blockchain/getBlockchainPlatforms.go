@@ -79,12 +79,8 @@ type GetBlockchainPlatformsResult struct {
 }
 
 func GetBlockchainPlatformsOutput(ctx *pulumi.Context, args GetBlockchainPlatformsOutputArgs, opts ...pulumi.InvokeOption) GetBlockchainPlatformsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBlockchainPlatformsResultOutput, error) {
-			args := v.(GetBlockchainPlatformsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Blockchain/getBlockchainPlatforms:getBlockchainPlatforms", args, GetBlockchainPlatformsResultOutput{}, options).(GetBlockchainPlatformsResultOutput), nil
-		}).(GetBlockchainPlatformsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Blockchain/getBlockchainPlatforms:getBlockchainPlatforms", args, GetBlockchainPlatformsResultOutput{}, options).(GetBlockchainPlatformsResultOutput)
 }
 
 // A collection of arguments for invoking getBlockchainPlatforms.

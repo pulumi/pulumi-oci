@@ -71,12 +71,8 @@ type GetApplianceImageResult struct {
 }
 
 func GetApplianceImageOutput(ctx *pulumi.Context, args GetApplianceImageOutputArgs, opts ...pulumi.InvokeOption) GetApplianceImageResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetApplianceImageResultOutput, error) {
-			args := v.(GetApplianceImageArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CloudBridge/getApplianceImage:getApplianceImage", args, GetApplianceImageResultOutput{}, options).(GetApplianceImageResultOutput), nil
-		}).(GetApplianceImageResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CloudBridge/getApplianceImage:getApplianceImage", args, GetApplianceImageResultOutput{}, options).(GetApplianceImageResultOutput)
 }
 
 // A collection of arguments for invoking getApplianceImage.

@@ -110,12 +110,8 @@ type LookupDomainsMySmtpCredentialResult struct {
 }
 
 func LookupDomainsMySmtpCredentialOutput(ctx *pulumi.Context, args LookupDomainsMySmtpCredentialOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsMySmtpCredentialResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDomainsMySmtpCredentialResultOutput, error) {
-			args := v.(LookupDomainsMySmtpCredentialArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsMySmtpCredential:getDomainsMySmtpCredential", args, LookupDomainsMySmtpCredentialResultOutput{}, options).(LookupDomainsMySmtpCredentialResultOutput), nil
-		}).(LookupDomainsMySmtpCredentialResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsMySmtpCredential:getDomainsMySmtpCredential", args, LookupDomainsMySmtpCredentialResultOutput{}, options).(LookupDomainsMySmtpCredentialResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsMySmtpCredential.

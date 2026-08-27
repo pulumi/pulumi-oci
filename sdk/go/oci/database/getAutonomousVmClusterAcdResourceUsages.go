@@ -72,12 +72,8 @@ type GetAutonomousVmClusterAcdResourceUsagesResult struct {
 }
 
 func GetAutonomousVmClusterAcdResourceUsagesOutput(ctx *pulumi.Context, args GetAutonomousVmClusterAcdResourceUsagesOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousVmClusterAcdResourceUsagesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAutonomousVmClusterAcdResourceUsagesResultOutput, error) {
-			args := v.(GetAutonomousVmClusterAcdResourceUsagesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getAutonomousVmClusterAcdResourceUsages:getAutonomousVmClusterAcdResourceUsages", args, GetAutonomousVmClusterAcdResourceUsagesResultOutput{}, options).(GetAutonomousVmClusterAcdResourceUsagesResultOutput), nil
-		}).(GetAutonomousVmClusterAcdResourceUsagesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getAutonomousVmClusterAcdResourceUsages:getAutonomousVmClusterAcdResourceUsages", args, GetAutonomousVmClusterAcdResourceUsagesResultOutput{}, options).(GetAutonomousVmClusterAcdResourceUsagesResultOutput)
 }
 
 // A collection of arguments for invoking getAutonomousVmClusterAcdResourceUsages.

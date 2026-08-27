@@ -79,12 +79,8 @@ type GetExternalListenersResult struct {
 }
 
 func GetExternalListenersOutput(ctx *pulumi.Context, args GetExternalListenersOutputArgs, opts ...pulumi.InvokeOption) GetExternalListenersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetExternalListenersResultOutput, error) {
-			args := v.(GetExternalListenersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalListeners:getExternalListeners", args, GetExternalListenersResultOutput{}, options).(GetExternalListenersResultOutput), nil
-		}).(GetExternalListenersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getExternalListeners:getExternalListeners", args, GetExternalListenersResultOutput{}, options).(GetExternalListenersResultOutput)
 }
 
 // A collection of arguments for invoking getExternalListeners.

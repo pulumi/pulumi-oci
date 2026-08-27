@@ -89,12 +89,8 @@ type GetGiVersionMinorVersionsResult struct {
 }
 
 func GetGiVersionMinorVersionsOutput(ctx *pulumi.Context, args GetGiVersionMinorVersionsOutputArgs, opts ...pulumi.InvokeOption) GetGiVersionMinorVersionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetGiVersionMinorVersionsResultOutput, error) {
-			args := v.(GetGiVersionMinorVersionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getGiVersionMinorVersions:getGiVersionMinorVersions", args, GetGiVersionMinorVersionsResultOutput{}, options).(GetGiVersionMinorVersionsResultOutput), nil
-		}).(GetGiVersionMinorVersionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getGiVersionMinorVersions:getGiVersionMinorVersions", args, GetGiVersionMinorVersionsResultOutput{}, options).(GetGiVersionMinorVersionsResultOutput)
 }
 
 // A collection of arguments for invoking getGiVersionMinorVersions.

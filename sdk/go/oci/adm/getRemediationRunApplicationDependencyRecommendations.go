@@ -78,12 +78,8 @@ type GetRemediationRunApplicationDependencyRecommendationsResult struct {
 }
 
 func GetRemediationRunApplicationDependencyRecommendationsOutput(ctx *pulumi.Context, args GetRemediationRunApplicationDependencyRecommendationsOutputArgs, opts ...pulumi.InvokeOption) GetRemediationRunApplicationDependencyRecommendationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRemediationRunApplicationDependencyRecommendationsResultOutput, error) {
-			args := v.(GetRemediationRunApplicationDependencyRecommendationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Adm/getRemediationRunApplicationDependencyRecommendations:getRemediationRunApplicationDependencyRecommendations", args, GetRemediationRunApplicationDependencyRecommendationsResultOutput{}, options).(GetRemediationRunApplicationDependencyRecommendationsResultOutput), nil
-		}).(GetRemediationRunApplicationDependencyRecommendationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Adm/getRemediationRunApplicationDependencyRecommendations:getRemediationRunApplicationDependencyRecommendations", args, GetRemediationRunApplicationDependencyRecommendationsResultOutput{}, options).(GetRemediationRunApplicationDependencyRecommendationsResultOutput)
 }
 
 // A collection of arguments for invoking getRemediationRunApplicationDependencyRecommendations.

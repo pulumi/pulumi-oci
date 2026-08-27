@@ -73,12 +73,8 @@ type GetAutonomousDatabasesEstimateCostSavingsResult struct {
 }
 
 func GetAutonomousDatabasesEstimateCostSavingsOutput(ctx *pulumi.Context, args GetAutonomousDatabasesEstimateCostSavingsOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousDatabasesEstimateCostSavingsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAutonomousDatabasesEstimateCostSavingsResultOutput, error) {
-			args := v.(GetAutonomousDatabasesEstimateCostSavingsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getAutonomousDatabasesEstimateCostSavings:getAutonomousDatabasesEstimateCostSavings", args, GetAutonomousDatabasesEstimateCostSavingsResultOutput{}, options).(GetAutonomousDatabasesEstimateCostSavingsResultOutput), nil
-		}).(GetAutonomousDatabasesEstimateCostSavingsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getAutonomousDatabasesEstimateCostSavings:getAutonomousDatabasesEstimateCostSavings", args, GetAutonomousDatabasesEstimateCostSavingsResultOutput{}, options).(GetAutonomousDatabasesEstimateCostSavingsResultOutput)
 }
 
 // A collection of arguments for invoking getAutonomousDatabasesEstimateCostSavings.

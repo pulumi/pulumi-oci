@@ -93,12 +93,8 @@ type GetFsuCyclesResult struct {
 }
 
 func GetFsuCyclesOutput(ctx *pulumi.Context, args GetFsuCyclesOutputArgs, opts ...pulumi.InvokeOption) GetFsuCyclesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFsuCyclesResultOutput, error) {
-			args := v.(GetFsuCyclesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetSoftwareUpdate/getFsuCycles:getFsuCycles", args, GetFsuCyclesResultOutput{}, options).(GetFsuCyclesResultOutput), nil
-		}).(GetFsuCyclesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetSoftwareUpdate/getFsuCycles:getFsuCycles", args, GetFsuCyclesResultOutput{}, options).(GetFsuCyclesResultOutput)
 }
 
 // A collection of arguments for invoking getFsuCycles.

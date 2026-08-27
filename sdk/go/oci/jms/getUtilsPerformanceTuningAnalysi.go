@@ -88,12 +88,8 @@ type GetUtilsPerformanceTuningAnalysiResult struct {
 }
 
 func GetUtilsPerformanceTuningAnalysiOutput(ctx *pulumi.Context, args GetUtilsPerformanceTuningAnalysiOutputArgs, opts ...pulumi.InvokeOption) GetUtilsPerformanceTuningAnalysiResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetUtilsPerformanceTuningAnalysiResultOutput, error) {
-			args := v.(GetUtilsPerformanceTuningAnalysiArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getUtilsPerformanceTuningAnalysi:getUtilsPerformanceTuningAnalysi", args, GetUtilsPerformanceTuningAnalysiResultOutput{}, options).(GetUtilsPerformanceTuningAnalysiResultOutput), nil
-		}).(GetUtilsPerformanceTuningAnalysiResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getUtilsPerformanceTuningAnalysi:getUtilsPerformanceTuningAnalysi", args, GetUtilsPerformanceTuningAnalysiResultOutput{}, options).(GetUtilsPerformanceTuningAnalysiResultOutput)
 }
 
 // A collection of arguments for invoking getUtilsPerformanceTuningAnalysi.

@@ -94,12 +94,8 @@ type LookupCompliancePolicyRuleResult struct {
 }
 
 func LookupCompliancePolicyRuleOutput(ctx *pulumi.Context, args LookupCompliancePolicyRuleOutputArgs, opts ...pulumi.InvokeOption) LookupCompliancePolicyRuleResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupCompliancePolicyRuleResultOutput, error) {
-			args := v.(LookupCompliancePolicyRuleArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getCompliancePolicyRule:getCompliancePolicyRule", args, LookupCompliancePolicyRuleResultOutput{}, options).(LookupCompliancePolicyRuleResultOutput), nil
-		}).(LookupCompliancePolicyRuleResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getCompliancePolicyRule:getCompliancePolicyRule", args, LookupCompliancePolicyRuleResultOutput{}, options).(LookupCompliancePolicyRuleResultOutput)
 }
 
 // A collection of arguments for invoking getCompliancePolicyRule.

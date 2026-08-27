@@ -6361,8 +6361,7 @@ class DomainsAppProtectableSecondaryAudience(dict):
 @pulumi.output_type
 class DomainsAppRadiusPolicy(dict):
     def __init__(__self__, *,
-                 value: _builtins.str,
-                 _ref: Optional[_builtins.str] = None):
+                 value: _builtins.str):
         """
         :param _builtins.str value: (Updatable) Identifier of the Policy.
                
@@ -6379,8 +6378,6 @@ class DomainsAppRadiusPolicy(dict):
                * uniqueness: none
         """
         pulumi.set(__self__, "value", value)
-        if _ref is not None:
-            pulumi.set(__self__, "_ref", _ref)
 
     @_builtins.property
     @pulumi.getter
@@ -6401,11 +6398,6 @@ class DomainsAppRadiusPolicy(dict):
         * uniqueness: none
         """
         return pulumi.get(self, "value")
-
-    @_builtins.property
-    @pulumi.getter
-    def _ref(self) -> Optional[_builtins.str]:
-        return pulumi.get(self, "_ref")
 
 
 @pulumi.output_type
@@ -31845,23 +31837,11 @@ class DomainsIdentityProofingProviderIdcsLastModifiedBy(dict):
 @pulumi.output_type
 class DomainsIdentityProofingProviderIdcsLockedBy(dict):
     def __init__(__self__, *,
-                 _ref: Optional[_builtins.str] = None,
                  display: Optional[_builtins.str] = None,
                  ocid: Optional[_builtins.str] = None,
                  type: Optional[_builtins.str] = None,
                  value: Optional[_builtins.str] = None):
         """
-        :param _builtins.str _ref: (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
         :param _builtins.str display: (Updatable) The displayName of the User or App who locked this Resource.
                
                **SCIM++ Properties:**
@@ -31906,8 +31886,6 @@ class DomainsIdentityProofingProviderIdcsLockedBy(dict):
                * type: string
                * uniqueness: none
         """
-        if _ref is not None:
-            pulumi.set(__self__, "_ref", _ref)
         if display is not None:
             pulumi.set(__self__, "display", display)
         if ocid is not None:
@@ -31916,24 +31894,6 @@ class DomainsIdentityProofingProviderIdcsLockedBy(dict):
             pulumi.set(__self__, "type", type)
         if value is not None:
             pulumi.set(__self__, "value", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def _ref(self) -> Optional[_builtins.str]:
-        """
-        (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
-        return pulumi.get(self, "_ref")
 
     @_builtins.property
     @pulumi.getter
@@ -32642,23 +32602,11 @@ class DomainsIdentityProofingProviderTemplateIdcsLastModifiedBy(dict):
 @pulumi.output_type
 class DomainsIdentityProofingProviderTemplateIdcsLockedBy(dict):
     def __init__(__self__, *,
-                 _ref: Optional[_builtins.str] = None,
                  display: Optional[_builtins.str] = None,
                  ocid: Optional[_builtins.str] = None,
                  type: Optional[_builtins.str] = None,
                  value: Optional[_builtins.str] = None):
         """
-        :param _builtins.str _ref: (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
         :param _builtins.str display: (Updatable) The displayName of the User or App who locked this Resource.
                
                **SCIM++ Properties:**
@@ -32703,8 +32651,6 @@ class DomainsIdentityProofingProviderTemplateIdcsLockedBy(dict):
                * type: string
                * uniqueness: none
         """
-        if _ref is not None:
-            pulumi.set(__self__, "_ref", _ref)
         if display is not None:
             pulumi.set(__self__, "display", display)
         if ocid is not None:
@@ -32713,24 +32659,6 @@ class DomainsIdentityProofingProviderTemplateIdcsLockedBy(dict):
             pulumi.set(__self__, "type", type)
         if value is not None:
             pulumi.set(__self__, "value", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def _ref(self) -> Optional[_builtins.str]:
-        """
-        (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
-        return pulumi.get(self, "_ref")
 
     @_builtins.property
     @pulumi.getter
@@ -75263,18 +75191,11 @@ class GetDomainsAppProtectableSecondaryAudienceResult(dict):
 @pulumi.output_type
 class GetDomainsAppRadiusPolicyResult(dict):
     def __init__(__self__, *,
-                 _ref: _builtins.str,
                  value: _builtins.str):
         """
         :param _builtins.str value: ID of the AppRole.
         """
-        pulumi.set(__self__, "_ref", _ref)
         pulumi.set(__self__, "value", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def _ref(self) -> _builtins.str:
-        return pulumi.get(self, "_ref")
 
     @_builtins.property
     @pulumi.getter
@@ -83957,18 +83878,11 @@ class GetDomainsAppsAppProtectableSecondaryAudienceResult(dict):
 @pulumi.output_type
 class GetDomainsAppsAppRadiusPolicyResult(dict):
     def __init__(__self__, *,
-                 _ref: _builtins.str,
                  value: _builtins.str):
         """
         :param _builtins.str value: ID of the AppRole.
         """
-        pulumi.set(__self__, "_ref", _ref)
         pulumi.set(__self__, "value", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def _ref(self) -> _builtins.str:
-        return pulumi.get(self, "_ref")
 
     @_builtins.property
     @pulumi.getter
@@ -101093,31 +101007,20 @@ class GetDomainsIdentityProofingProviderIdcsLastModifiedByResult(dict):
 @pulumi.output_type
 class GetDomainsIdentityProofingProviderIdcsLockedByResult(dict):
     def __init__(__self__, *,
-                 _ref: _builtins.str,
                  display: _builtins.str,
                  ocid: _builtins.str,
                  type: _builtins.str,
                  value: _builtins.str):
         """
-        :param _builtins.str _ref: The URI of the SCIM resource that represents the User or App who Locked this Resource.
         :param _builtins.str display: The displayName of the User or App who locked this Resource.
         :param _builtins.str ocid: Unique Oracle Cloud Infrastructure identifier (OCID) for the SCIM Resource.
         :param _builtins.str type: The type of resource, User or App, that locked this Resource.
         :param _builtins.str value: The ID of the SCIM resource that represents the User or App who LOCKED this Resource.
         """
-        pulumi.set(__self__, "_ref", _ref)
         pulumi.set(__self__, "display", display)
         pulumi.set(__self__, "ocid", ocid)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "value", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def _ref(self) -> _builtins.str:
-        """
-        The URI of the SCIM resource that represents the User or App who Locked this Resource.
-        """
-        return pulumi.get(self, "_ref")
 
     @_builtins.property
     @pulumi.getter
@@ -101402,31 +101305,20 @@ class GetDomainsIdentityProofingProviderTemplateIdcsLastModifiedByResult(dict):
 @pulumi.output_type
 class GetDomainsIdentityProofingProviderTemplateIdcsLockedByResult(dict):
     def __init__(__self__, *,
-                 _ref: _builtins.str,
                  display: _builtins.str,
                  ocid: _builtins.str,
                  type: _builtins.str,
                  value: _builtins.str):
         """
-        :param _builtins.str _ref: The URI of the SCIM resource that represents the User or App who Locked this Resource.
         :param _builtins.str display: The displayName of the User or App who locked this Resource.
         :param _builtins.str ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         :param _builtins.str type: The type of resource, User or App, that locked this Resource.
         :param _builtins.str value: The ID of the SCIM resource that represents the User or App who LOCKED this Resource.
         """
-        pulumi.set(__self__, "_ref", _ref)
         pulumi.set(__self__, "display", display)
         pulumi.set(__self__, "ocid", ocid)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "value", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def _ref(self) -> _builtins.str:
-        """
-        The URI of the SCIM resource that represents the User or App who Locked this Resource.
-        """
-        return pulumi.get(self, "_ref")
 
     @_builtins.property
     @pulumi.getter
@@ -101953,31 +101845,20 @@ class GetDomainsIdentityProofingProviderTemplatesIdentityProofingProviderTemplat
 @pulumi.output_type
 class GetDomainsIdentityProofingProviderTemplatesIdentityProofingProviderTemplateIdcsLockedByResult(dict):
     def __init__(__self__, *,
-                 _ref: _builtins.str,
                  display: _builtins.str,
                  ocid: _builtins.str,
                  type: _builtins.str,
                  value: _builtins.str):
         """
-        :param _builtins.str _ref: The URI of the SCIM resource that represents the User or App who Locked this Resource.
         :param _builtins.str display: The displayName of the User or App who locked this Resource.
         :param _builtins.str ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         :param _builtins.str type: The type of resource, User or App, that locked this Resource.
         :param _builtins.str value: The ID of the SCIM resource that represents the User or App who LOCKED this Resource.
         """
-        pulumi.set(__self__, "_ref", _ref)
         pulumi.set(__self__, "display", display)
         pulumi.set(__self__, "ocid", ocid)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "value", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def _ref(self) -> _builtins.str:
-        """
-        The URI of the SCIM resource that represents the User or App who Locked this Resource.
-        """
-        return pulumi.get(self, "_ref")
 
     @_builtins.property
     @pulumi.getter
@@ -102555,31 +102436,20 @@ class GetDomainsIdentityProofingProvidersIdentityProofingProviderIdcsLastModifie
 @pulumi.output_type
 class GetDomainsIdentityProofingProvidersIdentityProofingProviderIdcsLockedByResult(dict):
     def __init__(__self__, *,
-                 _ref: _builtins.str,
                  display: _builtins.str,
                  ocid: _builtins.str,
                  type: _builtins.str,
                  value: _builtins.str):
         """
-        :param _builtins.str _ref: The URI of the SCIM resource that represents the User or App who Locked this Resource.
         :param _builtins.str display: The displayName of the User or App who locked this Resource.
         :param _builtins.str ocid: Unique Oracle Cloud Infrastructure identifier (OCID) for the SCIM Resource.
         :param _builtins.str type: The type of resource, User or App, that locked this Resource.
         :param _builtins.str value: The ID of the SCIM resource that represents the User or App who LOCKED this Resource.
         """
-        pulumi.set(__self__, "_ref", _ref)
         pulumi.set(__self__, "display", display)
         pulumi.set(__self__, "ocid", ocid)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "value", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def _ref(self) -> _builtins.str:
-        """
-        The URI of the SCIM resource that represents the User or App who Locked this Resource.
-        """
-        return pulumi.get(self, "_ref")
 
     @_builtins.property
     @pulumi.getter

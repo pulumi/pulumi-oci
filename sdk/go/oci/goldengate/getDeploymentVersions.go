@@ -77,12 +77,8 @@ type GetDeploymentVersionsResult struct {
 }
 
 func GetDeploymentVersionsOutput(ctx *pulumi.Context, args GetDeploymentVersionsOutputArgs, opts ...pulumi.InvokeOption) GetDeploymentVersionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDeploymentVersionsResultOutput, error) {
-			args := v.(GetDeploymentVersionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GoldenGate/getDeploymentVersions:getDeploymentVersions", args, GetDeploymentVersionsResultOutput{}, options).(GetDeploymentVersionsResultOutput), nil
-		}).(GetDeploymentVersionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GoldenGate/getDeploymentVersions:getDeploymentVersions", args, GetDeploymentVersionsResultOutput{}, options).(GetDeploymentVersionsResultOutput)
 }
 
 // A collection of arguments for invoking getDeploymentVersions.

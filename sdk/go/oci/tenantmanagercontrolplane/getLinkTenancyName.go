@@ -82,12 +82,8 @@ type GetLinkTenancyNameResult struct {
 }
 
 func GetLinkTenancyNameOutput(ctx *pulumi.Context, args GetLinkTenancyNameOutputArgs, opts ...pulumi.InvokeOption) GetLinkTenancyNameResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetLinkTenancyNameResultOutput, error) {
-			args := v.(GetLinkTenancyNameArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Tenantmanagercontrolplane/getLinkTenancyName:getLinkTenancyName", args, GetLinkTenancyNameResultOutput{}, options).(GetLinkTenancyNameResultOutput), nil
-		}).(GetLinkTenancyNameResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Tenantmanagercontrolplane/getLinkTenancyName:getLinkTenancyName", args, GetLinkTenancyNameResultOutput{}, options).(GetLinkTenancyNameResultOutput)
 }
 
 // A collection of arguments for invoking getLinkTenancyName.

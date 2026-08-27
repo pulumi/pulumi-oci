@@ -84,12 +84,8 @@ type GetExecutionActionsResult struct {
 }
 
 func GetExecutionActionsOutput(ctx *pulumi.Context, args GetExecutionActionsOutputArgs, opts ...pulumi.InvokeOption) GetExecutionActionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetExecutionActionsResultOutput, error) {
-			args := v.(GetExecutionActionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getExecutionActions:getExecutionActions", args, GetExecutionActionsResultOutput{}, options).(GetExecutionActionsResultOutput), nil
-		}).(GetExecutionActionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getExecutionActions:getExecutionActions", args, GetExecutionActionsResultOutput{}, options).(GetExecutionActionsResultOutput)
 }
 
 // A collection of arguments for invoking getExecutionActions.

@@ -67,12 +67,8 @@ type LookupContainerConfigurationResult struct {
 }
 
 func LookupContainerConfigurationOutput(ctx *pulumi.Context, args LookupContainerConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupContainerConfigurationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupContainerConfigurationResultOutput, error) {
-			args := v.(LookupContainerConfigurationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Artifacts/getContainerConfiguration:getContainerConfiguration", args, LookupContainerConfigurationResultOutput{}, options).(LookupContainerConfigurationResultOutput), nil
-		}).(LookupContainerConfigurationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Artifacts/getContainerConfiguration:getContainerConfiguration", args, LookupContainerConfigurationResultOutput{}, options).(LookupContainerConfigurationResultOutput)
 }
 
 // A collection of arguments for invoking getContainerConfiguration.

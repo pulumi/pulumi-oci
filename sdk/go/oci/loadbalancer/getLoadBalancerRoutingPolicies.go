@@ -68,12 +68,8 @@ type GetLoadBalancerRoutingPoliciesResult struct {
 }
 
 func GetLoadBalancerRoutingPoliciesOutput(ctx *pulumi.Context, args GetLoadBalancerRoutingPoliciesOutputArgs, opts ...pulumi.InvokeOption) GetLoadBalancerRoutingPoliciesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetLoadBalancerRoutingPoliciesResultOutput, error) {
-			args := v.(GetLoadBalancerRoutingPoliciesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LoadBalancer/getLoadBalancerRoutingPolicies:getLoadBalancerRoutingPolicies", args, GetLoadBalancerRoutingPoliciesResultOutput{}, options).(GetLoadBalancerRoutingPoliciesResultOutput), nil
-		}).(GetLoadBalancerRoutingPoliciesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LoadBalancer/getLoadBalancerRoutingPolicies:getLoadBalancerRoutingPolicies", args, GetLoadBalancerRoutingPoliciesResultOutput{}, options).(GetLoadBalancerRoutingPoliciesResultOutput)
 }
 
 // A collection of arguments for invoking getLoadBalancerRoutingPolicies.

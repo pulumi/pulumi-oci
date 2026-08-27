@@ -78,12 +78,8 @@ type GetCrossConnectStatusResult struct {
 }
 
 func GetCrossConnectStatusOutput(ctx *pulumi.Context, args GetCrossConnectStatusOutputArgs, opts ...pulumi.InvokeOption) GetCrossConnectStatusResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCrossConnectStatusResultOutput, error) {
-			args := v.(GetCrossConnectStatusArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getCrossConnectStatus:getCrossConnectStatus", args, GetCrossConnectStatusResultOutput{}, options).(GetCrossConnectStatusResultOutput), nil
-		}).(GetCrossConnectStatusResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getCrossConnectStatus:getCrossConnectStatus", args, GetCrossConnectStatusResultOutput{}, options).(GetCrossConnectStatusResultOutput)
 }
 
 // A collection of arguments for invoking getCrossConnectStatus.

@@ -92,12 +92,8 @@ type GetMonitoringTemplateAlarmConditionsResult struct {
 }
 
 func GetMonitoringTemplateAlarmConditionsOutput(ctx *pulumi.Context, args GetMonitoringTemplateAlarmConditionsOutputArgs, opts ...pulumi.InvokeOption) GetMonitoringTemplateAlarmConditionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMonitoringTemplateAlarmConditionsResultOutput, error) {
-			args := v.(GetMonitoringTemplateAlarmConditionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:StackMonitoring/getMonitoringTemplateAlarmConditions:getMonitoringTemplateAlarmConditions", args, GetMonitoringTemplateAlarmConditionsResultOutput{}, options).(GetMonitoringTemplateAlarmConditionsResultOutput), nil
-		}).(GetMonitoringTemplateAlarmConditionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:StackMonitoring/getMonitoringTemplateAlarmConditions:getMonitoringTemplateAlarmConditions", args, GetMonitoringTemplateAlarmConditionsResultOutput{}, options).(GetMonitoringTemplateAlarmConditionsResultOutput)
 }
 
 // A collection of arguments for invoking getMonitoringTemplateAlarmConditions.

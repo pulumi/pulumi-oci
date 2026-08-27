@@ -69,12 +69,8 @@ type GetRetrievePasswordResult struct {
 }
 
 func GetRetrievePasswordOutput(ctx *pulumi.Context, args GetRetrievePasswordOutputArgs, opts ...pulumi.InvokeOption) GetRetrievePasswordResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRetrievePasswordResultOutput, error) {
-			args := v.(GetRetrievePasswordArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Ocvp/getRetrievePassword:getRetrievePassword", args, GetRetrievePasswordResultOutput{}, options).(GetRetrievePasswordResultOutput), nil
-		}).(GetRetrievePasswordResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Ocvp/getRetrievePassword:getRetrievePassword", args, GetRetrievePasswordResultOutput{}, options).(GetRetrievePasswordResultOutput)
 }
 
 // A collection of arguments for invoking getRetrievePassword.

@@ -82,12 +82,8 @@ type GetInstVbsInstancesResult struct {
 }
 
 func GetInstVbsInstancesOutput(ctx *pulumi.Context, args GetInstVbsInstancesOutputArgs, opts ...pulumi.InvokeOption) GetInstVbsInstancesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetInstVbsInstancesResultOutput, error) {
-			args := v.(GetInstVbsInstancesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Vbs/getInstVbsInstances:getInstVbsInstances", args, GetInstVbsInstancesResultOutput{}, options).(GetInstVbsInstancesResultOutput), nil
-		}).(GetInstVbsInstancesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Vbs/getInstVbsInstances:getInstVbsInstances", args, GetInstVbsInstancesResultOutput{}, options).(GetInstVbsInstancesResultOutput)
 }
 
 // A collection of arguments for invoking getInstVbsInstances.

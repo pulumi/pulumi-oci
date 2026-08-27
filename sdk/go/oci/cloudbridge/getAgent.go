@@ -101,12 +101,8 @@ type LookupAgentResult struct {
 }
 
 func LookupAgentOutput(ctx *pulumi.Context, args LookupAgentOutputArgs, opts ...pulumi.InvokeOption) LookupAgentResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAgentResultOutput, error) {
-			args := v.(LookupAgentArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CloudBridge/getAgent:getAgent", args, LookupAgentResultOutput{}, options).(LookupAgentResultOutput), nil
-		}).(LookupAgentResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CloudBridge/getAgent:getAgent", args, LookupAgentResultOutput{}, options).(LookupAgentResultOutput)
 }
 
 // A collection of arguments for invoking getAgent.

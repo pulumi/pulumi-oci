@@ -88,12 +88,8 @@ type GetPrivateEndpointsResult struct {
 }
 
 func GetPrivateEndpointsOutput(ctx *pulumi.Context, args GetPrivateEndpointsOutputArgs, opts ...pulumi.InvokeOption) GetPrivateEndpointsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPrivateEndpointsResultOutput, error) {
-			args := v.(GetPrivateEndpointsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataFlow/getPrivateEndpoints:getPrivateEndpoints", args, GetPrivateEndpointsResultOutput{}, options).(GetPrivateEndpointsResultOutput), nil
-		}).(GetPrivateEndpointsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataFlow/getPrivateEndpoints:getPrivateEndpoints", args, GetPrivateEndpointsResultOutput{}, options).(GetPrivateEndpointsResultOutput)
 }
 
 // A collection of arguments for invoking getPrivateEndpoints.

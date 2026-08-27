@@ -126,12 +126,8 @@ type LookupDomainsCloudGateServerResult struct {
 }
 
 func LookupDomainsCloudGateServerOutput(ctx *pulumi.Context, args LookupDomainsCloudGateServerOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsCloudGateServerResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDomainsCloudGateServerResultOutput, error) {
-			args := v.(LookupDomainsCloudGateServerArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsCloudGateServer:getDomainsCloudGateServer", args, LookupDomainsCloudGateServerResultOutput{}, options).(LookupDomainsCloudGateServerResultOutput), nil
-		}).(LookupDomainsCloudGateServerResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsCloudGateServer:getDomainsCloudGateServer", args, LookupDomainsCloudGateServerResultOutput{}, options).(LookupDomainsCloudGateServerResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsCloudGateServer.

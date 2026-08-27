@@ -103,12 +103,8 @@ type GetDomainsOciConsoleSignOnPolicyConsentsResult struct {
 }
 
 func GetDomainsOciConsoleSignOnPolicyConsentsOutput(ctx *pulumi.Context, args GetDomainsOciConsoleSignOnPolicyConsentsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsOciConsoleSignOnPolicyConsentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsOciConsoleSignOnPolicyConsentsResultOutput, error) {
-			args := v.(GetDomainsOciConsoleSignOnPolicyConsentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsOciConsoleSignOnPolicyConsents:getDomainsOciConsoleSignOnPolicyConsents", args, GetDomainsOciConsoleSignOnPolicyConsentsResultOutput{}, options).(GetDomainsOciConsoleSignOnPolicyConsentsResultOutput), nil
-		}).(GetDomainsOciConsoleSignOnPolicyConsentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsOciConsoleSignOnPolicyConsents:getDomainsOciConsoleSignOnPolicyConsents", args, GetDomainsOciConsoleSignOnPolicyConsentsResultOutput{}, options).(GetDomainsOciConsoleSignOnPolicyConsentsResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsOciConsoleSignOnPolicyConsents.

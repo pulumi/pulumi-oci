@@ -84,12 +84,8 @@ type LookupMlApplicationResult struct {
 }
 
 func LookupMlApplicationOutput(ctx *pulumi.Context, args LookupMlApplicationOutputArgs, opts ...pulumi.InvokeOption) LookupMlApplicationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupMlApplicationResultOutput, error) {
-			args := v.(LookupMlApplicationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataScience/getMlApplication:getMlApplication", args, LookupMlApplicationResultOutput{}, options).(LookupMlApplicationResultOutput), nil
-		}).(LookupMlApplicationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataScience/getMlApplication:getMlApplication", args, LookupMlApplicationResultOutput{}, options).(LookupMlApplicationResultOutput)
 }
 
 // A collection of arguments for invoking getMlApplication.

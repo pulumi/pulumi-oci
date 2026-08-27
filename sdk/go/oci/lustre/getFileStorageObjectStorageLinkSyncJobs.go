@@ -73,12 +73,8 @@ type GetFileStorageObjectStorageLinkSyncJobsResult struct {
 }
 
 func GetFileStorageObjectStorageLinkSyncJobsOutput(ctx *pulumi.Context, args GetFileStorageObjectStorageLinkSyncJobsOutputArgs, opts ...pulumi.InvokeOption) GetFileStorageObjectStorageLinkSyncJobsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFileStorageObjectStorageLinkSyncJobsResultOutput, error) {
-			args := v.(GetFileStorageObjectStorageLinkSyncJobsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Lustre/getFileStorageObjectStorageLinkSyncJobs:getFileStorageObjectStorageLinkSyncJobs", args, GetFileStorageObjectStorageLinkSyncJobsResultOutput{}, options).(GetFileStorageObjectStorageLinkSyncJobsResultOutput), nil
-		}).(GetFileStorageObjectStorageLinkSyncJobsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Lustre/getFileStorageObjectStorageLinkSyncJobs:getFileStorageObjectStorageLinkSyncJobs", args, GetFileStorageObjectStorageLinkSyncJobsResultOutput{}, options).(GetFileStorageObjectStorageLinkSyncJobsResultOutput)
 }
 
 // A collection of arguments for invoking getFileStorageObjectStorageLinkSyncJobs.

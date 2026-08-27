@@ -84,12 +84,8 @@ type GetMlApplicationInstancesResult struct {
 }
 
 func GetMlApplicationInstancesOutput(ctx *pulumi.Context, args GetMlApplicationInstancesOutputArgs, opts ...pulumi.InvokeOption) GetMlApplicationInstancesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMlApplicationInstancesResultOutput, error) {
-			args := v.(GetMlApplicationInstancesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataScience/getMlApplicationInstances:getMlApplicationInstances", args, GetMlApplicationInstancesResultOutput{}, options).(GetMlApplicationInstancesResultOutput), nil
-		}).(GetMlApplicationInstancesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataScience/getMlApplicationInstances:getMlApplicationInstances", args, GetMlApplicationInstancesResultOutput{}, options).(GetMlApplicationInstancesResultOutput)
 }
 
 // A collection of arguments for invoking getMlApplicationInstances.

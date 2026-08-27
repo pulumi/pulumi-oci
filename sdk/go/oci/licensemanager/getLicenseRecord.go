@@ -98,12 +98,8 @@ type LookupLicenseRecordResult struct {
 }
 
 func LookupLicenseRecordOutput(ctx *pulumi.Context, args LookupLicenseRecordOutputArgs, opts ...pulumi.InvokeOption) LookupLicenseRecordResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupLicenseRecordResultOutput, error) {
-			args := v.(LookupLicenseRecordArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LicenseManager/getLicenseRecord:getLicenseRecord", args, LookupLicenseRecordResultOutput{}, options).(LookupLicenseRecordResultOutput), nil
-		}).(LookupLicenseRecordResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LicenseManager/getLicenseRecord:getLicenseRecord", args, LookupLicenseRecordResultOutput{}, options).(LookupLicenseRecordResultOutput)
 }
 
 // A collection of arguments for invoking getLicenseRecord.

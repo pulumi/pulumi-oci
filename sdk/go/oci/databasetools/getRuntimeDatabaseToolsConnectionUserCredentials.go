@@ -72,12 +72,8 @@ type GetRuntimeDatabaseToolsConnectionUserCredentialsResult struct {
 }
 
 func GetRuntimeDatabaseToolsConnectionUserCredentialsOutput(ctx *pulumi.Context, args GetRuntimeDatabaseToolsConnectionUserCredentialsOutputArgs, opts ...pulumi.InvokeOption) GetRuntimeDatabaseToolsConnectionUserCredentialsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRuntimeDatabaseToolsConnectionUserCredentialsResultOutput, error) {
-			args := v.(GetRuntimeDatabaseToolsConnectionUserCredentialsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionUserCredentials:getRuntimeDatabaseToolsConnectionUserCredentials", args, GetRuntimeDatabaseToolsConnectionUserCredentialsResultOutput{}, options).(GetRuntimeDatabaseToolsConnectionUserCredentialsResultOutput), nil
-		}).(GetRuntimeDatabaseToolsConnectionUserCredentialsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionUserCredentials:getRuntimeDatabaseToolsConnectionUserCredentials", args, GetRuntimeDatabaseToolsConnectionUserCredentialsResultOutput{}, options).(GetRuntimeDatabaseToolsConnectionUserCredentialsResultOutput)
 }
 
 // A collection of arguments for invoking getRuntimeDatabaseToolsConnectionUserCredentials.

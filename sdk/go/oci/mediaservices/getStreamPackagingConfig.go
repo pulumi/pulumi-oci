@@ -91,12 +91,8 @@ type LookupStreamPackagingConfigResult struct {
 }
 
 func LookupStreamPackagingConfigOutput(ctx *pulumi.Context, args LookupStreamPackagingConfigOutputArgs, opts ...pulumi.InvokeOption) LookupStreamPackagingConfigResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupStreamPackagingConfigResultOutput, error) {
-			args := v.(LookupStreamPackagingConfigArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:MediaServices/getStreamPackagingConfig:getStreamPackagingConfig", args, LookupStreamPackagingConfigResultOutput{}, options).(LookupStreamPackagingConfigResultOutput), nil
-		}).(LookupStreamPackagingConfigResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:MediaServices/getStreamPackagingConfig:getStreamPackagingConfig", args, LookupStreamPackagingConfigResultOutput{}, options).(LookupStreamPackagingConfigResultOutput)
 }
 
 // A collection of arguments for invoking getStreamPackagingConfig.

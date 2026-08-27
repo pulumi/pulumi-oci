@@ -96,12 +96,8 @@ type LookupJmsPluginResult struct {
 }
 
 func LookupJmsPluginOutput(ctx *pulumi.Context, args LookupJmsPluginOutputArgs, opts ...pulumi.InvokeOption) LookupJmsPluginResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupJmsPluginResultOutput, error) {
-			args := v.(LookupJmsPluginArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getJmsPlugin:getJmsPlugin", args, LookupJmsPluginResultOutput{}, options).(LookupJmsPluginResultOutput), nil
-		}).(LookupJmsPluginResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getJmsPlugin:getJmsPlugin", args, LookupJmsPluginResultOutput{}, options).(LookupJmsPluginResultOutput)
 }
 
 // A collection of arguments for invoking getJmsPlugin.

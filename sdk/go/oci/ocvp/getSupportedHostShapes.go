@@ -88,12 +88,8 @@ type GetSupportedHostShapesResult struct {
 }
 
 func GetSupportedHostShapesOutput(ctx *pulumi.Context, args GetSupportedHostShapesOutputArgs, opts ...pulumi.InvokeOption) GetSupportedHostShapesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSupportedHostShapesResultOutput, error) {
-			args := v.(GetSupportedHostShapesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes", args, GetSupportedHostShapesResultOutput{}, options).(GetSupportedHostShapesResultOutput), nil
-		}).(GetSupportedHostShapesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes", args, GetSupportedHostShapesResultOutput{}, options).(GetSupportedHostShapesResultOutput)
 }
 
 // A collection of arguments for invoking getSupportedHostShapes.

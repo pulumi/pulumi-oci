@@ -74,12 +74,8 @@ type LookupCloudVmClusterIormConfigResult struct {
 }
 
 func LookupCloudVmClusterIormConfigOutput(ctx *pulumi.Context, args LookupCloudVmClusterIormConfigOutputArgs, opts ...pulumi.InvokeOption) LookupCloudVmClusterIormConfigResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupCloudVmClusterIormConfigResultOutput, error) {
-			args := v.(LookupCloudVmClusterIormConfigArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getCloudVmClusterIormConfig:getCloudVmClusterIormConfig", args, LookupCloudVmClusterIormConfigResultOutput{}, options).(LookupCloudVmClusterIormConfigResultOutput), nil
-		}).(LookupCloudVmClusterIormConfigResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getCloudVmClusterIormConfig:getCloudVmClusterIormConfig", args, LookupCloudVmClusterIormConfigResultOutput{}, options).(LookupCloudVmClusterIormConfigResultOutput)
 }
 
 // A collection of arguments for invoking getCloudVmClusterIormConfig.

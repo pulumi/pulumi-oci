@@ -100,12 +100,8 @@ type LookupCloudDbNodeResult struct {
 }
 
 func LookupCloudDbNodeOutput(ctx *pulumi.Context, args LookupCloudDbNodeOutputArgs, opts ...pulumi.InvokeOption) LookupCloudDbNodeResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupCloudDbNodeResultOutput, error) {
-			args := v.(LookupCloudDbNodeArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getCloudDbNode:getCloudDbNode", args, LookupCloudDbNodeResultOutput{}, options).(LookupCloudDbNodeResultOutput), nil
-		}).(LookupCloudDbNodeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getCloudDbNode:getCloudDbNode", args, LookupCloudDbNodeResultOutput{}, options).(LookupCloudDbNodeResultOutput)
 }
 
 // A collection of arguments for invoking getCloudDbNode.

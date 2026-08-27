@@ -86,12 +86,8 @@ type GetAutonomousContainerDatabaseResourceUsageResult struct {
 }
 
 func GetAutonomousContainerDatabaseResourceUsageOutput(ctx *pulumi.Context, args GetAutonomousContainerDatabaseResourceUsageOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousContainerDatabaseResourceUsageResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAutonomousContainerDatabaseResourceUsageResultOutput, error) {
-			args := v.(GetAutonomousContainerDatabaseResourceUsageArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getAutonomousContainerDatabaseResourceUsage:getAutonomousContainerDatabaseResourceUsage", args, GetAutonomousContainerDatabaseResourceUsageResultOutput{}, options).(GetAutonomousContainerDatabaseResourceUsageResultOutput), nil
-		}).(GetAutonomousContainerDatabaseResourceUsageResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getAutonomousContainerDatabaseResourceUsage:getAutonomousContainerDatabaseResourceUsage", args, GetAutonomousContainerDatabaseResourceUsageResultOutput{}, options).(GetAutonomousContainerDatabaseResourceUsageResultOutput)
 }
 
 // A collection of arguments for invoking getAutonomousContainerDatabaseResourceUsage.

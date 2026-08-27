@@ -93,12 +93,8 @@ type GetPropertiesResult struct {
 }
 
 func GetPropertiesOutput(ctx *pulumi.Context, args GetPropertiesOutputArgs, opts ...pulumi.InvokeOption) GetPropertiesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPropertiesResultOutput, error) {
-			args := v.(GetPropertiesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getProperties:getProperties", args, GetPropertiesResultOutput{}, options).(GetPropertiesResultOutput), nil
-		}).(GetPropertiesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getProperties:getProperties", args, GetPropertiesResultOutput{}, options).(GetPropertiesResultOutput)
 }
 
 // A collection of arguments for invoking getProperties.

@@ -79,12 +79,8 @@ type GetInfrastructureTargetVersionResult struct {
 }
 
 func GetInfrastructureTargetVersionOutput(ctx *pulumi.Context, args GetInfrastructureTargetVersionOutputArgs, opts ...pulumi.InvokeOption) GetInfrastructureTargetVersionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetInfrastructureTargetVersionResultOutput, error) {
-			args := v.(GetInfrastructureTargetVersionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getInfrastructureTargetVersion:getInfrastructureTargetVersion", args, GetInfrastructureTargetVersionResultOutput{}, options).(GetInfrastructureTargetVersionResultOutput), nil
-		}).(GetInfrastructureTargetVersionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getInfrastructureTargetVersion:getInfrastructureTargetVersion", args, GetInfrastructureTargetVersionResultOutput{}, options).(GetInfrastructureTargetVersionResultOutput)
 }
 
 // A collection of arguments for invoking getInfrastructureTargetVersion.

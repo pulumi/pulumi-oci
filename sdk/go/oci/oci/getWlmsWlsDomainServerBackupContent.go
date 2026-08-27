@@ -80,12 +80,8 @@ type GetWlmsWlsDomainServerBackupContentResult struct {
 }
 
 func GetWlmsWlsDomainServerBackupContentOutput(ctx *pulumi.Context, args GetWlmsWlsDomainServerBackupContentOutputArgs, opts ...pulumi.InvokeOption) GetWlmsWlsDomainServerBackupContentResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetWlmsWlsDomainServerBackupContentResultOutput, error) {
-			args := v.(GetWlmsWlsDomainServerBackupContentArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getWlmsWlsDomainServerBackupContent:getWlmsWlsDomainServerBackupContent", args, GetWlmsWlsDomainServerBackupContentResultOutput{}, options).(GetWlmsWlsDomainServerBackupContentResultOutput), nil
-		}).(GetWlmsWlsDomainServerBackupContentResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getWlmsWlsDomainServerBackupContent:getWlmsWlsDomainServerBackupContent", args, GetWlmsWlsDomainServerBackupContentResultOutput{}, options).(GetWlmsWlsDomainServerBackupContentResultOutput)
 }
 
 // A collection of arguments for invoking getWlmsWlsDomainServerBackupContent.

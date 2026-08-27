@@ -12,21 +12,6 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsIdentityProofingProviderIdcsLockedBy {
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-     * 
-     * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
-     * * type: string
-     * * uniqueness: none
-     * 
-     */
-    private @Nullable String _ref;
-    /**
      * @return (Updatable) The displayName of the User or App who locked this Resource.
      * 
      * **SCIM++ Properties:**
@@ -87,23 +72,6 @@ public final class DomainsIdentityProofingProviderIdcsLockedBy {
     private @Nullable String value;
 
     private DomainsIdentityProofingProviderIdcsLockedBy() {}
-    /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-     * 
-     * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
-     * * type: string
-     * * uniqueness: none
-     * 
-     */
-    public Optional<String> _ref() {
-        return Optional.ofNullable(this._ref);
-    }
     /**
      * @return (Updatable) The displayName of the User or App who locked this Resource.
      * 
@@ -181,7 +149,6 @@ public final class DomainsIdentityProofingProviderIdcsLockedBy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable String _ref;
         private @Nullable String display;
         private @Nullable String ocid;
         private @Nullable String type;
@@ -189,19 +156,12 @@ public final class DomainsIdentityProofingProviderIdcsLockedBy {
         public Builder() {}
         public Builder(DomainsIdentityProofingProviderIdcsLockedBy defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this._ref = defaults._ref;
     	      this.display = defaults.display;
     	      this.ocid = defaults.ocid;
     	      this.type = defaults.type;
     	      this.value = defaults.value;
         }
 
-        @CustomType.Setter
-        public Builder _ref(@Nullable String _ref) {
-
-            this._ref = _ref;
-            return this;
-        }
         @CustomType.Setter
         public Builder display(@Nullable String display) {
 
@@ -228,7 +188,6 @@ public final class DomainsIdentityProofingProviderIdcsLockedBy {
         }
         public DomainsIdentityProofingProviderIdcsLockedBy build() {
             final var _resultValue = new DomainsIdentityProofingProviderIdcsLockedBy();
-            _resultValue._ref = _ref;
             _resultValue.display = display;
             _resultValue.ocid = ocid;
             _resultValue.type = type;

@@ -76,12 +76,8 @@ type GetConsoleHistoryDataResult struct {
 }
 
 func GetConsoleHistoryDataOutput(ctx *pulumi.Context, args GetConsoleHistoryDataOutputArgs, opts ...pulumi.InvokeOption) GetConsoleHistoryDataResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetConsoleHistoryDataResultOutput, error) {
-			args := v.(GetConsoleHistoryDataArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getConsoleHistoryData:getConsoleHistoryData", args, GetConsoleHistoryDataResultOutput{}, options).(GetConsoleHistoryDataResultOutput), nil
-		}).(GetConsoleHistoryDataResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getConsoleHistoryData:getConsoleHistoryData", args, GetConsoleHistoryDataResultOutput{}, options).(GetConsoleHistoryDataResultOutput)
 }
 
 // A collection of arguments for invoking getConsoleHistoryData.

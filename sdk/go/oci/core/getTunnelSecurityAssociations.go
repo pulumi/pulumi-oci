@@ -72,12 +72,8 @@ type GetTunnelSecurityAssociationsResult struct {
 }
 
 func GetTunnelSecurityAssociationsOutput(ctx *pulumi.Context, args GetTunnelSecurityAssociationsOutputArgs, opts ...pulumi.InvokeOption) GetTunnelSecurityAssociationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetTunnelSecurityAssociationsResultOutput, error) {
-			args := v.(GetTunnelSecurityAssociationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getTunnelSecurityAssociations:getTunnelSecurityAssociations", args, GetTunnelSecurityAssociationsResultOutput{}, options).(GetTunnelSecurityAssociationsResultOutput), nil
-		}).(GetTunnelSecurityAssociationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getTunnelSecurityAssociations:getTunnelSecurityAssociations", args, GetTunnelSecurityAssociationsResultOutput{}, options).(GetTunnelSecurityAssociationsResultOutput)
 }
 
 // A collection of arguments for invoking getTunnelSecurityAssociations.

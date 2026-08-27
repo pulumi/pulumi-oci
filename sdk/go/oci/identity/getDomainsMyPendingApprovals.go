@@ -96,12 +96,8 @@ type GetDomainsMyPendingApprovalsResult struct {
 }
 
 func GetDomainsMyPendingApprovalsOutput(ctx *pulumi.Context, args GetDomainsMyPendingApprovalsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMyPendingApprovalsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsMyPendingApprovalsResultOutput, error) {
-			args := v.(GetDomainsMyPendingApprovalsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsMyPendingApprovals:getDomainsMyPendingApprovals", args, GetDomainsMyPendingApprovalsResultOutput{}, options).(GetDomainsMyPendingApprovalsResultOutput), nil
-		}).(GetDomainsMyPendingApprovalsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsMyPendingApprovals:getDomainsMyPendingApprovals", args, GetDomainsMyPendingApprovalsResultOutput{}, options).(GetDomainsMyPendingApprovalsResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsMyPendingApprovals.

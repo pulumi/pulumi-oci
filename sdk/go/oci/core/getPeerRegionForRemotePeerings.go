@@ -64,12 +64,8 @@ type GetPeerRegionForRemotePeeringsResult struct {
 }
 
 func GetPeerRegionForRemotePeeringsOutput(ctx *pulumi.Context, args GetPeerRegionForRemotePeeringsOutputArgs, opts ...pulumi.InvokeOption) GetPeerRegionForRemotePeeringsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPeerRegionForRemotePeeringsResultOutput, error) {
-			args := v.(GetPeerRegionForRemotePeeringsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getPeerRegionForRemotePeerings:getPeerRegionForRemotePeerings", args, GetPeerRegionForRemotePeeringsResultOutput{}, options).(GetPeerRegionForRemotePeeringsResultOutput), nil
-		}).(GetPeerRegionForRemotePeeringsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getPeerRegionForRemotePeerings:getPeerRegionForRemotePeerings", args, GetPeerRegionForRemotePeeringsResultOutput{}, options).(GetPeerRegionForRemotePeeringsResultOutput)
 }
 
 // A collection of arguments for invoking getPeerRegionForRemotePeerings.

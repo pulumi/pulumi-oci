@@ -133,12 +133,8 @@ type LookupDistributedDatabaseDistributedAutonomousDatabaseResult struct {
 }
 
 func LookupDistributedDatabaseDistributedAutonomousDatabaseOutput(ctx *pulumi.Context, args LookupDistributedDatabaseDistributedAutonomousDatabaseOutputArgs, opts ...pulumi.InvokeOption) LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput, error) {
-			args := v.(LookupDistributedDatabaseDistributedAutonomousDatabaseArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDistributedDatabaseDistributedAutonomousDatabase:getDistributedDatabaseDistributedAutonomousDatabase", args, LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput{}, options).(LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput), nil
-		}).(LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDistributedDatabaseDistributedAutonomousDatabase:getDistributedDatabaseDistributedAutonomousDatabase", args, LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput{}, options).(LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput)
 }
 
 // A collection of arguments for invoking getDistributedDatabaseDistributedAutonomousDatabase.

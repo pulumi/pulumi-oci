@@ -70,12 +70,8 @@ type GetTargetDatabaseGroupGroupMemberResult struct {
 }
 
 func GetTargetDatabaseGroupGroupMemberOutput(ctx *pulumi.Context, args GetTargetDatabaseGroupGroupMemberOutputArgs, opts ...pulumi.InvokeOption) GetTargetDatabaseGroupGroupMemberResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetTargetDatabaseGroupGroupMemberResultOutput, error) {
-			args := v.(GetTargetDatabaseGroupGroupMemberArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getTargetDatabaseGroupGroupMember:getTargetDatabaseGroupGroupMember", args, GetTargetDatabaseGroupGroupMemberResultOutput{}, options).(GetTargetDatabaseGroupGroupMemberResultOutput), nil
-		}).(GetTargetDatabaseGroupGroupMemberResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getTargetDatabaseGroupGroupMember:getTargetDatabaseGroupGroupMember", args, GetTargetDatabaseGroupGroupMemberResultOutput{}, options).(GetTargetDatabaseGroupGroupMemberResultOutput)
 }
 
 // A collection of arguments for invoking getTargetDatabaseGroupGroupMember.

@@ -110,12 +110,8 @@ type GetExsiHostsResult struct {
 }
 
 func GetExsiHostsOutput(ctx *pulumi.Context, args GetExsiHostsOutputArgs, opts ...pulumi.InvokeOption) GetExsiHostsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetExsiHostsResultOutput, error) {
-			args := v.(GetExsiHostsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Ocvp/getExsiHosts:getExsiHosts", args, GetExsiHostsResultOutput{}, options).(GetExsiHostsResultOutput), nil
-		}).(GetExsiHostsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Ocvp/getExsiHosts:getExsiHosts", args, GetExsiHostsResultOutput{}, options).(GetExsiHostsResultOutput)
 }
 
 // A collection of arguments for invoking getExsiHosts.

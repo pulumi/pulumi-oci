@@ -84,12 +84,8 @@ type GetAutonomousDatabaseSoftwareImagesResult struct {
 }
 
 func GetAutonomousDatabaseSoftwareImagesOutput(ctx *pulumi.Context, args GetAutonomousDatabaseSoftwareImagesOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousDatabaseSoftwareImagesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAutonomousDatabaseSoftwareImagesResultOutput, error) {
-			args := v.(GetAutonomousDatabaseSoftwareImagesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getAutonomousDatabaseSoftwareImages:getAutonomousDatabaseSoftwareImages", args, GetAutonomousDatabaseSoftwareImagesResultOutput{}, options).(GetAutonomousDatabaseSoftwareImagesResultOutput), nil
-		}).(GetAutonomousDatabaseSoftwareImagesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getAutonomousDatabaseSoftwareImages:getAutonomousDatabaseSoftwareImages", args, GetAutonomousDatabaseSoftwareImagesResultOutput{}, options).(GetAutonomousDatabaseSoftwareImagesResultOutput)
 }
 
 // A collection of arguments for invoking getAutonomousDatabaseSoftwareImages.

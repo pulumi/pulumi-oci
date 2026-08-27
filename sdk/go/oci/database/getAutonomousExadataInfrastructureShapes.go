@@ -72,12 +72,8 @@ type GetAutonomousExadataInfrastructureShapesResult struct {
 }
 
 func GetAutonomousExadataInfrastructureShapesOutput(ctx *pulumi.Context, args GetAutonomousExadataInfrastructureShapesOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousExadataInfrastructureShapesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAutonomousExadataInfrastructureShapesResultOutput, error) {
-			args := v.(GetAutonomousExadataInfrastructureShapesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getAutonomousExadataInfrastructureShapes:getAutonomousExadataInfrastructureShapes", args, GetAutonomousExadataInfrastructureShapesResultOutput{}, options).(GetAutonomousExadataInfrastructureShapesResultOutput), nil
-		}).(GetAutonomousExadataInfrastructureShapesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getAutonomousExadataInfrastructureShapes:getAutonomousExadataInfrastructureShapes", args, GetAutonomousExadataInfrastructureShapesResultOutput{}, options).(GetAutonomousExadataInfrastructureShapesResultOutput)
 }
 
 // A collection of arguments for invoking getAutonomousExadataInfrastructureShapes.

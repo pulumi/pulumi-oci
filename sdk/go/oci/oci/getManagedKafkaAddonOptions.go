@@ -73,12 +73,8 @@ type GetManagedKafkaAddonOptionsResult struct {
 }
 
 func GetManagedKafkaAddonOptionsOutput(ctx *pulumi.Context, args GetManagedKafkaAddonOptionsOutputArgs, opts ...pulumi.InvokeOption) GetManagedKafkaAddonOptionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedKafkaAddonOptionsResultOutput, error) {
-			args := v.(GetManagedKafkaAddonOptionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getManagedKafkaAddonOptions:getManagedKafkaAddonOptions", args, GetManagedKafkaAddonOptionsResultOutput{}, options).(GetManagedKafkaAddonOptionsResultOutput), nil
-		}).(GetManagedKafkaAddonOptionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getManagedKafkaAddonOptions:getManagedKafkaAddonOptions", args, GetManagedKafkaAddonOptionsResultOutput{}, options).(GetManagedKafkaAddonOptionsResultOutput)
 }
 
 // A collection of arguments for invoking getManagedKafkaAddonOptions.

@@ -79,12 +79,8 @@ type GetBdsInstancesResult struct {
 }
 
 func GetBdsInstancesOutput(ctx *pulumi.Context, args GetBdsInstancesOutputArgs, opts ...pulumi.InvokeOption) GetBdsInstancesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBdsInstancesResultOutput, error) {
-			args := v.(GetBdsInstancesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:BigDataService/getBdsInstances:getBdsInstances", args, GetBdsInstancesResultOutput{}, options).(GetBdsInstancesResultOutput), nil
-		}).(GetBdsInstancesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:BigDataService/getBdsInstances:getBdsInstances", args, GetBdsInstancesResultOutput{}, options).(GetBdsInstancesResultOutput)
 }
 
 // A collection of arguments for invoking getBdsInstances.

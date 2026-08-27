@@ -94,12 +94,8 @@ type LookupRecoveryServiceSubnetResult struct {
 }
 
 func LookupRecoveryServiceSubnetOutput(ctx *pulumi.Context, args LookupRecoveryServiceSubnetOutputArgs, opts ...pulumi.InvokeOption) LookupRecoveryServiceSubnetResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupRecoveryServiceSubnetResultOutput, error) {
-			args := v.(LookupRecoveryServiceSubnetArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:RecoveryMod/getRecoveryServiceSubnet:getRecoveryServiceSubnet", args, LookupRecoveryServiceSubnetResultOutput{}, options).(LookupRecoveryServiceSubnetResultOutput), nil
-		}).(LookupRecoveryServiceSubnetResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:RecoveryMod/getRecoveryServiceSubnet:getRecoveryServiceSubnet", args, LookupRecoveryServiceSubnetResultOutput{}, options).(LookupRecoveryServiceSubnetResultOutput)
 }
 
 // A collection of arguments for invoking getRecoveryServiceSubnet.

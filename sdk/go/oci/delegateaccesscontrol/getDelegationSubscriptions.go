@@ -79,12 +79,8 @@ type GetDelegationSubscriptionsResult struct {
 }
 
 func GetDelegationSubscriptionsOutput(ctx *pulumi.Context, args GetDelegationSubscriptionsOutputArgs, opts ...pulumi.InvokeOption) GetDelegationSubscriptionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDelegationSubscriptionsResultOutput, error) {
-			args := v.(GetDelegationSubscriptionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DelegateAccessControl/getDelegationSubscriptions:getDelegationSubscriptions", args, GetDelegationSubscriptionsResultOutput{}, options).(GetDelegationSubscriptionsResultOutput), nil
-		}).(GetDelegationSubscriptionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DelegateAccessControl/getDelegationSubscriptions:getDelegationSubscriptions", args, GetDelegationSubscriptionsResultOutput{}, options).(GetDelegationSubscriptionsResultOutput)
 }
 
 // A collection of arguments for invoking getDelegationSubscriptions.

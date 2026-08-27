@@ -68,12 +68,8 @@ type GetClusterPublicApiEndpointDecommissionStatusResult struct {
 }
 
 func GetClusterPublicApiEndpointDecommissionStatusOutput(ctx *pulumi.Context, args GetClusterPublicApiEndpointDecommissionStatusOutputArgs, opts ...pulumi.InvokeOption) GetClusterPublicApiEndpointDecommissionStatusResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetClusterPublicApiEndpointDecommissionStatusResultOutput, error) {
-			args := v.(GetClusterPublicApiEndpointDecommissionStatusArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ContainerEngine/getClusterPublicApiEndpointDecommissionStatus:getClusterPublicApiEndpointDecommissionStatus", args, GetClusterPublicApiEndpointDecommissionStatusResultOutput{}, options).(GetClusterPublicApiEndpointDecommissionStatusResultOutput), nil
-		}).(GetClusterPublicApiEndpointDecommissionStatusResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ContainerEngine/getClusterPublicApiEndpointDecommissionStatus:getClusterPublicApiEndpointDecommissionStatus", args, GetClusterPublicApiEndpointDecommissionStatusResultOutput{}, options).(GetClusterPublicApiEndpointDecommissionStatusResultOutput)
 }
 
 // A collection of arguments for invoking getClusterPublicApiEndpointDecommissionStatus.

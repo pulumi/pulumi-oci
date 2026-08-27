@@ -89,12 +89,8 @@ type GetInternalNamespaceOccOverviewsResult struct {
 }
 
 func GetInternalNamespaceOccOverviewsOutput(ctx *pulumi.Context, args GetInternalNamespaceOccOverviewsOutputArgs, opts ...pulumi.InvokeOption) GetInternalNamespaceOccOverviewsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetInternalNamespaceOccOverviewsResultOutput, error) {
-			args := v.(GetInternalNamespaceOccOverviewsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CapacityManagement/getInternalNamespaceOccOverviews:getInternalNamespaceOccOverviews", args, GetInternalNamespaceOccOverviewsResultOutput{}, options).(GetInternalNamespaceOccOverviewsResultOutput), nil
-		}).(GetInternalNamespaceOccOverviewsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CapacityManagement/getInternalNamespaceOccOverviews:getInternalNamespaceOccOverviews", args, GetInternalNamespaceOccOverviewsResultOutput{}, options).(GetInternalNamespaceOccOverviewsResultOutput)
 }
 
 // A collection of arguments for invoking getInternalNamespaceOccOverviews.

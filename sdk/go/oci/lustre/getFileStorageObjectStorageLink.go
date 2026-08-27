@@ -100,12 +100,8 @@ type LookupFileStorageObjectStorageLinkResult struct {
 }
 
 func LookupFileStorageObjectStorageLinkOutput(ctx *pulumi.Context, args LookupFileStorageObjectStorageLinkOutputArgs, opts ...pulumi.InvokeOption) LookupFileStorageObjectStorageLinkResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupFileStorageObjectStorageLinkResultOutput, error) {
-			args := v.(LookupFileStorageObjectStorageLinkArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Lustre/getFileStorageObjectStorageLink:getFileStorageObjectStorageLink", args, LookupFileStorageObjectStorageLinkResultOutput{}, options).(LookupFileStorageObjectStorageLinkResultOutput), nil
-		}).(LookupFileStorageObjectStorageLinkResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Lustre/getFileStorageObjectStorageLink:getFileStorageObjectStorageLink", args, LookupFileStorageObjectStorageLinkResultOutput{}, options).(LookupFileStorageObjectStorageLinkResultOutput)
 }
 
 // A collection of arguments for invoking getFileStorageObjectStorageLink.

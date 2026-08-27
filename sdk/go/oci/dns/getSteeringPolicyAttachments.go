@@ -108,12 +108,8 @@ type GetSteeringPolicyAttachmentsResult struct {
 }
 
 func GetSteeringPolicyAttachmentsOutput(ctx *pulumi.Context, args GetSteeringPolicyAttachmentsOutputArgs, opts ...pulumi.InvokeOption) GetSteeringPolicyAttachmentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSteeringPolicyAttachmentsResultOutput, error) {
-			args := v.(GetSteeringPolicyAttachmentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Dns/getSteeringPolicyAttachments:getSteeringPolicyAttachments", args, GetSteeringPolicyAttachmentsResultOutput{}, options).(GetSteeringPolicyAttachmentsResultOutput), nil
-		}).(GetSteeringPolicyAttachmentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Dns/getSteeringPolicyAttachments:getSteeringPolicyAttachments", args, GetSteeringPolicyAttachmentsResultOutput{}, options).(GetSteeringPolicyAttachmentsResultOutput)
 }
 
 // A collection of arguments for invoking getSteeringPolicyAttachments.

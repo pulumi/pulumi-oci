@@ -41,12 +41,8 @@ type GetVirtualNetworksResult struct {
 }
 
 func GetVirtualNetworksOutput(ctx *pulumi.Context, args GetVirtualNetworksOutputArgs, opts ...pulumi.InvokeOption) GetVirtualNetworksResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVirtualNetworksResultOutput, error) {
-			args := v.(GetVirtualNetworksArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getVirtualNetworks:getVirtualNetworks", args, GetVirtualNetworksResultOutput{}, options).(GetVirtualNetworksResultOutput), nil
-		}).(GetVirtualNetworksResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getVirtualNetworks:getVirtualNetworks", args, GetVirtualNetworksResultOutput{}, options).(GetVirtualNetworksResultOutput)
 }
 
 // A collection of arguments for invoking getVirtualNetworks.

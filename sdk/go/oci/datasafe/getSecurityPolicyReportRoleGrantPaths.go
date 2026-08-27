@@ -80,12 +80,8 @@ type GetSecurityPolicyReportRoleGrantPathsResult struct {
 }
 
 func GetSecurityPolicyReportRoleGrantPathsOutput(ctx *pulumi.Context, args GetSecurityPolicyReportRoleGrantPathsOutputArgs, opts ...pulumi.InvokeOption) GetSecurityPolicyReportRoleGrantPathsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSecurityPolicyReportRoleGrantPathsResultOutput, error) {
-			args := v.(GetSecurityPolicyReportRoleGrantPathsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getSecurityPolicyReportRoleGrantPaths:getSecurityPolicyReportRoleGrantPaths", args, GetSecurityPolicyReportRoleGrantPathsResultOutput{}, options).(GetSecurityPolicyReportRoleGrantPathsResultOutput), nil
-		}).(GetSecurityPolicyReportRoleGrantPathsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getSecurityPolicyReportRoleGrantPaths:getSecurityPolicyReportRoleGrantPaths", args, GetSecurityPolicyReportRoleGrantPathsResultOutput{}, options).(GetSecurityPolicyReportRoleGrantPathsResultOutput)
 }
 
 // A collection of arguments for invoking getSecurityPolicyReportRoleGrantPaths.

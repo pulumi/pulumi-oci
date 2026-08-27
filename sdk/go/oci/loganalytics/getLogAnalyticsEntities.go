@@ -143,12 +143,8 @@ type GetLogAnalyticsEntitiesResult struct {
 }
 
 func GetLogAnalyticsEntitiesOutput(ctx *pulumi.Context, args GetLogAnalyticsEntitiesOutputArgs, opts ...pulumi.InvokeOption) GetLogAnalyticsEntitiesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetLogAnalyticsEntitiesResultOutput, error) {
-			args := v.(GetLogAnalyticsEntitiesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities", args, GetLogAnalyticsEntitiesResultOutput{}, options).(GetLogAnalyticsEntitiesResultOutput), nil
-		}).(GetLogAnalyticsEntitiesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities", args, GetLogAnalyticsEntitiesResultOutput{}, options).(GetLogAnalyticsEntitiesResultOutput)
 }
 
 // A collection of arguments for invoking getLogAnalyticsEntities.

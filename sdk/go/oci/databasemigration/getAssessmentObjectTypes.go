@@ -68,12 +68,8 @@ type GetAssessmentObjectTypesResult struct {
 }
 
 func GetAssessmentObjectTypesOutput(ctx *pulumi.Context, args GetAssessmentObjectTypesOutputArgs, opts ...pulumi.InvokeOption) GetAssessmentObjectTypesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAssessmentObjectTypesResultOutput, error) {
-			args := v.(GetAssessmentObjectTypesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseMigration/getAssessmentObjectTypes:getAssessmentObjectTypes", args, GetAssessmentObjectTypesResultOutput{}, options).(GetAssessmentObjectTypesResultOutput), nil
-		}).(GetAssessmentObjectTypesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseMigration/getAssessmentObjectTypes:getAssessmentObjectTypes", args, GetAssessmentObjectTypesResultOutput{}, options).(GetAssessmentObjectTypesResultOutput)
 }
 
 // A collection of arguments for invoking getAssessmentObjectTypes.

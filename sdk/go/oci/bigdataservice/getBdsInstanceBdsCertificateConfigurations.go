@@ -79,12 +79,8 @@ type GetBdsInstanceBdsCertificateConfigurationsResult struct {
 }
 
 func GetBdsInstanceBdsCertificateConfigurationsOutput(ctx *pulumi.Context, args GetBdsInstanceBdsCertificateConfigurationsOutputArgs, opts ...pulumi.InvokeOption) GetBdsInstanceBdsCertificateConfigurationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBdsInstanceBdsCertificateConfigurationsResultOutput, error) {
-			args := v.(GetBdsInstanceBdsCertificateConfigurationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:BigDataService/getBdsInstanceBdsCertificateConfigurations:getBdsInstanceBdsCertificateConfigurations", args, GetBdsInstanceBdsCertificateConfigurationsResultOutput{}, options).(GetBdsInstanceBdsCertificateConfigurationsResultOutput), nil
-		}).(GetBdsInstanceBdsCertificateConfigurationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:BigDataService/getBdsInstanceBdsCertificateConfigurations:getBdsInstanceBdsCertificateConfigurations", args, GetBdsInstanceBdsCertificateConfigurationsResultOutput{}, options).(GetBdsInstanceBdsCertificateConfigurationsResultOutput)
 }
 
 // A collection of arguments for invoking getBdsInstanceBdsCertificateConfigurations.

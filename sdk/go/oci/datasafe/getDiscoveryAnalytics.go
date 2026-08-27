@@ -105,12 +105,8 @@ type GetDiscoveryAnalyticsResult struct {
 }
 
 func GetDiscoveryAnalyticsOutput(ctx *pulumi.Context, args GetDiscoveryAnalyticsOutputArgs, opts ...pulumi.InvokeOption) GetDiscoveryAnalyticsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDiscoveryAnalyticsResultOutput, error) {
-			args := v.(GetDiscoveryAnalyticsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getDiscoveryAnalytics:getDiscoveryAnalytics", args, GetDiscoveryAnalyticsResultOutput{}, options).(GetDiscoveryAnalyticsResultOutput), nil
-		}).(GetDiscoveryAnalyticsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getDiscoveryAnalytics:getDiscoveryAnalytics", args, GetDiscoveryAnalyticsResultOutput{}, options).(GetDiscoveryAnalyticsResultOutput)
 }
 
 // A collection of arguments for invoking getDiscoveryAnalytics.

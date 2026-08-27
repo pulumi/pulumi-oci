@@ -82,12 +82,8 @@ type GetSessionsResult struct {
 }
 
 func GetSessionsOutput(ctx *pulumi.Context, args GetSessionsOutputArgs, opts ...pulumi.InvokeOption) GetSessionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSessionsResultOutput, error) {
-			args := v.(GetSessionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Bastion/getSessions:getSessions", args, GetSessionsResultOutput{}, options).(GetSessionsResultOutput), nil
-		}).(GetSessionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Bastion/getSessions:getSessions", args, GetSessionsResultOutput{}, options).(GetSessionsResultOutput)
 }
 
 // A collection of arguments for invoking getSessions.

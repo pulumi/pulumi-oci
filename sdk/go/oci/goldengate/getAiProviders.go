@@ -68,12 +68,8 @@ type GetAiProvidersResult struct {
 }
 
 func GetAiProvidersOutput(ctx *pulumi.Context, args GetAiProvidersOutputArgs, opts ...pulumi.InvokeOption) GetAiProvidersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAiProvidersResultOutput, error) {
-			args := v.(GetAiProvidersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GoldenGate/getAiProviders:getAiProviders", args, GetAiProvidersResultOutput{}, options).(GetAiProvidersResultOutput), nil
-		}).(GetAiProvidersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GoldenGate/getAiProviders:getAiProviders", args, GetAiProvidersResultOutput{}, options).(GetAiProvidersResultOutput)
 }
 
 // A collection of arguments for invoking getAiProviders.

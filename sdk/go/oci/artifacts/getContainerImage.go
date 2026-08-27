@@ -100,12 +100,8 @@ type GetContainerImageResult struct {
 }
 
 func GetContainerImageOutput(ctx *pulumi.Context, args GetContainerImageOutputArgs, opts ...pulumi.InvokeOption) GetContainerImageResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetContainerImageResultOutput, error) {
-			args := v.(GetContainerImageArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Artifacts/getContainerImage:getContainerImage", args, GetContainerImageResultOutput{}, options).(GetContainerImageResultOutput), nil
-		}).(GetContainerImageResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Artifacts/getContainerImage:getContainerImage", args, GetContainerImageResultOutput{}, options).(GetContainerImageResultOutput)
 }
 
 // A collection of arguments for invoking getContainerImage.

@@ -79,12 +79,8 @@ type GetExternalClusterInstancesResult struct {
 }
 
 func GetExternalClusterInstancesOutput(ctx *pulumi.Context, args GetExternalClusterInstancesOutputArgs, opts ...pulumi.InvokeOption) GetExternalClusterInstancesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetExternalClusterInstancesResultOutput, error) {
-			args := v.(GetExternalClusterInstancesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalClusterInstances:getExternalClusterInstances", args, GetExternalClusterInstancesResultOutput{}, options).(GetExternalClusterInstancesResultOutput), nil
-		}).(GetExternalClusterInstancesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getExternalClusterInstances:getExternalClusterInstances", args, GetExternalClusterInstancesResultOutput{}, options).(GetExternalClusterInstancesResultOutput)
 }
 
 // A collection of arguments for invoking getExternalClusterInstances.

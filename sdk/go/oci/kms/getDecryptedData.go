@@ -80,12 +80,8 @@ type GetDecryptedDataResult struct {
 }
 
 func GetDecryptedDataOutput(ctx *pulumi.Context, args GetDecryptedDataOutputArgs, opts ...pulumi.InvokeOption) GetDecryptedDataResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDecryptedDataResultOutput, error) {
-			args := v.(GetDecryptedDataArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Kms/getDecryptedData:getDecryptedData", args, GetDecryptedDataResultOutput{}, options).(GetDecryptedDataResultOutput), nil
-		}).(GetDecryptedDataResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Kms/getDecryptedData:getDecryptedData", args, GetDecryptedDataResultOutput{}, options).(GetDecryptedDataResultOutput)
 }
 
 // A collection of arguments for invoking getDecryptedData.

@@ -76,12 +76,8 @@ type GetLifecycleStagesResult struct {
 }
 
 func GetLifecycleStagesOutput(ctx *pulumi.Context, args GetLifecycleStagesOutputArgs, opts ...pulumi.InvokeOption) GetLifecycleStagesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetLifecycleStagesResultOutput, error) {
-			args := v.(GetLifecycleStagesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getLifecycleStages:getLifecycleStages", args, GetLifecycleStagesResultOutput{}, options).(GetLifecycleStagesResultOutput), nil
-		}).(GetLifecycleStagesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getLifecycleStages:getLifecycleStages", args, GetLifecycleStagesResultOutput{}, options).(GetLifecycleStagesResultOutput)
 }
 
 // A collection of arguments for invoking getLifecycleStages.

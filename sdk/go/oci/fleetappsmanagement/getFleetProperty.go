@@ -90,12 +90,8 @@ type LookupFleetPropertyResult struct {
 }
 
 func LookupFleetPropertyOutput(ctx *pulumi.Context, args LookupFleetPropertyOutputArgs, opts ...pulumi.InvokeOption) LookupFleetPropertyResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupFleetPropertyResultOutput, error) {
-			args := v.(LookupFleetPropertyArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getFleetProperty:getFleetProperty", args, LookupFleetPropertyResultOutput{}, options).(LookupFleetPropertyResultOutput), nil
-		}).(LookupFleetPropertyResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getFleetProperty:getFleetProperty", args, LookupFleetPropertyResultOutput{}, options).(LookupFleetPropertyResultOutput)
 }
 
 // A collection of arguments for invoking getFleetProperty.

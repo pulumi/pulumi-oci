@@ -95,12 +95,8 @@ type GetAtCustomerCccInfrastructuresResult struct {
 }
 
 func GetAtCustomerCccInfrastructuresOutput(ctx *pulumi.Context, args GetAtCustomerCccInfrastructuresOutputArgs, opts ...pulumi.InvokeOption) GetAtCustomerCccInfrastructuresResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAtCustomerCccInfrastructuresResultOutput, error) {
-			args := v.(GetAtCustomerCccInfrastructuresArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ComputeCloud/getAtCustomerCccInfrastructures:getAtCustomerCccInfrastructures", args, GetAtCustomerCccInfrastructuresResultOutput{}, options).(GetAtCustomerCccInfrastructuresResultOutput), nil
-		}).(GetAtCustomerCccInfrastructuresResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ComputeCloud/getAtCustomerCccInfrastructures:getAtCustomerCccInfrastructures", args, GetAtCustomerCccInfrastructuresResultOutput{}, options).(GetAtCustomerCccInfrastructuresResultOutput)
 }
 
 // A collection of arguments for invoking getAtCustomerCccInfrastructures.

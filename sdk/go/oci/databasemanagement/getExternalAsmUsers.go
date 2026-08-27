@@ -72,12 +72,8 @@ type GetExternalAsmUsersResult struct {
 }
 
 func GetExternalAsmUsersOutput(ctx *pulumi.Context, args GetExternalAsmUsersOutputArgs, opts ...pulumi.InvokeOption) GetExternalAsmUsersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetExternalAsmUsersResultOutput, error) {
-			args := v.(GetExternalAsmUsersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalAsmUsers:getExternalAsmUsers", args, GetExternalAsmUsersResultOutput{}, options).(GetExternalAsmUsersResultOutput), nil
-		}).(GetExternalAsmUsersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getExternalAsmUsers:getExternalAsmUsers", args, GetExternalAsmUsersResultOutput{}, options).(GetExternalAsmUsersResultOutput)
 }
 
 // A collection of arguments for invoking getExternalAsmUsers.

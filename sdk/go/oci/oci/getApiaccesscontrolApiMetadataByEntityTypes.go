@@ -83,12 +83,8 @@ type GetApiaccesscontrolApiMetadataByEntityTypesResult struct {
 }
 
 func GetApiaccesscontrolApiMetadataByEntityTypesOutput(ctx *pulumi.Context, args GetApiaccesscontrolApiMetadataByEntityTypesOutputArgs, opts ...pulumi.InvokeOption) GetApiaccesscontrolApiMetadataByEntityTypesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetApiaccesscontrolApiMetadataByEntityTypesResultOutput, error) {
-			args := v.(GetApiaccesscontrolApiMetadataByEntityTypesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getApiaccesscontrolApiMetadataByEntityTypes:getApiaccesscontrolApiMetadataByEntityTypes", args, GetApiaccesscontrolApiMetadataByEntityTypesResultOutput{}, options).(GetApiaccesscontrolApiMetadataByEntityTypesResultOutput), nil
-		}).(GetApiaccesscontrolApiMetadataByEntityTypesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getApiaccesscontrolApiMetadataByEntityTypes:getApiaccesscontrolApiMetadataByEntityTypes", args, GetApiaccesscontrolApiMetadataByEntityTypesResultOutput{}, options).(GetApiaccesscontrolApiMetadataByEntityTypesResultOutput)
 }
 
 // A collection of arguments for invoking getApiaccesscontrolApiMetadataByEntityTypes.

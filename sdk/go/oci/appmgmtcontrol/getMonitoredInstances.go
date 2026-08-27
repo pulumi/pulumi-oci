@@ -74,12 +74,8 @@ type GetMonitoredInstancesResult struct {
 }
 
 func GetMonitoredInstancesOutput(ctx *pulumi.Context, args GetMonitoredInstancesOutputArgs, opts ...pulumi.InvokeOption) GetMonitoredInstancesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMonitoredInstancesResultOutput, error) {
-			args := v.(GetMonitoredInstancesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:AppMgmtControl/getMonitoredInstances:getMonitoredInstances", args, GetMonitoredInstancesResultOutput{}, options).(GetMonitoredInstancesResultOutput), nil
-		}).(GetMonitoredInstancesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:AppMgmtControl/getMonitoredInstances:getMonitoredInstances", args, GetMonitoredInstancesResultOutput{}, options).(GetMonitoredInstancesResultOutput)
 }
 
 // A collection of arguments for invoking getMonitoredInstances.

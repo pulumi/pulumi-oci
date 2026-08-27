@@ -87,12 +87,8 @@ type LookupWlpAgentResult struct {
 }
 
 func LookupWlpAgentOutput(ctx *pulumi.Context, args LookupWlpAgentOutputArgs, opts ...pulumi.InvokeOption) LookupWlpAgentResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupWlpAgentResultOutput, error) {
-			args := v.(LookupWlpAgentArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CloudGuard/getWlpAgent:getWlpAgent", args, LookupWlpAgentResultOutput{}, options).(LookupWlpAgentResultOutput), nil
-		}).(LookupWlpAgentResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CloudGuard/getWlpAgent:getWlpAgent", args, LookupWlpAgentResultOutput{}, options).(LookupWlpAgentResultOutput)
 }
 
 // A collection of arguments for invoking getWlpAgent.

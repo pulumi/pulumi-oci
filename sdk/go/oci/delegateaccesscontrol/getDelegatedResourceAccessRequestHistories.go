@@ -68,12 +68,8 @@ type GetDelegatedResourceAccessRequestHistoriesResult struct {
 }
 
 func GetDelegatedResourceAccessRequestHistoriesOutput(ctx *pulumi.Context, args GetDelegatedResourceAccessRequestHistoriesOutputArgs, opts ...pulumi.InvokeOption) GetDelegatedResourceAccessRequestHistoriesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDelegatedResourceAccessRequestHistoriesResultOutput, error) {
-			args := v.(GetDelegatedResourceAccessRequestHistoriesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DelegateAccessControl/getDelegatedResourceAccessRequestHistories:getDelegatedResourceAccessRequestHistories", args, GetDelegatedResourceAccessRequestHistoriesResultOutput{}, options).(GetDelegatedResourceAccessRequestHistoriesResultOutput), nil
-		}).(GetDelegatedResourceAccessRequestHistoriesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DelegateAccessControl/getDelegatedResourceAccessRequestHistories:getDelegatedResourceAccessRequestHistories", args, GetDelegatedResourceAccessRequestHistoriesResultOutput{}, options).(GetDelegatedResourceAccessRequestHistoriesResultOutput)
 }
 
 // A collection of arguments for invoking getDelegatedResourceAccessRequestHistories.

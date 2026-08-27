@@ -107,12 +107,8 @@ type LookupAutonomousExadataInfrastructureResult struct {
 }
 
 func LookupAutonomousExadataInfrastructureOutput(ctx *pulumi.Context, args LookupAutonomousExadataInfrastructureOutputArgs, opts ...pulumi.InvokeOption) LookupAutonomousExadataInfrastructureResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAutonomousExadataInfrastructureResultOutput, error) {
-			args := v.(LookupAutonomousExadataInfrastructureArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getAutonomousExadataInfrastructure:getAutonomousExadataInfrastructure", args, LookupAutonomousExadataInfrastructureResultOutput{}, options).(LookupAutonomousExadataInfrastructureResultOutput), nil
-		}).(LookupAutonomousExadataInfrastructureResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getAutonomousExadataInfrastructure:getAutonomousExadataInfrastructure", args, LookupAutonomousExadataInfrastructureResultOutput{}, options).(LookupAutonomousExadataInfrastructureResultOutput)
 }
 
 // A collection of arguments for invoking getAutonomousExadataInfrastructure.

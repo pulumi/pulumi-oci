@@ -79,12 +79,8 @@ type GetHttpMonitorsResult struct {
 }
 
 func GetHttpMonitorsOutput(ctx *pulumi.Context, args GetHttpMonitorsOutputArgs, opts ...pulumi.InvokeOption) GetHttpMonitorsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetHttpMonitorsResultOutput, error) {
-			args := v.(GetHttpMonitorsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:HealthChecks/getHttpMonitors:getHttpMonitors", args, GetHttpMonitorsResultOutput{}, options).(GetHttpMonitorsResultOutput), nil
-		}).(GetHttpMonitorsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:HealthChecks/getHttpMonitors:getHttpMonitors", args, GetHttpMonitorsResultOutput{}, options).(GetHttpMonitorsResultOutput)
 }
 
 // A collection of arguments for invoking getHttpMonitors.

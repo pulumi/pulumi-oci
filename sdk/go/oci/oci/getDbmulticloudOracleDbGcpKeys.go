@@ -88,12 +88,8 @@ type GetDbmulticloudOracleDbGcpKeysResult struct {
 }
 
 func GetDbmulticloudOracleDbGcpKeysOutput(ctx *pulumi.Context, args GetDbmulticloudOracleDbGcpKeysOutputArgs, opts ...pulumi.InvokeOption) GetDbmulticloudOracleDbGcpKeysResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbmulticloudOracleDbGcpKeysResultOutput, error) {
-			args := v.(GetDbmulticloudOracleDbGcpKeysArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbGcpKeys:getDbmulticloudOracleDbGcpKeys", args, GetDbmulticloudOracleDbGcpKeysResultOutput{}, options).(GetDbmulticloudOracleDbGcpKeysResultOutput), nil
-		}).(GetDbmulticloudOracleDbGcpKeysResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbGcpKeys:getDbmulticloudOracleDbGcpKeys", args, GetDbmulticloudOracleDbGcpKeysResultOutput{}, options).(GetDbmulticloudOracleDbGcpKeysResultOutput)
 }
 
 // A collection of arguments for invoking getDbmulticloudOracleDbGcpKeys.

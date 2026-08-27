@@ -82,12 +82,8 @@ type LookupBdsCapacityReservationResult struct {
 }
 
 func LookupBdsCapacityReservationOutput(ctx *pulumi.Context, args LookupBdsCapacityReservationOutputArgs, opts ...pulumi.InvokeOption) LookupBdsCapacityReservationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBdsCapacityReservationResultOutput, error) {
-			args := v.(LookupBdsCapacityReservationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:BigDataService/getBdsCapacityReservation:getBdsCapacityReservation", args, LookupBdsCapacityReservationResultOutput{}, options).(LookupBdsCapacityReservationResultOutput), nil
-		}).(LookupBdsCapacityReservationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:BigDataService/getBdsCapacityReservation:getBdsCapacityReservation", args, LookupBdsCapacityReservationResultOutput{}, options).(LookupBdsCapacityReservationResultOutput)
 }
 
 // A collection of arguments for invoking getBdsCapacityReservation.

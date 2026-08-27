@@ -85,12 +85,8 @@ type GetSddcsResult struct {
 }
 
 func GetSddcsOutput(ctx *pulumi.Context, args GetSddcsOutputArgs, opts ...pulumi.InvokeOption) GetSddcsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSddcsResultOutput, error) {
-			args := v.(GetSddcsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Ocvp/getSddcs:getSddcs", args, GetSddcsResultOutput{}, options).(GetSddcsResultOutput), nil
-		}).(GetSddcsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Ocvp/getSddcs:getSddcs", args, GetSddcsResultOutput{}, options).(GetSddcsResultOutput)
 }
 
 // A collection of arguments for invoking getSddcs.

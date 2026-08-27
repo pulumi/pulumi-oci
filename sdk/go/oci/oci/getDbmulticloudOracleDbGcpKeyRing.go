@@ -97,12 +97,8 @@ type LookupDbmulticloudOracleDbGcpKeyRingResult struct {
 }
 
 func LookupDbmulticloudOracleDbGcpKeyRingOutput(ctx *pulumi.Context, args LookupDbmulticloudOracleDbGcpKeyRingOutputArgs, opts ...pulumi.InvokeOption) LookupDbmulticloudOracleDbGcpKeyRingResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDbmulticloudOracleDbGcpKeyRingResultOutput, error) {
-			args := v.(LookupDbmulticloudOracleDbGcpKeyRingArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbGcpKeyRing:getDbmulticloudOracleDbGcpKeyRing", args, LookupDbmulticloudOracleDbGcpKeyRingResultOutput{}, options).(LookupDbmulticloudOracleDbGcpKeyRingResultOutput), nil
-		}).(LookupDbmulticloudOracleDbGcpKeyRingResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbGcpKeyRing:getDbmulticloudOracleDbGcpKeyRing", args, LookupDbmulticloudOracleDbGcpKeyRingResultOutput{}, options).(LookupDbmulticloudOracleDbGcpKeyRingResultOutput)
 }
 
 // A collection of arguments for invoking getDbmulticloudOracleDbGcpKeyRing.

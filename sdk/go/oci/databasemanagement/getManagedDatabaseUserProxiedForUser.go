@@ -75,12 +75,8 @@ type GetManagedDatabaseUserProxiedForUserResult struct {
 }
 
 func GetManagedDatabaseUserProxiedForUserOutput(ctx *pulumi.Context, args GetManagedDatabaseUserProxiedForUserOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseUserProxiedForUserResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabaseUserProxiedForUserResultOutput, error) {
-			args := v.(GetManagedDatabaseUserProxiedForUserArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseUserProxiedForUser:getManagedDatabaseUserProxiedForUser", args, GetManagedDatabaseUserProxiedForUserResultOutput{}, options).(GetManagedDatabaseUserProxiedForUserResultOutput), nil
-		}).(GetManagedDatabaseUserProxiedForUserResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseUserProxiedForUser:getManagedDatabaseUserProxiedForUser", args, GetManagedDatabaseUserProxiedForUserResultOutput{}, options).(GetManagedDatabaseUserProxiedForUserResultOutput)
 }
 
 // A collection of arguments for invoking getManagedDatabaseUserProxiedForUser.

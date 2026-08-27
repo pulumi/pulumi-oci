@@ -184,12 +184,8 @@ type LookupDomainsPasswordPolicyResult struct {
 }
 
 func LookupDomainsPasswordPolicyOutput(ctx *pulumi.Context, args LookupDomainsPasswordPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsPasswordPolicyResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDomainsPasswordPolicyResultOutput, error) {
-			args := v.(LookupDomainsPasswordPolicyArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsPasswordPolicy:getDomainsPasswordPolicy", args, LookupDomainsPasswordPolicyResultOutput{}, options).(LookupDomainsPasswordPolicyResultOutput), nil
-		}).(LookupDomainsPasswordPolicyResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsPasswordPolicy:getDomainsPasswordPolicy", args, LookupDomainsPasswordPolicyResultOutput{}, options).(LookupDomainsPasswordPolicyResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsPasswordPolicy.

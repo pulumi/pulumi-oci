@@ -98,12 +98,8 @@ type GetMysqlBackupsResult struct {
 }
 
 func GetMysqlBackupsOutput(ctx *pulumi.Context, args GetMysqlBackupsOutputArgs, opts ...pulumi.InvokeOption) GetMysqlBackupsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMysqlBackupsResultOutput, error) {
-			args := v.(GetMysqlBackupsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Mysql/getMysqlBackups:getMysqlBackups", args, GetMysqlBackupsResultOutput{}, options).(GetMysqlBackupsResultOutput), nil
-		}).(GetMysqlBackupsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Mysql/getMysqlBackups:getMysqlBackups", args, GetMysqlBackupsResultOutput{}, options).(GetMysqlBackupsResultOutput)
 }
 
 // A collection of arguments for invoking getMysqlBackups.

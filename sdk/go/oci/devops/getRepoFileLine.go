@@ -78,12 +78,8 @@ type GetRepoFileLineResult struct {
 }
 
 func GetRepoFileLineOutput(ctx *pulumi.Context, args GetRepoFileLineOutputArgs, opts ...pulumi.InvokeOption) GetRepoFileLineResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRepoFileLineResultOutput, error) {
-			args := v.(GetRepoFileLineArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DevOps/getRepoFileLine:getRepoFileLine", args, GetRepoFileLineResultOutput{}, options).(GetRepoFileLineResultOutput), nil
-		}).(GetRepoFileLineResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DevOps/getRepoFileLine:getRepoFileLine", args, GetRepoFileLineResultOutput{}, options).(GetRepoFileLineResultOutput)
 }
 
 // A collection of arguments for invoking getRepoFileLine.

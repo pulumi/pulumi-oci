@@ -77,12 +77,8 @@ type GetComputeCapacityTopologyComputeHpcIslandsResult struct {
 }
 
 func GetComputeCapacityTopologyComputeHpcIslandsOutput(ctx *pulumi.Context, args GetComputeCapacityTopologyComputeHpcIslandsOutputArgs, opts ...pulumi.InvokeOption) GetComputeCapacityTopologyComputeHpcIslandsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetComputeCapacityTopologyComputeHpcIslandsResultOutput, error) {
-			args := v.(GetComputeCapacityTopologyComputeHpcIslandsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getComputeCapacityTopologyComputeHpcIslands:getComputeCapacityTopologyComputeHpcIslands", args, GetComputeCapacityTopologyComputeHpcIslandsResultOutput{}, options).(GetComputeCapacityTopologyComputeHpcIslandsResultOutput), nil
-		}).(GetComputeCapacityTopologyComputeHpcIslandsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getComputeCapacityTopologyComputeHpcIslands:getComputeCapacityTopologyComputeHpcIslands", args, GetComputeCapacityTopologyComputeHpcIslandsResultOutput{}, options).(GetComputeCapacityTopologyComputeHpcIslandsResultOutput)
 }
 
 // A collection of arguments for invoking getComputeCapacityTopologyComputeHpcIslands.

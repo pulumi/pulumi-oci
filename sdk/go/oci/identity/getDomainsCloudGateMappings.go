@@ -106,12 +106,8 @@ type GetDomainsCloudGateMappingsResult struct {
 }
 
 func GetDomainsCloudGateMappingsOutput(ctx *pulumi.Context, args GetDomainsCloudGateMappingsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsCloudGateMappingsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsCloudGateMappingsResultOutput, error) {
-			args := v.(GetDomainsCloudGateMappingsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsCloudGateMappings:getDomainsCloudGateMappings", args, GetDomainsCloudGateMappingsResultOutput{}, options).(GetDomainsCloudGateMappingsResultOutput), nil
-		}).(GetDomainsCloudGateMappingsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsCloudGateMappings:getDomainsCloudGateMappings", args, GetDomainsCloudGateMappingsResultOutput{}, options).(GetDomainsCloudGateMappingsResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsCloudGateMappings.

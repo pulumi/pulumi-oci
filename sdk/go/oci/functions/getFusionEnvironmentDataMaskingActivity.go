@@ -76,12 +76,8 @@ type GetFusionEnvironmentDataMaskingActivityResult struct {
 }
 
 func GetFusionEnvironmentDataMaskingActivityOutput(ctx *pulumi.Context, args GetFusionEnvironmentDataMaskingActivityOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentDataMaskingActivityResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFusionEnvironmentDataMaskingActivityResultOutput, error) {
-			args := v.(GetFusionEnvironmentDataMaskingActivityArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Functions/getFusionEnvironmentDataMaskingActivity:getFusionEnvironmentDataMaskingActivity", args, GetFusionEnvironmentDataMaskingActivityResultOutput{}, options).(GetFusionEnvironmentDataMaskingActivityResultOutput), nil
-		}).(GetFusionEnvironmentDataMaskingActivityResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Functions/getFusionEnvironmentDataMaskingActivity:getFusionEnvironmentDataMaskingActivity", args, GetFusionEnvironmentDataMaskingActivityResultOutput{}, options).(GetFusionEnvironmentDataMaskingActivityResultOutput)
 }
 
 // A collection of arguments for invoking getFusionEnvironmentDataMaskingActivity.

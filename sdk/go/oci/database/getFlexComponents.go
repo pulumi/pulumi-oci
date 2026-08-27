@@ -78,12 +78,8 @@ type GetFlexComponentsResult struct {
 }
 
 func GetFlexComponentsOutput(ctx *pulumi.Context, args GetFlexComponentsOutputArgs, opts ...pulumi.InvokeOption) GetFlexComponentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFlexComponentsResultOutput, error) {
-			args := v.(GetFlexComponentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getFlexComponents:getFlexComponents", args, GetFlexComponentsResultOutput{}, options).(GetFlexComponentsResultOutput), nil
-		}).(GetFlexComponentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getFlexComponents:getFlexComponents", args, GetFlexComponentsResultOutput{}, options).(GetFlexComponentsResultOutput)
 }
 
 // A collection of arguments for invoking getFlexComponents.

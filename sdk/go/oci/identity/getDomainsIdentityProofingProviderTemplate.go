@@ -122,12 +122,8 @@ type LookupDomainsIdentityProofingProviderTemplateResult struct {
 }
 
 func LookupDomainsIdentityProofingProviderTemplateOutput(ctx *pulumi.Context, args LookupDomainsIdentityProofingProviderTemplateOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsIdentityProofingProviderTemplateResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDomainsIdentityProofingProviderTemplateResultOutput, error) {
-			args := v.(LookupDomainsIdentityProofingProviderTemplateArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsIdentityProofingProviderTemplate:getDomainsIdentityProofingProviderTemplate", args, LookupDomainsIdentityProofingProviderTemplateResultOutput{}, options).(LookupDomainsIdentityProofingProviderTemplateResultOutput), nil
-		}).(LookupDomainsIdentityProofingProviderTemplateResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsIdentityProofingProviderTemplate:getDomainsIdentityProofingProviderTemplate", args, LookupDomainsIdentityProofingProviderTemplateResultOutput{}, options).(LookupDomainsIdentityProofingProviderTemplateResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsIdentityProofingProviderTemplate.

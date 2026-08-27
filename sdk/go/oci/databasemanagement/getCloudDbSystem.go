@@ -98,12 +98,8 @@ type LookupCloudDbSystemResult struct {
 }
 
 func LookupCloudDbSystemOutput(ctx *pulumi.Context, args LookupCloudDbSystemOutputArgs, opts ...pulumi.InvokeOption) LookupCloudDbSystemResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupCloudDbSystemResultOutput, error) {
-			args := v.(LookupCloudDbSystemArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getCloudDbSystem:getCloudDbSystem", args, LookupCloudDbSystemResultOutput{}, options).(LookupCloudDbSystemResultOutput), nil
-		}).(LookupCloudDbSystemResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getCloudDbSystem:getCloudDbSystem", args, LookupCloudDbSystemResultOutput{}, options).(LookupCloudDbSystemResultOutput)
 }
 
 // A collection of arguments for invoking getCloudDbSystem.

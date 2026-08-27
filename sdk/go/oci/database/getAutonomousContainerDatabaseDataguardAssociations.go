@@ -69,12 +69,8 @@ type GetAutonomousContainerDatabaseDataguardAssociationsResult struct {
 }
 
 func GetAutonomousContainerDatabaseDataguardAssociationsOutput(ctx *pulumi.Context, args GetAutonomousContainerDatabaseDataguardAssociationsOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousContainerDatabaseDataguardAssociationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAutonomousContainerDatabaseDataguardAssociationsResultOutput, error) {
-			args := v.(GetAutonomousContainerDatabaseDataguardAssociationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getAutonomousContainerDatabaseDataguardAssociations:getAutonomousContainerDatabaseDataguardAssociations", args, GetAutonomousContainerDatabaseDataguardAssociationsResultOutput{}, options).(GetAutonomousContainerDatabaseDataguardAssociationsResultOutput), nil
-		}).(GetAutonomousContainerDatabaseDataguardAssociationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getAutonomousContainerDatabaseDataguardAssociations:getAutonomousContainerDatabaseDataguardAssociations", args, GetAutonomousContainerDatabaseDataguardAssociationsResultOutput{}, options).(GetAutonomousContainerDatabaseDataguardAssociationsResultOutput)
 }
 
 // A collection of arguments for invoking getAutonomousContainerDatabaseDataguardAssociations.

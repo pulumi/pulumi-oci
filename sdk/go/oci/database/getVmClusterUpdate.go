@@ -90,12 +90,8 @@ type GetVmClusterUpdateResult struct {
 }
 
 func GetVmClusterUpdateOutput(ctx *pulumi.Context, args GetVmClusterUpdateOutputArgs, opts ...pulumi.InvokeOption) GetVmClusterUpdateResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVmClusterUpdateResultOutput, error) {
-			args := v.(GetVmClusterUpdateArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getVmClusterUpdate:getVmClusterUpdate", args, GetVmClusterUpdateResultOutput{}, options).(GetVmClusterUpdateResultOutput), nil
-		}).(GetVmClusterUpdateResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getVmClusterUpdate:getVmClusterUpdate", args, GetVmClusterUpdateResultOutput{}, options).(GetVmClusterUpdateResultOutput)
 }
 
 // A collection of arguments for invoking getVmClusterUpdate.

@@ -100,12 +100,8 @@ type GetCostadCostAnomalyEventAnalyticsResult struct {
 }
 
 func GetCostadCostAnomalyEventAnalyticsOutput(ctx *pulumi.Context, args GetCostadCostAnomalyEventAnalyticsOutputArgs, opts ...pulumi.InvokeOption) GetCostadCostAnomalyEventAnalyticsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCostadCostAnomalyEventAnalyticsResultOutput, error) {
-			args := v.(GetCostadCostAnomalyEventAnalyticsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getCostadCostAnomalyEventAnalytics:getCostadCostAnomalyEventAnalytics", args, GetCostadCostAnomalyEventAnalyticsResultOutput{}, options).(GetCostadCostAnomalyEventAnalyticsResultOutput), nil
-		}).(GetCostadCostAnomalyEventAnalyticsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getCostadCostAnomalyEventAnalytics:getCostadCostAnomalyEventAnalytics", args, GetCostadCostAnomalyEventAnalyticsResultOutput{}, options).(GetCostadCostAnomalyEventAnalyticsResultOutput)
 }
 
 // A collection of arguments for invoking getCostadCostAnomalyEventAnalytics.

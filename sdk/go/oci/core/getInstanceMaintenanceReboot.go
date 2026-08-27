@@ -67,12 +67,8 @@ type GetInstanceMaintenanceRebootResult struct {
 }
 
 func GetInstanceMaintenanceRebootOutput(ctx *pulumi.Context, args GetInstanceMaintenanceRebootOutputArgs, opts ...pulumi.InvokeOption) GetInstanceMaintenanceRebootResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetInstanceMaintenanceRebootResultOutput, error) {
-			args := v.(GetInstanceMaintenanceRebootArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getInstanceMaintenanceReboot:getInstanceMaintenanceReboot", args, GetInstanceMaintenanceRebootResultOutput{}, options).(GetInstanceMaintenanceRebootResultOutput), nil
-		}).(GetInstanceMaintenanceRebootResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getInstanceMaintenanceReboot:getInstanceMaintenanceReboot", args, GetInstanceMaintenanceRebootResultOutput{}, options).(GetInstanceMaintenanceRebootResultOutput)
 }
 
 // A collection of arguments for invoking getInstanceMaintenanceReboot.

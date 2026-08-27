@@ -103,12 +103,8 @@ type LookupOpaInstanceResult struct {
 }
 
 func LookupOpaInstanceOutput(ctx *pulumi.Context, args LookupOpaInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupOpaInstanceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupOpaInstanceResultOutput, error) {
-			args := v.(LookupOpaInstanceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Opa/getOpaInstance:getOpaInstance", args, LookupOpaInstanceResultOutput{}, options).(LookupOpaInstanceResultOutput), nil
-		}).(LookupOpaInstanceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Opa/getOpaInstance:getOpaInstance", args, LookupOpaInstanceResultOutput{}, options).(LookupOpaInstanceResultOutput)
 }
 
 // A collection of arguments for invoking getOpaInstance.

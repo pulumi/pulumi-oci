@@ -82,12 +82,8 @@ type LookupComputeCapacityTopologyResult struct {
 }
 
 func LookupComputeCapacityTopologyOutput(ctx *pulumi.Context, args LookupComputeCapacityTopologyOutputArgs, opts ...pulumi.InvokeOption) LookupComputeCapacityTopologyResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupComputeCapacityTopologyResultOutput, error) {
-			args := v.(LookupComputeCapacityTopologyArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getComputeCapacityTopology:getComputeCapacityTopology", args, LookupComputeCapacityTopologyResultOutput{}, options).(LookupComputeCapacityTopologyResultOutput), nil
-		}).(LookupComputeCapacityTopologyResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getComputeCapacityTopology:getComputeCapacityTopology", args, LookupComputeCapacityTopologyResultOutput{}, options).(LookupComputeCapacityTopologyResultOutput)
 }
 
 // A collection of arguments for invoking getComputeCapacityTopology.

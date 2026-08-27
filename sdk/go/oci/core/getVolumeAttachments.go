@@ -88,12 +88,8 @@ type GetVolumeAttachmentsResult struct {
 }
 
 func GetVolumeAttachmentsOutput(ctx *pulumi.Context, args GetVolumeAttachmentsOutputArgs, opts ...pulumi.InvokeOption) GetVolumeAttachmentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVolumeAttachmentsResultOutput, error) {
-			args := v.(GetVolumeAttachmentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getVolumeAttachments:getVolumeAttachments", args, GetVolumeAttachmentsResultOutput{}, options).(GetVolumeAttachmentsResultOutput), nil
-		}).(GetVolumeAttachmentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getVolumeAttachments:getVolumeAttachments", args, GetVolumeAttachmentsResultOutput{}, options).(GetVolumeAttachmentsResultOutput)
 }
 
 // A collection of arguments for invoking getVolumeAttachments.

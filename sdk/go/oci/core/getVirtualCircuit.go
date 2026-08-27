@@ -134,12 +134,8 @@ type LookupVirtualCircuitResult struct {
 }
 
 func LookupVirtualCircuitOutput(ctx *pulumi.Context, args LookupVirtualCircuitOutputArgs, opts ...pulumi.InvokeOption) LookupVirtualCircuitResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupVirtualCircuitResultOutput, error) {
-			args := v.(LookupVirtualCircuitArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getVirtualCircuit:getVirtualCircuit", args, LookupVirtualCircuitResultOutput{}, options).(LookupVirtualCircuitResultOutput), nil
-		}).(LookupVirtualCircuitResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getVirtualCircuit:getVirtualCircuit", args, LookupVirtualCircuitResultOutput{}, options).(LookupVirtualCircuitResultOutput)
 }
 
 // A collection of arguments for invoking getVirtualCircuit.

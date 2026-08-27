@@ -35,12 +35,8 @@ type LookupResourceSearchResult struct {
 }
 
 func LookupResourceSearchOutput(ctx *pulumi.Context, args LookupResourceSearchOutputArgs, opts ...pulumi.InvokeOption) LookupResourceSearchResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupResourceSearchResultOutput, error) {
-			args := v.(LookupResourceSearchArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getResourceSearch:getResourceSearch", args, LookupResourceSearchResultOutput{}, options).(LookupResourceSearchResultOutput), nil
-		}).(LookupResourceSearchResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getResourceSearch:getResourceSearch", args, LookupResourceSearchResultOutput{}, options).(LookupResourceSearchResultOutput)
 }
 
 // A collection of arguments for invoking getResourceSearch.

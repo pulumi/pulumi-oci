@@ -71,12 +71,8 @@ type GetQueriesResult struct {
 }
 
 func GetQueriesOutput(ctx *pulumi.Context, args GetQueriesOutputArgs, opts ...pulumi.InvokeOption) GetQueriesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetQueriesResultOutput, error) {
-			args := v.(GetQueriesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:MeteringComputation/getQueries:getQueries", args, GetQueriesResultOutput{}, options).(GetQueriesResultOutput), nil
-		}).(GetQueriesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:MeteringComputation/getQueries:getQueries", args, GetQueriesResultOutput{}, options).(GetQueriesResultOutput)
 }
 
 // A collection of arguments for invoking getQueries.

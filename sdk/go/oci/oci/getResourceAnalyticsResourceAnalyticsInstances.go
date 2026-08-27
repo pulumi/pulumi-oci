@@ -82,12 +82,8 @@ type GetResourceAnalyticsResourceAnalyticsInstancesResult struct {
 }
 
 func GetResourceAnalyticsResourceAnalyticsInstancesOutput(ctx *pulumi.Context, args GetResourceAnalyticsResourceAnalyticsInstancesOutputArgs, opts ...pulumi.InvokeOption) GetResourceAnalyticsResourceAnalyticsInstancesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetResourceAnalyticsResourceAnalyticsInstancesResultOutput, error) {
-			args := v.(GetResourceAnalyticsResourceAnalyticsInstancesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getResourceAnalyticsResourceAnalyticsInstances:getResourceAnalyticsResourceAnalyticsInstances", args, GetResourceAnalyticsResourceAnalyticsInstancesResultOutput{}, options).(GetResourceAnalyticsResourceAnalyticsInstancesResultOutput), nil
-		}).(GetResourceAnalyticsResourceAnalyticsInstancesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getResourceAnalyticsResourceAnalyticsInstances:getResourceAnalyticsResourceAnalyticsInstances", args, GetResourceAnalyticsResourceAnalyticsInstancesResultOutput{}, options).(GetResourceAnalyticsResourceAnalyticsInstancesResultOutput)
 }
 
 // A collection of arguments for invoking getResourceAnalyticsResourceAnalyticsInstances.

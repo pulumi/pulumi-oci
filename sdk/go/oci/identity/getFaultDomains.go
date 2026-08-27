@@ -76,12 +76,8 @@ type GetFaultDomainsResult struct {
 }
 
 func GetFaultDomainsOutput(ctx *pulumi.Context, args GetFaultDomainsOutputArgs, opts ...pulumi.InvokeOption) GetFaultDomainsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFaultDomainsResultOutput, error) {
-			args := v.(GetFaultDomainsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getFaultDomains:getFaultDomains", args, GetFaultDomainsResultOutput{}, options).(GetFaultDomainsResultOutput), nil
-		}).(GetFaultDomainsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getFaultDomains:getFaultDomains", args, GetFaultDomainsResultOutput{}, options).(GetFaultDomainsResultOutput)
 }
 
 // A collection of arguments for invoking getFaultDomains.

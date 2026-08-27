@@ -83,12 +83,8 @@ type GetFusionEnvironmentFamiliesResult struct {
 }
 
 func GetFusionEnvironmentFamiliesOutput(ctx *pulumi.Context, args GetFusionEnvironmentFamiliesOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentFamiliesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFusionEnvironmentFamiliesResultOutput, error) {
-			args := v.(GetFusionEnvironmentFamiliesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Functions/getFusionEnvironmentFamilies:getFusionEnvironmentFamilies", args, GetFusionEnvironmentFamiliesResultOutput{}, options).(GetFusionEnvironmentFamiliesResultOutput), nil
-		}).(GetFusionEnvironmentFamiliesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Functions/getFusionEnvironmentFamilies:getFusionEnvironmentFamilies", args, GetFusionEnvironmentFamiliesResultOutput{}, options).(GetFusionEnvironmentFamiliesResultOutput)
 }
 
 // A collection of arguments for invoking getFusionEnvironmentFamilies.

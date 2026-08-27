@@ -68,12 +68,8 @@ type GetModelEvaluationResultsResult struct {
 }
 
 func GetModelEvaluationResultsOutput(ctx *pulumi.Context, args GetModelEvaluationResultsOutputArgs, opts ...pulumi.InvokeOption) GetModelEvaluationResultsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetModelEvaluationResultsResultOutput, error) {
-			args := v.(GetModelEvaluationResultsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:AiLanguage/getModelEvaluationResults:getModelEvaluationResults", args, GetModelEvaluationResultsResultOutput{}, options).(GetModelEvaluationResultsResultOutput), nil
-		}).(GetModelEvaluationResultsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:AiLanguage/getModelEvaluationResults:getModelEvaluationResults", args, GetModelEvaluationResultsResultOutput{}, options).(GetModelEvaluationResultsResultOutput)
 }
 
 // A collection of arguments for invoking getModelEvaluationResults.

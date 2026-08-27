@@ -96,12 +96,8 @@ type GetDomainsMyOauth2clientCredentialsResult struct {
 }
 
 func GetDomainsMyOauth2clientCredentialsOutput(ctx *pulumi.Context, args GetDomainsMyOauth2clientCredentialsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMyOauth2clientCredentialsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsMyOauth2clientCredentialsResultOutput, error) {
-			args := v.(GetDomainsMyOauth2clientCredentialsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsMyOauth2clientCredentials:getDomainsMyOauth2clientCredentials", args, GetDomainsMyOauth2clientCredentialsResultOutput{}, options).(GetDomainsMyOauth2clientCredentialsResultOutput), nil
-		}).(GetDomainsMyOauth2clientCredentialsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsMyOauth2clientCredentials:getDomainsMyOauth2clientCredentials", args, GetDomainsMyOauth2clientCredentialsResultOutput{}, options).(GetDomainsMyOauth2clientCredentialsResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsMyOauth2clientCredentials.

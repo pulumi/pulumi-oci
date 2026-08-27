@@ -74,12 +74,8 @@ type GetNetworkLoadBalancerBackendSetBackendOperationalStatusResult struct {
 }
 
 func GetNetworkLoadBalancerBackendSetBackendOperationalStatusOutput(ctx *pulumi.Context, args GetNetworkLoadBalancerBackendSetBackendOperationalStatusOutputArgs, opts ...pulumi.InvokeOption) GetNetworkLoadBalancerBackendSetBackendOperationalStatusResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetNetworkLoadBalancerBackendSetBackendOperationalStatusResultOutput, error) {
-			args := v.(GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:NetworkLoadBalancer/getNetworkLoadBalancerBackendSetBackendOperationalStatus:getNetworkLoadBalancerBackendSetBackendOperationalStatus", args, GetNetworkLoadBalancerBackendSetBackendOperationalStatusResultOutput{}, options).(GetNetworkLoadBalancerBackendSetBackendOperationalStatusResultOutput), nil
-		}).(GetNetworkLoadBalancerBackendSetBackendOperationalStatusResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:NetworkLoadBalancer/getNetworkLoadBalancerBackendSetBackendOperationalStatus:getNetworkLoadBalancerBackendSetBackendOperationalStatus", args, GetNetworkLoadBalancerBackendSetBackendOperationalStatusResultOutput{}, options).(GetNetworkLoadBalancerBackendSetBackendOperationalStatusResultOutput)
 }
 
 // A collection of arguments for invoking getNetworkLoadBalancerBackendSetBackendOperationalStatus.

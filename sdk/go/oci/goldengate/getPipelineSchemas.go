@@ -72,12 +72,8 @@ type GetPipelineSchemasResult struct {
 }
 
 func GetPipelineSchemasOutput(ctx *pulumi.Context, args GetPipelineSchemasOutputArgs, opts ...pulumi.InvokeOption) GetPipelineSchemasResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPipelineSchemasResultOutput, error) {
-			args := v.(GetPipelineSchemasArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GoldenGate/getPipelineSchemas:getPipelineSchemas", args, GetPipelineSchemasResultOutput{}, options).(GetPipelineSchemasResultOutput), nil
-		}).(GetPipelineSchemasResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GoldenGate/getPipelineSchemas:getPipelineSchemas", args, GetPipelineSchemasResultOutput{}, options).(GetPipelineSchemasResultOutput)
 }
 
 // A collection of arguments for invoking getPipelineSchemas.

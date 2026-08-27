@@ -57,12 +57,8 @@ type LookupNetworkFirewallPolicyMappedSecretResult struct {
 }
 
 func LookupNetworkFirewallPolicyMappedSecretOutput(ctx *pulumi.Context, args LookupNetworkFirewallPolicyMappedSecretOutputArgs, opts ...pulumi.InvokeOption) LookupNetworkFirewallPolicyMappedSecretResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupNetworkFirewallPolicyMappedSecretResultOutput, error) {
-			args := v.(LookupNetworkFirewallPolicyMappedSecretArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecret:getNetworkFirewallPolicyMappedSecret", args, LookupNetworkFirewallPolicyMappedSecretResultOutput{}, options).(LookupNetworkFirewallPolicyMappedSecretResultOutput), nil
-		}).(LookupNetworkFirewallPolicyMappedSecretResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecret:getNetworkFirewallPolicyMappedSecret", args, LookupNetworkFirewallPolicyMappedSecretResultOutput{}, options).(LookupNetworkFirewallPolicyMappedSecretResultOutput)
 }
 
 // A collection of arguments for invoking getNetworkFirewallPolicyMappedSecret.

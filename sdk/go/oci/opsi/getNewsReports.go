@@ -87,12 +87,8 @@ type GetNewsReportsResult struct {
 }
 
 func GetNewsReportsOutput(ctx *pulumi.Context, args GetNewsReportsOutputArgs, opts ...pulumi.InvokeOption) GetNewsReportsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetNewsReportsResultOutput, error) {
-			args := v.(GetNewsReportsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Opsi/getNewsReports:getNewsReports", args, GetNewsReportsResultOutput{}, options).(GetNewsReportsResultOutput), nil
-		}).(GetNewsReportsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Opsi/getNewsReports:getNewsReports", args, GetNewsReportsResultOutput{}, options).(GetNewsReportsResultOutput)
 }
 
 // A collection of arguments for invoking getNewsReports.

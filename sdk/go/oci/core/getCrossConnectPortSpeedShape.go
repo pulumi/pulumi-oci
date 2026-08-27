@@ -70,12 +70,8 @@ type GetCrossConnectPortSpeedShapeResult struct {
 }
 
 func GetCrossConnectPortSpeedShapeOutput(ctx *pulumi.Context, args GetCrossConnectPortSpeedShapeOutputArgs, opts ...pulumi.InvokeOption) GetCrossConnectPortSpeedShapeResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCrossConnectPortSpeedShapeResultOutput, error) {
-			args := v.(GetCrossConnectPortSpeedShapeArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getCrossConnectPortSpeedShape:getCrossConnectPortSpeedShape", args, GetCrossConnectPortSpeedShapeResultOutput{}, options).(GetCrossConnectPortSpeedShapeResultOutput), nil
-		}).(GetCrossConnectPortSpeedShapeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getCrossConnectPortSpeedShape:getCrossConnectPortSpeedShape", args, GetCrossConnectPortSpeedShapeResultOutput{}, options).(GetCrossConnectPortSpeedShapeResultOutput)
 }
 
 // A collection of arguments for invoking getCrossConnectPortSpeedShape.

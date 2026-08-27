@@ -113,12 +113,8 @@ type GetSecurityAssessmentFindingsChangeAuditLogsResult struct {
 }
 
 func GetSecurityAssessmentFindingsChangeAuditLogsOutput(ctx *pulumi.Context, args GetSecurityAssessmentFindingsChangeAuditLogsOutputArgs, opts ...pulumi.InvokeOption) GetSecurityAssessmentFindingsChangeAuditLogsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSecurityAssessmentFindingsChangeAuditLogsResultOutput, error) {
-			args := v.(GetSecurityAssessmentFindingsChangeAuditLogsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getSecurityAssessmentFindingsChangeAuditLogs:getSecurityAssessmentFindingsChangeAuditLogs", args, GetSecurityAssessmentFindingsChangeAuditLogsResultOutput{}, options).(GetSecurityAssessmentFindingsChangeAuditLogsResultOutput), nil
-		}).(GetSecurityAssessmentFindingsChangeAuditLogsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getSecurityAssessmentFindingsChangeAuditLogs:getSecurityAssessmentFindingsChangeAuditLogs", args, GetSecurityAssessmentFindingsChangeAuditLogsResultOutput{}, options).(GetSecurityAssessmentFindingsChangeAuditLogsResultOutput)
 }
 
 // A collection of arguments for invoking getSecurityAssessmentFindingsChangeAuditLogs.

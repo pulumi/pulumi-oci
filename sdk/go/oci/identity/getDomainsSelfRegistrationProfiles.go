@@ -106,12 +106,8 @@ type GetDomainsSelfRegistrationProfilesResult struct {
 }
 
 func GetDomainsSelfRegistrationProfilesOutput(ctx *pulumi.Context, args GetDomainsSelfRegistrationProfilesOutputArgs, opts ...pulumi.InvokeOption) GetDomainsSelfRegistrationProfilesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsSelfRegistrationProfilesResultOutput, error) {
-			args := v.(GetDomainsSelfRegistrationProfilesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsSelfRegistrationProfiles:getDomainsSelfRegistrationProfiles", args, GetDomainsSelfRegistrationProfilesResultOutput{}, options).(GetDomainsSelfRegistrationProfilesResultOutput), nil
-		}).(GetDomainsSelfRegistrationProfilesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsSelfRegistrationProfiles:getDomainsSelfRegistrationProfiles", args, GetDomainsSelfRegistrationProfilesResultOutput{}, options).(GetDomainsSelfRegistrationProfilesResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsSelfRegistrationProfiles.

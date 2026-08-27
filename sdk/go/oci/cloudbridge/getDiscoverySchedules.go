@@ -83,12 +83,8 @@ type GetDiscoverySchedulesResult struct {
 }
 
 func GetDiscoverySchedulesOutput(ctx *pulumi.Context, args GetDiscoverySchedulesOutputArgs, opts ...pulumi.InvokeOption) GetDiscoverySchedulesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDiscoverySchedulesResultOutput, error) {
-			args := v.(GetDiscoverySchedulesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CloudBridge/getDiscoverySchedules:getDiscoverySchedules", args, GetDiscoverySchedulesResultOutput{}, options).(GetDiscoverySchedulesResultOutput), nil
-		}).(GetDiscoverySchedulesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CloudBridge/getDiscoverySchedules:getDiscoverySchedules", args, GetDiscoverySchedulesResultOutput{}, options).(GetDiscoverySchedulesResultOutput)
 }
 
 // A collection of arguments for invoking getDiscoverySchedules.

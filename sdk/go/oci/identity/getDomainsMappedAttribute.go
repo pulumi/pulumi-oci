@@ -120,12 +120,8 @@ type LookupDomainsMappedAttributeResult struct {
 }
 
 func LookupDomainsMappedAttributeOutput(ctx *pulumi.Context, args LookupDomainsMappedAttributeOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsMappedAttributeResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDomainsMappedAttributeResultOutput, error) {
-			args := v.(LookupDomainsMappedAttributeArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsMappedAttribute:getDomainsMappedAttribute", args, LookupDomainsMappedAttributeResultOutput{}, options).(LookupDomainsMappedAttributeResultOutput), nil
-		}).(LookupDomainsMappedAttributeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsMappedAttribute:getDomainsMappedAttribute", args, LookupDomainsMappedAttributeResultOutput{}, options).(LookupDomainsMappedAttributeResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsMappedAttribute.

@@ -73,12 +73,8 @@ type GetManagementAgentDataSourcesResult struct {
 }
 
 func GetManagementAgentDataSourcesOutput(ctx *pulumi.Context, args GetManagementAgentDataSourcesOutputArgs, opts ...pulumi.InvokeOption) GetManagementAgentDataSourcesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagementAgentDataSourcesResultOutput, error) {
-			args := v.(GetManagementAgentDataSourcesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ManagementAgent/getManagementAgentDataSources:getManagementAgentDataSources", args, GetManagementAgentDataSourcesResultOutput{}, options).(GetManagementAgentDataSourcesResultOutput), nil
-		}).(GetManagementAgentDataSourcesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ManagementAgent/getManagementAgentDataSources:getManagementAgentDataSources", args, GetManagementAgentDataSourcesResultOutput{}, options).(GetManagementAgentDataSourcesResultOutput)
 }
 
 // A collection of arguments for invoking getManagementAgentDataSources.

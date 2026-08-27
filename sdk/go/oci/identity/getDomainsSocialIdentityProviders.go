@@ -96,12 +96,8 @@ type GetDomainsSocialIdentityProvidersResult struct {
 }
 
 func GetDomainsSocialIdentityProvidersOutput(ctx *pulumi.Context, args GetDomainsSocialIdentityProvidersOutputArgs, opts ...pulumi.InvokeOption) GetDomainsSocialIdentityProvidersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsSocialIdentityProvidersResultOutput, error) {
-			args := v.(GetDomainsSocialIdentityProvidersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsSocialIdentityProviders:getDomainsSocialIdentityProviders", args, GetDomainsSocialIdentityProvidersResultOutput{}, options).(GetDomainsSocialIdentityProvidersResultOutput), nil
-		}).(GetDomainsSocialIdentityProvidersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsSocialIdentityProviders:getDomainsSocialIdentityProviders", args, GetDomainsSocialIdentityProvidersResultOutput{}, options).(GetDomainsSocialIdentityProvidersResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsSocialIdentityProviders.

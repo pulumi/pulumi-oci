@@ -37,12 +37,8 @@ type GetPsaPsaWorkRequestLogsResult struct {
 }
 
 func GetPsaPsaWorkRequestLogsOutput(ctx *pulumi.Context, args GetPsaPsaWorkRequestLogsOutputArgs, opts ...pulumi.InvokeOption) GetPsaPsaWorkRequestLogsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPsaPsaWorkRequestLogsResultOutput, error) {
-			args := v.(GetPsaPsaWorkRequestLogsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getPsaPsaWorkRequestLogs:getPsaPsaWorkRequestLogs", args, GetPsaPsaWorkRequestLogsResultOutput{}, options).(GetPsaPsaWorkRequestLogsResultOutput), nil
-		}).(GetPsaPsaWorkRequestLogsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getPsaPsaWorkRequestLogs:getPsaPsaWorkRequestLogs", args, GetPsaPsaWorkRequestLogsResultOutput{}, options).(GetPsaPsaWorkRequestLogsResultOutput)
 }
 
 // A collection of arguments for invoking getPsaPsaWorkRequestLogs.

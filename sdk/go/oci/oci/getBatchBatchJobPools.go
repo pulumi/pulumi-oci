@@ -87,12 +87,8 @@ type GetBatchBatchJobPoolsResult struct {
 }
 
 func GetBatchBatchJobPoolsOutput(ctx *pulumi.Context, args GetBatchBatchJobPoolsOutputArgs, opts ...pulumi.InvokeOption) GetBatchBatchJobPoolsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBatchBatchJobPoolsResultOutput, error) {
-			args := v.(GetBatchBatchJobPoolsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getBatchBatchJobPools:getBatchBatchJobPools", args, GetBatchBatchJobPoolsResultOutput{}, options).(GetBatchBatchJobPoolsResultOutput), nil
-		}).(GetBatchBatchJobPoolsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getBatchBatchJobPools:getBatchBatchJobPools", args, GetBatchBatchJobPoolsResultOutput{}, options).(GetBatchBatchJobPoolsResultOutput)
 }
 
 // A collection of arguments for invoking getBatchBatchJobPools.

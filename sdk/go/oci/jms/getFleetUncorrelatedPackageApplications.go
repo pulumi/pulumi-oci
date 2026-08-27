@@ -88,12 +88,8 @@ type GetFleetUncorrelatedPackageApplicationsResult struct {
 }
 
 func GetFleetUncorrelatedPackageApplicationsOutput(ctx *pulumi.Context, args GetFleetUncorrelatedPackageApplicationsOutputArgs, opts ...pulumi.InvokeOption) GetFleetUncorrelatedPackageApplicationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFleetUncorrelatedPackageApplicationsResultOutput, error) {
-			args := v.(GetFleetUncorrelatedPackageApplicationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getFleetUncorrelatedPackageApplications:getFleetUncorrelatedPackageApplications", args, GetFleetUncorrelatedPackageApplicationsResultOutput{}, options).(GetFleetUncorrelatedPackageApplicationsResultOutput), nil
-		}).(GetFleetUncorrelatedPackageApplicationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getFleetUncorrelatedPackageApplications:getFleetUncorrelatedPackageApplications", args, GetFleetUncorrelatedPackageApplicationsResultOutput{}, options).(GetFleetUncorrelatedPackageApplicationsResultOutput)
 }
 
 // A collection of arguments for invoking getFleetUncorrelatedPackageApplications.

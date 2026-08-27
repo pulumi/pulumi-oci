@@ -85,12 +85,8 @@ type GetManagedDatabasesDatabaseParametersResult struct {
 }
 
 func GetManagedDatabasesDatabaseParametersOutput(ctx *pulumi.Context, args GetManagedDatabasesDatabaseParametersOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabasesDatabaseParametersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabasesDatabaseParametersResultOutput, error) {
-			args := v.(GetManagedDatabasesDatabaseParametersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabasesDatabaseParameters:getManagedDatabasesDatabaseParameters", args, GetManagedDatabasesDatabaseParametersResultOutput{}, options).(GetManagedDatabasesDatabaseParametersResultOutput), nil
-		}).(GetManagedDatabasesDatabaseParametersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabasesDatabaseParameters:getManagedDatabasesDatabaseParameters", args, GetManagedDatabasesDatabaseParametersResultOutput{}, options).(GetManagedDatabasesDatabaseParametersResultOutput)
 }
 
 // A collection of arguments for invoking getManagedDatabasesDatabaseParameters.

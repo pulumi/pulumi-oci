@@ -126,12 +126,8 @@ type LookupDataccVmInstanceResult struct {
 }
 
 func LookupDataccVmInstanceOutput(ctx *pulumi.Context, args LookupDataccVmInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupDataccVmInstanceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDataccVmInstanceResultOutput, error) {
-			args := v.(LookupDataccVmInstanceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDataccVmInstance:getDataccVmInstance", args, LookupDataccVmInstanceResultOutput{}, options).(LookupDataccVmInstanceResultOutput), nil
-		}).(LookupDataccVmInstanceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDataccVmInstance:getDataccVmInstance", args, LookupDataccVmInstanceResultOutput{}, options).(LookupDataccVmInstanceResultOutput)
 }
 
 // A collection of arguments for invoking getDataccVmInstance.

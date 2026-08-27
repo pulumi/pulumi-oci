@@ -102,12 +102,8 @@ type LookupVirtualNodePoolResult struct {
 }
 
 func LookupVirtualNodePoolOutput(ctx *pulumi.Context, args LookupVirtualNodePoolOutputArgs, opts ...pulumi.InvokeOption) LookupVirtualNodePoolResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupVirtualNodePoolResultOutput, error) {
-			args := v.(LookupVirtualNodePoolArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ContainerEngine/getVirtualNodePool:getVirtualNodePool", args, LookupVirtualNodePoolResultOutput{}, options).(LookupVirtualNodePoolResultOutput), nil
-		}).(LookupVirtualNodePoolResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ContainerEngine/getVirtualNodePool:getVirtualNodePool", args, LookupVirtualNodePoolResultOutput{}, options).(LookupVirtualNodePoolResultOutput)
 }
 
 // A collection of arguments for invoking getVirtualNodePool.

@@ -109,12 +109,8 @@ type LookupAssetSourceResult struct {
 }
 
 func LookupAssetSourceOutput(ctx *pulumi.Context, args LookupAssetSourceOutputArgs, opts ...pulumi.InvokeOption) LookupAssetSourceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAssetSourceResultOutput, error) {
-			args := v.(LookupAssetSourceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CloudBridge/getAssetSource:getAssetSource", args, LookupAssetSourceResultOutput{}, options).(LookupAssetSourceResultOutput), nil
-		}).(LookupAssetSourceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CloudBridge/getAssetSource:getAssetSource", args, LookupAssetSourceResultOutput{}, options).(LookupAssetSourceResultOutput)
 }
 
 // A collection of arguments for invoking getAssetSource.

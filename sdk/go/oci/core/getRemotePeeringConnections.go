@@ -75,12 +75,8 @@ type GetRemotePeeringConnectionsResult struct {
 }
 
 func GetRemotePeeringConnectionsOutput(ctx *pulumi.Context, args GetRemotePeeringConnectionsOutputArgs, opts ...pulumi.InvokeOption) GetRemotePeeringConnectionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRemotePeeringConnectionsResultOutput, error) {
-			args := v.(GetRemotePeeringConnectionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getRemotePeeringConnections:getRemotePeeringConnections", args, GetRemotePeeringConnectionsResultOutput{}, options).(GetRemotePeeringConnectionsResultOutput), nil
-		}).(GetRemotePeeringConnectionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getRemotePeeringConnections:getRemotePeeringConnections", args, GetRemotePeeringConnectionsResultOutput{}, options).(GetRemotePeeringConnectionsResultOutput)
 }
 
 // A collection of arguments for invoking getRemotePeeringConnections.

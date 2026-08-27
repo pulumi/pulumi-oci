@@ -76,12 +76,8 @@ type GetOccmDemandSignalDeliveriesResult struct {
 }
 
 func GetOccmDemandSignalDeliveriesOutput(ctx *pulumi.Context, args GetOccmDemandSignalDeliveriesOutputArgs, opts ...pulumi.InvokeOption) GetOccmDemandSignalDeliveriesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetOccmDemandSignalDeliveriesResultOutput, error) {
-			args := v.(GetOccmDemandSignalDeliveriesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CapacityManagement/getOccmDemandSignalDeliveries:getOccmDemandSignalDeliveries", args, GetOccmDemandSignalDeliveriesResultOutput{}, options).(GetOccmDemandSignalDeliveriesResultOutput), nil
-		}).(GetOccmDemandSignalDeliveriesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CapacityManagement/getOccmDemandSignalDeliveries:getOccmDemandSignalDeliveries", args, GetOccmDemandSignalDeliveriesResultOutput{}, options).(GetOccmDemandSignalDeliveriesResultOutput)
 }
 
 // A collection of arguments for invoking getOccmDemandSignalDeliveries.

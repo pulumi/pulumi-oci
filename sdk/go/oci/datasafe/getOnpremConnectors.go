@@ -91,12 +91,8 @@ type GetOnpremConnectorsResult struct {
 }
 
 func GetOnpremConnectorsOutput(ctx *pulumi.Context, args GetOnpremConnectorsOutputArgs, opts ...pulumi.InvokeOption) GetOnpremConnectorsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetOnpremConnectorsResultOutput, error) {
-			args := v.(GetOnpremConnectorsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getOnpremConnectors:getOnpremConnectors", args, GetOnpremConnectorsResultOutput{}, options).(GetOnpremConnectorsResultOutput), nil
-		}).(GetOnpremConnectorsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getOnpremConnectors:getOnpremConnectors", args, GetOnpremConnectorsResultOutput{}, options).(GetOnpremConnectorsResultOutput)
 }
 
 // A collection of arguments for invoking getOnpremConnectors.

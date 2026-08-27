@@ -103,12 +103,8 @@ type LookupOccCapacityRequestResult struct {
 }
 
 func LookupOccCapacityRequestOutput(ctx *pulumi.Context, args LookupOccCapacityRequestOutputArgs, opts ...pulumi.InvokeOption) LookupOccCapacityRequestResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupOccCapacityRequestResultOutput, error) {
-			args := v.(LookupOccCapacityRequestArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CapacityManagement/getOccCapacityRequest:getOccCapacityRequest", args, LookupOccCapacityRequestResultOutput{}, options).(LookupOccCapacityRequestResultOutput), nil
-		}).(LookupOccCapacityRequestResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CapacityManagement/getOccCapacityRequest:getOccCapacityRequest", args, LookupOccCapacityRequestResultOutput{}, options).(LookupOccCapacityRequestResultOutput)
 }
 
 // A collection of arguments for invoking getOccCapacityRequest.

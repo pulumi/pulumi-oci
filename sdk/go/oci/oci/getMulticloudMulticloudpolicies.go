@@ -84,12 +84,8 @@ type GetMulticloudMulticloudpoliciesResult struct {
 }
 
 func GetMulticloudMulticloudpoliciesOutput(ctx *pulumi.Context, args GetMulticloudMulticloudpoliciesOutputArgs, opts ...pulumi.InvokeOption) GetMulticloudMulticloudpoliciesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMulticloudMulticloudpoliciesResultOutput, error) {
-			args := v.(GetMulticloudMulticloudpoliciesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getMulticloudMulticloudpolicies:getMulticloudMulticloudpolicies", args, GetMulticloudMulticloudpoliciesResultOutput{}, options).(GetMulticloudMulticloudpoliciesResultOutput), nil
-		}).(GetMulticloudMulticloudpoliciesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getMulticloudMulticloudpolicies:getMulticloudMulticloudpolicies", args, GetMulticloudMulticloudpoliciesResultOutput{}, options).(GetMulticloudMulticloudpoliciesResultOutput)
 }
 
 // A collection of arguments for invoking getMulticloudMulticloudpolicies.

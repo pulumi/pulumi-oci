@@ -89,12 +89,8 @@ type GetCertificateVersionResult struct {
 }
 
 func GetCertificateVersionOutput(ctx *pulumi.Context, args GetCertificateVersionOutputArgs, opts ...pulumi.InvokeOption) GetCertificateVersionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCertificateVersionResultOutput, error) {
-			args := v.(GetCertificateVersionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CertificatesManagement/getCertificateVersion:getCertificateVersion", args, GetCertificateVersionResultOutput{}, options).(GetCertificateVersionResultOutput), nil
-		}).(GetCertificateVersionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CertificatesManagement/getCertificateVersion:getCertificateVersion", args, GetCertificateVersionResultOutput{}, options).(GetCertificateVersionResultOutput)
 }
 
 // A collection of arguments for invoking getCertificateVersion.

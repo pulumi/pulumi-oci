@@ -86,12 +86,8 @@ type GetIpv6sResult struct {
 }
 
 func GetIpv6sOutput(ctx *pulumi.Context, args GetIpv6sOutputArgs, opts ...pulumi.InvokeOption) GetIpv6sResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetIpv6sResultOutput, error) {
-			args := v.(GetIpv6sArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getIpv6s:getIpv6s", args, GetIpv6sResultOutput{}, options).(GetIpv6sResultOutput), nil
-		}).(GetIpv6sResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getIpv6s:getIpv6s", args, GetIpv6sResultOutput{}, options).(GetIpv6sResultOutput)
 }
 
 // A collection of arguments for invoking getIpv6s.

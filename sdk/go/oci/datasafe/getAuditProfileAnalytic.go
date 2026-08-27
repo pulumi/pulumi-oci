@@ -90,12 +90,8 @@ type GetAuditProfileAnalyticResult struct {
 }
 
 func GetAuditProfileAnalyticOutput(ctx *pulumi.Context, args GetAuditProfileAnalyticOutputArgs, opts ...pulumi.InvokeOption) GetAuditProfileAnalyticResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAuditProfileAnalyticResultOutput, error) {
-			args := v.(GetAuditProfileAnalyticArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getAuditProfileAnalytic:getAuditProfileAnalytic", args, GetAuditProfileAnalyticResultOutput{}, options).(GetAuditProfileAnalyticResultOutput), nil
-		}).(GetAuditProfileAnalyticResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getAuditProfileAnalytic:getAuditProfileAnalytic", args, GetAuditProfileAnalyticResultOutput{}, options).(GetAuditProfileAnalyticResultOutput)
 }
 
 // A collection of arguments for invoking getAuditProfileAnalytic.

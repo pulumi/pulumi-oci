@@ -74,12 +74,8 @@ type GetWlmsManagedInstanceServerInstalledPatchesResult struct {
 }
 
 func GetWlmsManagedInstanceServerInstalledPatchesOutput(ctx *pulumi.Context, args GetWlmsManagedInstanceServerInstalledPatchesOutputArgs, opts ...pulumi.InvokeOption) GetWlmsManagedInstanceServerInstalledPatchesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetWlmsManagedInstanceServerInstalledPatchesResultOutput, error) {
-			args := v.(GetWlmsManagedInstanceServerInstalledPatchesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getWlmsManagedInstanceServerInstalledPatches:getWlmsManagedInstanceServerInstalledPatches", args, GetWlmsManagedInstanceServerInstalledPatchesResultOutput{}, options).(GetWlmsManagedInstanceServerInstalledPatchesResultOutput), nil
-		}).(GetWlmsManagedInstanceServerInstalledPatchesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getWlmsManagedInstanceServerInstalledPatches:getWlmsManagedInstanceServerInstalledPatches", args, GetWlmsManagedInstanceServerInstalledPatchesResultOutput{}, options).(GetWlmsManagedInstanceServerInstalledPatchesResultOutput)
 }
 
 // A collection of arguments for invoking getWlmsManagedInstanceServerInstalledPatches.

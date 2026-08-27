@@ -95,12 +95,8 @@ type LookupOneoffPatchResult struct {
 }
 
 func LookupOneoffPatchOutput(ctx *pulumi.Context, args LookupOneoffPatchOutputArgs, opts ...pulumi.InvokeOption) LookupOneoffPatchResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupOneoffPatchResultOutput, error) {
-			args := v.(LookupOneoffPatchArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getOneoffPatch:getOneoffPatch", args, LookupOneoffPatchResultOutput{}, options).(LookupOneoffPatchResultOutput), nil
-		}).(LookupOneoffPatchResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getOneoffPatch:getOneoffPatch", args, LookupOneoffPatchResultOutput{}, options).(LookupOneoffPatchResultOutput)
 }
 
 // A collection of arguments for invoking getOneoffPatch.

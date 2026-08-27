@@ -101,12 +101,8 @@ type LookupManagementApplianceResult struct {
 }
 
 func LookupManagementApplianceOutput(ctx *pulumi.Context, args LookupManagementApplianceOutputArgs, opts ...pulumi.InvokeOption) LookupManagementApplianceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupManagementApplianceResultOutput, error) {
-			args := v.(LookupManagementApplianceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Ocvp/getManagementAppliance:getManagementAppliance", args, LookupManagementApplianceResultOutput{}, options).(LookupManagementApplianceResultOutput), nil
-		}).(LookupManagementApplianceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Ocvp/getManagementAppliance:getManagementAppliance", args, LookupManagementApplianceResultOutput{}, options).(LookupManagementApplianceResultOutput)
 }
 
 // A collection of arguments for invoking getManagementAppliance.

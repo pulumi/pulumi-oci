@@ -86,12 +86,8 @@ type GetHostedDeploymentsResult struct {
 }
 
 func GetHostedDeploymentsOutput(ctx *pulumi.Context, args GetHostedDeploymentsOutputArgs, opts ...pulumi.InvokeOption) GetHostedDeploymentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetHostedDeploymentsResultOutput, error) {
-			args := v.(GetHostedDeploymentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GenerativeAi/getHostedDeployments:getHostedDeployments", args, GetHostedDeploymentsResultOutput{}, options).(GetHostedDeploymentsResultOutput), nil
-		}).(GetHostedDeploymentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GenerativeAi/getHostedDeployments:getHostedDeployments", args, GetHostedDeploymentsResultOutput{}, options).(GetHostedDeploymentsResultOutput)
 }
 
 // A collection of arguments for invoking getHostedDeployments.

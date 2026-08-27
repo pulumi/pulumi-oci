@@ -85,12 +85,8 @@ type LookupAnalyticsInstancePrivateAccessChannelResult struct {
 }
 
 func LookupAnalyticsInstancePrivateAccessChannelOutput(ctx *pulumi.Context, args LookupAnalyticsInstancePrivateAccessChannelOutputArgs, opts ...pulumi.InvokeOption) LookupAnalyticsInstancePrivateAccessChannelResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAnalyticsInstancePrivateAccessChannelResultOutput, error) {
-			args := v.(LookupAnalyticsInstancePrivateAccessChannelArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Analytics/getAnalyticsInstancePrivateAccessChannel:getAnalyticsInstancePrivateAccessChannel", args, LookupAnalyticsInstancePrivateAccessChannelResultOutput{}, options).(LookupAnalyticsInstancePrivateAccessChannelResultOutput), nil
-		}).(LookupAnalyticsInstancePrivateAccessChannelResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Analytics/getAnalyticsInstancePrivateAccessChannel:getAnalyticsInstancePrivateAccessChannel", args, LookupAnalyticsInstancePrivateAccessChannelResultOutput{}, options).(LookupAnalyticsInstancePrivateAccessChannelResultOutput)
 }
 
 // A collection of arguments for invoking getAnalyticsInstancePrivateAccessChannel.

@@ -98,12 +98,8 @@ type GetDefaultConfigurationsResult struct {
 }
 
 func GetDefaultConfigurationsOutput(ctx *pulumi.Context, args GetDefaultConfigurationsOutputArgs, opts ...pulumi.InvokeOption) GetDefaultConfigurationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDefaultConfigurationsResultOutput, error) {
-			args := v.(GetDefaultConfigurationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Psql/getDefaultConfigurations:getDefaultConfigurations", args, GetDefaultConfigurationsResultOutput{}, options).(GetDefaultConfigurationsResultOutput), nil
-		}).(GetDefaultConfigurationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Psql/getDefaultConfigurations:getDefaultConfigurations", args, GetDefaultConfigurationsResultOutput{}, options).(GetDefaultConfigurationsResultOutput)
 }
 
 // A collection of arguments for invoking getDefaultConfigurations.

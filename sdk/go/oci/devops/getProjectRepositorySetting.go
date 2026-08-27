@@ -67,12 +67,8 @@ type LookupProjectRepositorySettingResult struct {
 }
 
 func LookupProjectRepositorySettingOutput(ctx *pulumi.Context, args LookupProjectRepositorySettingOutputArgs, opts ...pulumi.InvokeOption) LookupProjectRepositorySettingResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupProjectRepositorySettingResultOutput, error) {
-			args := v.(LookupProjectRepositorySettingArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DevOps/getProjectRepositorySetting:getProjectRepositorySetting", args, LookupProjectRepositorySettingResultOutput{}, options).(LookupProjectRepositorySettingResultOutput), nil
-		}).(LookupProjectRepositorySettingResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DevOps/getProjectRepositorySetting:getProjectRepositorySetting", args, LookupProjectRepositorySettingResultOutput{}, options).(LookupProjectRepositorySettingResultOutput)
 }
 
 // A collection of arguments for invoking getProjectRepositorySetting.

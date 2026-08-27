@@ -73,12 +73,8 @@ type GetSelfSubscriptionTokenResult struct {
 }
 
 func GetSelfSubscriptionTokenOutput(ctx *pulumi.Context, args GetSelfSubscriptionTokenOutputArgs, opts ...pulumi.InvokeOption) GetSelfSubscriptionTokenResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSelfSubscriptionTokenResultOutput, error) {
-			args := v.(GetSelfSubscriptionTokenArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getSelfSubscriptionToken:getSelfSubscriptionToken", args, GetSelfSubscriptionTokenResultOutput{}, options).(GetSelfSubscriptionTokenResultOutput), nil
-		}).(GetSelfSubscriptionTokenResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getSelfSubscriptionToken:getSelfSubscriptionToken", args, GetSelfSubscriptionTokenResultOutput{}, options).(GetSelfSubscriptionTokenResultOutput)
 }
 
 // A collection of arguments for invoking getSelfSubscriptionToken.

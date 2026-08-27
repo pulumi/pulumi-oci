@@ -72,12 +72,8 @@ type GetPatchManagementResult struct {
 }
 
 func GetPatchManagementOutput(ctx *pulumi.Context, args GetPatchManagementOutputArgs, opts ...pulumi.InvokeOption) GetPatchManagementResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPatchManagementResultOutput, error) {
-			args := v.(GetPatchManagementArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Dblm/getPatchManagement:getPatchManagement", args, GetPatchManagementResultOutput{}, options).(GetPatchManagementResultOutput), nil
-		}).(GetPatchManagementResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Dblm/getPatchManagement:getPatchManagement", args, GetPatchManagementResultOutput{}, options).(GetPatchManagementResultOutput)
 }
 
 // A collection of arguments for invoking getPatchManagement.

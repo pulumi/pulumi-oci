@@ -79,12 +79,8 @@ type GetPublicIpPoolsResult struct {
 }
 
 func GetPublicIpPoolsOutput(ctx *pulumi.Context, args GetPublicIpPoolsOutputArgs, opts ...pulumi.InvokeOption) GetPublicIpPoolsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPublicIpPoolsResultOutput, error) {
-			args := v.(GetPublicIpPoolsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getPublicIpPools:getPublicIpPools", args, GetPublicIpPoolsResultOutput{}, options).(GetPublicIpPoolsResultOutput), nil
-		}).(GetPublicIpPoolsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getPublicIpPools:getPublicIpPools", args, GetPublicIpPoolsResultOutput{}, options).(GetPublicIpPoolsResultOutput)
 }
 
 // A collection of arguments for invoking getPublicIpPools.

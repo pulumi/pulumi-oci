@@ -91,12 +91,8 @@ type GetDomainsAccountRecoverySettingsResult struct {
 }
 
 func GetDomainsAccountRecoverySettingsOutput(ctx *pulumi.Context, args GetDomainsAccountRecoverySettingsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsAccountRecoverySettingsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsAccountRecoverySettingsResultOutput, error) {
-			args := v.(GetDomainsAccountRecoverySettingsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsAccountRecoverySettings:getDomainsAccountRecoverySettings", args, GetDomainsAccountRecoverySettingsResultOutput{}, options).(GetDomainsAccountRecoverySettingsResultOutput), nil
-		}).(GetDomainsAccountRecoverySettingsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsAccountRecoverySettings:getDomainsAccountRecoverySettings", args, GetDomainsAccountRecoverySettingsResultOutput{}, options).(GetDomainsAccountRecoverySettingsResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsAccountRecoverySettings.

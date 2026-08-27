@@ -89,12 +89,8 @@ type GetDomainsAuthenticationFactorSettingsResult struct {
 }
 
 func GetDomainsAuthenticationFactorSettingsOutput(ctx *pulumi.Context, args GetDomainsAuthenticationFactorSettingsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsAuthenticationFactorSettingsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsAuthenticationFactorSettingsResultOutput, error) {
-			args := v.(GetDomainsAuthenticationFactorSettingsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsAuthenticationFactorSettings:getDomainsAuthenticationFactorSettings", args, GetDomainsAuthenticationFactorSettingsResultOutput{}, options).(GetDomainsAuthenticationFactorSettingsResultOutput), nil
-		}).(GetDomainsAuthenticationFactorSettingsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsAuthenticationFactorSettings:getDomainsAuthenticationFactorSettings", args, GetDomainsAuthenticationFactorSettingsResultOutput{}, options).(GetDomainsAuthenticationFactorSettingsResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsAuthenticationFactorSettings.

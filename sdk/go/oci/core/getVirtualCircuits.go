@@ -79,12 +79,8 @@ type GetVirtualCircuitsResult struct {
 }
 
 func GetVirtualCircuitsOutput(ctx *pulumi.Context, args GetVirtualCircuitsOutputArgs, opts ...pulumi.InvokeOption) GetVirtualCircuitsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVirtualCircuitsResultOutput, error) {
-			args := v.(GetVirtualCircuitsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getVirtualCircuits:getVirtualCircuits", args, GetVirtualCircuitsResultOutput{}, options).(GetVirtualCircuitsResultOutput), nil
-		}).(GetVirtualCircuitsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getVirtualCircuits:getVirtualCircuits", args, GetVirtualCircuitsResultOutput{}, options).(GetVirtualCircuitsResultOutput)
 }
 
 // A collection of arguments for invoking getVirtualCircuits.

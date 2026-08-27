@@ -79,12 +79,8 @@ type GetCloudAsmsResult struct {
 }
 
 func GetCloudAsmsOutput(ctx *pulumi.Context, args GetCloudAsmsOutputArgs, opts ...pulumi.InvokeOption) GetCloudAsmsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCloudAsmsResultOutput, error) {
-			args := v.(GetCloudAsmsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getCloudAsms:getCloudAsms", args, GetCloudAsmsResultOutput{}, options).(GetCloudAsmsResultOutput), nil
-		}).(GetCloudAsmsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getCloudAsms:getCloudAsms", args, GetCloudAsmsResultOutput{}, options).(GetCloudAsmsResultOutput)
 }
 
 // A collection of arguments for invoking getCloudAsms.

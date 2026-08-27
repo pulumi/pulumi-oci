@@ -81,12 +81,8 @@ type GetWindowsUpdatesResult struct {
 }
 
 func GetWindowsUpdatesOutput(ctx *pulumi.Context, args GetWindowsUpdatesOutputArgs, opts ...pulumi.InvokeOption) GetWindowsUpdatesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetWindowsUpdatesResultOutput, error) {
-			args := v.(GetWindowsUpdatesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getWindowsUpdates:getWindowsUpdates", args, GetWindowsUpdatesResultOutput{}, options).(GetWindowsUpdatesResultOutput), nil
-		}).(GetWindowsUpdatesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getWindowsUpdates:getWindowsUpdates", args, GetWindowsUpdatesResultOutput{}, options).(GetWindowsUpdatesResultOutput)
 }
 
 // A collection of arguments for invoking getWindowsUpdates.

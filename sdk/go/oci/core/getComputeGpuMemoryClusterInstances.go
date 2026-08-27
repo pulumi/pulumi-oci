@@ -68,12 +68,8 @@ type GetComputeGpuMemoryClusterInstancesResult struct {
 }
 
 func GetComputeGpuMemoryClusterInstancesOutput(ctx *pulumi.Context, args GetComputeGpuMemoryClusterInstancesOutputArgs, opts ...pulumi.InvokeOption) GetComputeGpuMemoryClusterInstancesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetComputeGpuMemoryClusterInstancesResultOutput, error) {
-			args := v.(GetComputeGpuMemoryClusterInstancesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getComputeGpuMemoryClusterInstances:getComputeGpuMemoryClusterInstances", args, GetComputeGpuMemoryClusterInstancesResultOutput{}, options).(GetComputeGpuMemoryClusterInstancesResultOutput), nil
-		}).(GetComputeGpuMemoryClusterInstancesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getComputeGpuMemoryClusterInstances:getComputeGpuMemoryClusterInstances", args, GetComputeGpuMemoryClusterInstancesResultOutput{}, options).(GetComputeGpuMemoryClusterInstancesResultOutput)
 }
 
 // A collection of arguments for invoking getComputeGpuMemoryClusterInstances.

@@ -79,12 +79,8 @@ type GetAgentKnowledgeBasesResult struct {
 }
 
 func GetAgentKnowledgeBasesOutput(ctx *pulumi.Context, args GetAgentKnowledgeBasesOutputArgs, opts ...pulumi.InvokeOption) GetAgentKnowledgeBasesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAgentKnowledgeBasesResultOutput, error) {
-			args := v.(GetAgentKnowledgeBasesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GenerativeAi/getAgentKnowledgeBases:getAgentKnowledgeBases", args, GetAgentKnowledgeBasesResultOutput{}, options).(GetAgentKnowledgeBasesResultOutput), nil
-		}).(GetAgentKnowledgeBasesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GenerativeAi/getAgentKnowledgeBases:getAgentKnowledgeBases", args, GetAgentKnowledgeBasesResultOutput{}, options).(GetAgentKnowledgeBasesResultOutput)
 }
 
 // A collection of arguments for invoking getAgentKnowledgeBases.

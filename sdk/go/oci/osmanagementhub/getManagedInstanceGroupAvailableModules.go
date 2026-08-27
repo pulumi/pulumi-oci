@@ -81,12 +81,8 @@ type GetManagedInstanceGroupAvailableModulesResult struct {
 }
 
 func GetManagedInstanceGroupAvailableModulesOutput(ctx *pulumi.Context, args GetManagedInstanceGroupAvailableModulesOutputArgs, opts ...pulumi.InvokeOption) GetManagedInstanceGroupAvailableModulesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedInstanceGroupAvailableModulesResultOutput, error) {
-			args := v.(GetManagedInstanceGroupAvailableModulesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getManagedInstanceGroupAvailableModules:getManagedInstanceGroupAvailableModules", args, GetManagedInstanceGroupAvailableModulesResultOutput{}, options).(GetManagedInstanceGroupAvailableModulesResultOutput), nil
-		}).(GetManagedInstanceGroupAvailableModulesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getManagedInstanceGroupAvailableModules:getManagedInstanceGroupAvailableModules", args, GetManagedInstanceGroupAvailableModulesResultOutput{}, options).(GetManagedInstanceGroupAvailableModulesResultOutput)
 }
 
 // A collection of arguments for invoking getManagedInstanceGroupAvailableModules.

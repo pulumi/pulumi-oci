@@ -66,12 +66,8 @@ type GetFusionEnvironmentFamilySubscriptionDetailResult struct {
 }
 
 func GetFusionEnvironmentFamilySubscriptionDetailOutput(ctx *pulumi.Context, args GetFusionEnvironmentFamilySubscriptionDetailOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentFamilySubscriptionDetailResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFusionEnvironmentFamilySubscriptionDetailResultOutput, error) {
-			args := v.(GetFusionEnvironmentFamilySubscriptionDetailArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Functions/getFusionEnvironmentFamilySubscriptionDetail:getFusionEnvironmentFamilySubscriptionDetail", args, GetFusionEnvironmentFamilySubscriptionDetailResultOutput{}, options).(GetFusionEnvironmentFamilySubscriptionDetailResultOutput), nil
-		}).(GetFusionEnvironmentFamilySubscriptionDetailResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Functions/getFusionEnvironmentFamilySubscriptionDetail:getFusionEnvironmentFamilySubscriptionDetail", args, GetFusionEnvironmentFamilySubscriptionDetailResultOutput{}, options).(GetFusionEnvironmentFamilySubscriptionDetailResultOutput)
 }
 
 // A collection of arguments for invoking getFusionEnvironmentFamilySubscriptionDetail.

@@ -79,12 +79,8 @@ type GetIntegrationInstancesResult struct {
 }
 
 func GetIntegrationInstancesOutput(ctx *pulumi.Context, args GetIntegrationInstancesOutputArgs, opts ...pulumi.InvokeOption) GetIntegrationInstancesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetIntegrationInstancesResultOutput, error) {
-			args := v.(GetIntegrationInstancesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Integration/getIntegrationInstances:getIntegrationInstances", args, GetIntegrationInstancesResultOutput{}, options).(GetIntegrationInstancesResultOutput), nil
-		}).(GetIntegrationInstancesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Integration/getIntegrationInstances:getIntegrationInstances", args, GetIntegrationInstancesResultOutput{}, options).(GetIntegrationInstancesResultOutput)
 }
 
 // A collection of arguments for invoking getIntegrationInstances.

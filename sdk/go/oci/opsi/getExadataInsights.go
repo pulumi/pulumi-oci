@@ -97,12 +97,8 @@ type GetExadataInsightsResult struct {
 }
 
 func GetExadataInsightsOutput(ctx *pulumi.Context, args GetExadataInsightsOutputArgs, opts ...pulumi.InvokeOption) GetExadataInsightsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetExadataInsightsResultOutput, error) {
-			args := v.(GetExadataInsightsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Opsi/getExadataInsights:getExadataInsights", args, GetExadataInsightsResultOutput{}, options).(GetExadataInsightsResultOutput), nil
-		}).(GetExadataInsightsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Opsi/getExadataInsights:getExadataInsights", args, GetExadataInsightsResultOutput{}, options).(GetExadataInsightsResultOutput)
 }
 
 // A collection of arguments for invoking getExadataInsights.

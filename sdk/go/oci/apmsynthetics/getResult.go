@@ -91,12 +91,8 @@ type GetResultResult struct {
 }
 
 func GetResultOutput(ctx *pulumi.Context, args GetResultOutputArgs, opts ...pulumi.InvokeOption) GetResultResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetResultResultOutput, error) {
-			args := v.(GetResultArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ApmSynthetics/getResult:getResult", args, GetResultResultOutput{}, options).(GetResultResultOutput), nil
-		}).(GetResultResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ApmSynthetics/getResult:getResult", args, GetResultResultOutput{}, options).(GetResultResultOutput)
 }
 
 // A collection of arguments for invoking getResult.

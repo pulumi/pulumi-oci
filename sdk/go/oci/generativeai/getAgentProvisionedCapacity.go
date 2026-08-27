@@ -84,12 +84,8 @@ type LookupAgentProvisionedCapacityResult struct {
 }
 
 func LookupAgentProvisionedCapacityOutput(ctx *pulumi.Context, args LookupAgentProvisionedCapacityOutputArgs, opts ...pulumi.InvokeOption) LookupAgentProvisionedCapacityResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAgentProvisionedCapacityResultOutput, error) {
-			args := v.(LookupAgentProvisionedCapacityArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GenerativeAi/getAgentProvisionedCapacity:getAgentProvisionedCapacity", args, LookupAgentProvisionedCapacityResultOutput{}, options).(LookupAgentProvisionedCapacityResultOutput), nil
-		}).(LookupAgentProvisionedCapacityResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GenerativeAi/getAgentProvisionedCapacity:getAgentProvisionedCapacity", args, LookupAgentProvisionedCapacityResultOutput{}, options).(LookupAgentProvisionedCapacityResultOutput)
 }
 
 // A collection of arguments for invoking getAgentProvisionedCapacity.

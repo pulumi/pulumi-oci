@@ -74,12 +74,8 @@ type GetRedisClusterNodesResult struct {
 }
 
 func GetRedisClusterNodesOutput(ctx *pulumi.Context, args GetRedisClusterNodesOutputArgs, opts ...pulumi.InvokeOption) GetRedisClusterNodesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRedisClusterNodesResultOutput, error) {
-			args := v.(GetRedisClusterNodesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Redis/getRedisClusterNodes:getRedisClusterNodes", args, GetRedisClusterNodesResultOutput{}, options).(GetRedisClusterNodesResultOutput), nil
-		}).(GetRedisClusterNodesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Redis/getRedisClusterNodes:getRedisClusterNodes", args, GetRedisClusterNodesResultOutput{}, options).(GetRedisClusterNodesResultOutput)
 }
 
 // A collection of arguments for invoking getRedisClusterNodes.

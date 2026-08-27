@@ -96,12 +96,8 @@ type LookupBaselineableMetricResult struct {
 }
 
 func LookupBaselineableMetricOutput(ctx *pulumi.Context, args LookupBaselineableMetricOutputArgs, opts ...pulumi.InvokeOption) LookupBaselineableMetricResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBaselineableMetricResultOutput, error) {
-			args := v.(LookupBaselineableMetricArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:StackMonitoring/getBaselineableMetric:getBaselineableMetric", args, LookupBaselineableMetricResultOutput{}, options).(LookupBaselineableMetricResultOutput), nil
-		}).(LookupBaselineableMetricResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:StackMonitoring/getBaselineableMetric:getBaselineableMetric", args, LookupBaselineableMetricResultOutput{}, options).(LookupBaselineableMetricResultOutput)
 }
 
 // A collection of arguments for invoking getBaselineableMetric.

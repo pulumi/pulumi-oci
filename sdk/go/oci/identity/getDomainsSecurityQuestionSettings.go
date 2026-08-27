@@ -91,12 +91,8 @@ type GetDomainsSecurityQuestionSettingsResult struct {
 }
 
 func GetDomainsSecurityQuestionSettingsOutput(ctx *pulumi.Context, args GetDomainsSecurityQuestionSettingsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsSecurityQuestionSettingsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsSecurityQuestionSettingsResultOutput, error) {
-			args := v.(GetDomainsSecurityQuestionSettingsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsSecurityQuestionSettings:getDomainsSecurityQuestionSettings", args, GetDomainsSecurityQuestionSettingsResultOutput{}, options).(GetDomainsSecurityQuestionSettingsResultOutput), nil
-		}).(GetDomainsSecurityQuestionSettingsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsSecurityQuestionSettings:getDomainsSecurityQuestionSettings", args, GetDomainsSecurityQuestionSettingsResultOutput{}, options).(GetDomainsSecurityQuestionSettingsResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsSecurityQuestionSettings.

@@ -69,12 +69,8 @@ type GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResult struct 
 }
 
 func GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricOutput(ctx *pulumi.Context, args GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricOutputArgs, opts ...pulumi.InvokeOption) GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResultOutput, error) {
-			args := v.(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric:getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric", args, GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResultOutput{}, options).(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResultOutput), nil
-		}).(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric:getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric", args, GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResultOutput{}, options).(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResultOutput)
 }
 
 // A collection of arguments for invoking getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric.

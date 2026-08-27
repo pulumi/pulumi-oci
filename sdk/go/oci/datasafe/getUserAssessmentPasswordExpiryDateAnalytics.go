@@ -94,12 +94,8 @@ type GetUserAssessmentPasswordExpiryDateAnalyticsResult struct {
 }
 
 func GetUserAssessmentPasswordExpiryDateAnalyticsOutput(ctx *pulumi.Context, args GetUserAssessmentPasswordExpiryDateAnalyticsOutputArgs, opts ...pulumi.InvokeOption) GetUserAssessmentPasswordExpiryDateAnalyticsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetUserAssessmentPasswordExpiryDateAnalyticsResultOutput, error) {
-			args := v.(GetUserAssessmentPasswordExpiryDateAnalyticsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getUserAssessmentPasswordExpiryDateAnalytics:getUserAssessmentPasswordExpiryDateAnalytics", args, GetUserAssessmentPasswordExpiryDateAnalyticsResultOutput{}, options).(GetUserAssessmentPasswordExpiryDateAnalyticsResultOutput), nil
-		}).(GetUserAssessmentPasswordExpiryDateAnalyticsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getUserAssessmentPasswordExpiryDateAnalytics:getUserAssessmentPasswordExpiryDateAnalytics", args, GetUserAssessmentPasswordExpiryDateAnalyticsResultOutput{}, options).(GetUserAssessmentPasswordExpiryDateAnalyticsResultOutput)
 }
 
 // A collection of arguments for invoking getUserAssessmentPasswordExpiryDateAnalytics.

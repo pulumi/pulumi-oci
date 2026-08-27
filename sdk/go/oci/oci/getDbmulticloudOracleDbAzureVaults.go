@@ -92,12 +92,8 @@ type GetDbmulticloudOracleDbAzureVaultsResult struct {
 }
 
 func GetDbmulticloudOracleDbAzureVaultsOutput(ctx *pulumi.Context, args GetDbmulticloudOracleDbAzureVaultsOutputArgs, opts ...pulumi.InvokeOption) GetDbmulticloudOracleDbAzureVaultsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbmulticloudOracleDbAzureVaultsResultOutput, error) {
-			args := v.(GetDbmulticloudOracleDbAzureVaultsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbAzureVaults:getDbmulticloudOracleDbAzureVaults", args, GetDbmulticloudOracleDbAzureVaultsResultOutput{}, options).(GetDbmulticloudOracleDbAzureVaultsResultOutput), nil
-		}).(GetDbmulticloudOracleDbAzureVaultsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbAzureVaults:getDbmulticloudOracleDbAzureVaults", args, GetDbmulticloudOracleDbAzureVaultsResultOutput{}, options).(GetDbmulticloudOracleDbAzureVaultsResultOutput)
 }
 
 // A collection of arguments for invoking getDbmulticloudOracleDbAzureVaults.

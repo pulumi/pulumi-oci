@@ -105,12 +105,8 @@ type GetVnicResult struct {
 }
 
 func GetVnicOutput(ctx *pulumi.Context, args GetVnicOutputArgs, opts ...pulumi.InvokeOption) GetVnicResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVnicResultOutput, error) {
-			args := v.(GetVnicArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getVnic:getVnic", args, GetVnicResultOutput{}, options).(GetVnicResultOutput), nil
-		}).(GetVnicResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getVnic:getVnic", args, GetVnicResultOutput{}, options).(GetVnicResultOutput)
 }
 
 // A collection of arguments for invoking getVnic.

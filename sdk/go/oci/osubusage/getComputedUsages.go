@@ -61,12 +61,8 @@ type GetComputedUsagesResult struct {
 }
 
 func GetComputedUsagesOutput(ctx *pulumi.Context, args GetComputedUsagesOutputArgs, opts ...pulumi.InvokeOption) GetComputedUsagesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetComputedUsagesResultOutput, error) {
-			args := v.(GetComputedUsagesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsubUsage/getComputedUsages:getComputedUsages", args, GetComputedUsagesResultOutput{}, options).(GetComputedUsagesResultOutput), nil
-		}).(GetComputedUsagesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsubUsage/getComputedUsages:getComputedUsages", args, GetComputedUsagesResultOutput{}, options).(GetComputedUsagesResultOutput)
 }
 
 // A collection of arguments for invoking getComputedUsages.

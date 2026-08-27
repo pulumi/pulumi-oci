@@ -87,12 +87,8 @@ type GetGenerativeAiPrivateEndpointsResult struct {
 }
 
 func GetGenerativeAiPrivateEndpointsOutput(ctx *pulumi.Context, args GetGenerativeAiPrivateEndpointsOutputArgs, opts ...pulumi.InvokeOption) GetGenerativeAiPrivateEndpointsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetGenerativeAiPrivateEndpointsResultOutput, error) {
-			args := v.(GetGenerativeAiPrivateEndpointsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GenerativeAi/getGenerativeAiPrivateEndpoints:getGenerativeAiPrivateEndpoints", args, GetGenerativeAiPrivateEndpointsResultOutput{}, options).(GetGenerativeAiPrivateEndpointsResultOutput), nil
-		}).(GetGenerativeAiPrivateEndpointsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GenerativeAi/getGenerativeAiPrivateEndpoints:getGenerativeAiPrivateEndpoints", args, GetGenerativeAiPrivateEndpointsResultOutput{}, options).(GetGenerativeAiPrivateEndpointsResultOutput)
 }
 
 // A collection of arguments for invoking getGenerativeAiPrivateEndpoints.

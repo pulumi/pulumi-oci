@@ -77,12 +77,8 @@ type GetDatabaseToolsMcpToolsetVersionsResult struct {
 }
 
 func GetDatabaseToolsMcpToolsetVersionsOutput(ctx *pulumi.Context, args GetDatabaseToolsMcpToolsetVersionsOutputArgs, opts ...pulumi.InvokeOption) GetDatabaseToolsMcpToolsetVersionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDatabaseToolsMcpToolsetVersionsResultOutput, error) {
-			args := v.(GetDatabaseToolsMcpToolsetVersionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseTools/getDatabaseToolsMcpToolsetVersions:getDatabaseToolsMcpToolsetVersions", args, GetDatabaseToolsMcpToolsetVersionsResultOutput{}, options).(GetDatabaseToolsMcpToolsetVersionsResultOutput), nil
-		}).(GetDatabaseToolsMcpToolsetVersionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseTools/getDatabaseToolsMcpToolsetVersions:getDatabaseToolsMcpToolsetVersions", args, GetDatabaseToolsMcpToolsetVersionsResultOutput{}, options).(GetDatabaseToolsMcpToolsetVersionsResultOutput)
 }
 
 // A collection of arguments for invoking getDatabaseToolsMcpToolsetVersions.

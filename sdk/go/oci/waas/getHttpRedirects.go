@@ -89,12 +89,8 @@ type GetHttpRedirectsResult struct {
 }
 
 func GetHttpRedirectsOutput(ctx *pulumi.Context, args GetHttpRedirectsOutputArgs, opts ...pulumi.InvokeOption) GetHttpRedirectsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetHttpRedirectsResultOutput, error) {
-			args := v.(GetHttpRedirectsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Waas/getHttpRedirects:getHttpRedirects", args, GetHttpRedirectsResultOutput{}, options).(GetHttpRedirectsResultOutput), nil
-		}).(GetHttpRedirectsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Waas/getHttpRedirects:getHttpRedirects", args, GetHttpRedirectsResultOutput{}, options).(GetHttpRedirectsResultOutput)
 }
 
 // A collection of arguments for invoking getHttpRedirects.

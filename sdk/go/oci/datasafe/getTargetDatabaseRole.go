@@ -45,12 +45,8 @@ type GetTargetDatabaseRoleResult struct {
 }
 
 func GetTargetDatabaseRoleOutput(ctx *pulumi.Context, args GetTargetDatabaseRoleOutputArgs, opts ...pulumi.InvokeOption) GetTargetDatabaseRoleResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetTargetDatabaseRoleResultOutput, error) {
-			args := v.(GetTargetDatabaseRoleArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getTargetDatabaseRole:getTargetDatabaseRole", args, GetTargetDatabaseRoleResultOutput{}, options).(GetTargetDatabaseRoleResultOutput), nil
-		}).(GetTargetDatabaseRoleResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getTargetDatabaseRole:getTargetDatabaseRole", args, GetTargetDatabaseRoleResultOutput{}, options).(GetTargetDatabaseRoleResultOutput)
 }
 
 // A collection of arguments for invoking getTargetDatabaseRole.

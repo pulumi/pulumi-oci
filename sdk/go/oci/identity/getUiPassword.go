@@ -71,12 +71,8 @@ type LookupUiPasswordResult struct {
 }
 
 func LookupUiPasswordOutput(ctx *pulumi.Context, args LookupUiPasswordOutputArgs, opts ...pulumi.InvokeOption) LookupUiPasswordResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupUiPasswordResultOutput, error) {
-			args := v.(LookupUiPasswordArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getUiPassword:getUiPassword", args, LookupUiPasswordResultOutput{}, options).(LookupUiPasswordResultOutput), nil
-		}).(LookupUiPasswordResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getUiPassword:getUiPassword", args, LookupUiPasswordResultOutput{}, options).(LookupUiPasswordResultOutput)
 }
 
 // A collection of arguments for invoking getUiPassword.

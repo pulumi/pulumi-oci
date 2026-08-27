@@ -73,12 +73,8 @@ type GetManagedKafkaNodeShapesResult struct {
 }
 
 func GetManagedKafkaNodeShapesOutput(ctx *pulumi.Context, args GetManagedKafkaNodeShapesOutputArgs, opts ...pulumi.InvokeOption) GetManagedKafkaNodeShapesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedKafkaNodeShapesResultOutput, error) {
-			args := v.(GetManagedKafkaNodeShapesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getManagedKafkaNodeShapes:getManagedKafkaNodeShapes", args, GetManagedKafkaNodeShapesResultOutput{}, options).(GetManagedKafkaNodeShapesResultOutput), nil
-		}).(GetManagedKafkaNodeShapesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getManagedKafkaNodeShapes:getManagedKafkaNodeShapes", args, GetManagedKafkaNodeShapesResultOutput{}, options).(GetManagedKafkaNodeShapesResultOutput)
 }
 
 // A collection of arguments for invoking getManagedKafkaNodeShapes.

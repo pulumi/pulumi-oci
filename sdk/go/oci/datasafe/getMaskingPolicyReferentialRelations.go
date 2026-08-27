@@ -88,12 +88,8 @@ type GetMaskingPolicyReferentialRelationsResult struct {
 }
 
 func GetMaskingPolicyReferentialRelationsOutput(ctx *pulumi.Context, args GetMaskingPolicyReferentialRelationsOutputArgs, opts ...pulumi.InvokeOption) GetMaskingPolicyReferentialRelationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMaskingPolicyReferentialRelationsResultOutput, error) {
-			args := v.(GetMaskingPolicyReferentialRelationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getMaskingPolicyReferentialRelations:getMaskingPolicyReferentialRelations", args, GetMaskingPolicyReferentialRelationsResultOutput{}, options).(GetMaskingPolicyReferentialRelationsResultOutput), nil
-		}).(GetMaskingPolicyReferentialRelationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getMaskingPolicyReferentialRelations:getMaskingPolicyReferentialRelations", args, GetMaskingPolicyReferentialRelationsResultOutput{}, options).(GetMaskingPolicyReferentialRelationsResultOutput)
 }
 
 // A collection of arguments for invoking getMaskingPolicyReferentialRelations.

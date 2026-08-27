@@ -92,12 +92,8 @@ type LookupCatalogPrivateEndpointResult struct {
 }
 
 func LookupCatalogPrivateEndpointOutput(ctx *pulumi.Context, args LookupCatalogPrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupCatalogPrivateEndpointResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupCatalogPrivateEndpointResultOutput, error) {
-			args := v.(LookupCatalogPrivateEndpointArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataCatalog/getCatalogPrivateEndpoint:getCatalogPrivateEndpoint", args, LookupCatalogPrivateEndpointResultOutput{}, options).(LookupCatalogPrivateEndpointResultOutput), nil
-		}).(LookupCatalogPrivateEndpointResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataCatalog/getCatalogPrivateEndpoint:getCatalogPrivateEndpoint", args, LookupCatalogPrivateEndpointResultOutput{}, options).(LookupCatalogPrivateEndpointResultOutput)
 }
 
 // A collection of arguments for invoking getCatalogPrivateEndpoint.

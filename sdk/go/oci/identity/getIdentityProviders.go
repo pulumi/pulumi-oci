@@ -89,12 +89,8 @@ type GetIdentityProvidersResult struct {
 }
 
 func GetIdentityProvidersOutput(ctx *pulumi.Context, args GetIdentityProvidersOutputArgs, opts ...pulumi.InvokeOption) GetIdentityProvidersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetIdentityProvidersResultOutput, error) {
-			args := v.(GetIdentityProvidersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getIdentityProviders:getIdentityProviders", args, GetIdentityProvidersResultOutput{}, options).(GetIdentityProvidersResultOutput), nil
-		}).(GetIdentityProvidersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getIdentityProviders:getIdentityProviders", args, GetIdentityProvidersResultOutput{}, options).(GetIdentityProvidersResultOutput)
 }
 
 // A collection of arguments for invoking getIdentityProviders.

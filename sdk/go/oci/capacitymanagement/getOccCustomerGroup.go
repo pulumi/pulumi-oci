@@ -89,12 +89,8 @@ type LookupOccCustomerGroupResult struct {
 }
 
 func LookupOccCustomerGroupOutput(ctx *pulumi.Context, args LookupOccCustomerGroupOutputArgs, opts ...pulumi.InvokeOption) LookupOccCustomerGroupResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupOccCustomerGroupResultOutput, error) {
-			args := v.(LookupOccCustomerGroupArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CapacityManagement/getOccCustomerGroup:getOccCustomerGroup", args, LookupOccCustomerGroupResultOutput{}, options).(LookupOccCustomerGroupResultOutput), nil
-		}).(LookupOccCustomerGroupResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CapacityManagement/getOccCustomerGroup:getOccCustomerGroup", args, LookupOccCustomerGroupResultOutput{}, options).(LookupOccCustomerGroupResultOutput)
 }
 
 // A collection of arguments for invoking getOccCustomerGroup.

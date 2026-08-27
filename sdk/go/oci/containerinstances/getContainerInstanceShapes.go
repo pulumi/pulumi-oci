@@ -72,12 +72,8 @@ type GetContainerInstanceShapesResult struct {
 }
 
 func GetContainerInstanceShapesOutput(ctx *pulumi.Context, args GetContainerInstanceShapesOutputArgs, opts ...pulumi.InvokeOption) GetContainerInstanceShapesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetContainerInstanceShapesResultOutput, error) {
-			args := v.(GetContainerInstanceShapesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ContainerInstances/getContainerInstanceShapes:getContainerInstanceShapes", args, GetContainerInstanceShapesResultOutput{}, options).(GetContainerInstanceShapesResultOutput), nil
-		}).(GetContainerInstanceShapesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ContainerInstances/getContainerInstanceShapes:getContainerInstanceShapes", args, GetContainerInstanceShapesResultOutput{}, options).(GetContainerInstanceShapesResultOutput)
 }
 
 // A collection of arguments for invoking getContainerInstanceShapes.

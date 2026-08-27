@@ -98,12 +98,8 @@ type LookupHttpMonitorResult struct {
 }
 
 func LookupHttpMonitorOutput(ctx *pulumi.Context, args LookupHttpMonitorOutputArgs, opts ...pulumi.InvokeOption) LookupHttpMonitorResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupHttpMonitorResultOutput, error) {
-			args := v.(LookupHttpMonitorArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:HealthChecks/getHttpMonitor:getHttpMonitor", args, LookupHttpMonitorResultOutput{}, options).(LookupHttpMonitorResultOutput), nil
-		}).(LookupHttpMonitorResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:HealthChecks/getHttpMonitor:getHttpMonitor", args, LookupHttpMonitorResultOutput{}, options).(LookupHttpMonitorResultOutput)
 }
 
 // A collection of arguments for invoking getHttpMonitor.

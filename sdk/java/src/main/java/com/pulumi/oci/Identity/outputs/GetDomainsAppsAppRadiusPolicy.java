@@ -10,7 +10,6 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDomainsAppsAppRadiusPolicy {
-    private String _ref;
     /**
      * @return ID of the AppRole.
      * 
@@ -18,9 +17,6 @@ public final class GetDomainsAppsAppRadiusPolicy {
     private String value;
 
     private GetDomainsAppsAppRadiusPolicy() {}
-    public String _ref() {
-        return this._ref;
-    }
     /**
      * @return ID of the AppRole.
      * 
@@ -38,23 +34,13 @@ public final class GetDomainsAppsAppRadiusPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String _ref;
         private String value;
         public Builder() {}
         public Builder(GetDomainsAppsAppRadiusPolicy defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this._ref = defaults._ref;
     	      this.value = defaults.value;
         }
 
-        @CustomType.Setter
-        public Builder _ref(String _ref) {
-            if (_ref == null) {
-              throw new MissingRequiredPropertyException("GetDomainsAppsAppRadiusPolicy", "_ref");
-            }
-            this._ref = _ref;
-            return this;
-        }
         @CustomType.Setter
         public Builder value(String value) {
             if (value == null) {
@@ -65,7 +51,6 @@ public final class GetDomainsAppsAppRadiusPolicy {
         }
         public GetDomainsAppsAppRadiusPolicy build() {
             final var _resultValue = new GetDomainsAppsAppRadiusPolicy();
-            _resultValue._ref = _ref;
             _resultValue.value = value;
             return _resultValue;
         }

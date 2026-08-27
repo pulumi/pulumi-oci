@@ -82,12 +82,8 @@ type GetComputeCapacityTopologyComputeNetworkBlocksResult struct {
 }
 
 func GetComputeCapacityTopologyComputeNetworkBlocksOutput(ctx *pulumi.Context, args GetComputeCapacityTopologyComputeNetworkBlocksOutputArgs, opts ...pulumi.InvokeOption) GetComputeCapacityTopologyComputeNetworkBlocksResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetComputeCapacityTopologyComputeNetworkBlocksResultOutput, error) {
-			args := v.(GetComputeCapacityTopologyComputeNetworkBlocksArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getComputeCapacityTopologyComputeNetworkBlocks:getComputeCapacityTopologyComputeNetworkBlocks", args, GetComputeCapacityTopologyComputeNetworkBlocksResultOutput{}, options).(GetComputeCapacityTopologyComputeNetworkBlocksResultOutput), nil
-		}).(GetComputeCapacityTopologyComputeNetworkBlocksResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getComputeCapacityTopologyComputeNetworkBlocks:getComputeCapacityTopologyComputeNetworkBlocks", args, GetComputeCapacityTopologyComputeNetworkBlocksResultOutput{}, options).(GetComputeCapacityTopologyComputeNetworkBlocksResultOutput)
 }
 
 // A collection of arguments for invoking getComputeCapacityTopologyComputeNetworkBlocks.

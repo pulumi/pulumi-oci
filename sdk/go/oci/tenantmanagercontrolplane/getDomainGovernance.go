@@ -90,12 +90,8 @@ type GetDomainGovernanceResult struct {
 }
 
 func GetDomainGovernanceOutput(ctx *pulumi.Context, args GetDomainGovernanceOutputArgs, opts ...pulumi.InvokeOption) GetDomainGovernanceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainGovernanceResultOutput, error) {
-			args := v.(GetDomainGovernanceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Tenantmanagercontrolplane/getDomainGovernance:getDomainGovernance", args, GetDomainGovernanceResultOutput{}, options).(GetDomainGovernanceResultOutput), nil
-		}).(GetDomainGovernanceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Tenantmanagercontrolplane/getDomainGovernance:getDomainGovernance", args, GetDomainGovernanceResultOutput{}, options).(GetDomainGovernanceResultOutput)
 }
 
 // A collection of arguments for invoking getDomainGovernance.

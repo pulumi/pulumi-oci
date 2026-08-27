@@ -102,12 +102,8 @@ type LookupSelfSubscriptionResult struct {
 }
 
 func LookupSelfSubscriptionOutput(ctx *pulumi.Context, args LookupSelfSubscriptionOutputArgs, opts ...pulumi.InvokeOption) LookupSelfSubscriptionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupSelfSubscriptionResultOutput, error) {
-			args := v.(LookupSelfSubscriptionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getSelfSubscription:getSelfSubscription", args, LookupSelfSubscriptionResultOutput{}, options).(LookupSelfSubscriptionResultOutput), nil
-		}).(LookupSelfSubscriptionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getSelfSubscription:getSelfSubscription", args, LookupSelfSubscriptionResultOutput{}, options).(LookupSelfSubscriptionResultOutput)
 }
 
 // A collection of arguments for invoking getSelfSubscription.

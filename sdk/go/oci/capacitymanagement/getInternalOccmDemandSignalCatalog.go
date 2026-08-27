@@ -84,12 +84,8 @@ type GetInternalOccmDemandSignalCatalogResult struct {
 }
 
 func GetInternalOccmDemandSignalCatalogOutput(ctx *pulumi.Context, args GetInternalOccmDemandSignalCatalogOutputArgs, opts ...pulumi.InvokeOption) GetInternalOccmDemandSignalCatalogResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetInternalOccmDemandSignalCatalogResultOutput, error) {
-			args := v.(GetInternalOccmDemandSignalCatalogArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CapacityManagement/getInternalOccmDemandSignalCatalog:getInternalOccmDemandSignalCatalog", args, GetInternalOccmDemandSignalCatalogResultOutput{}, options).(GetInternalOccmDemandSignalCatalogResultOutput), nil
-		}).(GetInternalOccmDemandSignalCatalogResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CapacityManagement/getInternalOccmDemandSignalCatalog:getInternalOccmDemandSignalCatalog", args, GetInternalOccmDemandSignalCatalogResultOutput{}, options).(GetInternalOccmDemandSignalCatalogResultOutput)
 }
 
 // A collection of arguments for invoking getInternalOccmDemandSignalCatalog.

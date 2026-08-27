@@ -93,12 +93,8 @@ type LookupMediaWorkflowResult struct {
 }
 
 func LookupMediaWorkflowOutput(ctx *pulumi.Context, args LookupMediaWorkflowOutputArgs, opts ...pulumi.InvokeOption) LookupMediaWorkflowResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupMediaWorkflowResultOutput, error) {
-			args := v.(LookupMediaWorkflowArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:MediaServices/getMediaWorkflow:getMediaWorkflow", args, LookupMediaWorkflowResultOutput{}, options).(LookupMediaWorkflowResultOutput), nil
-		}).(LookupMediaWorkflowResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:MediaServices/getMediaWorkflow:getMediaWorkflow", args, LookupMediaWorkflowResultOutput{}, options).(LookupMediaWorkflowResultOutput)
 }
 
 // A collection of arguments for invoking getMediaWorkflow.

@@ -68,12 +68,8 @@ type GetFusionEnvironmentTimeAvailableForRefreshsResult struct {
 }
 
 func GetFusionEnvironmentTimeAvailableForRefreshsOutput(ctx *pulumi.Context, args GetFusionEnvironmentTimeAvailableForRefreshsOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentTimeAvailableForRefreshsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFusionEnvironmentTimeAvailableForRefreshsResultOutput, error) {
-			args := v.(GetFusionEnvironmentTimeAvailableForRefreshsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Functions/getFusionEnvironmentTimeAvailableForRefreshs:getFusionEnvironmentTimeAvailableForRefreshs", args, GetFusionEnvironmentTimeAvailableForRefreshsResultOutput{}, options).(GetFusionEnvironmentTimeAvailableForRefreshsResultOutput), nil
-		}).(GetFusionEnvironmentTimeAvailableForRefreshsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Functions/getFusionEnvironmentTimeAvailableForRefreshs:getFusionEnvironmentTimeAvailableForRefreshs", args, GetFusionEnvironmentTimeAvailableForRefreshsResultOutput{}, options).(GetFusionEnvironmentTimeAvailableForRefreshsResultOutput)
 }
 
 // A collection of arguments for invoking getFusionEnvironmentTimeAvailableForRefreshs.

@@ -85,12 +85,8 @@ type GetLogAnalyticsEntityTopologyResult struct {
 }
 
 func GetLogAnalyticsEntityTopologyOutput(ctx *pulumi.Context, args GetLogAnalyticsEntityTopologyOutputArgs, opts ...pulumi.InvokeOption) GetLogAnalyticsEntityTopologyResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetLogAnalyticsEntityTopologyResultOutput, error) {
-			args := v.(GetLogAnalyticsEntityTopologyArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", args, GetLogAnalyticsEntityTopologyResultOutput{}, options).(GetLogAnalyticsEntityTopologyResultOutput), nil
-		}).(GetLogAnalyticsEntityTopologyResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", args, GetLogAnalyticsEntityTopologyResultOutput{}, options).(GetLogAnalyticsEntityTopologyResultOutput)
 }
 
 // A collection of arguments for invoking getLogAnalyticsEntityTopology.

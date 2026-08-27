@@ -79,12 +79,8 @@ type GetRemediationRunStagesResult struct {
 }
 
 func GetRemediationRunStagesOutput(ctx *pulumi.Context, args GetRemediationRunStagesOutputArgs, opts ...pulumi.InvokeOption) GetRemediationRunStagesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRemediationRunStagesResultOutput, error) {
-			args := v.(GetRemediationRunStagesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Adm/getRemediationRunStages:getRemediationRunStages", args, GetRemediationRunStagesResultOutput{}, options).(GetRemediationRunStagesResultOutput), nil
-		}).(GetRemediationRunStagesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Adm/getRemediationRunStages:getRemediationRunStages", args, GetRemediationRunStagesResultOutput{}, options).(GetRemediationRunStagesResultOutput)
 }
 
 // A collection of arguments for invoking getRemediationRunStages.

@@ -83,12 +83,8 @@ type GetSecurityRecipesResult struct {
 }
 
 func GetSecurityRecipesOutput(ctx *pulumi.Context, args GetSecurityRecipesOutputArgs, opts ...pulumi.InvokeOption) GetSecurityRecipesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSecurityRecipesResultOutput, error) {
-			args := v.(GetSecurityRecipesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CloudGuard/getSecurityRecipes:getSecurityRecipes", args, GetSecurityRecipesResultOutput{}, options).(GetSecurityRecipesResultOutput), nil
-		}).(GetSecurityRecipesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CloudGuard/getSecurityRecipes:getSecurityRecipes", args, GetSecurityRecipesResultOutput{}, options).(GetSecurityRecipesResultOutput)
 }
 
 // A collection of arguments for invoking getSecurityRecipes.

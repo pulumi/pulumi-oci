@@ -131,12 +131,8 @@ type LookupDomainsGrantResult struct {
 }
 
 func LookupDomainsGrantOutput(ctx *pulumi.Context, args LookupDomainsGrantOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsGrantResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDomainsGrantResultOutput, error) {
-			args := v.(LookupDomainsGrantArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsGrant:getDomainsGrant", args, LookupDomainsGrantResultOutput{}, options).(LookupDomainsGrantResultOutput), nil
-		}).(LookupDomainsGrantResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsGrant:getDomainsGrant", args, LookupDomainsGrantResultOutput{}, options).(LookupDomainsGrantResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsGrant.

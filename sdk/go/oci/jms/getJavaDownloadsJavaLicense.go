@@ -69,12 +69,8 @@ type GetJavaDownloadsJavaLicenseResult struct {
 }
 
 func GetJavaDownloadsJavaLicenseOutput(ctx *pulumi.Context, args GetJavaDownloadsJavaLicenseOutputArgs, opts ...pulumi.InvokeOption) GetJavaDownloadsJavaLicenseResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetJavaDownloadsJavaLicenseResultOutput, error) {
-			args := v.(GetJavaDownloadsJavaLicenseArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getJavaDownloadsJavaLicense:getJavaDownloadsJavaLicense", args, GetJavaDownloadsJavaLicenseResultOutput{}, options).(GetJavaDownloadsJavaLicenseResultOutput), nil
-		}).(GetJavaDownloadsJavaLicenseResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getJavaDownloadsJavaLicense:getJavaDownloadsJavaLicense", args, GetJavaDownloadsJavaLicenseResultOutput{}, options).(GetJavaDownloadsJavaLicenseResultOutput)
 }
 
 // A collection of arguments for invoking getJavaDownloadsJavaLicense.

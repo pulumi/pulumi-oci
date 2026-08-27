@@ -118,12 +118,8 @@ type GetMulticloudMulticloudalertsResult struct {
 }
 
 func GetMulticloudMulticloudalertsOutput(ctx *pulumi.Context, args GetMulticloudMulticloudalertsOutputArgs, opts ...pulumi.InvokeOption) GetMulticloudMulticloudalertsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMulticloudMulticloudalertsResultOutput, error) {
-			args := v.(GetMulticloudMulticloudalertsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getMulticloudMulticloudalerts:getMulticloudMulticloudalerts", args, GetMulticloudMulticloudalertsResultOutput{}, options).(GetMulticloudMulticloudalertsResultOutput), nil
-		}).(GetMulticloudMulticloudalertsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getMulticloudMulticloudalerts:getMulticloudMulticloudalerts", args, GetMulticloudMulticloudalertsResultOutput{}, options).(GetMulticloudMulticloudalertsResultOutput)
 }
 
 // A collection of arguments for invoking getMulticloudMulticloudalerts.

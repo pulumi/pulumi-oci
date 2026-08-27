@@ -68,12 +68,8 @@ type GetAutonomousDatabasePeersResult struct {
 }
 
 func GetAutonomousDatabasePeersOutput(ctx *pulumi.Context, args GetAutonomousDatabasePeersOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousDatabasePeersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAutonomousDatabasePeersResultOutput, error) {
-			args := v.(GetAutonomousDatabasePeersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getAutonomousDatabasePeers:getAutonomousDatabasePeers", args, GetAutonomousDatabasePeersResultOutput{}, options).(GetAutonomousDatabasePeersResultOutput), nil
-		}).(GetAutonomousDatabasePeersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getAutonomousDatabasePeers:getAutonomousDatabasePeers", args, GetAutonomousDatabasePeersResultOutput{}, options).(GetAutonomousDatabasePeersResultOutput)
 }
 
 // A collection of arguments for invoking getAutonomousDatabasePeers.

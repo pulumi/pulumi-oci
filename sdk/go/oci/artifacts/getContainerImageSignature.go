@@ -92,12 +92,8 @@ type LookupContainerImageSignatureResult struct {
 }
 
 func LookupContainerImageSignatureOutput(ctx *pulumi.Context, args LookupContainerImageSignatureOutputArgs, opts ...pulumi.InvokeOption) LookupContainerImageSignatureResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupContainerImageSignatureResultOutput, error) {
-			args := v.(LookupContainerImageSignatureArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Artifacts/getContainerImageSignature:getContainerImageSignature", args, LookupContainerImageSignatureResultOutput{}, options).(LookupContainerImageSignatureResultOutput), nil
-		}).(LookupContainerImageSignatureResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Artifacts/getContainerImageSignature:getContainerImageSignature", args, LookupContainerImageSignatureResultOutput{}, options).(LookupContainerImageSignatureResultOutput)
 }
 
 // A collection of arguments for invoking getContainerImageSignature.

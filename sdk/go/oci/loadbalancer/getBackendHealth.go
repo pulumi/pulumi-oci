@@ -80,12 +80,8 @@ type GetBackendHealthResult struct {
 }
 
 func GetBackendHealthOutput(ctx *pulumi.Context, args GetBackendHealthOutputArgs, opts ...pulumi.InvokeOption) GetBackendHealthResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBackendHealthResultOutput, error) {
-			args := v.(GetBackendHealthArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LoadBalancer/getBackendHealth:getBackendHealth", args, GetBackendHealthResultOutput{}, options).(GetBackendHealthResultOutput), nil
-		}).(GetBackendHealthResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LoadBalancer/getBackendHealth:getBackendHealth", args, GetBackendHealthResultOutput{}, options).(GetBackendHealthResultOutput)
 }
 
 // A collection of arguments for invoking getBackendHealth.

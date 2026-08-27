@@ -59,12 +59,8 @@ type LookupManagedKafkaKafkaClusterAddonResult struct {
 }
 
 func LookupManagedKafkaKafkaClusterAddonOutput(ctx *pulumi.Context, args LookupManagedKafkaKafkaClusterAddonOutputArgs, opts ...pulumi.InvokeOption) LookupManagedKafkaKafkaClusterAddonResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupManagedKafkaKafkaClusterAddonResultOutput, error) {
-			args := v.(LookupManagedKafkaKafkaClusterAddonArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getManagedKafkaKafkaClusterAddon:getManagedKafkaKafkaClusterAddon", args, LookupManagedKafkaKafkaClusterAddonResultOutput{}, options).(LookupManagedKafkaKafkaClusterAddonResultOutput), nil
-		}).(LookupManagedKafkaKafkaClusterAddonResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getManagedKafkaKafkaClusterAddon:getManagedKafkaKafkaClusterAddon", args, LookupManagedKafkaKafkaClusterAddonResultOutput{}, options).(LookupManagedKafkaKafkaClusterAddonResultOutput)
 }
 
 // A collection of arguments for invoking getManagedKafkaKafkaClusterAddon.

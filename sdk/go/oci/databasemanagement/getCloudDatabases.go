@@ -78,12 +78,8 @@ type GetCloudDatabasesResult struct {
 }
 
 func GetCloudDatabasesOutput(ctx *pulumi.Context, args GetCloudDatabasesOutputArgs, opts ...pulumi.InvokeOption) GetCloudDatabasesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCloudDatabasesResultOutput, error) {
-			args := v.(GetCloudDatabasesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getCloudDatabases:getCloudDatabases", args, GetCloudDatabasesResultOutput{}, options).(GetCloudDatabasesResultOutput), nil
-		}).(GetCloudDatabasesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getCloudDatabases:getCloudDatabases", args, GetCloudDatabasesResultOutput{}, options).(GetCloudDatabasesResultOutput)
 }
 
 // A collection of arguments for invoking getCloudDatabases.

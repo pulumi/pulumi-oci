@@ -79,12 +79,8 @@ type GetAutonomousVirtualMachinesResult struct {
 }
 
 func GetAutonomousVirtualMachinesOutput(ctx *pulumi.Context, args GetAutonomousVirtualMachinesOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousVirtualMachinesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAutonomousVirtualMachinesResultOutput, error) {
-			args := v.(GetAutonomousVirtualMachinesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getAutonomousVirtualMachines:getAutonomousVirtualMachines", args, GetAutonomousVirtualMachinesResultOutput{}, options).(GetAutonomousVirtualMachinesResultOutput), nil
-		}).(GetAutonomousVirtualMachinesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getAutonomousVirtualMachines:getAutonomousVirtualMachines", args, GetAutonomousVirtualMachinesResultOutput{}, options).(GetAutonomousVirtualMachinesResultOutput)
 }
 
 // A collection of arguments for invoking getAutonomousVirtualMachines.

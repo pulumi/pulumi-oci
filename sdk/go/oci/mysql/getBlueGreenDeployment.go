@@ -99,12 +99,8 @@ type LookupBlueGreenDeploymentResult struct {
 }
 
 func LookupBlueGreenDeploymentOutput(ctx *pulumi.Context, args LookupBlueGreenDeploymentOutputArgs, opts ...pulumi.InvokeOption) LookupBlueGreenDeploymentResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBlueGreenDeploymentResultOutput, error) {
-			args := v.(LookupBlueGreenDeploymentArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Mysql/getBlueGreenDeployment:getBlueGreenDeployment", args, LookupBlueGreenDeploymentResultOutput{}, options).(LookupBlueGreenDeploymentResultOutput), nil
-		}).(LookupBlueGreenDeploymentResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Mysql/getBlueGreenDeployment:getBlueGreenDeployment", args, LookupBlueGreenDeploymentResultOutput{}, options).(LookupBlueGreenDeploymentResultOutput)
 }
 
 // A collection of arguments for invoking getBlueGreenDeployment.

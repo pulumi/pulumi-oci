@@ -41,12 +41,8 @@ type GetBackendSetHealthResult struct {
 }
 
 func GetBackendSetHealthOutput(ctx *pulumi.Context, args GetBackendSetHealthOutputArgs, opts ...pulumi.InvokeOption) GetBackendSetHealthResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBackendSetHealthResultOutput, error) {
-			args := v.(GetBackendSetHealthArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:NetworkLoadBalancer/getBackendSetHealth:getBackendSetHealth", args, GetBackendSetHealthResultOutput{}, options).(GetBackendSetHealthResultOutput), nil
-		}).(GetBackendSetHealthResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:NetworkLoadBalancer/getBackendSetHealth:getBackendSetHealth", args, GetBackendSetHealthResultOutput{}, options).(GetBackendSetHealthResultOutput)
 }
 
 // A collection of arguments for invoking getBackendSetHealth.

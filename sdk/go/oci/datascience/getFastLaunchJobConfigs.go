@@ -68,12 +68,8 @@ type GetFastLaunchJobConfigsResult struct {
 }
 
 func GetFastLaunchJobConfigsOutput(ctx *pulumi.Context, args GetFastLaunchJobConfigsOutputArgs, opts ...pulumi.InvokeOption) GetFastLaunchJobConfigsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFastLaunchJobConfigsResultOutput, error) {
-			args := v.(GetFastLaunchJobConfigsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataScience/getFastLaunchJobConfigs:getFastLaunchJobConfigs", args, GetFastLaunchJobConfigsResultOutput{}, options).(GetFastLaunchJobConfigsResultOutput), nil
-		}).(GetFastLaunchJobConfigsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataScience/getFastLaunchJobConfigs:getFastLaunchJobConfigs", args, GetFastLaunchJobConfigsResultOutput{}, options).(GetFastLaunchJobConfigsResultOutput)
 }
 
 // A collection of arguments for invoking getFastLaunchJobConfigs.

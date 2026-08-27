@@ -77,12 +77,8 @@ type GetResourceQuotasResult struct {
 }
 
 func GetResourceQuotasOutput(ctx *pulumi.Context, args GetResourceQuotasOutputArgs, opts ...pulumi.InvokeOption) GetResourceQuotasResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetResourceQuotasResultOutput, error) {
-			args := v.(GetResourceQuotasArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:UsageProxy/getResourceQuotas:getResourceQuotas", args, GetResourceQuotasResultOutput{}, options).(GetResourceQuotasResultOutput), nil
-		}).(GetResourceQuotasResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:UsageProxy/getResourceQuotas:getResourceQuotas", args, GetResourceQuotasResultOutput{}, options).(GetResourceQuotasResultOutput)
 }
 
 // A collection of arguments for invoking getResourceQuotas.

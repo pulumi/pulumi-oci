@@ -87,12 +87,8 @@ type GetOciCacheConfigSetsResult struct {
 }
 
 func GetOciCacheConfigSetsOutput(ctx *pulumi.Context, args GetOciCacheConfigSetsOutputArgs, opts ...pulumi.InvokeOption) GetOciCacheConfigSetsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetOciCacheConfigSetsResultOutput, error) {
-			args := v.(GetOciCacheConfigSetsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Redis/getOciCacheConfigSets:getOciCacheConfigSets", args, GetOciCacheConfigSetsResultOutput{}, options).(GetOciCacheConfigSetsResultOutput), nil
-		}).(GetOciCacheConfigSetsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Redis/getOciCacheConfigSets:getOciCacheConfigSets", args, GetOciCacheConfigSetsResultOutput{}, options).(GetOciCacheConfigSetsResultOutput)
 }
 
 // A collection of arguments for invoking getOciCacheConfigSets.

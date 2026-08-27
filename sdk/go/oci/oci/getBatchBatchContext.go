@@ -94,12 +94,8 @@ type LookupBatchBatchContextResult struct {
 }
 
 func LookupBatchBatchContextOutput(ctx *pulumi.Context, args LookupBatchBatchContextOutputArgs, opts ...pulumi.InvokeOption) LookupBatchBatchContextResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBatchBatchContextResultOutput, error) {
-			args := v.(LookupBatchBatchContextArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getBatchBatchContext:getBatchBatchContext", args, LookupBatchBatchContextResultOutput{}, options).(LookupBatchBatchContextResultOutput), nil
-		}).(LookupBatchBatchContextResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getBatchBatchContext:getBatchBatchContext", args, LookupBatchBatchContextResultOutput{}, options).(LookupBatchBatchContextResultOutput)
 }
 
 // A collection of arguments for invoking getBatchBatchContext.

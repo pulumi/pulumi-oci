@@ -88,12 +88,8 @@ type GetPoolsResult struct {
 }
 
 func GetPoolsOutput(ctx *pulumi.Context, args GetPoolsOutputArgs, opts ...pulumi.InvokeOption) GetPoolsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPoolsResultOutput, error) {
-			args := v.(GetPoolsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataFlow/getPools:getPools", args, GetPoolsResultOutput{}, options).(GetPoolsResultOutput), nil
-		}).(GetPoolsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataFlow/getPools:getPools", args, GetPoolsResultOutput{}, options).(GetPoolsResultOutput)
 }
 
 // A collection of arguments for invoking getPools.

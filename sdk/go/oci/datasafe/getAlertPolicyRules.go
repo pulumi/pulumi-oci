@@ -69,12 +69,8 @@ type GetAlertPolicyRulesResult struct {
 }
 
 func GetAlertPolicyRulesOutput(ctx *pulumi.Context, args GetAlertPolicyRulesOutputArgs, opts ...pulumi.InvokeOption) GetAlertPolicyRulesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAlertPolicyRulesResultOutput, error) {
-			args := v.(GetAlertPolicyRulesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getAlertPolicyRules:getAlertPolicyRules", args, GetAlertPolicyRulesResultOutput{}, options).(GetAlertPolicyRulesResultOutput), nil
-		}).(GetAlertPolicyRulesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getAlertPolicyRules:getAlertPolicyRules", args, GetAlertPolicyRulesResultOutput{}, options).(GetAlertPolicyRulesResultOutput)
 }
 
 // A collection of arguments for invoking getAlertPolicyRules.

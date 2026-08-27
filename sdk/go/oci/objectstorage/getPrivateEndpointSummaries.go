@@ -82,12 +82,8 @@ type GetPrivateEndpointSummariesResult struct {
 }
 
 func GetPrivateEndpointSummariesOutput(ctx *pulumi.Context, args GetPrivateEndpointSummariesOutputArgs, opts ...pulumi.InvokeOption) GetPrivateEndpointSummariesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPrivateEndpointSummariesResultOutput, error) {
-			args := v.(GetPrivateEndpointSummariesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ObjectStorage/getPrivateEndpointSummaries:getPrivateEndpointSummaries", args, GetPrivateEndpointSummariesResultOutput{}, options).(GetPrivateEndpointSummariesResultOutput), nil
-		}).(GetPrivateEndpointSummariesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ObjectStorage/getPrivateEndpointSummaries:getPrivateEndpointSummaries", args, GetPrivateEndpointSummariesResultOutput{}, options).(GetPrivateEndpointSummariesResultOutput)
 }
 
 // A collection of arguments for invoking getPrivateEndpointSummaries.

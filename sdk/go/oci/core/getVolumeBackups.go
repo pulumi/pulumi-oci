@@ -89,12 +89,8 @@ type GetVolumeBackupsResult struct {
 }
 
 func GetVolumeBackupsOutput(ctx *pulumi.Context, args GetVolumeBackupsOutputArgs, opts ...pulumi.InvokeOption) GetVolumeBackupsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVolumeBackupsResultOutput, error) {
-			args := v.(GetVolumeBackupsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getVolumeBackups:getVolumeBackups", args, GetVolumeBackupsResultOutput{}, options).(GetVolumeBackupsResultOutput), nil
-		}).(GetVolumeBackupsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getVolumeBackups:getVolumeBackups", args, GetVolumeBackupsResultOutput{}, options).(GetVolumeBackupsResultOutput)
 }
 
 // A collection of arguments for invoking getVolumeBackups.

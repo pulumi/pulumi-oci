@@ -87,12 +87,8 @@ type LookupConsumerGroupResult struct {
 }
 
 func LookupConsumerGroupOutput(ctx *pulumi.Context, args LookupConsumerGroupOutputArgs, opts ...pulumi.InvokeOption) LookupConsumerGroupResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupConsumerGroupResultOutput, error) {
-			args := v.(LookupConsumerGroupArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Queue/getConsumerGroup:getConsumerGroup", args, LookupConsumerGroupResultOutput{}, options).(LookupConsumerGroupResultOutput), nil
-		}).(LookupConsumerGroupResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Queue/getConsumerGroup:getConsumerGroup", args, LookupConsumerGroupResultOutput{}, options).(LookupConsumerGroupResultOutput)
 }
 
 // A collection of arguments for invoking getConsumerGroup.

@@ -90,12 +90,8 @@ type LookupCostadCostAnomalyMonitorResult struct {
 }
 
 func LookupCostadCostAnomalyMonitorOutput(ctx *pulumi.Context, args LookupCostadCostAnomalyMonitorOutputArgs, opts ...pulumi.InvokeOption) LookupCostadCostAnomalyMonitorResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupCostadCostAnomalyMonitorResultOutput, error) {
-			args := v.(LookupCostadCostAnomalyMonitorArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getCostadCostAnomalyMonitor:getCostadCostAnomalyMonitor", args, LookupCostadCostAnomalyMonitorResultOutput{}, options).(LookupCostadCostAnomalyMonitorResultOutput), nil
-		}).(LookupCostadCostAnomalyMonitorResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getCostadCostAnomalyMonitor:getCostadCostAnomalyMonitor", args, LookupCostadCostAnomalyMonitorResultOutput{}, options).(LookupCostadCostAnomalyMonitorResultOutput)
 }
 
 // A collection of arguments for invoking getCostadCostAnomalyMonitor.

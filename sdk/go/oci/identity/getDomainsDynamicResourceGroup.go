@@ -120,12 +120,8 @@ type LookupDomainsDynamicResourceGroupResult struct {
 }
 
 func LookupDomainsDynamicResourceGroupOutput(ctx *pulumi.Context, args LookupDomainsDynamicResourceGroupOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsDynamicResourceGroupResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDomainsDynamicResourceGroupResultOutput, error) {
-			args := v.(LookupDomainsDynamicResourceGroupArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsDynamicResourceGroup:getDomainsDynamicResourceGroup", args, LookupDomainsDynamicResourceGroupResultOutput{}, options).(LookupDomainsDynamicResourceGroupResultOutput), nil
-		}).(LookupDomainsDynamicResourceGroupResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsDynamicResourceGroup:getDomainsDynamicResourceGroup", args, LookupDomainsDynamicResourceGroupResultOutput{}, options).(LookupDomainsDynamicResourceGroupResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsDynamicResourceGroup.

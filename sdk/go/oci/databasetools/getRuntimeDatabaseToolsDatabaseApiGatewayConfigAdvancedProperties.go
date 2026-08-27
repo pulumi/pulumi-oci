@@ -63,12 +63,8 @@ type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesResult str
 }
 
 func GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesOutput(ctx *pulumi.Context, args GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesOutputArgs, opts ...pulumi.InvokeOption) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesResultOutput, error) {
-			args := v.(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties:getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties", args, GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesResultOutput{}, options).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesResultOutput), nil
-		}).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties:getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties", args, GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesResultOutput{}, options).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesResultOutput)
 }
 
 // A collection of arguments for invoking getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties.

@@ -85,12 +85,8 @@ type GetSecurityListsResult struct {
 }
 
 func GetSecurityListsOutput(ctx *pulumi.Context, args GetSecurityListsOutputArgs, opts ...pulumi.InvokeOption) GetSecurityListsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSecurityListsResultOutput, error) {
-			args := v.(GetSecurityListsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getSecurityLists:getSecurityLists", args, GetSecurityListsResultOutput{}, options).(GetSecurityListsResultOutput), nil
-		}).(GetSecurityListsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getSecurityLists:getSecurityLists", args, GetSecurityListsResultOutput{}, options).(GetSecurityListsResultOutput)
 }
 
 // A collection of arguments for invoking getSecurityLists.

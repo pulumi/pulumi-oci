@@ -90,12 +90,8 @@ type LookupStreamJobResult struct {
 }
 
 func LookupStreamJobOutput(ctx *pulumi.Context, args LookupStreamJobOutputArgs, opts ...pulumi.InvokeOption) LookupStreamJobResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupStreamJobResultOutput, error) {
-			args := v.(LookupStreamJobArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:AiVision/getStreamJob:getStreamJob", args, LookupStreamJobResultOutput{}, options).(LookupStreamJobResultOutput), nil
-		}).(LookupStreamJobResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:AiVision/getStreamJob:getStreamJob", args, LookupStreamJobResultOutput{}, options).(LookupStreamJobResultOutput)
 }
 
 // A collection of arguments for invoking getStreamJob.

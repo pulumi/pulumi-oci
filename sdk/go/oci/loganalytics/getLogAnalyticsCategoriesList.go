@@ -79,12 +79,8 @@ type GetLogAnalyticsCategoriesListResult struct {
 }
 
 func GetLogAnalyticsCategoriesListOutput(ctx *pulumi.Context, args GetLogAnalyticsCategoriesListOutputArgs, opts ...pulumi.InvokeOption) GetLogAnalyticsCategoriesListResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetLogAnalyticsCategoriesListResultOutput, error) {
-			args := v.(GetLogAnalyticsCategoriesListArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsCategoriesList:getLogAnalyticsCategoriesList", args, GetLogAnalyticsCategoriesListResultOutput{}, options).(GetLogAnalyticsCategoriesListResultOutput), nil
-		}).(GetLogAnalyticsCategoriesListResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsCategoriesList:getLogAnalyticsCategoriesList", args, GetLogAnalyticsCategoriesListResultOutput{}, options).(GetLogAnalyticsCategoriesListResultOutput)
 }
 
 // A collection of arguments for invoking getLogAnalyticsCategoriesList.

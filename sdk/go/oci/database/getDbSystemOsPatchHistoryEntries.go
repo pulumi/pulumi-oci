@@ -79,12 +79,8 @@ type GetDbSystemOsPatchHistoryEntriesResult struct {
 }
 
 func GetDbSystemOsPatchHistoryEntriesOutput(ctx *pulumi.Context, args GetDbSystemOsPatchHistoryEntriesOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemOsPatchHistoryEntriesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbSystemOsPatchHistoryEntriesResultOutput, error) {
-			args := v.(GetDbSystemOsPatchHistoryEntriesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getDbSystemOsPatchHistoryEntries:getDbSystemOsPatchHistoryEntries", args, GetDbSystemOsPatchHistoryEntriesResultOutput{}, options).(GetDbSystemOsPatchHistoryEntriesResultOutput), nil
-		}).(GetDbSystemOsPatchHistoryEntriesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getDbSystemOsPatchHistoryEntries:getDbSystemOsPatchHistoryEntries", args, GetDbSystemOsPatchHistoryEntriesResultOutput{}, options).(GetDbSystemOsPatchHistoryEntriesResultOutput)
 }
 
 // A collection of arguments for invoking getDbSystemOsPatchHistoryEntries.

@@ -74,12 +74,8 @@ type GetExternalExadataInfrastructuresResult struct {
 }
 
 func GetExternalExadataInfrastructuresOutput(ctx *pulumi.Context, args GetExternalExadataInfrastructuresOutputArgs, opts ...pulumi.InvokeOption) GetExternalExadataInfrastructuresResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetExternalExadataInfrastructuresResultOutput, error) {
-			args := v.(GetExternalExadataInfrastructuresArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalExadataInfrastructures:getExternalExadataInfrastructures", args, GetExternalExadataInfrastructuresResultOutput{}, options).(GetExternalExadataInfrastructuresResultOutput), nil
-		}).(GetExternalExadataInfrastructuresResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getExternalExadataInfrastructures:getExternalExadataInfrastructures", args, GetExternalExadataInfrastructuresResultOutput{}, options).(GetExternalExadataInfrastructuresResultOutput)
 }
 
 // A collection of arguments for invoking getExternalExadataInfrastructures.

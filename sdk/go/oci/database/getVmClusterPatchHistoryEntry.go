@@ -80,12 +80,8 @@ type GetVmClusterPatchHistoryEntryResult struct {
 }
 
 func GetVmClusterPatchHistoryEntryOutput(ctx *pulumi.Context, args GetVmClusterPatchHistoryEntryOutputArgs, opts ...pulumi.InvokeOption) GetVmClusterPatchHistoryEntryResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVmClusterPatchHistoryEntryResultOutput, error) {
-			args := v.(GetVmClusterPatchHistoryEntryArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getVmClusterPatchHistoryEntry:getVmClusterPatchHistoryEntry", args, GetVmClusterPatchHistoryEntryResultOutput{}, options).(GetVmClusterPatchHistoryEntryResultOutput), nil
-		}).(GetVmClusterPatchHistoryEntryResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getVmClusterPatchHistoryEntry:getVmClusterPatchHistoryEntry", args, GetVmClusterPatchHistoryEntryResultOutput{}, options).(GetVmClusterPatchHistoryEntryResultOutput)
 }
 
 // A collection of arguments for invoking getVmClusterPatchHistoryEntry.

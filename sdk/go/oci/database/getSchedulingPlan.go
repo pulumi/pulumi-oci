@@ -94,12 +94,8 @@ type LookupSchedulingPlanResult struct {
 }
 
 func LookupSchedulingPlanOutput(ctx *pulumi.Context, args LookupSchedulingPlanOutputArgs, opts ...pulumi.InvokeOption) LookupSchedulingPlanResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupSchedulingPlanResultOutput, error) {
-			args := v.(LookupSchedulingPlanArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getSchedulingPlan:getSchedulingPlan", args, LookupSchedulingPlanResultOutput{}, options).(LookupSchedulingPlanResultOutput), nil
-		}).(LookupSchedulingPlanResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getSchedulingPlan:getSchedulingPlan", args, LookupSchedulingPlanResultOutput{}, options).(LookupSchedulingPlanResultOutput)
 }
 
 // A collection of arguments for invoking getSchedulingPlan.

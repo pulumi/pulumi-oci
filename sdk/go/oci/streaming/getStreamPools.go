@@ -82,12 +82,8 @@ type GetStreamPoolsResult struct {
 }
 
 func GetStreamPoolsOutput(ctx *pulumi.Context, args GetStreamPoolsOutputArgs, opts ...pulumi.InvokeOption) GetStreamPoolsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetStreamPoolsResultOutput, error) {
-			args := v.(GetStreamPoolsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Streaming/getStreamPools:getStreamPools", args, GetStreamPoolsResultOutput{}, options).(GetStreamPoolsResultOutput), nil
-		}).(GetStreamPoolsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Streaming/getStreamPools:getStreamPools", args, GetStreamPoolsResultOutput{}, options).(GetStreamPoolsResultOutput)
 }
 
 // A collection of arguments for invoking getStreamPools.

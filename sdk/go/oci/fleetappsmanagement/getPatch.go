@@ -99,12 +99,8 @@ type LookupPatchResult struct {
 }
 
 func LookupPatchOutput(ctx *pulumi.Context, args LookupPatchOutputArgs, opts ...pulumi.InvokeOption) LookupPatchResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupPatchResultOutput, error) {
-			args := v.(LookupPatchArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getPatch:getPatch", args, LookupPatchResultOutput{}, options).(LookupPatchResultOutput), nil
-		}).(LookupPatchResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getPatch:getPatch", args, LookupPatchResultOutput{}, options).(LookupPatchResultOutput)
 }
 
 // A collection of arguments for invoking getPatch.

@@ -87,12 +87,8 @@ type GetDeployArtifactsResult struct {
 }
 
 func GetDeployArtifactsOutput(ctx *pulumi.Context, args GetDeployArtifactsOutputArgs, opts ...pulumi.InvokeOption) GetDeployArtifactsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDeployArtifactsResultOutput, error) {
-			args := v.(GetDeployArtifactsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DevOps/getDeployArtifacts:getDeployArtifacts", args, GetDeployArtifactsResultOutput{}, options).(GetDeployArtifactsResultOutput), nil
-		}).(GetDeployArtifactsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DevOps/getDeployArtifacts:getDeployArtifacts", args, GetDeployArtifactsResultOutput{}, options).(GetDeployArtifactsResultOutput)
 }
 
 // A collection of arguments for invoking getDeployArtifacts.

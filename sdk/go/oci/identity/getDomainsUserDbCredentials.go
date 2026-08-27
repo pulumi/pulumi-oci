@@ -104,12 +104,8 @@ type GetDomainsUserDbCredentialsResult struct {
 }
 
 func GetDomainsUserDbCredentialsOutput(ctx *pulumi.Context, args GetDomainsUserDbCredentialsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsUserDbCredentialsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsUserDbCredentialsResultOutput, error) {
-			args := v.(GetDomainsUserDbCredentialsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsUserDbCredentials:getDomainsUserDbCredentials", args, GetDomainsUserDbCredentialsResultOutput{}, options).(GetDomainsUserDbCredentialsResultOutput), nil
-		}).(GetDomainsUserDbCredentialsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsUserDbCredentials:getDomainsUserDbCredentials", args, GetDomainsUserDbCredentialsResultOutput{}, options).(GetDomainsUserDbCredentialsResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsUserDbCredentials.

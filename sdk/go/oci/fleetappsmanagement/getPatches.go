@@ -112,12 +112,8 @@ type GetPatchesResult struct {
 }
 
 func GetPatchesOutput(ctx *pulumi.Context, args GetPatchesOutputArgs, opts ...pulumi.InvokeOption) GetPatchesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPatchesResultOutput, error) {
-			args := v.(GetPatchesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getPatches:getPatches", args, GetPatchesResultOutput{}, options).(GetPatchesResultOutput), nil
-		}).(GetPatchesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getPatches:getPatches", args, GetPatchesResultOutput{}, options).(GetPatchesResultOutput)
 }
 
 // A collection of arguments for invoking getPatches.

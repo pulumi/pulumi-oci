@@ -123,12 +123,8 @@ type GetControlAssignmentResult struct {
 }
 
 func GetControlAssignmentOutput(ctx *pulumi.Context, args GetControlAssignmentOutputArgs, opts ...pulumi.InvokeOption) GetControlAssignmentResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetControlAssignmentResultOutput, error) {
-			args := v.(GetControlAssignmentArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OperatorAccessControl/getControlAssignment:getControlAssignment", args, GetControlAssignmentResultOutput{}, options).(GetControlAssignmentResultOutput), nil
-		}).(GetControlAssignmentResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OperatorAccessControl/getControlAssignment:getControlAssignment", args, GetControlAssignmentResultOutput{}, options).(GetControlAssignmentResultOutput)
 }
 
 // A collection of arguments for invoking getControlAssignment.

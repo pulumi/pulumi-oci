@@ -64,12 +64,8 @@ type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentResult struct {
 }
 
 func GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentOutput(ctx *pulumi.Context, args GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentOutputArgs, opts ...pulumi.InvokeOption) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentResultOutput, error) {
-			args := v.(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent:getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent", args, GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentResultOutput{}, options).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentResultOutput), nil
-		}).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent:getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent", args, GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentResultOutput{}, options).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentResultOutput)
 }
 
 // A collection of arguments for invoking getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent.

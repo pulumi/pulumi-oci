@@ -72,12 +72,8 @@ type GetCloudAsmDiskGroupsResult struct {
 }
 
 func GetCloudAsmDiskGroupsOutput(ctx *pulumi.Context, args GetCloudAsmDiskGroupsOutputArgs, opts ...pulumi.InvokeOption) GetCloudAsmDiskGroupsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCloudAsmDiskGroupsResultOutput, error) {
-			args := v.(GetCloudAsmDiskGroupsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getCloudAsmDiskGroups:getCloudAsmDiskGroups", args, GetCloudAsmDiskGroupsResultOutput{}, options).(GetCloudAsmDiskGroupsResultOutput), nil
-		}).(GetCloudAsmDiskGroupsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getCloudAsmDiskGroups:getCloudAsmDiskGroups", args, GetCloudAsmDiskGroupsResultOutput{}, options).(GetCloudAsmDiskGroupsResultOutput)
 }
 
 // A collection of arguments for invoking getCloudAsmDiskGroups.

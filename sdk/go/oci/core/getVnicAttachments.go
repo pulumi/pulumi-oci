@@ -86,12 +86,8 @@ type GetVnicAttachmentsResult struct {
 }
 
 func GetVnicAttachmentsOutput(ctx *pulumi.Context, args GetVnicAttachmentsOutputArgs, opts ...pulumi.InvokeOption) GetVnicAttachmentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVnicAttachmentsResultOutput, error) {
-			args := v.(GetVnicAttachmentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getVnicAttachments:getVnicAttachments", args, GetVnicAttachmentsResultOutput{}, options).(GetVnicAttachmentsResultOutput), nil
-		}).(GetVnicAttachmentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getVnicAttachments:getVnicAttachments", args, GetVnicAttachmentsResultOutput{}, options).(GetVnicAttachmentsResultOutput)
 }
 
 // A collection of arguments for invoking getVnicAttachments.

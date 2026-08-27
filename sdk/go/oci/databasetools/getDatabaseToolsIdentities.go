@@ -89,12 +89,8 @@ type GetDatabaseToolsIdentitiesResult struct {
 }
 
 func GetDatabaseToolsIdentitiesOutput(ctx *pulumi.Context, args GetDatabaseToolsIdentitiesOutputArgs, opts ...pulumi.InvokeOption) GetDatabaseToolsIdentitiesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDatabaseToolsIdentitiesResultOutput, error) {
-			args := v.(GetDatabaseToolsIdentitiesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseTools/getDatabaseToolsIdentities:getDatabaseToolsIdentities", args, GetDatabaseToolsIdentitiesResultOutput{}, options).(GetDatabaseToolsIdentitiesResultOutput), nil
-		}).(GetDatabaseToolsIdentitiesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseTools/getDatabaseToolsIdentities:getDatabaseToolsIdentities", args, GetDatabaseToolsIdentitiesResultOutput{}, options).(GetDatabaseToolsIdentitiesResultOutput)
 }
 
 // A collection of arguments for invoking getDatabaseToolsIdentities.

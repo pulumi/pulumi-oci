@@ -92,12 +92,8 @@ type GetModelGroupVersionHistoriesResult struct {
 }
 
 func GetModelGroupVersionHistoriesOutput(ctx *pulumi.Context, args GetModelGroupVersionHistoriesOutputArgs, opts ...pulumi.InvokeOption) GetModelGroupVersionHistoriesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetModelGroupVersionHistoriesResultOutput, error) {
-			args := v.(GetModelGroupVersionHistoriesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataScience/getModelGroupVersionHistories:getModelGroupVersionHistories", args, GetModelGroupVersionHistoriesResultOutput{}, options).(GetModelGroupVersionHistoriesResultOutput), nil
-		}).(GetModelGroupVersionHistoriesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataScience/getModelGroupVersionHistories:getModelGroupVersionHistories", args, GetModelGroupVersionHistoriesResultOutput{}, options).(GetModelGroupVersionHistoriesResultOutput)
 }
 
 // A collection of arguments for invoking getModelGroupVersionHistories.

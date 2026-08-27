@@ -64,12 +64,8 @@ type GetIotDigitalTwinModelSpecResult struct {
 }
 
 func GetIotDigitalTwinModelSpecOutput(ctx *pulumi.Context, args GetIotDigitalTwinModelSpecOutputArgs, opts ...pulumi.InvokeOption) GetIotDigitalTwinModelSpecResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetIotDigitalTwinModelSpecResultOutput, error) {
-			args := v.(GetIotDigitalTwinModelSpecArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getIotDigitalTwinModelSpec:getIotDigitalTwinModelSpec", args, GetIotDigitalTwinModelSpecResultOutput{}, options).(GetIotDigitalTwinModelSpecResultOutput), nil
-		}).(GetIotDigitalTwinModelSpecResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getIotDigitalTwinModelSpec:getIotDigitalTwinModelSpec", args, GetIotDigitalTwinModelSpecResultOutput{}, options).(GetIotDigitalTwinModelSpecResultOutput)
 }
 
 // A collection of arguments for invoking getIotDigitalTwinModelSpec.

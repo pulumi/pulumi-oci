@@ -68,12 +68,8 @@ type GetVirtualCircuitAssociatedTunnelsResult struct {
 }
 
 func GetVirtualCircuitAssociatedTunnelsOutput(ctx *pulumi.Context, args GetVirtualCircuitAssociatedTunnelsOutputArgs, opts ...pulumi.InvokeOption) GetVirtualCircuitAssociatedTunnelsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVirtualCircuitAssociatedTunnelsResultOutput, error) {
-			args := v.(GetVirtualCircuitAssociatedTunnelsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getVirtualCircuitAssociatedTunnels:getVirtualCircuitAssociatedTunnels", args, GetVirtualCircuitAssociatedTunnelsResultOutput{}, options).(GetVirtualCircuitAssociatedTunnelsResultOutput), nil
-		}).(GetVirtualCircuitAssociatedTunnelsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getVirtualCircuitAssociatedTunnels:getVirtualCircuitAssociatedTunnels", args, GetVirtualCircuitAssociatedTunnelsResultOutput{}, options).(GetVirtualCircuitAssociatedTunnelsResultOutput)
 }
 
 // A collection of arguments for invoking getVirtualCircuitAssociatedTunnels.

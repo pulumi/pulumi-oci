@@ -82,12 +82,8 @@ type GetBatchBatchTaskEnvironmentsResult struct {
 }
 
 func GetBatchBatchTaskEnvironmentsOutput(ctx *pulumi.Context, args GetBatchBatchTaskEnvironmentsOutputArgs, opts ...pulumi.InvokeOption) GetBatchBatchTaskEnvironmentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBatchBatchTaskEnvironmentsResultOutput, error) {
-			args := v.(GetBatchBatchTaskEnvironmentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getBatchBatchTaskEnvironments:getBatchBatchTaskEnvironments", args, GetBatchBatchTaskEnvironmentsResultOutput{}, options).(GetBatchBatchTaskEnvironmentsResultOutput), nil
-		}).(GetBatchBatchTaskEnvironmentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getBatchBatchTaskEnvironments:getBatchBatchTaskEnvironments", args, GetBatchBatchTaskEnvironmentsResultOutput{}, options).(GetBatchBatchTaskEnvironmentsResultOutput)
 }
 
 // A collection of arguments for invoking getBatchBatchTaskEnvironments.

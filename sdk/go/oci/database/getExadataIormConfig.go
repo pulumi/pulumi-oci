@@ -79,12 +79,8 @@ type LookupExadataIormConfigResult struct {
 }
 
 func LookupExadataIormConfigOutput(ctx *pulumi.Context, args LookupExadataIormConfigOutputArgs, opts ...pulumi.InvokeOption) LookupExadataIormConfigResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupExadataIormConfigResultOutput, error) {
-			args := v.(LookupExadataIormConfigArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getExadataIormConfig:getExadataIormConfig", args, LookupExadataIormConfigResultOutput{}, options).(LookupExadataIormConfigResultOutput), nil
-		}).(LookupExadataIormConfigResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getExadataIormConfig:getExadataIormConfig", args, LookupExadataIormConfigResultOutput{}, options).(LookupExadataIormConfigResultOutput)
 }
 
 // A collection of arguments for invoking getExadataIormConfig.

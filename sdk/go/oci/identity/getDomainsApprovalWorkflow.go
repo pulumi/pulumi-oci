@@ -118,12 +118,8 @@ type LookupDomainsApprovalWorkflowResult struct {
 }
 
 func LookupDomainsApprovalWorkflowOutput(ctx *pulumi.Context, args LookupDomainsApprovalWorkflowOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsApprovalWorkflowResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDomainsApprovalWorkflowResultOutput, error) {
-			args := v.(LookupDomainsApprovalWorkflowArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsApprovalWorkflow:getDomainsApprovalWorkflow", args, LookupDomainsApprovalWorkflowResultOutput{}, options).(LookupDomainsApprovalWorkflowResultOutput), nil
-		}).(LookupDomainsApprovalWorkflowResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsApprovalWorkflow:getDomainsApprovalWorkflow", args, LookupDomainsApprovalWorkflowResultOutput{}, options).(LookupDomainsApprovalWorkflowResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsApprovalWorkflow.

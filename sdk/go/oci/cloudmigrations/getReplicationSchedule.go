@@ -84,12 +84,8 @@ type LookupReplicationScheduleResult struct {
 }
 
 func LookupReplicationScheduleOutput(ctx *pulumi.Context, args LookupReplicationScheduleOutputArgs, opts ...pulumi.InvokeOption) LookupReplicationScheduleResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupReplicationScheduleResultOutput, error) {
-			args := v.(LookupReplicationScheduleArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CloudMigrations/getReplicationSchedule:getReplicationSchedule", args, LookupReplicationScheduleResultOutput{}, options).(LookupReplicationScheduleResultOutput), nil
-		}).(LookupReplicationScheduleResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CloudMigrations/getReplicationSchedule:getReplicationSchedule", args, LookupReplicationScheduleResultOutput{}, options).(LookupReplicationScheduleResultOutput)
 }
 
 // A collection of arguments for invoking getReplicationSchedule.

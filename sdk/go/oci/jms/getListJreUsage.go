@@ -88,12 +88,8 @@ type GetListJreUsageResult struct {
 }
 
 func GetListJreUsageOutput(ctx *pulumi.Context, args GetListJreUsageOutputArgs, opts ...pulumi.InvokeOption) GetListJreUsageResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetListJreUsageResultOutput, error) {
-			args := v.(GetListJreUsageArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getListJreUsage:getListJreUsage", args, GetListJreUsageResultOutput{}, options).(GetListJreUsageResultOutput), nil
-		}).(GetListJreUsageResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getListJreUsage:getListJreUsage", args, GetListJreUsageResultOutput{}, options).(GetListJreUsageResultOutput)
 }
 
 // A collection of arguments for invoking getListJreUsage.

@@ -100,12 +100,8 @@ type GetMulticloudExternalLocationsMetadataResult struct {
 }
 
 func GetMulticloudExternalLocationsMetadataOutput(ctx *pulumi.Context, args GetMulticloudExternalLocationsMetadataOutputArgs, opts ...pulumi.InvokeOption) GetMulticloudExternalLocationsMetadataResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMulticloudExternalLocationsMetadataResultOutput, error) {
-			args := v.(GetMulticloudExternalLocationsMetadataArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getMulticloudExternalLocationsMetadata:getMulticloudExternalLocationsMetadata", args, GetMulticloudExternalLocationsMetadataResultOutput{}, options).(GetMulticloudExternalLocationsMetadataResultOutput), nil
-		}).(GetMulticloudExternalLocationsMetadataResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getMulticloudExternalLocationsMetadata:getMulticloudExternalLocationsMetadata", args, GetMulticloudExternalLocationsMetadataResultOutput{}, options).(GetMulticloudExternalLocationsMetadataResultOutput)
 }
 
 // A collection of arguments for invoking getMulticloudExternalLocationsMetadata.

@@ -92,12 +92,8 @@ type LookupOperationsInsightsWarehouseUserResult struct {
 }
 
 func LookupOperationsInsightsWarehouseUserOutput(ctx *pulumi.Context, args LookupOperationsInsightsWarehouseUserOutputArgs, opts ...pulumi.InvokeOption) LookupOperationsInsightsWarehouseUserResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupOperationsInsightsWarehouseUserResultOutput, error) {
-			args := v.(LookupOperationsInsightsWarehouseUserArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Opsi/getOperationsInsightsWarehouseUser:getOperationsInsightsWarehouseUser", args, LookupOperationsInsightsWarehouseUserResultOutput{}, options).(LookupOperationsInsightsWarehouseUserResultOutput), nil
-		}).(LookupOperationsInsightsWarehouseUserResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Opsi/getOperationsInsightsWarehouseUser:getOperationsInsightsWarehouseUser", args, LookupOperationsInsightsWarehouseUserResultOutput{}, options).(LookupOperationsInsightsWarehouseUserResultOutput)
 }
 
 // A collection of arguments for invoking getOperationsInsightsWarehouseUser.

@@ -98,12 +98,8 @@ type GetSdmMaskingPolicyDifferenceDifferenceColumnsResult struct {
 }
 
 func GetSdmMaskingPolicyDifferenceDifferenceColumnsOutput(ctx *pulumi.Context, args GetSdmMaskingPolicyDifferenceDifferenceColumnsOutputArgs, opts ...pulumi.InvokeOption) GetSdmMaskingPolicyDifferenceDifferenceColumnsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSdmMaskingPolicyDifferenceDifferenceColumnsResultOutput, error) {
-			args := v.(GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getSdmMaskingPolicyDifferenceDifferenceColumns:getSdmMaskingPolicyDifferenceDifferenceColumns", args, GetSdmMaskingPolicyDifferenceDifferenceColumnsResultOutput{}, options).(GetSdmMaskingPolicyDifferenceDifferenceColumnsResultOutput), nil
-		}).(GetSdmMaskingPolicyDifferenceDifferenceColumnsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getSdmMaskingPolicyDifferenceDifferenceColumns:getSdmMaskingPolicyDifferenceDifferenceColumns", args, GetSdmMaskingPolicyDifferenceDifferenceColumnsResultOutput{}, options).(GetSdmMaskingPolicyDifferenceDifferenceColumnsResultOutput)
 }
 
 // A collection of arguments for invoking getSdmMaskingPolicyDifferenceDifferenceColumns.

@@ -79,12 +79,8 @@ type GetAppCatalogListingResult struct {
 }
 
 func GetAppCatalogListingOutput(ctx *pulumi.Context, args GetAppCatalogListingOutputArgs, opts ...pulumi.InvokeOption) GetAppCatalogListingResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAppCatalogListingResultOutput, error) {
-			args := v.(GetAppCatalogListingArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getAppCatalogListing:getAppCatalogListing", args, GetAppCatalogListingResultOutput{}, options).(GetAppCatalogListingResultOutput), nil
-		}).(GetAppCatalogListingResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getAppCatalogListing:getAppCatalogListing", args, GetAppCatalogListingResultOutput{}, options).(GetAppCatalogListingResultOutput)
 }
 
 // A collection of arguments for invoking getAppCatalogListing.

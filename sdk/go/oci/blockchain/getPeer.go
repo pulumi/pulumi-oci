@@ -81,12 +81,8 @@ type LookupPeerResult struct {
 }
 
 func LookupPeerOutput(ctx *pulumi.Context, args LookupPeerOutputArgs, opts ...pulumi.InvokeOption) LookupPeerResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupPeerResultOutput, error) {
-			args := v.(LookupPeerArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Blockchain/getPeer:getPeer", args, LookupPeerResultOutput{}, options).(LookupPeerResultOutput), nil
-		}).(LookupPeerResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Blockchain/getPeer:getPeer", args, LookupPeerResultOutput{}, options).(LookupPeerResultOutput)
 }
 
 // A collection of arguments for invoking getPeer.

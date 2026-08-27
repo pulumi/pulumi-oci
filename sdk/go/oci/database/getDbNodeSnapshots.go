@@ -89,12 +89,8 @@ type GetDbNodeSnapshotsResult struct {
 }
 
 func GetDbNodeSnapshotsOutput(ctx *pulumi.Context, args GetDbNodeSnapshotsOutputArgs, opts ...pulumi.InvokeOption) GetDbNodeSnapshotsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbNodeSnapshotsResultOutput, error) {
-			args := v.(GetDbNodeSnapshotsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getDbNodeSnapshots:getDbNodeSnapshots", args, GetDbNodeSnapshotsResultOutput{}, options).(GetDbNodeSnapshotsResultOutput), nil
-		}).(GetDbNodeSnapshotsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getDbNodeSnapshots:getDbNodeSnapshots", args, GetDbNodeSnapshotsResultOutput{}, options).(GetDbNodeSnapshotsResultOutput)
 }
 
 // A collection of arguments for invoking getDbNodeSnapshots.

@@ -81,12 +81,8 @@ type GetManagedInstanceSnapsResult struct {
 }
 
 func GetManagedInstanceSnapsOutput(ctx *pulumi.Context, args GetManagedInstanceSnapsOutputArgs, opts ...pulumi.InvokeOption) GetManagedInstanceSnapsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedInstanceSnapsResultOutput, error) {
-			args := v.(GetManagedInstanceSnapsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getManagedInstanceSnaps:getManagedInstanceSnaps", args, GetManagedInstanceSnapsResultOutput{}, options).(GetManagedInstanceSnapsResultOutput), nil
-		}).(GetManagedInstanceSnapsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getManagedInstanceSnaps:getManagedInstanceSnaps", args, GetManagedInstanceSnapsResultOutput{}, options).(GetManagedInstanceSnapsResultOutput)
 }
 
 // A collection of arguments for invoking getManagedInstanceSnaps.

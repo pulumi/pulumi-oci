@@ -82,12 +82,8 @@ type GetBdsInstanceIdentityConfigurationsResult struct {
 }
 
 func GetBdsInstanceIdentityConfigurationsOutput(ctx *pulumi.Context, args GetBdsInstanceIdentityConfigurationsOutputArgs, opts ...pulumi.InvokeOption) GetBdsInstanceIdentityConfigurationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBdsInstanceIdentityConfigurationsResultOutput, error) {
-			args := v.(GetBdsInstanceIdentityConfigurationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:BigDataService/getBdsInstanceIdentityConfigurations:getBdsInstanceIdentityConfigurations", args, GetBdsInstanceIdentityConfigurationsResultOutput{}, options).(GetBdsInstanceIdentityConfigurationsResultOutput), nil
-		}).(GetBdsInstanceIdentityConfigurationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:BigDataService/getBdsInstanceIdentityConfigurations:getBdsInstanceIdentityConfigurations", args, GetBdsInstanceIdentityConfigurationsResultOutput{}, options).(GetBdsInstanceIdentityConfigurationsResultOutput)
 }
 
 // A collection of arguments for invoking getBdsInstanceIdentityConfigurations.

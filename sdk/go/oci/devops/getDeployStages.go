@@ -87,12 +87,8 @@ type GetDeployStagesResult struct {
 }
 
 func GetDeployStagesOutput(ctx *pulumi.Context, args GetDeployStagesOutputArgs, opts ...pulumi.InvokeOption) GetDeployStagesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDeployStagesResultOutput, error) {
-			args := v.(GetDeployStagesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DevOps/getDeployStages:getDeployStages", args, GetDeployStagesResultOutput{}, options).(GetDeployStagesResultOutput), nil
-		}).(GetDeployStagesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DevOps/getDeployStages:getDeployStages", args, GetDeployStagesResultOutput{}, options).(GetDeployStagesResultOutput)
 }
 
 // A collection of arguments for invoking getDeployStages.

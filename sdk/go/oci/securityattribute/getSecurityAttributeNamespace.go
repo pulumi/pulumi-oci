@@ -84,12 +84,8 @@ type LookupSecurityAttributeNamespaceResult struct {
 }
 
 func LookupSecurityAttributeNamespaceOutput(ctx *pulumi.Context, args LookupSecurityAttributeNamespaceOutputArgs, opts ...pulumi.InvokeOption) LookupSecurityAttributeNamespaceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupSecurityAttributeNamespaceResultOutput, error) {
-			args := v.(LookupSecurityAttributeNamespaceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:SecurityAttribute/getSecurityAttributeNamespace:getSecurityAttributeNamespace", args, LookupSecurityAttributeNamespaceResultOutput{}, options).(LookupSecurityAttributeNamespaceResultOutput), nil
-		}).(LookupSecurityAttributeNamespaceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:SecurityAttribute/getSecurityAttributeNamespace:getSecurityAttributeNamespace", args, LookupSecurityAttributeNamespaceResultOutput{}, options).(LookupSecurityAttributeNamespaceResultOutput)
 }
 
 // A collection of arguments for invoking getSecurityAttributeNamespace.

@@ -88,12 +88,8 @@ type LookupDelegationSubscriptionResult struct {
 }
 
 func LookupDelegationSubscriptionOutput(ctx *pulumi.Context, args LookupDelegationSubscriptionOutputArgs, opts ...pulumi.InvokeOption) LookupDelegationSubscriptionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDelegationSubscriptionResultOutput, error) {
-			args := v.(LookupDelegationSubscriptionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DelegateAccessControl/getDelegationSubscription:getDelegationSubscription", args, LookupDelegationSubscriptionResultOutput{}, options).(LookupDelegationSubscriptionResultOutput), nil
-		}).(LookupDelegationSubscriptionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DelegateAccessControl/getDelegationSubscription:getDelegationSubscription", args, LookupDelegationSubscriptionResultOutput{}, options).(LookupDelegationSubscriptionResultOutput)
 }
 
 // A collection of arguments for invoking getDelegationSubscription.

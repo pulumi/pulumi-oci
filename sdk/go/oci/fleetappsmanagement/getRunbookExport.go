@@ -79,12 +79,8 @@ type GetRunbookExportResult struct {
 }
 
 func GetRunbookExportOutput(ctx *pulumi.Context, args GetRunbookExportOutputArgs, opts ...pulumi.InvokeOption) GetRunbookExportResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRunbookExportResultOutput, error) {
-			args := v.(GetRunbookExportArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getRunbookExport:getRunbookExport", args, GetRunbookExportResultOutput{}, options).(GetRunbookExportResultOutput), nil
-		}).(GetRunbookExportResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getRunbookExport:getRunbookExport", args, GetRunbookExportResultOutput{}, options).(GetRunbookExportResultOutput)
 }
 
 // A collection of arguments for invoking getRunbookExport.

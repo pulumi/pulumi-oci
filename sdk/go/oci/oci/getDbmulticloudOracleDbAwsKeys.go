@@ -87,12 +87,8 @@ type GetDbmulticloudOracleDbAwsKeysResult struct {
 }
 
 func GetDbmulticloudOracleDbAwsKeysOutput(ctx *pulumi.Context, args GetDbmulticloudOracleDbAwsKeysOutputArgs, opts ...pulumi.InvokeOption) GetDbmulticloudOracleDbAwsKeysResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbmulticloudOracleDbAwsKeysResultOutput, error) {
-			args := v.(GetDbmulticloudOracleDbAwsKeysArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbAwsKeys:getDbmulticloudOracleDbAwsKeys", args, GetDbmulticloudOracleDbAwsKeysResultOutput{}, options).(GetDbmulticloudOracleDbAwsKeysResultOutput), nil
-		}).(GetDbmulticloudOracleDbAwsKeysResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbAwsKeys:getDbmulticloudOracleDbAwsKeys", args, GetDbmulticloudOracleDbAwsKeysResultOutput{}, options).(GetDbmulticloudOracleDbAwsKeysResultOutput)
 }
 
 // A collection of arguments for invoking getDbmulticloudOracleDbAwsKeys.

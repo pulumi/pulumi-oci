@@ -79,12 +79,8 @@ type GetCloudClustersResult struct {
 }
 
 func GetCloudClustersOutput(ctx *pulumi.Context, args GetCloudClustersOutputArgs, opts ...pulumi.InvokeOption) GetCloudClustersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCloudClustersResultOutput, error) {
-			args := v.(GetCloudClustersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getCloudClusters:getCloudClusters", args, GetCloudClustersResultOutput{}, options).(GetCloudClustersResultOutput), nil
-		}).(GetCloudClustersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getCloudClusters:getCloudClusters", args, GetCloudClustersResultOutput{}, options).(GetCloudClustersResultOutput)
 }
 
 // A collection of arguments for invoking getCloudClusters.

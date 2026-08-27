@@ -73,12 +73,8 @@ type GetPsaPsaServicesResult struct {
 }
 
 func GetPsaPsaServicesOutput(ctx *pulumi.Context, args GetPsaPsaServicesOutputArgs, opts ...pulumi.InvokeOption) GetPsaPsaServicesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPsaPsaServicesResultOutput, error) {
-			args := v.(GetPsaPsaServicesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getPsaPsaServices:getPsaPsaServices", args, GetPsaPsaServicesResultOutput{}, options).(GetPsaPsaServicesResultOutput), nil
-		}).(GetPsaPsaServicesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getPsaPsaServices:getPsaPsaServices", args, GetPsaPsaServicesResultOutput{}, options).(GetPsaPsaServicesResultOutput)
 }
 
 // A collection of arguments for invoking getPsaPsaServices.

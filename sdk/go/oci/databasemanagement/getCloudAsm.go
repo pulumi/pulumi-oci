@@ -102,12 +102,8 @@ type LookupCloudAsmResult struct {
 }
 
 func LookupCloudAsmOutput(ctx *pulumi.Context, args LookupCloudAsmOutputArgs, opts ...pulumi.InvokeOption) LookupCloudAsmResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupCloudAsmResultOutput, error) {
-			args := v.(LookupCloudAsmArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getCloudAsm:getCloudAsm", args, LookupCloudAsmResultOutput{}, options).(LookupCloudAsmResultOutput), nil
-		}).(LookupCloudAsmResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getCloudAsm:getCloudAsm", args, LookupCloudAsmResultOutput{}, options).(LookupCloudAsmResultOutput)
 }
 
 // A collection of arguments for invoking getCloudAsm.

@@ -71,12 +71,8 @@ type GetVirtualCircuitBandwidthShapesResult struct {
 }
 
 func GetVirtualCircuitBandwidthShapesOutput(ctx *pulumi.Context, args GetVirtualCircuitBandwidthShapesOutputArgs, opts ...pulumi.InvokeOption) GetVirtualCircuitBandwidthShapesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVirtualCircuitBandwidthShapesResultOutput, error) {
-			args := v.(GetVirtualCircuitBandwidthShapesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getVirtualCircuitBandwidthShapes:getVirtualCircuitBandwidthShapes", args, GetVirtualCircuitBandwidthShapesResultOutput{}, options).(GetVirtualCircuitBandwidthShapesResultOutput), nil
-		}).(GetVirtualCircuitBandwidthShapesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getVirtualCircuitBandwidthShapes:getVirtualCircuitBandwidthShapes", args, GetVirtualCircuitBandwidthShapesResultOutput{}, options).(GetVirtualCircuitBandwidthShapesResultOutput)
 }
 
 // A collection of arguments for invoking getVirtualCircuitBandwidthShapes.

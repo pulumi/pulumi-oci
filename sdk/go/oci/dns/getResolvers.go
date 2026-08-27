@@ -91,12 +91,8 @@ type GetResolversResult struct {
 }
 
 func GetResolversOutput(ctx *pulumi.Context, args GetResolversOutputArgs, opts ...pulumi.InvokeOption) GetResolversResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetResolversResultOutput, error) {
-			args := v.(GetResolversArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Dns/getResolvers:getResolvers", args, GetResolversResultOutput{}, options).(GetResolversResultOutput), nil
-		}).(GetResolversResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Dns/getResolvers:getResolvers", args, GetResolversResultOutput{}, options).(GetResolversResultOutput)
 }
 
 // A collection of arguments for invoking getResolvers.

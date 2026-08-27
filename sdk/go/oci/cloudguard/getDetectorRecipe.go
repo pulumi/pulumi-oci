@@ -96,12 +96,8 @@ type LookupDetectorRecipeResult struct {
 }
 
 func LookupDetectorRecipeOutput(ctx *pulumi.Context, args LookupDetectorRecipeOutputArgs, opts ...pulumi.InvokeOption) LookupDetectorRecipeResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDetectorRecipeResultOutput, error) {
-			args := v.(LookupDetectorRecipeArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CloudGuard/getDetectorRecipe:getDetectorRecipe", args, LookupDetectorRecipeResultOutput{}, options).(LookupDetectorRecipeResultOutput), nil
-		}).(LookupDetectorRecipeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CloudGuard/getDetectorRecipe:getDetectorRecipe", args, LookupDetectorRecipeResultOutput{}, options).(LookupDetectorRecipeResultOutput)
 }
 
 // A collection of arguments for invoking getDetectorRecipe.

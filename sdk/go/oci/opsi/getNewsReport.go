@@ -102,12 +102,8 @@ type LookupNewsReportResult struct {
 }
 
 func LookupNewsReportOutput(ctx *pulumi.Context, args LookupNewsReportOutputArgs, opts ...pulumi.InvokeOption) LookupNewsReportResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupNewsReportResultOutput, error) {
-			args := v.(LookupNewsReportArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Opsi/getNewsReport:getNewsReport", args, LookupNewsReportResultOutput{}, options).(LookupNewsReportResultOutput), nil
-		}).(LookupNewsReportResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Opsi/getNewsReport:getNewsReport", args, LookupNewsReportResultOutput{}, options).(LookupNewsReportResultOutput)
 }
 
 // A collection of arguments for invoking getNewsReport.

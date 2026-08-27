@@ -71,12 +71,8 @@ type GetOperationsInsightsWarehouseResourceUsageSummaryResult struct {
 }
 
 func GetOperationsInsightsWarehouseResourceUsageSummaryOutput(ctx *pulumi.Context, args GetOperationsInsightsWarehouseResourceUsageSummaryOutputArgs, opts ...pulumi.InvokeOption) GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput, error) {
-			args := v.(GetOperationsInsightsWarehouseResourceUsageSummaryArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Opsi/getOperationsInsightsWarehouseResourceUsageSummary:getOperationsInsightsWarehouseResourceUsageSummary", args, GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput{}, options).(GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput), nil
-		}).(GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Opsi/getOperationsInsightsWarehouseResourceUsageSummary:getOperationsInsightsWarehouseResourceUsageSummary", args, GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput{}, options).(GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput)
 }
 
 // A collection of arguments for invoking getOperationsInsightsWarehouseResourceUsageSummary.

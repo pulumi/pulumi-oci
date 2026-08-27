@@ -106,12 +106,8 @@ type GetInventoryResourcesResult struct {
 }
 
 func GetInventoryResourcesOutput(ctx *pulumi.Context, args GetInventoryResourcesOutputArgs, opts ...pulumi.InvokeOption) GetInventoryResourcesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetInventoryResourcesResultOutput, error) {
-			args := v.(GetInventoryResourcesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getInventoryResources:getInventoryResources", args, GetInventoryResourcesResultOutput{}, options).(GetInventoryResourcesResultOutput), nil
-		}).(GetInventoryResourcesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getInventoryResources:getInventoryResources", args, GetInventoryResourcesResultOutput{}, options).(GetInventoryResourcesResultOutput)
 }
 
 // A collection of arguments for invoking getInventoryResources.

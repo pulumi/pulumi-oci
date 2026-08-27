@@ -69,12 +69,8 @@ type LookupUtilsSubscriptionAcknowledgmentConfigurationResult struct {
 }
 
 func LookupUtilsSubscriptionAcknowledgmentConfigurationOutput(ctx *pulumi.Context, args LookupUtilsSubscriptionAcknowledgmentConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput, error) {
-			args := v.(LookupUtilsSubscriptionAcknowledgmentConfigurationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getUtilsSubscriptionAcknowledgmentConfiguration:getUtilsSubscriptionAcknowledgmentConfiguration", args, LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput{}, options).(LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput), nil
-		}).(LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getUtilsSubscriptionAcknowledgmentConfiguration:getUtilsSubscriptionAcknowledgmentConfiguration", args, LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput{}, options).(LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput)
 }
 
 // A collection of arguments for invoking getUtilsSubscriptionAcknowledgmentConfiguration.

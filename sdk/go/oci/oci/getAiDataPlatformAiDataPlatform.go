@@ -97,12 +97,8 @@ type LookupAiDataPlatformAiDataPlatformResult struct {
 }
 
 func LookupAiDataPlatformAiDataPlatformOutput(ctx *pulumi.Context, args LookupAiDataPlatformAiDataPlatformOutputArgs, opts ...pulumi.InvokeOption) LookupAiDataPlatformAiDataPlatformResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAiDataPlatformAiDataPlatformResultOutput, error) {
-			args := v.(LookupAiDataPlatformAiDataPlatformArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getAiDataPlatformAiDataPlatform:getAiDataPlatformAiDataPlatform", args, LookupAiDataPlatformAiDataPlatformResultOutput{}, options).(LookupAiDataPlatformAiDataPlatformResultOutput), nil
-		}).(LookupAiDataPlatformAiDataPlatformResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getAiDataPlatformAiDataPlatform:getAiDataPlatformAiDataPlatform", args, LookupAiDataPlatformAiDataPlatformResultOutput{}, options).(LookupAiDataPlatformAiDataPlatformResultOutput)
 }
 
 // A collection of arguments for invoking getAiDataPlatformAiDataPlatform.

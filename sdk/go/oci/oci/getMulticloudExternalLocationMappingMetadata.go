@@ -84,12 +84,8 @@ type GetMulticloudExternalLocationMappingMetadataResult struct {
 }
 
 func GetMulticloudExternalLocationMappingMetadataOutput(ctx *pulumi.Context, args GetMulticloudExternalLocationMappingMetadataOutputArgs, opts ...pulumi.InvokeOption) GetMulticloudExternalLocationMappingMetadataResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMulticloudExternalLocationMappingMetadataResultOutput, error) {
-			args := v.(GetMulticloudExternalLocationMappingMetadataArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getMulticloudExternalLocationMappingMetadata:getMulticloudExternalLocationMappingMetadata", args, GetMulticloudExternalLocationMappingMetadataResultOutput{}, options).(GetMulticloudExternalLocationMappingMetadataResultOutput), nil
-		}).(GetMulticloudExternalLocationMappingMetadataResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getMulticloudExternalLocationMappingMetadata:getMulticloudExternalLocationMappingMetadata", args, GetMulticloudExternalLocationMappingMetadataResultOutput{}, options).(GetMulticloudExternalLocationMappingMetadataResultOutput)
 }
 
 // A collection of arguments for invoking getMulticloudExternalLocationMappingMetadata.

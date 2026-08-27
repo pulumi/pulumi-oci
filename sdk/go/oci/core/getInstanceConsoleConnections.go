@@ -76,12 +76,8 @@ type GetInstanceConsoleConnectionsResult struct {
 }
 
 func GetInstanceConsoleConnectionsOutput(ctx *pulumi.Context, args GetInstanceConsoleConnectionsOutputArgs, opts ...pulumi.InvokeOption) GetInstanceConsoleConnectionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetInstanceConsoleConnectionsResultOutput, error) {
-			args := v.(GetInstanceConsoleConnectionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getInstanceConsoleConnections:getInstanceConsoleConnections", args, GetInstanceConsoleConnectionsResultOutput{}, options).(GetInstanceConsoleConnectionsResultOutput), nil
-		}).(GetInstanceConsoleConnectionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getInstanceConsoleConnections:getInstanceConsoleConnections", args, GetInstanceConsoleConnectionsResultOutput{}, options).(GetInstanceConsoleConnectionsResultOutput)
 }
 
 // A collection of arguments for invoking getInstanceConsoleConnections.

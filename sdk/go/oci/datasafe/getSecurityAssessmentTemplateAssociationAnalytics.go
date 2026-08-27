@@ -110,12 +110,8 @@ type GetSecurityAssessmentTemplateAssociationAnalyticsResult struct {
 }
 
 func GetSecurityAssessmentTemplateAssociationAnalyticsOutput(ctx *pulumi.Context, args GetSecurityAssessmentTemplateAssociationAnalyticsOutputArgs, opts ...pulumi.InvokeOption) GetSecurityAssessmentTemplateAssociationAnalyticsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSecurityAssessmentTemplateAssociationAnalyticsResultOutput, error) {
-			args := v.(GetSecurityAssessmentTemplateAssociationAnalyticsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getSecurityAssessmentTemplateAssociationAnalytics:getSecurityAssessmentTemplateAssociationAnalytics", args, GetSecurityAssessmentTemplateAssociationAnalyticsResultOutput{}, options).(GetSecurityAssessmentTemplateAssociationAnalyticsResultOutput), nil
-		}).(GetSecurityAssessmentTemplateAssociationAnalyticsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getSecurityAssessmentTemplateAssociationAnalytics:getSecurityAssessmentTemplateAssociationAnalytics", args, GetSecurityAssessmentTemplateAssociationAnalyticsResultOutput{}, options).(GetSecurityAssessmentTemplateAssociationAnalyticsResultOutput)
 }
 
 // A collection of arguments for invoking getSecurityAssessmentTemplateAssociationAnalytics.

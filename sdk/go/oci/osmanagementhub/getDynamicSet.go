@@ -90,12 +90,8 @@ type LookupDynamicSetResult struct {
 }
 
 func LookupDynamicSetOutput(ctx *pulumi.Context, args LookupDynamicSetOutputArgs, opts ...pulumi.InvokeOption) LookupDynamicSetResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDynamicSetResultOutput, error) {
-			args := v.(LookupDynamicSetArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getDynamicSet:getDynamicSet", args, LookupDynamicSetResultOutput{}, options).(LookupDynamicSetResultOutput), nil
-		}).(LookupDynamicSetResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getDynamicSet:getDynamicSet", args, LookupDynamicSetResultOutput{}, options).(LookupDynamicSetResultOutput)
 }
 
 // A collection of arguments for invoking getDynamicSet.

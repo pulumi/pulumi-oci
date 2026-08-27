@@ -92,12 +92,8 @@ type LookupNotebookSessionResult struct {
 }
 
 func LookupNotebookSessionOutput(ctx *pulumi.Context, args LookupNotebookSessionOutputArgs, opts ...pulumi.InvokeOption) LookupNotebookSessionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupNotebookSessionResultOutput, error) {
-			args := v.(LookupNotebookSessionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataScience/getNotebookSession:getNotebookSession", args, LookupNotebookSessionResultOutput{}, options).(LookupNotebookSessionResultOutput), nil
-		}).(LookupNotebookSessionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataScience/getNotebookSession:getNotebookSession", args, LookupNotebookSessionResultOutput{}, options).(LookupNotebookSessionResultOutput)
 }
 
 // A collection of arguments for invoking getNotebookSession.

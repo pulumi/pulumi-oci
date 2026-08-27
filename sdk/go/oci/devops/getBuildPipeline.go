@@ -88,12 +88,8 @@ type LookupBuildPipelineResult struct {
 }
 
 func LookupBuildPipelineOutput(ctx *pulumi.Context, args LookupBuildPipelineOutputArgs, opts ...pulumi.InvokeOption) LookupBuildPipelineResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBuildPipelineResultOutput, error) {
-			args := v.(LookupBuildPipelineArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DevOps/getBuildPipeline:getBuildPipeline", args, LookupBuildPipelineResultOutput{}, options).(LookupBuildPipelineResultOutput), nil
-		}).(LookupBuildPipelineResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DevOps/getBuildPipeline:getBuildPipeline", args, LookupBuildPipelineResultOutput{}, options).(LookupBuildPipelineResultOutput)
 }
 
 // A collection of arguments for invoking getBuildPipeline.

@@ -70,12 +70,8 @@ type LookupSubscriptionRedeemableUserResult struct {
 }
 
 func LookupSubscriptionRedeemableUserOutput(ctx *pulumi.Context, args LookupSubscriptionRedeemableUserOutputArgs, opts ...pulumi.InvokeOption) LookupSubscriptionRedeemableUserResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupSubscriptionRedeemableUserResultOutput, error) {
-			args := v.(LookupSubscriptionRedeemableUserArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:UsageProxy/getSubscriptionRedeemableUser:getSubscriptionRedeemableUser", args, LookupSubscriptionRedeemableUserResultOutput{}, options).(LookupSubscriptionRedeemableUserResultOutput), nil
-		}).(LookupSubscriptionRedeemableUserResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:UsageProxy/getSubscriptionRedeemableUser:getSubscriptionRedeemableUser", args, LookupSubscriptionRedeemableUserResultOutput{}, options).(LookupSubscriptionRedeemableUserResultOutput)
 }
 
 // A collection of arguments for invoking getSubscriptionRedeemableUser.

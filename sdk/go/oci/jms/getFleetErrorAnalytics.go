@@ -72,12 +72,8 @@ type GetFleetErrorAnalyticsResult struct {
 }
 
 func GetFleetErrorAnalyticsOutput(ctx *pulumi.Context, args GetFleetErrorAnalyticsOutputArgs, opts ...pulumi.InvokeOption) GetFleetErrorAnalyticsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFleetErrorAnalyticsResultOutput, error) {
-			args := v.(GetFleetErrorAnalyticsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getFleetErrorAnalytics:getFleetErrorAnalytics", args, GetFleetErrorAnalyticsResultOutput{}, options).(GetFleetErrorAnalyticsResultOutput), nil
-		}).(GetFleetErrorAnalyticsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getFleetErrorAnalytics:getFleetErrorAnalytics", args, GetFleetErrorAnalyticsResultOutput{}, options).(GetFleetErrorAnalyticsResultOutput)
 }
 
 // A collection of arguments for invoking getFleetErrorAnalytics.

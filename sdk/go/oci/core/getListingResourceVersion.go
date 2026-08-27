@@ -43,12 +43,8 @@ type GetListingResourceVersionResult struct {
 }
 
 func GetListingResourceVersionOutput(ctx *pulumi.Context, args GetListingResourceVersionOutputArgs, opts ...pulumi.InvokeOption) GetListingResourceVersionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetListingResourceVersionResultOutput, error) {
-			args := v.(GetListingResourceVersionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getListingResourceVersion:getListingResourceVersion", args, GetListingResourceVersionResultOutput{}, options).(GetListingResourceVersionResultOutput), nil
-		}).(GetListingResourceVersionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getListingResourceVersion:getListingResourceVersion", args, GetListingResourceVersionResultOutput{}, options).(GetListingResourceVersionResultOutput)
 }
 
 // A collection of arguments for invoking getListingResourceVersion.

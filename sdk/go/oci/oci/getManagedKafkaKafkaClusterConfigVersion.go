@@ -75,12 +75,8 @@ type GetManagedKafkaKafkaClusterConfigVersionResult struct {
 }
 
 func GetManagedKafkaKafkaClusterConfigVersionOutput(ctx *pulumi.Context, args GetManagedKafkaKafkaClusterConfigVersionOutputArgs, opts ...pulumi.InvokeOption) GetManagedKafkaKafkaClusterConfigVersionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedKafkaKafkaClusterConfigVersionResultOutput, error) {
-			args := v.(GetManagedKafkaKafkaClusterConfigVersionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getManagedKafkaKafkaClusterConfigVersion:getManagedKafkaKafkaClusterConfigVersion", args, GetManagedKafkaKafkaClusterConfigVersionResultOutput{}, options).(GetManagedKafkaKafkaClusterConfigVersionResultOutput), nil
-		}).(GetManagedKafkaKafkaClusterConfigVersionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getManagedKafkaKafkaClusterConfigVersion:getManagedKafkaKafkaClusterConfigVersion", args, GetManagedKafkaKafkaClusterConfigVersionResultOutput{}, options).(GetManagedKafkaKafkaClusterConfigVersionResultOutput)
 }
 
 // A collection of arguments for invoking getManagedKafkaKafkaClusterConfigVersion.

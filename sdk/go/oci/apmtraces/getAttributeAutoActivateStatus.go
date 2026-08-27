@@ -72,12 +72,8 @@ type GetAttributeAutoActivateStatusResult struct {
 }
 
 func GetAttributeAutoActivateStatusOutput(ctx *pulumi.Context, args GetAttributeAutoActivateStatusOutputArgs, opts ...pulumi.InvokeOption) GetAttributeAutoActivateStatusResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAttributeAutoActivateStatusResultOutput, error) {
-			args := v.(GetAttributeAutoActivateStatusArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ApmTraces/getAttributeAutoActivateStatus:getAttributeAutoActivateStatus", args, GetAttributeAutoActivateStatusResultOutput{}, options).(GetAttributeAutoActivateStatusResultOutput), nil
-		}).(GetAttributeAutoActivateStatusResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ApmTraces/getAttributeAutoActivateStatus:getAttributeAutoActivateStatus", args, GetAttributeAutoActivateStatusResultOutput{}, options).(GetAttributeAutoActivateStatusResultOutput)
 }
 
 // A collection of arguments for invoking getAttributeAutoActivateStatus.

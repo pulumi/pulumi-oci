@@ -78,12 +78,8 @@ type GetClusterNetworkInstancesResult struct {
 }
 
 func GetClusterNetworkInstancesOutput(ctx *pulumi.Context, args GetClusterNetworkInstancesOutputArgs, opts ...pulumi.InvokeOption) GetClusterNetworkInstancesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetClusterNetworkInstancesResultOutput, error) {
-			args := v.(GetClusterNetworkInstancesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getClusterNetworkInstances:getClusterNetworkInstances", args, GetClusterNetworkInstancesResultOutput{}, options).(GetClusterNetworkInstancesResultOutput), nil
-		}).(GetClusterNetworkInstancesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getClusterNetworkInstances:getClusterNetworkInstances", args, GetClusterNetworkInstancesResultOutput{}, options).(GetClusterNetworkInstancesResultOutput)
 }
 
 // A collection of arguments for invoking getClusterNetworkInstances.

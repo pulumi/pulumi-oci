@@ -118,12 +118,8 @@ type LookupDomainsNetworkPerimeterResult struct {
 }
 
 func LookupDomainsNetworkPerimeterOutput(ctx *pulumi.Context, args LookupDomainsNetworkPerimeterOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsNetworkPerimeterResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDomainsNetworkPerimeterResultOutput, error) {
-			args := v.(LookupDomainsNetworkPerimeterArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsNetworkPerimeter:getDomainsNetworkPerimeter", args, LookupDomainsNetworkPerimeterResultOutput{}, options).(LookupDomainsNetworkPerimeterResultOutput), nil
-		}).(LookupDomainsNetworkPerimeterResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsNetworkPerimeter:getDomainsNetworkPerimeter", args, LookupDomainsNetworkPerimeterResultOutput{}, options).(LookupDomainsNetworkPerimeterResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsNetworkPerimeter.

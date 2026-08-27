@@ -69,12 +69,8 @@ type GetDbNodeConsoleConnectionsResult struct {
 }
 
 func GetDbNodeConsoleConnectionsOutput(ctx *pulumi.Context, args GetDbNodeConsoleConnectionsOutputArgs, opts ...pulumi.InvokeOption) GetDbNodeConsoleConnectionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbNodeConsoleConnectionsResultOutput, error) {
-			args := v.(GetDbNodeConsoleConnectionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getDbNodeConsoleConnections:getDbNodeConsoleConnections", args, GetDbNodeConsoleConnectionsResultOutput{}, options).(GetDbNodeConsoleConnectionsResultOutput), nil
-		}).(GetDbNodeConsoleConnectionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getDbNodeConsoleConnections:getDbNodeConsoleConnections", args, GetDbNodeConsoleConnectionsResultOutput{}, options).(GetDbNodeConsoleConnectionsResultOutput)
 }
 
 // A collection of arguments for invoking getDbNodeConsoleConnections.

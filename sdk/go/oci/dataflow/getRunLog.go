@@ -76,12 +76,8 @@ type GetRunLogResult struct {
 }
 
 func GetRunLogOutput(ctx *pulumi.Context, args GetRunLogOutputArgs, opts ...pulumi.InvokeOption) GetRunLogResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRunLogResultOutput, error) {
-			args := v.(GetRunLogArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataFlow/getRunLog:getRunLog", args, GetRunLogResultOutput{}, options).(GetRunLogResultOutput), nil
-		}).(GetRunLogResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataFlow/getRunLog:getRunLog", args, GetRunLogResultOutput{}, options).(GetRunLogResultOutput)
 }
 
 // A collection of arguments for invoking getRunLog.

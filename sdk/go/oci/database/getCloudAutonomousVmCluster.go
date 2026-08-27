@@ -197,12 +197,8 @@ type LookupCloudAutonomousVmClusterResult struct {
 }
 
 func LookupCloudAutonomousVmClusterOutput(ctx *pulumi.Context, args LookupCloudAutonomousVmClusterOutputArgs, opts ...pulumi.InvokeOption) LookupCloudAutonomousVmClusterResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupCloudAutonomousVmClusterResultOutput, error) {
-			args := v.(LookupCloudAutonomousVmClusterArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getCloudAutonomousVmCluster:getCloudAutonomousVmCluster", args, LookupCloudAutonomousVmClusterResultOutput{}, options).(LookupCloudAutonomousVmClusterResultOutput), nil
-		}).(LookupCloudAutonomousVmClusterResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getCloudAutonomousVmCluster:getCloudAutonomousVmCluster", args, LookupCloudAutonomousVmClusterResultOutput{}, options).(LookupCloudAutonomousVmClusterResultOutput)
 }
 
 // A collection of arguments for invoking getCloudAutonomousVmCluster.

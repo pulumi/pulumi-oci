@@ -68,12 +68,8 @@ type GetSslCipherSuitesResult struct {
 }
 
 func GetSslCipherSuitesOutput(ctx *pulumi.Context, args GetSslCipherSuitesOutputArgs, opts ...pulumi.InvokeOption) GetSslCipherSuitesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSslCipherSuitesResultOutput, error) {
-			args := v.(GetSslCipherSuitesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LoadBalancer/getSslCipherSuites:getSslCipherSuites", args, GetSslCipherSuitesResultOutput{}, options).(GetSslCipherSuitesResultOutput), nil
-		}).(GetSslCipherSuitesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LoadBalancer/getSslCipherSuites:getSslCipherSuites", args, GetSslCipherSuitesResultOutput{}, options).(GetSslCipherSuitesResultOutput)
 }
 
 // A collection of arguments for invoking getSslCipherSuites.

@@ -76,12 +76,8 @@ type GetActionResult struct {
 }
 
 func GetActionOutput(ctx *pulumi.Context, args GetActionOutputArgs, opts ...pulumi.InvokeOption) GetActionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetActionResultOutput, error) {
-			args := v.(GetActionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OperatorAccessControl/getAction:getAction", args, GetActionResultOutput{}, options).(GetActionResultOutput), nil
-		}).(GetActionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OperatorAccessControl/getAction:getAction", args, GetActionResultOutput{}, options).(GetActionResultOutput)
 }
 
 // A collection of arguments for invoking getAction.

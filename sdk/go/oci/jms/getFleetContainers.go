@@ -100,12 +100,8 @@ type GetFleetContainersResult struct {
 }
 
 func GetFleetContainersOutput(ctx *pulumi.Context, args GetFleetContainersOutputArgs, opts ...pulumi.InvokeOption) GetFleetContainersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFleetContainersResultOutput, error) {
-			args := v.(GetFleetContainersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getFleetContainers:getFleetContainers", args, GetFleetContainersResultOutput{}, options).(GetFleetContainersResultOutput), nil
-		}).(GetFleetContainersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getFleetContainers:getFleetContainers", args, GetFleetContainersResultOutput{}, options).(GetFleetContainersResultOutput)
 }
 
 // A collection of arguments for invoking getFleetContainers.

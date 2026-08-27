@@ -81,12 +81,8 @@ type LookupRunStatementResult struct {
 }
 
 func LookupRunStatementOutput(ctx *pulumi.Context, args LookupRunStatementOutputArgs, opts ...pulumi.InvokeOption) LookupRunStatementResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupRunStatementResultOutput, error) {
-			args := v.(LookupRunStatementArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataFlow/getRunStatement:getRunStatement", args, LookupRunStatementResultOutput{}, options).(LookupRunStatementResultOutput), nil
-		}).(LookupRunStatementResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataFlow/getRunStatement:getRunStatement", args, LookupRunStatementResultOutput{}, options).(LookupRunStatementResultOutput)
 }
 
 // A collection of arguments for invoking getRunStatement.

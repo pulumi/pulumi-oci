@@ -14,10 +14,6 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class GetDomainsIdentityProofingProviderTemplatesIdentityProofingProviderTemplateIdcsLockedByResult
     {
         /// <summary>
-        /// The URI of the SCIM resource that represents the User or App who Locked this Resource.
-        /// </summary>
-        public readonly string _ref;
-        /// <summary>
         /// The displayName of the User or App who locked this Resource.
         /// </summary>
         public readonly string Display;
@@ -36,8 +32,6 @@ namespace Pulumi.Oci.Identity.Outputs
 
         [OutputConstructor]
         private GetDomainsIdentityProofingProviderTemplatesIdentityProofingProviderTemplateIdcsLockedByResult(
-            string _ref,
-
             string display,
 
             string ocid,
@@ -46,7 +40,6 @@ namespace Pulumi.Oci.Identity.Outputs
 
             string value)
         {
-            this._ref = _ref;
             Display = display;
             Ocid = ocid;
             Type = type;

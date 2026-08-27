@@ -88,12 +88,8 @@ type LookupDdfsInstanceResult struct {
 }
 
 func LookupDdfsInstanceOutput(ctx *pulumi.Context, args LookupDdfsInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupDdfsInstanceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDdfsInstanceResultOutput, error) {
-			args := v.(LookupDdfsInstanceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDdfsInstance:getDdfsInstance", args, LookupDdfsInstanceResultOutput{}, options).(LookupDdfsInstanceResultOutput), nil
-		}).(LookupDdfsInstanceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDdfsInstance:getDdfsInstance", args, LookupDdfsInstanceResultOutput{}, options).(LookupDdfsInstanceResultOutput)
 }
 
 // A collection of arguments for invoking getDdfsInstance.

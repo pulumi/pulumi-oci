@@ -72,12 +72,8 @@ type GetScheduledQueriesResult struct {
 }
 
 func GetScheduledQueriesOutput(ctx *pulumi.Context, args GetScheduledQueriesOutputArgs, opts ...pulumi.InvokeOption) GetScheduledQueriesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetScheduledQueriesResultOutput, error) {
-			args := v.(GetScheduledQueriesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ApmTraces/getScheduledQueries:getScheduledQueries", args, GetScheduledQueriesResultOutput{}, options).(GetScheduledQueriesResultOutput), nil
-		}).(GetScheduledQueriesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ApmTraces/getScheduledQueries:getScheduledQueries", args, GetScheduledQueriesResultOutput{}, options).(GetScheduledQueriesResultOutput)
 }
 
 // A collection of arguments for invoking getScheduledQueries.

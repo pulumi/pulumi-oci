@@ -72,12 +72,8 @@ type GetNamespaceResult struct {
 }
 
 func GetNamespaceOutput(ctx *pulumi.Context, args GetNamespaceOutputArgs, opts ...pulumi.InvokeOption) GetNamespaceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetNamespaceResultOutput, error) {
-			args := v.(GetNamespaceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ObjectStorage/getNamespace:getNamespace", args, GetNamespaceResultOutput{}, options).(GetNamespaceResultOutput), nil
-		}).(GetNamespaceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ObjectStorage/getNamespace:getNamespace", args, GetNamespaceResultOutput{}, options).(GetNamespaceResultOutput)
 }
 
 // A collection of arguments for invoking getNamespace.

@@ -88,12 +88,8 @@ type LookupNetworkAddressListResult struct {
 }
 
 func LookupNetworkAddressListOutput(ctx *pulumi.Context, args LookupNetworkAddressListOutputArgs, opts ...pulumi.InvokeOption) LookupNetworkAddressListResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupNetworkAddressListResultOutput, error) {
-			args := v.(LookupNetworkAddressListArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Waf/getNetworkAddressList:getNetworkAddressList", args, LookupNetworkAddressListResultOutput{}, options).(LookupNetworkAddressListResultOutput), nil
-		}).(LookupNetworkAddressListResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Waf/getNetworkAddressList:getNetworkAddressList", args, LookupNetworkAddressListResultOutput{}, options).(LookupNetworkAddressListResultOutput)
 }
 
 // A collection of arguments for invoking getNetworkAddressList.

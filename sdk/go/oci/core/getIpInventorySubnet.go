@@ -74,12 +74,8 @@ type GetIpInventorySubnetResult struct {
 }
 
 func GetIpInventorySubnetOutput(ctx *pulumi.Context, args GetIpInventorySubnetOutputArgs, opts ...pulumi.InvokeOption) GetIpInventorySubnetResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetIpInventorySubnetResultOutput, error) {
-			args := v.(GetIpInventorySubnetArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getIpInventorySubnet:getIpInventorySubnet", args, GetIpInventorySubnetResultOutput{}, options).(GetIpInventorySubnetResultOutput), nil
-		}).(GetIpInventorySubnetResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getIpInventorySubnet:getIpInventorySubnet", args, GetIpInventorySubnetResultOutput{}, options).(GetIpInventorySubnetResultOutput)
 }
 
 // A collection of arguments for invoking getIpInventorySubnet.

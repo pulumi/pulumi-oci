@@ -71,12 +71,8 @@ type GetSystemMediaWorkflowResult struct {
 }
 
 func GetSystemMediaWorkflowOutput(ctx *pulumi.Context, args GetSystemMediaWorkflowOutputArgs, opts ...pulumi.InvokeOption) GetSystemMediaWorkflowResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSystemMediaWorkflowResultOutput, error) {
-			args := v.(GetSystemMediaWorkflowArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:MediaServices/getSystemMediaWorkflow:getSystemMediaWorkflow", args, GetSystemMediaWorkflowResultOutput{}, options).(GetSystemMediaWorkflowResultOutput), nil
-		}).(GetSystemMediaWorkflowResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:MediaServices/getSystemMediaWorkflow:getSystemMediaWorkflow", args, GetSystemMediaWorkflowResultOutput{}, options).(GetSystemMediaWorkflowResultOutput)
 }
 
 // A collection of arguments for invoking getSystemMediaWorkflow.

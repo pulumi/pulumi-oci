@@ -83,12 +83,8 @@ type GetVcnsResult struct {
 }
 
 func GetVcnsOutput(ctx *pulumi.Context, args GetVcnsOutputArgs, opts ...pulumi.InvokeOption) GetVcnsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVcnsResultOutput, error) {
-			args := v.(GetVcnsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getVcns:getVcns", args, GetVcnsResultOutput{}, options).(GetVcnsResultOutput), nil
-		}).(GetVcnsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getVcns:getVcns", args, GetVcnsResultOutput{}, options).(GetVcnsResultOutput)
 }
 
 // A collection of arguments for invoking getVcns.

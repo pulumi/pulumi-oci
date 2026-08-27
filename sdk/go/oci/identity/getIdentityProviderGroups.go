@@ -80,12 +80,8 @@ type GetIdentityProviderGroupsResult struct {
 }
 
 func GetIdentityProviderGroupsOutput(ctx *pulumi.Context, args GetIdentityProviderGroupsOutputArgs, opts ...pulumi.InvokeOption) GetIdentityProviderGroupsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetIdentityProviderGroupsResultOutput, error) {
-			args := v.(GetIdentityProviderGroupsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getIdentityProviderGroups:getIdentityProviderGroups", args, GetIdentityProviderGroupsResultOutput{}, options).(GetIdentityProviderGroupsResultOutput), nil
-		}).(GetIdentityProviderGroupsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getIdentityProviderGroups:getIdentityProviderGroups", args, GetIdentityProviderGroupsResultOutput{}, options).(GetIdentityProviderGroupsResultOutput)
 }
 
 // A collection of arguments for invoking getIdentityProviderGroups.

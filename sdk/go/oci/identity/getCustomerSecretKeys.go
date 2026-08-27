@@ -70,12 +70,8 @@ type GetCustomerSecretKeysResult struct {
 }
 
 func GetCustomerSecretKeysOutput(ctx *pulumi.Context, args GetCustomerSecretKeysOutputArgs, opts ...pulumi.InvokeOption) GetCustomerSecretKeysResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCustomerSecretKeysResultOutput, error) {
-			args := v.(GetCustomerSecretKeysArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getCustomerSecretKeys:getCustomerSecretKeys", args, GetCustomerSecretKeysResultOutput{}, options).(GetCustomerSecretKeysResultOutput), nil
-		}).(GetCustomerSecretKeysResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getCustomerSecretKeys:getCustomerSecretKeys", args, GetCustomerSecretKeysResultOutput{}, options).(GetCustomerSecretKeysResultOutput)
 }
 
 // A collection of arguments for invoking getCustomerSecretKeys.

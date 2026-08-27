@@ -80,12 +80,8 @@ type GetEntitlementsResult struct {
 }
 
 func GetEntitlementsOutput(ctx *pulumi.Context, args GetEntitlementsOutputArgs, opts ...pulumi.InvokeOption) GetEntitlementsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetEntitlementsResultOutput, error) {
-			args := v.(GetEntitlementsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getEntitlements:getEntitlements", args, GetEntitlementsResultOutput{}, options).(GetEntitlementsResultOutput), nil
-		}).(GetEntitlementsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getEntitlements:getEntitlements", args, GetEntitlementsResultOutput{}, options).(GetEntitlementsResultOutput)
 }
 
 // A collection of arguments for invoking getEntitlements.

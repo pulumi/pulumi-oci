@@ -84,12 +84,8 @@ type GetDatabaseToolsSqlReportsResult struct {
 }
 
 func GetDatabaseToolsSqlReportsOutput(ctx *pulumi.Context, args GetDatabaseToolsSqlReportsOutputArgs, opts ...pulumi.InvokeOption) GetDatabaseToolsSqlReportsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDatabaseToolsSqlReportsResultOutput, error) {
-			args := v.(GetDatabaseToolsSqlReportsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseTools/getDatabaseToolsSqlReports:getDatabaseToolsSqlReports", args, GetDatabaseToolsSqlReportsResultOutput{}, options).(GetDatabaseToolsSqlReportsResultOutput), nil
-		}).(GetDatabaseToolsSqlReportsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseTools/getDatabaseToolsSqlReports:getDatabaseToolsSqlReports", args, GetDatabaseToolsSqlReportsResultOutput{}, options).(GetDatabaseToolsSqlReportsResultOutput)
 }
 
 // A collection of arguments for invoking getDatabaseToolsSqlReports.

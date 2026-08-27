@@ -88,12 +88,8 @@ type GetPingProbeResultsResult struct {
 }
 
 func GetPingProbeResultsOutput(ctx *pulumi.Context, args GetPingProbeResultsOutputArgs, opts ...pulumi.InvokeOption) GetPingProbeResultsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPingProbeResultsResultOutput, error) {
-			args := v.(GetPingProbeResultsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:HealthChecks/getPingProbeResults:getPingProbeResults", args, GetPingProbeResultsResultOutput{}, options).(GetPingProbeResultsResultOutput), nil
-		}).(GetPingProbeResultsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:HealthChecks/getPingProbeResults:getPingProbeResults", args, GetPingProbeResultsResultOutput{}, options).(GetPingProbeResultsResultOutput)
 }
 
 // A collection of arguments for invoking getPingProbeResults.

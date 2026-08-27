@@ -89,12 +89,8 @@ type GetAddressListsResult struct {
 }
 
 func GetAddressListsOutput(ctx *pulumi.Context, args GetAddressListsOutputArgs, opts ...pulumi.InvokeOption) GetAddressListsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAddressListsResultOutput, error) {
-			args := v.(GetAddressListsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Waas/getAddressLists:getAddressLists", args, GetAddressListsResultOutput{}, options).(GetAddressListsResultOutput), nil
-		}).(GetAddressListsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Waas/getAddressLists:getAddressLists", args, GetAddressListsResultOutput{}, options).(GetAddressListsResultOutput)
 }
 
 // A collection of arguments for invoking getAddressLists.

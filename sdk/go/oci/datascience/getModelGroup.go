@@ -105,12 +105,8 @@ type LookupModelGroupResult struct {
 }
 
 func LookupModelGroupOutput(ctx *pulumi.Context, args LookupModelGroupOutputArgs, opts ...pulumi.InvokeOption) LookupModelGroupResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupModelGroupResultOutput, error) {
-			args := v.(LookupModelGroupArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataScience/getModelGroup:getModelGroup", args, LookupModelGroupResultOutput{}, options).(LookupModelGroupResultOutput), nil
-		}).(LookupModelGroupResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataScience/getModelGroup:getModelGroup", args, LookupModelGroupResultOutput{}, options).(LookupModelGroupResultOutput)
 }
 
 // A collection of arguments for invoking getModelGroup.

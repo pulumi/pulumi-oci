@@ -97,12 +97,8 @@ type GetErratumResult struct {
 }
 
 func GetErratumOutput(ctx *pulumi.Context, args GetErratumOutputArgs, opts ...pulumi.InvokeOption) GetErratumResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetErratumResultOutput, error) {
-			args := v.(GetErratumArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getErratum:getErratum", args, GetErratumResultOutput{}, options).(GetErratumResultOutput), nil
-		}).(GetErratumResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getErratum:getErratum", args, GetErratumResultOutput{}, options).(GetErratumResultOutput)
 }
 
 // A collection of arguments for invoking getErratum.

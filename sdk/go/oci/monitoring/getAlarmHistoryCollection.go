@@ -89,12 +89,8 @@ type GetAlarmHistoryCollectionResult struct {
 }
 
 func GetAlarmHistoryCollectionOutput(ctx *pulumi.Context, args GetAlarmHistoryCollectionOutputArgs, opts ...pulumi.InvokeOption) GetAlarmHistoryCollectionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAlarmHistoryCollectionResultOutput, error) {
-			args := v.(GetAlarmHistoryCollectionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Monitoring/getAlarmHistoryCollection:getAlarmHistoryCollection", args, GetAlarmHistoryCollectionResultOutput{}, options).(GetAlarmHistoryCollectionResultOutput), nil
-		}).(GetAlarmHistoryCollectionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Monitoring/getAlarmHistoryCollection:getAlarmHistoryCollection", args, GetAlarmHistoryCollectionResultOutput{}, options).(GetAlarmHistoryCollectionResultOutput)
 }
 
 // A collection of arguments for invoking getAlarmHistoryCollection.

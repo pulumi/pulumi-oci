@@ -112,12 +112,8 @@ type LookupDatabaseToolsConnectionResult struct {
 }
 
 func LookupDatabaseToolsConnectionOutput(ctx *pulumi.Context, args LookupDatabaseToolsConnectionOutputArgs, opts ...pulumi.InvokeOption) LookupDatabaseToolsConnectionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDatabaseToolsConnectionResultOutput, error) {
-			args := v.(LookupDatabaseToolsConnectionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseTools/getDatabaseToolsConnection:getDatabaseToolsConnection", args, LookupDatabaseToolsConnectionResultOutput{}, options).(LookupDatabaseToolsConnectionResultOutput), nil
-		}).(LookupDatabaseToolsConnectionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseTools/getDatabaseToolsConnection:getDatabaseToolsConnection", args, LookupDatabaseToolsConnectionResultOutput{}, options).(LookupDatabaseToolsConnectionResultOutput)
 }
 
 // A collection of arguments for invoking getDatabaseToolsConnection.

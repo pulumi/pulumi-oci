@@ -101,12 +101,8 @@ type LookupOciCacheBackupResult struct {
 }
 
 func LookupOciCacheBackupOutput(ctx *pulumi.Context, args LookupOciCacheBackupOutputArgs, opts ...pulumi.InvokeOption) LookupOciCacheBackupResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupOciCacheBackupResultOutput, error) {
-			args := v.(LookupOciCacheBackupArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Redis/getOciCacheBackup:getOciCacheBackup", args, LookupOciCacheBackupResultOutput{}, options).(LookupOciCacheBackupResultOutput), nil
-		}).(LookupOciCacheBackupResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Redis/getOciCacheBackup:getOciCacheBackup", args, LookupOciCacheBackupResultOutput{}, options).(LookupOciCacheBackupResultOutput)
 }
 
 // A collection of arguments for invoking getOciCacheBackup.

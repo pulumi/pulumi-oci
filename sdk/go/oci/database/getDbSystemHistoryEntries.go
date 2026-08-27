@@ -68,12 +68,8 @@ type GetDbSystemHistoryEntriesResult struct {
 }
 
 func GetDbSystemHistoryEntriesOutput(ctx *pulumi.Context, args GetDbSystemHistoryEntriesOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemHistoryEntriesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbSystemHistoryEntriesResultOutput, error) {
-			args := v.(GetDbSystemHistoryEntriesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getDbSystemHistoryEntries:getDbSystemHistoryEntries", args, GetDbSystemHistoryEntriesResultOutput{}, options).(GetDbSystemHistoryEntriesResultOutput), nil
-		}).(GetDbSystemHistoryEntriesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getDbSystemHistoryEntries:getDbSystemHistoryEntries", args, GetDbSystemHistoryEntriesResultOutput{}, options).(GetDbSystemHistoryEntriesResultOutput)
 }
 
 // A collection of arguments for invoking getDbSystemHistoryEntries.

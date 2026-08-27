@@ -87,12 +87,8 @@ type GetAgentDependenciesResult struct {
 }
 
 func GetAgentDependenciesOutput(ctx *pulumi.Context, args GetAgentDependenciesOutputArgs, opts ...pulumi.InvokeOption) GetAgentDependenciesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAgentDependenciesResultOutput, error) {
-			args := v.(GetAgentDependenciesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CloudBridge/getAgentDependencies:getAgentDependencies", args, GetAgentDependenciesResultOutput{}, options).(GetAgentDependenciesResultOutput), nil
-		}).(GetAgentDependenciesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CloudBridge/getAgentDependencies:getAgentDependencies", args, GetAgentDependenciesResultOutput{}, options).(GetAgentDependenciesResultOutput)
 }
 
 // A collection of arguments for invoking getAgentDependencies.

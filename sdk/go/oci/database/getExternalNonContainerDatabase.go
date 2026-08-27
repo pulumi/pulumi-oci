@@ -104,12 +104,8 @@ type LookupExternalNonContainerDatabaseResult struct {
 }
 
 func LookupExternalNonContainerDatabaseOutput(ctx *pulumi.Context, args LookupExternalNonContainerDatabaseOutputArgs, opts ...pulumi.InvokeOption) LookupExternalNonContainerDatabaseResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupExternalNonContainerDatabaseResultOutput, error) {
-			args := v.(LookupExternalNonContainerDatabaseArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getExternalNonContainerDatabase:getExternalNonContainerDatabase", args, LookupExternalNonContainerDatabaseResultOutput{}, options).(LookupExternalNonContainerDatabaseResultOutput), nil
-		}).(LookupExternalNonContainerDatabaseResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getExternalNonContainerDatabase:getExternalNonContainerDatabase", args, LookupExternalNonContainerDatabaseResultOutput{}, options).(LookupExternalNonContainerDatabaseResultOutput)
 }
 
 // A collection of arguments for invoking getExternalNonContainerDatabase.

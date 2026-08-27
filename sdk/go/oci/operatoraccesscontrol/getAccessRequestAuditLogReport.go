@@ -76,12 +76,8 @@ type GetAccessRequestAuditLogReportResult struct {
 }
 
 func GetAccessRequestAuditLogReportOutput(ctx *pulumi.Context, args GetAccessRequestAuditLogReportOutputArgs, opts ...pulumi.InvokeOption) GetAccessRequestAuditLogReportResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAccessRequestAuditLogReportResultOutput, error) {
-			args := v.(GetAccessRequestAuditLogReportArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OperatorAccessControl/getAccessRequestAuditLogReport:getAccessRequestAuditLogReport", args, GetAccessRequestAuditLogReportResultOutput{}, options).(GetAccessRequestAuditLogReportResultOutput), nil
-		}).(GetAccessRequestAuditLogReportResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OperatorAccessControl/getAccessRequestAuditLogReport:getAccessRequestAuditLogReport", args, GetAccessRequestAuditLogReportResultOutput{}, options).(GetAccessRequestAuditLogReportResultOutput)
 }
 
 // A collection of arguments for invoking getAccessRequestAuditLogReport.

@@ -89,12 +89,8 @@ type GetCloudVmClustersResult struct {
 }
 
 func GetCloudVmClustersOutput(ctx *pulumi.Context, args GetCloudVmClustersOutputArgs, opts ...pulumi.InvokeOption) GetCloudVmClustersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCloudVmClustersResultOutput, error) {
-			args := v.(GetCloudVmClustersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getCloudVmClusters:getCloudVmClusters", args, GetCloudVmClustersResultOutput{}, options).(GetCloudVmClustersResultOutput), nil
-		}).(GetCloudVmClustersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getCloudVmClusters:getCloudVmClusters", args, GetCloudVmClustersResultOutput{}, options).(GetCloudVmClustersResultOutput)
 }
 
 // A collection of arguments for invoking getCloudVmClusters.

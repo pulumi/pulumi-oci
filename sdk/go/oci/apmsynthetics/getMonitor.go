@@ -120,12 +120,8 @@ type GetMonitorResult struct {
 }
 
 func GetMonitorOutput(ctx *pulumi.Context, args GetMonitorOutputArgs, opts ...pulumi.InvokeOption) GetMonitorResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMonitorResultOutput, error) {
-			args := v.(GetMonitorArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ApmSynthetics/getMonitor:getMonitor", args, GetMonitorResultOutput{}, options).(GetMonitorResultOutput), nil
-		}).(GetMonitorResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ApmSynthetics/getMonitor:getMonitor", args, GetMonitorResultOutput{}, options).(GetMonitorResultOutput)
 }
 
 // A collection of arguments for invoking getMonitor.

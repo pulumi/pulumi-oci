@@ -66,12 +66,8 @@ type GetLogSetsCountResult struct {
 }
 
 func GetLogSetsCountOutput(ctx *pulumi.Context, args GetLogSetsCountOutputArgs, opts ...pulumi.InvokeOption) GetLogSetsCountResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetLogSetsCountResultOutput, error) {
-			args := v.(GetLogSetsCountArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LogAnalytics/getLogSetsCount:getLogSetsCount", args, GetLogSetsCountResultOutput{}, options).(GetLogSetsCountResultOutput), nil
-		}).(GetLogSetsCountResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LogAnalytics/getLogSetsCount:getLogSetsCount", args, GetLogSetsCountResultOutput{}, options).(GetLogSetsCountResultOutput)
 }
 
 // A collection of arguments for invoking getLogSetsCount.

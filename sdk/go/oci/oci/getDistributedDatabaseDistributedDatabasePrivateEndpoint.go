@@ -99,12 +99,8 @@ type LookupDistributedDatabaseDistributedDatabasePrivateEndpointResult struct {
 }
 
 func LookupDistributedDatabaseDistributedDatabasePrivateEndpointOutput(ctx *pulumi.Context, args LookupDistributedDatabaseDistributedDatabasePrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupDistributedDatabaseDistributedDatabasePrivateEndpointResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDistributedDatabaseDistributedDatabasePrivateEndpointResultOutput, error) {
-			args := v.(LookupDistributedDatabaseDistributedDatabasePrivateEndpointArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDistributedDatabaseDistributedDatabasePrivateEndpoint:getDistributedDatabaseDistributedDatabasePrivateEndpoint", args, LookupDistributedDatabaseDistributedDatabasePrivateEndpointResultOutput{}, options).(LookupDistributedDatabaseDistributedDatabasePrivateEndpointResultOutput), nil
-		}).(LookupDistributedDatabaseDistributedDatabasePrivateEndpointResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDistributedDatabaseDistributedDatabasePrivateEndpoint:getDistributedDatabaseDistributedDatabasePrivateEndpoint", args, LookupDistributedDatabaseDistributedDatabasePrivateEndpointResultOutput{}, options).(LookupDistributedDatabaseDistributedDatabasePrivateEndpointResultOutput)
 }
 
 // A collection of arguments for invoking getDistributedDatabaseDistributedDatabasePrivateEndpoint.

@@ -108,12 +108,8 @@ type LookupVtapResult struct {
 }
 
 func LookupVtapOutput(ctx *pulumi.Context, args LookupVtapOutputArgs, opts ...pulumi.InvokeOption) LookupVtapResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupVtapResultOutput, error) {
-			args := v.(LookupVtapArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getVtap:getVtap", args, LookupVtapResultOutput{}, options).(LookupVtapResultOutput), nil
-		}).(LookupVtapResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getVtap:getVtap", args, LookupVtapResultOutput{}, options).(LookupVtapResultOutput)
 }
 
 // A collection of arguments for invoking getVtap.

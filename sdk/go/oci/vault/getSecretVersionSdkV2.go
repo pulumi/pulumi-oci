@@ -44,12 +44,8 @@ type GetSecretVersionSdkV2Result struct {
 }
 
 func GetSecretVersionSdkV2Output(ctx *pulumi.Context, args GetSecretVersionSdkV2OutputArgs, opts ...pulumi.InvokeOption) GetSecretVersionSdkV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSecretVersionSdkV2ResultOutput, error) {
-			args := v.(GetSecretVersionSdkV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Vault/getSecretVersionSdkV2:getSecretVersionSdkV2", args, GetSecretVersionSdkV2ResultOutput{}, options).(GetSecretVersionSdkV2ResultOutput), nil
-		}).(GetSecretVersionSdkV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Vault/getSecretVersionSdkV2:getSecretVersionSdkV2", args, GetSecretVersionSdkV2ResultOutput{}, options).(GetSecretVersionSdkV2ResultOutput)
 }
 
 // A collection of arguments for invoking getSecretVersionSdkV2.

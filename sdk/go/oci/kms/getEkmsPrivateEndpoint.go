@@ -90,12 +90,8 @@ type LookupEkmsPrivateEndpointResult struct {
 }
 
 func LookupEkmsPrivateEndpointOutput(ctx *pulumi.Context, args LookupEkmsPrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupEkmsPrivateEndpointResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupEkmsPrivateEndpointResultOutput, error) {
-			args := v.(LookupEkmsPrivateEndpointArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Kms/getEkmsPrivateEndpoint:getEkmsPrivateEndpoint", args, LookupEkmsPrivateEndpointResultOutput{}, options).(LookupEkmsPrivateEndpointResultOutput), nil
-		}).(LookupEkmsPrivateEndpointResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Kms/getEkmsPrivateEndpoint:getEkmsPrivateEndpoint", args, LookupEkmsPrivateEndpointResultOutput{}, options).(LookupEkmsPrivateEndpointResultOutput)
 }
 
 // A collection of arguments for invoking getEkmsPrivateEndpoint.

@@ -79,12 +79,8 @@ type GetBdsInstanceResourcePrincipalConfigurationsResult struct {
 }
 
 func GetBdsInstanceResourcePrincipalConfigurationsOutput(ctx *pulumi.Context, args GetBdsInstanceResourcePrincipalConfigurationsOutputArgs, opts ...pulumi.InvokeOption) GetBdsInstanceResourcePrincipalConfigurationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBdsInstanceResourcePrincipalConfigurationsResultOutput, error) {
-			args := v.(GetBdsInstanceResourcePrincipalConfigurationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:BigDataService/getBdsInstanceResourcePrincipalConfigurations:getBdsInstanceResourcePrincipalConfigurations", args, GetBdsInstanceResourcePrincipalConfigurationsResultOutput{}, options).(GetBdsInstanceResourcePrincipalConfigurationsResultOutput), nil
-		}).(GetBdsInstanceResourcePrincipalConfigurationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:BigDataService/getBdsInstanceResourcePrincipalConfigurations:getBdsInstanceResourcePrincipalConfigurations", args, GetBdsInstanceResourcePrincipalConfigurationsResultOutput{}, options).(GetBdsInstanceResourcePrincipalConfigurationsResultOutput)
 }
 
 // A collection of arguments for invoking getBdsInstanceResourcePrincipalConfigurations.

@@ -76,12 +76,8 @@ type GetVirtualCircuitPublicPrefixesResult struct {
 }
 
 func GetVirtualCircuitPublicPrefixesOutput(ctx *pulumi.Context, args GetVirtualCircuitPublicPrefixesOutputArgs, opts ...pulumi.InvokeOption) GetVirtualCircuitPublicPrefixesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVirtualCircuitPublicPrefixesResultOutput, error) {
-			args := v.(GetVirtualCircuitPublicPrefixesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getVirtualCircuitPublicPrefixes:getVirtualCircuitPublicPrefixes", args, GetVirtualCircuitPublicPrefixesResultOutput{}, options).(GetVirtualCircuitPublicPrefixesResultOutput), nil
-		}).(GetVirtualCircuitPublicPrefixesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getVirtualCircuitPublicPrefixes:getVirtualCircuitPublicPrefixes", args, GetVirtualCircuitPublicPrefixesResultOutput{}, options).(GetVirtualCircuitPublicPrefixesResultOutput)
 }
 
 // A collection of arguments for invoking getVirtualCircuitPublicPrefixes.

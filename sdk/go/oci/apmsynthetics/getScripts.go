@@ -78,12 +78,8 @@ type GetScriptsResult struct {
 }
 
 func GetScriptsOutput(ctx *pulumi.Context, args GetScriptsOutputArgs, opts ...pulumi.InvokeOption) GetScriptsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetScriptsResultOutput, error) {
-			args := v.(GetScriptsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ApmSynthetics/getScripts:getScripts", args, GetScriptsResultOutput{}, options).(GetScriptsResultOutput), nil
-		}).(GetScriptsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ApmSynthetics/getScripts:getScripts", args, GetScriptsResultOutput{}, options).(GetScriptsResultOutput)
 }
 
 // A collection of arguments for invoking getScripts.

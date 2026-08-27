@@ -83,12 +83,8 @@ type GetJavaFamilyResult struct {
 }
 
 func GetJavaFamilyOutput(ctx *pulumi.Context, args GetJavaFamilyOutputArgs, opts ...pulumi.InvokeOption) GetJavaFamilyResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetJavaFamilyResultOutput, error) {
-			args := v.(GetJavaFamilyArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getJavaFamily:getJavaFamily", args, GetJavaFamilyResultOutput{}, options).(GetJavaFamilyResultOutput), nil
-		}).(GetJavaFamilyResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getJavaFamily:getJavaFamily", args, GetJavaFamilyResultOutput{}, options).(GetJavaFamilyResultOutput)
 }
 
 // A collection of arguments for invoking getJavaFamily.

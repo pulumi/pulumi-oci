@@ -98,12 +98,8 @@ type LookupExecutionActionResult struct {
 }
 
 func LookupExecutionActionOutput(ctx *pulumi.Context, args LookupExecutionActionOutputArgs, opts ...pulumi.InvokeOption) LookupExecutionActionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupExecutionActionResultOutput, error) {
-			args := v.(LookupExecutionActionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getExecutionAction:getExecutionAction", args, LookupExecutionActionResultOutput{}, options).(LookupExecutionActionResultOutput), nil
-		}).(LookupExecutionActionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getExecutionAction:getExecutionAction", args, LookupExecutionActionResultOutput{}, options).(LookupExecutionActionResultOutput)
 }
 
 // A collection of arguments for invoking getExecutionAction.

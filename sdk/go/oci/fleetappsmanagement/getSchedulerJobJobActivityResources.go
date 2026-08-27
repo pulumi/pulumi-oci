@@ -90,12 +90,8 @@ type GetSchedulerJobJobActivityResourcesResult struct {
 }
 
 func GetSchedulerJobJobActivityResourcesOutput(ctx *pulumi.Context, args GetSchedulerJobJobActivityResourcesOutputArgs, opts ...pulumi.InvokeOption) GetSchedulerJobJobActivityResourcesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSchedulerJobJobActivityResourcesResultOutput, error) {
-			args := v.(GetSchedulerJobJobActivityResourcesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getSchedulerJobJobActivityResources:getSchedulerJobJobActivityResources", args, GetSchedulerJobJobActivityResourcesResultOutput{}, options).(GetSchedulerJobJobActivityResourcesResultOutput), nil
-		}).(GetSchedulerJobJobActivityResourcesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getSchedulerJobJobActivityResources:getSchedulerJobJobActivityResources", args, GetSchedulerJobJobActivityResourcesResultOutput{}, options).(GetSchedulerJobJobActivityResourcesResultOutput)
 }
 
 // A collection of arguments for invoking getSchedulerJobJobActivityResources.

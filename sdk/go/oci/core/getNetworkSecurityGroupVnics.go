@@ -68,12 +68,8 @@ type GetNetworkSecurityGroupVnicsResult struct {
 }
 
 func GetNetworkSecurityGroupVnicsOutput(ctx *pulumi.Context, args GetNetworkSecurityGroupVnicsOutputArgs, opts ...pulumi.InvokeOption) GetNetworkSecurityGroupVnicsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetNetworkSecurityGroupVnicsResultOutput, error) {
-			args := v.(GetNetworkSecurityGroupVnicsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getNetworkSecurityGroupVnics:getNetworkSecurityGroupVnics", args, GetNetworkSecurityGroupVnicsResultOutput{}, options).(GetNetworkSecurityGroupVnicsResultOutput), nil
-		}).(GetNetworkSecurityGroupVnicsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getNetworkSecurityGroupVnics:getNetworkSecurityGroupVnics", args, GetNetworkSecurityGroupVnicsResultOutput{}, options).(GetNetworkSecurityGroupVnicsResultOutput)
 }
 
 // A collection of arguments for invoking getNetworkSecurityGroupVnics.

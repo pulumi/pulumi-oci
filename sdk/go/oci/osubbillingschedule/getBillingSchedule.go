@@ -81,12 +81,8 @@ type GetBillingScheduleResult struct {
 }
 
 func GetBillingScheduleOutput(ctx *pulumi.Context, args GetBillingScheduleOutputArgs, opts ...pulumi.InvokeOption) GetBillingScheduleResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBillingScheduleResultOutput, error) {
-			args := v.(GetBillingScheduleArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsubBillingSchedule/getBillingSchedule:getBillingSchedule", args, GetBillingScheduleResultOutput{}, options).(GetBillingScheduleResultOutput), nil
-		}).(GetBillingScheduleResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsubBillingSchedule/getBillingSchedule:getBillingSchedule", args, GetBillingScheduleResultOutput{}, options).(GetBillingScheduleResultOutput)
 }
 
 // A collection of arguments for invoking getBillingSchedule.

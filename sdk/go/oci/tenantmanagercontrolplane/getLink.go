@@ -78,12 +78,8 @@ type GetLinkResult struct {
 }
 
 func GetLinkOutput(ctx *pulumi.Context, args GetLinkOutputArgs, opts ...pulumi.InvokeOption) GetLinkResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetLinkResultOutput, error) {
-			args := v.(GetLinkArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Tenantmanagercontrolplane/getLink:getLink", args, GetLinkResultOutput{}, options).(GetLinkResultOutput), nil
-		}).(GetLinkResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Tenantmanagercontrolplane/getLink:getLink", args, GetLinkResultOutput{}, options).(GetLinkResultOutput)
 }
 
 // A collection of arguments for invoking getLink.

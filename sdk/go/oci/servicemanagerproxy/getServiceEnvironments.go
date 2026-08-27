@@ -85,12 +85,8 @@ type GetServiceEnvironmentsResult struct {
 }
 
 func GetServiceEnvironmentsOutput(ctx *pulumi.Context, args GetServiceEnvironmentsOutputArgs, opts ...pulumi.InvokeOption) GetServiceEnvironmentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetServiceEnvironmentsResultOutput, error) {
-			args := v.(GetServiceEnvironmentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ServiceManagerProxy/getServiceEnvironments:getServiceEnvironments", args, GetServiceEnvironmentsResultOutput{}, options).(GetServiceEnvironmentsResultOutput), nil
-		}).(GetServiceEnvironmentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ServiceManagerProxy/getServiceEnvironments:getServiceEnvironments", args, GetServiceEnvironmentsResultOutput{}, options).(GetServiceEnvironmentsResultOutput)
 }
 
 // A collection of arguments for invoking getServiceEnvironments.

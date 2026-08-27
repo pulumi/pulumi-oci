@@ -93,12 +93,8 @@ type GetFusionEnvironmentScheduledActivityResult struct {
 }
 
 func GetFusionEnvironmentScheduledActivityOutput(ctx *pulumi.Context, args GetFusionEnvironmentScheduledActivityOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentScheduledActivityResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFusionEnvironmentScheduledActivityResultOutput, error) {
-			args := v.(GetFusionEnvironmentScheduledActivityArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Functions/getFusionEnvironmentScheduledActivity:getFusionEnvironmentScheduledActivity", args, GetFusionEnvironmentScheduledActivityResultOutput{}, options).(GetFusionEnvironmentScheduledActivityResultOutput), nil
-		}).(GetFusionEnvironmentScheduledActivityResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Functions/getFusionEnvironmentScheduledActivity:getFusionEnvironmentScheduledActivity", args, GetFusionEnvironmentScheduledActivityResultOutput{}, options).(GetFusionEnvironmentScheduledActivityResultOutput)
 }
 
 // A collection of arguments for invoking getFusionEnvironmentScheduledActivity.

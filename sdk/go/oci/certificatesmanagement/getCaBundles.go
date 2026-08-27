@@ -84,12 +84,8 @@ type GetCaBundlesResult struct {
 }
 
 func GetCaBundlesOutput(ctx *pulumi.Context, args GetCaBundlesOutputArgs, opts ...pulumi.InvokeOption) GetCaBundlesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCaBundlesResultOutput, error) {
-			args := v.(GetCaBundlesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CertificatesManagement/getCaBundles:getCaBundles", args, GetCaBundlesResultOutput{}, options).(GetCaBundlesResultOutput), nil
-		}).(GetCaBundlesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CertificatesManagement/getCaBundles:getCaBundles", args, GetCaBundlesResultOutput{}, options).(GetCaBundlesResultOutput)
 }
 
 // A collection of arguments for invoking getCaBundles.

@@ -89,12 +89,8 @@ type GetDatastoreClustersResult struct {
 }
 
 func GetDatastoreClustersOutput(ctx *pulumi.Context, args GetDatastoreClustersOutputArgs, opts ...pulumi.InvokeOption) GetDatastoreClustersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDatastoreClustersResultOutput, error) {
-			args := v.(GetDatastoreClustersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Ocvp/getDatastoreClusters:getDatastoreClusters", args, GetDatastoreClustersResultOutput{}, options).(GetDatastoreClustersResultOutput), nil
-		}).(GetDatastoreClustersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Ocvp/getDatastoreClusters:getDatastoreClusters", args, GetDatastoreClustersResultOutput{}, options).(GetDatastoreClustersResultOutput)
 }
 
 // A collection of arguments for invoking getDatastoreClusters.

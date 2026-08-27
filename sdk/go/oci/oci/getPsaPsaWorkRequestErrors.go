@@ -37,12 +37,8 @@ type GetPsaPsaWorkRequestErrorsResult struct {
 }
 
 func GetPsaPsaWorkRequestErrorsOutput(ctx *pulumi.Context, args GetPsaPsaWorkRequestErrorsOutputArgs, opts ...pulumi.InvokeOption) GetPsaPsaWorkRequestErrorsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPsaPsaWorkRequestErrorsResultOutput, error) {
-			args := v.(GetPsaPsaWorkRequestErrorsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getPsaPsaWorkRequestErrors:getPsaPsaWorkRequestErrors", args, GetPsaPsaWorkRequestErrorsResultOutput{}, options).(GetPsaPsaWorkRequestErrorsResultOutput), nil
-		}).(GetPsaPsaWorkRequestErrorsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getPsaPsaWorkRequestErrors:getPsaPsaWorkRequestErrors", args, GetPsaPsaWorkRequestErrorsResultOutput{}, options).(GetPsaPsaWorkRequestErrorsResultOutput)
 }
 
 // A collection of arguments for invoking getPsaPsaWorkRequestErrors.

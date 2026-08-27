@@ -80,12 +80,8 @@ type GetMediaWorkflowTaskDeclarationResult struct {
 }
 
 func GetMediaWorkflowTaskDeclarationOutput(ctx *pulumi.Context, args GetMediaWorkflowTaskDeclarationOutputArgs, opts ...pulumi.InvokeOption) GetMediaWorkflowTaskDeclarationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMediaWorkflowTaskDeclarationResultOutput, error) {
-			args := v.(GetMediaWorkflowTaskDeclarationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:MediaServices/getMediaWorkflowTaskDeclaration:getMediaWorkflowTaskDeclaration", args, GetMediaWorkflowTaskDeclarationResultOutput{}, options).(GetMediaWorkflowTaskDeclarationResultOutput), nil
-		}).(GetMediaWorkflowTaskDeclarationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:MediaServices/getMediaWorkflowTaskDeclaration:getMediaWorkflowTaskDeclaration", args, GetMediaWorkflowTaskDeclarationResultOutput{}, options).(GetMediaWorkflowTaskDeclarationResultOutput)
 }
 
 // A collection of arguments for invoking getMediaWorkflowTaskDeclaration.

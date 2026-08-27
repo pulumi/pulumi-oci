@@ -111,12 +111,8 @@ type LookupMediaAssetResult struct {
 }
 
 func LookupMediaAssetOutput(ctx *pulumi.Context, args LookupMediaAssetOutputArgs, opts ...pulumi.InvokeOption) LookupMediaAssetResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupMediaAssetResultOutput, error) {
-			args := v.(LookupMediaAssetArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:MediaServices/getMediaAsset:getMediaAsset", args, LookupMediaAssetResultOutput{}, options).(LookupMediaAssetResultOutput), nil
-		}).(LookupMediaAssetResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:MediaServices/getMediaAsset:getMediaAsset", args, LookupMediaAssetResultOutput{}, options).(LookupMediaAssetResultOutput)
 }
 
 // A collection of arguments for invoking getMediaAsset.

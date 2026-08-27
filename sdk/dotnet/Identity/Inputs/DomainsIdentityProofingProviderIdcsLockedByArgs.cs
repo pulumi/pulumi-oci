@@ -13,22 +13,6 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsIdentityProofingProviderIdcsLockedByArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-        /// 
-        /// **SCIM++ Properties:**
-        /// * caseExact: true
-        /// * idcsSearchable: false
-        /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: false
-        /// * returned: default
-        /// * type: string
-        /// * uniqueness: none
-        /// </summary>
-        [Input("_ref")]
-        public Input<string>? _ref { get; set; }
-
-        /// <summary>
         /// (Updatable) The displayName of the User or App who locked this Resource.
         /// 
         /// **SCIM++ Properties:**

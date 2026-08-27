@@ -93,12 +93,8 @@ type GetBdsInstanceMetastoreConfigsResult struct {
 }
 
 func GetBdsInstanceMetastoreConfigsOutput(ctx *pulumi.Context, args GetBdsInstanceMetastoreConfigsOutputArgs, opts ...pulumi.InvokeOption) GetBdsInstanceMetastoreConfigsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBdsInstanceMetastoreConfigsResultOutput, error) {
-			args := v.(GetBdsInstanceMetastoreConfigsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:BigDataService/getBdsInstanceMetastoreConfigs:getBdsInstanceMetastoreConfigs", args, GetBdsInstanceMetastoreConfigsResultOutput{}, options).(GetBdsInstanceMetastoreConfigsResultOutput), nil
-		}).(GetBdsInstanceMetastoreConfigsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:BigDataService/getBdsInstanceMetastoreConfigs:getBdsInstanceMetastoreConfigs", args, GetBdsInstanceMetastoreConfigsResultOutput{}, options).(GetBdsInstanceMetastoreConfigsResultOutput)
 }
 
 // A collection of arguments for invoking getBdsInstanceMetastoreConfigs.

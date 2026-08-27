@@ -85,12 +85,8 @@ type GetManagedInstanceErrataResult struct {
 }
 
 func GetManagedInstanceErrataOutput(ctx *pulumi.Context, args GetManagedInstanceErrataOutputArgs, opts ...pulumi.InvokeOption) GetManagedInstanceErrataResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedInstanceErrataResultOutput, error) {
-			args := v.(GetManagedInstanceErrataArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getManagedInstanceErrata:getManagedInstanceErrata", args, GetManagedInstanceErrataResultOutput{}, options).(GetManagedInstanceErrataResultOutput), nil
-		}).(GetManagedInstanceErrataResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getManagedInstanceErrata:getManagedInstanceErrata", args, GetManagedInstanceErrataResultOutput{}, options).(GetManagedInstanceErrataResultOutput)
 }
 
 // A collection of arguments for invoking getManagedInstanceErrata.

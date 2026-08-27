@@ -102,12 +102,8 @@ type LookupExecutionWindowResult struct {
 }
 
 func LookupExecutionWindowOutput(ctx *pulumi.Context, args LookupExecutionWindowOutputArgs, opts ...pulumi.InvokeOption) LookupExecutionWindowResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupExecutionWindowResultOutput, error) {
-			args := v.(LookupExecutionWindowArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getExecutionWindow:getExecutionWindow", args, LookupExecutionWindowResultOutput{}, options).(LookupExecutionWindowResultOutput), nil
-		}).(LookupExecutionWindowResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getExecutionWindow:getExecutionWindow", args, LookupExecutionWindowResultOutput{}, options).(LookupExecutionWindowResultOutput)
 }
 
 // A collection of arguments for invoking getExecutionWindow.

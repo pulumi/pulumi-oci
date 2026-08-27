@@ -111,12 +111,8 @@ type LookupBootVolumeBackupResult struct {
 }
 
 func LookupBootVolumeBackupOutput(ctx *pulumi.Context, args LookupBootVolumeBackupOutputArgs, opts ...pulumi.InvokeOption) LookupBootVolumeBackupResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBootVolumeBackupResultOutput, error) {
-			args := v.(LookupBootVolumeBackupArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getBootVolumeBackup:getBootVolumeBackup", args, LookupBootVolumeBackupResultOutput{}, options).(LookupBootVolumeBackupResultOutput), nil
-		}).(LookupBootVolumeBackupResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getBootVolumeBackup:getBootVolumeBackup", args, LookupBootVolumeBackupResultOutput{}, options).(LookupBootVolumeBackupResultOutput)
 }
 
 // A collection of arguments for invoking getBootVolumeBackup.

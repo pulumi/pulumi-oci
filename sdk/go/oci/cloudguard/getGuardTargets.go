@@ -105,12 +105,8 @@ type GetGuardTargetsResult struct {
 }
 
 func GetGuardTargetsOutput(ctx *pulumi.Context, args GetGuardTargetsOutputArgs, opts ...pulumi.InvokeOption) GetGuardTargetsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetGuardTargetsResultOutput, error) {
-			args := v.(GetGuardTargetsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CloudGuard/getGuardTargets:getGuardTargets", args, GetGuardTargetsResultOutput{}, options).(GetGuardTargetsResultOutput), nil
-		}).(GetGuardTargetsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CloudGuard/getGuardTargets:getGuardTargets", args, GetGuardTargetsResultOutput{}, options).(GetGuardTargetsResultOutput)
 }
 
 // A collection of arguments for invoking getGuardTargets.

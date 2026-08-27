@@ -92,12 +92,8 @@ type LookupHostedApplicationIamResult struct {
 }
 
 func LookupHostedApplicationIamOutput(ctx *pulumi.Context, args LookupHostedApplicationIamOutputArgs, opts ...pulumi.InvokeOption) LookupHostedApplicationIamResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupHostedApplicationIamResultOutput, error) {
-			args := v.(LookupHostedApplicationIamArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GenerativeAi/getHostedApplicationIam:getHostedApplicationIam", args, LookupHostedApplicationIamResultOutput{}, options).(LookupHostedApplicationIamResultOutput), nil
-		}).(LookupHostedApplicationIamResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GenerativeAi/getHostedApplicationIam:getHostedApplicationIam", args, LookupHostedApplicationIamResultOutput{}, options).(LookupHostedApplicationIamResultOutput)
 }
 
 // A collection of arguments for invoking getHostedApplicationIam.

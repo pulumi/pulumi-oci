@@ -118,12 +118,8 @@ type LookupDomainsAccountRecoverySettingResult struct {
 }
 
 func LookupDomainsAccountRecoverySettingOutput(ctx *pulumi.Context, args LookupDomainsAccountRecoverySettingOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsAccountRecoverySettingResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDomainsAccountRecoverySettingResultOutput, error) {
-			args := v.(LookupDomainsAccountRecoverySettingArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsAccountRecoverySetting:getDomainsAccountRecoverySetting", args, LookupDomainsAccountRecoverySettingResultOutput{}, options).(LookupDomainsAccountRecoverySettingResultOutput), nil
-		}).(LookupDomainsAccountRecoverySettingResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsAccountRecoverySetting:getDomainsAccountRecoverySetting", args, LookupDomainsAccountRecoverySettingResultOutput{}, options).(LookupDomainsAccountRecoverySettingResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsAccountRecoverySetting.

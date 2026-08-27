@@ -66,12 +66,8 @@ type GetDbSystemPrimaryDbInstanceResult struct {
 }
 
 func GetDbSystemPrimaryDbInstanceOutput(ctx *pulumi.Context, args GetDbSystemPrimaryDbInstanceOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemPrimaryDbInstanceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbSystemPrimaryDbInstanceResultOutput, error) {
-			args := v.(GetDbSystemPrimaryDbInstanceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Psql/getDbSystemPrimaryDbInstance:getDbSystemPrimaryDbInstance", args, GetDbSystemPrimaryDbInstanceResultOutput{}, options).(GetDbSystemPrimaryDbInstanceResultOutput), nil
-		}).(GetDbSystemPrimaryDbInstanceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Psql/getDbSystemPrimaryDbInstance:getDbSystemPrimaryDbInstance", args, GetDbSystemPrimaryDbInstanceResultOutput{}, options).(GetDbSystemPrimaryDbInstanceResultOutput)
 }
 
 // A collection of arguments for invoking getDbSystemPrimaryDbInstance.

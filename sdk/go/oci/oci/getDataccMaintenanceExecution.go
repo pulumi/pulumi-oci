@@ -108,12 +108,8 @@ type GetDataccMaintenanceExecutionResult struct {
 }
 
 func GetDataccMaintenanceExecutionOutput(ctx *pulumi.Context, args GetDataccMaintenanceExecutionOutputArgs, opts ...pulumi.InvokeOption) GetDataccMaintenanceExecutionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDataccMaintenanceExecutionResultOutput, error) {
-			args := v.(GetDataccMaintenanceExecutionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDataccMaintenanceExecution:getDataccMaintenanceExecution", args, GetDataccMaintenanceExecutionResultOutput{}, options).(GetDataccMaintenanceExecutionResultOutput), nil
-		}).(GetDataccMaintenanceExecutionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDataccMaintenanceExecution:getDataccMaintenanceExecution", args, GetDataccMaintenanceExecutionResultOutput{}, options).(GetDataccMaintenanceExecutionResultOutput)
 }
 
 // A collection of arguments for invoking getDataccMaintenanceExecution.

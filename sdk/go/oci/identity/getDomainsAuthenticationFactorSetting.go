@@ -158,12 +158,8 @@ type LookupDomainsAuthenticationFactorSettingResult struct {
 }
 
 func LookupDomainsAuthenticationFactorSettingOutput(ctx *pulumi.Context, args LookupDomainsAuthenticationFactorSettingOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsAuthenticationFactorSettingResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDomainsAuthenticationFactorSettingResultOutput, error) {
-			args := v.(LookupDomainsAuthenticationFactorSettingArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsAuthenticationFactorSetting:getDomainsAuthenticationFactorSetting", args, LookupDomainsAuthenticationFactorSettingResultOutput{}, options).(LookupDomainsAuthenticationFactorSettingResultOutput), nil
-		}).(LookupDomainsAuthenticationFactorSettingResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsAuthenticationFactorSetting:getDomainsAuthenticationFactorSetting", args, LookupDomainsAuthenticationFactorSettingResultOutput{}, options).(LookupDomainsAuthenticationFactorSettingResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsAuthenticationFactorSetting.

@@ -98,12 +98,8 @@ type LookupContainerRepositoryResult struct {
 }
 
 func LookupContainerRepositoryOutput(ctx *pulumi.Context, args LookupContainerRepositoryOutputArgs, opts ...pulumi.InvokeOption) LookupContainerRepositoryResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupContainerRepositoryResultOutput, error) {
-			args := v.(LookupContainerRepositoryArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Artifacts/getContainerRepository:getContainerRepository", args, LookupContainerRepositoryResultOutput{}, options).(LookupContainerRepositoryResultOutput), nil
-		}).(LookupContainerRepositoryResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Artifacts/getContainerRepository:getContainerRepository", args, LookupContainerRepositoryResultOutput{}, options).(LookupContainerRepositoryResultOutput)
 }
 
 // A collection of arguments for invoking getContainerRepository.

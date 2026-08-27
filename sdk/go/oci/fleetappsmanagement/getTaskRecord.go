@@ -91,12 +91,8 @@ type LookupTaskRecordResult struct {
 }
 
 func LookupTaskRecordOutput(ctx *pulumi.Context, args LookupTaskRecordOutputArgs, opts ...pulumi.InvokeOption) LookupTaskRecordResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupTaskRecordResultOutput, error) {
-			args := v.(LookupTaskRecordArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getTaskRecord:getTaskRecord", args, LookupTaskRecordResultOutput{}, options).(LookupTaskRecordResultOutput), nil
-		}).(LookupTaskRecordResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getTaskRecord:getTaskRecord", args, LookupTaskRecordResultOutput{}, options).(LookupTaskRecordResultOutput)
 }
 
 // A collection of arguments for invoking getTaskRecord.

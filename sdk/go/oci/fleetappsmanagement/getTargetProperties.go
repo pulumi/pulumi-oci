@@ -80,12 +80,8 @@ type GetTargetPropertiesResult struct {
 }
 
 func GetTargetPropertiesOutput(ctx *pulumi.Context, args GetTargetPropertiesOutputArgs, opts ...pulumi.InvokeOption) GetTargetPropertiesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetTargetPropertiesResultOutput, error) {
-			args := v.(GetTargetPropertiesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getTargetProperties:getTargetProperties", args, GetTargetPropertiesResultOutput{}, options).(GetTargetPropertiesResultOutput), nil
-		}).(GetTargetPropertiesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getTargetProperties:getTargetProperties", args, GetTargetPropertiesResultOutput{}, options).(GetTargetPropertiesResultOutput)
 }
 
 // A collection of arguments for invoking getTargetProperties.

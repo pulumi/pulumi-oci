@@ -135,12 +135,8 @@ type LookupMaintenanceRunResult struct {
 }
 
 func LookupMaintenanceRunOutput(ctx *pulumi.Context, args LookupMaintenanceRunOutputArgs, opts ...pulumi.InvokeOption) LookupMaintenanceRunResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupMaintenanceRunResultOutput, error) {
-			args := v.(LookupMaintenanceRunArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getMaintenanceRun:getMaintenanceRun", args, LookupMaintenanceRunResultOutput{}, options).(LookupMaintenanceRunResultOutput), nil
-		}).(LookupMaintenanceRunResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getMaintenanceRun:getMaintenanceRun", args, LookupMaintenanceRunResultOutput{}, options).(LookupMaintenanceRunResultOutput)
 }
 
 // A collection of arguments for invoking getMaintenanceRun.

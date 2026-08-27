@@ -60,12 +60,8 @@ type GetMediaAssetDistributionChannelAttachmentResult struct {
 }
 
 func GetMediaAssetDistributionChannelAttachmentOutput(ctx *pulumi.Context, args GetMediaAssetDistributionChannelAttachmentOutputArgs, opts ...pulumi.InvokeOption) GetMediaAssetDistributionChannelAttachmentResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMediaAssetDistributionChannelAttachmentResultOutput, error) {
-			args := v.(GetMediaAssetDistributionChannelAttachmentArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:MediaServices/getMediaAssetDistributionChannelAttachment:getMediaAssetDistributionChannelAttachment", args, GetMediaAssetDistributionChannelAttachmentResultOutput{}, options).(GetMediaAssetDistributionChannelAttachmentResultOutput), nil
-		}).(GetMediaAssetDistributionChannelAttachmentResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:MediaServices/getMediaAssetDistributionChannelAttachment:getMediaAssetDistributionChannelAttachment", args, GetMediaAssetDistributionChannelAttachmentResultOutput{}, options).(GetMediaAssetDistributionChannelAttachmentResultOutput)
 }
 
 // A collection of arguments for invoking getMediaAssetDistributionChannelAttachment.

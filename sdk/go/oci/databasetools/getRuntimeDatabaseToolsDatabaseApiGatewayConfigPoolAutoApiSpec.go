@@ -97,12 +97,8 @@ type LookupRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecResult str
 }
 
 func LookupRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecOutput(ctx *pulumi.Context, args LookupRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecOutputArgs, opts ...pulumi.InvokeOption) LookupRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecResultOutput, error) {
-			args := v.(LookupRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec:getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec", args, LookupRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecResultOutput{}, options).(LookupRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecResultOutput), nil
-		}).(LookupRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec:getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec", args, LookupRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecResultOutput{}, options).(LookupRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecResultOutput)
 }
 
 // A collection of arguments for invoking getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec.

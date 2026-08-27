@@ -70,12 +70,8 @@ type GetApiDeploymentSpecificationResult struct {
 }
 
 func GetApiDeploymentSpecificationOutput(ctx *pulumi.Context, args GetApiDeploymentSpecificationOutputArgs, opts ...pulumi.InvokeOption) GetApiDeploymentSpecificationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetApiDeploymentSpecificationResultOutput, error) {
-			args := v.(GetApiDeploymentSpecificationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ApiGateway/getApiDeploymentSpecification:getApiDeploymentSpecification", args, GetApiDeploymentSpecificationResultOutput{}, options).(GetApiDeploymentSpecificationResultOutput), nil
-		}).(GetApiDeploymentSpecificationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ApiGateway/getApiDeploymentSpecification:getApiDeploymentSpecification", args, GetApiDeploymentSpecificationResultOutput{}, options).(GetApiDeploymentSpecificationResultOutput)
 }
 
 // A collection of arguments for invoking getApiDeploymentSpecification.

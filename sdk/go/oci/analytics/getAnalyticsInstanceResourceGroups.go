@@ -72,12 +72,8 @@ type GetAnalyticsInstanceResourceGroupsResult struct {
 }
 
 func GetAnalyticsInstanceResourceGroupsOutput(ctx *pulumi.Context, args GetAnalyticsInstanceResourceGroupsOutputArgs, opts ...pulumi.InvokeOption) GetAnalyticsInstanceResourceGroupsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAnalyticsInstanceResourceGroupsResultOutput, error) {
-			args := v.(GetAnalyticsInstanceResourceGroupsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Analytics/getAnalyticsInstanceResourceGroups:getAnalyticsInstanceResourceGroups", args, GetAnalyticsInstanceResourceGroupsResultOutput{}, options).(GetAnalyticsInstanceResourceGroupsResultOutput), nil
-		}).(GetAnalyticsInstanceResourceGroupsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Analytics/getAnalyticsInstanceResourceGroups:getAnalyticsInstanceResourceGroups", args, GetAnalyticsInstanceResourceGroupsResultOutput{}, options).(GetAnalyticsInstanceResourceGroupsResultOutput)
 }
 
 // A collection of arguments for invoking getAnalyticsInstanceResourceGroups.

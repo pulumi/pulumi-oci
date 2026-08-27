@@ -83,12 +83,8 @@ type GetDedicatedVmHostInstancesResult struct {
 }
 
 func GetDedicatedVmHostInstancesOutput(ctx *pulumi.Context, args GetDedicatedVmHostInstancesOutputArgs, opts ...pulumi.InvokeOption) GetDedicatedVmHostInstancesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDedicatedVmHostInstancesResultOutput, error) {
-			args := v.(GetDedicatedVmHostInstancesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getDedicatedVmHostInstances:getDedicatedVmHostInstances", args, GetDedicatedVmHostInstancesResultOutput{}, options).(GetDedicatedVmHostInstancesResultOutput), nil
-		}).(GetDedicatedVmHostInstancesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getDedicatedVmHostInstances:getDedicatedVmHostInstances", args, GetDedicatedVmHostInstancesResultOutput{}, options).(GetDedicatedVmHostInstancesResultOutput)
 }
 
 // A collection of arguments for invoking getDedicatedVmHostInstances.

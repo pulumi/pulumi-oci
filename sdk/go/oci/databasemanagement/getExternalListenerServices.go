@@ -78,12 +78,8 @@ type GetExternalListenerServicesResult struct {
 }
 
 func GetExternalListenerServicesOutput(ctx *pulumi.Context, args GetExternalListenerServicesOutputArgs, opts ...pulumi.InvokeOption) GetExternalListenerServicesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetExternalListenerServicesResultOutput, error) {
-			args := v.(GetExternalListenerServicesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalListenerServices:getExternalListenerServices", args, GetExternalListenerServicesResultOutput{}, options).(GetExternalListenerServicesResultOutput), nil
-		}).(GetExternalListenerServicesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getExternalListenerServices:getExternalListenerServices", args, GetExternalListenerServicesResultOutput{}, options).(GetExternalListenerServicesResultOutput)
 }
 
 // A collection of arguments for invoking getExternalListenerServices.

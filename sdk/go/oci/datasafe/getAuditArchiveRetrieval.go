@@ -96,12 +96,8 @@ type LookupAuditArchiveRetrievalResult struct {
 }
 
 func LookupAuditArchiveRetrievalOutput(ctx *pulumi.Context, args LookupAuditArchiveRetrievalOutputArgs, opts ...pulumi.InvokeOption) LookupAuditArchiveRetrievalResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAuditArchiveRetrievalResultOutput, error) {
-			args := v.(LookupAuditArchiveRetrievalArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getAuditArchiveRetrieval:getAuditArchiveRetrieval", args, LookupAuditArchiveRetrievalResultOutput{}, options).(LookupAuditArchiveRetrievalResultOutput), nil
-		}).(LookupAuditArchiveRetrievalResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getAuditArchiveRetrieval:getAuditArchiveRetrieval", args, LookupAuditArchiveRetrievalResultOutput{}, options).(LookupAuditArchiveRetrievalResultOutput)
 }
 
 // A collection of arguments for invoking getAuditArchiveRetrieval.

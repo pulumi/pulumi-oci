@@ -82,12 +82,8 @@ type GetSavedQueriesResult struct {
 }
 
 func GetSavedQueriesOutput(ctx *pulumi.Context, args GetSavedQueriesOutputArgs, opts ...pulumi.InvokeOption) GetSavedQueriesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSavedQueriesResultOutput, error) {
-			args := v.(GetSavedQueriesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CloudGuard/getSavedQueries:getSavedQueries", args, GetSavedQueriesResultOutput{}, options).(GetSavedQueriesResultOutput), nil
-		}).(GetSavedQueriesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CloudGuard/getSavedQueries:getSavedQueries", args, GetSavedQueriesResultOutput{}, options).(GetSavedQueriesResultOutput)
 }
 
 // A collection of arguments for invoking getSavedQueries.

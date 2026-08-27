@@ -68,12 +68,8 @@ type GetModelGroupArtifactContentResult struct {
 }
 
 func GetModelGroupArtifactContentOutput(ctx *pulumi.Context, args GetModelGroupArtifactContentOutputArgs, opts ...pulumi.InvokeOption) GetModelGroupArtifactContentResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetModelGroupArtifactContentResultOutput, error) {
-			args := v.(GetModelGroupArtifactContentArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataScience/getModelGroupArtifactContent:getModelGroupArtifactContent", args, GetModelGroupArtifactContentResultOutput{}, options).(GetModelGroupArtifactContentResultOutput), nil
-		}).(GetModelGroupArtifactContentResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataScience/getModelGroupArtifactContent:getModelGroupArtifactContent", args, GetModelGroupArtifactContentResultOutput{}, options).(GetModelGroupArtifactContentResultOutput)
 }
 
 // A collection of arguments for invoking getModelGroupArtifactContent.

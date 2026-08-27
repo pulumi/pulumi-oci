@@ -99,12 +99,8 @@ type GetDomainsMyRequestableGroupsResult struct {
 }
 
 func GetDomainsMyRequestableGroupsOutput(ctx *pulumi.Context, args GetDomainsMyRequestableGroupsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMyRequestableGroupsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsMyRequestableGroupsResultOutput, error) {
-			args := v.(GetDomainsMyRequestableGroupsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsMyRequestableGroups:getDomainsMyRequestableGroups", args, GetDomainsMyRequestableGroupsResultOutput{}, options).(GetDomainsMyRequestableGroupsResultOutput), nil
-		}).(GetDomainsMyRequestableGroupsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsMyRequestableGroups:getDomainsMyRequestableGroups", args, GetDomainsMyRequestableGroupsResultOutput{}, options).(GetDomainsMyRequestableGroupsResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsMyRequestableGroups.

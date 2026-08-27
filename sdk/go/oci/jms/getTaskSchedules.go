@@ -86,12 +86,8 @@ type GetTaskSchedulesResult struct {
 }
 
 func GetTaskSchedulesOutput(ctx *pulumi.Context, args GetTaskSchedulesOutputArgs, opts ...pulumi.InvokeOption) GetTaskSchedulesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetTaskSchedulesResultOutput, error) {
-			args := v.(GetTaskSchedulesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getTaskSchedules:getTaskSchedules", args, GetTaskSchedulesResultOutput{}, options).(GetTaskSchedulesResultOutput), nil
-		}).(GetTaskSchedulesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getTaskSchedules:getTaskSchedules", args, GetTaskSchedulesResultOutput{}, options).(GetTaskSchedulesResultOutput)
 }
 
 // A collection of arguments for invoking getTaskSchedules.

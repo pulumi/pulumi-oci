@@ -71,12 +71,8 @@ type LookupObjectLifecyclePolicyResult struct {
 }
 
 func LookupObjectLifecyclePolicyOutput(ctx *pulumi.Context, args LookupObjectLifecyclePolicyOutputArgs, opts ...pulumi.InvokeOption) LookupObjectLifecyclePolicyResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupObjectLifecyclePolicyResultOutput, error) {
-			args := v.(LookupObjectLifecyclePolicyArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ObjectStorage/getObjectLifecyclePolicy:getObjectLifecyclePolicy", args, LookupObjectLifecyclePolicyResultOutput{}, options).(LookupObjectLifecyclePolicyResultOutput), nil
-		}).(LookupObjectLifecyclePolicyResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ObjectStorage/getObjectLifecyclePolicy:getObjectLifecyclePolicy", args, LookupObjectLifecyclePolicyResultOutput{}, options).(LookupObjectLifecyclePolicyResultOutput)
 }
 
 // A collection of arguments for invoking getObjectLifecyclePolicy.

@@ -13,19 +13,14 @@ namespace Pulumi.Oci.Identity.Outputs
     [OutputType]
     public sealed class GetDomainsAppsAppRadiusPolicyResult
     {
-        public readonly string _ref;
         /// <summary>
         /// ID of the AppRole.
         /// </summary>
         public readonly string Value;
 
         [OutputConstructor]
-        private GetDomainsAppsAppRadiusPolicyResult(
-            string _ref,
-
-            string value)
+        private GetDomainsAppsAppRadiusPolicyResult(string value)
         {
-            this._ref = _ref;
             Value = value;
         }
     }

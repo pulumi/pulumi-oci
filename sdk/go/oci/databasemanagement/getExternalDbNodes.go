@@ -79,12 +79,8 @@ type GetExternalDbNodesResult struct {
 }
 
 func GetExternalDbNodesOutput(ctx *pulumi.Context, args GetExternalDbNodesOutputArgs, opts ...pulumi.InvokeOption) GetExternalDbNodesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetExternalDbNodesResultOutput, error) {
-			args := v.(GetExternalDbNodesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalDbNodes:getExternalDbNodes", args, GetExternalDbNodesResultOutput{}, options).(GetExternalDbNodesResultOutput), nil
-		}).(GetExternalDbNodesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getExternalDbNodes:getExternalDbNodes", args, GetExternalDbNodesResultOutput{}, options).(GetExternalDbNodesResultOutput)
 }
 
 // A collection of arguments for invoking getExternalDbNodes.

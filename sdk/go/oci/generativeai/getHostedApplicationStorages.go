@@ -86,12 +86,8 @@ type GetHostedApplicationStoragesResult struct {
 }
 
 func GetHostedApplicationStoragesOutput(ctx *pulumi.Context, args GetHostedApplicationStoragesOutputArgs, opts ...pulumi.InvokeOption) GetHostedApplicationStoragesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetHostedApplicationStoragesResultOutput, error) {
-			args := v.(GetHostedApplicationStoragesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GenerativeAi/getHostedApplicationStorages:getHostedApplicationStorages", args, GetHostedApplicationStoragesResultOutput{}, options).(GetHostedApplicationStoragesResultOutput), nil
-		}).(GetHostedApplicationStoragesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GenerativeAi/getHostedApplicationStorages:getHostedApplicationStorages", args, GetHostedApplicationStoragesResultOutput{}, options).(GetHostedApplicationStoragesResultOutput)
 }
 
 // A collection of arguments for invoking getHostedApplicationStorages.

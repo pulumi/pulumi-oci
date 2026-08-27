@@ -66,12 +66,8 @@ type GetCloudExadataStorageServerOpenAlertHistoryResult struct {
 }
 
 func GetCloudExadataStorageServerOpenAlertHistoryOutput(ctx *pulumi.Context, args GetCloudExadataStorageServerOpenAlertHistoryOutputArgs, opts ...pulumi.InvokeOption) GetCloudExadataStorageServerOpenAlertHistoryResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCloudExadataStorageServerOpenAlertHistoryResultOutput, error) {
-			args := v.(GetCloudExadataStorageServerOpenAlertHistoryArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getCloudExadataStorageServerOpenAlertHistory:getCloudExadataStorageServerOpenAlertHistory", args, GetCloudExadataStorageServerOpenAlertHistoryResultOutput{}, options).(GetCloudExadataStorageServerOpenAlertHistoryResultOutput), nil
-		}).(GetCloudExadataStorageServerOpenAlertHistoryResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getCloudExadataStorageServerOpenAlertHistory:getCloudExadataStorageServerOpenAlertHistory", args, GetCloudExadataStorageServerOpenAlertHistoryResultOutput{}, options).(GetCloudExadataStorageServerOpenAlertHistoryResultOutput)
 }
 
 // A collection of arguments for invoking getCloudExadataStorageServerOpenAlertHistory.

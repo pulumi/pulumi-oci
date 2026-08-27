@@ -86,12 +86,8 @@ type GetSystemVersionsResult struct {
 }
 
 func GetSystemVersionsOutput(ctx *pulumi.Context, args GetSystemVersionsOutputArgs, opts ...pulumi.InvokeOption) GetSystemVersionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSystemVersionsResultOutput, error) {
-			args := v.(GetSystemVersionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getSystemVersions:getSystemVersions", args, GetSystemVersionsResultOutput{}, options).(GetSystemVersionsResultOutput), nil
-		}).(GetSystemVersionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getSystemVersions:getSystemVersions", args, GetSystemVersionsResultOutput{}, options).(GetSystemVersionsResultOutput)
 }
 
 // A collection of arguments for invoking getSystemVersions.

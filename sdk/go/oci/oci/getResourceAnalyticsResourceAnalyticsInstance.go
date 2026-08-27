@@ -94,12 +94,8 @@ type LookupResourceAnalyticsResourceAnalyticsInstanceResult struct {
 }
 
 func LookupResourceAnalyticsResourceAnalyticsInstanceOutput(ctx *pulumi.Context, args LookupResourceAnalyticsResourceAnalyticsInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupResourceAnalyticsResourceAnalyticsInstanceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupResourceAnalyticsResourceAnalyticsInstanceResultOutput, error) {
-			args := v.(LookupResourceAnalyticsResourceAnalyticsInstanceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getResourceAnalyticsResourceAnalyticsInstance:getResourceAnalyticsResourceAnalyticsInstance", args, LookupResourceAnalyticsResourceAnalyticsInstanceResultOutput{}, options).(LookupResourceAnalyticsResourceAnalyticsInstanceResultOutput), nil
-		}).(LookupResourceAnalyticsResourceAnalyticsInstanceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getResourceAnalyticsResourceAnalyticsInstance:getResourceAnalyticsResourceAnalyticsInstance", args, LookupResourceAnalyticsResourceAnalyticsInstanceResultOutput{}, options).(LookupResourceAnalyticsResourceAnalyticsInstanceResultOutput)
 }
 
 // A collection of arguments for invoking getResourceAnalyticsResourceAnalyticsInstance.

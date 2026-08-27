@@ -73,12 +73,8 @@ type LookupRuntimeDatabaseToolsConnectionCredentialPublicSynonymResult struct {
 }
 
 func LookupRuntimeDatabaseToolsConnectionCredentialPublicSynonymOutput(ctx *pulumi.Context, args LookupRuntimeDatabaseToolsConnectionCredentialPublicSynonymOutputArgs, opts ...pulumi.InvokeOption) LookupRuntimeDatabaseToolsConnectionCredentialPublicSynonymResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupRuntimeDatabaseToolsConnectionCredentialPublicSynonymResultOutput, error) {
-			args := v.(LookupRuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionCredentialPublicSynonym:getRuntimeDatabaseToolsConnectionCredentialPublicSynonym", args, LookupRuntimeDatabaseToolsConnectionCredentialPublicSynonymResultOutput{}, options).(LookupRuntimeDatabaseToolsConnectionCredentialPublicSynonymResultOutput), nil
-		}).(LookupRuntimeDatabaseToolsConnectionCredentialPublicSynonymResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionCredentialPublicSynonym:getRuntimeDatabaseToolsConnectionCredentialPublicSynonym", args, LookupRuntimeDatabaseToolsConnectionCredentialPublicSynonymResultOutput{}, options).(LookupRuntimeDatabaseToolsConnectionCredentialPublicSynonymResultOutput)
 }
 
 // A collection of arguments for invoking getRuntimeDatabaseToolsConnectionCredentialPublicSynonym.

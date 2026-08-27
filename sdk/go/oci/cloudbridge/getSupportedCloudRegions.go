@@ -39,12 +39,8 @@ type GetSupportedCloudRegionsResult struct {
 }
 
 func GetSupportedCloudRegionsOutput(ctx *pulumi.Context, args GetSupportedCloudRegionsOutputArgs, opts ...pulumi.InvokeOption) GetSupportedCloudRegionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSupportedCloudRegionsResultOutput, error) {
-			args := v.(GetSupportedCloudRegionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CloudBridge/getSupportedCloudRegions:getSupportedCloudRegions", args, GetSupportedCloudRegionsResultOutput{}, options).(GetSupportedCloudRegionsResultOutput), nil
-		}).(GetSupportedCloudRegionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CloudBridge/getSupportedCloudRegions:getSupportedCloudRegions", args, GetSupportedCloudRegionsResultOutput{}, options).(GetSupportedCloudRegionsResultOutput)
 }
 
 // A collection of arguments for invoking getSupportedCloudRegions.

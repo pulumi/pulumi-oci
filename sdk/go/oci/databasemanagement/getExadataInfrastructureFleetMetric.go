@@ -93,12 +93,8 @@ type GetExadataInfrastructureFleetMetricResult struct {
 }
 
 func GetExadataInfrastructureFleetMetricOutput(ctx *pulumi.Context, args GetExadataInfrastructureFleetMetricOutputArgs, opts ...pulumi.InvokeOption) GetExadataInfrastructureFleetMetricResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetExadataInfrastructureFleetMetricResultOutput, error) {
-			args := v.(GetExadataInfrastructureFleetMetricArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getExadataInfrastructureFleetMetric:getExadataInfrastructureFleetMetric", args, GetExadataInfrastructureFleetMetricResultOutput{}, options).(GetExadataInfrastructureFleetMetricResultOutput), nil
-		}).(GetExadataInfrastructureFleetMetricResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getExadataInfrastructureFleetMetric:getExadataInfrastructureFleetMetric", args, GetExadataInfrastructureFleetMetricResultOutput{}, options).(GetExadataInfrastructureFleetMetricResultOutput)
 }
 
 // A collection of arguments for invoking getExadataInfrastructureFleetMetric.

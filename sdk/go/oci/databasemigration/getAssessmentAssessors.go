@@ -79,12 +79,8 @@ type GetAssessmentAssessorsResult struct {
 }
 
 func GetAssessmentAssessorsOutput(ctx *pulumi.Context, args GetAssessmentAssessorsOutputArgs, opts ...pulumi.InvokeOption) GetAssessmentAssessorsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAssessmentAssessorsResultOutput, error) {
-			args := v.(GetAssessmentAssessorsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseMigration/getAssessmentAssessors:getAssessmentAssessors", args, GetAssessmentAssessorsResultOutput{}, options).(GetAssessmentAssessorsResultOutput), nil
-		}).(GetAssessmentAssessorsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseMigration/getAssessmentAssessors:getAssessmentAssessors", args, GetAssessmentAssessorsResultOutput{}, options).(GetAssessmentAssessorsResultOutput)
 }
 
 // A collection of arguments for invoking getAssessmentAssessors.

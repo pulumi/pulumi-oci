@@ -68,12 +68,8 @@ type GetFleetDiagnosesResult struct {
 }
 
 func GetFleetDiagnosesOutput(ctx *pulumi.Context, args GetFleetDiagnosesOutputArgs, opts ...pulumi.InvokeOption) GetFleetDiagnosesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFleetDiagnosesResultOutput, error) {
-			args := v.(GetFleetDiagnosesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getFleetDiagnoses:getFleetDiagnoses", args, GetFleetDiagnosesResultOutput{}, options).(GetFleetDiagnosesResultOutput), nil
-		}).(GetFleetDiagnosesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getFleetDiagnoses:getFleetDiagnoses", args, GetFleetDiagnosesResultOutput{}, options).(GetFleetDiagnosesResultOutput)
 }
 
 // A collection of arguments for invoking getFleetDiagnoses.

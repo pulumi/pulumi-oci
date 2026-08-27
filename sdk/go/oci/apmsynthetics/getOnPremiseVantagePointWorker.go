@@ -111,12 +111,8 @@ type LookupOnPremiseVantagePointWorkerResult struct {
 }
 
 func LookupOnPremiseVantagePointWorkerOutput(ctx *pulumi.Context, args LookupOnPremiseVantagePointWorkerOutputArgs, opts ...pulumi.InvokeOption) LookupOnPremiseVantagePointWorkerResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupOnPremiseVantagePointWorkerResultOutput, error) {
-			args := v.(LookupOnPremiseVantagePointWorkerArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ApmSynthetics/getOnPremiseVantagePointWorker:getOnPremiseVantagePointWorker", args, LookupOnPremiseVantagePointWorkerResultOutput{}, options).(LookupOnPremiseVantagePointWorkerResultOutput), nil
-		}).(LookupOnPremiseVantagePointWorkerResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ApmSynthetics/getOnPremiseVantagePointWorker:getOnPremiseVantagePointWorker", args, LookupOnPremiseVantagePointWorkerResultOutput{}, options).(LookupOnPremiseVantagePointWorkerResultOutput)
 }
 
 // A collection of arguments for invoking getOnPremiseVantagePointWorker.

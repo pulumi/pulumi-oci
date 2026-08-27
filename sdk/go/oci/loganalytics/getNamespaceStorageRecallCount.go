@@ -74,12 +74,8 @@ type GetNamespaceStorageRecallCountResult struct {
 }
 
 func GetNamespaceStorageRecallCountOutput(ctx *pulumi.Context, args GetNamespaceStorageRecallCountOutputArgs, opts ...pulumi.InvokeOption) GetNamespaceStorageRecallCountResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetNamespaceStorageRecallCountResultOutput, error) {
-			args := v.(GetNamespaceStorageRecallCountArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LogAnalytics/getNamespaceStorageRecallCount:getNamespaceStorageRecallCount", args, GetNamespaceStorageRecallCountResultOutput{}, options).(GetNamespaceStorageRecallCountResultOutput), nil
-		}).(GetNamespaceStorageRecallCountResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LogAnalytics/getNamespaceStorageRecallCount:getNamespaceStorageRecallCount", args, GetNamespaceStorageRecallCountResultOutput{}, options).(GetNamespaceStorageRecallCountResultOutput)
 }
 
 // A collection of arguments for invoking getNamespaceStorageRecallCount.

@@ -115,12 +115,8 @@ type LookupHostInsightResult struct {
 }
 
 func LookupHostInsightOutput(ctx *pulumi.Context, args LookupHostInsightOutputArgs, opts ...pulumi.InvokeOption) LookupHostInsightResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupHostInsightResultOutput, error) {
-			args := v.(LookupHostInsightArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Opsi/getHostInsight:getHostInsight", args, LookupHostInsightResultOutput{}, options).(LookupHostInsightResultOutput), nil
-		}).(LookupHostInsightResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Opsi/getHostInsight:getHostInsight", args, LookupHostInsightResultOutput{}, options).(LookupHostInsightResultOutput)
 }
 
 // A collection of arguments for invoking getHostInsight.

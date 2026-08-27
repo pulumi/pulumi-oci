@@ -78,12 +78,8 @@ type GetOdaPrivateEndpointScanProxiesResult struct {
 }
 
 func GetOdaPrivateEndpointScanProxiesOutput(ctx *pulumi.Context, args GetOdaPrivateEndpointScanProxiesOutputArgs, opts ...pulumi.InvokeOption) GetOdaPrivateEndpointScanProxiesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetOdaPrivateEndpointScanProxiesResultOutput, error) {
-			args := v.(GetOdaPrivateEndpointScanProxiesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Oda/getOdaPrivateEndpointScanProxies:getOdaPrivateEndpointScanProxies", args, GetOdaPrivateEndpointScanProxiesResultOutput{}, options).(GetOdaPrivateEndpointScanProxiesResultOutput), nil
-		}).(GetOdaPrivateEndpointScanProxiesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Oda/getOdaPrivateEndpointScanProxies:getOdaPrivateEndpointScanProxies", args, GetOdaPrivateEndpointScanProxiesResultOutput{}, options).(GetOdaPrivateEndpointScanProxiesResultOutput)
 }
 
 // A collection of arguments for invoking getOdaPrivateEndpointScanProxies.

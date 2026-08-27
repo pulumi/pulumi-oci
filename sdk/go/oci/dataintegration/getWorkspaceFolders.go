@@ -91,12 +91,8 @@ type GetWorkspaceFoldersResult struct {
 }
 
 func GetWorkspaceFoldersOutput(ctx *pulumi.Context, args GetWorkspaceFoldersOutputArgs, opts ...pulumi.InvokeOption) GetWorkspaceFoldersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetWorkspaceFoldersResultOutput, error) {
-			args := v.(GetWorkspaceFoldersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataIntegration/getWorkspaceFolders:getWorkspaceFolders", args, GetWorkspaceFoldersResultOutput{}, options).(GetWorkspaceFoldersResultOutput), nil
-		}).(GetWorkspaceFoldersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataIntegration/getWorkspaceFolders:getWorkspaceFolders", args, GetWorkspaceFoldersResultOutput{}, options).(GetWorkspaceFoldersResultOutput)
 }
 
 // A collection of arguments for invoking getWorkspaceFolders.

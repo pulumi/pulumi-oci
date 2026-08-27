@@ -94,12 +94,8 @@ type GetFleetErrorsResult struct {
 }
 
 func GetFleetErrorsOutput(ctx *pulumi.Context, args GetFleetErrorsOutputArgs, opts ...pulumi.InvokeOption) GetFleetErrorsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFleetErrorsResultOutput, error) {
-			args := v.(GetFleetErrorsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getFleetErrors:getFleetErrors", args, GetFleetErrorsResultOutput{}, options).(GetFleetErrorsResultOutput), nil
-		}).(GetFleetErrorsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getFleetErrors:getFleetErrors", args, GetFleetErrorsResultOutput{}, options).(GetFleetErrorsResultOutput)
 }
 
 // A collection of arguments for invoking getFleetErrors.

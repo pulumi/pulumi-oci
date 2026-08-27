@@ -104,12 +104,8 @@ type GetDomainsAuthTokensResult struct {
 }
 
 func GetDomainsAuthTokensOutput(ctx *pulumi.Context, args GetDomainsAuthTokensOutputArgs, opts ...pulumi.InvokeOption) GetDomainsAuthTokensResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsAuthTokensResultOutput, error) {
-			args := v.(GetDomainsAuthTokensArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsAuthTokens:getDomainsAuthTokens", args, GetDomainsAuthTokensResultOutput{}, options).(GetDomainsAuthTokensResultOutput), nil
-		}).(GetDomainsAuthTokensResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsAuthTokens:getDomainsAuthTokens", args, GetDomainsAuthTokensResultOutput{}, options).(GetDomainsAuthTokensResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsAuthTokens.

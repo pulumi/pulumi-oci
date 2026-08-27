@@ -78,12 +78,8 @@ type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult struct {
 }
 
 func GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOutput(ctx *pulumi.Context, args GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResultOutput, error) {
-			args := v.(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutions:getManagedDatabaseOptimizerStatisticsAdvisorExecutions", args, GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResultOutput{}, options).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResultOutput), nil
-		}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutions:getManagedDatabaseOptimizerStatisticsAdvisorExecutions", args, GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResultOutput{}, options).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResultOutput)
 }
 
 // A collection of arguments for invoking getManagedDatabaseOptimizerStatisticsAdvisorExecutions.

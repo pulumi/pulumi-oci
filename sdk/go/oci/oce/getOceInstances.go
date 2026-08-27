@@ -83,12 +83,8 @@ type GetOceInstancesResult struct {
 }
 
 func GetOceInstancesOutput(ctx *pulumi.Context, args GetOceInstancesOutputArgs, opts ...pulumi.InvokeOption) GetOceInstancesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetOceInstancesResultOutput, error) {
-			args := v.(GetOceInstancesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Oce/getOceInstances:getOceInstances", args, GetOceInstancesResultOutput{}, options).(GetOceInstancesResultOutput), nil
-		}).(GetOceInstancesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Oce/getOceInstances:getOceInstances", args, GetOceInstancesResultOutput{}, options).(GetOceInstancesResultOutput)
 }
 
 // A collection of arguments for invoking getOceInstances.

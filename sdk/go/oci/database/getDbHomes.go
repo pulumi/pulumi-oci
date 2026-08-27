@@ -66,12 +66,8 @@ type GetDbHomesResult struct {
 }
 
 func GetDbHomesOutput(ctx *pulumi.Context, args GetDbHomesOutputArgs, opts ...pulumi.InvokeOption) GetDbHomesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbHomesResultOutput, error) {
-			args := v.(GetDbHomesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getDbHomes:getDbHomes", args, GetDbHomesResultOutput{}, options).(GetDbHomesResultOutput), nil
-		}).(GetDbHomesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getDbHomes:getDbHomes", args, GetDbHomesResultOutput{}, options).(GetDbHomesResultOutput)
 }
 
 // A collection of arguments for invoking getDbHomes.

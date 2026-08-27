@@ -77,12 +77,8 @@ type GetDefinedMonitoringTemplatesResult struct {
 }
 
 func GetDefinedMonitoringTemplatesOutput(ctx *pulumi.Context, args GetDefinedMonitoringTemplatesOutputArgs, opts ...pulumi.InvokeOption) GetDefinedMonitoringTemplatesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDefinedMonitoringTemplatesResultOutput, error) {
-			args := v.(GetDefinedMonitoringTemplatesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:StackMonitoring/getDefinedMonitoringTemplates:getDefinedMonitoringTemplates", args, GetDefinedMonitoringTemplatesResultOutput{}, options).(GetDefinedMonitoringTemplatesResultOutput), nil
-		}).(GetDefinedMonitoringTemplatesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:StackMonitoring/getDefinedMonitoringTemplates:getDefinedMonitoringTemplates", args, GetDefinedMonitoringTemplatesResultOutput{}, options).(GetDefinedMonitoringTemplatesResultOutput)
 }
 
 // A collection of arguments for invoking getDefinedMonitoringTemplates.

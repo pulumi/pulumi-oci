@@ -79,12 +79,8 @@ type GetApmDomainsResult struct {
 }
 
 func GetApmDomainsOutput(ctx *pulumi.Context, args GetApmDomainsOutputArgs, opts ...pulumi.InvokeOption) GetApmDomainsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetApmDomainsResultOutput, error) {
-			args := v.(GetApmDomainsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Apm/getApmDomains:getApmDomains", args, GetApmDomainsResultOutput{}, options).(GetApmDomainsResultOutput), nil
-		}).(GetApmDomainsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Apm/getApmDomains:getApmDomains", args, GetApmDomainsResultOutput{}, options).(GetApmDomainsResultOutput)
 }
 
 // A collection of arguments for invoking getApmDomains.

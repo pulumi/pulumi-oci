@@ -85,12 +85,8 @@ type LookupInstanceConfigurationResult struct {
 }
 
 func LookupInstanceConfigurationOutput(ctx *pulumi.Context, args LookupInstanceConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupInstanceConfigurationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupInstanceConfigurationResultOutput, error) {
-			args := v.(LookupInstanceConfigurationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getInstanceConfiguration:getInstanceConfiguration", args, LookupInstanceConfigurationResultOutput{}, options).(LookupInstanceConfigurationResultOutput), nil
-		}).(LookupInstanceConfigurationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getInstanceConfiguration:getInstanceConfiguration", args, LookupInstanceConfigurationResultOutput{}, options).(LookupInstanceConfigurationResultOutput)
 }
 
 // A collection of arguments for invoking getInstanceConfiguration.

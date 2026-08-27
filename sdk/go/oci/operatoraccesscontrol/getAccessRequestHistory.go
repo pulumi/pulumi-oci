@@ -66,12 +66,8 @@ type GetAccessRequestHistoryResult struct {
 }
 
 func GetAccessRequestHistoryOutput(ctx *pulumi.Context, args GetAccessRequestHistoryOutputArgs, opts ...pulumi.InvokeOption) GetAccessRequestHistoryResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAccessRequestHistoryResultOutput, error) {
-			args := v.(GetAccessRequestHistoryArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OperatorAccessControl/getAccessRequestHistory:getAccessRequestHistory", args, GetAccessRequestHistoryResultOutput{}, options).(GetAccessRequestHistoryResultOutput), nil
-		}).(GetAccessRequestHistoryResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OperatorAccessControl/getAccessRequestHistory:getAccessRequestHistory", args, GetAccessRequestHistoryResultOutput{}, options).(GetAccessRequestHistoryResultOutput)
 }
 
 // A collection of arguments for invoking getAccessRequestHistory.

@@ -87,12 +87,8 @@ type GetEmailReturnPathsResult struct {
 }
 
 func GetEmailReturnPathsOutput(ctx *pulumi.Context, args GetEmailReturnPathsOutputArgs, opts ...pulumi.InvokeOption) GetEmailReturnPathsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetEmailReturnPathsResultOutput, error) {
-			args := v.(GetEmailReturnPathsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Email/getEmailReturnPaths:getEmailReturnPaths", args, GetEmailReturnPathsResultOutput{}, options).(GetEmailReturnPathsResultOutput), nil
-		}).(GetEmailReturnPathsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Email/getEmailReturnPaths:getEmailReturnPaths", args, GetEmailReturnPathsResultOutput{}, options).(GetEmailReturnPathsResultOutput)
 }
 
 // A collection of arguments for invoking getEmailReturnPaths.

@@ -94,12 +94,8 @@ type LookupSecurityPolicyDeploymentResult struct {
 }
 
 func LookupSecurityPolicyDeploymentOutput(ctx *pulumi.Context, args LookupSecurityPolicyDeploymentOutputArgs, opts ...pulumi.InvokeOption) LookupSecurityPolicyDeploymentResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupSecurityPolicyDeploymentResultOutput, error) {
-			args := v.(LookupSecurityPolicyDeploymentArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getSecurityPolicyDeployment:getSecurityPolicyDeployment", args, LookupSecurityPolicyDeploymentResultOutput{}, options).(LookupSecurityPolicyDeploymentResultOutput), nil
-		}).(LookupSecurityPolicyDeploymentResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getSecurityPolicyDeployment:getSecurityPolicyDeployment", args, LookupSecurityPolicyDeploymentResultOutput{}, options).(LookupSecurityPolicyDeploymentResultOutput)
 }
 
 // A collection of arguments for invoking getSecurityPolicyDeployment.

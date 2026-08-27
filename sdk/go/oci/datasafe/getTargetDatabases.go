@@ -105,12 +105,8 @@ type GetTargetDatabasesResult struct {
 }
 
 func GetTargetDatabasesOutput(ctx *pulumi.Context, args GetTargetDatabasesOutputArgs, opts ...pulumi.InvokeOption) GetTargetDatabasesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetTargetDatabasesResultOutput, error) {
-			args := v.(GetTargetDatabasesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getTargetDatabases:getTargetDatabases", args, GetTargetDatabasesResultOutput{}, options).(GetTargetDatabasesResultOutput), nil
-		}).(GetTargetDatabasesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getTargetDatabases:getTargetDatabases", args, GetTargetDatabasesResultOutput{}, options).(GetTargetDatabasesResultOutput)
 }
 
 // A collection of arguments for invoking getTargetDatabases.

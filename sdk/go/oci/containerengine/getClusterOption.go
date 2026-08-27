@@ -76,12 +76,8 @@ type LookupClusterOptionResult struct {
 }
 
 func LookupClusterOptionOutput(ctx *pulumi.Context, args LookupClusterOptionOutputArgs, opts ...pulumi.InvokeOption) LookupClusterOptionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupClusterOptionResultOutput, error) {
-			args := v.(LookupClusterOptionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ContainerEngine/getClusterOption:getClusterOption", args, LookupClusterOptionResultOutput{}, options).(LookupClusterOptionResultOutput), nil
-		}).(LookupClusterOptionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ContainerEngine/getClusterOption:getClusterOption", args, LookupClusterOptionResultOutput{}, options).(LookupClusterOptionResultOutput)
 }
 
 // A collection of arguments for invoking getClusterOption.

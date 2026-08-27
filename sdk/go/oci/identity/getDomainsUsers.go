@@ -104,12 +104,8 @@ type GetDomainsUsersResult struct {
 }
 
 func GetDomainsUsersOutput(ctx *pulumi.Context, args GetDomainsUsersOutputArgs, opts ...pulumi.InvokeOption) GetDomainsUsersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsUsersResultOutput, error) {
-			args := v.(GetDomainsUsersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsUsers:getDomainsUsers", args, GetDomainsUsersResultOutput{}, options).(GetDomainsUsersResultOutput), nil
-		}).(GetDomainsUsersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsUsers:getDomainsUsers", args, GetDomainsUsersResultOutput{}, options).(GetDomainsUsersResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsUsers.

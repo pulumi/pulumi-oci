@@ -84,12 +84,8 @@ type LookupLogAnalyticsEntityTypeResult struct {
 }
 
 func LookupLogAnalyticsEntityTypeOutput(ctx *pulumi.Context, args LookupLogAnalyticsEntityTypeOutputArgs, opts ...pulumi.InvokeOption) LookupLogAnalyticsEntityTypeResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupLogAnalyticsEntityTypeResultOutput, error) {
-			args := v.(LookupLogAnalyticsEntityTypeArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsEntityType:getLogAnalyticsEntityType", args, LookupLogAnalyticsEntityTypeResultOutput{}, options).(LookupLogAnalyticsEntityTypeResultOutput), nil
-		}).(LookupLogAnalyticsEntityTypeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsEntityType:getLogAnalyticsEntityType", args, LookupLogAnalyticsEntityTypeResultOutput{}, options).(LookupLogAnalyticsEntityTypeResultOutput)
 }
 
 // A collection of arguments for invoking getLogAnalyticsEntityType.

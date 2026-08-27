@@ -86,12 +86,8 @@ type LookupByoasnResult struct {
 }
 
 func LookupByoasnOutput(ctx *pulumi.Context, args LookupByoasnOutputArgs, opts ...pulumi.InvokeOption) LookupByoasnResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupByoasnResultOutput, error) {
-			args := v.(LookupByoasnArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getByoasn:getByoasn", args, LookupByoasnResultOutput{}, options).(LookupByoasnResultOutput), nil
-		}).(LookupByoasnResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getByoasn:getByoasn", args, LookupByoasnResultOutput{}, options).(LookupByoasnResultOutput)
 }
 
 // A collection of arguments for invoking getByoasn.

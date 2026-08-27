@@ -85,12 +85,8 @@ type GetTargetComponentsResult struct {
 }
 
 func GetTargetComponentsOutput(ctx *pulumi.Context, args GetTargetComponentsOutputArgs, opts ...pulumi.InvokeOption) GetTargetComponentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetTargetComponentsResultOutput, error) {
-			args := v.(GetTargetComponentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getTargetComponents:getTargetComponents", args, GetTargetComponentsResultOutput{}, options).(GetTargetComponentsResultOutput), nil
-		}).(GetTargetComponentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getTargetComponents:getTargetComponents", args, GetTargetComponentsResultOutput{}, options).(GetTargetComponentsResultOutput)
 }
 
 // A collection of arguments for invoking getTargetComponents.

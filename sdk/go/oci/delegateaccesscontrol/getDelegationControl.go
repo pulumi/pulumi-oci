@@ -106,12 +106,8 @@ type LookupDelegationControlResult struct {
 }
 
 func LookupDelegationControlOutput(ctx *pulumi.Context, args LookupDelegationControlOutputArgs, opts ...pulumi.InvokeOption) LookupDelegationControlResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDelegationControlResultOutput, error) {
-			args := v.(LookupDelegationControlArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DelegateAccessControl/getDelegationControl:getDelegationControl", args, LookupDelegationControlResultOutput{}, options).(LookupDelegationControlResultOutput), nil
-		}).(LookupDelegationControlResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DelegateAccessControl/getDelegationControl:getDelegationControl", args, LookupDelegationControlResultOutput{}, options).(LookupDelegationControlResultOutput)
 }
 
 // A collection of arguments for invoking getDelegationControl.

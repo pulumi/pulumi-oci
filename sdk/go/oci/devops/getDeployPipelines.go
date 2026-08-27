@@ -87,12 +87,8 @@ type GetDeployPipelinesResult struct {
 }
 
 func GetDeployPipelinesOutput(ctx *pulumi.Context, args GetDeployPipelinesOutputArgs, opts ...pulumi.InvokeOption) GetDeployPipelinesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDeployPipelinesResultOutput, error) {
-			args := v.(GetDeployPipelinesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DevOps/getDeployPipelines:getDeployPipelines", args, GetDeployPipelinesResultOutput{}, options).(GetDeployPipelinesResultOutput), nil
-		}).(GetDeployPipelinesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DevOps/getDeployPipelines:getDeployPipelines", args, GetDeployPipelinesResultOutput{}, options).(GetDeployPipelinesResultOutput)
 }
 
 // A collection of arguments for invoking getDeployPipelines.

@@ -72,12 +72,8 @@ type GetReportMetadataResult struct {
 }
 
 func GetReportMetadataOutput(ctx *pulumi.Context, args GetReportMetadataOutputArgs, opts ...pulumi.InvokeOption) GetReportMetadataResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetReportMetadataResultOutput, error) {
-			args := v.(GetReportMetadataArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getReportMetadata:getReportMetadata", args, GetReportMetadataResultOutput{}, options).(GetReportMetadataResultOutput), nil
-		}).(GetReportMetadataResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getReportMetadata:getReportMetadata", args, GetReportMetadataResultOutput{}, options).(GetReportMetadataResultOutput)
 }
 
 // A collection of arguments for invoking getReportMetadata.

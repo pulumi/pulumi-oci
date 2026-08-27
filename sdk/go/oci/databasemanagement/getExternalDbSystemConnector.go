@@ -96,12 +96,8 @@ type LookupExternalDbSystemConnectorResult struct {
 }
 
 func LookupExternalDbSystemConnectorOutput(ctx *pulumi.Context, args LookupExternalDbSystemConnectorOutputArgs, opts ...pulumi.InvokeOption) LookupExternalDbSystemConnectorResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupExternalDbSystemConnectorResultOutput, error) {
-			args := v.(LookupExternalDbSystemConnectorArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getExternalDbSystemConnector:getExternalDbSystemConnector", args, LookupExternalDbSystemConnectorResultOutput{}, options).(LookupExternalDbSystemConnectorResultOutput), nil
-		}).(LookupExternalDbSystemConnectorResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getExternalDbSystemConnector:getExternalDbSystemConnector", args, LookupExternalDbSystemConnectorResultOutput{}, options).(LookupExternalDbSystemConnectorResultOutput)
 }
 
 // A collection of arguments for invoking getExternalDbSystemConnector.

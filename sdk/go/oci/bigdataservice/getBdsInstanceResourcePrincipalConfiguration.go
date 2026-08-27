@@ -87,12 +87,8 @@ type LookupBdsInstanceResourcePrincipalConfigurationResult struct {
 }
 
 func LookupBdsInstanceResourcePrincipalConfigurationOutput(ctx *pulumi.Context, args LookupBdsInstanceResourcePrincipalConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupBdsInstanceResourcePrincipalConfigurationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBdsInstanceResourcePrincipalConfigurationResultOutput, error) {
-			args := v.(LookupBdsInstanceResourcePrincipalConfigurationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:BigDataService/getBdsInstanceResourcePrincipalConfiguration:getBdsInstanceResourcePrincipalConfiguration", args, LookupBdsInstanceResourcePrincipalConfigurationResultOutput{}, options).(LookupBdsInstanceResourcePrincipalConfigurationResultOutput), nil
-		}).(LookupBdsInstanceResourcePrincipalConfigurationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:BigDataService/getBdsInstanceResourcePrincipalConfiguration:getBdsInstanceResourcePrincipalConfiguration", args, LookupBdsInstanceResourcePrincipalConfigurationResultOutput{}, options).(LookupBdsInstanceResourcePrincipalConfigurationResultOutput)
 }
 
 // A collection of arguments for invoking getBdsInstanceResourcePrincipalConfiguration.

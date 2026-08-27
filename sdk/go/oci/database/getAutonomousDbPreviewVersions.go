@@ -69,12 +69,8 @@ type GetAutonomousDbPreviewVersionsResult struct {
 }
 
 func GetAutonomousDbPreviewVersionsOutput(ctx *pulumi.Context, args GetAutonomousDbPreviewVersionsOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousDbPreviewVersionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAutonomousDbPreviewVersionsResultOutput, error) {
-			args := v.(GetAutonomousDbPreviewVersionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getAutonomousDbPreviewVersions:getAutonomousDbPreviewVersions", args, GetAutonomousDbPreviewVersionsResultOutput{}, options).(GetAutonomousDbPreviewVersionsResultOutput), nil
-		}).(GetAutonomousDbPreviewVersionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getAutonomousDbPreviewVersions:getAutonomousDbPreviewVersions", args, GetAutonomousDbPreviewVersionsResultOutput{}, options).(GetAutonomousDbPreviewVersionsResultOutput)
 }
 
 // A collection of arguments for invoking getAutonomousDbPreviewVersions.

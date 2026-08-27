@@ -110,12 +110,8 @@ type LookupDatabaseToolsMcpServerResult struct {
 }
 
 func LookupDatabaseToolsMcpServerOutput(ctx *pulumi.Context, args LookupDatabaseToolsMcpServerOutputArgs, opts ...pulumi.InvokeOption) LookupDatabaseToolsMcpServerResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDatabaseToolsMcpServerResultOutput, error) {
-			args := v.(LookupDatabaseToolsMcpServerArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseTools/getDatabaseToolsMcpServer:getDatabaseToolsMcpServer", args, LookupDatabaseToolsMcpServerResultOutput{}, options).(LookupDatabaseToolsMcpServerResultOutput), nil
-		}).(LookupDatabaseToolsMcpServerResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseTools/getDatabaseToolsMcpServer:getDatabaseToolsMcpServer", args, LookupDatabaseToolsMcpServerResultOutput{}, options).(LookupDatabaseToolsMcpServerResultOutput)
 }
 
 // A collection of arguments for invoking getDatabaseToolsMcpServer.

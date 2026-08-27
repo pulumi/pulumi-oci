@@ -75,12 +75,8 @@ type GetTagStandardTagNamespaceTemplateResult struct {
 }
 
 func GetTagStandardTagNamespaceTemplateOutput(ctx *pulumi.Context, args GetTagStandardTagNamespaceTemplateOutputArgs, opts ...pulumi.InvokeOption) GetTagStandardTagNamespaceTemplateResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetTagStandardTagNamespaceTemplateResultOutput, error) {
-			args := v.(GetTagStandardTagNamespaceTemplateArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getTagStandardTagNamespaceTemplate:getTagStandardTagNamespaceTemplate", args, GetTagStandardTagNamespaceTemplateResultOutput{}, options).(GetTagStandardTagNamespaceTemplateResultOutput), nil
-		}).(GetTagStandardTagNamespaceTemplateResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getTagStandardTagNamespaceTemplate:getTagStandardTagNamespaceTemplate", args, GetTagStandardTagNamespaceTemplateResultOutput{}, options).(GetTagStandardTagNamespaceTemplateResultOutput)
 }
 
 // A collection of arguments for invoking getTagStandardTagNamespaceTemplate.

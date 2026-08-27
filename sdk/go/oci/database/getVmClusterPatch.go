@@ -82,12 +82,8 @@ type GetVmClusterPatchResult struct {
 }
 
 func GetVmClusterPatchOutput(ctx *pulumi.Context, args GetVmClusterPatchOutputArgs, opts ...pulumi.InvokeOption) GetVmClusterPatchResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVmClusterPatchResultOutput, error) {
-			args := v.(GetVmClusterPatchArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getVmClusterPatch:getVmClusterPatch", args, GetVmClusterPatchResultOutput{}, options).(GetVmClusterPatchResultOutput), nil
-		}).(GetVmClusterPatchResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getVmClusterPatch:getVmClusterPatch", args, GetVmClusterPatchResultOutput{}, options).(GetVmClusterPatchResultOutput)
 }
 
 // A collection of arguments for invoking getVmClusterPatch.

@@ -96,12 +96,8 @@ type LookupInstancePoolResult struct {
 }
 
 func LookupInstancePoolOutput(ctx *pulumi.Context, args LookupInstancePoolOutputArgs, opts ...pulumi.InvokeOption) LookupInstancePoolResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupInstancePoolResultOutput, error) {
-			args := v.(LookupInstancePoolArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getInstancePool:getInstancePool", args, LookupInstancePoolResultOutput{}, options).(LookupInstancePoolResultOutput), nil
-		}).(LookupInstancePoolResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getInstancePool:getInstancePool", args, LookupInstancePoolResultOutput{}, options).(LookupInstancePoolResultOutput)
 }
 
 // A collection of arguments for invoking getInstancePool.

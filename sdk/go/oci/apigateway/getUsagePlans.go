@@ -79,12 +79,8 @@ type GetUsagePlansResult struct {
 }
 
 func GetUsagePlansOutput(ctx *pulumi.Context, args GetUsagePlansOutputArgs, opts ...pulumi.InvokeOption) GetUsagePlansResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetUsagePlansResultOutput, error) {
-			args := v.(GetUsagePlansArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ApiGateway/getUsagePlans:getUsagePlans", args, GetUsagePlansResultOutput{}, options).(GetUsagePlansResultOutput), nil
-		}).(GetUsagePlansResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ApiGateway/getUsagePlans:getUsagePlans", args, GetUsagePlansResultOutput{}, options).(GetUsagePlansResultOutput)
 }
 
 // A collection of arguments for invoking getUsagePlans.

@@ -70,12 +70,8 @@ type GetStackTfStateResult struct {
 }
 
 func GetStackTfStateOutput(ctx *pulumi.Context, args GetStackTfStateOutputArgs, opts ...pulumi.InvokeOption) GetStackTfStateResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetStackTfStateResultOutput, error) {
-			args := v.(GetStackTfStateArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ResourceManager/getStackTfState:getStackTfState", args, GetStackTfStateResultOutput{}, options).(GetStackTfStateResultOutput), nil
-		}).(GetStackTfStateResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ResourceManager/getStackTfState:getStackTfState", args, GetStackTfStateResultOutput{}, options).(GetStackTfStateResultOutput)
 }
 
 // A collection of arguments for invoking getStackTfState.

@@ -68,12 +68,8 @@ type GetBdsInstanceListOsPatchesResult struct {
 }
 
 func GetBdsInstanceListOsPatchesOutput(ctx *pulumi.Context, args GetBdsInstanceListOsPatchesOutputArgs, opts ...pulumi.InvokeOption) GetBdsInstanceListOsPatchesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBdsInstanceListOsPatchesResultOutput, error) {
-			args := v.(GetBdsInstanceListOsPatchesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:BigDataService/getBdsInstanceListOsPatches:getBdsInstanceListOsPatches", args, GetBdsInstanceListOsPatchesResultOutput{}, options).(GetBdsInstanceListOsPatchesResultOutput), nil
-		}).(GetBdsInstanceListOsPatchesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:BigDataService/getBdsInstanceListOsPatches:getBdsInstanceListOsPatches", args, GetBdsInstanceListOsPatchesResultOutput{}, options).(GetBdsInstanceListOsPatchesResultOutput)
 }
 
 // A collection of arguments for invoking getBdsInstanceListOsPatches.

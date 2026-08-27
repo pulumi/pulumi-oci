@@ -106,12 +106,8 @@ type GetAlarmStatusesResult struct {
 }
 
 func GetAlarmStatusesOutput(ctx *pulumi.Context, args GetAlarmStatusesOutputArgs, opts ...pulumi.InvokeOption) GetAlarmStatusesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAlarmStatusesResultOutput, error) {
-			args := v.(GetAlarmStatusesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Monitoring/getAlarmStatuses:getAlarmStatuses", args, GetAlarmStatusesResultOutput{}, options).(GetAlarmStatusesResultOutput), nil
-		}).(GetAlarmStatusesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Monitoring/getAlarmStatuses:getAlarmStatuses", args, GetAlarmStatusesResultOutput{}, options).(GetAlarmStatusesResultOutput)
 }
 
 // A collection of arguments for invoking getAlarmStatuses.

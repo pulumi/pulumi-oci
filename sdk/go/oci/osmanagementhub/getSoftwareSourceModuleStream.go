@@ -88,12 +88,8 @@ type GetSoftwareSourceModuleStreamResult struct {
 }
 
 func GetSoftwareSourceModuleStreamOutput(ctx *pulumi.Context, args GetSoftwareSourceModuleStreamOutputArgs, opts ...pulumi.InvokeOption) GetSoftwareSourceModuleStreamResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSoftwareSourceModuleStreamResultOutput, error) {
-			args := v.(GetSoftwareSourceModuleStreamArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getSoftwareSourceModuleStream:getSoftwareSourceModuleStream", args, GetSoftwareSourceModuleStreamResultOutput{}, options).(GetSoftwareSourceModuleStreamResultOutput), nil
-		}).(GetSoftwareSourceModuleStreamResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getSoftwareSourceModuleStream:getSoftwareSourceModuleStream", args, GetSoftwareSourceModuleStreamResultOutput{}, options).(GetSoftwareSourceModuleStreamResultOutput)
 }
 
 // A collection of arguments for invoking getSoftwareSourceModuleStream.

@@ -82,12 +82,8 @@ type LookupLogAnalyticsLogGroupResult struct {
 }
 
 func LookupLogAnalyticsLogGroupOutput(ctx *pulumi.Context, args LookupLogAnalyticsLogGroupOutputArgs, opts ...pulumi.InvokeOption) LookupLogAnalyticsLogGroupResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupLogAnalyticsLogGroupResultOutput, error) {
-			args := v.(LookupLogAnalyticsLogGroupArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsLogGroup:getLogAnalyticsLogGroup", args, LookupLogAnalyticsLogGroupResultOutput{}, options).(LookupLogAnalyticsLogGroupResultOutput), nil
-		}).(LookupLogAnalyticsLogGroupResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LogAnalytics/getLogAnalyticsLogGroup:getLogAnalyticsLogGroup", args, LookupLogAnalyticsLogGroupResultOutput{}, options).(LookupLogAnalyticsLogGroupResultOutput)
 }
 
 // A collection of arguments for invoking getLogAnalyticsLogGroup.

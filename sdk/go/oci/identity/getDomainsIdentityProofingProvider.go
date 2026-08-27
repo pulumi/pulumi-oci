@@ -128,12 +128,8 @@ type LookupDomainsIdentityProofingProviderResult struct {
 }
 
 func LookupDomainsIdentityProofingProviderOutput(ctx *pulumi.Context, args LookupDomainsIdentityProofingProviderOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsIdentityProofingProviderResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDomainsIdentityProofingProviderResultOutput, error) {
-			args := v.(LookupDomainsIdentityProofingProviderArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsIdentityProofingProvider:getDomainsIdentityProofingProvider", args, LookupDomainsIdentityProofingProviderResultOutput{}, options).(LookupDomainsIdentityProofingProviderResultOutput), nil
-		}).(LookupDomainsIdentityProofingProviderResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsIdentityProofingProvider:getDomainsIdentityProofingProvider", args, LookupDomainsIdentityProofingProviderResultOutput{}, options).(LookupDomainsIdentityProofingProviderResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsIdentityProofingProvider.

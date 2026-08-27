@@ -106,12 +106,8 @@ type GetDomainsRulesResult struct {
 }
 
 func GetDomainsRulesOutput(ctx *pulumi.Context, args GetDomainsRulesOutputArgs, opts ...pulumi.InvokeOption) GetDomainsRulesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsRulesResultOutput, error) {
-			args := v.(GetDomainsRulesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsRules:getDomainsRules", args, GetDomainsRulesResultOutput{}, options).(GetDomainsRulesResultOutput), nil
-		}).(GetDomainsRulesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsRules:getDomainsRules", args, GetDomainsRulesResultOutput{}, options).(GetDomainsRulesResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsRules.

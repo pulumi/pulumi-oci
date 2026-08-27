@@ -78,12 +78,8 @@ type LookupOdaPrivateEndpointScanProxyResult struct {
 }
 
 func LookupOdaPrivateEndpointScanProxyOutput(ctx *pulumi.Context, args LookupOdaPrivateEndpointScanProxyOutputArgs, opts ...pulumi.InvokeOption) LookupOdaPrivateEndpointScanProxyResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupOdaPrivateEndpointScanProxyResultOutput, error) {
-			args := v.(LookupOdaPrivateEndpointScanProxyArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Oda/getOdaPrivateEndpointScanProxy:getOdaPrivateEndpointScanProxy", args, LookupOdaPrivateEndpointScanProxyResultOutput{}, options).(LookupOdaPrivateEndpointScanProxyResultOutput), nil
-		}).(LookupOdaPrivateEndpointScanProxyResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Oda/getOdaPrivateEndpointScanProxy:getOdaPrivateEndpointScanProxy", args, LookupOdaPrivateEndpointScanProxyResultOutput{}, options).(LookupOdaPrivateEndpointScanProxyResultOutput)
 }
 
 // A collection of arguments for invoking getOdaPrivateEndpointScanProxy.

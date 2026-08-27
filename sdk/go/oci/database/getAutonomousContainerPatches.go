@@ -77,12 +77,8 @@ type GetAutonomousContainerPatchesResult struct {
 }
 
 func GetAutonomousContainerPatchesOutput(ctx *pulumi.Context, args GetAutonomousContainerPatchesOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousContainerPatchesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAutonomousContainerPatchesResultOutput, error) {
-			args := v.(GetAutonomousContainerPatchesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getAutonomousContainerPatches:getAutonomousContainerPatches", args, GetAutonomousContainerPatchesResultOutput{}, options).(GetAutonomousContainerPatchesResultOutput), nil
-		}).(GetAutonomousContainerPatchesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getAutonomousContainerPatches:getAutonomousContainerPatches", args, GetAutonomousContainerPatchesResultOutput{}, options).(GetAutonomousContainerPatchesResultOutput)
 }
 
 // A collection of arguments for invoking getAutonomousContainerPatches.

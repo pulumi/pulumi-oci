@@ -68,12 +68,8 @@ type GetPoliciesResult struct {
 }
 
 func GetPoliciesOutput(ctx *pulumi.Context, args GetPoliciesOutputArgs, opts ...pulumi.InvokeOption) GetPoliciesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPoliciesResultOutput, error) {
-			args := v.(GetPoliciesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:LoadBalancer/getPolicies:getPolicies", args, GetPoliciesResultOutput{}, options).(GetPoliciesResultOutput), nil
-		}).(GetPoliciesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:LoadBalancer/getPolicies:getPolicies", args, GetPoliciesResultOutput{}, options).(GetPoliciesResultOutput)
 }
 
 // A collection of arguments for invoking getPolicies.

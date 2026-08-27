@@ -72,12 +72,8 @@ type GetModelDefinedMetadataArtifactContentResult struct {
 }
 
 func GetModelDefinedMetadataArtifactContentOutput(ctx *pulumi.Context, args GetModelDefinedMetadataArtifactContentOutputArgs, opts ...pulumi.InvokeOption) GetModelDefinedMetadataArtifactContentResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetModelDefinedMetadataArtifactContentResultOutput, error) {
-			args := v.(GetModelDefinedMetadataArtifactContentArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataScience/getModelDefinedMetadataArtifactContent:getModelDefinedMetadataArtifactContent", args, GetModelDefinedMetadataArtifactContentResultOutput{}, options).(GetModelDefinedMetadataArtifactContentResultOutput), nil
-		}).(GetModelDefinedMetadataArtifactContentResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataScience/getModelDefinedMetadataArtifactContent:getModelDefinedMetadataArtifactContent", args, GetModelDefinedMetadataArtifactContentResultOutput{}, options).(GetModelDefinedMetadataArtifactContentResultOutput)
 }
 
 // A collection of arguments for invoking getModelDefinedMetadataArtifactContent.

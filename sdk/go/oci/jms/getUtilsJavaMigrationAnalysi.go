@@ -94,12 +94,8 @@ type GetUtilsJavaMigrationAnalysiResult struct {
 }
 
 func GetUtilsJavaMigrationAnalysiOutput(ctx *pulumi.Context, args GetUtilsJavaMigrationAnalysiOutputArgs, opts ...pulumi.InvokeOption) GetUtilsJavaMigrationAnalysiResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetUtilsJavaMigrationAnalysiResultOutput, error) {
-			args := v.(GetUtilsJavaMigrationAnalysiArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getUtilsJavaMigrationAnalysi:getUtilsJavaMigrationAnalysi", args, GetUtilsJavaMigrationAnalysiResultOutput{}, options).(GetUtilsJavaMigrationAnalysiResultOutput), nil
-		}).(GetUtilsJavaMigrationAnalysiResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getUtilsJavaMigrationAnalysi:getUtilsJavaMigrationAnalysi", args, GetUtilsJavaMigrationAnalysiResultOutput{}, options).(GetUtilsJavaMigrationAnalysiResultOutput)
 }
 
 // A collection of arguments for invoking getUtilsJavaMigrationAnalysi.

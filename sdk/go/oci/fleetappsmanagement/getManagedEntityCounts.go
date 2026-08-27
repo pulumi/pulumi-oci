@@ -72,12 +72,8 @@ type GetManagedEntityCountsResult struct {
 }
 
 func GetManagedEntityCountsOutput(ctx *pulumi.Context, args GetManagedEntityCountsOutputArgs, opts ...pulumi.InvokeOption) GetManagedEntityCountsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagedEntityCountsResultOutput, error) {
-			args := v.(GetManagedEntityCountsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getManagedEntityCounts:getManagedEntityCounts", args, GetManagedEntityCountsResultOutput{}, options).(GetManagedEntityCountsResultOutput), nil
-		}).(GetManagedEntityCountsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getManagedEntityCounts:getManagedEntityCounts", args, GetManagedEntityCountsResultOutput{}, options).(GetManagedEntityCountsResultOutput)
 }
 
 // A collection of arguments for invoking getManagedEntityCounts.

@@ -72,12 +72,8 @@ type GetCatalogItemVariablesDefinitionResult struct {
 }
 
 func GetCatalogItemVariablesDefinitionOutput(ctx *pulumi.Context, args GetCatalogItemVariablesDefinitionOutputArgs, opts ...pulumi.InvokeOption) GetCatalogItemVariablesDefinitionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCatalogItemVariablesDefinitionResultOutput, error) {
-			args := v.(GetCatalogItemVariablesDefinitionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getCatalogItemVariablesDefinition:getCatalogItemVariablesDefinition", args, GetCatalogItemVariablesDefinitionResultOutput{}, options).(GetCatalogItemVariablesDefinitionResultOutput), nil
-		}).(GetCatalogItemVariablesDefinitionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getCatalogItemVariablesDefinition:getCatalogItemVariablesDefinition", args, GetCatalogItemVariablesDefinitionResultOutput{}, options).(GetCatalogItemVariablesDefinitionResultOutput)
 }
 
 // A collection of arguments for invoking getCatalogItemVariablesDefinition.

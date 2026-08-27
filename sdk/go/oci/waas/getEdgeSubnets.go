@@ -63,12 +63,8 @@ type GetEdgeSubnetsResult struct {
 }
 
 func GetEdgeSubnetsOutput(ctx *pulumi.Context, args GetEdgeSubnetsOutputArgs, opts ...pulumi.InvokeOption) GetEdgeSubnetsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetEdgeSubnetsResultOutput, error) {
-			args := v.(GetEdgeSubnetsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Waas/getEdgeSubnets:getEdgeSubnets", args, GetEdgeSubnetsResultOutput{}, options).(GetEdgeSubnetsResultOutput), nil
-		}).(GetEdgeSubnetsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Waas/getEdgeSubnets:getEdgeSubnets", args, GetEdgeSubnetsResultOutput{}, options).(GetEdgeSubnetsResultOutput)
 }
 
 // A collection of arguments for invoking getEdgeSubnets.

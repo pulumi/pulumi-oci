@@ -68,12 +68,8 @@ type GetFleetDrsFilesResult struct {
 }
 
 func GetFleetDrsFilesOutput(ctx *pulumi.Context, args GetFleetDrsFilesOutputArgs, opts ...pulumi.InvokeOption) GetFleetDrsFilesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFleetDrsFilesResultOutput, error) {
-			args := v.(GetFleetDrsFilesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getFleetDrsFiles:getFleetDrsFiles", args, GetFleetDrsFilesResultOutput{}, options).(GetFleetDrsFilesResultOutput), nil
-		}).(GetFleetDrsFilesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getFleetDrsFiles:getFleetDrsFiles", args, GetFleetDrsFilesResultOutput{}, options).(GetFleetDrsFilesResultOutput)
 }
 
 // A collection of arguments for invoking getFleetDrsFiles.

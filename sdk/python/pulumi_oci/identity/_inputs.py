@@ -7884,13 +7884,11 @@ class DomainsAppRadiusPolicyArgsDict(TypedDict):
     * type: string
     * uniqueness: none
     """
-    _ref: NotRequired[pulumi.Input[Optional[_builtins.str]]]
 
 @pulumi.input_type
 class DomainsAppRadiusPolicyArgs:
     def __init__(__self__, *,
-                 value: pulumi.Input[_builtins.str],
-                 _ref: pulumi.Input[Optional[_builtins.str]] = None):
+                 value: pulumi.Input[_builtins.str]):
         """
         :param pulumi.Input[_builtins.str] value: (Updatable) Identifier of the Policy.
                
@@ -7907,8 +7905,6 @@ class DomainsAppRadiusPolicyArgs:
                * uniqueness: none
         """
         pulumi.set(__self__, "value", value)
-        if _ref is not None:
-            pulumi.set(__self__, "_ref", _ref)
 
     @_builtins.property
     @pulumi.getter
@@ -7933,15 +7929,6 @@ class DomainsAppRadiusPolicyArgs:
     @value.setter
     def value(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "value", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def _ref(self) -> pulumi.Input[Optional[_builtins.str]]:
-        return pulumi.get(self, "_ref")
-
-    @_ref.setter
-    def _ref(self, value: pulumi.Input[Optional[_builtins.str]]):
-        pulumi.set(self, "_ref", value)
 
 
 class DomainsAppRoleAppArgsDict(TypedDict):
@@ -44914,20 +44901,6 @@ class DomainsIdentityProofingProviderIdcsLastModifiedByArgs:
 
 
 class DomainsIdentityProofingProviderIdcsLockedByArgsDict(TypedDict):
-    _ref: NotRequired[pulumi.Input[Optional[_builtins.str]]]
-    """
-    (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-
-    **SCIM++ Properties:**
-    * caseExact: true
-    * idcsSearchable: false
-    * multiValued: false
-    * mutability: readOnly
-    * required: false
-    * returned: default
-    * type: string
-    * uniqueness: none
-    """
     display: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The displayName of the User or App who locked this Resource.
@@ -44987,23 +44960,11 @@ class DomainsIdentityProofingProviderIdcsLockedByArgsDict(TypedDict):
 @pulumi.input_type
 class DomainsIdentityProofingProviderIdcsLockedByArgs:
     def __init__(__self__, *,
-                 _ref: pulumi.Input[Optional[_builtins.str]] = None,
                  display: pulumi.Input[Optional[_builtins.str]] = None,
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  value: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] _ref: (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
         :param pulumi.Input[_builtins.str] display: (Updatable) The displayName of the User or App who locked this Resource.
                
                **SCIM++ Properties:**
@@ -45048,8 +45009,6 @@ class DomainsIdentityProofingProviderIdcsLockedByArgs:
                * type: string
                * uniqueness: none
         """
-        if _ref is not None:
-            pulumi.set(__self__, "_ref", _ref)
         if display is not None:
             pulumi.set(__self__, "display", display)
         if ocid is not None:
@@ -45058,28 +45017,6 @@ class DomainsIdentityProofingProviderIdcsLockedByArgs:
             pulumi.set(__self__, "type", type)
         if value is not None:
             pulumi.set(__self__, "value", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def _ref(self) -> pulumi.Input[Optional[_builtins.str]]:
-        """
-        (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
-        return pulumi.get(self, "_ref")
-
-    @_ref.setter
-    def _ref(self, value: pulumi.Input[Optional[_builtins.str]]):
-        pulumi.set(self, "_ref", value)
 
     @_builtins.property
     @pulumi.getter
@@ -46095,20 +46032,6 @@ class DomainsIdentityProofingProviderTemplateIdcsLastModifiedByArgs:
 
 
 class DomainsIdentityProofingProviderTemplateIdcsLockedByArgsDict(TypedDict):
-    _ref: NotRequired[pulumi.Input[Optional[_builtins.str]]]
-    """
-    (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-
-    **SCIM++ Properties:**
-    * caseExact: true
-    * idcsSearchable: false
-    * multiValued: false
-    * mutability: readOnly
-    * required: false
-    * returned: default
-    * type: string
-    * uniqueness: none
-    """
     display: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The displayName of the User or App who locked this Resource.
@@ -46168,23 +46091,11 @@ class DomainsIdentityProofingProviderTemplateIdcsLockedByArgsDict(TypedDict):
 @pulumi.input_type
 class DomainsIdentityProofingProviderTemplateIdcsLockedByArgs:
     def __init__(__self__, *,
-                 _ref: pulumi.Input[Optional[_builtins.str]] = None,
                  display: pulumi.Input[Optional[_builtins.str]] = None,
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  value: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] _ref: (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
         :param pulumi.Input[_builtins.str] display: (Updatable) The displayName of the User or App who locked this Resource.
                
                **SCIM++ Properties:**
@@ -46229,8 +46140,6 @@ class DomainsIdentityProofingProviderTemplateIdcsLockedByArgs:
                * type: string
                * uniqueness: none
         """
-        if _ref is not None:
-            pulumi.set(__self__, "_ref", _ref)
         if display is not None:
             pulumi.set(__self__, "display", display)
         if ocid is not None:
@@ -46239,28 +46148,6 @@ class DomainsIdentityProofingProviderTemplateIdcsLockedByArgs:
             pulumi.set(__self__, "type", type)
         if value is not None:
             pulumi.set(__self__, "value", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def _ref(self) -> pulumi.Input[Optional[_builtins.str]]:
-        """
-        (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
-        return pulumi.get(self, "_ref")
-
-    @_ref.setter
-    def _ref(self, value: pulumi.Input[Optional[_builtins.str]]):
-        pulumi.set(self, "_ref", value)
 
     @_builtins.property
     @pulumi.getter

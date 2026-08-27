@@ -112,12 +112,8 @@ type GetListingPackageResult struct {
 }
 
 func GetListingPackageOutput(ctx *pulumi.Context, args GetListingPackageOutputArgs, opts ...pulumi.InvokeOption) GetListingPackageResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetListingPackageResultOutput, error) {
-			args := v.(GetListingPackageArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Marketplace/getListingPackage:getListingPackage", args, GetListingPackageResultOutput{}, options).(GetListingPackageResultOutput), nil
-		}).(GetListingPackageResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Marketplace/getListingPackage:getListingPackage", args, GetListingPackageResultOutput{}, options).(GetListingPackageResultOutput)
 }
 
 // A collection of arguments for invoking getListingPackage.

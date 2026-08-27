@@ -80,12 +80,8 @@ type GetExadataInfrastructureUnAllocatedResourceResult struct {
 }
 
 func GetExadataInfrastructureUnAllocatedResourceOutput(ctx *pulumi.Context, args GetExadataInfrastructureUnAllocatedResourceOutputArgs, opts ...pulumi.InvokeOption) GetExadataInfrastructureUnAllocatedResourceResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetExadataInfrastructureUnAllocatedResourceResultOutput, error) {
-			args := v.(GetExadataInfrastructureUnAllocatedResourceArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getExadataInfrastructureUnAllocatedResource:getExadataInfrastructureUnAllocatedResource", args, GetExadataInfrastructureUnAllocatedResourceResultOutput{}, options).(GetExadataInfrastructureUnAllocatedResourceResultOutput), nil
-		}).(GetExadataInfrastructureUnAllocatedResourceResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getExadataInfrastructureUnAllocatedResource:getExadataInfrastructureUnAllocatedResource", args, GetExadataInfrastructureUnAllocatedResourceResultOutput{}, options).(GetExadataInfrastructureUnAllocatedResourceResultOutput)
 }
 
 // A collection of arguments for invoking getExadataInfrastructureUnAllocatedResource.

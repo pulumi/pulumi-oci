@@ -75,12 +75,8 @@ type GetFleetComplianceReportResult struct {
 }
 
 func GetFleetComplianceReportOutput(ctx *pulumi.Context, args GetFleetComplianceReportOutputArgs, opts ...pulumi.InvokeOption) GetFleetComplianceReportResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFleetComplianceReportResultOutput, error) {
-			args := v.(GetFleetComplianceReportArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getFleetComplianceReport:getFleetComplianceReport", args, GetFleetComplianceReportResultOutput{}, options).(GetFleetComplianceReportResultOutput), nil
-		}).(GetFleetComplianceReportResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getFleetComplianceReport:getFleetComplianceReport", args, GetFleetComplianceReportResultOutput{}, options).(GetFleetComplianceReportResultOutput)
 }
 
 // A collection of arguments for invoking getFleetComplianceReport.

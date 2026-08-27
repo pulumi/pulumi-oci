@@ -68,12 +68,8 @@ type GetLinkFeaturesResult struct {
 }
 
 func GetLinkFeaturesOutput(ctx *pulumi.Context, args GetLinkFeaturesOutputArgs, opts ...pulumi.InvokeOption) GetLinkFeaturesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetLinkFeaturesResultOutput, error) {
-			args := v.(GetLinkFeaturesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Tenantmanagercontrolplane/getLinkFeatures:getLinkFeatures", args, GetLinkFeaturesResultOutput{}, options).(GetLinkFeaturesResultOutput), nil
-		}).(GetLinkFeaturesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Tenantmanagercontrolplane/getLinkFeatures:getLinkFeatures", args, GetLinkFeaturesResultOutput{}, options).(GetLinkFeaturesResultOutput)
 }
 
 // A collection of arguments for invoking getLinkFeatures.

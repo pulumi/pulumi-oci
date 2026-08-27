@@ -91,12 +91,8 @@ type LookupStreamCdnConfigResult struct {
 }
 
 func LookupStreamCdnConfigOutput(ctx *pulumi.Context, args LookupStreamCdnConfigOutputArgs, opts ...pulumi.InvokeOption) LookupStreamCdnConfigResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupStreamCdnConfigResultOutput, error) {
-			args := v.(LookupStreamCdnConfigArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:MediaServices/getStreamCdnConfig:getStreamCdnConfig", args, LookupStreamCdnConfigResultOutput{}, options).(LookupStreamCdnConfigResultOutput), nil
-		}).(LookupStreamCdnConfigResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:MediaServices/getStreamCdnConfig:getStreamCdnConfig", args, LookupStreamCdnConfigResultOutput{}, options).(LookupStreamCdnConfigResultOutput)
 }
 
 // A collection of arguments for invoking getStreamCdnConfig.

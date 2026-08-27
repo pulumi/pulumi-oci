@@ -62,12 +62,8 @@ type GetCommitmentAggregatedsResult struct {
 }
 
 func GetCommitmentAggregatedsOutput(ctx *pulumi.Context, args GetCommitmentAggregatedsOutputArgs, opts ...pulumi.InvokeOption) GetCommitmentAggregatedsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCommitmentAggregatedsResultOutput, error) {
-			args := v.(GetCommitmentAggregatedsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsubUsage/getCommitmentAggregateds:getCommitmentAggregateds", args, GetCommitmentAggregatedsResultOutput{}, options).(GetCommitmentAggregatedsResultOutput), nil
-		}).(GetCommitmentAggregatedsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsubUsage/getCommitmentAggregateds:getCommitmentAggregateds", args, GetCommitmentAggregatedsResultOutput{}, options).(GetCommitmentAggregatedsResultOutput)
 }
 
 // A collection of arguments for invoking getCommitmentAggregateds.

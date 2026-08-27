@@ -68,12 +68,8 @@ type GetDbSystemPatchesResult struct {
 }
 
 func GetDbSystemPatchesOutput(ctx *pulumi.Context, args GetDbSystemPatchesOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemPatchesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbSystemPatchesResultOutput, error) {
-			args := v.(GetDbSystemPatchesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getDbSystemPatches:getDbSystemPatches", args, GetDbSystemPatchesResultOutput{}, options).(GetDbSystemPatchesResultOutput), nil
-		}).(GetDbSystemPatchesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getDbSystemPatches:getDbSystemPatches", args, GetDbSystemPatchesResultOutput{}, options).(GetDbSystemPatchesResultOutput)
 }
 
 // A collection of arguments for invoking getDbSystemPatches.

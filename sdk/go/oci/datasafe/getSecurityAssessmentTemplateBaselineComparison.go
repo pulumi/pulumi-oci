@@ -103,12 +103,8 @@ type GetSecurityAssessmentTemplateBaselineComparisonResult struct {
 }
 
 func GetSecurityAssessmentTemplateBaselineComparisonOutput(ctx *pulumi.Context, args GetSecurityAssessmentTemplateBaselineComparisonOutputArgs, opts ...pulumi.InvokeOption) GetSecurityAssessmentTemplateBaselineComparisonResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSecurityAssessmentTemplateBaselineComparisonResultOutput, error) {
-			args := v.(GetSecurityAssessmentTemplateBaselineComparisonArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getSecurityAssessmentTemplateBaselineComparison:getSecurityAssessmentTemplateBaselineComparison", args, GetSecurityAssessmentTemplateBaselineComparisonResultOutput{}, options).(GetSecurityAssessmentTemplateBaselineComparisonResultOutput), nil
-		}).(GetSecurityAssessmentTemplateBaselineComparisonResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getSecurityAssessmentTemplateBaselineComparison:getSecurityAssessmentTemplateBaselineComparison", args, GetSecurityAssessmentTemplateBaselineComparisonResultOutput{}, options).(GetSecurityAssessmentTemplateBaselineComparisonResultOutput)
 }
 
 // A collection of arguments for invoking getSecurityAssessmentTemplateBaselineComparison.

@@ -78,12 +78,8 @@ type GetAutonomousDbVersionsResult struct {
 }
 
 func GetAutonomousDbVersionsOutput(ctx *pulumi.Context, args GetAutonomousDbVersionsOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousDbVersionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAutonomousDbVersionsResultOutput, error) {
-			args := v.(GetAutonomousDbVersionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getAutonomousDbVersions:getAutonomousDbVersions", args, GetAutonomousDbVersionsResultOutput{}, options).(GetAutonomousDbVersionsResultOutput), nil
-		}).(GetAutonomousDbVersionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getAutonomousDbVersions:getAutonomousDbVersions", args, GetAutonomousDbVersionsResultOutput{}, options).(GetAutonomousDbVersionsResultOutput)
 }
 
 // A collection of arguments for invoking getAutonomousDbVersions.

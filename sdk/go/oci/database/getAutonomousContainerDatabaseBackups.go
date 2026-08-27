@@ -94,12 +94,8 @@ type GetAutonomousContainerDatabaseBackupsResult struct {
 }
 
 func GetAutonomousContainerDatabaseBackupsOutput(ctx *pulumi.Context, args GetAutonomousContainerDatabaseBackupsOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousContainerDatabaseBackupsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAutonomousContainerDatabaseBackupsResultOutput, error) {
-			args := v.(GetAutonomousContainerDatabaseBackupsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getAutonomousContainerDatabaseBackups:getAutonomousContainerDatabaseBackups", args, GetAutonomousContainerDatabaseBackupsResultOutput{}, options).(GetAutonomousContainerDatabaseBackupsResultOutput), nil
-		}).(GetAutonomousContainerDatabaseBackupsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getAutonomousContainerDatabaseBackups:getAutonomousContainerDatabaseBackups", args, GetAutonomousContainerDatabaseBackupsResultOutput{}, options).(GetAutonomousContainerDatabaseBackupsResultOutput)
 }
 
 // A collection of arguments for invoking getAutonomousContainerDatabaseBackups.

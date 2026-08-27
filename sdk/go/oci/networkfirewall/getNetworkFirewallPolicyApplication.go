@@ -53,12 +53,8 @@ type LookupNetworkFirewallPolicyApplicationResult struct {
 }
 
 func LookupNetworkFirewallPolicyApplicationOutput(ctx *pulumi.Context, args LookupNetworkFirewallPolicyApplicationOutputArgs, opts ...pulumi.InvokeOption) LookupNetworkFirewallPolicyApplicationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupNetworkFirewallPolicyApplicationResultOutput, error) {
-			args := v.(LookupNetworkFirewallPolicyApplicationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyApplication:getNetworkFirewallPolicyApplication", args, LookupNetworkFirewallPolicyApplicationResultOutput{}, options).(LookupNetworkFirewallPolicyApplicationResultOutput), nil
-		}).(LookupNetworkFirewallPolicyApplicationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:NetworkFirewall/getNetworkFirewallPolicyApplication:getNetworkFirewallPolicyApplication", args, LookupNetworkFirewallPolicyApplicationResultOutput{}, options).(LookupNetworkFirewallPolicyApplicationResultOutput)
 }
 
 // A collection of arguments for invoking getNetworkFirewallPolicyApplication.

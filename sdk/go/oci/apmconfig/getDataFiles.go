@@ -87,12 +87,8 @@ type GetDataFilesResult struct {
 }
 
 func GetDataFilesOutput(ctx *pulumi.Context, args GetDataFilesOutputArgs, opts ...pulumi.InvokeOption) GetDataFilesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDataFilesResultOutput, error) {
-			args := v.(GetDataFilesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ApmConfig/getDataFiles:getDataFiles", args, GetDataFilesResultOutput{}, options).(GetDataFilesResultOutput), nil
-		}).(GetDataFilesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ApmConfig/getDataFiles:getDataFiles", args, GetDataFilesResultOutput{}, options).(GetDataFilesResultOutput)
 }
 
 // A collection of arguments for invoking getDataFiles.

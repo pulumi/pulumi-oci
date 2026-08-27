@@ -92,12 +92,8 @@ type LookupPingMonitorResult struct {
 }
 
 func LookupPingMonitorOutput(ctx *pulumi.Context, args LookupPingMonitorOutputArgs, opts ...pulumi.InvokeOption) LookupPingMonitorResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupPingMonitorResultOutput, error) {
-			args := v.(LookupPingMonitorArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:HealthChecks/getPingMonitor:getPingMonitor", args, LookupPingMonitorResultOutput{}, options).(LookupPingMonitorResultOutput), nil
-		}).(LookupPingMonitorResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:HealthChecks/getPingMonitor:getPingMonitor", args, LookupPingMonitorResultOutput{}, options).(LookupPingMonitorResultOutput)
 }
 
 // A collection of arguments for invoking getPingMonitor.

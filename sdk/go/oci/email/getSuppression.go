@@ -81,12 +81,8 @@ type LookupSuppressionResult struct {
 }
 
 func LookupSuppressionOutput(ctx *pulumi.Context, args LookupSuppressionOutputArgs, opts ...pulumi.InvokeOption) LookupSuppressionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupSuppressionResultOutput, error) {
-			args := v.(LookupSuppressionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Email/getSuppression:getSuppression", args, LookupSuppressionResultOutput{}, options).(LookupSuppressionResultOutput), nil
-		}).(LookupSuppressionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Email/getSuppression:getSuppression", args, LookupSuppressionResultOutput{}, options).(LookupSuppressionResultOutput)
 }
 
 // A collection of arguments for invoking getSuppression.

@@ -105,12 +105,8 @@ type GetManagementStationsResult struct {
 }
 
 func GetManagementStationsOutput(ctx *pulumi.Context, args GetManagementStationsOutputArgs, opts ...pulumi.InvokeOption) GetManagementStationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetManagementStationsResultOutput, error) {
-			args := v.(GetManagementStationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getManagementStations:getManagementStations", args, GetManagementStationsResultOutput{}, options).(GetManagementStationsResultOutput), nil
-		}).(GetManagementStationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getManagementStations:getManagementStations", args, GetManagementStationsResultOutput{}, options).(GetManagementStationsResultOutput)
 }
 
 // A collection of arguments for invoking getManagementStations.

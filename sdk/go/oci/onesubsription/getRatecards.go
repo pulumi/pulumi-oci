@@ -86,12 +86,8 @@ type GetRatecardsResult struct {
 }
 
 func GetRatecardsOutput(ctx *pulumi.Context, args GetRatecardsOutputArgs, opts ...pulumi.InvokeOption) GetRatecardsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRatecardsResultOutput, error) {
-			args := v.(GetRatecardsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OneSubsription/getRatecards:getRatecards", args, GetRatecardsResultOutput{}, options).(GetRatecardsResultOutput), nil
-		}).(GetRatecardsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OneSubsription/getRatecards:getRatecards", args, GetRatecardsResultOutput{}, options).(GetRatecardsResultOutput)
 }
 
 // A collection of arguments for invoking getRatecards.

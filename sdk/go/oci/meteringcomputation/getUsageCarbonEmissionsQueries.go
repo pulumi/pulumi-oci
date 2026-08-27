@@ -69,12 +69,8 @@ type GetUsageCarbonEmissionsQueriesResult struct {
 }
 
 func GetUsageCarbonEmissionsQueriesOutput(ctx *pulumi.Context, args GetUsageCarbonEmissionsQueriesOutputArgs, opts ...pulumi.InvokeOption) GetUsageCarbonEmissionsQueriesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetUsageCarbonEmissionsQueriesResultOutput, error) {
-			args := v.(GetUsageCarbonEmissionsQueriesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:MeteringComputation/getUsageCarbonEmissionsQueries:getUsageCarbonEmissionsQueries", args, GetUsageCarbonEmissionsQueriesResultOutput{}, options).(GetUsageCarbonEmissionsQueriesResultOutput), nil
-		}).(GetUsageCarbonEmissionsQueriesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:MeteringComputation/getUsageCarbonEmissionsQueries:getUsageCarbonEmissionsQueries", args, GetUsageCarbonEmissionsQueriesResultOutput{}, options).(GetUsageCarbonEmissionsQueriesResultOutput)
 }
 
 // A collection of arguments for invoking getUsageCarbonEmissionsQueries.

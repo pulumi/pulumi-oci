@@ -104,12 +104,8 @@ type GetReportDefinitionsResult struct {
 }
 
 func GetReportDefinitionsOutput(ctx *pulumi.Context, args GetReportDefinitionsOutputArgs, opts ...pulumi.InvokeOption) GetReportDefinitionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetReportDefinitionsResultOutput, error) {
-			args := v.(GetReportDefinitionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getReportDefinitions:getReportDefinitions", args, GetReportDefinitionsResultOutput{}, options).(GetReportDefinitionsResultOutput), nil
-		}).(GetReportDefinitionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getReportDefinitions:getReportDefinitions", args, GetReportDefinitionsResultOutput{}, options).(GetReportDefinitionsResultOutput)
 }
 
 // A collection of arguments for invoking getReportDefinitions.

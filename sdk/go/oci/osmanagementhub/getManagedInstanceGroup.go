@@ -106,12 +106,8 @@ type LookupManagedInstanceGroupResult struct {
 }
 
 func LookupManagedInstanceGroupOutput(ctx *pulumi.Context, args LookupManagedInstanceGroupOutputArgs, opts ...pulumi.InvokeOption) LookupManagedInstanceGroupResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupManagedInstanceGroupResultOutput, error) {
-			args := v.(LookupManagedInstanceGroupArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getManagedInstanceGroup:getManagedInstanceGroup", args, LookupManagedInstanceGroupResultOutput{}, options).(LookupManagedInstanceGroupResultOutput), nil
-		}).(LookupManagedInstanceGroupResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getManagedInstanceGroup:getManagedInstanceGroup", args, LookupManagedInstanceGroupResultOutput{}, options).(LookupManagedInstanceGroupResultOutput)
 }
 
 // A collection of arguments for invoking getManagedInstanceGroup.

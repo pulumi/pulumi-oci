@@ -108,12 +108,8 @@ type LookupManagedDatabaseResult struct {
 }
 
 func LookupManagedDatabaseOutput(ctx *pulumi.Context, args LookupManagedDatabaseOutputArgs, opts ...pulumi.InvokeOption) LookupManagedDatabaseResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupManagedDatabaseResultOutput, error) {
-			args := v.(LookupManagedDatabaseArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabase:getManagedDatabase", args, LookupManagedDatabaseResultOutput{}, options).(LookupManagedDatabaseResultOutput), nil
-		}).(LookupManagedDatabaseResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getManagedDatabase:getManagedDatabase", args, LookupManagedDatabaseResultOutput{}, options).(LookupManagedDatabaseResultOutput)
 }
 
 // A collection of arguments for invoking getManagedDatabase.

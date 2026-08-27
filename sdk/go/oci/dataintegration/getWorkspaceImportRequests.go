@@ -91,12 +91,8 @@ type GetWorkspaceImportRequestsResult struct {
 }
 
 func GetWorkspaceImportRequestsOutput(ctx *pulumi.Context, args GetWorkspaceImportRequestsOutputArgs, opts ...pulumi.InvokeOption) GetWorkspaceImportRequestsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetWorkspaceImportRequestsResultOutput, error) {
-			args := v.(GetWorkspaceImportRequestsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataIntegration/getWorkspaceImportRequests:getWorkspaceImportRequests", args, GetWorkspaceImportRequestsResultOutput{}, options).(GetWorkspaceImportRequestsResultOutput), nil
-		}).(GetWorkspaceImportRequestsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataIntegration/getWorkspaceImportRequests:getWorkspaceImportRequests", args, GetWorkspaceImportRequestsResultOutput{}, options).(GetWorkspaceImportRequestsResultOutput)
 }
 
 // A collection of arguments for invoking getWorkspaceImportRequests.

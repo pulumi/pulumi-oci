@@ -73,12 +73,8 @@ type GetSchedulerDefinitionScheduledFleetsResult struct {
 }
 
 func GetSchedulerDefinitionScheduledFleetsOutput(ctx *pulumi.Context, args GetSchedulerDefinitionScheduledFleetsOutputArgs, opts ...pulumi.InvokeOption) GetSchedulerDefinitionScheduledFleetsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSchedulerDefinitionScheduledFleetsResultOutput, error) {
-			args := v.(GetSchedulerDefinitionScheduledFleetsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getSchedulerDefinitionScheduledFleets:getSchedulerDefinitionScheduledFleets", args, GetSchedulerDefinitionScheduledFleetsResultOutput{}, options).(GetSchedulerDefinitionScheduledFleetsResultOutput), nil
-		}).(GetSchedulerDefinitionScheduledFleetsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getSchedulerDefinitionScheduledFleets:getSchedulerDefinitionScheduledFleets", args, GetSchedulerDefinitionScheduledFleetsResultOutput{}, options).(GetSchedulerDefinitionScheduledFleetsResultOutput)
 }
 
 // A collection of arguments for invoking getSchedulerDefinitionScheduledFleets.

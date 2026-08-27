@@ -90,12 +90,8 @@ type LookupDbmulticloudOracleDbAzureBlobMountResult struct {
 }
 
 func LookupDbmulticloudOracleDbAzureBlobMountOutput(ctx *pulumi.Context, args LookupDbmulticloudOracleDbAzureBlobMountOutputArgs, opts ...pulumi.InvokeOption) LookupDbmulticloudOracleDbAzureBlobMountResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDbmulticloudOracleDbAzureBlobMountResultOutput, error) {
-			args := v.(LookupDbmulticloudOracleDbAzureBlobMountArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbAzureBlobMount:getDbmulticloudOracleDbAzureBlobMount", args, LookupDbmulticloudOracleDbAzureBlobMountResultOutput{}, options).(LookupDbmulticloudOracleDbAzureBlobMountResultOutput), nil
-		}).(LookupDbmulticloudOracleDbAzureBlobMountResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDbmulticloudOracleDbAzureBlobMount:getDbmulticloudOracleDbAzureBlobMount", args, LookupDbmulticloudOracleDbAzureBlobMountResultOutput{}, options).(LookupDbmulticloudOracleDbAzureBlobMountResultOutput)
 }
 
 // A collection of arguments for invoking getDbmulticloudOracleDbAzureBlobMount.

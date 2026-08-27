@@ -82,12 +82,8 @@ type GetBdsInstancePatchHistoriesResult struct {
 }
 
 func GetBdsInstancePatchHistoriesOutput(ctx *pulumi.Context, args GetBdsInstancePatchHistoriesOutputArgs, opts ...pulumi.InvokeOption) GetBdsInstancePatchHistoriesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBdsInstancePatchHistoriesResultOutput, error) {
-			args := v.(GetBdsInstancePatchHistoriesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories", args, GetBdsInstancePatchHistoriesResultOutput{}, options).(GetBdsInstancePatchHistoriesResultOutput), nil
-		}).(GetBdsInstancePatchHistoriesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories", args, GetBdsInstancePatchHistoriesResultOutput{}, options).(GetBdsInstancePatchHistoriesResultOutput)
 }
 
 // A collection of arguments for invoking getBdsInstancePatchHistories.

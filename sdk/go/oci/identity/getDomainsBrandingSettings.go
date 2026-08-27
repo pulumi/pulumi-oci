@@ -91,12 +91,8 @@ type GetDomainsBrandingSettingsResult struct {
 }
 
 func GetDomainsBrandingSettingsOutput(ctx *pulumi.Context, args GetDomainsBrandingSettingsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsBrandingSettingsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsBrandingSettingsResultOutput, error) {
-			args := v.(GetDomainsBrandingSettingsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsBrandingSettings:getDomainsBrandingSettings", args, GetDomainsBrandingSettingsResultOutput{}, options).(GetDomainsBrandingSettingsResultOutput), nil
-		}).(GetDomainsBrandingSettingsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsBrandingSettings:getDomainsBrandingSettings", args, GetDomainsBrandingSettingsResultOutput{}, options).(GetDomainsBrandingSettingsResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsBrandingSettings.

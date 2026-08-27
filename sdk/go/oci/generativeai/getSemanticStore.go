@@ -90,12 +90,8 @@ type LookupSemanticStoreResult struct {
 }
 
 func LookupSemanticStoreOutput(ctx *pulumi.Context, args LookupSemanticStoreOutputArgs, opts ...pulumi.InvokeOption) LookupSemanticStoreResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupSemanticStoreResultOutput, error) {
-			args := v.(LookupSemanticStoreArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GenerativeAi/getSemanticStore:getSemanticStore", args, LookupSemanticStoreResultOutput{}, options).(LookupSemanticStoreResultOutput), nil
-		}).(LookupSemanticStoreResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GenerativeAi/getSemanticStore:getSemanticStore", args, LookupSemanticStoreResultOutput{}, options).(LookupSemanticStoreResultOutput)
 }
 
 // A collection of arguments for invoking getSemanticStore.

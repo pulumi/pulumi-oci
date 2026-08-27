@@ -66,12 +66,8 @@ type GetMessageResult struct {
 }
 
 func GetMessageOutput(ctx *pulumi.Context, args GetMessageOutputArgs, opts ...pulumi.InvokeOption) GetMessageResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMessageResultOutput, error) {
-			args := v.(GetMessageArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GoldenGate/getMessage:getMessage", args, GetMessageResultOutput{}, options).(GetMessageResultOutput), nil
-		}).(GetMessageResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GoldenGate/getMessage:getMessage", args, GetMessageResultOutput{}, options).(GetMessageResultOutput)
 }
 
 // A collection of arguments for invoking getMessage.

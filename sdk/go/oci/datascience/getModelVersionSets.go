@@ -97,12 +97,8 @@ type GetModelVersionSetsResult struct {
 }
 
 func GetModelVersionSetsOutput(ctx *pulumi.Context, args GetModelVersionSetsOutputArgs, opts ...pulumi.InvokeOption) GetModelVersionSetsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetModelVersionSetsResultOutput, error) {
-			args := v.(GetModelVersionSetsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataScience/getModelVersionSets:getModelVersionSets", args, GetModelVersionSetsResultOutput{}, options).(GetModelVersionSetsResultOutput), nil
-		}).(GetModelVersionSetsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataScience/getModelVersionSets:getModelVersionSets", args, GetModelVersionSetsResultOutput{}, options).(GetModelVersionSetsResultOutput)
 }
 
 // A collection of arguments for invoking getModelVersionSets.

@@ -72,12 +72,8 @@ type GetReplicationSourcesResult struct {
 }
 
 func GetReplicationSourcesOutput(ctx *pulumi.Context, args GetReplicationSourcesOutputArgs, opts ...pulumi.InvokeOption) GetReplicationSourcesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetReplicationSourcesResultOutput, error) {
-			args := v.(GetReplicationSourcesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ObjectStorage/getReplicationSources:getReplicationSources", args, GetReplicationSourcesResultOutput{}, options).(GetReplicationSourcesResultOutput), nil
-		}).(GetReplicationSourcesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ObjectStorage/getReplicationSources:getReplicationSources", args, GetReplicationSourcesResultOutput{}, options).(GetReplicationSourcesResultOutput)
 }
 
 // A collection of arguments for invoking getReplicationSources.

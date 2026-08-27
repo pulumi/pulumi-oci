@@ -80,12 +80,8 @@ type GetMulticloudOmHubMultiCloudMetadataResult struct {
 }
 
 func GetMulticloudOmHubMultiCloudMetadataOutput(ctx *pulumi.Context, args GetMulticloudOmHubMultiCloudMetadataOutputArgs, opts ...pulumi.InvokeOption) GetMulticloudOmHubMultiCloudMetadataResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMulticloudOmHubMultiCloudMetadataResultOutput, error) {
-			args := v.(GetMulticloudOmHubMultiCloudMetadataArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getMulticloudOmHubMultiCloudMetadata:getMulticloudOmHubMultiCloudMetadata", args, GetMulticloudOmHubMultiCloudMetadataResultOutput{}, options).(GetMulticloudOmHubMultiCloudMetadataResultOutput), nil
-		}).(GetMulticloudOmHubMultiCloudMetadataResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getMulticloudOmHubMultiCloudMetadata:getMulticloudOmHubMultiCloudMetadata", args, GetMulticloudOmHubMultiCloudMetadataResultOutput{}, options).(GetMulticloudOmHubMultiCloudMetadataResultOutput)
 }
 
 // A collection of arguments for invoking getMulticloudOmHubMultiCloudMetadata.

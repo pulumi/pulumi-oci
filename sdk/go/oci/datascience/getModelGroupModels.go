@@ -91,12 +91,8 @@ type GetModelGroupModelsResult struct {
 }
 
 func GetModelGroupModelsOutput(ctx *pulumi.Context, args GetModelGroupModelsOutputArgs, opts ...pulumi.InvokeOption) GetModelGroupModelsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetModelGroupModelsResultOutput, error) {
-			args := v.(GetModelGroupModelsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataScience/getModelGroupModels:getModelGroupModels", args, GetModelGroupModelsResultOutput{}, options).(GetModelGroupModelsResultOutput), nil
-		}).(GetModelGroupModelsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataScience/getModelGroupModels:getModelGroupModels", args, GetModelGroupModelsResultOutput{}, options).(GetModelGroupModelsResultOutput)
 }
 
 // A collection of arguments for invoking getModelGroupModels.

@@ -68,12 +68,8 @@ type GetOrganizationSubscriptionsResult struct {
 }
 
 func GetOrganizationSubscriptionsOutput(ctx *pulumi.Context, args GetOrganizationSubscriptionsOutputArgs, opts ...pulumi.InvokeOption) GetOrganizationSubscriptionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetOrganizationSubscriptionsResultOutput, error) {
-			args := v.(GetOrganizationSubscriptionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OneSubsription/getOrganizationSubscriptions:getOrganizationSubscriptions", args, GetOrganizationSubscriptionsResultOutput{}, options).(GetOrganizationSubscriptionsResultOutput), nil
-		}).(GetOrganizationSubscriptionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OneSubsription/getOrganizationSubscriptions:getOrganizationSubscriptions", args, GetOrganizationSubscriptionsResultOutput{}, options).(GetOrganizationSubscriptionsResultOutput)
 }
 
 // A collection of arguments for invoking getOrganizationSubscriptions.

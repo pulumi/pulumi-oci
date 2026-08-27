@@ -89,12 +89,8 @@ type LookupAtCustomerCccUpgradeScheduleResult struct {
 }
 
 func LookupAtCustomerCccUpgradeScheduleOutput(ctx *pulumi.Context, args LookupAtCustomerCccUpgradeScheduleOutputArgs, opts ...pulumi.InvokeOption) LookupAtCustomerCccUpgradeScheduleResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAtCustomerCccUpgradeScheduleResultOutput, error) {
-			args := v.(LookupAtCustomerCccUpgradeScheduleArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ComputeCloud/getAtCustomerCccUpgradeSchedule:getAtCustomerCccUpgradeSchedule", args, LookupAtCustomerCccUpgradeScheduleResultOutput{}, options).(LookupAtCustomerCccUpgradeScheduleResultOutput), nil
-		}).(LookupAtCustomerCccUpgradeScheduleResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ComputeCloud/getAtCustomerCccUpgradeSchedule:getAtCustomerCccUpgradeSchedule", args, LookupAtCustomerCccUpgradeScheduleResultOutput{}, options).(LookupAtCustomerCccUpgradeScheduleResultOutput)
 }
 
 // A collection of arguments for invoking getAtCustomerCccUpgradeSchedule.

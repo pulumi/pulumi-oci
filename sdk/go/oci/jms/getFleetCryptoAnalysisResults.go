@@ -110,12 +110,8 @@ type GetFleetCryptoAnalysisResultsResult struct {
 }
 
 func GetFleetCryptoAnalysisResultsOutput(ctx *pulumi.Context, args GetFleetCryptoAnalysisResultsOutputArgs, opts ...pulumi.InvokeOption) GetFleetCryptoAnalysisResultsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFleetCryptoAnalysisResultsResultOutput, error) {
-			args := v.(GetFleetCryptoAnalysisResultsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getFleetCryptoAnalysisResults:getFleetCryptoAnalysisResults", args, GetFleetCryptoAnalysisResultsResultOutput{}, options).(GetFleetCryptoAnalysisResultsResultOutput), nil
-		}).(GetFleetCryptoAnalysisResultsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getFleetCryptoAnalysisResults:getFleetCryptoAnalysisResults", args, GetFleetCryptoAnalysisResultsResultOutput{}, options).(GetFleetCryptoAnalysisResultsResultOutput)
 }
 
 // A collection of arguments for invoking getFleetCryptoAnalysisResults.

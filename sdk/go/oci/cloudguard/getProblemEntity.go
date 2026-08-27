@@ -67,12 +67,8 @@ type GetProblemEntityResult struct {
 }
 
 func GetProblemEntityOutput(ctx *pulumi.Context, args GetProblemEntityOutputArgs, opts ...pulumi.InvokeOption) GetProblemEntityResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetProblemEntityResultOutput, error) {
-			args := v.(GetProblemEntityArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CloudGuard/getProblemEntity:getProblemEntity", args, GetProblemEntityResultOutput{}, options).(GetProblemEntityResultOutput), nil
-		}).(GetProblemEntityResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CloudGuard/getProblemEntity:getProblemEntity", args, GetProblemEntityResultOutput{}, options).(GetProblemEntityResultOutput)
 }
 
 // A collection of arguments for invoking getProblemEntity.

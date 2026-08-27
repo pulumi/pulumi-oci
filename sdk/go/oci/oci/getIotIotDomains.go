@@ -87,12 +87,8 @@ type GetIotIotDomainsResult struct {
 }
 
 func GetIotIotDomainsOutput(ctx *pulumi.Context, args GetIotIotDomainsOutputArgs, opts ...pulumi.InvokeOption) GetIotIotDomainsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetIotIotDomainsResultOutput, error) {
-			args := v.(GetIotIotDomainsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getIotIotDomains:getIotIotDomains", args, GetIotIotDomainsResultOutput{}, options).(GetIotIotDomainsResultOutput), nil
-		}).(GetIotIotDomainsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getIotIotDomains:getIotIotDomains", args, GetIotIotDomainsResultOutput{}, options).(GetIotIotDomainsResultOutput)
 }
 
 // A collection of arguments for invoking getIotIotDomains.

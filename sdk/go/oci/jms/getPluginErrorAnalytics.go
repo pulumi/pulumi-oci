@@ -72,12 +72,8 @@ type GetPluginErrorAnalyticsResult struct {
 }
 
 func GetPluginErrorAnalyticsOutput(ctx *pulumi.Context, args GetPluginErrorAnalyticsOutputArgs, opts ...pulumi.InvokeOption) GetPluginErrorAnalyticsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPluginErrorAnalyticsResultOutput, error) {
-			args := v.(GetPluginErrorAnalyticsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getPluginErrorAnalytics:getPluginErrorAnalytics", args, GetPluginErrorAnalyticsResultOutput{}, options).(GetPluginErrorAnalyticsResultOutput), nil
-		}).(GetPluginErrorAnalyticsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getPluginErrorAnalytics:getPluginErrorAnalytics", args, GetPluginErrorAnalyticsResultOutput{}, options).(GetPluginErrorAnalyticsResultOutput)
 }
 
 // A collection of arguments for invoking getPluginErrorAnalytics.

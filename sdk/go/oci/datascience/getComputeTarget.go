@@ -88,12 +88,8 @@ type LookupComputeTargetResult struct {
 }
 
 func LookupComputeTargetOutput(ctx *pulumi.Context, args LookupComputeTargetOutputArgs, opts ...pulumi.InvokeOption) LookupComputeTargetResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupComputeTargetResultOutput, error) {
-			args := v.(LookupComputeTargetArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataScience/getComputeTarget:getComputeTarget", args, LookupComputeTargetResultOutput{}, options).(LookupComputeTargetResultOutput), nil
-		}).(LookupComputeTargetResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataScience/getComputeTarget:getComputeTarget", args, LookupComputeTargetResultOutput{}, options).(LookupComputeTargetResultOutput)
 }
 
 // A collection of arguments for invoking getComputeTarget.

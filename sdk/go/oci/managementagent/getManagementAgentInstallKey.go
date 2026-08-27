@@ -94,12 +94,8 @@ type LookupManagementAgentInstallKeyResult struct {
 }
 
 func LookupManagementAgentInstallKeyOutput(ctx *pulumi.Context, args LookupManagementAgentInstallKeyOutputArgs, opts ...pulumi.InvokeOption) LookupManagementAgentInstallKeyResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupManagementAgentInstallKeyResultOutput, error) {
-			args := v.(LookupManagementAgentInstallKeyArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ManagementAgent/getManagementAgentInstallKey:getManagementAgentInstallKey", args, LookupManagementAgentInstallKeyResultOutput{}, options).(LookupManagementAgentInstallKeyResultOutput), nil
-		}).(LookupManagementAgentInstallKeyResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ManagementAgent/getManagementAgentInstallKey:getManagementAgentInstallKey", args, LookupManagementAgentInstallKeyResultOutput{}, options).(LookupManagementAgentInstallKeyResultOutput)
 }
 
 // A collection of arguments for invoking getManagementAgentInstallKey.

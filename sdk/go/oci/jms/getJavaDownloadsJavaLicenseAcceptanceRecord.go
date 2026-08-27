@@ -86,12 +86,8 @@ type LookupJavaDownloadsJavaLicenseAcceptanceRecordResult struct {
 }
 
 func LookupJavaDownloadsJavaLicenseAcceptanceRecordOutput(ctx *pulumi.Context, args LookupJavaDownloadsJavaLicenseAcceptanceRecordOutputArgs, opts ...pulumi.InvokeOption) LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput, error) {
-			args := v.(LookupJavaDownloadsJavaLicenseAcceptanceRecordArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getJavaDownloadsJavaLicenseAcceptanceRecord:getJavaDownloadsJavaLicenseAcceptanceRecord", args, LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput{}, options).(LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput), nil
-		}).(LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getJavaDownloadsJavaLicenseAcceptanceRecord:getJavaDownloadsJavaLicenseAcceptanceRecord", args, LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput{}, options).(LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput)
 }
 
 // A collection of arguments for invoking getJavaDownloadsJavaLicenseAcceptanceRecord.

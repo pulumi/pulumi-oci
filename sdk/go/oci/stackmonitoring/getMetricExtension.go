@@ -103,12 +103,8 @@ type LookupMetricExtensionResult struct {
 }
 
 func LookupMetricExtensionOutput(ctx *pulumi.Context, args LookupMetricExtensionOutputArgs, opts ...pulumi.InvokeOption) LookupMetricExtensionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupMetricExtensionResultOutput, error) {
-			args := v.(LookupMetricExtensionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:StackMonitoring/getMetricExtension:getMetricExtension", args, LookupMetricExtensionResultOutput{}, options).(LookupMetricExtensionResultOutput), nil
-		}).(LookupMetricExtensionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:StackMonitoring/getMetricExtension:getMetricExtension", args, LookupMetricExtensionResultOutput{}, options).(LookupMetricExtensionResultOutput)
 }
 
 // A collection of arguments for invoking getMetricExtension.

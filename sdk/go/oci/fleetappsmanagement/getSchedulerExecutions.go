@@ -118,12 +118,8 @@ type GetSchedulerExecutionsResult struct {
 }
 
 func GetSchedulerExecutionsOutput(ctx *pulumi.Context, args GetSchedulerExecutionsOutputArgs, opts ...pulumi.InvokeOption) GetSchedulerExecutionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSchedulerExecutionsResultOutput, error) {
-			args := v.(GetSchedulerExecutionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetAppsManagement/getSchedulerExecutions:getSchedulerExecutions", args, GetSchedulerExecutionsResultOutput{}, options).(GetSchedulerExecutionsResultOutput), nil
-		}).(GetSchedulerExecutionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetAppsManagement/getSchedulerExecutions:getSchedulerExecutions", args, GetSchedulerExecutionsResultOutput{}, options).(GetSchedulerExecutionsResultOutput)
 }
 
 // A collection of arguments for invoking getSchedulerExecutions.

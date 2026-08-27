@@ -107,12 +107,8 @@ type LookupDataccVmClusterNetworkResult struct {
 }
 
 func LookupDataccVmClusterNetworkOutput(ctx *pulumi.Context, args LookupDataccVmClusterNetworkOutputArgs, opts ...pulumi.InvokeOption) LookupDataccVmClusterNetworkResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDataccVmClusterNetworkResultOutput, error) {
-			args := v.(LookupDataccVmClusterNetworkArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDataccVmClusterNetwork:getDataccVmClusterNetwork", args, LookupDataccVmClusterNetworkResultOutput{}, options).(LookupDataccVmClusterNetworkResultOutput), nil
-		}).(LookupDataccVmClusterNetworkResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDataccVmClusterNetwork:getDataccVmClusterNetwork", args, LookupDataccVmClusterNetworkResultOutput{}, options).(LookupDataccVmClusterNetworkResultOutput)
 }
 
 // A collection of arguments for invoking getDataccVmClusterNetwork.

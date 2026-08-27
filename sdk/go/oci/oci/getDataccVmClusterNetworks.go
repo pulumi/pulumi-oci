@@ -98,12 +98,8 @@ type GetDataccVmClusterNetworksResult struct {
 }
 
 func GetDataccVmClusterNetworksOutput(ctx *pulumi.Context, args GetDataccVmClusterNetworksOutputArgs, opts ...pulumi.InvokeOption) GetDataccVmClusterNetworksResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDataccVmClusterNetworksResultOutput, error) {
-			args := v.(GetDataccVmClusterNetworksArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getDataccVmClusterNetworks:getDataccVmClusterNetworks", args, GetDataccVmClusterNetworksResultOutput{}, options).(GetDataccVmClusterNetworksResultOutput), nil
-		}).(GetDataccVmClusterNetworksResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getDataccVmClusterNetworks:getDataccVmClusterNetworks", args, GetDataccVmClusterNetworksResultOutput{}, options).(GetDataccVmClusterNetworksResultOutput)
 }
 
 // A collection of arguments for invoking getDataccVmClusterNetworks.

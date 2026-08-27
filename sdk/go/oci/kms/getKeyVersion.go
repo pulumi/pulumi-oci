@@ -104,12 +104,8 @@ type LookupKeyVersionResult struct {
 }
 
 func LookupKeyVersionOutput(ctx *pulumi.Context, args LookupKeyVersionOutputArgs, opts ...pulumi.InvokeOption) LookupKeyVersionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupKeyVersionResultOutput, error) {
-			args := v.(LookupKeyVersionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Kms/getKeyVersion:getKeyVersion", args, LookupKeyVersionResultOutput{}, options).(LookupKeyVersionResultOutput), nil
-		}).(LookupKeyVersionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Kms/getKeyVersion:getKeyVersion", args, LookupKeyVersionResultOutput{}, options).(LookupKeyVersionResultOutput)
 }
 
 // A collection of arguments for invoking getKeyVersion.

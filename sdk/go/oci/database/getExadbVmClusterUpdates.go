@@ -78,12 +78,8 @@ type GetExadbVmClusterUpdatesResult struct {
 }
 
 func GetExadbVmClusterUpdatesOutput(ctx *pulumi.Context, args GetExadbVmClusterUpdatesOutputArgs, opts ...pulumi.InvokeOption) GetExadbVmClusterUpdatesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetExadbVmClusterUpdatesResultOutput, error) {
-			args := v.(GetExadbVmClusterUpdatesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getExadbVmClusterUpdates:getExadbVmClusterUpdates", args, GetExadbVmClusterUpdatesResultOutput{}, options).(GetExadbVmClusterUpdatesResultOutput), nil
-		}).(GetExadbVmClusterUpdatesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getExadbVmClusterUpdates:getExadbVmClusterUpdates", args, GetExadbVmClusterUpdatesResultOutput{}, options).(GetExadbVmClusterUpdatesResultOutput)
 }
 
 // A collection of arguments for invoking getExadbVmClusterUpdates.

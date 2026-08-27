@@ -70,12 +70,8 @@ type GetSmtpCredentialsResult struct {
 }
 
 func GetSmtpCredentialsOutput(ctx *pulumi.Context, args GetSmtpCredentialsOutputArgs, opts ...pulumi.InvokeOption) GetSmtpCredentialsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSmtpCredentialsResultOutput, error) {
-			args := v.(GetSmtpCredentialsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getSmtpCredentials:getSmtpCredentials", args, GetSmtpCredentialsResultOutput{}, options).(GetSmtpCredentialsResultOutput), nil
-		}).(GetSmtpCredentialsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getSmtpCredentials:getSmtpCredentials", args, GetSmtpCredentialsResultOutput{}, options).(GetSmtpCredentialsResultOutput)
 }
 
 // A collection of arguments for invoking getSmtpCredentials.

@@ -204,12 +204,8 @@ type LookupDeployStageResult struct {
 }
 
 func LookupDeployStageOutput(ctx *pulumi.Context, args LookupDeployStageOutputArgs, opts ...pulumi.InvokeOption) LookupDeployStageResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDeployStageResultOutput, error) {
-			args := v.(LookupDeployStageArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DevOps/getDeployStage:getDeployStage", args, LookupDeployStageResultOutput{}, options).(LookupDeployStageResultOutput), nil
-		}).(LookupDeployStageResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DevOps/getDeployStage:getDeployStage", args, LookupDeployStageResultOutput{}, options).(LookupDeployStageResultOutput)
 }
 
 // A collection of arguments for invoking getDeployStage.

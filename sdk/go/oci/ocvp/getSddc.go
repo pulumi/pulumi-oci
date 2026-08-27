@@ -251,12 +251,8 @@ type LookupSddcResult struct {
 }
 
 func LookupSddcOutput(ctx *pulumi.Context, args LookupSddcOutputArgs, opts ...pulumi.InvokeOption) LookupSddcResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupSddcResultOutput, error) {
-			args := v.(LookupSddcArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Ocvp/getSddc:getSddc", args, LookupSddcResultOutput{}, options).(LookupSddcResultOutput), nil
-		}).(LookupSddcResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Ocvp/getSddc:getSddc", args, LookupSddcResultOutput{}, options).(LookupSddcResultOutput)
 }
 
 // A collection of arguments for invoking getSddc.

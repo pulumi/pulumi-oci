@@ -97,12 +97,8 @@ type GetWorkspaceTasksResult struct {
 }
 
 func GetWorkspaceTasksOutput(ctx *pulumi.Context, args GetWorkspaceTasksOutputArgs, opts ...pulumi.InvokeOption) GetWorkspaceTasksResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetWorkspaceTasksResultOutput, error) {
-			args := v.(GetWorkspaceTasksArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataIntegration/getWorkspaceTasks:getWorkspaceTasks", args, GetWorkspaceTasksResultOutput{}, options).(GetWorkspaceTasksResultOutput), nil
-		}).(GetWorkspaceTasksResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataIntegration/getWorkspaceTasks:getWorkspaceTasks", args, GetWorkspaceTasksResultOutput{}, options).(GetWorkspaceTasksResultOutput)
 }
 
 // A collection of arguments for invoking getWorkspaceTasks.

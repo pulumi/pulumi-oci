@@ -91,12 +91,8 @@ type GetDomainsNotificationSettingsResult struct {
 }
 
 func GetDomainsNotificationSettingsOutput(ctx *pulumi.Context, args GetDomainsNotificationSettingsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsNotificationSettingsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsNotificationSettingsResultOutput, error) {
-			args := v.(GetDomainsNotificationSettingsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsNotificationSettings:getDomainsNotificationSettings", args, GetDomainsNotificationSettingsResultOutput{}, options).(GetDomainsNotificationSettingsResultOutput), nil
-		}).(GetDomainsNotificationSettingsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsNotificationSettings:getDomainsNotificationSettings", args, GetDomainsNotificationSettingsResultOutput{}, options).(GetDomainsNotificationSettingsResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsNotificationSettings.

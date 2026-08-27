@@ -68,12 +68,8 @@ type GetWlmsWlsDomainAgreementRecordsResult struct {
 }
 
 func GetWlmsWlsDomainAgreementRecordsOutput(ctx *pulumi.Context, args GetWlmsWlsDomainAgreementRecordsOutputArgs, opts ...pulumi.InvokeOption) GetWlmsWlsDomainAgreementRecordsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetWlmsWlsDomainAgreementRecordsResultOutput, error) {
-			args := v.(GetWlmsWlsDomainAgreementRecordsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getWlmsWlsDomainAgreementRecords:getWlmsWlsDomainAgreementRecords", args, GetWlmsWlsDomainAgreementRecordsResultOutput{}, options).(GetWlmsWlsDomainAgreementRecordsResultOutput), nil
-		}).(GetWlmsWlsDomainAgreementRecordsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getWlmsWlsDomainAgreementRecords:getWlmsWlsDomainAgreementRecords", args, GetWlmsWlsDomainAgreementRecordsResultOutput{}, options).(GetWlmsWlsDomainAgreementRecordsResultOutput)
 }
 
 // A collection of arguments for invoking getWlmsWlsDomainAgreementRecords.

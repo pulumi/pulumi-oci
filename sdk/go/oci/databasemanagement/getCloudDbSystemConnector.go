@@ -96,12 +96,8 @@ type LookupCloudDbSystemConnectorResult struct {
 }
 
 func LookupCloudDbSystemConnectorOutput(ctx *pulumi.Context, args LookupCloudDbSystemConnectorOutputArgs, opts ...pulumi.InvokeOption) LookupCloudDbSystemConnectorResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupCloudDbSystemConnectorResultOutput, error) {
-			args := v.(LookupCloudDbSystemConnectorArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getCloudDbSystemConnector:getCloudDbSystemConnector", args, LookupCloudDbSystemConnectorResultOutput{}, options).(LookupCloudDbSystemConnectorResultOutput), nil
-		}).(LookupCloudDbSystemConnectorResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getCloudDbSystemConnector:getCloudDbSystemConnector", args, LookupCloudDbSystemConnectorResultOutput{}, options).(LookupCloudDbSystemConnectorResultOutput)
 }
 
 // A collection of arguments for invoking getCloudDbSystemConnector.

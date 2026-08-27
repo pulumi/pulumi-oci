@@ -76,12 +76,8 @@ type GetAwrHubAwrSourcesSummaryResult struct {
 }
 
 func GetAwrHubAwrSourcesSummaryOutput(ctx *pulumi.Context, args GetAwrHubAwrSourcesSummaryOutputArgs, opts ...pulumi.InvokeOption) GetAwrHubAwrSourcesSummaryResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAwrHubAwrSourcesSummaryResultOutput, error) {
-			args := v.(GetAwrHubAwrSourcesSummaryArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Opsi/getAwrHubAwrSourcesSummary:getAwrHubAwrSourcesSummary", args, GetAwrHubAwrSourcesSummaryResultOutput{}, options).(GetAwrHubAwrSourcesSummaryResultOutput), nil
-		}).(GetAwrHubAwrSourcesSummaryResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Opsi/getAwrHubAwrSourcesSummary:getAwrHubAwrSourcesSummary", args, GetAwrHubAwrSourcesSummaryResultOutput{}, options).(GetAwrHubAwrSourcesSummaryResultOutput)
 }
 
 // A collection of arguments for invoking getAwrHubAwrSourcesSummary.

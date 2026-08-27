@@ -72,12 +72,8 @@ type GetAutonomousContainerDatabaseVersionsResult struct {
 }
 
 func GetAutonomousContainerDatabaseVersionsOutput(ctx *pulumi.Context, args GetAutonomousContainerDatabaseVersionsOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousContainerDatabaseVersionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAutonomousContainerDatabaseVersionsResultOutput, error) {
-			args := v.(GetAutonomousContainerDatabaseVersionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getAutonomousContainerDatabaseVersions:getAutonomousContainerDatabaseVersions", args, GetAutonomousContainerDatabaseVersionsResultOutput{}, options).(GetAutonomousContainerDatabaseVersionsResultOutput), nil
-		}).(GetAutonomousContainerDatabaseVersionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getAutonomousContainerDatabaseVersions:getAutonomousContainerDatabaseVersions", args, GetAutonomousContainerDatabaseVersionsResultOutput{}, options).(GetAutonomousContainerDatabaseVersionsResultOutput)
 }
 
 // A collection of arguments for invoking getAutonomousContainerDatabaseVersions.

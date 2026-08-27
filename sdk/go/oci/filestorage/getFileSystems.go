@@ -103,12 +103,8 @@ type GetFileSystemsResult struct {
 }
 
 func GetFileSystemsOutput(ctx *pulumi.Context, args GetFileSystemsOutputArgs, opts ...pulumi.InvokeOption) GetFileSystemsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFileSystemsResultOutput, error) {
-			args := v.(GetFileSystemsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FileStorage/getFileSystems:getFileSystems", args, GetFileSystemsResultOutput{}, options).(GetFileSystemsResultOutput), nil
-		}).(GetFileSystemsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FileStorage/getFileSystems:getFileSystems", args, GetFileSystemsResultOutput{}, options).(GetFileSystemsResultOutput)
 }
 
 // A collection of arguments for invoking getFileSystems.

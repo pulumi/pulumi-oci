@@ -79,12 +79,8 @@ type GetCostadCostAlertSubscriptionsResult struct {
 }
 
 func GetCostadCostAlertSubscriptionsOutput(ctx *pulumi.Context, args GetCostadCostAlertSubscriptionsOutputArgs, opts ...pulumi.InvokeOption) GetCostadCostAlertSubscriptionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCostadCostAlertSubscriptionsResultOutput, error) {
-			args := v.(GetCostadCostAlertSubscriptionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getCostadCostAlertSubscriptions:getCostadCostAlertSubscriptions", args, GetCostadCostAlertSubscriptionsResultOutput{}, options).(GetCostadCostAlertSubscriptionsResultOutput), nil
-		}).(GetCostadCostAlertSubscriptionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getCostadCostAlertSubscriptions:getCostadCostAlertSubscriptions", args, GetCostadCostAlertSubscriptionsResultOutput{}, options).(GetCostadCostAlertSubscriptionsResultOutput)
 }
 
 // A collection of arguments for invoking getCostadCostAlertSubscriptions.

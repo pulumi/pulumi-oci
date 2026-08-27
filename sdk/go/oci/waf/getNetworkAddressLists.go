@@ -82,12 +82,8 @@ type GetNetworkAddressListsResult struct {
 }
 
 func GetNetworkAddressListsOutput(ctx *pulumi.Context, args GetNetworkAddressListsOutputArgs, opts ...pulumi.InvokeOption) GetNetworkAddressListsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetNetworkAddressListsResultOutput, error) {
-			args := v.(GetNetworkAddressListsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Waf/getNetworkAddressLists:getNetworkAddressLists", args, GetNetworkAddressListsResultOutput{}, options).(GetNetworkAddressListsResultOutput), nil
-		}).(GetNetworkAddressListsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Waf/getNetworkAddressLists:getNetworkAddressLists", args, GetNetworkAddressListsResultOutput{}, options).(GetNetworkAddressListsResultOutput)
 }
 
 // A collection of arguments for invoking getNetworkAddressLists.

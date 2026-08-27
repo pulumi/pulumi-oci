@@ -113,12 +113,8 @@ type GetMulticloudNetworkAnchorsResult struct {
 }
 
 func GetMulticloudNetworkAnchorsOutput(ctx *pulumi.Context, args GetMulticloudNetworkAnchorsOutputArgs, opts ...pulumi.InvokeOption) GetMulticloudNetworkAnchorsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetMulticloudNetworkAnchorsResultOutput, error) {
-			args := v.(GetMulticloudNetworkAnchorsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getMulticloudNetworkAnchors:getMulticloudNetworkAnchors", args, GetMulticloudNetworkAnchorsResultOutput{}, options).(GetMulticloudNetworkAnchorsResultOutput), nil
-		}).(GetMulticloudNetworkAnchorsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getMulticloudNetworkAnchors:getMulticloudNetworkAnchors", args, GetMulticloudNetworkAnchorsResultOutput{}, options).(GetMulticloudNetworkAnchorsResultOutput)
 }
 
 // A collection of arguments for invoking getMulticloudNetworkAnchors.

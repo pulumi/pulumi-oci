@@ -79,12 +79,8 @@ type GetDeploymentPeersResult struct {
 }
 
 func GetDeploymentPeersOutput(ctx *pulumi.Context, args GetDeploymentPeersOutputArgs, opts ...pulumi.InvokeOption) GetDeploymentPeersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDeploymentPeersResultOutput, error) {
-			args := v.(GetDeploymentPeersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GoldenGate/getDeploymentPeers:getDeploymentPeers", args, GetDeploymentPeersResultOutput{}, options).(GetDeploymentPeersResultOutput), nil
-		}).(GetDeploymentPeersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GoldenGate/getDeploymentPeers:getDeploymentPeers", args, GetDeploymentPeersResultOutput{}, options).(GetDeploymentPeersResultOutput)
 }
 
 // A collection of arguments for invoking getDeploymentPeers.

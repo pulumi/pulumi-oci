@@ -97,12 +97,8 @@ type GetFleetLibraryManagedInstancesResult struct {
 }
 
 func GetFleetLibraryManagedInstancesOutput(ctx *pulumi.Context, args GetFleetLibraryManagedInstancesOutputArgs, opts ...pulumi.InvokeOption) GetFleetLibraryManagedInstancesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFleetLibraryManagedInstancesResultOutput, error) {
-			args := v.(GetFleetLibraryManagedInstancesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getFleetLibraryManagedInstances:getFleetLibraryManagedInstances", args, GetFleetLibraryManagedInstancesResultOutput{}, options).(GetFleetLibraryManagedInstancesResultOutput), nil
-		}).(GetFleetLibraryManagedInstancesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getFleetLibraryManagedInstances:getFleetLibraryManagedInstances", args, GetFleetLibraryManagedInstancesResultOutput{}, options).(GetFleetLibraryManagedInstancesResultOutput)
 }
 
 // A collection of arguments for invoking getFleetLibraryManagedInstances.

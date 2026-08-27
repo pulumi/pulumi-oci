@@ -90,12 +90,8 @@ type LookupBatchBatchTaskProfileResult struct {
 }
 
 func LookupBatchBatchTaskProfileOutput(ctx *pulumi.Context, args LookupBatchBatchTaskProfileOutputArgs, opts ...pulumi.InvokeOption) LookupBatchBatchTaskProfileResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupBatchBatchTaskProfileResultOutput, error) {
-			args := v.(LookupBatchBatchTaskProfileArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:oci/getBatchBatchTaskProfile:getBatchBatchTaskProfile", args, LookupBatchBatchTaskProfileResultOutput{}, options).(LookupBatchBatchTaskProfileResultOutput), nil
-		}).(LookupBatchBatchTaskProfileResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:oci/getBatchBatchTaskProfile:getBatchBatchTaskProfile", args, LookupBatchBatchTaskProfileResultOutput{}, options).(LookupBatchBatchTaskProfileResultOutput)
 }
 
 // A collection of arguments for invoking getBatchBatchTaskProfile.

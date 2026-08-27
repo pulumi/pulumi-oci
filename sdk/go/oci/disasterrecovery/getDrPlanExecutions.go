@@ -83,12 +83,8 @@ type GetDrPlanExecutionsResult struct {
 }
 
 func GetDrPlanExecutionsOutput(ctx *pulumi.Context, args GetDrPlanExecutionsOutputArgs, opts ...pulumi.InvokeOption) GetDrPlanExecutionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDrPlanExecutionsResultOutput, error) {
-			args := v.(GetDrPlanExecutionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DisasterRecovery/getDrPlanExecutions:getDrPlanExecutions", args, GetDrPlanExecutionsResultOutput{}, options).(GetDrPlanExecutionsResultOutput), nil
-		}).(GetDrPlanExecutionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DisasterRecovery/getDrPlanExecutions:getDrPlanExecutions", args, GetDrPlanExecutionsResultOutput{}, options).(GetDrPlanExecutionsResultOutput)
 }
 
 // A collection of arguments for invoking getDrPlanExecutions.

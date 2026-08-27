@@ -96,12 +96,8 @@ type GetRepositoryDiffResult struct {
 }
 
 func GetRepositoryDiffOutput(ctx *pulumi.Context, args GetRepositoryDiffOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryDiffResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRepositoryDiffResultOutput, error) {
-			args := v.(GetRepositoryDiffArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DevOps/getRepositoryDiff:getRepositoryDiff", args, GetRepositoryDiffResultOutput{}, options).(GetRepositoryDiffResultOutput), nil
-		}).(GetRepositoryDiffResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DevOps/getRepositoryDiff:getRepositoryDiff", args, GetRepositoryDiffResultOutput{}, options).(GetRepositoryDiffResultOutput)
 }
 
 // A collection of arguments for invoking getRepositoryDiff.

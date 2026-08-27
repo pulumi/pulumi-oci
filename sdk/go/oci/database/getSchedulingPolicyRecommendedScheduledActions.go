@@ -76,12 +76,8 @@ type GetSchedulingPolicyRecommendedScheduledActionsResult struct {
 }
 
 func GetSchedulingPolicyRecommendedScheduledActionsOutput(ctx *pulumi.Context, args GetSchedulingPolicyRecommendedScheduledActionsOutputArgs, opts ...pulumi.InvokeOption) GetSchedulingPolicyRecommendedScheduledActionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSchedulingPolicyRecommendedScheduledActionsResultOutput, error) {
-			args := v.(GetSchedulingPolicyRecommendedScheduledActionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getSchedulingPolicyRecommendedScheduledActions:getSchedulingPolicyRecommendedScheduledActions", args, GetSchedulingPolicyRecommendedScheduledActionsResultOutput{}, options).(GetSchedulingPolicyRecommendedScheduledActionsResultOutput), nil
-		}).(GetSchedulingPolicyRecommendedScheduledActionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getSchedulingPolicyRecommendedScheduledActions:getSchedulingPolicyRecommendedScheduledActions", args, GetSchedulingPolicyRecommendedScheduledActionsResultOutput{}, options).(GetSchedulingPolicyRecommendedScheduledActionsResultOutput)
 }
 
 // A collection of arguments for invoking getSchedulingPolicyRecommendedScheduledActions.

@@ -92,12 +92,8 @@ type LookupFsuReadinessCheckResult struct {
 }
 
 func LookupFsuReadinessCheckOutput(ctx *pulumi.Context, args LookupFsuReadinessCheckOutputArgs, opts ...pulumi.InvokeOption) LookupFsuReadinessCheckResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupFsuReadinessCheckResultOutput, error) {
-			args := v.(LookupFsuReadinessCheckArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:FleetSoftwareUpdate/getFsuReadinessCheck:getFsuReadinessCheck", args, LookupFsuReadinessCheckResultOutput{}, options).(LookupFsuReadinessCheckResultOutput), nil
-		}).(LookupFsuReadinessCheckResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:FleetSoftwareUpdate/getFsuReadinessCheck:getFsuReadinessCheck", args, LookupFsuReadinessCheckResultOutput{}, options).(LookupFsuReadinessCheckResultOutput)
 }
 
 // A collection of arguments for invoking getFsuReadinessCheck.

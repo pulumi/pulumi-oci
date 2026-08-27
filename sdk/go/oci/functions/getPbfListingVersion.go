@@ -88,12 +88,8 @@ type GetPbfListingVersionResult struct {
 }
 
 func GetPbfListingVersionOutput(ctx *pulumi.Context, args GetPbfListingVersionOutputArgs, opts ...pulumi.InvokeOption) GetPbfListingVersionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPbfListingVersionResultOutput, error) {
-			args := v.(GetPbfListingVersionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Functions/getPbfListingVersion:getPbfListingVersion", args, GetPbfListingVersionResultOutput{}, options).(GetPbfListingVersionResultOutput), nil
-		}).(GetPbfListingVersionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Functions/getPbfListingVersion:getPbfListingVersion", args, GetPbfListingVersionResultOutput{}, options).(GetPbfListingVersionResultOutput)
 }
 
 // A collection of arguments for invoking getPbfListingVersion.

@@ -79,12 +79,8 @@ type GetDbNodeConsoleHistoriesResult struct {
 }
 
 func GetDbNodeConsoleHistoriesOutput(ctx *pulumi.Context, args GetDbNodeConsoleHistoriesOutputArgs, opts ...pulumi.InvokeOption) GetDbNodeConsoleHistoriesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbNodeConsoleHistoriesResultOutput, error) {
-			args := v.(GetDbNodeConsoleHistoriesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getDbNodeConsoleHistories:getDbNodeConsoleHistories", args, GetDbNodeConsoleHistoriesResultOutput{}, options).(GetDbNodeConsoleHistoriesResultOutput), nil
-		}).(GetDbNodeConsoleHistoriesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getDbNodeConsoleHistories:getDbNodeConsoleHistories", args, GetDbNodeConsoleHistoriesResultOutput{}, options).(GetDbNodeConsoleHistoriesResultOutput)
 }
 
 // A collection of arguments for invoking getDbNodeConsoleHistories.

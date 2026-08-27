@@ -99,12 +99,8 @@ type GetFleetJavaMigrationAnalysisResultResult struct {
 }
 
 func GetFleetJavaMigrationAnalysisResultOutput(ctx *pulumi.Context, args GetFleetJavaMigrationAnalysisResultOutputArgs, opts ...pulumi.InvokeOption) GetFleetJavaMigrationAnalysisResultResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFleetJavaMigrationAnalysisResultResultOutput, error) {
-			args := v.(GetFleetJavaMigrationAnalysisResultArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getFleetJavaMigrationAnalysisResult:getFleetJavaMigrationAnalysisResult", args, GetFleetJavaMigrationAnalysisResultResultOutput{}, options).(GetFleetJavaMigrationAnalysisResultResultOutput), nil
-		}).(GetFleetJavaMigrationAnalysisResultResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getFleetJavaMigrationAnalysisResult:getFleetJavaMigrationAnalysisResult", args, GetFleetJavaMigrationAnalysisResultResultOutput{}, options).(GetFleetJavaMigrationAnalysisResultResultOutput)
 }
 
 // A collection of arguments for invoking getFleetJavaMigrationAnalysisResult.

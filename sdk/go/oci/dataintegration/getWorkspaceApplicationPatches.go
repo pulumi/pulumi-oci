@@ -86,12 +86,8 @@ type GetWorkspaceApplicationPatchesResult struct {
 }
 
 func GetWorkspaceApplicationPatchesOutput(ctx *pulumi.Context, args GetWorkspaceApplicationPatchesOutputArgs, opts ...pulumi.InvokeOption) GetWorkspaceApplicationPatchesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetWorkspaceApplicationPatchesResultOutput, error) {
-			args := v.(GetWorkspaceApplicationPatchesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataIntegration/getWorkspaceApplicationPatches:getWorkspaceApplicationPatches", args, GetWorkspaceApplicationPatchesResultOutput{}, options).(GetWorkspaceApplicationPatchesResultOutput), nil
-		}).(GetWorkspaceApplicationPatchesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataIntegration/getWorkspaceApplicationPatches:getWorkspaceApplicationPatches", args, GetWorkspaceApplicationPatchesResultOutput{}, options).(GetWorkspaceApplicationPatchesResultOutput)
 }
 
 // A collection of arguments for invoking getWorkspaceApplicationPatches.

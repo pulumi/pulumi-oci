@@ -87,12 +87,8 @@ type GetAwrHubsResult struct {
 }
 
 func GetAwrHubsOutput(ctx *pulumi.Context, args GetAwrHubsOutputArgs, opts ...pulumi.InvokeOption) GetAwrHubsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAwrHubsResultOutput, error) {
-			args := v.(GetAwrHubsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Opsi/getAwrHubs:getAwrHubs", args, GetAwrHubsResultOutput{}, options).(GetAwrHubsResultOutput), nil
-		}).(GetAwrHubsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Opsi/getAwrHubs:getAwrHubs", args, GetAwrHubsResultOutput{}, options).(GetAwrHubsResultOutput)
 }
 
 // A collection of arguments for invoking getAwrHubs.

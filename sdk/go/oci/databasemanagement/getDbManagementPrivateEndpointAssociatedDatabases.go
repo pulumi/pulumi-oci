@@ -73,12 +73,8 @@ type GetDbManagementPrivateEndpointAssociatedDatabasesResult struct {
 }
 
 func GetDbManagementPrivateEndpointAssociatedDatabasesOutput(ctx *pulumi.Context, args GetDbManagementPrivateEndpointAssociatedDatabasesOutputArgs, opts ...pulumi.InvokeOption) GetDbManagementPrivateEndpointAssociatedDatabasesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbManagementPrivateEndpointAssociatedDatabasesResultOutput, error) {
-			args := v.(GetDbManagementPrivateEndpointAssociatedDatabasesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseManagement/getDbManagementPrivateEndpointAssociatedDatabases:getDbManagementPrivateEndpointAssociatedDatabases", args, GetDbManagementPrivateEndpointAssociatedDatabasesResultOutput{}, options).(GetDbManagementPrivateEndpointAssociatedDatabasesResultOutput), nil
-		}).(GetDbManagementPrivateEndpointAssociatedDatabasesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseManagement/getDbManagementPrivateEndpointAssociatedDatabases:getDbManagementPrivateEndpointAssociatedDatabases", args, GetDbManagementPrivateEndpointAssociatedDatabasesResultOutput{}, options).(GetDbManagementPrivateEndpointAssociatedDatabasesResultOutput)
 }
 
 // A collection of arguments for invoking getDbManagementPrivateEndpointAssociatedDatabases.

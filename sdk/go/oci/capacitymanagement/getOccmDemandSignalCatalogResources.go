@@ -78,12 +78,8 @@ type GetOccmDemandSignalCatalogResourcesResult struct {
 }
 
 func GetOccmDemandSignalCatalogResourcesOutput(ctx *pulumi.Context, args GetOccmDemandSignalCatalogResourcesOutputArgs, opts ...pulumi.InvokeOption) GetOccmDemandSignalCatalogResourcesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetOccmDemandSignalCatalogResourcesResultOutput, error) {
-			args := v.(GetOccmDemandSignalCatalogResourcesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:CapacityManagement/getOccmDemandSignalCatalogResources:getOccmDemandSignalCatalogResources", args, GetOccmDemandSignalCatalogResourcesResultOutput{}, options).(GetOccmDemandSignalCatalogResourcesResultOutput), nil
-		}).(GetOccmDemandSignalCatalogResourcesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:CapacityManagement/getOccmDemandSignalCatalogResources:getOccmDemandSignalCatalogResources", args, GetOccmDemandSignalCatalogResourcesResultOutput{}, options).(GetOccmDemandSignalCatalogResourcesResultOutput)
 }
 
 // A collection of arguments for invoking getOccmDemandSignalCatalogResources.

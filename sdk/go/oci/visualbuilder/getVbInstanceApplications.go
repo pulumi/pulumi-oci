@@ -70,12 +70,8 @@ type GetVbInstanceApplicationsResult struct {
 }
 
 func GetVbInstanceApplicationsOutput(ctx *pulumi.Context, args GetVbInstanceApplicationsOutputArgs, opts ...pulumi.InvokeOption) GetVbInstanceApplicationsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVbInstanceApplicationsResultOutput, error) {
-			args := v.(GetVbInstanceApplicationsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:VisualBuilder/getVbInstanceApplications:getVbInstanceApplications", args, GetVbInstanceApplicationsResultOutput{}, options).(GetVbInstanceApplicationsResultOutput), nil
-		}).(GetVbInstanceApplicationsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:VisualBuilder/getVbInstanceApplications:getVbInstanceApplications", args, GetVbInstanceApplicationsResultOutput{}, options).(GetVbInstanceApplicationsResultOutput)
 }
 
 // A collection of arguments for invoking getVbInstanceApplications.

@@ -74,12 +74,8 @@ type GetVmClusterNetworkDownloadConfigFileResult struct {
 }
 
 func GetVmClusterNetworkDownloadConfigFileOutput(ctx *pulumi.Context, args GetVmClusterNetworkDownloadConfigFileOutputArgs, opts ...pulumi.InvokeOption) GetVmClusterNetworkDownloadConfigFileResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVmClusterNetworkDownloadConfigFileResultOutput, error) {
-			args := v.(GetVmClusterNetworkDownloadConfigFileArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getVmClusterNetworkDownloadConfigFile:getVmClusterNetworkDownloadConfigFile", args, GetVmClusterNetworkDownloadConfigFileResultOutput{}, options).(GetVmClusterNetworkDownloadConfigFileResultOutput), nil
-		}).(GetVmClusterNetworkDownloadConfigFileResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getVmClusterNetworkDownloadConfigFile:getVmClusterNetworkDownloadConfigFile", args, GetVmClusterNetworkDownloadConfigFileResultOutput{}, options).(GetVmClusterNetworkDownloadConfigFileResultOutput)
 }
 
 // A collection of arguments for invoking getVmClusterNetworkDownloadConfigFile.

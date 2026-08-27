@@ -68,12 +68,8 @@ type GetJobAdvisorReportChecksResult struct {
 }
 
 func GetJobAdvisorReportChecksOutput(ctx *pulumi.Context, args GetJobAdvisorReportChecksOutputArgs, opts ...pulumi.InvokeOption) GetJobAdvisorReportChecksResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetJobAdvisorReportChecksResultOutput, error) {
-			args := v.(GetJobAdvisorReportChecksArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseMigration/getJobAdvisorReportChecks:getJobAdvisorReportChecks", args, GetJobAdvisorReportChecksResultOutput{}, options).(GetJobAdvisorReportChecksResultOutput), nil
-		}).(GetJobAdvisorReportChecksResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseMigration/getJobAdvisorReportChecks:getJobAdvisorReportChecks", args, GetJobAdvisorReportChecksResultOutput{}, options).(GetJobAdvisorReportChecksResultOutput)
 }
 
 // A collection of arguments for invoking getJobAdvisorReportChecks.

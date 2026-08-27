@@ -90,12 +90,8 @@ type LookupPathAnalyzerTestResult struct {
 }
 
 func LookupPathAnalyzerTestOutput(ctx *pulumi.Context, args LookupPathAnalyzerTestOutputArgs, opts ...pulumi.InvokeOption) LookupPathAnalyzerTestResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupPathAnalyzerTestResultOutput, error) {
-			args := v.(LookupPathAnalyzerTestArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:VnMonitoring/getPathAnalyzerTest:GetPathAnalyzerTest", args, LookupPathAnalyzerTestResultOutput{}, options).(LookupPathAnalyzerTestResultOutput), nil
-		}).(LookupPathAnalyzerTestResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:VnMonitoring/getPathAnalyzerTest:GetPathAnalyzerTest", args, LookupPathAnalyzerTestResultOutput{}, options).(LookupPathAnalyzerTestResultOutput)
 }
 
 // A collection of arguments for invoking GetPathAnalyzerTest.

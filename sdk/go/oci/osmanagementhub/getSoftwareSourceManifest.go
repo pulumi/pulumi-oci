@@ -64,12 +64,8 @@ type LookupSoftwareSourceManifestResult struct {
 }
 
 func LookupSoftwareSourceManifestOutput(ctx *pulumi.Context, args LookupSoftwareSourceManifestOutputArgs, opts ...pulumi.InvokeOption) LookupSoftwareSourceManifestResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupSoftwareSourceManifestResultOutput, error) {
-			args := v.(LookupSoftwareSourceManifestArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:OsManagementHub/getSoftwareSourceManifest:getSoftwareSourceManifest", args, LookupSoftwareSourceManifestResultOutput{}, options).(LookupSoftwareSourceManifestResultOutput), nil
-		}).(LookupSoftwareSourceManifestResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:OsManagementHub/getSoftwareSourceManifest:getSoftwareSourceManifest", args, LookupSoftwareSourceManifestResultOutput{}, options).(LookupSoftwareSourceManifestResultOutput)
 }
 
 // A collection of arguments for invoking getSoftwareSourceManifest.

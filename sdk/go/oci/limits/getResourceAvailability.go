@@ -98,12 +98,8 @@ type GetResourceAvailabilityResult struct {
 }
 
 func GetResourceAvailabilityOutput(ctx *pulumi.Context, args GetResourceAvailabilityOutputArgs, opts ...pulumi.InvokeOption) GetResourceAvailabilityResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetResourceAvailabilityResultOutput, error) {
-			args := v.(GetResourceAvailabilityArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Limits/getResourceAvailability:getResourceAvailability", args, GetResourceAvailabilityResultOutput{}, options).(GetResourceAvailabilityResultOutput), nil
-		}).(GetResourceAvailabilityResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Limits/getResourceAvailability:getResourceAvailability", args, GetResourceAvailabilityResultOutput{}, options).(GetResourceAvailabilityResultOutput)
 }
 
 // A collection of arguments for invoking getResourceAvailability.

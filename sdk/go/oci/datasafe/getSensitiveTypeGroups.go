@@ -103,12 +103,8 @@ type GetSensitiveTypeGroupsResult struct {
 }
 
 func GetSensitiveTypeGroupsOutput(ctx *pulumi.Context, args GetSensitiveTypeGroupsOutputArgs, opts ...pulumi.InvokeOption) GetSensitiveTypeGroupsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSensitiveTypeGroupsResultOutput, error) {
-			args := v.(GetSensitiveTypeGroupsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getSensitiveTypeGroups:getSensitiveTypeGroups", args, GetSensitiveTypeGroupsResultOutput{}, options).(GetSensitiveTypeGroupsResultOutput), nil
-		}).(GetSensitiveTypeGroupsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataSafe/getSensitiveTypeGroups:getSensitiveTypeGroups", args, GetSensitiveTypeGroupsResultOutput{}, options).(GetSensitiveTypeGroupsResultOutput)
 }
 
 // A collection of arguments for invoking getSensitiveTypeGroups.

@@ -97,12 +97,8 @@ type GetWorkspaceApplicationTaskSchedulesResult struct {
 }
 
 func GetWorkspaceApplicationTaskSchedulesOutput(ctx *pulumi.Context, args GetWorkspaceApplicationTaskSchedulesOutputArgs, opts ...pulumi.InvokeOption) GetWorkspaceApplicationTaskSchedulesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetWorkspaceApplicationTaskSchedulesResultOutput, error) {
-			args := v.(GetWorkspaceApplicationTaskSchedulesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataIntegration/getWorkspaceApplicationTaskSchedules:getWorkspaceApplicationTaskSchedules", args, GetWorkspaceApplicationTaskSchedulesResultOutput{}, options).(GetWorkspaceApplicationTaskSchedulesResultOutput), nil
-		}).(GetWorkspaceApplicationTaskSchedulesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DataIntegration/getWorkspaceApplicationTaskSchedules:getWorkspaceApplicationTaskSchedules", args, GetWorkspaceApplicationTaskSchedulesResultOutput{}, options).(GetWorkspaceApplicationTaskSchedulesResultOutput)
 }
 
 // A collection of arguments for invoking getWorkspaceApplicationTaskSchedules.

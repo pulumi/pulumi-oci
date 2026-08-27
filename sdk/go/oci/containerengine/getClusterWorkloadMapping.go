@@ -83,12 +83,8 @@ type LookupClusterWorkloadMappingResult struct {
 }
 
 func LookupClusterWorkloadMappingOutput(ctx *pulumi.Context, args LookupClusterWorkloadMappingOutputArgs, opts ...pulumi.InvokeOption) LookupClusterWorkloadMappingResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupClusterWorkloadMappingResultOutput, error) {
-			args := v.(LookupClusterWorkloadMappingArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ContainerEngine/getClusterWorkloadMapping:getClusterWorkloadMapping", args, LookupClusterWorkloadMappingResultOutput{}, options).(LookupClusterWorkloadMappingResultOutput), nil
-		}).(LookupClusterWorkloadMappingResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ContainerEngine/getClusterWorkloadMapping:getClusterWorkloadMapping", args, LookupClusterWorkloadMappingResultOutput{}, options).(LookupClusterWorkloadMappingResultOutput)
 }
 
 // A collection of arguments for invoking getClusterWorkloadMapping.

@@ -154,12 +154,8 @@ type LookupDomainsIdentityPropagationTrustResult struct {
 }
 
 func LookupDomainsIdentityPropagationTrustOutput(ctx *pulumi.Context, args LookupDomainsIdentityPropagationTrustOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsIdentityPropagationTrustResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDomainsIdentityPropagationTrustResultOutput, error) {
-			args := v.(LookupDomainsIdentityPropagationTrustArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsIdentityPropagationTrust:getDomainsIdentityPropagationTrust", args, LookupDomainsIdentityPropagationTrustResultOutput{}, options).(LookupDomainsIdentityPropagationTrustResultOutput), nil
-		}).(LookupDomainsIdentityPropagationTrustResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsIdentityPropagationTrust:getDomainsIdentityPropagationTrust", args, LookupDomainsIdentityPropagationTrustResultOutput{}, options).(LookupDomainsIdentityPropagationTrustResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsIdentityPropagationTrust.

@@ -95,12 +95,8 @@ type GetDbVersionsResult struct {
 }
 
 func GetDbVersionsOutput(ctx *pulumi.Context, args GetDbVersionsOutputArgs, opts ...pulumi.InvokeOption) GetDbVersionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDbVersionsResultOutput, error) {
-			args := v.(GetDbVersionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getDbVersions:getDbVersions", args, GetDbVersionsResultOutput{}, options).(GetDbVersionsResultOutput), nil
-		}).(GetDbVersionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getDbVersions:getDbVersions", args, GetDbVersionsResultOutput{}, options).(GetDbVersionsResultOutput)
 }
 
 // A collection of arguments for invoking getDbVersions.

@@ -71,12 +71,8 @@ type GetVolumeBackupPolicyAssignmentsResult struct {
 }
 
 func GetVolumeBackupPolicyAssignmentsOutput(ctx *pulumi.Context, args GetVolumeBackupPolicyAssignmentsOutputArgs, opts ...pulumi.InvokeOption) GetVolumeBackupPolicyAssignmentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVolumeBackupPolicyAssignmentsResultOutput, error) {
-			args := v.(GetVolumeBackupPolicyAssignmentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getVolumeBackupPolicyAssignments:getVolumeBackupPolicyAssignments", args, GetVolumeBackupPolicyAssignmentsResultOutput{}, options).(GetVolumeBackupPolicyAssignmentsResultOutput), nil
-		}).(GetVolumeBackupPolicyAssignmentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Core/getVolumeBackupPolicyAssignments:getVolumeBackupPolicyAssignments", args, GetVolumeBackupPolicyAssignmentsResultOutput{}, options).(GetVolumeBackupPolicyAssignmentsResultOutput)
 }
 
 // A collection of arguments for invoking getVolumeBackupPolicyAssignments.

@@ -87,12 +87,8 @@ type LookupFleetAgentConfigurationResult struct {
 }
 
 func LookupFleetAgentConfigurationOutput(ctx *pulumi.Context, args LookupFleetAgentConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupFleetAgentConfigurationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupFleetAgentConfigurationResultOutput, error) {
-			args := v.(LookupFleetAgentConfigurationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getFleetAgentConfiguration:getFleetAgentConfiguration", args, LookupFleetAgentConfigurationResultOutput{}, options).(LookupFleetAgentConfigurationResultOutput), nil
-		}).(LookupFleetAgentConfigurationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getFleetAgentConfiguration:getFleetAgentConfiguration", args, LookupFleetAgentConfigurationResultOutput{}, options).(LookupFleetAgentConfigurationResultOutput)
 }
 
 // A collection of arguments for invoking getFleetAgentConfiguration.

@@ -14,20 +14,6 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsIdentityProofingProviderTemplateIdcsLockedBy
     {
         /// <summary>
-        /// (Updatable) The URI of the SCIM resource that represents the User or App who Locked this Resource.
-        /// 
-        /// **SCIM++ Properties:**
-        /// * caseExact: true
-        /// * idcsSearchable: false
-        /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: false
-        /// * returned: default
-        /// * type: string
-        /// * uniqueness: none
-        /// </summary>
-        public readonly string? _ref;
-        /// <summary>
         /// (Updatable) The displayName of the User or App who locked this Resource.
         /// 
         /// **SCIM++ Properties:**
@@ -85,8 +71,6 @@ namespace Pulumi.Oci.Identity.Outputs
 
         [OutputConstructor]
         private DomainsIdentityProofingProviderTemplateIdcsLockedBy(
-            string? _ref,
-
             string? display,
 
             string? ocid,
@@ -95,7 +79,6 @@ namespace Pulumi.Oci.Identity.Outputs
 
             string? value)
         {
-            this._ref = _ref;
             Display = display;
             Ocid = ocid;
             Type = type;

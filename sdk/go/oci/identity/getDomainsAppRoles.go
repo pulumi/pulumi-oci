@@ -106,12 +106,8 @@ type GetDomainsAppRolesResult struct {
 }
 
 func GetDomainsAppRolesOutput(ctx *pulumi.Context, args GetDomainsAppRolesOutputArgs, opts ...pulumi.InvokeOption) GetDomainsAppRolesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDomainsAppRolesResultOutput, error) {
-			args := v.(GetDomainsAppRolesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsAppRoles:getDomainsAppRoles", args, GetDomainsAppRolesResultOutput{}, options).(GetDomainsAppRolesResultOutput), nil
-		}).(GetDomainsAppRolesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsAppRoles:getDomainsAppRoles", args, GetDomainsAppRolesResultOutput{}, options).(GetDomainsAppRolesResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsAppRoles.

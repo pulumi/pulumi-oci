@@ -72,12 +72,8 @@ type GetPublishersResult struct {
 }
 
 func GetPublishersOutput(ctx *pulumi.Context, args GetPublishersOutputArgs, opts ...pulumi.InvokeOption) GetPublishersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPublishersResultOutput, error) {
-			args := v.(GetPublishersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Marketplace/getPublishers:getPublishers", args, GetPublishersResultOutput{}, options).(GetPublishersResultOutput), nil
-		}).(GetPublishersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Marketplace/getPublishers:getPublishers", args, GetPublishersResultOutput{}, options).(GetPublishersResultOutput)
 }
 
 // A collection of arguments for invoking getPublishers.

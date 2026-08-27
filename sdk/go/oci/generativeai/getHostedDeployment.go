@@ -87,12 +87,8 @@ type LookupHostedDeploymentResult struct {
 }
 
 func LookupHostedDeploymentOutput(ctx *pulumi.Context, args LookupHostedDeploymentOutputArgs, opts ...pulumi.InvokeOption) LookupHostedDeploymentResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupHostedDeploymentResultOutput, error) {
-			args := v.(LookupHostedDeploymentArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GenerativeAi/getHostedDeployment:getHostedDeployment", args, LookupHostedDeploymentResultOutput{}, options).(LookupHostedDeploymentResultOutput), nil
-		}).(LookupHostedDeploymentResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:GenerativeAi/getHostedDeployment:getHostedDeployment", args, LookupHostedDeploymentResultOutput{}, options).(LookupHostedDeploymentResultOutput)
 }
 
 // A collection of arguments for invoking getHostedDeployment.

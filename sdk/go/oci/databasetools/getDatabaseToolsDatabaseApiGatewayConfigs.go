@@ -84,12 +84,8 @@ type GetDatabaseToolsDatabaseApiGatewayConfigsResult struct {
 }
 
 func GetDatabaseToolsDatabaseApiGatewayConfigsOutput(ctx *pulumi.Context, args GetDatabaseToolsDatabaseApiGatewayConfigsOutputArgs, opts ...pulumi.InvokeOption) GetDatabaseToolsDatabaseApiGatewayConfigsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDatabaseToolsDatabaseApiGatewayConfigsResultOutput, error) {
-			args := v.(GetDatabaseToolsDatabaseApiGatewayConfigsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DatabaseTools/getDatabaseToolsDatabaseApiGatewayConfigs:getDatabaseToolsDatabaseApiGatewayConfigs", args, GetDatabaseToolsDatabaseApiGatewayConfigsResultOutput{}, options).(GetDatabaseToolsDatabaseApiGatewayConfigsResultOutput), nil
-		}).(GetDatabaseToolsDatabaseApiGatewayConfigsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DatabaseTools/getDatabaseToolsDatabaseApiGatewayConfigs:getDatabaseToolsDatabaseApiGatewayConfigs", args, GetDatabaseToolsDatabaseApiGatewayConfigsResultOutput{}, options).(GetDatabaseToolsDatabaseApiGatewayConfigsResultOutput)
 }
 
 // A collection of arguments for invoking getDatabaseToolsDatabaseApiGatewayConfigs.

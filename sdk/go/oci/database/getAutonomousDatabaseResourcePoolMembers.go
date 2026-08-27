@@ -68,12 +68,8 @@ type GetAutonomousDatabaseResourcePoolMembersResult struct {
 }
 
 func GetAutonomousDatabaseResourcePoolMembersOutput(ctx *pulumi.Context, args GetAutonomousDatabaseResourcePoolMembersOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousDatabaseResourcePoolMembersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAutonomousDatabaseResourcePoolMembersResultOutput, error) {
-			args := v.(GetAutonomousDatabaseResourcePoolMembersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Database/getAutonomousDatabaseResourcePoolMembers:getAutonomousDatabaseResourcePoolMembers", args, GetAutonomousDatabaseResourcePoolMembersResultOutput{}, options).(GetAutonomousDatabaseResourcePoolMembersResultOutput), nil
-		}).(GetAutonomousDatabaseResourcePoolMembersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Database/getAutonomousDatabaseResourcePoolMembers:getAutonomousDatabaseResourcePoolMembers", args, GetAutonomousDatabaseResourcePoolMembersResultOutput{}, options).(GetAutonomousDatabaseResourcePoolMembersResultOutput)
 }
 
 // A collection of arguments for invoking getAutonomousDatabaseResourcePoolMembers.

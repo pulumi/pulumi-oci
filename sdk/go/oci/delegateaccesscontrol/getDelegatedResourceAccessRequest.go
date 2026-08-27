@@ -132,12 +132,8 @@ type GetDelegatedResourceAccessRequestResult struct {
 }
 
 func GetDelegatedResourceAccessRequestOutput(ctx *pulumi.Context, args GetDelegatedResourceAccessRequestOutputArgs, opts ...pulumi.InvokeOption) GetDelegatedResourceAccessRequestResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDelegatedResourceAccessRequestResultOutput, error) {
-			args := v.(GetDelegatedResourceAccessRequestArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DelegateAccessControl/getDelegatedResourceAccessRequest:getDelegatedResourceAccessRequest", args, GetDelegatedResourceAccessRequestResultOutput{}, options).(GetDelegatedResourceAccessRequestResultOutput), nil
-		}).(GetDelegatedResourceAccessRequestResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:DelegateAccessControl/getDelegatedResourceAccessRequest:getDelegatedResourceAccessRequest", args, GetDelegatedResourceAccessRequestResultOutput{}, options).(GetDelegatedResourceAccessRequestResultOutput)
 }
 
 // A collection of arguments for invoking getDelegatedResourceAccessRequest.

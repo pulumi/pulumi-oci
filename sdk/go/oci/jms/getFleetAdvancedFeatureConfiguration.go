@@ -81,12 +81,8 @@ type LookupFleetAdvancedFeatureConfigurationResult struct {
 }
 
 func LookupFleetAdvancedFeatureConfigurationOutput(ctx *pulumi.Context, args LookupFleetAdvancedFeatureConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupFleetAdvancedFeatureConfigurationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupFleetAdvancedFeatureConfigurationResultOutput, error) {
-			args := v.(LookupFleetAdvancedFeatureConfigurationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getFleetAdvancedFeatureConfiguration:getFleetAdvancedFeatureConfiguration", args, LookupFleetAdvancedFeatureConfigurationResultOutput{}, options).(LookupFleetAdvancedFeatureConfigurationResultOutput), nil
-		}).(LookupFleetAdvancedFeatureConfigurationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Jms/getFleetAdvancedFeatureConfiguration:getFleetAdvancedFeatureConfiguration", args, LookupFleetAdvancedFeatureConfigurationResultOutput{}, options).(LookupFleetAdvancedFeatureConfigurationResultOutput)
 }
 
 // A collection of arguments for invoking getFleetAdvancedFeatureConfiguration.

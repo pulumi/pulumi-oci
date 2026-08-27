@@ -112,12 +112,8 @@ type LookupDomainsMyCustomerSecretKeyResult struct {
 }
 
 func LookupDomainsMyCustomerSecretKeyOutput(ctx *pulumi.Context, args LookupDomainsMyCustomerSecretKeyOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsMyCustomerSecretKeyResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupDomainsMyCustomerSecretKeyResultOutput, error) {
-			args := v.(LookupDomainsMyCustomerSecretKeyArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Identity/getDomainsMyCustomerSecretKey:getDomainsMyCustomerSecretKey", args, LookupDomainsMyCustomerSecretKeyResultOutput{}, options).(LookupDomainsMyCustomerSecretKeyResultOutput), nil
-		}).(LookupDomainsMyCustomerSecretKeyResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:Identity/getDomainsMyCustomerSecretKey:getDomainsMyCustomerSecretKey", args, LookupDomainsMyCustomerSecretKeyResultOutput{}, options).(LookupDomainsMyCustomerSecretKeyResultOutput)
 }
 
 // A collection of arguments for invoking getDomainsMyCustomerSecretKey.

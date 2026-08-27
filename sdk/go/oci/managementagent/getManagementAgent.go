@@ -120,12 +120,8 @@ type LookupManagementAgentResult struct {
 }
 
 func LookupManagementAgentOutput(ctx *pulumi.Context, args LookupManagementAgentOutputArgs, opts ...pulumi.InvokeOption) LookupManagementAgentResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupManagementAgentResultOutput, error) {
-			args := v.(LookupManagementAgentArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:ManagementAgent/getManagementAgent:getManagementAgent", args, LookupManagementAgentResultOutput{}, options).(LookupManagementAgentResultOutput), nil
-		}).(LookupManagementAgentResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("oci:ManagementAgent/getManagementAgent:getManagementAgent", args, LookupManagementAgentResultOutput{}, options).(LookupManagementAgentResultOutput)
 }
 
 // A collection of arguments for invoking getManagementAgent.

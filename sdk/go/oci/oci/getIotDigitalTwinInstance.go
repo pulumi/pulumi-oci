@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/oci"
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/oci"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -59,8 +59,7 @@ type LookupIotDigitalTwinInstanceArgs struct {
 // A collection of values returned by getIotDigitalTwinInstance.
 type LookupIotDigitalTwinInstanceResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
-	AuthId string `pulumi:"authId"`
-	// Connectivity type of the digital twin instance
+	AuthId           string `pulumi:"authId"`
 	ConnectivityType string `pulumi:"connectivityType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -130,7 +129,6 @@ func (o LookupIotDigitalTwinInstanceResultOutput) AuthId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIotDigitalTwinInstanceResult) string { return v.AuthId }).(pulumi.StringOutput)
 }
 
-// Connectivity type of the digital twin instance
 func (o LookupIotDigitalTwinInstanceResultOutput) ConnectivityType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIotDigitalTwinInstanceResult) string { return v.ConnectivityType }).(pulumi.StringOutput)
 }

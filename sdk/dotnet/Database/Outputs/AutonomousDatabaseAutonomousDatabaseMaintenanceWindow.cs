@@ -14,9 +14,17 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class AutonomousDatabaseAutonomousDatabaseMaintenanceWindow
     {
         /// <summary>
+        /// (Updatable) The AD in which the maintenance will occur.
+        /// </summary>
+        public readonly string? AvailabilityDomain;
+        /// <summary>
         /// (Updatable) Day of the week.
         /// </summary>
         public readonly Outputs.AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek DayOfWeek;
+        /// <summary>
+        /// (Updatable) Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+        /// </summary>
+        public readonly bool? IsMaintenanceWindowChangeScheduled;
         /// <summary>
         /// (Updatable) The maintenance end time. The value must use the ISO-8601 format "hh:mm".
         /// </summary>
@@ -28,13 +36,19 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private AutonomousDatabaseAutonomousDatabaseMaintenanceWindow(
+            string? availabilityDomain,
+
             Outputs.AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek dayOfWeek,
+
+            bool? isMaintenanceWindowChangeScheduled,
 
             string? maintenanceEndTime,
 
             string? maintenanceStartTime)
         {
+            AvailabilityDomain = availabilityDomain;
             DayOfWeek = dayOfWeek;
+            IsMaintenanceWindowChangeScheduled = isMaintenanceWindowChangeScheduled;
             MaintenanceEndTime = maintenanceEndTime;
             MaintenanceStartTime = maintenanceStartTime;
         }

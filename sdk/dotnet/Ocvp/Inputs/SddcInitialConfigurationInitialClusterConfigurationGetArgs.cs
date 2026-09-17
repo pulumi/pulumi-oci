@@ -81,6 +81,12 @@ namespace Pulumi.Oci.Ocvp.Inputs
         public Input<string>? InitialCommitment { get; set; }
 
         /// <summary>
+        /// Initial Fault Domain Host distribution mode for the Cluster.
+        /// </summary>
+        [Input("initialFaultDomainHostDistribution")]
+        public Input<string>? InitialFaultDomainHostDistribution { get; set; }
+
+        /// <summary>
         /// The initial OCPU count of the Cluster's ESXi hosts.
         /// </summary>
         [Input("initialHostOcpuCount")]

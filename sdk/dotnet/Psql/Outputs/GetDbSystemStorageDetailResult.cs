@@ -26,6 +26,10 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly bool IsRegionallyDurable;
         /// <summary>
+        /// The OCID of the Vault service key to assign as the master encryption key for the database system.
+        /// </summary>
+        public readonly string KmsKeyId;
+        /// <summary>
         /// Type of the database system.
         /// </summary>
         public readonly string SystemType;
@@ -38,11 +42,14 @@ namespace Pulumi.Oci.Psql.Outputs
 
             bool isRegionallyDurable,
 
+            string kmsKeyId,
+
             string systemType)
         {
             AvailabilityDomain = availabilityDomain;
             Iops = iops;
             IsRegionallyDurable = isRegionallyDurable;
+            KmsKeyId = kmsKeyId;
             SystemType = systemType;
         }
     }

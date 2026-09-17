@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -26,7 +26,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/oci"
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/oci"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -60,12 +60,14 @@ import (
 //				InboundRoutes: oci.IotDigitalTwinAdapterInboundRouteArray{
 //					&oci.IotDigitalTwinAdapterInboundRouteArgs{
 //						Condition:      pulumi.Any(digitalTwinAdapterInboundRoutesCondition),
+//						ContentRoot:    pulumi.Any(digitalTwinAdapterInboundRoutesContentRoot),
 //						Description:    pulumi.Any(digitalTwinAdapterInboundRoutesDescription),
 //						PayloadMapping: pulumi.Any(digitalTwinAdapterInboundRoutesPayloadMapping),
 //						ReferencePayload: &oci.IotDigitalTwinAdapterInboundRouteReferencePayloadArgs{
 //							Data:       pulumi.Any(digitalTwinAdapterInboundRoutesReferencePayloadData),
 //							DataFormat: pulumi.Any(digitalTwinAdapterInboundRoutesReferencePayloadDataFormat),
 //						},
+//						Target: pulumi.Any(digitalTwinAdapterInboundRoutesTarget),
 //					},
 //				},
 //			})

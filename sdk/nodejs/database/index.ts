@@ -415,6 +415,11 @@ export const getAutonomousDatabase: typeof import("./getAutonomousDatabase").get
 export const getAutonomousDatabaseOutput: typeof import("./getAutonomousDatabase").getAutonomousDatabaseOutput = null as any;
 utilities.lazyLoad(exports, ["getAutonomousDatabase","getAutonomousDatabaseOutput"], () => require("./getAutonomousDatabase"));
 
+export { GetAutonomousDatabaseAvailableMaintenanceWindowsArgs, GetAutonomousDatabaseAvailableMaintenanceWindowsResult, GetAutonomousDatabaseAvailableMaintenanceWindowsOutputArgs } from "./getAutonomousDatabaseAvailableMaintenanceWindows";
+export const getAutonomousDatabaseAvailableMaintenanceWindows: typeof import("./getAutonomousDatabaseAvailableMaintenanceWindows").getAutonomousDatabaseAvailableMaintenanceWindows = null as any;
+export const getAutonomousDatabaseAvailableMaintenanceWindowsOutput: typeof import("./getAutonomousDatabaseAvailableMaintenanceWindows").getAutonomousDatabaseAvailableMaintenanceWindowsOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousDatabaseAvailableMaintenanceWindows","getAutonomousDatabaseAvailableMaintenanceWindowsOutput"], () => require("./getAutonomousDatabaseAvailableMaintenanceWindows"));
+
 export { GetAutonomousDatabaseBackupArgs, GetAutonomousDatabaseBackupResult, GetAutonomousDatabaseBackupOutputArgs } from "./getAutonomousDatabaseBackup";
 export const getAutonomousDatabaseBackup: typeof import("./getAutonomousDatabaseBackup").getAutonomousDatabaseBackup = null as any;
 export const getAutonomousDatabaseBackupOutput: typeof import("./getAutonomousDatabaseBackup").getAutonomousDatabaseBackupOutput = null as any;

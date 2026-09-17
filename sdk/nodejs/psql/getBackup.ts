@@ -88,6 +88,10 @@ export interface GetBackupResult {
      */
     readonly id: string;
     /**
+     * The OCID of the master encryption key for the backup.
+     */
+    readonly kmsKeyId: string;
+    /**
      * lastAcceptedRequestToken from MP.
      */
     readonly lastAcceptedRequestToken: string;

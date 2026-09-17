@@ -157,6 +157,21 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The OCID of the master encryption key for the backup.
+     * 
+     */
+    @Import(name="kmsKeyId")
+    private @Nullable Output<String> kmsKeyId;
+
+    /**
+     * @return The OCID of the master encryption key for the backup.
+     * 
+     */
+    public Optional<Output<String>> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
+    }
+
+    /**
      * lastAcceptedRequestToken from MP.
      * 
      */
@@ -339,6 +354,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.kmsKeyId = $.kmsKeyId;
         this.lastAcceptedRequestToken = $.lastAcceptedRequestToken;
         this.lastCompletedRequestToken = $.lastCompletedRequestToken;
         this.lifecycleDetails = $.lifecycleDetails;
@@ -577,6 +593,27 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param kmsKeyId The OCID of the master encryption key for the backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsKeyId(@Nullable Output<String> kmsKeyId) {
+            $.kmsKeyId = kmsKeyId;
+            return this;
+        }
+
+        /**
+         * @param kmsKeyId The OCID of the master encryption key for the backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsKeyId(String kmsKeyId) {
+            return kmsKeyId(Output.of(kmsKeyId));
         }
 
         /**

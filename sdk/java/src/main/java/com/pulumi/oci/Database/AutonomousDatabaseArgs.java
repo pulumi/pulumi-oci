@@ -12,6 +12,7 @@ import com.pulumi.oci.Database.inputs.AutonomousDatabaseDbToolsDetailArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseEncryptionKeyArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseLongTermBackupScheduleArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseResourcePoolSummaryArgs;
+import com.pulumi.oci.Database.inputs.AutonomousDatabaseScheduledMaintenanceWindowArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseScheduledOperationArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseTransportableTablespaceArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseVanityUrlDetailArgs;
@@ -136,14 +137,14 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     * (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
      * 
      */
     @Import(name="autonomousDatabaseMaintenanceWindow")
     private @Nullable Output<AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs> autonomousDatabaseMaintenanceWindow;
 
     /**
-     * @return (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     * @return (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
      * 
      */
     public Optional<Output<AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs>> autonomousDatabaseMaintenanceWindow() {
@@ -1217,6 +1218,21 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     * 
+     */
+    @Import(name="scheduledMaintenanceWindow")
+    private @Nullable Output<AutonomousDatabaseScheduledMaintenanceWindowArgs> scheduledMaintenanceWindow;
+
+    /**
+     * @return Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     * 
+     */
+    public Optional<Output<AutonomousDatabaseScheduledMaintenanceWindowArgs>> scheduledMaintenanceWindow() {
+        return Optional.ofNullable(this.scheduledMaintenanceWindow);
+    }
+
+    /**
      * (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
      * 
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -1502,6 +1518,21 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * The date and time at which operation to change Maintenance Window is scheduled to take place.
+     * 
+     */
+    @Import(name="timeScheduledMaintenanceWindowUpdate")
+    private @Nullable Output<String> timeScheduledMaintenanceWindowUpdate;
+
+    /**
+     * @return The date and time at which operation to change Maintenance Window is scheduled to take place.
+     * 
+     */
+    public Optional<Output<String>> timeScheduledMaintenanceWindowUpdate() {
+        return Optional.ofNullable(this.timeScheduledMaintenanceWindowUpdate);
+    }
+
+    /**
      * The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
      * 
      */
@@ -1682,6 +1713,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         this.resourcePoolLeaderId = $.resourcePoolLeaderId;
         this.resourcePoolSummary = $.resourcePoolSummary;
         this.rotateKeyTrigger = $.rotateKeyTrigger;
+        this.scheduledMaintenanceWindow = $.scheduledMaintenanceWindow;
         this.scheduledOperations = $.scheduledOperations;
         this.secretId = $.secretId;
         this.secretVersionNumber = $.secretVersionNumber;
@@ -1699,6 +1731,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         this.timeOfAutoRefreshStart = $.timeOfAutoRefreshStart;
         this.timeScheduledAdUpdate = $.timeScheduledAdUpdate;
         this.timeScheduledDbVersionUpgrade = $.timeScheduledDbVersionUpgrade;
+        this.timeScheduledMaintenanceWindowUpdate = $.timeScheduledMaintenanceWindowUpdate;
         this.timestamp = $.timestamp;
         this.transportableTablespace = $.transportableTablespace;
         this.useLatestAvailableBackupTimeStamp = $.useLatestAvailableBackupTimeStamp;
@@ -1873,7 +1906,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param autonomousDatabaseMaintenanceWindow (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+         * @param autonomousDatabaseMaintenanceWindow (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
          * 
          * @return builder
          * 
@@ -1884,7 +1917,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param autonomousDatabaseMaintenanceWindow (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+         * @param autonomousDatabaseMaintenanceWindow (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
          * 
          * @return builder
          * 
@@ -3385,6 +3418,27 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
+         * @param scheduledMaintenanceWindow Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scheduledMaintenanceWindow(@Nullable Output<AutonomousDatabaseScheduledMaintenanceWindowArgs> scheduledMaintenanceWindow) {
+            $.scheduledMaintenanceWindow = scheduledMaintenanceWindow;
+            return this;
+        }
+
+        /**
+         * @param scheduledMaintenanceWindow Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scheduledMaintenanceWindow(AutonomousDatabaseScheduledMaintenanceWindowArgs scheduledMaintenanceWindow) {
+            return scheduledMaintenanceWindow(Output.of(scheduledMaintenanceWindow));
+        }
+
+        /**
          * @param scheduledOperations (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
          * 
          * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -3793,6 +3847,27 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          */
         public Builder timeScheduledDbVersionUpgrade(String timeScheduledDbVersionUpgrade) {
             return timeScheduledDbVersionUpgrade(Output.of(timeScheduledDbVersionUpgrade));
+        }
+
+        /**
+         * @param timeScheduledMaintenanceWindowUpdate The date and time at which operation to change Maintenance Window is scheduled to take place.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeScheduledMaintenanceWindowUpdate(@Nullable Output<String> timeScheduledMaintenanceWindowUpdate) {
+            $.timeScheduledMaintenanceWindowUpdate = timeScheduledMaintenanceWindowUpdate;
+            return this;
+        }
+
+        /**
+         * @param timeScheduledMaintenanceWindowUpdate The date and time at which operation to change Maintenance Window is scheduled to take place.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeScheduledMaintenanceWindowUpdate(String timeScheduledMaintenanceWindowUpdate) {
+            return timeScheduledMaintenanceWindowUpdate(Output.of(timeScheduledMaintenanceWindowUpdate));
         }
 
         /**

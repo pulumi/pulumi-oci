@@ -45,6 +45,11 @@ export type BatchBatchTaskProfile = import("./batchBatchTaskProfile").BatchBatch
 export const BatchBatchTaskProfile: typeof import("./batchBatchTaskProfile").BatchBatchTaskProfile = null as any;
 utilities.lazyLoad(exports, ["BatchBatchTaskProfile"], () => require("./batchBatchTaskProfile"));
 
+export { ClusterHealthDiagnosisStoreArgs, ClusterHealthDiagnosisStoreState } from "./clusterHealthDiagnosisStore";
+export type ClusterHealthDiagnosisStore = import("./clusterHealthDiagnosisStore").ClusterHealthDiagnosisStore;
+export const ClusterHealthDiagnosisStore: typeof import("./clusterHealthDiagnosisStore").ClusterHealthDiagnosisStore = null as any;
+utilities.lazyLoad(exports, ["ClusterHealthDiagnosisStore"], () => require("./clusterHealthDiagnosisStore"));
+
 export { CostadCostAlertSubscriptionArgs, CostadCostAlertSubscriptionState } from "./costadCostAlertSubscription";
 export type CostadCostAlertSubscription = import("./costadCostAlertSubscription").CostadCostAlertSubscription;
 export const CostadCostAlertSubscription: typeof import("./costadCostAlertSubscription").CostadCostAlertSubscription = null as any;
@@ -139,21 +144,6 @@ export { DifStackArgs, DifStackState } from "./difStack";
 export type DifStack = import("./difStack").DifStack;
 export const DifStack: typeof import("./difStack").DifStack = null as any;
 utilities.lazyLoad(exports, ["DifStack"], () => require("./difStack"));
-
-export { DistributedDatabaseDistributedAutonomousDatabaseArgs, DistributedDatabaseDistributedAutonomousDatabaseState } from "./distributedDatabaseDistributedAutonomousDatabase";
-export type DistributedDatabaseDistributedAutonomousDatabase = import("./distributedDatabaseDistributedAutonomousDatabase").DistributedDatabaseDistributedAutonomousDatabase;
-export const DistributedDatabaseDistributedAutonomousDatabase: typeof import("./distributedDatabaseDistributedAutonomousDatabase").DistributedDatabaseDistributedAutonomousDatabase = null as any;
-utilities.lazyLoad(exports, ["DistributedDatabaseDistributedAutonomousDatabase"], () => require("./distributedDatabaseDistributedAutonomousDatabase"));
-
-export { DistributedDatabaseDistributedDatabaseArgs, DistributedDatabaseDistributedDatabaseState } from "./distributedDatabaseDistributedDatabase";
-export type DistributedDatabaseDistributedDatabase = import("./distributedDatabaseDistributedDatabase").DistributedDatabaseDistributedDatabase;
-export const DistributedDatabaseDistributedDatabase: typeof import("./distributedDatabaseDistributedDatabase").DistributedDatabaseDistributedDatabase = null as any;
-utilities.lazyLoad(exports, ["DistributedDatabaseDistributedDatabase"], () => require("./distributedDatabaseDistributedDatabase"));
-
-export { DistributedDatabaseDistributedDatabasePrivateEndpointArgs, DistributedDatabaseDistributedDatabasePrivateEndpointState } from "./distributedDatabaseDistributedDatabasePrivateEndpoint";
-export type DistributedDatabaseDistributedDatabasePrivateEndpoint = import("./distributedDatabaseDistributedDatabasePrivateEndpoint").DistributedDatabaseDistributedDatabasePrivateEndpoint;
-export const DistributedDatabaseDistributedDatabasePrivateEndpoint: typeof import("./distributedDatabaseDistributedDatabasePrivateEndpoint").DistributedDatabaseDistributedDatabasePrivateEndpoint = null as any;
-utilities.lazyLoad(exports, ["DistributedDatabaseDistributedDatabasePrivateEndpoint"], () => require("./distributedDatabaseDistributedDatabasePrivateEndpoint"));
 
 export { GdpGdpPipelineArgs, GdpGdpPipelineState } from "./gdpGdpPipeline";
 export type GdpGdpPipeline = import("./gdpGdpPipeline").GdpGdpPipeline;
@@ -259,6 +249,16 @@ export { GetBatchBatchTaskProfilesArgs, GetBatchBatchTaskProfilesResult, GetBatc
 export const getBatchBatchTaskProfiles: typeof import("./getBatchBatchTaskProfiles").getBatchBatchTaskProfiles = null as any;
 export const getBatchBatchTaskProfilesOutput: typeof import("./getBatchBatchTaskProfiles").getBatchBatchTaskProfilesOutput = null as any;
 utilities.lazyLoad(exports, ["getBatchBatchTaskProfiles","getBatchBatchTaskProfilesOutput"], () => require("./getBatchBatchTaskProfiles"));
+
+export { GetClusterHealthDiagnosisStoreArgs, GetClusterHealthDiagnosisStoreResult, GetClusterHealthDiagnosisStoreOutputArgs } from "./getClusterHealthDiagnosisStore";
+export const getClusterHealthDiagnosisStore: typeof import("./getClusterHealthDiagnosisStore").getClusterHealthDiagnosisStore = null as any;
+export const getClusterHealthDiagnosisStoreOutput: typeof import("./getClusterHealthDiagnosisStore").getClusterHealthDiagnosisStoreOutput = null as any;
+utilities.lazyLoad(exports, ["getClusterHealthDiagnosisStore","getClusterHealthDiagnosisStoreOutput"], () => require("./getClusterHealthDiagnosisStore"));
+
+export { GetClusterHealthDiagnosisStoresArgs, GetClusterHealthDiagnosisStoresResult, GetClusterHealthDiagnosisStoresOutputArgs } from "./getClusterHealthDiagnosisStores";
+export const getClusterHealthDiagnosisStores: typeof import("./getClusterHealthDiagnosisStores").getClusterHealthDiagnosisStores = null as any;
+export const getClusterHealthDiagnosisStoresOutput: typeof import("./getClusterHealthDiagnosisStores").getClusterHealthDiagnosisStoresOutput = null as any;
+utilities.lazyLoad(exports, ["getClusterHealthDiagnosisStores","getClusterHealthDiagnosisStoresOutput"], () => require("./getClusterHealthDiagnosisStores"));
 
 export { GetCostadCostAlertSubscriptionArgs, GetCostadCostAlertSubscriptionResult, GetCostadCostAlertSubscriptionOutputArgs } from "./getCostadCostAlertSubscription";
 export const getCostadCostAlertSubscription: typeof import("./getCostadCostAlertSubscription").getCostadCostAlertSubscription = null as any;
@@ -480,46 +480,6 @@ export const getDifStacks: typeof import("./getDifStacks").getDifStacks = null a
 export const getDifStacksOutput: typeof import("./getDifStacks").getDifStacksOutput = null as any;
 utilities.lazyLoad(exports, ["getDifStacks","getDifStacksOutput"], () => require("./getDifStacks"));
 
-export { GetDistributedDatabaseDistributedAutonomousDatabaseArgs, GetDistributedDatabaseDistributedAutonomousDatabaseResult, GetDistributedDatabaseDistributedAutonomousDatabaseOutputArgs } from "./getDistributedDatabaseDistributedAutonomousDatabase";
-export const getDistributedDatabaseDistributedAutonomousDatabase: typeof import("./getDistributedDatabaseDistributedAutonomousDatabase").getDistributedDatabaseDistributedAutonomousDatabase = null as any;
-export const getDistributedDatabaseDistributedAutonomousDatabaseOutput: typeof import("./getDistributedDatabaseDistributedAutonomousDatabase").getDistributedDatabaseDistributedAutonomousDatabaseOutput = null as any;
-utilities.lazyLoad(exports, ["getDistributedDatabaseDistributedAutonomousDatabase","getDistributedDatabaseDistributedAutonomousDatabaseOutput"], () => require("./getDistributedDatabaseDistributedAutonomousDatabase"));
-
-export { GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs, GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResult, GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricOutputArgs } from "./getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric";
-export const getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric: typeof import("./getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric").getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric = null as any;
-export const getDistributedDatabaseDistributedAutonomousDatabaseRaftMetricOutput: typeof import("./getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric").getDistributedDatabaseDistributedAutonomousDatabaseRaftMetricOutput = null as any;
-utilities.lazyLoad(exports, ["getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric","getDistributedDatabaseDistributedAutonomousDatabaseRaftMetricOutput"], () => require("./getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric"));
-
-export { GetDistributedDatabaseDistributedAutonomousDatabasesArgs, GetDistributedDatabaseDistributedAutonomousDatabasesResult, GetDistributedDatabaseDistributedAutonomousDatabasesOutputArgs } from "./getDistributedDatabaseDistributedAutonomousDatabases";
-export const getDistributedDatabaseDistributedAutonomousDatabases: typeof import("./getDistributedDatabaseDistributedAutonomousDatabases").getDistributedDatabaseDistributedAutonomousDatabases = null as any;
-export const getDistributedDatabaseDistributedAutonomousDatabasesOutput: typeof import("./getDistributedDatabaseDistributedAutonomousDatabases").getDistributedDatabaseDistributedAutonomousDatabasesOutput = null as any;
-utilities.lazyLoad(exports, ["getDistributedDatabaseDistributedAutonomousDatabases","getDistributedDatabaseDistributedAutonomousDatabasesOutput"], () => require("./getDistributedDatabaseDistributedAutonomousDatabases"));
-
-export { GetDistributedDatabaseDistributedDatabaseArgs, GetDistributedDatabaseDistributedDatabaseResult, GetDistributedDatabaseDistributedDatabaseOutputArgs } from "./getDistributedDatabaseDistributedDatabase";
-export const getDistributedDatabaseDistributedDatabase: typeof import("./getDistributedDatabaseDistributedDatabase").getDistributedDatabaseDistributedDatabase = null as any;
-export const getDistributedDatabaseDistributedDatabaseOutput: typeof import("./getDistributedDatabaseDistributedDatabase").getDistributedDatabaseDistributedDatabaseOutput = null as any;
-utilities.lazyLoad(exports, ["getDistributedDatabaseDistributedDatabase","getDistributedDatabaseDistributedDatabaseOutput"], () => require("./getDistributedDatabaseDistributedDatabase"));
-
-export { GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs, GetDistributedDatabaseDistributedDatabasePrivateEndpointResult, GetDistributedDatabaseDistributedDatabasePrivateEndpointOutputArgs } from "./getDistributedDatabaseDistributedDatabasePrivateEndpoint";
-export const getDistributedDatabaseDistributedDatabasePrivateEndpoint: typeof import("./getDistributedDatabaseDistributedDatabasePrivateEndpoint").getDistributedDatabaseDistributedDatabasePrivateEndpoint = null as any;
-export const getDistributedDatabaseDistributedDatabasePrivateEndpointOutput: typeof import("./getDistributedDatabaseDistributedDatabasePrivateEndpoint").getDistributedDatabaseDistributedDatabasePrivateEndpointOutput = null as any;
-utilities.lazyLoad(exports, ["getDistributedDatabaseDistributedDatabasePrivateEndpoint","getDistributedDatabaseDistributedDatabasePrivateEndpointOutput"], () => require("./getDistributedDatabaseDistributedDatabasePrivateEndpoint"));
-
-export { GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs, GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult, GetDistributedDatabaseDistributedDatabasePrivateEndpointsOutputArgs } from "./getDistributedDatabaseDistributedDatabasePrivateEndpoints";
-export const getDistributedDatabaseDistributedDatabasePrivateEndpoints: typeof import("./getDistributedDatabaseDistributedDatabasePrivateEndpoints").getDistributedDatabaseDistributedDatabasePrivateEndpoints = null as any;
-export const getDistributedDatabaseDistributedDatabasePrivateEndpointsOutput: typeof import("./getDistributedDatabaseDistributedDatabasePrivateEndpoints").getDistributedDatabaseDistributedDatabasePrivateEndpointsOutput = null as any;
-utilities.lazyLoad(exports, ["getDistributedDatabaseDistributedDatabasePrivateEndpoints","getDistributedDatabaseDistributedDatabasePrivateEndpointsOutput"], () => require("./getDistributedDatabaseDistributedDatabasePrivateEndpoints"));
-
-export { GetDistributedDatabaseDistributedDatabaseRaftMetricArgs, GetDistributedDatabaseDistributedDatabaseRaftMetricResult, GetDistributedDatabaseDistributedDatabaseRaftMetricOutputArgs } from "./getDistributedDatabaseDistributedDatabaseRaftMetric";
-export const getDistributedDatabaseDistributedDatabaseRaftMetric: typeof import("./getDistributedDatabaseDistributedDatabaseRaftMetric").getDistributedDatabaseDistributedDatabaseRaftMetric = null as any;
-export const getDistributedDatabaseDistributedDatabaseRaftMetricOutput: typeof import("./getDistributedDatabaseDistributedDatabaseRaftMetric").getDistributedDatabaseDistributedDatabaseRaftMetricOutput = null as any;
-utilities.lazyLoad(exports, ["getDistributedDatabaseDistributedDatabaseRaftMetric","getDistributedDatabaseDistributedDatabaseRaftMetricOutput"], () => require("./getDistributedDatabaseDistributedDatabaseRaftMetric"));
-
-export { GetDistributedDatabaseDistributedDatabasesArgs, GetDistributedDatabaseDistributedDatabasesResult, GetDistributedDatabaseDistributedDatabasesOutputArgs } from "./getDistributedDatabaseDistributedDatabases";
-export const getDistributedDatabaseDistributedDatabases: typeof import("./getDistributedDatabaseDistributedDatabases").getDistributedDatabaseDistributedDatabases = null as any;
-export const getDistributedDatabaseDistributedDatabasesOutput: typeof import("./getDistributedDatabaseDistributedDatabases").getDistributedDatabaseDistributedDatabasesOutput = null as any;
-utilities.lazyLoad(exports, ["getDistributedDatabaseDistributedDatabases","getDistributedDatabaseDistributedDatabasesOutput"], () => require("./getDistributedDatabaseDistributedDatabases"));
-
 export { GetGdpGdpPipelineArgs, GetGdpGdpPipelineResult, GetGdpGdpPipelineOutputArgs } from "./getGdpGdpPipeline";
 export const getGdpGdpPipeline: typeof import("./getGdpGdpPipeline").getGdpGdpPipeline = null as any;
 export const getGdpGdpPipelineOutput: typeof import("./getGdpGdpPipeline").getGdpGdpPipelineOutput = null as any;
@@ -599,6 +559,21 @@ export { GetIotIotDomainsArgs, GetIotIotDomainsResult, GetIotIotDomainsOutputArg
 export const getIotIotDomains: typeof import("./getIotIotDomains").getIotIotDomains = null as any;
 export const getIotIotDomainsOutput: typeof import("./getIotIotDomains").getIotIotDomainsOutput = null as any;
 utilities.lazyLoad(exports, ["getIotIotDomains","getIotIotDomainsOutput"], () => require("./getIotIotDomains"));
+
+export { GetIotIotFlowRuntimeArgs, GetIotIotFlowRuntimeResult, GetIotIotFlowRuntimeOutputArgs } from "./getIotIotFlowRuntime";
+export const getIotIotFlowRuntime: typeof import("./getIotIotFlowRuntime").getIotIotFlowRuntime = null as any;
+export const getIotIotFlowRuntimeOutput: typeof import("./getIotIotFlowRuntime").getIotIotFlowRuntimeOutput = null as any;
+utilities.lazyLoad(exports, ["getIotIotFlowRuntime","getIotIotFlowRuntimeOutput"], () => require("./getIotIotFlowRuntime"));
+
+export { GetIotIotFlowRuntimeFlowArgs, GetIotIotFlowRuntimeFlowResult, GetIotIotFlowRuntimeFlowOutputArgs } from "./getIotIotFlowRuntimeFlow";
+export const getIotIotFlowRuntimeFlow: typeof import("./getIotIotFlowRuntimeFlow").getIotIotFlowRuntimeFlow = null as any;
+export const getIotIotFlowRuntimeFlowOutput: typeof import("./getIotIotFlowRuntimeFlow").getIotIotFlowRuntimeFlowOutput = null as any;
+utilities.lazyLoad(exports, ["getIotIotFlowRuntimeFlow","getIotIotFlowRuntimeFlowOutput"], () => require("./getIotIotFlowRuntimeFlow"));
+
+export { GetIotIotFlowRuntimesArgs, GetIotIotFlowRuntimesResult, GetIotIotFlowRuntimesOutputArgs } from "./getIotIotFlowRuntimes";
+export const getIotIotFlowRuntimes: typeof import("./getIotIotFlowRuntimes").getIotIotFlowRuntimes = null as any;
+export const getIotIotFlowRuntimesOutput: typeof import("./getIotIotFlowRuntimes").getIotIotFlowRuntimesOutput = null as any;
+utilities.lazyLoad(exports, ["getIotIotFlowRuntimes","getIotIotFlowRuntimesOutput"], () => require("./getIotIotFlowRuntimes"));
 
 export { GetManagedKafkaAddonOptionsArgs, GetManagedKafkaAddonOptionsResult, GetManagedKafkaAddonOptionsOutputArgs } from "./getManagedKafkaAddonOptions";
 export const getManagedKafkaAddonOptions: typeof import("./getManagedKafkaAddonOptions").getManagedKafkaAddonOptions = null as any;
@@ -940,6 +915,26 @@ export type IotIotDomainGroupConfigureDataAccess = import("./iotIotDomainGroupCo
 export const IotIotDomainGroupConfigureDataAccess: typeof import("./iotIotDomainGroupConfigureDataAccess").IotIotDomainGroupConfigureDataAccess = null as any;
 utilities.lazyLoad(exports, ["IotIotDomainGroupConfigureDataAccess"], () => require("./iotIotDomainGroupConfigureDataAccess"));
 
+export { IotIotFlowRuntimeArgs, IotIotFlowRuntimeState } from "./iotIotFlowRuntime";
+export type IotIotFlowRuntime = import("./iotIotFlowRuntime").IotIotFlowRuntime;
+export const IotIotFlowRuntime: typeof import("./iotIotFlowRuntime").IotIotFlowRuntime = null as any;
+utilities.lazyLoad(exports, ["IotIotFlowRuntime"], () => require("./iotIotFlowRuntime"));
+
+export { IotIotFlowRuntimeActivateArgs, IotIotFlowRuntimeActivateState } from "./iotIotFlowRuntimeActivate";
+export type IotIotFlowRuntimeActivate = import("./iotIotFlowRuntimeActivate").IotIotFlowRuntimeActivate;
+export const IotIotFlowRuntimeActivate: typeof import("./iotIotFlowRuntimeActivate").IotIotFlowRuntimeActivate = null as any;
+utilities.lazyLoad(exports, ["IotIotFlowRuntimeActivate"], () => require("./iotIotFlowRuntimeActivate"));
+
+export { IotIotFlowRuntimeDeactivateArgs, IotIotFlowRuntimeDeactivateState } from "./iotIotFlowRuntimeDeactivate";
+export type IotIotFlowRuntimeDeactivate = import("./iotIotFlowRuntimeDeactivate").IotIotFlowRuntimeDeactivate;
+export const IotIotFlowRuntimeDeactivate: typeof import("./iotIotFlowRuntimeDeactivate").IotIotFlowRuntimeDeactivate = null as any;
+utilities.lazyLoad(exports, ["IotIotFlowRuntimeDeactivate"], () => require("./iotIotFlowRuntimeDeactivate"));
+
+export { IotIotFlowRuntimeFlowArgs, IotIotFlowRuntimeFlowState } from "./iotIotFlowRuntimeFlow";
+export type IotIotFlowRuntimeFlow = import("./iotIotFlowRuntimeFlow").IotIotFlowRuntimeFlow;
+export const IotIotFlowRuntimeFlow: typeof import("./iotIotFlowRuntimeFlow").IotIotFlowRuntimeFlow = null as any;
+utilities.lazyLoad(exports, ["IotIotFlowRuntimeFlow"], () => require("./iotIotFlowRuntimeFlow"));
+
 export { ManagedKafkaKafkaClusterArgs, ManagedKafkaKafkaClusterState } from "./managedKafkaKafkaCluster";
 export type ManagedKafkaKafkaCluster = import("./managedKafkaKafkaCluster").ManagedKafkaKafkaCluster;
 export const ManagedKafkaKafkaCluster: typeof import("./managedKafkaKafkaCluster").ManagedKafkaKafkaCluster = null as any;
@@ -1011,6 +1006,8 @@ const _module = {
                 return new BatchBatchTaskEnvironment(name, <any>undefined, { urn })
             case "oci:oci/batchBatchTaskProfile:BatchBatchTaskProfile":
                 return new BatchBatchTaskProfile(name, <any>undefined, { urn })
+            case "oci:oci/clusterHealthDiagnosisStore:ClusterHealthDiagnosisStore":
+                return new ClusterHealthDiagnosisStore(name, <any>undefined, { urn })
             case "oci:oci/costadCostAlertSubscription:CostadCostAlertSubscription":
                 return new CostadCostAlertSubscription(name, <any>undefined, { urn })
             case "oci:oci/costadCostAnomalyEvent:CostadCostAnomalyEvent":
@@ -1049,12 +1046,6 @@ const _module = {
                 return new DdfsInstance(name, <any>undefined, { urn })
             case "oci:oci/difStack:DifStack":
                 return new DifStack(name, <any>undefined, { urn })
-            case "oci:oci/distributedDatabaseDistributedAutonomousDatabase:DistributedDatabaseDistributedAutonomousDatabase":
-                return new DistributedDatabaseDistributedAutonomousDatabase(name, <any>undefined, { urn })
-            case "oci:oci/distributedDatabaseDistributedDatabase:DistributedDatabaseDistributedDatabase":
-                return new DistributedDatabaseDistributedDatabase(name, <any>undefined, { urn })
-            case "oci:oci/distributedDatabaseDistributedDatabasePrivateEndpoint:DistributedDatabaseDistributedDatabasePrivateEndpoint":
-                return new DistributedDatabaseDistributedDatabasePrivateEndpoint(name, <any>undefined, { urn })
             case "oci:oci/gdpGdpPipeline:GdpGdpPipeline":
                 return new GdpGdpPipeline(name, <any>undefined, { urn })
             case "oci:oci/iotDigitalTwinAdapter:IotDigitalTwinAdapter":
@@ -1077,6 +1068,14 @@ const _module = {
                 return new IotIotDomainGroup(name, <any>undefined, { urn })
             case "oci:oci/iotIotDomainGroupConfigureDataAccess:IotIotDomainGroupConfigureDataAccess":
                 return new IotIotDomainGroupConfigureDataAccess(name, <any>undefined, { urn })
+            case "oci:oci/iotIotFlowRuntime:IotIotFlowRuntime":
+                return new IotIotFlowRuntime(name, <any>undefined, { urn })
+            case "oci:oci/iotIotFlowRuntimeActivate:IotIotFlowRuntimeActivate":
+                return new IotIotFlowRuntimeActivate(name, <any>undefined, { urn })
+            case "oci:oci/iotIotFlowRuntimeDeactivate:IotIotFlowRuntimeDeactivate":
+                return new IotIotFlowRuntimeDeactivate(name, <any>undefined, { urn })
+            case "oci:oci/iotIotFlowRuntimeFlow:IotIotFlowRuntimeFlow":
+                return new IotIotFlowRuntimeFlow(name, <any>undefined, { urn })
             case "oci:oci/managedKafkaKafkaCluster:ManagedKafkaKafkaCluster":
                 return new ManagedKafkaKafkaCluster(name, <any>undefined, { urn })
             case "oci:oci/managedKafkaKafkaClusterAddon:ManagedKafkaKafkaClusterAddon":
@@ -1110,6 +1109,7 @@ pulumi.runtime.registerResourceModule("oci", "oci/batchBatchContext", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/batchBatchJobPool", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/batchBatchTaskEnvironment", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/batchBatchTaskProfile", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/clusterHealthDiagnosisStore", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/costadCostAlertSubscription", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/costadCostAnomalyEvent", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/costadCostAnomalyMonitor", _module)
@@ -1129,9 +1129,6 @@ pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbGcpIdentit
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbGcpKeyRing", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/ddfsInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/difStack", _module)
-pulumi.runtime.registerResourceModule("oci", "oci/distributedDatabaseDistributedAutonomousDatabase", _module)
-pulumi.runtime.registerResourceModule("oci", "oci/distributedDatabaseDistributedDatabase", _module)
-pulumi.runtime.registerResourceModule("oci", "oci/distributedDatabaseDistributedDatabasePrivateEndpoint", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/gdpGdpPipeline", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/iotDigitalTwinAdapter", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/iotDigitalTwinInstance", _module)
@@ -1143,6 +1140,10 @@ pulumi.runtime.registerResourceModule("oci", "oci/iotIotDomainChangeDataRetentio
 pulumi.runtime.registerResourceModule("oci", "oci/iotIotDomainConfigureDataAccess", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/iotIotDomainGroup", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/iotIotDomainGroupConfigureDataAccess", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/iotIotFlowRuntime", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/iotIotFlowRuntimeActivate", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/iotIotFlowRuntimeDeactivate", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/iotIotFlowRuntimeFlow", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaClusterAddon", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaClusterConfig", _module)

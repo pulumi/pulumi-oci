@@ -25,6 +25,12 @@ __all__ = [
     'OciCacheUserAuthenticationModeArgsDict',
     'OciCacheUserGetRedisClusterOciCacheClusterArgs',
     'OciCacheUserGetRedisClusterOciCacheClusterArgsDict',
+    'RedisClusterClusterReplicationTopologyArgs',
+    'RedisClusterClusterReplicationTopologyArgsDict',
+    'RedisClusterClusterReplicationTopologyPrimaryClusterArgs',
+    'RedisClusterClusterReplicationTopologyPrimaryClusterArgsDict',
+    'RedisClusterClusterReplicationTopologySecondaryClusterArgs',
+    'RedisClusterClusterReplicationTopologySecondaryClusterArgsDict',
     'RedisClusterGetOciCacheUserOciCacheUserArgs',
     'RedisClusterGetOciCacheUserOciCacheUserArgsDict',
     'RedisClusterImportFromObjectStorageDetailsArgs',
@@ -230,6 +236,153 @@ class OciCacheUserGetRedisClusterOciCacheClusterArgs:
     @oci_cache_cluster_id.setter
     def oci_cache_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oci_cache_cluster_id", value)
+
+
+class RedisClusterClusterReplicationTopologyArgsDict(TypedDict):
+    primary_clusters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RedisClusterClusterReplicationTopologyPrimaryClusterArgsDict']]]]]
+    """
+    The details of a cluster participating in the replication setup.
+    """
+    secondary_clusters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RedisClusterClusterReplicationTopologySecondaryClusterArgsDict']]]]]
+    """
+    The list of secondary clusters that replicate data from the primary cluster.
+    """
+
+@pulumi.input_type
+class RedisClusterClusterReplicationTopologyArgs:
+    def __init__(__self__, *,
+                 primary_clusters: pulumi.Input[Optional[Sequence[pulumi.Input['RedisClusterClusterReplicationTopologyPrimaryClusterArgs']]]] = None,
+                 secondary_clusters: pulumi.Input[Optional[Sequence[pulumi.Input['RedisClusterClusterReplicationTopologySecondaryClusterArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['RedisClusterClusterReplicationTopologyPrimaryClusterArgs']]] primary_clusters: The details of a cluster participating in the replication setup.
+        :param pulumi.Input[Sequence[pulumi.Input['RedisClusterClusterReplicationTopologySecondaryClusterArgs']]] secondary_clusters: The list of secondary clusters that replicate data from the primary cluster.
+        """
+        if primary_clusters is not None:
+            pulumi.set(__self__, "primary_clusters", primary_clusters)
+        if secondary_clusters is not None:
+            pulumi.set(__self__, "secondary_clusters", secondary_clusters)
+
+    @_builtins.property
+    @pulumi.getter(name="primaryClusters")
+    def primary_clusters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RedisClusterClusterReplicationTopologyPrimaryClusterArgs']]]]:
+        """
+        The details of a cluster participating in the replication setup.
+        """
+        return pulumi.get(self, "primary_clusters")
+
+    @primary_clusters.setter
+    def primary_clusters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RedisClusterClusterReplicationTopologyPrimaryClusterArgs']]]]):
+        pulumi.set(self, "primary_clusters", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secondaryClusters")
+    def secondary_clusters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RedisClusterClusterReplicationTopologySecondaryClusterArgs']]]]:
+        """
+        The list of secondary clusters that replicate data from the primary cluster.
+        """
+        return pulumi.get(self, "secondary_clusters")
+
+    @secondary_clusters.setter
+    def secondary_clusters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RedisClusterClusterReplicationTopologySecondaryClusterArgs']]]]):
+        pulumi.set(self, "secondary_clusters", value)
+
+
+class RedisClusterClusterReplicationTopologyPrimaryClusterArgsDict(TypedDict):
+    oci_cache_cluster_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+    """
+    region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The Oracle Cloud Infrastructure region to which the cluster belongs.
+    """
+
+@pulumi.input_type
+class RedisClusterClusterReplicationTopologyPrimaryClusterArgs:
+    def __init__(__self__, *,
+                 oci_cache_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] oci_cache_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+        :param pulumi.Input[_builtins.str] region: The Oracle Cloud Infrastructure region to which the cluster belongs.
+        """
+        if oci_cache_cluster_id is not None:
+            pulumi.set(__self__, "oci_cache_cluster_id", oci_cache_cluster_id)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+
+    @_builtins.property
+    @pulumi.getter(name="ociCacheClusterId")
+    def oci_cache_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+        """
+        return pulumi.get(self, "oci_cache_cluster_id")
+
+    @oci_cache_cluster_id.setter
+    def oci_cache_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "oci_cache_cluster_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The Oracle Cloud Infrastructure region to which the cluster belongs.
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "region", value)
+
+
+class RedisClusterClusterReplicationTopologySecondaryClusterArgsDict(TypedDict):
+    oci_cache_cluster_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+    """
+    region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The Oracle Cloud Infrastructure region to which the cluster belongs.
+    """
+
+@pulumi.input_type
+class RedisClusterClusterReplicationTopologySecondaryClusterArgs:
+    def __init__(__self__, *,
+                 oci_cache_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] oci_cache_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+        :param pulumi.Input[_builtins.str] region: The Oracle Cloud Infrastructure region to which the cluster belongs.
+        """
+        if oci_cache_cluster_id is not None:
+            pulumi.set(__self__, "oci_cache_cluster_id", oci_cache_cluster_id)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+
+    @_builtins.property
+    @pulumi.getter(name="ociCacheClusterId")
+    def oci_cache_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+        """
+        return pulumi.get(self, "oci_cache_cluster_id")
+
+    @oci_cache_cluster_id.setter
+    def oci_cache_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "oci_cache_cluster_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The Oracle Cloud Infrastructure region to which the cluster belongs.
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "region", value)
 
 
 class RedisClusterGetOciCacheUserOciCacheUserArgsDict(TypedDict):

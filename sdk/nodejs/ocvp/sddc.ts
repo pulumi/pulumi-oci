@@ -57,6 +57,7 @@ import * as utilities from "../utilities";
  *             }],
  *             displayName: sddcInitialConfigurationInitialClusterConfigurationsDisplayName,
  *             initialCommitment: sddcInitialConfigurationInitialClusterConfigurationsInitialCommitment,
+ *             initialFaultDomainHostDistribution: sddcInitialConfigurationInitialClusterConfigurationsInitialFaultDomainHostDistribution,
  *             initialHostOcpuCount: sddcInitialConfigurationInitialClusterConfigurationsInitialHostOcpuCount,
  *             initialHostShapeName: testShape.name,
  *             initialVcfByolAllocationId: testByolAllocation.id,

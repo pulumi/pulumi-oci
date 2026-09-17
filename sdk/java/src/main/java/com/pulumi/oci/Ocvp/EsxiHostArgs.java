@@ -261,6 +261,21 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The initial fault domain host distribution mode for the ESXi host.
+     * 
+     */
+    @Import(name="initialFaultDomainHostDistribution")
+    private @Nullable Output<String> initialFaultDomainHostDistribution;
+
+    /**
+     * @return (Updatable) The initial fault domain host distribution mode for the ESXi host.
+     * 
+     */
+    public Optional<Output<String>> initialFaultDomainHostDistribution() {
+        return Optional.ofNullable(this.initialFaultDomainHostDistribution);
+    }
+
+    /**
      * (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
      * 
      */
@@ -413,6 +428,7 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.hostOcpuCount = $.hostOcpuCount;
         this.hostShapeName = $.hostShapeName;
+        this.initialFaultDomainHostDistribution = $.initialFaultDomainHostDistribution;
         this.isVsanByolEnabled = $.isVsanByolEnabled;
         this.nextCommitment = $.nextCommitment;
         this.nextSku = $.nextSku;
@@ -769,6 +785,27 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder hostShapeName(String hostShapeName) {
             return hostShapeName(Output.of(hostShapeName));
+        }
+
+        /**
+         * @param initialFaultDomainHostDistribution (Updatable) The initial fault domain host distribution mode for the ESXi host.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialFaultDomainHostDistribution(@Nullable Output<String> initialFaultDomainHostDistribution) {
+            $.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
+            return this;
+        }
+
+        /**
+         * @param initialFaultDomainHostDistribution (Updatable) The initial fault domain host distribution mode for the ESXi host.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialFaultDomainHostDistribution(String initialFaultDomainHostDistribution) {
+            return initialFaultDomainHostDistribution(Output.of(initialFaultDomainHostDistribution));
         }
 
         /**

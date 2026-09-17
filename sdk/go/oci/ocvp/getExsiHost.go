@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/ocvp"
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/ocvp"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -73,6 +73,8 @@ type GetExsiHostResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The availability domain of the ESXi host.
 	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
+	// The fault domain of the ESXi host.
+	ComputeFaultDomain string `pulumi:"computeFaultDomain"`
 	// In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
 	ComputeInstanceId string `pulumi:"computeInstanceId"`
 	// The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
@@ -107,6 +109,8 @@ type GetExsiHostResult struct {
 	HostShapeName string `pulumi:"hostShapeName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
 	Id string `pulumi:"id"`
+	// The initial fault domain host distribution mode for the ESXi host.
+	InitialFaultDomainHostDistribution string `pulumi:"initialFaultDomainHostDistribution"`
 	// Indicates whether this host is in the progress of billing continuation.
 	IsBillingContinuationInProgress bool `pulumi:"isBillingContinuationInProgress"`
 	// Indicates whether this host is in the progress of swapping billing.
@@ -214,6 +218,11 @@ func (o GetExsiHostResultOutput) ComputeAvailabilityDomain() pulumi.StringOutput
 	return o.ApplyT(func(v GetExsiHostResult) string { return v.ComputeAvailabilityDomain }).(pulumi.StringOutput)
 }
 
+// The fault domain of the ESXi host.
+func (o GetExsiHostResultOutput) ComputeFaultDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostResult) string { return v.ComputeFaultDomain }).(pulumi.StringOutput)
+}
+
 // In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
 func (o GetExsiHostResultOutput) ComputeInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostResult) string { return v.ComputeInstanceId }).(pulumi.StringOutput)
@@ -294,6 +303,11 @@ func (o GetExsiHostResultOutput) HostShapeName() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
 func (o GetExsiHostResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The initial fault domain host distribution mode for the ESXi host.
+func (o GetExsiHostResultOutput) InitialFaultDomainHostDistribution() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostResult) string { return v.InitialFaultDomainHostDistribution }).(pulumi.StringOutput)
 }
 
 // Indicates whether this host is in the progress of billing continuation.

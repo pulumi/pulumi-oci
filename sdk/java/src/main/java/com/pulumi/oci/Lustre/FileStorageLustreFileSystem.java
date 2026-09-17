@@ -75,7 +75,7 @@ import javax.annotation.Nullable;
  *             .fileSystemDescription(lustreFileSystemFileSystemDescription)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .kmsKeyId(testKey.id())
- *             .maintenanceWindows(FileStorageLustreFileSystemMaintenanceWindowArgs.builder()
+ *             .maintenanceWindow(FileStorageLustreFileSystemMaintenanceWindowArgs.builder()
  *                 .dayOfWeek(lustreFileSystemMaintenanceWindowDayOfWeek)
  *                 .timeStart(lustreFileSystemMaintenanceWindowTimeStart)
  *                 .build())
@@ -273,6 +273,20 @@ public class FileStorageLustreFileSystem extends com.pulumi.resources.CustomReso
         return this.lnet;
     }
     /**
+     * (Updatable) The preferred day and time to perform maintenance.
+     * 
+     */
+    @Export(name="maintenanceWindow", refs={FileStorageLustreFileSystemMaintenanceWindow.class}, tree="[0]")
+    private Output<FileStorageLustreFileSystemMaintenanceWindow> maintenanceWindow;
+
+    /**
+     * @return (Updatable) The preferred day and time to perform maintenance.
+     * 
+     */
+    public Output<FileStorageLustreFileSystemMaintenanceWindow> maintenanceWindow() {
+        return this.maintenanceWindow;
+    }
+    /**
      * The meta-data for maintenance window.
      * 
      */
@@ -285,20 +299,6 @@ public class FileStorageLustreFileSystem extends com.pulumi.resources.CustomReso
      */
     public Output<List<FileStorageLustreFileSystemMaintenanceWindowMetadata>> maintenanceWindowMetadatas() {
         return this.maintenanceWindowMetadatas;
-    }
-    /**
-     * (Updatable) The preferred day and time to perform maintenance.
-     * 
-     */
-    @Export(name="maintenanceWindows", refs={List.class,FileStorageLustreFileSystemMaintenanceWindow.class}, tree="[0,1]")
-    private Output<List<FileStorageLustreFileSystemMaintenanceWindow>> maintenanceWindows;
-
-    /**
-     * @return (Updatable) The preferred day and time to perform maintenance.
-     * 
-     */
-    public Output<List<FileStorageLustreFileSystemMaintenanceWindow>> maintenanceWindows() {
-        return this.maintenanceWindows;
     }
     /**
      * Major version of Lustre running in the Lustre file system.  Example: `2.15`

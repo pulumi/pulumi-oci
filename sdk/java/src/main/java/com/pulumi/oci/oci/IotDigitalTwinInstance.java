@@ -93,14 +93,14 @@ public class IotDigitalTwinInstance extends com.pulumi.resources.CustomResource 
         return this.authId;
     }
     /**
-     * Connectivity type of the digital twin instance
+     * (Updatable)
      * 
      */
     @Export(name="connectivityType", refs={String.class}, tree="[0]")
     private Output<String> connectivityType;
 
     /**
-     * @return Connectivity type of the digital twin instance
+     * @return (Updatable)
      * 
      */
     public Output<String> connectivityType() {

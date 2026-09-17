@@ -51,6 +51,11 @@ public final class GetExsiHostResult {
      */
     private String computeAvailabilityDomain;
     /**
+     * @return The fault domain of the ESXi host.
+     * 
+     */
+    private String computeFaultDomain;
+    /**
      * @return In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
      * 
      */
@@ -130,6 +135,11 @@ public final class GetExsiHostResult {
      * 
      */
     private String id;
+    /**
+     * @return The initial fault domain host distribution mode for the ESXi host.
+     * 
+     */
+    private String initialFaultDomainHostDistribution;
     /**
      * @return Indicates whether this host is in the progress of billing continuation.
      * 
@@ -275,6 +285,13 @@ public final class GetExsiHostResult {
         return this.computeAvailabilityDomain;
     }
     /**
+     * @return The fault domain of the ESXi host.
+     * 
+     */
+    public String computeFaultDomain() {
+        return this.computeFaultDomain;
+    }
+    /**
      * @return In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
      * 
      */
@@ -385,6 +402,13 @@ public final class GetExsiHostResult {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return The initial fault domain host distribution mode for the ESXi host.
+     * 
+     */
+    public String initialFaultDomainHostDistribution() {
+        return this.initialFaultDomainHostDistribution;
     }
     /**
      * @return Indicates whether this host is in the progress of billing continuation.
@@ -530,6 +554,7 @@ public final class GetExsiHostResult {
         private String clusterId;
         private String compartmentId;
         private String computeAvailabilityDomain;
+        private String computeFaultDomain;
         private String computeInstanceId;
         private String currentCommitment;
         private String currentSku;
@@ -546,6 +571,7 @@ public final class GetExsiHostResult {
         private Double hostOcpuCount;
         private String hostShapeName;
         private String id;
+        private String initialFaultDomainHostDistribution;
         private Boolean isBillingContinuationInProgress;
         private Boolean isBillingSwappingInProgress;
         private Boolean isVsanByolEnabled;
@@ -573,6 +599,7 @@ public final class GetExsiHostResult {
     	      this.clusterId = defaults.clusterId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeAvailabilityDomain = defaults.computeAvailabilityDomain;
+    	      this.computeFaultDomain = defaults.computeFaultDomain;
     	      this.computeInstanceId = defaults.computeInstanceId;
     	      this.currentCommitment = defaults.currentCommitment;
     	      this.currentSku = defaults.currentSku;
@@ -589,6 +616,7 @@ public final class GetExsiHostResult {
     	      this.hostOcpuCount = defaults.hostOcpuCount;
     	      this.hostShapeName = defaults.hostShapeName;
     	      this.id = defaults.id;
+    	      this.initialFaultDomainHostDistribution = defaults.initialFaultDomainHostDistribution;
     	      this.isBillingContinuationInProgress = defaults.isBillingContinuationInProgress;
     	      this.isBillingSwappingInProgress = defaults.isBillingSwappingInProgress;
     	      this.isVsanByolEnabled = defaults.isVsanByolEnabled;
@@ -665,6 +693,14 @@ public final class GetExsiHostResult {
               throw new MissingRequiredPropertyException("GetExsiHostResult", "computeAvailabilityDomain");
             }
             this.computeAvailabilityDomain = computeAvailabilityDomain;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeFaultDomain(String computeFaultDomain) {
+            if (computeFaultDomain == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "computeFaultDomain");
+            }
+            this.computeFaultDomain = computeFaultDomain;
             return this;
         }
         @CustomType.Setter
@@ -802,6 +838,14 @@ public final class GetExsiHostResult {
               throw new MissingRequiredPropertyException("GetExsiHostResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder initialFaultDomainHostDistribution(String initialFaultDomainHostDistribution) {
+            if (initialFaultDomainHostDistribution == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "initialFaultDomainHostDistribution");
+            }
+            this.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
             return this;
         }
         @CustomType.Setter
@@ -949,6 +993,7 @@ public final class GetExsiHostResult {
             _resultValue.clusterId = clusterId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.computeAvailabilityDomain = computeAvailabilityDomain;
+            _resultValue.computeFaultDomain = computeFaultDomain;
             _resultValue.computeInstanceId = computeInstanceId;
             _resultValue.currentCommitment = currentCommitment;
             _resultValue.currentSku = currentSku;
@@ -965,6 +1010,7 @@ public final class GetExsiHostResult {
             _resultValue.hostOcpuCount = hostOcpuCount;
             _resultValue.hostShapeName = hostShapeName;
             _resultValue.id = id;
+            _resultValue.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
             _resultValue.isBillingContinuationInProgress = isBillingContinuationInProgress;
             _resultValue.isBillingSwappingInProgress = isBillingSwappingInProgress;
             _resultValue.isVsanByolEnabled = isVsanByolEnabled;

@@ -210,6 +210,21 @@ public final class FileStorageLustreFileSystemState extends com.pulumi.resources
     }
 
     /**
+     * (Updatable) The preferred day and time to perform maintenance.
+     * 
+     */
+    @Import(name="maintenanceWindow")
+    private @Nullable Output<FileStorageLustreFileSystemMaintenanceWindowArgs> maintenanceWindow;
+
+    /**
+     * @return (Updatable) The preferred day and time to perform maintenance.
+     * 
+     */
+    public Optional<Output<FileStorageLustreFileSystemMaintenanceWindowArgs>> maintenanceWindow() {
+        return Optional.ofNullable(this.maintenanceWindow);
+    }
+
+    /**
      * The meta-data for maintenance window.
      * 
      */
@@ -222,21 +237,6 @@ public final class FileStorageLustreFileSystemState extends com.pulumi.resources
      */
     public Optional<Output<List<FileStorageLustreFileSystemMaintenanceWindowMetadataArgs>>> maintenanceWindowMetadatas() {
         return Optional.ofNullable(this.maintenanceWindowMetadatas);
-    }
-
-    /**
-     * (Updatable) The preferred day and time to perform maintenance.
-     * 
-     */
-    @Import(name="maintenanceWindows")
-    private @Nullable Output<List<FileStorageLustreFileSystemMaintenanceWindowArgs>> maintenanceWindows;
-
-    /**
-     * @return (Updatable) The preferred day and time to perform maintenance.
-     * 
-     */
-    public Optional<Output<List<FileStorageLustreFileSystemMaintenanceWindowArgs>>> maintenanceWindows() {
-        return Optional.ofNullable(this.maintenanceWindows);
     }
 
     /**
@@ -441,8 +441,8 @@ public final class FileStorageLustreFileSystemState extends com.pulumi.resources
         this.kmsKeyId = $.kmsKeyId;
         this.lifecycleDetails = $.lifecycleDetails;
         this.lnet = $.lnet;
+        this.maintenanceWindow = $.maintenanceWindow;
         this.maintenanceWindowMetadatas = $.maintenanceWindowMetadatas;
-        this.maintenanceWindows = $.maintenanceWindows;
         this.majorVersion = $.majorVersion;
         this.managementServiceAddress = $.managementServiceAddress;
         this.nsgIds = $.nsgIds;
@@ -737,6 +737,27 @@ public final class FileStorageLustreFileSystemState extends com.pulumi.resources
         }
 
         /**
+         * @param maintenanceWindow (Updatable) The preferred day and time to perform maintenance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceWindow(@Nullable Output<FileStorageLustreFileSystemMaintenanceWindowArgs> maintenanceWindow) {
+            $.maintenanceWindow = maintenanceWindow;
+            return this;
+        }
+
+        /**
+         * @param maintenanceWindow (Updatable) The preferred day and time to perform maintenance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceWindow(FileStorageLustreFileSystemMaintenanceWindowArgs maintenanceWindow) {
+            return maintenanceWindow(Output.of(maintenanceWindow));
+        }
+
+        /**
          * @param maintenanceWindowMetadatas The meta-data for maintenance window.
          * 
          * @return builder
@@ -765,37 +786,6 @@ public final class FileStorageLustreFileSystemState extends com.pulumi.resources
          */
         public Builder maintenanceWindowMetadatas(FileStorageLustreFileSystemMaintenanceWindowMetadataArgs... maintenanceWindowMetadatas) {
             return maintenanceWindowMetadatas(List.of(maintenanceWindowMetadatas));
-        }
-
-        /**
-         * @param maintenanceWindows (Updatable) The preferred day and time to perform maintenance.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder maintenanceWindows(@Nullable Output<List<FileStorageLustreFileSystemMaintenanceWindowArgs>> maintenanceWindows) {
-            $.maintenanceWindows = maintenanceWindows;
-            return this;
-        }
-
-        /**
-         * @param maintenanceWindows (Updatable) The preferred day and time to perform maintenance.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder maintenanceWindows(List<FileStorageLustreFileSystemMaintenanceWindowArgs> maintenanceWindows) {
-            return maintenanceWindows(Output.of(maintenanceWindows));
-        }
-
-        /**
-         * @param maintenanceWindows (Updatable) The preferred day and time to perform maintenance.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder maintenanceWindows(FileStorageLustreFileSystemMaintenanceWindowArgs... maintenanceWindows) {
-            return maintenanceWindows(List.of(maintenanceWindows));
         }
 
         /**

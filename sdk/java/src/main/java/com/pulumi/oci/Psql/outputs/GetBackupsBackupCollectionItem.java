@@ -67,6 +67,11 @@ public final class GetBackupsBackupCollectionItem {
      */
     private String id;
     /**
+     * @return The OCID of the master encryption key for the backup.
+     * 
+     */
+    private String kmsKeyId;
+    /**
      * @return lastAcceptedRequestToken from MP.
      * 
      */
@@ -194,6 +199,13 @@ public final class GetBackupsBackupCollectionItem {
         return this.id;
     }
     /**
+     * @return The OCID of the master encryption key for the backup.
+     * 
+     */
+    public String kmsKeyId() {
+        return this.kmsKeyId;
+    }
+    /**
      * @return lastAcceptedRequestToken from MP.
      * 
      */
@@ -290,6 +302,7 @@ public final class GetBackupsBackupCollectionItem {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private String kmsKeyId;
         private String lastAcceptedRequestToken;
         private String lastCompletedRequestToken;
         private String lifecycleDetails;
@@ -314,6 +327,7 @@ public final class GetBackupsBackupCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.lastAcceptedRequestToken = defaults.lastAcceptedRequestToken;
     	      this.lastCompletedRequestToken = defaults.lastCompletedRequestToken;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -411,6 +425,14 @@ public final class GetBackupsBackupCollectionItem {
               throw new MissingRequiredPropertyException("GetBackupsBackupCollectionItem", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder kmsKeyId(String kmsKeyId) {
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupCollectionItem", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
@@ -516,6 +538,7 @@ public final class GetBackupsBackupCollectionItem {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.lastAcceptedRequestToken = lastAcceptedRequestToken;
             _resultValue.lastCompletedRequestToken = lastCompletedRequestToken;
             _resultValue.lifecycleDetails = lifecycleDetails;

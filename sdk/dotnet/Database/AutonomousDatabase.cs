@@ -101,7 +101,7 @@ namespace Pulumi.Oci.Database
         public Output<string> AutonomousDatabaseId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        /// (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         /// </summary>
         [Output("autonomousDatabaseMaintenanceWindow")]
         public Output<Outputs.AutonomousDatabaseAutonomousDatabaseMaintenanceWindow> AutonomousDatabaseMaintenanceWindow { get; private set; } = null!;
@@ -765,6 +765,12 @@ namespace Pulumi.Oci.Database
         public Output<bool?> RotateKeyTrigger { get; private set; } = null!;
 
         /// <summary>
+        /// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        /// </summary>
+        [Output("scheduledMaintenanceWindow")]
+        public Output<Outputs.AutonomousDatabaseScheduledMaintenanceWindow> ScheduledMaintenanceWindow { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
         /// 
         /// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -1015,6 +1021,12 @@ namespace Pulumi.Oci.Database
         public Output<string> TimeScheduledDbVersionUpgrade { get; private set; } = null!;
 
         /// <summary>
+        /// The date and time at which operation to change Maintenance Window is scheduled to take place.
+        /// </summary>
+        [Output("timeScheduledMaintenanceWindowUpdate")]
+        public Output<string> TimeScheduledMaintenanceWindowUpdate { get; private set; } = null!;
+
+        /// <summary>
         /// The date and time the Autonomous AI Database was most recently undeleted.
         /// </summary>
         [Output("timeUndeleted")]
@@ -1195,7 +1207,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? AutonomousDatabaseId { get; set; }
 
         /// <summary>
-        /// (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        /// (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         /// </summary>
         [Input("autonomousDatabaseMaintenanceWindow")]
         public Input<Inputs.AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs>? AutonomousDatabaseMaintenanceWindow { get; set; }
@@ -1678,6 +1690,12 @@ namespace Pulumi.Oci.Database
         [Input("rotateKeyTrigger")]
         public Input<bool>? RotateKeyTrigger { get; set; }
 
+        /// <summary>
+        /// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        /// </summary>
+        [Input("scheduledMaintenanceWindow")]
+        public Input<Inputs.AutonomousDatabaseScheduledMaintenanceWindowArgs>? ScheduledMaintenanceWindow { get; set; }
+
         [Input("scheduledOperations")]
         private InputList<Inputs.AutonomousDatabaseScheduledOperationArgs>? _scheduledOperations;
 
@@ -1813,6 +1831,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("timeScheduledDbVersionUpgrade")]
         public Input<string>? TimeScheduledDbVersionUpgrade { get; set; }
+
+        /// <summary>
+        /// The date and time at which operation to change Maintenance Window is scheduled to take place.
+        /// </summary>
+        [Input("timeScheduledMaintenanceWindowUpdate")]
+        public Input<string>? TimeScheduledMaintenanceWindowUpdate { get; set; }
 
         /// <summary>
         /// The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
@@ -1971,7 +1995,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? AutonomousDatabaseId { get; set; }
 
         /// <summary>
-        /// (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        /// (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         /// </summary>
         [Input("autonomousDatabaseMaintenanceWindow")]
         public Input<Inputs.AutonomousDatabaseAutonomousDatabaseMaintenanceWindowGetArgs>? AutonomousDatabaseMaintenanceWindow { get; set; }
@@ -2748,6 +2772,12 @@ namespace Pulumi.Oci.Database
         [Input("rotateKeyTrigger")]
         public Input<bool>? RotateKeyTrigger { get; set; }
 
+        /// <summary>
+        /// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        /// </summary>
+        [Input("scheduledMaintenanceWindow")]
+        public Input<Inputs.AutonomousDatabaseScheduledMaintenanceWindowGetArgs>? ScheduledMaintenanceWindow { get; set; }
+
         [Input("scheduledOperations")]
         private InputList<Inputs.AutonomousDatabaseScheduledOperationGetArgs>? _scheduledOperations;
 
@@ -3033,6 +3063,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("timeScheduledDbVersionUpgrade")]
         public Input<string>? TimeScheduledDbVersionUpgrade { get; set; }
+
+        /// <summary>
+        /// The date and time at which operation to change Maintenance Window is scheduled to take place.
+        /// </summary>
+        [Input("timeScheduledMaintenanceWindowUpdate")]
+        public Input<string>? TimeScheduledMaintenanceWindowUpdate { get; set; }
 
         /// <summary>
         /// The date and time the Autonomous AI Database was most recently undeleted.

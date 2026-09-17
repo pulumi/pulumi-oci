@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -13,10 +14,20 @@ import java.util.Objects;
 @CustomType
 public final class GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow {
     /**
+     * @return The AD in which the maintenance will occur.
+     * 
+     */
+    private String availabilityDomain;
+    /**
      * @return Day of the week.
      * 
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek> dayOfWeeks;
+    /**
+     * @return Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+     * 
+     */
+    private Boolean isMaintenanceWindowChangeScheduled;
     /**
      * @return The maintenance end time. The value must use the ISO-8601 format &#34;hh:mm&#34;.
      * 
@@ -30,11 +41,25 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatab
 
     private GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow() {}
     /**
+     * @return The AD in which the maintenance will occur.
+     * 
+     */
+    public String availabilityDomain() {
+        return this.availabilityDomain;
+    }
+    /**
      * @return Day of the week.
      * 
      */
     public List<GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek> dayOfWeeks() {
         return this.dayOfWeeks;
+    }
+    /**
+     * @return Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+     * 
+     */
+    public Boolean isMaintenanceWindowChangeScheduled() {
+        return this.isMaintenanceWindowChangeScheduled;
     }
     /**
      * @return The maintenance end time. The value must use the ISO-8601 format &#34;hh:mm&#34;.
@@ -60,17 +85,29 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatab
     }
     @CustomType.Builder
     public static final class Builder {
+        private String availabilityDomain;
         private List<GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek> dayOfWeeks;
+        private Boolean isMaintenanceWindowChangeScheduled;
         private String maintenanceEndTime;
         private String maintenanceStartTime;
         public Builder() {}
         public Builder(GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.dayOfWeeks = defaults.dayOfWeeks;
+    	      this.isMaintenanceWindowChangeScheduled = defaults.isMaintenanceWindowChangeScheduled;
     	      this.maintenanceEndTime = defaults.maintenanceEndTime;
     	      this.maintenanceStartTime = defaults.maintenanceStartTime;
         }
 
+        @CustomType.Setter
+        public Builder availabilityDomain(String availabilityDomain) {
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
+            return this;
+        }
         @CustomType.Setter
         public Builder dayOfWeeks(List<GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek> dayOfWeeks) {
             if (dayOfWeeks == null) {
@@ -81,6 +118,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatab
         }
         public Builder dayOfWeeks(GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek... dayOfWeeks) {
             return dayOfWeeks(List.of(dayOfWeeks));
+        }
+        @CustomType.Setter
+        public Builder isMaintenanceWindowChangeScheduled(Boolean isMaintenanceWindowChangeScheduled) {
+            if (isMaintenanceWindowChangeScheduled == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow", "isMaintenanceWindowChangeScheduled");
+            }
+            this.isMaintenanceWindowChangeScheduled = isMaintenanceWindowChangeScheduled;
+            return this;
         }
         @CustomType.Setter
         public Builder maintenanceEndTime(String maintenanceEndTime) {
@@ -100,7 +145,9 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatab
         }
         public GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow build() {
             final var _resultValue = new GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow();
+            _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.dayOfWeeks = dayOfWeeks;
+            _resultValue.isMaintenanceWindowChangeScheduled = isMaintenanceWindowChangeScheduled;
             _resultValue.maintenanceEndTime = maintenanceEndTime;
             _resultValue.maintenanceStartTime = maintenanceStartTime;
             return _resultValue;

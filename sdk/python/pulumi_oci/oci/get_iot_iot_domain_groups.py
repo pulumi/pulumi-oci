@@ -150,7 +150,7 @@ def get_iot_iot_domain_groups(compartment_id: Optional[_builtins.str] = None,
     :param _builtins.str display_name: Filter resources whose display name matches the specified value.
     :param _builtins.str id: Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
     :param _builtins.str state: Filter resources whose lifecycleState matches the specified value.
-    :param _builtins.str type: Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+    :param _builtins.str type: Filter resources by type. Valid values are DEVELOPMENT or PRODUCTION. LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION, respectively.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -200,7 +200,7 @@ def get_iot_iot_domain_groups_output(compartment_id: pulumi.Input[Optional[_buil
     :param _builtins.str display_name: Filter resources whose display name matches the specified value.
     :param _builtins.str id: Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
     :param _builtins.str state: Filter resources whose lifecycleState matches the specified value.
-    :param _builtins.str type: Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+    :param _builtins.str type: Filter resources by type. Valid values are DEVELOPMENT or PRODUCTION. LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION, respectively.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id

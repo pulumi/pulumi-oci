@@ -840,7 +840,7 @@ namespace Pulumi.Oci.Database
         [Input("sparseDiskgroup")]
         public Input<bool>? SparseDiskgroup { get; set; }
 
-        [Input("sshPublicKeys", required: true)]
+        [Input("sshPublicKeys")]
         private InputList<string>? _sshPublicKeys;
 
         /// <summary>

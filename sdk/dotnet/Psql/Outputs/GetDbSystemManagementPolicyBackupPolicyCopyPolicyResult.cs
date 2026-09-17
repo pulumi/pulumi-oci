@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// List of key ids of the remote regions
+        /// </summary>
+        public readonly ImmutableArray<string> KmsKeyIds;
+        /// <summary>
         /// List of region names of the remote region
         /// </summary>
         public readonly ImmutableArray<string> Regions;
@@ -30,11 +34,14 @@ namespace Pulumi.Oci.Psql.Outputs
         private GetDbSystemManagementPolicyBackupPolicyCopyPolicyResult(
             string compartmentId,
 
+            ImmutableArray<string> kmsKeyIds,
+
             ImmutableArray<string> regions,
 
             int retentionPeriod)
         {
             CompartmentId = compartmentId;
+            KmsKeyIds = kmsKeyIds;
             Regions = regions;
             RetentionPeriod = retentionPeriod;
         }

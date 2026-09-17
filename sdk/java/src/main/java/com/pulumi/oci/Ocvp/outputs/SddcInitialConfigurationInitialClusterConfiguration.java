@@ -67,6 +67,11 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
      */
     private @Nullable String initialCommitment;
     /**
+     * @return Initial Fault Domain Host distribution mode for the Cluster.
+     * 
+     */
+    private @Nullable String initialFaultDomainHostDistribution;
+    /**
      * @return The initial OCPU count of the Cluster&#39;s ESXi hosts.
      * 
      */
@@ -176,6 +181,13 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
         return Optional.ofNullable(this.initialCommitment);
     }
     /**
+     * @return Initial Fault Domain Host distribution mode for the Cluster.
+     * 
+     */
+    public Optional<String> initialFaultDomainHostDistribution() {
+        return Optional.ofNullable(this.initialFaultDomainHostDistribution);
+    }
+    /**
      * @return The initial OCPU count of the Cluster&#39;s ESXi hosts.
      * 
      */
@@ -252,6 +264,7 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
         private @Nullable String displayName;
         private Integer esxiHostsCount;
         private @Nullable String initialCommitment;
+        private @Nullable String initialFaultDomainHostDistribution;
         private @Nullable Double initialHostOcpuCount;
         private @Nullable String initialHostShapeName;
         private @Nullable String initialVcfByolAllocationId;
@@ -272,6 +285,7 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
     	      this.displayName = defaults.displayName;
     	      this.esxiHostsCount = defaults.esxiHostsCount;
     	      this.initialCommitment = defaults.initialCommitment;
+    	      this.initialFaultDomainHostDistribution = defaults.initialFaultDomainHostDistribution;
     	      this.initialHostOcpuCount = defaults.initialHostOcpuCount;
     	      this.initialHostShapeName = defaults.initialHostShapeName;
     	      this.initialVcfByolAllocationId = defaults.initialVcfByolAllocationId;
@@ -347,6 +361,12 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
             return this;
         }
         @CustomType.Setter
+        public Builder initialFaultDomainHostDistribution(@Nullable String initialFaultDomainHostDistribution) {
+
+            this.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
+            return this;
+        }
+        @CustomType.Setter
         public Builder initialHostOcpuCount(@Nullable Double initialHostOcpuCount) {
 
             this.initialHostOcpuCount = initialHostOcpuCount;
@@ -407,6 +427,7 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
             _resultValue.displayName = displayName;
             _resultValue.esxiHostsCount = esxiHostsCount;
             _resultValue.initialCommitment = initialCommitment;
+            _resultValue.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
             _resultValue.initialHostOcpuCount = initialHostOcpuCount;
             _resultValue.initialHostShapeName = initialHostShapeName;
             _resultValue.initialVcfByolAllocationId = initialVcfByolAllocationId;

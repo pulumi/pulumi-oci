@@ -32,12 +32,16 @@ import com.pulumi.oci.Ocvp.inputs.GetExsiHostArgs;
 import com.pulumi.oci.Ocvp.inputs.GetExsiHostPlainArgs;
 import com.pulumi.oci.Ocvp.inputs.GetExsiHostsArgs;
 import com.pulumi.oci.Ocvp.inputs.GetExsiHostsPlainArgs;
+import com.pulumi.oci.Ocvp.inputs.GetGenerateVmwareBinaryDownloadInfoArgs;
+import com.pulumi.oci.Ocvp.inputs.GetGenerateVmwareBinaryDownloadInfoPlainArgs;
 import com.pulumi.oci.Ocvp.inputs.GetManagementApplianceArgs;
 import com.pulumi.oci.Ocvp.inputs.GetManagementAppliancePlainArgs;
 import com.pulumi.oci.Ocvp.inputs.GetManagementAppliancesArgs;
 import com.pulumi.oci.Ocvp.inputs.GetManagementAppliancesPlainArgs;
 import com.pulumi.oci.Ocvp.inputs.GetRetrievePasswordArgs;
 import com.pulumi.oci.Ocvp.inputs.GetRetrievePasswordPlainArgs;
+import com.pulumi.oci.Ocvp.inputs.GetRetrieveVmwareBinariesArgs;
+import com.pulumi.oci.Ocvp.inputs.GetRetrieveVmwareBinariesPlainArgs;
 import com.pulumi.oci.Ocvp.inputs.GetSddcArgs;
 import com.pulumi.oci.Ocvp.inputs.GetSddcPlainArgs;
 import com.pulumi.oci.Ocvp.inputs.GetSddcsArgs;
@@ -62,9 +66,11 @@ import com.pulumi.oci.Ocvp.outputs.GetDatastoreResult;
 import com.pulumi.oci.Ocvp.outputs.GetDatastoresResult;
 import com.pulumi.oci.Ocvp.outputs.GetExsiHostResult;
 import com.pulumi.oci.Ocvp.outputs.GetExsiHostsResult;
+import com.pulumi.oci.Ocvp.outputs.GetGenerateVmwareBinaryDownloadInfoResult;
 import com.pulumi.oci.Ocvp.outputs.GetManagementApplianceResult;
 import com.pulumi.oci.Ocvp.outputs.GetManagementAppliancesResult;
 import com.pulumi.oci.Ocvp.outputs.GetRetrievePasswordResult;
+import com.pulumi.oci.Ocvp.outputs.GetRetrieveVmwareBinariesResult;
 import com.pulumi.oci.Ocvp.outputs.GetSddcResult;
 import com.pulumi.oci.Ocvp.outputs.GetSddcsResult;
 import com.pulumi.oci.Ocvp.outputs.GetSupportedCommitmentsResult;
@@ -3005,6 +3011,211 @@ public final class OcvpFunctions {
         return Deployment.getInstance().invokeAsync("oci:Ocvp/getExsiHosts:getExsiHosts", TypeShape.of(GetExsiHostsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source generates VMware binary download information for an SDDC in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetGenerateVmwareBinaryDownloadInfoArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenerateVmwareBinaryDownloadInfo = OcvpFunctions.getGenerateVmwareBinaryDownloadInfo(GetGenerateVmwareBinaryDownloadInfoArgs.builder()
+     *             .sddcId(sddcId)
+     *             .vmwareBinaryFileName(vmwareBinaryFileName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetGenerateVmwareBinaryDownloadInfoResult> getGenerateVmwareBinaryDownloadInfo(GetGenerateVmwareBinaryDownloadInfoArgs args) {
+        return getGenerateVmwareBinaryDownloadInfo(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source generates VMware binary download information for an SDDC in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetGenerateVmwareBinaryDownloadInfoArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenerateVmwareBinaryDownloadInfo = OcvpFunctions.getGenerateVmwareBinaryDownloadInfo(GetGenerateVmwareBinaryDownloadInfoArgs.builder()
+     *             .sddcId(sddcId)
+     *             .vmwareBinaryFileName(vmwareBinaryFileName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetGenerateVmwareBinaryDownloadInfoResult> getGenerateVmwareBinaryDownloadInfoPlain(GetGenerateVmwareBinaryDownloadInfoPlainArgs args) {
+        return getGenerateVmwareBinaryDownloadInfoPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source generates VMware binary download information for an SDDC in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetGenerateVmwareBinaryDownloadInfoArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenerateVmwareBinaryDownloadInfo = OcvpFunctions.getGenerateVmwareBinaryDownloadInfo(GetGenerateVmwareBinaryDownloadInfoArgs.builder()
+     *             .sddcId(sddcId)
+     *             .vmwareBinaryFileName(vmwareBinaryFileName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetGenerateVmwareBinaryDownloadInfoResult> getGenerateVmwareBinaryDownloadInfo(GetGenerateVmwareBinaryDownloadInfoArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getGenerateVmwareBinaryDownloadInfo:getGenerateVmwareBinaryDownloadInfo", TypeShape.of(GetGenerateVmwareBinaryDownloadInfoResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source generates VMware binary download information for an SDDC in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetGenerateVmwareBinaryDownloadInfoArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenerateVmwareBinaryDownloadInfo = OcvpFunctions.getGenerateVmwareBinaryDownloadInfo(GetGenerateVmwareBinaryDownloadInfoArgs.builder()
+     *             .sddcId(sddcId)
+     *             .vmwareBinaryFileName(vmwareBinaryFileName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetGenerateVmwareBinaryDownloadInfoResult> getGenerateVmwareBinaryDownloadInfo(GetGenerateVmwareBinaryDownloadInfoArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getGenerateVmwareBinaryDownloadInfo:getGenerateVmwareBinaryDownloadInfo", TypeShape.of(GetGenerateVmwareBinaryDownloadInfoResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source generates VMware binary download information for an SDDC in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetGenerateVmwareBinaryDownloadInfoArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenerateVmwareBinaryDownloadInfo = OcvpFunctions.getGenerateVmwareBinaryDownloadInfo(GetGenerateVmwareBinaryDownloadInfoArgs.builder()
+     *             .sddcId(sddcId)
+     *             .vmwareBinaryFileName(vmwareBinaryFileName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetGenerateVmwareBinaryDownloadInfoResult> getGenerateVmwareBinaryDownloadInfoPlain(GetGenerateVmwareBinaryDownloadInfoPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Ocvp/getGenerateVmwareBinaryDownloadInfo:getGenerateVmwareBinaryDownloadInfo", TypeShape.of(GetGenerateVmwareBinaryDownloadInfoResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Management Appliance resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
      * 
      * Get the specified management appliance information.
@@ -3648,6 +3859,206 @@ public final class OcvpFunctions {
      */
     public static CompletableFuture<GetRetrievePasswordResult> getRetrievePasswordPlain(GetRetrievePasswordPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Ocvp/getRetrievePassword:getRetrievePassword", TypeShape.of(GetRetrievePasswordResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source retrieves the available VMware binaries for an SDDC in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetRetrieveVmwareBinariesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRetrieveVmwareBinaries = OcvpFunctions.getRetrieveVmwareBinaries(GetRetrieveVmwareBinariesArgs.builder()
+     *             .sddcId(sddcId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRetrieveVmwareBinariesResult> getRetrieveVmwareBinaries(GetRetrieveVmwareBinariesArgs args) {
+        return getRetrieveVmwareBinaries(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source retrieves the available VMware binaries for an SDDC in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetRetrieveVmwareBinariesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRetrieveVmwareBinaries = OcvpFunctions.getRetrieveVmwareBinaries(GetRetrieveVmwareBinariesArgs.builder()
+     *             .sddcId(sddcId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRetrieveVmwareBinariesResult> getRetrieveVmwareBinariesPlain(GetRetrieveVmwareBinariesPlainArgs args) {
+        return getRetrieveVmwareBinariesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source retrieves the available VMware binaries for an SDDC in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetRetrieveVmwareBinariesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRetrieveVmwareBinaries = OcvpFunctions.getRetrieveVmwareBinaries(GetRetrieveVmwareBinariesArgs.builder()
+     *             .sddcId(sddcId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRetrieveVmwareBinariesResult> getRetrieveVmwareBinaries(GetRetrieveVmwareBinariesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getRetrieveVmwareBinaries:getRetrieveVmwareBinaries", TypeShape.of(GetRetrieveVmwareBinariesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source retrieves the available VMware binaries for an SDDC in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetRetrieveVmwareBinariesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRetrieveVmwareBinaries = OcvpFunctions.getRetrieveVmwareBinaries(GetRetrieveVmwareBinariesArgs.builder()
+     *             .sddcId(sddcId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRetrieveVmwareBinariesResult> getRetrieveVmwareBinaries(GetRetrieveVmwareBinariesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getRetrieveVmwareBinaries:getRetrieveVmwareBinaries", TypeShape.of(GetRetrieveVmwareBinariesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source retrieves the available VMware binaries for an SDDC in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetRetrieveVmwareBinariesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRetrieveVmwareBinaries = OcvpFunctions.getRetrieveVmwareBinaries(GetRetrieveVmwareBinariesArgs.builder()
+     *             .sddcId(sddcId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRetrieveVmwareBinariesResult> getRetrieveVmwareBinariesPlain(GetRetrieveVmwareBinariesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Ocvp/getRetrieveVmwareBinaries:getRetrieveVmwareBinaries", TypeShape.of(GetRetrieveVmwareBinariesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Sddc resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.

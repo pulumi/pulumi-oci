@@ -29,6 +29,11 @@ public final class DbSystemStorageDetails {
      */
     private Boolean isRegionallyDurable;
     /**
+     * @return (Updatable) The OCID of the Vault service key to assign as the master encryption key for the database system.
+     * 
+     */
+    private @Nullable String kmsKeyId;
+    /**
      * @return Type of the database system.
      * 
      */
@@ -57,6 +62,13 @@ public final class DbSystemStorageDetails {
         return this.isRegionallyDurable;
     }
     /**
+     * @return (Updatable) The OCID of the Vault service key to assign as the master encryption key for the database system.
+     * 
+     */
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
+    }
+    /**
      * @return Type of the database system.
      * 
      */
@@ -76,6 +88,7 @@ public final class DbSystemStorageDetails {
         private @Nullable String availabilityDomain;
         private @Nullable String iops;
         private Boolean isRegionallyDurable;
+        private @Nullable String kmsKeyId;
         private String systemType;
         public Builder() {}
         public Builder(DbSystemStorageDetails defaults) {
@@ -83,6 +96,7 @@ public final class DbSystemStorageDetails {
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.iops = defaults.iops;
     	      this.isRegionallyDurable = defaults.isRegionallyDurable;
+    	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.systemType = defaults.systemType;
         }
 
@@ -107,6 +121,12 @@ public final class DbSystemStorageDetails {
             return this;
         }
         @CustomType.Setter
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+
+            this.kmsKeyId = kmsKeyId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder systemType(String systemType) {
             if (systemType == null) {
               throw new MissingRequiredPropertyException("DbSystemStorageDetails", "systemType");
@@ -119,6 +139,7 @@ public final class DbSystemStorageDetails {
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.iops = iops;
             _resultValue.isRegionallyDurable = isRegionallyDurable;
+            _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.systemType = systemType;
             return _resultValue;
         }

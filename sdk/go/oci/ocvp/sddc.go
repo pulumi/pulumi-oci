@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -31,7 +31,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/ocvp"
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/ocvp"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -72,14 +72,15 @@ import (
 //										DatastoreType:  pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsDatastoresDatastoreType),
 //									},
 //								},
-//								DisplayName:                pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsDisplayName),
-//								InitialCommitment:          pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsInitialCommitment),
-//								InitialHostOcpuCount:       pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsInitialHostOcpuCount),
-//								InitialHostShapeName:       pulumi.Any(testShape.Name),
-//								InitialVcfByolAllocationId: pulumi.Any(testByolAllocation.Id),
-//								InstanceDisplayNamePrefix:  pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsInstanceDisplayNamePrefix),
-//								IsShieldedInstanceEnabled:  pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsIsShieldedInstanceEnabled),
-//								WorkloadNetworkCidr:        pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsWorkloadNetworkCidr),
+//								DisplayName:                        pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsDisplayName),
+//								InitialCommitment:                  pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsInitialCommitment),
+//								InitialFaultDomainHostDistribution: pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsInitialFaultDomainHostDistribution),
+//								InitialHostOcpuCount:               pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsInitialHostOcpuCount),
+//								InitialHostShapeName:               pulumi.Any(testShape.Name),
+//								InitialVcfByolAllocationId:         pulumi.Any(testByolAllocation.Id),
+//								InstanceDisplayNamePrefix:          pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsInstanceDisplayNamePrefix),
+//								IsShieldedInstanceEnabled:          pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsIsShieldedInstanceEnabled),
+//								WorkloadNetworkCidr:                pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsWorkloadNetworkCidr),
 //							},
 //						},
 //					},

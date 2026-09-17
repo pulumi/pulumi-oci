@@ -101,14 +101,14 @@ public final class GetIotDigitalTwinInstancesArgs extends com.pulumi.resources.I
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list IoT resources.
      * 
      */
     @Import(name="iotDomainId", required=true)
     private Output<String> iotDomainId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list IoT resources.
      * 
      */
     public Output<String> iotDomainId() {
@@ -280,7 +280,7 @@ public final class GetIotDigitalTwinInstancesArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param iotDomainId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+         * @param iotDomainId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list IoT resources.
          * 
          * @return builder
          * 
@@ -291,7 +291,7 @@ public final class GetIotDigitalTwinInstancesArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param iotDomainId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+         * @param iotDomainId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list IoT resources.
          * 
          * @return builder
          * 

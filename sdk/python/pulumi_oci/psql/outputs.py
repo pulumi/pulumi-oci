@@ -1220,6 +1220,8 @@ class DbSystemManagementPolicyBackupPolicyCopyPolicy(dict):
         suggest = None
         if key == "compartmentId":
             suggest = "compartment_id"
+        elif key == "kmsKeyIds":
+            suggest = "kms_key_ids"
         elif key == "retentionPeriod":
             suggest = "retention_period"
 
@@ -1237,14 +1239,18 @@ class DbSystemManagementPolicyBackupPolicyCopyPolicy(dict):
     def __init__(__self__, *,
                  compartment_id: _builtins.str,
                  regions: Sequence[_builtins.str],
+                 kms_key_ids: Optional[Sequence[_builtins.str]] = None,
                  retention_period: Optional[_builtins.int] = None):
         """
         :param _builtins.str compartment_id: (Updatable) target compartment to place a new backup
         :param Sequence[_builtins.str] regions: (Updatable) List of region names of the remote region
+        :param Sequence[_builtins.str] kms_key_ids: (Updatable) List of key ids of the remote regions
         :param _builtins.int retention_period: (Updatable) Retention period in days of the backup copy.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "regions", regions)
+        if kms_key_ids is not None:
+            pulumi.set(__self__, "kms_key_ids", kms_key_ids)
         if retention_period is not None:
             pulumi.set(__self__, "retention_period", retention_period)
 
@@ -1263,6 +1269,14 @@ class DbSystemManagementPolicyBackupPolicyCopyPolicy(dict):
         (Updatable) List of region names of the remote region
         """
         return pulumi.get(self, "regions")
+
+    @_builtins.property
+    @pulumi.getter(name="kmsKeyIds")
+    def kms_key_ids(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) List of key ids of the remote regions
+        """
+        return pulumi.get(self, "kms_key_ids")
 
     @_builtins.property
     @pulumi.getter(name="retentionPeriod")
@@ -1750,6 +1764,8 @@ class DbSystemStorageDetails(dict):
             suggest = "system_type"
         elif key == "availabilityDomain":
             suggest = "availability_domain"
+        elif key == "kmsKeyId":
+            suggest = "kms_key_id"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DbSystemStorageDetails. Access the value via the '{suggest}' property getter instead.")
@@ -1766,12 +1782,14 @@ class DbSystemStorageDetails(dict):
                  is_regionally_durable: _builtins.bool,
                  system_type: _builtins.str,
                  availability_domain: Optional[_builtins.str] = None,
-                 iops: Optional[_builtins.str] = None):
+                 iops: Optional[_builtins.str] = None,
+                 kms_key_id: Optional[_builtins.str] = None):
         """
         :param _builtins.bool is_regionally_durable: Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         :param _builtins.str system_type: Type of the database system.
         :param _builtins.str availability_domain: Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         :param _builtins.str iops: (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system. Find more about the supported Peformance Tiers [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/performance-tiers.htm).
+        :param _builtins.str kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the database system.
         """
         pulumi.set(__self__, "is_regionally_durable", is_regionally_durable)
         pulumi.set(__self__, "system_type", system_type)
@@ -1779,6 +1797,8 @@ class DbSystemStorageDetails(dict):
             pulumi.set(__self__, "availability_domain", availability_domain)
         if iops is not None:
             pulumi.set(__self__, "iops", iops)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
 
     @_builtins.property
     @pulumi.getter(name="isRegionallyDurable")
@@ -1811,6 +1831,14 @@ class DbSystemStorageDetails(dict):
         (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system. Find more about the supported Peformance Tiers [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/performance-tiers.htm).
         """
         return pulumi.get(self, "iops")
+
+    @_builtins.property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The OCID of the Vault service key to assign as the master encryption key for the database system.
+        """
+        return pulumi.get(self, "kms_key_id")
 
 
 @pulumi.output_type
@@ -1958,6 +1986,7 @@ class GetBackupsBackupCollectionItemResult(dict):
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 kms_key_id: _builtins.str,
                  last_accepted_request_token: _builtins.str,
                  last_completed_request_token: _builtins.str,
                  lifecycle_details: _builtins.str,
@@ -1980,6 +2009,7 @@ class GetBackupsBackupCollectionItemResult(dict):
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param _builtins.str id: A unique identifier for the database system.
+        :param _builtins.str kms_key_id: The OCID of the master encryption key for the backup.
         :param _builtins.str last_accepted_request_token: lastAcceptedRequestToken from MP.
         :param _builtins.str last_completed_request_token: lastCompletedRequestToken from MP.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -2002,6 +2032,7 @@ class GetBackupsBackupCollectionItemResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "last_accepted_request_token", last_accepted_request_token)
         pulumi.set(__self__, "last_completed_request_token", last_completed_request_token)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -2093,6 +2124,14 @@ class GetBackupsBackupCollectionItemResult(dict):
         A unique identifier for the database system.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> _builtins.str:
+        """
+        The OCID of the master encryption key for the backup.
+        """
+        return pulumi.get(self, "kms_key_id")
 
     @_builtins.property
     @pulumi.getter(name="lastAcceptedRequestToken")
@@ -3487,14 +3526,17 @@ class GetDbSystemManagementPolicyBackupPolicyResult(dict):
 class GetDbSystemManagementPolicyBackupPolicyCopyPolicyResult(dict):
     def __init__(__self__, *,
                  compartment_id: _builtins.str,
+                 kms_key_ids: Sequence[_builtins.str],
                  regions: Sequence[_builtins.str],
                  retention_period: _builtins.int):
         """
         :param _builtins.str compartment_id: target compartment to place a new backup
+        :param Sequence[_builtins.str] kms_key_ids: List of key ids of the remote regions
         :param Sequence[_builtins.str] regions: List of region names of the remote region
         :param _builtins.int retention_period: Retention period in days of the backup copy.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "kms_key_ids", kms_key_ids)
         pulumi.set(__self__, "regions", regions)
         pulumi.set(__self__, "retention_period", retention_period)
 
@@ -3505,6 +3547,14 @@ class GetDbSystemManagementPolicyBackupPolicyCopyPolicyResult(dict):
         target compartment to place a new backup
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="kmsKeyIds")
+    def kms_key_ids(self) -> Sequence[_builtins.str]:
+        """
+        List of key ids of the remote regions
+        """
+        return pulumi.get(self, "kms_key_ids")
 
     @_builtins.property
     @pulumi.getter
@@ -3919,16 +3969,19 @@ class GetDbSystemStorageDetailResult(dict):
                  availability_domain: _builtins.str,
                  iops: _builtins.str,
                  is_regionally_durable: _builtins.bool,
+                 kms_key_id: _builtins.str,
                  system_type: _builtins.str):
         """
         :param _builtins.str availability_domain: Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         :param _builtins.str iops: Guaranteed input/output storage requests per second (IOPS) available to the database system.
         :param _builtins.bool is_regionally_durable: Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
+        :param _builtins.str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the database system.
         :param _builtins.str system_type: Type of the database system.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "iops", iops)
         pulumi.set(__self__, "is_regionally_durable", is_regionally_durable)
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "system_type", system_type)
 
     @_builtins.property
@@ -3954,6 +4007,14 @@ class GetDbSystemStorageDetailResult(dict):
         Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         """
         return pulumi.get(self, "is_regionally_durable")
+
+    @_builtins.property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> _builtins.str:
+        """
+        The OCID of the Vault service key to assign as the master encryption key for the database system.
+        """
+        return pulumi.get(self, "kms_key_id")
 
     @_builtins.property
     @pulumi.getter(name="systemType")
@@ -4750,14 +4811,17 @@ class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult(dict)
 class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyResult(dict):
     def __init__(__self__, *,
                  compartment_id: _builtins.str,
+                 kms_key_ids: Sequence[_builtins.str],
                  regions: Sequence[_builtins.str],
                  retention_period: _builtins.int):
         """
         :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param Sequence[_builtins.str] kms_key_ids: List of key ids of the remote regions
         :param Sequence[_builtins.str] regions: List of region names of the remote region
         :param _builtins.int retention_period: Retention period in days of the backup copy.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "kms_key_ids", kms_key_ids)
         pulumi.set(__self__, "regions", regions)
         pulumi.set(__self__, "retention_period", retention_period)
 
@@ -4768,6 +4832,14 @@ class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyRe
         The ID of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="kmsKeyIds")
+    def kms_key_ids(self) -> Sequence[_builtins.str]:
+        """
+        List of key ids of the remote regions
+        """
+        return pulumi.get(self, "kms_key_ids")
 
     @_builtins.property
     @pulumi.getter
@@ -5079,16 +5151,19 @@ class GetDbSystemsDbSystemCollectionItemStorageDetailResult(dict):
                  availability_domain: _builtins.str,
                  iops: _builtins.str,
                  is_regionally_durable: _builtins.bool,
+                 kms_key_id: _builtins.str,
                  system_type: _builtins.str):
         """
         :param _builtins.str availability_domain: Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         :param _builtins.str iops: Guaranteed input/output storage requests per second (IOPS) available to the database system.
         :param _builtins.bool is_regionally_durable: Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
+        :param _builtins.str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the database system.
         :param _builtins.str system_type: Type of the database system.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "iops", iops)
         pulumi.set(__self__, "is_regionally_durable", is_regionally_durable)
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "system_type", system_type)
 
     @_builtins.property
@@ -5114,6 +5189,14 @@ class GetDbSystemsDbSystemCollectionItemStorageDetailResult(dict):
         Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         """
         return pulumi.get(self, "is_regionally_durable")
+
+    @_builtins.property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> _builtins.str:
+        """
+        The OCID of the Vault service key to assign as the master encryption key for the database system.
+        """
+        return pulumi.get(self, "kms_key_id")
 
     @_builtins.property
     @pulumi.getter(name="systemType")

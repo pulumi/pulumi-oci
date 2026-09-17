@@ -100,6 +100,10 @@ export interface GetClusterResult {
      */
     readonly initialCommitment: string;
     /**
+     * The initial fault domain host distribution mode for the Cluster.
+     */
+    readonly initialFaultDomainHostDistribution: string;
+    /**
      * The initial OCPU count of the Cluster's ESXi hosts.
      */
     readonly initialHostOcpuCount: number;

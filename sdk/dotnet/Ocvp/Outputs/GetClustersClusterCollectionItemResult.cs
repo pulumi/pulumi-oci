@@ -69,6 +69,10 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly string InitialCommitment;
         /// <summary>
+        /// The initial fault domain host distribution mode for the Cluster.
+        /// </summary>
+        public readonly string InitialFaultDomainHostDistribution;
+        /// <summary>
         /// The initial OCPU count of the Cluster's ESXi hosts.
         /// </summary>
         public readonly double InitialHostOcpuCount;
@@ -167,6 +171,8 @@ namespace Pulumi.Oci.Ocvp.Outputs
 
             string initialCommitment,
 
+            string initialFaultDomainHostDistribution,
+
             double initialHostOcpuCount,
 
             string initialHostShapeName,
@@ -215,6 +221,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
             FreeformTags = freeformTags;
             Id = id;
             InitialCommitment = initialCommitment;
+            InitialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
             InitialHostOcpuCount = initialHostOcpuCount;
             InitialHostShapeName = initialHostShapeName;
             InitialVcfByolAllocationId = initialVcfByolAllocationId;

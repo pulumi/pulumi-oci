@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -26,7 +26,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/lustre"
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/lustre"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -56,11 +56,9 @@ import (
 //					"Department": pulumi.String("Finance"),
 //				},
 //				KmsKeyId: pulumi.Any(testKey.Id),
-//				MaintenanceWindows: lustre.FileStorageLustreFileSystemMaintenanceWindowArray{
-//					&lustre.FileStorageLustreFileSystemMaintenanceWindowArgs{
-//						DayOfWeek: pulumi.Any(lustreFileSystemMaintenanceWindowDayOfWeek),
-//						TimeStart: pulumi.Any(lustreFileSystemMaintenanceWindowTimeStart),
-//					},
+//				MaintenanceWindow: &lustre.FileStorageLustreFileSystemMaintenanceWindowArgs{
+//					DayOfWeek: pulumi.Any(lustreFileSystemMaintenanceWindowDayOfWeek),
+//					TimeStart: pulumi.Any(lustreFileSystemMaintenanceWindowTimeStart),
 //				},
 //				NsgIds: pulumi.Any(lustreFileSystemNsgIds),
 //			})
@@ -108,10 +106,10 @@ type FileStorageLustreFileSystem struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Type of network used by clients to mount the file system.   Example: `tcp`
 	Lnet pulumi.StringOutput `pulumi:"lnet"`
+	// (Updatable) The preferred day and time to perform maintenance.
+	MaintenanceWindow FileStorageLustreFileSystemMaintenanceWindowOutput `pulumi:"maintenanceWindow"`
 	// The meta-data for maintenance window.
 	MaintenanceWindowMetadatas FileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput `pulumi:"maintenanceWindowMetadatas"`
-	// (Updatable) The preferred day and time to perform maintenance.
-	MaintenanceWindows FileStorageLustreFileSystemMaintenanceWindowArrayOutput `pulumi:"maintenanceWindows"`
 	// Major version of Lustre running in the Lustre file system.  Example: `2.15`
 	MajorVersion pulumi.StringOutput `pulumi:"majorVersion"`
 	// The IPv4 address of MGS (Lustre Management Service) used by clients to mount the file system. For example '10.0.0.4'.
@@ -223,10 +221,10 @@ type fileStorageLustreFileSystemState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Type of network used by clients to mount the file system.   Example: `tcp`
 	Lnet *string `pulumi:"lnet"`
+	// (Updatable) The preferred day and time to perform maintenance.
+	MaintenanceWindow *FileStorageLustreFileSystemMaintenanceWindow `pulumi:"maintenanceWindow"`
 	// The meta-data for maintenance window.
 	MaintenanceWindowMetadatas []FileStorageLustreFileSystemMaintenanceWindowMetadata `pulumi:"maintenanceWindowMetadatas"`
-	// (Updatable) The preferred day and time to perform maintenance.
-	MaintenanceWindows []FileStorageLustreFileSystemMaintenanceWindow `pulumi:"maintenanceWindows"`
 	// Major version of Lustre running in the Lustre file system.  Example: `2.15`
 	MajorVersion *string `pulumi:"majorVersion"`
 	// The IPv4 address of MGS (Lustre Management Service) used by clients to mount the file system. For example '10.0.0.4'.
@@ -282,10 +280,10 @@ type FileStorageLustreFileSystemState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// Type of network used by clients to mount the file system.   Example: `tcp`
 	Lnet pulumi.StringPtrInput
+	// (Updatable) The preferred day and time to perform maintenance.
+	MaintenanceWindow FileStorageLustreFileSystemMaintenanceWindowPtrInput
 	// The meta-data for maintenance window.
 	MaintenanceWindowMetadatas FileStorageLustreFileSystemMaintenanceWindowMetadataArrayInput
-	// (Updatable) The preferred day and time to perform maintenance.
-	MaintenanceWindows FileStorageLustreFileSystemMaintenanceWindowArrayInput
 	// Major version of Lustre running in the Lustre file system.  Example: `2.15`
 	MajorVersion pulumi.StringPtrInput
 	// The IPv4 address of MGS (Lustre Management Service) used by clients to mount the file system. For example '10.0.0.4'.
@@ -342,7 +340,7 @@ type fileStorageLustreFileSystemArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// (Updatable) The preferred day and time to perform maintenance.
-	MaintenanceWindows []FileStorageLustreFileSystemMaintenanceWindow `pulumi:"maintenanceWindows"`
+	MaintenanceWindow *FileStorageLustreFileSystemMaintenanceWindow `pulumi:"maintenanceWindow"`
 	// (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
@@ -384,7 +382,7 @@ type FileStorageLustreFileSystemArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
 	KmsKeyId pulumi.StringPtrInput
 	// (Updatable) The preferred day and time to perform maintenance.
-	MaintenanceWindows FileStorageLustreFileSystemMaintenanceWindowArrayInput
+	MaintenanceWindow FileStorageLustreFileSystemMaintenanceWindowPtrInput
 	// (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds pulumi.StringArrayInput
 	// (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
@@ -555,18 +553,18 @@ func (o FileStorageLustreFileSystemOutput) Lnet() pulumi.StringOutput {
 	return o.ApplyT(func(v *FileStorageLustreFileSystem) pulumi.StringOutput { return v.Lnet }).(pulumi.StringOutput)
 }
 
+// (Updatable) The preferred day and time to perform maintenance.
+func (o FileStorageLustreFileSystemOutput) MaintenanceWindow() FileStorageLustreFileSystemMaintenanceWindowOutput {
+	return o.ApplyT(func(v *FileStorageLustreFileSystem) FileStorageLustreFileSystemMaintenanceWindowOutput {
+		return v.MaintenanceWindow
+	}).(FileStorageLustreFileSystemMaintenanceWindowOutput)
+}
+
 // The meta-data for maintenance window.
 func (o FileStorageLustreFileSystemOutput) MaintenanceWindowMetadatas() FileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput {
 	return o.ApplyT(func(v *FileStorageLustreFileSystem) FileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput {
 		return v.MaintenanceWindowMetadatas
 	}).(FileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput)
-}
-
-// (Updatable) The preferred day and time to perform maintenance.
-func (o FileStorageLustreFileSystemOutput) MaintenanceWindows() FileStorageLustreFileSystemMaintenanceWindowArrayOutput {
-	return o.ApplyT(func(v *FileStorageLustreFileSystem) FileStorageLustreFileSystemMaintenanceWindowArrayOutput {
-		return v.MaintenanceWindows
-	}).(FileStorageLustreFileSystemMaintenanceWindowArrayOutput)
 }
 
 // Major version of Lustre running in the Lustre file system.  Example: `2.15`

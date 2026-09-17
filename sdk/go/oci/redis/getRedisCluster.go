@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/redis"
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/redis"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -62,6 +62,10 @@ type LookupRedisClusterResult struct {
 	BackupId string `pulumi:"backupId"`
 	// Specifies whether the cluster is sharded or non-sharded.
 	ClusterMode string `pulumi:"clusterMode"`
+	// Defines the replication topology of an Oracle Cloud Infrastructure cache cluster, including the primary cluster and associated secondary clusters participating in replication.
+	ClusterReplicationTopologies []GetRedisClusterClusterReplicationTopology `pulumi:"clusterReplicationTopologies"`
+	// The current role of the cluster.
+	ClusterRole string `pulumi:"clusterRole"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -90,6 +94,8 @@ type LookupRedisClusterResult struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
 	OciCacheConfigSetId string `pulumi:"ociCacheConfigSetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster in CRR.
+	PrimaryClusterId string `pulumi:"primaryClusterId"`
 	// The private IP address of the API endpoint for the cluster's primary node.
 	PrimaryEndpointIpAddress string `pulumi:"primaryEndpointIpAddress"`
 	// The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
@@ -155,6 +161,18 @@ func (o LookupRedisClusterResultOutput) BackupId() pulumi.StringOutput {
 // Specifies whether the cluster is sharded or non-sharded.
 func (o LookupRedisClusterResultOutput) ClusterMode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRedisClusterResult) string { return v.ClusterMode }).(pulumi.StringOutput)
+}
+
+// Defines the replication topology of an Oracle Cloud Infrastructure cache cluster, including the primary cluster and associated secondary clusters participating in replication.
+func (o LookupRedisClusterResultOutput) ClusterReplicationTopologies() GetRedisClusterClusterReplicationTopologyArrayOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) []GetRedisClusterClusterReplicationTopology {
+		return v.ClusterReplicationTopologies
+	}).(GetRedisClusterClusterReplicationTopologyArrayOutput)
+}
+
+// The current role of the cluster.
+func (o LookupRedisClusterResultOutput) ClusterRole() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) string { return v.ClusterRole }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
@@ -227,6 +245,11 @@ func (o LookupRedisClusterResultOutput) NsgIds() pulumi.StringArrayOutput {
 // The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
 func (o LookupRedisClusterResultOutput) OciCacheConfigSetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRedisClusterResult) string { return v.OciCacheConfigSetId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster in CRR.
+func (o LookupRedisClusterResultOutput) PrimaryClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) string { return v.PrimaryClusterId }).(pulumi.StringOutput)
 }
 
 // The private IP address of the API endpoint for the cluster's primary node.

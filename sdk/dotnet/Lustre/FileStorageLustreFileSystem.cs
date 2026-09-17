@@ -54,13 +54,10 @@ namespace Pulumi.Oci.Lustre
     ///             { "Department", "Finance" },
     ///         },
     ///         KmsKeyId = testKey.Id,
-    ///         MaintenanceWindows = new[]
+    ///         MaintenanceWindow = new Oci.Lustre.Inputs.FileStorageLustreFileSystemMaintenanceWindowArgs
     ///         {
-    ///             new Oci.Lustre.Inputs.FileStorageLustreFileSystemMaintenanceWindowArgs
-    ///             {
-    ///                 DayOfWeek = lustreFileSystemMaintenanceWindowDayOfWeek,
-    ///                 TimeStart = lustreFileSystemMaintenanceWindowTimeStart,
-    ///             },
+    ///             DayOfWeek = lustreFileSystemMaintenanceWindowDayOfWeek,
+    ///             TimeStart = lustreFileSystemMaintenanceWindowTimeStart,
     ///         },
     ///         NsgIds = lustreFileSystemNsgIds,
     ///     });
@@ -155,16 +152,16 @@ namespace Pulumi.Oci.Lustre
         public Output<string> Lnet { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The preferred day and time to perform maintenance.
+        /// </summary>
+        [Output("maintenanceWindow")]
+        public Output<Outputs.FileStorageLustreFileSystemMaintenanceWindow> MaintenanceWindow { get; private set; } = null!;
+
+        /// <summary>
         /// The meta-data for maintenance window.
         /// </summary>
         [Output("maintenanceWindowMetadatas")]
         public Output<ImmutableArray<Outputs.FileStorageLustreFileSystemMaintenanceWindowMetadata>> MaintenanceWindowMetadatas { get; private set; } = null!;
-
-        /// <summary>
-        /// (Updatable) The preferred day and time to perform maintenance.
-        /// </summary>
-        [Output("maintenanceWindows")]
-        public Output<ImmutableArray<Outputs.FileStorageLustreFileSystemMaintenanceWindow>> MaintenanceWindows { get; private set; } = null!;
 
         /// <summary>
         /// Major version of Lustre running in the Lustre file system.  Example: `2.15`
@@ -367,17 +364,11 @@ namespace Pulumi.Oci.Lustre
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }
 
-        [Input("maintenanceWindows")]
-        private InputList<Inputs.FileStorageLustreFileSystemMaintenanceWindowArgs>? _maintenanceWindows;
-
         /// <summary>
         /// (Updatable) The preferred day and time to perform maintenance.
         /// </summary>
-        public InputList<Inputs.FileStorageLustreFileSystemMaintenanceWindowArgs> MaintenanceWindows
-        {
-            get => _maintenanceWindows ?? (_maintenanceWindows = new InputList<Inputs.FileStorageLustreFileSystemMaintenanceWindowArgs>());
-            set => _maintenanceWindows = value;
-        }
+        [Input("maintenanceWindow")]
+        public Input<Inputs.FileStorageLustreFileSystemMaintenanceWindowArgs>? MaintenanceWindow { get; set; }
 
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
@@ -526,6 +517,12 @@ namespace Pulumi.Oci.Lustre
         [Input("lnet")]
         public Input<string>? Lnet { get; set; }
 
+        /// <summary>
+        /// (Updatable) The preferred day and time to perform maintenance.
+        /// </summary>
+        [Input("maintenanceWindow")]
+        public Input<Inputs.FileStorageLustreFileSystemMaintenanceWindowGetArgs>? MaintenanceWindow { get; set; }
+
         [Input("maintenanceWindowMetadatas")]
         private InputList<Inputs.FileStorageLustreFileSystemMaintenanceWindowMetadataGetArgs>? _maintenanceWindowMetadatas;
 
@@ -536,18 +533,6 @@ namespace Pulumi.Oci.Lustre
         {
             get => _maintenanceWindowMetadatas ?? (_maintenanceWindowMetadatas = new InputList<Inputs.FileStorageLustreFileSystemMaintenanceWindowMetadataGetArgs>());
             set => _maintenanceWindowMetadatas = value;
-        }
-
-        [Input("maintenanceWindows")]
-        private InputList<Inputs.FileStorageLustreFileSystemMaintenanceWindowGetArgs>? _maintenanceWindows;
-
-        /// <summary>
-        /// (Updatable) The preferred day and time to perform maintenance.
-        /// </summary>
-        public InputList<Inputs.FileStorageLustreFileSystemMaintenanceWindowGetArgs> MaintenanceWindows
-        {
-            get => _maintenanceWindows ?? (_maintenanceWindows = new InputList<Inputs.FileStorageLustreFileSystemMaintenanceWindowGetArgs>());
-            set => _maintenanceWindows = value;
         }
 
         /// <summary>

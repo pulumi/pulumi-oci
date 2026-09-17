@@ -108,6 +108,10 @@ export class Backup extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * The OCID of the master encryption key for the backup.
+     */
+    declare public /*out*/ readonly kmsKeyId: pulumi.Output<string>;
+    /**
      * lastAcceptedRequestToken from MP.
      */
     declare public /*out*/ readonly lastAcceptedRequestToken: pulumi.Output<string>;
@@ -177,6 +181,7 @@ export class Backup extends pulumi.CustomResource {
             resourceInputs["description"] = state?.description;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["kmsKeyId"] = state?.kmsKeyId;
             resourceInputs["lastAcceptedRequestToken"] = state?.lastAcceptedRequestToken;
             resourceInputs["lastCompletedRequestToken"] = state?.lastCompletedRequestToken;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
@@ -204,6 +209,7 @@ export class Backup extends pulumi.CustomResource {
             resourceInputs["backupSize"] = undefined /*out*/;
             resourceInputs["copyStatuses"] = undefined /*out*/;
             resourceInputs["dbSystemDetails"] = undefined /*out*/;
+            resourceInputs["kmsKeyId"] = undefined /*out*/;
             resourceInputs["lastAcceptedRequestToken"] = undefined /*out*/;
             resourceInputs["lastCompletedRequestToken"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -259,6 +265,10 @@ export interface BackupState {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * The OCID of the master encryption key for the backup.
+     */
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * lastAcceptedRequestToken from MP.
      */

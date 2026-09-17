@@ -43,10 +43,10 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     kmsKeyId: testKey.id,
- *     maintenanceWindows: [{
+ *     maintenanceWindow: {
  *         dayOfWeek: lustreFileSystemMaintenanceWindowDayOfWeek,
  *         timeStart: lustreFileSystemMaintenanceWindowTimeStart,
- *     }],
+ *     },
  *     nsgIds: lustreFileSystemNsgIds,
  * });
  * ```
@@ -137,13 +137,13 @@ export class FileStorageLustreFileSystem extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly lnet: pulumi.Output<string>;
     /**
+     * (Updatable) The preferred day and time to perform maintenance.
+     */
+    declare public readonly maintenanceWindow: pulumi.Output<outputs.Lustre.FileStorageLustreFileSystemMaintenanceWindow>;
+    /**
      * The meta-data for maintenance window.
      */
     declare public /*out*/ readonly maintenanceWindowMetadatas: pulumi.Output<outputs.Lustre.FileStorageLustreFileSystemMaintenanceWindowMetadata[]>;
-    /**
-     * (Updatable) The preferred day and time to perform maintenance.
-     */
-    declare public readonly maintenanceWindows: pulumi.Output<outputs.Lustre.FileStorageLustreFileSystemMaintenanceWindow[]>;
     /**
      * Major version of Lustre running in the Lustre file system.  Example: `2.15`
      */
@@ -222,8 +222,8 @@ export class FileStorageLustreFileSystem extends pulumi.CustomResource {
             resourceInputs["kmsKeyId"] = state?.kmsKeyId;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["lnet"] = state?.lnet;
+            resourceInputs["maintenanceWindow"] = state?.maintenanceWindow;
             resourceInputs["maintenanceWindowMetadatas"] = state?.maintenanceWindowMetadatas;
-            resourceInputs["maintenanceWindows"] = state?.maintenanceWindows;
             resourceInputs["majorVersion"] = state?.majorVersion;
             resourceInputs["managementServiceAddress"] = state?.managementServiceAddress;
             resourceInputs["nsgIds"] = state?.nsgIds;
@@ -270,7 +270,7 @@ export class FileStorageLustreFileSystem extends pulumi.CustomResource {
             resourceInputs["fileSystemName"] = args?.fileSystemName;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["kmsKeyId"] = args?.kmsKeyId;
-            resourceInputs["maintenanceWindows"] = args?.maintenanceWindows;
+            resourceInputs["maintenanceWindow"] = args?.maintenanceWindow;
             resourceInputs["nsgIds"] = args?.nsgIds;
             resourceInputs["overrideMaintenanceTrigger"] = args?.overrideMaintenanceTrigger;
             resourceInputs["performanceTier"] = args?.performanceTier;
@@ -348,13 +348,13 @@ export interface FileStorageLustreFileSystemState {
      */
     lnet?: pulumi.Input<string | undefined>;
     /**
+     * (Updatable) The preferred day and time to perform maintenance.
+     */
+    maintenanceWindow?: pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemMaintenanceWindow | undefined>;
+    /**
      * The meta-data for maintenance window.
      */
     maintenanceWindowMetadatas?: pulumi.Input<pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemMaintenanceWindowMetadata>[] | undefined>;
-    /**
-     * (Updatable) The preferred day and time to perform maintenance.
-     */
-    maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemMaintenanceWindow>[] | undefined>;
     /**
      * Major version of Lustre running in the Lustre file system.  Example: `2.15`
      */
@@ -456,7 +456,7 @@ export interface FileStorageLustreFileSystemArgs {
     /**
      * (Updatable) The preferred day and time to perform maintenance.
      */
-    maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemMaintenanceWindow>[] | undefined>;
+    maintenanceWindow?: pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemMaintenanceWindow | undefined>;
     /**
      * (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      */

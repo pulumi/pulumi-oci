@@ -76,12 +76,14 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .inboundRoutes(IotDigitalTwinAdapterInboundRouteArgs.builder()
  *                 .condition(digitalTwinAdapterInboundRoutesCondition)
+ *                 .contentRoot(digitalTwinAdapterInboundRoutesContentRoot)
  *                 .description(digitalTwinAdapterInboundRoutesDescription)
  *                 .payloadMapping(digitalTwinAdapterInboundRoutesPayloadMapping)
  *                 .referencePayload(IotDigitalTwinAdapterInboundRouteReferencePayloadArgs.builder()
  *                     .data(digitalTwinAdapterInboundRoutesReferencePayloadData)
  *                     .dataFormat(digitalTwinAdapterInboundRoutesReferencePayloadDataFormat)
  *                     .build())
+ *                 .target(digitalTwinAdapterInboundRoutesTarget)
  *                 .build())
  *             .build());
  * 

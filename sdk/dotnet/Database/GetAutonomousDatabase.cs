@@ -166,7 +166,7 @@ namespace Pulumi.Oci.Database
         public readonly string AutonomousDatabaseBackupId;
         public readonly string AutonomousDatabaseId;
         /// <summary>
-        /// Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        /// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowResult> AutonomousDatabaseMaintenanceWindows;
         /// <summary>
@@ -561,6 +561,10 @@ namespace Pulumi.Oci.Database
         public readonly string Role;
         public readonly bool RotateKeyTrigger;
         /// <summary>
+        /// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousDatabaseScheduledMaintenanceWindowResult> ScheduledMaintenanceWindows;
+        /// <summary>
         /// The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabaseScheduledOperationResult> ScheduledOperations;
@@ -698,6 +702,10 @@ namespace Pulumi.Oci.Database
         /// The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
         /// </summary>
         public readonly string TimeScheduledDbVersionUpgrade;
+        /// <summary>
+        /// The date and time at which operation to change Maintenance Window is scheduled to take place.
+        /// </summary>
+        public readonly string TimeScheduledMaintenanceWindowUpdate;
         /// <summary>
         /// The date and time the Autonomous AI Database was most recently undeleted.
         /// </summary>
@@ -978,6 +986,8 @@ namespace Pulumi.Oci.Database
 
             bool rotateKeyTrigger,
 
+            ImmutableArray<Outputs.GetAutonomousDatabaseScheduledMaintenanceWindowResult> scheduledMaintenanceWindows,
+
             ImmutableArray<Outputs.GetAutonomousDatabaseScheduledOperationResult> scheduledOperations,
 
             string secretId,
@@ -1055,6 +1065,8 @@ namespace Pulumi.Oci.Database
             string timeScheduledAdUpdate,
 
             string timeScheduledDbVersionUpgrade,
+
+            string timeScheduledMaintenanceWindowUpdate,
 
             string timeUndeleted,
 
@@ -1199,6 +1211,7 @@ namespace Pulumi.Oci.Database
             ResourcePoolSummaries = resourcePoolSummaries;
             Role = role;
             RotateKeyTrigger = rotateKeyTrigger;
+            ScheduledMaintenanceWindows = scheduledMaintenanceWindows;
             ScheduledOperations = scheduledOperations;
             SecretId = secretId;
             SecretVersionNumber = secretVersionNumber;
@@ -1238,6 +1251,7 @@ namespace Pulumi.Oci.Database
             TimeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
             TimeScheduledAdUpdate = timeScheduledAdUpdate;
             TimeScheduledDbVersionUpgrade = timeScheduledDbVersionUpgrade;
+            TimeScheduledMaintenanceWindowUpdate = timeScheduledMaintenanceWindowUpdate;
             TimeUndeleted = timeUndeleted;
             TimeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
             Timestamp = timestamp;

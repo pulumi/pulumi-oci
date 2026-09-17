@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list IoT resources.
         /// </summary>
         public readonly string IotDomainId;
         /// <summary>

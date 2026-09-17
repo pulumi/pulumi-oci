@@ -187,6 +187,21 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster from which data will be replicated. Setting it on a standalone cluster converts that cluster to a secondary cluster; removing it from a secondary cluster converts that cluster to standalone. Changing directly from one primary cluster to another is not supported: remove it and apply before setting a different primary cluster.
+     * 
+     */
+    @Import(name="primaryClusterId")
+    private @Nullable Output<String> primaryClusterId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster from which data will be replicated. Setting it on a standalone cluster converts that cluster to a secondary cluster; removing it from a secondary cluster converts that cluster to standalone. Changing directly from one primary cluster to another is not supported: remove it and apply before setting a different primary cluster.
+     * 
+     */
+    public Optional<Output<String>> primaryClusterId() {
+        return Optional.ofNullable(this.primaryClusterId);
+    }
+
+    /**
      * (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
      * 
      */
@@ -266,6 +281,7 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
         this.nodeMemoryInGbs = $.nodeMemoryInGbs;
         this.nsgIds = $.nsgIds;
         this.ociCacheConfigSetId = $.ociCacheConfigSetId;
+        this.primaryClusterId = $.primaryClusterId;
         this.securityAttributes = $.securityAttributes;
         this.shardCount = $.shardCount;
         this.softwareVersion = $.softwareVersion;
@@ -529,6 +545,27 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder ociCacheConfigSetId(String ociCacheConfigSetId) {
             return ociCacheConfigSetId(Output.of(ociCacheConfigSetId));
+        }
+
+        /**
+         * @param primaryClusterId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster from which data will be replicated. Setting it on a standalone cluster converts that cluster to a secondary cluster; removing it from a secondary cluster converts that cluster to standalone. Changing directly from one primary cluster to another is not supported: remove it and apply before setting a different primary cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder primaryClusterId(@Nullable Output<String> primaryClusterId) {
+            $.primaryClusterId = primaryClusterId;
+            return this;
+        }
+
+        /**
+         * @param primaryClusterId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster from which data will be replicated. Setting it on a standalone cluster converts that cluster to a secondary cluster; removing it from a secondary cluster converts that cluster to standalone. Changing directly from one primary cluster to another is not supported: remove it and apply before setting a different primary cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder primaryClusterId(String primaryClusterId) {
+            return primaryClusterId(Output.of(primaryClusterId));
         }
 
         /**

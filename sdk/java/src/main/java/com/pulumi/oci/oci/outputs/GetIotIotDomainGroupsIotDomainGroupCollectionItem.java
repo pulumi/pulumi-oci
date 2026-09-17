@@ -83,7 +83,7 @@ public final class GetIotIotDomainGroupsIotDomainGroupCollectionItem {
      */
     private String timeUpdated;
     /**
-     * @return Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+     * @return Filter resources by type. Valid values are DEVELOPMENT or PRODUCTION. LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION, respectively.
      * 
      */
     private String type;
@@ -188,7 +188,7 @@ public final class GetIotIotDomainGroupsIotDomainGroupCollectionItem {
         return this.timeUpdated;
     }
     /**
-     * @return Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+     * @return Filter resources by type. Valid values are DEVELOPMENT or PRODUCTION. LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION, respectively.
      * 
      */
     public String type() {

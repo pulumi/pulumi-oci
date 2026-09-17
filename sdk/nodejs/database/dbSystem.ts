@@ -476,9 +476,6 @@ export class DbSystem extends pulumi.CustomResource {
             if (args?.shape === undefined && !opts.urn) {
                 throw new Error("Missing required property 'shape'");
             }
-            if (args?.sshPublicKeys === undefined && !opts.urn) {
-                throw new Error("Missing required property 'sshPublicKeys'");
-            }
             if (args?.subnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
@@ -1048,7 +1045,7 @@ export interface DbSystemArgs {
     /**
      * (Updatable) The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
      */
-    sshPublicKeys: pulumi.Input<pulumi.Input<string>[]>;
+    sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
      */

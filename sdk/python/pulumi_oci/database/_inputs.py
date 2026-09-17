@@ -123,6 +123,10 @@ __all__ = [
     'AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgsDict',
     'AutonomousDatabaseResourcePoolSummaryArgs',
     'AutonomousDatabaseResourcePoolSummaryArgsDict',
+    'AutonomousDatabaseScheduledMaintenanceWindowArgs',
+    'AutonomousDatabaseScheduledMaintenanceWindowArgsDict',
+    'AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs',
+    'AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgsDict',
     'AutonomousDatabaseScheduledOperationArgs',
     'AutonomousDatabaseScheduledOperationArgsDict',
     'AutonomousDatabaseScheduledOperationDayOfWeekArgs',
@@ -577,6 +581,8 @@ __all__ = [
     'GetAutonomousContainerDatabasesFilterArgsDict',
     'GetAutonomousContainerPatchesFilterArgs',
     'GetAutonomousContainerPatchesFilterArgsDict',
+    'GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArgs',
+    'GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArgsDict',
     'GetAutonomousDatabaseBackupsFilterArgs',
     'GetAutonomousDatabaseBackupsFilterArgsDict',
     'GetAutonomousDatabaseDataguardAssociationsFilterArgs',
@@ -4979,6 +4985,14 @@ class AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict(TypedDict):
     """
     (Updatable) Day of the week.
     """
+    availability_domain: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The AD in which the maintenance will occur.
+    """
+    is_maintenance_window_change_scheduled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    (Updatable) Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+    """
     maintenance_end_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The maintenance end time. The value must use the ISO-8601 format "hh:mm".
@@ -4992,14 +5006,22 @@ class AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict(TypedDict):
 class AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs:
     def __init__(__self__, *,
                  day_of_week: pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgs'],
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_maintenance_window_change_scheduled: pulumi.Input[Optional[_builtins.bool]] = None,
                  maintenance_end_time: pulumi.Input[Optional[_builtins.str]] = None,
                  maintenance_start_time: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgs'] day_of_week: (Updatable) Day of the week.
+        :param pulumi.Input[_builtins.str] availability_domain: (Updatable) The AD in which the maintenance will occur.
+        :param pulumi.Input[_builtins.bool] is_maintenance_window_change_scheduled: (Updatable) Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
         :param pulumi.Input[_builtins.str] maintenance_end_time: (Updatable) The maintenance end time. The value must use the ISO-8601 format "hh:mm".
         :param pulumi.Input[_builtins.str] maintenance_start_time: (Updatable) The maintenance start time. The value must use the ISO-8601 format "hh:mm".
         """
         pulumi.set(__self__, "day_of_week", day_of_week)
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if is_maintenance_window_change_scheduled is not None:
+            pulumi.set(__self__, "is_maintenance_window_change_scheduled", is_maintenance_window_change_scheduled)
         if maintenance_end_time is not None:
             pulumi.set(__self__, "maintenance_end_time", maintenance_end_time)
         if maintenance_start_time is not None:
@@ -5016,6 +5038,30 @@ class AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs:
     @day_of_week.setter
     def day_of_week(self, value: pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgs']):
         pulumi.set(self, "day_of_week", value)
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The AD in which the maintenance will occur.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @availability_domain.setter
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "availability_domain", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isMaintenanceWindowChangeScheduled")
+    def is_maintenance_window_change_scheduled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+        """
+        return pulumi.get(self, "is_maintenance_window_change_scheduled")
+
+    @is_maintenance_window_change_scheduled.setter
+    def is_maintenance_window_change_scheduled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_maintenance_window_change_scheduled", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceEndTime")
@@ -5260,23 +5306,13 @@ class AutonomousDatabaseBackupBackupDestinationDetailsArgs:
 
 class AutonomousDatabaseBackupConfigArgsDict(TypedDict):
     manual_backup_bucket_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
-    """
-    Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
-    """
     manual_backup_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
-    """
-    The manual backup destination type.
-    """
 
 @pulumi.input_type
 class AutonomousDatabaseBackupConfigArgs:
     def __init__(__self__, *,
                  manual_backup_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
                  manual_backup_type: pulumi.Input[Optional[_builtins.str]] = None):
-        """
-        :param pulumi.Input[_builtins.str] manual_backup_bucket_name: Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
-        :param pulumi.Input[_builtins.str] manual_backup_type: The manual backup destination type.
-        """
         if manual_backup_bucket_name is not None:
             pulumi.set(__self__, "manual_backup_bucket_name", manual_backup_bucket_name)
         if manual_backup_type is not None:
@@ -5285,9 +5321,6 @@ class AutonomousDatabaseBackupConfigArgs:
     @_builtins.property
     @pulumi.getter(name="manualBackupBucketName")
     def manual_backup_bucket_name(self) -> pulumi.Input[Optional[_builtins.str]]:
-        """
-        Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
-        """
         return pulumi.get(self, "manual_backup_bucket_name")
 
     @manual_backup_bucket_name.setter
@@ -5297,9 +5330,6 @@ class AutonomousDatabaseBackupConfigArgs:
     @_builtins.property
     @pulumi.getter(name="manualBackupType")
     def manual_backup_type(self) -> pulumi.Input[Optional[_builtins.str]]:
-        """
-        The manual backup destination type.
-        """
         return pulumi.get(self, "manual_backup_type")
 
     @manual_backup_type.setter
@@ -7824,6 +7854,143 @@ class AutonomousDatabaseResourcePoolSummaryArgs:
     @total_compute_capacity.setter
     def total_compute_capacity(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "total_compute_capacity", value)
+
+
+class AutonomousDatabaseScheduledMaintenanceWindowArgsDict(TypedDict):
+    availability_domain: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The Autonomous Database Serverless instance's availability domain.
+    """
+    day_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgsDict']]]]]
+    """
+    Day of the week.
+    """
+    is_maintenance_window_change_scheduled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+    """
+    maintenance_end_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+    """
+    maintenance_start_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+    """
+
+@pulumi.input_type
+class AutonomousDatabaseScheduledMaintenanceWindowArgs:
+    def __init__(__self__, *,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 day_of_weeks: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs']]]] = None,
+                 is_maintenance_window_change_scheduled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 maintenance_end_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance_start_time: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] availability_domain: (Updatable) The Autonomous Database Serverless instance's availability domain.
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs']]] day_of_weeks: Day of the week.
+        :param pulumi.Input[_builtins.bool] is_maintenance_window_change_scheduled: Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+        :param pulumi.Input[_builtins.str] maintenance_end_time: The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+        :param pulumi.Input[_builtins.str] maintenance_start_time: The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+        """
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if day_of_weeks is not None:
+            pulumi.set(__self__, "day_of_weeks", day_of_weeks)
+        if is_maintenance_window_change_scheduled is not None:
+            pulumi.set(__self__, "is_maintenance_window_change_scheduled", is_maintenance_window_change_scheduled)
+        if maintenance_end_time is not None:
+            pulumi.set(__self__, "maintenance_end_time", maintenance_end_time)
+        if maintenance_start_time is not None:
+            pulumi.set(__self__, "maintenance_start_time", maintenance_start_time)
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The Autonomous Database Serverless instance's availability domain.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @availability_domain.setter
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "availability_domain", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dayOfWeeks")
+    def day_of_weeks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs']]]]:
+        """
+        Day of the week.
+        """
+        return pulumi.get(self, "day_of_weeks")
+
+    @day_of_weeks.setter
+    def day_of_weeks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs']]]]):
+        pulumi.set(self, "day_of_weeks", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isMaintenanceWindowChangeScheduled")
+    def is_maintenance_window_change_scheduled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+        """
+        return pulumi.get(self, "is_maintenance_window_change_scheduled")
+
+    @is_maintenance_window_change_scheduled.setter
+    def is_maintenance_window_change_scheduled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_maintenance_window_change_scheduled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceEndTime")
+    def maintenance_end_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+        """
+        return pulumi.get(self, "maintenance_end_time")
+
+    @maintenance_end_time.setter
+    def maintenance_end_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "maintenance_end_time", value)
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceStartTime")
+    def maintenance_start_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+        """
+        return pulumi.get(self, "maintenance_start_time")
+
+    @maintenance_start_time.setter
+    def maintenance_start_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "maintenance_start_time", value)
+
+
+class AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    Name of the day of the week.
+    """
+
+@pulumi.input_type
+class AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] name: Name of the day of the week.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        Name of the day of the week.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
 
 
 class AutonomousDatabaseScheduledOperationArgsDict(TypedDict):
@@ -28463,6 +28630,59 @@ class GetAutonomousContainerPatchesFilterArgs:
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the day of the week.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Name of the day of the week.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the day of the week.
+        """
         return pulumi.get(self, "name")
 
     @name.setter

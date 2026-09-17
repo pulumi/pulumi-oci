@@ -88,6 +88,7 @@ from .get_autonomous_container_database_versions import *
 from .get_autonomous_container_databases import *
 from .get_autonomous_container_patches import *
 from .get_autonomous_database import *
+from .get_autonomous_database_available_maintenance_windows import *
 from .get_autonomous_database_backup import *
 from .get_autonomous_database_backups import *
 from .get_autonomous_database_dataguard_association import *

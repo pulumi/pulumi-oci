@@ -97,6 +97,7 @@ class AutonomousDatabaseArgs:
                  resource_pool_leader_id: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_pool_summary: pulumi.Input[Optional['AutonomousDatabaseResourcePoolSummaryArgs']] = None,
                  rotate_key_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scheduled_maintenance_window: pulumi.Input[Optional['AutonomousDatabaseScheduledMaintenanceWindowArgs']] = None,
                  scheduled_operations: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]] = None,
                  secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  secret_version_number: pulumi.Input[Optional[_builtins.int]] = None,
@@ -114,6 +115,7 @@ class AutonomousDatabaseArgs:
                  time_of_auto_refresh_start: pulumi.Input[Optional[_builtins.str]] = None,
                  time_scheduled_ad_update: pulumi.Input[Optional[_builtins.str]] = None,
                  time_scheduled_db_version_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_scheduled_maintenance_window_update: pulumi.Input[Optional[_builtins.str]] = None,
                  timestamp: pulumi.Input[Optional[_builtins.str]] = None,
                  transportable_tablespace: pulumi.Input[Optional['AutonomousDatabaseTransportableTablespaceArgs']] = None,
                  use_latest_available_backup_time_stamp: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -132,7 +134,7 @@ class AutonomousDatabaseArgs:
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         :param pulumi.Input[_builtins.str] autonomous_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database Backup that you will clone to create a new Autonomous AI Database.
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
-        :param pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs'] autonomous_database_maintenance_window: (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        :param pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs'] autonomous_database_maintenance_window: (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         :param pulumi.Input[_builtins.str] autonomous_maintenance_schedule_type: (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         :param pulumi.Input[_builtins.str] availability_domain: (Updatable) The Autonomous Database Serverless instance's availability domain.
         :param pulumi.Input[_builtins.int] backup_retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
@@ -245,6 +247,7 @@ class AutonomousDatabaseArgs:
         :param pulumi.Input[_builtins.str] resource_pool_leader_id: (Updatable) The unique identifier for leader Autonomous AI Database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input['AutonomousDatabaseResourcePoolSummaryArgs'] resource_pool_summary: (Updatable) The configuration details for resource pool
         :param pulumi.Input[_builtins.bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
+        :param pulumi.Input['AutonomousDatabaseScheduledMaintenanceWindowArgs'] scheduled_maintenance_window: Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]] scheduled_operations: (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -280,6 +283,7 @@ class AutonomousDatabaseArgs:
         :param pulumi.Input[_builtins.str] time_of_auto_refresh_start: (Updatable) The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
         :param pulumi.Input[_builtins.str] time_scheduled_ad_update: The date and time to which the Autonomous Database availability domain update is scheduled.
         :param pulumi.Input[_builtins.str] time_scheduled_db_version_upgrade: The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
+        :param pulumi.Input[_builtins.str] time_scheduled_maintenance_window_update: The date and time at which operation to change Maintenance Window is scheduled to take place.
         :param pulumi.Input[_builtins.str] timestamp: The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
         :param pulumi.Input['AutonomousDatabaseTransportableTablespaceArgs'] transportable_tablespace: Details for importing transportable tablespace for an Autonomous Database.
         :param pulumi.Input[_builtins.bool] use_latest_available_backup_time_stamp: Clone from latest available backup timestamp.
@@ -446,6 +450,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "resource_pool_summary", resource_pool_summary)
         if rotate_key_trigger is not None:
             pulumi.set(__self__, "rotate_key_trigger", rotate_key_trigger)
+        if scheduled_maintenance_window is not None:
+            pulumi.set(__self__, "scheduled_maintenance_window", scheduled_maintenance_window)
         if scheduled_operations is not None:
             pulumi.set(__self__, "scheduled_operations", scheduled_operations)
         if secret_id is not None:
@@ -480,6 +486,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "time_scheduled_ad_update", time_scheduled_ad_update)
         if time_scheduled_db_version_upgrade is not None:
             pulumi.set(__self__, "time_scheduled_db_version_upgrade", time_scheduled_db_version_upgrade)
+        if time_scheduled_maintenance_window_update is not None:
+            pulumi.set(__self__, "time_scheduled_maintenance_window_update", time_scheduled_maintenance_window_update)
         if timestamp is not None:
             pulumi.set(__self__, "timestamp", timestamp)
         if transportable_tablespace is not None:
@@ -605,7 +613,7 @@ class AutonomousDatabaseArgs:
     @pulumi.getter(name="autonomousDatabaseMaintenanceWindow")
     def autonomous_database_maintenance_window(self) -> pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs']]:
         """
-        (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         """
         return pulumi.get(self, "autonomous_database_maintenance_window")
 
@@ -1435,6 +1443,18 @@ class AutonomousDatabaseArgs:
         pulumi.set(self, "rotate_key_trigger", value)
 
     @_builtins.property
+    @pulumi.getter(name="scheduledMaintenanceWindow")
+    def scheduled_maintenance_window(self) -> pulumi.Input[Optional['AutonomousDatabaseScheduledMaintenanceWindowArgs']]:
+        """
+        Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        """
+        return pulumi.get(self, "scheduled_maintenance_window")
+
+    @scheduled_maintenance_window.setter
+    def scheduled_maintenance_window(self, value: pulumi.Input[Optional['AutonomousDatabaseScheduledMaintenanceWindowArgs']]):
+        pulumi.set(self, "scheduled_maintenance_window", value)
+
+    @_builtins.property
     @pulumi.getter(name="scheduledOperations")
     def scheduled_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]]:
         """
@@ -1655,6 +1675,18 @@ class AutonomousDatabaseArgs:
         pulumi.set(self, "time_scheduled_db_version_upgrade", value)
 
     @_builtins.property
+    @pulumi.getter(name="timeScheduledMaintenanceWindowUpdate")
+    def time_scheduled_maintenance_window_update(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date and time at which operation to change Maintenance Window is scheduled to take place.
+        """
+        return pulumi.get(self, "time_scheduled_maintenance_window_update")
+
+    @time_scheduled_maintenance_window_update.setter
+    def time_scheduled_maintenance_window_update(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_scheduled_maintenance_window_update", value)
+
+    @_builtins.property
     @pulumi.getter
     def timestamp(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -1854,6 +1886,7 @@ class _AutonomousDatabaseState:
                  resource_pool_summary: pulumi.Input[Optional['AutonomousDatabaseResourcePoolSummaryArgs']] = None,
                  role: pulumi.Input[Optional[_builtins.str]] = None,
                  rotate_key_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scheduled_maintenance_window: pulumi.Input[Optional['AutonomousDatabaseScheduledMaintenanceWindowArgs']] = None,
                  scheduled_operations: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]] = None,
                  secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  secret_version_number: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1893,6 +1926,7 @@ class _AutonomousDatabaseState:
                  time_reclamation_of_free_autonomous_database: pulumi.Input[Optional[_builtins.str]] = None,
                  time_scheduled_ad_update: pulumi.Input[Optional[_builtins.str]] = None,
                  time_scheduled_db_version_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_scheduled_maintenance_window_update: pulumi.Input[Optional[_builtins.str]] = None,
                  time_undeleted: pulumi.Input[Optional[_builtins.str]] = None,
                  time_until_reconnect_clone_enabled: pulumi.Input[Optional[_builtins.str]] = None,
                  timestamp: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1920,7 +1954,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         :param pulumi.Input[_builtins.str] autonomous_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database Backup that you will clone to create a new Autonomous AI Database.
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
-        :param pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs'] autonomous_database_maintenance_window: (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        :param pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs'] autonomous_database_maintenance_window: (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         :param pulumi.Input[_builtins.str] autonomous_maintenance_schedule_type: (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         :param pulumi.Input[_builtins.str] availability_domain: (Updatable) The Autonomous Database Serverless instance's availability domain.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] available_upgrade_versions: List of Oracle AI Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
@@ -2072,6 +2106,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input['AutonomousDatabaseResourcePoolSummaryArgs'] resource_pool_summary: (Updatable) The configuration details for resource pool
         :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[_builtins.bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
+        :param pulumi.Input['AutonomousDatabaseScheduledMaintenanceWindowArgs'] scheduled_maintenance_window: Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]] scheduled_operations: (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -2129,6 +2164,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[_builtins.str] time_reclamation_of_free_autonomous_database: The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
         :param pulumi.Input[_builtins.str] time_scheduled_ad_update: The date and time to which the Autonomous Database availability domain update is scheduled.
         :param pulumi.Input[_builtins.str] time_scheduled_db_version_upgrade: The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
+        :param pulumi.Input[_builtins.str] time_scheduled_maintenance_window_update: The date and time at which operation to change Maintenance Window is scheduled to take place.
         :param pulumi.Input[_builtins.str] time_undeleted: The date and time the Autonomous AI Database was most recently undeleted.
         :param pulumi.Input[_builtins.str] time_until_reconnect_clone_enabled: The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
         :param pulumi.Input[_builtins.str] timestamp: The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
@@ -2387,6 +2423,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "role", role)
         if rotate_key_trigger is not None:
             pulumi.set(__self__, "rotate_key_trigger", rotate_key_trigger)
+        if scheduled_maintenance_window is not None:
+            pulumi.set(__self__, "scheduled_maintenance_window", scheduled_maintenance_window)
         if scheduled_operations is not None:
             pulumi.set(__self__, "scheduled_operations", scheduled_operations)
         if secret_id is not None:
@@ -2465,6 +2503,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "time_scheduled_ad_update", time_scheduled_ad_update)
         if time_scheduled_db_version_upgrade is not None:
             pulumi.set(__self__, "time_scheduled_db_version_upgrade", time_scheduled_db_version_upgrade)
+        if time_scheduled_maintenance_window_update is not None:
+            pulumi.set(__self__, "time_scheduled_maintenance_window_update", time_scheduled_maintenance_window_update)
         if time_undeleted is not None:
             pulumi.set(__self__, "time_undeleted", time_undeleted)
         if time_until_reconnect_clone_enabled is not None:
@@ -2638,7 +2678,7 @@ class _AutonomousDatabaseState:
     @pulumi.getter(name="autonomousDatabaseMaintenanceWindow")
     def autonomous_database_maintenance_window(self) -> pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs']]:
         """
-        (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         """
         return pulumi.get(self, "autonomous_database_maintenance_window")
 
@@ -3936,6 +3976,18 @@ class _AutonomousDatabaseState:
         pulumi.set(self, "rotate_key_trigger", value)
 
     @_builtins.property
+    @pulumi.getter(name="scheduledMaintenanceWindow")
+    def scheduled_maintenance_window(self) -> pulumi.Input[Optional['AutonomousDatabaseScheduledMaintenanceWindowArgs']]:
+        """
+        Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        """
+        return pulumi.get(self, "scheduled_maintenance_window")
+
+    @scheduled_maintenance_window.setter
+    def scheduled_maintenance_window(self, value: pulumi.Input[Optional['AutonomousDatabaseScheduledMaintenanceWindowArgs']]):
+        pulumi.set(self, "scheduled_maintenance_window", value)
+
+    @_builtins.property
     @pulumi.getter(name="scheduledOperations")
     def scheduled_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]]:
         """
@@ -4420,6 +4472,18 @@ class _AutonomousDatabaseState:
         pulumi.set(self, "time_scheduled_db_version_upgrade", value)
 
     @_builtins.property
+    @pulumi.getter(name="timeScheduledMaintenanceWindowUpdate")
+    def time_scheduled_maintenance_window_update(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date and time at which operation to change Maintenance Window is scheduled to take place.
+        """
+        return pulumi.get(self, "time_scheduled_maintenance_window_update")
+
+    @time_scheduled_maintenance_window_update.setter
+    def time_scheduled_maintenance_window_update(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_scheduled_maintenance_window_update", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeUndeleted")
     def time_undeleted(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -4652,6 +4716,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  resource_pool_leader_id: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_pool_summary: pulumi.Input[Optional[Union['AutonomousDatabaseResourcePoolSummaryArgs', 'AutonomousDatabaseResourcePoolSummaryArgsDict']]] = None,
                  rotate_key_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scheduled_maintenance_window: pulumi.Input[Optional[Union['AutonomousDatabaseScheduledMaintenanceWindowArgs', 'AutonomousDatabaseScheduledMaintenanceWindowArgsDict']]] = None,
                  scheduled_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseScheduledOperationArgs', 'AutonomousDatabaseScheduledOperationArgsDict']]]]] = None,
                  secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  secret_version_number: pulumi.Input[Optional[_builtins.int]] = None,
@@ -4669,6 +4734,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  time_of_auto_refresh_start: pulumi.Input[Optional[_builtins.str]] = None,
                  time_scheduled_ad_update: pulumi.Input[Optional[_builtins.str]] = None,
                  time_scheduled_db_version_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_scheduled_maintenance_window_update: pulumi.Input[Optional[_builtins.str]] = None,
                  timestamp: pulumi.Input[Optional[_builtins.str]] = None,
                  transportable_tablespace: pulumi.Input[Optional[Union['AutonomousDatabaseTransportableTablespaceArgs', 'AutonomousDatabaseTransportableTablespaceArgsDict']]] = None,
                  use_latest_available_backup_time_stamp: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -4702,7 +4768,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         :param pulumi.Input[_builtins.str] autonomous_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database Backup that you will clone to create a new Autonomous AI Database.
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
-        :param pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs', 'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict']] autonomous_database_maintenance_window: (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        :param pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs', 'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict']] autonomous_database_maintenance_window: (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         :param pulumi.Input[_builtins.str] autonomous_maintenance_schedule_type: (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         :param pulumi.Input[_builtins.str] availability_domain: (Updatable) The Autonomous Database Serverless instance's availability domain.
         :param pulumi.Input[_builtins.int] backup_retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
@@ -4817,6 +4883,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] resource_pool_leader_id: (Updatable) The unique identifier for leader Autonomous AI Database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Union['AutonomousDatabaseResourcePoolSummaryArgs', 'AutonomousDatabaseResourcePoolSummaryArgsDict']] resource_pool_summary: (Updatable) The configuration details for resource pool
         :param pulumi.Input[_builtins.bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
+        :param pulumi.Input[Union['AutonomousDatabaseScheduledMaintenanceWindowArgs', 'AutonomousDatabaseScheduledMaintenanceWindowArgsDict']] scheduled_maintenance_window: Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseScheduledOperationArgs', 'AutonomousDatabaseScheduledOperationArgsDict']]]] scheduled_operations: (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -4852,6 +4919,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_of_auto_refresh_start: (Updatable) The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
         :param pulumi.Input[_builtins.str] time_scheduled_ad_update: The date and time to which the Autonomous Database availability domain update is scheduled.
         :param pulumi.Input[_builtins.str] time_scheduled_db_version_upgrade: The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
+        :param pulumi.Input[_builtins.str] time_scheduled_maintenance_window_update: The date and time at which operation to change Maintenance Window is scheduled to take place.
         :param pulumi.Input[_builtins.str] timestamp: The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
         :param pulumi.Input[Union['AutonomousDatabaseTransportableTablespaceArgs', 'AutonomousDatabaseTransportableTablespaceArgsDict']] transportable_tablespace: Details for importing transportable tablespace for an Autonomous Database.
         :param pulumi.Input[_builtins.bool] use_latest_available_backup_time_stamp: Clone from latest available backup timestamp.
@@ -4979,6 +5047,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  resource_pool_leader_id: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_pool_summary: pulumi.Input[Optional[Union['AutonomousDatabaseResourcePoolSummaryArgs', 'AutonomousDatabaseResourcePoolSummaryArgsDict']]] = None,
                  rotate_key_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scheduled_maintenance_window: pulumi.Input[Optional[Union['AutonomousDatabaseScheduledMaintenanceWindowArgs', 'AutonomousDatabaseScheduledMaintenanceWindowArgsDict']]] = None,
                  scheduled_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseScheduledOperationArgs', 'AutonomousDatabaseScheduledOperationArgsDict']]]]] = None,
                  secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  secret_version_number: pulumi.Input[Optional[_builtins.int]] = None,
@@ -4996,6 +5065,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  time_of_auto_refresh_start: pulumi.Input[Optional[_builtins.str]] = None,
                  time_scheduled_ad_update: pulumi.Input[Optional[_builtins.str]] = None,
                  time_scheduled_db_version_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_scheduled_maintenance_window_update: pulumi.Input[Optional[_builtins.str]] = None,
                  timestamp: pulumi.Input[Optional[_builtins.str]] = None,
                  transportable_tablespace: pulumi.Input[Optional[Union['AutonomousDatabaseTransportableTablespaceArgs', 'AutonomousDatabaseTransportableTablespaceArgsDict']]] = None,
                  use_latest_available_backup_time_stamp: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -5091,6 +5161,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["resource_pool_leader_id"] = resource_pool_leader_id
             __props__.__dict__["resource_pool_summary"] = resource_pool_summary
             __props__.__dict__["rotate_key_trigger"] = rotate_key_trigger
+            __props__.__dict__["scheduled_maintenance_window"] = scheduled_maintenance_window
             __props__.__dict__["scheduled_operations"] = scheduled_operations
             __props__.__dict__["secret_id"] = secret_id
             __props__.__dict__["secret_version_number"] = secret_version_number
@@ -5108,6 +5179,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["time_of_auto_refresh_start"] = time_of_auto_refresh_start
             __props__.__dict__["time_scheduled_ad_update"] = time_scheduled_ad_update
             __props__.__dict__["time_scheduled_db_version_upgrade"] = time_scheduled_db_version_upgrade
+            __props__.__dict__["time_scheduled_maintenance_window_update"] = time_scheduled_maintenance_window_update
             __props__.__dict__["timestamp"] = timestamp
             __props__.__dict__["transportable_tablespace"] = transportable_tablespace
             __props__.__dict__["use_latest_available_backup_time_stamp"] = use_latest_available_backup_time_stamp
@@ -5314,6 +5386,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             resource_pool_summary: pulumi.Input[Optional[Union['AutonomousDatabaseResourcePoolSummaryArgs', 'AutonomousDatabaseResourcePoolSummaryArgsDict']]] = None,
             role: pulumi.Input[Optional[_builtins.str]] = None,
             rotate_key_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+            scheduled_maintenance_window: pulumi.Input[Optional[Union['AutonomousDatabaseScheduledMaintenanceWindowArgs', 'AutonomousDatabaseScheduledMaintenanceWindowArgsDict']]] = None,
             scheduled_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseScheduledOperationArgs', 'AutonomousDatabaseScheduledOperationArgsDict']]]]] = None,
             secret_id: pulumi.Input[Optional[_builtins.str]] = None,
             secret_version_number: pulumi.Input[Optional[_builtins.int]] = None,
@@ -5353,6 +5426,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             time_reclamation_of_free_autonomous_database: pulumi.Input[Optional[_builtins.str]] = None,
             time_scheduled_ad_update: pulumi.Input[Optional[_builtins.str]] = None,
             time_scheduled_db_version_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
+            time_scheduled_maintenance_window_update: pulumi.Input[Optional[_builtins.str]] = None,
             time_undeleted: pulumi.Input[Optional[_builtins.str]] = None,
             time_until_reconnect_clone_enabled: pulumi.Input[Optional[_builtins.str]] = None,
             timestamp: pulumi.Input[Optional[_builtins.str]] = None,
@@ -5384,7 +5458,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         :param pulumi.Input[_builtins.str] autonomous_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database Backup that you will clone to create a new Autonomous AI Database.
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
-        :param pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs', 'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict']] autonomous_database_maintenance_window: (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        :param pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs', 'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict']] autonomous_database_maintenance_window: (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         :param pulumi.Input[_builtins.str] autonomous_maintenance_schedule_type: (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         :param pulumi.Input[_builtins.str] availability_domain: (Updatable) The Autonomous Database Serverless instance's availability domain.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] available_upgrade_versions: List of Oracle AI Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
@@ -5536,6 +5610,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[Union['AutonomousDatabaseResourcePoolSummaryArgs', 'AutonomousDatabaseResourcePoolSummaryArgsDict']] resource_pool_summary: (Updatable) The configuration details for resource pool
         :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[_builtins.bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
+        :param pulumi.Input[Union['AutonomousDatabaseScheduledMaintenanceWindowArgs', 'AutonomousDatabaseScheduledMaintenanceWindowArgsDict']] scheduled_maintenance_window: Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseScheduledOperationArgs', 'AutonomousDatabaseScheduledOperationArgsDict']]]] scheduled_operations: (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -5593,6 +5668,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_reclamation_of_free_autonomous_database: The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
         :param pulumi.Input[_builtins.str] time_scheduled_ad_update: The date and time to which the Autonomous Database availability domain update is scheduled.
         :param pulumi.Input[_builtins.str] time_scheduled_db_version_upgrade: The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
+        :param pulumi.Input[_builtins.str] time_scheduled_maintenance_window_update: The date and time at which operation to change Maintenance Window is scheduled to take place.
         :param pulumi.Input[_builtins.str] time_undeleted: The date and time the Autonomous AI Database was most recently undeleted.
         :param pulumi.Input[_builtins.str] time_until_reconnect_clone_enabled: The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
         :param pulumi.Input[_builtins.str] timestamp: The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
@@ -5734,6 +5810,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["resource_pool_summary"] = resource_pool_summary
         __props__.__dict__["role"] = role
         __props__.__dict__["rotate_key_trigger"] = rotate_key_trigger
+        __props__.__dict__["scheduled_maintenance_window"] = scheduled_maintenance_window
         __props__.__dict__["scheduled_operations"] = scheduled_operations
         __props__.__dict__["secret_id"] = secret_id
         __props__.__dict__["secret_version_number"] = secret_version_number
@@ -5773,6 +5850,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["time_reclamation_of_free_autonomous_database"] = time_reclamation_of_free_autonomous_database
         __props__.__dict__["time_scheduled_ad_update"] = time_scheduled_ad_update
         __props__.__dict__["time_scheduled_db_version_upgrade"] = time_scheduled_db_version_upgrade
+        __props__.__dict__["time_scheduled_maintenance_window_update"] = time_scheduled_maintenance_window_update
         __props__.__dict__["time_undeleted"] = time_undeleted
         __props__.__dict__["time_until_reconnect_clone_enabled"] = time_until_reconnect_clone_enabled
         __props__.__dict__["timestamp"] = timestamp
@@ -5887,7 +5965,7 @@ class AutonomousDatabase(pulumi.CustomResource):
     @pulumi.getter(name="autonomousDatabaseMaintenanceWindow")
     def autonomous_database_maintenance_window(self) -> pulumi.Output['outputs.AutonomousDatabaseAutonomousDatabaseMaintenanceWindow']:
         """
-        (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         """
         return pulumi.get(self, "autonomous_database_maintenance_window")
 
@@ -6761,6 +6839,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         return pulumi.get(self, "rotate_key_trigger")
 
     @_builtins.property
+    @pulumi.getter(name="scheduledMaintenanceWindow")
+    def scheduled_maintenance_window(self) -> pulumi.Output['outputs.AutonomousDatabaseScheduledMaintenanceWindow']:
+        """
+        Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        """
+        return pulumi.get(self, "scheduled_maintenance_window")
+
+    @_builtins.property
     @pulumi.getter(name="scheduledOperations")
     def scheduled_operations(self) -> pulumi.Output[Sequence['outputs.AutonomousDatabaseScheduledOperation']]:
         """
@@ -7087,6 +7173,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
         """
         return pulumi.get(self, "time_scheduled_db_version_upgrade")
+
+    @_builtins.property
+    @pulumi.getter(name="timeScheduledMaintenanceWindowUpdate")
+    def time_scheduled_maintenance_window_update(self) -> pulumi.Output[_builtins.str]:
+        """
+        The date and time at which operation to change Maintenance Window is scheduled to take place.
+        """
+        return pulumi.get(self, "time_scheduled_maintenance_window_update")
 
     @_builtins.property
     @pulumi.getter(name="timeUndeleted")

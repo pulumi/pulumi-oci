@@ -141,7 +141,7 @@ namespace Pulumi.Oci.Oci
         public string? State { get; set; }
 
         /// <summary>
-        /// Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+        /// Filter resources by type. Valid values are DEVELOPMENT or PRODUCTION. LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION, respectively.
         /// </summary>
         [Input("type")]
         public string? Type { get; set; }
@@ -187,7 +187,7 @@ namespace Pulumi.Oci.Oci
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+        /// Filter resources by type. Valid values are DEVELOPMENT or PRODUCTION. LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION, respectively.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

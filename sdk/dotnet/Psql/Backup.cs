@@ -113,6 +113,12 @@ namespace Pulumi.Oci.Psql
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// The OCID of the master encryption key for the backup.
+        /// </summary>
+        [Output("kmsKeyId")]
+        public Output<string> KmsKeyId { get; private set; } = null!;
+
+        /// <summary>
         /// lastAcceptedRequestToken from MP.
         /// </summary>
         [Output("lastAcceptedRequestToken")]
@@ -377,6 +383,12 @@ namespace Pulumi.Oci.Psql
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// The OCID of the master encryption key for the backup.
+        /// </summary>
+        [Input("kmsKeyId")]
+        public Input<string>? KmsKeyId { get; set; }
 
         /// <summary>
         /// lastAcceptedRequestToken from MP.

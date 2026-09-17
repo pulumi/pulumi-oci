@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -53,7 +53,7 @@ type AutonomousDatabase struct {
 	AutonomousDatabaseBackupId pulumi.StringOutput `pulumi:"autonomousDatabaseBackupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
 	AutonomousDatabaseId pulumi.StringOutput `pulumi:"autonomousDatabaseId"`
-	// (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+	// (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
 	AutonomousDatabaseMaintenanceWindow AutonomousDatabaseAutonomousDatabaseMaintenanceWindowOutput `pulumi:"autonomousDatabaseMaintenanceWindow"`
 	// (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
 	AutonomousMaintenanceScheduleType pulumi.StringOutput `pulumi:"autonomousMaintenanceScheduleType"`
@@ -313,6 +313,8 @@ type AutonomousDatabase struct {
 	Role pulumi.StringOutput `pulumi:"role"`
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
 	RotateKeyTrigger pulumi.BoolPtrOutput `pulumi:"rotateKeyTrigger"`
+	// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+	ScheduledMaintenanceWindow AutonomousDatabaseScheduledMaintenanceWindowOutput `pulumi:"scheduledMaintenanceWindow"`
 	// (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -409,6 +411,8 @@ type AutonomousDatabase struct {
 	TimeScheduledAdUpdate pulumi.StringOutput `pulumi:"timeScheduledAdUpdate"`
 	// The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
 	TimeScheduledDbVersionUpgrade pulumi.StringOutput `pulumi:"timeScheduledDbVersionUpgrade"`
+	// The date and time at which operation to change Maintenance Window is scheduled to take place.
+	TimeScheduledMaintenanceWindowUpdate pulumi.StringOutput `pulumi:"timeScheduledMaintenanceWindowUpdate"`
 	// The date and time the Autonomous AI Database was most recently undeleted.
 	TimeUndeleted pulumi.StringOutput `pulumi:"timeUndeleted"`
 	// The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
@@ -508,7 +512,7 @@ type autonomousDatabaseState struct {
 	AutonomousDatabaseBackupId *string `pulumi:"autonomousDatabaseBackupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
 	AutonomousDatabaseId *string `pulumi:"autonomousDatabaseId"`
-	// (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+	// (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
 	AutonomousDatabaseMaintenanceWindow *AutonomousDatabaseAutonomousDatabaseMaintenanceWindow `pulumi:"autonomousDatabaseMaintenanceWindow"`
 	// (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
 	AutonomousMaintenanceScheduleType *string `pulumi:"autonomousMaintenanceScheduleType"`
@@ -768,6 +772,8 @@ type autonomousDatabaseState struct {
 	Role *string `pulumi:"role"`
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
 	RotateKeyTrigger *bool `pulumi:"rotateKeyTrigger"`
+	// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+	ScheduledMaintenanceWindow *AutonomousDatabaseScheduledMaintenanceWindow `pulumi:"scheduledMaintenanceWindow"`
 	// (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -864,6 +870,8 @@ type autonomousDatabaseState struct {
 	TimeScheduledAdUpdate *string `pulumi:"timeScheduledAdUpdate"`
 	// The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
 	TimeScheduledDbVersionUpgrade *string `pulumi:"timeScheduledDbVersionUpgrade"`
+	// The date and time at which operation to change Maintenance Window is scheduled to take place.
+	TimeScheduledMaintenanceWindowUpdate *string `pulumi:"timeScheduledMaintenanceWindowUpdate"`
 	// The date and time the Autonomous AI Database was most recently undeleted.
 	TimeUndeleted *string `pulumi:"timeUndeleted"`
 	// The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
@@ -921,7 +929,7 @@ type AutonomousDatabaseState struct {
 	AutonomousDatabaseBackupId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
 	AutonomousDatabaseId pulumi.StringPtrInput
-	// (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+	// (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
 	AutonomousDatabaseMaintenanceWindow AutonomousDatabaseAutonomousDatabaseMaintenanceWindowPtrInput
 	// (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
 	AutonomousMaintenanceScheduleType pulumi.StringPtrInput
@@ -1181,6 +1189,8 @@ type AutonomousDatabaseState struct {
 	Role pulumi.StringPtrInput
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
 	RotateKeyTrigger pulumi.BoolPtrInput
+	// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+	ScheduledMaintenanceWindow AutonomousDatabaseScheduledMaintenanceWindowPtrInput
 	// (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -1277,6 +1287,8 @@ type AutonomousDatabaseState struct {
 	TimeScheduledAdUpdate pulumi.StringPtrInput
 	// The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
 	TimeScheduledDbVersionUpgrade pulumi.StringPtrInput
+	// The date and time at which operation to change Maintenance Window is scheduled to take place.
+	TimeScheduledMaintenanceWindowUpdate pulumi.StringPtrInput
 	// The date and time the Autonomous AI Database was most recently undeleted.
 	TimeUndeleted pulumi.StringPtrInput
 	// The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
@@ -1328,7 +1340,7 @@ type autonomousDatabaseArgs struct {
 	AutonomousDatabaseBackupId *string `pulumi:"autonomousDatabaseBackupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
 	AutonomousDatabaseId *string `pulumi:"autonomousDatabaseId"`
-	// (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+	// (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
 	AutonomousDatabaseMaintenanceWindow *AutonomousDatabaseAutonomousDatabaseMaintenanceWindow `pulumi:"autonomousDatabaseMaintenanceWindow"`
 	// (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
 	AutonomousMaintenanceScheduleType *string `pulumi:"autonomousMaintenanceScheduleType"`
@@ -1514,6 +1526,8 @@ type autonomousDatabaseArgs struct {
 	ResourcePoolSummary *AutonomousDatabaseResourcePoolSummary `pulumi:"resourcePoolSummary"`
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
 	RotateKeyTrigger *bool `pulumi:"rotateKeyTrigger"`
+	// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+	ScheduledMaintenanceWindow *AutonomousDatabaseScheduledMaintenanceWindow `pulumi:"scheduledMaintenanceWindow"`
 	// (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -1566,6 +1580,8 @@ type autonomousDatabaseArgs struct {
 	TimeScheduledAdUpdate *string `pulumi:"timeScheduledAdUpdate"`
 	// The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
 	TimeScheduledDbVersionUpgrade *string `pulumi:"timeScheduledDbVersionUpgrade"`
+	// The date and time at which operation to change Maintenance Window is scheduled to take place.
+	TimeScheduledMaintenanceWindowUpdate *string `pulumi:"timeScheduledMaintenanceWindowUpdate"`
 	// The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
 	Timestamp *string `pulumi:"timestamp"`
 	// Details for importing transportable tablespace for an Autonomous Database.
@@ -1602,7 +1618,7 @@ type AutonomousDatabaseArgs struct {
 	AutonomousDatabaseBackupId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
 	AutonomousDatabaseId pulumi.StringPtrInput
-	// (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+	// (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
 	AutonomousDatabaseMaintenanceWindow AutonomousDatabaseAutonomousDatabaseMaintenanceWindowPtrInput
 	// (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
 	AutonomousMaintenanceScheduleType pulumi.StringPtrInput
@@ -1788,6 +1804,8 @@ type AutonomousDatabaseArgs struct {
 	ResourcePoolSummary AutonomousDatabaseResourcePoolSummaryPtrInput
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
 	RotateKeyTrigger pulumi.BoolPtrInput
+	// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+	ScheduledMaintenanceWindow AutonomousDatabaseScheduledMaintenanceWindowPtrInput
 	// (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -1840,6 +1858,8 @@ type AutonomousDatabaseArgs struct {
 	TimeScheduledAdUpdate pulumi.StringPtrInput
 	// The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
 	TimeScheduledDbVersionUpgrade pulumi.StringPtrInput
+	// The date and time at which operation to change Maintenance Window is scheduled to take place.
+	TimeScheduledMaintenanceWindowUpdate pulumi.StringPtrInput
 	// The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
 	Timestamp pulumi.StringPtrInput
 	// Details for importing transportable tablespace for an Autonomous Database.
@@ -2007,7 +2027,7 @@ func (o AutonomousDatabaseOutput) AutonomousDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+// (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
 func (o AutonomousDatabaseOutput) AutonomousDatabaseMaintenanceWindow() AutonomousDatabaseAutonomousDatabaseMaintenanceWindowOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) AutonomousDatabaseAutonomousDatabaseMaintenanceWindowOutput {
 		return v.AutonomousDatabaseMaintenanceWindow
@@ -2597,6 +2617,13 @@ func (o AutonomousDatabaseOutput) RotateKeyTrigger() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.BoolPtrOutput { return v.RotateKeyTrigger }).(pulumi.BoolPtrOutput)
 }
 
+// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+func (o AutonomousDatabaseOutput) ScheduledMaintenanceWindow() AutonomousDatabaseScheduledMaintenanceWindowOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) AutonomousDatabaseScheduledMaintenanceWindowOutput {
+		return v.ScheduledMaintenanceWindow
+	}).(AutonomousDatabaseScheduledMaintenanceWindowOutput)
+}
+
 // (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 //
 // This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -2810,6 +2837,11 @@ func (o AutonomousDatabaseOutput) TimeScheduledAdUpdate() pulumi.StringOutput {
 // The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
 func (o AutonomousDatabaseOutput) TimeScheduledDbVersionUpgrade() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.TimeScheduledDbVersionUpgrade }).(pulumi.StringOutput)
+}
+
+// The date and time at which operation to change Maintenance Window is scheduled to take place.
+func (o AutonomousDatabaseOutput) TimeScheduledMaintenanceWindowUpdate() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.TimeScheduledMaintenanceWindowUpdate }).(pulumi.StringOutput)
 }
 
 // The date and time the Autonomous AI Database was most recently undeleted.

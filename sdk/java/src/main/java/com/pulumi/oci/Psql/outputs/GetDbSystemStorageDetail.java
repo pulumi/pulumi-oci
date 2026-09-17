@@ -27,6 +27,11 @@ public final class GetDbSystemStorageDetail {
      */
     private Boolean isRegionallyDurable;
     /**
+     * @return The OCID of the Vault service key to assign as the master encryption key for the database system.
+     * 
+     */
+    private String kmsKeyId;
+    /**
      * @return Type of the database system.
      * 
      */
@@ -55,6 +60,13 @@ public final class GetDbSystemStorageDetail {
         return this.isRegionallyDurable;
     }
     /**
+     * @return The OCID of the Vault service key to assign as the master encryption key for the database system.
+     * 
+     */
+    public String kmsKeyId() {
+        return this.kmsKeyId;
+    }
+    /**
      * @return Type of the database system.
      * 
      */
@@ -74,6 +86,7 @@ public final class GetDbSystemStorageDetail {
         private String availabilityDomain;
         private String iops;
         private Boolean isRegionallyDurable;
+        private String kmsKeyId;
         private String systemType;
         public Builder() {}
         public Builder(GetDbSystemStorageDetail defaults) {
@@ -81,6 +94,7 @@ public final class GetDbSystemStorageDetail {
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.iops = defaults.iops;
     	      this.isRegionallyDurable = defaults.isRegionallyDurable;
+    	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.systemType = defaults.systemType;
         }
 
@@ -109,6 +123,14 @@ public final class GetDbSystemStorageDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder kmsKeyId(String kmsKeyId) {
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemStorageDetail", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder systemType(String systemType) {
             if (systemType == null) {
               throw new MissingRequiredPropertyException("GetDbSystemStorageDetail", "systemType");
@@ -121,6 +143,7 @@ public final class GetDbSystemStorageDetail {
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.iops = iops;
             _resultValue.isRegionallyDurable = isRegionallyDurable;
+            _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.systemType = systemType;
             return _resultValue;
         }

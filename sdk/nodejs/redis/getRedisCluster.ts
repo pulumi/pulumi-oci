@@ -52,6 +52,14 @@ export interface GetRedisClusterResult {
      */
     readonly clusterMode: string;
     /**
+     * Defines the replication topology of an Oracle Cloud Infrastructure cache cluster, including the primary cluster and associated secondary clusters participating in replication.
+     */
+    readonly clusterReplicationTopologies: outputs.Redis.GetRedisClusterClusterReplicationTopology[];
+    /**
+     * The current role of the cluster.
+     */
+    readonly clusterRole: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
      */
     readonly compartmentId: string;
@@ -107,6 +115,10 @@ export interface GetRedisClusterResult {
      * The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
      */
     readonly ociCacheConfigSetId: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster in CRR.
+     */
+    readonly primaryClusterId: string;
     /**
      * The private IP address of the API endpoint for the cluster's primary node.
      */

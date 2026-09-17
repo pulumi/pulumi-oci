@@ -15,10 +15,6 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIotDigitalTwinInstancesResult {
-    /**
-     * @return Connectivity type of the digital twin instance
-     * 
-     */
     private @Nullable String connectivityType;
     /**
      * @return The list of digital_twin_instance_collection.
@@ -58,10 +54,6 @@ public final class GetIotDigitalTwinInstancesResult {
     private @Nullable String state;
 
     private GetIotDigitalTwinInstancesResult() {}
-    /**
-     * @return Connectivity type of the digital twin instance
-     * 
-     */
     public Optional<String> connectivityType() {
         return Optional.ofNullable(this.connectivityType);
     }

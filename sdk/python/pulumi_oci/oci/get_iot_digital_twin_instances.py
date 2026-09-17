@@ -60,9 +60,6 @@ class GetIotDigitalTwinInstancesResult:
     @_builtins.property
     @pulumi.getter(name="connectivityType")
     def connectivity_type(self) -> Optional[_builtins.str]:
-        """
-        Connectivity type of the digital twin instance
-        """
         return pulumi.get(self, "connectivity_type")
 
     @_builtins.property
@@ -179,7 +176,7 @@ def get_iot_digital_twin_instances(connectivity_type: Optional[_builtins.str] = 
     :param _builtins.str digital_twin_model_spec_uri: Filter resources that match the specified URI (DTMI) of the digital twin model.
     :param _builtins.str display_name: Filter resources whose display name matches the specified value.
     :param _builtins.str id: Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
-    :param _builtins.str iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+    :param _builtins.str iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list IoT resources.
     :param _builtins.str state: Filter resources whose lifecycleState matches the specified value.
     """
     __args__ = dict()
@@ -239,7 +236,7 @@ def get_iot_digital_twin_instances_output(connectivity_type: pulumi.Input[Option
     :param _builtins.str digital_twin_model_spec_uri: Filter resources that match the specified URI (DTMI) of the digital twin model.
     :param _builtins.str display_name: Filter resources whose display name matches the specified value.
     :param _builtins.str id: Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
-    :param _builtins.str iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+    :param _builtins.str iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list IoT resources.
     :param _builtins.str state: Filter resources whose lifecycleState matches the specified value.
     """
     __args__ = dict()

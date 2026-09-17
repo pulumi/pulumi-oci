@@ -7,7 +7,7 @@ import (
 	"fmt"
 
 	"github.com/blang/semver"
-	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -37,6 +37,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &BatchBatchTaskEnvironment{}
 	case "oci:oci/batchBatchTaskProfile:BatchBatchTaskProfile":
 		r = &BatchBatchTaskProfile{}
+	case "oci:oci/clusterHealthDiagnosisStore:ClusterHealthDiagnosisStore":
+		r = &ClusterHealthDiagnosisStore{}
 	case "oci:oci/costadCostAlertSubscription:CostadCostAlertSubscription":
 		r = &CostadCostAlertSubscription{}
 	case "oci:oci/costadCostAnomalyEvent:CostadCostAnomalyEvent":
@@ -75,12 +77,6 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DdfsInstance{}
 	case "oci:oci/difStack:DifStack":
 		r = &DifStack{}
-	case "oci:oci/distributedDatabaseDistributedAutonomousDatabase:DistributedDatabaseDistributedAutonomousDatabase":
-		r = &DistributedDatabaseDistributedAutonomousDatabase{}
-	case "oci:oci/distributedDatabaseDistributedDatabase:DistributedDatabaseDistributedDatabase":
-		r = &DistributedDatabaseDistributedDatabase{}
-	case "oci:oci/distributedDatabaseDistributedDatabasePrivateEndpoint:DistributedDatabaseDistributedDatabasePrivateEndpoint":
-		r = &DistributedDatabaseDistributedDatabasePrivateEndpoint{}
 	case "oci:oci/gdpGdpPipeline:GdpGdpPipeline":
 		r = &GdpGdpPipeline{}
 	case "oci:oci/iotDigitalTwinAdapter:IotDigitalTwinAdapter":
@@ -103,6 +99,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &IotIotDomainGroup{}
 	case "oci:oci/iotIotDomainGroupConfigureDataAccess:IotIotDomainGroupConfigureDataAccess":
 		r = &IotIotDomainGroupConfigureDataAccess{}
+	case "oci:oci/iotIotFlowRuntime:IotIotFlowRuntime":
+		r = &IotIotFlowRuntime{}
+	case "oci:oci/iotIotFlowRuntimeActivate:IotIotFlowRuntimeActivate":
+		r = &IotIotFlowRuntimeActivate{}
+	case "oci:oci/iotIotFlowRuntimeDeactivate:IotIotFlowRuntimeDeactivate":
+		r = &IotIotFlowRuntimeDeactivate{}
+	case "oci:oci/iotIotFlowRuntimeFlow:IotIotFlowRuntimeFlow":
+		r = &IotIotFlowRuntimeFlow{}
 	case "oci:oci/managedKafkaKafkaCluster:ManagedKafkaKafkaCluster":
 		r = &ManagedKafkaKafkaCluster{}
 	case "oci:oci/managedKafkaKafkaClusterAddon:ManagedKafkaKafkaClusterAddon":
@@ -174,6 +178,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"oci/batchBatchTaskProfile",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/clusterHealthDiagnosisStore",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -273,21 +282,6 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
-		"oci/distributedDatabaseDistributedAutonomousDatabase",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"oci",
-		"oci/distributedDatabaseDistributedDatabase",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"oci",
-		"oci/distributedDatabaseDistributedDatabasePrivateEndpoint",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"oci",
 		"oci/gdpGdpPipeline",
 		&module{version},
 	)
@@ -339,6 +333,26 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"oci/iotIotDomainGroupConfigureDataAccess",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/iotIotFlowRuntime",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/iotIotFlowRuntimeActivate",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/iotIotFlowRuntimeDeactivate",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/iotIotFlowRuntimeFlow",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -7,11 +7,1920 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 var _ = internal.GetEnvOrDefault
+
+type GetBackupDestinationMountTypeDetail struct {
+	// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+	LocalMountPointPath string `pulumi:"localMountPointPath"`
+	MountType           string `pulumi:"mountType"`
+	// Specifies the directory on which to mount the file system
+	NfsServerExport string `pulumi:"nfsServerExport"`
+	// Host names or IP addresses for NFS Auto mount.
+	NfsServers []string `pulumi:"nfsServers"`
+}
+
+// GetBackupDestinationMountTypeDetailInput is an input type that accepts GetBackupDestinationMountTypeDetailArgs and GetBackupDestinationMountTypeDetailOutput values.
+// You can construct a concrete instance of `GetBackupDestinationMountTypeDetailInput` via:
+//
+//	GetBackupDestinationMountTypeDetailArgs{...}
+type GetBackupDestinationMountTypeDetailInput interface {
+	pulumi.Input
+
+	ToGetBackupDestinationMountTypeDetailOutput() GetBackupDestinationMountTypeDetailOutput
+	ToGetBackupDestinationMountTypeDetailOutputWithContext(context.Context) GetBackupDestinationMountTypeDetailOutput
+}
+
+type GetBackupDestinationMountTypeDetailArgs struct {
+	// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+	LocalMountPointPath pulumi.StringInput `pulumi:"localMountPointPath"`
+	MountType           pulumi.StringInput `pulumi:"mountType"`
+	// Specifies the directory on which to mount the file system
+	NfsServerExport pulumi.StringInput `pulumi:"nfsServerExport"`
+	// Host names or IP addresses for NFS Auto mount.
+	NfsServers pulumi.StringArrayInput `pulumi:"nfsServers"`
+}
+
+func (GetBackupDestinationMountTypeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupDestinationMountTypeDetail)(nil)).Elem()
+}
+
+func (i GetBackupDestinationMountTypeDetailArgs) ToGetBackupDestinationMountTypeDetailOutput() GetBackupDestinationMountTypeDetailOutput {
+	return i.ToGetBackupDestinationMountTypeDetailOutputWithContext(context.Background())
+}
+
+func (i GetBackupDestinationMountTypeDetailArgs) ToGetBackupDestinationMountTypeDetailOutputWithContext(ctx context.Context) GetBackupDestinationMountTypeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationMountTypeDetailOutput)
+}
+
+// GetBackupDestinationMountTypeDetailArrayInput is an input type that accepts GetBackupDestinationMountTypeDetailArray and GetBackupDestinationMountTypeDetailArrayOutput values.
+// You can construct a concrete instance of `GetBackupDestinationMountTypeDetailArrayInput` via:
+//
+//	GetBackupDestinationMountTypeDetailArray{ GetBackupDestinationMountTypeDetailArgs{...} }
+type GetBackupDestinationMountTypeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetBackupDestinationMountTypeDetailArrayOutput() GetBackupDestinationMountTypeDetailArrayOutput
+	ToGetBackupDestinationMountTypeDetailArrayOutputWithContext(context.Context) GetBackupDestinationMountTypeDetailArrayOutput
+}
+
+type GetBackupDestinationMountTypeDetailArray []GetBackupDestinationMountTypeDetailInput
+
+func (GetBackupDestinationMountTypeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupDestinationMountTypeDetail)(nil)).Elem()
+}
+
+func (i GetBackupDestinationMountTypeDetailArray) ToGetBackupDestinationMountTypeDetailArrayOutput() GetBackupDestinationMountTypeDetailArrayOutput {
+	return i.ToGetBackupDestinationMountTypeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetBackupDestinationMountTypeDetailArray) ToGetBackupDestinationMountTypeDetailArrayOutputWithContext(ctx context.Context) GetBackupDestinationMountTypeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationMountTypeDetailArrayOutput)
+}
+
+type GetBackupDestinationMountTypeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetBackupDestinationMountTypeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupDestinationMountTypeDetail)(nil)).Elem()
+}
+
+func (o GetBackupDestinationMountTypeDetailOutput) ToGetBackupDestinationMountTypeDetailOutput() GetBackupDestinationMountTypeDetailOutput {
+	return o
+}
+
+func (o GetBackupDestinationMountTypeDetailOutput) ToGetBackupDestinationMountTypeDetailOutputWithContext(ctx context.Context) GetBackupDestinationMountTypeDetailOutput {
+	return o
+}
+
+// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+func (o GetBackupDestinationMountTypeDetailOutput) LocalMountPointPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationMountTypeDetail) string { return v.LocalMountPointPath }).(pulumi.StringOutput)
+}
+
+func (o GetBackupDestinationMountTypeDetailOutput) MountType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationMountTypeDetail) string { return v.MountType }).(pulumi.StringOutput)
+}
+
+// Specifies the directory on which to mount the file system
+func (o GetBackupDestinationMountTypeDetailOutput) NfsServerExport() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationMountTypeDetail) string { return v.NfsServerExport }).(pulumi.StringOutput)
+}
+
+// Host names or IP addresses for NFS Auto mount.
+func (o GetBackupDestinationMountTypeDetailOutput) NfsServers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBackupDestinationMountTypeDetail) []string { return v.NfsServers }).(pulumi.StringArrayOutput)
+}
+
+type GetBackupDestinationMountTypeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBackupDestinationMountTypeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupDestinationMountTypeDetail)(nil)).Elem()
+}
+
+func (o GetBackupDestinationMountTypeDetailArrayOutput) ToGetBackupDestinationMountTypeDetailArrayOutput() GetBackupDestinationMountTypeDetailArrayOutput {
+	return o
+}
+
+func (o GetBackupDestinationMountTypeDetailArrayOutput) ToGetBackupDestinationMountTypeDetailArrayOutputWithContext(ctx context.Context) GetBackupDestinationMountTypeDetailArrayOutput {
+	return o
+}
+
+func (o GetBackupDestinationMountTypeDetailArrayOutput) Index(i pulumi.IntInput) GetBackupDestinationMountTypeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupDestinationMountTypeDetail {
+		return vs[0].([]GetBackupDestinationMountTypeDetail)[vs[1].(int)]
+	}).(GetBackupDestinationMountTypeDetailOutput)
+}
+
+type GetBackupDestinationsBackupDestination struct {
+	// List of databases associated with the backup destination.
+	AssociatedDatabases []GetBackupDestinationsBackupDestinationAssociatedDatabase `pulumi:"associatedDatabases"`
+	// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+	AssociatedLongTermBackupCount int `pulumi:"associatedLongTermBackupCount"`
+	// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+	AssociatedLongTermBackups []GetBackupDestinationsBackupDestinationAssociatedLongTermBackup `pulumi:"associatedLongTermBackups"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
+	ConnectionString string `pulumi:"connectionString"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The user-provided name of the backup destination.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+	Id string `pulumi:"id"`
+	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+	//
+	// Deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.
+	LocalMountPointPath string                                                  `pulumi:"localMountPointPath"`
+	MountTypeDetails    []GetBackupDestinationsBackupDestinationMountTypeDetail `pulumi:"mountTypeDetails"`
+	// NFS Mount type for backup destination.
+	NfsMountType string `pulumi:"nfsMountType"`
+	// Specifies the directory on which to mount the file system
+	NfsServerExport string `pulumi:"nfsServerExport"`
+	// Host names or IP addresses for NFS Auto mount.
+	NfsServers []string `pulumi:"nfsServers"`
+	// The current lifecycle state of the backup destination.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The time when the total storage size and the utilized storage size of the backup destination are updated.
+	TimeAtWhichStorageDetailsAreUpdated string `pulumi:"timeAtWhichStorageDetailsAreUpdated"`
+	// The date and time the backup destination was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The total storage size of the backup destination in GBs, rounded to the nearest integer.
+	TotalStorageSizeInGbs int `pulumi:"totalStorageSizeInGbs"`
+	// A filter to return only resources that match the given type of the Backup Destination.
+	Type string `pulumi:"type"`
+	// The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+	UtilizedStorageSizeInGbs int `pulumi:"utilizedStorageSizeInGbs"`
+	// For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+	VpcUsers []string `pulumi:"vpcUsers"`
+}
+
+// GetBackupDestinationsBackupDestinationInput is an input type that accepts GetBackupDestinationsBackupDestinationArgs and GetBackupDestinationsBackupDestinationOutput values.
+// You can construct a concrete instance of `GetBackupDestinationsBackupDestinationInput` via:
+//
+//	GetBackupDestinationsBackupDestinationArgs{...}
+type GetBackupDestinationsBackupDestinationInput interface {
+	pulumi.Input
+
+	ToGetBackupDestinationsBackupDestinationOutput() GetBackupDestinationsBackupDestinationOutput
+	ToGetBackupDestinationsBackupDestinationOutputWithContext(context.Context) GetBackupDestinationsBackupDestinationOutput
+}
+
+type GetBackupDestinationsBackupDestinationArgs struct {
+	// List of databases associated with the backup destination.
+	AssociatedDatabases GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayInput `pulumi:"associatedDatabases"`
+	// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+	AssociatedLongTermBackupCount pulumi.IntInput `pulumi:"associatedLongTermBackupCount"`
+	// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+	AssociatedLongTermBackups GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayInput `pulumi:"associatedLongTermBackups"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
+	ConnectionString pulumi.StringInput `pulumi:"connectionString"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The user-provided name of the backup destination.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+	//
+	// Deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.
+	LocalMountPointPath pulumi.StringInput                                              `pulumi:"localMountPointPath"`
+	MountTypeDetails    GetBackupDestinationsBackupDestinationMountTypeDetailArrayInput `pulumi:"mountTypeDetails"`
+	// NFS Mount type for backup destination.
+	NfsMountType pulumi.StringInput `pulumi:"nfsMountType"`
+	// Specifies the directory on which to mount the file system
+	NfsServerExport pulumi.StringInput `pulumi:"nfsServerExport"`
+	// Host names or IP addresses for NFS Auto mount.
+	NfsServers pulumi.StringArrayInput `pulumi:"nfsServers"`
+	// The current lifecycle state of the backup destination.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The time when the total storage size and the utilized storage size of the backup destination are updated.
+	TimeAtWhichStorageDetailsAreUpdated pulumi.StringInput `pulumi:"timeAtWhichStorageDetailsAreUpdated"`
+	// The date and time the backup destination was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The total storage size of the backup destination in GBs, rounded to the nearest integer.
+	TotalStorageSizeInGbs pulumi.IntInput `pulumi:"totalStorageSizeInGbs"`
+	// A filter to return only resources that match the given type of the Backup Destination.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+	UtilizedStorageSizeInGbs pulumi.IntInput `pulumi:"utilizedStorageSizeInGbs"`
+	// For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+	VpcUsers pulumi.StringArrayInput `pulumi:"vpcUsers"`
+}
+
+func (GetBackupDestinationsBackupDestinationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupDestinationsBackupDestination)(nil)).Elem()
+}
+
+func (i GetBackupDestinationsBackupDestinationArgs) ToGetBackupDestinationsBackupDestinationOutput() GetBackupDestinationsBackupDestinationOutput {
+	return i.ToGetBackupDestinationsBackupDestinationOutputWithContext(context.Background())
+}
+
+func (i GetBackupDestinationsBackupDestinationArgs) ToGetBackupDestinationsBackupDestinationOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationsBackupDestinationOutput)
+}
+
+// GetBackupDestinationsBackupDestinationArrayInput is an input type that accepts GetBackupDestinationsBackupDestinationArray and GetBackupDestinationsBackupDestinationArrayOutput values.
+// You can construct a concrete instance of `GetBackupDestinationsBackupDestinationArrayInput` via:
+//
+//	GetBackupDestinationsBackupDestinationArray{ GetBackupDestinationsBackupDestinationArgs{...} }
+type GetBackupDestinationsBackupDestinationArrayInput interface {
+	pulumi.Input
+
+	ToGetBackupDestinationsBackupDestinationArrayOutput() GetBackupDestinationsBackupDestinationArrayOutput
+	ToGetBackupDestinationsBackupDestinationArrayOutputWithContext(context.Context) GetBackupDestinationsBackupDestinationArrayOutput
+}
+
+type GetBackupDestinationsBackupDestinationArray []GetBackupDestinationsBackupDestinationInput
+
+func (GetBackupDestinationsBackupDestinationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupDestinationsBackupDestination)(nil)).Elem()
+}
+
+func (i GetBackupDestinationsBackupDestinationArray) ToGetBackupDestinationsBackupDestinationArrayOutput() GetBackupDestinationsBackupDestinationArrayOutput {
+	return i.ToGetBackupDestinationsBackupDestinationArrayOutputWithContext(context.Background())
+}
+
+func (i GetBackupDestinationsBackupDestinationArray) ToGetBackupDestinationsBackupDestinationArrayOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationsBackupDestinationArrayOutput)
+}
+
+type GetBackupDestinationsBackupDestinationOutput struct{ *pulumi.OutputState }
+
+func (GetBackupDestinationsBackupDestinationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupDestinationsBackupDestination)(nil)).Elem()
+}
+
+func (o GetBackupDestinationsBackupDestinationOutput) ToGetBackupDestinationsBackupDestinationOutput() GetBackupDestinationsBackupDestinationOutput {
+	return o
+}
+
+func (o GetBackupDestinationsBackupDestinationOutput) ToGetBackupDestinationsBackupDestinationOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationOutput {
+	return o
+}
+
+// List of databases associated with the backup destination.
+func (o GetBackupDestinationsBackupDestinationOutput) AssociatedDatabases() GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) []GetBackupDestinationsBackupDestinationAssociatedDatabase {
+		return v.AssociatedDatabases
+	}).(GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput)
+}
+
+// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+func (o GetBackupDestinationsBackupDestinationOutput) AssociatedLongTermBackupCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) int { return v.AssociatedLongTermBackupCount }).(pulumi.IntOutput)
+}
+
+// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+func (o GetBackupDestinationsBackupDestinationOutput) AssociatedLongTermBackups() GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) []GetBackupDestinationsBackupDestinationAssociatedLongTermBackup {
+		return v.AssociatedLongTermBackups
+	}).(GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetBackupDestinationsBackupDestinationOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
+func (o GetBackupDestinationsBackupDestinationOutput) ConnectionString() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.ConnectionString }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetBackupDestinationsBackupDestinationOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// The user-provided name of the backup destination.
+func (o GetBackupDestinationsBackupDestinationOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetBackupDestinationsBackupDestinationOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+func (o GetBackupDestinationsBackupDestinationOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A descriptive text associated with the lifecycleState. Typically contains additional displayable text
+func (o GetBackupDestinationsBackupDestinationOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+//
+// Deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.
+func (o GetBackupDestinationsBackupDestinationOutput) LocalMountPointPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.LocalMountPointPath }).(pulumi.StringOutput)
+}
+
+func (o GetBackupDestinationsBackupDestinationOutput) MountTypeDetails() GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) []GetBackupDestinationsBackupDestinationMountTypeDetail {
+		return v.MountTypeDetails
+	}).(GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput)
+}
+
+// NFS Mount type for backup destination.
+func (o GetBackupDestinationsBackupDestinationOutput) NfsMountType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.NfsMountType }).(pulumi.StringOutput)
+}
+
+// Specifies the directory on which to mount the file system
+func (o GetBackupDestinationsBackupDestinationOutput) NfsServerExport() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.NfsServerExport }).(pulumi.StringOutput)
+}
+
+// Host names or IP addresses for NFS Auto mount.
+func (o GetBackupDestinationsBackupDestinationOutput) NfsServers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) []string { return v.NfsServers }).(pulumi.StringArrayOutput)
+}
+
+// The current lifecycle state of the backup destination.
+func (o GetBackupDestinationsBackupDestinationOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetBackupDestinationsBackupDestinationOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The time when the total storage size and the utilized storage size of the backup destination are updated.
+func (o GetBackupDestinationsBackupDestinationOutput) TimeAtWhichStorageDetailsAreUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.TimeAtWhichStorageDetailsAreUpdated }).(pulumi.StringOutput)
+}
+
+// The date and time the backup destination was created.
+func (o GetBackupDestinationsBackupDestinationOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The total storage size of the backup destination in GBs, rounded to the nearest integer.
+func (o GetBackupDestinationsBackupDestinationOutput) TotalStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) int { return v.TotalStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+// A filter to return only resources that match the given type of the Backup Destination.
+func (o GetBackupDestinationsBackupDestinationOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+func (o GetBackupDestinationsBackupDestinationOutput) UtilizedStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) int { return v.UtilizedStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+// For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+func (o GetBackupDestinationsBackupDestinationOutput) VpcUsers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) []string { return v.VpcUsers }).(pulumi.StringArrayOutput)
+}
+
+type GetBackupDestinationsBackupDestinationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBackupDestinationsBackupDestinationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupDestinationsBackupDestination)(nil)).Elem()
+}
+
+func (o GetBackupDestinationsBackupDestinationArrayOutput) ToGetBackupDestinationsBackupDestinationArrayOutput() GetBackupDestinationsBackupDestinationArrayOutput {
+	return o
+}
+
+func (o GetBackupDestinationsBackupDestinationArrayOutput) ToGetBackupDestinationsBackupDestinationArrayOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationArrayOutput {
+	return o
+}
+
+func (o GetBackupDestinationsBackupDestinationArrayOutput) Index(i pulumi.IntInput) GetBackupDestinationsBackupDestinationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupDestinationsBackupDestination {
+		return vs[0].([]GetBackupDestinationsBackupDestination)[vs[1].(int)]
+	}).(GetBackupDestinationsBackupDestinationOutput)
+}
+
+type GetBackupDestinationsBackupDestinationAssociatedDatabase struct {
+	// The display name of the database that is associated with the backup destination.
+	DbName string `pulumi:"dbName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+	Id string `pulumi:"id"`
+}
+
+// GetBackupDestinationsBackupDestinationAssociatedDatabaseInput is an input type that accepts GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs and GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput values.
+// You can construct a concrete instance of `GetBackupDestinationsBackupDestinationAssociatedDatabaseInput` via:
+//
+//	GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs{...}
+type GetBackupDestinationsBackupDestinationAssociatedDatabaseInput interface {
+	pulumi.Input
+
+	ToGetBackupDestinationsBackupDestinationAssociatedDatabaseOutput() GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput
+	ToGetBackupDestinationsBackupDestinationAssociatedDatabaseOutputWithContext(context.Context) GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput
+}
+
+type GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs struct {
+	// The display name of the database that is associated with the backup destination.
+	DbName pulumi.StringInput `pulumi:"dbName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupDestinationsBackupDestinationAssociatedDatabase)(nil)).Elem()
+}
+
+func (i GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs) ToGetBackupDestinationsBackupDestinationAssociatedDatabaseOutput() GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput {
+	return i.ToGetBackupDestinationsBackupDestinationAssociatedDatabaseOutputWithContext(context.Background())
+}
+
+func (i GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs) ToGetBackupDestinationsBackupDestinationAssociatedDatabaseOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput)
+}
+
+// GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayInput is an input type that accepts GetBackupDestinationsBackupDestinationAssociatedDatabaseArray and GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput values.
+// You can construct a concrete instance of `GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayInput` via:
+//
+//	GetBackupDestinationsBackupDestinationAssociatedDatabaseArray{ GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs{...} }
+type GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayInput interface {
+	pulumi.Input
+
+	ToGetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput() GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput
+	ToGetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutputWithContext(context.Context) GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput
+}
+
+type GetBackupDestinationsBackupDestinationAssociatedDatabaseArray []GetBackupDestinationsBackupDestinationAssociatedDatabaseInput
+
+func (GetBackupDestinationsBackupDestinationAssociatedDatabaseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupDestinationsBackupDestinationAssociatedDatabase)(nil)).Elem()
+}
+
+func (i GetBackupDestinationsBackupDestinationAssociatedDatabaseArray) ToGetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput() GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput {
+	return i.ToGetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutputWithContext(context.Background())
+}
+
+func (i GetBackupDestinationsBackupDestinationAssociatedDatabaseArray) ToGetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput)
+}
+
+type GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput struct{ *pulumi.OutputState }
+
+func (GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupDestinationsBackupDestinationAssociatedDatabase)(nil)).Elem()
+}
+
+func (o GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput) ToGetBackupDestinationsBackupDestinationAssociatedDatabaseOutput() GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput {
+	return o
+}
+
+func (o GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput) ToGetBackupDestinationsBackupDestinationAssociatedDatabaseOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput {
+	return o
+}
+
+// The display name of the database that is associated with the backup destination.
+func (o GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput) DbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestinationAssociatedDatabase) string { return v.DbName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+func (o GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestinationAssociatedDatabase) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupDestinationsBackupDestinationAssociatedDatabase)(nil)).Elem()
+}
+
+func (o GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput) ToGetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput() GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput {
+	return o
+}
+
+func (o GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput) ToGetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput {
+	return o
+}
+
+func (o GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput) Index(i pulumi.IntInput) GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupDestinationsBackupDestinationAssociatedDatabase {
+		return vs[0].([]GetBackupDestinationsBackupDestinationAssociatedDatabase)[vs[1].(int)]
+	}).(GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput)
+}
+
+type GetBackupDestinationsBackupDestinationAssociatedLongTermBackup struct {
+	// The user-provided name of the backup destination.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+	Id string `pulumi:"id"`
+}
+
+// GetBackupDestinationsBackupDestinationAssociatedLongTermBackupInput is an input type that accepts GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArgs and GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput values.
+// You can construct a concrete instance of `GetBackupDestinationsBackupDestinationAssociatedLongTermBackupInput` via:
+//
+//	GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArgs{...}
+type GetBackupDestinationsBackupDestinationAssociatedLongTermBackupInput interface {
+	pulumi.Input
+
+	ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput() GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput
+	ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutputWithContext(context.Context) GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput
+}
+
+type GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArgs struct {
+	// The user-provided name of the backup destination.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupDestinationsBackupDestinationAssociatedLongTermBackup)(nil)).Elem()
+}
+
+func (i GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArgs) ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput() GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput {
+	return i.ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutputWithContext(context.Background())
+}
+
+func (i GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArgs) ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput)
+}
+
+// GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayInput is an input type that accepts GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArray and GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput values.
+// You can construct a concrete instance of `GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayInput` via:
+//
+//	GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArray{ GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArgs{...} }
+type GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayInput interface {
+	pulumi.Input
+
+	ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput() GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput
+	ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutputWithContext(context.Context) GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput
+}
+
+type GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArray []GetBackupDestinationsBackupDestinationAssociatedLongTermBackupInput
+
+func (GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupDestinationsBackupDestinationAssociatedLongTermBackup)(nil)).Elem()
+}
+
+func (i GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArray) ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput() GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput {
+	return i.ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutputWithContext(context.Background())
+}
+
+func (i GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArray) ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput)
+}
+
+type GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput struct{ *pulumi.OutputState }
+
+func (GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupDestinationsBackupDestinationAssociatedLongTermBackup)(nil)).Elem()
+}
+
+func (o GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput) ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput() GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput {
+	return o
+}
+
+func (o GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput) ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput {
+	return o
+}
+
+// The user-provided name of the backup destination.
+func (o GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestinationAssociatedLongTermBackup) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+func (o GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestinationAssociatedLongTermBackup) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupDestinationsBackupDestinationAssociatedLongTermBackup)(nil)).Elem()
+}
+
+func (o GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput) ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput() GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput {
+	return o
+}
+
+func (o GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput) ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput {
+	return o
+}
+
+func (o GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput) Index(i pulumi.IntInput) GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupDestinationsBackupDestinationAssociatedLongTermBackup {
+		return vs[0].([]GetBackupDestinationsBackupDestinationAssociatedLongTermBackup)[vs[1].(int)]
+	}).(GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput)
+}
+
+type GetBackupDestinationsBackupDestinationMountTypeDetail struct {
+	// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+	LocalMountPointPath string `pulumi:"localMountPointPath"`
+	MountType           string `pulumi:"mountType"`
+	// Specifies the directory on which to mount the file system
+	NfsServerExport string `pulumi:"nfsServerExport"`
+	// Host names or IP addresses for NFS Auto mount.
+	NfsServers []string `pulumi:"nfsServers"`
+}
+
+// GetBackupDestinationsBackupDestinationMountTypeDetailInput is an input type that accepts GetBackupDestinationsBackupDestinationMountTypeDetailArgs and GetBackupDestinationsBackupDestinationMountTypeDetailOutput values.
+// You can construct a concrete instance of `GetBackupDestinationsBackupDestinationMountTypeDetailInput` via:
+//
+//	GetBackupDestinationsBackupDestinationMountTypeDetailArgs{...}
+type GetBackupDestinationsBackupDestinationMountTypeDetailInput interface {
+	pulumi.Input
+
+	ToGetBackupDestinationsBackupDestinationMountTypeDetailOutput() GetBackupDestinationsBackupDestinationMountTypeDetailOutput
+	ToGetBackupDestinationsBackupDestinationMountTypeDetailOutputWithContext(context.Context) GetBackupDestinationsBackupDestinationMountTypeDetailOutput
+}
+
+type GetBackupDestinationsBackupDestinationMountTypeDetailArgs struct {
+	// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+	LocalMountPointPath pulumi.StringInput `pulumi:"localMountPointPath"`
+	MountType           pulumi.StringInput `pulumi:"mountType"`
+	// Specifies the directory on which to mount the file system
+	NfsServerExport pulumi.StringInput `pulumi:"nfsServerExport"`
+	// Host names or IP addresses for NFS Auto mount.
+	NfsServers pulumi.StringArrayInput `pulumi:"nfsServers"`
+}
+
+func (GetBackupDestinationsBackupDestinationMountTypeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupDestinationsBackupDestinationMountTypeDetail)(nil)).Elem()
+}
+
+func (i GetBackupDestinationsBackupDestinationMountTypeDetailArgs) ToGetBackupDestinationsBackupDestinationMountTypeDetailOutput() GetBackupDestinationsBackupDestinationMountTypeDetailOutput {
+	return i.ToGetBackupDestinationsBackupDestinationMountTypeDetailOutputWithContext(context.Background())
+}
+
+func (i GetBackupDestinationsBackupDestinationMountTypeDetailArgs) ToGetBackupDestinationsBackupDestinationMountTypeDetailOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationMountTypeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationsBackupDestinationMountTypeDetailOutput)
+}
+
+// GetBackupDestinationsBackupDestinationMountTypeDetailArrayInput is an input type that accepts GetBackupDestinationsBackupDestinationMountTypeDetailArray and GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput values.
+// You can construct a concrete instance of `GetBackupDestinationsBackupDestinationMountTypeDetailArrayInput` via:
+//
+//	GetBackupDestinationsBackupDestinationMountTypeDetailArray{ GetBackupDestinationsBackupDestinationMountTypeDetailArgs{...} }
+type GetBackupDestinationsBackupDestinationMountTypeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput() GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput
+	ToGetBackupDestinationsBackupDestinationMountTypeDetailArrayOutputWithContext(context.Context) GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput
+}
+
+type GetBackupDestinationsBackupDestinationMountTypeDetailArray []GetBackupDestinationsBackupDestinationMountTypeDetailInput
+
+func (GetBackupDestinationsBackupDestinationMountTypeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupDestinationsBackupDestinationMountTypeDetail)(nil)).Elem()
+}
+
+func (i GetBackupDestinationsBackupDestinationMountTypeDetailArray) ToGetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput() GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput {
+	return i.ToGetBackupDestinationsBackupDestinationMountTypeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetBackupDestinationsBackupDestinationMountTypeDetailArray) ToGetBackupDestinationsBackupDestinationMountTypeDetailArrayOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput)
+}
+
+type GetBackupDestinationsBackupDestinationMountTypeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetBackupDestinationsBackupDestinationMountTypeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupDestinationsBackupDestinationMountTypeDetail)(nil)).Elem()
+}
+
+func (o GetBackupDestinationsBackupDestinationMountTypeDetailOutput) ToGetBackupDestinationsBackupDestinationMountTypeDetailOutput() GetBackupDestinationsBackupDestinationMountTypeDetailOutput {
+	return o
+}
+
+func (o GetBackupDestinationsBackupDestinationMountTypeDetailOutput) ToGetBackupDestinationsBackupDestinationMountTypeDetailOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationMountTypeDetailOutput {
+	return o
+}
+
+// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+func (o GetBackupDestinationsBackupDestinationMountTypeDetailOutput) LocalMountPointPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestinationMountTypeDetail) string { return v.LocalMountPointPath }).(pulumi.StringOutput)
+}
+
+func (o GetBackupDestinationsBackupDestinationMountTypeDetailOutput) MountType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestinationMountTypeDetail) string { return v.MountType }).(pulumi.StringOutput)
+}
+
+// Specifies the directory on which to mount the file system
+func (o GetBackupDestinationsBackupDestinationMountTypeDetailOutput) NfsServerExport() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestinationMountTypeDetail) string { return v.NfsServerExport }).(pulumi.StringOutput)
+}
+
+// Host names or IP addresses for NFS Auto mount.
+func (o GetBackupDestinationsBackupDestinationMountTypeDetailOutput) NfsServers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBackupDestinationsBackupDestinationMountTypeDetail) []string { return v.NfsServers }).(pulumi.StringArrayOutput)
+}
+
+type GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupDestinationsBackupDestinationMountTypeDetail)(nil)).Elem()
+}
+
+func (o GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput) ToGetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput() GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput {
+	return o
+}
+
+func (o GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput) ToGetBackupDestinationsBackupDestinationMountTypeDetailArrayOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput {
+	return o
+}
+
+func (o GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput) Index(i pulumi.IntInput) GetBackupDestinationsBackupDestinationMountTypeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupDestinationsBackupDestinationMountTypeDetail {
+		return vs[0].([]GetBackupDestinationsBackupDestinationMountTypeDetail)[vs[1].(int)]
+	}).(GetBackupDestinationsBackupDestinationMountTypeDetailOutput)
+}
+
+type GetBackupDestinationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetBackupDestinationsFilterInput is an input type that accepts GetBackupDestinationsFilterArgs and GetBackupDestinationsFilterOutput values.
+// You can construct a concrete instance of `GetBackupDestinationsFilterInput` via:
+//
+//	GetBackupDestinationsFilterArgs{...}
+type GetBackupDestinationsFilterInput interface {
+	pulumi.Input
+
+	ToGetBackupDestinationsFilterOutput() GetBackupDestinationsFilterOutput
+	ToGetBackupDestinationsFilterOutputWithContext(context.Context) GetBackupDestinationsFilterOutput
+}
+
+type GetBackupDestinationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetBackupDestinationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupDestinationsFilter)(nil)).Elem()
+}
+
+func (i GetBackupDestinationsFilterArgs) ToGetBackupDestinationsFilterOutput() GetBackupDestinationsFilterOutput {
+	return i.ToGetBackupDestinationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetBackupDestinationsFilterArgs) ToGetBackupDestinationsFilterOutputWithContext(ctx context.Context) GetBackupDestinationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationsFilterOutput)
+}
+
+// GetBackupDestinationsFilterArrayInput is an input type that accepts GetBackupDestinationsFilterArray and GetBackupDestinationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetBackupDestinationsFilterArrayInput` via:
+//
+//	GetBackupDestinationsFilterArray{ GetBackupDestinationsFilterArgs{...} }
+type GetBackupDestinationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBackupDestinationsFilterArrayOutput() GetBackupDestinationsFilterArrayOutput
+	ToGetBackupDestinationsFilterArrayOutputWithContext(context.Context) GetBackupDestinationsFilterArrayOutput
+}
+
+type GetBackupDestinationsFilterArray []GetBackupDestinationsFilterInput
+
+func (GetBackupDestinationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupDestinationsFilter)(nil)).Elem()
+}
+
+func (i GetBackupDestinationsFilterArray) ToGetBackupDestinationsFilterArrayOutput() GetBackupDestinationsFilterArrayOutput {
+	return i.ToGetBackupDestinationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBackupDestinationsFilterArray) ToGetBackupDestinationsFilterArrayOutputWithContext(ctx context.Context) GetBackupDestinationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationsFilterArrayOutput)
+}
+
+type GetBackupDestinationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBackupDestinationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupDestinationsFilter)(nil)).Elem()
+}
+
+func (o GetBackupDestinationsFilterOutput) ToGetBackupDestinationsFilterOutput() GetBackupDestinationsFilterOutput {
+	return o
+}
+
+func (o GetBackupDestinationsFilterOutput) ToGetBackupDestinationsFilterOutputWithContext(ctx context.Context) GetBackupDestinationsFilterOutput {
+	return o
+}
+
+func (o GetBackupDestinationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDestinationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetBackupDestinationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBackupDestinationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetBackupDestinationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBackupDestinationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetBackupDestinationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBackupDestinationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupDestinationsFilter)(nil)).Elem()
+}
+
+func (o GetBackupDestinationsFilterArrayOutput) ToGetBackupDestinationsFilterArrayOutput() GetBackupDestinationsFilterArrayOutput {
+	return o
+}
+
+func (o GetBackupDestinationsFilterArrayOutput) ToGetBackupDestinationsFilterArrayOutputWithContext(ctx context.Context) GetBackupDestinationsFilterArrayOutput {
+	return o
+}
+
+func (o GetBackupDestinationsFilterArrayOutput) Index(i pulumi.IntInput) GetBackupDestinationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupDestinationsFilter {
+		return vs[0].([]GetBackupDestinationsFilter)[vs[1].(int)]
+	}).(GetBackupDestinationsFilterOutput)
+}
+
+type GetBackupsBackup struct {
+	// The name of the availability domain where the database backup is stored.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// A filter to return only resources that match the given backup destination type.
+	BackupDestinationType string `pulumi:"backupDestinationType"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
+	DatabaseEdition string `pulumi:"databaseEdition"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+	DatabaseId string `pulumi:"databaseId"`
+	// The size of the database in gigabytes at the time the backup was taken.
+	DatabaseSizeInGbs float64 `pulumi:"databaseSizeInGbs"`
+	// The user-friendly name for the backup. The name does not have to be unique.
+	DisplayName string `pulumi:"displayName"`
+	// Types of providers supported for managing database encryption keys
+	EncryptionKeyLocationDetails []GetBackupsBackupEncryptionKeyLocationDetail `pulumi:"encryptionKeyLocationDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
+	Id string `pulumi:"id"`
+	// True if Oracle Managed Keys is required for restore of the backup.
+	IsUsingOracleManagedKeys bool `pulumi:"isUsingOracleManagedKeys"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+	KeyStoreId string `pulumi:"keyStoreId"`
+	// The wallet name for Oracle Key Vault.
+	KeyStoreWalletName string `pulumi:"keyStoreWalletName"`
+	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+	KmsKeyId string `pulumi:"kmsKeyId"`
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The retention period of the long term backup in days.
+	RetentionPeriodInDays int `pulumi:"retentionPeriodInDays"`
+	// The retention period of the long term backup in years.
+	RetentionPeriodInYears int `pulumi:"retentionPeriodInYears"`
+	// List of OCIDs of the key containers used as the secondary encryption key in database transparent data encryption (TDE) operations.
+	SecondaryKmsKeyIds []string `pulumi:"secondaryKmsKeyIds"`
+	// Shape of the backup's source database.
+	Shape string `pulumi:"shape"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The date and time the backup was completed.
+	TimeEnded string `pulumi:"timeEnded"`
+	// Expiration time of the long term database backup.
+	TimeExpiryScheduled string `pulumi:"timeExpiryScheduled"`
+	// The date and time the backup started.
+	TimeStarted string `pulumi:"timeStarted"`
+	// A filter to return only backups that matches with the given type of Backup.
+	Type string `pulumi:"type"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+	VaultId string `pulumi:"vaultId"`
+	// A filter to return only resources that match the given database version.
+	Version string `pulumi:"version"`
+}
+
+// GetBackupsBackupInput is an input type that accepts GetBackupsBackupArgs and GetBackupsBackupOutput values.
+// You can construct a concrete instance of `GetBackupsBackupInput` via:
+//
+//	GetBackupsBackupArgs{...}
+type GetBackupsBackupInput interface {
+	pulumi.Input
+
+	ToGetBackupsBackupOutput() GetBackupsBackupOutput
+	ToGetBackupsBackupOutputWithContext(context.Context) GetBackupsBackupOutput
+}
+
+type GetBackupsBackupArgs struct {
+	// The name of the availability domain where the database backup is stored.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// A filter to return only resources that match the given backup destination type.
+	BackupDestinationType pulumi.StringInput `pulumi:"backupDestinationType"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
+	DatabaseEdition pulumi.StringInput `pulumi:"databaseEdition"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+	DatabaseId pulumi.StringInput `pulumi:"databaseId"`
+	// The size of the database in gigabytes at the time the backup was taken.
+	DatabaseSizeInGbs pulumi.Float64Input `pulumi:"databaseSizeInGbs"`
+	// The user-friendly name for the backup. The name does not have to be unique.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Types of providers supported for managing database encryption keys
+	EncryptionKeyLocationDetails GetBackupsBackupEncryptionKeyLocationDetailArrayInput `pulumi:"encryptionKeyLocationDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
+	Id pulumi.StringInput `pulumi:"id"`
+	// True if Oracle Managed Keys is required for restore of the backup.
+	IsUsingOracleManagedKeys pulumi.BoolInput `pulumi:"isUsingOracleManagedKeys"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+	KeyStoreId pulumi.StringInput `pulumi:"keyStoreId"`
+	// The wallet name for Oracle Key Vault.
+	KeyStoreWalletName pulumi.StringInput `pulumi:"keyStoreWalletName"`
+	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+	KmsKeyVersionId pulumi.StringInput `pulumi:"kmsKeyVersionId"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The retention period of the long term backup in days.
+	RetentionPeriodInDays pulumi.IntInput `pulumi:"retentionPeriodInDays"`
+	// The retention period of the long term backup in years.
+	RetentionPeriodInYears pulumi.IntInput `pulumi:"retentionPeriodInYears"`
+	// List of OCIDs of the key containers used as the secondary encryption key in database transparent data encryption (TDE) operations.
+	SecondaryKmsKeyIds pulumi.StringArrayInput `pulumi:"secondaryKmsKeyIds"`
+	// Shape of the backup's source database.
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the backup was completed.
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// Expiration time of the long term database backup.
+	TimeExpiryScheduled pulumi.StringInput `pulumi:"timeExpiryScheduled"`
+	// The date and time the backup started.
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	// A filter to return only backups that matches with the given type of Backup.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+	VaultId pulumi.StringInput `pulumi:"vaultId"`
+	// A filter to return only resources that match the given database version.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetBackupsBackupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupsBackup)(nil)).Elem()
+}
+
+func (i GetBackupsBackupArgs) ToGetBackupsBackupOutput() GetBackupsBackupOutput {
+	return i.ToGetBackupsBackupOutputWithContext(context.Background())
+}
+
+func (i GetBackupsBackupArgs) ToGetBackupsBackupOutputWithContext(ctx context.Context) GetBackupsBackupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupsBackupOutput)
+}
+
+// GetBackupsBackupArrayInput is an input type that accepts GetBackupsBackupArray and GetBackupsBackupArrayOutput values.
+// You can construct a concrete instance of `GetBackupsBackupArrayInput` via:
+//
+//	GetBackupsBackupArray{ GetBackupsBackupArgs{...} }
+type GetBackupsBackupArrayInput interface {
+	pulumi.Input
+
+	ToGetBackupsBackupArrayOutput() GetBackupsBackupArrayOutput
+	ToGetBackupsBackupArrayOutputWithContext(context.Context) GetBackupsBackupArrayOutput
+}
+
+type GetBackupsBackupArray []GetBackupsBackupInput
+
+func (GetBackupsBackupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupsBackup)(nil)).Elem()
+}
+
+func (i GetBackupsBackupArray) ToGetBackupsBackupArrayOutput() GetBackupsBackupArrayOutput {
+	return i.ToGetBackupsBackupArrayOutputWithContext(context.Background())
+}
+
+func (i GetBackupsBackupArray) ToGetBackupsBackupArrayOutputWithContext(ctx context.Context) GetBackupsBackupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupsBackupArrayOutput)
+}
+
+type GetBackupsBackupOutput struct{ *pulumi.OutputState }
+
+func (GetBackupsBackupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupsBackup)(nil)).Elem()
+}
+
+func (o GetBackupsBackupOutput) ToGetBackupsBackupOutput() GetBackupsBackupOutput {
+	return o
+}
+
+func (o GetBackupsBackupOutput) ToGetBackupsBackupOutputWithContext(ctx context.Context) GetBackupsBackupOutput {
+	return o
+}
+
+// The name of the availability domain where the database backup is stored.
+func (o GetBackupsBackupOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackup) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given backup destination type.
+func (o GetBackupsBackupOutput) BackupDestinationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackup) string { return v.BackupDestinationType }).(pulumi.StringOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetBackupsBackupOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackup) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
+func (o GetBackupsBackupOutput) DatabaseEdition() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackup) string { return v.DatabaseEdition }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+func (o GetBackupsBackupOutput) DatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackup) string { return v.DatabaseId }).(pulumi.StringOutput)
+}
+
+// The size of the database in gigabytes at the time the backup was taken.
+func (o GetBackupsBackupOutput) DatabaseSizeInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetBackupsBackup) float64 { return v.DatabaseSizeInGbs }).(pulumi.Float64Output)
+}
+
+// The user-friendly name for the backup. The name does not have to be unique.
+func (o GetBackupsBackupOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackup) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Types of providers supported for managing database encryption keys
+func (o GetBackupsBackupOutput) EncryptionKeyLocationDetails() GetBackupsBackupEncryptionKeyLocationDetailArrayOutput {
+	return o.ApplyT(func(v GetBackupsBackup) []GetBackupsBackupEncryptionKeyLocationDetail {
+		return v.EncryptionKeyLocationDetails
+	}).(GetBackupsBackupEncryptionKeyLocationDetailArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
+func (o GetBackupsBackupOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackup) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// True if Oracle Managed Keys is required for restore of the backup.
+func (o GetBackupsBackupOutput) IsUsingOracleManagedKeys() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBackupsBackup) bool { return v.IsUsingOracleManagedKeys }).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+func (o GetBackupsBackupOutput) KeyStoreId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackup) string { return v.KeyStoreId }).(pulumi.StringOutput)
+}
+
+// The wallet name for Oracle Key Vault.
+func (o GetBackupsBackupOutput) KeyStoreWalletName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackup) string { return v.KeyStoreWalletName }).(pulumi.StringOutput)
+}
+
+// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+func (o GetBackupsBackupOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackup) string { return v.KmsKeyId }).(pulumi.StringOutput)
+}
+
+// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+func (o GetBackupsBackupOutput) KmsKeyVersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackup) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetBackupsBackupOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackup) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The retention period of the long term backup in days.
+func (o GetBackupsBackupOutput) RetentionPeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBackupsBackup) int { return v.RetentionPeriodInDays }).(pulumi.IntOutput)
+}
+
+// The retention period of the long term backup in years.
+func (o GetBackupsBackupOutput) RetentionPeriodInYears() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBackupsBackup) int { return v.RetentionPeriodInYears }).(pulumi.IntOutput)
+}
+
+// List of OCIDs of the key containers used as the secondary encryption key in database transparent data encryption (TDE) operations.
+func (o GetBackupsBackupOutput) SecondaryKmsKeyIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBackupsBackup) []string { return v.SecondaryKmsKeyIds }).(pulumi.StringArrayOutput)
+}
+
+// Shape of the backup's source database.
+func (o GetBackupsBackupOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackup) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetBackupsBackupOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackup) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the backup was completed.
+func (o GetBackupsBackupOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackup) string { return v.TimeEnded }).(pulumi.StringOutput)
+}
+
+// Expiration time of the long term database backup.
+func (o GetBackupsBackupOutput) TimeExpiryScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackup) string { return v.TimeExpiryScheduled }).(pulumi.StringOutput)
+}
+
+// The date and time the backup started.
+func (o GetBackupsBackupOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackup) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+// A filter to return only backups that matches with the given type of Backup.
+func (o GetBackupsBackupOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackup) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+func (o GetBackupsBackupOutput) VaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackup) string { return v.VaultId }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given database version.
+func (o GetBackupsBackupOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackup) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetBackupsBackupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBackupsBackupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupsBackup)(nil)).Elem()
+}
+
+func (o GetBackupsBackupArrayOutput) ToGetBackupsBackupArrayOutput() GetBackupsBackupArrayOutput {
+	return o
+}
+
+func (o GetBackupsBackupArrayOutput) ToGetBackupsBackupArrayOutputWithContext(ctx context.Context) GetBackupsBackupArrayOutput {
+	return o
+}
+
+func (o GetBackupsBackupArrayOutput) Index(i pulumi.IntInput) GetBackupsBackupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupsBackup {
+		return vs[0].([]GetBackupsBackup)[vs[1].(int)]
+	}).(GetBackupsBackupOutput)
+}
+
+type GetBackupsBackupEncryptionKeyLocationDetail struct {
+	// Provide the key OCID of a registered AWS key.
+	AwsEncryptionKeyId string `pulumi:"awsEncryptionKeyId"`
+	// Provide the key OCID of a registered Azure key.
+	AzureEncryptionKeyId string `pulumi:"azureEncryptionKeyId"`
+	// Provide the key OCID of a registered GCP key.
+	GoogleCloudProviderEncryptionKeyId string `pulumi:"googleCloudProviderEncryptionKeyId"`
+	// Provide the HSM password as you would in RDBMS for External HSM.
+	HsmPassword string `pulumi:"hsmPassword"`
+	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
+	ProviderType string `pulumi:"providerType"`
+}
+
+// GetBackupsBackupEncryptionKeyLocationDetailInput is an input type that accepts GetBackupsBackupEncryptionKeyLocationDetailArgs and GetBackupsBackupEncryptionKeyLocationDetailOutput values.
+// You can construct a concrete instance of `GetBackupsBackupEncryptionKeyLocationDetailInput` via:
+//
+//	GetBackupsBackupEncryptionKeyLocationDetailArgs{...}
+type GetBackupsBackupEncryptionKeyLocationDetailInput interface {
+	pulumi.Input
+
+	ToGetBackupsBackupEncryptionKeyLocationDetailOutput() GetBackupsBackupEncryptionKeyLocationDetailOutput
+	ToGetBackupsBackupEncryptionKeyLocationDetailOutputWithContext(context.Context) GetBackupsBackupEncryptionKeyLocationDetailOutput
+}
+
+type GetBackupsBackupEncryptionKeyLocationDetailArgs struct {
+	// Provide the key OCID of a registered AWS key.
+	AwsEncryptionKeyId pulumi.StringInput `pulumi:"awsEncryptionKeyId"`
+	// Provide the key OCID of a registered Azure key.
+	AzureEncryptionKeyId pulumi.StringInput `pulumi:"azureEncryptionKeyId"`
+	// Provide the key OCID of a registered GCP key.
+	GoogleCloudProviderEncryptionKeyId pulumi.StringInput `pulumi:"googleCloudProviderEncryptionKeyId"`
+	// Provide the HSM password as you would in RDBMS for External HSM.
+	HsmPassword pulumi.StringInput `pulumi:"hsmPassword"`
+	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
+	ProviderType pulumi.StringInput `pulumi:"providerType"`
+}
+
+func (GetBackupsBackupEncryptionKeyLocationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupsBackupEncryptionKeyLocationDetail)(nil)).Elem()
+}
+
+func (i GetBackupsBackupEncryptionKeyLocationDetailArgs) ToGetBackupsBackupEncryptionKeyLocationDetailOutput() GetBackupsBackupEncryptionKeyLocationDetailOutput {
+	return i.ToGetBackupsBackupEncryptionKeyLocationDetailOutputWithContext(context.Background())
+}
+
+func (i GetBackupsBackupEncryptionKeyLocationDetailArgs) ToGetBackupsBackupEncryptionKeyLocationDetailOutputWithContext(ctx context.Context) GetBackupsBackupEncryptionKeyLocationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupsBackupEncryptionKeyLocationDetailOutput)
+}
+
+// GetBackupsBackupEncryptionKeyLocationDetailArrayInput is an input type that accepts GetBackupsBackupEncryptionKeyLocationDetailArray and GetBackupsBackupEncryptionKeyLocationDetailArrayOutput values.
+// You can construct a concrete instance of `GetBackupsBackupEncryptionKeyLocationDetailArrayInput` via:
+//
+//	GetBackupsBackupEncryptionKeyLocationDetailArray{ GetBackupsBackupEncryptionKeyLocationDetailArgs{...} }
+type GetBackupsBackupEncryptionKeyLocationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetBackupsBackupEncryptionKeyLocationDetailArrayOutput() GetBackupsBackupEncryptionKeyLocationDetailArrayOutput
+	ToGetBackupsBackupEncryptionKeyLocationDetailArrayOutputWithContext(context.Context) GetBackupsBackupEncryptionKeyLocationDetailArrayOutput
+}
+
+type GetBackupsBackupEncryptionKeyLocationDetailArray []GetBackupsBackupEncryptionKeyLocationDetailInput
+
+func (GetBackupsBackupEncryptionKeyLocationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupsBackupEncryptionKeyLocationDetail)(nil)).Elem()
+}
+
+func (i GetBackupsBackupEncryptionKeyLocationDetailArray) ToGetBackupsBackupEncryptionKeyLocationDetailArrayOutput() GetBackupsBackupEncryptionKeyLocationDetailArrayOutput {
+	return i.ToGetBackupsBackupEncryptionKeyLocationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetBackupsBackupEncryptionKeyLocationDetailArray) ToGetBackupsBackupEncryptionKeyLocationDetailArrayOutputWithContext(ctx context.Context) GetBackupsBackupEncryptionKeyLocationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupsBackupEncryptionKeyLocationDetailArrayOutput)
+}
+
+type GetBackupsBackupEncryptionKeyLocationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetBackupsBackupEncryptionKeyLocationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupsBackupEncryptionKeyLocationDetail)(nil)).Elem()
+}
+
+func (o GetBackupsBackupEncryptionKeyLocationDetailOutput) ToGetBackupsBackupEncryptionKeyLocationDetailOutput() GetBackupsBackupEncryptionKeyLocationDetailOutput {
+	return o
+}
+
+func (o GetBackupsBackupEncryptionKeyLocationDetailOutput) ToGetBackupsBackupEncryptionKeyLocationDetailOutputWithContext(ctx context.Context) GetBackupsBackupEncryptionKeyLocationDetailOutput {
+	return o
+}
+
+// Provide the key OCID of a registered AWS key.
+func (o GetBackupsBackupEncryptionKeyLocationDetailOutput) AwsEncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackupEncryptionKeyLocationDetail) string { return v.AwsEncryptionKeyId }).(pulumi.StringOutput)
+}
+
+// Provide the key OCID of a registered Azure key.
+func (o GetBackupsBackupEncryptionKeyLocationDetailOutput) AzureEncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackupEncryptionKeyLocationDetail) string { return v.AzureEncryptionKeyId }).(pulumi.StringOutput)
+}
+
+// Provide the key OCID of a registered GCP key.
+func (o GetBackupsBackupEncryptionKeyLocationDetailOutput) GoogleCloudProviderEncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackupEncryptionKeyLocationDetail) string {
+		return v.GoogleCloudProviderEncryptionKeyId
+	}).(pulumi.StringOutput)
+}
+
+// Provide the HSM password as you would in RDBMS for External HSM.
+func (o GetBackupsBackupEncryptionKeyLocationDetailOutput) HsmPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackupEncryptionKeyLocationDetail) string { return v.HsmPassword }).(pulumi.StringOutput)
+}
+
+// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
+func (o GetBackupsBackupEncryptionKeyLocationDetailOutput) ProviderType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackupEncryptionKeyLocationDetail) string { return v.ProviderType }).(pulumi.StringOutput)
+}
+
+type GetBackupsBackupEncryptionKeyLocationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBackupsBackupEncryptionKeyLocationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupsBackupEncryptionKeyLocationDetail)(nil)).Elem()
+}
+
+func (o GetBackupsBackupEncryptionKeyLocationDetailArrayOutput) ToGetBackupsBackupEncryptionKeyLocationDetailArrayOutput() GetBackupsBackupEncryptionKeyLocationDetailArrayOutput {
+	return o
+}
+
+func (o GetBackupsBackupEncryptionKeyLocationDetailArrayOutput) ToGetBackupsBackupEncryptionKeyLocationDetailArrayOutputWithContext(ctx context.Context) GetBackupsBackupEncryptionKeyLocationDetailArrayOutput {
+	return o
+}
+
+func (o GetBackupsBackupEncryptionKeyLocationDetailArrayOutput) Index(i pulumi.IntInput) GetBackupsBackupEncryptionKeyLocationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupsBackupEncryptionKeyLocationDetail {
+		return vs[0].([]GetBackupsBackupEncryptionKeyLocationDetail)[vs[1].(int)]
+	}).(GetBackupsBackupEncryptionKeyLocationDetailOutput)
+}
+
+type GetBackupsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetBackupsFilterInput is an input type that accepts GetBackupsFilterArgs and GetBackupsFilterOutput values.
+// You can construct a concrete instance of `GetBackupsFilterInput` via:
+//
+//	GetBackupsFilterArgs{...}
+type GetBackupsFilterInput interface {
+	pulumi.Input
+
+	ToGetBackupsFilterOutput() GetBackupsFilterOutput
+	ToGetBackupsFilterOutputWithContext(context.Context) GetBackupsFilterOutput
+}
+
+type GetBackupsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetBackupsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupsFilter)(nil)).Elem()
+}
+
+func (i GetBackupsFilterArgs) ToGetBackupsFilterOutput() GetBackupsFilterOutput {
+	return i.ToGetBackupsFilterOutputWithContext(context.Background())
+}
+
+func (i GetBackupsFilterArgs) ToGetBackupsFilterOutputWithContext(ctx context.Context) GetBackupsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupsFilterOutput)
+}
+
+// GetBackupsFilterArrayInput is an input type that accepts GetBackupsFilterArray and GetBackupsFilterArrayOutput values.
+// You can construct a concrete instance of `GetBackupsFilterArrayInput` via:
+//
+//	GetBackupsFilterArray{ GetBackupsFilterArgs{...} }
+type GetBackupsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBackupsFilterArrayOutput() GetBackupsFilterArrayOutput
+	ToGetBackupsFilterArrayOutputWithContext(context.Context) GetBackupsFilterArrayOutput
+}
+
+type GetBackupsFilterArray []GetBackupsFilterInput
+
+func (GetBackupsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupsFilter)(nil)).Elem()
+}
+
+func (i GetBackupsFilterArray) ToGetBackupsFilterArrayOutput() GetBackupsFilterArrayOutput {
+	return i.ToGetBackupsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBackupsFilterArray) ToGetBackupsFilterArrayOutputWithContext(ctx context.Context) GetBackupsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupsFilterArrayOutput)
+}
+
+type GetBackupsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBackupsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupsFilter)(nil)).Elem()
+}
+
+func (o GetBackupsFilterOutput) ToGetBackupsFilterOutput() GetBackupsFilterOutput {
+	return o
+}
+
+func (o GetBackupsFilterOutput) ToGetBackupsFilterOutputWithContext(ctx context.Context) GetBackupsFilterOutput {
+	return o
+}
+
+func (o GetBackupsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetBackupsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBackupsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetBackupsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBackupsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetBackupsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBackupsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupsFilter)(nil)).Elem()
+}
+
+func (o GetBackupsFilterArrayOutput) ToGetBackupsFilterArrayOutput() GetBackupsFilterArrayOutput {
+	return o
+}
+
+func (o GetBackupsFilterArrayOutput) ToGetBackupsFilterArrayOutputWithContext(ctx context.Context) GetBackupsFilterArrayOutput {
+	return o
+}
+
+func (o GetBackupsFilterArrayOutput) Index(i pulumi.IntInput) GetBackupsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupsFilter {
+		return vs[0].([]GetBackupsFilter)[vs[1].(int)]
+	}).(GetBackupsFilterOutput)
+}
+
+type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage struct {
+	// List of autonomous container database resource usage per autonomous virtual machine.
+	AutonomousContainerDatabaseVmUsages []GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage `pulumi:"autonomousContainerDatabaseVmUsages"`
+	// CPUs available for provisioning or scaling an Autonomous AI Database in the Autonomous Container Database.
+	AvailableCpus float64 `pulumi:"availableCpus"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
+	Id string `pulumi:"id"`
+	// Largest provisionable ADB in the Autonomous Container Database.
+	LargestProvisionableAutonomousDatabaseInCpus float64 `pulumi:"largestProvisionableAutonomousDatabaseInCpus"`
+	// Valid list of provisionable CPUs for Autonomous AI Database.
+	ProvisionableCpuses []float64 `pulumi:"provisionableCpuses"`
+	// CPUs / cores assigned to ADBs in the Autonomous Container Database.
+	ProvisionedCpus float64 `pulumi:"provisionedCpus"`
+	// Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
+	ReclaimableCpus float64 `pulumi:"reclaimableCpus"`
+	// CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
+	ReservedCpus float64 `pulumi:"reservedCpus"`
+	// CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
+	UsedCpus float64 `pulumi:"usedCpus"`
+}
+
+// GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageInput is an input type that accepts GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArgs and GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageInput` via:
+//
+//	GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArgs{...}
+type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput
+	ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutputWithContext(context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput
+}
+
+type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArgs struct {
+	// List of autonomous container database resource usage per autonomous virtual machine.
+	AutonomousContainerDatabaseVmUsages GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayInput `pulumi:"autonomousContainerDatabaseVmUsages"`
+	// CPUs available for provisioning or scaling an Autonomous AI Database in the Autonomous Container Database.
+	AvailableCpus pulumi.Float64Input `pulumi:"availableCpus"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Largest provisionable ADB in the Autonomous Container Database.
+	LargestProvisionableAutonomousDatabaseInCpus pulumi.Float64Input `pulumi:"largestProvisionableAutonomousDatabaseInCpus"`
+	// Valid list of provisionable CPUs for Autonomous AI Database.
+	ProvisionableCpuses pulumi.Float64ArrayInput `pulumi:"provisionableCpuses"`
+	// CPUs / cores assigned to ADBs in the Autonomous Container Database.
+	ProvisionedCpus pulumi.Float64Input `pulumi:"provisionedCpus"`
+	// Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
+	ReclaimableCpus pulumi.Float64Input `pulumi:"reclaimableCpus"`
+	// CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
+	ReservedCpus pulumi.Float64Input `pulumi:"reservedCpus"`
+	// CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
+	UsedCpus pulumi.Float64Input `pulumi:"usedCpus"`
+}
+
+func (GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArgs) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput {
+	return i.ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArgs) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput)
+}
+
+// GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayInput is an input type that accepts GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArray and GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayInput` via:
+//
+//	GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArray{ GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArgs{...} }
+type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput
+	ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutputWithContext(context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput
+}
+
+type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArray []GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageInput
+
+func (GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArray) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput {
+	return i.ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArray) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput)
+}
+
+type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput {
+	return o
+}
+
+// List of autonomous container database resource usage per autonomous virtual machine.
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) AutonomousContainerDatabaseVmUsages() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) []GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage {
+		return v.AutonomousContainerDatabaseVmUsages
+	}).(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput)
+}
+
+// CPUs available for provisioning or scaling an Autonomous AI Database in the Autonomous Container Database.
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) AvailableCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) float64 {
+		return v.AvailableCpus
+	}).(pulumi.Float64Output)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// Largest provisionable ADB in the Autonomous Container Database.
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) LargestProvisionableAutonomousDatabaseInCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) float64 {
+		return v.LargestProvisionableAutonomousDatabaseInCpus
+	}).(pulumi.Float64Output)
+}
+
+// Valid list of provisionable CPUs for Autonomous AI Database.
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) ProvisionableCpuses() pulumi.Float64ArrayOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) []float64 {
+		return v.ProvisionableCpuses
+	}).(pulumi.Float64ArrayOutput)
+}
+
+// CPUs / cores assigned to ADBs in the Autonomous Container Database.
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) ProvisionedCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) float64 {
+		return v.ProvisionedCpus
+	}).(pulumi.Float64Output)
+}
+
+// Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) ReclaimableCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) float64 {
+		return v.ReclaimableCpus
+	}).(pulumi.Float64Output)
+}
+
+// CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) ReservedCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) float64 {
+		return v.ReservedCpus
+	}).(pulumi.Float64Output)
+}
+
+// CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) UsedCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) float64 {
+		return v.UsedCpus
+	}).(pulumi.Float64Output)
+}
+
+type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage {
+		return vs[0].([]GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage)[vs[1].(int)]
+	}).(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput)
+}
+
+type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage struct {
+	// The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
+	Id string `pulumi:"id"`
+	// CPUs / cores assigned to ADBs in the Autonomous Container Database.
+	ProvisionedCpus float64 `pulumi:"provisionedCpus"`
+	// Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
+	ReclaimableCpus float64 `pulumi:"reclaimableCpus"`
+	// CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
+	ReservedCpus float64 `pulumi:"reservedCpus"`
+	// CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
+	UsedCpus float64 `pulumi:"usedCpus"`
+}
+
+// GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageInput is an input type that accepts GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArgs and GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageInput` via:
+//
+//	GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArgs{...}
+type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput
+	ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutputWithContext(context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput
+}
+
+type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArgs struct {
+	// The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
+	Id pulumi.StringInput `pulumi:"id"`
+	// CPUs / cores assigned to ADBs in the Autonomous Container Database.
+	ProvisionedCpus pulumi.Float64Input `pulumi:"provisionedCpus"`
+	// Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
+	ReclaimableCpus pulumi.Float64Input `pulumi:"reclaimableCpus"`
+	// CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
+	ReservedCpus pulumi.Float64Input `pulumi:"reservedCpus"`
+	// CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
+	UsedCpus pulumi.Float64Input `pulumi:"usedCpus"`
+}
+
+func (GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArgs) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput {
+	return i.ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArgs) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput)
+}
+
+// GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayInput is an input type that accepts GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArray and GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayInput` via:
+//
+//	GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArray{ GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArgs{...} }
+type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput
+	ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutputWithContext(context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput
+}
+
+type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArray []GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageInput
+
+func (GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArray) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput {
+	return i.ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArray) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput)
+}
+
+type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput {
+	return o
+}
+
+// The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// CPUs / cores assigned to ADBs in the Autonomous Container Database.
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput) ProvisionedCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage) float64 {
+		return v.ProvisionedCpus
+	}).(pulumi.Float64Output)
+}
+
+// Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput) ReclaimableCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage) float64 {
+		return v.ReclaimableCpus
+	}).(pulumi.Float64Output)
+}
+
+// CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput) ReservedCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage) float64 {
+		return v.ReservedCpus
+	}).(pulumi.Float64Output)
+}
+
+// CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput) UsedCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage) float64 {
+		return v.UsedCpus
+	}).(pulumi.Float64Output)
+}
+
+type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage {
+		return vs[0].([]GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage)[vs[1].(int)]
+	}).(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput)
+}
+
+type GetCloudAutonomousVmClusterAcdResourceUsagesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetCloudAutonomousVmClusterAcdResourceUsagesFilterInput is an input type that accepts GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs and GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClusterAcdResourceUsagesFilterInput` via:
+//
+//	GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs{...}
+type GetCloudAutonomousVmClusterAcdResourceUsagesFilterInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput() GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput
+	ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterOutputWithContext(context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput
+}
+
+type GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesFilter)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs) ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput() GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput {
+	return i.ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs) ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput)
+}
+
+// GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayInput is an input type that accepts GetCloudAutonomousVmClusterAcdResourceUsagesFilterArray and GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayInput` via:
+//
+//	GetCloudAutonomousVmClusterAcdResourceUsagesFilterArray{ GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs{...} }
+type GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput() GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput
+	ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutputWithContext(context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput
+}
+
+type GetCloudAutonomousVmClusterAcdResourceUsagesFilterArray []GetCloudAutonomousVmClusterAcdResourceUsagesFilterInput
+
+func (GetCloudAutonomousVmClusterAcdResourceUsagesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterAcdResourceUsagesFilter)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClusterAcdResourceUsagesFilterArray) ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput() GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput {
+	return i.ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClusterAcdResourceUsagesFilterArray) ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput)
+}
+
+type GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesFilter)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput() GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterAcdResourceUsagesFilter)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput() GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClusterAcdResourceUsagesFilter {
+		return vs[0].([]GetCloudAutonomousVmClusterAcdResourceUsagesFilter)[vs[1].(int)]
+	}).(GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput)
+}
 
 type GetCloudAutonomousVmClusterMaintenanceWindow struct {
 	// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -60884,6 +62793,30 @@ func (o GetVmClustersVmClusterUpdateDetailArrayOutput) Index(i pulumi.IntInput) 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationMountTypeDetailInput)(nil)).Elem(), GetBackupDestinationMountTypeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationMountTypeDetailArrayInput)(nil)).Elem(), GetBackupDestinationMountTypeDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationsBackupDestinationInput)(nil)).Elem(), GetBackupDestinationsBackupDestinationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationsBackupDestinationArrayInput)(nil)).Elem(), GetBackupDestinationsBackupDestinationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationsBackupDestinationAssociatedDatabaseInput)(nil)).Elem(), GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayInput)(nil)).Elem(), GetBackupDestinationsBackupDestinationAssociatedDatabaseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationsBackupDestinationAssociatedLongTermBackupInput)(nil)).Elem(), GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayInput)(nil)).Elem(), GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationsBackupDestinationMountTypeDetailInput)(nil)).Elem(), GetBackupDestinationsBackupDestinationMountTypeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationsBackupDestinationMountTypeDetailArrayInput)(nil)).Elem(), GetBackupDestinationsBackupDestinationMountTypeDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationsFilterInput)(nil)).Elem(), GetBackupDestinationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationsFilterArrayInput)(nil)).Elem(), GetBackupDestinationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsBackupInput)(nil)).Elem(), GetBackupsBackupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsBackupArrayInput)(nil)).Elem(), GetBackupsBackupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsBackupEncryptionKeyLocationDetailInput)(nil)).Elem(), GetBackupsBackupEncryptionKeyLocationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsBackupEncryptionKeyLocationDetailArrayInput)(nil)).Elem(), GetBackupsBackupEncryptionKeyLocationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsFilterInput)(nil)).Elem(), GetBackupsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsFilterArrayInput)(nil)).Elem(), GetBackupsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageInput)(nil)).Elem(), GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayInput)(nil)).Elem(), GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageInput)(nil)).Elem(), GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayInput)(nil)).Elem(), GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesFilterInput)(nil)).Elem(), GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayInput)(nil)).Elem(), GetCloudAutonomousVmClusterAcdResourceUsagesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterMaintenanceWindowInput)(nil)).Elem(), GetCloudAutonomousVmClusterMaintenanceWindowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterMaintenanceWindowArrayInput)(nil)).Elem(), GetCloudAutonomousVmClusterMaintenanceWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekInput)(nil)).Elem(), GetCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs{})
@@ -61716,6 +63649,30 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterLiveImageVersionDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterLiveImageVersionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterUpdateDetailInput)(nil)).Elem(), GetVmClustersVmClusterUpdateDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterUpdateDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterUpdateDetailArray{})
+	pulumi.RegisterOutputType(GetBackupDestinationMountTypeDetailOutput{})
+	pulumi.RegisterOutputType(GetBackupDestinationMountTypeDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetBackupDestinationsBackupDestinationOutput{})
+	pulumi.RegisterOutputType(GetBackupDestinationsBackupDestinationArrayOutput{})
+	pulumi.RegisterOutputType(GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput{})
+	pulumi.RegisterOutputType(GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput{})
+	pulumi.RegisterOutputType(GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput{})
+	pulumi.RegisterOutputType(GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput{})
+	pulumi.RegisterOutputType(GetBackupDestinationsBackupDestinationMountTypeDetailOutput{})
+	pulumi.RegisterOutputType(GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetBackupDestinationsFilterOutput{})
+	pulumi.RegisterOutputType(GetBackupDestinationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetBackupsBackupOutput{})
+	pulumi.RegisterOutputType(GetBackupsBackupArrayOutput{})
+	pulumi.RegisterOutputType(GetBackupsBackupEncryptionKeyLocationDetailOutput{})
+	pulumi.RegisterOutputType(GetBackupsBackupEncryptionKeyLocationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetBackupsFilterOutput{})
+	pulumi.RegisterOutputType(GetBackupsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterMaintenanceWindowOutput{})
 	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterMaintenanceWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput{})

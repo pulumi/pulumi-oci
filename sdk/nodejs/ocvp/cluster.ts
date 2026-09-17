@@ -61,6 +61,7 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     initialCommitment: clusterInitialCommitment,
+ *     initialFaultDomainHostDistribution: clusterInitialFaultDomainHostDistribution,
  *     initialHostOcpuCount: clusterInitialHostOcpuCount,
  *     initialHostShapeName: testShape.name,
  *     initialVcfByolAllocationId: testByolAllocation.id,
@@ -161,6 +162,10 @@ export class Cluster extends pulumi.CustomResource {
      */
     declare public readonly initialCommitment: pulumi.Output<string>;
     /**
+     * The initial fault domain host distribution mode for the Cluster.
+     */
+    declare public readonly initialFaultDomainHostDistribution: pulumi.Output<string>;
+    /**
      * The initial OCPU count of the Cluster's ESXi hosts.
      */
     declare public readonly initialHostOcpuCount: pulumi.Output<number>;
@@ -258,6 +263,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["esxiSoftwareVersion"] = state?.esxiSoftwareVersion;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["initialCommitment"] = state?.initialCommitment;
+            resourceInputs["initialFaultDomainHostDistribution"] = state?.initialFaultDomainHostDistribution;
             resourceInputs["initialHostOcpuCount"] = state?.initialHostOcpuCount;
             resourceInputs["initialHostShapeName"] = state?.initialHostShapeName;
             resourceInputs["initialVcfByolAllocationId"] = state?.initialVcfByolAllocationId;
@@ -301,6 +307,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["esxiSoftwareVersion"] = args?.esxiSoftwareVersion;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["initialCommitment"] = args?.initialCommitment;
+            resourceInputs["initialFaultDomainHostDistribution"] = args?.initialFaultDomainHostDistribution;
             resourceInputs["initialHostOcpuCount"] = args?.initialHostOcpuCount;
             resourceInputs["initialHostShapeName"] = args?.initialHostShapeName;
             resourceInputs["initialVcfByolAllocationId"] = args?.initialVcfByolAllocationId;
@@ -382,6 +389,10 @@ export interface ClusterState {
      * The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
      */
     initialCommitment?: pulumi.Input<string | undefined>;
+    /**
+     * The initial fault domain host distribution mode for the Cluster.
+     */
+    initialFaultDomainHostDistribution?: pulumi.Input<string | undefined>;
     /**
      * The initial OCPU count of the Cluster's ESXi hosts.
      */
@@ -505,6 +516,10 @@ export interface ClusterArgs {
      * The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
      */
     initialCommitment?: pulumi.Input<string | undefined>;
+    /**
+     * The initial fault domain host distribution mode for the Cluster.
+     */
+    initialFaultDomainHostDistribution?: pulumi.Input<string | undefined>;
     /**
      * The initial OCPU count of the Cluster's ESXi hosts.
      */

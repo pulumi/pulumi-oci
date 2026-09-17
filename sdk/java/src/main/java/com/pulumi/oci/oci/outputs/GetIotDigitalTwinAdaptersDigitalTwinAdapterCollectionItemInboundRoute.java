@@ -19,6 +19,11 @@ public final class GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInbo
      */
     private String condition;
     /**
+     * @return JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+     * 
+     */
+    private String contentRoot;
+    /**
      * @return Meaningful write up about the inbound route.
      * 
      */
@@ -33,6 +38,11 @@ public final class GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInbo
      * 
      */
     private List<GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayload> referencePayloads;
+    /**
+     * @return Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+     * 
+     */
+    private String target;
 
     private GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRoute() {}
     /**
@@ -41,6 +51,13 @@ public final class GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInbo
      */
     public String condition() {
         return this.condition;
+    }
+    /**
+     * @return JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+     * 
+     */
+    public String contentRoot() {
+        return this.contentRoot;
     }
     /**
      * @return Meaningful write up about the inbound route.
@@ -63,6 +80,13 @@ public final class GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInbo
     public List<GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayload> referencePayloads() {
         return this.referencePayloads;
     }
+    /**
+     * @return Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+     * 
+     */
+    public String target() {
+        return this.target;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -74,16 +98,20 @@ public final class GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInbo
     @CustomType.Builder
     public static final class Builder {
         private String condition;
+        private String contentRoot;
         private String description;
         private Map<String,String> payloadMapping;
         private List<GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayload> referencePayloads;
+        private String target;
         public Builder() {}
         public Builder(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRoute defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.condition = defaults.condition;
+    	      this.contentRoot = defaults.contentRoot;
     	      this.description = defaults.description;
     	      this.payloadMapping = defaults.payloadMapping;
     	      this.referencePayloads = defaults.referencePayloads;
+    	      this.target = defaults.target;
         }
 
         @CustomType.Setter
@@ -92,6 +120,14 @@ public final class GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInbo
               throw new MissingRequiredPropertyException("GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRoute", "condition");
             }
             this.condition = condition;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder contentRoot(String contentRoot) {
+            if (contentRoot == null) {
+              throw new MissingRequiredPropertyException("GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRoute", "contentRoot");
+            }
+            this.contentRoot = contentRoot;
             return this;
         }
         @CustomType.Setter
@@ -121,12 +157,22 @@ public final class GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInbo
         public Builder referencePayloads(GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayload... referencePayloads) {
             return referencePayloads(List.of(referencePayloads));
         }
+        @CustomType.Setter
+        public Builder target(String target) {
+            if (target == null) {
+              throw new MissingRequiredPropertyException("GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRoute", "target");
+            }
+            this.target = target;
+            return this;
+        }
         public GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRoute build() {
             final var _resultValue = new GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRoute();
             _resultValue.condition = condition;
+            _resultValue.contentRoot = contentRoot;
             _resultValue.description = description;
             _resultValue.payloadMapping = payloadMapping;
             _resultValue.referencePayloads = referencePayloads;
+            _resultValue.target = target;
             return _resultValue;
         }
     }

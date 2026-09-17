@@ -5,6 +5,7 @@ package com.pulumi.oci.Redis.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Redis.inputs.RedisClusterClusterReplicationTopologyArgs;
 import com.pulumi.oci.Redis.inputs.RedisClusterImportFromObjectStorageDetailsArgs;
 import com.pulumi.oci.Redis.inputs.RedisClusterNodeCollectionArgs;
 import java.lang.Double;
@@ -49,6 +50,36 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> clusterMode() {
         return Optional.ofNullable(this.clusterMode);
+    }
+
+    /**
+     * Defines the replication topology of an Oracle Cloud Infrastructure cache cluster, including the primary cluster and associated secondary clusters participating in replication.
+     * 
+     */
+    @Import(name="clusterReplicationTopologies")
+    private @Nullable Output<List<RedisClusterClusterReplicationTopologyArgs>> clusterReplicationTopologies;
+
+    /**
+     * @return Defines the replication topology of an Oracle Cloud Infrastructure cache cluster, including the primary cluster and associated secondary clusters participating in replication.
+     * 
+     */
+    public Optional<Output<List<RedisClusterClusterReplicationTopologyArgs>>> clusterReplicationTopologies() {
+        return Optional.ofNullable(this.clusterReplicationTopologies);
+    }
+
+    /**
+     * The current role of the cluster.
+     * 
+     */
+    @Import(name="clusterRole")
+    private @Nullable Output<String> clusterRole;
+
+    /**
+     * @return The current role of the cluster.
+     * 
+     */
+    public Optional<Output<String>> clusterRole() {
+        return Optional.ofNullable(this.clusterRole);
     }
 
     /**
@@ -247,6 +278,21 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster from which data will be replicated. Setting it on a standalone cluster converts that cluster to a secondary cluster; removing it from a secondary cluster converts that cluster to standalone. Changing directly from one primary cluster to another is not supported: remove it and apply before setting a different primary cluster.
+     * 
+     */
+    @Import(name="primaryClusterId")
+    private @Nullable Output<String> primaryClusterId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster from which data will be replicated. Setting it on a standalone cluster converts that cluster to a secondary cluster; removing it from a secondary cluster converts that cluster to standalone. Changing directly from one primary cluster to another is not supported: remove it and apply before setting a different primary cluster.
+     * 
+     */
+    public Optional<Output<String>> primaryClusterId() {
+        return Optional.ofNullable(this.primaryClusterId);
+    }
+
+    /**
      * The private IP address of the API endpoint for the cluster&#39;s primary node.
      * 
      */
@@ -437,6 +483,8 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
     private RedisClusterState(RedisClusterState $) {
         this.backupId = $.backupId;
         this.clusterMode = $.clusterMode;
+        this.clusterReplicationTopologies = $.clusterReplicationTopologies;
+        this.clusterRole = $.clusterRole;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.discoveryEndpointIpAddress = $.discoveryEndpointIpAddress;
@@ -450,6 +498,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         this.nodeMemoryInGbs = $.nodeMemoryInGbs;
         this.nsgIds = $.nsgIds;
         this.ociCacheConfigSetId = $.ociCacheConfigSetId;
+        this.primaryClusterId = $.primaryClusterId;
         this.primaryEndpointIpAddress = $.primaryEndpointIpAddress;
         this.primaryFqdn = $.primaryFqdn;
         this.replicasEndpointIpAddress = $.replicasEndpointIpAddress;
@@ -522,6 +571,58 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder clusterMode(String clusterMode) {
             return clusterMode(Output.of(clusterMode));
+        }
+
+        /**
+         * @param clusterReplicationTopologies Defines the replication topology of an Oracle Cloud Infrastructure cache cluster, including the primary cluster and associated secondary clusters participating in replication.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterReplicationTopologies(@Nullable Output<List<RedisClusterClusterReplicationTopologyArgs>> clusterReplicationTopologies) {
+            $.clusterReplicationTopologies = clusterReplicationTopologies;
+            return this;
+        }
+
+        /**
+         * @param clusterReplicationTopologies Defines the replication topology of an Oracle Cloud Infrastructure cache cluster, including the primary cluster and associated secondary clusters participating in replication.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterReplicationTopologies(List<RedisClusterClusterReplicationTopologyArgs> clusterReplicationTopologies) {
+            return clusterReplicationTopologies(Output.of(clusterReplicationTopologies));
+        }
+
+        /**
+         * @param clusterReplicationTopologies Defines the replication topology of an Oracle Cloud Infrastructure cache cluster, including the primary cluster and associated secondary clusters participating in replication.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterReplicationTopologies(RedisClusterClusterReplicationTopologyArgs... clusterReplicationTopologies) {
+            return clusterReplicationTopologies(List.of(clusterReplicationTopologies));
+        }
+
+        /**
+         * @param clusterRole The current role of the cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterRole(@Nullable Output<String> clusterRole) {
+            $.clusterRole = clusterRole;
+            return this;
+        }
+
+        /**
+         * @param clusterRole The current role of the cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterRole(String clusterRole) {
+            return clusterRole(Output.of(clusterRole));
         }
 
         /**
@@ -815,6 +916,27 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder ociCacheConfigSetId(String ociCacheConfigSetId) {
             return ociCacheConfigSetId(Output.of(ociCacheConfigSetId));
+        }
+
+        /**
+         * @param primaryClusterId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster from which data will be replicated. Setting it on a standalone cluster converts that cluster to a secondary cluster; removing it from a secondary cluster converts that cluster to standalone. Changing directly from one primary cluster to another is not supported: remove it and apply before setting a different primary cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder primaryClusterId(@Nullable Output<String> primaryClusterId) {
+            $.primaryClusterId = primaryClusterId;
+            return this;
+        }
+
+        /**
+         * @param primaryClusterId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster from which data will be replicated. Setting it on a standalone cluster converts that cluster to a secondary cluster; removing it from a secondary cluster converts that cluster to standalone. Changing directly from one primary cluster to another is not supported: remove it and apply before setting a different primary cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder primaryClusterId(String primaryClusterId) {
+            return primaryClusterId(Output.of(primaryClusterId));
         }
 
         /**

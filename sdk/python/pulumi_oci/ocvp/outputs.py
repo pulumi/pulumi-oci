@@ -79,6 +79,8 @@ __all__ = [
     'GetManagementAppliancesManagementApplianceCollectionItemConfigurationResult',
     'GetManagementAppliancesManagementApplianceCollectionItemConnectionResult',
     'GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateResult',
+    'GetRetrieveVmwareBinariesFilterResult',
+    'GetRetrieveVmwareBinariesItemResult',
     'GetSddcDatastoreResult',
     'GetSddcHcxOnPremLicenseResult',
     'GetSddcInitialConfigurationResult',
@@ -1095,6 +1097,8 @@ class SddcInitialConfigurationInitialClusterConfiguration(dict):
             suggest = "display_name"
         elif key == "initialCommitment":
             suggest = "initial_commitment"
+        elif key == "initialFaultDomainHostDistribution":
+            suggest = "initial_fault_domain_host_distribution"
         elif key == "initialHostOcpuCount":
             suggest = "initial_host_ocpu_count"
         elif key == "initialHostShapeName":
@@ -1132,6 +1136,7 @@ class SddcInitialConfigurationInitialClusterConfiguration(dict):
                  datastores: Optional[Sequence['outputs.SddcInitialConfigurationInitialClusterConfigurationDatastore']] = None,
                  display_name: Optional[_builtins.str] = None,
                  initial_commitment: Optional[_builtins.str] = None,
+                 initial_fault_domain_host_distribution: Optional[_builtins.str] = None,
                  initial_host_ocpu_count: Optional[_builtins.float] = None,
                  initial_host_shape_name: Optional[_builtins.str] = None,
                  initial_vcf_byol_allocation_id: Optional[_builtins.str] = None,
@@ -1152,6 +1157,7 @@ class SddcInitialConfigurationInitialClusterConfiguration(dict):
         :param Sequence['SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs'] datastores: A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
         :param _builtins.str display_name: A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         :param _builtins.str initial_commitment: The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
+        :param _builtins.str initial_fault_domain_host_distribution: Initial Fault Domain Host distribution mode for the Cluster.
         :param _builtins.float initial_host_ocpu_count: The initial OCPU count of the Cluster's ESXi hosts.
         :param _builtins.str initial_host_shape_name: The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         :param _builtins.str initial_vcf_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
@@ -1179,6 +1185,8 @@ class SddcInitialConfigurationInitialClusterConfiguration(dict):
             pulumi.set(__self__, "display_name", display_name)
         if initial_commitment is not None:
             pulumi.set(__self__, "initial_commitment", initial_commitment)
+        if initial_fault_domain_host_distribution is not None:
+            pulumi.set(__self__, "initial_fault_domain_host_distribution", initial_fault_domain_host_distribution)
         if initial_host_ocpu_count is not None:
             pulumi.set(__self__, "initial_host_ocpu_count", initial_host_ocpu_count)
         if initial_host_shape_name is not None:
@@ -1275,6 +1283,14 @@ class SddcInitialConfigurationInitialClusterConfiguration(dict):
         The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
         """
         return pulumi.get(self, "initial_commitment")
+
+    @_builtins.property
+    @pulumi.getter(name="initialFaultDomainHostDistribution")
+    def initial_fault_domain_host_distribution(self) -> Optional[_builtins.str]:
+        """
+        Initial Fault Domain Host distribution mode for the Cluster.
+        """
+        return pulumi.get(self, "initial_fault_domain_host_distribution")
 
     @_builtins.property
     @pulumi.getter(name="initialHostOcpuCount")
@@ -2576,6 +2592,7 @@ class GetClustersClusterCollectionItemResult(dict):
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  initial_commitment: _builtins.str,
+                 initial_fault_domain_host_distribution: _builtins.str,
                  initial_host_ocpu_count: _builtins.float,
                  initial_host_shape_name: _builtins.str,
                  initial_vcf_byol_allocation_id: _builtins.str,
@@ -2606,6 +2623,7 @@ class GetClustersClusterCollectionItemResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
         :param _builtins.str initial_commitment: The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
+        :param _builtins.str initial_fault_domain_host_distribution: The initial fault domain host distribution mode for the Cluster.
         :param _builtins.float initial_host_ocpu_count: The initial OCPU count of the Cluster's ESXi hosts.
         :param _builtins.str initial_host_shape_name: The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         :param _builtins.str initial_vcf_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
@@ -2639,6 +2657,7 @@ class GetClustersClusterCollectionItemResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "initial_commitment", initial_commitment)
+        pulumi.set(__self__, "initial_fault_domain_host_distribution", initial_fault_domain_host_distribution)
         pulumi.set(__self__, "initial_host_ocpu_count", initial_host_ocpu_count)
         pulumi.set(__self__, "initial_host_shape_name", initial_host_shape_name)
         pulumi.set(__self__, "initial_vcf_byol_allocation_id", initial_vcf_byol_allocation_id)
@@ -2774,6 +2793,14 @@ class GetClustersClusterCollectionItemResult(dict):
         The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
         """
         return pulumi.get(self, "initial_commitment")
+
+    @_builtins.property
+    @pulumi.getter(name="initialFaultDomainHostDistribution")
+    def initial_fault_domain_host_distribution(self) -> _builtins.str:
+        """
+        The initial fault domain host distribution mode for the Cluster.
+        """
+        return pulumi.get(self, "initial_fault_domain_host_distribution")
 
     @_builtins.property
     @pulumi.getter(name="initialHostOcpuCount")
@@ -3851,6 +3878,7 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
                  cluster_id: _builtins.str,
                  compartment_id: _builtins.str,
                  compute_availability_domain: _builtins.str,
+                 compute_fault_domain: _builtins.str,
                  compute_instance_id: _builtins.str,
                  current_commitment: _builtins.str,
                  current_sku: _builtins.str,
@@ -3866,6 +3894,7 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
                  host_ocpu_count: _builtins.float,
                  host_shape_name: _builtins.str,
                  id: _builtins.str,
+                 initial_fault_domain_host_distribution: _builtins.str,
                  is_billing_continuation_in_progress: _builtins.bool,
                  is_billing_swapping_in_progress: _builtins.bool,
                  is_vsan_byol_enabled: _builtins.bool,
@@ -3890,6 +3919,7 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         :param _builtins.str cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
         :param _builtins.str compute_availability_domain: The availability domain of the ESXi host.
+        :param _builtins.str compute_fault_domain: The fault domain of the ESXi host.
         :param _builtins.str compute_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
         :param _builtins.str current_commitment: The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
         :param _builtins.str current_sku: (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `current_commitment` instead.
@@ -3904,6 +3934,7 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         :param _builtins.float host_ocpu_count: The OCPU count of the ESXi host.
         :param _builtins.str host_shape_name: The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
+        :param _builtins.str initial_fault_domain_host_distribution: The initial fault domain host distribution mode for the ESXi host.
         :param _builtins.bool is_billing_continuation_in_progress: Indicates whether this host is in the progress of billing continuation.
         :param _builtins.bool is_billing_swapping_in_progress: Indicates whether this host is in the progress of swapping billing.
         :param _builtins.bool is_vsan_byol_enabled: Indicates whether this host embedded VMware vSAN with BYOL Allocation.
@@ -3928,6 +3959,7 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         pulumi.set(__self__, "cluster_id", cluster_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
+        pulumi.set(__self__, "compute_fault_domain", compute_fault_domain)
         pulumi.set(__self__, "compute_instance_id", compute_instance_id)
         pulumi.set(__self__, "current_commitment", current_commitment)
         pulumi.set(__self__, "current_sku", current_sku)
@@ -3943,6 +3975,7 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         pulumi.set(__self__, "host_ocpu_count", host_ocpu_count)
         pulumi.set(__self__, "host_shape_name", host_shape_name)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "initial_fault_domain_host_distribution", initial_fault_domain_host_distribution)
         pulumi.set(__self__, "is_billing_continuation_in_progress", is_billing_continuation_in_progress)
         pulumi.set(__self__, "is_billing_swapping_in_progress", is_billing_swapping_in_progress)
         pulumi.set(__self__, "is_vsan_byol_enabled", is_vsan_byol_enabled)
@@ -4014,6 +4047,14 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         The availability domain of the ESXi host.
         """
         return pulumi.get(self, "compute_availability_domain")
+
+    @_builtins.property
+    @pulumi.getter(name="computeFaultDomain")
+    def compute_fault_domain(self) -> _builtins.str:
+        """
+        The fault domain of the ESXi host.
+        """
+        return pulumi.get(self, "compute_fault_domain")
 
     @_builtins.property
     @pulumi.getter(name="computeInstanceId")
@@ -4133,6 +4174,14 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="initialFaultDomainHostDistribution")
+    def initial_fault_domain_host_distribution(self) -> _builtins.str:
+        """
+        The initial fault domain host distribution mode for the ESXi host.
+        """
+        return pulumi.get(self, "initial_fault_domain_host_distribution")
 
     @_builtins.property
     @pulumi.getter(name="isBillingContinuationInProgress")
@@ -4863,6 +4912,84 @@ class GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectio
 
 
 @pulumi.output_type
+class GetRetrieveVmwareBinariesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetRetrieveVmwareBinariesItemResult(dict):
+    def __init__(__self__, *,
+                 checksum: _builtins.str,
+                 description: _builtins.str,
+                 file_name: _builtins.str,
+                 size_in_bytes: _builtins.str):
+        """
+        :param _builtins.str checksum: Base64-encoded SHA256 hash of the VMware binary object data.
+        :param _builtins.str description: Description of the VMware binary.
+        :param _builtins.str file_name: The VMware binary file name.
+        :param _builtins.str size_in_bytes: Size of the VMware binary file in bytes.
+        """
+        pulumi.set(__self__, "checksum", checksum)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "file_name", file_name)
+        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+
+    @_builtins.property
+    @pulumi.getter
+    def checksum(self) -> _builtins.str:
+        """
+        Base64-encoded SHA256 hash of the VMware binary object data.
+        """
+        return pulumi.get(self, "checksum")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of the VMware binary.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="fileName")
+    def file_name(self) -> _builtins.str:
+        """
+        The VMware binary file name.
+        """
+        return pulumi.get(self, "file_name")
+
+    @_builtins.property
+    @pulumi.getter(name="sizeInBytes")
+    def size_in_bytes(self) -> _builtins.str:
+        """
+        Size of the VMware binary file in bytes.
+        """
+        return pulumi.get(self, "size_in_bytes")
+
+
+@pulumi.output_type
 class GetSddcDatastoreResult(dict):
     def __init__(__self__, *,
                  block_volume_ids: Sequence[_builtins.str],
@@ -4972,6 +5099,7 @@ class GetSddcInitialConfigurationInitialClusterConfigurationResult(dict):
                  display_name: _builtins.str,
                  esxi_hosts_count: _builtins.int,
                  initial_commitment: _builtins.str,
+                 initial_fault_domain_host_distribution: _builtins.str,
                  initial_host_ocpu_count: _builtins.float,
                  initial_host_shape_name: _builtins.str,
                  initial_vcf_byol_allocation_id: _builtins.str,
@@ -4990,6 +5118,7 @@ class GetSddcInitialConfigurationInitialClusterConfigurationResult(dict):
         :param _builtins.str display_name: A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         :param _builtins.int esxi_hosts_count: The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
         :param _builtins.str initial_commitment: The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
+        :param _builtins.str initial_fault_domain_host_distribution: Initial Fault Domain Host distribution mode for the Cluster.
         :param _builtins.float initial_host_ocpu_count: (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initial_host_ocpu_count` of `initial_cluster_configurations` instead.
         :param _builtins.str initial_host_shape_name: (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initial_host_shape_name` of `initial_cluster_configurations` instead.
         :param _builtins.str initial_vcf_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
@@ -5008,6 +5137,7 @@ class GetSddcInitialConfigurationInitialClusterConfigurationResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "esxi_hosts_count", esxi_hosts_count)
         pulumi.set(__self__, "initial_commitment", initial_commitment)
+        pulumi.set(__self__, "initial_fault_domain_host_distribution", initial_fault_domain_host_distribution)
         pulumi.set(__self__, "initial_host_ocpu_count", initial_host_ocpu_count)
         pulumi.set(__self__, "initial_host_shape_name", initial_host_shape_name)
         pulumi.set(__self__, "initial_vcf_byol_allocation_id", initial_vcf_byol_allocation_id)
@@ -5088,6 +5218,14 @@ class GetSddcInitialConfigurationInitialClusterConfigurationResult(dict):
         The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
         """
         return pulumi.get(self, "initial_commitment")
+
+    @_builtins.property
+    @pulumi.getter(name="initialFaultDomainHostDistribution")
+    def initial_fault_domain_host_distribution(self) -> _builtins.str:
+        """
+        Initial Fault Domain Host distribution mode for the Cluster.
+        """
+        return pulumi.get(self, "initial_fault_domain_host_distribution")
 
     @_builtins.property
     @pulumi.getter(name="initialHostOcpuCount")
@@ -6233,6 +6371,7 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResul
                  display_name: _builtins.str,
                  esxi_hosts_count: _builtins.int,
                  initial_commitment: _builtins.str,
+                 initial_fault_domain_host_distribution: _builtins.str,
                  initial_host_ocpu_count: _builtins.float,
                  initial_host_shape_name: _builtins.str,
                  initial_vcf_byol_allocation_id: _builtins.str,
@@ -6251,6 +6390,7 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResul
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param _builtins.int esxi_hosts_count: The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
         :param _builtins.str initial_commitment: The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
+        :param _builtins.str initial_fault_domain_host_distribution: Initial Fault Domain Host distribution mode for the Cluster.
         :param _builtins.float initial_host_ocpu_count: (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
         :param _builtins.str initial_host_shape_name: (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         :param _builtins.str initial_vcf_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
@@ -6269,6 +6409,7 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResul
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "esxi_hosts_count", esxi_hosts_count)
         pulumi.set(__self__, "initial_commitment", initial_commitment)
+        pulumi.set(__self__, "initial_fault_domain_host_distribution", initial_fault_domain_host_distribution)
         pulumi.set(__self__, "initial_host_ocpu_count", initial_host_ocpu_count)
         pulumi.set(__self__, "initial_host_shape_name", initial_host_shape_name)
         pulumi.set(__self__, "initial_vcf_byol_allocation_id", initial_vcf_byol_allocation_id)
@@ -6349,6 +6490,14 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResul
         The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
         """
         return pulumi.get(self, "initial_commitment")
+
+    @_builtins.property
+    @pulumi.getter(name="initialFaultDomainHostDistribution")
+    def initial_fault_domain_host_distribution(self) -> _builtins.str:
+        """
+        Initial Fault Domain Host distribution mode for the Cluster.
+        """
+        return pulumi.get(self, "initial_fault_domain_host_distribution")
 
     @_builtins.property
     @pulumi.getter(name="initialHostOcpuCount")

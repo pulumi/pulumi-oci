@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -2371,6 +2371,8 @@ func (o DbSystemManagementPolicyBackupPolicyPtrOutput) RetentionDays() pulumi.In
 type DbSystemManagementPolicyBackupPolicyCopyPolicy struct {
 	// (Updatable) target compartment to place a new backup
 	CompartmentId string `pulumi:"compartmentId"`
+	// (Updatable) List of key ids of the remote regions
+	KmsKeyIds []string `pulumi:"kmsKeyIds"`
 	// (Updatable) List of region names of the remote region
 	Regions []string `pulumi:"regions"`
 	// (Updatable) Retention period in days of the backup copy.
@@ -2391,6 +2393,8 @@ type DbSystemManagementPolicyBackupPolicyCopyPolicyInput interface {
 type DbSystemManagementPolicyBackupPolicyCopyPolicyArgs struct {
 	// (Updatable) target compartment to place a new backup
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// (Updatable) List of key ids of the remote regions
+	KmsKeyIds pulumi.StringArrayInput `pulumi:"kmsKeyIds"`
 	// (Updatable) List of region names of the remote region
 	Regions pulumi.StringArrayInput `pulumi:"regions"`
 	// (Updatable) Retention period in days of the backup copy.
@@ -2479,6 +2483,11 @@ func (o DbSystemManagementPolicyBackupPolicyCopyPolicyOutput) CompartmentId() pu
 	return o.ApplyT(func(v DbSystemManagementPolicyBackupPolicyCopyPolicy) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// (Updatable) List of key ids of the remote regions
+func (o DbSystemManagementPolicyBackupPolicyCopyPolicyOutput) KmsKeyIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DbSystemManagementPolicyBackupPolicyCopyPolicy) []string { return v.KmsKeyIds }).(pulumi.StringArrayOutput)
+}
+
 // (Updatable) List of region names of the remote region
 func (o DbSystemManagementPolicyBackupPolicyCopyPolicyOutput) Regions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DbSystemManagementPolicyBackupPolicyCopyPolicy) []string { return v.Regions }).(pulumi.StringArrayOutput)
@@ -2521,6 +2530,16 @@ func (o DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput) CompartmentId()
 		}
 		return &v.CompartmentId
 	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) List of key ids of the remote regions
+func (o DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput) KmsKeyIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DbSystemManagementPolicyBackupPolicyCopyPolicy) []string {
+		if v == nil {
+			return nil
+		}
+		return v.KmsKeyIds
+	}).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) List of region names of the remote region
@@ -3693,6 +3712,8 @@ type DbSystemStorageDetails struct {
 	Iops *string `pulumi:"iops"`
 	// Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	IsRegionallyDurable bool `pulumi:"isRegionallyDurable"`
+	// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the database system.
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// Type of the database system.
 	SystemType string `pulumi:"systemType"`
 }
@@ -3715,6 +3736,8 @@ type DbSystemStorageDetailsArgs struct {
 	Iops pulumi.StringPtrInput `pulumi:"iops"`
 	// Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	IsRegionallyDurable pulumi.BoolInput `pulumi:"isRegionallyDurable"`
+	// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the database system.
+	KmsKeyId pulumi.StringPtrInput `pulumi:"kmsKeyId"`
 	// Type of the database system.
 	SystemType pulumi.StringInput `pulumi:"systemType"`
 }
@@ -3811,6 +3834,11 @@ func (o DbSystemStorageDetailsOutput) IsRegionallyDurable() pulumi.BoolOutput {
 	return o.ApplyT(func(v DbSystemStorageDetails) bool { return v.IsRegionallyDurable }).(pulumi.BoolOutput)
 }
 
+// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the database system.
+func (o DbSystemStorageDetailsOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemStorageDetails) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
+}
+
 // Type of the database system.
 func (o DbSystemStorageDetailsOutput) SystemType() pulumi.StringOutput {
 	return o.ApplyT(func(v DbSystemStorageDetails) string { return v.SystemType }).(pulumi.StringOutput)
@@ -3868,6 +3896,16 @@ func (o DbSystemStorageDetailsPtrOutput) IsRegionallyDurable() pulumi.BoolPtrOut
 		}
 		return &v.IsRegionallyDurable
 	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the database system.
+func (o DbSystemStorageDetailsPtrOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemStorageDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.KmsKeyId
+	}).(pulumi.StringPtrOutput)
 }
 
 // Type of the database system.
@@ -4340,6 +4378,8 @@ type GetBackupsBackupCollectionItem struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A unique identifier for the database system.
 	Id string `pulumi:"id"`
+	// The OCID of the master encryption key for the backup.
+	KmsKeyId string `pulumi:"kmsKeyId"`
 	// lastAcceptedRequestToken from MP.
 	LastAcceptedRequestToken string `pulumi:"lastAcceptedRequestToken"`
 	// lastCompletedRequestToken from MP.
@@ -4396,6 +4436,8 @@ type GetBackupsBackupCollectionItemArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A unique identifier for the database system.
 	Id pulumi.StringInput `pulumi:"id"`
+	// The OCID of the master encryption key for the backup.
+	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// lastAcceptedRequestToken from MP.
 	LastAcceptedRequestToken pulumi.StringInput `pulumi:"lastAcceptedRequestToken"`
 	// lastCompletedRequestToken from MP.
@@ -4523,6 +4565,11 @@ func (o GetBackupsBackupCollectionItemOutput) FreeformTags() pulumi.StringMapOut
 // A unique identifier for the database system.
 func (o GetBackupsBackupCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackupsBackupCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The OCID of the master encryption key for the backup.
+func (o GetBackupsBackupCollectionItemOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackupCollectionItem) string { return v.KmsKeyId }).(pulumi.StringOutput)
 }
 
 // lastAcceptedRequestToken from MP.
@@ -8015,6 +8062,8 @@ func (o GetDbSystemManagementPolicyBackupPolicyArrayOutput) Index(i pulumi.IntIn
 type GetDbSystemManagementPolicyBackupPolicyCopyPolicy struct {
 	// target compartment to place a new backup
 	CompartmentId string `pulumi:"compartmentId"`
+	// List of key ids of the remote regions
+	KmsKeyIds []string `pulumi:"kmsKeyIds"`
 	// List of region names of the remote region
 	Regions []string `pulumi:"regions"`
 	// Retention period in days of the backup copy.
@@ -8035,6 +8084,8 @@ type GetDbSystemManagementPolicyBackupPolicyCopyPolicyInput interface {
 type GetDbSystemManagementPolicyBackupPolicyCopyPolicyArgs struct {
 	// target compartment to place a new backup
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// List of key ids of the remote regions
+	KmsKeyIds pulumi.StringArrayInput `pulumi:"kmsKeyIds"`
 	// List of region names of the remote region
 	Regions pulumi.StringArrayInput `pulumi:"regions"`
 	// Retention period in days of the backup copy.
@@ -8095,6 +8146,11 @@ func (o GetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput) ToGetDbSystemMa
 // target compartment to place a new backup
 func (o GetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemManagementPolicyBackupPolicyCopyPolicy) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// List of key ids of the remote regions
+func (o GetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput) KmsKeyIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemManagementPolicyBackupPolicyCopyPolicy) []string { return v.KmsKeyIds }).(pulumi.StringArrayOutput)
 }
 
 // List of region names of the remote region
@@ -9367,6 +9423,8 @@ type GetDbSystemStorageDetail struct {
 	Iops string `pulumi:"iops"`
 	// Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	IsRegionallyDurable bool `pulumi:"isRegionallyDurable"`
+	// The OCID of the Vault service key to assign as the master encryption key for the database system.
+	KmsKeyId string `pulumi:"kmsKeyId"`
 	// Type of the database system.
 	SystemType string `pulumi:"systemType"`
 }
@@ -9389,6 +9447,8 @@ type GetDbSystemStorageDetailArgs struct {
 	Iops pulumi.StringInput `pulumi:"iops"`
 	// Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	IsRegionallyDurable pulumi.BoolInput `pulumi:"isRegionallyDurable"`
+	// The OCID of the Vault service key to assign as the master encryption key for the database system.
+	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// Type of the database system.
 	SystemType pulumi.StringInput `pulumi:"systemType"`
 }
@@ -9457,6 +9517,11 @@ func (o GetDbSystemStorageDetailOutput) Iops() pulumi.StringOutput {
 // Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 func (o GetDbSystemStorageDetailOutput) IsRegionallyDurable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDbSystemStorageDetail) bool { return v.IsRegionallyDurable }).(pulumi.BoolOutput)
+}
+
+// The OCID of the Vault service key to assign as the master encryption key for the database system.
+func (o GetDbSystemStorageDetailOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemStorageDetail) string { return v.KmsKeyId }).(pulumi.StringOutput)
 }
 
 // Type of the database system.
@@ -11084,6 +11149,8 @@ func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArrayOutpu
 type GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
+	// List of key ids of the remote regions
+	KmsKeyIds []string `pulumi:"kmsKeyIds"`
 	// List of region names of the remote region
 	Regions []string `pulumi:"regions"`
 	// Retention period in days of the backup copy.
@@ -11104,6 +11171,8 @@ type GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyInp
 type GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// List of key ids of the remote regions
+	KmsKeyIds pulumi.StringArrayInput `pulumi:"kmsKeyIds"`
 	// List of region names of the remote region
 	Regions pulumi.StringArrayInput `pulumi:"regions"`
 	// Retention period in days of the backup copy.
@@ -11166,6 +11235,13 @@ func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy) string {
 		return v.CompartmentId
 	}).(pulumi.StringOutput)
+}
+
+// List of key ids of the remote regions
+func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput) KmsKeyIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy) []string {
+		return v.KmsKeyIds
+	}).(pulumi.StringArrayOutput)
 }
 
 // List of region names of the remote region
@@ -12029,6 +12105,8 @@ type GetDbSystemsDbSystemCollectionItemStorageDetail struct {
 	Iops string `pulumi:"iops"`
 	// Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	IsRegionallyDurable bool `pulumi:"isRegionallyDurable"`
+	// The OCID of the Vault service key to assign as the master encryption key for the database system.
+	KmsKeyId string `pulumi:"kmsKeyId"`
 	// Type of the database system.
 	SystemType string `pulumi:"systemType"`
 }
@@ -12051,6 +12129,8 @@ type GetDbSystemsDbSystemCollectionItemStorageDetailArgs struct {
 	Iops pulumi.StringInput `pulumi:"iops"`
 	// Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	IsRegionallyDurable pulumi.BoolInput `pulumi:"isRegionallyDurable"`
+	// The OCID of the Vault service key to assign as the master encryption key for the database system.
+	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// Type of the database system.
 	SystemType pulumi.StringInput `pulumi:"systemType"`
 }
@@ -12119,6 +12199,11 @@ func (o GetDbSystemsDbSystemCollectionItemStorageDetailOutput) Iops() pulumi.Str
 // Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 func (o GetDbSystemsDbSystemCollectionItemStorageDetailOutput) IsRegionallyDurable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemStorageDetail) bool { return v.IsRegionallyDurable }).(pulumi.BoolOutput)
+}
+
+// The OCID of the Vault service key to assign as the master encryption key for the database system.
+func (o GetDbSystemsDbSystemCollectionItemStorageDetailOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemStorageDetail) string { return v.KmsKeyId }).(pulumi.StringOutput)
 }
 
 // Type of the database system.

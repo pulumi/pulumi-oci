@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/psql"
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/psql"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -80,6 +80,8 @@ type LookupBackupResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
 	Id string `pulumi:"id"`
+	// The OCID of the master encryption key for the backup.
+	KmsKeyId string `pulumi:"kmsKeyId"`
 	// lastAcceptedRequestToken from MP.
 	LastAcceptedRequestToken string `pulumi:"lastAcceptedRequestToken"`
 	// lastCompletedRequestToken from MP.
@@ -187,6 +189,11 @@ func (o LookupBackupResultOutput) FreeformTags() pulumi.StringMapOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
 func (o LookupBackupResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBackupResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The OCID of the master encryption key for the backup.
+func (o LookupBackupResultOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupBackupResult) string { return v.KmsKeyId }).(pulumi.StringOutput)
 }
 
 // lastAcceptedRequestToken from MP.

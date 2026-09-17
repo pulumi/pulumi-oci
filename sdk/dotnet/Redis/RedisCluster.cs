@@ -19,54 +19,17 @@ namespace Pulumi.Oci.Redis
     /// You can optionally initialize the cluster data by restoring from an Oracle Cloud Infrastructure Cache Backup (backupId) or by importing from Object Storage RDB file(s) (importFromObjectStorageDetails).
     /// For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
     /// 
-    /// ## Example Usage
+    /// ## Cross-Region Replication Switchover
     /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
+    /// Switchover isn't supported in Terraform. To complete a switchover, use the OCI Console, CLI, or SDK.
     /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testRedisCluster = new Oci.Redis.RedisCluster("test_redis_cluster", new()
-    ///     {
-    ///         CompartmentId = compartmentId,
-    ///         DisplayName = redisClusterDisplayName,
-    ///         NodeCount = redisClusterNodeCount,
-    ///         NodeMemoryInGbs = redisClusterNodeMemoryInGbs,
-    ///         SoftwareVersion = redisClusterSoftwareVersion,
-    ///         SubnetId = testSubnet.Id,
-    ///         BackupId = testBackup.Id,
-    ///         ClusterMode = redisClusterClusterMode,
-    ///         DefinedTags = 
-    ///         {
-    ///             { "foo-namespace.bar-key", "value" },
-    ///         },
-    ///         FreeformTags = 
-    ///         {
-    ///             { "bar-key", "value" },
-    ///         },
-    ///         ImportFromObjectStorageDetails = new Oci.Redis.Inputs.RedisClusterImportFromObjectStorageDetailsArgs
-    ///         {
-    ///             Bucket = redisClusterImportFromObjectStorageDetailsBucket,
-    ///             Namespace = redisClusterImportFromObjectStorageDetailsNamespace,
-    ///             Objects = new[]
-    ///             {
-    ///                 new Oci.Redis.Inputs.RedisClusterImportFromObjectStorageDetailsObjectArgs
-    ///                 {
-    ///                     Object = redisClusterImportFromObjectStorageDetailsObjectsObject,
-    ///                 },
-    ///             },
-    ///         },
-    ///         NsgIds = redisClusterNsgIds,
-    ///         OciCacheConfigSetId = testOciCacheConfigSet.Id,
-    ///         SecurityAttributes = redisClusterSecurityAttributes,
-    ///         ShardCount = redisClusterShardCount,
-    ///     });
+    /// After the switchover completes, update the Terraform configuration for both affected clusters before you run any further `pulumi up` operations:
     /// 
-    /// });
-    /// ```
+    /// 1. For the new primary cluster (formerly the secondary), remove `PrimaryClusterId` from the resource configuration.
+    /// 2. For the new secondary cluster (formerly the primary), set `PrimaryClusterId` to the OCID of the new primary cluster.
+    /// 3. Run `pulumi preview` for both cluster resources. Proceed only if the plan reports no changes, confirming that the Terraform configuration matches the new cluster topology.
+    /// 
+    /// If you don't update these configurations, a later pulumi up might revert to the previous topology and unintentionally change or break the cross-region replication relationship.
     /// 
     /// ## Import
     /// 
@@ -90,6 +53,18 @@ namespace Pulumi.Oci.Redis
         /// </summary>
         [Output("clusterMode")]
         public Output<string> ClusterMode { get; private set; } = null!;
+
+        /// <summary>
+        /// Defines the replication topology of an Oracle Cloud Infrastructure cache cluster, including the primary cluster and associated secondary clusters participating in replication.
+        /// </summary>
+        [Output("clusterReplicationTopologies")]
+        public Output<ImmutableArray<Outputs.RedisClusterClusterReplicationTopology>> ClusterReplicationTopologies { get; private set; } = null!;
+
+        /// <summary>
+        /// The current role of the cluster.
+        /// </summary>
+        [Output("clusterRole")]
+        public Output<string> ClusterRole { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
@@ -168,6 +143,12 @@ namespace Pulumi.Oci.Redis
         /// </summary>
         [Output("ociCacheConfigSetId")]
         public Output<string> OciCacheConfigSetId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster from which data will be replicated. Setting it on a standalone cluster converts that cluster to a secondary cluster; removing it from a secondary cluster converts that cluster to standalone. Changing directly from one primary cluster to another is not supported: remove it and apply before setting a different primary cluster.
+        /// </summary>
+        [Output("primaryClusterId")]
+        public Output<string?> PrimaryClusterId { get; private set; } = null!;
 
         /// <summary>
         /// The private IP address of the API endpoint for the cluster's primary node.
@@ -375,6 +356,12 @@ namespace Pulumi.Oci.Redis
         [Input("ociCacheConfigSetId")]
         public Input<string>? OciCacheConfigSetId { get; set; }
 
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster from which data will be replicated. Setting it on a standalone cluster converts that cluster to a secondary cluster; removing it from a secondary cluster converts that cluster to standalone. Changing directly from one primary cluster to another is not supported: remove it and apply before setting a different primary cluster.
+        /// </summary>
+        [Input("primaryClusterId")]
+        public Input<string>? PrimaryClusterId { get; set; }
+
         [Input("securityAttributes")]
         private InputMap<string>? _securityAttributes;
 
@@ -428,6 +415,24 @@ namespace Pulumi.Oci.Redis
         /// </summary>
         [Input("clusterMode")]
         public Input<string>? ClusterMode { get; set; }
+
+        [Input("clusterReplicationTopologies")]
+        private InputList<Inputs.RedisClusterClusterReplicationTopologyGetArgs>? _clusterReplicationTopologies;
+
+        /// <summary>
+        /// Defines the replication topology of an Oracle Cloud Infrastructure cache cluster, including the primary cluster and associated secondary clusters participating in replication.
+        /// </summary>
+        public InputList<Inputs.RedisClusterClusterReplicationTopologyGetArgs> ClusterReplicationTopologies
+        {
+            get => _clusterReplicationTopologies ?? (_clusterReplicationTopologies = new InputList<Inputs.RedisClusterClusterReplicationTopologyGetArgs>());
+            set => _clusterReplicationTopologies = value;
+        }
+
+        /// <summary>
+        /// The current role of the cluster.
+        /// </summary>
+        [Input("clusterRole")]
+        public Input<string>? ClusterRole { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
@@ -530,6 +535,12 @@ namespace Pulumi.Oci.Redis
         /// </summary>
         [Input("ociCacheConfigSetId")]
         public Input<string>? OciCacheConfigSetId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster from which data will be replicated. Setting it on a standalone cluster converts that cluster to a secondary cluster; removing it from a secondary cluster converts that cluster to standalone. Changing directly from one primary cluster to another is not supported: remove it and apply before setting a different primary cluster.
+        /// </summary>
+        [Input("primaryClusterId")]
+        public Input<string>? PrimaryClusterId { get; set; }
 
         /// <summary>
         /// The private IP address of the API endpoint for the cluster's primary node.

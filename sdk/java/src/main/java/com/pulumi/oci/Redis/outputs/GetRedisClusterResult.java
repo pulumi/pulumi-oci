@@ -5,6 +5,7 @@ package com.pulumi.oci.Redis.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Redis.outputs.GetRedisClusterClusterReplicationTopology;
 import com.pulumi.oci.Redis.outputs.GetRedisClusterImportFromObjectStorageDetail;
 import com.pulumi.oci.Redis.outputs.GetRedisClusterNodeCollection;
 import java.lang.Double;
@@ -26,6 +27,16 @@ public final class GetRedisClusterResult {
      * 
      */
     private String clusterMode;
+    /**
+     * @return Defines the replication topology of an Oracle Cloud Infrastructure cache cluster, including the primary cluster and associated secondary clusters participating in replication.
+     * 
+     */
+    private List<GetRedisClusterClusterReplicationTopology> clusterReplicationTopologies;
+    /**
+     * @return The current role of the cluster.
+     * 
+     */
+    private String clusterRole;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
      * 
@@ -96,6 +107,11 @@ public final class GetRedisClusterResult {
      * 
      */
     private String ociCacheConfigSetId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster in CRR.
+     * 
+     */
+    private String primaryClusterId;
     /**
      * @return The private IP address of the API endpoint for the cluster&#39;s primary node.
      * 
@@ -172,6 +188,20 @@ public final class GetRedisClusterResult {
      */
     public String clusterMode() {
         return this.clusterMode;
+    }
+    /**
+     * @return Defines the replication topology of an Oracle Cloud Infrastructure cache cluster, including the primary cluster and associated secondary clusters participating in replication.
+     * 
+     */
+    public List<GetRedisClusterClusterReplicationTopology> clusterReplicationTopologies() {
+        return this.clusterReplicationTopologies;
+    }
+    /**
+     * @return The current role of the cluster.
+     * 
+     */
+    public String clusterRole() {
+        return this.clusterRole;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
@@ -272,6 +302,13 @@ public final class GetRedisClusterResult {
         return this.ociCacheConfigSetId;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster in CRR.
+     * 
+     */
+    public String primaryClusterId() {
+        return this.primaryClusterId;
+    }
+    /**
      * @return The private IP address of the API endpoint for the cluster&#39;s primary node.
      * 
      */
@@ -370,6 +407,8 @@ public final class GetRedisClusterResult {
     public static final class Builder {
         private String backupId;
         private String clusterMode;
+        private List<GetRedisClusterClusterReplicationTopology> clusterReplicationTopologies;
+        private String clusterRole;
         private String compartmentId;
         private Map<String,String> definedTags;
         private String discoveryEndpointIpAddress;
@@ -384,6 +423,7 @@ public final class GetRedisClusterResult {
         private Double nodeMemoryInGbs;
         private List<String> nsgIds;
         private String ociCacheConfigSetId;
+        private String primaryClusterId;
         private String primaryEndpointIpAddress;
         private String primaryFqdn;
         private String redisClusterId;
@@ -402,6 +442,8 @@ public final class GetRedisClusterResult {
     	      Objects.requireNonNull(defaults);
     	      this.backupId = defaults.backupId;
     	      this.clusterMode = defaults.clusterMode;
+    	      this.clusterReplicationTopologies = defaults.clusterReplicationTopologies;
+    	      this.clusterRole = defaults.clusterRole;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.discoveryEndpointIpAddress = defaults.discoveryEndpointIpAddress;
@@ -416,6 +458,7 @@ public final class GetRedisClusterResult {
     	      this.nodeMemoryInGbs = defaults.nodeMemoryInGbs;
     	      this.nsgIds = defaults.nsgIds;
     	      this.ociCacheConfigSetId = defaults.ociCacheConfigSetId;
+    	      this.primaryClusterId = defaults.primaryClusterId;
     	      this.primaryEndpointIpAddress = defaults.primaryEndpointIpAddress;
     	      this.primaryFqdn = defaults.primaryFqdn;
     	      this.redisClusterId = defaults.redisClusterId;
@@ -445,6 +488,25 @@ public final class GetRedisClusterResult {
               throw new MissingRequiredPropertyException("GetRedisClusterResult", "clusterMode");
             }
             this.clusterMode = clusterMode;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterReplicationTopologies(List<GetRedisClusterClusterReplicationTopology> clusterReplicationTopologies) {
+            if (clusterReplicationTopologies == null) {
+              throw new MissingRequiredPropertyException("GetRedisClusterResult", "clusterReplicationTopologies");
+            }
+            this.clusterReplicationTopologies = clusterReplicationTopologies;
+            return this;
+        }
+        public Builder clusterReplicationTopologies(GetRedisClusterClusterReplicationTopology... clusterReplicationTopologies) {
+            return clusterReplicationTopologies(List.of(clusterReplicationTopologies));
+        }
+        @CustomType.Setter
+        public Builder clusterRole(String clusterRole) {
+            if (clusterRole == null) {
+              throw new MissingRequiredPropertyException("GetRedisClusterResult", "clusterRole");
+            }
+            this.clusterRole = clusterRole;
             return this;
         }
         @CustomType.Setter
@@ -569,6 +631,14 @@ public final class GetRedisClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder primaryClusterId(String primaryClusterId) {
+            if (primaryClusterId == null) {
+              throw new MissingRequiredPropertyException("GetRedisClusterResult", "primaryClusterId");
+            }
+            this.primaryClusterId = primaryClusterId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder primaryEndpointIpAddress(String primaryEndpointIpAddress) {
             if (primaryEndpointIpAddress == null) {
               throw new MissingRequiredPropertyException("GetRedisClusterResult", "primaryEndpointIpAddress");
@@ -676,6 +746,8 @@ public final class GetRedisClusterResult {
             final var _resultValue = new GetRedisClusterResult();
             _resultValue.backupId = backupId;
             _resultValue.clusterMode = clusterMode;
+            _resultValue.clusterReplicationTopologies = clusterReplicationTopologies;
+            _resultValue.clusterRole = clusterRole;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.discoveryEndpointIpAddress = discoveryEndpointIpAddress;
@@ -690,6 +762,7 @@ public final class GetRedisClusterResult {
             _resultValue.nodeMemoryInGbs = nodeMemoryInGbs;
             _resultValue.nsgIds = nsgIds;
             _resultValue.ociCacheConfigSetId = ociCacheConfigSetId;
+            _resultValue.primaryClusterId = primaryClusterId;
             _resultValue.primaryEndpointIpAddress = primaryEndpointIpAddress;
             _resultValue.primaryFqdn = primaryFqdn;
             _resultValue.redisClusterId = redisClusterId;

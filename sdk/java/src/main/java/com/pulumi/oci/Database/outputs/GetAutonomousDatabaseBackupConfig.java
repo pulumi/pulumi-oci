@@ -10,29 +10,13 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAutonomousDatabaseBackupConfig {
-    /**
-     * @return Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
-     * 
-     */
     private String manualBackupBucketName;
-    /**
-     * @return The manual backup destination type.
-     * 
-     */
     private String manualBackupType;
 
     private GetAutonomousDatabaseBackupConfig() {}
-    /**
-     * @return Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
-     * 
-     */
     public String manualBackupBucketName() {
         return this.manualBackupBucketName;
     }
-    /**
-     * @return The manual backup destination type.
-     * 
-     */
     public String manualBackupType() {
         return this.manualBackupType;
     }

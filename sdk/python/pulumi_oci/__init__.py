@@ -8047,6 +8047,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "oci/clusterHealthDiagnosisStore",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/clusterHealthDiagnosisStore:ClusterHealthDiagnosisStore": "ClusterHealthDiagnosisStore"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "oci/costadCostAlertSubscription",
   "fqn": "pulumi_oci.oci",
   "classes": {
@@ -8199,30 +8207,6 @@ _utilities.register(
  },
  {
   "pkg": "oci",
-  "mod": "oci/distributedDatabaseDistributedAutonomousDatabase",
-  "fqn": "pulumi_oci.oci",
-  "classes": {
-   "oci:oci/distributedDatabaseDistributedAutonomousDatabase:DistributedDatabaseDistributedAutonomousDatabase": "DistributedDatabaseDistributedAutonomousDatabase"
-  }
- },
- {
-  "pkg": "oci",
-  "mod": "oci/distributedDatabaseDistributedDatabase",
-  "fqn": "pulumi_oci.oci",
-  "classes": {
-   "oci:oci/distributedDatabaseDistributedDatabase:DistributedDatabaseDistributedDatabase": "DistributedDatabaseDistributedDatabase"
-  }
- },
- {
-  "pkg": "oci",
-  "mod": "oci/distributedDatabaseDistributedDatabasePrivateEndpoint",
-  "fqn": "pulumi_oci.oci",
-  "classes": {
-   "oci:oci/distributedDatabaseDistributedDatabasePrivateEndpoint:DistributedDatabaseDistributedDatabasePrivateEndpoint": "DistributedDatabaseDistributedDatabasePrivateEndpoint"
-  }
- },
- {
-  "pkg": "oci",
   "mod": "oci/gdpGdpPipeline",
   "fqn": "pulumi_oci.oci",
   "classes": {
@@ -8307,6 +8291,38 @@ _utilities.register(
   "fqn": "pulumi_oci.oci",
   "classes": {
    "oci:oci/iotIotDomainGroupConfigureDataAccess:IotIotDomainGroupConfigureDataAccess": "IotIotDomainGroupConfigureDataAccess"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/iotIotFlowRuntime",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/iotIotFlowRuntime:IotIotFlowRuntime": "IotIotFlowRuntime"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/iotIotFlowRuntimeActivate",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/iotIotFlowRuntimeActivate:IotIotFlowRuntimeActivate": "IotIotFlowRuntimeActivate"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/iotIotFlowRuntimeDeactivate",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/iotIotFlowRuntimeDeactivate:IotIotFlowRuntimeDeactivate": "IotIotFlowRuntimeDeactivate"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/iotIotFlowRuntimeFlow",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/iotIotFlowRuntimeFlow:IotIotFlowRuntimeFlow": "IotIotFlowRuntimeFlow"
   }
  },
  {

@@ -71,6 +71,10 @@ export interface GetExsiHostResult {
      */
     readonly computeAvailabilityDomain: string;
     /**
+     * The fault domain of the ESXi host.
+     */
+    readonly computeFaultDomain: string;
+    /**
      * In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
      */
     readonly computeInstanceId: string;
@@ -132,6 +136,10 @@ export interface GetExsiHostResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
      */
     readonly id: string;
+    /**
+     * The initial fault domain host distribution mode for the ESXi host.
+     */
+    readonly initialFaultDomainHostDistribution: string;
     /**
      * Indicates whether this host is in the progress of billing continuation.
      */

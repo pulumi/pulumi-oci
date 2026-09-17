@@ -71,6 +71,8 @@ __all__ = [
     'GetExsiHostsFilterArgsDict',
     'GetManagementAppliancesFilterArgs',
     'GetManagementAppliancesFilterArgsDict',
+    'GetRetrieveVmwareBinariesFilterArgs',
+    'GetRetrieveVmwareBinariesFilterArgsDict',
     'GetSddcsFilterArgs',
     'GetSddcsFilterArgsDict',
     'GetSupportedCommitmentsFilterArgs',
@@ -1274,6 +1276,10 @@ class SddcInitialConfigurationInitialClusterConfigurationArgsDict(TypedDict):
     """
     The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
     """
+    initial_fault_domain_host_distribution: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Initial Fault Domain Host distribution mode for the Cluster.
+    """
     initial_host_ocpu_count: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The initial OCPU count of the Cluster's ESXi hosts.
@@ -1318,6 +1324,7 @@ class SddcInitialConfigurationInitialClusterConfigurationArgs:
                  datastores: pulumi.Input[Optional[Sequence[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs']]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  initial_commitment: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_fault_domain_host_distribution: pulumi.Input[Optional[_builtins.str]] = None,
                  initial_host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
                  initial_host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
                  initial_vcf_byol_allocation_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1338,6 +1345,7 @@ class SddcInitialConfigurationInitialClusterConfigurationArgs:
         :param pulumi.Input[Sequence[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs']]] datastores: A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
         :param pulumi.Input[_builtins.str] display_name: A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] initial_commitment: The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
+        :param pulumi.Input[_builtins.str] initial_fault_domain_host_distribution: Initial Fault Domain Host distribution mode for the Cluster.
         :param pulumi.Input[_builtins.float] initial_host_ocpu_count: The initial OCPU count of the Cluster's ESXi hosts.
         :param pulumi.Input[_builtins.str] initial_host_shape_name: The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         :param pulumi.Input[_builtins.str] initial_vcf_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
@@ -1365,6 +1373,8 @@ class SddcInitialConfigurationInitialClusterConfigurationArgs:
             pulumi.set(__self__, "display_name", display_name)
         if initial_commitment is not None:
             pulumi.set(__self__, "initial_commitment", initial_commitment)
+        if initial_fault_domain_host_distribution is not None:
+            pulumi.set(__self__, "initial_fault_domain_host_distribution", initial_fault_domain_host_distribution)
         if initial_host_ocpu_count is not None:
             pulumi.set(__self__, "initial_host_ocpu_count", initial_host_ocpu_count)
         if initial_host_shape_name is not None:
@@ -1501,6 +1511,18 @@ class SddcInitialConfigurationInitialClusterConfigurationArgs:
     @initial_commitment.setter
     def initial_commitment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "initial_commitment", value)
+
+    @_builtins.property
+    @pulumi.getter(name="initialFaultDomainHostDistribution")
+    def initial_fault_domain_host_distribution(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Initial Fault Domain Host distribution mode for the Cluster.
+        """
+        return pulumi.get(self, "initial_fault_domain_host_distribution")
+
+    @initial_fault_domain_host_distribution.setter
+    def initial_fault_domain_host_distribution(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "initial_fault_domain_host_distribution", value)
 
     @_builtins.property
     @pulumi.getter(name="initialHostOcpuCount")
@@ -2423,6 +2445,50 @@ class GetManagementAppliancesFilterArgsDict(TypedDict):
 
 @pulumi.input_type
 class GetManagementAppliancesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetRetrieveVmwareBinariesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetRetrieveVmwareBinariesFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

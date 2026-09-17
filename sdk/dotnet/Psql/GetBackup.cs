@@ -168,6 +168,10 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// The OCID of the master encryption key for the backup.
+        /// </summary>
+        public readonly string KmsKeyId;
+        /// <summary>
         /// lastAcceptedRequestToken from MP.
         /// </summary>
         public readonly string LastAcceptedRequestToken;
@@ -236,6 +240,8 @@ namespace Pulumi.Oci.Psql
 
             string id,
 
+            string kmsKeyId,
+
             string lastAcceptedRequestToken,
 
             string lastCompletedRequestToken,
@@ -269,6 +275,7 @@ namespace Pulumi.Oci.Psql
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            KmsKeyId = kmsKeyId;
             LastAcceptedRequestToken = lastAcceptedRequestToken;
             LastCompletedRequestToken = lastCompletedRequestToken;
             LifecycleDetails = lifecycleDetails;

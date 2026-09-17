@@ -99,7 +99,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     declare public readonly autonomousDatabaseId: pulumi.Output<string>;
     /**
-     * (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     * (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
      */
     declare public readonly autonomousDatabaseMaintenanceWindow: pulumi.Output<outputs.Database.AutonomousDatabaseAutonomousDatabaseMaintenanceWindow>;
     /**
@@ -553,6 +553,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     declare public readonly rotateKeyTrigger: pulumi.Output<boolean | undefined>;
     /**
+     * Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     */
+    declare public readonly scheduledMaintenanceWindow: pulumi.Output<outputs.Database.AutonomousDatabaseScheduledMaintenanceWindow>;
+    /**
      * (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
      *
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -724,6 +728,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      * The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
      */
     declare public readonly timeScheduledDbVersionUpgrade: pulumi.Output<string>;
+    /**
+     * The date and time at which operation to change Maintenance Window is scheduled to take place.
+     */
+    declare public readonly timeScheduledMaintenanceWindowUpdate: pulumi.Output<string>;
     /**
      * The date and time the Autonomous AI Database was most recently undeleted.
      */
@@ -910,6 +918,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["resourcePoolSummary"] = state?.resourcePoolSummary;
             resourceInputs["role"] = state?.role;
             resourceInputs["rotateKeyTrigger"] = state?.rotateKeyTrigger;
+            resourceInputs["scheduledMaintenanceWindow"] = state?.scheduledMaintenanceWindow;
             resourceInputs["scheduledOperations"] = state?.scheduledOperations;
             resourceInputs["secretId"] = state?.secretId;
             resourceInputs["secretVersionNumber"] = state?.secretVersionNumber;
@@ -949,6 +958,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["timeReclamationOfFreeAutonomousDatabase"] = state?.timeReclamationOfFreeAutonomousDatabase;
             resourceInputs["timeScheduledAdUpdate"] = state?.timeScheduledAdUpdate;
             resourceInputs["timeScheduledDbVersionUpgrade"] = state?.timeScheduledDbVersionUpgrade;
+            resourceInputs["timeScheduledMaintenanceWindowUpdate"] = state?.timeScheduledMaintenanceWindowUpdate;
             resourceInputs["timeUndeleted"] = state?.timeUndeleted;
             resourceInputs["timeUntilReconnectCloneEnabled"] = state?.timeUntilReconnectCloneEnabled;
             resourceInputs["timestamp"] = state?.timestamp;
@@ -1045,6 +1055,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["resourcePoolLeaderId"] = args?.resourcePoolLeaderId;
             resourceInputs["resourcePoolSummary"] = args?.resourcePoolSummary;
             resourceInputs["rotateKeyTrigger"] = args?.rotateKeyTrigger;
+            resourceInputs["scheduledMaintenanceWindow"] = args?.scheduledMaintenanceWindow;
             resourceInputs["scheduledOperations"] = args?.scheduledOperations;
             resourceInputs["secretId"] = args?.secretId;
             resourceInputs["secretVersionNumber"] = args?.secretVersionNumber;
@@ -1062,6 +1073,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["timeOfAutoRefreshStart"] = args?.timeOfAutoRefreshStart;
             resourceInputs["timeScheduledAdUpdate"] = args?.timeScheduledAdUpdate;
             resourceInputs["timeScheduledDbVersionUpgrade"] = args?.timeScheduledDbVersionUpgrade;
+            resourceInputs["timeScheduledMaintenanceWindowUpdate"] = args?.timeScheduledMaintenanceWindowUpdate;
             resourceInputs["timestamp"] = args?.timestamp;
             resourceInputs["transportableTablespace"] = args?.transportableTablespace;
             resourceInputs["useLatestAvailableBackupTimeStamp"] = args?.useLatestAvailableBackupTimeStamp;
@@ -1199,7 +1211,7 @@ export interface AutonomousDatabaseState {
      */
     autonomousDatabaseId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     * (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
      */
     autonomousDatabaseMaintenanceWindow?: pulumi.Input<inputs.Database.AutonomousDatabaseAutonomousDatabaseMaintenanceWindow | undefined>;
     /**
@@ -1653,6 +1665,10 @@ export interface AutonomousDatabaseState {
      */
     rotateKeyTrigger?: pulumi.Input<boolean | undefined>;
     /**
+     * Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     */
+    scheduledMaintenanceWindow?: pulumi.Input<inputs.Database.AutonomousDatabaseScheduledMaintenanceWindow | undefined>;
+    /**
      * (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
      *
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -1825,6 +1841,10 @@ export interface AutonomousDatabaseState {
      */
     timeScheduledDbVersionUpgrade?: pulumi.Input<string | undefined>;
     /**
+     * The date and time at which operation to change Maintenance Window is scheduled to take place.
+     */
+    timeScheduledMaintenanceWindowUpdate?: pulumi.Input<string | undefined>;
+    /**
      * The date and time the Autonomous AI Database was most recently undeleted.
      */
     timeUndeleted?: pulumi.Input<string | undefined>;
@@ -1913,7 +1933,7 @@ export interface AutonomousDatabaseArgs {
      */
     autonomousDatabaseId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     * (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
      */
     autonomousDatabaseMaintenanceWindow?: pulumi.Input<inputs.Database.AutonomousDatabaseAutonomousDatabaseMaintenanceWindow | undefined>;
     /**
@@ -2219,6 +2239,10 @@ export interface AutonomousDatabaseArgs {
      */
     rotateKeyTrigger?: pulumi.Input<boolean | undefined>;
     /**
+     * Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     */
+    scheduledMaintenanceWindow?: pulumi.Input<inputs.Database.AutonomousDatabaseScheduledMaintenanceWindow | undefined>;
+    /**
      * (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
      *
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -2302,6 +2326,10 @@ export interface AutonomousDatabaseArgs {
      * The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
      */
     timeScheduledDbVersionUpgrade?: pulumi.Input<string | undefined>;
+    /**
+     * The date and time at which operation to change Maintenance Window is scheduled to take place.
+     */
+    timeScheduledMaintenanceWindowUpdate?: pulumi.Input<string | undefined>;
     /**
      * The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
      */

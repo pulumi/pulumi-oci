@@ -676,15 +676,15 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
      * (Updatable) The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
      * 
      */
-    @Import(name="sshPublicKeys", required=true)
-    private Output<List<String>> sshPublicKeys;
+    @Import(name="sshPublicKeys")
+    private @Nullable Output<List<String>> sshPublicKeys;
 
     /**
      * @return (Updatable) The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
      * 
      */
-    public Output<List<String>> sshPublicKeys() {
-        return this.sshPublicKeys;
+    public Optional<Output<List<String>>> sshPublicKeys() {
+        return Optional.ofNullable(this.sshPublicKeys);
     }
 
     /**
@@ -1740,7 +1740,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder sshPublicKeys(Output<List<String>> sshPublicKeys) {
+        public Builder sshPublicKeys(@Nullable Output<List<String>> sshPublicKeys) {
             $.sshPublicKeys = sshPublicKeys;
             return this;
         }
@@ -1864,9 +1864,6 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
             }
             if ($.shape == null) {
                 throw new MissingRequiredPropertyException("DbSystemArgs", "shape");
-            }
-            if ($.sshPublicKeys == null) {
-                throw new MissingRequiredPropertyException("DbSystemArgs", "sshPublicKeys");
             }
             if ($.subnetId == null) {
                 throw new MissingRequiredPropertyException("DbSystemArgs", "subnetId");

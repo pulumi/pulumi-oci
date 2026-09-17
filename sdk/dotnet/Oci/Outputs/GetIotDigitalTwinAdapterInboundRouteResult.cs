@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string Condition;
         /// <summary>
+        /// JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+        /// </summary>
+        public readonly string ContentRoot;
+        /// <summary>
         /// Meaningful write up about the inbound route.
         /// </summary>
         public readonly string Description;
@@ -29,21 +33,31 @@ namespace Pulumi.Oci.Oci.Outputs
         /// Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetIotDigitalTwinAdapterInboundRouteReferencePayloadResult> ReferencePayloads;
+        /// <summary>
+        /// Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+        /// </summary>
+        public readonly string Target;
 
         [OutputConstructor]
         private GetIotDigitalTwinAdapterInboundRouteResult(
             string condition,
 
+            string contentRoot,
+
             string description,
 
             ImmutableDictionary<string, string> payloadMapping,
 
-            ImmutableArray<Outputs.GetIotDigitalTwinAdapterInboundRouteReferencePayloadResult> referencePayloads)
+            ImmutableArray<Outputs.GetIotDigitalTwinAdapterInboundRouteReferencePayloadResult> referencePayloads,
+
+            string target)
         {
             Condition = condition;
+            ContentRoot = contentRoot;
             Description = description;
             PayloadMapping = payloadMapping;
             ReferencePayloads = referencePayloads;
+            Target = target;
         }
     }
 }

@@ -163,6 +163,21 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
     }
 
     /**
+     * Initial Fault Domain Host distribution mode for the Cluster.
+     * 
+     */
+    @Import(name="initialFaultDomainHostDistribution")
+    private @Nullable Output<String> initialFaultDomainHostDistribution;
+
+    /**
+     * @return Initial Fault Domain Host distribution mode for the Cluster.
+     * 
+     */
+    public Optional<Output<String>> initialFaultDomainHostDistribution() {
+        return Optional.ofNullable(this.initialFaultDomainHostDistribution);
+    }
+
+    /**
      * The initial OCPU count of the Cluster&#39;s ESXi hosts.
      * 
      */
@@ -298,6 +313,7 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
         this.displayName = $.displayName;
         this.esxiHostsCount = $.esxiHostsCount;
         this.initialCommitment = $.initialCommitment;
+        this.initialFaultDomainHostDistribution = $.initialFaultDomainHostDistribution;
         this.initialHostOcpuCount = $.initialHostOcpuCount;
         this.initialHostShapeName = $.initialHostShapeName;
         this.initialVcfByolAllocationId = $.initialVcfByolAllocationId;
@@ -537,6 +553,27 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
          */
         public Builder initialCommitment(String initialCommitment) {
             return initialCommitment(Output.of(initialCommitment));
+        }
+
+        /**
+         * @param initialFaultDomainHostDistribution Initial Fault Domain Host distribution mode for the Cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialFaultDomainHostDistribution(@Nullable Output<String> initialFaultDomainHostDistribution) {
+            $.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
+            return this;
+        }
+
+        /**
+         * @param initialFaultDomainHostDistribution Initial Fault Domain Host distribution mode for the Cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialFaultDomainHostDistribution(String initialFaultDomainHostDistribution) {
+            return initialFaultDomainHostDistribution(Output.of(initialFaultDomainHostDistribution));
         }
 
         /**

@@ -24,9 +24,11 @@ from .get_datastore_clusters import *
 from .get_datastores import *
 from .get_exsi_host import *
 from .get_exsi_hosts import *
+from .get_generate_vmware_binary_download_info import *
 from .get_management_appliance import *
 from .get_management_appliances import *
 from .get_retrieve_password import *
+from .get_retrieve_vmware_binaries import *
 from .get_sddc import *
 from .get_sddcs import *
 from .get_supported_commitments import *

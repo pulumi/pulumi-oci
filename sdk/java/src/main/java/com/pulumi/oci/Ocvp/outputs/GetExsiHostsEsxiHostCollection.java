@@ -51,6 +51,11 @@ public final class GetExsiHostsEsxiHostCollection {
      */
     private String computeAvailabilityDomain;
     /**
+     * @return The fault domain of the ESXi host.
+     * 
+     */
+    private String computeFaultDomain;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
      * 
      */
@@ -129,6 +134,11 @@ public final class GetExsiHostsEsxiHostCollection {
      * 
      */
     private String id;
+    /**
+     * @return The initial fault domain host distribution mode for the ESXi host.
+     * 
+     */
+    private String initialFaultDomainHostDistribution;
     /**
      * @return Indicates whether this host is in the progress of billing continuation.
      * 
@@ -274,6 +284,13 @@ public final class GetExsiHostsEsxiHostCollection {
         return this.computeAvailabilityDomain;
     }
     /**
+     * @return The fault domain of the ESXi host.
+     * 
+     */
+    public String computeFaultDomain() {
+        return this.computeFaultDomain;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
      * 
      */
@@ -381,6 +398,13 @@ public final class GetExsiHostsEsxiHostCollection {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return The initial fault domain host distribution mode for the ESXi host.
+     * 
+     */
+    public String initialFaultDomainHostDistribution() {
+        return this.initialFaultDomainHostDistribution;
     }
     /**
      * @return Indicates whether this host is in the progress of billing continuation.
@@ -526,6 +550,7 @@ public final class GetExsiHostsEsxiHostCollection {
         private String clusterId;
         private String compartmentId;
         private String computeAvailabilityDomain;
+        private String computeFaultDomain;
         private String computeInstanceId;
         private String currentCommitment;
         private String currentSku;
@@ -541,6 +566,7 @@ public final class GetExsiHostsEsxiHostCollection {
         private Double hostOcpuCount;
         private String hostShapeName;
         private String id;
+        private String initialFaultDomainHostDistribution;
         private Boolean isBillingContinuationInProgress;
         private Boolean isBillingSwappingInProgress;
         private Boolean isVsanByolEnabled;
@@ -568,6 +594,7 @@ public final class GetExsiHostsEsxiHostCollection {
     	      this.clusterId = defaults.clusterId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeAvailabilityDomain = defaults.computeAvailabilityDomain;
+    	      this.computeFaultDomain = defaults.computeFaultDomain;
     	      this.computeInstanceId = defaults.computeInstanceId;
     	      this.currentCommitment = defaults.currentCommitment;
     	      this.currentSku = defaults.currentSku;
@@ -583,6 +610,7 @@ public final class GetExsiHostsEsxiHostCollection {
     	      this.hostOcpuCount = defaults.hostOcpuCount;
     	      this.hostShapeName = defaults.hostShapeName;
     	      this.id = defaults.id;
+    	      this.initialFaultDomainHostDistribution = defaults.initialFaultDomainHostDistribution;
     	      this.isBillingContinuationInProgress = defaults.isBillingContinuationInProgress;
     	      this.isBillingSwappingInProgress = defaults.isBillingSwappingInProgress;
     	      this.isVsanByolEnabled = defaults.isVsanByolEnabled;
@@ -659,6 +687,14 @@ public final class GetExsiHostsEsxiHostCollection {
               throw new MissingRequiredPropertyException("GetExsiHostsEsxiHostCollection", "computeAvailabilityDomain");
             }
             this.computeAvailabilityDomain = computeAvailabilityDomain;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeFaultDomain(String computeFaultDomain) {
+            if (computeFaultDomain == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostsEsxiHostCollection", "computeFaultDomain");
+            }
+            this.computeFaultDomain = computeFaultDomain;
             return this;
         }
         @CustomType.Setter
@@ -788,6 +824,14 @@ public final class GetExsiHostsEsxiHostCollection {
               throw new MissingRequiredPropertyException("GetExsiHostsEsxiHostCollection", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder initialFaultDomainHostDistribution(String initialFaultDomainHostDistribution) {
+            if (initialFaultDomainHostDistribution == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostsEsxiHostCollection", "initialFaultDomainHostDistribution");
+            }
+            this.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
             return this;
         }
         @CustomType.Setter
@@ -935,6 +979,7 @@ public final class GetExsiHostsEsxiHostCollection {
             _resultValue.clusterId = clusterId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.computeAvailabilityDomain = computeAvailabilityDomain;
+            _resultValue.computeFaultDomain = computeFaultDomain;
             _resultValue.computeInstanceId = computeInstanceId;
             _resultValue.currentCommitment = currentCommitment;
             _resultValue.currentSku = currentSku;
@@ -950,6 +995,7 @@ public final class GetExsiHostsEsxiHostCollection {
             _resultValue.hostOcpuCount = hostOcpuCount;
             _resultValue.hostShapeName = hostShapeName;
             _resultValue.id = id;
+            _resultValue.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
             _resultValue.isBillingContinuationInProgress = isBillingContinuationInProgress;
             _resultValue.isBillingSwappingInProgress = isBillingSwappingInProgress;
             _resultValue.isVsanByolEnabled = isVsanByolEnabled;

@@ -49,6 +49,10 @@ import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfileArgs;
 import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfilePlainArgs;
 import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfilesArgs;
 import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfilesPlainArgs;
+import com.pulumi.oci.oci.inputs.GetClusterHealthDiagnosisStoreArgs;
+import com.pulumi.oci.oci.inputs.GetClusterHealthDiagnosisStorePlainArgs;
+import com.pulumi.oci.oci.inputs.GetClusterHealthDiagnosisStoresArgs;
+import com.pulumi.oci.oci.inputs.GetClusterHealthDiagnosisStoresPlainArgs;
 import com.pulumi.oci.oci.inputs.GetCostadCostAlertSubscriptionArgs;
 import com.pulumi.oci.oci.inputs.GetCostadCostAlertSubscriptionPlainArgs;
 import com.pulumi.oci.oci.inputs.GetCostadCostAlertSubscriptionsArgs;
@@ -137,22 +141,6 @@ import com.pulumi.oci.oci.inputs.GetDifStackArgs;
 import com.pulumi.oci.oci.inputs.GetDifStackPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDifStacksArgs;
 import com.pulumi.oci.oci.inputs.GetDifStacksPlainArgs;
-import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabaseArgs;
-import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabasePlainArgs;
-import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs;
-import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricPlainArgs;
-import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabasesArgs;
-import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabasesPlainArgs;
-import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabaseArgs;
-import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePlainArgs;
-import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs;
-import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointPlainArgs;
-import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs;
-import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsPlainArgs;
-import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabaseRaftMetricArgs;
-import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabaseRaftMetricPlainArgs;
-import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasesArgs;
-import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasesPlainArgs;
 import com.pulumi.oci.oci.inputs.GetGdpGdpPipelineArgs;
 import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinePlainArgs;
 import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
@@ -185,6 +173,12 @@ import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetIotIotDomainPlainArgs;
 import com.pulumi.oci.oci.inputs.GetIotIotDomainsArgs;
 import com.pulumi.oci.oci.inputs.GetIotIotDomainsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetIotIotFlowRuntimeArgs;
+import com.pulumi.oci.oci.inputs.GetIotIotFlowRuntimeFlowArgs;
+import com.pulumi.oci.oci.inputs.GetIotIotFlowRuntimeFlowPlainArgs;
+import com.pulumi.oci.oci.inputs.GetIotIotFlowRuntimePlainArgs;
+import com.pulumi.oci.oci.inputs.GetIotIotFlowRuntimesArgs;
+import com.pulumi.oci.oci.inputs.GetIotIotFlowRuntimesPlainArgs;
 import com.pulumi.oci.oci.inputs.GetManagedKafkaAddonOptionsArgs;
 import com.pulumi.oci.oci.inputs.GetManagedKafkaAddonOptionsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterAddonArgs;
@@ -321,6 +315,8 @@ import com.pulumi.oci.oci.outputs.GetBatchBatchTaskEnvironmentResult;
 import com.pulumi.oci.oci.outputs.GetBatchBatchTaskEnvironmentsResult;
 import com.pulumi.oci.oci.outputs.GetBatchBatchTaskProfileResult;
 import com.pulumi.oci.oci.outputs.GetBatchBatchTaskProfilesResult;
+import com.pulumi.oci.oci.outputs.GetClusterHealthDiagnosisStoreResult;
+import com.pulumi.oci.oci.outputs.GetClusterHealthDiagnosisStoresResult;
 import com.pulumi.oci.oci.outputs.GetCostadCostAlertSubscriptionResult;
 import com.pulumi.oci.oci.outputs.GetCostadCostAlertSubscriptionsResult;
 import com.pulumi.oci.oci.outputs.GetCostadCostAnomalyEventAnalyticsResult;
@@ -365,14 +361,6 @@ import com.pulumi.oci.oci.outputs.GetDdfsInstanceResult;
 import com.pulumi.oci.oci.outputs.GetDdfsInstancesResult;
 import com.pulumi.oci.oci.outputs.GetDifStackResult;
 import com.pulumi.oci.oci.outputs.GetDifStacksResult;
-import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResult;
-import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedAutonomousDatabaseResult;
-import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedAutonomousDatabasesResult;
-import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointResult;
-import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult;
-import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedDatabaseRaftMetricResult;
-import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedDatabaseResult;
-import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedDatabasesResult;
 import com.pulumi.oci.oci.outputs.GetGdpGdpPipelineResult;
 import com.pulumi.oci.oci.outputs.GetGdpGdpPipelinesResult;
 import com.pulumi.oci.oci.outputs.GetIotDigitalTwinAdapterResult;
@@ -389,6 +377,9 @@ import com.pulumi.oci.oci.outputs.GetIotIotDomainGroupResult;
 import com.pulumi.oci.oci.outputs.GetIotIotDomainGroupsResult;
 import com.pulumi.oci.oci.outputs.GetIotIotDomainResult;
 import com.pulumi.oci.oci.outputs.GetIotIotDomainsResult;
+import com.pulumi.oci.oci.outputs.GetIotIotFlowRuntimeFlowResult;
+import com.pulumi.oci.oci.outputs.GetIotIotFlowRuntimeResult;
+import com.pulumi.oci.oci.outputs.GetIotIotFlowRuntimesResult;
 import com.pulumi.oci.oci.outputs.GetManagedKafkaAddonOptionsResult;
 import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClusterAddonResult;
 import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClusterAddonsResult;
@@ -5751,6 +5742,531 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetBatchBatchTaskProfilesResult> getBatchBatchTaskProfilesPlain(GetBatchBatchTaskProfilesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getBatchBatchTaskProfiles:getBatchBatchTaskProfiles", TypeShape.of(GetBatchBatchTaskProfilesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Diagnosis Store resource in Oracle Cloud Infrastructure Cluster Health service.
+     * 
+     * Gets information about a Diagnosis Store.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetClusterHealthDiagnosisStoreArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiagnosisStore = OciFunctions.getClusterHealthDiagnosisStore(GetClusterHealthDiagnosisStoreArgs.builder()
+     *             .diagnosisStoreId(testDiagnosisStoreOciClusterHealthDiagnosisStore.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetClusterHealthDiagnosisStoreResult> getClusterHealthDiagnosisStore(GetClusterHealthDiagnosisStoreArgs args) {
+        return getClusterHealthDiagnosisStore(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Diagnosis Store resource in Oracle Cloud Infrastructure Cluster Health service.
+     * 
+     * Gets information about a Diagnosis Store.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetClusterHealthDiagnosisStoreArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiagnosisStore = OciFunctions.getClusterHealthDiagnosisStore(GetClusterHealthDiagnosisStoreArgs.builder()
+     *             .diagnosisStoreId(testDiagnosisStoreOciClusterHealthDiagnosisStore.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetClusterHealthDiagnosisStoreResult> getClusterHealthDiagnosisStorePlain(GetClusterHealthDiagnosisStorePlainArgs args) {
+        return getClusterHealthDiagnosisStorePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Diagnosis Store resource in Oracle Cloud Infrastructure Cluster Health service.
+     * 
+     * Gets information about a Diagnosis Store.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetClusterHealthDiagnosisStoreArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiagnosisStore = OciFunctions.getClusterHealthDiagnosisStore(GetClusterHealthDiagnosisStoreArgs.builder()
+     *             .diagnosisStoreId(testDiagnosisStoreOciClusterHealthDiagnosisStore.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetClusterHealthDiagnosisStoreResult> getClusterHealthDiagnosisStore(GetClusterHealthDiagnosisStoreArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getClusterHealthDiagnosisStore:getClusterHealthDiagnosisStore", TypeShape.of(GetClusterHealthDiagnosisStoreResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Diagnosis Store resource in Oracle Cloud Infrastructure Cluster Health service.
+     * 
+     * Gets information about a Diagnosis Store.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetClusterHealthDiagnosisStoreArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiagnosisStore = OciFunctions.getClusterHealthDiagnosisStore(GetClusterHealthDiagnosisStoreArgs.builder()
+     *             .diagnosisStoreId(testDiagnosisStoreOciClusterHealthDiagnosisStore.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetClusterHealthDiagnosisStoreResult> getClusterHealthDiagnosisStore(GetClusterHealthDiagnosisStoreArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getClusterHealthDiagnosisStore:getClusterHealthDiagnosisStore", TypeShape.of(GetClusterHealthDiagnosisStoreResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Diagnosis Store resource in Oracle Cloud Infrastructure Cluster Health service.
+     * 
+     * Gets information about a Diagnosis Store.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetClusterHealthDiagnosisStoreArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiagnosisStore = OciFunctions.getClusterHealthDiagnosisStore(GetClusterHealthDiagnosisStoreArgs.builder()
+     *             .diagnosisStoreId(testDiagnosisStoreOciClusterHealthDiagnosisStore.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetClusterHealthDiagnosisStoreResult> getClusterHealthDiagnosisStorePlain(GetClusterHealthDiagnosisStorePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getClusterHealthDiagnosisStore:getClusterHealthDiagnosisStore", TypeShape.of(GetClusterHealthDiagnosisStoreResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Diagnosis Stores in Oracle Cloud Infrastructure Cluster Health service.
+     * 
+     * Gets a list of Diagnosis Stores.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetClusterHealthDiagnosisStoresArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiagnosisStores = OciFunctions.getClusterHealthDiagnosisStores(GetClusterHealthDiagnosisStoresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .diagnosisStoreId(testDiagnosisStore.id())
+     *             .displayName(diagnosisStoreDisplayName)
+     *             .state(diagnosisStoreState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetClusterHealthDiagnosisStoresResult> getClusterHealthDiagnosisStores() {
+        return getClusterHealthDiagnosisStores(GetClusterHealthDiagnosisStoresArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Diagnosis Stores in Oracle Cloud Infrastructure Cluster Health service.
+     * 
+     * Gets a list of Diagnosis Stores.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetClusterHealthDiagnosisStoresArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiagnosisStores = OciFunctions.getClusterHealthDiagnosisStores(GetClusterHealthDiagnosisStoresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .diagnosisStoreId(testDiagnosisStore.id())
+     *             .displayName(diagnosisStoreDisplayName)
+     *             .state(diagnosisStoreState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetClusterHealthDiagnosisStoresResult> getClusterHealthDiagnosisStoresPlain() {
+        return getClusterHealthDiagnosisStoresPlain(GetClusterHealthDiagnosisStoresPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Diagnosis Stores in Oracle Cloud Infrastructure Cluster Health service.
+     * 
+     * Gets a list of Diagnosis Stores.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetClusterHealthDiagnosisStoresArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiagnosisStores = OciFunctions.getClusterHealthDiagnosisStores(GetClusterHealthDiagnosisStoresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .diagnosisStoreId(testDiagnosisStore.id())
+     *             .displayName(diagnosisStoreDisplayName)
+     *             .state(diagnosisStoreState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetClusterHealthDiagnosisStoresResult> getClusterHealthDiagnosisStores(GetClusterHealthDiagnosisStoresArgs args) {
+        return getClusterHealthDiagnosisStores(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Diagnosis Stores in Oracle Cloud Infrastructure Cluster Health service.
+     * 
+     * Gets a list of Diagnosis Stores.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetClusterHealthDiagnosisStoresArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiagnosisStores = OciFunctions.getClusterHealthDiagnosisStores(GetClusterHealthDiagnosisStoresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .diagnosisStoreId(testDiagnosisStore.id())
+     *             .displayName(diagnosisStoreDisplayName)
+     *             .state(diagnosisStoreState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetClusterHealthDiagnosisStoresResult> getClusterHealthDiagnosisStoresPlain(GetClusterHealthDiagnosisStoresPlainArgs args) {
+        return getClusterHealthDiagnosisStoresPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Diagnosis Stores in Oracle Cloud Infrastructure Cluster Health service.
+     * 
+     * Gets a list of Diagnosis Stores.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetClusterHealthDiagnosisStoresArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiagnosisStores = OciFunctions.getClusterHealthDiagnosisStores(GetClusterHealthDiagnosisStoresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .diagnosisStoreId(testDiagnosisStore.id())
+     *             .displayName(diagnosisStoreDisplayName)
+     *             .state(diagnosisStoreState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetClusterHealthDiagnosisStoresResult> getClusterHealthDiagnosisStores(GetClusterHealthDiagnosisStoresArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getClusterHealthDiagnosisStores:getClusterHealthDiagnosisStores", TypeShape.of(GetClusterHealthDiagnosisStoresResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Diagnosis Stores in Oracle Cloud Infrastructure Cluster Health service.
+     * 
+     * Gets a list of Diagnosis Stores.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetClusterHealthDiagnosisStoresArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiagnosisStores = OciFunctions.getClusterHealthDiagnosisStores(GetClusterHealthDiagnosisStoresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .diagnosisStoreId(testDiagnosisStore.id())
+     *             .displayName(diagnosisStoreDisplayName)
+     *             .state(diagnosisStoreState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetClusterHealthDiagnosisStoresResult> getClusterHealthDiagnosisStores(GetClusterHealthDiagnosisStoresArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getClusterHealthDiagnosisStores:getClusterHealthDiagnosisStores", TypeShape.of(GetClusterHealthDiagnosisStoresResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Diagnosis Stores in Oracle Cloud Infrastructure Cluster Health service.
+     * 
+     * Gets a list of Diagnosis Stores.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetClusterHealthDiagnosisStoresArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiagnosisStores = OciFunctions.getClusterHealthDiagnosisStores(GetClusterHealthDiagnosisStoresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .diagnosisStoreId(testDiagnosisStore.id())
+     *             .displayName(diagnosisStoreDisplayName)
+     *             .state(diagnosisStoreState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetClusterHealthDiagnosisStoresResult> getClusterHealthDiagnosisStoresPlain(GetClusterHealthDiagnosisStoresPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getClusterHealthDiagnosisStores:getClusterHealthDiagnosisStores", TypeShape.of(GetClusterHealthDiagnosisStoresResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Cost Alert Subscription resource in Oracle Cloud Infrastructure Costad service.
@@ -15698,1066 +16214,6 @@ public final class OciFunctions {
         return Deployment.getInstance().invokeAsync("oci:oci/getDifStacks:getDifStacks", TypeShape.of(GetDifStacksResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific Distributed Autonomous Database resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Gets the details of the Globally distributed autonomous database identified by given id.
-     * 
-     * ## Example Usage
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedAutonomousDatabaseResult> getDistributedDatabaseDistributedAutonomousDatabase(GetDistributedDatabaseDistributedAutonomousDatabaseArgs args) {
-        return getDistributedDatabaseDistributedAutonomousDatabase(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Distributed Autonomous Database resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Gets the details of the Globally distributed autonomous database identified by given id.
-     * 
-     * ## Example Usage
-     * 
-     */
-    public static CompletableFuture<GetDistributedDatabaseDistributedAutonomousDatabaseResult> getDistributedDatabaseDistributedAutonomousDatabasePlain(GetDistributedDatabaseDistributedAutonomousDatabasePlainArgs args) {
-        return getDistributedDatabaseDistributedAutonomousDatabasePlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Distributed Autonomous Database resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Gets the details of the Globally distributed autonomous database identified by given id.
-     * 
-     * ## Example Usage
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedAutonomousDatabaseResult> getDistributedDatabaseDistributedAutonomousDatabase(GetDistributedDatabaseDistributedAutonomousDatabaseArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedAutonomousDatabase:getDistributedDatabaseDistributedAutonomousDatabase", TypeShape.of(GetDistributedDatabaseDistributedAutonomousDatabaseResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Distributed Autonomous Database resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Gets the details of the Globally distributed autonomous database identified by given id.
-     * 
-     * ## Example Usage
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedAutonomousDatabaseResult> getDistributedDatabaseDistributedAutonomousDatabase(GetDistributedDatabaseDistributedAutonomousDatabaseArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedAutonomousDatabase:getDistributedDatabaseDistributedAutonomousDatabase", TypeShape.of(GetDistributedDatabaseDistributedAutonomousDatabaseResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Distributed Autonomous Database resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Gets the details of the Globally distributed autonomous database identified by given id.
-     * 
-     * ## Example Usage
-     * 
-     */
-    public static CompletableFuture<GetDistributedDatabaseDistributedAutonomousDatabaseResult> getDistributedDatabaseDistributedAutonomousDatabasePlain(GetDistributedDatabaseDistributedAutonomousDatabasePlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getDistributedDatabaseDistributedAutonomousDatabase:getDistributedDatabaseDistributedAutonomousDatabase", TypeShape.of(GetDistributedDatabaseDistributedAutonomousDatabaseResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Distributed Autonomous Database Raft Metric resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Operation to retrieve RAFT metrics for the Globally distributed autonomous database. If the Globally distributed
-     * autonomous database is not RAFT based then empty response is returned from the API.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDistributedAutonomousDatabaseRaftMetric = OciFunctions.getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs.builder()
-     *             .distributedAutonomousDatabaseId(testDistributedAutonomousDatabase.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResult> getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs args) {
-        return getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Distributed Autonomous Database Raft Metric resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Operation to retrieve RAFT metrics for the Globally distributed autonomous database. If the Globally distributed
-     * autonomous database is not RAFT based then empty response is returned from the API.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDistributedAutonomousDatabaseRaftMetric = OciFunctions.getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs.builder()
-     *             .distributedAutonomousDatabaseId(testDistributedAutonomousDatabase.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResult> getDistributedDatabaseDistributedAutonomousDatabaseRaftMetricPlain(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricPlainArgs args) {
-        return getDistributedDatabaseDistributedAutonomousDatabaseRaftMetricPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Distributed Autonomous Database Raft Metric resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Operation to retrieve RAFT metrics for the Globally distributed autonomous database. If the Globally distributed
-     * autonomous database is not RAFT based then empty response is returned from the API.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDistributedAutonomousDatabaseRaftMetric = OciFunctions.getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs.builder()
-     *             .distributedAutonomousDatabaseId(testDistributedAutonomousDatabase.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResult> getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric:getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric", TypeShape.of(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Distributed Autonomous Database Raft Metric resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Operation to retrieve RAFT metrics for the Globally distributed autonomous database. If the Globally distributed
-     * autonomous database is not RAFT based then empty response is returned from the API.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDistributedAutonomousDatabaseRaftMetric = OciFunctions.getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs.builder()
-     *             .distributedAutonomousDatabaseId(testDistributedAutonomousDatabase.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResult> getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric:getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric", TypeShape.of(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Distributed Autonomous Database Raft Metric resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Operation to retrieve RAFT metrics for the Globally distributed autonomous database. If the Globally distributed
-     * autonomous database is not RAFT based then empty response is returned from the API.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDistributedAutonomousDatabaseRaftMetric = OciFunctions.getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs.builder()
-     *             .distributedAutonomousDatabaseId(testDistributedAutonomousDatabase.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResult> getDistributedDatabaseDistributedAutonomousDatabaseRaftMetricPlain(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric:getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric", TypeShape.of(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Distributed Autonomous Databases in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * List of Globally distributed autonomous databases.
-     * 
-     * ## Example Usage
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedAutonomousDatabasesResult> getDistributedDatabaseDistributedAutonomousDatabases(GetDistributedDatabaseDistributedAutonomousDatabasesArgs args) {
-        return getDistributedDatabaseDistributedAutonomousDatabases(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Distributed Autonomous Databases in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * List of Globally distributed autonomous databases.
-     * 
-     * ## Example Usage
-     * 
-     */
-    public static CompletableFuture<GetDistributedDatabaseDistributedAutonomousDatabasesResult> getDistributedDatabaseDistributedAutonomousDatabasesPlain(GetDistributedDatabaseDistributedAutonomousDatabasesPlainArgs args) {
-        return getDistributedDatabaseDistributedAutonomousDatabasesPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Distributed Autonomous Databases in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * List of Globally distributed autonomous databases.
-     * 
-     * ## Example Usage
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedAutonomousDatabasesResult> getDistributedDatabaseDistributedAutonomousDatabases(GetDistributedDatabaseDistributedAutonomousDatabasesArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedAutonomousDatabases:getDistributedDatabaseDistributedAutonomousDatabases", TypeShape.of(GetDistributedDatabaseDistributedAutonomousDatabasesResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Distributed Autonomous Databases in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * List of Globally distributed autonomous databases.
-     * 
-     * ## Example Usage
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedAutonomousDatabasesResult> getDistributedDatabaseDistributedAutonomousDatabases(GetDistributedDatabaseDistributedAutonomousDatabasesArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedAutonomousDatabases:getDistributedDatabaseDistributedAutonomousDatabases", TypeShape.of(GetDistributedDatabaseDistributedAutonomousDatabasesResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Distributed Autonomous Databases in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * List of Globally distributed autonomous databases.
-     * 
-     * ## Example Usage
-     * 
-     */
-    public static CompletableFuture<GetDistributedDatabaseDistributedAutonomousDatabasesResult> getDistributedDatabaseDistributedAutonomousDatabasesPlain(GetDistributedDatabaseDistributedAutonomousDatabasesPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getDistributedDatabaseDistributedAutonomousDatabases:getDistributedDatabaseDistributedAutonomousDatabases", TypeShape.of(GetDistributedDatabaseDistributedAutonomousDatabasesResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Distributed Database resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Gets the details of the Globally distributed database identified by given id.
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedDatabaseResult> getDistributedDatabaseDistributedDatabase(GetDistributedDatabaseDistributedDatabaseArgs args) {
-        return getDistributedDatabaseDistributedDatabase(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Distributed Database resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Gets the details of the Globally distributed database identified by given id.
-     * 
-     */
-    public static CompletableFuture<GetDistributedDatabaseDistributedDatabaseResult> getDistributedDatabaseDistributedDatabasePlain(GetDistributedDatabaseDistributedDatabasePlainArgs args) {
-        return getDistributedDatabaseDistributedDatabasePlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Distributed Database resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Gets the details of the Globally distributed database identified by given id.
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedDatabaseResult> getDistributedDatabaseDistributedDatabase(GetDistributedDatabaseDistributedDatabaseArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedDatabase:getDistributedDatabaseDistributedDatabase", TypeShape.of(GetDistributedDatabaseDistributedDatabaseResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Distributed Database resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Gets the details of the Globally distributed database identified by given id.
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedDatabaseResult> getDistributedDatabaseDistributedDatabase(GetDistributedDatabaseDistributedDatabaseArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedDatabase:getDistributedDatabaseDistributedDatabase", TypeShape.of(GetDistributedDatabaseDistributedDatabaseResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Distributed Database resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Gets the details of the Globally distributed database identified by given id.
-     * 
-     */
-    public static CompletableFuture<GetDistributedDatabaseDistributedDatabaseResult> getDistributedDatabaseDistributedDatabasePlain(GetDistributedDatabaseDistributedDatabasePlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getDistributedDatabaseDistributedDatabase:getDistributedDatabaseDistributedDatabase", TypeShape.of(GetDistributedDatabaseDistributedDatabaseResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Distributed Database Private Endpoint resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Get the DistributedDatabasePrivateEndpoint resource.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDistributedDatabasePrivateEndpoint = OciFunctions.getDistributedDatabaseDistributedDatabasePrivateEndpoint(GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs.builder()
-     *             .distributedDatabasePrivateEndpointId(testDistributedDatabasePrivateEndpointOciDistributedDatabaseDistributedDatabasePrivateEndpoint.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedDatabasePrivateEndpointResult> getDistributedDatabaseDistributedDatabasePrivateEndpoint(GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs args) {
-        return getDistributedDatabaseDistributedDatabasePrivateEndpoint(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Distributed Database Private Endpoint resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Get the DistributedDatabasePrivateEndpoint resource.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDistributedDatabasePrivateEndpoint = OciFunctions.getDistributedDatabaseDistributedDatabasePrivateEndpoint(GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs.builder()
-     *             .distributedDatabasePrivateEndpointId(testDistributedDatabasePrivateEndpointOciDistributedDatabaseDistributedDatabasePrivateEndpoint.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetDistributedDatabaseDistributedDatabasePrivateEndpointResult> getDistributedDatabaseDistributedDatabasePrivateEndpointPlain(GetDistributedDatabaseDistributedDatabasePrivateEndpointPlainArgs args) {
-        return getDistributedDatabaseDistributedDatabasePrivateEndpointPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Distributed Database Private Endpoint resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Get the DistributedDatabasePrivateEndpoint resource.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDistributedDatabasePrivateEndpoint = OciFunctions.getDistributedDatabaseDistributedDatabasePrivateEndpoint(GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs.builder()
-     *             .distributedDatabasePrivateEndpointId(testDistributedDatabasePrivateEndpointOciDistributedDatabaseDistributedDatabasePrivateEndpoint.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedDatabasePrivateEndpointResult> getDistributedDatabaseDistributedDatabasePrivateEndpoint(GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedDatabasePrivateEndpoint:getDistributedDatabaseDistributedDatabasePrivateEndpoint", TypeShape.of(GetDistributedDatabaseDistributedDatabasePrivateEndpointResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Distributed Database Private Endpoint resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Get the DistributedDatabasePrivateEndpoint resource.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDistributedDatabasePrivateEndpoint = OciFunctions.getDistributedDatabaseDistributedDatabasePrivateEndpoint(GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs.builder()
-     *             .distributedDatabasePrivateEndpointId(testDistributedDatabasePrivateEndpointOciDistributedDatabaseDistributedDatabasePrivateEndpoint.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedDatabasePrivateEndpointResult> getDistributedDatabaseDistributedDatabasePrivateEndpoint(GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedDatabasePrivateEndpoint:getDistributedDatabaseDistributedDatabasePrivateEndpoint", TypeShape.of(GetDistributedDatabaseDistributedDatabasePrivateEndpointResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Distributed Database Private Endpoint resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Get the DistributedDatabasePrivateEndpoint resource.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDistributedDatabasePrivateEndpoint = OciFunctions.getDistributedDatabaseDistributedDatabasePrivateEndpoint(GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs.builder()
-     *             .distributedDatabasePrivateEndpointId(testDistributedDatabasePrivateEndpointOciDistributedDatabaseDistributedDatabasePrivateEndpoint.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetDistributedDatabaseDistributedDatabasePrivateEndpointResult> getDistributedDatabaseDistributedDatabasePrivateEndpointPlain(GetDistributedDatabaseDistributedDatabasePrivateEndpointPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getDistributedDatabaseDistributedDatabasePrivateEndpoint:getDistributedDatabaseDistributedDatabasePrivateEndpoint", TypeShape.of(GetDistributedDatabaseDistributedDatabasePrivateEndpointResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Distributed Database Private Endpoints in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * List of DistributedDatabasePrivateEndpoints.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDistributedDatabasePrivateEndpoints = OciFunctions.getDistributedDatabaseDistributedDatabasePrivateEndpoints(GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(distributedDatabasePrivateEndpointDisplayName)
-     *             .state(distributedDatabasePrivateEndpointState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult> getDistributedDatabaseDistributedDatabasePrivateEndpoints(GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs args) {
-        return getDistributedDatabaseDistributedDatabasePrivateEndpoints(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Distributed Database Private Endpoints in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * List of DistributedDatabasePrivateEndpoints.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDistributedDatabasePrivateEndpoints = OciFunctions.getDistributedDatabaseDistributedDatabasePrivateEndpoints(GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(distributedDatabasePrivateEndpointDisplayName)
-     *             .state(distributedDatabasePrivateEndpointState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult> getDistributedDatabaseDistributedDatabasePrivateEndpointsPlain(GetDistributedDatabaseDistributedDatabasePrivateEndpointsPlainArgs args) {
-        return getDistributedDatabaseDistributedDatabasePrivateEndpointsPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Distributed Database Private Endpoints in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * List of DistributedDatabasePrivateEndpoints.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDistributedDatabasePrivateEndpoints = OciFunctions.getDistributedDatabaseDistributedDatabasePrivateEndpoints(GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(distributedDatabasePrivateEndpointDisplayName)
-     *             .state(distributedDatabasePrivateEndpointState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult> getDistributedDatabaseDistributedDatabasePrivateEndpoints(GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedDatabasePrivateEndpoints:getDistributedDatabaseDistributedDatabasePrivateEndpoints", TypeShape.of(GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Distributed Database Private Endpoints in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * List of DistributedDatabasePrivateEndpoints.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDistributedDatabasePrivateEndpoints = OciFunctions.getDistributedDatabaseDistributedDatabasePrivateEndpoints(GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(distributedDatabasePrivateEndpointDisplayName)
-     *             .state(distributedDatabasePrivateEndpointState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult> getDistributedDatabaseDistributedDatabasePrivateEndpoints(GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedDatabasePrivateEndpoints:getDistributedDatabaseDistributedDatabasePrivateEndpoints", TypeShape.of(GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Distributed Database Private Endpoints in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * List of DistributedDatabasePrivateEndpoints.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDistributedDatabasePrivateEndpoints = OciFunctions.getDistributedDatabaseDistributedDatabasePrivateEndpoints(GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(distributedDatabasePrivateEndpointDisplayName)
-     *             .state(distributedDatabasePrivateEndpointState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult> getDistributedDatabaseDistributedDatabasePrivateEndpointsPlain(GetDistributedDatabaseDistributedDatabasePrivateEndpointsPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getDistributedDatabaseDistributedDatabasePrivateEndpoints:getDistributedDatabaseDistributedDatabasePrivateEndpoints", TypeShape.of(GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Distributed Database Raft Metric resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Operation to retrieve RAFT metrics for the Globally distributed database. If the Globally distributed database is not
-     * RAFT based then empty response is returned from the API.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabaseRaftMetricArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDistributedDatabaseRaftMetric = OciFunctions.getDistributedDatabaseDistributedDatabaseRaftMetric(GetDistributedDatabaseDistributedDatabaseRaftMetricArgs.builder()
-     *             .distributedDatabaseId(testDistributedDatabase.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedDatabaseRaftMetricResult> getDistributedDatabaseDistributedDatabaseRaftMetric(GetDistributedDatabaseDistributedDatabaseRaftMetricArgs args) {
-        return getDistributedDatabaseDistributedDatabaseRaftMetric(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Distributed Database Raft Metric resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Operation to retrieve RAFT metrics for the Globally distributed database. If the Globally distributed database is not
-     * RAFT based then empty response is returned from the API.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabaseRaftMetricArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDistributedDatabaseRaftMetric = OciFunctions.getDistributedDatabaseDistributedDatabaseRaftMetric(GetDistributedDatabaseDistributedDatabaseRaftMetricArgs.builder()
-     *             .distributedDatabaseId(testDistributedDatabase.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetDistributedDatabaseDistributedDatabaseRaftMetricResult> getDistributedDatabaseDistributedDatabaseRaftMetricPlain(GetDistributedDatabaseDistributedDatabaseRaftMetricPlainArgs args) {
-        return getDistributedDatabaseDistributedDatabaseRaftMetricPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides details about a specific Distributed Database Raft Metric resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Operation to retrieve RAFT metrics for the Globally distributed database. If the Globally distributed database is not
-     * RAFT based then empty response is returned from the API.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabaseRaftMetricArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDistributedDatabaseRaftMetric = OciFunctions.getDistributedDatabaseDistributedDatabaseRaftMetric(GetDistributedDatabaseDistributedDatabaseRaftMetricArgs.builder()
-     *             .distributedDatabaseId(testDistributedDatabase.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedDatabaseRaftMetricResult> getDistributedDatabaseDistributedDatabaseRaftMetric(GetDistributedDatabaseDistributedDatabaseRaftMetricArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedDatabaseRaftMetric:getDistributedDatabaseDistributedDatabaseRaftMetric", TypeShape.of(GetDistributedDatabaseDistributedDatabaseRaftMetricResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Distributed Database Raft Metric resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Operation to retrieve RAFT metrics for the Globally distributed database. If the Globally distributed database is not
-     * RAFT based then empty response is returned from the API.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabaseRaftMetricArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDistributedDatabaseRaftMetric = OciFunctions.getDistributedDatabaseDistributedDatabaseRaftMetric(GetDistributedDatabaseDistributedDatabaseRaftMetricArgs.builder()
-     *             .distributedDatabaseId(testDistributedDatabase.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedDatabaseRaftMetricResult> getDistributedDatabaseDistributedDatabaseRaftMetric(GetDistributedDatabaseDistributedDatabaseRaftMetricArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedDatabaseRaftMetric:getDistributedDatabaseDistributedDatabaseRaftMetric", TypeShape.of(GetDistributedDatabaseDistributedDatabaseRaftMetricResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides details about a specific Distributed Database Raft Metric resource in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * Operation to retrieve RAFT metrics for the Globally distributed database. If the Globally distributed database is not
-     * RAFT based then empty response is returned from the API.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabaseRaftMetricArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDistributedDatabaseRaftMetric = OciFunctions.getDistributedDatabaseDistributedDatabaseRaftMetric(GetDistributedDatabaseDistributedDatabaseRaftMetricArgs.builder()
-     *             .distributedDatabaseId(testDistributedDatabase.id())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
-     */
-    public static CompletableFuture<GetDistributedDatabaseDistributedDatabaseRaftMetricResult> getDistributedDatabaseDistributedDatabaseRaftMetricPlain(GetDistributedDatabaseDistributedDatabaseRaftMetricPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getDistributedDatabaseDistributedDatabaseRaftMetric:getDistributedDatabaseDistributedDatabaseRaftMetric", TypeShape.of(GetDistributedDatabaseDistributedDatabaseRaftMetricResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Distributed Databases in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * List of Globally distributed databases.
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedDatabasesResult> getDistributedDatabaseDistributedDatabases(GetDistributedDatabaseDistributedDatabasesArgs args) {
-        return getDistributedDatabaseDistributedDatabases(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Distributed Databases in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * List of Globally distributed databases.
-     * 
-     */
-    public static CompletableFuture<GetDistributedDatabaseDistributedDatabasesResult> getDistributedDatabaseDistributedDatabasesPlain(GetDistributedDatabaseDistributedDatabasesPlainArgs args) {
-        return getDistributedDatabaseDistributedDatabasesPlain(args, InvokeOptions.Empty);
-    }
-    /**
-     * This data source provides the list of Distributed Databases in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * List of Globally distributed databases.
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedDatabasesResult> getDistributedDatabaseDistributedDatabases(GetDistributedDatabaseDistributedDatabasesArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedDatabases:getDistributedDatabaseDistributedDatabases", TypeShape.of(GetDistributedDatabaseDistributedDatabasesResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Distributed Databases in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * List of Globally distributed databases.
-     * 
-     */
-    public static Output<GetDistributedDatabaseDistributedDatabasesResult> getDistributedDatabaseDistributedDatabases(GetDistributedDatabaseDistributedDatabasesArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedDatabases:getDistributedDatabaseDistributedDatabases", TypeShape.of(GetDistributedDatabaseDistributedDatabasesResult.class), args, Utilities.withVersion(options));
-    }
-    /**
-     * This data source provides the list of Distributed Databases in Oracle Cloud Infrastructure Distributed Database service.
-     * 
-     * List of Globally distributed databases.
-     * 
-     */
-    public static CompletableFuture<GetDistributedDatabaseDistributedDatabasesResult> getDistributedDatabaseDistributedDatabasesPlain(GetDistributedDatabaseDistributedDatabasesPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getDistributedDatabaseDistributedDatabases:getDistributedDatabaseDistributedDatabases", TypeShape.of(GetDistributedDatabaseDistributedDatabasesResult.class), args, Utilities.withVersion(options));
-    }
-    /**
      * This data source provides details about a specific Gdp Pipeline resource in Oracle Cloud Infrastructure Gdp service.
      * 
      * Retrieves a pipeline by identifier.
@@ -20374,6 +19830,656 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetIotIotDomainsResult> getIotIotDomainsPlain(GetIotIotDomainsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getIotIotDomains:getIotIotDomains", TypeShape.of(GetIotIotDomainsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Iot Flow Runtime resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Gets the IoT flow runtime identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotFlowRuntimeArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotFlowRuntime = OciFunctions.getIotIotFlowRuntime(GetIotIotFlowRuntimeArgs.builder()
+     *             .iotFlowRuntimeId(testIotFlowRuntimeOciIotIotFlowRuntime.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotIotFlowRuntimeResult> getIotIotFlowRuntime(GetIotIotFlowRuntimeArgs args) {
+        return getIotIotFlowRuntime(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Iot Flow Runtime resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Gets the IoT flow runtime identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotFlowRuntimeArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotFlowRuntime = OciFunctions.getIotIotFlowRuntime(GetIotIotFlowRuntimeArgs.builder()
+     *             .iotFlowRuntimeId(testIotFlowRuntimeOciIotIotFlowRuntime.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotIotFlowRuntimeResult> getIotIotFlowRuntimePlain(GetIotIotFlowRuntimePlainArgs args) {
+        return getIotIotFlowRuntimePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Iot Flow Runtime resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Gets the IoT flow runtime identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotFlowRuntimeArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotFlowRuntime = OciFunctions.getIotIotFlowRuntime(GetIotIotFlowRuntimeArgs.builder()
+     *             .iotFlowRuntimeId(testIotFlowRuntimeOciIotIotFlowRuntime.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotIotFlowRuntimeResult> getIotIotFlowRuntime(GetIotIotFlowRuntimeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotIotFlowRuntime:getIotIotFlowRuntime", TypeShape.of(GetIotIotFlowRuntimeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Iot Flow Runtime resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Gets the IoT flow runtime identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotFlowRuntimeArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotFlowRuntime = OciFunctions.getIotIotFlowRuntime(GetIotIotFlowRuntimeArgs.builder()
+     *             .iotFlowRuntimeId(testIotFlowRuntimeOciIotIotFlowRuntime.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotIotFlowRuntimeResult> getIotIotFlowRuntime(GetIotIotFlowRuntimeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotIotFlowRuntime:getIotIotFlowRuntime", TypeShape.of(GetIotIotFlowRuntimeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Iot Flow Runtime resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Gets the IoT flow runtime identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotFlowRuntimeArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotFlowRuntime = OciFunctions.getIotIotFlowRuntime(GetIotIotFlowRuntimeArgs.builder()
+     *             .iotFlowRuntimeId(testIotFlowRuntimeOciIotIotFlowRuntime.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotIotFlowRuntimeResult> getIotIotFlowRuntimePlain(GetIotIotFlowRuntimePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getIotIotFlowRuntime:getIotIotFlowRuntime", TypeShape.of(GetIotIotFlowRuntimeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Iot Flow Runtime Flow resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Gets the opaque flows document for the IoT flow runtime identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotFlowRuntimeFlowArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotFlowRuntimeFlow = OciFunctions.getIotIotFlowRuntimeFlow(GetIotIotFlowRuntimeFlowArgs.builder()
+     *             .iotFlowRuntimeId(testIotFlowRuntime.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotIotFlowRuntimeFlowResult> getIotIotFlowRuntimeFlow(GetIotIotFlowRuntimeFlowArgs args) {
+        return getIotIotFlowRuntimeFlow(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Iot Flow Runtime Flow resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Gets the opaque flows document for the IoT flow runtime identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotFlowRuntimeFlowArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotFlowRuntimeFlow = OciFunctions.getIotIotFlowRuntimeFlow(GetIotIotFlowRuntimeFlowArgs.builder()
+     *             .iotFlowRuntimeId(testIotFlowRuntime.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotIotFlowRuntimeFlowResult> getIotIotFlowRuntimeFlowPlain(GetIotIotFlowRuntimeFlowPlainArgs args) {
+        return getIotIotFlowRuntimeFlowPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Iot Flow Runtime Flow resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Gets the opaque flows document for the IoT flow runtime identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotFlowRuntimeFlowArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotFlowRuntimeFlow = OciFunctions.getIotIotFlowRuntimeFlow(GetIotIotFlowRuntimeFlowArgs.builder()
+     *             .iotFlowRuntimeId(testIotFlowRuntime.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotIotFlowRuntimeFlowResult> getIotIotFlowRuntimeFlow(GetIotIotFlowRuntimeFlowArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotIotFlowRuntimeFlow:getIotIotFlowRuntimeFlow", TypeShape.of(GetIotIotFlowRuntimeFlowResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Iot Flow Runtime Flow resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Gets the opaque flows document for the IoT flow runtime identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotFlowRuntimeFlowArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotFlowRuntimeFlow = OciFunctions.getIotIotFlowRuntimeFlow(GetIotIotFlowRuntimeFlowArgs.builder()
+     *             .iotFlowRuntimeId(testIotFlowRuntime.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotIotFlowRuntimeFlowResult> getIotIotFlowRuntimeFlow(GetIotIotFlowRuntimeFlowArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotIotFlowRuntimeFlow:getIotIotFlowRuntimeFlow", TypeShape.of(GetIotIotFlowRuntimeFlowResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Iot Flow Runtime Flow resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Gets the opaque flows document for the IoT flow runtime identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotFlowRuntimeFlowArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotFlowRuntimeFlow = OciFunctions.getIotIotFlowRuntimeFlow(GetIotIotFlowRuntimeFlowArgs.builder()
+     *             .iotFlowRuntimeId(testIotFlowRuntime.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotIotFlowRuntimeFlowResult> getIotIotFlowRuntimeFlowPlain(GetIotIotFlowRuntimeFlowPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getIotIotFlowRuntimeFlow:getIotIotFlowRuntimeFlow", TypeShape.of(GetIotIotFlowRuntimeFlowResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Iot Flow Runtimes in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Lists IoT flow runtimes in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotFlowRuntimesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotFlowRuntimes = OciFunctions.getIotIotFlowRuntimes(GetIotIotFlowRuntimesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(iotFlowRuntimeDisplayName)
+     *             .id(iotFlowRuntimeId)
+     *             .iotDomainId(testIotDomain.id())
+     *             .state(iotFlowRuntimeState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotIotFlowRuntimesResult> getIotIotFlowRuntimes(GetIotIotFlowRuntimesArgs args) {
+        return getIotIotFlowRuntimes(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Iot Flow Runtimes in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Lists IoT flow runtimes in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotFlowRuntimesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotFlowRuntimes = OciFunctions.getIotIotFlowRuntimes(GetIotIotFlowRuntimesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(iotFlowRuntimeDisplayName)
+     *             .id(iotFlowRuntimeId)
+     *             .iotDomainId(testIotDomain.id())
+     *             .state(iotFlowRuntimeState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotIotFlowRuntimesResult> getIotIotFlowRuntimesPlain(GetIotIotFlowRuntimesPlainArgs args) {
+        return getIotIotFlowRuntimesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Iot Flow Runtimes in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Lists IoT flow runtimes in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotFlowRuntimesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotFlowRuntimes = OciFunctions.getIotIotFlowRuntimes(GetIotIotFlowRuntimesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(iotFlowRuntimeDisplayName)
+     *             .id(iotFlowRuntimeId)
+     *             .iotDomainId(testIotDomain.id())
+     *             .state(iotFlowRuntimeState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotIotFlowRuntimesResult> getIotIotFlowRuntimes(GetIotIotFlowRuntimesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotIotFlowRuntimes:getIotIotFlowRuntimes", TypeShape.of(GetIotIotFlowRuntimesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Iot Flow Runtimes in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Lists IoT flow runtimes in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotFlowRuntimesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotFlowRuntimes = OciFunctions.getIotIotFlowRuntimes(GetIotIotFlowRuntimesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(iotFlowRuntimeDisplayName)
+     *             .id(iotFlowRuntimeId)
+     *             .iotDomainId(testIotDomain.id())
+     *             .state(iotFlowRuntimeState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotIotFlowRuntimesResult> getIotIotFlowRuntimes(GetIotIotFlowRuntimesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotIotFlowRuntimes:getIotIotFlowRuntimes", TypeShape.of(GetIotIotFlowRuntimesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Iot Flow Runtimes in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Lists IoT flow runtimes in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotFlowRuntimesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotFlowRuntimes = OciFunctions.getIotIotFlowRuntimes(GetIotIotFlowRuntimesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(iotFlowRuntimeDisplayName)
+     *             .id(iotFlowRuntimeId)
+     *             .iotDomainId(testIotDomain.id())
+     *             .state(iotFlowRuntimeState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotIotFlowRuntimesResult> getIotIotFlowRuntimesPlain(GetIotIotFlowRuntimesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getIotIotFlowRuntimes:getIotIotFlowRuntimes", TypeShape.of(GetIotIotFlowRuntimesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Addon Options in Oracle Cloud Infrastructure Managed Kafka service.

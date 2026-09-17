@@ -20,6 +20,11 @@ public final class IotDigitalTwinAdapterInboundRoute {
      */
     private String condition;
     /**
+     * @return (Updatable) JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+     * 
+     */
+    private @Nullable String contentRoot;
+    /**
      * @return (Updatable) Meaningful write up about the inbound route.
      * 
      */
@@ -38,6 +43,11 @@ public final class IotDigitalTwinAdapterInboundRoute {
      * 
      */
     private @Nullable IotDigitalTwinAdapterInboundRouteReferencePayload referencePayload;
+    /**
+     * @return (Updatable) Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+     * 
+     */
+    private @Nullable String target;
 
     private IotDigitalTwinAdapterInboundRoute() {}
     /**
@@ -46,6 +56,13 @@ public final class IotDigitalTwinAdapterInboundRoute {
      */
     public String condition() {
         return this.condition;
+    }
+    /**
+     * @return (Updatable) JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+     * 
+     */
+    public Optional<String> contentRoot() {
+        return Optional.ofNullable(this.contentRoot);
     }
     /**
      * @return (Updatable) Meaningful write up about the inbound route.
@@ -72,6 +89,13 @@ public final class IotDigitalTwinAdapterInboundRoute {
     public Optional<IotDigitalTwinAdapterInboundRouteReferencePayload> referencePayload() {
         return Optional.ofNullable(this.referencePayload);
     }
+    /**
+     * @return (Updatable) Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+     * 
+     */
+    public Optional<String> target() {
+        return Optional.ofNullable(this.target);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -83,16 +107,20 @@ public final class IotDigitalTwinAdapterInboundRoute {
     @CustomType.Builder
     public static final class Builder {
         private String condition;
+        private @Nullable String contentRoot;
         private @Nullable String description;
         private @Nullable Map<String,String> payloadMapping;
         private @Nullable IotDigitalTwinAdapterInboundRouteReferencePayload referencePayload;
+        private @Nullable String target;
         public Builder() {}
         public Builder(IotDigitalTwinAdapterInboundRoute defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.condition = defaults.condition;
+    	      this.contentRoot = defaults.contentRoot;
     	      this.description = defaults.description;
     	      this.payloadMapping = defaults.payloadMapping;
     	      this.referencePayload = defaults.referencePayload;
+    	      this.target = defaults.target;
         }
 
         @CustomType.Setter
@@ -101,6 +129,12 @@ public final class IotDigitalTwinAdapterInboundRoute {
               throw new MissingRequiredPropertyException("IotDigitalTwinAdapterInboundRoute", "condition");
             }
             this.condition = condition;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder contentRoot(@Nullable String contentRoot) {
+
+            this.contentRoot = contentRoot;
             return this;
         }
         @CustomType.Setter
@@ -121,12 +155,20 @@ public final class IotDigitalTwinAdapterInboundRoute {
             this.referencePayload = referencePayload;
             return this;
         }
+        @CustomType.Setter
+        public Builder target(@Nullable String target) {
+
+            this.target = target;
+            return this;
+        }
         public IotDigitalTwinAdapterInboundRoute build() {
             final var _resultValue = new IotDigitalTwinAdapterInboundRoute();
             _resultValue.condition = condition;
+            _resultValue.contentRoot = contentRoot;
             _resultValue.description = description;
             _resultValue.payloadMapping = payloadMapping;
             _resultValue.referencePayload = referencePayload;
+            _resultValue.target = target;
             return _resultValue;
         }
     }

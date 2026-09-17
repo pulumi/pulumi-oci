@@ -34,6 +34,21 @@ public final class IotDigitalTwinAdapterInboundRouteArgs extends com.pulumi.reso
     }
 
     /**
+     * (Updatable) JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+     * 
+     */
+    @Import(name="contentRoot")
+    private @Nullable Output<String> contentRoot;
+
+    /**
+     * @return (Updatable) JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+     * 
+     */
+    public Optional<Output<String>> contentRoot() {
+        return Optional.ofNullable(this.contentRoot);
+    }
+
+    /**
      * (Updatable) Meaningful write up about the inbound route.
      * 
      */
@@ -86,13 +101,30 @@ public final class IotDigitalTwinAdapterInboundRouteArgs extends com.pulumi.reso
         return Optional.ofNullable(this.referencePayload);
     }
 
+    /**
+     * (Updatable) Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+     * 
+     */
+    @Import(name="target")
+    private @Nullable Output<String> target;
+
+    /**
+     * @return (Updatable) Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+     * 
+     */
+    public Optional<Output<String>> target() {
+        return Optional.ofNullable(this.target);
+    }
+
     private IotDigitalTwinAdapterInboundRouteArgs() {}
 
     private IotDigitalTwinAdapterInboundRouteArgs(IotDigitalTwinAdapterInboundRouteArgs $) {
         this.condition = $.condition;
+        this.contentRoot = $.contentRoot;
         this.description = $.description;
         this.payloadMapping = $.payloadMapping;
         this.referencePayload = $.referencePayload;
+        this.target = $.target;
     }
 
     public static Builder builder() {
@@ -132,6 +164,27 @@ public final class IotDigitalTwinAdapterInboundRouteArgs extends com.pulumi.reso
          */
         public Builder condition(String condition) {
             return condition(Output.of(condition));
+        }
+
+        /**
+         * @param contentRoot (Updatable) JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder contentRoot(@Nullable Output<String> contentRoot) {
+            $.contentRoot = contentRoot;
+            return this;
+        }
+
+        /**
+         * @param contentRoot (Updatable) JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder contentRoot(String contentRoot) {
+            return contentRoot(Output.of(contentRoot));
         }
 
         /**
@@ -203,6 +256,27 @@ public final class IotDigitalTwinAdapterInboundRouteArgs extends com.pulumi.reso
          */
         public Builder referencePayload(IotDigitalTwinAdapterInboundRouteReferencePayloadArgs referencePayload) {
             return referencePayload(Output.of(referencePayload));
+        }
+
+        /**
+         * @param target (Updatable) Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder target(@Nullable Output<String> target) {
+            $.target = target;
+            return this;
+        }
+
+        /**
+         * @param target (Updatable) Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder target(String target) {
+            return target(Output.of(target));
         }
 
         public IotDigitalTwinAdapterInboundRouteArgs build() {

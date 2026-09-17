@@ -149,6 +149,10 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly string ComputeAvailabilityDomain;
         /// <summary>
+        /// The fault domain of the ESXi host.
+        /// </summary>
+        public readonly string ComputeFaultDomain;
+        /// <summary>
         /// In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
         /// </summary>
         public readonly string ComputeInstanceId;
@@ -206,6 +210,10 @@ namespace Pulumi.Oci.Ocvp
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The initial fault domain host distribution mode for the ESXi host.
+        /// </summary>
+        public readonly string InitialFaultDomainHostDistribution;
         /// <summary>
         /// Indicates whether this host is in the progress of billing continuation.
         /// </summary>
@@ -288,6 +296,8 @@ namespace Pulumi.Oci.Ocvp
 
             string computeAvailabilityDomain,
 
+            string computeFaultDomain,
+
             string computeInstanceId,
 
             string currentCommitment,
@@ -319,6 +329,8 @@ namespace Pulumi.Oci.Ocvp
             string hostShapeName,
 
             string id,
+
+            string initialFaultDomainHostDistribution,
 
             bool isBillingContinuationInProgress,
 
@@ -361,6 +373,7 @@ namespace Pulumi.Oci.Ocvp
             ClusterId = clusterId;
             CompartmentId = compartmentId;
             ComputeAvailabilityDomain = computeAvailabilityDomain;
+            ComputeFaultDomain = computeFaultDomain;
             ComputeInstanceId = computeInstanceId;
             CurrentCommitment = currentCommitment;
             CurrentSku = currentSku;
@@ -377,6 +390,7 @@ namespace Pulumi.Oci.Ocvp
             HostOcpuCount = hostOcpuCount;
             HostShapeName = hostShapeName;
             Id = id;
+            InitialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
             IsBillingContinuationInProgress = isBillingContinuationInProgress;
             IsBillingSwappingInProgress = isBillingSwappingInProgress;
             IsVsanByolEnabled = isVsanByolEnabled;

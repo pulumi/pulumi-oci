@@ -51,6 +51,7 @@ namespace Pulumi.Oci.Ocvp
     ///         },
     ///         HostOcpuCount = esxiHostHostOcpuCount,
     ///         HostShapeName = testShape.Name,
+    ///         InitialFaultDomainHostDistribution = esxiHostInitialFaultDomainHostDistribution,
     ///         IsVsanByolEnabled = esxiHostIsVsanByolEnabled,
     ///         NextCommitment = esxiHostNextCommitment,
     ///         VcfByolAllocationId = testByolAllocation.Id,
@@ -117,6 +118,12 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Output("computeAvailabilityDomain")]
         public Output<string> ComputeAvailabilityDomain { get; private set; } = null!;
+
+        /// <summary>
+        /// The fault domain of the ESXi host.
+        /// </summary>
+        [Output("computeFaultDomain")]
+        public Output<string> ComputeFaultDomain { get; private set; } = null!;
 
         /// <summary>
         /// In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
@@ -202,6 +209,12 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Output("hostShapeName")]
         public Output<string> HostShapeName { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The initial fault domain host distribution mode for the ESXi host.
+        /// </summary>
+        [Output("initialFaultDomainHostDistribution")]
+        public Output<string> InitialFaultDomainHostDistribution { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether this host is in the progress of billing continuation.
@@ -463,6 +476,12 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? HostShapeName { get; set; }
 
         /// <summary>
+        /// (Updatable) The initial fault domain host distribution mode for the ESXi host.
+        /// </summary>
+        [Input("initialFaultDomainHostDistribution")]
+        public Input<string>? InitialFaultDomainHostDistribution { get; set; }
+
+        /// <summary>
         /// (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
         /// </summary>
         [Input("isVsanByolEnabled")]
@@ -565,6 +584,12 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Input("computeAvailabilityDomain")]
         public Input<string>? ComputeAvailabilityDomain { get; set; }
+
+        /// <summary>
+        /// The fault domain of the ESXi host.
+        /// </summary>
+        [Input("computeFaultDomain")]
+        public Input<string>? ComputeFaultDomain { get; set; }
 
         /// <summary>
         /// In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
@@ -679,6 +704,12 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Input("hostShapeName")]
         public Input<string>? HostShapeName { get; set; }
+
+        /// <summary>
+        /// (Updatable) The initial fault domain host distribution mode for the ESXi host.
+        /// </summary>
+        [Input("initialFaultDomainHostDistribution")]
+        public Input<string>? InitialFaultDomainHostDistribution { get; set; }
 
         /// <summary>
         /// Indicates whether this host is in the progress of billing continuation.

@@ -60,7 +60,7 @@ public final class GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem {
      */
     private List<GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRoute> inboundRoutes;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list IoT resources.
      * 
      */
     private String iotDomainId;
@@ -150,7 +150,7 @@ public final class GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItem {
         return this.inboundRoutes;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list IoT resources.
      * 
      */
     public String iotDomainId() {

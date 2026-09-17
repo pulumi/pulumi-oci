@@ -27,7 +27,7 @@ class GetBackupResult:
     """
     A collection of values returned by getBackup.
     """
-    def __init__(__self__, backup_id=None, backup_size=None, compartment_id=None, copy_statuses=None, db_system_details=None, db_system_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, last_accepted_request_token=None, last_completed_request_token=None, lifecycle_details=None, retention_period=None, source_backup_details=None, source_type=None, state=None, system_tags=None, time_created=None, time_created_precise=None, time_updated=None):
+    def __init__(__self__, backup_id=None, backup_size=None, compartment_id=None, copy_statuses=None, db_system_details=None, db_system_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, kms_key_id=None, last_accepted_request_token=None, last_completed_request_token=None, lifecycle_details=None, retention_period=None, source_backup_details=None, source_type=None, state=None, system_tags=None, time_created=None, time_created_precise=None, time_updated=None):
         if backup_id and not isinstance(backup_id, str):
             raise TypeError("Expected argument 'backup_id' to be a str")
         pulumi.set(__self__, "backup_id", backup_id)
@@ -61,6 +61,9 @@ class GetBackupResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if kms_key_id and not isinstance(kms_key_id, str):
+            raise TypeError("Expected argument 'kms_key_id' to be a str")
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
         if last_accepted_request_token and not isinstance(last_accepted_request_token, str):
             raise TypeError("Expected argument 'last_accepted_request_token' to be a str")
         pulumi.set(__self__, "last_accepted_request_token", last_accepted_request_token)
@@ -184,6 +187,14 @@ class GetBackupResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> _builtins.str:
+        """
+        The OCID of the master encryption key for the backup.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @_builtins.property
     @pulumi.getter(name="lastAcceptedRequestToken")
     def last_accepted_request_token(self) -> _builtins.str:
         """
@@ -289,6 +300,7 @@ class AwaitableGetBackupResult(GetBackupResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            kms_key_id=self.kms_key_id,
             last_accepted_request_token=self.last_accepted_request_token,
             last_completed_request_token=self.last_completed_request_token,
             lifecycle_details=self.lifecycle_details,
@@ -338,6 +350,7 @@ def get_backup(backup_id: Optional[_builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        kms_key_id=pulumi.get(__ret__, 'kms_key_id'),
         last_accepted_request_token=pulumi.get(__ret__, 'last_accepted_request_token'),
         last_completed_request_token=pulumi.get(__ret__, 'last_completed_request_token'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
@@ -384,6 +397,7 @@ def get_backup_output(backup_id: pulumi.Input[Optional[_builtins.str]] = None,
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        kms_key_id=pulumi.get(__response__, 'kms_key_id'),
         last_accepted_request_token=pulumi.get(__response__, 'last_accepted_request_token'),
         last_completed_request_token=pulumi.get(__response__, 'last_completed_request_token'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),

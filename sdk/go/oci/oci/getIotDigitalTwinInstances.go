@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/oci"
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/oci"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -69,7 +69,7 @@ type GetIotDigitalTwinInstancesArgs struct {
 	Filters     []GetIotDigitalTwinInstancesFilter `pulumi:"filters"`
 	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
 	Id *string `pulumi:"id"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list IoT resources.
 	IotDomainId string `pulumi:"iotDomainId"`
 	// Filter resources whose lifecycleState matches the specified value.
 	State *string `pulumi:"state"`
@@ -77,7 +77,6 @@ type GetIotDigitalTwinInstancesArgs struct {
 
 // A collection of values returned by getIotDigitalTwinInstances.
 type GetIotDigitalTwinInstancesResult struct {
-	// Connectivity type of the digital twin instance
 	ConnectivityType *string `pulumi:"connectivityType"`
 	// The list of digital_twin_instance_collection.
 	DigitalTwinInstanceCollections []GetIotDigitalTwinInstancesDigitalTwinInstanceCollection `pulumi:"digitalTwinInstanceCollections"`
@@ -114,7 +113,7 @@ type GetIotDigitalTwinInstancesOutputArgs struct {
 	Filters     GetIotDigitalTwinInstancesFilterArrayInput `pulumi:"filters"`
 	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list IoT resources.
 	IotDomainId pulumi.StringInput `pulumi:"iotDomainId"`
 	// Filter resources whose lifecycleState matches the specified value.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -139,7 +138,6 @@ func (o GetIotDigitalTwinInstancesResultOutput) ToGetIotDigitalTwinInstancesResu
 	return o
 }
 
-// Connectivity type of the digital twin instance
 func (o GetIotDigitalTwinInstancesResultOutput) ConnectivityType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetIotDigitalTwinInstancesResult) *string { return v.ConnectivityType }).(pulumi.StringPtrOutput)
 }

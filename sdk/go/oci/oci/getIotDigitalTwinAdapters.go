@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/oci"
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/oci"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -66,7 +66,7 @@ type GetIotDigitalTwinAdaptersArgs struct {
 	Filters     []GetIotDigitalTwinAdaptersFilter `pulumi:"filters"`
 	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
 	Id *string `pulumi:"id"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list IoT resources.
 	IotDomainId string `pulumi:"iotDomainId"`
 	// Filter resources whose lifecycleState matches the specified value.
 	State *string `pulumi:"state"`
@@ -107,7 +107,7 @@ type GetIotDigitalTwinAdaptersOutputArgs struct {
 	Filters     GetIotDigitalTwinAdaptersFilterArrayInput `pulumi:"filters"`
 	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list IoT resources.
 	IotDomainId pulumi.StringInput `pulumi:"iotDomainId"`
 	// Filter resources whose lifecycleState matches the specified value.
 	State pulumi.StringPtrInput `pulumi:"state"`

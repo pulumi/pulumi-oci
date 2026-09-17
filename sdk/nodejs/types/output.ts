@@ -102849,9 +102849,17 @@ export namespace Database {
 
     export interface AutonomousDatabaseAutonomousDatabaseMaintenanceWindow {
         /**
+         * (Updatable) The AD in which the maintenance will occur.
+         */
+        availabilityDomain: string;
+        /**
          * (Updatable) Day of the week.
          */
         dayOfWeek: outputs.Database.AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek;
+        /**
+         * (Updatable) Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+         */
+        isMaintenanceWindowChangeScheduled: boolean;
         /**
          * (Updatable) The maintenance end time. The value must use the ISO-8601 format "hh:mm".
          */
@@ -102909,13 +102917,7 @@ export namespace Database {
     }
 
     export interface AutonomousDatabaseBackupConfig {
-        /**
-         * Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
-         */
         manualBackupBucketName: string;
-        /**
-         * The manual backup destination type.
-         */
         manualBackupType: string;
     }
 
@@ -103441,6 +103443,36 @@ export namespace Database {
          * Resource Pool total capacity, it's currently 4x of pool size
          */
         totalComputeCapacity: number;
+    }
+
+    export interface AutonomousDatabaseScheduledMaintenanceWindow {
+        /**
+         * (Updatable) The Autonomous Database Serverless instance's availability domain.
+         */
+        availabilityDomain: string;
+        /**
+         * Day of the week.
+         */
+        dayOfWeeks: outputs.Database.AutonomousDatabaseScheduledMaintenanceWindowDayOfWeek[];
+        /**
+         * Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+         */
+        isMaintenanceWindowChangeScheduled: boolean;
+        /**
+         * The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+         */
+        maintenanceEndTime: string;
+        /**
+         * The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+         */
+        maintenanceStartTime: string;
+    }
+
+    export interface AutonomousDatabaseScheduledMaintenanceWindowDayOfWeek {
+        /**
+         * Name of the day of the week.
+         */
+        name: string;
     }
 
     export interface AutonomousDatabaseScheduledOperation {
@@ -108951,9 +108983,17 @@ export namespace Database {
 
     export interface GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindow {
         /**
+         * The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+         */
+        availabilityDomain: string;
+        /**
          * Day of the week.
          */
         dayOfWeeks: outputs.Database.GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek[];
+        /**
+         * Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+         */
+        isMaintenanceWindowChangeScheduled: boolean;
         /**
          * The maintenance end time. The value must use the ISO-8601 format "hh:mm".
          */
@@ -108969,6 +109009,52 @@ export namespace Database {
          * Name of the day of the week.
          */
         name: string;
+    }
+
+    export interface GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollection {
+        /**
+         * List of Autonomous AI Database maintenance windows.
+         */
+        items: outputs.Database.GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItem[];
+    }
+
+    export interface GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItem {
+        /**
+         * The AD in which the maintenance will occur.
+         */
+        availabilityDomain: string;
+        /**
+         * Day of the week.
+         */
+        dayOfWeeks: outputs.Database.GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeek[];
+        /**
+         * Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+         */
+        isMaintenanceWindowChangeScheduled: boolean;
+        /**
+         * The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+         */
+        maintenanceEndTime: string;
+        /**
+         * The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+         */
+        maintenanceStartTime: string;
+    }
+
+    export interface GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeek {
+        /**
+         * Name of the day of the week.
+         */
+        name: string;
+    }
+
+    export interface GetAutonomousDatabaseAvailableMaintenanceWindowsFilter {
+        /**
+         * Name of the day of the week.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetAutonomousDatabaseBackupBackupDestinationDetail {
@@ -109011,13 +109097,7 @@ export namespace Database {
     }
 
     export interface GetAutonomousDatabaseBackupConfig {
-        /**
-         * Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
-         */
         manualBackupBucketName: string;
-        /**
-         * The manual backup destination type.
-         */
         manualBackupType: string;
     }
 
@@ -109885,6 +109965,36 @@ export namespace Database {
         totalComputeCapacity: number;
     }
 
+    export interface GetAutonomousDatabaseScheduledMaintenanceWindow {
+        /**
+         * The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+         */
+        availabilityDomain: string;
+        /**
+         * Day of the week.
+         */
+        dayOfWeeks: outputs.Database.GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek[];
+        /**
+         * Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+         */
+        isMaintenanceWindowChangeScheduled: boolean;
+        /**
+         * The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+         */
+        maintenanceEndTime: string;
+        /**
+         * The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+         */
+        maintenanceStartTime: string;
+    }
+
+    export interface GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek {
+        /**
+         * Name of the day of the week.
+         */
+        name: string;
+    }
+
     export interface GetAutonomousDatabaseScheduledOperation {
         /**
          * Day of the week.
@@ -110111,7 +110221,7 @@ export namespace Database {
         autonomousDatabaseBackupId: string;
         autonomousDatabaseId: string;
         /**
-         * Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+         * Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
          */
         autonomousDatabaseMaintenanceWindows: outputs.Database.GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow[];
         /**
@@ -110513,6 +110623,10 @@ export namespace Database {
         role: string;
         rotateKeyTrigger: boolean;
         /**
+         * Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+         */
+        scheduledMaintenanceWindows: outputs.Database.GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindow[];
+        /**
          * The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
          */
         scheduledOperations: outputs.Database.GetAutonomousDatabasesAutonomousDatabaseScheduledOperation[];
@@ -110651,6 +110765,10 @@ export namespace Database {
          */
         timeScheduledDbVersionUpgrade: string;
         /**
+         * The date and time at which operation to change Maintenance Window is scheduled to take place.
+         */
+        timeScheduledMaintenanceWindowUpdate: string;
+        /**
          * The date and time the Autonomous AI Database was most recently undeleted.
          */
         timeUndeleted: string;
@@ -110704,9 +110822,17 @@ export namespace Database {
 
     export interface GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow {
         /**
+         * The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+         */
+        availabilityDomain: string;
+        /**
          * Day of the week.
          */
         dayOfWeeks: outputs.Database.GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek[];
+        /**
+         * Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+         */
+        isMaintenanceWindowChangeScheduled: boolean;
         /**
          * The maintenance end time. The value must use the ISO-8601 format "hh:mm".
          */
@@ -111203,6 +111329,36 @@ export namespace Database {
         totalComputeCapacity: number;
     }
 
+    export interface GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindow {
+        /**
+         * The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+         */
+        availabilityDomain: string;
+        /**
+         * Day of the week.
+         */
+        dayOfWeeks: outputs.Database.GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek[];
+        /**
+         * Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+         */
+        isMaintenanceWindowChangeScheduled: boolean;
+        /**
+         * The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+         */
+        maintenanceEndTime: string;
+        /**
+         * The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+         */
+        maintenanceStartTime: string;
+    }
+
+    export interface GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek {
+        /**
+         * Name of the day of the week.
+         */
+        name: string;
+    }
+
     export interface GetAutonomousDatabasesAutonomousDatabaseScheduledOperation {
         /**
          * Day of the week.
@@ -111360,7 +111516,7 @@ export namespace Database {
          */
         autonomousContainerDatabaseId: string;
         /**
-         * Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+         * Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
          */
         autonomousDatabaseMaintenanceWindows: outputs.Database.GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow[];
         /**
@@ -111368,7 +111524,7 @@ export namespace Database {
          */
         autonomousMaintenanceScheduleType: string;
         /**
-         * The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+         * The AD in which the maintenance will occur.
          */
         availabilityDomain: string;
         /**
@@ -111726,6 +111882,10 @@ export namespace Database {
          */
         role: string;
         /**
+         * Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+         */
+        scheduledMaintenanceWindow: outputs.Database.GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindow;
+        /**
          * The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
          */
         scheduledOperations: outputs.Database.GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperation[];
@@ -111855,6 +112015,10 @@ export namespace Database {
          */
         timeScheduledDbVersionUpgrade: string;
         /**
+         * The date and time at which operation to change Maintenance Window is scheduled to take place.
+         */
+        timeScheduledMaintenanceWindowUpdate: string;
+        /**
          * The date and time the Autonomous AI Database was most recently undeleted.
          */
         timeUndeleted: string;
@@ -111905,9 +112069,17 @@ export namespace Database {
 
     export interface GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow {
         /**
+         * The AD in which the maintenance will occur.
+         */
+        availabilityDomain: string;
+        /**
          * Day of the week.
          */
         dayOfWeeks: outputs.Database.GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek[];
+        /**
+         * Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+         */
+        isMaintenanceWindowChangeScheduled: boolean;
         /**
          * The maintenance end time. The value must use the ISO-8601 format "hh:mm".
          */
@@ -112262,7 +112434,7 @@ export namespace Database {
 
     export interface GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb {
         /**
-         * The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+         * The AD in which the maintenance will occur.
          */
         availabilityDomain: string;
         /**
@@ -112404,6 +112576,36 @@ export namespace Database {
         totalComputeCapacity: number;
     }
 
+    export interface GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindow {
+        /**
+         * The AD in which the maintenance will occur.
+         */
+        availabilityDomain: string;
+        /**
+         * Day of the week.
+         */
+        dayOfWeeks: outputs.Database.GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek[];
+        /**
+         * Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+         */
+        isMaintenanceWindowChangeScheduled: boolean;
+        /**
+         * The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+         */
+        maintenanceEndTime: string;
+        /**
+         * The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+         */
+        maintenanceStartTime: string;
+    }
+
+    export interface GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek {
+        /**
+         * Name of the day of the week.
+         */
+        name: string;
+    }
+
     export interface GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperation {
         /**
          * Day of the week.
@@ -112428,7 +112630,7 @@ export namespace Database {
 
     export interface GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb {
         /**
-         * The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+         * The AD in which the maintenance will occur.
          */
         availabilityDomain: string;
         /**
@@ -273451,6 +273653,10 @@ export namespace Ocvp {
          */
         initialCommitment: string;
         /**
+         * The initial fault domain host distribution mode for the Cluster.
+         */
+        initialFaultDomainHostDistribution: string;
+        /**
          * The initial OCPU count of the Cluster's ESXi hosts.
          */
         initialHostOcpuCount: number;
@@ -273879,6 +274085,10 @@ export namespace Ocvp {
          */
         computeAvailabilityDomain: string;
         /**
+         * The fault domain of the ESXi host.
+         */
+        computeFaultDomain: string;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
          */
         computeInstanceId: string;
@@ -273939,6 +274149,10 @@ export namespace Ocvp {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
          */
         id: string;
+        /**
+         * The initial fault domain host distribution mode for the ESXi host.
+         */
+        initialFaultDomainHostDistribution: string;
         /**
          * Indicates whether this host is in the progress of billing continuation.
          */
@@ -274221,6 +274435,31 @@ export namespace Ocvp {
         type: string;
     }
 
+    export interface GetRetrieveVmwareBinariesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetRetrieveVmwareBinariesItem {
+        /**
+         * Base64-encoded SHA256 hash of the VMware binary object data.
+         */
+        checksum: string;
+        /**
+         * Description of the VMware binary.
+         */
+        description: string;
+        /**
+         * The VMware binary file name.
+         */
+        fileName: string;
+        /**
+         * Size of the VMware binary file in bytes.
+         */
+        sizeInBytes: string;
+    }
+
     export interface GetSddcDatastore {
         /**
          * A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
@@ -274295,6 +274534,10 @@ export namespace Ocvp {
          * The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
          */
         initialCommitment: string;
+        /**
+         * Initial Fault Domain Host distribution mode for the Cluster.
+         */
+        initialFaultDomainHostDistribution: string;
         /**
          * (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initialHostOcpuCount` of `initialClusterConfigurations` instead.
          */
@@ -274783,6 +275026,10 @@ export namespace Ocvp {
          */
         initialCommitment: string;
         /**
+         * Initial Fault Domain Host distribution mode for the Cluster.
+         */
+        initialFaultDomainHostDistribution: string;
+        /**
          * (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
          */
         initialHostOcpuCount: number;
@@ -275159,6 +275406,10 @@ export namespace Ocvp {
          * The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
          */
         initialCommitment: string;
+        /**
+         * Initial Fault Domain Host distribution mode for the Cluster.
+         */
+        initialFaultDomainHostDistribution: string;
         /**
          * The initial OCPU count of the Cluster's ESXi hosts.
          */
@@ -294575,6 +294826,10 @@ export namespace Psql {
          */
         compartmentId: string;
         /**
+         * (Updatable) List of key ids of the remote regions
+         */
+        kmsKeyIds: string[];
+        /**
          * (Updatable) List of region names of the remote region
          */
         regions: string[];
@@ -294708,6 +294963,10 @@ export namespace Psql {
          */
         isRegionallyDurable: boolean;
         /**
+         * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the database system.
+         */
+        kmsKeyId: string;
+        /**
          * Type of the database system.
          */
         systemType: string;
@@ -294803,6 +295062,10 @@ export namespace Psql {
          * A unique identifier for the database system.
          */
         id: string;
+        /**
+         * The OCID of the master encryption key for the backup.
+         */
+        kmsKeyId: string;
         /**
          * lastAcceptedRequestToken from MP.
          */
@@ -295321,6 +295584,10 @@ export namespace Psql {
          */
         compartmentId: string;
         /**
+         * List of key ids of the remote regions
+         */
+        kmsKeyIds: string[];
+        /**
          * List of region names of the remote region
          */
         regions: string[];
@@ -295477,6 +295744,10 @@ export namespace Psql {
          * Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
          */
         isRegionallyDurable: boolean;
+        /**
+         * The OCID of the Vault service key to assign as the master encryption key for the database system.
+         */
+        kmsKeyId: string;
         /**
          * Type of the database system.
          */
@@ -295762,6 +296033,10 @@ export namespace Psql {
          */
         compartmentId: string;
         /**
+         * List of key ids of the remote regions
+         */
+        kmsKeyIds: string[];
+        /**
          * List of region names of the remote region
          */
         regions: string[];
@@ -295883,6 +296158,10 @@ export namespace Psql {
          * Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
          */
         isRegionallyDurable: boolean;
+        /**
+         * The OCID of the Vault service key to assign as the master encryption key for the database system.
+         */
+        kmsKeyId: string;
         /**
          * Type of the database system.
          */
@@ -297298,6 +297577,39 @@ export namespace Redis {
         timeCreated: string;
     }
 
+    export interface GetRedisClusterClusterReplicationTopology {
+        /**
+         * The details of a cluster participating in the replication setup.
+         */
+        primaryClusters: outputs.Redis.GetRedisClusterClusterReplicationTopologyPrimaryCluster[];
+        /**
+         * The list of secondary clusters that replicate data from the primary cluster.
+         */
+        secondaryClusters: outputs.Redis.GetRedisClusterClusterReplicationTopologySecondaryCluster[];
+    }
+
+    export interface GetRedisClusterClusterReplicationTopologyPrimaryCluster {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+         */
+        ociCacheClusterId: string;
+        /**
+         * The Oracle Cloud Infrastructure region to which the cluster belongs.
+         */
+        region: string;
+    }
+
+    export interface GetRedisClusterClusterReplicationTopologySecondaryCluster {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+         */
+        ociCacheClusterId: string;
+        /**
+         * The Oracle Cloud Infrastructure region to which the cluster belongs.
+         */
+        region: string;
+    }
+
     export interface GetRedisClusterImportFromObjectStorageDetail {
         /**
          * The Object Storage bucket name.
@@ -297401,6 +297713,14 @@ export namespace Redis {
          */
         clusterMode: string;
         /**
+         * Defines the replication topology of an Oracle Cloud Infrastructure cache cluster, including the primary cluster and associated secondary clusters participating in replication.
+         */
+        clusterReplicationTopologies: outputs.Redis.GetRedisClustersRedisClusterCollectionItemClusterReplicationTopology[];
+        /**
+         * The current role of the cluster.
+         */
+        clusterRole: string;
+        /**
          * The ID of the compartment in which to list resources.
          */
         compartmentId: string;
@@ -297457,6 +297777,10 @@ export namespace Redis {
          */
         ociCacheConfigSetId: string;
         /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster in CRR.
+         */
+        primaryClusterId: string;
+        /**
          * The private IP address of the API endpoint for the cluster's primary node.
          */
         primaryEndpointIpAddress: string;
@@ -297504,6 +297828,39 @@ export namespace Redis {
          * The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          */
         timeUpdated: string;
+    }
+
+    export interface GetRedisClustersRedisClusterCollectionItemClusterReplicationTopology {
+        /**
+         * The details of a cluster participating in the replication setup.
+         */
+        primaryClusters: outputs.Redis.GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryCluster[];
+        /**
+         * The list of secondary clusters that replicate data from the primary cluster.
+         */
+        secondaryClusters: outputs.Redis.GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryCluster[];
+    }
+
+    export interface GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryCluster {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+         */
+        ociCacheClusterId: string;
+        /**
+         * The Oracle Cloud Infrastructure region to which the cluster belongs.
+         */
+        region: string;
+    }
+
+    export interface GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryCluster {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+         */
+        ociCacheClusterId: string;
+        /**
+         * The Oracle Cloud Infrastructure region to which the cluster belongs.
+         */
+        region: string;
     }
 
     export interface GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetail {
@@ -297591,6 +297948,39 @@ export namespace Redis {
          * OCID of the OciCacheCluster
          */
         ociCacheClusterId: string;
+    }
+
+    export interface RedisClusterClusterReplicationTopology {
+        /**
+         * The details of a cluster participating in the replication setup.
+         */
+        primaryClusters: outputs.Redis.RedisClusterClusterReplicationTopologyPrimaryCluster[];
+        /**
+         * The list of secondary clusters that replicate data from the primary cluster.
+         */
+        secondaryClusters: outputs.Redis.RedisClusterClusterReplicationTopologySecondaryCluster[];
+    }
+
+    export interface RedisClusterClusterReplicationTopologyPrimaryCluster {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+         */
+        ociCacheClusterId: string;
+        /**
+         * The Oracle Cloud Infrastructure region to which the cluster belongs.
+         */
+        region: string;
+    }
+
+    export interface RedisClusterClusterReplicationTopologySecondaryCluster {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+         */
+        ociCacheClusterId: string;
+        /**
+         * The Oracle Cloud Infrastructure region to which the cluster belongs.
+         */
+        region: string;
     }
 
     export interface RedisClusterGetOciCacheUserOciCacheUser {
@@ -314773,1340 +315163,6 @@ export namespace oci {
         endpointName: string;
     }
 
-    export interface DistributedDatabaseDistributedAutonomousDatabaseCatalogDetail {
-        /**
-         * Admin password for catalog database.
-         */
-        adminPassword: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous VM Cluster.
-         */
-        cloudAutonomousVmClusterId: string;
-        /**
-         * The compute count for the catalog database. It has to be in multiples of 2.
-         */
-        computeCount: number;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * The data disk group size to be allocated in GBs for the catalog database.
-         */
-        dataStorageSizeInGbs: number;
-        /**
-         * Determines the auto-scaling mode for the catalog database.
-         */
-        isAutoScalingEnabled: boolean;
-        /**
-         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-         */
-        kmsKeyId: string;
-        /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
-         */
-        kmsKeyVersionId: string;
-        /**
-         * Additional metadata related to Globally distributed autonomous database resources.
-         */
-        metadatas: outputs.oci.DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailMetadata[];
-        /**
-         * Name of the shard.
-         */
-        name: string;
-        /**
-         * The OKV endpoint name.
-         */
-        okvEndPointGroup: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the catalog.
-         */
-        okvKeyStoreId: string;
-        /**
-         * This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers on catalog of distributed autonomous database please use peerDetails.
-         */
-        peerCloudAutonomousVmClusterIds: string[];
-        /**
-         * The details required for creation of the peer for the autonomous dedicated infrastructure based catalog.
-         */
-        peerDetails: outputs.oci.DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetail[];
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * The source of Globally distributed autonomous database type: Use ADB_D for the Globally distributed autonomous database with autonomous dedicated cloudautonomousvmclusters.
-         */
-        source: string;
-        /**
-         * Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
-         */
-        vaultId: string;
-    }
-
-    export interface DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetail {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous VM Cluster for the peer catalog.
-         */
-        cloudAutonomousVmClusterId: string;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * The lag time preference based on data loss tolerance in seconds.
-         */
-        fastStartFailOverLagLimitInSeconds: number;
-        /**
-         * This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
-         */
-        isAutomaticFailoverEnabled: boolean;
-        /**
-         * Additional metadata related to Globally distributed autonomous database resources.
-         */
-        metadatas: outputs.oci.DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailMetadata[];
-        /**
-         * The protectionMode for the catalog peer.
-         */
-        protectionMode: string;
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before schedlued maintenance of the primary database.
-         */
-        standbyMaintenanceBufferInDays: number;
-        /**
-         * Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-    }
-
-    export interface DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface DistributedDatabaseDistributedAutonomousDatabaseConnectionString {
-        /**
-         * Collection of connection strings.
-         */
-        allConnectionStrings: {[key: string]: string};
-    }
-
-    export interface DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfig {
-        /**
-         * Backup destination details.
-         */
-        backupDestinationDetails: outputs.oci.DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigBackupDestinationDetail[];
-        /**
-         * Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
-         */
-        recoveryWindowInDays: number;
-    }
-
-    export interface DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigBackupDestinationDetail {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-         */
-        dbrsPolicyId: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-         */
-        id: string;
-        /**
-         * Proxy URL to connect to object store.
-         */
-        internetProxy: string;
-        /**
-         * Indicates whether the backup destination is cross-region or local region.
-         */
-        isRemote: boolean;
-        /**
-         * The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-         */
-        remoteRegion: string;
-        /**
-         * Type of the database backup destination.
-         */
-        type: string;
-        /**
-         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-         */
-        vpcPassword: string;
-        /**
-         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-         */
-        vpcUser: string;
-    }
-
-    export interface DistributedDatabaseDistributedAutonomousDatabaseGsmDetail {
-        /**
-         * The compute count for the shard database. It has to be in multiples of 2.
-         */
-        computeCount: number;
-        /**
-         * The data disk group size to be allocated in GBs for the shard database.
-         */
-        dataStorageSizeInGbs: number;
-        /**
-         * The Global service manager image details.
-         */
-        gsmImageDetails: outputs.oci.DistributedDatabaseDistributedAutonomousDatabaseGsmDetailGsmImageDetail[];
-        /**
-         * Additional metadata related to Globally distributed autonomous database resources.
-         */
-        metadatas: outputs.oci.DistributedDatabaseDistributedAutonomousDatabaseGsmDetailMetadata[];
-        /**
-         * Name of the shard.
-         */
-        name: string;
-        /**
-         * Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string
-         */
-        timeSslCertificateExpires: string;
-        /**
-         * The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-    }
-
-    export interface DistributedDatabaseDistributedAutonomousDatabaseGsmDetailGsmImageDetail {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
-         */
-        id: string;
-        /**
-         * The version number associated with the image identified by id.
-         */
-        versionNumber: number;
-    }
-
-    export interface DistributedDatabaseDistributedAutonomousDatabaseGsmDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface DistributedDatabaseDistributedAutonomousDatabaseLatestGsmImage {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
-         */
-        id: string;
-        /**
-         * The version number associated with the image identified by id.
-         */
-        versionNumber: number;
-    }
-
-    export interface DistributedDatabaseDistributedAutonomousDatabaseMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface DistributedDatabaseDistributedAutonomousDatabasePatchOperation {
-        /**
-         * (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
-         */
-        operation: string;
-        /**
-         * (Updatable)
-         */
-        selection: string;
-        /**
-         * (Updatable)
-         */
-        value: string;
-    }
-
-    export interface DistributedDatabaseDistributedAutonomousDatabaseShardDetail {
-        /**
-         * Admin password for shard database.
-         */
-        adminPassword: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
-         */
-        cloudAutonomousVmClusterId: string;
-        /**
-         * The compute count for the shard database. It has to be in multiples of 2.
-         */
-        computeCount: number;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * The data disk group size to be allocated in GBs for the shard database.
-         */
-        dataStorageSizeInGbs: number;
-        /**
-         * Determines the auto-scaling mode for the shard database.
-         */
-        isAutoScalingEnabled: boolean;
-        /**
-         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-         */
-        kmsKeyId: string;
-        /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
-         */
-        kmsKeyVersionId: string;
-        /**
-         * Additional metadata related to Globally distributed autonomous database resources.
-         */
-        metadatas: outputs.oci.DistributedDatabaseDistributedAutonomousDatabaseShardDetailMetadata[];
-        /**
-         * Name of the shard.
-         */
-        name: string;
-        /**
-         * The OKV endpoint name.
-         */
-        okvEndPointGroup: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
-         */
-        okvKeyStoreId: string;
-        /**
-         * This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers on new shards of distributed autonomous database please use peerDetails.
-         */
-        peerCloudAutonomousVmClusterIds: string[];
-        /**
-         * The details required for creation of the peer for the autonomous dedicated infrastructure based shard.
-         */
-        peerDetails: outputs.oci.DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetail[];
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * The shard space name for the shard database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards. For User defined sharding, every shard must have a unique shard space name. For system defined sharding, shard space name is not required.
-         */
-        shardSpace: string;
-        /**
-         * The source of Globally distributed autonomous database type: Use ADB_D for the Globally distributed autonomous database with autonomous dedicated cloudautonomousvmclusters.
-         */
-        source: string;
-        /**
-         * Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
-         */
-        vaultId: string;
-    }
-
-    export interface DistributedDatabaseDistributedAutonomousDatabaseShardDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetail {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous VM Cluster for the peer shard.
-         */
-        cloudAutonomousVmClusterId: string;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * The lag time preference based on data loss tolerance in seconds.
-         */
-        fastStartFailOverLagLimitInSeconds: number;
-        /**
-         * This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
-         */
-        isAutomaticFailoverEnabled: boolean;
-        /**
-         * Additional metadata related to Globally distributed autonomous database resources.
-         */
-        metadatas: outputs.oci.DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailMetadata[];
-        /**
-         * The protectionMode for the shard peer.
-         */
-        protectionMode: string;
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before schedlued maintenance of the primary database.
-         */
-        standbyMaintenanceBufferInDays: number;
-        /**
-         * Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-    }
-
-    export interface DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetails {
-        isSurrogate?: boolean;
-        resourceName?: string;
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup?: string;
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseCatalogDetail {
-        /**
-         * The admin password for the catalog associated with Globally distributed database.
-         */
-        adminPassword: string;
-        /**
-         * The name of the availability domain that the distributed database shard will be located in.
-         */
-        availabilityDomain: string;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-         */
-        dbHomeId: string;
-        /**
-         * Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
-         */
-        dbStorageVaultDetails: outputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetails;
-        /**
-         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-         */
-        kmsKeyId: string;
-        /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
-         */
-        kmsKeyVersionId: string;
-        /**
-         * Additional metadata related to Globally distributed database resources.
-         */
-        metadatas: outputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailMetadata[];
-        /**
-         * Name of the shard.
-         */
-        name: string;
-        /**
-         * The details required for creation of the peer for the ExadbXs infrastructure based catalog.
-         */
-        peerDetails: outputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetail[];
-        /**
-         * This field is deprecated. This should not be used while creation of new distributed database. To set the peers on catalog of distributed database please use peerDetails.
-         */
-        peerVmClusterIds: string[];
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * The shard space name for the Globally distributed database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards.
-         */
-        shardSpace: string;
-        /**
-         * Type of Globally distributed database Shard or Catalog. Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch. Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters. EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
-         */
-        source: string;
-        /**
-         * Status of EXADB_XS based shard.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
-         */
-        vaultId: string;
-        /**
-         * Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
-         */
-        vmClusterDetails: outputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetails;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
-         */
-        vmClusterId: string;
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetails {
-        /**
-         * The size of additional Flash Cache in percentage of High Capacity database storage.
-         */
-        additionalFlashCacheInPercent: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
-         */
-        dbStorageVaultId: string;
-        /**
-         * (Updatable) The display name of the Globally distributed database.
-         */
-        displayName: string;
-        /**
-         * Total storage capacity in GB for vault storage.
-         */
-        highCapacityDatabaseStorage: number;
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseCatalogDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetail {
-        /**
-         * The name of the availability domain that the distributed database shard will be located in.
-         */
-        availabilityDomain: string;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
-         */
-        dbStorageVaultDetails: outputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetails;
-        /**
-         * Additional metadata related to Globally distributed database resources.
-         */
-        metadatas: outputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadata[];
-        /**
-         * The protectionMode for the catalog peer.
-         */
-        protectionMode: string;
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * Status of EXADB_XS based shard.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-        /**
-         * The redo transport type to use for this Data Guard association.
-         */
-        transportType: string;
-        /**
-         * Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
-         */
-        vmClusterDetails: outputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetails;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the catalog peer.
-         */
-        vmClusterId: string;
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetails {
-        /**
-         * The size of additional Flash Cache in percentage of High Capacity database storage.
-         */
-        additionalFlashCacheInPercent: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
-         */
-        dbStorageVaultId: string;
-        /**
-         * (Updatable) The display name of the Globally distributed database.
-         */
-        displayName: string;
-        /**
-         * Total storage capacity in GB for vault storage.
-         */
-        highCapacityDatabaseStorage: number;
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetails {
-        /**
-         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-         */
-        backupNetworkNsgIds: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        backupSubnetId: string;
-        /**
-         * (Updatable) The display name of the Globally distributed database.
-         */
-        displayName: string;
-        /**
-         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
-         */
-        domain: string;
-        /**
-         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        enabledEcpuCount: number;
-        /**
-         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
-         */
-        isDiagnosticsEventsEnabled: boolean;
-        /**
-         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
-         */
-        isHealthMonitoringEnabled: boolean;
-        /**
-         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
-         */
-        isIncidentLogsEnabled: boolean;
-        /**
-         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-         */
-        licenseModel: string;
-        /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-         */
-        nsgIds: string[];
-        /**
-         * The private zone ID in which you want DNS records to be created.
-         */
-        privateZoneId: string;
-        /**
-         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
-         */
-        sshPublicKeys: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        subnetId: string;
-        /**
-         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        totalEcpuCount: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
-         */
-        vmClusterId: string;
-        /**
-         * File System Storage Size in GBs for Exadata VM cluster.
-         */
-        vmFileSystemStorageSize: number;
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetails {
-        /**
-         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-         */
-        backupNetworkNsgIds: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        backupSubnetId: string;
-        /**
-         * (Updatable) The display name of the Globally distributed database.
-         */
-        displayName: string;
-        /**
-         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
-         */
-        domain: string;
-        /**
-         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        enabledEcpuCount: number;
-        /**
-         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
-         */
-        isDiagnosticsEventsEnabled: boolean;
-        /**
-         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
-         */
-        isHealthMonitoringEnabled: boolean;
-        /**
-         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
-         */
-        isIncidentLogsEnabled: boolean;
-        /**
-         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-         */
-        licenseModel: string;
-        /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-         */
-        nsgIds: string[];
-        /**
-         * The private zone ID in which you want DNS records to be created.
-         */
-        privateZoneId: string;
-        /**
-         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
-         */
-        sshPublicKeys: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        subnetId: string;
-        /**
-         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        totalEcpuCount: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
-         */
-        vmClusterId: string;
-        /**
-         * File System Storage Size in GBs for Exadata VM cluster.
-         */
-        vmFileSystemStorageSize: number;
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseConnectionString {
-        /**
-         * Collection of connection strings.
-         */
-        allConnectionStrings: {[key: string]: string};
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseDbBackupConfig {
-        /**
-         * Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive). Example: `SLOT_TWO`
-         */
-        autoBackupWindow: string;
-        /**
-         * Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
-         */
-        autoFullBackupDay: string;
-        /**
-         * Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive). Example: `SLOT_TWO`
-         */
-        autoFullBackupWindow: string;
-        /**
-         * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
-         */
-        backupDeletionPolicy: string;
-        /**
-         * Backup destination details.
-         */
-        backupDestinationDetails: outputs.oci.DistributedDatabaseDistributedDatabaseDbBackupConfigBackupDestinationDetail[];
-        /**
-         * If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
-         */
-        canRunImmediateFullBackup: boolean;
-        /**
-         * If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-         */
-        isAutoBackupEnabled: boolean;
-        /**
-         * If set to true, configures automatic incremental backups in the local region (the region of the DB system) and the remote region with a default frequency of 1 hour. If you previously used RMAN or dbcli to configure backups, using the Console or the API for manged backups creates a new backup configuration for your database. The new configuration replaces the configuration created with RMAN or dbcli. This means that you can no longer rely on your previously configured unmanaged backups to work.
-         */
-        isRemoteBackupEnabled: boolean;
-        /**
-         * Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-         */
-        recoveryWindowInDays: number;
-        /**
-         * The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-         */
-        remoteRegion: string;
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseDbBackupConfigBackupDestinationDetail {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-         */
-        dbrsPolicyId: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-         */
-        id: string;
-        /**
-         * Proxy URL to connect to object store.
-         */
-        internetProxy: string;
-        /**
-         * Indicates whether the backup destination is cross-region or local region.
-         */
-        isRemote: boolean;
-        /**
-         * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
-         */
-        isZeroDataLossEnabled: boolean;
-        /**
-         * The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-         */
-        remoteRegion: string;
-        /**
-         * Type of the database backup destination.
-         */
-        type: string;
-        /**
-         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-         */
-        vpcPassword: string;
-        /**
-         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-         */
-        vpcUser: string;
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseGsmDetail {
-        /**
-         * The compute count for the Global service manager instance.
-         */
-        computeCount: number;
-        /**
-         * The data disk group size to be allocated in GBs for the Global service manager instance.
-         */
-        dataStorageSizeInGbs: number;
-        /**
-         * The Global service manager image details
-         */
-        gsmImageDetails: outputs.oci.DistributedDatabaseDistributedDatabaseGsmDetailGsmImageDetail[];
-        /**
-         * Additional metadata related to Globally distributed database resources.
-         */
-        metadatas: outputs.oci.DistributedDatabaseDistributedDatabaseGsmDetailMetadata[];
-        /**
-         * Name of the shard.
-         */
-        name: string;
-        /**
-         * Status of EXADB_XS based shard.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string
-         */
-        timeSslCertificateExpires: string;
-        /**
-         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseGsmDetailGsmImageDetail {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
-         */
-        id: string;
-        /**
-         * The version number associated with the image identified by id.
-         */
-        versionNumber: number;
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseGsmDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseLatestGsmImageDetail {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
-         */
-        id: string;
-        /**
-         * The version number associated with the image identified by id.
-         */
-        versionNumber: number;
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface DistributedDatabaseDistributedDatabasePatchOperation {
-        /**
-         * (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
-         */
-        operation: string;
-        /**
-         * (Updatable)
-         */
-        selection: string;
-        /**
-         * (Updatable)
-         */
-        value?: string;
-    }
-
-    export interface DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabase {
-        /**
-         * The dbDeploymentType associated with the distributed database.
-         */
-        dbDeploymentType: string;
-        /**
-         * The identifier of the Private Endpoint.
-         */
-        id: string;
-    }
-
-    export interface DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabase {
-        /**
-         * The dbDeploymentType associated with the distributed database.
-         */
-        dbDeploymentType: string;
-        /**
-         * The identifier of the Private Endpoint.
-         */
-        id: string;
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseShardDetail {
-        /**
-         * The admin password for the shard associated with Globally distributed database.
-         */
-        adminPassword: string;
-        /**
-         * The name of the availability domain that the distributed database shard will be located in.
-         */
-        availabilityDomain: string;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-         */
-        dbHomeId: string;
-        /**
-         * Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
-         */
-        dbStorageVaultDetails: outputs.oci.DistributedDatabaseDistributedDatabaseShardDetailDbStorageVaultDetails;
-        /**
-         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-         */
-        kmsKeyId: string;
-        /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
-         */
-        kmsKeyVersionId: string;
-        /**
-         * Additional metadata related to Globally distributed database resources.
-         */
-        metadatas: outputs.oci.DistributedDatabaseDistributedDatabaseShardDetailMetadata[];
-        /**
-         * Name of the shard.
-         */
-        name: string;
-        /**
-         * The details required for creation of the peer for the ExadbXs infrastructure based shard.
-         */
-        peerDetails: outputs.oci.DistributedDatabaseDistributedDatabaseShardDetailPeerDetail[];
-        /**
-         * This field is deprecated. This should not be used while creation of new distributed database. To set the peers on new shards of distributed database please use peerDetails.
-         */
-        peerVmClusterIds: string[];
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * The shard space name for the Globally distributed database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards.
-         */
-        shardSpace: string;
-        /**
-         * Type of Globally distributed database Shard or Catalog. Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch. Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters. EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
-         */
-        source: string;
-        /**
-         * Status of EXADB_XS based shard.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
-         */
-        vaultId: string;
-        /**
-         * Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
-         */
-        vmClusterDetails: outputs.oci.DistributedDatabaseDistributedDatabaseShardDetailVmClusterDetails;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
-         */
-        vmClusterId: string;
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseShardDetailDbStorageVaultDetails {
-        /**
-         * The size of additional Flash Cache in percentage of High Capacity database storage.
-         */
-        additionalFlashCacheInPercent: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
-         */
-        dbStorageVaultId: string;
-        /**
-         * (Updatable) The display name of the Globally distributed database.
-         */
-        displayName: string;
-        /**
-         * Total storage capacity in GB for vault storage.
-         */
-        highCapacityDatabaseStorage: number;
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseShardDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseShardDetailPeerDetail {
-        /**
-         * The name of the availability domain that the distributed database shard will be located in.
-         */
-        availabilityDomain: string;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
-         */
-        dbStorageVaultDetails: outputs.oci.DistributedDatabaseDistributedDatabaseShardDetailPeerDetailDbStorageVaultDetails;
-        /**
-         * Additional metadata related to Globally distributed database resources.
-         */
-        metadatas: outputs.oci.DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadata[];
-        /**
-         * The protectionMode for the shard peer.
-         */
-        protectionMode: string;
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * Status of EXADB_XS based shard.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-        /**
-         * The redo transport type to use for this Data Guard association.
-         */
-        transportType: string;
-        /**
-         * Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
-         */
-        vmClusterDetails: outputs.oci.DistributedDatabaseDistributedDatabaseShardDetailPeerDetailVmClusterDetails;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the shard peer.
-         */
-        vmClusterId: string;
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseShardDetailPeerDetailDbStorageVaultDetails {
-        /**
-         * The size of additional Flash Cache in percentage of High Capacity database storage.
-         */
-        additionalFlashCacheInPercent: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
-         */
-        dbStorageVaultId: string;
-        /**
-         * (Updatable) The display name of the Globally distributed database.
-         */
-        displayName: string;
-        /**
-         * Total storage capacity in GB for vault storage.
-         */
-        highCapacityDatabaseStorage: number;
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseShardDetailPeerDetailVmClusterDetails {
-        /**
-         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-         */
-        backupNetworkNsgIds: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        backupSubnetId: string;
-        /**
-         * (Updatable) The display name of the Globally distributed database.
-         */
-        displayName: string;
-        /**
-         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
-         */
-        domain: string;
-        /**
-         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        enabledEcpuCount: number;
-        /**
-         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
-         */
-        isDiagnosticsEventsEnabled: boolean;
-        /**
-         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
-         */
-        isHealthMonitoringEnabled: boolean;
-        /**
-         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
-         */
-        isIncidentLogsEnabled: boolean;
-        /**
-         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-         */
-        licenseModel: string;
-        /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-         */
-        nsgIds: string[];
-        /**
-         * The private zone ID in which you want DNS records to be created.
-         */
-        privateZoneId: string;
-        /**
-         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
-         */
-        sshPublicKeys: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        subnetId: string;
-        /**
-         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        totalEcpuCount: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
-         */
-        vmClusterId: string;
-        /**
-         * File System Storage Size in GBs for Exadata VM cluster.
-         */
-        vmFileSystemStorageSize: number;
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseShardDetailVmClusterDetails {
-        /**
-         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-         */
-        backupNetworkNsgIds: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        backupSubnetId: string;
-        /**
-         * (Updatable) The display name of the Globally distributed database.
-         */
-        displayName: string;
-        /**
-         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
-         */
-        domain: string;
-        /**
-         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        enabledEcpuCount: number;
-        /**
-         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
-         */
-        isDiagnosticsEventsEnabled: boolean;
-        /**
-         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
-         */
-        isHealthMonitoringEnabled: boolean;
-        /**
-         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
-         */
-        isIncidentLogsEnabled: boolean;
-        /**
-         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-         */
-        licenseModel: string;
-        /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-         */
-        nsgIds: string[];
-        /**
-         * The private zone ID in which you want DNS records to be created.
-         */
-        privateZoneId: string;
-        /**
-         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
-         */
-        sshPublicKeys: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        subnetId: string;
-        /**
-         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        totalEcpuCount: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
-         */
-        vmClusterId: string;
-        /**
-         * File System Storage Size in GBs for Exadata VM cluster.
-         */
-        vmFileSystemStorageSize: number;
-    }
-
-    export interface DistributedDatabaseDistributedDatabaseValidateNetworkDetails {
-        isSurrogate?: boolean;
-        resourceName?: string;
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup?: string;
-    }
-
     export interface GdpGdpPipelineBucketDetail {
         /**
          * Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
@@ -317536,6 +316592,75 @@ export namespace oci {
     }
 
     export interface GetBatchBatchTaskProfilesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetClusterHealthDiagnosisStoresDiagnosisStoreCollection {
+        items: outputs.oci.GetClusterHealthDiagnosisStoresDiagnosisStoreCollectionItem[];
+    }
+
+    export interface GetClusterHealthDiagnosisStoresDiagnosisStoreCollectionItem {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         */
+        displayName: string;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DiagnosisStore.
+         */
+        id: string;
+        /**
+         * The last accepted request token.
+         */
+        lastAcceptedRequestToken: string;
+        /**
+         * The last completed request token.
+         */
+        lastCompletedRequestToken: string;
+        /**
+         * A message that describes the current state of the Diagnosis in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * The name of the object store bucket.
+         */
+        objectStoreBucket: string;
+        /**
+         * The namespace of the object store.
+         */
+        objectStoreNamespace: string;
+        /**
+         * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The date and time the Diagnosis Store was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+         */
+        timeCreated: string;
+        /**
+         * The date and time the Diagnosis Store was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetClusterHealthDiagnosisStoresFilter {
         name: string;
         regex?: boolean;
         values: string[];
@@ -321423,3056 +320548,6 @@ export namespace oci {
         endpointName: string;
     }
 
-    export interface GetDistributedDatabaseDistributedAutonomousDatabaseCatalogDetail {
-        adminPassword: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloudAutonomousVmCluster.
-         */
-        cloudAutonomousVmClusterId: string;
-        /**
-         * The compute count for the shard database. It has to be in multiples of 2.
-         */
-        computeCount: number;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * The data disk group size to be allocated in GBs for the shard database.
-         */
-        dataStorageSizeInGbs: number;
-        /**
-         * Determines the auto-scaling mode for the shard database.
-         */
-        isAutoScalingEnabled: boolean;
-        /**
-         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-         */
-        kmsKeyId: string;
-        /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
-         */
-        kmsKeyVersionId: string;
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
-        metadatas: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabaseCatalogDetailMetadata[];
-        /**
-         * Name of the shard.
-         */
-        name: string;
-        /**
-         * The OKV endpoint name.
-         */
-        okvEndPointGroup: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
-         */
-        okvKeyStoreId: string;
-        /**
-         * This field is deprecated. For shard peer details please refer peerDetails attribute.
-         */
-        peerCloudAutonomousVmClusterIds: string[];
-        /**
-         * Peer details for the shard with dedicated infrastructure.
-         */
-        peerDetails: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetail[];
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * The source of Globally distributed autonomous database type: Use ADB_D for the Globally distributed autonomous database with autonomous dedicated cloudautonomousvmclusters.
-         */
-        source: string;
-        /**
-         * Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
-         */
-        vaultId: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabaseCatalogDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetail {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloudAutonomousVmCluster.
-         */
-        cloudAutonomousVmClusterId: string;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * The lag time for my preference based on data loss tolerance in seconds.
-         */
-        fastStartFailOverLagLimitInSeconds: number;
-        /**
-         * This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
-         */
-        isAutomaticFailoverEnabled: boolean;
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
-        metadatas: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailMetadata[];
-        /**
-         * The protectionMode for the shard peer.
-         */
-        protectionMode: string;
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before schedlued maintenance of the primary database.
-         */
-        standbyMaintenanceBufferInDays: number;
-        /**
-         * Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabaseConnectionString {
-        /**
-         * Collection of connection strings.
-         */
-        allConnectionStrings: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabaseDbBackupConfig {
-        /**
-         * Backup destination details.
-         */
-        backupDestinationDetails: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigBackupDestinationDetail[];
-        /**
-         * Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
-         */
-        recoveryWindowInDays: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigBackupDestinationDetail {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-         */
-        dbrsPolicyId: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
-         */
-        id: string;
-        /**
-         * Proxy URL to connect to object store.
-         */
-        internetProxy: string;
-        /**
-         * Indicates whether the backup destination is cross-region or local region.
-         */
-        isRemote: boolean;
-        /**
-         * The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-         */
-        remoteRegion: string;
-        /**
-         * Type of the database backup destination.
-         */
-        type: string;
-        /**
-         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-         */
-        vpcPassword: string;
-        /**
-         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-         */
-        vpcUser: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabaseGsmDetail {
-        /**
-         * The compute count for the shard database. It has to be in multiples of 2.
-         */
-        computeCount: number;
-        /**
-         * The data disk group size to be allocated in GBs for the shard database.
-         */
-        dataStorageSizeInGbs: number;
-        /**
-         * The Global service manager image details.
-         */
-        gsmImageDetails: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabaseGsmDetailGsmImageDetail[];
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
-        metadatas: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabaseGsmDetailMetadata[];
-        /**
-         * Name of the shard.
-         */
-        name: string;
-        /**
-         * Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string
-         */
-        timeSslCertificateExpires: string;
-        /**
-         * The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabaseGsmDetailGsmImageDetail {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
-         */
-        id: string;
-        /**
-         * The version number associated with the image identified by id.
-         */
-        versionNumber: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabaseGsmDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabaseLatestGsmImage {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
-         */
-        id: string;
-        /**
-         * The version number associated with the image identified by id.
-         */
-        versionNumber: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabaseMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabasePatchOperation {
-        operation: string;
-        selection: string;
-        value: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabaseShardDetail {
-        adminPassword: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloudAutonomousVmCluster.
-         */
-        cloudAutonomousVmClusterId: string;
-        /**
-         * The compute count for the shard database. It has to be in multiples of 2.
-         */
-        computeCount: number;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * The data disk group size to be allocated in GBs for the shard database.
-         */
-        dataStorageSizeInGbs: number;
-        /**
-         * Determines the auto-scaling mode for the shard database.
-         */
-        isAutoScalingEnabled: boolean;
-        /**
-         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-         */
-        kmsKeyId: string;
-        /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
-         */
-        kmsKeyVersionId: string;
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
-        metadatas: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabaseShardDetailMetadata[];
-        /**
-         * Name of the shard.
-         */
-        name: string;
-        /**
-         * The OKV endpoint name.
-         */
-        okvEndPointGroup: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
-         */
-        okvKeyStoreId: string;
-        /**
-         * This field is deprecated. For shard peer details please refer peerDetails attribute.
-         */
-        peerCloudAutonomousVmClusterIds: string[];
-        /**
-         * Peer details for the shard with dedicated infrastructure.
-         */
-        peerDetails: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetail[];
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * The shard space name for the Globally distributed autonomous database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards.
-         */
-        shardSpace: string;
-        /**
-         * The source of Globally distributed autonomous database type: Use ADB_D for the Globally distributed autonomous database with autonomous dedicated cloudautonomousvmclusters.
-         */
-        source: string;
-        /**
-         * Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
-         */
-        vaultId: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabaseShardDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetail {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloudAutonomousVmCluster.
-         */
-        cloudAutonomousVmClusterId: string;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * The lag time for my preference based on data loss tolerance in seconds.
-         */
-        fastStartFailOverLagLimitInSeconds: number;
-        /**
-         * This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
-         */
-        isAutomaticFailoverEnabled: boolean;
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
-        metadatas: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailMetadata[];
-        /**
-         * The protectionMode for the shard peer.
-         */
-        protectionMode: string;
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before schedlued maintenance of the primary database.
-         */
-        standbyMaintenanceBufferInDays: number;
-        /**
-         * Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetail {
-        isSurrogate: boolean;
-        resourceName: string;
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollection {
-        items: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItem[];
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItem {
-        caBundleId: string;
-        /**
-         * Collection of catalogs associated with the Globally distributed autonomous database.
-         */
-        catalogDetails: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemCatalogDetail[];
-        certificateId: string;
-        changeDbBackupConfigTrigger: number;
-        /**
-         * The character set for the database.
-         */
-        characterSet: string;
-        /**
-         * The default number of unique chunks in a shardspace. The value of chunks must be greater than 2 times the size of the largest shardgroup in any shardspace.
-         */
-        chunks: number;
-        /**
-         * The ID of the compartment in which to list resources.
-         */
-        compartmentId: string;
-        configureGsmWalletTrigger: number;
-        configureShardingIsRebalanceRequired: boolean;
-        configureShardingTrigger: number;
-        /**
-         * Details of Globally distributed autonomous database connection String.
-         */
-        connectionStrings: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemConnectionString[];
-        /**
-         * Oracle Database version for the shards and catalog used in Globally distributed autonomous database.
-         */
-        databaseVersion: string;
-        /**
-         * Backup options for the Distributed Autonomous Database.
-         */
-        dbBackupConfigs: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemDbBackupConfig[];
-        /**
-         * A filter to return only resources their dbDeploymentType matches the given dbDeploymentType.
-         */
-        dbDeploymentType: string;
-        /**
-         * Possible workload types. Currently only OLTP workload type is supported.
-         */
-        dbWorkload: string;
-        /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-         */
-        definedTags: {[key: string]: string};
-        /**
-         * A filter to return only Globally distributed autonomous databases that match the entire name given. The match is not case sensitive.
-         */
-        displayName: string;
-        downloadGsmCertificateSigningRequestTrigger: number;
-        downloadedGsmCsrPem: string;
-        effectiveReplicationUnit: number;
-        /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-         */
-        freeformTags: {[key: string]: string};
-        generateGsmCertificateSigningRequestTrigger: number;
-        generateGsmCertificateSigningRequestTriggerCaBundleId: string;
-        generateWalletDownloadedWalletContentLength: number;
-        generateWalletDownloadedWalletEtag: string;
-        generateWalletDownloadedWalletLastModified: string;
-        generateWalletDownloadedWalletZipBase64: string;
-        generateWalletPassword: string;
-        generateWalletTrigger: number;
-        /**
-         * Collection of catalogs associated with the Globally distributed autonomous database.
-         */
-        gsmDetails: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemGsmDetail[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
-         */
-        id: string;
-        /**
-         * The Global service manager image details.
-         */
-        latestGsmImages: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemLatestGsmImage[];
-        /**
-         * The lifecycleDetails for the Globally distributed autonomous database.
-         */
-        lifecycleDetails: string;
-        /**
-         * The listener port number for the Globally distributed autonomous database.
-         */
-        listenerPort: number;
-        /**
-         * The TLS listener port number for Globally distributed autonomous database.
-         */
-        listenerPortTls: number;
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
-        metadatas: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemMetadata[];
-        moveReplicationUnitTrigger: number;
-        /**
-         * The national character set for the database.
-         */
-        ncharacterSet: string;
-        /**
-         * Ons local port number for Globally distributed autonomous database.
-         */
-        onsPortLocal: number;
-        /**
-         * Ons remote port number for Globally distributed autonomous database.
-         */
-        onsPortRemote: number;
-        patchOperations: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemPatchOperation[];
-        /**
-         * Unique name prefix for the Globally distributed autonomous databases. Only alpha-numeric values are allowed. First character has to be a letter followed by any combination of letter and number.
-         */
-        prefix: string;
-        /**
-         * The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
-         */
-        privateEndpointIds: string[];
-        recreateFailedResourceTrigger: number;
-        /**
-         * The Replication factor for RAFT replication based Globally distributed autonomous database. Currently supported values are 3, 5 and 7.
-         */
-        replicationFactor: number;
-        /**
-         * The Replication method for Globally distributed autonomous database. Use RAFT for Raft replication, and DG for DataGuard. If replicationMethod is not provided, it defaults to DG.
-         */
-        replicationMethod: string;
-        /**
-         * The replication unit count for RAFT based distributed autonomous database. For RAFT replication based Globally distributed autonomous database, the value should be at least twice the number of shards.
-         */
-        replicationUnit: number;
-        /**
-         * Collection of shards associated with the Globally distributed autonomous database.
-         */
-        shardDetails: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemShardDetail[];
-        /**
-         * Sharding Methods for the Globally distributed autonomous database.
-         */
-        shardingMethod: string;
-        /**
-         * Increment this value to trigger StartDistributedAutonomousDatabase action.
-         */
-        startDatabaseTrigger: number;
-        /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
-         */
-        state: string;
-        /**
-         * Increment this value to trigger StopDistributedAutonomousDatabase action.
-         */
-        stopDatabaseTrigger: number;
-        /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-         */
-        systemTags: {[key: string]: string};
-        /**
-         * The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-        uploadCaSignedCertificate: string;
-        uploadSignedCertificateAndGenerateWalletTrigger: number;
-        validateCaBundleTrigger: number;
-        validateNetworkDetails: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemValidateNetworkDetail[];
-        validateNetworkTrigger: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemCatalogDetail {
-        adminPassword: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloudAutonomousVmCluster.
-         */
-        cloudAutonomousVmClusterId: string;
-        /**
-         * The compute count for the shard database. It has to be in multiples of 2.
-         */
-        computeCount: number;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * The data disk group size to be allocated in GBs for the shard database.
-         */
-        dataStorageSizeInGbs: number;
-        /**
-         * Determines the auto-scaling mode for the shard database.
-         */
-        isAutoScalingEnabled: boolean;
-        /**
-         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-         */
-        kmsKeyId: string;
-        /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
-         */
-        kmsKeyVersionId: string;
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
-        metadatas: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemCatalogDetailMetadata[];
-        /**
-         * Name of the shard.
-         */
-        name: string;
-        /**
-         * The OKV endpoint name.
-         */
-        okvEndPointGroup: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
-         */
-        okvKeyStoreId: string;
-        /**
-         * This field is deprecated. For shard peer details please refer peerDetails attribute.
-         */
-        peerCloudAutonomousVmClusterIds: string[];
-        /**
-         * Peer details for the shard with dedicated infrastructure.
-         */
-        peerDetails: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemCatalogDetailPeerDetail[];
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * The source of Globally distributed autonomous database type: Use ADB_D for the Globally distributed autonomous database with autonomous dedicated cloudautonomousvmclusters.
-         */
-        source: string;
-        /**
-         * Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
-         */
-        vaultId: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemCatalogDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemCatalogDetailPeerDetail {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloudAutonomousVmCluster.
-         */
-        cloudAutonomousVmClusterId: string;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * The lag time for my preference based on data loss tolerance in seconds.
-         */
-        fastStartFailOverLagLimitInSeconds: number;
-        /**
-         * This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
-         */
-        isAutomaticFailoverEnabled: boolean;
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
-        metadatas: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemCatalogDetailPeerDetailMetadata[];
-        /**
-         * The protectionMode for the shard peer.
-         */
-        protectionMode: string;
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before schedlued maintenance of the primary database.
-         */
-        standbyMaintenanceBufferInDays: number;
-        /**
-         * Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemCatalogDetailPeerDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemConnectionString {
-        /**
-         * Collection of connection strings.
-         */
-        allConnectionStrings: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemDbBackupConfig {
-        /**
-         * Backup destination details.
-         */
-        backupDestinationDetails: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemDbBackupConfigBackupDestinationDetail[];
-        /**
-         * Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
-         */
-        recoveryWindowInDays: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemDbBackupConfigBackupDestinationDetail {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-         */
-        dbrsPolicyId: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
-         */
-        id: string;
-        /**
-         * Proxy URL to connect to object store.
-         */
-        internetProxy: string;
-        /**
-         * Indicates whether the backup destination is cross-region or local region.
-         */
-        isRemote: boolean;
-        /**
-         * The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-         */
-        remoteRegion: string;
-        /**
-         * Type of the database backup destination.
-         */
-        type: string;
-        /**
-         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-         */
-        vpcPassword: string;
-        /**
-         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-         */
-        vpcUser: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemGsmDetail {
-        /**
-         * The compute count for the shard database. It has to be in multiples of 2.
-         */
-        computeCount: number;
-        /**
-         * The data disk group size to be allocated in GBs for the shard database.
-         */
-        dataStorageSizeInGbs: number;
-        /**
-         * The Global service manager image details.
-         */
-        gsmImageDetails: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemGsmDetailGsmImageDetail[];
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
-        metadatas: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemGsmDetailMetadata[];
-        /**
-         * Name of the shard.
-         */
-        name: string;
-        /**
-         * Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string
-         */
-        timeSslCertificateExpires: string;
-        /**
-         * The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemGsmDetailGsmImageDetail {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
-         */
-        id: string;
-        /**
-         * The version number associated with the image identified by id.
-         */
-        versionNumber: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemGsmDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemLatestGsmImage {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
-         */
-        id: string;
-        /**
-         * The version number associated with the image identified by id.
-         */
-        versionNumber: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemPatchOperation {
-        operation: string;
-        selection: string;
-        value: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemShardDetail {
-        adminPassword: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloudAutonomousVmCluster.
-         */
-        cloudAutonomousVmClusterId: string;
-        /**
-         * The compute count for the shard database. It has to be in multiples of 2.
-         */
-        computeCount: number;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * The data disk group size to be allocated in GBs for the shard database.
-         */
-        dataStorageSizeInGbs: number;
-        /**
-         * Determines the auto-scaling mode for the shard database.
-         */
-        isAutoScalingEnabled: boolean;
-        /**
-         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-         */
-        kmsKeyId: string;
-        /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
-         */
-        kmsKeyVersionId: string;
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
-        metadatas: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemShardDetailMetadata[];
-        /**
-         * Name of the shard.
-         */
-        name: string;
-        /**
-         * The OKV endpoint name.
-         */
-        okvEndPointGroup: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
-         */
-        okvKeyStoreId: string;
-        /**
-         * This field is deprecated. For shard peer details please refer peerDetails attribute.
-         */
-        peerCloudAutonomousVmClusterIds: string[];
-        /**
-         * Peer details for the shard with dedicated infrastructure.
-         */
-        peerDetails: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemShardDetailPeerDetail[];
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * The shard space name for the Globally distributed autonomous database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards.
-         */
-        shardSpace: string;
-        /**
-         * The source of Globally distributed autonomous database type: Use ADB_D for the Globally distributed autonomous database with autonomous dedicated cloudautonomousvmclusters.
-         */
-        source: string;
-        /**
-         * Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
-         */
-        vaultId: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemShardDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemShardDetailPeerDetail {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloudAutonomousVmCluster.
-         */
-        cloudAutonomousVmClusterId: string;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * The lag time for my preference based on data loss tolerance in seconds.
-         */
-        fastStartFailOverLagLimitInSeconds: number;
-        /**
-         * This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
-         */
-        isAutomaticFailoverEnabled: boolean;
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
-        metadatas: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemShardDetailPeerDetailMetadata[];
-        /**
-         * The protectionMode for the shard peer.
-         */
-        protectionMode: string;
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before schedlued maintenance of the primary database.
-         */
-        standbyMaintenanceBufferInDays: number;
-        /**
-         * Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemShardDetailPeerDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemValidateNetworkDetail {
-        isSurrogate: boolean;
-        resourceName: string;
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabasesFilter {
-        /**
-         * Name of the shard.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetDistributedDatabaseDistributedAutonomousDatabasesMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseCatalogDetail {
-        adminPassword: string;
-        /**
-         * The name of the availability domain that the distributed database shard will be located in.
-         */
-        availabilityDomain: string;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-         */
-        dbHomeId: string;
-        /**
-         * The Storage Vault for Distributed Database Resource
-         */
-        dbStorageVaultDetails: outputs.oci.GetDistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetail[];
-        /**
-         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-         */
-        kmsKeyId: string;
-        /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
-         */
-        kmsKeyVersionId: string;
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
-        metadatas: outputs.oci.GetDistributedDatabaseDistributedDatabaseCatalogDetailMetadata[];
-        /**
-         * Name of the shard.
-         */
-        name: string;
-        /**
-         * Peer details for the shard.
-         */
-        peerDetails: outputs.oci.GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetail[];
-        peerVmClusterIds: string[];
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * The shard space name for the Globally distributed database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards.
-         */
-        shardSpace: string;
-        /**
-         * Type of Globally distributed database Shard or Catalog. Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch. Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters. EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
-         */
-        source: string;
-        /**
-         * Status of EXADB_XS based shard.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
-         */
-        vaultId: string;
-        /**
-         * The Exadata VM cluster for Distributed Database Resource
-         */
-        vmClusterDetails: outputs.oci.GetDistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetail[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
-         */
-        vmClusterId: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetail {
-        /**
-         * The size of additional Flash Cache in percentage of High Capacity database storage.
-         */
-        additionalFlashCacheInPercent: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
-         */
-        dbStorageVaultId: string;
-        /**
-         * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
-         */
-        displayName: string;
-        /**
-         * Total storage capacity in GB for vault storage.
-         */
-        highCapacityDatabaseStorage: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseCatalogDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetail {
-        /**
-         * The name of the availability domain that the distributed database shard will be located in.
-         */
-        availabilityDomain: string;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * The Storage Vault for Distributed Database Resource
-         */
-        dbStorageVaultDetails: outputs.oci.GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetail[];
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
-        metadatas: outputs.oci.GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadata[];
-        /**
-         * The protectionMode for the shard peer.
-         */
-        protectionMode: string;
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * Status of EXADB_XS based shard.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-        /**
-         * The redo transport type to use for this Data Guard association.
-         */
-        transportType: string;
-        /**
-         * The Exadata VM cluster for Distributed Database Resource
-         */
-        vmClusterDetails: outputs.oci.GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetail[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
-         */
-        vmClusterId: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetail {
-        /**
-         * The size of additional Flash Cache in percentage of High Capacity database storage.
-         */
-        additionalFlashCacheInPercent: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
-         */
-        dbStorageVaultId: string;
-        /**
-         * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
-         */
-        displayName: string;
-        /**
-         * Total storage capacity in GB for vault storage.
-         */
-        highCapacityDatabaseStorage: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetail {
-        /**
-         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-         */
-        backupNetworkNsgIds: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        backupSubnetId: string;
-        /**
-         * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
-         */
-        displayName: string;
-        /**
-         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
-         */
-        domain: string;
-        /**
-         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        enabledEcpuCount: number;
-        /**
-         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
-         */
-        isDiagnosticsEventsEnabled: boolean;
-        /**
-         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
-         */
-        isHealthMonitoringEnabled: boolean;
-        /**
-         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
-         */
-        isIncidentLogsEnabled: boolean;
-        /**
-         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-         */
-        licenseModel: string;
-        /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-         */
-        nsgIds: string[];
-        /**
-         * The private zone ID in which you want DNS records to be created.
-         */
-        privateZoneId: string;
-        /**
-         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
-         */
-        sshPublicKeys: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        subnetId: string;
-        /**
-         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        totalEcpuCount: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
-         */
-        vmClusterId: string;
-        /**
-         * File System Storage Size in GBs for Exadata VM cluster.
-         */
-        vmFileSystemStorageSize: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetail {
-        /**
-         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-         */
-        backupNetworkNsgIds: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        backupSubnetId: string;
-        /**
-         * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
-         */
-        displayName: string;
-        /**
-         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
-         */
-        domain: string;
-        /**
-         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        enabledEcpuCount: number;
-        /**
-         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
-         */
-        isDiagnosticsEventsEnabled: boolean;
-        /**
-         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
-         */
-        isHealthMonitoringEnabled: boolean;
-        /**
-         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
-         */
-        isIncidentLogsEnabled: boolean;
-        /**
-         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-         */
-        licenseModel: string;
-        /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-         */
-        nsgIds: string[];
-        /**
-         * The private zone ID in which you want DNS records to be created.
-         */
-        privateZoneId: string;
-        /**
-         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
-         */
-        sshPublicKeys: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        subnetId: string;
-        /**
-         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        totalEcpuCount: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
-         */
-        vmClusterId: string;
-        /**
-         * File System Storage Size in GBs for Exadata VM cluster.
-         */
-        vmFileSystemStorageSize: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseConnectionString {
-        /**
-         * Collection of connection strings.
-         */
-        allConnectionStrings: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseDbBackupConfig {
-        /**
-         * Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive). Example: `SLOT_TWO`
-         */
-        autoBackupWindow: string;
-        /**
-         * Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
-         */
-        autoFullBackupDay: string;
-        /**
-         * Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive). Example: `SLOT_TWO`
-         */
-        autoFullBackupWindow: string;
-        /**
-         * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
-         */
-        backupDeletionPolicy: string;
-        /**
-         * Backup destination details.
-         */
-        backupDestinationDetails: outputs.oci.GetDistributedDatabaseDistributedDatabaseDbBackupConfigBackupDestinationDetail[];
-        /**
-         * If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
-         */
-        canRunImmediateFullBackup: boolean;
-        /**
-         * If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-         */
-        isAutoBackupEnabled: boolean;
-        /**
-         * If set to true, configures automatic incremental backups in the local region (the region of the DB system) and the remote region with a default frequency of 1 hour. If you previously used RMAN or dbcli to configure backups, using the Console or the API for manged backups creates a new backup configuration for your database. The new configuration replaces the configuration created with RMAN or dbcli. This means that you can no longer rely on your previously configured unmanaged backups to work.
-         */
-        isRemoteBackupEnabled: boolean;
-        /**
-         * Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-         */
-        recoveryWindowInDays: number;
-        /**
-         * The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-         */
-        remoteRegion: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseDbBackupConfigBackupDestinationDetail {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-         */
-        dbrsPolicyId: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
-         */
-        id: string;
-        /**
-         * Proxy URL to connect to object store.
-         */
-        internetProxy: string;
-        /**
-         * Indicates whether the backup destination is cross-region or local region.
-         */
-        isRemote: boolean;
-        /**
-         * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
-         */
-        isZeroDataLossEnabled: boolean;
-        /**
-         * The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-         */
-        remoteRegion: string;
-        /**
-         * Type of the database backup destination.
-         */
-        type: string;
-        /**
-         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-         */
-        vpcPassword: string;
-        /**
-         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-         */
-        vpcUser: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseGsmDetail {
-        /**
-         * The compute count for the Global service manager instance.
-         */
-        computeCount: number;
-        /**
-         * The data disk group size to be allocated in GBs for the Global service manager instance.
-         */
-        dataStorageSizeInGbs: number;
-        /**
-         * The Global service manager image details
-         */
-        gsmImageDetails: outputs.oci.GetDistributedDatabaseDistributedDatabaseGsmDetailGsmImageDetail[];
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
-        metadatas: outputs.oci.GetDistributedDatabaseDistributedDatabaseGsmDetailMetadata[];
-        /**
-         * Name of the shard.
-         */
-        name: string;
-        /**
-         * Status of EXADB_XS based shard.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string
-         */
-        timeSslCertificateExpires: string;
-        /**
-         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseGsmDetailGsmImageDetail {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
-         */
-        id: string;
-        /**
-         * The version number associated with the image identified by id.
-         */
-        versionNumber: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseGsmDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseLatestGsmImageDetail {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
-         */
-        id: string;
-        /**
-         * The version number associated with the image identified by id.
-         */
-        versionNumber: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasePatchOperation {
-        operation: string;
-        selection: string;
-        value: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabase {
-        /**
-         * The dbDeploymentType associated with the distributed database.
-         */
-        dbDeploymentType: string;
-        /**
-         * The identifier of the Private Endpoint.
-         */
-        id: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabase {
-        /**
-         * The dbDeploymentType associated with the distributed database.
-         */
-        dbDeploymentType: string;
-        /**
-         * The identifier of the Private Endpoint.
-         */
-        id: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasePrivateEndpointsDistributedDatabasePrivateEndpointCollection {
-        items: outputs.oci.GetDistributedDatabaseDistributedDatabasePrivateEndpointsDistributedDatabasePrivateEndpointCollectionItem[];
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasePrivateEndpointsDistributedDatabasePrivateEndpointCollectionItem {
-        /**
-         * The ID of the compartment in which to list resources.
-         */
-        compartmentId: string;
-        /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-         */
-        definedTags: {[key: string]: string};
-        /**
-         * DistributedDatabasePrivateEndpoint description.
-         */
-        description: string;
-        /**
-         * A filter to return only private endpoint that match the entire name given. The match is not case sensitive.
-         */
-        displayName: string;
-        /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-         */
-        freeformTags: {[key: string]: string};
-        /**
-         * This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
-         */
-        globallyDistributedAutonomousDatabases: outputs.oci.GetDistributedDatabaseDistributedDatabasePrivateEndpointsDistributedDatabasePrivateEndpointCollectionItemGloballyDistributedAutonomousDatabase[];
-        /**
-         * This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
-         */
-        globallyDistributedDatabases: outputs.oci.GetDistributedDatabaseDistributedDatabasePrivateEndpointsDistributedDatabasePrivateEndpointCollectionItemGloballyDistributedDatabase[];
-        /**
-         * The identifier of the Private Endpoint.
-         */
-        id: string;
-        /**
-         * Detailed message for the lifecycle state.
-         */
-        lifecycleDetails: string;
-        /**
-         * The OCIDs of the network security groups that the private endpoint belongs to.
-         */
-        nsgIds: string[];
-        /**
-         * IP address of the Private Endpoint.
-         */
-        privateIp: string;
-        /**
-         * The identifier of the proxy compute instance.
-         */
-        proxyComputeInstanceId: string;
-        reinstateProxyInstanceTrigger: number;
-        /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
-         */
-        state: string;
-        /**
-         * Identifier of the subnet in which private endpoint exists.
-         */
-        subnetId: string;
-        /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-         */
-        systemTags: {[key: string]: string};
-        /**
-         * The time the DistributedDatabasePrivateEndpoint was first created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Private Endpoint was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-        /**
-         * Identifier of the VCN in which subnet exists.
-         */
-        vcnId: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasePrivateEndpointsDistributedDatabasePrivateEndpointCollectionItemGloballyDistributedAutonomousDatabase {
-        /**
-         * The dbDeploymentType associated with the distributed database.
-         */
-        dbDeploymentType: string;
-        /**
-         * The identifier of the Private Endpoint.
-         */
-        id: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasePrivateEndpointsDistributedDatabasePrivateEndpointCollectionItemGloballyDistributedDatabase {
-        /**
-         * The dbDeploymentType associated with the distributed database.
-         */
-        dbDeploymentType: string;
-        /**
-         * The identifier of the Private Endpoint.
-         */
-        id: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasePrivateEndpointsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseShardDetail {
-        adminPassword: string;
-        /**
-         * The name of the availability domain that the distributed database shard will be located in.
-         */
-        availabilityDomain: string;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-         */
-        dbHomeId: string;
-        /**
-         * The Storage Vault for Distributed Database Resource
-         */
-        dbStorageVaultDetails: outputs.oci.GetDistributedDatabaseDistributedDatabaseShardDetailDbStorageVaultDetail[];
-        /**
-         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-         */
-        kmsKeyId: string;
-        /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
-         */
-        kmsKeyVersionId: string;
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
-        metadatas: outputs.oci.GetDistributedDatabaseDistributedDatabaseShardDetailMetadata[];
-        /**
-         * Name of the shard.
-         */
-        name: string;
-        /**
-         * Peer details for the shard.
-         */
-        peerDetails: outputs.oci.GetDistributedDatabaseDistributedDatabaseShardDetailPeerDetail[];
-        peerVmClusterIds: string[];
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * The shard space name for the Globally distributed database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards.
-         */
-        shardSpace: string;
-        /**
-         * Type of Globally distributed database Shard or Catalog. Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch. Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters. EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
-         */
-        source: string;
-        /**
-         * Status of EXADB_XS based shard.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
-         */
-        vaultId: string;
-        /**
-         * The Exadata VM cluster for Distributed Database Resource
-         */
-        vmClusterDetails: outputs.oci.GetDistributedDatabaseDistributedDatabaseShardDetailVmClusterDetail[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
-         */
-        vmClusterId: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseShardDetailDbStorageVaultDetail {
-        /**
-         * The size of additional Flash Cache in percentage of High Capacity database storage.
-         */
-        additionalFlashCacheInPercent: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
-         */
-        dbStorageVaultId: string;
-        /**
-         * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
-         */
-        displayName: string;
-        /**
-         * Total storage capacity in GB for vault storage.
-         */
-        highCapacityDatabaseStorage: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseShardDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseShardDetailPeerDetail {
-        /**
-         * The name of the availability domain that the distributed database shard will be located in.
-         */
-        availabilityDomain: string;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * The Storage Vault for Distributed Database Resource
-         */
-        dbStorageVaultDetails: outputs.oci.GetDistributedDatabaseDistributedDatabaseShardDetailPeerDetailDbStorageVaultDetail[];
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
-        metadatas: outputs.oci.GetDistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadata[];
-        /**
-         * The protectionMode for the shard peer.
-         */
-        protectionMode: string;
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * Status of EXADB_XS based shard.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-        /**
-         * The redo transport type to use for this Data Guard association.
-         */
-        transportType: string;
-        /**
-         * The Exadata VM cluster for Distributed Database Resource
-         */
-        vmClusterDetails: outputs.oci.GetDistributedDatabaseDistributedDatabaseShardDetailPeerDetailVmClusterDetail[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
-         */
-        vmClusterId: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseShardDetailPeerDetailDbStorageVaultDetail {
-        /**
-         * The size of additional Flash Cache in percentage of High Capacity database storage.
-         */
-        additionalFlashCacheInPercent: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
-         */
-        dbStorageVaultId: string;
-        /**
-         * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
-         */
-        displayName: string;
-        /**
-         * Total storage capacity in GB for vault storage.
-         */
-        highCapacityDatabaseStorage: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseShardDetailPeerDetailVmClusterDetail {
-        /**
-         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-         */
-        backupNetworkNsgIds: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        backupSubnetId: string;
-        /**
-         * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
-         */
-        displayName: string;
-        /**
-         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
-         */
-        domain: string;
-        /**
-         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        enabledEcpuCount: number;
-        /**
-         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
-         */
-        isDiagnosticsEventsEnabled: boolean;
-        /**
-         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
-         */
-        isHealthMonitoringEnabled: boolean;
-        /**
-         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
-         */
-        isIncidentLogsEnabled: boolean;
-        /**
-         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-         */
-        licenseModel: string;
-        /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-         */
-        nsgIds: string[];
-        /**
-         * The private zone ID in which you want DNS records to be created.
-         */
-        privateZoneId: string;
-        /**
-         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
-         */
-        sshPublicKeys: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        subnetId: string;
-        /**
-         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        totalEcpuCount: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
-         */
-        vmClusterId: string;
-        /**
-         * File System Storage Size in GBs for Exadata VM cluster.
-         */
-        vmFileSystemStorageSize: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseShardDetailVmClusterDetail {
-        /**
-         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-         */
-        backupNetworkNsgIds: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        backupSubnetId: string;
-        /**
-         * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
-         */
-        displayName: string;
-        /**
-         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
-         */
-        domain: string;
-        /**
-         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        enabledEcpuCount: number;
-        /**
-         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
-         */
-        isDiagnosticsEventsEnabled: boolean;
-        /**
-         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
-         */
-        isHealthMonitoringEnabled: boolean;
-        /**
-         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
-         */
-        isIncidentLogsEnabled: boolean;
-        /**
-         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-         */
-        licenseModel: string;
-        /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-         */
-        nsgIds: string[];
-        /**
-         * The private zone ID in which you want DNS records to be created.
-         */
-        privateZoneId: string;
-        /**
-         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
-         */
-        sshPublicKeys: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        subnetId: string;
-        /**
-         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        totalEcpuCount: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
-         */
-        vmClusterId: string;
-        /**
-         * File System Storage Size in GBs for Exadata VM cluster.
-         */
-        vmFileSystemStorageSize: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabaseValidateNetworkDetail {
-        isSurrogate: boolean;
-        resourceName: string;
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollection {
-        items: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItem[];
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItem {
-        /**
-         * Collection of catalogs associated with the Globally distributed database.
-         */
-        catalogDetails: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemCatalogDetail[];
-        changeDbBackupConfigTrigger: number;
-        /**
-         * The character set for the database.
-         */
-        characterSet: string;
-        /**
-         * The default number of unique chunks in a shardspace. The value of chunks must be greater than 2 times the size of the largest shardgroup in any shardspace.
-         */
-        chunks: number;
-        /**
-         * The ID of the compartment in which to list resources.
-         */
-        compartmentId: string;
-        configureShardingIsRebalanceRequired: boolean;
-        configureShardingTrigger: number;
-        /**
-         * Details of Globally distributed database connection String.
-         */
-        connectionStrings: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemConnectionString[];
-        /**
-         * Oracle Database version for the shards and catalog used in Globally distributed database.
-         */
-        databaseVersion: string;
-        /**
-         * Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-         */
-        dbBackupConfigs: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemDbBackupConfig[];
-        /**
-         * A filter to return only resources their dbDeploymentType matches the given dbDeploymentType.
-         */
-        dbDeploymentType: string;
-        /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-         */
-        definedTags: {[key: string]: string};
-        /**
-         * A filter to return only Globally distributed databases that match the entire name given. The match is not case sensitive.
-         */
-        displayName: string;
-        /**
-         * @deprecated This trigger/action API is deprecated.
-         */
-        downloadGsmCertificateSigningRequestTrigger: number;
-        effectiveReplicationUnit: number;
-        /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-         */
-        freeformTags: {[key: string]: string};
-        /**
-         * @deprecated This trigger/action API is deprecated.
-         */
-        generateGsmCertificateSigningRequestTrigger: number;
-        generateWalletDownloadedWalletContentLength: number;
-        generateWalletDownloadedWalletEtag: string;
-        generateWalletDownloadedWalletLastModified: string;
-        generateWalletDownloadedWalletZipBase64: string;
-        generateWalletPassword: string;
-        generateWalletTrigger: number;
-        /**
-         * Collection of catalogs associated with the Globally distributed database.
-         */
-        gsmDetails: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemGsmDetail[];
-        /**
-         * The SSH public key for Global service manager instances.
-         */
-        gsmSshPublicKey: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
-         */
-        id: string;
-        /**
-         * The Global service manager image details
-         */
-        latestGsmImageDetails: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemLatestGsmImageDetail[];
-        /**
-         * The lifecycleDetails for the Globally distributed database.
-         */
-        lifecycleDetails: string;
-        /**
-         * The Global service manager listener port number for the Globally distributed database.
-         */
-        listenerPort: number;
-        /**
-         * The TLS listener port number for Globally distributed database.
-         */
-        listenerPortTls: number;
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
-        metadatas: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemMetadata[];
-        moveReplicationUnitTrigger: number;
-        /**
-         * The national character set for the database.
-         */
-        ncharacterSet: string;
-        /**
-         * Ons local port number.
-         */
-        onsPortLocal: number;
-        /**
-         * Ons remote port number.
-         */
-        onsPortRemote: number;
-        patchOperations: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemPatchOperation[];
-        /**
-         * Unique name prefix for the Globally distributed databases. Only alpha-numeric values are allowed. First character has to be a letter followed by any combination of letter and number.
-         */
-        prefix: string;
-        /**
-         * The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
-         */
-        privateEndpointIds: string[];
-        recreateFailedResourceTrigger: number;
-        /**
-         * The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
-         */
-        replicationFactor: number;
-        /**
-         * The Replication method for Globally distributed database. Use RAFT for Raft replication, and DG for DataGuard. If replicationMethod is not provided, it defaults to DG.
-         */
-        replicationMethod: string;
-        /**
-         * The replication unit count for RAFT based distributed database. For RAFT replication based Globally distributed database, the value should be at least twice the number of shards.
-         */
-        replicationUnit: number;
-        /**
-         * The TCP Single Client Access Name (SCAN) port for Globally distributed database clusters.
-         */
-        scanListenerPort: number;
-        /**
-         * Collection of shards associated with the Globally distributed database.
-         */
-        shardDetails: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemShardDetail[];
-        /**
-         * Sharding Methods for the Globally distributed database.
-         */
-        shardingMethod: string;
-        /**
-         * Increment this value to trigger StartDistributedDatabase action.
-         */
-        startDatabaseTrigger: number;
-        /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
-         */
-        state: string;
-        /**
-         * Increment this value to trigger StopDistributedDatabase action.
-         */
-        stopDatabaseTrigger: number;
-        /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-         */
-        systemTags: {[key: string]: string};
-        /**
-         * The time the Globally distributed database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-        /**
-         * @deprecated This trigger/action API is deprecated.
-         */
-        uploadSignedCertificateAndGenerateWalletTrigger: number;
-        validateNetworkDetails: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemValidateNetworkDetail[];
-        validateNetworkTrigger: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemCatalogDetail {
-        adminPassword: string;
-        /**
-         * The name of the availability domain that the distributed database shard will be located in.
-         */
-        availabilityDomain: string;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-         */
-        dbHomeId: string;
-        /**
-         * The Storage Vault for Distributed Database Resource
-         */
-        dbStorageVaultDetails: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemCatalogDetailDbStorageVaultDetail[];
-        /**
-         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-         */
-        kmsKeyId: string;
-        /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
-         */
-        kmsKeyVersionId: string;
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
-        metadatas: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemCatalogDetailMetadata[];
-        /**
-         * Name of the shard.
-         */
-        name: string;
-        /**
-         * Peer details for the shard.
-         */
-        peerDetails: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemCatalogDetailPeerDetail[];
-        peerVmClusterIds: string[];
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * The shard space name for the Globally distributed database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards.
-         */
-        shardSpace: string;
-        /**
-         * Type of Globally distributed database Shard or Catalog. Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch. Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters. EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
-         */
-        source: string;
-        /**
-         * Status of EXADB_XS based shard.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
-         */
-        vaultId: string;
-        /**
-         * The Exadata VM cluster for Distributed Database Resource
-         */
-        vmClusterDetails: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemCatalogDetailVmClusterDetail[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
-         */
-        vmClusterId: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemCatalogDetailDbStorageVaultDetail {
-        /**
-         * The size of additional Flash Cache in percentage of High Capacity database storage.
-         */
-        additionalFlashCacheInPercent: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
-         */
-        dbStorageVaultId: string;
-        /**
-         * A filter to return only Globally distributed databases that match the entire name given. The match is not case sensitive.
-         */
-        displayName: string;
-        /**
-         * Total storage capacity in GB for vault storage.
-         */
-        highCapacityDatabaseStorage: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemCatalogDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemCatalogDetailPeerDetail {
-        /**
-         * The name of the availability domain that the distributed database shard will be located in.
-         */
-        availabilityDomain: string;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * The Storage Vault for Distributed Database Resource
-         */
-        dbStorageVaultDetails: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemCatalogDetailPeerDetailDbStorageVaultDetail[];
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
-        metadatas: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemCatalogDetailPeerDetailMetadata[];
-        /**
-         * The protectionMode for the shard peer.
-         */
-        protectionMode: string;
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * Status of EXADB_XS based shard.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-        /**
-         * The redo transport type to use for this Data Guard association.
-         */
-        transportType: string;
-        /**
-         * The Exadata VM cluster for Distributed Database Resource
-         */
-        vmClusterDetails: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemCatalogDetailPeerDetailVmClusterDetail[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
-         */
-        vmClusterId: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemCatalogDetailPeerDetailDbStorageVaultDetail {
-        /**
-         * The size of additional Flash Cache in percentage of High Capacity database storage.
-         */
-        additionalFlashCacheInPercent: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
-         */
-        dbStorageVaultId: string;
-        /**
-         * A filter to return only Globally distributed databases that match the entire name given. The match is not case sensitive.
-         */
-        displayName: string;
-        /**
-         * Total storage capacity in GB for vault storage.
-         */
-        highCapacityDatabaseStorage: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemCatalogDetailPeerDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemCatalogDetailPeerDetailVmClusterDetail {
-        /**
-         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-         */
-        backupNetworkNsgIds: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        backupSubnetId: string;
-        /**
-         * A filter to return only Globally distributed databases that match the entire name given. The match is not case sensitive.
-         */
-        displayName: string;
-        /**
-         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
-         */
-        domain: string;
-        /**
-         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        enabledEcpuCount: number;
-        /**
-         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
-         */
-        isDiagnosticsEventsEnabled: boolean;
-        /**
-         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
-         */
-        isHealthMonitoringEnabled: boolean;
-        /**
-         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
-         */
-        isIncidentLogsEnabled: boolean;
-        /**
-         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-         */
-        licenseModel: string;
-        /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-         */
-        nsgIds: string[];
-        /**
-         * The private zone ID in which you want DNS records to be created.
-         */
-        privateZoneId: string;
-        /**
-         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
-         */
-        sshPublicKeys: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        subnetId: string;
-        /**
-         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        totalEcpuCount: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
-         */
-        vmClusterId: string;
-        /**
-         * File System Storage Size in GBs for Exadata VM cluster.
-         */
-        vmFileSystemStorageSize: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemCatalogDetailVmClusterDetail {
-        /**
-         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-         */
-        backupNetworkNsgIds: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        backupSubnetId: string;
-        /**
-         * A filter to return only Globally distributed databases that match the entire name given. The match is not case sensitive.
-         */
-        displayName: string;
-        /**
-         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
-         */
-        domain: string;
-        /**
-         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        enabledEcpuCount: number;
-        /**
-         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
-         */
-        isDiagnosticsEventsEnabled: boolean;
-        /**
-         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
-         */
-        isHealthMonitoringEnabled: boolean;
-        /**
-         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
-         */
-        isIncidentLogsEnabled: boolean;
-        /**
-         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-         */
-        licenseModel: string;
-        /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-         */
-        nsgIds: string[];
-        /**
-         * The private zone ID in which you want DNS records to be created.
-         */
-        privateZoneId: string;
-        /**
-         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
-         */
-        sshPublicKeys: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        subnetId: string;
-        /**
-         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        totalEcpuCount: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
-         */
-        vmClusterId: string;
-        /**
-         * File System Storage Size in GBs for Exadata VM cluster.
-         */
-        vmFileSystemStorageSize: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemConnectionString {
-        /**
-         * Collection of connection strings.
-         */
-        allConnectionStrings: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemDbBackupConfig {
-        /**
-         * Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive). Example: `SLOT_TWO`
-         */
-        autoBackupWindow: string;
-        /**
-         * Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
-         */
-        autoFullBackupDay: string;
-        /**
-         * Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive). Example: `SLOT_TWO`
-         */
-        autoFullBackupWindow: string;
-        /**
-         * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
-         */
-        backupDeletionPolicy: string;
-        /**
-         * Backup destination details.
-         */
-        backupDestinationDetails: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemDbBackupConfigBackupDestinationDetail[];
-        /**
-         * If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
-         */
-        canRunImmediateFullBackup: boolean;
-        /**
-         * If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-         */
-        isAutoBackupEnabled: boolean;
-        /**
-         * If set to true, configures automatic incremental backups in the local region (the region of the DB system) and the remote region with a default frequency of 1 hour. If you previously used RMAN or dbcli to configure backups, using the Console or the API for manged backups creates a new backup configuration for your database. The new configuration replaces the configuration created with RMAN or dbcli. This means that you can no longer rely on your previously configured unmanaged backups to work.
-         */
-        isRemoteBackupEnabled: boolean;
-        /**
-         * Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-         */
-        recoveryWindowInDays: number;
-        /**
-         * The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-         */
-        remoteRegion: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemDbBackupConfigBackupDestinationDetail {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-         */
-        dbrsPolicyId: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
-         */
-        id: string;
-        /**
-         * Proxy URL to connect to object store.
-         */
-        internetProxy: string;
-        /**
-         * Indicates whether the backup destination is cross-region or local region.
-         */
-        isRemote: boolean;
-        /**
-         * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
-         */
-        isZeroDataLossEnabled: boolean;
-        /**
-         * The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-         */
-        remoteRegion: string;
-        /**
-         * Type of the database backup destination.
-         */
-        type: string;
-        /**
-         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-         */
-        vpcPassword: string;
-        /**
-         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-         */
-        vpcUser: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemGsmDetail {
-        /**
-         * The compute count for the Global service manager instance.
-         */
-        computeCount: number;
-        /**
-         * The data disk group size to be allocated in GBs for the Global service manager instance.
-         */
-        dataStorageSizeInGbs: number;
-        /**
-         * The Global service manager image details
-         */
-        gsmImageDetails: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemGsmDetailGsmImageDetail[];
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
-        metadatas: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemGsmDetailMetadata[];
-        /**
-         * Name of the shard.
-         */
-        name: string;
-        /**
-         * Status of EXADB_XS based shard.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string
-         */
-        timeSslCertificateExpires: string;
-        /**
-         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemGsmDetailGsmImageDetail {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
-         */
-        id: string;
-        /**
-         * The version number associated with the image identified by id.
-         */
-        versionNumber: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemGsmDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemLatestGsmImageDetail {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
-         */
-        id: string;
-        /**
-         * The version number associated with the image identified by id.
-         */
-        versionNumber: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemPatchOperation {
-        operation: string;
-        selection: string;
-        value: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemShardDetail {
-        adminPassword: string;
-        /**
-         * The name of the availability domain that the distributed database shard will be located in.
-         */
-        availabilityDomain: string;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-         */
-        dbHomeId: string;
-        /**
-         * The Storage Vault for Distributed Database Resource
-         */
-        dbStorageVaultDetails: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemShardDetailDbStorageVaultDetail[];
-        /**
-         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-         */
-        kmsKeyId: string;
-        /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
-         */
-        kmsKeyVersionId: string;
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
-        metadatas: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemShardDetailMetadata[];
-        /**
-         * Name of the shard.
-         */
-        name: string;
-        /**
-         * Peer details for the shard.
-         */
-        peerDetails: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemShardDetailPeerDetail[];
-        peerVmClusterIds: string[];
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * The shard space name for the Globally distributed database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards.
-         */
-        shardSpace: string;
-        /**
-         * Type of Globally distributed database Shard or Catalog. Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch. Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters. EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
-         */
-        source: string;
-        /**
-         * Status of EXADB_XS based shard.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
-         */
-        vaultId: string;
-        /**
-         * The Exadata VM cluster for Distributed Database Resource
-         */
-        vmClusterDetails: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemShardDetailVmClusterDetail[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
-         */
-        vmClusterId: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemShardDetailDbStorageVaultDetail {
-        /**
-         * The size of additional Flash Cache in percentage of High Capacity database storage.
-         */
-        additionalFlashCacheInPercent: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
-         */
-        dbStorageVaultId: string;
-        /**
-         * A filter to return only Globally distributed databases that match the entire name given. The match is not case sensitive.
-         */
-        displayName: string;
-        /**
-         * Total storage capacity in GB for vault storage.
-         */
-        highCapacityDatabaseStorage: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemShardDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemShardDetailPeerDetail {
-        /**
-         * The name of the availability domain that the distributed database shard will be located in.
-         */
-        availabilityDomain: string;
-        /**
-         * the identifier of the container database for underlying supporting resource.
-         */
-        containerDatabaseId: string;
-        /**
-         * The Storage Vault for Distributed Database Resource
-         */
-        dbStorageVaultDetails: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemShardDetailPeerDetailDbStorageVaultDetail[];
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
-        metadatas: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemShardDetailPeerDetailMetadata[];
-        /**
-         * The protectionMode for the shard peer.
-         */
-        protectionMode: string;
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-        /**
-         * Status of EXADB_XS based shard.
-         */
-        status: string;
-        /**
-         * the identifier of the underlying supporting resource.
-         */
-        supportingResourceId: string;
-        /**
-         * The time the Globally distributed database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated: string;
-        /**
-         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated: string;
-        /**
-         * The redo transport type to use for this Data Guard association.
-         */
-        transportType: string;
-        /**
-         * The Exadata VM cluster for Distributed Database Resource
-         */
-        vmClusterDetails: outputs.oci.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemShardDetailPeerDetailVmClusterDetail[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
-         */
-        vmClusterId: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemShardDetailPeerDetailDbStorageVaultDetail {
-        /**
-         * The size of additional Flash Cache in percentage of High Capacity database storage.
-         */
-        additionalFlashCacheInPercent: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
-         */
-        dbStorageVaultId: string;
-        /**
-         * A filter to return only Globally distributed databases that match the entire name given. The match is not case sensitive.
-         */
-        displayName: string;
-        /**
-         * Total storage capacity in GB for vault storage.
-         */
-        highCapacityDatabaseStorage: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemShardDetailPeerDetailMetadata {
-        /**
-         * The map containing key-value pair of additional metadata.
-         */
-        map: {[key: string]: string};
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemShardDetailPeerDetailVmClusterDetail {
-        /**
-         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-         */
-        backupNetworkNsgIds: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        backupSubnetId: string;
-        /**
-         * A filter to return only Globally distributed databases that match the entire name given. The match is not case sensitive.
-         */
-        displayName: string;
-        /**
-         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
-         */
-        domain: string;
-        /**
-         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        enabledEcpuCount: number;
-        /**
-         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
-         */
-        isDiagnosticsEventsEnabled: boolean;
-        /**
-         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
-         */
-        isHealthMonitoringEnabled: boolean;
-        /**
-         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
-         */
-        isIncidentLogsEnabled: boolean;
-        /**
-         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-         */
-        licenseModel: string;
-        /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-         */
-        nsgIds: string[];
-        /**
-         * The private zone ID in which you want DNS records to be created.
-         */
-        privateZoneId: string;
-        /**
-         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
-         */
-        sshPublicKeys: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        subnetId: string;
-        /**
-         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        totalEcpuCount: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
-         */
-        vmClusterId: string;
-        /**
-         * File System Storage Size in GBs for Exadata VM cluster.
-         */
-        vmFileSystemStorageSize: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemShardDetailVmClusterDetail {
-        /**
-         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-         */
-        backupNetworkNsgIds: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        backupSubnetId: string;
-        /**
-         * A filter to return only Globally distributed databases that match the entire name given. The match is not case sensitive.
-         */
-        displayName: string;
-        /**
-         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
-         */
-        domain: string;
-        /**
-         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        enabledEcpuCount: number;
-        /**
-         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
-         */
-        isDiagnosticsEventsEnabled: boolean;
-        /**
-         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
-         */
-        isHealthMonitoringEnabled: boolean;
-        /**
-         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
-         */
-        isIncidentLogsEnabled: boolean;
-        /**
-         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-         */
-        licenseModel: string;
-        /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-         */
-        nsgIds: string[];
-        /**
-         * The private zone ID in which you want DNS records to be created.
-         */
-        privateZoneId: string;
-        /**
-         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
-         */
-        sshPublicKeys: string[];
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-         */
-        subnetId: string;
-        /**
-         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
-         */
-        totalEcpuCount: number;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
-         */
-        vmClusterId: string;
-        /**
-         * File System Storage Size in GBs for Exadata VM cluster.
-         */
-        vmFileSystemStorageSize: number;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemValidateNetworkDetail {
-        isSurrogate: boolean;
-        resourceName: string;
-        /**
-         * The name of the shardGroup for the shard.
-         */
-        shardGroup: string;
-    }
-
-    export interface GetDistributedDatabaseDistributedDatabasesFilter {
-        /**
-         * Name of the shard.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetGdpGdpPipelineBucketDetail {
         /**
          * Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
@@ -324670,6 +320745,10 @@ export namespace oci {
          */
         condition: string;
         /**
+         * JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+         */
+        contentRoot: string;
+        /**
          * Meaningful write up about the inbound route.
          */
         description: string;
@@ -324681,6 +320760,10 @@ export namespace oci {
          * Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
          */
         referencePayloads: outputs.oci.GetIotDigitalTwinAdapterInboundRouteReferencePayload[];
+        /**
+         * Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+         */
+        target: string;
     }
 
     export interface GetIotDigitalTwinAdapterInboundRouteReferencePayload {
@@ -324736,7 +320819,7 @@ export namespace oci {
          */
         inboundRoutes: outputs.oci.GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRoute[];
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list IoT resources.
          */
         iotDomainId: string;
         /**
@@ -324804,6 +320887,10 @@ export namespace oci {
          */
         condition: string;
         /**
+         * JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+         */
+        contentRoot: string;
+        /**
          * Meaningful write up about the inbound route.
          */
         description: string;
@@ -324815,6 +320902,10 @@ export namespace oci {
          * Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
          */
         referencePayloads: outputs.oci.GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayload[];
+        /**
+         * Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+         */
+        target: string;
     }
 
     export interface GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayload {
@@ -324888,7 +320979,7 @@ export namespace oci {
          */
         id: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list IoT resources.
          */
         iotDomainId: string;
         /**
@@ -324941,7 +321032,7 @@ export namespace oci {
          */
         id: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list IoT resources.
          */
         iotDomainId: string;
         spec: string;
@@ -325007,7 +321098,7 @@ export namespace oci {
          */
         id: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list IoT resources.
          */
         iotDomainId: string;
         /**
@@ -325129,7 +321220,7 @@ export namespace oci {
          */
         timeUpdated: string;
         /**
-         * Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+         * Filter resources by type. Valid values are DEVELOPMENT or PRODUCTION. LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION, respectively.
          */
         type: string;
     }
@@ -325224,6 +321315,161 @@ export namespace oci {
          * Number of days for which any data sent to IoT devices would be retained for.
          */
         rejectedData: number;
+    }
+
+    export interface GetIotIotFlowRuntimeLogConfig {
+        /**
+         * The OCID of the log group associated with the IoT flow runtime.
+         */
+        logGroupId: string;
+        /**
+         * The OCID of the log that receives IoT flow runtime container logs.
+         */
+        logId: string;
+    }
+
+    export interface GetIotIotFlowRuntimeNetworkConfig {
+        /**
+         * The File Storage mounts to attach to the IoT flow runtime. If specified, this list must contain from 1 to 5 items.
+         */
+        fileStorageMounts: outputs.oci.GetIotIotFlowRuntimeNetworkConfigFileStorageMount[];
+        /**
+         * The OCIDs of the network security groups associated with the IoT flow runtime.
+         */
+        networkSecurityGroupIds: string[];
+        /**
+         * The OCID of the subnet used by the IoT flow runtime.
+         */
+        subnetId: string;
+    }
+
+    export interface GetIotIotFlowRuntimeNetworkConfigFileStorageMount {
+        /**
+         * The OCID of the File Storage export.
+         */
+        exportId: string;
+        /**
+         * The path relative to `/mnt` where the File Storage export is mounted. Do not include a leading slash or the `/mnt` prefix.
+         */
+        mountPath: string;
+        /**
+         * The OCID of the File Storage mount target.
+         */
+        mountTargetId: string;
+    }
+
+    export interface GetIotIotFlowRuntimesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetIotIotFlowRuntimesIotFlowRuntimeCollection {
+        items: outputs.oci.GetIotIotFlowRuntimesIotFlowRuntimeCollectionItem[];
+    }
+
+    export interface GetIotIotFlowRuntimesIotFlowRuntimeCollectionItem {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * A short description of the resource.
+         */
+        description: string;
+        /**
+         * Filter resources whose display name matches the specified value.
+         */
+        displayName: string;
+        /**
+         * Hostname of the IoT flow runtime.
+         */
+        flowRuntimeHost: string;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+         */
+        id: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list flow runtime.
+         */
+        iotDomainId: string;
+        /**
+         * Logging configuration for an IoT flow runtime.
+         */
+        logConfigs: outputs.oci.GetIotIotFlowRuntimesIotFlowRuntimeCollectionItemLogConfig[];
+        /**
+         * Network access configuration for an IoT flow runtime.
+         */
+        networkConfigs: outputs.oci.GetIotIotFlowRuntimesIotFlowRuntimeCollectionItemNetworkConfig[];
+        /**
+         * The scale of the IoT flow runtime. Larger values allocate more CPU and memory for higher throughput and operational headroom. MEDIUM is the default value.
+         */
+        scale: string;
+        /**
+         * Filter resources whose lifecycleState matches the specified value.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+         */
+        timeCreated: string;
+        /**
+         * The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetIotIotFlowRuntimesIotFlowRuntimeCollectionItemLogConfig {
+        /**
+         * The OCID of the log group associated with the IoT flow runtime.
+         */
+        logGroupId: string;
+        /**
+         * The OCID of the log that receives IoT flow runtime container logs.
+         */
+        logId: string;
+    }
+
+    export interface GetIotIotFlowRuntimesIotFlowRuntimeCollectionItemNetworkConfig {
+        /**
+         * The File Storage mounts to attach to the IoT flow runtime. If specified, this list must contain from 1 to 5 items.
+         */
+        fileStorageMounts: outputs.oci.GetIotIotFlowRuntimesIotFlowRuntimeCollectionItemNetworkConfigFileStorageMount[];
+        /**
+         * The OCIDs of the network security groups associated with the IoT flow runtime.
+         */
+        networkSecurityGroupIds: string[];
+        /**
+         * The OCID of the subnet used by the IoT flow runtime.
+         */
+        subnetId: string;
+    }
+
+    export interface GetIotIotFlowRuntimesIotFlowRuntimeCollectionItemNetworkConfigFileStorageMount {
+        /**
+         * The OCID of the File Storage export.
+         */
+        exportId: string;
+        /**
+         * The path relative to `/mnt` where the File Storage export is mounted. Do not include a leading slash or the `/mnt` prefix.
+         */
+        mountPath: string;
+        /**
+         * The OCID of the File Storage mount target.
+         */
+        mountTargetId: string;
     }
 
     export interface GetManagedKafkaAddonOptionsAddonOptionCollection {
@@ -328228,6 +324474,10 @@ export namespace oci {
          */
         condition: string;
         /**
+         * (Updatable) JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+         */
+        contentRoot: string;
+        /**
          * (Updatable) Meaningful write up about the inbound route.
          */
         description: string;
@@ -328243,6 +324493,10 @@ export namespace oci {
          * (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
          */
         referencePayload: outputs.oci.IotDigitalTwinAdapterInboundRouteReferencePayload;
+        /**
+         * (Updatable) Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+         */
+        target: string;
     }
 
     export interface IotDigitalTwinAdapterInboundRouteReferencePayload {
@@ -328273,6 +324527,47 @@ export namespace oci {
          * Number of days for which any data sent to IoT devices would be retained for.
          */
         rejectedData: number;
+    }
+
+    export interface IotIotFlowRuntimeLogConfig {
+        /**
+         * (Updatable) The OCID of the log group associated with the IoT flow runtime.
+         */
+        logGroupId: string;
+        /**
+         * (Updatable) The OCID of the log that receives IoT flow runtime container logs.
+         */
+        logId: string;
+    }
+
+    export interface IotIotFlowRuntimeNetworkConfig {
+        /**
+         * (Updatable) The File Storage mounts to attach to the IoT flow runtime. If specified, this list must contain from 1 to 5 items.
+         */
+        fileStorageMounts: outputs.oci.IotIotFlowRuntimeNetworkConfigFileStorageMount[];
+        /**
+         * (Updatable) The OCIDs of the network security groups associated with the IoT flow runtime.
+         */
+        networkSecurityGroupIds: string[];
+        /**
+         * (Updatable) The OCID of the subnet used by the IoT flow runtime.
+         */
+        subnetId: string;
+    }
+
+    export interface IotIotFlowRuntimeNetworkConfigFileStorageMount {
+        /**
+         * (Updatable) The OCID of the File Storage export.
+         */
+        exportId: string;
+        /**
+         * (Updatable) The path relative to `/mnt` where the File Storage export is mounted. Do not include a leading slash or the `/mnt` prefix.
+         */
+        mountPath: string;
+        /**
+         * (Updatable) The OCID of the File Storage mount target.
+         */
+        mountTargetId: string;
     }
 
     export interface ManagedKafkaKafkaClusterAccessSubnet {

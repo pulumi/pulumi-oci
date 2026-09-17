@@ -12,15 +12,9 @@ namespace Pulumi.Oci.Database.Inputs
 
     public sealed class AutonomousDatabaseBackupConfigArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
-        /// </summary>
         [Input("manualBackupBucketName")]
         public Input<string>? ManualBackupBucketName { get; set; }
 
-        /// <summary>
-        /// The manual backup destination type.
-        /// </summary>
         [Input("manualBackupType")]
         public Input<string>? ManualBackupType { get; set; }
 

@@ -36,6 +36,7 @@ class ClusterArgs:
                  esxi_software_version: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  initial_commitment: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_fault_domain_host_distribution: pulumi.Input[Optional[_builtins.str]] = None,
                  initial_host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
                  initial_host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
                  initial_vcf_byol_allocation_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -61,6 +62,7 @@ class ClusterArgs:
         :param pulumi.Input[_builtins.str] esxi_software_version: (Updatable) The ESXi software bundle to install on the ESXi hosts in the Cluster.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] initial_commitment: The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
+        :param pulumi.Input[_builtins.str] initial_fault_domain_host_distribution: The initial fault domain host distribution mode for the Cluster.
         :param pulumi.Input[_builtins.float] initial_host_ocpu_count: The initial OCPU count of the Cluster's ESXi hosts.
         :param pulumi.Input[_builtins.str] initial_host_shape_name: The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         :param pulumi.Input[_builtins.str] initial_vcf_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
@@ -100,6 +102,8 @@ class ClusterArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if initial_commitment is not None:
             pulumi.set(__self__, "initial_commitment", initial_commitment)
+        if initial_fault_domain_host_distribution is not None:
+            pulumi.set(__self__, "initial_fault_domain_host_distribution", initial_fault_domain_host_distribution)
         if initial_host_ocpu_count is not None:
             pulumi.set(__self__, "initial_host_ocpu_count", initial_host_ocpu_count)
         if initial_host_shape_name is not None:
@@ -292,6 +296,18 @@ class ClusterArgs:
         pulumi.set(self, "initial_commitment", value)
 
     @_builtins.property
+    @pulumi.getter(name="initialFaultDomainHostDistribution")
+    def initial_fault_domain_host_distribution(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The initial fault domain host distribution mode for the Cluster.
+        """
+        return pulumi.get(self, "initial_fault_domain_host_distribution")
+
+    @initial_fault_domain_host_distribution.setter
+    def initial_fault_domain_host_distribution(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "initial_fault_domain_host_distribution", value)
+
+    @_builtins.property
     @pulumi.getter(name="initialHostOcpuCount")
     def initial_host_ocpu_count(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
@@ -399,6 +415,7 @@ class _ClusterState:
                  esxi_software_version: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  initial_commitment: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_fault_domain_host_distribution: pulumi.Input[Optional[_builtins.str]] = None,
                  initial_host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
                  initial_host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
                  initial_vcf_byol_allocation_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -432,6 +449,7 @@ class _ClusterState:
         :param pulumi.Input[_builtins.str] esxi_software_version: (Updatable) The ESXi software bundle to install on the ESXi hosts in the Cluster.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] initial_commitment: The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
+        :param pulumi.Input[_builtins.str] initial_fault_domain_host_distribution: The initial fault domain host distribution mode for the Cluster.
         :param pulumi.Input[_builtins.float] initial_host_ocpu_count: The initial OCPU count of the Cluster's ESXi hosts.
         :param pulumi.Input[_builtins.str] initial_host_shape_name: The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         :param pulumi.Input[_builtins.str] initial_vcf_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
@@ -484,6 +502,8 @@ class _ClusterState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if initial_commitment is not None:
             pulumi.set(__self__, "initial_commitment", initial_commitment)
+        if initial_fault_domain_host_distribution is not None:
+            pulumi.set(__self__, "initial_fault_domain_host_distribution", initial_fault_domain_host_distribution)
         if initial_host_ocpu_count is not None:
             pulumi.set(__self__, "initial_host_ocpu_count", initial_host_ocpu_count)
         if initial_host_shape_name is not None:
@@ -689,6 +709,18 @@ class _ClusterState:
     @initial_commitment.setter
     def initial_commitment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "initial_commitment", value)
+
+    @_builtins.property
+    @pulumi.getter(name="initialFaultDomainHostDistribution")
+    def initial_fault_domain_host_distribution(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The initial fault domain host distribution mode for the Cluster.
+        """
+        return pulumi.get(self, "initial_fault_domain_host_distribution")
+
+    @initial_fault_domain_host_distribution.setter
+    def initial_fault_domain_host_distribution(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "initial_fault_domain_host_distribution", value)
 
     @_builtins.property
     @pulumi.getter(name="initialHostOcpuCount")
@@ -907,6 +939,7 @@ class Cluster(pulumi.CustomResource):
                  esxi_software_version: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  initial_commitment: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_fault_domain_host_distribution: pulumi.Input[Optional[_builtins.str]] = None,
                  initial_host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
                  initial_host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
                  initial_vcf_byol_allocation_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -972,6 +1005,7 @@ class Cluster(pulumi.CustomResource):
                 "Department": "Finance",
             },
             initial_commitment=cluster_initial_commitment,
+            initial_fault_domain_host_distribution=cluster_initial_fault_domain_host_distribution,
             initial_host_ocpu_count=cluster_initial_host_ocpu_count,
             initial_host_shape_name=test_shape["name"],
             initial_vcf_byol_allocation_id=test_byol_allocation["id"],
@@ -1005,6 +1039,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] esxi_software_version: (Updatable) The ESXi software bundle to install on the ESXi hosts in the Cluster.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] initial_commitment: The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
+        :param pulumi.Input[_builtins.str] initial_fault_domain_host_distribution: The initial fault domain host distribution mode for the Cluster.
         :param pulumi.Input[_builtins.float] initial_host_ocpu_count: The initial OCPU count of the Cluster's ESXi hosts.
         :param pulumi.Input[_builtins.str] initial_host_shape_name: The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         :param pulumi.Input[_builtins.str] initial_vcf_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
@@ -1081,6 +1116,7 @@ class Cluster(pulumi.CustomResource):
                 "Department": "Finance",
             },
             initial_commitment=cluster_initial_commitment,
+            initial_fault_domain_host_distribution=cluster_initial_fault_domain_host_distribution,
             initial_host_ocpu_count=cluster_initial_host_ocpu_count,
             initial_host_shape_name=test_shape["name"],
             initial_vcf_byol_allocation_id=test_byol_allocation["id"],
@@ -1127,6 +1163,7 @@ class Cluster(pulumi.CustomResource):
                  esxi_software_version: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  initial_commitment: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_fault_domain_host_distribution: pulumi.Input[Optional[_builtins.str]] = None,
                  initial_host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
                  initial_host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
                  initial_vcf_byol_allocation_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1162,6 +1199,7 @@ class Cluster(pulumi.CustomResource):
             __props__.__dict__["esxi_software_version"] = esxi_software_version
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["initial_commitment"] = initial_commitment
+            __props__.__dict__["initial_fault_domain_host_distribution"] = initial_fault_domain_host_distribution
             __props__.__dict__["initial_host_ocpu_count"] = initial_host_ocpu_count
             __props__.__dict__["initial_host_shape_name"] = initial_host_shape_name
             __props__.__dict__["initial_vcf_byol_allocation_id"] = initial_vcf_byol_allocation_id
@@ -1209,6 +1247,7 @@ class Cluster(pulumi.CustomResource):
             esxi_software_version: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             initial_commitment: pulumi.Input[Optional[_builtins.str]] = None,
+            initial_fault_domain_host_distribution: pulumi.Input[Optional[_builtins.str]] = None,
             initial_host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
             initial_host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
             initial_vcf_byol_allocation_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1246,6 +1285,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] esxi_software_version: (Updatable) The ESXi software bundle to install on the ESXi hosts in the Cluster.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] initial_commitment: The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
+        :param pulumi.Input[_builtins.str] initial_fault_domain_host_distribution: The initial fault domain host distribution mode for the Cluster.
         :param pulumi.Input[_builtins.float] initial_host_ocpu_count: The initial OCPU count of the Cluster's ESXi hosts.
         :param pulumi.Input[_builtins.str] initial_host_shape_name: The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         :param pulumi.Input[_builtins.str] initial_vcf_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
@@ -1287,6 +1327,7 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["esxi_software_version"] = esxi_software_version
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["initial_commitment"] = initial_commitment
+        __props__.__dict__["initial_fault_domain_host_distribution"] = initial_fault_domain_host_distribution
         __props__.__dict__["initial_host_ocpu_count"] = initial_host_ocpu_count
         __props__.__dict__["initial_host_shape_name"] = initial_host_shape_name
         __props__.__dict__["initial_vcf_byol_allocation_id"] = initial_vcf_byol_allocation_id
@@ -1417,6 +1458,14 @@ class Cluster(pulumi.CustomResource):
         The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
         """
         return pulumi.get(self, "initial_commitment")
+
+    @_builtins.property
+    @pulumi.getter(name="initialFaultDomainHostDistribution")
+    def initial_fault_domain_host_distribution(self) -> pulumi.Output[_builtins.str]:
+        """
+        The initial fault domain host distribution mode for the Cluster.
+        """
+        return pulumi.get(self, "initial_fault_domain_host_distribution")
 
     @_builtins.property
     @pulumi.getter(name="initialHostOcpuCount")

@@ -455,12 +455,14 @@ class IotDigitalTwinAdapter(pulumi.CustomResource):
             },
             inbound_routes=[{
                 "condition": digital_twin_adapter_inbound_routes_condition,
+                "content_root": digital_twin_adapter_inbound_routes_content_root,
                 "description": digital_twin_adapter_inbound_routes_description,
                 "payload_mapping": digital_twin_adapter_inbound_routes_payload_mapping,
                 "reference_payload": {
                     "data": digital_twin_adapter_inbound_routes_reference_payload_data,
                     "data_format": digital_twin_adapter_inbound_routes_reference_payload_data_format,
                 },
+                "target": digital_twin_adapter_inbound_routes_target,
             }])
         ```
 
@@ -534,12 +536,14 @@ class IotDigitalTwinAdapter(pulumi.CustomResource):
             },
             inbound_routes=[{
                 "condition": digital_twin_adapter_inbound_routes_condition,
+                "content_root": digital_twin_adapter_inbound_routes_content_root,
                 "description": digital_twin_adapter_inbound_routes_description,
                 "payload_mapping": digital_twin_adapter_inbound_routes_payload_mapping,
                 "reference_payload": {
                     "data": digital_twin_adapter_inbound_routes_reference_payload_data,
                     "data_format": digital_twin_adapter_inbound_routes_reference_payload_data_format,
                 },
+                "target": digital_twin_adapter_inbound_routes_target,
             }])
         ```
 

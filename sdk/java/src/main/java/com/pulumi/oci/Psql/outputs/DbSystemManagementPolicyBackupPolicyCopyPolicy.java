@@ -20,6 +20,11 @@ public final class DbSystemManagementPolicyBackupPolicyCopyPolicy {
      */
     private String compartmentId;
     /**
+     * @return (Updatable) List of key ids of the remote regions
+     * 
+     */
+    private @Nullable List<String> kmsKeyIds;
+    /**
      * @return (Updatable) List of region names of the remote region
      * 
      */
@@ -37,6 +42,13 @@ public final class DbSystemManagementPolicyBackupPolicyCopyPolicy {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return (Updatable) List of key ids of the remote regions
+     * 
+     */
+    public List<String> kmsKeyIds() {
+        return this.kmsKeyIds == null ? List.of() : this.kmsKeyIds;
     }
     /**
      * @return (Updatable) List of region names of the remote region
@@ -63,12 +75,14 @@ public final class DbSystemManagementPolicyBackupPolicyCopyPolicy {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private @Nullable List<String> kmsKeyIds;
         private List<String> regions;
         private @Nullable Integer retentionPeriod;
         public Builder() {}
         public Builder(DbSystemManagementPolicyBackupPolicyCopyPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.kmsKeyIds = defaults.kmsKeyIds;
     	      this.regions = defaults.regions;
     	      this.retentionPeriod = defaults.retentionPeriod;
         }
@@ -80,6 +94,15 @@ public final class DbSystemManagementPolicyBackupPolicyCopyPolicy {
             }
             this.compartmentId = compartmentId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder kmsKeyIds(@Nullable List<String> kmsKeyIds) {
+
+            this.kmsKeyIds = kmsKeyIds;
+            return this;
+        }
+        public Builder kmsKeyIds(String... kmsKeyIds) {
+            return kmsKeyIds(List.of(kmsKeyIds));
         }
         @CustomType.Setter
         public Builder regions(List<String> regions) {
@@ -101,6 +124,7 @@ public final class DbSystemManagementPolicyBackupPolicyCopyPolicy {
         public DbSystemManagementPolicyBackupPolicyCopyPolicy build() {
             final var _resultValue = new DbSystemManagementPolicyBackupPolicyCopyPolicy();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.kmsKeyIds = kmsKeyIds;
             _resultValue.regions = regions;
             _resultValue.retentionPeriod = retentionPeriod;
             return _resultValue;

@@ -39,7 +39,7 @@ class IotDigitalTwinInstanceArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] auth_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
-        :param pulumi.Input[_builtins.str] connectivity_type: Connectivity type of the digital twin instance
+        :param pulumi.Input[_builtins.str] connectivity_type: (Updatable)
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the resource.
         :param pulumi.Input[_builtins.str] digital_twin_adapter_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.
@@ -105,7 +105,7 @@ class IotDigitalTwinInstanceArgs:
     @pulumi.getter(name="connectivityType")
     def connectivity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Connectivity type of the digital twin instance
+        (Updatable)
         """
         return pulumi.get(self, "connectivity_type")
 
@@ -245,7 +245,7 @@ class _IotDigitalTwinInstanceState:
         Input properties used for looking up and filtering IotDigitalTwinInstance resources.
 
         :param pulumi.Input[_builtins.str] auth_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
-        :param pulumi.Input[_builtins.str] connectivity_type: Connectivity type of the digital twin instance
+        :param pulumi.Input[_builtins.str] connectivity_type: (Updatable)
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the resource.
         :param pulumi.Input[_builtins.str] digital_twin_adapter_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.
@@ -313,7 +313,7 @@ class _IotDigitalTwinInstanceState:
     @pulumi.getter(name="connectivityType")
     def connectivity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Connectivity type of the digital twin instance
+        (Updatable)
         """
         return pulumi.get(self, "connectivity_type")
 
@@ -557,7 +557,7 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] auth_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
-        :param pulumi.Input[_builtins.str] connectivity_type: Connectivity type of the digital twin instance
+        :param pulumi.Input[_builtins.str] connectivity_type: (Updatable)
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the resource.
         :param pulumi.Input[_builtins.str] digital_twin_adapter_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.
@@ -708,7 +708,7 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] auth_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
-        :param pulumi.Input[_builtins.str] connectivity_type: Connectivity type of the digital twin instance
+        :param pulumi.Input[_builtins.str] connectivity_type: (Updatable)
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the resource.
         :param pulumi.Input[_builtins.str] digital_twin_adapter_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.
@@ -761,7 +761,7 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
     @pulumi.getter(name="connectivityType")
     def connectivity_type(self) -> pulumi.Output[_builtins.str]:
         """
-        Connectivity type of the digital twin instance
+        (Updatable)
         """
         return pulumi.get(self, "connectivity_type")
 

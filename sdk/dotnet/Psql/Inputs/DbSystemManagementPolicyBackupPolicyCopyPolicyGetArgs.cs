@@ -18,6 +18,18 @@ namespace Pulumi.Oci.Psql.Inputs
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        [Input("kmsKeyIds")]
+        private InputList<string>? _kmsKeyIds;
+
+        /// <summary>
+        /// (Updatable) List of key ids of the remote regions
+        /// </summary>
+        public InputList<string> KmsKeyIds
+        {
+            get => _kmsKeyIds ?? (_kmsKeyIds = new InputList<string>());
+            set => _kmsKeyIds = value;
+        }
+
         [Input("regions", required: true)]
         private InputList<string>? _regions;
 

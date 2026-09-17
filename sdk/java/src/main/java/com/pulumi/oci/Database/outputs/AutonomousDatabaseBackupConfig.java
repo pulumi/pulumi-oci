@@ -11,29 +11,13 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class AutonomousDatabaseBackupConfig {
-    /**
-     * @return Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
-     * 
-     */
     private @Nullable String manualBackupBucketName;
-    /**
-     * @return The manual backup destination type.
-     * 
-     */
     private @Nullable String manualBackupType;
 
     private AutonomousDatabaseBackupConfig() {}
-    /**
-     * @return Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
-     * 
-     */
     public Optional<String> manualBackupBucketName() {
         return Optional.ofNullable(this.manualBackupBucketName);
     }
-    /**
-     * @return The manual backup destination type.
-     * 
-     */
     public Optional<String> manualBackupType() {
         return Optional.ofNullable(this.manualBackupType);
     }

@@ -79,7 +79,7 @@ export class IotDigitalTwinInstance extends pulumi.CustomResource {
      */
     declare public readonly authId: pulumi.Output<string>;
     /**
-     * Connectivity type of the digital twin instance
+     * (Updatable)
      */
     declare public readonly connectivityType: pulumi.Output<string>;
     /**
@@ -207,7 +207,7 @@ export interface IotDigitalTwinInstanceState {
      */
     authId?: pulumi.Input<string | undefined>;
     /**
-     * Connectivity type of the digital twin instance
+     * (Updatable)
      */
     connectivityType?: pulumi.Input<string | undefined>;
     /**
@@ -280,7 +280,7 @@ export interface IotDigitalTwinInstanceArgs {
      */
     authId?: pulumi.Input<string | undefined>;
     /**
-     * Connectivity type of the digital twin instance
+     * (Updatable)
      */
     connectivityType?: pulumi.Input<string | undefined>;
     /**

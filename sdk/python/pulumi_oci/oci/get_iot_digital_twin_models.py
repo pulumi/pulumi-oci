@@ -145,7 +145,7 @@ def get_iot_digital_twin_models(display_name: Optional[_builtins.str] = None,
 
     :param _builtins.str display_name: Filter resources whose display name matches the specified value.
     :param _builtins.str id: Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
-    :param _builtins.str iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+    :param _builtins.str iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list IoT resources.
     :param _builtins.str spec_uri_starts_with: Filters resources by spec URI prefix. For example, to search all versions of the `dtmi:example:device;1` model, pass the prefix without the version: `dtmi:example:device`.
     :param _builtins.str state: Filter resources whose lifecycleState matches the specified value.
     """
@@ -195,7 +195,7 @@ def get_iot_digital_twin_models_output(display_name: pulumi.Input[Optional[Optio
 
     :param _builtins.str display_name: Filter resources whose display name matches the specified value.
     :param _builtins.str id: Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
-    :param _builtins.str iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+    :param _builtins.str iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list IoT resources.
     :param _builtins.str spec_uri_starts_with: Filters resources by spec URI prefix. For example, to search all versions of the `dtmi:example:device;1` model, pass the prefix without the version: `dtmi:example:device`.
     :param _builtins.str state: Filter resources whose lifecycleState matches the specified value.
     """

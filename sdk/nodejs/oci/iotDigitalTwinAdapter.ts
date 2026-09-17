@@ -46,12 +46,14 @@ import * as utilities from "../utilities";
  *     },
  *     inboundRoutes: [{
  *         condition: digitalTwinAdapterInboundRoutesCondition,
+ *         contentRoot: digitalTwinAdapterInboundRoutesContentRoot,
  *         description: digitalTwinAdapterInboundRoutesDescription,
  *         payloadMapping: digitalTwinAdapterInboundRoutesPayloadMapping,
  *         referencePayload: {
  *             data: digitalTwinAdapterInboundRoutesReferencePayloadData,
  *             dataFormat: digitalTwinAdapterInboundRoutesReferencePayloadDataFormat,
  *         },
+ *         target: digitalTwinAdapterInboundRoutesTarget,
  *     }],
  * });
  * ```

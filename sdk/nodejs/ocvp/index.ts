@@ -95,6 +95,11 @@ export const getExsiHosts: typeof import("./getExsiHosts").getExsiHosts = null a
 export const getExsiHostsOutput: typeof import("./getExsiHosts").getExsiHostsOutput = null as any;
 utilities.lazyLoad(exports, ["getExsiHosts","getExsiHostsOutput"], () => require("./getExsiHosts"));
 
+export { GetGenerateVmwareBinaryDownloadInfoArgs, GetGenerateVmwareBinaryDownloadInfoResult, GetGenerateVmwareBinaryDownloadInfoOutputArgs } from "./getGenerateVmwareBinaryDownloadInfo";
+export const getGenerateVmwareBinaryDownloadInfo: typeof import("./getGenerateVmwareBinaryDownloadInfo").getGenerateVmwareBinaryDownloadInfo = null as any;
+export const getGenerateVmwareBinaryDownloadInfoOutput: typeof import("./getGenerateVmwareBinaryDownloadInfo").getGenerateVmwareBinaryDownloadInfoOutput = null as any;
+utilities.lazyLoad(exports, ["getGenerateVmwareBinaryDownloadInfo","getGenerateVmwareBinaryDownloadInfoOutput"], () => require("./getGenerateVmwareBinaryDownloadInfo"));
+
 export { GetManagementApplianceArgs, GetManagementApplianceResult, GetManagementApplianceOutputArgs } from "./getManagementAppliance";
 export const getManagementAppliance: typeof import("./getManagementAppliance").getManagementAppliance = null as any;
 export const getManagementApplianceOutput: typeof import("./getManagementAppliance").getManagementApplianceOutput = null as any;
@@ -109,6 +114,11 @@ export { GetRetrievePasswordArgs, GetRetrievePasswordResult, GetRetrievePassword
 export const getRetrievePassword: typeof import("./getRetrievePassword").getRetrievePassword = null as any;
 export const getRetrievePasswordOutput: typeof import("./getRetrievePassword").getRetrievePasswordOutput = null as any;
 utilities.lazyLoad(exports, ["getRetrievePassword","getRetrievePasswordOutput"], () => require("./getRetrievePassword"));
+
+export { GetRetrieveVmwareBinariesArgs, GetRetrieveVmwareBinariesResult, GetRetrieveVmwareBinariesOutputArgs } from "./getRetrieveVmwareBinaries";
+export const getRetrieveVmwareBinaries: typeof import("./getRetrieveVmwareBinaries").getRetrieveVmwareBinaries = null as any;
+export const getRetrieveVmwareBinariesOutput: typeof import("./getRetrieveVmwareBinaries").getRetrieveVmwareBinariesOutput = null as any;
+utilities.lazyLoad(exports, ["getRetrieveVmwareBinaries","getRetrieveVmwareBinariesOutput"], () => require("./getRetrieveVmwareBinaries"));
 
 export { GetSddcArgs, GetSddcResult, GetSddcOutputArgs } from "./getSddc";
 export const getSddc: typeof import("./getSddc").getSddc = null as any;

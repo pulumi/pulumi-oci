@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -261,9 +261,6 @@ func NewDbSystem(ctx *pulumi.Context,
 	}
 	if args.Shape == nil {
 		return nil, errors.New("invalid value for required argument 'Shape'")
-	}
-	if args.SshPublicKeys == nil {
-		return nil, errors.New("invalid value for required argument 'SshPublicKeys'")
 	}
 	if args.SubnetId == nil {
 		return nil, errors.New("invalid value for required argument 'SubnetId'")

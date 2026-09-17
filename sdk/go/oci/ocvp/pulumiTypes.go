@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -2079,6 +2079,8 @@ type SddcInitialConfigurationInitialClusterConfiguration struct {
 	EsxiHostsCount int `pulumi:"esxiHostsCount"`
 	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 	InitialCommitment *string `pulumi:"initialCommitment"`
+	// Initial Fault Domain Host distribution mode for the Cluster.
+	InitialFaultDomainHostDistribution *string `pulumi:"initialFaultDomainHostDistribution"`
 	// The initial OCPU count of the Cluster's ESXi hosts.
 	InitialHostOcpuCount *float64 `pulumi:"initialHostOcpuCount"`
 	// The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
@@ -2131,6 +2133,8 @@ type SddcInitialConfigurationInitialClusterConfigurationArgs struct {
 	EsxiHostsCount pulumi.IntInput `pulumi:"esxiHostsCount"`
 	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 	InitialCommitment pulumi.StringPtrInput `pulumi:"initialCommitment"`
+	// Initial Fault Domain Host distribution mode for the Cluster.
+	InitialFaultDomainHostDistribution pulumi.StringPtrInput `pulumi:"initialFaultDomainHostDistribution"`
 	// The initial OCPU count of the Cluster's ESXi hosts.
 	InitialHostOcpuCount pulumi.Float64PtrInput `pulumi:"initialHostOcpuCount"`
 	// The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
@@ -2251,6 +2255,13 @@ func (o SddcInitialConfigurationInitialClusterConfigurationOutput) EsxiHostsCoun
 // The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 func (o SddcInitialConfigurationInitialClusterConfigurationOutput) InitialCommitment() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) *string { return v.InitialCommitment }).(pulumi.StringPtrOutput)
+}
+
+// Initial Fault Domain Host distribution mode for the Cluster.
+func (o SddcInitialConfigurationInitialClusterConfigurationOutput) InitialFaultDomainHostDistribution() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) *string {
+		return v.InitialFaultDomainHostDistribution
+	}).(pulumi.StringPtrOutput)
 }
 
 // The initial OCPU count of the Cluster's ESXi hosts.
@@ -5069,6 +5080,8 @@ type GetClustersClusterCollectionItem struct {
 	Id string `pulumi:"id"`
 	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 	InitialCommitment string `pulumi:"initialCommitment"`
+	// The initial fault domain host distribution mode for the Cluster.
+	InitialFaultDomainHostDistribution string `pulumi:"initialFaultDomainHostDistribution"`
 	// The initial OCPU count of the Cluster's ESXi hosts.
 	InitialHostOcpuCount float64 `pulumi:"initialHostOcpuCount"`
 	// The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
@@ -5144,6 +5157,8 @@ type GetClustersClusterCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 	InitialCommitment pulumi.StringInput `pulumi:"initialCommitment"`
+	// The initial fault domain host distribution mode for the Cluster.
+	InitialFaultDomainHostDistribution pulumi.StringInput `pulumi:"initialFaultDomainHostDistribution"`
 	// The initial OCPU count of the Cluster's ESXi hosts.
 	InitialHostOcpuCount pulumi.Float64Input `pulumi:"initialHostOcpuCount"`
 	// The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
@@ -5308,6 +5323,11 @@ func (o GetClustersClusterCollectionItemOutput) Id() pulumi.StringOutput {
 // The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 func (o GetClustersClusterCollectionItemOutput) InitialCommitment() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.InitialCommitment }).(pulumi.StringOutput)
+}
+
+// The initial fault domain host distribution mode for the Cluster.
+func (o GetClustersClusterCollectionItemOutput) InitialFaultDomainHostDistribution() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.InitialFaultDomainHostDistribution }).(pulumi.StringOutput)
 }
 
 // The initial OCPU count of the Cluster's ESXi hosts.
@@ -7616,6 +7636,8 @@ type GetExsiHostsEsxiHostCollection struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The availability domain of the ESXi host.
 	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
+	// The fault domain of the ESXi host.
+	ComputeFaultDomain string `pulumi:"computeFaultDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
 	ComputeInstanceId string `pulumi:"computeInstanceId"`
 	// The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
@@ -7649,6 +7671,8 @@ type GetExsiHostsEsxiHostCollection struct {
 	HostShapeName string `pulumi:"hostShapeName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
 	Id string `pulumi:"id"`
+	// The initial fault domain host distribution mode for the ESXi host.
+	InitialFaultDomainHostDistribution string `pulumi:"initialFaultDomainHostDistribution"`
 	// Indicates whether this host is in the progress of billing continuation.
 	IsBillingContinuationInProgress bool `pulumi:"isBillingContinuationInProgress"`
 	// Indicates whether this host is in the progress of swapping billing.
@@ -7717,6 +7741,8 @@ type GetExsiHostsEsxiHostCollectionArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The availability domain of the ESXi host.
 	ComputeAvailabilityDomain pulumi.StringInput `pulumi:"computeAvailabilityDomain"`
+	// The fault domain of the ESXi host.
+	ComputeFaultDomain pulumi.StringInput `pulumi:"computeFaultDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
 	ComputeInstanceId pulumi.StringInput `pulumi:"computeInstanceId"`
 	// The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
@@ -7750,6 +7776,8 @@ type GetExsiHostsEsxiHostCollectionArgs struct {
 	HostShapeName pulumi.StringInput `pulumi:"hostShapeName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
 	Id pulumi.StringInput `pulumi:"id"`
+	// The initial fault domain host distribution mode for the ESXi host.
+	InitialFaultDomainHostDistribution pulumi.StringInput `pulumi:"initialFaultDomainHostDistribution"`
 	// Indicates whether this host is in the progress of billing continuation.
 	IsBillingContinuationInProgress pulumi.BoolInput `pulumi:"isBillingContinuationInProgress"`
 	// Indicates whether this host is in the progress of swapping billing.
@@ -7878,6 +7906,11 @@ func (o GetExsiHostsEsxiHostCollectionOutput) ComputeAvailabilityDomain() pulumi
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.ComputeAvailabilityDomain }).(pulumi.StringOutput)
 }
 
+// The fault domain of the ESXi host.
+func (o GetExsiHostsEsxiHostCollectionOutput) ComputeFaultDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.ComputeFaultDomain }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
 func (o GetExsiHostsEsxiHostCollectionOutput) ComputeInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.ComputeInstanceId }).(pulumi.StringOutput)
@@ -7956,6 +7989,11 @@ func (o GetExsiHostsEsxiHostCollectionOutput) HostShapeName() pulumi.StringOutpu
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
 func (o GetExsiHostsEsxiHostCollectionOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The initial fault domain host distribution mode for the ESXi host.
+func (o GetExsiHostsEsxiHostCollectionOutput) InitialFaultDomainHostDistribution() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.InitialFaultDomainHostDistribution }).(pulumi.StringOutput)
 }
 
 // Indicates whether this host is in the progress of billing continuation.
@@ -9494,6 +9532,236 @@ func (o GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnect
 	}).(GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutput)
 }
 
+type GetRetrieveVmwareBinariesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRetrieveVmwareBinariesFilterInput is an input type that accepts GetRetrieveVmwareBinariesFilterArgs and GetRetrieveVmwareBinariesFilterOutput values.
+// You can construct a concrete instance of `GetRetrieveVmwareBinariesFilterInput` via:
+//
+//	GetRetrieveVmwareBinariesFilterArgs{...}
+type GetRetrieveVmwareBinariesFilterInput interface {
+	pulumi.Input
+
+	ToGetRetrieveVmwareBinariesFilterOutput() GetRetrieveVmwareBinariesFilterOutput
+	ToGetRetrieveVmwareBinariesFilterOutputWithContext(context.Context) GetRetrieveVmwareBinariesFilterOutput
+}
+
+type GetRetrieveVmwareBinariesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRetrieveVmwareBinariesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRetrieveVmwareBinariesFilter)(nil)).Elem()
+}
+
+func (i GetRetrieveVmwareBinariesFilterArgs) ToGetRetrieveVmwareBinariesFilterOutput() GetRetrieveVmwareBinariesFilterOutput {
+	return i.ToGetRetrieveVmwareBinariesFilterOutputWithContext(context.Background())
+}
+
+func (i GetRetrieveVmwareBinariesFilterArgs) ToGetRetrieveVmwareBinariesFilterOutputWithContext(ctx context.Context) GetRetrieveVmwareBinariesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRetrieveVmwareBinariesFilterOutput)
+}
+
+// GetRetrieveVmwareBinariesFilterArrayInput is an input type that accepts GetRetrieveVmwareBinariesFilterArray and GetRetrieveVmwareBinariesFilterArrayOutput values.
+// You can construct a concrete instance of `GetRetrieveVmwareBinariesFilterArrayInput` via:
+//
+//	GetRetrieveVmwareBinariesFilterArray{ GetRetrieveVmwareBinariesFilterArgs{...} }
+type GetRetrieveVmwareBinariesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRetrieveVmwareBinariesFilterArrayOutput() GetRetrieveVmwareBinariesFilterArrayOutput
+	ToGetRetrieveVmwareBinariesFilterArrayOutputWithContext(context.Context) GetRetrieveVmwareBinariesFilterArrayOutput
+}
+
+type GetRetrieveVmwareBinariesFilterArray []GetRetrieveVmwareBinariesFilterInput
+
+func (GetRetrieveVmwareBinariesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRetrieveVmwareBinariesFilter)(nil)).Elem()
+}
+
+func (i GetRetrieveVmwareBinariesFilterArray) ToGetRetrieveVmwareBinariesFilterArrayOutput() GetRetrieveVmwareBinariesFilterArrayOutput {
+	return i.ToGetRetrieveVmwareBinariesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRetrieveVmwareBinariesFilterArray) ToGetRetrieveVmwareBinariesFilterArrayOutputWithContext(ctx context.Context) GetRetrieveVmwareBinariesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRetrieveVmwareBinariesFilterArrayOutput)
+}
+
+type GetRetrieveVmwareBinariesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRetrieveVmwareBinariesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRetrieveVmwareBinariesFilter)(nil)).Elem()
+}
+
+func (o GetRetrieveVmwareBinariesFilterOutput) ToGetRetrieveVmwareBinariesFilterOutput() GetRetrieveVmwareBinariesFilterOutput {
+	return o
+}
+
+func (o GetRetrieveVmwareBinariesFilterOutput) ToGetRetrieveVmwareBinariesFilterOutputWithContext(ctx context.Context) GetRetrieveVmwareBinariesFilterOutput {
+	return o
+}
+
+func (o GetRetrieveVmwareBinariesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRetrieveVmwareBinariesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRetrieveVmwareBinariesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRetrieveVmwareBinariesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRetrieveVmwareBinariesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRetrieveVmwareBinariesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRetrieveVmwareBinariesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRetrieveVmwareBinariesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRetrieveVmwareBinariesFilter)(nil)).Elem()
+}
+
+func (o GetRetrieveVmwareBinariesFilterArrayOutput) ToGetRetrieveVmwareBinariesFilterArrayOutput() GetRetrieveVmwareBinariesFilterArrayOutput {
+	return o
+}
+
+func (o GetRetrieveVmwareBinariesFilterArrayOutput) ToGetRetrieveVmwareBinariesFilterArrayOutputWithContext(ctx context.Context) GetRetrieveVmwareBinariesFilterArrayOutput {
+	return o
+}
+
+func (o GetRetrieveVmwareBinariesFilterArrayOutput) Index(i pulumi.IntInput) GetRetrieveVmwareBinariesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRetrieveVmwareBinariesFilter {
+		return vs[0].([]GetRetrieveVmwareBinariesFilter)[vs[1].(int)]
+	}).(GetRetrieveVmwareBinariesFilterOutput)
+}
+
+type GetRetrieveVmwareBinariesItem struct {
+	// Base64-encoded SHA256 hash of the VMware binary object data.
+	Checksum string `pulumi:"checksum"`
+	// Description of the VMware binary.
+	Description string `pulumi:"description"`
+	// The VMware binary file name.
+	FileName string `pulumi:"fileName"`
+	// Size of the VMware binary file in bytes.
+	SizeInBytes string `pulumi:"sizeInBytes"`
+}
+
+// GetRetrieveVmwareBinariesItemInput is an input type that accepts GetRetrieveVmwareBinariesItemArgs and GetRetrieveVmwareBinariesItemOutput values.
+// You can construct a concrete instance of `GetRetrieveVmwareBinariesItemInput` via:
+//
+//	GetRetrieveVmwareBinariesItemArgs{...}
+type GetRetrieveVmwareBinariesItemInput interface {
+	pulumi.Input
+
+	ToGetRetrieveVmwareBinariesItemOutput() GetRetrieveVmwareBinariesItemOutput
+	ToGetRetrieveVmwareBinariesItemOutputWithContext(context.Context) GetRetrieveVmwareBinariesItemOutput
+}
+
+type GetRetrieveVmwareBinariesItemArgs struct {
+	// Base64-encoded SHA256 hash of the VMware binary object data.
+	Checksum pulumi.StringInput `pulumi:"checksum"`
+	// Description of the VMware binary.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The VMware binary file name.
+	FileName pulumi.StringInput `pulumi:"fileName"`
+	// Size of the VMware binary file in bytes.
+	SizeInBytes pulumi.StringInput `pulumi:"sizeInBytes"`
+}
+
+func (GetRetrieveVmwareBinariesItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRetrieveVmwareBinariesItem)(nil)).Elem()
+}
+
+func (i GetRetrieveVmwareBinariesItemArgs) ToGetRetrieveVmwareBinariesItemOutput() GetRetrieveVmwareBinariesItemOutput {
+	return i.ToGetRetrieveVmwareBinariesItemOutputWithContext(context.Background())
+}
+
+func (i GetRetrieveVmwareBinariesItemArgs) ToGetRetrieveVmwareBinariesItemOutputWithContext(ctx context.Context) GetRetrieveVmwareBinariesItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRetrieveVmwareBinariesItemOutput)
+}
+
+// GetRetrieveVmwareBinariesItemArrayInput is an input type that accepts GetRetrieveVmwareBinariesItemArray and GetRetrieveVmwareBinariesItemArrayOutput values.
+// You can construct a concrete instance of `GetRetrieveVmwareBinariesItemArrayInput` via:
+//
+//	GetRetrieveVmwareBinariesItemArray{ GetRetrieveVmwareBinariesItemArgs{...} }
+type GetRetrieveVmwareBinariesItemArrayInput interface {
+	pulumi.Input
+
+	ToGetRetrieveVmwareBinariesItemArrayOutput() GetRetrieveVmwareBinariesItemArrayOutput
+	ToGetRetrieveVmwareBinariesItemArrayOutputWithContext(context.Context) GetRetrieveVmwareBinariesItemArrayOutput
+}
+
+type GetRetrieveVmwareBinariesItemArray []GetRetrieveVmwareBinariesItemInput
+
+func (GetRetrieveVmwareBinariesItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRetrieveVmwareBinariesItem)(nil)).Elem()
+}
+
+func (i GetRetrieveVmwareBinariesItemArray) ToGetRetrieveVmwareBinariesItemArrayOutput() GetRetrieveVmwareBinariesItemArrayOutput {
+	return i.ToGetRetrieveVmwareBinariesItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetRetrieveVmwareBinariesItemArray) ToGetRetrieveVmwareBinariesItemArrayOutputWithContext(ctx context.Context) GetRetrieveVmwareBinariesItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRetrieveVmwareBinariesItemArrayOutput)
+}
+
+type GetRetrieveVmwareBinariesItemOutput struct{ *pulumi.OutputState }
+
+func (GetRetrieveVmwareBinariesItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRetrieveVmwareBinariesItem)(nil)).Elem()
+}
+
+func (o GetRetrieveVmwareBinariesItemOutput) ToGetRetrieveVmwareBinariesItemOutput() GetRetrieveVmwareBinariesItemOutput {
+	return o
+}
+
+func (o GetRetrieveVmwareBinariesItemOutput) ToGetRetrieveVmwareBinariesItemOutputWithContext(ctx context.Context) GetRetrieveVmwareBinariesItemOutput {
+	return o
+}
+
+// Base64-encoded SHA256 hash of the VMware binary object data.
+func (o GetRetrieveVmwareBinariesItemOutput) Checksum() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRetrieveVmwareBinariesItem) string { return v.Checksum }).(pulumi.StringOutput)
+}
+
+// Description of the VMware binary.
+func (o GetRetrieveVmwareBinariesItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRetrieveVmwareBinariesItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The VMware binary file name.
+func (o GetRetrieveVmwareBinariesItemOutput) FileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRetrieveVmwareBinariesItem) string { return v.FileName }).(pulumi.StringOutput)
+}
+
+// Size of the VMware binary file in bytes.
+func (o GetRetrieveVmwareBinariesItemOutput) SizeInBytes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRetrieveVmwareBinariesItem) string { return v.SizeInBytes }).(pulumi.StringOutput)
+}
+
+type GetRetrieveVmwareBinariesItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRetrieveVmwareBinariesItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRetrieveVmwareBinariesItem)(nil)).Elem()
+}
+
+func (o GetRetrieveVmwareBinariesItemArrayOutput) ToGetRetrieveVmwareBinariesItemArrayOutput() GetRetrieveVmwareBinariesItemArrayOutput {
+	return o
+}
+
+func (o GetRetrieveVmwareBinariesItemArrayOutput) ToGetRetrieveVmwareBinariesItemArrayOutputWithContext(ctx context.Context) GetRetrieveVmwareBinariesItemArrayOutput {
+	return o
+}
+
+func (o GetRetrieveVmwareBinariesItemArrayOutput) Index(i pulumi.IntInput) GetRetrieveVmwareBinariesItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRetrieveVmwareBinariesItem {
+		return vs[0].([]GetRetrieveVmwareBinariesItem)[vs[1].(int)]
+	}).(GetRetrieveVmwareBinariesItemOutput)
+}
+
 type GetSddcDatastore struct {
 	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
 	BlockVolumeIds []string `pulumi:"blockVolumeIds"`
@@ -9842,6 +10110,8 @@ type GetSddcInitialConfigurationInitialClusterConfiguration struct {
 	EsxiHostsCount int `pulumi:"esxiHostsCount"`
 	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 	InitialCommitment string `pulumi:"initialCommitment"`
+	// Initial Fault Domain Host distribution mode for the Cluster.
+	InitialFaultDomainHostDistribution string `pulumi:"initialFaultDomainHostDistribution"`
 	// (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initialHostOcpuCount` of `initialClusterConfigurations` instead.
 	InitialHostOcpuCount float64 `pulumi:"initialHostOcpuCount"`
 	// (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initialHostShapeName` of `initialClusterConfigurations` instead.
@@ -9890,6 +10160,8 @@ type GetSddcInitialConfigurationInitialClusterConfigurationArgs struct {
 	EsxiHostsCount pulumi.IntInput `pulumi:"esxiHostsCount"`
 	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 	InitialCommitment pulumi.StringInput `pulumi:"initialCommitment"`
+	// Initial Fault Domain Host distribution mode for the Cluster.
+	InitialFaultDomainHostDistribution pulumi.StringInput `pulumi:"initialFaultDomainHostDistribution"`
 	// (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initialHostOcpuCount` of `initialClusterConfigurations` instead.
 	InitialHostOcpuCount pulumi.Float64Input `pulumi:"initialHostOcpuCount"`
 	// (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initialHostShapeName` of `initialClusterConfigurations` instead.
@@ -10008,6 +10280,13 @@ func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) EsxiHostsC
 // The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) InitialCommitment() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) string { return v.InitialCommitment }).(pulumi.StringOutput)
+}
+
+// Initial Fault Domain Host distribution mode for the Cluster.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) InitialFaultDomainHostDistribution() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) string {
+		return v.InitialFaultDomainHostDistribution
+	}).(pulumi.StringOutput)
 }
 
 // (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initialHostOcpuCount` of `initialClusterConfigurations` instead.
@@ -12052,6 +12331,8 @@ type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration struc
 	EsxiHostsCount int `pulumi:"esxiHostsCount"`
 	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 	InitialCommitment string `pulumi:"initialCommitment"`
+	// Initial Fault Domain Host distribution mode for the Cluster.
+	InitialFaultDomainHostDistribution string `pulumi:"initialFaultDomainHostDistribution"`
 	// (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
 	InitialHostOcpuCount float64 `pulumi:"initialHostOcpuCount"`
 	// (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
@@ -12100,6 +12381,8 @@ type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArgs s
 	EsxiHostsCount pulumi.IntInput `pulumi:"esxiHostsCount"`
 	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 	InitialCommitment pulumi.StringInput `pulumi:"initialCommitment"`
+	// Initial Fault Domain Host distribution mode for the Cluster.
+	InitialFaultDomainHostDistribution pulumi.StringInput `pulumi:"initialFaultDomainHostDistribution"`
 	// (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
 	InitialHostOcpuCount pulumi.Float64Input `pulumi:"initialHostOcpuCount"`
 	// (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
@@ -12229,6 +12512,13 @@ func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOut
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) InitialCommitment() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) string {
 		return v.InitialCommitment
+	}).(pulumi.StringOutput)
+}
+
+// Initial Fault Domain Host distribution mode for the Cluster.
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) InitialFaultDomainHostDistribution() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) string {
+		return v.InitialFaultDomainHostDistribution
 	}).(pulumi.StringOutput)
 }
 
@@ -14239,6 +14529,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAppliancesManagementApplianceCollectionItemConnectionArrayInput)(nil)).Elem(), GetManagementAppliancesManagementApplianceCollectionItemConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateInput)(nil)).Elem(), GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayInput)(nil)).Elem(), GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRetrieveVmwareBinariesFilterInput)(nil)).Elem(), GetRetrieveVmwareBinariesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRetrieveVmwareBinariesFilterArrayInput)(nil)).Elem(), GetRetrieveVmwareBinariesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRetrieveVmwareBinariesItemInput)(nil)).Elem(), GetRetrieveVmwareBinariesItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRetrieveVmwareBinariesItemArrayInput)(nil)).Elem(), GetRetrieveVmwareBinariesItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcDatastoreInput)(nil)).Elem(), GetSddcDatastoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcDatastoreArrayInput)(nil)).Elem(), GetSddcDatastoreArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcHcxOnPremLicenseInput)(nil)).Elem(), GetSddcHcxOnPremLicenseArgs{})
@@ -14427,6 +14721,10 @@ func init() {
 	pulumi.RegisterOutputType(GetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutput{})
 	pulumi.RegisterOutputType(GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutput{})
+	pulumi.RegisterOutputType(GetRetrieveVmwareBinariesFilterOutput{})
+	pulumi.RegisterOutputType(GetRetrieveVmwareBinariesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRetrieveVmwareBinariesItemOutput{})
+	pulumi.RegisterOutputType(GetRetrieveVmwareBinariesItemArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcDatastoreOutput{})
 	pulumi.RegisterOutputType(GetSddcDatastoreArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcHcxOnPremLicenseOutput{})

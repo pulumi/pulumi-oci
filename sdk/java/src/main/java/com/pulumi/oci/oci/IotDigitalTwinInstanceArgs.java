@@ -34,14 +34,14 @@ public final class IotDigitalTwinInstanceArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * Connectivity type of the digital twin instance
+     * (Updatable)
      * 
      */
     @Import(name="connectivityType")
     private @Nullable Output<String> connectivityType;
 
     /**
-     * @return Connectivity type of the digital twin instance
+     * @return (Updatable)
      * 
      */
     public Optional<Output<String>> connectivityType() {
@@ -261,7 +261,7 @@ public final class IotDigitalTwinInstanceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param connectivityType Connectivity type of the digital twin instance
+         * @param connectivityType (Updatable)
          * 
          * @return builder
          * 
@@ -272,7 +272,7 @@ public final class IotDigitalTwinInstanceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param connectivityType Connectivity type of the digital twin instance
+         * @param connectivityType (Updatable)
          * 
          * @return builder
          * 

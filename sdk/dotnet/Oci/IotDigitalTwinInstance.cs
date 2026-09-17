@@ -70,7 +70,7 @@ namespace Pulumi.Oci.Oci
         public Output<string> AuthId { get; private set; } = null!;
 
         /// <summary>
-        /// Connectivity type of the digital twin instance
+        /// (Updatable)
         /// </summary>
         [Output("connectivityType")]
         public Output<string> ConnectivityType { get; private set; } = null!;
@@ -216,7 +216,7 @@ namespace Pulumi.Oci.Oci
         public Input<string>? AuthId { get; set; }
 
         /// <summary>
-        /// Connectivity type of the digital twin instance
+        /// (Updatable)
         /// </summary>
         [Input("connectivityType")]
         public Input<string>? ConnectivityType { get; set; }
@@ -318,7 +318,7 @@ namespace Pulumi.Oci.Oci
         public Input<string>? AuthId { get; set; }
 
         /// <summary>
-        /// Connectivity type of the digital twin instance
+        /// (Updatable)
         /// </summary>
         [Input("connectivityType")]
         public Input<string>? ConnectivityType { get; set; }

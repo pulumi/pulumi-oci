@@ -77,6 +77,7 @@ namespace Pulumi.Oci.Ocvp
     ///                         },
     ///                         DisplayName = sddcInitialConfigurationInitialClusterConfigurationsDisplayName,
     ///                         InitialCommitment = sddcInitialConfigurationInitialClusterConfigurationsInitialCommitment,
+    ///                         InitialFaultDomainHostDistribution = sddcInitialConfigurationInitialClusterConfigurationsInitialFaultDomainHostDistribution,
     ///                         InitialHostOcpuCount = sddcInitialConfigurationInitialClusterConfigurationsInitialHostOcpuCount,
     ///                         InitialHostShapeName = testShape.Name,
     ///                         InitialVcfByolAllocationId = testByolAllocation.Id,

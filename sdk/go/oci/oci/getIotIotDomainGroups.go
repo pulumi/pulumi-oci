@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/oci"
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/oci"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -65,7 +65,7 @@ type GetIotIotDomainGroupsArgs struct {
 	Id *string `pulumi:"id"`
 	// Filter resources whose lifecycleState matches the specified value.
 	State *string `pulumi:"state"`
-	// Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+	// Filter resources by type. Valid values are DEVELOPMENT or PRODUCTION. LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION, respectively.
 	Type *string `pulumi:"type"`
 }
 
@@ -102,7 +102,7 @@ type GetIotIotDomainGroupsOutputArgs struct {
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Filter resources whose lifecycleState matches the specified value.
 	State pulumi.StringPtrInput `pulumi:"state"`
-	// Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+	// Filter resources by type. Valid values are DEVELOPMENT or PRODUCTION. LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION, respectively.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 

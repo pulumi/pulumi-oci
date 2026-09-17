@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb {
     /**
-     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+     * @return The AD in which the maintenance will occur.
      * 
      */
     private String availabilityDomain;
@@ -64,7 +64,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb {
 
     private GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb() {}
     /**
-     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+     * @return The AD in which the maintenance will occur.
      * 
      */
     public String availabilityDomain() {

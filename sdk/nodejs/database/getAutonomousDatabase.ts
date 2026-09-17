@@ -83,7 +83,7 @@ export interface GetAutonomousDatabaseResult {
     readonly autonomousDatabaseBackupId: string;
     readonly autonomousDatabaseId: string;
     /**
-     * Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     * Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
      */
     readonly autonomousDatabaseMaintenanceWindows: outputs.Database.GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindow[];
     /**
@@ -481,6 +481,10 @@ export interface GetAutonomousDatabaseResult {
     readonly role: string;
     readonly rotateKeyTrigger: boolean;
     /**
+     * Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     */
+    readonly scheduledMaintenanceWindows: outputs.Database.GetAutonomousDatabaseScheduledMaintenanceWindow[];
+    /**
      * The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
      */
     readonly scheduledOperations: outputs.Database.GetAutonomousDatabaseScheduledOperation[];
@@ -618,6 +622,10 @@ export interface GetAutonomousDatabaseResult {
      * The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
      */
     readonly timeScheduledDbVersionUpgrade: string;
+    /**
+     * The date and time at which operation to change Maintenance Window is scheduled to take place.
+     */
+    readonly timeScheduledMaintenanceWindowUpdate: string;
     /**
      * The date and time the Autonomous AI Database was most recently undeleted.
      */

@@ -70,7 +70,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+        /// Filter resources by type. Valid values are DEVELOPMENT or PRODUCTION. LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION, respectively.
         /// </summary>
         public readonly string Type;
 

@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -30,7 +30,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/ocvp"
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/ocvp"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -51,11 +51,12 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
-//				HostOcpuCount:       pulumi.Any(esxiHostHostOcpuCount),
-//				HostShapeName:       pulumi.Any(testShape.Name),
-//				IsVsanByolEnabled:   pulumi.Any(esxiHostIsVsanByolEnabled),
-//				NextCommitment:      pulumi.Any(esxiHostNextCommitment),
-//				VcfByolAllocationId: pulumi.Any(testByolAllocation.Id),
+//				HostOcpuCount:                      pulumi.Any(esxiHostHostOcpuCount),
+//				HostShapeName:                      pulumi.Any(testShape.Name),
+//				InitialFaultDomainHostDistribution: pulumi.Any(esxiHostInitialFaultDomainHostDistribution),
+//				IsVsanByolEnabled:                  pulumi.Any(esxiHostIsVsanByolEnabled),
+//				NextCommitment:                     pulumi.Any(esxiHostNextCommitment),
+//				VcfByolAllocationId:                pulumi.Any(testByolAllocation.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -100,6 +101,8 @@ type EsxiHost struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The availability domain to create the ESXi host in. If keep empty, for AD-specific Cluster, new ESXi host will be created in the same availability domain; for multi-AD Cluster, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
 	ComputeAvailabilityDomain pulumi.StringOutput `pulumi:"computeAvailabilityDomain"`
+	// The fault domain of the ESXi host.
+	ComputeFaultDomain pulumi.StringOutput `pulumi:"computeFaultDomain"`
 	// In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
 	ComputeInstanceId pulumi.StringOutput `pulumi:"computeInstanceId"`
 	// The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
@@ -135,6 +138,8 @@ type EsxiHost struct {
 	HostOcpuCount pulumi.Float64Output `pulumi:"hostOcpuCount"`
 	// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
 	HostShapeName pulumi.StringOutput `pulumi:"hostShapeName"`
+	// (Updatable) The initial fault domain host distribution mode for the ESXi host.
+	InitialFaultDomainHostDistribution pulumi.StringOutput `pulumi:"initialFaultDomainHostDistribution"`
 	// Indicates whether this host is in the progress of billing continuation.
 	IsBillingContinuationInProgress pulumi.BoolOutput `pulumi:"isBillingContinuationInProgress"`
 	// Indicates whether this host is in the progress of swapping billing.
@@ -224,6 +229,8 @@ type esxiHostState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The availability domain to create the ESXi host in. If keep empty, for AD-specific Cluster, new ESXi host will be created in the same availability domain; for multi-AD Cluster, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
 	ComputeAvailabilityDomain *string `pulumi:"computeAvailabilityDomain"`
+	// The fault domain of the ESXi host.
+	ComputeFaultDomain *string `pulumi:"computeFaultDomain"`
 	// In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
 	ComputeInstanceId *string `pulumi:"computeInstanceId"`
 	// The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
@@ -259,6 +266,8 @@ type esxiHostState struct {
 	HostOcpuCount *float64 `pulumi:"hostOcpuCount"`
 	// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
 	HostShapeName *string `pulumi:"hostShapeName"`
+	// (Updatable) The initial fault domain host distribution mode for the ESXi host.
+	InitialFaultDomainHostDistribution *string `pulumi:"initialFaultDomainHostDistribution"`
 	// Indicates whether this host is in the progress of billing continuation.
 	IsBillingContinuationInProgress *bool `pulumi:"isBillingContinuationInProgress"`
 	// Indicates whether this host is in the progress of swapping billing.
@@ -319,6 +328,8 @@ type EsxiHostState struct {
 	CompartmentId pulumi.StringPtrInput
 	// The availability domain to create the ESXi host in. If keep empty, for AD-specific Cluster, new ESXi host will be created in the same availability domain; for multi-AD Cluster, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
 	ComputeAvailabilityDomain pulumi.StringPtrInput
+	// The fault domain of the ESXi host.
+	ComputeFaultDomain pulumi.StringPtrInput
 	// In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
 	ComputeInstanceId pulumi.StringPtrInput
 	// The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
@@ -354,6 +365,8 @@ type EsxiHostState struct {
 	HostOcpuCount pulumi.Float64PtrInput
 	// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
 	HostShapeName pulumi.StringPtrInput
+	// (Updatable) The initial fault domain host distribution mode for the ESXi host.
+	InitialFaultDomainHostDistribution pulumi.StringPtrInput
 	// Indicates whether this host is in the progress of billing continuation.
 	IsBillingContinuationInProgress pulumi.BoolPtrInput
 	// Indicates whether this host is in the progress of swapping billing.
@@ -441,6 +454,8 @@ type esxiHostArgs struct {
 	HostOcpuCount *float64 `pulumi:"hostOcpuCount"`
 	// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
 	HostShapeName *string `pulumi:"hostShapeName"`
+	// (Updatable) The initial fault domain host distribution mode for the ESXi host.
+	InitialFaultDomainHostDistribution *string `pulumi:"initialFaultDomainHostDistribution"`
 	// (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
 	IsVsanByolEnabled *bool `pulumi:"isVsanByolEnabled"`
 	// (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
@@ -506,6 +521,8 @@ type EsxiHostArgs struct {
 	HostOcpuCount pulumi.Float64PtrInput
 	// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
 	HostShapeName pulumi.StringPtrInput
+	// (Updatable) The initial fault domain host distribution mode for the ESXi host.
+	InitialFaultDomainHostDistribution pulumi.StringPtrInput
 	// (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
 	IsVsanByolEnabled pulumi.BoolPtrInput
 	// (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
@@ -654,6 +671,11 @@ func (o EsxiHostOutput) ComputeAvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.ComputeAvailabilityDomain }).(pulumi.StringOutput)
 }
 
+// The fault domain of the ESXi host.
+func (o EsxiHostOutput) ComputeFaultDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.ComputeFaultDomain }).(pulumi.StringOutput)
+}
+
 // In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
 func (o EsxiHostOutput) ComputeInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.ComputeInstanceId }).(pulumi.StringOutput)
@@ -729,6 +751,11 @@ func (o EsxiHostOutput) HostOcpuCount() pulumi.Float64Output {
 // The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
 func (o EsxiHostOutput) HostShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.HostShapeName }).(pulumi.StringOutput)
+}
+
+// (Updatable) The initial fault domain host distribution mode for the ESXi host.
+func (o EsxiHostOutput) InitialFaultDomainHostDistribution() pulumi.StringOutput {
+	return o.ApplyT(func(v *EsxiHost) pulumi.StringOutput { return v.InitialFaultDomainHostDistribution }).(pulumi.StringOutput)
 }
 
 // Indicates whether this host is in the progress of billing continuation.

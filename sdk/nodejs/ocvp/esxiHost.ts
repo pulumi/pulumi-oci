@@ -41,6 +41,7 @@ import * as utilities from "../utilities";
  *     },
  *     hostOcpuCount: esxiHostHostOcpuCount,
  *     hostShapeName: testShape.name,
+ *     initialFaultDomainHostDistribution: esxiHostInitialFaultDomainHostDistribution,
  *     isVsanByolEnabled: esxiHostIsVsanByolEnabled === "true",
  *     nextCommitment: esxiHostNextCommitment,
  *     vcfByolAllocationId: testByolAllocation.id,
@@ -120,6 +121,10 @@ export class EsxiHost extends pulumi.CustomResource {
      */
     declare public readonly computeAvailabilityDomain: pulumi.Output<string>;
     /**
+     * The fault domain of the ESXi host.
+     */
+    declare public /*out*/ readonly computeFaultDomain: pulumi.Output<string>;
+    /**
      * In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
      */
     declare public /*out*/ readonly computeInstanceId: pulumi.Output<string>;
@@ -180,6 +185,10 @@ export class EsxiHost extends pulumi.CustomResource {
      * The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
      */
     declare public readonly hostShapeName: pulumi.Output<string>;
+    /**
+     * (Updatable) The initial fault domain host distribution mode for the ESXi host.
+     */
+    declare public readonly initialFaultDomainHostDistribution: pulumi.Output<string>;
     /**
      * Indicates whether this host is in the progress of billing continuation.
      */
@@ -275,6 +284,7 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["clusterId"] = state?.clusterId;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["computeAvailabilityDomain"] = state?.computeAvailabilityDomain;
+            resourceInputs["computeFaultDomain"] = state?.computeFaultDomain;
             resourceInputs["computeInstanceId"] = state?.computeInstanceId;
             resourceInputs["currentCommitment"] = state?.currentCommitment;
             resourceInputs["currentSku"] = state?.currentSku;
@@ -289,6 +299,7 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["gracePeriodEndDate"] = state?.gracePeriodEndDate;
             resourceInputs["hostOcpuCount"] = state?.hostOcpuCount;
             resourceInputs["hostShapeName"] = state?.hostShapeName;
+            resourceInputs["initialFaultDomainHostDistribution"] = state?.initialFaultDomainHostDistribution;
             resourceInputs["isBillingContinuationInProgress"] = state?.isBillingContinuationInProgress;
             resourceInputs["isBillingSwappingInProgress"] = state?.isBillingSwappingInProgress;
             resourceInputs["isVsanByolEnabled"] = state?.isVsanByolEnabled;
@@ -323,6 +334,7 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["hostOcpuCount"] = args?.hostOcpuCount;
             resourceInputs["hostShapeName"] = args?.hostShapeName;
+            resourceInputs["initialFaultDomainHostDistribution"] = args?.initialFaultDomainHostDistribution;
             resourceInputs["isVsanByolEnabled"] = args?.isVsanByolEnabled;
             resourceInputs["nextCommitment"] = args?.nextCommitment;
             resourceInputs["nextSku"] = args?.nextSku;
@@ -332,6 +344,7 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["vcfByolAllocationId"] = args?.vcfByolAllocationId;
             resourceInputs["billingContractEndDate"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
+            resourceInputs["computeFaultDomain"] = undefined /*out*/;
             resourceInputs["computeInstanceId"] = undefined /*out*/;
             resourceInputs["datastoreAttachments"] = undefined /*out*/;
             resourceInputs["datastoreClusterIds"] = undefined /*out*/;
@@ -383,6 +396,10 @@ export interface EsxiHostState {
      * The availability domain to create the ESXi host in. If keep empty, for AD-specific Cluster, new ESXi host will be created in the same availability domain; for multi-AD Cluster, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
      */
     computeAvailabilityDomain?: pulumi.Input<string | undefined>;
+    /**
+     * The fault domain of the ESXi host.
+     */
+    computeFaultDomain?: pulumi.Input<string | undefined>;
     /**
      * In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
      */
@@ -444,6 +461,10 @@ export interface EsxiHostState {
      * The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
      */
     hostShapeName?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The initial fault domain host distribution mode for the ESXi host.
+     */
+    initialFaultDomainHostDistribution?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether this host is in the progress of billing continuation.
      */
@@ -588,6 +609,10 @@ export interface EsxiHostArgs {
      * The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
      */
     hostShapeName?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The initial fault domain host distribution mode for the ESXi host.
+     */
+    initialFaultDomainHostDistribution?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
      */

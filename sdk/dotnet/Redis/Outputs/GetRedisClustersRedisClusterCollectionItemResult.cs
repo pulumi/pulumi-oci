@@ -22,6 +22,14 @@ namespace Pulumi.Oci.Redis.Outputs
         /// </summary>
         public readonly string ClusterMode;
         /// <summary>
+        /// Defines the replication topology of an Oracle Cloud Infrastructure cache cluster, including the primary cluster and associated secondary clusters participating in replication.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyResult> ClusterReplicationTopologies;
+        /// <summary>
+        /// The current role of the cluster.
+        /// </summary>
+        public readonly string ClusterRole;
+        /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
@@ -78,6 +86,10 @@ namespace Pulumi.Oci.Redis.Outputs
         /// </summary>
         public readonly string OciCacheConfigSetId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster in CRR.
+        /// </summary>
+        public readonly string PrimaryClusterId;
+        /// <summary>
         /// The private IP address of the API endpoint for the cluster's primary node.
         /// </summary>
         public readonly string PrimaryEndpointIpAddress;
@@ -132,6 +144,10 @@ namespace Pulumi.Oci.Redis.Outputs
 
             string clusterMode,
 
+            ImmutableArray<Outputs.GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyResult> clusterReplicationTopologies,
+
+            string clusterRole,
+
             string compartmentId,
 
             ImmutableDictionary<string, string> definedTags,
@@ -160,6 +176,8 @@ namespace Pulumi.Oci.Redis.Outputs
 
             string ociCacheConfigSetId,
 
+            string primaryClusterId,
+
             string primaryEndpointIpAddress,
 
             string primaryFqdn,
@@ -186,6 +204,8 @@ namespace Pulumi.Oci.Redis.Outputs
         {
             BackupId = backupId;
             ClusterMode = clusterMode;
+            ClusterReplicationTopologies = clusterReplicationTopologies;
+            ClusterRole = clusterRole;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DiscoveryEndpointIpAddress = discoveryEndpointIpAddress;
@@ -200,6 +220,7 @@ namespace Pulumi.Oci.Redis.Outputs
             NodeMemoryInGbs = nodeMemoryInGbs;
             NsgIds = nsgIds;
             OciCacheConfigSetId = ociCacheConfigSetId;
+            PrimaryClusterId = primaryClusterId;
             PrimaryEndpointIpAddress = primaryEndpointIpAddress;
             PrimaryFqdn = primaryFqdn;
             ReplicasEndpointIpAddress = replicasEndpointIpAddress;

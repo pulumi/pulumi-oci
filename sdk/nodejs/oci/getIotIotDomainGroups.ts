@@ -60,7 +60,7 @@ export interface GetIotIotDomainGroupsArgs {
      */
     state?: string;
     /**
-     * Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+     * Filter resources by type. Valid values are DEVELOPMENT or PRODUCTION. LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION, respectively.
      */
     type?: string;
 }
@@ -149,7 +149,7 @@ export interface GetIotIotDomainGroupsOutputArgs {
      */
     state?: pulumi.Input<string | undefined>;
     /**
-     * Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+     * Filter resources by type. Valid values are DEVELOPMENT or PRODUCTION. LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION, respectively.
      */
     type?: pulumi.Input<string | undefined>;
 }

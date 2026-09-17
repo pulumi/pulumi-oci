@@ -27,7 +27,7 @@ class GetExsiHostResult:
     """
     A collection of values returned by getExsiHost.
     """
-    def __init__(__self__, attach_datastore_cluster_ids=None, billing_contract_end_date=None, billing_donor_host_id=None, capacity_reservation_id=None, cluster_id=None, compartment_id=None, compute_availability_domain=None, compute_instance_id=None, current_commitment=None, current_sku=None, datastore_attachments=None, datastore_cluster_ids=None, defined_tags=None, detach_datastore_cluster_ids=None, display_name=None, esxi_host_id=None, esxi_software_version=None, failed_esxi_host_id=None, freeform_tags=None, grace_period_end_date=None, host_ocpu_count=None, host_shape_name=None, id=None, is_billing_continuation_in_progress=None, is_billing_swapping_in_progress=None, is_vsan_byol_enabled=None, next_commitment=None, next_sku=None, non_upgraded_esxi_host_id=None, primary_vnic_mac_address=None, replacement_esxi_host_id=None, sddc_id=None, state=None, swap_billing_host_id=None, system_tags=None, time_created=None, time_updated=None, upgraded_replacement_esxi_host_id=None, vcf_byol_allocation_id=None, vmware_software_version=None):
+    def __init__(__self__, attach_datastore_cluster_ids=None, billing_contract_end_date=None, billing_donor_host_id=None, capacity_reservation_id=None, cluster_id=None, compartment_id=None, compute_availability_domain=None, compute_fault_domain=None, compute_instance_id=None, current_commitment=None, current_sku=None, datastore_attachments=None, datastore_cluster_ids=None, defined_tags=None, detach_datastore_cluster_ids=None, display_name=None, esxi_host_id=None, esxi_software_version=None, failed_esxi_host_id=None, freeform_tags=None, grace_period_end_date=None, host_ocpu_count=None, host_shape_name=None, id=None, initial_fault_domain_host_distribution=None, is_billing_continuation_in_progress=None, is_billing_swapping_in_progress=None, is_vsan_byol_enabled=None, next_commitment=None, next_sku=None, non_upgraded_esxi_host_id=None, primary_vnic_mac_address=None, replacement_esxi_host_id=None, sddc_id=None, state=None, swap_billing_host_id=None, system_tags=None, time_created=None, time_updated=None, upgraded_replacement_esxi_host_id=None, vcf_byol_allocation_id=None, vmware_software_version=None):
         if attach_datastore_cluster_ids and not isinstance(attach_datastore_cluster_ids, list):
             raise TypeError("Expected argument 'attach_datastore_cluster_ids' to be a list")
         pulumi.set(__self__, "attach_datastore_cluster_ids", attach_datastore_cluster_ids)
@@ -49,6 +49,9 @@ class GetExsiHostResult:
         if compute_availability_domain and not isinstance(compute_availability_domain, str):
             raise TypeError("Expected argument 'compute_availability_domain' to be a str")
         pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
+        if compute_fault_domain and not isinstance(compute_fault_domain, str):
+            raise TypeError("Expected argument 'compute_fault_domain' to be a str")
+        pulumi.set(__self__, "compute_fault_domain", compute_fault_domain)
         if compute_instance_id and not isinstance(compute_instance_id, str):
             raise TypeError("Expected argument 'compute_instance_id' to be a str")
         pulumi.set(__self__, "compute_instance_id", compute_instance_id)
@@ -97,6 +100,9 @@ class GetExsiHostResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if initial_fault_domain_host_distribution and not isinstance(initial_fault_domain_host_distribution, str):
+            raise TypeError("Expected argument 'initial_fault_domain_host_distribution' to be a str")
+        pulumi.set(__self__, "initial_fault_domain_host_distribution", initial_fault_domain_host_distribution)
         if is_billing_continuation_in_progress and not isinstance(is_billing_continuation_in_progress, bool):
             raise TypeError("Expected argument 'is_billing_continuation_in_progress' to be a bool")
         pulumi.set(__self__, "is_billing_continuation_in_progress", is_billing_continuation_in_progress)
@@ -202,6 +208,14 @@ class GetExsiHostResult:
         The availability domain of the ESXi host.
         """
         return pulumi.get(self, "compute_availability_domain")
+
+    @_builtins.property
+    @pulumi.getter(name="computeFaultDomain")
+    def compute_fault_domain(self) -> _builtins.str:
+        """
+        The fault domain of the ESXi host.
+        """
+        return pulumi.get(self, "compute_fault_domain")
 
     @_builtins.property
     @pulumi.getter(name="computeInstanceId")
@@ -326,6 +340,14 @@ class GetExsiHostResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="initialFaultDomainHostDistribution")
+    def initial_fault_domain_host_distribution(self) -> _builtins.str:
+        """
+        The initial fault domain host distribution mode for the ESXi host.
+        """
+        return pulumi.get(self, "initial_fault_domain_host_distribution")
 
     @_builtins.property
     @pulumi.getter(name="isBillingContinuationInProgress")
@@ -477,6 +499,7 @@ class AwaitableGetExsiHostResult(GetExsiHostResult):
             cluster_id=self.cluster_id,
             compartment_id=self.compartment_id,
             compute_availability_domain=self.compute_availability_domain,
+            compute_fault_domain=self.compute_fault_domain,
             compute_instance_id=self.compute_instance_id,
             current_commitment=self.current_commitment,
             current_sku=self.current_sku,
@@ -493,6 +516,7 @@ class AwaitableGetExsiHostResult(GetExsiHostResult):
             host_ocpu_count=self.host_ocpu_count,
             host_shape_name=self.host_shape_name,
             id=self.id,
+            initial_fault_domain_host_distribution=self.initial_fault_domain_host_distribution,
             is_billing_continuation_in_progress=self.is_billing_continuation_in_progress,
             is_billing_swapping_in_progress=self.is_billing_swapping_in_progress,
             is_vsan_byol_enabled=self.is_vsan_byol_enabled,
@@ -544,6 +568,7 @@ def get_exsi_host(esxi_host_id: Optional[_builtins.str] = None,
         cluster_id=pulumi.get(__ret__, 'cluster_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         compute_availability_domain=pulumi.get(__ret__, 'compute_availability_domain'),
+        compute_fault_domain=pulumi.get(__ret__, 'compute_fault_domain'),
         compute_instance_id=pulumi.get(__ret__, 'compute_instance_id'),
         current_commitment=pulumi.get(__ret__, 'current_commitment'),
         current_sku=pulumi.get(__ret__, 'current_sku'),
@@ -560,6 +585,7 @@ def get_exsi_host(esxi_host_id: Optional[_builtins.str] = None,
         host_ocpu_count=pulumi.get(__ret__, 'host_ocpu_count'),
         host_shape_name=pulumi.get(__ret__, 'host_shape_name'),
         id=pulumi.get(__ret__, 'id'),
+        initial_fault_domain_host_distribution=pulumi.get(__ret__, 'initial_fault_domain_host_distribution'),
         is_billing_continuation_in_progress=pulumi.get(__ret__, 'is_billing_continuation_in_progress'),
         is_billing_swapping_in_progress=pulumi.get(__ret__, 'is_billing_swapping_in_progress'),
         is_vsan_byol_enabled=pulumi.get(__ret__, 'is_vsan_byol_enabled'),
@@ -608,6 +634,7 @@ def get_exsi_host_output(esxi_host_id: pulumi.Input[Optional[_builtins.str]] = N
         cluster_id=pulumi.get(__response__, 'cluster_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         compute_availability_domain=pulumi.get(__response__, 'compute_availability_domain'),
+        compute_fault_domain=pulumi.get(__response__, 'compute_fault_domain'),
         compute_instance_id=pulumi.get(__response__, 'compute_instance_id'),
         current_commitment=pulumi.get(__response__, 'current_commitment'),
         current_sku=pulumi.get(__response__, 'current_sku'),
@@ -624,6 +651,7 @@ def get_exsi_host_output(esxi_host_id: pulumi.Input[Optional[_builtins.str]] = N
         host_ocpu_count=pulumi.get(__response__, 'host_ocpu_count'),
         host_shape_name=pulumi.get(__response__, 'host_shape_name'),
         id=pulumi.get(__response__, 'id'),
+        initial_fault_domain_host_distribution=pulumi.get(__response__, 'initial_fault_domain_host_distribution'),
         is_billing_continuation_in_progress=pulumi.get(__response__, 'is_billing_continuation_in_progress'),
         is_billing_swapping_in_progress=pulumi.get(__response__, 'is_billing_swapping_in_progress'),
         is_vsan_byol_enabled=pulumi.get(__response__, 'is_vsan_byol_enabled'),

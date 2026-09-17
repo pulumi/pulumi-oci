@@ -85,14 +85,14 @@ public final class GetIotIotDomainGroupsPlainArgs extends com.pulumi.resources.I
     }
 
     /**
-     * Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+     * Filter resources by type. Valid values are DEVELOPMENT or PRODUCTION. LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION, respectively.
      * 
      */
     @Import(name="type")
     private @Nullable String type;
 
     /**
-     * @return Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+     * @return Filter resources by type. Valid values are DEVELOPMENT or PRODUCTION. LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION, respectively.
      * 
      */
     public Optional<String> type() {
@@ -182,7 +182,7 @@ public final class GetIotIotDomainGroupsPlainArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param type Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+         * @param type Filter resources by type. Valid values are DEVELOPMENT or PRODUCTION. LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION, respectively.
          * 
          * @return builder
          * 

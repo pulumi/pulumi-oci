@@ -68,6 +68,7 @@ import javax.annotation.Nullable;
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .hostOcpuCount(esxiHostHostOcpuCount)
  *             .hostShapeName(testShape.name())
+ *             .initialFaultDomainHostDistribution(esxiHostInitialFaultDomainHostDistribution)
  *             .isVsanByolEnabled(esxiHostIsVsanByolEnabled)
  *             .nextCommitment(esxiHostNextCommitment)
  *             .vcfByolAllocationId(testByolAllocation.id())
@@ -191,6 +192,20 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      */
     public Output<String> computeAvailabilityDomain() {
         return this.computeAvailabilityDomain;
+    }
+    /**
+     * The fault domain of the ESXi host.
+     * 
+     */
+    @Export(name="computeFaultDomain", refs={String.class}, tree="[0]")
+    private Output<String> computeFaultDomain;
+
+    /**
+     * @return The fault domain of the ESXi host.
+     * 
+     */
+    public Output<String> computeFaultDomain() {
+        return this.computeFaultDomain;
     }
     /**
      * In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
@@ -395,6 +410,20 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      */
     public Output<String> hostShapeName() {
         return this.hostShapeName;
+    }
+    /**
+     * (Updatable) The initial fault domain host distribution mode for the ESXi host.
+     * 
+     */
+    @Export(name="initialFaultDomainHostDistribution", refs={String.class}, tree="[0]")
+    private Output<String> initialFaultDomainHostDistribution;
+
+    /**
+     * @return (Updatable) The initial fault domain host distribution mode for the ESXi host.
+     * 
+     */
+    public Output<String> initialFaultDomainHostDistribution() {
+        return this.initialFaultDomainHostDistribution;
     }
     /**
      * Indicates whether this host is in the progress of billing continuation.

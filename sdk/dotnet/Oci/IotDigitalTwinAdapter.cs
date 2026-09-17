@@ -62,6 +62,7 @@ namespace Pulumi.Oci.Oci
     ///             new Oci.Oci.Inputs.IotDigitalTwinAdapterInboundRouteArgs
     ///             {
     ///                 Condition = digitalTwinAdapterInboundRoutesCondition,
+    ///                 ContentRoot = digitalTwinAdapterInboundRoutesContentRoot,
     ///                 Description = digitalTwinAdapterInboundRoutesDescription,
     ///                 PayloadMapping = digitalTwinAdapterInboundRoutesPayloadMapping,
     ///                 ReferencePayload = new Oci.Oci.Inputs.IotDigitalTwinAdapterInboundRouteReferencePayloadArgs
@@ -69,6 +70,7 @@ namespace Pulumi.Oci.Oci
     ///                     Data = digitalTwinAdapterInboundRoutesReferencePayloadData,
     ///                     DataFormat = digitalTwinAdapterInboundRoutesReferencePayloadDataFormat,
     ///                 },
+    ///                 Target = digitalTwinAdapterInboundRoutesTarget,
     ///             },
     ///         },
     ///     });

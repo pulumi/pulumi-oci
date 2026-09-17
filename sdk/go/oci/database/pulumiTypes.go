@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -5294,8 +5294,12 @@ func (o AutonomousDatabaseApexDetailArrayOutput) Index(i pulumi.IntInput) Autono
 }
 
 type AutonomousDatabaseAutonomousDatabaseMaintenanceWindow struct {
+	// (Updatable) The AD in which the maintenance will occur.
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// (Updatable) Day of the week.
 	DayOfWeek AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek `pulumi:"dayOfWeek"`
+	// (Updatable) Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+	IsMaintenanceWindowChangeScheduled *bool `pulumi:"isMaintenanceWindowChangeScheduled"`
 	// (Updatable) The maintenance end time. The value must use the ISO-8601 format "hh:mm".
 	MaintenanceEndTime *string `pulumi:"maintenanceEndTime"`
 	// (Updatable) The maintenance start time. The value must use the ISO-8601 format "hh:mm".
@@ -5314,8 +5318,12 @@ type AutonomousDatabaseAutonomousDatabaseMaintenanceWindowInput interface {
 }
 
 type AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs struct {
+	// (Updatable) The AD in which the maintenance will occur.
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// (Updatable) Day of the week.
 	DayOfWeek AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekInput `pulumi:"dayOfWeek"`
+	// (Updatable) Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+	IsMaintenanceWindowChangeScheduled pulumi.BoolPtrInput `pulumi:"isMaintenanceWindowChangeScheduled"`
 	// (Updatable) The maintenance end time. The value must use the ISO-8601 format "hh:mm".
 	MaintenanceEndTime pulumi.StringPtrInput `pulumi:"maintenanceEndTime"`
 	// (Updatable) The maintenance start time. The value must use the ISO-8601 format "hh:mm".
@@ -5399,11 +5407,23 @@ func (o AutonomousDatabaseAutonomousDatabaseMaintenanceWindowOutput) ToAutonomou
 	}).(AutonomousDatabaseAutonomousDatabaseMaintenanceWindowPtrOutput)
 }
 
+// (Updatable) The AD in which the maintenance will occur.
+func (o AutonomousDatabaseAutonomousDatabaseMaintenanceWindowOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutonomousDatabaseAutonomousDatabaseMaintenanceWindow) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) Day of the week.
 func (o AutonomousDatabaseAutonomousDatabaseMaintenanceWindowOutput) DayOfWeek() AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekOutput {
 	return o.ApplyT(func(v AutonomousDatabaseAutonomousDatabaseMaintenanceWindow) AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek {
 		return v.DayOfWeek
 	}).(AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekOutput)
+}
+
+// (Updatable) Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+func (o AutonomousDatabaseAutonomousDatabaseMaintenanceWindowOutput) IsMaintenanceWindowChangeScheduled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AutonomousDatabaseAutonomousDatabaseMaintenanceWindow) *bool {
+		return v.IsMaintenanceWindowChangeScheduled
+	}).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The maintenance end time. The value must use the ISO-8601 format "hh:mm".
@@ -5440,6 +5460,16 @@ func (o AutonomousDatabaseAutonomousDatabaseMaintenanceWindowPtrOutput) Elem() A
 	}).(AutonomousDatabaseAutonomousDatabaseMaintenanceWindowOutput)
 }
 
+// (Updatable) The AD in which the maintenance will occur.
+func (o AutonomousDatabaseAutonomousDatabaseMaintenanceWindowPtrOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousDatabaseAutonomousDatabaseMaintenanceWindow) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AvailabilityDomain
+	}).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) Day of the week.
 func (o AutonomousDatabaseAutonomousDatabaseMaintenanceWindowPtrOutput) DayOfWeek() AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekPtrOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseAutonomousDatabaseMaintenanceWindow) *AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek {
@@ -5448,6 +5478,16 @@ func (o AutonomousDatabaseAutonomousDatabaseMaintenanceWindowPtrOutput) DayOfWee
 		}
 		return &v.DayOfWeek
 	}).(AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekPtrOutput)
+}
+
+// (Updatable) Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+func (o AutonomousDatabaseAutonomousDatabaseMaintenanceWindowPtrOutput) IsMaintenanceWindowChangeScheduled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AutonomousDatabaseAutonomousDatabaseMaintenanceWindow) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsMaintenanceWindowChangeScheduled
+	}).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The maintenance end time. The value must use the ISO-8601 format "hh:mm".
@@ -5899,10 +5939,8 @@ func (o AutonomousDatabaseBackupBackupDestinationDetailsPtrOutput) VpcUser() pul
 }
 
 type AutonomousDatabaseBackupConfig struct {
-	// Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
 	ManualBackupBucketName *string `pulumi:"manualBackupBucketName"`
-	// The manual backup destination type.
-	ManualBackupType *string `pulumi:"manualBackupType"`
+	ManualBackupType       *string `pulumi:"manualBackupType"`
 }
 
 // AutonomousDatabaseBackupConfigInput is an input type that accepts AutonomousDatabaseBackupConfigArgs and AutonomousDatabaseBackupConfigOutput values.
@@ -5917,10 +5955,8 @@ type AutonomousDatabaseBackupConfigInput interface {
 }
 
 type AutonomousDatabaseBackupConfigArgs struct {
-	// Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
 	ManualBackupBucketName pulumi.StringPtrInput `pulumi:"manualBackupBucketName"`
-	// The manual backup destination type.
-	ManualBackupType pulumi.StringPtrInput `pulumi:"manualBackupType"`
+	ManualBackupType       pulumi.StringPtrInput `pulumi:"manualBackupType"`
 }
 
 func (AutonomousDatabaseBackupConfigArgs) ElementType() reflect.Type {
@@ -5974,12 +6010,10 @@ func (o AutonomousDatabaseBackupConfigOutput) ToAutonomousDatabaseBackupConfigOu
 	return o
 }
 
-// Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
 func (o AutonomousDatabaseBackupConfigOutput) ManualBackupBucketName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutonomousDatabaseBackupConfig) *string { return v.ManualBackupBucketName }).(pulumi.StringPtrOutput)
 }
 
-// The manual backup destination type.
 func (o AutonomousDatabaseBackupConfigOutput) ManualBackupType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutonomousDatabaseBackupConfig) *string { return v.ManualBackupType }).(pulumi.StringPtrOutput)
 }
@@ -8978,6 +9012,320 @@ func (o AutonomousDatabaseResourcePoolSummaryPtrOutput) TotalComputeCapacity() p
 		}
 		return v.TotalComputeCapacity
 	}).(pulumi.IntPtrOutput)
+}
+
+type AutonomousDatabaseScheduledMaintenanceWindow struct {
+	// (Updatable) The Autonomous Database Serverless instance's availability domain.
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
+	// Day of the week.
+	DayOfWeeks []AutonomousDatabaseScheduledMaintenanceWindowDayOfWeek `pulumi:"dayOfWeeks"`
+	// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+	IsMaintenanceWindowChangeScheduled *bool `pulumi:"isMaintenanceWindowChangeScheduled"`
+	// The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+	MaintenanceEndTime *string `pulumi:"maintenanceEndTime"`
+	// The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+	MaintenanceStartTime *string `pulumi:"maintenanceStartTime"`
+}
+
+// AutonomousDatabaseScheduledMaintenanceWindowInput is an input type that accepts AutonomousDatabaseScheduledMaintenanceWindowArgs and AutonomousDatabaseScheduledMaintenanceWindowOutput values.
+// You can construct a concrete instance of `AutonomousDatabaseScheduledMaintenanceWindowInput` via:
+//
+//	AutonomousDatabaseScheduledMaintenanceWindowArgs{...}
+type AutonomousDatabaseScheduledMaintenanceWindowInput interface {
+	pulumi.Input
+
+	ToAutonomousDatabaseScheduledMaintenanceWindowOutput() AutonomousDatabaseScheduledMaintenanceWindowOutput
+	ToAutonomousDatabaseScheduledMaintenanceWindowOutputWithContext(context.Context) AutonomousDatabaseScheduledMaintenanceWindowOutput
+}
+
+type AutonomousDatabaseScheduledMaintenanceWindowArgs struct {
+	// (Updatable) The Autonomous Database Serverless instance's availability domain.
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
+	// Day of the week.
+	DayOfWeeks AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayInput `pulumi:"dayOfWeeks"`
+	// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+	IsMaintenanceWindowChangeScheduled pulumi.BoolPtrInput `pulumi:"isMaintenanceWindowChangeScheduled"`
+	// The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+	MaintenanceEndTime pulumi.StringPtrInput `pulumi:"maintenanceEndTime"`
+	// The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+	MaintenanceStartTime pulumi.StringPtrInput `pulumi:"maintenanceStartTime"`
+}
+
+func (AutonomousDatabaseScheduledMaintenanceWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutonomousDatabaseScheduledMaintenanceWindow)(nil)).Elem()
+}
+
+func (i AutonomousDatabaseScheduledMaintenanceWindowArgs) ToAutonomousDatabaseScheduledMaintenanceWindowOutput() AutonomousDatabaseScheduledMaintenanceWindowOutput {
+	return i.ToAutonomousDatabaseScheduledMaintenanceWindowOutputWithContext(context.Background())
+}
+
+func (i AutonomousDatabaseScheduledMaintenanceWindowArgs) ToAutonomousDatabaseScheduledMaintenanceWindowOutputWithContext(ctx context.Context) AutonomousDatabaseScheduledMaintenanceWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseScheduledMaintenanceWindowOutput)
+}
+
+func (i AutonomousDatabaseScheduledMaintenanceWindowArgs) ToAutonomousDatabaseScheduledMaintenanceWindowPtrOutput() AutonomousDatabaseScheduledMaintenanceWindowPtrOutput {
+	return i.ToAutonomousDatabaseScheduledMaintenanceWindowPtrOutputWithContext(context.Background())
+}
+
+func (i AutonomousDatabaseScheduledMaintenanceWindowArgs) ToAutonomousDatabaseScheduledMaintenanceWindowPtrOutputWithContext(ctx context.Context) AutonomousDatabaseScheduledMaintenanceWindowPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseScheduledMaintenanceWindowOutput).ToAutonomousDatabaseScheduledMaintenanceWindowPtrOutputWithContext(ctx)
+}
+
+// AutonomousDatabaseScheduledMaintenanceWindowPtrInput is an input type that accepts AutonomousDatabaseScheduledMaintenanceWindowArgs, AutonomousDatabaseScheduledMaintenanceWindowPtr and AutonomousDatabaseScheduledMaintenanceWindowPtrOutput values.
+// You can construct a concrete instance of `AutonomousDatabaseScheduledMaintenanceWindowPtrInput` via:
+//
+//	        AutonomousDatabaseScheduledMaintenanceWindowArgs{...}
+//
+//	or:
+//
+//	        nil
+type AutonomousDatabaseScheduledMaintenanceWindowPtrInput interface {
+	pulumi.Input
+
+	ToAutonomousDatabaseScheduledMaintenanceWindowPtrOutput() AutonomousDatabaseScheduledMaintenanceWindowPtrOutput
+	ToAutonomousDatabaseScheduledMaintenanceWindowPtrOutputWithContext(context.Context) AutonomousDatabaseScheduledMaintenanceWindowPtrOutput
+}
+
+type autonomousDatabaseScheduledMaintenanceWindowPtrType AutonomousDatabaseScheduledMaintenanceWindowArgs
+
+func AutonomousDatabaseScheduledMaintenanceWindowPtr(v *AutonomousDatabaseScheduledMaintenanceWindowArgs) AutonomousDatabaseScheduledMaintenanceWindowPtrInput {
+	return (*autonomousDatabaseScheduledMaintenanceWindowPtrType)(v)
+}
+
+func (*autonomousDatabaseScheduledMaintenanceWindowPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutonomousDatabaseScheduledMaintenanceWindow)(nil)).Elem()
+}
+
+func (i *autonomousDatabaseScheduledMaintenanceWindowPtrType) ToAutonomousDatabaseScheduledMaintenanceWindowPtrOutput() AutonomousDatabaseScheduledMaintenanceWindowPtrOutput {
+	return i.ToAutonomousDatabaseScheduledMaintenanceWindowPtrOutputWithContext(context.Background())
+}
+
+func (i *autonomousDatabaseScheduledMaintenanceWindowPtrType) ToAutonomousDatabaseScheduledMaintenanceWindowPtrOutputWithContext(ctx context.Context) AutonomousDatabaseScheduledMaintenanceWindowPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseScheduledMaintenanceWindowPtrOutput)
+}
+
+type AutonomousDatabaseScheduledMaintenanceWindowOutput struct{ *pulumi.OutputState }
+
+func (AutonomousDatabaseScheduledMaintenanceWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutonomousDatabaseScheduledMaintenanceWindow)(nil)).Elem()
+}
+
+func (o AutonomousDatabaseScheduledMaintenanceWindowOutput) ToAutonomousDatabaseScheduledMaintenanceWindowOutput() AutonomousDatabaseScheduledMaintenanceWindowOutput {
+	return o
+}
+
+func (o AutonomousDatabaseScheduledMaintenanceWindowOutput) ToAutonomousDatabaseScheduledMaintenanceWindowOutputWithContext(ctx context.Context) AutonomousDatabaseScheduledMaintenanceWindowOutput {
+	return o
+}
+
+func (o AutonomousDatabaseScheduledMaintenanceWindowOutput) ToAutonomousDatabaseScheduledMaintenanceWindowPtrOutput() AutonomousDatabaseScheduledMaintenanceWindowPtrOutput {
+	return o.ToAutonomousDatabaseScheduledMaintenanceWindowPtrOutputWithContext(context.Background())
+}
+
+func (o AutonomousDatabaseScheduledMaintenanceWindowOutput) ToAutonomousDatabaseScheduledMaintenanceWindowPtrOutputWithContext(ctx context.Context) AutonomousDatabaseScheduledMaintenanceWindowPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutonomousDatabaseScheduledMaintenanceWindow) *AutonomousDatabaseScheduledMaintenanceWindow {
+		return &v
+	}).(AutonomousDatabaseScheduledMaintenanceWindowPtrOutput)
+}
+
+// (Updatable) The Autonomous Database Serverless instance's availability domain.
+func (o AutonomousDatabaseScheduledMaintenanceWindowOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutonomousDatabaseScheduledMaintenanceWindow) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
+}
+
+// Day of the week.
+func (o AutonomousDatabaseScheduledMaintenanceWindowOutput) DayOfWeeks() AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput {
+	return o.ApplyT(func(v AutonomousDatabaseScheduledMaintenanceWindow) []AutonomousDatabaseScheduledMaintenanceWindowDayOfWeek {
+		return v.DayOfWeeks
+	}).(AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput)
+}
+
+// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+func (o AutonomousDatabaseScheduledMaintenanceWindowOutput) IsMaintenanceWindowChangeScheduled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AutonomousDatabaseScheduledMaintenanceWindow) *bool {
+		return v.IsMaintenanceWindowChangeScheduled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+func (o AutonomousDatabaseScheduledMaintenanceWindowOutput) MaintenanceEndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutonomousDatabaseScheduledMaintenanceWindow) *string { return v.MaintenanceEndTime }).(pulumi.StringPtrOutput)
+}
+
+// The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+func (o AutonomousDatabaseScheduledMaintenanceWindowOutput) MaintenanceStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutonomousDatabaseScheduledMaintenanceWindow) *string { return v.MaintenanceStartTime }).(pulumi.StringPtrOutput)
+}
+
+type AutonomousDatabaseScheduledMaintenanceWindowPtrOutput struct{ *pulumi.OutputState }
+
+func (AutonomousDatabaseScheduledMaintenanceWindowPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutonomousDatabaseScheduledMaintenanceWindow)(nil)).Elem()
+}
+
+func (o AutonomousDatabaseScheduledMaintenanceWindowPtrOutput) ToAutonomousDatabaseScheduledMaintenanceWindowPtrOutput() AutonomousDatabaseScheduledMaintenanceWindowPtrOutput {
+	return o
+}
+
+func (o AutonomousDatabaseScheduledMaintenanceWindowPtrOutput) ToAutonomousDatabaseScheduledMaintenanceWindowPtrOutputWithContext(ctx context.Context) AutonomousDatabaseScheduledMaintenanceWindowPtrOutput {
+	return o
+}
+
+func (o AutonomousDatabaseScheduledMaintenanceWindowPtrOutput) Elem() AutonomousDatabaseScheduledMaintenanceWindowOutput {
+	return o.ApplyT(func(v *AutonomousDatabaseScheduledMaintenanceWindow) AutonomousDatabaseScheduledMaintenanceWindow {
+		if v != nil {
+			return *v
+		}
+		var ret AutonomousDatabaseScheduledMaintenanceWindow
+		return ret
+	}).(AutonomousDatabaseScheduledMaintenanceWindowOutput)
+}
+
+// (Updatable) The Autonomous Database Serverless instance's availability domain.
+func (o AutonomousDatabaseScheduledMaintenanceWindowPtrOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousDatabaseScheduledMaintenanceWindow) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AvailabilityDomain
+	}).(pulumi.StringPtrOutput)
+}
+
+// Day of the week.
+func (o AutonomousDatabaseScheduledMaintenanceWindowPtrOutput) DayOfWeeks() AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput {
+	return o.ApplyT(func(v *AutonomousDatabaseScheduledMaintenanceWindow) []AutonomousDatabaseScheduledMaintenanceWindowDayOfWeek {
+		if v == nil {
+			return nil
+		}
+		return v.DayOfWeeks
+	}).(AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput)
+}
+
+// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+func (o AutonomousDatabaseScheduledMaintenanceWindowPtrOutput) IsMaintenanceWindowChangeScheduled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AutonomousDatabaseScheduledMaintenanceWindow) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsMaintenanceWindowChangeScheduled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+func (o AutonomousDatabaseScheduledMaintenanceWindowPtrOutput) MaintenanceEndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousDatabaseScheduledMaintenanceWindow) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MaintenanceEndTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+func (o AutonomousDatabaseScheduledMaintenanceWindowPtrOutput) MaintenanceStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousDatabaseScheduledMaintenanceWindow) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MaintenanceStartTime
+	}).(pulumi.StringPtrOutput)
+}
+
+type AutonomousDatabaseScheduledMaintenanceWindowDayOfWeek struct {
+	// Name of the day of the week.
+	Name string `pulumi:"name"`
+}
+
+// AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekInput is an input type that accepts AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs and AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput values.
+// You can construct a concrete instance of `AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekInput` via:
+//
+//	AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs{...}
+type AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekInput interface {
+	pulumi.Input
+
+	ToAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput() AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput
+	ToAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutputWithContext(context.Context) AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput
+}
+
+type AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs struct {
+	// Name of the day of the week.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutonomousDatabaseScheduledMaintenanceWindowDayOfWeek)(nil)).Elem()
+}
+
+func (i AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs) ToAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput() AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput {
+	return i.ToAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutputWithContext(context.Background())
+}
+
+func (i AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs) ToAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutputWithContext(ctx context.Context) AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput)
+}
+
+// AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayInput is an input type that accepts AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray and AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput values.
+// You can construct a concrete instance of `AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayInput` via:
+//
+//	AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray{ AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs{...} }
+type AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayInput interface {
+	pulumi.Input
+
+	ToAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput() AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput
+	ToAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutputWithContext(context.Context) AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput
+}
+
+type AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray []AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekInput
+
+func (AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AutonomousDatabaseScheduledMaintenanceWindowDayOfWeek)(nil)).Elem()
+}
+
+func (i AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray) ToAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput() AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput {
+	return i.ToAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutputWithContext(context.Background())
+}
+
+func (i AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray) ToAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutputWithContext(ctx context.Context) AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput)
+}
+
+type AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput struct{ *pulumi.OutputState }
+
+func (AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutonomousDatabaseScheduledMaintenanceWindowDayOfWeek)(nil)).Elem()
+}
+
+func (o AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput) ToAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput() AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput {
+	return o
+}
+
+func (o AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput) ToAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutputWithContext(ctx context.Context) AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput {
+	return o
+}
+
+// Name of the day of the week.
+func (o AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v AutonomousDatabaseScheduledMaintenanceWindowDayOfWeek) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput struct{ *pulumi.OutputState }
+
+func (AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AutonomousDatabaseScheduledMaintenanceWindowDayOfWeek)(nil)).Elem()
+}
+
+func (o AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput) ToAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput() AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput {
+	return o
+}
+
+func (o AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput) ToAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutputWithContext(ctx context.Context) AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput {
+	return o
+}
+
+func (o AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput) Index(i pulumi.IntInput) AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AutonomousDatabaseScheduledMaintenanceWindowDayOfWeek {
+		return vs[0].([]AutonomousDatabaseScheduledMaintenanceWindowDayOfWeek)[vs[1].(int)]
+	}).(AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput)
 }
 
 type AutonomousDatabaseScheduledOperation struct {
@@ -52583,8 +52931,12 @@ func (o GetAutonomousDatabaseApexDetailArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindow struct {
+	// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// Day of the week.
 	DayOfWeeks []GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek `pulumi:"dayOfWeeks"`
+	// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+	IsMaintenanceWindowChangeScheduled bool `pulumi:"isMaintenanceWindowChangeScheduled"`
 	// The maintenance end time. The value must use the ISO-8601 format "hh:mm".
 	MaintenanceEndTime string `pulumi:"maintenanceEndTime"`
 	// The maintenance start time. The value must use the ISO-8601 format "hh:mm".
@@ -52603,8 +52955,12 @@ type GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowInput interface {
 }
 
 type GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs struct {
+	// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// Day of the week.
 	DayOfWeeks GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArrayInput `pulumi:"dayOfWeeks"`
+	// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+	IsMaintenanceWindowChangeScheduled pulumi.BoolInput `pulumi:"isMaintenanceWindowChangeScheduled"`
 	// The maintenance end time. The value must use the ISO-8601 format "hh:mm".
 	MaintenanceEndTime pulumi.StringInput `pulumi:"maintenanceEndTime"`
 	// The maintenance start time. The value must use the ISO-8601 format "hh:mm".
@@ -52662,11 +53018,23 @@ func (o GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowOutput) ToGetAut
 	return o
 }
 
+// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+func (o GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindow) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
 // Day of the week.
 func (o GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowOutput) DayOfWeeks() GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArrayOutput {
 	return o.ApplyT(func(v GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindow) []GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek {
 		return v.DayOfWeeks
 	}).(GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArrayOutput)
+}
+
+// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+func (o GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowOutput) IsMaintenanceWindowChangeScheduled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindow) bool {
+		return v.IsMaintenanceWindowChangeScheduled
+	}).(pulumi.BoolOutput)
 }
 
 // The maintenance end time. The value must use the ISO-8601 format "hh:mm".
@@ -52794,6 +53162,456 @@ func (o GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArrayOu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek {
 		return vs[0].([]GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek)[vs[1].(int)]
 	}).(GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekOutput)
+}
+
+type GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollection struct {
+	// List of Autonomous AI Database maintenance windows.
+	Items []GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItem `pulumi:"items"`
+}
+
+// GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionInput is an input type that accepts GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArgs and GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionInput` via:
+//
+//	GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArgs{...}
+type GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionOutput
+	ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionOutputWithContext(context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionOutput
+}
+
+type GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArgs struct {
+	// List of Autonomous AI Database maintenance windows.
+	Items GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollection)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArgs) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionOutput {
+	return i.ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArgs) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionOutputWithContext(ctx context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionOutput)
+}
+
+// GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayInput is an input type that accepts GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArray and GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayInput` via:
+//
+//	GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArray{ GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArgs{...} }
+type GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayOutput
+	ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayOutputWithContext(context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayOutput
+}
+
+type GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArray []GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionInput
+
+func (GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollection)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArray) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayOutput {
+	return i.ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArray) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayOutputWithContext(ctx context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayOutput)
+}
+
+type GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollection)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionOutput) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionOutput {
+	return o
+}
+
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionOutput) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionOutputWithContext(ctx context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionOutput {
+	return o
+}
+
+// List of Autonomous AI Database maintenance windows.
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionOutput) Items() GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollection) []GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItem {
+		return v.Items
+	}).(GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayOutput)
+}
+
+type GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollection)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayOutput) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayOutput) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayOutputWithContext(ctx context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayOutput) Index(i pulumi.IntInput) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollection {
+		return vs[0].([]GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollection)[vs[1].(int)]
+	}).(GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionOutput)
+}
+
+type GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItem struct {
+	// The AD in which the maintenance will occur.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// Day of the week.
+	DayOfWeeks []GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeek `pulumi:"dayOfWeeks"`
+	// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+	IsMaintenanceWindowChangeScheduled bool `pulumi:"isMaintenanceWindowChangeScheduled"`
+	// The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+	MaintenanceEndTime string `pulumi:"maintenanceEndTime"`
+	// The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+	MaintenanceStartTime string `pulumi:"maintenanceStartTime"`
+}
+
+// GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemInput is an input type that accepts GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArgs and GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemInput` via:
+//
+//	GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArgs{...}
+type GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutput
+	ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutputWithContext(context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutput
+}
+
+type GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArgs struct {
+	// The AD in which the maintenance will occur.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// Day of the week.
+	DayOfWeeks GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayInput `pulumi:"dayOfWeeks"`
+	// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+	IsMaintenanceWindowChangeScheduled pulumi.BoolInput `pulumi:"isMaintenanceWindowChangeScheduled"`
+	// The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+	MaintenanceEndTime pulumi.StringInput `pulumi:"maintenanceEndTime"`
+	// The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+	MaintenanceStartTime pulumi.StringInput `pulumi:"maintenanceStartTime"`
+}
+
+func (GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItem)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArgs) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutput {
+	return i.ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArgs) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutputWithContext(ctx context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutput)
+}
+
+// GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayInput is an input type that accepts GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArray and GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayInput` via:
+//
+//	GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArray{ GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArgs{...} }
+type GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayOutput
+	ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayOutputWithContext(context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayOutput
+}
+
+type GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArray []GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemInput
+
+func (GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItem)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArray) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayOutput {
+	return i.ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArray) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayOutputWithContext(ctx context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayOutput)
+}
+
+type GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItem)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutput) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutput {
+	return o
+}
+
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutput) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutputWithContext(ctx context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutput {
+	return o
+}
+
+// The AD in which the maintenance will occur.
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItem) string {
+		return v.AvailabilityDomain
+	}).(pulumi.StringOutput)
+}
+
+// Day of the week.
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutput) DayOfWeeks() GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItem) []GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeek {
+		return v.DayOfWeeks
+	}).(GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayOutput)
+}
+
+// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutput) IsMaintenanceWindowChangeScheduled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItem) bool {
+		return v.IsMaintenanceWindowChangeScheduled
+	}).(pulumi.BoolOutput)
+}
+
+// The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutput) MaintenanceEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItem) string {
+		return v.MaintenanceEndTime
+	}).(pulumi.StringOutput)
+}
+
+// The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutput) MaintenanceStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItem) string {
+		return v.MaintenanceStartTime
+	}).(pulumi.StringOutput)
+}
+
+type GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItem)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayOutput) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayOutput) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayOutputWithContext(ctx context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItem {
+		return vs[0].([]GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItem)[vs[1].(int)]
+	}).(GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutput)
+}
+
+type GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeek struct {
+	// Name of the day of the week.
+	Name string `pulumi:"name"`
+}
+
+// GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekInput is an input type that accepts GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArgs and GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekInput` via:
+//
+//	GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArgs{...}
+type GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekOutput
+	ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekOutputWithContext(context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekOutput
+}
+
+type GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArgs struct {
+	// Name of the day of the week.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeek)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArgs) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekOutput {
+	return i.ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArgs) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekOutputWithContext(ctx context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekOutput)
+}
+
+// GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayInput is an input type that accepts GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArray and GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayInput` via:
+//
+//	GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArray{ GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArgs{...} }
+type GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayOutput
+	ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayOutputWithContext(context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayOutput
+}
+
+type GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArray []GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekInput
+
+func (GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeek)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArray) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayOutput {
+	return i.ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArray) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayOutputWithContext(ctx context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayOutput)
+}
+
+type GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeek)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekOutput) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekOutput {
+	return o
+}
+
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekOutput) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekOutputWithContext(ctx context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekOutput {
+	return o
+}
+
+// Name of the day of the week.
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeek) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeek)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayOutput) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayOutput) ToGetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayOutputWithContext(ctx context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayOutput) Index(i pulumi.IntInput) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeek {
+		return vs[0].([]GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeek)[vs[1].(int)]
+	}).(GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekOutput)
+}
+
+type GetAutonomousDatabaseAvailableMaintenanceWindowsFilter struct {
+	// Name of the day of the week.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAutonomousDatabaseAvailableMaintenanceWindowsFilterInput is an input type that accepts GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArgs and GetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabaseAvailableMaintenanceWindowsFilterInput` via:
+//
+//	GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArgs{...}
+type GetAutonomousDatabaseAvailableMaintenanceWindowsFilterInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutput
+	ToGetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutputWithContext(context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutput
+}
+
+type GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArgs struct {
+	// Name of the day of the week.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabaseAvailableMaintenanceWindowsFilter)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArgs) ToGetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutput {
+	return i.ToGetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArgs) ToGetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutputWithContext(ctx context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutput)
+}
+
+// GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayInput is an input type that accepts GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArray and GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayInput` via:
+//
+//	GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArray{ GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArgs{...} }
+type GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayOutput
+	ToGetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayOutputWithContext(context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayOutput
+}
+
+type GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArray []GetAutonomousDatabaseAvailableMaintenanceWindowsFilterInput
+
+func (GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabaseAvailableMaintenanceWindowsFilter)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArray) ToGetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayOutput {
+	return i.ToGetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArray) ToGetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayOutputWithContext(ctx context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayOutput)
+}
+
+type GetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabaseAvailableMaintenanceWindowsFilter)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutput) ToGetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutput {
+	return o
+}
+
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutput) ToGetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutputWithContext(ctx context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutput {
+	return o
+}
+
+// Name of the day of the week.
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseAvailableMaintenanceWindowsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseAvailableMaintenanceWindowsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseAvailableMaintenanceWindowsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabaseAvailableMaintenanceWindowsFilter)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayOutput) ToGetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayOutput() GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayOutput) ToGetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayOutputWithContext(ctx context.Context) GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayOutput) Index(i pulumi.IntInput) GetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutonomousDatabaseAvailableMaintenanceWindowsFilter {
+		return vs[0].([]GetAutonomousDatabaseAvailableMaintenanceWindowsFilter)[vs[1].(int)]
+	}).(GetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutput)
 }
 
 type GetAutonomousDatabaseBackupBackupDestinationDetail struct {
@@ -52968,10 +53786,8 @@ func (o GetAutonomousDatabaseBackupBackupDestinationDetailArrayOutput) Index(i p
 }
 
 type GetAutonomousDatabaseBackupConfig struct {
-	// Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
 	ManualBackupBucketName string `pulumi:"manualBackupBucketName"`
-	// The manual backup destination type.
-	ManualBackupType string `pulumi:"manualBackupType"`
+	ManualBackupType       string `pulumi:"manualBackupType"`
 }
 
 // GetAutonomousDatabaseBackupConfigInput is an input type that accepts GetAutonomousDatabaseBackupConfigArgs and GetAutonomousDatabaseBackupConfigOutput values.
@@ -52986,10 +53802,8 @@ type GetAutonomousDatabaseBackupConfigInput interface {
 }
 
 type GetAutonomousDatabaseBackupConfigArgs struct {
-	// Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
 	ManualBackupBucketName pulumi.StringInput `pulumi:"manualBackupBucketName"`
-	// The manual backup destination type.
-	ManualBackupType pulumi.StringInput `pulumi:"manualBackupType"`
+	ManualBackupType       pulumi.StringInput `pulumi:"manualBackupType"`
 }
 
 func (GetAutonomousDatabaseBackupConfigArgs) ElementType() reflect.Type {
@@ -53043,12 +53857,10 @@ func (o GetAutonomousDatabaseBackupConfigOutput) ToGetAutonomousDatabaseBackupCo
 	return o
 }
 
-// Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
 func (o GetAutonomousDatabaseBackupConfigOutput) ManualBackupBucketName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabaseBackupConfig) string { return v.ManualBackupBucketName }).(pulumi.StringOutput)
 }
 
-// The manual backup destination type.
 func (o GetAutonomousDatabaseBackupConfigOutput) ManualBackupType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabaseBackupConfig) string { return v.ManualBackupType }).(pulumi.StringOutput)
 }
@@ -58048,6 +58860,240 @@ func (o GetAutonomousDatabaseResourcePoolSummaryArrayOutput) Index(i pulumi.IntI
 	}).(GetAutonomousDatabaseResourcePoolSummaryOutput)
 }
 
+type GetAutonomousDatabaseScheduledMaintenanceWindow struct {
+	// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// Day of the week.
+	DayOfWeeks []GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek `pulumi:"dayOfWeeks"`
+	// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+	IsMaintenanceWindowChangeScheduled bool `pulumi:"isMaintenanceWindowChangeScheduled"`
+	// The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+	MaintenanceEndTime string `pulumi:"maintenanceEndTime"`
+	// The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+	MaintenanceStartTime string `pulumi:"maintenanceStartTime"`
+}
+
+// GetAutonomousDatabaseScheduledMaintenanceWindowInput is an input type that accepts GetAutonomousDatabaseScheduledMaintenanceWindowArgs and GetAutonomousDatabaseScheduledMaintenanceWindowOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabaseScheduledMaintenanceWindowInput` via:
+//
+//	GetAutonomousDatabaseScheduledMaintenanceWindowArgs{...}
+type GetAutonomousDatabaseScheduledMaintenanceWindowInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabaseScheduledMaintenanceWindowOutput() GetAutonomousDatabaseScheduledMaintenanceWindowOutput
+	ToGetAutonomousDatabaseScheduledMaintenanceWindowOutputWithContext(context.Context) GetAutonomousDatabaseScheduledMaintenanceWindowOutput
+}
+
+type GetAutonomousDatabaseScheduledMaintenanceWindowArgs struct {
+	// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// Day of the week.
+	DayOfWeeks GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayInput `pulumi:"dayOfWeeks"`
+	// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+	IsMaintenanceWindowChangeScheduled pulumi.BoolInput `pulumi:"isMaintenanceWindowChangeScheduled"`
+	// The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+	MaintenanceEndTime pulumi.StringInput `pulumi:"maintenanceEndTime"`
+	// The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+	MaintenanceStartTime pulumi.StringInput `pulumi:"maintenanceStartTime"`
+}
+
+func (GetAutonomousDatabaseScheduledMaintenanceWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabaseScheduledMaintenanceWindow)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabaseScheduledMaintenanceWindowArgs) ToGetAutonomousDatabaseScheduledMaintenanceWindowOutput() GetAutonomousDatabaseScheduledMaintenanceWindowOutput {
+	return i.ToGetAutonomousDatabaseScheduledMaintenanceWindowOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabaseScheduledMaintenanceWindowArgs) ToGetAutonomousDatabaseScheduledMaintenanceWindowOutputWithContext(ctx context.Context) GetAutonomousDatabaseScheduledMaintenanceWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabaseScheduledMaintenanceWindowOutput)
+}
+
+// GetAutonomousDatabaseScheduledMaintenanceWindowArrayInput is an input type that accepts GetAutonomousDatabaseScheduledMaintenanceWindowArray and GetAutonomousDatabaseScheduledMaintenanceWindowArrayOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabaseScheduledMaintenanceWindowArrayInput` via:
+//
+//	GetAutonomousDatabaseScheduledMaintenanceWindowArray{ GetAutonomousDatabaseScheduledMaintenanceWindowArgs{...} }
+type GetAutonomousDatabaseScheduledMaintenanceWindowArrayInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabaseScheduledMaintenanceWindowArrayOutput() GetAutonomousDatabaseScheduledMaintenanceWindowArrayOutput
+	ToGetAutonomousDatabaseScheduledMaintenanceWindowArrayOutputWithContext(context.Context) GetAutonomousDatabaseScheduledMaintenanceWindowArrayOutput
+}
+
+type GetAutonomousDatabaseScheduledMaintenanceWindowArray []GetAutonomousDatabaseScheduledMaintenanceWindowInput
+
+func (GetAutonomousDatabaseScheduledMaintenanceWindowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabaseScheduledMaintenanceWindow)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabaseScheduledMaintenanceWindowArray) ToGetAutonomousDatabaseScheduledMaintenanceWindowArrayOutput() GetAutonomousDatabaseScheduledMaintenanceWindowArrayOutput {
+	return i.ToGetAutonomousDatabaseScheduledMaintenanceWindowArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabaseScheduledMaintenanceWindowArray) ToGetAutonomousDatabaseScheduledMaintenanceWindowArrayOutputWithContext(ctx context.Context) GetAutonomousDatabaseScheduledMaintenanceWindowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabaseScheduledMaintenanceWindowArrayOutput)
+}
+
+type GetAutonomousDatabaseScheduledMaintenanceWindowOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabaseScheduledMaintenanceWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabaseScheduledMaintenanceWindow)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabaseScheduledMaintenanceWindowOutput) ToGetAutonomousDatabaseScheduledMaintenanceWindowOutput() GetAutonomousDatabaseScheduledMaintenanceWindowOutput {
+	return o
+}
+
+func (o GetAutonomousDatabaseScheduledMaintenanceWindowOutput) ToGetAutonomousDatabaseScheduledMaintenanceWindowOutputWithContext(ctx context.Context) GetAutonomousDatabaseScheduledMaintenanceWindowOutput {
+	return o
+}
+
+// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+func (o GetAutonomousDatabaseScheduledMaintenanceWindowOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseScheduledMaintenanceWindow) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// Day of the week.
+func (o GetAutonomousDatabaseScheduledMaintenanceWindowOutput) DayOfWeeks() GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseScheduledMaintenanceWindow) []GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek {
+		return v.DayOfWeeks
+	}).(GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput)
+}
+
+// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+func (o GetAutonomousDatabaseScheduledMaintenanceWindowOutput) IsMaintenanceWindowChangeScheduled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseScheduledMaintenanceWindow) bool {
+		return v.IsMaintenanceWindowChangeScheduled
+	}).(pulumi.BoolOutput)
+}
+
+// The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+func (o GetAutonomousDatabaseScheduledMaintenanceWindowOutput) MaintenanceEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseScheduledMaintenanceWindow) string { return v.MaintenanceEndTime }).(pulumi.StringOutput)
+}
+
+// The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+func (o GetAutonomousDatabaseScheduledMaintenanceWindowOutput) MaintenanceStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseScheduledMaintenanceWindow) string { return v.MaintenanceStartTime }).(pulumi.StringOutput)
+}
+
+type GetAutonomousDatabaseScheduledMaintenanceWindowArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabaseScheduledMaintenanceWindowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabaseScheduledMaintenanceWindow)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabaseScheduledMaintenanceWindowArrayOutput) ToGetAutonomousDatabaseScheduledMaintenanceWindowArrayOutput() GetAutonomousDatabaseScheduledMaintenanceWindowArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabaseScheduledMaintenanceWindowArrayOutput) ToGetAutonomousDatabaseScheduledMaintenanceWindowArrayOutputWithContext(ctx context.Context) GetAutonomousDatabaseScheduledMaintenanceWindowArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabaseScheduledMaintenanceWindowArrayOutput) Index(i pulumi.IntInput) GetAutonomousDatabaseScheduledMaintenanceWindowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutonomousDatabaseScheduledMaintenanceWindow {
+		return vs[0].([]GetAutonomousDatabaseScheduledMaintenanceWindow)[vs[1].(int)]
+	}).(GetAutonomousDatabaseScheduledMaintenanceWindowOutput)
+}
+
+type GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek struct {
+	// Name of the day of the week.
+	Name string `pulumi:"name"`
+}
+
+// GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekInput is an input type that accepts GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs and GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekInput` via:
+//
+//	GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs{...}
+type GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput() GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput
+	ToGetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutputWithContext(context.Context) GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput
+}
+
+type GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs struct {
+	// Name of the day of the week.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs) ToGetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput() GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput {
+	return i.ToGetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs) ToGetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutputWithContext(ctx context.Context) GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput)
+}
+
+// GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayInput is an input type that accepts GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray and GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayInput` via:
+//
+//	GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray{ GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs{...} }
+type GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput() GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput
+	ToGetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutputWithContext(context.Context) GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput
+}
+
+type GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray []GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekInput
+
+func (GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray) ToGetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput() GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput {
+	return i.ToGetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray) ToGetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutputWithContext(ctx context.Context) GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput)
+}
+
+type GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput) ToGetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput() GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput {
+	return o
+}
+
+func (o GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput) ToGetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutputWithContext(ctx context.Context) GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput {
+	return o
+}
+
+// Name of the day of the week.
+func (o GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput) ToGetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput() GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput) ToGetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutputWithContext(ctx context.Context) GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput) Index(i pulumi.IntInput) GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek {
+		return vs[0].([]GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek)[vs[1].(int)]
+	}).(GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput)
+}
+
 type GetAutonomousDatabaseScheduledOperation struct {
 	// Day of the week.
 	DayOfWeeks []GetAutonomousDatabaseScheduledOperationDayOfWeek `pulumi:"dayOfWeeks"`
@@ -59272,7 +60318,7 @@ type GetAutonomousDatabasesAutonomousDatabase struct {
 	AutonomousContainerDatabaseId string `pulumi:"autonomousContainerDatabaseId"`
 	AutonomousDatabaseBackupId    string `pulumi:"autonomousDatabaseBackupId"`
 	AutonomousDatabaseId          string `pulumi:"autonomousDatabaseId"`
-	// Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+	// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
 	AutonomousDatabaseMaintenanceWindows []GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow `pulumi:"autonomousDatabaseMaintenanceWindows"`
 	// The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
 	AutonomousMaintenanceScheduleType string `pulumi:"autonomousMaintenanceScheduleType"`
@@ -59478,6 +60524,8 @@ type GetAutonomousDatabasesAutonomousDatabase struct {
 	// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 	Role             string `pulumi:"role"`
 	RotateKeyTrigger bool   `pulumi:"rotateKeyTrigger"`
+	// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+	ScheduledMaintenanceWindows []GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindow `pulumi:"scheduledMaintenanceWindows"`
 	// The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 	ScheduledOperations []GetAutonomousDatabasesAutonomousDatabaseScheduledOperation `pulumi:"scheduledOperations"`
 	SecretId            string                                                       `pulumi:"secretId"`
@@ -59550,6 +60598,8 @@ type GetAutonomousDatabasesAutonomousDatabase struct {
 	TimeScheduledAdUpdate string `pulumi:"timeScheduledAdUpdate"`
 	// The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
 	TimeScheduledDbVersionUpgrade string `pulumi:"timeScheduledDbVersionUpgrade"`
+	// The date and time at which operation to change Maintenance Window is scheduled to take place.
+	TimeScheduledMaintenanceWindowUpdate string `pulumi:"timeScheduledMaintenanceWindowUpdate"`
 	// The date and time the Autonomous AI Database was most recently undeleted.
 	TimeUndeleted string `pulumi:"timeUndeleted"`
 	// The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
@@ -59606,7 +60656,7 @@ type GetAutonomousDatabasesAutonomousDatabaseArgs struct {
 	AutonomousContainerDatabaseId pulumi.StringInput `pulumi:"autonomousContainerDatabaseId"`
 	AutonomousDatabaseBackupId    pulumi.StringInput `pulumi:"autonomousDatabaseBackupId"`
 	AutonomousDatabaseId          pulumi.StringInput `pulumi:"autonomousDatabaseId"`
-	// Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+	// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
 	AutonomousDatabaseMaintenanceWindows GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowArrayInput `pulumi:"autonomousDatabaseMaintenanceWindows"`
 	// The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
 	AutonomousMaintenanceScheduleType pulumi.StringInput `pulumi:"autonomousMaintenanceScheduleType"`
@@ -59812,6 +60862,8 @@ type GetAutonomousDatabasesAutonomousDatabaseArgs struct {
 	// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 	Role             pulumi.StringInput `pulumi:"role"`
 	RotateKeyTrigger pulumi.BoolInput   `pulumi:"rotateKeyTrigger"`
+	// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+	ScheduledMaintenanceWindows GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayInput `pulumi:"scheduledMaintenanceWindows"`
 	// The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 	ScheduledOperations GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArrayInput `pulumi:"scheduledOperations"`
 	SecretId            pulumi.StringInput                                                   `pulumi:"secretId"`
@@ -59884,6 +60936,8 @@ type GetAutonomousDatabasesAutonomousDatabaseArgs struct {
 	TimeScheduledAdUpdate pulumi.StringInput `pulumi:"timeScheduledAdUpdate"`
 	// The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
 	TimeScheduledDbVersionUpgrade pulumi.StringInput `pulumi:"timeScheduledDbVersionUpgrade"`
+	// The date and time at which operation to change Maintenance Window is scheduled to take place.
+	TimeScheduledMaintenanceWindowUpdate pulumi.StringInput `pulumi:"timeScheduledMaintenanceWindowUpdate"`
 	// The date and time the Autonomous AI Database was most recently undeleted.
 	TimeUndeleted pulumi.StringInput `pulumi:"timeUndeleted"`
 	// The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
@@ -60017,7 +61071,7 @@ func (o GetAutonomousDatabasesAutonomousDatabaseOutput) AutonomousDatabaseId() p
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) string { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
 }
 
-// Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
 func (o GetAutonomousDatabasesAutonomousDatabaseOutput) AutonomousDatabaseMaintenanceWindows() GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowArrayOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) []GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow {
 		return v.AutonomousDatabaseMaintenanceWindows
@@ -60576,6 +61630,13 @@ func (o GetAutonomousDatabasesAutonomousDatabaseOutput) RotateKeyTrigger() pulum
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) bool { return v.RotateKeyTrigger }).(pulumi.BoolOutput)
 }
 
+// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+func (o GetAutonomousDatabasesAutonomousDatabaseOutput) ScheduledMaintenanceWindows() GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) []GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindow {
+		return v.ScheduledMaintenanceWindows
+	}).(GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayOutput)
+}
+
 // The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 func (o GetAutonomousDatabasesAutonomousDatabaseOutput) ScheduledOperations() GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArrayOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) []GetAutonomousDatabasesAutonomousDatabaseScheduledOperation {
@@ -60773,6 +61834,11 @@ func (o GetAutonomousDatabasesAutonomousDatabaseOutput) TimeScheduledDbVersionUp
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) string { return v.TimeScheduledDbVersionUpgrade }).(pulumi.StringOutput)
 }
 
+// The date and time at which operation to change Maintenance Window is scheduled to take place.
+func (o GetAutonomousDatabasesAutonomousDatabaseOutput) TimeScheduledMaintenanceWindowUpdate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) string { return v.TimeScheduledMaintenanceWindowUpdate }).(pulumi.StringOutput)
+}
+
 // The date and time the Autonomous AI Database was most recently undeleted.
 func (o GetAutonomousDatabasesAutonomousDatabaseOutput) TimeUndeleted() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) string { return v.TimeUndeleted }).(pulumi.StringOutput)
@@ -60963,8 +62029,12 @@ func (o GetAutonomousDatabasesAutonomousDatabaseApexDetailArrayOutput) Index(i p
 }
 
 type GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow struct {
+	// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// Day of the week.
 	DayOfWeeks []GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek `pulumi:"dayOfWeeks"`
+	// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+	IsMaintenanceWindowChangeScheduled bool `pulumi:"isMaintenanceWindowChangeScheduled"`
 	// The maintenance end time. The value must use the ISO-8601 format "hh:mm".
 	MaintenanceEndTime string `pulumi:"maintenanceEndTime"`
 	// The maintenance start time. The value must use the ISO-8601 format "hh:mm".
@@ -60983,8 +62053,12 @@ type GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow
 }
 
 type GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs struct {
+	// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// Day of the week.
 	DayOfWeeks GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArrayInput `pulumi:"dayOfWeeks"`
+	// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+	IsMaintenanceWindowChangeScheduled pulumi.BoolInput `pulumi:"isMaintenanceWindowChangeScheduled"`
 	// The maintenance end time. The value must use the ISO-8601 format "hh:mm".
 	MaintenanceEndTime pulumi.StringInput `pulumi:"maintenanceEndTime"`
 	// The maintenance start time. The value must use the ISO-8601 format "hh:mm".
@@ -61042,11 +62116,25 @@ func (o GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWin
 	return o
 }
 
+// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+func (o GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow) string {
+		return v.AvailabilityDomain
+	}).(pulumi.StringOutput)
+}
+
 // Day of the week.
 func (o GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowOutput) DayOfWeeks() GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArrayOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow) []GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek {
 		return v.DayOfWeeks
 	}).(GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArrayOutput)
+}
+
+// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+func (o GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowOutput) IsMaintenanceWindowChangeScheduled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow) bool {
+		return v.IsMaintenanceWindowChangeScheduled
+	}).(pulumi.BoolOutput)
 }
 
 // The maintenance end time. The value must use the ISO-8601 format "hh:mm".
@@ -63659,6 +64747,248 @@ func (o GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummaryArrayOutput) 
 	}).(GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummaryOutput)
 }
 
+type GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindow struct {
+	// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// Day of the week.
+	DayOfWeeks []GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek `pulumi:"dayOfWeeks"`
+	// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+	IsMaintenanceWindowChangeScheduled bool `pulumi:"isMaintenanceWindowChangeScheduled"`
+	// The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+	MaintenanceEndTime string `pulumi:"maintenanceEndTime"`
+	// The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+	MaintenanceStartTime string `pulumi:"maintenanceStartTime"`
+}
+
+// GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArgs and GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowInput` via:
+//
+//	GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArgs{...}
+type GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutput() GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutput
+	ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutputWithContext(context.Context) GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutput
+}
+
+type GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArgs struct {
+	// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// Day of the week.
+	DayOfWeeks GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayInput `pulumi:"dayOfWeeks"`
+	// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+	IsMaintenanceWindowChangeScheduled pulumi.BoolInput `pulumi:"isMaintenanceWindowChangeScheduled"`
+	// The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+	MaintenanceEndTime pulumi.StringInput `pulumi:"maintenanceEndTime"`
+	// The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+	MaintenanceStartTime pulumi.StringInput `pulumi:"maintenanceStartTime"`
+}
+
+func (GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindow)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArgs) ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutput() GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutput {
+	return i.ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArgs) ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutputWithContext(ctx context.Context) GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutput)
+}
+
+// GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArray and GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayInput` via:
+//
+//	GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArray{ GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArgs{...} }
+type GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayOutput() GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayOutput
+	ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayOutputWithContext(context.Context) GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayOutput
+}
+
+type GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArray []GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowInput
+
+func (GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindow)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArray) ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayOutput() GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayOutput {
+	return i.ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArray) ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayOutputWithContext(ctx context.Context) GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayOutput)
+}
+
+type GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindow)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutput) ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutput() GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutput {
+	return o
+}
+
+func (o GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutput) ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutputWithContext(ctx context.Context) GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutput {
+	return o
+}
+
+// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+func (o GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindow) string {
+		return v.AvailabilityDomain
+	}).(pulumi.StringOutput)
+}
+
+// Day of the week.
+func (o GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutput) DayOfWeeks() GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindow) []GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek {
+		return v.DayOfWeeks
+	}).(GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput)
+}
+
+// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+func (o GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutput) IsMaintenanceWindowChangeScheduled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindow) bool {
+		return v.IsMaintenanceWindowChangeScheduled
+	}).(pulumi.BoolOutput)
+}
+
+// The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+func (o GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutput) MaintenanceEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindow) string {
+		return v.MaintenanceEndTime
+	}).(pulumi.StringOutput)
+}
+
+// The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+func (o GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutput) MaintenanceStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindow) string {
+		return v.MaintenanceStartTime
+	}).(pulumi.StringOutput)
+}
+
+type GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindow)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayOutput) ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayOutput() GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayOutput) ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayOutputWithContext(ctx context.Context) GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayOutput) Index(i pulumi.IntInput) GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindow {
+		return vs[0].([]GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindow)[vs[1].(int)]
+	}).(GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutput)
+}
+
+type GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek struct {
+	// Name of the day of the week.
+	Name string `pulumi:"name"`
+}
+
+// GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs and GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekInput` via:
+//
+//	GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs{...}
+type GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput() GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput
+	ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutputWithContext(context.Context) GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput
+}
+
+type GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs struct {
+	// Name of the day of the week.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs) ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput() GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput {
+	return i.ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs) ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutputWithContext(ctx context.Context) GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput)
+}
+
+// GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray and GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayInput` via:
+//
+//	GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray{ GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs{...} }
+type GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput() GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput
+	ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutputWithContext(context.Context) GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput
+}
+
+type GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray []GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekInput
+
+func (GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray) ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput() GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput {
+	return i.ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray) ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutputWithContext(ctx context.Context) GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput)
+}
+
+type GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput) ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput() GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput {
+	return o
+}
+
+func (o GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput) ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutputWithContext(ctx context.Context) GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput {
+	return o
+}
+
+// Name of the day of the week.
+func (o GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput) ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput() GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput) ToGetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutputWithContext(ctx context.Context) GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput) Index(i pulumi.IntInput) GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek {
+		return vs[0].([]GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek)[vs[1].(int)]
+	}).(GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput)
+}
+
 type GetAutonomousDatabasesAutonomousDatabaseScheduledOperation struct {
 	// Day of the week.
 	DayOfWeeks []GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeek `pulumi:"dayOfWeeks"`
@@ -64447,11 +65777,11 @@ type GetAutonomousDatabasesClonesAutonomousDatabase struct {
 	AutoRefreshPointLagInSeconds int `pulumi:"autoRefreshPointLagInSeconds"`
 	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
 	AutonomousContainerDatabaseId string `pulumi:"autonomousContainerDatabaseId"`
-	// Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+	// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
 	AutonomousDatabaseMaintenanceWindows []GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow `pulumi:"autonomousDatabaseMaintenanceWindows"`
 	// The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
 	AutonomousMaintenanceScheduleType string `pulumi:"autonomousMaintenanceScheduleType"`
-	// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+	// The AD in which the maintenance will occur.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// List of Oracle AI Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
 	AvailableUpgradeVersions []string `pulumi:"availableUpgradeVersions"`
@@ -64635,6 +65965,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabase struct {
 	ResourcePoolSummaries []GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummary `pulumi:"resourcePoolSummaries"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 	Role string `pulumi:"role"`
+	// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+	ScheduledMaintenanceWindow GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindow `pulumi:"scheduledMaintenanceWindow"`
 	// The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 	ScheduledOperations []GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperation `pulumi:"scheduledOperations"`
 	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
@@ -64700,6 +66032,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabase struct {
 	TimeScheduledAdUpdate string `pulumi:"timeScheduledAdUpdate"`
 	// The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
 	TimeScheduledDbVersionUpgrade string `pulumi:"timeScheduledDbVersionUpgrade"`
+	// The date and time at which operation to change Maintenance Window is scheduled to take place.
+	TimeScheduledMaintenanceWindowUpdate string `pulumi:"timeScheduledMaintenanceWindowUpdate"`
 	// The date and time the Autonomous AI Database was most recently undeleted.
 	TimeUndeleted string `pulumi:"timeUndeleted"`
 	// The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
@@ -64750,11 +66084,11 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseArgs struct {
 	AutoRefreshPointLagInSeconds pulumi.IntInput `pulumi:"autoRefreshPointLagInSeconds"`
 	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
 	AutonomousContainerDatabaseId pulumi.StringInput `pulumi:"autonomousContainerDatabaseId"`
-	// Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+	// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
 	AutonomousDatabaseMaintenanceWindows GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowArrayInput `pulumi:"autonomousDatabaseMaintenanceWindows"`
 	// The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
 	AutonomousMaintenanceScheduleType pulumi.StringInput `pulumi:"autonomousMaintenanceScheduleType"`
-	// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+	// The AD in which the maintenance will occur.
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// List of Oracle AI Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
 	AvailableUpgradeVersions pulumi.StringArrayInput `pulumi:"availableUpgradeVersions"`
@@ -64938,6 +66272,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseArgs struct {
 	ResourcePoolSummaries GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryArrayInput `pulumi:"resourcePoolSummaries"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 	Role pulumi.StringInput `pulumi:"role"`
+	// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+	ScheduledMaintenanceWindow GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowInput `pulumi:"scheduledMaintenanceWindow"`
 	// The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 	ScheduledOperations GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArrayInput `pulumi:"scheduledOperations"`
 	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
@@ -65003,6 +66339,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseArgs struct {
 	TimeScheduledAdUpdate pulumi.StringInput `pulumi:"timeScheduledAdUpdate"`
 	// The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
 	TimeScheduledDbVersionUpgrade pulumi.StringInput `pulumi:"timeScheduledDbVersionUpgrade"`
+	// The date and time at which operation to change Maintenance Window is scheduled to take place.
+	TimeScheduledMaintenanceWindowUpdate pulumi.StringInput `pulumi:"timeScheduledMaintenanceWindowUpdate"`
 	// The date and time the Autonomous AI Database was most recently undeleted.
 	TimeUndeleted pulumi.StringInput `pulumi:"timeUndeleted"`
 	// The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
@@ -65125,7 +66463,7 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) AutonomousContaine
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) string { return v.AutonomousContainerDatabaseId }).(pulumi.StringOutput)
 }
 
-// Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
 func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) AutonomousDatabaseMaintenanceWindows() GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowArrayOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) []GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow {
 		return v.AutonomousDatabaseMaintenanceWindows
@@ -65139,7 +66477,7 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) AutonomousMaintena
 	}).(pulumi.StringOutput)
 }
 
-// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+// The AD in which the maintenance will occur.
 func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
@@ -65617,6 +66955,13 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) Role() pulumi.Stri
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) string { return v.Role }).(pulumi.StringOutput)
 }
 
+// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) ScheduledMaintenanceWindow() GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindow {
+		return v.ScheduledMaintenanceWindow
+	}).(GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutput)
+}
+
 // The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) ScheduledOperations() GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArrayOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) []GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperation {
@@ -65795,6 +67140,13 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) TimeScheduledDbVer
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) string { return v.TimeScheduledDbVersionUpgrade }).(pulumi.StringOutput)
 }
 
+// The date and time at which operation to change Maintenance Window is scheduled to take place.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) TimeScheduledMaintenanceWindowUpdate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) string {
+		return v.TimeScheduledMaintenanceWindowUpdate
+	}).(pulumi.StringOutput)
+}
+
 // The date and time the Autonomous AI Database was most recently undeleted.
 func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) TimeUndeleted() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) string { return v.TimeUndeleted }).(pulumi.StringOutput)
@@ -65971,8 +67323,12 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailArrayOutput) Ind
 }
 
 type GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow struct {
+	// The AD in which the maintenance will occur.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// Day of the week.
 	DayOfWeeks []GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek `pulumi:"dayOfWeeks"`
+	// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+	IsMaintenanceWindowChangeScheduled bool `pulumi:"isMaintenanceWindowChangeScheduled"`
 	// The maintenance end time. The value must use the ISO-8601 format "hh:mm".
 	MaintenanceEndTime string `pulumi:"maintenanceEndTime"`
 	// The maintenance start time. The value must use the ISO-8601 format "hh:mm".
@@ -65991,8 +67347,12 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenance
 }
 
 type GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs struct {
+	// The AD in which the maintenance will occur.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// Day of the week.
 	DayOfWeeks GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArrayInput `pulumi:"dayOfWeeks"`
+	// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+	IsMaintenanceWindowChangeScheduled pulumi.BoolInput `pulumi:"isMaintenanceWindowChangeScheduled"`
 	// The maintenance end time. The value must use the ISO-8601 format "hh:mm".
 	MaintenanceEndTime pulumi.StringInput `pulumi:"maintenanceEndTime"`
 	// The maintenance start time. The value must use the ISO-8601 format "hh:mm".
@@ -66050,11 +67410,25 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintena
 	return o
 }
 
+// The AD in which the maintenance will occur.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow) string {
+		return v.AvailabilityDomain
+	}).(pulumi.StringOutput)
+}
+
 // Day of the week.
 func (o GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowOutput) DayOfWeeks() GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArrayOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow) []GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek {
 		return v.DayOfWeeks
 	}).(GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArrayOutput)
+}
+
+// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowOutput) IsMaintenanceWindowChangeScheduled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow) bool {
+		return v.IsMaintenanceWindowChangeScheduled
+	}).(pulumi.BoolOutput)
 }
 
 // The maintenance end time. The value must use the ISO-8601 format "hh:mm".
@@ -67928,7 +69302,7 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArrayOutput
 }
 
 type GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb struct {
-	// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+	// The AD in which the maintenance will occur.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
 	ExternalLocationZone string `pulumi:"externalLocationZone"`
@@ -67962,7 +69336,7 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbInput interface
 }
 
 type GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs struct {
-	// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+	// The AD in which the maintenance will occur.
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
 	ExternalLocationZone pulumi.StringInput `pulumi:"externalLocationZone"`
@@ -68035,7 +69409,7 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput) ToGe
 	return o
 }
 
-// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+// The AD in which the maintenance will occur.
 func (o GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb) string {
 		return v.AvailabilityDomain
@@ -68709,6 +70083,203 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryArrayOu
 	}).(GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryOutput)
 }
 
+type GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindow struct {
+	// The AD in which the maintenance will occur.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// Day of the week.
+	DayOfWeeks []GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek `pulumi:"dayOfWeeks"`
+	// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+	IsMaintenanceWindowChangeScheduled bool `pulumi:"isMaintenanceWindowChangeScheduled"`
+	// The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+	MaintenanceEndTime string `pulumi:"maintenanceEndTime"`
+	// The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+	MaintenanceStartTime string `pulumi:"maintenanceStartTime"`
+}
+
+// GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowArgs and GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowInput` via:
+//
+//	GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowArgs{...}
+type GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutput() GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutput
+	ToGetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutputWithContext(context.Context) GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutput
+}
+
+type GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowArgs struct {
+	// The AD in which the maintenance will occur.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// Day of the week.
+	DayOfWeeks GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayInput `pulumi:"dayOfWeeks"`
+	// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+	IsMaintenanceWindowChangeScheduled pulumi.BoolInput `pulumi:"isMaintenanceWindowChangeScheduled"`
+	// The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+	MaintenanceEndTime pulumi.StringInput `pulumi:"maintenanceEndTime"`
+	// The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+	MaintenanceStartTime pulumi.StringInput `pulumi:"maintenanceStartTime"`
+}
+
+func (GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindow)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowArgs) ToGetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutput() GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutput {
+	return i.ToGetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowArgs) ToGetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutputWithContext(ctx context.Context) GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutput)
+}
+
+type GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindow)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutput) ToGetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutput() GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutput {
+	return o
+}
+
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutput) ToGetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutputWithContext(ctx context.Context) GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutput {
+	return o
+}
+
+// The AD in which the maintenance will occur.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindow) string {
+		return v.AvailabilityDomain
+	}).(pulumi.StringOutput)
+}
+
+// Day of the week.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutput) DayOfWeeks() GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindow) []GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek {
+		return v.DayOfWeeks
+	}).(GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput)
+}
+
+// Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutput) IsMaintenanceWindowChangeScheduled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindow) bool {
+		return v.IsMaintenanceWindowChangeScheduled
+	}).(pulumi.BoolOutput)
+}
+
+// The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutput) MaintenanceEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindow) string {
+		return v.MaintenanceEndTime
+	}).(pulumi.StringOutput)
+}
+
+// The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutput) MaintenanceStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindow) string {
+		return v.MaintenanceStartTime
+	}).(pulumi.StringOutput)
+}
+
+type GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek struct {
+	// Name of the day of the week.
+	Name string `pulumi:"name"`
+}
+
+// GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs and GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekInput` via:
+//
+//	GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs{...}
+type GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput() GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput
+	ToGetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutputWithContext(context.Context) GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput
+}
+
+type GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs struct {
+	// Name of the day of the week.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs) ToGetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput() GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput {
+	return i.ToGetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs) ToGetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutputWithContext(ctx context.Context) GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput)
+}
+
+// GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray and GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayInput` via:
+//
+//	GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray{ GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs{...} }
+type GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput() GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput
+	ToGetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutputWithContext(context.Context) GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput
+}
+
+type GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray []GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekInput
+
+func (GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray) ToGetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput() GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput {
+	return i.ToGetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray) ToGetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutputWithContext(ctx context.Context) GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput)
+}
+
+type GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput) ToGetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput() GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput {
+	return o
+}
+
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput) ToGetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutputWithContext(ctx context.Context) GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput {
+	return o
+}
+
+// Name of the day of the week.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput) ToGetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput() GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput) ToGetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutputWithContext(ctx context.Context) GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput) Index(i pulumi.IntInput) GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek {
+		return vs[0].([]GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeek)[vs[1].(int)]
+	}).(GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput)
+}
+
 type GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperation struct {
 	// Day of the week.
 	DayOfWeeks []GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeek `pulumi:"dayOfWeeks"`
@@ -68930,7 +70501,7 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWee
 }
 
 type GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb struct {
-	// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+	// The AD in which the maintenance will occur.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
 	ExternalLocationZone string `pulumi:"externalLocationZone"`
@@ -68964,7 +70535,7 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbInput interface {
 }
 
 type GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArgs struct {
-	// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+	// The AD in which the maintenance will occur.
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
 	ExternalLocationZone pulumi.StringInput `pulumi:"externalLocationZone"`
@@ -69037,7 +70608,7 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbOutput) ToGetAuto
 	return o
 }
 
-// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+// The AD in which the maintenance will occur.
 func (o GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
@@ -76421,1915 +77992,6 @@ func (o GetBackupDestinationAssociatedLongTermBackupArrayOutput) Index(i pulumi.
 	}).(GetBackupDestinationAssociatedLongTermBackupOutput)
 }
 
-type GetBackupDestinationMountTypeDetail struct {
-	// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
-	LocalMountPointPath string `pulumi:"localMountPointPath"`
-	MountType           string `pulumi:"mountType"`
-	// Specifies the directory on which to mount the file system
-	NfsServerExport string `pulumi:"nfsServerExport"`
-	// Host names or IP addresses for NFS Auto mount.
-	NfsServers []string `pulumi:"nfsServers"`
-}
-
-// GetBackupDestinationMountTypeDetailInput is an input type that accepts GetBackupDestinationMountTypeDetailArgs and GetBackupDestinationMountTypeDetailOutput values.
-// You can construct a concrete instance of `GetBackupDestinationMountTypeDetailInput` via:
-//
-//	GetBackupDestinationMountTypeDetailArgs{...}
-type GetBackupDestinationMountTypeDetailInput interface {
-	pulumi.Input
-
-	ToGetBackupDestinationMountTypeDetailOutput() GetBackupDestinationMountTypeDetailOutput
-	ToGetBackupDestinationMountTypeDetailOutputWithContext(context.Context) GetBackupDestinationMountTypeDetailOutput
-}
-
-type GetBackupDestinationMountTypeDetailArgs struct {
-	// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
-	LocalMountPointPath pulumi.StringInput `pulumi:"localMountPointPath"`
-	MountType           pulumi.StringInput `pulumi:"mountType"`
-	// Specifies the directory on which to mount the file system
-	NfsServerExport pulumi.StringInput `pulumi:"nfsServerExport"`
-	// Host names or IP addresses for NFS Auto mount.
-	NfsServers pulumi.StringArrayInput `pulumi:"nfsServers"`
-}
-
-func (GetBackupDestinationMountTypeDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetBackupDestinationMountTypeDetail)(nil)).Elem()
-}
-
-func (i GetBackupDestinationMountTypeDetailArgs) ToGetBackupDestinationMountTypeDetailOutput() GetBackupDestinationMountTypeDetailOutput {
-	return i.ToGetBackupDestinationMountTypeDetailOutputWithContext(context.Background())
-}
-
-func (i GetBackupDestinationMountTypeDetailArgs) ToGetBackupDestinationMountTypeDetailOutputWithContext(ctx context.Context) GetBackupDestinationMountTypeDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationMountTypeDetailOutput)
-}
-
-// GetBackupDestinationMountTypeDetailArrayInput is an input type that accepts GetBackupDestinationMountTypeDetailArray and GetBackupDestinationMountTypeDetailArrayOutput values.
-// You can construct a concrete instance of `GetBackupDestinationMountTypeDetailArrayInput` via:
-//
-//	GetBackupDestinationMountTypeDetailArray{ GetBackupDestinationMountTypeDetailArgs{...} }
-type GetBackupDestinationMountTypeDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetBackupDestinationMountTypeDetailArrayOutput() GetBackupDestinationMountTypeDetailArrayOutput
-	ToGetBackupDestinationMountTypeDetailArrayOutputWithContext(context.Context) GetBackupDestinationMountTypeDetailArrayOutput
-}
-
-type GetBackupDestinationMountTypeDetailArray []GetBackupDestinationMountTypeDetailInput
-
-func (GetBackupDestinationMountTypeDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetBackupDestinationMountTypeDetail)(nil)).Elem()
-}
-
-func (i GetBackupDestinationMountTypeDetailArray) ToGetBackupDestinationMountTypeDetailArrayOutput() GetBackupDestinationMountTypeDetailArrayOutput {
-	return i.ToGetBackupDestinationMountTypeDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetBackupDestinationMountTypeDetailArray) ToGetBackupDestinationMountTypeDetailArrayOutputWithContext(ctx context.Context) GetBackupDestinationMountTypeDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationMountTypeDetailArrayOutput)
-}
-
-type GetBackupDestinationMountTypeDetailOutput struct{ *pulumi.OutputState }
-
-func (GetBackupDestinationMountTypeDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetBackupDestinationMountTypeDetail)(nil)).Elem()
-}
-
-func (o GetBackupDestinationMountTypeDetailOutput) ToGetBackupDestinationMountTypeDetailOutput() GetBackupDestinationMountTypeDetailOutput {
-	return o
-}
-
-func (o GetBackupDestinationMountTypeDetailOutput) ToGetBackupDestinationMountTypeDetailOutputWithContext(ctx context.Context) GetBackupDestinationMountTypeDetailOutput {
-	return o
-}
-
-// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
-func (o GetBackupDestinationMountTypeDetailOutput) LocalMountPointPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationMountTypeDetail) string { return v.LocalMountPointPath }).(pulumi.StringOutput)
-}
-
-func (o GetBackupDestinationMountTypeDetailOutput) MountType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationMountTypeDetail) string { return v.MountType }).(pulumi.StringOutput)
-}
-
-// Specifies the directory on which to mount the file system
-func (o GetBackupDestinationMountTypeDetailOutput) NfsServerExport() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationMountTypeDetail) string { return v.NfsServerExport }).(pulumi.StringOutput)
-}
-
-// Host names or IP addresses for NFS Auto mount.
-func (o GetBackupDestinationMountTypeDetailOutput) NfsServers() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetBackupDestinationMountTypeDetail) []string { return v.NfsServers }).(pulumi.StringArrayOutput)
-}
-
-type GetBackupDestinationMountTypeDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetBackupDestinationMountTypeDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetBackupDestinationMountTypeDetail)(nil)).Elem()
-}
-
-func (o GetBackupDestinationMountTypeDetailArrayOutput) ToGetBackupDestinationMountTypeDetailArrayOutput() GetBackupDestinationMountTypeDetailArrayOutput {
-	return o
-}
-
-func (o GetBackupDestinationMountTypeDetailArrayOutput) ToGetBackupDestinationMountTypeDetailArrayOutputWithContext(ctx context.Context) GetBackupDestinationMountTypeDetailArrayOutput {
-	return o
-}
-
-func (o GetBackupDestinationMountTypeDetailArrayOutput) Index(i pulumi.IntInput) GetBackupDestinationMountTypeDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupDestinationMountTypeDetail {
-		return vs[0].([]GetBackupDestinationMountTypeDetail)[vs[1].(int)]
-	}).(GetBackupDestinationMountTypeDetailOutput)
-}
-
-type GetBackupDestinationsBackupDestination struct {
-	// List of databases associated with the backup destination.
-	AssociatedDatabases []GetBackupDestinationsBackupDestinationAssociatedDatabase `pulumi:"associatedDatabases"`
-	// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
-	AssociatedLongTermBackupCount int `pulumi:"associatedLongTermBackupCount"`
-	// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
-	AssociatedLongTermBackups []GetBackupDestinationsBackupDestinationAssociatedLongTermBackup `pulumi:"associatedLongTermBackups"`
-	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
-	// For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
-	ConnectionString string `pulumi:"connectionString"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]string `pulumi:"definedTags"`
-	// The user-provided name of the backup destination.
-	DisplayName string `pulumi:"displayName"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-	Id string `pulumi:"id"`
-	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
-	//
-	// Deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.
-	LocalMountPointPath string                                                  `pulumi:"localMountPointPath"`
-	MountTypeDetails    []GetBackupDestinationsBackupDestinationMountTypeDetail `pulumi:"mountTypeDetails"`
-	// NFS Mount type for backup destination.
-	NfsMountType string `pulumi:"nfsMountType"`
-	// Specifies the directory on which to mount the file system
-	NfsServerExport string `pulumi:"nfsServerExport"`
-	// Host names or IP addresses for NFS Auto mount.
-	NfsServers []string `pulumi:"nfsServers"`
-	// The current lifecycle state of the backup destination.
-	State string `pulumi:"state"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	SystemTags map[string]string `pulumi:"systemTags"`
-	// The time when the total storage size and the utilized storage size of the backup destination are updated.
-	TimeAtWhichStorageDetailsAreUpdated string `pulumi:"timeAtWhichStorageDetailsAreUpdated"`
-	// The date and time the backup destination was created.
-	TimeCreated string `pulumi:"timeCreated"`
-	// The total storage size of the backup destination in GBs, rounded to the nearest integer.
-	TotalStorageSizeInGbs int `pulumi:"totalStorageSizeInGbs"`
-	// A filter to return only resources that match the given type of the Backup Destination.
-	Type string `pulumi:"type"`
-	// The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
-	UtilizedStorageSizeInGbs int `pulumi:"utilizedStorageSizeInGbs"`
-	// For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
-	VpcUsers []string `pulumi:"vpcUsers"`
-}
-
-// GetBackupDestinationsBackupDestinationInput is an input type that accepts GetBackupDestinationsBackupDestinationArgs and GetBackupDestinationsBackupDestinationOutput values.
-// You can construct a concrete instance of `GetBackupDestinationsBackupDestinationInput` via:
-//
-//	GetBackupDestinationsBackupDestinationArgs{...}
-type GetBackupDestinationsBackupDestinationInput interface {
-	pulumi.Input
-
-	ToGetBackupDestinationsBackupDestinationOutput() GetBackupDestinationsBackupDestinationOutput
-	ToGetBackupDestinationsBackupDestinationOutputWithContext(context.Context) GetBackupDestinationsBackupDestinationOutput
-}
-
-type GetBackupDestinationsBackupDestinationArgs struct {
-	// List of databases associated with the backup destination.
-	AssociatedDatabases GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayInput `pulumi:"associatedDatabases"`
-	// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
-	AssociatedLongTermBackupCount pulumi.IntInput `pulumi:"associatedLongTermBackupCount"`
-	// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
-	AssociatedLongTermBackups GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayInput `pulumi:"associatedLongTermBackups"`
-	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
-	ConnectionString pulumi.StringInput `pulumi:"connectionString"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
-	// The user-provided name of the backup destination.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-	Id pulumi.StringInput `pulumi:"id"`
-	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
-	//
-	// Deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.
-	LocalMountPointPath pulumi.StringInput                                              `pulumi:"localMountPointPath"`
-	MountTypeDetails    GetBackupDestinationsBackupDestinationMountTypeDetailArrayInput `pulumi:"mountTypeDetails"`
-	// NFS Mount type for backup destination.
-	NfsMountType pulumi.StringInput `pulumi:"nfsMountType"`
-	// Specifies the directory on which to mount the file system
-	NfsServerExport pulumi.StringInput `pulumi:"nfsServerExport"`
-	// Host names or IP addresses for NFS Auto mount.
-	NfsServers pulumi.StringArrayInput `pulumi:"nfsServers"`
-	// The current lifecycle state of the backup destination.
-	State pulumi.StringInput `pulumi:"state"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
-	// The time when the total storage size and the utilized storage size of the backup destination are updated.
-	TimeAtWhichStorageDetailsAreUpdated pulumi.StringInput `pulumi:"timeAtWhichStorageDetailsAreUpdated"`
-	// The date and time the backup destination was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The total storage size of the backup destination in GBs, rounded to the nearest integer.
-	TotalStorageSizeInGbs pulumi.IntInput `pulumi:"totalStorageSizeInGbs"`
-	// A filter to return only resources that match the given type of the Backup Destination.
-	Type pulumi.StringInput `pulumi:"type"`
-	// The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
-	UtilizedStorageSizeInGbs pulumi.IntInput `pulumi:"utilizedStorageSizeInGbs"`
-	// For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
-	VpcUsers pulumi.StringArrayInput `pulumi:"vpcUsers"`
-}
-
-func (GetBackupDestinationsBackupDestinationArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetBackupDestinationsBackupDestination)(nil)).Elem()
-}
-
-func (i GetBackupDestinationsBackupDestinationArgs) ToGetBackupDestinationsBackupDestinationOutput() GetBackupDestinationsBackupDestinationOutput {
-	return i.ToGetBackupDestinationsBackupDestinationOutputWithContext(context.Background())
-}
-
-func (i GetBackupDestinationsBackupDestinationArgs) ToGetBackupDestinationsBackupDestinationOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationsBackupDestinationOutput)
-}
-
-// GetBackupDestinationsBackupDestinationArrayInput is an input type that accepts GetBackupDestinationsBackupDestinationArray and GetBackupDestinationsBackupDestinationArrayOutput values.
-// You can construct a concrete instance of `GetBackupDestinationsBackupDestinationArrayInput` via:
-//
-//	GetBackupDestinationsBackupDestinationArray{ GetBackupDestinationsBackupDestinationArgs{...} }
-type GetBackupDestinationsBackupDestinationArrayInput interface {
-	pulumi.Input
-
-	ToGetBackupDestinationsBackupDestinationArrayOutput() GetBackupDestinationsBackupDestinationArrayOutput
-	ToGetBackupDestinationsBackupDestinationArrayOutputWithContext(context.Context) GetBackupDestinationsBackupDestinationArrayOutput
-}
-
-type GetBackupDestinationsBackupDestinationArray []GetBackupDestinationsBackupDestinationInput
-
-func (GetBackupDestinationsBackupDestinationArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetBackupDestinationsBackupDestination)(nil)).Elem()
-}
-
-func (i GetBackupDestinationsBackupDestinationArray) ToGetBackupDestinationsBackupDestinationArrayOutput() GetBackupDestinationsBackupDestinationArrayOutput {
-	return i.ToGetBackupDestinationsBackupDestinationArrayOutputWithContext(context.Background())
-}
-
-func (i GetBackupDestinationsBackupDestinationArray) ToGetBackupDestinationsBackupDestinationArrayOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationsBackupDestinationArrayOutput)
-}
-
-type GetBackupDestinationsBackupDestinationOutput struct{ *pulumi.OutputState }
-
-func (GetBackupDestinationsBackupDestinationOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetBackupDestinationsBackupDestination)(nil)).Elem()
-}
-
-func (o GetBackupDestinationsBackupDestinationOutput) ToGetBackupDestinationsBackupDestinationOutput() GetBackupDestinationsBackupDestinationOutput {
-	return o
-}
-
-func (o GetBackupDestinationsBackupDestinationOutput) ToGetBackupDestinationsBackupDestinationOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationOutput {
-	return o
-}
-
-// List of databases associated with the backup destination.
-func (o GetBackupDestinationsBackupDestinationOutput) AssociatedDatabases() GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) []GetBackupDestinationsBackupDestinationAssociatedDatabase {
-		return v.AssociatedDatabases
-	}).(GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput)
-}
-
-// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
-func (o GetBackupDestinationsBackupDestinationOutput) AssociatedLongTermBackupCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) int { return v.AssociatedLongTermBackupCount }).(pulumi.IntOutput)
-}
-
-// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
-func (o GetBackupDestinationsBackupDestinationOutput) AssociatedLongTermBackups() GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) []GetBackupDestinationsBackupDestinationAssociatedLongTermBackup {
-		return v.AssociatedLongTermBackups
-	}).(GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput)
-}
-
-// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetBackupDestinationsBackupDestinationOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.CompartmentId }).(pulumi.StringOutput)
-}
-
-// For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
-func (o GetBackupDestinationsBackupDestinationOutput) ConnectionString() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.ConnectionString }).(pulumi.StringOutput)
-}
-
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetBackupDestinationsBackupDestinationOutput) DefinedTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
-}
-
-// The user-provided name of the backup destination.
-func (o GetBackupDestinationsBackupDestinationOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.DisplayName }).(pulumi.StringOutput)
-}
-
-// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetBackupDestinationsBackupDestinationOutput) FreeformTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-func (o GetBackupDestinationsBackupDestinationOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// A descriptive text associated with the lifecycleState. Typically contains additional displayable text
-func (o GetBackupDestinationsBackupDestinationOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.LifecycleDetails }).(pulumi.StringOutput)
-}
-
-// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
-//
-// Deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.
-func (o GetBackupDestinationsBackupDestinationOutput) LocalMountPointPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.LocalMountPointPath }).(pulumi.StringOutput)
-}
-
-func (o GetBackupDestinationsBackupDestinationOutput) MountTypeDetails() GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) []GetBackupDestinationsBackupDestinationMountTypeDetail {
-		return v.MountTypeDetails
-	}).(GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput)
-}
-
-// NFS Mount type for backup destination.
-func (o GetBackupDestinationsBackupDestinationOutput) NfsMountType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.NfsMountType }).(pulumi.StringOutput)
-}
-
-// Specifies the directory on which to mount the file system
-func (o GetBackupDestinationsBackupDestinationOutput) NfsServerExport() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.NfsServerExport }).(pulumi.StringOutput)
-}
-
-// Host names or IP addresses for NFS Auto mount.
-func (o GetBackupDestinationsBackupDestinationOutput) NfsServers() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) []string { return v.NfsServers }).(pulumi.StringArrayOutput)
-}
-
-// The current lifecycle state of the backup destination.
-func (o GetBackupDestinationsBackupDestinationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.State }).(pulumi.StringOutput)
-}
-
-// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetBackupDestinationsBackupDestinationOutput) SystemTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
-}
-
-// The time when the total storage size and the utilized storage size of the backup destination are updated.
-func (o GetBackupDestinationsBackupDestinationOutput) TimeAtWhichStorageDetailsAreUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.TimeAtWhichStorageDetailsAreUpdated }).(pulumi.StringOutput)
-}
-
-// The date and time the backup destination was created.
-func (o GetBackupDestinationsBackupDestinationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.TimeCreated }).(pulumi.StringOutput)
-}
-
-// The total storage size of the backup destination in GBs, rounded to the nearest integer.
-func (o GetBackupDestinationsBackupDestinationOutput) TotalStorageSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) int { return v.TotalStorageSizeInGbs }).(pulumi.IntOutput)
-}
-
-// A filter to return only resources that match the given type of the Backup Destination.
-func (o GetBackupDestinationsBackupDestinationOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) string { return v.Type }).(pulumi.StringOutput)
-}
-
-// The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
-func (o GetBackupDestinationsBackupDestinationOutput) UtilizedStorageSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) int { return v.UtilizedStorageSizeInGbs }).(pulumi.IntOutput)
-}
-
-// For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
-func (o GetBackupDestinationsBackupDestinationOutput) VpcUsers() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestination) []string { return v.VpcUsers }).(pulumi.StringArrayOutput)
-}
-
-type GetBackupDestinationsBackupDestinationArrayOutput struct{ *pulumi.OutputState }
-
-func (GetBackupDestinationsBackupDestinationArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetBackupDestinationsBackupDestination)(nil)).Elem()
-}
-
-func (o GetBackupDestinationsBackupDestinationArrayOutput) ToGetBackupDestinationsBackupDestinationArrayOutput() GetBackupDestinationsBackupDestinationArrayOutput {
-	return o
-}
-
-func (o GetBackupDestinationsBackupDestinationArrayOutput) ToGetBackupDestinationsBackupDestinationArrayOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationArrayOutput {
-	return o
-}
-
-func (o GetBackupDestinationsBackupDestinationArrayOutput) Index(i pulumi.IntInput) GetBackupDestinationsBackupDestinationOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupDestinationsBackupDestination {
-		return vs[0].([]GetBackupDestinationsBackupDestination)[vs[1].(int)]
-	}).(GetBackupDestinationsBackupDestinationOutput)
-}
-
-type GetBackupDestinationsBackupDestinationAssociatedDatabase struct {
-	// The display name of the database that is associated with the backup destination.
-	DbName string `pulumi:"dbName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-	Id string `pulumi:"id"`
-}
-
-// GetBackupDestinationsBackupDestinationAssociatedDatabaseInput is an input type that accepts GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs and GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput values.
-// You can construct a concrete instance of `GetBackupDestinationsBackupDestinationAssociatedDatabaseInput` via:
-//
-//	GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs{...}
-type GetBackupDestinationsBackupDestinationAssociatedDatabaseInput interface {
-	pulumi.Input
-
-	ToGetBackupDestinationsBackupDestinationAssociatedDatabaseOutput() GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput
-	ToGetBackupDestinationsBackupDestinationAssociatedDatabaseOutputWithContext(context.Context) GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput
-}
-
-type GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs struct {
-	// The display name of the database that is associated with the backup destination.
-	DbName pulumi.StringInput `pulumi:"dbName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-	Id pulumi.StringInput `pulumi:"id"`
-}
-
-func (GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetBackupDestinationsBackupDestinationAssociatedDatabase)(nil)).Elem()
-}
-
-func (i GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs) ToGetBackupDestinationsBackupDestinationAssociatedDatabaseOutput() GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput {
-	return i.ToGetBackupDestinationsBackupDestinationAssociatedDatabaseOutputWithContext(context.Background())
-}
-
-func (i GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs) ToGetBackupDestinationsBackupDestinationAssociatedDatabaseOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput)
-}
-
-// GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayInput is an input type that accepts GetBackupDestinationsBackupDestinationAssociatedDatabaseArray and GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput values.
-// You can construct a concrete instance of `GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayInput` via:
-//
-//	GetBackupDestinationsBackupDestinationAssociatedDatabaseArray{ GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs{...} }
-type GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayInput interface {
-	pulumi.Input
-
-	ToGetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput() GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput
-	ToGetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutputWithContext(context.Context) GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput
-}
-
-type GetBackupDestinationsBackupDestinationAssociatedDatabaseArray []GetBackupDestinationsBackupDestinationAssociatedDatabaseInput
-
-func (GetBackupDestinationsBackupDestinationAssociatedDatabaseArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetBackupDestinationsBackupDestinationAssociatedDatabase)(nil)).Elem()
-}
-
-func (i GetBackupDestinationsBackupDestinationAssociatedDatabaseArray) ToGetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput() GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput {
-	return i.ToGetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutputWithContext(context.Background())
-}
-
-func (i GetBackupDestinationsBackupDestinationAssociatedDatabaseArray) ToGetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput)
-}
-
-type GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput struct{ *pulumi.OutputState }
-
-func (GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetBackupDestinationsBackupDestinationAssociatedDatabase)(nil)).Elem()
-}
-
-func (o GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput) ToGetBackupDestinationsBackupDestinationAssociatedDatabaseOutput() GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput {
-	return o
-}
-
-func (o GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput) ToGetBackupDestinationsBackupDestinationAssociatedDatabaseOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput {
-	return o
-}
-
-// The display name of the database that is associated with the backup destination.
-func (o GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput) DbName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestinationAssociatedDatabase) string { return v.DbName }).(pulumi.StringOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-func (o GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestinationAssociatedDatabase) string { return v.Id }).(pulumi.StringOutput)
-}
-
-type GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput struct{ *pulumi.OutputState }
-
-func (GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetBackupDestinationsBackupDestinationAssociatedDatabase)(nil)).Elem()
-}
-
-func (o GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput) ToGetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput() GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput {
-	return o
-}
-
-func (o GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput) ToGetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput {
-	return o
-}
-
-func (o GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput) Index(i pulumi.IntInput) GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupDestinationsBackupDestinationAssociatedDatabase {
-		return vs[0].([]GetBackupDestinationsBackupDestinationAssociatedDatabase)[vs[1].(int)]
-	}).(GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput)
-}
-
-type GetBackupDestinationsBackupDestinationAssociatedLongTermBackup struct {
-	// The user-provided name of the backup destination.
-	DisplayName string `pulumi:"displayName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-	Id string `pulumi:"id"`
-}
-
-// GetBackupDestinationsBackupDestinationAssociatedLongTermBackupInput is an input type that accepts GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArgs and GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput values.
-// You can construct a concrete instance of `GetBackupDestinationsBackupDestinationAssociatedLongTermBackupInput` via:
-//
-//	GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArgs{...}
-type GetBackupDestinationsBackupDestinationAssociatedLongTermBackupInput interface {
-	pulumi.Input
-
-	ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput() GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput
-	ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutputWithContext(context.Context) GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput
-}
-
-type GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArgs struct {
-	// The user-provided name of the backup destination.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-	Id pulumi.StringInput `pulumi:"id"`
-}
-
-func (GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetBackupDestinationsBackupDestinationAssociatedLongTermBackup)(nil)).Elem()
-}
-
-func (i GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArgs) ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput() GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput {
-	return i.ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutputWithContext(context.Background())
-}
-
-func (i GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArgs) ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput)
-}
-
-// GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayInput is an input type that accepts GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArray and GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput values.
-// You can construct a concrete instance of `GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayInput` via:
-//
-//	GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArray{ GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArgs{...} }
-type GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayInput interface {
-	pulumi.Input
-
-	ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput() GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput
-	ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutputWithContext(context.Context) GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput
-}
-
-type GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArray []GetBackupDestinationsBackupDestinationAssociatedLongTermBackupInput
-
-func (GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetBackupDestinationsBackupDestinationAssociatedLongTermBackup)(nil)).Elem()
-}
-
-func (i GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArray) ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput() GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput {
-	return i.ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutputWithContext(context.Background())
-}
-
-func (i GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArray) ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput)
-}
-
-type GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput struct{ *pulumi.OutputState }
-
-func (GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetBackupDestinationsBackupDestinationAssociatedLongTermBackup)(nil)).Elem()
-}
-
-func (o GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput) ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput() GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput {
-	return o
-}
-
-func (o GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput) ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput {
-	return o
-}
-
-// The user-provided name of the backup destination.
-func (o GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestinationAssociatedLongTermBackup) string { return v.DisplayName }).(pulumi.StringOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-func (o GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestinationAssociatedLongTermBackup) string { return v.Id }).(pulumi.StringOutput)
-}
-
-type GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput struct{ *pulumi.OutputState }
-
-func (GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetBackupDestinationsBackupDestinationAssociatedLongTermBackup)(nil)).Elem()
-}
-
-func (o GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput) ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput() GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput {
-	return o
-}
-
-func (o GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput) ToGetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput {
-	return o
-}
-
-func (o GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput) Index(i pulumi.IntInput) GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupDestinationsBackupDestinationAssociatedLongTermBackup {
-		return vs[0].([]GetBackupDestinationsBackupDestinationAssociatedLongTermBackup)[vs[1].(int)]
-	}).(GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput)
-}
-
-type GetBackupDestinationsBackupDestinationMountTypeDetail struct {
-	// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
-	LocalMountPointPath string `pulumi:"localMountPointPath"`
-	MountType           string `pulumi:"mountType"`
-	// Specifies the directory on which to mount the file system
-	NfsServerExport string `pulumi:"nfsServerExport"`
-	// Host names or IP addresses for NFS Auto mount.
-	NfsServers []string `pulumi:"nfsServers"`
-}
-
-// GetBackupDestinationsBackupDestinationMountTypeDetailInput is an input type that accepts GetBackupDestinationsBackupDestinationMountTypeDetailArgs and GetBackupDestinationsBackupDestinationMountTypeDetailOutput values.
-// You can construct a concrete instance of `GetBackupDestinationsBackupDestinationMountTypeDetailInput` via:
-//
-//	GetBackupDestinationsBackupDestinationMountTypeDetailArgs{...}
-type GetBackupDestinationsBackupDestinationMountTypeDetailInput interface {
-	pulumi.Input
-
-	ToGetBackupDestinationsBackupDestinationMountTypeDetailOutput() GetBackupDestinationsBackupDestinationMountTypeDetailOutput
-	ToGetBackupDestinationsBackupDestinationMountTypeDetailOutputWithContext(context.Context) GetBackupDestinationsBackupDestinationMountTypeDetailOutput
-}
-
-type GetBackupDestinationsBackupDestinationMountTypeDetailArgs struct {
-	// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
-	LocalMountPointPath pulumi.StringInput `pulumi:"localMountPointPath"`
-	MountType           pulumi.StringInput `pulumi:"mountType"`
-	// Specifies the directory on which to mount the file system
-	NfsServerExport pulumi.StringInput `pulumi:"nfsServerExport"`
-	// Host names or IP addresses for NFS Auto mount.
-	NfsServers pulumi.StringArrayInput `pulumi:"nfsServers"`
-}
-
-func (GetBackupDestinationsBackupDestinationMountTypeDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetBackupDestinationsBackupDestinationMountTypeDetail)(nil)).Elem()
-}
-
-func (i GetBackupDestinationsBackupDestinationMountTypeDetailArgs) ToGetBackupDestinationsBackupDestinationMountTypeDetailOutput() GetBackupDestinationsBackupDestinationMountTypeDetailOutput {
-	return i.ToGetBackupDestinationsBackupDestinationMountTypeDetailOutputWithContext(context.Background())
-}
-
-func (i GetBackupDestinationsBackupDestinationMountTypeDetailArgs) ToGetBackupDestinationsBackupDestinationMountTypeDetailOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationMountTypeDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationsBackupDestinationMountTypeDetailOutput)
-}
-
-// GetBackupDestinationsBackupDestinationMountTypeDetailArrayInput is an input type that accepts GetBackupDestinationsBackupDestinationMountTypeDetailArray and GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput values.
-// You can construct a concrete instance of `GetBackupDestinationsBackupDestinationMountTypeDetailArrayInput` via:
-//
-//	GetBackupDestinationsBackupDestinationMountTypeDetailArray{ GetBackupDestinationsBackupDestinationMountTypeDetailArgs{...} }
-type GetBackupDestinationsBackupDestinationMountTypeDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput() GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput
-	ToGetBackupDestinationsBackupDestinationMountTypeDetailArrayOutputWithContext(context.Context) GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput
-}
-
-type GetBackupDestinationsBackupDestinationMountTypeDetailArray []GetBackupDestinationsBackupDestinationMountTypeDetailInput
-
-func (GetBackupDestinationsBackupDestinationMountTypeDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetBackupDestinationsBackupDestinationMountTypeDetail)(nil)).Elem()
-}
-
-func (i GetBackupDestinationsBackupDestinationMountTypeDetailArray) ToGetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput() GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput {
-	return i.ToGetBackupDestinationsBackupDestinationMountTypeDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetBackupDestinationsBackupDestinationMountTypeDetailArray) ToGetBackupDestinationsBackupDestinationMountTypeDetailArrayOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput)
-}
-
-type GetBackupDestinationsBackupDestinationMountTypeDetailOutput struct{ *pulumi.OutputState }
-
-func (GetBackupDestinationsBackupDestinationMountTypeDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetBackupDestinationsBackupDestinationMountTypeDetail)(nil)).Elem()
-}
-
-func (o GetBackupDestinationsBackupDestinationMountTypeDetailOutput) ToGetBackupDestinationsBackupDestinationMountTypeDetailOutput() GetBackupDestinationsBackupDestinationMountTypeDetailOutput {
-	return o
-}
-
-func (o GetBackupDestinationsBackupDestinationMountTypeDetailOutput) ToGetBackupDestinationsBackupDestinationMountTypeDetailOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationMountTypeDetailOutput {
-	return o
-}
-
-// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
-func (o GetBackupDestinationsBackupDestinationMountTypeDetailOutput) LocalMountPointPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestinationMountTypeDetail) string { return v.LocalMountPointPath }).(pulumi.StringOutput)
-}
-
-func (o GetBackupDestinationsBackupDestinationMountTypeDetailOutput) MountType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestinationMountTypeDetail) string { return v.MountType }).(pulumi.StringOutput)
-}
-
-// Specifies the directory on which to mount the file system
-func (o GetBackupDestinationsBackupDestinationMountTypeDetailOutput) NfsServerExport() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestinationMountTypeDetail) string { return v.NfsServerExport }).(pulumi.StringOutput)
-}
-
-// Host names or IP addresses for NFS Auto mount.
-func (o GetBackupDestinationsBackupDestinationMountTypeDetailOutput) NfsServers() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetBackupDestinationsBackupDestinationMountTypeDetail) []string { return v.NfsServers }).(pulumi.StringArrayOutput)
-}
-
-type GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetBackupDestinationsBackupDestinationMountTypeDetail)(nil)).Elem()
-}
-
-func (o GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput) ToGetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput() GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput {
-	return o
-}
-
-func (o GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput) ToGetBackupDestinationsBackupDestinationMountTypeDetailArrayOutputWithContext(ctx context.Context) GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput {
-	return o
-}
-
-func (o GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput) Index(i pulumi.IntInput) GetBackupDestinationsBackupDestinationMountTypeDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupDestinationsBackupDestinationMountTypeDetail {
-		return vs[0].([]GetBackupDestinationsBackupDestinationMountTypeDetail)[vs[1].(int)]
-	}).(GetBackupDestinationsBackupDestinationMountTypeDetailOutput)
-}
-
-type GetBackupDestinationsFilter struct {
-	Name   string   `pulumi:"name"`
-	Regex  *bool    `pulumi:"regex"`
-	Values []string `pulumi:"values"`
-}
-
-// GetBackupDestinationsFilterInput is an input type that accepts GetBackupDestinationsFilterArgs and GetBackupDestinationsFilterOutput values.
-// You can construct a concrete instance of `GetBackupDestinationsFilterInput` via:
-//
-//	GetBackupDestinationsFilterArgs{...}
-type GetBackupDestinationsFilterInput interface {
-	pulumi.Input
-
-	ToGetBackupDestinationsFilterOutput() GetBackupDestinationsFilterOutput
-	ToGetBackupDestinationsFilterOutputWithContext(context.Context) GetBackupDestinationsFilterOutput
-}
-
-type GetBackupDestinationsFilterArgs struct {
-	Name   pulumi.StringInput      `pulumi:"name"`
-	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
-	Values pulumi.StringArrayInput `pulumi:"values"`
-}
-
-func (GetBackupDestinationsFilterArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetBackupDestinationsFilter)(nil)).Elem()
-}
-
-func (i GetBackupDestinationsFilterArgs) ToGetBackupDestinationsFilterOutput() GetBackupDestinationsFilterOutput {
-	return i.ToGetBackupDestinationsFilterOutputWithContext(context.Background())
-}
-
-func (i GetBackupDestinationsFilterArgs) ToGetBackupDestinationsFilterOutputWithContext(ctx context.Context) GetBackupDestinationsFilterOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationsFilterOutput)
-}
-
-// GetBackupDestinationsFilterArrayInput is an input type that accepts GetBackupDestinationsFilterArray and GetBackupDestinationsFilterArrayOutput values.
-// You can construct a concrete instance of `GetBackupDestinationsFilterArrayInput` via:
-//
-//	GetBackupDestinationsFilterArray{ GetBackupDestinationsFilterArgs{...} }
-type GetBackupDestinationsFilterArrayInput interface {
-	pulumi.Input
-
-	ToGetBackupDestinationsFilterArrayOutput() GetBackupDestinationsFilterArrayOutput
-	ToGetBackupDestinationsFilterArrayOutputWithContext(context.Context) GetBackupDestinationsFilterArrayOutput
-}
-
-type GetBackupDestinationsFilterArray []GetBackupDestinationsFilterInput
-
-func (GetBackupDestinationsFilterArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetBackupDestinationsFilter)(nil)).Elem()
-}
-
-func (i GetBackupDestinationsFilterArray) ToGetBackupDestinationsFilterArrayOutput() GetBackupDestinationsFilterArrayOutput {
-	return i.ToGetBackupDestinationsFilterArrayOutputWithContext(context.Background())
-}
-
-func (i GetBackupDestinationsFilterArray) ToGetBackupDestinationsFilterArrayOutputWithContext(ctx context.Context) GetBackupDestinationsFilterArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDestinationsFilterArrayOutput)
-}
-
-type GetBackupDestinationsFilterOutput struct{ *pulumi.OutputState }
-
-func (GetBackupDestinationsFilterOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetBackupDestinationsFilter)(nil)).Elem()
-}
-
-func (o GetBackupDestinationsFilterOutput) ToGetBackupDestinationsFilterOutput() GetBackupDestinationsFilterOutput {
-	return o
-}
-
-func (o GetBackupDestinationsFilterOutput) ToGetBackupDestinationsFilterOutputWithContext(ctx context.Context) GetBackupDestinationsFilterOutput {
-	return o
-}
-
-func (o GetBackupDestinationsFilterOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationsFilter) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetBackupDestinationsFilterOutput) Regex() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v GetBackupDestinationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
-}
-
-func (o GetBackupDestinationsFilterOutput) Values() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetBackupDestinationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
-}
-
-type GetBackupDestinationsFilterArrayOutput struct{ *pulumi.OutputState }
-
-func (GetBackupDestinationsFilterArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetBackupDestinationsFilter)(nil)).Elem()
-}
-
-func (o GetBackupDestinationsFilterArrayOutput) ToGetBackupDestinationsFilterArrayOutput() GetBackupDestinationsFilterArrayOutput {
-	return o
-}
-
-func (o GetBackupDestinationsFilterArrayOutput) ToGetBackupDestinationsFilterArrayOutputWithContext(ctx context.Context) GetBackupDestinationsFilterArrayOutput {
-	return o
-}
-
-func (o GetBackupDestinationsFilterArrayOutput) Index(i pulumi.IntInput) GetBackupDestinationsFilterOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupDestinationsFilter {
-		return vs[0].([]GetBackupDestinationsFilter)[vs[1].(int)]
-	}).(GetBackupDestinationsFilterOutput)
-}
-
-type GetBackupsBackup struct {
-	// The name of the availability domain where the database backup is stored.
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// A filter to return only resources that match the given backup destination type.
-	BackupDestinationType string `pulumi:"backupDestinationType"`
-	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
-	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
-	DatabaseEdition string `pulumi:"databaseEdition"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-	DatabaseId string `pulumi:"databaseId"`
-	// The size of the database in gigabytes at the time the backup was taken.
-	DatabaseSizeInGbs float64 `pulumi:"databaseSizeInGbs"`
-	// The user-friendly name for the backup. The name does not have to be unique.
-	DisplayName string `pulumi:"displayName"`
-	// Types of providers supported for managing database encryption keys
-	EncryptionKeyLocationDetails []GetBackupsBackupEncryptionKeyLocationDetail `pulumi:"encryptionKeyLocationDetails"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
-	Id string `pulumi:"id"`
-	// True if Oracle Managed Keys is required for restore of the backup.
-	IsUsingOracleManagedKeys bool `pulumi:"isUsingOracleManagedKeys"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
-	KeyStoreId string `pulumi:"keyStoreId"`
-	// The wallet name for Oracle Key Vault.
-	KeyStoreWalletName string `pulumi:"keyStoreWalletName"`
-	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-	KmsKeyId string `pulumi:"kmsKeyId"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
-	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
-	// Additional information about the current lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The retention period of the long term backup in days.
-	RetentionPeriodInDays int `pulumi:"retentionPeriodInDays"`
-	// The retention period of the long term backup in years.
-	RetentionPeriodInYears int `pulumi:"retentionPeriodInYears"`
-	// List of OCIDs of the key containers used as the secondary encryption key in database transparent data encryption (TDE) operations.
-	SecondaryKmsKeyIds []string `pulumi:"secondaryKmsKeyIds"`
-	// Shape of the backup's source database.
-	Shape string `pulumi:"shape"`
-	// A filter to return only resources that match the given lifecycle state exactly.
-	State string `pulumi:"state"`
-	// The date and time the backup was completed.
-	TimeEnded string `pulumi:"timeEnded"`
-	// Expiration time of the long term database backup.
-	TimeExpiryScheduled string `pulumi:"timeExpiryScheduled"`
-	// The date and time the backup started.
-	TimeStarted string `pulumi:"timeStarted"`
-	// A filter to return only backups that matches with the given type of Backup.
-	Type string `pulumi:"type"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
-	VaultId string `pulumi:"vaultId"`
-	// A filter to return only resources that match the given database version.
-	Version string `pulumi:"version"`
-}
-
-// GetBackupsBackupInput is an input type that accepts GetBackupsBackupArgs and GetBackupsBackupOutput values.
-// You can construct a concrete instance of `GetBackupsBackupInput` via:
-//
-//	GetBackupsBackupArgs{...}
-type GetBackupsBackupInput interface {
-	pulumi.Input
-
-	ToGetBackupsBackupOutput() GetBackupsBackupOutput
-	ToGetBackupsBackupOutputWithContext(context.Context) GetBackupsBackupOutput
-}
-
-type GetBackupsBackupArgs struct {
-	// The name of the availability domain where the database backup is stored.
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
-	// A filter to return only resources that match the given backup destination type.
-	BackupDestinationType pulumi.StringInput `pulumi:"backupDestinationType"`
-	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
-	DatabaseEdition pulumi.StringInput `pulumi:"databaseEdition"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-	DatabaseId pulumi.StringInput `pulumi:"databaseId"`
-	// The size of the database in gigabytes at the time the backup was taken.
-	DatabaseSizeInGbs pulumi.Float64Input `pulumi:"databaseSizeInGbs"`
-	// The user-friendly name for the backup. The name does not have to be unique.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Types of providers supported for managing database encryption keys
-	EncryptionKeyLocationDetails GetBackupsBackupEncryptionKeyLocationDetailArrayInput `pulumi:"encryptionKeyLocationDetails"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
-	Id pulumi.StringInput `pulumi:"id"`
-	// True if Oracle Managed Keys is required for restore of the backup.
-	IsUsingOracleManagedKeys pulumi.BoolInput `pulumi:"isUsingOracleManagedKeys"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
-	KeyStoreId pulumi.StringInput `pulumi:"keyStoreId"`
-	// The wallet name for Oracle Key Vault.
-	KeyStoreWalletName pulumi.StringInput `pulumi:"keyStoreWalletName"`
-	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
-	KmsKeyVersionId pulumi.StringInput `pulumi:"kmsKeyVersionId"`
-	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// The retention period of the long term backup in days.
-	RetentionPeriodInDays pulumi.IntInput `pulumi:"retentionPeriodInDays"`
-	// The retention period of the long term backup in years.
-	RetentionPeriodInYears pulumi.IntInput `pulumi:"retentionPeriodInYears"`
-	// List of OCIDs of the key containers used as the secondary encryption key in database transparent data encryption (TDE) operations.
-	SecondaryKmsKeyIds pulumi.StringArrayInput `pulumi:"secondaryKmsKeyIds"`
-	// Shape of the backup's source database.
-	Shape pulumi.StringInput `pulumi:"shape"`
-	// A filter to return only resources that match the given lifecycle state exactly.
-	State pulumi.StringInput `pulumi:"state"`
-	// The date and time the backup was completed.
-	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
-	// Expiration time of the long term database backup.
-	TimeExpiryScheduled pulumi.StringInput `pulumi:"timeExpiryScheduled"`
-	// The date and time the backup started.
-	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
-	// A filter to return only backups that matches with the given type of Backup.
-	Type pulumi.StringInput `pulumi:"type"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
-	VaultId pulumi.StringInput `pulumi:"vaultId"`
-	// A filter to return only resources that match the given database version.
-	Version pulumi.StringInput `pulumi:"version"`
-}
-
-func (GetBackupsBackupArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetBackupsBackup)(nil)).Elem()
-}
-
-func (i GetBackupsBackupArgs) ToGetBackupsBackupOutput() GetBackupsBackupOutput {
-	return i.ToGetBackupsBackupOutputWithContext(context.Background())
-}
-
-func (i GetBackupsBackupArgs) ToGetBackupsBackupOutputWithContext(ctx context.Context) GetBackupsBackupOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetBackupsBackupOutput)
-}
-
-// GetBackupsBackupArrayInput is an input type that accepts GetBackupsBackupArray and GetBackupsBackupArrayOutput values.
-// You can construct a concrete instance of `GetBackupsBackupArrayInput` via:
-//
-//	GetBackupsBackupArray{ GetBackupsBackupArgs{...} }
-type GetBackupsBackupArrayInput interface {
-	pulumi.Input
-
-	ToGetBackupsBackupArrayOutput() GetBackupsBackupArrayOutput
-	ToGetBackupsBackupArrayOutputWithContext(context.Context) GetBackupsBackupArrayOutput
-}
-
-type GetBackupsBackupArray []GetBackupsBackupInput
-
-func (GetBackupsBackupArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetBackupsBackup)(nil)).Elem()
-}
-
-func (i GetBackupsBackupArray) ToGetBackupsBackupArrayOutput() GetBackupsBackupArrayOutput {
-	return i.ToGetBackupsBackupArrayOutputWithContext(context.Background())
-}
-
-func (i GetBackupsBackupArray) ToGetBackupsBackupArrayOutputWithContext(ctx context.Context) GetBackupsBackupArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetBackupsBackupArrayOutput)
-}
-
-type GetBackupsBackupOutput struct{ *pulumi.OutputState }
-
-func (GetBackupsBackupOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetBackupsBackup)(nil)).Elem()
-}
-
-func (o GetBackupsBackupOutput) ToGetBackupsBackupOutput() GetBackupsBackupOutput {
-	return o
-}
-
-func (o GetBackupsBackupOutput) ToGetBackupsBackupOutputWithContext(ctx context.Context) GetBackupsBackupOutput {
-	return o
-}
-
-// The name of the availability domain where the database backup is stored.
-func (o GetBackupsBackupOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackup) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
-}
-
-// A filter to return only resources that match the given backup destination type.
-func (o GetBackupsBackupOutput) BackupDestinationType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackup) string { return v.BackupDestinationType }).(pulumi.StringOutput)
-}
-
-// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetBackupsBackupOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackup) string { return v.CompartmentId }).(pulumi.StringOutput)
-}
-
-// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
-func (o GetBackupsBackupOutput) DatabaseEdition() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackup) string { return v.DatabaseEdition }).(pulumi.StringOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-func (o GetBackupsBackupOutput) DatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackup) string { return v.DatabaseId }).(pulumi.StringOutput)
-}
-
-// The size of the database in gigabytes at the time the backup was taken.
-func (o GetBackupsBackupOutput) DatabaseSizeInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetBackupsBackup) float64 { return v.DatabaseSizeInGbs }).(pulumi.Float64Output)
-}
-
-// The user-friendly name for the backup. The name does not have to be unique.
-func (o GetBackupsBackupOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackup) string { return v.DisplayName }).(pulumi.StringOutput)
-}
-
-// Types of providers supported for managing database encryption keys
-func (o GetBackupsBackupOutput) EncryptionKeyLocationDetails() GetBackupsBackupEncryptionKeyLocationDetailArrayOutput {
-	return o.ApplyT(func(v GetBackupsBackup) []GetBackupsBackupEncryptionKeyLocationDetail {
-		return v.EncryptionKeyLocationDetails
-	}).(GetBackupsBackupEncryptionKeyLocationDetailArrayOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
-func (o GetBackupsBackupOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackup) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// True if Oracle Managed Keys is required for restore of the backup.
-func (o GetBackupsBackupOutput) IsUsingOracleManagedKeys() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBackupsBackup) bool { return v.IsUsingOracleManagedKeys }).(pulumi.BoolOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
-func (o GetBackupsBackupOutput) KeyStoreId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackup) string { return v.KeyStoreId }).(pulumi.StringOutput)
-}
-
-// The wallet name for Oracle Key Vault.
-func (o GetBackupsBackupOutput) KeyStoreWalletName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackup) string { return v.KeyStoreWalletName }).(pulumi.StringOutput)
-}
-
-// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-func (o GetBackupsBackupOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackup) string { return v.KmsKeyId }).(pulumi.StringOutput)
-}
-
-// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
-func (o GetBackupsBackupOutput) KmsKeyVersionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackup) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
-}
-
-// Additional information about the current lifecycle state.
-func (o GetBackupsBackupOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackup) string { return v.LifecycleDetails }).(pulumi.StringOutput)
-}
-
-// The retention period of the long term backup in days.
-func (o GetBackupsBackupOutput) RetentionPeriodInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackupsBackup) int { return v.RetentionPeriodInDays }).(pulumi.IntOutput)
-}
-
-// The retention period of the long term backup in years.
-func (o GetBackupsBackupOutput) RetentionPeriodInYears() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackupsBackup) int { return v.RetentionPeriodInYears }).(pulumi.IntOutput)
-}
-
-// List of OCIDs of the key containers used as the secondary encryption key in database transparent data encryption (TDE) operations.
-func (o GetBackupsBackupOutput) SecondaryKmsKeyIds() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetBackupsBackup) []string { return v.SecondaryKmsKeyIds }).(pulumi.StringArrayOutput)
-}
-
-// Shape of the backup's source database.
-func (o GetBackupsBackupOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackup) string { return v.Shape }).(pulumi.StringOutput)
-}
-
-// A filter to return only resources that match the given lifecycle state exactly.
-func (o GetBackupsBackupOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackup) string { return v.State }).(pulumi.StringOutput)
-}
-
-// The date and time the backup was completed.
-func (o GetBackupsBackupOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackup) string { return v.TimeEnded }).(pulumi.StringOutput)
-}
-
-// Expiration time of the long term database backup.
-func (o GetBackupsBackupOutput) TimeExpiryScheduled() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackup) string { return v.TimeExpiryScheduled }).(pulumi.StringOutput)
-}
-
-// The date and time the backup started.
-func (o GetBackupsBackupOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackup) string { return v.TimeStarted }).(pulumi.StringOutput)
-}
-
-// A filter to return only backups that matches with the given type of Backup.
-func (o GetBackupsBackupOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackup) string { return v.Type }).(pulumi.StringOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
-func (o GetBackupsBackupOutput) VaultId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackup) string { return v.VaultId }).(pulumi.StringOutput)
-}
-
-// A filter to return only resources that match the given database version.
-func (o GetBackupsBackupOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackup) string { return v.Version }).(pulumi.StringOutput)
-}
-
-type GetBackupsBackupArrayOutput struct{ *pulumi.OutputState }
-
-func (GetBackupsBackupArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetBackupsBackup)(nil)).Elem()
-}
-
-func (o GetBackupsBackupArrayOutput) ToGetBackupsBackupArrayOutput() GetBackupsBackupArrayOutput {
-	return o
-}
-
-func (o GetBackupsBackupArrayOutput) ToGetBackupsBackupArrayOutputWithContext(ctx context.Context) GetBackupsBackupArrayOutput {
-	return o
-}
-
-func (o GetBackupsBackupArrayOutput) Index(i pulumi.IntInput) GetBackupsBackupOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupsBackup {
-		return vs[0].([]GetBackupsBackup)[vs[1].(int)]
-	}).(GetBackupsBackupOutput)
-}
-
-type GetBackupsBackupEncryptionKeyLocationDetail struct {
-	// Provide the key OCID of a registered AWS key.
-	AwsEncryptionKeyId string `pulumi:"awsEncryptionKeyId"`
-	// Provide the key OCID of a registered Azure key.
-	AzureEncryptionKeyId string `pulumi:"azureEncryptionKeyId"`
-	// Provide the key OCID of a registered GCP key.
-	GoogleCloudProviderEncryptionKeyId string `pulumi:"googleCloudProviderEncryptionKeyId"`
-	// Provide the HSM password as you would in RDBMS for External HSM.
-	HsmPassword string `pulumi:"hsmPassword"`
-	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
-	ProviderType string `pulumi:"providerType"`
-}
-
-// GetBackupsBackupEncryptionKeyLocationDetailInput is an input type that accepts GetBackupsBackupEncryptionKeyLocationDetailArgs and GetBackupsBackupEncryptionKeyLocationDetailOutput values.
-// You can construct a concrete instance of `GetBackupsBackupEncryptionKeyLocationDetailInput` via:
-//
-//	GetBackupsBackupEncryptionKeyLocationDetailArgs{...}
-type GetBackupsBackupEncryptionKeyLocationDetailInput interface {
-	pulumi.Input
-
-	ToGetBackupsBackupEncryptionKeyLocationDetailOutput() GetBackupsBackupEncryptionKeyLocationDetailOutput
-	ToGetBackupsBackupEncryptionKeyLocationDetailOutputWithContext(context.Context) GetBackupsBackupEncryptionKeyLocationDetailOutput
-}
-
-type GetBackupsBackupEncryptionKeyLocationDetailArgs struct {
-	// Provide the key OCID of a registered AWS key.
-	AwsEncryptionKeyId pulumi.StringInput `pulumi:"awsEncryptionKeyId"`
-	// Provide the key OCID of a registered Azure key.
-	AzureEncryptionKeyId pulumi.StringInput `pulumi:"azureEncryptionKeyId"`
-	// Provide the key OCID of a registered GCP key.
-	GoogleCloudProviderEncryptionKeyId pulumi.StringInput `pulumi:"googleCloudProviderEncryptionKeyId"`
-	// Provide the HSM password as you would in RDBMS for External HSM.
-	HsmPassword pulumi.StringInput `pulumi:"hsmPassword"`
-	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
-	ProviderType pulumi.StringInput `pulumi:"providerType"`
-}
-
-func (GetBackupsBackupEncryptionKeyLocationDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetBackupsBackupEncryptionKeyLocationDetail)(nil)).Elem()
-}
-
-func (i GetBackupsBackupEncryptionKeyLocationDetailArgs) ToGetBackupsBackupEncryptionKeyLocationDetailOutput() GetBackupsBackupEncryptionKeyLocationDetailOutput {
-	return i.ToGetBackupsBackupEncryptionKeyLocationDetailOutputWithContext(context.Background())
-}
-
-func (i GetBackupsBackupEncryptionKeyLocationDetailArgs) ToGetBackupsBackupEncryptionKeyLocationDetailOutputWithContext(ctx context.Context) GetBackupsBackupEncryptionKeyLocationDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetBackupsBackupEncryptionKeyLocationDetailOutput)
-}
-
-// GetBackupsBackupEncryptionKeyLocationDetailArrayInput is an input type that accepts GetBackupsBackupEncryptionKeyLocationDetailArray and GetBackupsBackupEncryptionKeyLocationDetailArrayOutput values.
-// You can construct a concrete instance of `GetBackupsBackupEncryptionKeyLocationDetailArrayInput` via:
-//
-//	GetBackupsBackupEncryptionKeyLocationDetailArray{ GetBackupsBackupEncryptionKeyLocationDetailArgs{...} }
-type GetBackupsBackupEncryptionKeyLocationDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetBackupsBackupEncryptionKeyLocationDetailArrayOutput() GetBackupsBackupEncryptionKeyLocationDetailArrayOutput
-	ToGetBackupsBackupEncryptionKeyLocationDetailArrayOutputWithContext(context.Context) GetBackupsBackupEncryptionKeyLocationDetailArrayOutput
-}
-
-type GetBackupsBackupEncryptionKeyLocationDetailArray []GetBackupsBackupEncryptionKeyLocationDetailInput
-
-func (GetBackupsBackupEncryptionKeyLocationDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetBackupsBackupEncryptionKeyLocationDetail)(nil)).Elem()
-}
-
-func (i GetBackupsBackupEncryptionKeyLocationDetailArray) ToGetBackupsBackupEncryptionKeyLocationDetailArrayOutput() GetBackupsBackupEncryptionKeyLocationDetailArrayOutput {
-	return i.ToGetBackupsBackupEncryptionKeyLocationDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetBackupsBackupEncryptionKeyLocationDetailArray) ToGetBackupsBackupEncryptionKeyLocationDetailArrayOutputWithContext(ctx context.Context) GetBackupsBackupEncryptionKeyLocationDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetBackupsBackupEncryptionKeyLocationDetailArrayOutput)
-}
-
-type GetBackupsBackupEncryptionKeyLocationDetailOutput struct{ *pulumi.OutputState }
-
-func (GetBackupsBackupEncryptionKeyLocationDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetBackupsBackupEncryptionKeyLocationDetail)(nil)).Elem()
-}
-
-func (o GetBackupsBackupEncryptionKeyLocationDetailOutput) ToGetBackupsBackupEncryptionKeyLocationDetailOutput() GetBackupsBackupEncryptionKeyLocationDetailOutput {
-	return o
-}
-
-func (o GetBackupsBackupEncryptionKeyLocationDetailOutput) ToGetBackupsBackupEncryptionKeyLocationDetailOutputWithContext(ctx context.Context) GetBackupsBackupEncryptionKeyLocationDetailOutput {
-	return o
-}
-
-// Provide the key OCID of a registered AWS key.
-func (o GetBackupsBackupEncryptionKeyLocationDetailOutput) AwsEncryptionKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackupEncryptionKeyLocationDetail) string { return v.AwsEncryptionKeyId }).(pulumi.StringOutput)
-}
-
-// Provide the key OCID of a registered Azure key.
-func (o GetBackupsBackupEncryptionKeyLocationDetailOutput) AzureEncryptionKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackupEncryptionKeyLocationDetail) string { return v.AzureEncryptionKeyId }).(pulumi.StringOutput)
-}
-
-// Provide the key OCID of a registered GCP key.
-func (o GetBackupsBackupEncryptionKeyLocationDetailOutput) GoogleCloudProviderEncryptionKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackupEncryptionKeyLocationDetail) string {
-		return v.GoogleCloudProviderEncryptionKeyId
-	}).(pulumi.StringOutput)
-}
-
-// Provide the HSM password as you would in RDBMS for External HSM.
-func (o GetBackupsBackupEncryptionKeyLocationDetailOutput) HsmPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackupEncryptionKeyLocationDetail) string { return v.HsmPassword }).(pulumi.StringOutput)
-}
-
-// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
-func (o GetBackupsBackupEncryptionKeyLocationDetailOutput) ProviderType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsBackupEncryptionKeyLocationDetail) string { return v.ProviderType }).(pulumi.StringOutput)
-}
-
-type GetBackupsBackupEncryptionKeyLocationDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetBackupsBackupEncryptionKeyLocationDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetBackupsBackupEncryptionKeyLocationDetail)(nil)).Elem()
-}
-
-func (o GetBackupsBackupEncryptionKeyLocationDetailArrayOutput) ToGetBackupsBackupEncryptionKeyLocationDetailArrayOutput() GetBackupsBackupEncryptionKeyLocationDetailArrayOutput {
-	return o
-}
-
-func (o GetBackupsBackupEncryptionKeyLocationDetailArrayOutput) ToGetBackupsBackupEncryptionKeyLocationDetailArrayOutputWithContext(ctx context.Context) GetBackupsBackupEncryptionKeyLocationDetailArrayOutput {
-	return o
-}
-
-func (o GetBackupsBackupEncryptionKeyLocationDetailArrayOutput) Index(i pulumi.IntInput) GetBackupsBackupEncryptionKeyLocationDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupsBackupEncryptionKeyLocationDetail {
-		return vs[0].([]GetBackupsBackupEncryptionKeyLocationDetail)[vs[1].(int)]
-	}).(GetBackupsBackupEncryptionKeyLocationDetailOutput)
-}
-
-type GetBackupsFilter struct {
-	Name   string   `pulumi:"name"`
-	Regex  *bool    `pulumi:"regex"`
-	Values []string `pulumi:"values"`
-}
-
-// GetBackupsFilterInput is an input type that accepts GetBackupsFilterArgs and GetBackupsFilterOutput values.
-// You can construct a concrete instance of `GetBackupsFilterInput` via:
-//
-//	GetBackupsFilterArgs{...}
-type GetBackupsFilterInput interface {
-	pulumi.Input
-
-	ToGetBackupsFilterOutput() GetBackupsFilterOutput
-	ToGetBackupsFilterOutputWithContext(context.Context) GetBackupsFilterOutput
-}
-
-type GetBackupsFilterArgs struct {
-	Name   pulumi.StringInput      `pulumi:"name"`
-	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
-	Values pulumi.StringArrayInput `pulumi:"values"`
-}
-
-func (GetBackupsFilterArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetBackupsFilter)(nil)).Elem()
-}
-
-func (i GetBackupsFilterArgs) ToGetBackupsFilterOutput() GetBackupsFilterOutput {
-	return i.ToGetBackupsFilterOutputWithContext(context.Background())
-}
-
-func (i GetBackupsFilterArgs) ToGetBackupsFilterOutputWithContext(ctx context.Context) GetBackupsFilterOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetBackupsFilterOutput)
-}
-
-// GetBackupsFilterArrayInput is an input type that accepts GetBackupsFilterArray and GetBackupsFilterArrayOutput values.
-// You can construct a concrete instance of `GetBackupsFilterArrayInput` via:
-//
-//	GetBackupsFilterArray{ GetBackupsFilterArgs{...} }
-type GetBackupsFilterArrayInput interface {
-	pulumi.Input
-
-	ToGetBackupsFilterArrayOutput() GetBackupsFilterArrayOutput
-	ToGetBackupsFilterArrayOutputWithContext(context.Context) GetBackupsFilterArrayOutput
-}
-
-type GetBackupsFilterArray []GetBackupsFilterInput
-
-func (GetBackupsFilterArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetBackupsFilter)(nil)).Elem()
-}
-
-func (i GetBackupsFilterArray) ToGetBackupsFilterArrayOutput() GetBackupsFilterArrayOutput {
-	return i.ToGetBackupsFilterArrayOutputWithContext(context.Background())
-}
-
-func (i GetBackupsFilterArray) ToGetBackupsFilterArrayOutputWithContext(ctx context.Context) GetBackupsFilterArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetBackupsFilterArrayOutput)
-}
-
-type GetBackupsFilterOutput struct{ *pulumi.OutputState }
-
-func (GetBackupsFilterOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetBackupsFilter)(nil)).Elem()
-}
-
-func (o GetBackupsFilterOutput) ToGetBackupsFilterOutput() GetBackupsFilterOutput {
-	return o
-}
-
-func (o GetBackupsFilterOutput) ToGetBackupsFilterOutputWithContext(ctx context.Context) GetBackupsFilterOutput {
-	return o
-}
-
-func (o GetBackupsFilterOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupsFilter) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetBackupsFilterOutput) Regex() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v GetBackupsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
-}
-
-func (o GetBackupsFilterOutput) Values() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetBackupsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
-}
-
-type GetBackupsFilterArrayOutput struct{ *pulumi.OutputState }
-
-func (GetBackupsFilterArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetBackupsFilter)(nil)).Elem()
-}
-
-func (o GetBackupsFilterArrayOutput) ToGetBackupsFilterArrayOutput() GetBackupsFilterArrayOutput {
-	return o
-}
-
-func (o GetBackupsFilterArrayOutput) ToGetBackupsFilterArrayOutputWithContext(ctx context.Context) GetBackupsFilterArrayOutput {
-	return o
-}
-
-func (o GetBackupsFilterArrayOutput) Index(i pulumi.IntInput) GetBackupsFilterOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupsFilter {
-		return vs[0].([]GetBackupsFilter)[vs[1].(int)]
-	}).(GetBackupsFilterOutput)
-}
-
-type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage struct {
-	// List of autonomous container database resource usage per autonomous virtual machine.
-	AutonomousContainerDatabaseVmUsages []GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage `pulumi:"autonomousContainerDatabaseVmUsages"`
-	// CPUs available for provisioning or scaling an Autonomous AI Database in the Autonomous Container Database.
-	AvailableCpus float64 `pulumi:"availableCpus"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]string `pulumi:"definedTags"`
-	// The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
-	DisplayName string `pulumi:"displayName"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
-	Id string `pulumi:"id"`
-	// Largest provisionable ADB in the Autonomous Container Database.
-	LargestProvisionableAutonomousDatabaseInCpus float64 `pulumi:"largestProvisionableAutonomousDatabaseInCpus"`
-	// Valid list of provisionable CPUs for Autonomous AI Database.
-	ProvisionableCpuses []float64 `pulumi:"provisionableCpuses"`
-	// CPUs / cores assigned to ADBs in the Autonomous Container Database.
-	ProvisionedCpus float64 `pulumi:"provisionedCpus"`
-	// Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
-	ReclaimableCpus float64 `pulumi:"reclaimableCpus"`
-	// CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
-	ReservedCpus float64 `pulumi:"reservedCpus"`
-	// CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
-	UsedCpus float64 `pulumi:"usedCpus"`
-}
-
-// GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageInput is an input type that accepts GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArgs and GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput values.
-// You can construct a concrete instance of `GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageInput` via:
-//
-//	GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArgs{...}
-type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageInput interface {
-	pulumi.Input
-
-	ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput
-	ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutputWithContext(context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput
-}
-
-type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArgs struct {
-	// List of autonomous container database resource usage per autonomous virtual machine.
-	AutonomousContainerDatabaseVmUsages GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayInput `pulumi:"autonomousContainerDatabaseVmUsages"`
-	// CPUs available for provisioning or scaling an Autonomous AI Database in the Autonomous Container Database.
-	AvailableCpus pulumi.Float64Input `pulumi:"availableCpus"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
-	// The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
-	Id pulumi.StringInput `pulumi:"id"`
-	// Largest provisionable ADB in the Autonomous Container Database.
-	LargestProvisionableAutonomousDatabaseInCpus pulumi.Float64Input `pulumi:"largestProvisionableAutonomousDatabaseInCpus"`
-	// Valid list of provisionable CPUs for Autonomous AI Database.
-	ProvisionableCpuses pulumi.Float64ArrayInput `pulumi:"provisionableCpuses"`
-	// CPUs / cores assigned to ADBs in the Autonomous Container Database.
-	ProvisionedCpus pulumi.Float64Input `pulumi:"provisionedCpus"`
-	// Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
-	ReclaimableCpus pulumi.Float64Input `pulumi:"reclaimableCpus"`
-	// CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
-	ReservedCpus pulumi.Float64Input `pulumi:"reservedCpus"`
-	// CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
-	UsedCpus pulumi.Float64Input `pulumi:"usedCpus"`
-}
-
-func (GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage)(nil)).Elem()
-}
-
-func (i GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArgs) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput {
-	return i.ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutputWithContext(context.Background())
-}
-
-func (i GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArgs) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput)
-}
-
-// GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayInput is an input type that accepts GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArray and GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput values.
-// You can construct a concrete instance of `GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayInput` via:
-//
-//	GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArray{ GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArgs{...} }
-type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayInput interface {
-	pulumi.Input
-
-	ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput
-	ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutputWithContext(context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput
-}
-
-type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArray []GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageInput
-
-func (GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage)(nil)).Elem()
-}
-
-func (i GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArray) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput {
-	return i.ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutputWithContext(context.Background())
-}
-
-func (i GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArray) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput)
-}
-
-type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput struct{ *pulumi.OutputState }
-
-func (GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage)(nil)).Elem()
-}
-
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput {
-	return o
-}
-
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput {
-	return o
-}
-
-// List of autonomous container database resource usage per autonomous virtual machine.
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) AutonomousContainerDatabaseVmUsages() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) []GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage {
-		return v.AutonomousContainerDatabaseVmUsages
-	}).(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput)
-}
-
-// CPUs available for provisioning or scaling an Autonomous AI Database in the Autonomous Container Database.
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) AvailableCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) float64 {
-		return v.AvailableCpus
-	}).(pulumi.Float64Output)
-}
-
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) DefinedTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) map[string]string {
-		return v.DefinedTags
-	}).(pulumi.StringMapOutput)
-}
-
-// The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) string {
-		return v.DisplayName
-	}).(pulumi.StringOutput)
-}
-
-// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) FreeformTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) map[string]string {
-		return v.FreeformTags
-	}).(pulumi.StringMapOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) string {
-		return v.Id
-	}).(pulumi.StringOutput)
-}
-
-// Largest provisionable ADB in the Autonomous Container Database.
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) LargestProvisionableAutonomousDatabaseInCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) float64 {
-		return v.LargestProvisionableAutonomousDatabaseInCpus
-	}).(pulumi.Float64Output)
-}
-
-// Valid list of provisionable CPUs for Autonomous AI Database.
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) ProvisionableCpuses() pulumi.Float64ArrayOutput {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) []float64 {
-		return v.ProvisionableCpuses
-	}).(pulumi.Float64ArrayOutput)
-}
-
-// CPUs / cores assigned to ADBs in the Autonomous Container Database.
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) ProvisionedCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) float64 {
-		return v.ProvisionedCpus
-	}).(pulumi.Float64Output)
-}
-
-// Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) ReclaimableCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) float64 {
-		return v.ReclaimableCpus
-	}).(pulumi.Float64Output)
-}
-
-// CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) ReservedCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) float64 {
-		return v.ReservedCpus
-	}).(pulumi.Float64Output)
-}
-
-// CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput) UsedCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage) float64 {
-		return v.UsedCpus
-	}).(pulumi.Float64Output)
-}
-
-type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput struct{ *pulumi.OutputState }
-
-func (GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage)(nil)).Elem()
-}
-
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput {
-	return o
-}
-
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput {
-	return o
-}
-
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage {
-		return vs[0].([]GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage)[vs[1].(int)]
-	}).(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput)
-}
-
-type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage struct {
-	// The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
-	DisplayName string `pulumi:"displayName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
-	Id string `pulumi:"id"`
-	// CPUs / cores assigned to ADBs in the Autonomous Container Database.
-	ProvisionedCpus float64 `pulumi:"provisionedCpus"`
-	// Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
-	ReclaimableCpus float64 `pulumi:"reclaimableCpus"`
-	// CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
-	ReservedCpus float64 `pulumi:"reservedCpus"`
-	// CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
-	UsedCpus float64 `pulumi:"usedCpus"`
-}
-
-// GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageInput is an input type that accepts GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArgs and GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput values.
-// You can construct a concrete instance of `GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageInput` via:
-//
-//	GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArgs{...}
-type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageInput interface {
-	pulumi.Input
-
-	ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput
-	ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutputWithContext(context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput
-}
-
-type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArgs struct {
-	// The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
-	Id pulumi.StringInput `pulumi:"id"`
-	// CPUs / cores assigned to ADBs in the Autonomous Container Database.
-	ProvisionedCpus pulumi.Float64Input `pulumi:"provisionedCpus"`
-	// Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
-	ReclaimableCpus pulumi.Float64Input `pulumi:"reclaimableCpus"`
-	// CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
-	ReservedCpus pulumi.Float64Input `pulumi:"reservedCpus"`
-	// CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
-	UsedCpus pulumi.Float64Input `pulumi:"usedCpus"`
-}
-
-func (GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage)(nil)).Elem()
-}
-
-func (i GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArgs) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput {
-	return i.ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutputWithContext(context.Background())
-}
-
-func (i GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArgs) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput)
-}
-
-// GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayInput is an input type that accepts GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArray and GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput values.
-// You can construct a concrete instance of `GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayInput` via:
-//
-//	GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArray{ GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArgs{...} }
-type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayInput interface {
-	pulumi.Input
-
-	ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput
-	ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutputWithContext(context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput
-}
-
-type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArray []GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageInput
-
-func (GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage)(nil)).Elem()
-}
-
-func (i GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArray) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput {
-	return i.ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutputWithContext(context.Background())
-}
-
-func (i GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArray) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput)
-}
-
-type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput struct{ *pulumi.OutputState }
-
-func (GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage)(nil)).Elem()
-}
-
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput {
-	return o
-}
-
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput {
-	return o
-}
-
-// The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage) string {
-		return v.DisplayName
-	}).(pulumi.StringOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage) string {
-		return v.Id
-	}).(pulumi.StringOutput)
-}
-
-// CPUs / cores assigned to ADBs in the Autonomous Container Database.
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput) ProvisionedCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage) float64 {
-		return v.ProvisionedCpus
-	}).(pulumi.Float64Output)
-}
-
-// Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput) ReclaimableCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage) float64 {
-		return v.ReclaimableCpus
-	}).(pulumi.Float64Output)
-}
-
-// CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput) ReservedCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage) float64 {
-		return v.ReservedCpus
-	}).(pulumi.Float64Output)
-}
-
-// CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput) UsedCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage) float64 {
-		return v.UsedCpus
-	}).(pulumi.Float64Output)
-}
-
-type GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput struct{ *pulumi.OutputState }
-
-func (GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage)(nil)).Elem()
-}
-
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput {
-	return o
-}
-
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput {
-	return o
-}
-
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage {
-		return vs[0].([]GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage)[vs[1].(int)]
-	}).(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput)
-}
-
-type GetCloudAutonomousVmClusterAcdResourceUsagesFilter struct {
-	Name   string   `pulumi:"name"`
-	Regex  *bool    `pulumi:"regex"`
-	Values []string `pulumi:"values"`
-}
-
-// GetCloudAutonomousVmClusterAcdResourceUsagesFilterInput is an input type that accepts GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs and GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput values.
-// You can construct a concrete instance of `GetCloudAutonomousVmClusterAcdResourceUsagesFilterInput` via:
-//
-//	GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs{...}
-type GetCloudAutonomousVmClusterAcdResourceUsagesFilterInput interface {
-	pulumi.Input
-
-	ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput() GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput
-	ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterOutputWithContext(context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput
-}
-
-type GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs struct {
-	Name   pulumi.StringInput      `pulumi:"name"`
-	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
-	Values pulumi.StringArrayInput `pulumi:"values"`
-}
-
-func (GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesFilter)(nil)).Elem()
-}
-
-func (i GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs) ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput() GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput {
-	return i.ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterOutputWithContext(context.Background())
-}
-
-func (i GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs) ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput)
-}
-
-// GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayInput is an input type that accepts GetCloudAutonomousVmClusterAcdResourceUsagesFilterArray and GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput values.
-// You can construct a concrete instance of `GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayInput` via:
-//
-//	GetCloudAutonomousVmClusterAcdResourceUsagesFilterArray{ GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs{...} }
-type GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayInput interface {
-	pulumi.Input
-
-	ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput() GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput
-	ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutputWithContext(context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput
-}
-
-type GetCloudAutonomousVmClusterAcdResourceUsagesFilterArray []GetCloudAutonomousVmClusterAcdResourceUsagesFilterInput
-
-func (GetCloudAutonomousVmClusterAcdResourceUsagesFilterArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterAcdResourceUsagesFilter)(nil)).Elem()
-}
-
-func (i GetCloudAutonomousVmClusterAcdResourceUsagesFilterArray) ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput() GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput {
-	return i.ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutputWithContext(context.Background())
-}
-
-func (i GetCloudAutonomousVmClusterAcdResourceUsagesFilterArray) ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput)
-}
-
-type GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput struct{ *pulumi.OutputState }
-
-func (GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesFilter)(nil)).Elem()
-}
-
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput() GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput {
-	return o
-}
-
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput {
-	return o
-}
-
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesFilter) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput) Regex() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
-}
-
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput) Values() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
-}
-
-type GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput struct{ *pulumi.OutputState }
-
-func (GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterAcdResourceUsagesFilter)(nil)).Elem()
-}
-
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput() GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput {
-	return o
-}
-
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput {
-	return o
-}
-
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClusterAcdResourceUsagesFilter {
-		return vs[0].([]GetCloudAutonomousVmClusterAcdResourceUsagesFilter)[vs[1].(int)]
-	}).(GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousContainerDatabaseAddStandbyBackupConfigInput)(nil)).Elem(), AutonomousContainerDatabaseAddStandbyBackupConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousContainerDatabaseAddStandbyBackupConfigArrayInput)(nil)).Elem(), AutonomousContainerDatabaseAddStandbyBackupConfigArray{})
@@ -78439,6 +78101,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousDatabaseRemoteDisasterRecoveryConfigurationArrayInput)(nil)).Elem(), AutonomousDatabaseRemoteDisasterRecoveryConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousDatabaseResourcePoolSummaryInput)(nil)).Elem(), AutonomousDatabaseResourcePoolSummaryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousDatabaseResourcePoolSummaryPtrInput)(nil)).Elem(), AutonomousDatabaseResourcePoolSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousDatabaseScheduledMaintenanceWindowInput)(nil)).Elem(), AutonomousDatabaseScheduledMaintenanceWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousDatabaseScheduledMaintenanceWindowPtrInput)(nil)).Elem(), AutonomousDatabaseScheduledMaintenanceWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekInput)(nil)).Elem(), AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayInput)(nil)).Elem(), AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousDatabaseScheduledOperationInput)(nil)).Elem(), AutonomousDatabaseScheduledOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousDatabaseScheduledOperationArrayInput)(nil)).Elem(), AutonomousDatabaseScheduledOperationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousDatabaseScheduledOperationDayOfWeekInput)(nil)).Elem(), AutonomousDatabaseScheduledOperationDayOfWeekArgs{})
@@ -79015,6 +78681,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowArrayInput)(nil)).Elem(), GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekInput)(nil)).Elem(), GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArrayInput)(nil)).Elem(), GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionInput)(nil)).Elem(), GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayInput)(nil)).Elem(), GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemInput)(nil)).Elem(), GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayInput)(nil)).Elem(), GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekInput)(nil)).Elem(), GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayInput)(nil)).Elem(), GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseAvailableMaintenanceWindowsFilterInput)(nil)).Elem(), GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayInput)(nil)).Elem(), GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseBackupBackupDestinationDetailInput)(nil)).Elem(), GetAutonomousDatabaseBackupBackupDestinationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseBackupBackupDestinationDetailArrayInput)(nil)).Elem(), GetAutonomousDatabaseBackupBackupDestinationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseBackupConfigInput)(nil)).Elem(), GetAutonomousDatabaseBackupConfigArgs{})
@@ -79089,6 +78763,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseResourcePoolMembersResourcePoolMemberCollectionItemArrayInput)(nil)).Elem(), GetAutonomousDatabaseResourcePoolMembersResourcePoolMemberCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseResourcePoolSummaryInput)(nil)).Elem(), GetAutonomousDatabaseResourcePoolSummaryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseResourcePoolSummaryArrayInput)(nil)).Elem(), GetAutonomousDatabaseResourcePoolSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseScheduledMaintenanceWindowInput)(nil)).Elem(), GetAutonomousDatabaseScheduledMaintenanceWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseScheduledMaintenanceWindowArrayInput)(nil)).Elem(), GetAutonomousDatabaseScheduledMaintenanceWindowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekInput)(nil)).Elem(), GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayInput)(nil)).Elem(), GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseScheduledOperationInput)(nil)).Elem(), GetAutonomousDatabaseScheduledOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseScheduledOperationArrayInput)(nil)).Elem(), GetAutonomousDatabaseScheduledOperationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseScheduledOperationDayOfWeekInput)(nil)).Elem(), GetAutonomousDatabaseScheduledOperationDayOfWeekArgs{})
@@ -79147,6 +78825,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfigurationArrayInput)(nil)).Elem(), GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummaryInput)(nil)).Elem(), GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummaryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummaryArrayInput)(nil)).Elem(), GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowInput)(nil)).Elem(), GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayInput)(nil)).Elem(), GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekInput)(nil)).Elem(), GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayInput)(nil)).Elem(), GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseScheduledOperationInput)(nil)).Elem(), GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArrayInput)(nil)).Elem(), GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekInput)(nil)).Elem(), GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekArgs{})
@@ -79199,6 +78881,9 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfigurationArrayInput)(nil)).Elem(), GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryInput)(nil)).Elem(), GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryArrayInput)(nil)).Elem(), GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowInput)(nil)).Elem(), GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekInput)(nil)).Elem(), GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayInput)(nil)).Elem(), GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationInput)(nil)).Elem(), GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArrayInput)(nil)).Elem(), GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekInput)(nil)).Elem(), GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekArgs{})
@@ -79307,30 +78992,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationAssociatedDatabaseArrayInput)(nil)).Elem(), GetBackupDestinationAssociatedDatabaseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationAssociatedLongTermBackupInput)(nil)).Elem(), GetBackupDestinationAssociatedLongTermBackupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationAssociatedLongTermBackupArrayInput)(nil)).Elem(), GetBackupDestinationAssociatedLongTermBackupArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationMountTypeDetailInput)(nil)).Elem(), GetBackupDestinationMountTypeDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationMountTypeDetailArrayInput)(nil)).Elem(), GetBackupDestinationMountTypeDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationsBackupDestinationInput)(nil)).Elem(), GetBackupDestinationsBackupDestinationArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationsBackupDestinationArrayInput)(nil)).Elem(), GetBackupDestinationsBackupDestinationArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationsBackupDestinationAssociatedDatabaseInput)(nil)).Elem(), GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayInput)(nil)).Elem(), GetBackupDestinationsBackupDestinationAssociatedDatabaseArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationsBackupDestinationAssociatedLongTermBackupInput)(nil)).Elem(), GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayInput)(nil)).Elem(), GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationsBackupDestinationMountTypeDetailInput)(nil)).Elem(), GetBackupDestinationsBackupDestinationMountTypeDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationsBackupDestinationMountTypeDetailArrayInput)(nil)).Elem(), GetBackupDestinationsBackupDestinationMountTypeDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationsFilterInput)(nil)).Elem(), GetBackupDestinationsFilterArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDestinationsFilterArrayInput)(nil)).Elem(), GetBackupDestinationsFilterArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsBackupInput)(nil)).Elem(), GetBackupsBackupArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsBackupArrayInput)(nil)).Elem(), GetBackupsBackupArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsBackupEncryptionKeyLocationDetailInput)(nil)).Elem(), GetBackupsBackupEncryptionKeyLocationDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsBackupEncryptionKeyLocationDetailArrayInput)(nil)).Elem(), GetBackupsBackupEncryptionKeyLocationDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsFilterInput)(nil)).Elem(), GetBackupsFilterArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupsFilterArrayInput)(nil)).Elem(), GetBackupsFilterArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageInput)(nil)).Elem(), GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayInput)(nil)).Elem(), GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageInput)(nil)).Elem(), GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayInput)(nil)).Elem(), GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesFilterInput)(nil)).Elem(), GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayInput)(nil)).Elem(), GetCloudAutonomousVmClusterAcdResourceUsagesFilterArray{})
 	pulumi.RegisterOutputType(AutonomousContainerDatabaseAddStandbyBackupConfigOutput{})
 	pulumi.RegisterOutputType(AutonomousContainerDatabaseAddStandbyBackupConfigArrayOutput{})
 	pulumi.RegisterOutputType(AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailOutput{})
@@ -79439,6 +79100,10 @@ func init() {
 	pulumi.RegisterOutputType(AutonomousDatabaseRemoteDisasterRecoveryConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(AutonomousDatabaseResourcePoolSummaryOutput{})
 	pulumi.RegisterOutputType(AutonomousDatabaseResourcePoolSummaryPtrOutput{})
+	pulumi.RegisterOutputType(AutonomousDatabaseScheduledMaintenanceWindowOutput{})
+	pulumi.RegisterOutputType(AutonomousDatabaseScheduledMaintenanceWindowPtrOutput{})
+	pulumi.RegisterOutputType(AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput{})
+	pulumi.RegisterOutputType(AutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput{})
 	pulumi.RegisterOutputType(AutonomousDatabaseScheduledOperationOutput{})
 	pulumi.RegisterOutputType(AutonomousDatabaseScheduledOperationArrayOutput{})
 	pulumi.RegisterOutputType(AutonomousDatabaseScheduledOperationDayOfWeekOutput{})
@@ -80015,6 +79680,14 @@ func init() {
 	pulumi.RegisterOutputType(GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArrayOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabaseAvailableMaintenanceWindowsAutonomousDatabaseMaintenanceWindowCollectionItemDayOfWeekArrayOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabaseAvailableMaintenanceWindowsFilterOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabaseBackupBackupDestinationDetailOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabaseBackupBackupDestinationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabaseBackupConfigOutput{})
@@ -80089,6 +79762,10 @@ func init() {
 	pulumi.RegisterOutputType(GetAutonomousDatabaseResourcePoolMembersResourcePoolMemberCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabaseResourcePoolSummaryOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabaseResourcePoolSummaryArrayOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabaseScheduledMaintenanceWindowOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabaseScheduledMaintenanceWindowArrayOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabaseScheduledOperationOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabaseScheduledOperationArrayOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabaseScheduledOperationDayOfWeekOutput{})
@@ -80147,6 +79824,10 @@ func init() {
 	pulumi.RegisterOutputType(GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummaryOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummaryArrayOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowArrayOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabasesAutonomousDatabaseScheduledOperationOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArrayOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekOutput{})
@@ -80199,6 +79880,9 @@ func init() {
 	pulumi.RegisterOutputType(GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryArrayOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabasesClonesAutonomousDatabaseScheduledMaintenanceWindowDayOfWeekArrayOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArrayOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekOutput{})
@@ -80307,28 +79991,4 @@ func init() {
 	pulumi.RegisterOutputType(GetBackupDestinationAssociatedDatabaseArrayOutput{})
 	pulumi.RegisterOutputType(GetBackupDestinationAssociatedLongTermBackupOutput{})
 	pulumi.RegisterOutputType(GetBackupDestinationAssociatedLongTermBackupArrayOutput{})
-	pulumi.RegisterOutputType(GetBackupDestinationMountTypeDetailOutput{})
-	pulumi.RegisterOutputType(GetBackupDestinationMountTypeDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetBackupDestinationsBackupDestinationOutput{})
-	pulumi.RegisterOutputType(GetBackupDestinationsBackupDestinationArrayOutput{})
-	pulumi.RegisterOutputType(GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput{})
-	pulumi.RegisterOutputType(GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput{})
-	pulumi.RegisterOutputType(GetBackupDestinationsBackupDestinationAssociatedLongTermBackupOutput{})
-	pulumi.RegisterOutputType(GetBackupDestinationsBackupDestinationAssociatedLongTermBackupArrayOutput{})
-	pulumi.RegisterOutputType(GetBackupDestinationsBackupDestinationMountTypeDetailOutput{})
-	pulumi.RegisterOutputType(GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetBackupDestinationsFilterOutput{})
-	pulumi.RegisterOutputType(GetBackupDestinationsFilterArrayOutput{})
-	pulumi.RegisterOutputType(GetBackupsBackupOutput{})
-	pulumi.RegisterOutputType(GetBackupsBackupArrayOutput{})
-	pulumi.RegisterOutputType(GetBackupsBackupEncryptionKeyLocationDetailOutput{})
-	pulumi.RegisterOutputType(GetBackupsBackupEncryptionKeyLocationDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetBackupsFilterOutput{})
-	pulumi.RegisterOutputType(GetBackupsFilterArrayOutput{})
-	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageOutput{})
-	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput{})
-	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageOutput{})
-	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput{})
-	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterAcdResourceUsagesFilterOutput{})
-	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterAcdResourceUsagesFilterArrayOutput{})
 }

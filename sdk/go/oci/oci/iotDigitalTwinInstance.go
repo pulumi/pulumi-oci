@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -26,7 +26,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/oci"
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/oci"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -72,7 +72,7 @@ type IotDigitalTwinInstance struct {
 
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
 	AuthId pulumi.StringOutput `pulumi:"authId"`
-	// Connectivity type of the digital twin instance
+	// (Updatable)
 	ConnectivityType pulumi.StringOutput `pulumi:"connectivityType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
@@ -142,7 +142,7 @@ func GetIotDigitalTwinInstance(ctx *pulumi.Context,
 type iotDigitalTwinInstanceState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
 	AuthId *string `pulumi:"authId"`
-	// Connectivity type of the digital twin instance
+	// (Updatable)
 	ConnectivityType *string `pulumi:"connectivityType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -180,7 +180,7 @@ type iotDigitalTwinInstanceState struct {
 type IotDigitalTwinInstanceState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
 	AuthId pulumi.StringPtrInput
-	// Connectivity type of the digital twin instance
+	// (Updatable)
 	ConnectivityType pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
@@ -222,7 +222,7 @@ func (IotDigitalTwinInstanceState) ElementType() reflect.Type {
 type iotDigitalTwinInstanceArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
 	AuthId *string `pulumi:"authId"`
-	// Connectivity type of the digital twin instance
+	// (Updatable)
 	ConnectivityType *string `pulumi:"connectivityType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -253,7 +253,7 @@ type iotDigitalTwinInstanceArgs struct {
 type IotDigitalTwinInstanceArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
 	AuthId pulumi.StringPtrInput
-	// Connectivity type of the digital twin instance
+	// (Updatable)
 	ConnectivityType pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
@@ -372,7 +372,7 @@ func (o IotDigitalTwinInstanceOutput) AuthId() pulumi.StringOutput {
 	return o.ApplyT(func(v *IotDigitalTwinInstance) pulumi.StringOutput { return v.AuthId }).(pulumi.StringOutput)
 }
 
-// Connectivity type of the digital twin instance
+// (Updatable)
 func (o IotDigitalTwinInstanceOutput) ConnectivityType() pulumi.StringOutput {
 	return o.ApplyT(func(v *IotDigitalTwinInstance) pulumi.StringOutput { return v.ConnectivityType }).(pulumi.StringOutput)
 }

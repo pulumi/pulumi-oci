@@ -13,10 +13,22 @@ namespace Pulumi.Oci.Database.Inputs
     public sealed class AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) The AD in which the maintenance will occur.
+        /// </summary>
+        [Input("availabilityDomain")]
+        public Input<string>? AvailabilityDomain { get; set; }
+
+        /// <summary>
         /// (Updatable) Day of the week.
         /// </summary>
         [Input("dayOfWeek", required: true)]
         public Input<Inputs.AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgs> DayOfWeek { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+        /// </summary>
+        [Input("isMaintenanceWindowChangeScheduled")]
+        public Input<bool>? IsMaintenanceWindowChangeScheduled { get; set; }
 
         /// <summary>
         /// (Updatable) The maintenance end time. The value must use the ISO-8601 format "hh:mm".

@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -606,6 +606,328 @@ func (o OciCacheUserGetRedisClusterOciCacheClusterArrayOutput) Index(i pulumi.In
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OciCacheUserGetRedisClusterOciCacheCluster {
 		return vs[0].([]OciCacheUserGetRedisClusterOciCacheCluster)[vs[1].(int)]
 	}).(OciCacheUserGetRedisClusterOciCacheClusterOutput)
+}
+
+type RedisClusterClusterReplicationTopology struct {
+	// The details of a cluster participating in the replication setup.
+	PrimaryClusters []RedisClusterClusterReplicationTopologyPrimaryCluster `pulumi:"primaryClusters"`
+	// The list of secondary clusters that replicate data from the primary cluster.
+	SecondaryClusters []RedisClusterClusterReplicationTopologySecondaryCluster `pulumi:"secondaryClusters"`
+}
+
+// RedisClusterClusterReplicationTopologyInput is an input type that accepts RedisClusterClusterReplicationTopologyArgs and RedisClusterClusterReplicationTopologyOutput values.
+// You can construct a concrete instance of `RedisClusterClusterReplicationTopologyInput` via:
+//
+//	RedisClusterClusterReplicationTopologyArgs{...}
+type RedisClusterClusterReplicationTopologyInput interface {
+	pulumi.Input
+
+	ToRedisClusterClusterReplicationTopologyOutput() RedisClusterClusterReplicationTopologyOutput
+	ToRedisClusterClusterReplicationTopologyOutputWithContext(context.Context) RedisClusterClusterReplicationTopologyOutput
+}
+
+type RedisClusterClusterReplicationTopologyArgs struct {
+	// The details of a cluster participating in the replication setup.
+	PrimaryClusters RedisClusterClusterReplicationTopologyPrimaryClusterArrayInput `pulumi:"primaryClusters"`
+	// The list of secondary clusters that replicate data from the primary cluster.
+	SecondaryClusters RedisClusterClusterReplicationTopologySecondaryClusterArrayInput `pulumi:"secondaryClusters"`
+}
+
+func (RedisClusterClusterReplicationTopologyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RedisClusterClusterReplicationTopology)(nil)).Elem()
+}
+
+func (i RedisClusterClusterReplicationTopologyArgs) ToRedisClusterClusterReplicationTopologyOutput() RedisClusterClusterReplicationTopologyOutput {
+	return i.ToRedisClusterClusterReplicationTopologyOutputWithContext(context.Background())
+}
+
+func (i RedisClusterClusterReplicationTopologyArgs) ToRedisClusterClusterReplicationTopologyOutputWithContext(ctx context.Context) RedisClusterClusterReplicationTopologyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RedisClusterClusterReplicationTopologyOutput)
+}
+
+// RedisClusterClusterReplicationTopologyArrayInput is an input type that accepts RedisClusterClusterReplicationTopologyArray and RedisClusterClusterReplicationTopologyArrayOutput values.
+// You can construct a concrete instance of `RedisClusterClusterReplicationTopologyArrayInput` via:
+//
+//	RedisClusterClusterReplicationTopologyArray{ RedisClusterClusterReplicationTopologyArgs{...} }
+type RedisClusterClusterReplicationTopologyArrayInput interface {
+	pulumi.Input
+
+	ToRedisClusterClusterReplicationTopologyArrayOutput() RedisClusterClusterReplicationTopologyArrayOutput
+	ToRedisClusterClusterReplicationTopologyArrayOutputWithContext(context.Context) RedisClusterClusterReplicationTopologyArrayOutput
+}
+
+type RedisClusterClusterReplicationTopologyArray []RedisClusterClusterReplicationTopologyInput
+
+func (RedisClusterClusterReplicationTopologyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RedisClusterClusterReplicationTopology)(nil)).Elem()
+}
+
+func (i RedisClusterClusterReplicationTopologyArray) ToRedisClusterClusterReplicationTopologyArrayOutput() RedisClusterClusterReplicationTopologyArrayOutput {
+	return i.ToRedisClusterClusterReplicationTopologyArrayOutputWithContext(context.Background())
+}
+
+func (i RedisClusterClusterReplicationTopologyArray) ToRedisClusterClusterReplicationTopologyArrayOutputWithContext(ctx context.Context) RedisClusterClusterReplicationTopologyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RedisClusterClusterReplicationTopologyArrayOutput)
+}
+
+type RedisClusterClusterReplicationTopologyOutput struct{ *pulumi.OutputState }
+
+func (RedisClusterClusterReplicationTopologyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RedisClusterClusterReplicationTopology)(nil)).Elem()
+}
+
+func (o RedisClusterClusterReplicationTopologyOutput) ToRedisClusterClusterReplicationTopologyOutput() RedisClusterClusterReplicationTopologyOutput {
+	return o
+}
+
+func (o RedisClusterClusterReplicationTopologyOutput) ToRedisClusterClusterReplicationTopologyOutputWithContext(ctx context.Context) RedisClusterClusterReplicationTopologyOutput {
+	return o
+}
+
+// The details of a cluster participating in the replication setup.
+func (o RedisClusterClusterReplicationTopologyOutput) PrimaryClusters() RedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput {
+	return o.ApplyT(func(v RedisClusterClusterReplicationTopology) []RedisClusterClusterReplicationTopologyPrimaryCluster {
+		return v.PrimaryClusters
+	}).(RedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput)
+}
+
+// The list of secondary clusters that replicate data from the primary cluster.
+func (o RedisClusterClusterReplicationTopologyOutput) SecondaryClusters() RedisClusterClusterReplicationTopologySecondaryClusterArrayOutput {
+	return o.ApplyT(func(v RedisClusterClusterReplicationTopology) []RedisClusterClusterReplicationTopologySecondaryCluster {
+		return v.SecondaryClusters
+	}).(RedisClusterClusterReplicationTopologySecondaryClusterArrayOutput)
+}
+
+type RedisClusterClusterReplicationTopologyArrayOutput struct{ *pulumi.OutputState }
+
+func (RedisClusterClusterReplicationTopologyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RedisClusterClusterReplicationTopology)(nil)).Elem()
+}
+
+func (o RedisClusterClusterReplicationTopologyArrayOutput) ToRedisClusterClusterReplicationTopologyArrayOutput() RedisClusterClusterReplicationTopologyArrayOutput {
+	return o
+}
+
+func (o RedisClusterClusterReplicationTopologyArrayOutput) ToRedisClusterClusterReplicationTopologyArrayOutputWithContext(ctx context.Context) RedisClusterClusterReplicationTopologyArrayOutput {
+	return o
+}
+
+func (o RedisClusterClusterReplicationTopologyArrayOutput) Index(i pulumi.IntInput) RedisClusterClusterReplicationTopologyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RedisClusterClusterReplicationTopology {
+		return vs[0].([]RedisClusterClusterReplicationTopology)[vs[1].(int)]
+	}).(RedisClusterClusterReplicationTopologyOutput)
+}
+
+type RedisClusterClusterReplicationTopologyPrimaryCluster struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+	OciCacheClusterId *string `pulumi:"ociCacheClusterId"`
+	// The Oracle Cloud Infrastructure region to which the cluster belongs.
+	Region *string `pulumi:"region"`
+}
+
+// RedisClusterClusterReplicationTopologyPrimaryClusterInput is an input type that accepts RedisClusterClusterReplicationTopologyPrimaryClusterArgs and RedisClusterClusterReplicationTopologyPrimaryClusterOutput values.
+// You can construct a concrete instance of `RedisClusterClusterReplicationTopologyPrimaryClusterInput` via:
+//
+//	RedisClusterClusterReplicationTopologyPrimaryClusterArgs{...}
+type RedisClusterClusterReplicationTopologyPrimaryClusterInput interface {
+	pulumi.Input
+
+	ToRedisClusterClusterReplicationTopologyPrimaryClusterOutput() RedisClusterClusterReplicationTopologyPrimaryClusterOutput
+	ToRedisClusterClusterReplicationTopologyPrimaryClusterOutputWithContext(context.Context) RedisClusterClusterReplicationTopologyPrimaryClusterOutput
+}
+
+type RedisClusterClusterReplicationTopologyPrimaryClusterArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+	OciCacheClusterId pulumi.StringPtrInput `pulumi:"ociCacheClusterId"`
+	// The Oracle Cloud Infrastructure region to which the cluster belongs.
+	Region pulumi.StringPtrInput `pulumi:"region"`
+}
+
+func (RedisClusterClusterReplicationTopologyPrimaryClusterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RedisClusterClusterReplicationTopologyPrimaryCluster)(nil)).Elem()
+}
+
+func (i RedisClusterClusterReplicationTopologyPrimaryClusterArgs) ToRedisClusterClusterReplicationTopologyPrimaryClusterOutput() RedisClusterClusterReplicationTopologyPrimaryClusterOutput {
+	return i.ToRedisClusterClusterReplicationTopologyPrimaryClusterOutputWithContext(context.Background())
+}
+
+func (i RedisClusterClusterReplicationTopologyPrimaryClusterArgs) ToRedisClusterClusterReplicationTopologyPrimaryClusterOutputWithContext(ctx context.Context) RedisClusterClusterReplicationTopologyPrimaryClusterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RedisClusterClusterReplicationTopologyPrimaryClusterOutput)
+}
+
+// RedisClusterClusterReplicationTopologyPrimaryClusterArrayInput is an input type that accepts RedisClusterClusterReplicationTopologyPrimaryClusterArray and RedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput values.
+// You can construct a concrete instance of `RedisClusterClusterReplicationTopologyPrimaryClusterArrayInput` via:
+//
+//	RedisClusterClusterReplicationTopologyPrimaryClusterArray{ RedisClusterClusterReplicationTopologyPrimaryClusterArgs{...} }
+type RedisClusterClusterReplicationTopologyPrimaryClusterArrayInput interface {
+	pulumi.Input
+
+	ToRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput() RedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput
+	ToRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutputWithContext(context.Context) RedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput
+}
+
+type RedisClusterClusterReplicationTopologyPrimaryClusterArray []RedisClusterClusterReplicationTopologyPrimaryClusterInput
+
+func (RedisClusterClusterReplicationTopologyPrimaryClusterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RedisClusterClusterReplicationTopologyPrimaryCluster)(nil)).Elem()
+}
+
+func (i RedisClusterClusterReplicationTopologyPrimaryClusterArray) ToRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput() RedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput {
+	return i.ToRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutputWithContext(context.Background())
+}
+
+func (i RedisClusterClusterReplicationTopologyPrimaryClusterArray) ToRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutputWithContext(ctx context.Context) RedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput)
+}
+
+type RedisClusterClusterReplicationTopologyPrimaryClusterOutput struct{ *pulumi.OutputState }
+
+func (RedisClusterClusterReplicationTopologyPrimaryClusterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RedisClusterClusterReplicationTopologyPrimaryCluster)(nil)).Elem()
+}
+
+func (o RedisClusterClusterReplicationTopologyPrimaryClusterOutput) ToRedisClusterClusterReplicationTopologyPrimaryClusterOutput() RedisClusterClusterReplicationTopologyPrimaryClusterOutput {
+	return o
+}
+
+func (o RedisClusterClusterReplicationTopologyPrimaryClusterOutput) ToRedisClusterClusterReplicationTopologyPrimaryClusterOutputWithContext(ctx context.Context) RedisClusterClusterReplicationTopologyPrimaryClusterOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+func (o RedisClusterClusterReplicationTopologyPrimaryClusterOutput) OciCacheClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RedisClusterClusterReplicationTopologyPrimaryCluster) *string { return v.OciCacheClusterId }).(pulumi.StringPtrOutput)
+}
+
+// The Oracle Cloud Infrastructure region to which the cluster belongs.
+func (o RedisClusterClusterReplicationTopologyPrimaryClusterOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RedisClusterClusterReplicationTopologyPrimaryCluster) *string { return v.Region }).(pulumi.StringPtrOutput)
+}
+
+type RedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput struct{ *pulumi.OutputState }
+
+func (RedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RedisClusterClusterReplicationTopologyPrimaryCluster)(nil)).Elem()
+}
+
+func (o RedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput) ToRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput() RedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput {
+	return o
+}
+
+func (o RedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput) ToRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutputWithContext(ctx context.Context) RedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput {
+	return o
+}
+
+func (o RedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput) Index(i pulumi.IntInput) RedisClusterClusterReplicationTopologyPrimaryClusterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RedisClusterClusterReplicationTopologyPrimaryCluster {
+		return vs[0].([]RedisClusterClusterReplicationTopologyPrimaryCluster)[vs[1].(int)]
+	}).(RedisClusterClusterReplicationTopologyPrimaryClusterOutput)
+}
+
+type RedisClusterClusterReplicationTopologySecondaryCluster struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+	OciCacheClusterId *string `pulumi:"ociCacheClusterId"`
+	// The Oracle Cloud Infrastructure region to which the cluster belongs.
+	Region *string `pulumi:"region"`
+}
+
+// RedisClusterClusterReplicationTopologySecondaryClusterInput is an input type that accepts RedisClusterClusterReplicationTopologySecondaryClusterArgs and RedisClusterClusterReplicationTopologySecondaryClusterOutput values.
+// You can construct a concrete instance of `RedisClusterClusterReplicationTopologySecondaryClusterInput` via:
+//
+//	RedisClusterClusterReplicationTopologySecondaryClusterArgs{...}
+type RedisClusterClusterReplicationTopologySecondaryClusterInput interface {
+	pulumi.Input
+
+	ToRedisClusterClusterReplicationTopologySecondaryClusterOutput() RedisClusterClusterReplicationTopologySecondaryClusterOutput
+	ToRedisClusterClusterReplicationTopologySecondaryClusterOutputWithContext(context.Context) RedisClusterClusterReplicationTopologySecondaryClusterOutput
+}
+
+type RedisClusterClusterReplicationTopologySecondaryClusterArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+	OciCacheClusterId pulumi.StringPtrInput `pulumi:"ociCacheClusterId"`
+	// The Oracle Cloud Infrastructure region to which the cluster belongs.
+	Region pulumi.StringPtrInput `pulumi:"region"`
+}
+
+func (RedisClusterClusterReplicationTopologySecondaryClusterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RedisClusterClusterReplicationTopologySecondaryCluster)(nil)).Elem()
+}
+
+func (i RedisClusterClusterReplicationTopologySecondaryClusterArgs) ToRedisClusterClusterReplicationTopologySecondaryClusterOutput() RedisClusterClusterReplicationTopologySecondaryClusterOutput {
+	return i.ToRedisClusterClusterReplicationTopologySecondaryClusterOutputWithContext(context.Background())
+}
+
+func (i RedisClusterClusterReplicationTopologySecondaryClusterArgs) ToRedisClusterClusterReplicationTopologySecondaryClusterOutputWithContext(ctx context.Context) RedisClusterClusterReplicationTopologySecondaryClusterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RedisClusterClusterReplicationTopologySecondaryClusterOutput)
+}
+
+// RedisClusterClusterReplicationTopologySecondaryClusterArrayInput is an input type that accepts RedisClusterClusterReplicationTopologySecondaryClusterArray and RedisClusterClusterReplicationTopologySecondaryClusterArrayOutput values.
+// You can construct a concrete instance of `RedisClusterClusterReplicationTopologySecondaryClusterArrayInput` via:
+//
+//	RedisClusterClusterReplicationTopologySecondaryClusterArray{ RedisClusterClusterReplicationTopologySecondaryClusterArgs{...} }
+type RedisClusterClusterReplicationTopologySecondaryClusterArrayInput interface {
+	pulumi.Input
+
+	ToRedisClusterClusterReplicationTopologySecondaryClusterArrayOutput() RedisClusterClusterReplicationTopologySecondaryClusterArrayOutput
+	ToRedisClusterClusterReplicationTopologySecondaryClusterArrayOutputWithContext(context.Context) RedisClusterClusterReplicationTopologySecondaryClusterArrayOutput
+}
+
+type RedisClusterClusterReplicationTopologySecondaryClusterArray []RedisClusterClusterReplicationTopologySecondaryClusterInput
+
+func (RedisClusterClusterReplicationTopologySecondaryClusterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RedisClusterClusterReplicationTopologySecondaryCluster)(nil)).Elem()
+}
+
+func (i RedisClusterClusterReplicationTopologySecondaryClusterArray) ToRedisClusterClusterReplicationTopologySecondaryClusterArrayOutput() RedisClusterClusterReplicationTopologySecondaryClusterArrayOutput {
+	return i.ToRedisClusterClusterReplicationTopologySecondaryClusterArrayOutputWithContext(context.Background())
+}
+
+func (i RedisClusterClusterReplicationTopologySecondaryClusterArray) ToRedisClusterClusterReplicationTopologySecondaryClusterArrayOutputWithContext(ctx context.Context) RedisClusterClusterReplicationTopologySecondaryClusterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RedisClusterClusterReplicationTopologySecondaryClusterArrayOutput)
+}
+
+type RedisClusterClusterReplicationTopologySecondaryClusterOutput struct{ *pulumi.OutputState }
+
+func (RedisClusterClusterReplicationTopologySecondaryClusterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RedisClusterClusterReplicationTopologySecondaryCluster)(nil)).Elem()
+}
+
+func (o RedisClusterClusterReplicationTopologySecondaryClusterOutput) ToRedisClusterClusterReplicationTopologySecondaryClusterOutput() RedisClusterClusterReplicationTopologySecondaryClusterOutput {
+	return o
+}
+
+func (o RedisClusterClusterReplicationTopologySecondaryClusterOutput) ToRedisClusterClusterReplicationTopologySecondaryClusterOutputWithContext(ctx context.Context) RedisClusterClusterReplicationTopologySecondaryClusterOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+func (o RedisClusterClusterReplicationTopologySecondaryClusterOutput) OciCacheClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RedisClusterClusterReplicationTopologySecondaryCluster) *string { return v.OciCacheClusterId }).(pulumi.StringPtrOutput)
+}
+
+// The Oracle Cloud Infrastructure region to which the cluster belongs.
+func (o RedisClusterClusterReplicationTopologySecondaryClusterOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RedisClusterClusterReplicationTopologySecondaryCluster) *string { return v.Region }).(pulumi.StringPtrOutput)
+}
+
+type RedisClusterClusterReplicationTopologySecondaryClusterArrayOutput struct{ *pulumi.OutputState }
+
+func (RedisClusterClusterReplicationTopologySecondaryClusterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RedisClusterClusterReplicationTopologySecondaryCluster)(nil)).Elem()
+}
+
+func (o RedisClusterClusterReplicationTopologySecondaryClusterArrayOutput) ToRedisClusterClusterReplicationTopologySecondaryClusterArrayOutput() RedisClusterClusterReplicationTopologySecondaryClusterArrayOutput {
+	return o
+}
+
+func (o RedisClusterClusterReplicationTopologySecondaryClusterArrayOutput) ToRedisClusterClusterReplicationTopologySecondaryClusterArrayOutputWithContext(ctx context.Context) RedisClusterClusterReplicationTopologySecondaryClusterArrayOutput {
+	return o
+}
+
+func (o RedisClusterClusterReplicationTopologySecondaryClusterArrayOutput) Index(i pulumi.IntInput) RedisClusterClusterReplicationTopologySecondaryClusterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RedisClusterClusterReplicationTopologySecondaryCluster {
+		return vs[0].([]RedisClusterClusterReplicationTopologySecondaryCluster)[vs[1].(int)]
+	}).(RedisClusterClusterReplicationTopologySecondaryClusterOutput)
 }
 
 type RedisClusterGetOciCacheUserOciCacheUser struct {
@@ -4257,6 +4579,328 @@ func (o GetOciCacheUsersOciCacheUserCollectionItemArrayOutput) Index(i pulumi.In
 	}).(GetOciCacheUsersOciCacheUserCollectionItemOutput)
 }
 
+type GetRedisClusterClusterReplicationTopology struct {
+	// The details of a cluster participating in the replication setup.
+	PrimaryClusters []GetRedisClusterClusterReplicationTopologyPrimaryCluster `pulumi:"primaryClusters"`
+	// The list of secondary clusters that replicate data from the primary cluster.
+	SecondaryClusters []GetRedisClusterClusterReplicationTopologySecondaryCluster `pulumi:"secondaryClusters"`
+}
+
+// GetRedisClusterClusterReplicationTopologyInput is an input type that accepts GetRedisClusterClusterReplicationTopologyArgs and GetRedisClusterClusterReplicationTopologyOutput values.
+// You can construct a concrete instance of `GetRedisClusterClusterReplicationTopologyInput` via:
+//
+//	GetRedisClusterClusterReplicationTopologyArgs{...}
+type GetRedisClusterClusterReplicationTopologyInput interface {
+	pulumi.Input
+
+	ToGetRedisClusterClusterReplicationTopologyOutput() GetRedisClusterClusterReplicationTopologyOutput
+	ToGetRedisClusterClusterReplicationTopologyOutputWithContext(context.Context) GetRedisClusterClusterReplicationTopologyOutput
+}
+
+type GetRedisClusterClusterReplicationTopologyArgs struct {
+	// The details of a cluster participating in the replication setup.
+	PrimaryClusters GetRedisClusterClusterReplicationTopologyPrimaryClusterArrayInput `pulumi:"primaryClusters"`
+	// The list of secondary clusters that replicate data from the primary cluster.
+	SecondaryClusters GetRedisClusterClusterReplicationTopologySecondaryClusterArrayInput `pulumi:"secondaryClusters"`
+}
+
+func (GetRedisClusterClusterReplicationTopologyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClusterClusterReplicationTopology)(nil)).Elem()
+}
+
+func (i GetRedisClusterClusterReplicationTopologyArgs) ToGetRedisClusterClusterReplicationTopologyOutput() GetRedisClusterClusterReplicationTopologyOutput {
+	return i.ToGetRedisClusterClusterReplicationTopologyOutputWithContext(context.Background())
+}
+
+func (i GetRedisClusterClusterReplicationTopologyArgs) ToGetRedisClusterClusterReplicationTopologyOutputWithContext(ctx context.Context) GetRedisClusterClusterReplicationTopologyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClusterClusterReplicationTopologyOutput)
+}
+
+// GetRedisClusterClusterReplicationTopologyArrayInput is an input type that accepts GetRedisClusterClusterReplicationTopologyArray and GetRedisClusterClusterReplicationTopologyArrayOutput values.
+// You can construct a concrete instance of `GetRedisClusterClusterReplicationTopologyArrayInput` via:
+//
+//	GetRedisClusterClusterReplicationTopologyArray{ GetRedisClusterClusterReplicationTopologyArgs{...} }
+type GetRedisClusterClusterReplicationTopologyArrayInput interface {
+	pulumi.Input
+
+	ToGetRedisClusterClusterReplicationTopologyArrayOutput() GetRedisClusterClusterReplicationTopologyArrayOutput
+	ToGetRedisClusterClusterReplicationTopologyArrayOutputWithContext(context.Context) GetRedisClusterClusterReplicationTopologyArrayOutput
+}
+
+type GetRedisClusterClusterReplicationTopologyArray []GetRedisClusterClusterReplicationTopologyInput
+
+func (GetRedisClusterClusterReplicationTopologyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClusterClusterReplicationTopology)(nil)).Elem()
+}
+
+func (i GetRedisClusterClusterReplicationTopologyArray) ToGetRedisClusterClusterReplicationTopologyArrayOutput() GetRedisClusterClusterReplicationTopologyArrayOutput {
+	return i.ToGetRedisClusterClusterReplicationTopologyArrayOutputWithContext(context.Background())
+}
+
+func (i GetRedisClusterClusterReplicationTopologyArray) ToGetRedisClusterClusterReplicationTopologyArrayOutputWithContext(ctx context.Context) GetRedisClusterClusterReplicationTopologyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClusterClusterReplicationTopologyArrayOutput)
+}
+
+type GetRedisClusterClusterReplicationTopologyOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClusterClusterReplicationTopologyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClusterClusterReplicationTopology)(nil)).Elem()
+}
+
+func (o GetRedisClusterClusterReplicationTopologyOutput) ToGetRedisClusterClusterReplicationTopologyOutput() GetRedisClusterClusterReplicationTopologyOutput {
+	return o
+}
+
+func (o GetRedisClusterClusterReplicationTopologyOutput) ToGetRedisClusterClusterReplicationTopologyOutputWithContext(ctx context.Context) GetRedisClusterClusterReplicationTopologyOutput {
+	return o
+}
+
+// The details of a cluster participating in the replication setup.
+func (o GetRedisClusterClusterReplicationTopologyOutput) PrimaryClusters() GetRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput {
+	return o.ApplyT(func(v GetRedisClusterClusterReplicationTopology) []GetRedisClusterClusterReplicationTopologyPrimaryCluster {
+		return v.PrimaryClusters
+	}).(GetRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput)
+}
+
+// The list of secondary clusters that replicate data from the primary cluster.
+func (o GetRedisClusterClusterReplicationTopologyOutput) SecondaryClusters() GetRedisClusterClusterReplicationTopologySecondaryClusterArrayOutput {
+	return o.ApplyT(func(v GetRedisClusterClusterReplicationTopology) []GetRedisClusterClusterReplicationTopologySecondaryCluster {
+		return v.SecondaryClusters
+	}).(GetRedisClusterClusterReplicationTopologySecondaryClusterArrayOutput)
+}
+
+type GetRedisClusterClusterReplicationTopologyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClusterClusterReplicationTopologyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClusterClusterReplicationTopology)(nil)).Elem()
+}
+
+func (o GetRedisClusterClusterReplicationTopologyArrayOutput) ToGetRedisClusterClusterReplicationTopologyArrayOutput() GetRedisClusterClusterReplicationTopologyArrayOutput {
+	return o
+}
+
+func (o GetRedisClusterClusterReplicationTopologyArrayOutput) ToGetRedisClusterClusterReplicationTopologyArrayOutputWithContext(ctx context.Context) GetRedisClusterClusterReplicationTopologyArrayOutput {
+	return o
+}
+
+func (o GetRedisClusterClusterReplicationTopologyArrayOutput) Index(i pulumi.IntInput) GetRedisClusterClusterReplicationTopologyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRedisClusterClusterReplicationTopology {
+		return vs[0].([]GetRedisClusterClusterReplicationTopology)[vs[1].(int)]
+	}).(GetRedisClusterClusterReplicationTopologyOutput)
+}
+
+type GetRedisClusterClusterReplicationTopologyPrimaryCluster struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+	OciCacheClusterId string `pulumi:"ociCacheClusterId"`
+	// The Oracle Cloud Infrastructure region to which the cluster belongs.
+	Region string `pulumi:"region"`
+}
+
+// GetRedisClusterClusterReplicationTopologyPrimaryClusterInput is an input type that accepts GetRedisClusterClusterReplicationTopologyPrimaryClusterArgs and GetRedisClusterClusterReplicationTopologyPrimaryClusterOutput values.
+// You can construct a concrete instance of `GetRedisClusterClusterReplicationTopologyPrimaryClusterInput` via:
+//
+//	GetRedisClusterClusterReplicationTopologyPrimaryClusterArgs{...}
+type GetRedisClusterClusterReplicationTopologyPrimaryClusterInput interface {
+	pulumi.Input
+
+	ToGetRedisClusterClusterReplicationTopologyPrimaryClusterOutput() GetRedisClusterClusterReplicationTopologyPrimaryClusterOutput
+	ToGetRedisClusterClusterReplicationTopologyPrimaryClusterOutputWithContext(context.Context) GetRedisClusterClusterReplicationTopologyPrimaryClusterOutput
+}
+
+type GetRedisClusterClusterReplicationTopologyPrimaryClusterArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+	OciCacheClusterId pulumi.StringInput `pulumi:"ociCacheClusterId"`
+	// The Oracle Cloud Infrastructure region to which the cluster belongs.
+	Region pulumi.StringInput `pulumi:"region"`
+}
+
+func (GetRedisClusterClusterReplicationTopologyPrimaryClusterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClusterClusterReplicationTopologyPrimaryCluster)(nil)).Elem()
+}
+
+func (i GetRedisClusterClusterReplicationTopologyPrimaryClusterArgs) ToGetRedisClusterClusterReplicationTopologyPrimaryClusterOutput() GetRedisClusterClusterReplicationTopologyPrimaryClusterOutput {
+	return i.ToGetRedisClusterClusterReplicationTopologyPrimaryClusterOutputWithContext(context.Background())
+}
+
+func (i GetRedisClusterClusterReplicationTopologyPrimaryClusterArgs) ToGetRedisClusterClusterReplicationTopologyPrimaryClusterOutputWithContext(ctx context.Context) GetRedisClusterClusterReplicationTopologyPrimaryClusterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClusterClusterReplicationTopologyPrimaryClusterOutput)
+}
+
+// GetRedisClusterClusterReplicationTopologyPrimaryClusterArrayInput is an input type that accepts GetRedisClusterClusterReplicationTopologyPrimaryClusterArray and GetRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput values.
+// You can construct a concrete instance of `GetRedisClusterClusterReplicationTopologyPrimaryClusterArrayInput` via:
+//
+//	GetRedisClusterClusterReplicationTopologyPrimaryClusterArray{ GetRedisClusterClusterReplicationTopologyPrimaryClusterArgs{...} }
+type GetRedisClusterClusterReplicationTopologyPrimaryClusterArrayInput interface {
+	pulumi.Input
+
+	ToGetRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput() GetRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput
+	ToGetRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutputWithContext(context.Context) GetRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput
+}
+
+type GetRedisClusterClusterReplicationTopologyPrimaryClusterArray []GetRedisClusterClusterReplicationTopologyPrimaryClusterInput
+
+func (GetRedisClusterClusterReplicationTopologyPrimaryClusterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClusterClusterReplicationTopologyPrimaryCluster)(nil)).Elem()
+}
+
+func (i GetRedisClusterClusterReplicationTopologyPrimaryClusterArray) ToGetRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput() GetRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput {
+	return i.ToGetRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRedisClusterClusterReplicationTopologyPrimaryClusterArray) ToGetRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutputWithContext(ctx context.Context) GetRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput)
+}
+
+type GetRedisClusterClusterReplicationTopologyPrimaryClusterOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClusterClusterReplicationTopologyPrimaryClusterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClusterClusterReplicationTopologyPrimaryCluster)(nil)).Elem()
+}
+
+func (o GetRedisClusterClusterReplicationTopologyPrimaryClusterOutput) ToGetRedisClusterClusterReplicationTopologyPrimaryClusterOutput() GetRedisClusterClusterReplicationTopologyPrimaryClusterOutput {
+	return o
+}
+
+func (o GetRedisClusterClusterReplicationTopologyPrimaryClusterOutput) ToGetRedisClusterClusterReplicationTopologyPrimaryClusterOutputWithContext(ctx context.Context) GetRedisClusterClusterReplicationTopologyPrimaryClusterOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+func (o GetRedisClusterClusterReplicationTopologyPrimaryClusterOutput) OciCacheClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClusterClusterReplicationTopologyPrimaryCluster) string { return v.OciCacheClusterId }).(pulumi.StringOutput)
+}
+
+// The Oracle Cloud Infrastructure region to which the cluster belongs.
+func (o GetRedisClusterClusterReplicationTopologyPrimaryClusterOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClusterClusterReplicationTopologyPrimaryCluster) string { return v.Region }).(pulumi.StringOutput)
+}
+
+type GetRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClusterClusterReplicationTopologyPrimaryCluster)(nil)).Elem()
+}
+
+func (o GetRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput) ToGetRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput() GetRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput {
+	return o
+}
+
+func (o GetRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput) ToGetRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutputWithContext(ctx context.Context) GetRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput {
+	return o
+}
+
+func (o GetRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput) Index(i pulumi.IntInput) GetRedisClusterClusterReplicationTopologyPrimaryClusterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRedisClusterClusterReplicationTopologyPrimaryCluster {
+		return vs[0].([]GetRedisClusterClusterReplicationTopologyPrimaryCluster)[vs[1].(int)]
+	}).(GetRedisClusterClusterReplicationTopologyPrimaryClusterOutput)
+}
+
+type GetRedisClusterClusterReplicationTopologySecondaryCluster struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+	OciCacheClusterId string `pulumi:"ociCacheClusterId"`
+	// The Oracle Cloud Infrastructure region to which the cluster belongs.
+	Region string `pulumi:"region"`
+}
+
+// GetRedisClusterClusterReplicationTopologySecondaryClusterInput is an input type that accepts GetRedisClusterClusterReplicationTopologySecondaryClusterArgs and GetRedisClusterClusterReplicationTopologySecondaryClusterOutput values.
+// You can construct a concrete instance of `GetRedisClusterClusterReplicationTopologySecondaryClusterInput` via:
+//
+//	GetRedisClusterClusterReplicationTopologySecondaryClusterArgs{...}
+type GetRedisClusterClusterReplicationTopologySecondaryClusterInput interface {
+	pulumi.Input
+
+	ToGetRedisClusterClusterReplicationTopologySecondaryClusterOutput() GetRedisClusterClusterReplicationTopologySecondaryClusterOutput
+	ToGetRedisClusterClusterReplicationTopologySecondaryClusterOutputWithContext(context.Context) GetRedisClusterClusterReplicationTopologySecondaryClusterOutput
+}
+
+type GetRedisClusterClusterReplicationTopologySecondaryClusterArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+	OciCacheClusterId pulumi.StringInput `pulumi:"ociCacheClusterId"`
+	// The Oracle Cloud Infrastructure region to which the cluster belongs.
+	Region pulumi.StringInput `pulumi:"region"`
+}
+
+func (GetRedisClusterClusterReplicationTopologySecondaryClusterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClusterClusterReplicationTopologySecondaryCluster)(nil)).Elem()
+}
+
+func (i GetRedisClusterClusterReplicationTopologySecondaryClusterArgs) ToGetRedisClusterClusterReplicationTopologySecondaryClusterOutput() GetRedisClusterClusterReplicationTopologySecondaryClusterOutput {
+	return i.ToGetRedisClusterClusterReplicationTopologySecondaryClusterOutputWithContext(context.Background())
+}
+
+func (i GetRedisClusterClusterReplicationTopologySecondaryClusterArgs) ToGetRedisClusterClusterReplicationTopologySecondaryClusterOutputWithContext(ctx context.Context) GetRedisClusterClusterReplicationTopologySecondaryClusterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClusterClusterReplicationTopologySecondaryClusterOutput)
+}
+
+// GetRedisClusterClusterReplicationTopologySecondaryClusterArrayInput is an input type that accepts GetRedisClusterClusterReplicationTopologySecondaryClusterArray and GetRedisClusterClusterReplicationTopologySecondaryClusterArrayOutput values.
+// You can construct a concrete instance of `GetRedisClusterClusterReplicationTopologySecondaryClusterArrayInput` via:
+//
+//	GetRedisClusterClusterReplicationTopologySecondaryClusterArray{ GetRedisClusterClusterReplicationTopologySecondaryClusterArgs{...} }
+type GetRedisClusterClusterReplicationTopologySecondaryClusterArrayInput interface {
+	pulumi.Input
+
+	ToGetRedisClusterClusterReplicationTopologySecondaryClusterArrayOutput() GetRedisClusterClusterReplicationTopologySecondaryClusterArrayOutput
+	ToGetRedisClusterClusterReplicationTopologySecondaryClusterArrayOutputWithContext(context.Context) GetRedisClusterClusterReplicationTopologySecondaryClusterArrayOutput
+}
+
+type GetRedisClusterClusterReplicationTopologySecondaryClusterArray []GetRedisClusterClusterReplicationTopologySecondaryClusterInput
+
+func (GetRedisClusterClusterReplicationTopologySecondaryClusterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClusterClusterReplicationTopologySecondaryCluster)(nil)).Elem()
+}
+
+func (i GetRedisClusterClusterReplicationTopologySecondaryClusterArray) ToGetRedisClusterClusterReplicationTopologySecondaryClusterArrayOutput() GetRedisClusterClusterReplicationTopologySecondaryClusterArrayOutput {
+	return i.ToGetRedisClusterClusterReplicationTopologySecondaryClusterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRedisClusterClusterReplicationTopologySecondaryClusterArray) ToGetRedisClusterClusterReplicationTopologySecondaryClusterArrayOutputWithContext(ctx context.Context) GetRedisClusterClusterReplicationTopologySecondaryClusterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClusterClusterReplicationTopologySecondaryClusterArrayOutput)
+}
+
+type GetRedisClusterClusterReplicationTopologySecondaryClusterOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClusterClusterReplicationTopologySecondaryClusterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClusterClusterReplicationTopologySecondaryCluster)(nil)).Elem()
+}
+
+func (o GetRedisClusterClusterReplicationTopologySecondaryClusterOutput) ToGetRedisClusterClusterReplicationTopologySecondaryClusterOutput() GetRedisClusterClusterReplicationTopologySecondaryClusterOutput {
+	return o
+}
+
+func (o GetRedisClusterClusterReplicationTopologySecondaryClusterOutput) ToGetRedisClusterClusterReplicationTopologySecondaryClusterOutputWithContext(ctx context.Context) GetRedisClusterClusterReplicationTopologySecondaryClusterOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+func (o GetRedisClusterClusterReplicationTopologySecondaryClusterOutput) OciCacheClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClusterClusterReplicationTopologySecondaryCluster) string { return v.OciCacheClusterId }).(pulumi.StringOutput)
+}
+
+// The Oracle Cloud Infrastructure region to which the cluster belongs.
+func (o GetRedisClusterClusterReplicationTopologySecondaryClusterOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClusterClusterReplicationTopologySecondaryCluster) string { return v.Region }).(pulumi.StringOutput)
+}
+
+type GetRedisClusterClusterReplicationTopologySecondaryClusterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClusterClusterReplicationTopologySecondaryClusterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClusterClusterReplicationTopologySecondaryCluster)(nil)).Elem()
+}
+
+func (o GetRedisClusterClusterReplicationTopologySecondaryClusterArrayOutput) ToGetRedisClusterClusterReplicationTopologySecondaryClusterArrayOutput() GetRedisClusterClusterReplicationTopologySecondaryClusterArrayOutput {
+	return o
+}
+
+func (o GetRedisClusterClusterReplicationTopologySecondaryClusterArrayOutput) ToGetRedisClusterClusterReplicationTopologySecondaryClusterArrayOutputWithContext(ctx context.Context) GetRedisClusterClusterReplicationTopologySecondaryClusterArrayOutput {
+	return o
+}
+
+func (o GetRedisClusterClusterReplicationTopologySecondaryClusterArrayOutput) Index(i pulumi.IntInput) GetRedisClusterClusterReplicationTopologySecondaryClusterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRedisClusterClusterReplicationTopologySecondaryCluster {
+		return vs[0].([]GetRedisClusterClusterReplicationTopologySecondaryCluster)[vs[1].(int)]
+	}).(GetRedisClusterClusterReplicationTopologySecondaryClusterOutput)
+}
+
 type GetRedisClusterImportFromObjectStorageDetail struct {
 	// The Object Storage bucket name.
 	Bucket string `pulumi:"bucket"`
@@ -5231,6 +5875,10 @@ type GetRedisClustersRedisClusterCollectionItem struct {
 	BackupId string `pulumi:"backupId"`
 	// Specifies whether the cluster is sharded or non-sharded.
 	ClusterMode string `pulumi:"clusterMode"`
+	// Defines the replication topology of an Oracle Cloud Infrastructure cache cluster, including the primary cluster and associated secondary clusters participating in replication.
+	ClusterReplicationTopologies []GetRedisClustersRedisClusterCollectionItemClusterReplicationTopology `pulumi:"clusterReplicationTopologies"`
+	// The current role of the cluster.
+	ClusterRole string `pulumi:"clusterRole"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -5259,6 +5907,8 @@ type GetRedisClustersRedisClusterCollectionItem struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
 	OciCacheConfigSetId string `pulumi:"ociCacheConfigSetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster in CRR.
+	PrimaryClusterId string `pulumi:"primaryClusterId"`
 	// The private IP address of the API endpoint for the cluster's primary node.
 	PrimaryEndpointIpAddress string `pulumi:"primaryEndpointIpAddress"`
 	// The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
@@ -5301,6 +5951,10 @@ type GetRedisClustersRedisClusterCollectionItemArgs struct {
 	BackupId pulumi.StringInput `pulumi:"backupId"`
 	// Specifies whether the cluster is sharded or non-sharded.
 	ClusterMode pulumi.StringInput `pulumi:"clusterMode"`
+	// Defines the replication topology of an Oracle Cloud Infrastructure cache cluster, including the primary cluster and associated secondary clusters participating in replication.
+	ClusterReplicationTopologies GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayInput `pulumi:"clusterReplicationTopologies"`
+	// The current role of the cluster.
+	ClusterRole pulumi.StringInput `pulumi:"clusterRole"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -5329,6 +5983,8 @@ type GetRedisClustersRedisClusterCollectionItemArgs struct {
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
 	OciCacheConfigSetId pulumi.StringInput `pulumi:"ociCacheConfigSetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster in CRR.
+	PrimaryClusterId pulumi.StringInput `pulumi:"primaryClusterId"`
 	// The private IP address of the API endpoint for the cluster's primary node.
 	PrimaryEndpointIpAddress pulumi.StringInput `pulumi:"primaryEndpointIpAddress"`
 	// The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
@@ -5416,6 +6072,18 @@ func (o GetRedisClustersRedisClusterCollectionItemOutput) ClusterMode() pulumi.S
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.ClusterMode }).(pulumi.StringOutput)
 }
 
+// Defines the replication topology of an Oracle Cloud Infrastructure cache cluster, including the primary cluster and associated secondary clusters participating in replication.
+func (o GetRedisClustersRedisClusterCollectionItemOutput) ClusterReplicationTopologies() GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayOutput {
+	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) []GetRedisClustersRedisClusterCollectionItemClusterReplicationTopology {
+		return v.ClusterReplicationTopologies
+	}).(GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayOutput)
+}
+
+// The current role of the cluster.
+func (o GetRedisClustersRedisClusterCollectionItemOutput) ClusterRole() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.ClusterRole }).(pulumi.StringOutput)
+}
+
 // The ID of the compartment in which to list resources.
 func (o GetRedisClustersRedisClusterCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -5488,6 +6156,11 @@ func (o GetRedisClustersRedisClusterCollectionItemOutput) NsgIds() pulumi.String
 // The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
 func (o GetRedisClustersRedisClusterCollectionItemOutput) OciCacheConfigSetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.OciCacheConfigSetId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster in CRR.
+func (o GetRedisClustersRedisClusterCollectionItemOutput) PrimaryClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.PrimaryClusterId }).(pulumi.StringOutput)
 }
 
 // The private IP address of the API endpoint for the cluster's primary node.
@@ -5568,6 +6241,336 @@ func (o GetRedisClustersRedisClusterCollectionItemArrayOutput) Index(i pulumi.In
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRedisClustersRedisClusterCollectionItem {
 		return vs[0].([]GetRedisClustersRedisClusterCollectionItem)[vs[1].(int)]
 	}).(GetRedisClustersRedisClusterCollectionItemOutput)
+}
+
+type GetRedisClustersRedisClusterCollectionItemClusterReplicationTopology struct {
+	// The details of a cluster participating in the replication setup.
+	PrimaryClusters []GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryCluster `pulumi:"primaryClusters"`
+	// The list of secondary clusters that replicate data from the primary cluster.
+	SecondaryClusters []GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryCluster `pulumi:"secondaryClusters"`
+}
+
+// GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyInput is an input type that accepts GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArgs and GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutput values.
+// You can construct a concrete instance of `GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyInput` via:
+//
+//	GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArgs{...}
+type GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyInput interface {
+	pulumi.Input
+
+	ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutput() GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutput
+	ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutputWithContext(context.Context) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutput
+}
+
+type GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArgs struct {
+	// The details of a cluster participating in the replication setup.
+	PrimaryClusters GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayInput `pulumi:"primaryClusters"`
+	// The list of secondary clusters that replicate data from the primary cluster.
+	SecondaryClusters GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayInput `pulumi:"secondaryClusters"`
+}
+
+func (GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemClusterReplicationTopology)(nil)).Elem()
+}
+
+func (i GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArgs) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutput() GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutput {
+	return i.ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutputWithContext(context.Background())
+}
+
+func (i GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArgs) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutput)
+}
+
+// GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayInput is an input type that accepts GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArray and GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayOutput values.
+// You can construct a concrete instance of `GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayInput` via:
+//
+//	GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArray{ GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArgs{...} }
+type GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayInput interface {
+	pulumi.Input
+
+	ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayOutput() GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayOutput
+	ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayOutputWithContext(context.Context) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayOutput
+}
+
+type GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArray []GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyInput
+
+func (GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClustersRedisClusterCollectionItemClusterReplicationTopology)(nil)).Elem()
+}
+
+func (i GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArray) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayOutput() GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayOutput {
+	return i.ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayOutputWithContext(context.Background())
+}
+
+func (i GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArray) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayOutput)
+}
+
+type GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemClusterReplicationTopology)(nil)).Elem()
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutput) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutput() GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutput {
+	return o
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutput) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutput {
+	return o
+}
+
+// The details of a cluster participating in the replication setup.
+func (o GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutput) PrimaryClusters() GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayOutput {
+	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItemClusterReplicationTopology) []GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryCluster {
+		return v.PrimaryClusters
+	}).(GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayOutput)
+}
+
+// The list of secondary clusters that replicate data from the primary cluster.
+func (o GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutput) SecondaryClusters() GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayOutput {
+	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItemClusterReplicationTopology) []GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryCluster {
+		return v.SecondaryClusters
+	}).(GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayOutput)
+}
+
+type GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClustersRedisClusterCollectionItemClusterReplicationTopology)(nil)).Elem()
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayOutput) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayOutput() GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayOutput {
+	return o
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayOutput) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayOutput {
+	return o
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayOutput) Index(i pulumi.IntInput) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopology {
+		return vs[0].([]GetRedisClustersRedisClusterCollectionItemClusterReplicationTopology)[vs[1].(int)]
+	}).(GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutput)
+}
+
+type GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryCluster struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+	OciCacheClusterId string `pulumi:"ociCacheClusterId"`
+	// The Oracle Cloud Infrastructure region to which the cluster belongs.
+	Region string `pulumi:"region"`
+}
+
+// GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterInput is an input type that accepts GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArgs and GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutput values.
+// You can construct a concrete instance of `GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterInput` via:
+//
+//	GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArgs{...}
+type GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterInput interface {
+	pulumi.Input
+
+	ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutput() GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutput
+	ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutputWithContext(context.Context) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutput
+}
+
+type GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+	OciCacheClusterId pulumi.StringInput `pulumi:"ociCacheClusterId"`
+	// The Oracle Cloud Infrastructure region to which the cluster belongs.
+	Region pulumi.StringInput `pulumi:"region"`
+}
+
+func (GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryCluster)(nil)).Elem()
+}
+
+func (i GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArgs) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutput() GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutput {
+	return i.ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutputWithContext(context.Background())
+}
+
+func (i GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArgs) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutput)
+}
+
+// GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayInput is an input type that accepts GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArray and GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayOutput values.
+// You can construct a concrete instance of `GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayInput` via:
+//
+//	GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArray{ GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArgs{...} }
+type GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayInput interface {
+	pulumi.Input
+
+	ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayOutput() GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayOutput
+	ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayOutputWithContext(context.Context) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayOutput
+}
+
+type GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArray []GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterInput
+
+func (GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryCluster)(nil)).Elem()
+}
+
+func (i GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArray) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayOutput() GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayOutput {
+	return i.ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArray) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayOutput)
+}
+
+type GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryCluster)(nil)).Elem()
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutput) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutput() GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutput {
+	return o
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutput) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+func (o GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutput) OciCacheClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryCluster) string {
+		return v.OciCacheClusterId
+	}).(pulumi.StringOutput)
+}
+
+// The Oracle Cloud Infrastructure region to which the cluster belongs.
+func (o GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryCluster) string {
+		return v.Region
+	}).(pulumi.StringOutput)
+}
+
+type GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryCluster)(nil)).Elem()
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayOutput) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayOutput() GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayOutput {
+	return o
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayOutput) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayOutput {
+	return o
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayOutput) Index(i pulumi.IntInput) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryCluster {
+		return vs[0].([]GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryCluster)[vs[1].(int)]
+	}).(GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutput)
+}
+
+type GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryCluster struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+	OciCacheClusterId string `pulumi:"ociCacheClusterId"`
+	// The Oracle Cloud Infrastructure region to which the cluster belongs.
+	Region string `pulumi:"region"`
+}
+
+// GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterInput is an input type that accepts GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArgs and GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutput values.
+// You can construct a concrete instance of `GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterInput` via:
+//
+//	GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArgs{...}
+type GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterInput interface {
+	pulumi.Input
+
+	ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutput() GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutput
+	ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutputWithContext(context.Context) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutput
+}
+
+type GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+	OciCacheClusterId pulumi.StringInput `pulumi:"ociCacheClusterId"`
+	// The Oracle Cloud Infrastructure region to which the cluster belongs.
+	Region pulumi.StringInput `pulumi:"region"`
+}
+
+func (GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryCluster)(nil)).Elem()
+}
+
+func (i GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArgs) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutput() GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutput {
+	return i.ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutputWithContext(context.Background())
+}
+
+func (i GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArgs) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutput)
+}
+
+// GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayInput is an input type that accepts GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArray and GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayOutput values.
+// You can construct a concrete instance of `GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayInput` via:
+//
+//	GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArray{ GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArgs{...} }
+type GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayInput interface {
+	pulumi.Input
+
+	ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayOutput() GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayOutput
+	ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayOutputWithContext(context.Context) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayOutput
+}
+
+type GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArray []GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterInput
+
+func (GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryCluster)(nil)).Elem()
+}
+
+func (i GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArray) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayOutput() GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayOutput {
+	return i.ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArray) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayOutput)
+}
+
+type GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryCluster)(nil)).Elem()
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutput) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutput() GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutput {
+	return o
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutput) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Oracle Cloud Infrastructure Cache cluster.
+func (o GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutput) OciCacheClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryCluster) string {
+		return v.OciCacheClusterId
+	}).(pulumi.StringOutput)
+}
+
+// The Oracle Cloud Infrastructure region to which the cluster belongs.
+func (o GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryCluster) string {
+		return v.Region
+	}).(pulumi.StringOutput)
+}
+
+type GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryCluster)(nil)).Elem()
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayOutput) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayOutput() GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayOutput {
+	return o
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayOutput) ToGetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayOutput {
+	return o
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayOutput) Index(i pulumi.IntInput) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryCluster {
+		return vs[0].([]GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryCluster)[vs[1].(int)]
+	}).(GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutput)
 }
 
 type GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetail struct {
@@ -6019,6 +7022,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*OciCacheUserAuthenticationModePtrInput)(nil)).Elem(), OciCacheUserAuthenticationModeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OciCacheUserGetRedisClusterOciCacheClusterInput)(nil)).Elem(), OciCacheUserGetRedisClusterOciCacheClusterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OciCacheUserGetRedisClusterOciCacheClusterArrayInput)(nil)).Elem(), OciCacheUserGetRedisClusterOciCacheClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterClusterReplicationTopologyInput)(nil)).Elem(), RedisClusterClusterReplicationTopologyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterClusterReplicationTopologyArrayInput)(nil)).Elem(), RedisClusterClusterReplicationTopologyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterClusterReplicationTopologyPrimaryClusterInput)(nil)).Elem(), RedisClusterClusterReplicationTopologyPrimaryClusterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterClusterReplicationTopologyPrimaryClusterArrayInput)(nil)).Elem(), RedisClusterClusterReplicationTopologyPrimaryClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterClusterReplicationTopologySecondaryClusterInput)(nil)).Elem(), RedisClusterClusterReplicationTopologySecondaryClusterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterClusterReplicationTopologySecondaryClusterArrayInput)(nil)).Elem(), RedisClusterClusterReplicationTopologySecondaryClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterGetOciCacheUserOciCacheUserInput)(nil)).Elem(), RedisClusterGetOciCacheUserOciCacheUserArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterGetOciCacheUserOciCacheUserArrayInput)(nil)).Elem(), RedisClusterGetOciCacheUserOciCacheUserArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterImportFromObjectStorageDetailsInput)(nil)).Elem(), RedisClusterImportFromObjectStorageDetailsArgs{})
@@ -6079,6 +7088,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheUsersOciCacheUserCollectionArrayInput)(nil)).Elem(), GetOciCacheUsersOciCacheUserCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheUsersOciCacheUserCollectionItemInput)(nil)).Elem(), GetOciCacheUsersOciCacheUserCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheUsersOciCacheUserCollectionItemArrayInput)(nil)).Elem(), GetOciCacheUsersOciCacheUserCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterClusterReplicationTopologyInput)(nil)).Elem(), GetRedisClusterClusterReplicationTopologyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterClusterReplicationTopologyArrayInput)(nil)).Elem(), GetRedisClusterClusterReplicationTopologyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterClusterReplicationTopologyPrimaryClusterInput)(nil)).Elem(), GetRedisClusterClusterReplicationTopologyPrimaryClusterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterClusterReplicationTopologyPrimaryClusterArrayInput)(nil)).Elem(), GetRedisClusterClusterReplicationTopologyPrimaryClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterClusterReplicationTopologySecondaryClusterInput)(nil)).Elem(), GetRedisClusterClusterReplicationTopologySecondaryClusterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterClusterReplicationTopologySecondaryClusterArrayInput)(nil)).Elem(), GetRedisClusterClusterReplicationTopologySecondaryClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterImportFromObjectStorageDetailInput)(nil)).Elem(), GetRedisClusterImportFromObjectStorageDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterImportFromObjectStorageDetailArrayInput)(nil)).Elem(), GetRedisClusterImportFromObjectStorageDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterImportFromObjectStorageDetailObjectInput)(nil)).Elem(), GetRedisClusterImportFromObjectStorageDetailObjectArgs{})
@@ -6099,6 +7114,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionArrayInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemArrayInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArgs{})
@@ -6117,6 +7138,12 @@ func init() {
 	pulumi.RegisterOutputType(OciCacheUserAuthenticationModePtrOutput{})
 	pulumi.RegisterOutputType(OciCacheUserGetRedisClusterOciCacheClusterOutput{})
 	pulumi.RegisterOutputType(OciCacheUserGetRedisClusterOciCacheClusterArrayOutput{})
+	pulumi.RegisterOutputType(RedisClusterClusterReplicationTopologyOutput{})
+	pulumi.RegisterOutputType(RedisClusterClusterReplicationTopologyArrayOutput{})
+	pulumi.RegisterOutputType(RedisClusterClusterReplicationTopologyPrimaryClusterOutput{})
+	pulumi.RegisterOutputType(RedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput{})
+	pulumi.RegisterOutputType(RedisClusterClusterReplicationTopologySecondaryClusterOutput{})
+	pulumi.RegisterOutputType(RedisClusterClusterReplicationTopologySecondaryClusterArrayOutput{})
 	pulumi.RegisterOutputType(RedisClusterGetOciCacheUserOciCacheUserOutput{})
 	pulumi.RegisterOutputType(RedisClusterGetOciCacheUserOciCacheUserArrayOutput{})
 	pulumi.RegisterOutputType(RedisClusterImportFromObjectStorageDetailsOutput{})
@@ -6177,6 +7204,12 @@ func init() {
 	pulumi.RegisterOutputType(GetOciCacheUsersOciCacheUserCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetOciCacheUsersOciCacheUserCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetOciCacheUsersOciCacheUserCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRedisClusterClusterReplicationTopologyOutput{})
+	pulumi.RegisterOutputType(GetRedisClusterClusterReplicationTopologyArrayOutput{})
+	pulumi.RegisterOutputType(GetRedisClusterClusterReplicationTopologyPrimaryClusterOutput{})
+	pulumi.RegisterOutputType(GetRedisClusterClusterReplicationTopologyPrimaryClusterArrayOutput{})
+	pulumi.RegisterOutputType(GetRedisClusterClusterReplicationTopologySecondaryClusterOutput{})
+	pulumi.RegisterOutputType(GetRedisClusterClusterReplicationTopologySecondaryClusterArrayOutput{})
 	pulumi.RegisterOutputType(GetRedisClusterImportFromObjectStorageDetailOutput{})
 	pulumi.RegisterOutputType(GetRedisClusterImportFromObjectStorageDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetRedisClusterImportFromObjectStorageDetailObjectOutput{})
@@ -6197,6 +7230,12 @@ func init() {
 	pulumi.RegisterOutputType(GetRedisClustersRedisClusterCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetRedisClustersRedisClusterCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetRedisClustersRedisClusterCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyOutput{})
+	pulumi.RegisterOutputType(GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyArrayOutput{})
+	pulumi.RegisterOutputType(GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterOutput{})
+	pulumi.RegisterOutputType(GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologyPrimaryClusterArrayOutput{})
+	pulumi.RegisterOutputType(GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterOutput{})
+	pulumi.RegisterOutputType(GetRedisClustersRedisClusterCollectionItemClusterReplicationTopologySecondaryClusterArrayOutput{})
 	pulumi.RegisterOutputType(GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutput{})
 	pulumi.RegisterOutputType(GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutput{})

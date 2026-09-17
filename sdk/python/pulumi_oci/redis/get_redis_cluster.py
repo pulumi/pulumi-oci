@@ -27,13 +27,19 @@ class GetRedisClusterResult:
     """
     A collection of values returned by getRedisCluster.
     """
-    def __init__(__self__, backup_id=None, cluster_mode=None, compartment_id=None, defined_tags=None, discovery_endpoint_ip_address=None, discovery_fqdn=None, display_name=None, freeform_tags=None, id=None, import_from_object_storage_details=None, lifecycle_details=None, node_collections=None, node_count=None, node_memory_in_gbs=None, nsg_ids=None, oci_cache_config_set_id=None, primary_endpoint_ip_address=None, primary_fqdn=None, redis_cluster_id=None, replicas_endpoint_ip_address=None, replicas_fqdn=None, security_attributes=None, shard_count=None, software_version=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, backup_id=None, cluster_mode=None, cluster_replication_topologies=None, cluster_role=None, compartment_id=None, defined_tags=None, discovery_endpoint_ip_address=None, discovery_fqdn=None, display_name=None, freeform_tags=None, id=None, import_from_object_storage_details=None, lifecycle_details=None, node_collections=None, node_count=None, node_memory_in_gbs=None, nsg_ids=None, oci_cache_config_set_id=None, primary_cluster_id=None, primary_endpoint_ip_address=None, primary_fqdn=None, redis_cluster_id=None, replicas_endpoint_ip_address=None, replicas_fqdn=None, security_attributes=None, shard_count=None, software_version=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
         if backup_id and not isinstance(backup_id, str):
             raise TypeError("Expected argument 'backup_id' to be a str")
         pulumi.set(__self__, "backup_id", backup_id)
         if cluster_mode and not isinstance(cluster_mode, str):
             raise TypeError("Expected argument 'cluster_mode' to be a str")
         pulumi.set(__self__, "cluster_mode", cluster_mode)
+        if cluster_replication_topologies and not isinstance(cluster_replication_topologies, list):
+            raise TypeError("Expected argument 'cluster_replication_topologies' to be a list")
+        pulumi.set(__self__, "cluster_replication_topologies", cluster_replication_topologies)
+        if cluster_role and not isinstance(cluster_role, str):
+            raise TypeError("Expected argument 'cluster_role' to be a str")
+        pulumi.set(__self__, "cluster_role", cluster_role)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -76,6 +82,9 @@ class GetRedisClusterResult:
         if oci_cache_config_set_id and not isinstance(oci_cache_config_set_id, str):
             raise TypeError("Expected argument 'oci_cache_config_set_id' to be a str")
         pulumi.set(__self__, "oci_cache_config_set_id", oci_cache_config_set_id)
+        if primary_cluster_id and not isinstance(primary_cluster_id, str):
+            raise TypeError("Expected argument 'primary_cluster_id' to be a str")
+        pulumi.set(__self__, "primary_cluster_id", primary_cluster_id)
         if primary_endpoint_ip_address and not isinstance(primary_endpoint_ip_address, str):
             raise TypeError("Expected argument 'primary_endpoint_ip_address' to be a str")
         pulumi.set(__self__, "primary_endpoint_ip_address", primary_endpoint_ip_address)
@@ -131,6 +140,22 @@ class GetRedisClusterResult:
         Specifies whether the cluster is sharded or non-sharded.
         """
         return pulumi.get(self, "cluster_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterReplicationTopologies")
+    def cluster_replication_topologies(self) -> Sequence['outputs.GetRedisClusterClusterReplicationTopologyResult']:
+        """
+        Defines the replication topology of an Oracle Cloud Infrastructure cache cluster, including the primary cluster and associated secondary clusters participating in replication.
+        """
+        return pulumi.get(self, "cluster_replication_topologies")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterRole")
+    def cluster_role(self) -> _builtins.str:
+        """
+        The current role of the cluster.
+        """
+        return pulumi.get(self, "cluster_role")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -245,6 +270,14 @@ class GetRedisClusterResult:
         return pulumi.get(self, "oci_cache_config_set_id")
 
     @_builtins.property
+    @pulumi.getter(name="primaryClusterId")
+    def primary_cluster_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster in CRR.
+        """
+        return pulumi.get(self, "primary_cluster_id")
+
+    @_builtins.property
     @pulumi.getter(name="primaryEndpointIpAddress")
     def primary_endpoint_ip_address(self) -> _builtins.str:
         """
@@ -354,6 +387,8 @@ class AwaitableGetRedisClusterResult(GetRedisClusterResult):
         return GetRedisClusterResult(
             backup_id=self.backup_id,
             cluster_mode=self.cluster_mode,
+            cluster_replication_topologies=self.cluster_replication_topologies,
+            cluster_role=self.cluster_role,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             discovery_endpoint_ip_address=self.discovery_endpoint_ip_address,
@@ -368,6 +403,7 @@ class AwaitableGetRedisClusterResult(GetRedisClusterResult):
             node_memory_in_gbs=self.node_memory_in_gbs,
             nsg_ids=self.nsg_ids,
             oci_cache_config_set_id=self.oci_cache_config_set_id,
+            primary_cluster_id=self.primary_cluster_id,
             primary_endpoint_ip_address=self.primary_endpoint_ip_address,
             primary_fqdn=self.primary_fqdn,
             redis_cluster_id=self.redis_cluster_id,
@@ -410,6 +446,8 @@ def get_redis_cluster(redis_cluster_id: Optional[_builtins.str] = None,
     return AwaitableGetRedisClusterResult(
         backup_id=pulumi.get(__ret__, 'backup_id'),
         cluster_mode=pulumi.get(__ret__, 'cluster_mode'),
+        cluster_replication_topologies=pulumi.get(__ret__, 'cluster_replication_topologies'),
+        cluster_role=pulumi.get(__ret__, 'cluster_role'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         discovery_endpoint_ip_address=pulumi.get(__ret__, 'discovery_endpoint_ip_address'),
@@ -424,6 +462,7 @@ def get_redis_cluster(redis_cluster_id: Optional[_builtins.str] = None,
         node_memory_in_gbs=pulumi.get(__ret__, 'node_memory_in_gbs'),
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         oci_cache_config_set_id=pulumi.get(__ret__, 'oci_cache_config_set_id'),
+        primary_cluster_id=pulumi.get(__ret__, 'primary_cluster_id'),
         primary_endpoint_ip_address=pulumi.get(__ret__, 'primary_endpoint_ip_address'),
         primary_fqdn=pulumi.get(__ret__, 'primary_fqdn'),
         redis_cluster_id=pulumi.get(__ret__, 'redis_cluster_id'),
@@ -463,6 +502,8 @@ def get_redis_cluster_output(redis_cluster_id: pulumi.Input[Optional[_builtins.s
     return __ret__.apply(lambda __response__: GetRedisClusterResult(
         backup_id=pulumi.get(__response__, 'backup_id'),
         cluster_mode=pulumi.get(__response__, 'cluster_mode'),
+        cluster_replication_topologies=pulumi.get(__response__, 'cluster_replication_topologies'),
+        cluster_role=pulumi.get(__response__, 'cluster_role'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         discovery_endpoint_ip_address=pulumi.get(__response__, 'discovery_endpoint_ip_address'),
@@ -477,6 +518,7 @@ def get_redis_cluster_output(redis_cluster_id: pulumi.Input[Optional[_builtins.s
         node_memory_in_gbs=pulumi.get(__response__, 'node_memory_in_gbs'),
         nsg_ids=pulumi.get(__response__, 'nsg_ids'),
         oci_cache_config_set_id=pulumi.get(__response__, 'oci_cache_config_set_id'),
+        primary_cluster_id=pulumi.get(__response__, 'primary_cluster_id'),
         primary_endpoint_ip_address=pulumi.get(__response__, 'primary_endpoint_ip_address'),
         primary_fqdn=pulumi.get(__response__, 'primary_fqdn'),
         redis_cluster_id=pulumi.get(__response__, 'redis_cluster_id'),

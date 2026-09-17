@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/database"
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -79,7 +79,7 @@ type LookupAutonomousDatabaseResult struct {
 	AutonomousContainerDatabaseId string `pulumi:"autonomousContainerDatabaseId"`
 	AutonomousDatabaseBackupId    string `pulumi:"autonomousDatabaseBackupId"`
 	AutonomousDatabaseId          string `pulumi:"autonomousDatabaseId"`
-	// Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+	// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
 	AutonomousDatabaseMaintenanceWindows []GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindow `pulumi:"autonomousDatabaseMaintenanceWindows"`
 	// The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
 	AutonomousMaintenanceScheduleType string `pulumi:"autonomousMaintenanceScheduleType"`
@@ -287,6 +287,8 @@ type LookupAutonomousDatabaseResult struct {
 	// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 	Role             string `pulumi:"role"`
 	RotateKeyTrigger bool   `pulumi:"rotateKeyTrigger"`
+	// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+	ScheduledMaintenanceWindows []GetAutonomousDatabaseScheduledMaintenanceWindow `pulumi:"scheduledMaintenanceWindows"`
 	// The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 	ScheduledOperations []GetAutonomousDatabaseScheduledOperation `pulumi:"scheduledOperations"`
 	SecretId            string                                    `pulumi:"secretId"`
@@ -359,6 +361,8 @@ type LookupAutonomousDatabaseResult struct {
 	TimeScheduledAdUpdate string `pulumi:"timeScheduledAdUpdate"`
 	// The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
 	TimeScheduledDbVersionUpgrade string `pulumi:"timeScheduledDbVersionUpgrade"`
+	// The date and time at which operation to change Maintenance Window is scheduled to take place.
+	TimeScheduledMaintenanceWindowUpdate string `pulumi:"timeScheduledMaintenanceWindowUpdate"`
 	// The date and time the Autonomous AI Database was most recently undeleted.
 	TimeUndeleted string `pulumi:"timeUndeleted"`
 	// The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
@@ -469,7 +473,7 @@ func (o LookupAutonomousDatabaseResultOutput) AutonomousDatabaseId() pulumi.Stri
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
 }
 
-// Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
 func (o LookupAutonomousDatabaseResultOutput) AutonomousDatabaseMaintenanceWindows() GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowArrayOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindow {
 		return v.AutonomousDatabaseMaintenanceWindows
@@ -1018,6 +1022,13 @@ func (o LookupAutonomousDatabaseResultOutput) RotateKeyTrigger() pulumi.BoolOutp
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.RotateKeyTrigger }).(pulumi.BoolOutput)
 }
 
+// Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+func (o LookupAutonomousDatabaseResultOutput) ScheduledMaintenanceWindows() GetAutonomousDatabaseScheduledMaintenanceWindowArrayOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []GetAutonomousDatabaseScheduledMaintenanceWindow {
+		return v.ScheduledMaintenanceWindows
+	}).(GetAutonomousDatabaseScheduledMaintenanceWindowArrayOutput)
+}
+
 // The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 func (o LookupAutonomousDatabaseResultOutput) ScheduledOperations() GetAutonomousDatabaseScheduledOperationArrayOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []GetAutonomousDatabaseScheduledOperation {
@@ -1207,6 +1218,11 @@ func (o LookupAutonomousDatabaseResultOutput) TimeScheduledAdUpdate() pulumi.Str
 // The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
 func (o LookupAutonomousDatabaseResultOutput) TimeScheduledDbVersionUpgrade() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeScheduledDbVersionUpgrade }).(pulumi.StringOutput)
+}
+
+// The date and time at which operation to change Maintenance Window is scheduled to take place.
+func (o LookupAutonomousDatabaseResultOutput) TimeScheduledMaintenanceWindowUpdate() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeScheduledMaintenanceWindowUpdate }).(pulumi.StringOutput)
 }
 
 // The date and time the Autonomous AI Database was most recently undeleted.

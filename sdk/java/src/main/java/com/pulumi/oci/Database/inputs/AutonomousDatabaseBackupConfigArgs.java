@@ -15,32 +15,16 @@ public final class AutonomousDatabaseBackupConfigArgs extends com.pulumi.resourc
 
     public static final AutonomousDatabaseBackupConfigArgs Empty = new AutonomousDatabaseBackupConfigArgs();
 
-    /**
-     * Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
-     * 
-     */
     @Import(name="manualBackupBucketName")
     private @Nullable Output<String> manualBackupBucketName;
 
-    /**
-     * @return Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
-     * 
-     */
     public Optional<Output<String>> manualBackupBucketName() {
         return Optional.ofNullable(this.manualBackupBucketName);
     }
 
-    /**
-     * The manual backup destination type.
-     * 
-     */
     @Import(name="manualBackupType")
     private @Nullable Output<String> manualBackupType;
 
-    /**
-     * @return The manual backup destination type.
-     * 
-     */
     public Optional<Output<String>> manualBackupType() {
         return Optional.ofNullable(this.manualBackupType);
     }
@@ -70,44 +54,20 @@ public final class AutonomousDatabaseBackupConfigArgs extends com.pulumi.resourc
             $ = new AutonomousDatabaseBackupConfigArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param manualBackupBucketName Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
-         * 
-         * @return builder
-         * 
-         */
         public Builder manualBackupBucketName(@Nullable Output<String> manualBackupBucketName) {
             $.manualBackupBucketName = manualBackupBucketName;
             return this;
         }
 
-        /**
-         * @param manualBackupBucketName Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
-         * 
-         * @return builder
-         * 
-         */
         public Builder manualBackupBucketName(String manualBackupBucketName) {
             return manualBackupBucketName(Output.of(manualBackupBucketName));
         }
 
-        /**
-         * @param manualBackupType The manual backup destination type.
-         * 
-         * @return builder
-         * 
-         */
         public Builder manualBackupType(@Nullable Output<String> manualBackupType) {
             $.manualBackupType = manualBackupType;
             return this;
         }
 
-        /**
-         * @param manualBackupType The manual backup destination type.
-         * 
-         * @return builder
-         * 
-         */
         public Builder manualBackupType(String manualBackupType) {
             return manualBackupType(Output.of(manualBackupType));
         }

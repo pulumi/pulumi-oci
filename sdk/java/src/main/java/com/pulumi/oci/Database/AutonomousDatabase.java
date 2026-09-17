@@ -25,6 +25,7 @@ import com.pulumi.oci.Database.outputs.AutonomousDatabaseLongTermBackupSchedule;
 import com.pulumi.oci.Database.outputs.AutonomousDatabasePublicConnectionUrl;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseRemoteDisasterRecoveryConfiguration;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseResourcePoolSummary;
+import com.pulumi.oci.Database.outputs.AutonomousDatabaseScheduledMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseScheduledOperation;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseStandbyDb;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseTransportableTablespace;
@@ -228,14 +229,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.autonomousDatabaseId;
     }
     /**
-     * (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     * (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
      * 
      */
     @Export(name="autonomousDatabaseMaintenanceWindow", refs={AutonomousDatabaseAutonomousDatabaseMaintenanceWindow.class}, tree="[0]")
     private Output<AutonomousDatabaseAutonomousDatabaseMaintenanceWindow> autonomousDatabaseMaintenanceWindow;
 
     /**
-     * @return (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     * @return (Updatable) Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
      * 
      */
     public Output<AutonomousDatabaseAutonomousDatabaseMaintenanceWindow> autonomousDatabaseMaintenanceWindow() {
@@ -1754,6 +1755,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.rotateKeyTrigger);
     }
     /**
+     * Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     * 
+     */
+    @Export(name="scheduledMaintenanceWindow", refs={AutonomousDatabaseScheduledMaintenanceWindow.class}, tree="[0]")
+    private Output<AutonomousDatabaseScheduledMaintenanceWindow> scheduledMaintenanceWindow;
+
+    /**
+     * @return Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     * 
+     */
+    public Output<AutonomousDatabaseScheduledMaintenanceWindow> scheduledMaintenanceWindow() {
+        return this.scheduledMaintenanceWindow;
+    }
+    /**
      * (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
      * 
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -2328,6 +2343,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeScheduledDbVersionUpgrade() {
         return this.timeScheduledDbVersionUpgrade;
+    }
+    /**
+     * The date and time at which operation to change Maintenance Window is scheduled to take place.
+     * 
+     */
+    @Export(name="timeScheduledMaintenanceWindowUpdate", refs={String.class}, tree="[0]")
+    private Output<String> timeScheduledMaintenanceWindowUpdate;
+
+    /**
+     * @return The date and time at which operation to change Maintenance Window is scheduled to take place.
+     * 
+     */
+    public Output<String> timeScheduledMaintenanceWindowUpdate() {
+        return this.timeScheduledMaintenanceWindowUpdate;
     }
     /**
      * The date and time the Autonomous AI Database was most recently undeleted.

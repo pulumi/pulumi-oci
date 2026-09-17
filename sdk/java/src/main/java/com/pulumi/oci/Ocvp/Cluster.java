@@ -96,6 +96,7 @@ import javax.annotation.Nullable;
  *             .esxiSoftwareVersion(clusterEsxiSoftwareVersion)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .initialCommitment(clusterInitialCommitment)
+ *             .initialFaultDomainHostDistribution(clusterInitialFaultDomainHostDistribution)
  *             .initialHostOcpuCount(clusterInitialHostOcpuCount)
  *             .initialHostShapeName(testShape.name())
  *             .initialVcfByolAllocationId(testByolAllocation.id())
@@ -310,6 +311,20 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> initialCommitment() {
         return this.initialCommitment;
+    }
+    /**
+     * The initial fault domain host distribution mode for the Cluster.
+     * 
+     */
+    @Export(name="initialFaultDomainHostDistribution", refs={String.class}, tree="[0]")
+    private Output<String> initialFaultDomainHostDistribution;
+
+    /**
+     * @return The initial fault domain host distribution mode for the Cluster.
+     * 
+     */
+    public Output<String> initialFaultDomainHostDistribution() {
+        return this.initialFaultDomainHostDistribution;
     }
     /**
      * The initial OCPU count of the Cluster&#39;s ESXi hosts.

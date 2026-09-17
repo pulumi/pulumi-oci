@@ -231,6 +231,21 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The initial fault domain host distribution mode for the Cluster.
+     * 
+     */
+    @Import(name="initialFaultDomainHostDistribution")
+    private @Nullable Output<String> initialFaultDomainHostDistribution;
+
+    /**
+     * @return The initial fault domain host distribution mode for the Cluster.
+     * 
+     */
+    public Optional<Output<String>> initialFaultDomainHostDistribution() {
+        return Optional.ofNullable(this.initialFaultDomainHostDistribution);
+    }
+
+    /**
      * The initial OCPU count of the Cluster&#39;s ESXi hosts.
      * 
      */
@@ -498,6 +513,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         this.esxiSoftwareVersion = $.esxiSoftwareVersion;
         this.freeformTags = $.freeformTags;
         this.initialCommitment = $.initialCommitment;
+        this.initialFaultDomainHostDistribution = $.initialFaultDomainHostDistribution;
         this.initialHostOcpuCount = $.initialHostOcpuCount;
         this.initialHostShapeName = $.initialHostShapeName;
         this.initialVcfByolAllocationId = $.initialVcfByolAllocationId;
@@ -843,6 +859,27 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder initialCommitment(String initialCommitment) {
             return initialCommitment(Output.of(initialCommitment));
+        }
+
+        /**
+         * @param initialFaultDomainHostDistribution The initial fault domain host distribution mode for the Cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialFaultDomainHostDistribution(@Nullable Output<String> initialFaultDomainHostDistribution) {
+            $.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
+            return this;
+        }
+
+        /**
+         * @param initialFaultDomainHostDistribution The initial fault domain host distribution mode for the Cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialFaultDomainHostDistribution(String initialFaultDomainHostDistribution) {
+            return initialFaultDomainHostDistribution(Output.of(initialFaultDomainHostDistribution));
         }
 
         /**

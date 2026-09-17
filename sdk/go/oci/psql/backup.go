@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -26,7 +26,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/psql"
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/psql"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -83,6 +83,8 @@ type Backup struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// The OCID of the master encryption key for the backup.
+	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
 	// lastAcceptedRequestToken from MP.
 	LastAcceptedRequestToken pulumi.StringOutput `pulumi:"lastAcceptedRequestToken"`
 	// lastCompletedRequestToken from MP.
@@ -161,6 +163,8 @@ type backupState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the master encryption key for the backup.
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// lastAcceptedRequestToken from MP.
 	LastAcceptedRequestToken *string `pulumi:"lastAcceptedRequestToken"`
 	// lastCompletedRequestToken from MP.
@@ -207,6 +211,8 @@ type BackupState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
+	// The OCID of the master encryption key for the backup.
+	KmsKeyId pulumi.StringPtrInput
 	// lastAcceptedRequestToken from MP.
 	LastAcceptedRequestToken pulumi.StringPtrInput
 	// lastCompletedRequestToken from MP.
@@ -413,6 +419,11 @@ func (o BackupOutput) DisplayName() pulumi.StringOutput {
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o BackupOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The OCID of the master encryption key for the backup.
+func (o BackupOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
 }
 
 // lastAcceptedRequestToken from MP.

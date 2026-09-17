@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -16,6 +17,21 @@ import javax.annotation.Nullable;
 public final class AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs Empty = new AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs();
+
+    /**
+     * (Updatable) The AD in which the maintenance will occur.
+     * 
+     */
+    @Import(name="availabilityDomain")
+    private @Nullable Output<String> availabilityDomain;
+
+    /**
+     * @return (Updatable) The AD in which the maintenance will occur.
+     * 
+     */
+    public Optional<Output<String>> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
+    }
 
     /**
      * (Updatable) Day of the week.
@@ -30,6 +46,21 @@ public final class AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs ext
      */
     public Output<AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgs> dayOfWeek() {
         return this.dayOfWeek;
+    }
+
+    /**
+     * (Updatable) Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+     * 
+     */
+    @Import(name="isMaintenanceWindowChangeScheduled")
+    private @Nullable Output<Boolean> isMaintenanceWindowChangeScheduled;
+
+    /**
+     * @return (Updatable) Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+     * 
+     */
+    public Optional<Output<Boolean>> isMaintenanceWindowChangeScheduled() {
+        return Optional.ofNullable(this.isMaintenanceWindowChangeScheduled);
     }
 
     /**
@@ -65,7 +96,9 @@ public final class AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs ext
     private AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs() {}
 
     private AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs(AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs $) {
+        this.availabilityDomain = $.availabilityDomain;
         this.dayOfWeek = $.dayOfWeek;
+        this.isMaintenanceWindowChangeScheduled = $.isMaintenanceWindowChangeScheduled;
         this.maintenanceEndTime = $.maintenanceEndTime;
         this.maintenanceStartTime = $.maintenanceStartTime;
     }
@@ -89,6 +122,27 @@ public final class AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs ext
         }
 
         /**
+         * @param availabilityDomain (Updatable) The AD in which the maintenance will occur.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(@Nullable Output<String> availabilityDomain) {
+            $.availabilityDomain = availabilityDomain;
+            return this;
+        }
+
+        /**
+         * @param availabilityDomain (Updatable) The AD in which the maintenance will occur.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(String availabilityDomain) {
+            return availabilityDomain(Output.of(availabilityDomain));
+        }
+
+        /**
          * @param dayOfWeek (Updatable) Day of the week.
          * 
          * @return builder
@@ -107,6 +161,27 @@ public final class AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs ext
          */
         public Builder dayOfWeek(AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgs dayOfWeek) {
             return dayOfWeek(Output.of(dayOfWeek));
+        }
+
+        /**
+         * @param isMaintenanceWindowChangeScheduled (Updatable) Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMaintenanceWindowChangeScheduled(@Nullable Output<Boolean> isMaintenanceWindowChangeScheduled) {
+            $.isMaintenanceWindowChangeScheduled = isMaintenanceWindowChangeScheduled;
+            return this;
+        }
+
+        /**
+         * @param isMaintenanceWindowChangeScheduled (Updatable) Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMaintenanceWindowChangeScheduled(Boolean isMaintenanceWindowChangeScheduled) {
+            return isMaintenanceWindowChangeScheduled(Output.of(isMaintenanceWindowChangeScheduled));
         }
 
         /**

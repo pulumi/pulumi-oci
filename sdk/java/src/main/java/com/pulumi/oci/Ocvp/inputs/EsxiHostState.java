@@ -126,6 +126,21 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The fault domain of the ESXi host.
+     * 
+     */
+    @Import(name="computeFaultDomain")
+    private @Nullable Output<String> computeFaultDomain;
+
+    /**
+     * @return The fault domain of the ESXi host.
+     * 
+     */
+    public Optional<Output<String>> computeFaultDomain() {
+        return Optional.ofNullable(this.computeFaultDomain);
+    }
+
+    /**
      * In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
      * 
      */
@@ -349,6 +364,21 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> hostShapeName() {
         return Optional.ofNullable(this.hostShapeName);
+    }
+
+    /**
+     * (Updatable) The initial fault domain host distribution mode for the ESXi host.
+     * 
+     */
+    @Import(name="initialFaultDomainHostDistribution")
+    private @Nullable Output<String> initialFaultDomainHostDistribution;
+
+    /**
+     * @return (Updatable) The initial fault domain host distribution mode for the ESXi host.
+     * 
+     */
+    public Optional<Output<String>> initialFaultDomainHostDistribution() {
+        return Optional.ofNullable(this.initialFaultDomainHostDistribution);
     }
 
     /**
@@ -638,6 +668,7 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         this.clusterId = $.clusterId;
         this.compartmentId = $.compartmentId;
         this.computeAvailabilityDomain = $.computeAvailabilityDomain;
+        this.computeFaultDomain = $.computeFaultDomain;
         this.computeInstanceId = $.computeInstanceId;
         this.currentCommitment = $.currentCommitment;
         this.currentSku = $.currentSku;
@@ -652,6 +683,7 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         this.gracePeriodEndDate = $.gracePeriodEndDate;
         this.hostOcpuCount = $.hostOcpuCount;
         this.hostShapeName = $.hostShapeName;
+        this.initialFaultDomainHostDistribution = $.initialFaultDomainHostDistribution;
         this.isBillingContinuationInProgress = $.isBillingContinuationInProgress;
         this.isBillingSwappingInProgress = $.isBillingSwappingInProgress;
         this.isVsanByolEnabled = $.isVsanByolEnabled;
@@ -834,6 +866,27 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
             return computeAvailabilityDomain(Output.of(computeAvailabilityDomain));
+        }
+
+        /**
+         * @param computeFaultDomain The fault domain of the ESXi host.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeFaultDomain(@Nullable Output<String> computeFaultDomain) {
+            $.computeFaultDomain = computeFaultDomain;
+            return this;
+        }
+
+        /**
+         * @param computeFaultDomain The fault domain of the ESXi host.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeFaultDomain(String computeFaultDomain) {
+            return computeFaultDomain(Output.of(computeFaultDomain));
         }
 
         /**
@@ -1164,6 +1217,27 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder hostShapeName(String hostShapeName) {
             return hostShapeName(Output.of(hostShapeName));
+        }
+
+        /**
+         * @param initialFaultDomainHostDistribution (Updatable) The initial fault domain host distribution mode for the ESXi host.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialFaultDomainHostDistribution(@Nullable Output<String> initialFaultDomainHostDistribution) {
+            $.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
+            return this;
+        }
+
+        /**
+         * @param initialFaultDomainHostDistribution (Updatable) The initial fault domain host distribution mode for the ESXi host.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialFaultDomainHostDistribution(String initialFaultDomainHostDistribution) {
+            return initialFaultDomainHostDistribution(Output.of(initialFaultDomainHostDistribution));
         }
 
         /**

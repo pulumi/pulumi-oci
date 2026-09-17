@@ -39,6 +39,8 @@ import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabasesPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerPatchesArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerPatchesPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseAvailableMaintenanceWindowsArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseAvailableMaintenanceWindowsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupsArgs;
@@ -349,6 +351,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseVersionsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabasesResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerPatchesResult;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseAvailableMaintenanceWindowsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseBackupResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseBackupsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseDataguardAssociationResult;
@@ -4179,6 +4182,216 @@ public final class DatabaseFunctions {
      */
     public static CompletableFuture<GetAutonomousDatabaseResult> getAutonomousDatabasePlain(GetAutonomousDatabasePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabase:getAutonomousDatabase", TypeShape.of(GetAutonomousDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Database Available Maintenance Windows in Oracle Cloud Infrastructure Database service.
+     * 
+     * Retrieves the list of available maintenance window options for the specified Autonomous AI Database.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseAvailableMaintenanceWindowsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseAvailableMaintenanceWindows = DatabaseFunctions.getAutonomousDatabaseAvailableMaintenanceWindows(GetAutonomousDatabaseAvailableMaintenanceWindowsArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAutonomousDatabaseAvailableMaintenanceWindowsResult> getAutonomousDatabaseAvailableMaintenanceWindows(GetAutonomousDatabaseAvailableMaintenanceWindowsArgs args) {
+        return getAutonomousDatabaseAvailableMaintenanceWindows(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Database Available Maintenance Windows in Oracle Cloud Infrastructure Database service.
+     * 
+     * Retrieves the list of available maintenance window options for the specified Autonomous AI Database.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseAvailableMaintenanceWindowsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseAvailableMaintenanceWindows = DatabaseFunctions.getAutonomousDatabaseAvailableMaintenanceWindows(GetAutonomousDatabaseAvailableMaintenanceWindowsArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAutonomousDatabaseAvailableMaintenanceWindowsResult> getAutonomousDatabaseAvailableMaintenanceWindowsPlain(GetAutonomousDatabaseAvailableMaintenanceWindowsPlainArgs args) {
+        return getAutonomousDatabaseAvailableMaintenanceWindowsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Database Available Maintenance Windows in Oracle Cloud Infrastructure Database service.
+     * 
+     * Retrieves the list of available maintenance window options for the specified Autonomous AI Database.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseAvailableMaintenanceWindowsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseAvailableMaintenanceWindows = DatabaseFunctions.getAutonomousDatabaseAvailableMaintenanceWindows(GetAutonomousDatabaseAvailableMaintenanceWindowsArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAutonomousDatabaseAvailableMaintenanceWindowsResult> getAutonomousDatabaseAvailableMaintenanceWindows(GetAutonomousDatabaseAvailableMaintenanceWindowsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseAvailableMaintenanceWindows:getAutonomousDatabaseAvailableMaintenanceWindows", TypeShape.of(GetAutonomousDatabaseAvailableMaintenanceWindowsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Database Available Maintenance Windows in Oracle Cloud Infrastructure Database service.
+     * 
+     * Retrieves the list of available maintenance window options for the specified Autonomous AI Database.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseAvailableMaintenanceWindowsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseAvailableMaintenanceWindows = DatabaseFunctions.getAutonomousDatabaseAvailableMaintenanceWindows(GetAutonomousDatabaseAvailableMaintenanceWindowsArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAutonomousDatabaseAvailableMaintenanceWindowsResult> getAutonomousDatabaseAvailableMaintenanceWindows(GetAutonomousDatabaseAvailableMaintenanceWindowsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseAvailableMaintenanceWindows:getAutonomousDatabaseAvailableMaintenanceWindows", TypeShape.of(GetAutonomousDatabaseAvailableMaintenanceWindowsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Database Available Maintenance Windows in Oracle Cloud Infrastructure Database service.
+     * 
+     * Retrieves the list of available maintenance window options for the specified Autonomous AI Database.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseAvailableMaintenanceWindowsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseAvailableMaintenanceWindows = DatabaseFunctions.getAutonomousDatabaseAvailableMaintenanceWindows(GetAutonomousDatabaseAvailableMaintenanceWindowsArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAutonomousDatabaseAvailableMaintenanceWindowsResult> getAutonomousDatabaseAvailableMaintenanceWindowsPlain(GetAutonomousDatabaseAvailableMaintenanceWindowsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabaseAvailableMaintenanceWindows:getAutonomousDatabaseAvailableMaintenanceWindows", TypeShape.of(GetAutonomousDatabaseAvailableMaintenanceWindowsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.

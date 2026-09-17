@@ -27,7 +27,7 @@ class GetClusterResult:
     """
     A collection of values returned by getCluster.
     """
-    def __init__(__self__, actual_esxi_hosts_count=None, attach_datastore_cluster_ids=None, capacity_reservation_id=None, cluster_byol_allocation_details=None, cluster_id=None, compartment_id=None, compute_availability_domain=None, datastore_cluster_ids=None, datastores=None, defined_tags=None, detach_datastore_cluster_ids=None, display_name=None, esxi_hosts_count=None, esxi_software_version=None, freeform_tags=None, id=None, initial_commitment=None, initial_host_ocpu_count=None, initial_host_shape_name=None, initial_vcf_byol_allocation_id=None, instance_display_name_prefix=None, is_shielded_instance_enabled=None, network_configurations=None, sddc_id=None, state=None, system_tags=None, time_created=None, time_updated=None, upgrade_licenses=None, vmware_software_version=None, vsphere_type=None, vsphere_upgrade_objects=None, workload_network_cidr=None):
+    def __init__(__self__, actual_esxi_hosts_count=None, attach_datastore_cluster_ids=None, capacity_reservation_id=None, cluster_byol_allocation_details=None, cluster_id=None, compartment_id=None, compute_availability_domain=None, datastore_cluster_ids=None, datastores=None, defined_tags=None, detach_datastore_cluster_ids=None, display_name=None, esxi_hosts_count=None, esxi_software_version=None, freeform_tags=None, id=None, initial_commitment=None, initial_fault_domain_host_distribution=None, initial_host_ocpu_count=None, initial_host_shape_name=None, initial_vcf_byol_allocation_id=None, instance_display_name_prefix=None, is_shielded_instance_enabled=None, network_configurations=None, sddc_id=None, state=None, system_tags=None, time_created=None, time_updated=None, upgrade_licenses=None, vmware_software_version=None, vsphere_type=None, vsphere_upgrade_objects=None, workload_network_cidr=None):
         if actual_esxi_hosts_count and not isinstance(actual_esxi_hosts_count, int):
             raise TypeError("Expected argument 'actual_esxi_hosts_count' to be a int")
         pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
@@ -79,6 +79,9 @@ class GetClusterResult:
         if initial_commitment and not isinstance(initial_commitment, str):
             raise TypeError("Expected argument 'initial_commitment' to be a str")
         pulumi.set(__self__, "initial_commitment", initial_commitment)
+        if initial_fault_domain_host_distribution and not isinstance(initial_fault_domain_host_distribution, str):
+            raise TypeError("Expected argument 'initial_fault_domain_host_distribution' to be a str")
+        pulumi.set(__self__, "initial_fault_domain_host_distribution", initial_fault_domain_host_distribution)
         if initial_host_ocpu_count and not isinstance(initial_host_ocpu_count, float):
             raise TypeError("Expected argument 'initial_host_ocpu_count' to be a float")
         pulumi.set(__self__, "initial_host_ocpu_count", initial_host_ocpu_count)
@@ -253,6 +256,14 @@ class GetClusterResult:
         return pulumi.get(self, "initial_commitment")
 
     @_builtins.property
+    @pulumi.getter(name="initialFaultDomainHostDistribution")
+    def initial_fault_domain_host_distribution(self) -> _builtins.str:
+        """
+        The initial fault domain host distribution mode for the Cluster.
+        """
+        return pulumi.get(self, "initial_fault_domain_host_distribution")
+
+    @_builtins.property
     @pulumi.getter(name="initialHostOcpuCount")
     def initial_host_ocpu_count(self) -> _builtins.float:
         """
@@ -404,6 +415,7 @@ class AwaitableGetClusterResult(GetClusterResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             initial_commitment=self.initial_commitment,
+            initial_fault_domain_host_distribution=self.initial_fault_domain_host_distribution,
             initial_host_ocpu_count=self.initial_host_ocpu_count,
             initial_host_shape_name=self.initial_host_shape_name,
             initial_vcf_byol_allocation_id=self.initial_vcf_byol_allocation_id,
@@ -464,6 +476,7 @@ def get_cluster(cluster_id: Optional[_builtins.str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         initial_commitment=pulumi.get(__ret__, 'initial_commitment'),
+        initial_fault_domain_host_distribution=pulumi.get(__ret__, 'initial_fault_domain_host_distribution'),
         initial_host_ocpu_count=pulumi.get(__ret__, 'initial_host_ocpu_count'),
         initial_host_shape_name=pulumi.get(__ret__, 'initial_host_shape_name'),
         initial_vcf_byol_allocation_id=pulumi.get(__ret__, 'initial_vcf_byol_allocation_id'),
@@ -521,6 +534,7 @@ def get_cluster_output(cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         initial_commitment=pulumi.get(__response__, 'initial_commitment'),
+        initial_fault_domain_host_distribution=pulumi.get(__response__, 'initial_fault_domain_host_distribution'),
         initial_host_ocpu_count=pulumi.get(__response__, 'initial_host_ocpu_count'),
         initial_host_shape_name=pulumi.get(__response__, 'initial_host_shape_name'),
         initial_vcf_byol_allocation_id=pulumi.get(__response__, 'initial_vcf_byol_allocation_id'),

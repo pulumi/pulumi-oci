@@ -205,6 +205,20 @@ public class Backup extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * The OCID of the master encryption key for the backup.
+     * 
+     */
+    @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
+    private Output<String> kmsKeyId;
+
+    /**
+     * @return The OCID of the master encryption key for the backup.
+     * 
+     */
+    public Output<String> kmsKeyId() {
+        return this.kmsKeyId;
+    }
+    /**
      * lastAcceptedRequestToken from MP.
      * 
      */

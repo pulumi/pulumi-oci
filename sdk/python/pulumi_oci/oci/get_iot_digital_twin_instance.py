@@ -93,9 +93,6 @@ class GetIotDigitalTwinInstanceResult:
     @_builtins.property
     @pulumi.getter(name="connectivityType")
     def connectivity_type(self) -> _builtins.str:
-        """
-        Connectivity type of the digital twin instance
-        """
         return pulumi.get(self, "connectivity_type")
 
     @_builtins.property

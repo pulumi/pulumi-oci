@@ -34,6 +34,21 @@ public final class DbSystemManagementPolicyBackupPolicyCopyPolicyArgs extends co
     }
 
     /**
+     * (Updatable) List of key ids of the remote regions
+     * 
+     */
+    @Import(name="kmsKeyIds")
+    private @Nullable Output<List<String>> kmsKeyIds;
+
+    /**
+     * @return (Updatable) List of key ids of the remote regions
+     * 
+     */
+    public Optional<Output<List<String>>> kmsKeyIds() {
+        return Optional.ofNullable(this.kmsKeyIds);
+    }
+
+    /**
      * (Updatable) List of region names of the remote region
      * 
      */
@@ -67,6 +82,7 @@ public final class DbSystemManagementPolicyBackupPolicyCopyPolicyArgs extends co
 
     private DbSystemManagementPolicyBackupPolicyCopyPolicyArgs(DbSystemManagementPolicyBackupPolicyCopyPolicyArgs $) {
         this.compartmentId = $.compartmentId;
+        this.kmsKeyIds = $.kmsKeyIds;
         this.regions = $.regions;
         this.retentionPeriod = $.retentionPeriod;
     }
@@ -108,6 +124,37 @@ public final class DbSystemManagementPolicyBackupPolicyCopyPolicyArgs extends co
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param kmsKeyIds (Updatable) List of key ids of the remote regions
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsKeyIds(@Nullable Output<List<String>> kmsKeyIds) {
+            $.kmsKeyIds = kmsKeyIds;
+            return this;
+        }
+
+        /**
+         * @param kmsKeyIds (Updatable) List of key ids of the remote regions
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsKeyIds(List<String> kmsKeyIds) {
+            return kmsKeyIds(Output.of(kmsKeyIds));
+        }
+
+        /**
+         * @param kmsKeyIds (Updatable) List of key ids of the remote regions
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsKeyIds(String... kmsKeyIds) {
+            return kmsKeyIds(List.of(kmsKeyIds));
         }
 
         /**

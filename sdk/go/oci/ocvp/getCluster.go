@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/ocvp"
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/ocvp"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -88,6 +88,8 @@ type LookupClusterResult struct {
 	Id string `pulumi:"id"`
 	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 	InitialCommitment string `pulumi:"initialCommitment"`
+	// The initial fault domain host distribution mode for the Cluster.
+	InitialFaultDomainHostDistribution string `pulumi:"initialFaultDomainHostDistribution"`
 	// The initial OCPU count of the Cluster's ESXi hosts.
 	InitialHostOcpuCount float64 `pulumi:"initialHostOcpuCount"`
 	// The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
@@ -233,6 +235,11 @@ func (o LookupClusterResultOutput) Id() pulumi.StringOutput {
 // The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
 func (o LookupClusterResultOutput) InitialCommitment() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.InitialCommitment }).(pulumi.StringOutput)
+}
+
+// The initial fault domain host distribution mode for the Cluster.
+func (o LookupClusterResultOutput) InitialFaultDomainHostDistribution() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupClusterResult) string { return v.InitialFaultDomainHostDistribution }).(pulumi.StringOutput)
 }
 
 // The initial OCPU count of the Cluster's ESXi hosts.

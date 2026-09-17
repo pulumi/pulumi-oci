@@ -63,6 +63,21 @@ public final class DbSystemStorageDetailsArgs extends com.pulumi.resources.Resou
     }
 
     /**
+     * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the database system.
+     * 
+     */
+    @Import(name="kmsKeyId")
+    private @Nullable Output<String> kmsKeyId;
+
+    /**
+     * @return (Updatable) The OCID of the Vault service key to assign as the master encryption key for the database system.
+     * 
+     */
+    public Optional<Output<String>> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
+    }
+
+    /**
      * Type of the database system.
      * 
      */
@@ -83,6 +98,7 @@ public final class DbSystemStorageDetailsArgs extends com.pulumi.resources.Resou
         this.availabilityDomain = $.availabilityDomain;
         this.iops = $.iops;
         this.isRegionallyDurable = $.isRegionallyDurable;
+        this.kmsKeyId = $.kmsKeyId;
         this.systemType = $.systemType;
     }
 
@@ -165,6 +181,27 @@ public final class DbSystemStorageDetailsArgs extends com.pulumi.resources.Resou
          */
         public Builder isRegionallyDurable(Boolean isRegionallyDurable) {
             return isRegionallyDurable(Output.of(isRegionallyDurable));
+        }
+
+        /**
+         * @param kmsKeyId (Updatable) The OCID of the Vault service key to assign as the master encryption key for the database system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsKeyId(@Nullable Output<String> kmsKeyId) {
+            $.kmsKeyId = kmsKeyId;
+            return this;
+        }
+
+        /**
+         * @param kmsKeyId (Updatable) The OCID of the Vault service key to assign as the master encryption key for the database system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsKeyId(String kmsKeyId) {
+            return kmsKeyId(Output.of(kmsKeyId));
         }
 
         /**

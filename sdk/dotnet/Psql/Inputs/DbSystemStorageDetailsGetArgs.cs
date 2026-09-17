@@ -31,6 +31,12 @@ namespace Pulumi.Oci.Psql.Inputs
         public Input<bool> IsRegionallyDurable { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the database system.
+        /// </summary>
+        [Input("kmsKeyId")]
+        public Input<string>? KmsKeyId { get; set; }
+
+        /// <summary>
         /// Type of the database system.
         /// </summary>
         [Input("systemType", required: true)]

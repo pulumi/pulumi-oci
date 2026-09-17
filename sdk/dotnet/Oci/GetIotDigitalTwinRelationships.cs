@@ -141,7 +141,7 @@ namespace Pulumi.Oci.Oci
         public string? Id { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list IoT resources.
         /// </summary>
         [Input("iotDomainId", required: true)]
         public string IotDomainId { get; set; } = null!;
@@ -199,7 +199,7 @@ namespace Pulumi.Oci.Oci
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list IoT resources.
         /// </summary>
         [Input("iotDomainId", required: true)]
         public Input<string> IotDomainId { get; set; } = null!;

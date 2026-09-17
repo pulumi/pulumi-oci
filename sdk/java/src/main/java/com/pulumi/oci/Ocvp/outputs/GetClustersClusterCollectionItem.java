@@ -89,6 +89,11 @@ public final class GetClustersClusterCollectionItem {
      */
     private String initialCommitment;
     /**
+     * @return The initial fault domain host distribution mode for the Cluster.
+     * 
+     */
+    private String initialFaultDomainHostDistribution;
+    /**
      * @return The initial OCPU count of the Cluster&#39;s ESXi hosts.
      * 
      */
@@ -271,6 +276,13 @@ public final class GetClustersClusterCollectionItem {
         return this.initialCommitment;
     }
     /**
+     * @return The initial fault domain host distribution mode for the Cluster.
+     * 
+     */
+    public String initialFaultDomainHostDistribution() {
+        return this.initialFaultDomainHostDistribution;
+    }
+    /**
      * @return The initial OCPU count of the Cluster&#39;s ESXi hosts.
      * 
      */
@@ -408,6 +420,7 @@ public final class GetClustersClusterCollectionItem {
         private Map<String,String> freeformTags;
         private String id;
         private String initialCommitment;
+        private String initialFaultDomainHostDistribution;
         private Double initialHostOcpuCount;
         private String initialHostShapeName;
         private String initialVcfByolAllocationId;
@@ -443,6 +456,7 @@ public final class GetClustersClusterCollectionItem {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.initialCommitment = defaults.initialCommitment;
+    	      this.initialFaultDomainHostDistribution = defaults.initialFaultDomainHostDistribution;
     	      this.initialHostOcpuCount = defaults.initialHostOcpuCount;
     	      this.initialHostShapeName = defaults.initialHostShapeName;
     	      this.initialVcfByolAllocationId = defaults.initialVcfByolAllocationId;
@@ -605,6 +619,14 @@ public final class GetClustersClusterCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder initialFaultDomainHostDistribution(String initialFaultDomainHostDistribution) {
+            if (initialFaultDomainHostDistribution == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterCollectionItem", "initialFaultDomainHostDistribution");
+            }
+            this.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
+            return this;
+        }
+        @CustomType.Setter
         public Builder initialHostOcpuCount(Double initialHostOcpuCount) {
             if (initialHostOcpuCount == null) {
               throw new MissingRequiredPropertyException("GetClustersClusterCollectionItem", "initialHostOcpuCount");
@@ -759,6 +781,7 @@ public final class GetClustersClusterCollectionItem {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.initialCommitment = initialCommitment;
+            _resultValue.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
             _resultValue.initialHostOcpuCount = initialHostOcpuCount;
             _resultValue.initialHostShapeName = initialHostShapeName;
             _resultValue.initialVcfByolAllocationId = initialVcfByolAllocationId;

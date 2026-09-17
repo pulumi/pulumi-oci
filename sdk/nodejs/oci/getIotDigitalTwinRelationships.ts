@@ -60,7 +60,7 @@ export interface GetIotDigitalTwinRelationshipsArgs {
      */
     id?: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list IoT resources.
      */
     iotDomainId: string;
     /**
@@ -169,7 +169,7 @@ export interface GetIotDigitalTwinRelationshipsOutputArgs {
      */
     id?: pulumi.Input<string | undefined>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list IoT resources.
      */
     iotDomainId: pulumi.Input<string>;
     /**

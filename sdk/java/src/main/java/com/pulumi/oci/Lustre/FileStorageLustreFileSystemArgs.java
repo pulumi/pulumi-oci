@@ -183,15 +183,15 @@ public final class FileStorageLustreFileSystemArgs extends com.pulumi.resources.
      * (Updatable) The preferred day and time to perform maintenance.
      * 
      */
-    @Import(name="maintenanceWindows")
-    private @Nullable Output<List<FileStorageLustreFileSystemMaintenanceWindowArgs>> maintenanceWindows;
+    @Import(name="maintenanceWindow")
+    private @Nullable Output<FileStorageLustreFileSystemMaintenanceWindowArgs> maintenanceWindow;
 
     /**
      * @return (Updatable) The preferred day and time to perform maintenance.
      * 
      */
-    public Optional<Output<List<FileStorageLustreFileSystemMaintenanceWindowArgs>>> maintenanceWindows() {
-        return Optional.ofNullable(this.maintenanceWindows);
+    public Optional<Output<FileStorageLustreFileSystemMaintenanceWindowArgs>> maintenanceWindow() {
+        return Optional.ofNullable(this.maintenanceWindow);
     }
 
     /**
@@ -304,7 +304,7 @@ public final class FileStorageLustreFileSystemArgs extends com.pulumi.resources.
         this.fileSystemName = $.fileSystemName;
         this.freeformTags = $.freeformTags;
         this.kmsKeyId = $.kmsKeyId;
-        this.maintenanceWindows = $.maintenanceWindows;
+        this.maintenanceWindow = $.maintenanceWindow;
         this.nsgIds = $.nsgIds;
         this.overrideMaintenanceTrigger = $.overrideMaintenanceTrigger;
         this.performanceTier = $.performanceTier;
@@ -551,34 +551,24 @@ public final class FileStorageLustreFileSystemArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param maintenanceWindows (Updatable) The preferred day and time to perform maintenance.
+         * @param maintenanceWindow (Updatable) The preferred day and time to perform maintenance.
          * 
          * @return builder
          * 
          */
-        public Builder maintenanceWindows(@Nullable Output<List<FileStorageLustreFileSystemMaintenanceWindowArgs>> maintenanceWindows) {
-            $.maintenanceWindows = maintenanceWindows;
+        public Builder maintenanceWindow(@Nullable Output<FileStorageLustreFileSystemMaintenanceWindowArgs> maintenanceWindow) {
+            $.maintenanceWindow = maintenanceWindow;
             return this;
         }
 
         /**
-         * @param maintenanceWindows (Updatable) The preferred day and time to perform maintenance.
+         * @param maintenanceWindow (Updatable) The preferred day and time to perform maintenance.
          * 
          * @return builder
          * 
          */
-        public Builder maintenanceWindows(List<FileStorageLustreFileSystemMaintenanceWindowArgs> maintenanceWindows) {
-            return maintenanceWindows(Output.of(maintenanceWindows));
-        }
-
-        /**
-         * @param maintenanceWindows (Updatable) The preferred day and time to perform maintenance.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder maintenanceWindows(FileStorageLustreFileSystemMaintenanceWindowArgs... maintenanceWindows) {
-            return maintenanceWindows(List.of(maintenanceWindows));
+        public Builder maintenanceWindow(FileStorageLustreFileSystemMaintenanceWindowArgs maintenanceWindow) {
+            return maintenanceWindow(Output.of(maintenanceWindow));
         }
 
         /**

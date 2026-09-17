@@ -34,6 +34,7 @@ class RedisClusterArgs:
                  import_from_object_storage_details: pulumi.Input[Optional['RedisClusterImportFromObjectStorageDetailsArgs']] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  oci_cache_config_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shard_count: pulumi.Input[Optional[_builtins.int]] = None):
         """
@@ -55,6 +56,7 @@ class RedisClusterArgs:
         :param pulumi.Input['RedisClusterImportFromObjectStorageDetailsArgs'] import_from_object_storage_details: Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
         :param pulumi.Input[_builtins.str] oci_cache_config_set_id: (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+        :param pulumi.Input[_builtins.str] primary_cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster from which data will be replicated. Setting it on a standalone cluster converts that cluster to a secondary cluster; removing it from a secondary cluster converts that cluster to standalone. Changing directly from one primary cluster to another is not supported: remove it and apply before setting a different primary cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.int] shard_count: (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
         """
@@ -78,6 +80,8 @@ class RedisClusterArgs:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if oci_cache_config_set_id is not None:
             pulumi.set(__self__, "oci_cache_config_set_id", oci_cache_config_set_id)
+        if primary_cluster_id is not None:
+            pulumi.set(__self__, "primary_cluster_id", primary_cluster_id)
         if security_attributes is not None:
             pulumi.set(__self__, "security_attributes", security_attributes)
         if shard_count is not None:
@@ -243,6 +247,18 @@ class RedisClusterArgs:
         pulumi.set(self, "oci_cache_config_set_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="primaryClusterId")
+    def primary_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster from which data will be replicated. Setting it on a standalone cluster converts that cluster to a secondary cluster; removing it from a secondary cluster converts that cluster to standalone. Changing directly from one primary cluster to another is not supported: remove it and apply before setting a different primary cluster.
+        """
+        return pulumi.get(self, "primary_cluster_id")
+
+    @primary_cluster_id.setter
+    def primary_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "primary_cluster_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -272,6 +288,8 @@ class _RedisClusterState:
     def __init__(__self__, *,
                  backup_id: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_replication_topologies: pulumi.Input[Optional[Sequence[pulumi.Input['RedisClusterClusterReplicationTopologyArgs']]]] = None,
+                 cluster_role: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  discovery_endpoint_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
@@ -285,6 +303,7 @@ class _RedisClusterState:
                  node_memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  oci_cache_config_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  primary_endpoint_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
                  primary_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
                  replicas_endpoint_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
@@ -302,6 +321,8 @@ class _RedisClusterState:
 
         :param pulumi.Input[_builtins.str] backup_id: The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
         :param pulumi.Input[_builtins.str] cluster_mode: Specifies whether the cluster is sharded or non-sharded.
+        :param pulumi.Input[Sequence[pulumi.Input['RedisClusterClusterReplicationTopologyArgs']]] cluster_replication_topologies: Defines the replication topology of an Oracle Cloud Infrastructure cache cluster, including the primary cluster and associated secondary clusters participating in replication.
+        :param pulumi.Input[_builtins.str] cluster_role: The current role of the cluster.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] discovery_endpoint_ip_address: The private IP address of the API endpoint for sharded cluster discovery.
@@ -315,6 +336,7 @@ class _RedisClusterState:
         :param pulumi.Input[_builtins.float] node_memory_in_gbs: (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
         :param pulumi.Input[_builtins.str] oci_cache_config_set_id: (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+        :param pulumi.Input[_builtins.str] primary_cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster from which data will be replicated. Setting it on a standalone cluster converts that cluster to a secondary cluster; removing it from a secondary cluster converts that cluster to standalone. Changing directly from one primary cluster to another is not supported: remove it and apply before setting a different primary cluster.
         :param pulumi.Input[_builtins.str] primary_endpoint_ip_address: The private IP address of the API endpoint for the cluster's primary node.
         :param pulumi.Input[_builtins.str] primary_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
         :param pulumi.Input[_builtins.str] replicas_endpoint_ip_address: The private IP address of the API endpoint for the cluster's replica nodes.
@@ -335,6 +357,10 @@ class _RedisClusterState:
             pulumi.set(__self__, "backup_id", backup_id)
         if cluster_mode is not None:
             pulumi.set(__self__, "cluster_mode", cluster_mode)
+        if cluster_replication_topologies is not None:
+            pulumi.set(__self__, "cluster_replication_topologies", cluster_replication_topologies)
+        if cluster_role is not None:
+            pulumi.set(__self__, "cluster_role", cluster_role)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -361,6 +387,8 @@ class _RedisClusterState:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if oci_cache_config_set_id is not None:
             pulumi.set(__self__, "oci_cache_config_set_id", oci_cache_config_set_id)
+        if primary_cluster_id is not None:
+            pulumi.set(__self__, "primary_cluster_id", primary_cluster_id)
         if primary_endpoint_ip_address is not None:
             pulumi.set(__self__, "primary_endpoint_ip_address", primary_endpoint_ip_address)
         if primary_fqdn is not None:
@@ -409,6 +437,30 @@ class _RedisClusterState:
     @cluster_mode.setter
     def cluster_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterReplicationTopologies")
+    def cluster_replication_topologies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RedisClusterClusterReplicationTopologyArgs']]]]:
+        """
+        Defines the replication topology of an Oracle Cloud Infrastructure cache cluster, including the primary cluster and associated secondary clusters participating in replication.
+        """
+        return pulumi.get(self, "cluster_replication_topologies")
+
+    @cluster_replication_topologies.setter
+    def cluster_replication_topologies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RedisClusterClusterReplicationTopologyArgs']]]]):
+        pulumi.set(self, "cluster_replication_topologies", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterRole")
+    def cluster_role(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The current role of the cluster.
+        """
+        return pulumi.get(self, "cluster_role")
+
+    @cluster_role.setter
+    def cluster_role(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "cluster_role", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -565,6 +617,18 @@ class _RedisClusterState:
     @oci_cache_config_set_id.setter
     def oci_cache_config_set_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oci_cache_config_set_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="primaryClusterId")
+    def primary_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster from which data will be replicated. Setting it on a standalone cluster converts that cluster to a secondary cluster; removing it from a secondary cluster converts that cluster to standalone. Changing directly from one primary cluster to another is not supported: remove it and apply before setting a different primary cluster.
+        """
+        return pulumi.get(self, "primary_cluster_id")
+
+    @primary_cluster_id.setter
+    def primary_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "primary_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryEndpointIpAddress")
@@ -731,6 +795,7 @@ class RedisCluster(pulumi.CustomResource):
                  node_memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  oci_cache_config_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shard_count: pulumi.Input[Optional[_builtins.int]] = None,
                  software_version: pulumi.Input[Optional[_builtins.str]] = None,
@@ -746,39 +811,17 @@ class RedisCluster(pulumi.CustomResource):
         You can optionally initialize the cluster data by restoring from an Oracle Cloud Infrastructure Cache Backup (backupId) or by importing from Object Storage RDB file(s) (importFromObjectStorageDetails).
         For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
 
-        ## Example Usage
+        ## Cross-Region Replication Switchover
 
-        ```python
-        import pulumi
-        import pulumi_oci as oci
+        Switchover isn't supported in Terraform. To complete a switchover, use the OCI Console, CLI, or SDK.
 
-        test_redis_cluster = oci.redis.RedisCluster("test_redis_cluster",
-            compartment_id=compartment_id,
-            display_name=redis_cluster_display_name,
-            node_count=int(redis_cluster_node_count),
-            node_memory_in_gbs=redis_cluster_node_memory_in_gbs,
-            software_version=redis_cluster_software_version,
-            subnet_id=test_subnet["id"],
-            backup_id=test_backup["id"],
-            cluster_mode=redis_cluster_cluster_mode,
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            import_from_object_storage_details={
-                "bucket": redis_cluster_import_from_object_storage_details_bucket,
-                "namespace": redis_cluster_import_from_object_storage_details_namespace,
-                "objects": [{
-                    "object": redis_cluster_import_from_object_storage_details_objects_object,
-                }],
-            },
-            nsg_ids=redis_cluster_nsg_ids,
-            oci_cache_config_set_id=test_oci_cache_config_set["id"],
-            security_attributes=redis_cluster_security_attributes,
-            shard_count=int(redis_cluster_shard_count))
-        ```
+        After the switchover completes, update the Terraform configuration for both affected clusters before you run any further `pulumi up` operations:
+
+        1. For the new primary cluster (formerly the secondary), remove `primary_cluster_id` from the resource configuration.
+        2. For the new secondary cluster (formerly the primary), set `primary_cluster_id` to the OCID of the new primary cluster.
+        3. Run `pulumi preview` for both cluster resources. Proceed only if the plan reports no changes, confirming that the Terraform configuration matches the new cluster topology.
+
+        If you don't update these configurations, a later pulumi up might revert to the previous topology and unintentionally change or break the cross-region replication relationship.
 
         ## Import
 
@@ -802,6 +845,7 @@ class RedisCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.float] node_memory_in_gbs: (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
         :param pulumi.Input[_builtins.str] oci_cache_config_set_id: (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+        :param pulumi.Input[_builtins.str] primary_cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster from which data will be replicated. Setting it on a standalone cluster converts that cluster to a secondary cluster; removing it from a secondary cluster converts that cluster to standalone. Changing directly from one primary cluster to another is not supported: remove it and apply before setting a different primary cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.int] shard_count: (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
         :param pulumi.Input[_builtins.str] software_version: (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
@@ -826,39 +870,17 @@ class RedisCluster(pulumi.CustomResource):
         You can optionally initialize the cluster data by restoring from an Oracle Cloud Infrastructure Cache Backup (backupId) or by importing from Object Storage RDB file(s) (importFromObjectStorageDetails).
         For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
 
-        ## Example Usage
+        ## Cross-Region Replication Switchover
 
-        ```python
-        import pulumi
-        import pulumi_oci as oci
+        Switchover isn't supported in Terraform. To complete a switchover, use the OCI Console, CLI, or SDK.
 
-        test_redis_cluster = oci.redis.RedisCluster("test_redis_cluster",
-            compartment_id=compartment_id,
-            display_name=redis_cluster_display_name,
-            node_count=int(redis_cluster_node_count),
-            node_memory_in_gbs=redis_cluster_node_memory_in_gbs,
-            software_version=redis_cluster_software_version,
-            subnet_id=test_subnet["id"],
-            backup_id=test_backup["id"],
-            cluster_mode=redis_cluster_cluster_mode,
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            import_from_object_storage_details={
-                "bucket": redis_cluster_import_from_object_storage_details_bucket,
-                "namespace": redis_cluster_import_from_object_storage_details_namespace,
-                "objects": [{
-                    "object": redis_cluster_import_from_object_storage_details_objects_object,
-                }],
-            },
-            nsg_ids=redis_cluster_nsg_ids,
-            oci_cache_config_set_id=test_oci_cache_config_set["id"],
-            security_attributes=redis_cluster_security_attributes,
-            shard_count=int(redis_cluster_shard_count))
-        ```
+        After the switchover completes, update the Terraform configuration for both affected clusters before you run any further `pulumi up` operations:
+
+        1. For the new primary cluster (formerly the secondary), remove `primary_cluster_id` from the resource configuration.
+        2. For the new secondary cluster (formerly the primary), set `primary_cluster_id` to the OCID of the new primary cluster.
+        3. Run `pulumi preview` for both cluster resources. Proceed only if the plan reports no changes, confirming that the Terraform configuration matches the new cluster topology.
+
+        If you don't update these configurations, a later pulumi up might revert to the previous topology and unintentionally change or break the cross-region replication relationship.
 
         ## Import
 
@@ -895,6 +917,7 @@ class RedisCluster(pulumi.CustomResource):
                  node_memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  oci_cache_config_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shard_count: pulumi.Input[Optional[_builtins.int]] = None,
                  software_version: pulumi.Input[Optional[_builtins.str]] = None,
@@ -927,6 +950,7 @@ class RedisCluster(pulumi.CustomResource):
             __props__.__dict__["node_memory_in_gbs"] = node_memory_in_gbs
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["oci_cache_config_set_id"] = oci_cache_config_set_id
+            __props__.__dict__["primary_cluster_id"] = primary_cluster_id
             __props__.__dict__["security_attributes"] = security_attributes
             __props__.__dict__["shard_count"] = shard_count
             if software_version is None and not opts.urn:
@@ -935,6 +959,8 @@ class RedisCluster(pulumi.CustomResource):
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
+            __props__.__dict__["cluster_replication_topologies"] = None
+            __props__.__dict__["cluster_role"] = None
             __props__.__dict__["discovery_endpoint_ip_address"] = None
             __props__.__dict__["discovery_fqdn"] = None
             __props__.__dict__["lifecycle_details"] = None
@@ -959,6 +985,8 @@ class RedisCluster(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             backup_id: pulumi.Input[Optional[_builtins.str]] = None,
             cluster_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_replication_topologies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RedisClusterClusterReplicationTopologyArgs', 'RedisClusterClusterReplicationTopologyArgsDict']]]]] = None,
+            cluster_role: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             discovery_endpoint_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
@@ -972,6 +1000,7 @@ class RedisCluster(pulumi.CustomResource):
             node_memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
             nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             oci_cache_config_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+            primary_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
             primary_endpoint_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
             primary_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
             replicas_endpoint_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
@@ -993,6 +1022,8 @@ class RedisCluster(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] backup_id: The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
         :param pulumi.Input[_builtins.str] cluster_mode: Specifies whether the cluster is sharded or non-sharded.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RedisClusterClusterReplicationTopologyArgs', 'RedisClusterClusterReplicationTopologyArgsDict']]]] cluster_replication_topologies: Defines the replication topology of an Oracle Cloud Infrastructure cache cluster, including the primary cluster and associated secondary clusters participating in replication.
+        :param pulumi.Input[_builtins.str] cluster_role: The current role of the cluster.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] discovery_endpoint_ip_address: The private IP address of the API endpoint for sharded cluster discovery.
@@ -1006,6 +1037,7 @@ class RedisCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.float] node_memory_in_gbs: (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
         :param pulumi.Input[_builtins.str] oci_cache_config_set_id: (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+        :param pulumi.Input[_builtins.str] primary_cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster from which data will be replicated. Setting it on a standalone cluster converts that cluster to a secondary cluster; removing it from a secondary cluster converts that cluster to standalone. Changing directly from one primary cluster to another is not supported: remove it and apply before setting a different primary cluster.
         :param pulumi.Input[_builtins.str] primary_endpoint_ip_address: The private IP address of the API endpoint for the cluster's primary node.
         :param pulumi.Input[_builtins.str] primary_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
         :param pulumi.Input[_builtins.str] replicas_endpoint_ip_address: The private IP address of the API endpoint for the cluster's replica nodes.
@@ -1028,6 +1060,8 @@ class RedisCluster(pulumi.CustomResource):
 
         __props__.__dict__["backup_id"] = backup_id
         __props__.__dict__["cluster_mode"] = cluster_mode
+        __props__.__dict__["cluster_replication_topologies"] = cluster_replication_topologies
+        __props__.__dict__["cluster_role"] = cluster_role
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["discovery_endpoint_ip_address"] = discovery_endpoint_ip_address
@@ -1041,6 +1075,7 @@ class RedisCluster(pulumi.CustomResource):
         __props__.__dict__["node_memory_in_gbs"] = node_memory_in_gbs
         __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["oci_cache_config_set_id"] = oci_cache_config_set_id
+        __props__.__dict__["primary_cluster_id"] = primary_cluster_id
         __props__.__dict__["primary_endpoint_ip_address"] = primary_endpoint_ip_address
         __props__.__dict__["primary_fqdn"] = primary_fqdn
         __props__.__dict__["replicas_endpoint_ip_address"] = replicas_endpoint_ip_address
@@ -1070,6 +1105,22 @@ class RedisCluster(pulumi.CustomResource):
         Specifies whether the cluster is sharded or non-sharded.
         """
         return pulumi.get(self, "cluster_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterReplicationTopologies")
+    def cluster_replication_topologies(self) -> pulumi.Output[Sequence['outputs.RedisClusterClusterReplicationTopology']]:
+        """
+        Defines the replication topology of an Oracle Cloud Infrastructure cache cluster, including the primary cluster and associated secondary clusters participating in replication.
+        """
+        return pulumi.get(self, "cluster_replication_topologies")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterRole")
+    def cluster_role(self) -> pulumi.Output[_builtins.str]:
+        """
+        The current role of the cluster.
+        """
+        return pulumi.get(self, "cluster_role")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -1174,6 +1225,14 @@ class RedisCluster(pulumi.CustomResource):
         (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
         """
         return pulumi.get(self, "oci_cache_config_set_id")
+
+    @_builtins.property
+    @pulumi.getter(name="primaryClusterId")
+    def primary_cluster_id(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the primary cluster from which data will be replicated. Setting it on a standalone cluster converts that cluster to a secondary cluster; removing it from a secondary cluster converts that cluster to standalone. Changing directly from one primary cluster to another is not supported: remove it and apply before setting a different primary cluster.
+        """
+        return pulumi.get(self, "primary_cluster_id")
 
     @_builtins.property
     @pulumi.getter(name="primaryEndpointIpAddress")

@@ -26,7 +26,6 @@ class DbSystemArgs:
                  db_home: pulumi.Input['DbSystemDbHomeArgs'],
                  hostname: pulumi.Input[_builtins.str],
                  shape: pulumi.Input[_builtins.str],
-                 ssh_public_keys: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  subnet_id: pulumi.Input[_builtins.str],
                  backup_network_nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  backup_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -63,6 +62,7 @@ class DbSystemArgs:
                  source: pulumi.Input[Optional[_builtins.str]] = None,
                  source_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
                  sparse_diskgroup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ssh_public_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  storage_volume_performance_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None):
@@ -84,7 +84,6 @@ class DbSystemArgs:
                * For bare metal and Exadata shapes, the number of CPU cores, memory, and storage
                
                To get a list of shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ssh_public_keys: (Updatable) The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
                
                **Subnet Restrictions:**
@@ -150,6 +149,7 @@ class DbSystemArgs:
         :param pulumi.Input[_builtins.str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATABASE` for creating a new database from an existing database, including archive redo log data. The default is `NONE`.
         :param pulumi.Input[_builtins.str] source_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param pulumi.Input[_builtins.bool] sparse_diskgroup: If true, Sparse Diskgroup is configured for Exadata dbsystem. If False, Sparse diskgroup is not configured. Only applied for Exadata shape.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ssh_public_keys: (Updatable) The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
         :param pulumi.Input[_builtins.str] storage_volume_performance_mode: The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
@@ -158,7 +158,6 @@ class DbSystemArgs:
         pulumi.set(__self__, "db_home", db_home)
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
         pulumi.set(__self__, "subnet_id", subnet_id)
         if backup_network_nsg_ids is not None:
             pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
@@ -230,6 +229,8 @@ class DbSystemArgs:
             pulumi.set(__self__, "source_db_system_id", source_db_system_id)
         if sparse_diskgroup is not None:
             pulumi.set(__self__, "sparse_diskgroup", sparse_diskgroup)
+        if ssh_public_keys is not None:
+            pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
         if storage_volume_performance_mode is not None:
             pulumi.set(__self__, "storage_volume_performance_mode", storage_volume_performance_mode)
         if subscription_id is not None:
@@ -306,18 +307,6 @@ class DbSystemArgs:
     @shape.setter
     def shape(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "shape", value)
-
-    @_builtins.property
-    @pulumi.getter(name="sshPublicKeys")
-    def ssh_public_keys(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
-        """
-        (Updatable) The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
-        """
-        return pulumi.get(self, "ssh_public_keys")
-
-    @ssh_public_keys.setter
-    def ssh_public_keys(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
-        pulumi.set(self, "ssh_public_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
@@ -773,6 +762,18 @@ class DbSystemArgs:
     @sparse_diskgroup.setter
     def sparse_diskgroup(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "sparse_diskgroup", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sshPublicKeys")
+    def ssh_public_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
+        """
+        return pulumi.get(self, "ssh_public_keys")
+
+    @ssh_public_keys.setter
+    def ssh_public_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "ssh_public_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="storageVolumePerformanceMode")
@@ -2308,8 +2309,6 @@ class DbSystem(pulumi.CustomResource):
             __props__.__dict__["source"] = source
             __props__.__dict__["source_db_system_id"] = source_db_system_id
             __props__.__dict__["sparse_diskgroup"] = sparse_diskgroup
-            if ssh_public_keys is None and not opts.urn:
-                raise TypeError("Missing required property 'ssh_public_keys'")
             __props__.__dict__["ssh_public_keys"] = ssh_public_keys
             __props__.__dict__["storage_volume_performance_mode"] = storage_volume_performance_mode
             if subnet_id is None and not opts.urn:

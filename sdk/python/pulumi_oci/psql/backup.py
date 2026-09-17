@@ -172,6 +172,7 @@ class _BackupState:
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  last_accepted_request_token: pulumi.Input[Optional[_builtins.str]] = None,
                  last_completed_request_token: pulumi.Input[Optional[_builtins.str]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
@@ -195,6 +196,7 @@ class _BackupState:
         :param pulumi.Input[_builtins.str] description: (Updatable) A description for the backup.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the master encryption key for the backup.
         :param pulumi.Input[_builtins.str] last_accepted_request_token: lastAcceptedRequestToken from MP.
         :param pulumi.Input[_builtins.str] last_completed_request_token: lastCompletedRequestToken from MP.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -228,6 +230,8 @@ class _BackupState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
         if last_accepted_request_token is not None:
             pulumi.set(__self__, "last_accepted_request_token", last_accepted_request_token)
         if last_completed_request_token is not None:
@@ -358,6 +362,18 @@ class _BackupState:
     @freeform_tags.setter
     def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The OCID of the master encryption key for the backup.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @kms_key_id.setter
+    def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lastAcceptedRequestToken")
@@ -649,6 +665,7 @@ class Backup(pulumi.CustomResource):
             __props__.__dict__["backup_size"] = None
             __props__.__dict__["copy_statuses"] = None
             __props__.__dict__["db_system_details"] = None
+            __props__.__dict__["kms_key_id"] = None
             __props__.__dict__["last_accepted_request_token"] = None
             __props__.__dict__["last_completed_request_token"] = None
             __props__.__dict__["lifecycle_details"] = None
@@ -677,6 +694,7 @@ class Backup(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
             last_accepted_request_token: pulumi.Input[Optional[_builtins.str]] = None,
             last_completed_request_token: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
@@ -704,6 +722,7 @@ class Backup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) A description for the backup.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the master encryption key for the backup.
         :param pulumi.Input[_builtins.str] last_accepted_request_token: lastAcceptedRequestToken from MP.
         :param pulumi.Input[_builtins.str] last_completed_request_token: lastCompletedRequestToken from MP.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -732,6 +751,7 @@ class Backup(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["kms_key_id"] = kms_key_id
         __props__.__dict__["last_accepted_request_token"] = last_accepted_request_token
         __props__.__dict__["last_completed_request_token"] = last_completed_request_token
         __props__.__dict__["lifecycle_details"] = lifecycle_details
@@ -816,6 +836,14 @@ class Backup(pulumi.CustomResource):
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The OCID of the master encryption key for the backup.
+        """
+        return pulumi.get(self, "kms_key_id")
 
     @_builtins.property
     @pulumi.getter(name="lastAcceptedRequestToken")

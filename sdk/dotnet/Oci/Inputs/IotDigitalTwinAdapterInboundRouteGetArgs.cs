@@ -19,6 +19,12 @@ namespace Pulumi.Oci.Oci.Inputs
         public Input<string> Condition { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+        /// </summary>
+        [Input("contentRoot")]
+        public Input<string>? ContentRoot { get; set; }
+
+        /// <summary>
         /// (Updatable) Meaningful write up about the inbound route.
         /// </summary>
         [Input("description")]
@@ -45,6 +51,12 @@ namespace Pulumi.Oci.Oci.Inputs
         /// </summary>
         [Input("referencePayload")]
         public Input<Inputs.IotDigitalTwinAdapterInboundRouteReferencePayloadGetArgs>? ReferencePayload { get; set; }
+
+        /// <summary>
+        /// (Updatable) Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+        /// </summary>
+        [Input("target")]
+        public Input<string>? Target { get; set; }
 
         public IotDigitalTwinAdapterInboundRouteGetArgs()
         {

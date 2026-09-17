@@ -35,7 +35,7 @@ class FileStorageLustreFileSystemArgs:
                  file_system_description: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 maintenance_windows: pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowArgs']]]] = None,
+                 maintenance_window: pulumi.Input[Optional['FileStorageLustreFileSystemMaintenanceWindowArgs']] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  override_maintenance_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
@@ -55,7 +55,7 @@ class FileStorageLustreFileSystemArgs:
         :param pulumi.Input[_builtins.str] file_system_description: (Updatable) Short description of the Lustre file system. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
-        :param pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowArgs']]] maintenance_windows: (Updatable) The preferred day and time to perform maintenance.
+        :param pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowArgs'] maintenance_window: (Updatable) The preferred day and time to perform maintenance.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         :param pulumi.Input[_builtins.int] override_maintenance_trigger: (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
                
@@ -84,8 +84,8 @@ class FileStorageLustreFileSystemArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
-        if maintenance_windows is not None:
-            pulumi.set(__self__, "maintenance_windows", maintenance_windows)
+        if maintenance_window is not None:
+            pulumi.set(__self__, "maintenance_window", maintenance_window)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if override_maintenance_trigger is not None:
@@ -259,16 +259,16 @@ class FileStorageLustreFileSystemArgs:
         pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
-    @pulumi.getter(name="maintenanceWindows")
-    def maintenance_windows(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowArgs']]]]:
+    @pulumi.getter(name="maintenanceWindow")
+    def maintenance_window(self) -> pulumi.Input[Optional['FileStorageLustreFileSystemMaintenanceWindowArgs']]:
         """
         (Updatable) The preferred day and time to perform maintenance.
         """
-        return pulumi.get(self, "maintenance_windows")
+        return pulumi.get(self, "maintenance_window")
 
-    @maintenance_windows.setter
-    def maintenance_windows(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowArgs']]]]):
-        pulumi.set(self, "maintenance_windows", value)
+    @maintenance_window.setter
+    def maintenance_window(self, value: pulumi.Input[Optional['FileStorageLustreFileSystemMaintenanceWindowArgs']]):
+        pulumi.set(self, "maintenance_window", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
@@ -326,8 +326,8 @@ class _FileStorageLustreFileSystemState:
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
                  lnet: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance_window: pulumi.Input[Optional['FileStorageLustreFileSystemMaintenanceWindowArgs']] = None,
                  maintenance_window_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataArgs']]]] = None,
-                 maintenance_windows: pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowArgs']]]] = None,
                  major_version: pulumi.Input[Optional[_builtins.str]] = None,
                  management_service_address: pulumi.Input[Optional[_builtins.str]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -355,8 +355,8 @@ class _FileStorageLustreFileSystemState:
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the Lustre file system in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input[_builtins.str] lnet: Type of network used by clients to mount the file system.   Example: `tcp`
+        :param pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowArgs'] maintenance_window: (Updatable) The preferred day and time to perform maintenance.
         :param pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataArgs']]] maintenance_window_metadatas: The meta-data for maintenance window.
-        :param pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowArgs']]] maintenance_windows: (Updatable) The preferred day and time to perform maintenance.
         :param pulumi.Input[_builtins.str] major_version: Major version of Lustre running in the Lustre file system.  Example: `2.15`
         :param pulumi.Input[_builtins.str] management_service_address: The IPv4 address of MGS (Lustre Management Service) used by clients to mount the file system. For example '10.0.0.4'.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
@@ -399,10 +399,10 @@ class _FileStorageLustreFileSystemState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if lnet is not None:
             pulumi.set(__self__, "lnet", lnet)
+        if maintenance_window is not None:
+            pulumi.set(__self__, "maintenance_window", maintenance_window)
         if maintenance_window_metadatas is not None:
             pulumi.set(__self__, "maintenance_window_metadatas", maintenance_window_metadatas)
-        if maintenance_windows is not None:
-            pulumi.set(__self__, "maintenance_windows", maintenance_windows)
         if major_version is not None:
             pulumi.set(__self__, "major_version", major_version)
         if management_service_address is not None:
@@ -582,6 +582,18 @@ class _FileStorageLustreFileSystemState:
         pulumi.set(self, "lnet", value)
 
     @_builtins.property
+    @pulumi.getter(name="maintenanceWindow")
+    def maintenance_window(self) -> pulumi.Input[Optional['FileStorageLustreFileSystemMaintenanceWindowArgs']]:
+        """
+        (Updatable) The preferred day and time to perform maintenance.
+        """
+        return pulumi.get(self, "maintenance_window")
+
+    @maintenance_window.setter
+    def maintenance_window(self, value: pulumi.Input[Optional['FileStorageLustreFileSystemMaintenanceWindowArgs']]):
+        pulumi.set(self, "maintenance_window", value)
+
+    @_builtins.property
     @pulumi.getter(name="maintenanceWindowMetadatas")
     def maintenance_window_metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataArgs']]]]:
         """
@@ -592,18 +604,6 @@ class _FileStorageLustreFileSystemState:
     @maintenance_window_metadatas.setter
     def maintenance_window_metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataArgs']]]]):
         pulumi.set(self, "maintenance_window_metadatas", value)
-
-    @_builtins.property
-    @pulumi.getter(name="maintenanceWindows")
-    def maintenance_windows(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowArgs']]]]:
-        """
-        (Updatable) The preferred day and time to perform maintenance.
-        """
-        return pulumi.get(self, "maintenance_windows")
-
-    @maintenance_windows.setter
-    def maintenance_windows(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowArgs']]]]):
-        pulumi.set(self, "maintenance_windows", value)
 
     @_builtins.property
     @pulumi.getter(name="majorVersion")
@@ -770,7 +770,7 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
                  file_system_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 maintenance_windows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileStorageLustreFileSystemMaintenanceWindowArgs', 'FileStorageLustreFileSystemMaintenanceWindowArgsDict']]]]] = None,
+                 maintenance_window: pulumi.Input[Optional[Union['FileStorageLustreFileSystemMaintenanceWindowArgs', 'FileStorageLustreFileSystemMaintenanceWindowArgsDict']]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  override_maintenance_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  performance_tier: pulumi.Input[Optional[_builtins.str]] = None,
@@ -815,10 +815,10 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
                 "Department": "Finance",
             },
             kms_key_id=test_key["id"],
-            maintenance_windows=[{
+            maintenance_window={
                 "day_of_week": lustre_file_system_maintenance_window_day_of_week,
                 "time_start": lustre_file_system_maintenance_window_time_start,
-            }],
+            },
             nsg_ids=lustre_file_system_nsg_ids)
         ```
 
@@ -843,7 +843,7 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] file_system_name: The Lustre file system name. This is used in mount commands and other aspects of the client command line interface. The file system name is limited to 8 characters. Allowed characters are lower and upper case English letters, numbers, and '_'. If you have multiple Lustre file systems mounted on the same clients, this name can help distinguish them.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FileStorageLustreFileSystemMaintenanceWindowArgs', 'FileStorageLustreFileSystemMaintenanceWindowArgsDict']]]] maintenance_windows: (Updatable) The preferred day and time to perform maintenance.
+        :param pulumi.Input[Union['FileStorageLustreFileSystemMaintenanceWindowArgs', 'FileStorageLustreFileSystemMaintenanceWindowArgsDict']] maintenance_window: (Updatable) The preferred day and time to perform maintenance.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         :param pulumi.Input[_builtins.int] override_maintenance_trigger: (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
                
@@ -897,10 +897,10 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
                 "Department": "Finance",
             },
             kms_key_id=test_key["id"],
-            maintenance_windows=[{
+            maintenance_window={
                 "day_of_week": lustre_file_system_maintenance_window_day_of_week,
                 "time_start": lustre_file_system_maintenance_window_time_start,
-            }],
+            },
             nsg_ids=lustre_file_system_nsg_ids)
         ```
 
@@ -939,7 +939,7 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
                  file_system_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 maintenance_windows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileStorageLustreFileSystemMaintenanceWindowArgs', 'FileStorageLustreFileSystemMaintenanceWindowArgsDict']]]]] = None,
+                 maintenance_window: pulumi.Input[Optional[Union['FileStorageLustreFileSystemMaintenanceWindowArgs', 'FileStorageLustreFileSystemMaintenanceWindowArgsDict']]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  override_maintenance_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  performance_tier: pulumi.Input[Optional[_builtins.str]] = None,
@@ -974,7 +974,7 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
             __props__.__dict__["file_system_name"] = file_system_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["kms_key_id"] = kms_key_id
-            __props__.__dict__["maintenance_windows"] = maintenance_windows
+            __props__.__dict__["maintenance_window"] = maintenance_window
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["override_maintenance_trigger"] = override_maintenance_trigger
             if performance_tier is None and not opts.urn:
@@ -1021,8 +1021,8 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
             kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             lnet: pulumi.Input[Optional[_builtins.str]] = None,
+            maintenance_window: pulumi.Input[Optional[Union['FileStorageLustreFileSystemMaintenanceWindowArgs', 'FileStorageLustreFileSystemMaintenanceWindowArgsDict']]] = None,
             maintenance_window_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileStorageLustreFileSystemMaintenanceWindowMetadataArgs', 'FileStorageLustreFileSystemMaintenanceWindowMetadataArgsDict']]]]] = None,
-            maintenance_windows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileStorageLustreFileSystemMaintenanceWindowArgs', 'FileStorageLustreFileSystemMaintenanceWindowArgsDict']]]]] = None,
             major_version: pulumi.Input[Optional[_builtins.str]] = None,
             management_service_address: pulumi.Input[Optional[_builtins.str]] = None,
             nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -1054,8 +1054,8 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the Lustre file system in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input[_builtins.str] lnet: Type of network used by clients to mount the file system.   Example: `tcp`
+        :param pulumi.Input[Union['FileStorageLustreFileSystemMaintenanceWindowArgs', 'FileStorageLustreFileSystemMaintenanceWindowArgsDict']] maintenance_window: (Updatable) The preferred day and time to perform maintenance.
         :param pulumi.Input[Sequence[pulumi.Input[Union['FileStorageLustreFileSystemMaintenanceWindowMetadataArgs', 'FileStorageLustreFileSystemMaintenanceWindowMetadataArgsDict']]]] maintenance_window_metadatas: The meta-data for maintenance window.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FileStorageLustreFileSystemMaintenanceWindowArgs', 'FileStorageLustreFileSystemMaintenanceWindowArgsDict']]]] maintenance_windows: (Updatable) The preferred day and time to perform maintenance.
         :param pulumi.Input[_builtins.str] major_version: Major version of Lustre running in the Lustre file system.  Example: `2.15`
         :param pulumi.Input[_builtins.str] management_service_address: The IPv4 address of MGS (Lustre Management Service) used by clients to mount the file system. For example '10.0.0.4'.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
@@ -1089,8 +1089,8 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
         __props__.__dict__["kms_key_id"] = kms_key_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["lnet"] = lnet
+        __props__.__dict__["maintenance_window"] = maintenance_window
         __props__.__dict__["maintenance_window_metadatas"] = maintenance_window_metadatas
-        __props__.__dict__["maintenance_windows"] = maintenance_windows
         __props__.__dict__["major_version"] = major_version
         __props__.__dict__["management_service_address"] = management_service_address
         __props__.__dict__["nsg_ids"] = nsg_ids
@@ -1207,20 +1207,20 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
         return pulumi.get(self, "lnet")
 
     @_builtins.property
+    @pulumi.getter(name="maintenanceWindow")
+    def maintenance_window(self) -> pulumi.Output['outputs.FileStorageLustreFileSystemMaintenanceWindow']:
+        """
+        (Updatable) The preferred day and time to perform maintenance.
+        """
+        return pulumi.get(self, "maintenance_window")
+
+    @_builtins.property
     @pulumi.getter(name="maintenanceWindowMetadatas")
     def maintenance_window_metadatas(self) -> pulumi.Output[Sequence['outputs.FileStorageLustreFileSystemMaintenanceWindowMetadata']]:
         """
         The meta-data for maintenance window.
         """
         return pulumi.get(self, "maintenance_window_metadatas")
-
-    @_builtins.property
-    @pulumi.getter(name="maintenanceWindows")
-    def maintenance_windows(self) -> pulumi.Output[Sequence['outputs.FileStorageLustreFileSystemMaintenanceWindow']]:
-        """
-        (Updatable) The preferred day and time to perform maintenance.
-        """
-        return pulumi.get(self, "maintenance_windows")
 
     @_builtins.property
     @pulumi.getter(name="majorVersion")

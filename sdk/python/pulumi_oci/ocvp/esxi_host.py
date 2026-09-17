@@ -36,6 +36,7 @@ class EsxiHostArgs:
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
                  host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_fault_domain_host_distribution: pulumi.Input[Optional[_builtins.str]] = None,
                  is_vsan_byol_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  next_commitment: pulumi.Input[Optional[_builtins.str]] = None,
                  next_sku: pulumi.Input[Optional[_builtins.str]] = None,
@@ -63,6 +64,7 @@ class EsxiHostArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.float] host_ocpu_count: The OCPU count of the ESXi host.
         :param pulumi.Input[_builtins.str] host_shape_name: The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
+        :param pulumi.Input[_builtins.str] initial_fault_domain_host_distribution: (Updatable) The initial fault domain host distribution mode for the ESXi host.
         :param pulumi.Input[_builtins.bool] is_vsan_byol_enabled: (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
         :param pulumi.Input[_builtins.str] next_commitment: (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
         :param pulumi.Input[_builtins.str] next_sku: (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `next_sku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `next_commitment` instead.
@@ -113,6 +115,8 @@ class EsxiHostArgs:
             pulumi.set(__self__, "host_ocpu_count", host_ocpu_count)
         if host_shape_name is not None:
             pulumi.set(__self__, "host_shape_name", host_shape_name)
+        if initial_fault_domain_host_distribution is not None:
+            pulumi.set(__self__, "initial_fault_domain_host_distribution", initial_fault_domain_host_distribution)
         if is_vsan_byol_enabled is not None:
             pulumi.set(__self__, "is_vsan_byol_enabled", is_vsan_byol_enabled)
         if next_commitment is not None:
@@ -319,6 +323,18 @@ class EsxiHostArgs:
         pulumi.set(self, "host_shape_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="initialFaultDomainHostDistribution")
+    def initial_fault_domain_host_distribution(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The initial fault domain host distribution mode for the ESXi host.
+        """
+        return pulumi.get(self, "initial_fault_domain_host_distribution")
+
+    @initial_fault_domain_host_distribution.setter
+    def initial_fault_domain_host_distribution(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "initial_fault_domain_host_distribution", value)
+
+    @_builtins.property
     @pulumi.getter(name="isVsanByolEnabled")
     def is_vsan_byol_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -419,6 +435,7 @@ class _EsxiHostState:
                  cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  current_commitment: pulumi.Input[Optional[_builtins.str]] = None,
                  current_sku: pulumi.Input[Optional[_builtins.str]] = None,
@@ -433,6 +450,7 @@ class _EsxiHostState:
                  grace_period_end_date: pulumi.Input[Optional[_builtins.str]] = None,
                  host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
                  host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_fault_domain_host_distribution: pulumi.Input[Optional[_builtins.str]] = None,
                  is_billing_continuation_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_billing_swapping_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_vsan_byol_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -459,6 +477,7 @@ class _EsxiHostState:
         :param pulumi.Input[_builtins.str] cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster to add the ESXi host to.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
         :param pulumi.Input[_builtins.str] compute_availability_domain: The availability domain to create the ESXi host in. If keep empty, for AD-specific Cluster, new ESXi host will be created in the same availability domain; for multi-AD Cluster, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
+        :param pulumi.Input[_builtins.str] compute_fault_domain: The fault domain of the ESXi host.
         :param pulumi.Input[_builtins.str] compute_instance_id: In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
         :param pulumi.Input[_builtins.str] current_commitment: The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
         :param pulumi.Input[_builtins.str] current_sku: (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `current_commitment` instead.
@@ -476,6 +495,7 @@ class _EsxiHostState:
         :param pulumi.Input[_builtins.str] grace_period_end_date: The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.float] host_ocpu_count: The OCPU count of the ESXi host.
         :param pulumi.Input[_builtins.str] host_shape_name: The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
+        :param pulumi.Input[_builtins.str] initial_fault_domain_host_distribution: (Updatable) The initial fault domain host distribution mode for the ESXi host.
         :param pulumi.Input[_builtins.bool] is_billing_continuation_in_progress: Indicates whether this host is in the progress of billing continuation.
         :param pulumi.Input[_builtins.bool] is_billing_swapping_in_progress: Indicates whether this host is in the progress of swapping billing.
         :param pulumi.Input[_builtins.bool] is_vsan_byol_enabled: (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
@@ -513,6 +533,8 @@ class _EsxiHostState:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if compute_availability_domain is not None:
             pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
+        if compute_fault_domain is not None:
+            pulumi.set(__self__, "compute_fault_domain", compute_fault_domain)
         if compute_instance_id is not None:
             pulumi.set(__self__, "compute_instance_id", compute_instance_id)
         if current_commitment is not None:
@@ -547,6 +569,8 @@ class _EsxiHostState:
             pulumi.set(__self__, "host_ocpu_count", host_ocpu_count)
         if host_shape_name is not None:
             pulumi.set(__self__, "host_shape_name", host_shape_name)
+        if initial_fault_domain_host_distribution is not None:
+            pulumi.set(__self__, "initial_fault_domain_host_distribution", initial_fault_domain_host_distribution)
         if is_billing_continuation_in_progress is not None:
             pulumi.set(__self__, "is_billing_continuation_in_progress", is_billing_continuation_in_progress)
         if is_billing_swapping_in_progress is not None:
@@ -672,6 +696,18 @@ class _EsxiHostState:
     @compute_availability_domain.setter
     def compute_availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_availability_domain", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computeFaultDomain")
+    def compute_fault_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The fault domain of the ESXi host.
+        """
+        return pulumi.get(self, "compute_fault_domain")
+
+    @compute_fault_domain.setter
+    def compute_fault_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "compute_fault_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="computeInstanceId")
@@ -843,6 +879,18 @@ class _EsxiHostState:
     @host_shape_name.setter
     def host_shape_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_shape_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="initialFaultDomainHostDistribution")
+    def initial_fault_domain_host_distribution(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The initial fault domain host distribution mode for the ESXi host.
+        """
+        return pulumi.get(self, "initial_fault_domain_host_distribution")
+
+    @initial_fault_domain_host_distribution.setter
+    def initial_fault_domain_host_distribution(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "initial_fault_domain_host_distribution", value)
 
     @_builtins.property
     @pulumi.getter(name="isBillingContinuationInProgress")
@@ -1073,6 +1121,7 @@ class EsxiHost(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
                  host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_fault_domain_host_distribution: pulumi.Input[Optional[_builtins.str]] = None,
                  is_vsan_byol_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  next_commitment: pulumi.Input[Optional[_builtins.str]] = None,
                  next_sku: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1116,6 +1165,7 @@ class EsxiHost(pulumi.CustomResource):
             },
             host_ocpu_count=esxi_host_host_ocpu_count,
             host_shape_name=test_shape["name"],
+            initial_fault_domain_host_distribution=esxi_host_initial_fault_domain_host_distribution,
             is_vsan_byol_enabled=esxi_host_is_vsan_byol_enabled == "true",
             next_commitment=esxi_host_next_commitment,
             vcf_byol_allocation_id=test_byol_allocation["id"])
@@ -1158,6 +1208,7 @@ class EsxiHost(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.float] host_ocpu_count: The OCPU count of the ESXi host.
         :param pulumi.Input[_builtins.str] host_shape_name: The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
+        :param pulumi.Input[_builtins.str] initial_fault_domain_host_distribution: (Updatable) The initial fault domain host distribution mode for the ESXi host.
         :param pulumi.Input[_builtins.bool] is_vsan_byol_enabled: (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
         :param pulumi.Input[_builtins.str] next_commitment: (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
         :param pulumi.Input[_builtins.str] next_sku: (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `next_sku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `next_commitment` instead.
@@ -1210,6 +1261,7 @@ class EsxiHost(pulumi.CustomResource):
             },
             host_ocpu_count=esxi_host_host_ocpu_count,
             host_shape_name=test_shape["name"],
+            initial_fault_domain_host_distribution=esxi_host_initial_fault_domain_host_distribution,
             is_vsan_byol_enabled=esxi_host_is_vsan_byol_enabled == "true",
             next_commitment=esxi_host_next_commitment,
             vcf_byol_allocation_id=test_byol_allocation["id"])
@@ -1263,6 +1315,7 @@ class EsxiHost(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
                  host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_fault_domain_host_distribution: pulumi.Input[Optional[_builtins.str]] = None,
                  is_vsan_byol_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  next_commitment: pulumi.Input[Optional[_builtins.str]] = None,
                  next_sku: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1294,6 +1347,7 @@ class EsxiHost(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["host_ocpu_count"] = host_ocpu_count
             __props__.__dict__["host_shape_name"] = host_shape_name
+            __props__.__dict__["initial_fault_domain_host_distribution"] = initial_fault_domain_host_distribution
             __props__.__dict__["is_vsan_byol_enabled"] = is_vsan_byol_enabled
             __props__.__dict__["next_commitment"] = next_commitment
             __props__.__dict__["next_sku"] = next_sku
@@ -1303,6 +1357,7 @@ class EsxiHost(pulumi.CustomResource):
             __props__.__dict__["vcf_byol_allocation_id"] = vcf_byol_allocation_id
             __props__.__dict__["billing_contract_end_date"] = None
             __props__.__dict__["compartment_id"] = None
+            __props__.__dict__["compute_fault_domain"] = None
             __props__.__dict__["compute_instance_id"] = None
             __props__.__dict__["datastore_attachments"] = None
             __props__.__dict__["datastore_cluster_ids"] = None
@@ -1334,6 +1389,7 @@ class EsxiHost(pulumi.CustomResource):
             cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             compute_availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
             compute_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
             current_commitment: pulumi.Input[Optional[_builtins.str]] = None,
             current_sku: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1348,6 +1404,7 @@ class EsxiHost(pulumi.CustomResource):
             grace_period_end_date: pulumi.Input[Optional[_builtins.str]] = None,
             host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
             host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+            initial_fault_domain_host_distribution: pulumi.Input[Optional[_builtins.str]] = None,
             is_billing_continuation_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
             is_billing_swapping_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
             is_vsan_byol_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1378,6 +1435,7 @@ class EsxiHost(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster to add the ESXi host to.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
         :param pulumi.Input[_builtins.str] compute_availability_domain: The availability domain to create the ESXi host in. If keep empty, for AD-specific Cluster, new ESXi host will be created in the same availability domain; for multi-AD Cluster, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
+        :param pulumi.Input[_builtins.str] compute_fault_domain: The fault domain of the ESXi host.
         :param pulumi.Input[_builtins.str] compute_instance_id: In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
         :param pulumi.Input[_builtins.str] current_commitment: The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
         :param pulumi.Input[_builtins.str] current_sku: (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `current_commitment` instead.
@@ -1395,6 +1453,7 @@ class EsxiHost(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] grace_period_end_date: The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.float] host_ocpu_count: The OCPU count of the ESXi host.
         :param pulumi.Input[_builtins.str] host_shape_name: The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
+        :param pulumi.Input[_builtins.str] initial_fault_domain_host_distribution: (Updatable) The initial fault domain host distribution mode for the ESXi host.
         :param pulumi.Input[_builtins.bool] is_billing_continuation_in_progress: Indicates whether this host is in the progress of billing continuation.
         :param pulumi.Input[_builtins.bool] is_billing_swapping_in_progress: Indicates whether this host is in the progress of swapping billing.
         :param pulumi.Input[_builtins.bool] is_vsan_byol_enabled: (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
@@ -1426,6 +1485,7 @@ class EsxiHost(pulumi.CustomResource):
         __props__.__dict__["cluster_id"] = cluster_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["compute_availability_domain"] = compute_availability_domain
+        __props__.__dict__["compute_fault_domain"] = compute_fault_domain
         __props__.__dict__["compute_instance_id"] = compute_instance_id
         __props__.__dict__["current_commitment"] = current_commitment
         __props__.__dict__["current_sku"] = current_sku
@@ -1440,6 +1500,7 @@ class EsxiHost(pulumi.CustomResource):
         __props__.__dict__["grace_period_end_date"] = grace_period_end_date
         __props__.__dict__["host_ocpu_count"] = host_ocpu_count
         __props__.__dict__["host_shape_name"] = host_shape_name
+        __props__.__dict__["initial_fault_domain_host_distribution"] = initial_fault_domain_host_distribution
         __props__.__dict__["is_billing_continuation_in_progress"] = is_billing_continuation_in_progress
         __props__.__dict__["is_billing_swapping_in_progress"] = is_billing_swapping_in_progress
         __props__.__dict__["is_vsan_byol_enabled"] = is_vsan_byol_enabled
@@ -1512,6 +1573,14 @@ class EsxiHost(pulumi.CustomResource):
         The availability domain to create the ESXi host in. If keep empty, for AD-specific Cluster, new ESXi host will be created in the same availability domain; for multi-AD Cluster, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
         """
         return pulumi.get(self, "compute_availability_domain")
+
+    @_builtins.property
+    @pulumi.getter(name="computeFaultDomain")
+    def compute_fault_domain(self) -> pulumi.Output[_builtins.str]:
+        """
+        The fault domain of the ESXi host.
+        """
+        return pulumi.get(self, "compute_fault_domain")
 
     @_builtins.property
     @pulumi.getter(name="computeInstanceId")
@@ -1627,6 +1696,14 @@ class EsxiHost(pulumi.CustomResource):
         The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
         """
         return pulumi.get(self, "host_shape_name")
+
+    @_builtins.property
+    @pulumi.getter(name="initialFaultDomainHostDistribution")
+    def initial_fault_domain_host_distribution(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The initial fault domain host distribution mode for the ESXi host.
+        """
+        return pulumi.get(self, "initial_fault_domain_host_distribution")
 
     @_builtins.property
     @pulumi.getter(name="isBillingContinuationInProgress")

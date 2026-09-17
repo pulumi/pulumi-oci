@@ -21,6 +21,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseL
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrl;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfiguration;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseScheduledOperation;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseStandbyDb;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseTransportableTablespace;
@@ -85,7 +86,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     private String autonomousDatabaseBackupId;
     private String autonomousDatabaseId;
     /**
-     * @return Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     * @return Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
      * 
      */
     private List<GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow> autonomousDatabaseMaintenanceWindows;
@@ -587,6 +588,11 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     private String role;
     private Boolean rotateKeyTrigger;
     /**
+     * @return Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     * 
+     */
+    private List<GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindow> scheduledMaintenanceWindows;
+    /**
      * @return The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
      * 
      */
@@ -758,6 +764,11 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private String timeScheduledDbVersionUpgrade;
     /**
+     * @return The date and time at which operation to change Maintenance Window is scheduled to take place.
+     * 
+     */
+    private String timeScheduledMaintenanceWindowUpdate;
+    /**
      * @return The date and time the Autonomous AI Database was most recently undeleted.
      * 
      */
@@ -880,7 +891,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.autonomousDatabaseId;
     }
     /**
-     * @return Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     * @return Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
      * 
      */
     public List<GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindow> autonomousDatabaseMaintenanceWindows() {
@@ -1596,6 +1607,13 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.rotateKeyTrigger;
     }
     /**
+     * @return Autonomous AI Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous AI Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     * 
+     */
+    public List<GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindow> scheduledMaintenanceWindows() {
+        return this.scheduledMaintenanceWindows;
+    }
+    /**
      * @return The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
      * 
      */
@@ -1845,6 +1863,13 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.timeScheduledDbVersionUpgrade;
     }
     /**
+     * @return The date and time at which operation to change Maintenance Window is scheduled to take place.
+     * 
+     */
+    public String timeScheduledMaintenanceWindowUpdate() {
+        return this.timeScheduledMaintenanceWindowUpdate;
+    }
+    /**
      * @return The date and time the Autonomous AI Database was most recently undeleted.
      * 
      */
@@ -2045,6 +2070,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private List<GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary> resourcePoolSummaries;
         private String role;
         private Boolean rotateKeyTrigger;
+        private List<GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindow> scheduledMaintenanceWindows;
         private List<GetAutonomousDatabasesAutonomousDatabaseScheduledOperation> scheduledOperations;
         private String secretId;
         private Integer secretVersionNumber;
@@ -2084,6 +2110,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private String timeReclamationOfFreeAutonomousDatabase;
         private String timeScheduledAdUpdate;
         private String timeScheduledDbVersionUpgrade;
+        private String timeScheduledMaintenanceWindowUpdate;
         private String timeUndeleted;
         private String timeUntilReconnectCloneEnabled;
         private String timestamp;
@@ -2218,6 +2245,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.resourcePoolSummaries = defaults.resourcePoolSummaries;
     	      this.role = defaults.role;
     	      this.rotateKeyTrigger = defaults.rotateKeyTrigger;
+    	      this.scheduledMaintenanceWindows = defaults.scheduledMaintenanceWindows;
     	      this.scheduledOperations = defaults.scheduledOperations;
     	      this.secretId = defaults.secretId;
     	      this.secretVersionNumber = defaults.secretVersionNumber;
@@ -2257,6 +2285,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.timeReclamationOfFreeAutonomousDatabase = defaults.timeReclamationOfFreeAutonomousDatabase;
     	      this.timeScheduledAdUpdate = defaults.timeScheduledAdUpdate;
     	      this.timeScheduledDbVersionUpgrade = defaults.timeScheduledDbVersionUpgrade;
+    	      this.timeScheduledMaintenanceWindowUpdate = defaults.timeScheduledMaintenanceWindowUpdate;
     	      this.timeUndeleted = defaults.timeUndeleted;
     	      this.timeUntilReconnectCloneEnabled = defaults.timeUntilReconnectCloneEnabled;
     	      this.timestamp = defaults.timestamp;
@@ -3287,6 +3316,17 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder scheduledMaintenanceWindows(List<GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindow> scheduledMaintenanceWindows) {
+            if (scheduledMaintenanceWindows == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "scheduledMaintenanceWindows");
+            }
+            this.scheduledMaintenanceWindows = scheduledMaintenanceWindows;
+            return this;
+        }
+        public Builder scheduledMaintenanceWindows(GetAutonomousDatabasesAutonomousDatabaseScheduledMaintenanceWindow... scheduledMaintenanceWindows) {
+            return scheduledMaintenanceWindows(List.of(scheduledMaintenanceWindows));
+        }
+        @CustomType.Setter
         public Builder scheduledOperations(List<GetAutonomousDatabasesAutonomousDatabaseScheduledOperation> scheduledOperations) {
             if (scheduledOperations == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "scheduledOperations");
@@ -3611,6 +3651,14 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder timeScheduledMaintenanceWindowUpdate(String timeScheduledMaintenanceWindowUpdate) {
+            if (timeScheduledMaintenanceWindowUpdate == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeScheduledMaintenanceWindowUpdate");
+            }
+            this.timeScheduledMaintenanceWindowUpdate = timeScheduledMaintenanceWindowUpdate;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeUndeleted(String timeUndeleted) {
             if (timeUndeleted == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeUndeleted");
@@ -3839,6 +3887,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             _resultValue.resourcePoolSummaries = resourcePoolSummaries;
             _resultValue.role = role;
             _resultValue.rotateKeyTrigger = rotateKeyTrigger;
+            _resultValue.scheduledMaintenanceWindows = scheduledMaintenanceWindows;
             _resultValue.scheduledOperations = scheduledOperations;
             _resultValue.secretId = secretId;
             _resultValue.secretVersionNumber = secretVersionNumber;
@@ -3878,6 +3927,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             _resultValue.timeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
             _resultValue.timeScheduledAdUpdate = timeScheduledAdUpdate;
             _resultValue.timeScheduledDbVersionUpgrade = timeScheduledDbVersionUpgrade;
+            _resultValue.timeScheduledMaintenanceWindowUpdate = timeScheduledMaintenanceWindowUpdate;
             _resultValue.timeUndeleted = timeUndeleted;
             _resultValue.timeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
             _resultValue.timestamp = timestamp;

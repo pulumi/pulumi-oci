@@ -1,9 +1,10 @@
-module github.com/pulumi/pulumi-oci/sdk/v4
+module github.com/pulumi/pulumi-oci/sdk/v5
 
 go 1.25.11
 
 require (
 	github.com/blang/semver v3.5.1+incompatible
+	github.com/pulumi/pulumi-oci/sdk/v4 v4.22.0
 	github.com/pulumi/pulumi/sdk/v3 v3.259.0
 )
 

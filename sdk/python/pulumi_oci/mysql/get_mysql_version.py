@@ -82,7 +82,7 @@ class AwaitableGetMysqlVersionResult(GetMysqlVersionResult):
 
 
 def get_mysql_version(compartment_id: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetMysqlVersionFilterArgs', 'GetMysqlVersionFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetMysqlVersionFilterArgs', 'GetMysqlVersionFilterArgsDict', 'outputs.GetMysqlVersionFilterResult']]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMysqlVersionResult:
     """
     This data source provides the list of Mysql Versions in Oracle Cloud Infrastructure MySQL Database service.
@@ -115,7 +115,7 @@ def get_mysql_version(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         versions=pulumi.get(__ret__, 'versions'))
 def get_mysql_version_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMysqlVersionFilterArgs', 'GetMysqlVersionFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMysqlVersionFilterArgs', 'GetMysqlVersionFilterArgsDict', 'outputs.GetMysqlVersionFilterResult']]]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMysqlVersionResult]:
     """
     This data source provides the list of Mysql Versions in Oracle Cloud Infrastructure MySQL Database service.

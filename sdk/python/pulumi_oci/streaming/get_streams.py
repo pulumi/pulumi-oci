@@ -121,7 +121,7 @@ class AwaitableGetStreamsResult(GetStreamsResult):
 
 
 def get_streams(compartment_id: Optional[_builtins.str] = None,
-                filters: Optional[Sequence[Union['GetStreamsFilterArgs', 'GetStreamsFilterArgsDict']]] = None,
+                filters: Optional[Sequence[Union['GetStreamsFilterArgs', 'GetStreamsFilterArgsDict', 'outputs.GetStreamsFilterResult']]] = None,
                 id: Optional[_builtins.str] = None,
                 name: Optional[_builtins.str] = None,
                 state: Optional[_builtins.str] = None,
@@ -174,7 +174,7 @@ def get_streams(compartment_id: Optional[_builtins.str] = None,
         stream_pool_id=pulumi.get(__ret__, 'stream_pool_id'),
         streams=pulumi.get(__ret__, 'streams'))
 def get_streams_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetStreamsFilterArgs', 'GetStreamsFilterArgsDict']]]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetStreamsFilterArgs', 'GetStreamsFilterArgsDict', 'outputs.GetStreamsFilterResult']]]]] = None,
                        id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

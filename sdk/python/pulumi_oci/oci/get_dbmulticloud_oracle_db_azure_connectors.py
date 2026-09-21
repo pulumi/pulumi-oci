@@ -132,7 +132,7 @@ class AwaitableGetDbmulticloudOracleDbAzureConnectorsResult(GetDbmulticloudOracl
 def get_dbmulticloud_oracle_db_azure_connectors(compartment_id: Optional[_builtins.str] = None,
                                                 db_cluster_resource_id: Optional[_builtins.str] = None,
                                                 display_name: Optional[_builtins.str] = None,
-                                                filters: Optional[Sequence[Union['GetDbmulticloudOracleDbAzureConnectorsFilterArgs', 'GetDbmulticloudOracleDbAzureConnectorsFilterArgsDict']]] = None,
+                                                filters: Optional[Sequence[Union['GetDbmulticloudOracleDbAzureConnectorsFilterArgs', 'GetDbmulticloudOracleDbAzureConnectorsFilterArgsDict', 'outputs.GetDbmulticloudOracleDbAzureConnectorsFilterResult']]] = None,
                                                 oracle_db_azure_connector_id: Optional[_builtins.str] = None,
                                                 state: Optional[_builtins.str] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbmulticloudOracleDbAzureConnectorsResult:
@@ -183,7 +183,7 @@ def get_dbmulticloud_oracle_db_azure_connectors(compartment_id: Optional[_builti
 def get_dbmulticloud_oracle_db_azure_connectors_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                        db_cluster_resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbmulticloudOracleDbAzureConnectorsFilterArgs', 'GetDbmulticloudOracleDbAzureConnectorsFilterArgsDict']]]]] = None,
+                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbmulticloudOracleDbAzureConnectorsFilterArgs', 'GetDbmulticloudOracleDbAzureConnectorsFilterArgsDict', 'outputs.GetDbmulticloudOracleDbAzureConnectorsFilterResult']]]]] = None,
                                                        oracle_db_azure_connector_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbmulticloudOracleDbAzureConnectorsResult]:

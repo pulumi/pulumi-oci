@@ -106,7 +106,7 @@ class AwaitableGetFlexComponentsResult(GetFlexComponentsResult):
 
 
 def get_flex_components(compartment_id: Optional[_builtins.str] = None,
-                        filters: Optional[Sequence[Union['GetFlexComponentsFilterArgs', 'GetFlexComponentsFilterArgsDict']]] = None,
+                        filters: Optional[Sequence[Union['GetFlexComponentsFilterArgs', 'GetFlexComponentsFilterArgsDict', 'outputs.GetFlexComponentsFilterResult']]] = None,
                         name: Optional[_builtins.str] = None,
                         shape: Optional[_builtins.str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFlexComponentsResult:
@@ -147,7 +147,7 @@ def get_flex_components(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         shape=pulumi.get(__ret__, 'shape'))
 def get_flex_components_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFlexComponentsFilterArgs', 'GetFlexComponentsFilterArgsDict']]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFlexComponentsFilterArgs', 'GetFlexComponentsFilterArgsDict', 'outputs.GetFlexComponentsFilterResult']]]]] = None,
                                name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                shape: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFlexComponentsResult]:

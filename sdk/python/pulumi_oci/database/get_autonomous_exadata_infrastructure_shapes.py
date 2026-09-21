@@ -92,7 +92,7 @@ class AwaitableGetAutonomousExadataInfrastructureShapesResult(GetAutonomousExada
 
 def get_autonomous_exadata_infrastructure_shapes(availability_domain: Optional[_builtins.str] = None,
                                                  compartment_id: Optional[_builtins.str] = None,
-                                                 filters: Optional[Sequence[Union['GetAutonomousExadataInfrastructureShapesFilterArgs', 'GetAutonomousExadataInfrastructureShapesFilterArgsDict']]] = None,
+                                                 filters: Optional[Sequence[Union['GetAutonomousExadataInfrastructureShapesFilterArgs', 'GetAutonomousExadataInfrastructureShapesFilterArgsDict', 'outputs.GetAutonomousExadataInfrastructureShapesFilterResult']]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousExadataInfrastructureShapesResult:
     """
     This data source provides the list of Autonomous Exadata Infrastructure Shapes in Oracle Cloud Infrastructure Database service.
@@ -128,7 +128,7 @@ def get_autonomous_exadata_infrastructure_shapes(availability_domain: Optional[_
         id=pulumi.get(__ret__, 'id'))
 def get_autonomous_exadata_infrastructure_shapes_output(availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
                                                         compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousExadataInfrastructureShapesFilterArgs', 'GetAutonomousExadataInfrastructureShapesFilterArgsDict']]]]] = None,
+                                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousExadataInfrastructureShapesFilterArgs', 'GetAutonomousExadataInfrastructureShapesFilterArgsDict', 'outputs.GetAutonomousExadataInfrastructureShapesFilterResult']]]]] = None,
                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousExadataInfrastructureShapesResult]:
     """
     This data source provides the list of Autonomous Exadata Infrastructure Shapes in Oracle Cloud Infrastructure Database service.

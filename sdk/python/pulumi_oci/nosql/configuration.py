@@ -171,7 +171,7 @@ class Configuration(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  environment: pulumi.Input[Optional[_builtins.str]] = None,
                  is_opc_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
-                 kms_key: pulumi.Input[Optional[Union['ConfigurationKmsKeyArgs', 'ConfigurationKmsKeyArgsDict']]] = None,
+                 kms_key: pulumi.Input[Optional[Union['ConfigurationKmsKeyArgs', 'ConfigurationKmsKeyArgsDict', 'outputs.ConfigurationKmsKey']]] = None,
                  __props__=None):
         """
         This resource provides the Configuration resource in Oracle Cloud Infrastructure NoSQL Database service.
@@ -228,7 +228,7 @@ class Configuration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The tenancy's OCID
         :param pulumi.Input[_builtins.str] environment: (Updatable) The service environment type.
         :param pulumi.Input[_builtins.bool] is_opc_dry_run: (Updatable) If true, indicates that the request is a dry run. A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
-        :param pulumi.Input[Union['ConfigurationKmsKeyArgs', 'ConfigurationKmsKeyArgsDict']] kms_key: (Updatable) Information about the state of the service's encryption key management. The following properties are read-only and ignored when this object is used in UpdateConfiguration: kmsKeyState, timeCreated, timeUpdated.
+        :param pulumi.Input[Union['ConfigurationKmsKeyArgs', 'ConfigurationKmsKeyArgsDict', 'outputs.ConfigurationKmsKey']] kms_key: (Updatable) Information about the state of the service's encryption key management. The following properties are read-only and ignored when this object is used in UpdateConfiguration: kmsKeyState, timeCreated, timeUpdated.
         """
         ...
     @overload
@@ -304,7 +304,7 @@ class Configuration(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  environment: pulumi.Input[Optional[_builtins.str]] = None,
                  is_opc_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
-                 kms_key: pulumi.Input[Optional[Union['ConfigurationKmsKeyArgs', 'ConfigurationKmsKeyArgsDict']]] = None,
+                 kms_key: pulumi.Input[Optional[Union['ConfigurationKmsKeyArgs', 'ConfigurationKmsKeyArgsDict', 'outputs.ConfigurationKmsKey']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -335,7 +335,7 @@ class Configuration(pulumi.CustomResource):
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             environment: pulumi.Input[Optional[_builtins.str]] = None,
             is_opc_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
-            kms_key: pulumi.Input[Optional[Union['ConfigurationKmsKeyArgs', 'ConfigurationKmsKeyArgsDict']]] = None) -> 'Configuration':
+            kms_key: pulumi.Input[Optional[Union['ConfigurationKmsKeyArgs', 'ConfigurationKmsKeyArgsDict', 'outputs.ConfigurationKmsKey']]] = None) -> 'Configuration':
         """
         Get an existing Configuration resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -346,7 +346,7 @@ class Configuration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The tenancy's OCID
         :param pulumi.Input[_builtins.str] environment: (Updatable) The service environment type.
         :param pulumi.Input[_builtins.bool] is_opc_dry_run: (Updatable) If true, indicates that the request is a dry run. A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
-        :param pulumi.Input[Union['ConfigurationKmsKeyArgs', 'ConfigurationKmsKeyArgsDict']] kms_key: (Updatable) Information about the state of the service's encryption key management. The following properties are read-only and ignored when this object is used in UpdateConfiguration: kmsKeyState, timeCreated, timeUpdated.
+        :param pulumi.Input[Union['ConfigurationKmsKeyArgs', 'ConfigurationKmsKeyArgsDict', 'outputs.ConfigurationKmsKey']] kms_key: (Updatable) Information about the state of the service's encryption key management. The following properties are read-only and ignored when this object is used in UpdateConfiguration: kmsKeyState, timeCreated, timeUpdated.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

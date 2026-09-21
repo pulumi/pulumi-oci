@@ -107,7 +107,7 @@ class AwaitableGetServicesResult(GetServicesResult):
 
 def get_services(comms_manager_name: Optional[_builtins.str] = None,
                  compartment_id: Optional[_builtins.str] = None,
-                 filters: Optional[Sequence[Union['GetServicesFilterArgs', 'GetServicesFilterArgsDict']]] = None,
+                 filters: Optional[Sequence[Union['GetServicesFilterArgs', 'GetServicesFilterArgsDict', 'outputs.GetServicesFilterResult']]] = None,
                  platform_type: Optional[_builtins.str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServicesResult:
     """
@@ -148,7 +148,7 @@ def get_services(comms_manager_name: Optional[_builtins.str] = None,
         services_collections=pulumi.get(__ret__, 'services_collections'))
 def get_services_output(comms_manager_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetServicesFilterArgs', 'GetServicesFilterArgsDict']]]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetServicesFilterArgs', 'GetServicesFilterArgsDict', 'outputs.GetServicesFilterResult']]]]] = None,
                         platform_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServicesResult]:
     """

@@ -124,7 +124,7 @@ def get_alerts(access_level: Optional[_builtins.str] = None,
                compartment_id: Optional[_builtins.str] = None,
                compartment_id_in_subtree: Optional[_builtins.bool] = None,
                fields: Optional[Sequence[_builtins.str]] = None,
-               filters: Optional[Sequence[Union['GetAlertsFilterArgs', 'GetAlertsFilterArgsDict']]] = None,
+               filters: Optional[Sequence[Union['GetAlertsFilterArgs', 'GetAlertsFilterArgsDict', 'outputs.GetAlertsFilterResult']]] = None,
                id: Optional[_builtins.str] = None,
                scim_query: Optional[_builtins.str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAlertsResult:
@@ -181,7 +181,7 @@ def get_alerts_output(access_level: pulumi.Input[Optional[Optional[_builtins.str
                       compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                       compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                       fields: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
-                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAlertsFilterArgs', 'GetAlertsFilterArgsDict']]]]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAlertsFilterArgs', 'GetAlertsFilterArgsDict', 'outputs.GetAlertsFilterResult']]]]] = None,
                       id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       scim_query: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAlertsResult]:

@@ -504,7 +504,7 @@ class OpsiConfiguration(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  config_item_custom_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  config_item_fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 config_items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OpsiConfigurationConfigItemArgs', 'OpsiConfigurationConfigItemArgsDict']]]]] = None,
+                 config_items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OpsiConfigurationConfigItemArgs', 'OpsiConfigurationConfigItemArgsDict', 'outputs.OpsiConfigurationConfigItem']]]]] = None,
                  config_items_applicable_contexts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -565,7 +565,7 @@ class OpsiConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] config_item_custom_statuses: Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned. By default only customized configuration items are returned.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] config_item_fields: Specifies the fields to return in a config item summary.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OpsiConfigurationConfigItemArgs', 'OpsiConfigurationConfigItemArgsDict']]]] config_items: (Updatable) Array of configuration items with custom values. All and only configuration items requiring custom values should be part of this array.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OpsiConfigurationConfigItemArgs', 'OpsiConfigurationConfigItemArgsDict', 'outputs.OpsiConfigurationConfigItem']]]] config_items: (Updatable) Array of configuration items with custom values. All and only configuration items requiring custom values should be part of this array.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] config_items_applicable_contexts: Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of OPSI configuration.
@@ -648,7 +648,7 @@ class OpsiConfiguration(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  config_item_custom_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  config_item_fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 config_items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OpsiConfigurationConfigItemArgs', 'OpsiConfigurationConfigItemArgsDict']]]]] = None,
+                 config_items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OpsiConfigurationConfigItemArgs', 'OpsiConfigurationConfigItemArgsDict', 'outputs.OpsiConfigurationConfigItem']]]]] = None,
                  config_items_applicable_contexts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -697,7 +697,7 @@ class OpsiConfiguration(pulumi.CustomResource):
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             config_item_custom_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             config_item_fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            config_items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OpsiConfigurationConfigItemArgs', 'OpsiConfigurationConfigItemArgsDict']]]]] = None,
+            config_items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OpsiConfigurationConfigItemArgs', 'OpsiConfigurationConfigItemArgsDict', 'outputs.OpsiConfigurationConfigItem']]]]] = None,
             config_items_applicable_contexts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -720,7 +720,7 @@ class OpsiConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] config_item_custom_statuses: Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned. By default only customized configuration items are returned.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] config_item_fields: Specifies the fields to return in a config item summary.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OpsiConfigurationConfigItemArgs', 'OpsiConfigurationConfigItemArgsDict']]]] config_items: (Updatable) Array of configuration items with custom values. All and only configuration items requiring custom values should be part of this array.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OpsiConfigurationConfigItemArgs', 'OpsiConfigurationConfigItemArgsDict', 'outputs.OpsiConfigurationConfigItem']]]] config_items: (Updatable) Array of configuration items with custom values. All and only configuration items requiring custom values should be part of this array.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] config_items_applicable_contexts: Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of OPSI configuration.

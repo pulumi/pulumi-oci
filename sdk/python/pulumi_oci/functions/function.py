@@ -628,16 +628,16 @@ class Function(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  detached_mode_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 failure_destination: pulumi.Input[Optional[Union['FunctionFailureDestinationArgs', 'FunctionFailureDestinationArgsDict']]] = None,
+                 failure_destination: pulumi.Input[Optional[Union['FunctionFailureDestinationArgs', 'FunctionFailureDestinationArgsDict', 'outputs.FunctionFailureDestination']]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  image: pulumi.Input[Optional[_builtins.str]] = None,
                  image_digest: pulumi.Input[Optional[_builtins.str]] = None,
                  memory_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
-                 provisioned_concurrency_config: pulumi.Input[Optional[Union['FunctionProvisionedConcurrencyConfigArgs', 'FunctionProvisionedConcurrencyConfigArgsDict']]] = None,
-                 source_details: pulumi.Input[Optional[Union['FunctionSourceDetailsArgs', 'FunctionSourceDetailsArgsDict']]] = None,
-                 success_destination: pulumi.Input[Optional[Union['FunctionSuccessDestinationArgs', 'FunctionSuccessDestinationArgsDict']]] = None,
+                 provisioned_concurrency_config: pulumi.Input[Optional[Union['FunctionProvisionedConcurrencyConfigArgs', 'FunctionProvisionedConcurrencyConfigArgsDict', 'outputs.FunctionProvisionedConcurrencyConfig']]] = None,
+                 source_details: pulumi.Input[Optional[Union['FunctionSourceDetailsArgs', 'FunctionSourceDetailsArgsDict', 'outputs.FunctionSourceDetails']]] = None,
+                 success_destination: pulumi.Input[Optional[Union['FunctionSuccessDestinationArgs', 'FunctionSuccessDestinationArgsDict', 'outputs.FunctionSuccessDestination']]] = None,
                  timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
-                 trace_config: pulumi.Input[Optional[Union['FunctionTraceConfigArgs', 'FunctionTraceConfigArgsDict']]] = None,
+                 trace_config: pulumi.Input[Optional[Union['FunctionTraceConfigArgs', 'FunctionTraceConfigArgsDict', 'outputs.FunctionTraceConfig']]] = None,
                  __props__=None):
         """
         This resource provides the Function resource in Oracle Cloud Infrastructure Functions service.
@@ -713,16 +713,16 @@ class Function(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.int] detached_mode_timeout_in_seconds: (Updatable) Timeout for detached function invocations. Value in seconds.
         :param pulumi.Input[_builtins.str] display_name: The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
-        :param pulumi.Input[Union['FunctionFailureDestinationArgs', 'FunctionFailureDestinationArgsDict']] failure_destination: (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
+        :param pulumi.Input[Union['FunctionFailureDestinationArgs', 'FunctionFailureDestinationArgsDict', 'outputs.FunctionFailureDestination']] failure_destination: (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] image: (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
         :param pulumi.Input[_builtins.str] image_digest: (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
         :param pulumi.Input[_builtins.str] memory_in_mbs: (Updatable) Maximum usable memory for the function (MiB).
-        :param pulumi.Input[Union['FunctionProvisionedConcurrencyConfigArgs', 'FunctionProvisionedConcurrencyConfigArgsDict']] provisioned_concurrency_config: (Updatable) Define the strategy for provisioned concurrency for the function.
-        :param pulumi.Input[Union['FunctionSourceDetailsArgs', 'FunctionSourceDetailsArgsDict']] source_details: The source details for the Function. The function can be created from various sources.
-        :param pulumi.Input[Union['FunctionSuccessDestinationArgs', 'FunctionSuccessDestinationArgsDict']] success_destination: (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
+        :param pulumi.Input[Union['FunctionProvisionedConcurrencyConfigArgs', 'FunctionProvisionedConcurrencyConfigArgsDict', 'outputs.FunctionProvisionedConcurrencyConfig']] provisioned_concurrency_config: (Updatable) Define the strategy for provisioned concurrency for the function.
+        :param pulumi.Input[Union['FunctionSourceDetailsArgs', 'FunctionSourceDetailsArgsDict', 'outputs.FunctionSourceDetails']] source_details: The source details for the Function. The function can be created from various sources.
+        :param pulumi.Input[Union['FunctionSuccessDestinationArgs', 'FunctionSuccessDestinationArgsDict', 'outputs.FunctionSuccessDestination']] success_destination: (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
         :param pulumi.Input[_builtins.int] timeout_in_seconds: (Updatable) Timeout for executions of the function. Value in seconds.
-        :param pulumi.Input[Union['FunctionTraceConfigArgs', 'FunctionTraceConfigArgsDict']] trace_config: (Updatable) Define the tracing configuration for a function.
+        :param pulumi.Input[Union['FunctionTraceConfigArgs', 'FunctionTraceConfigArgsDict', 'outputs.FunctionTraceConfig']] trace_config: (Updatable) Define the tracing configuration for a function.
         """
         ...
     @overload
@@ -815,16 +815,16 @@ class Function(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  detached_mode_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 failure_destination: pulumi.Input[Optional[Union['FunctionFailureDestinationArgs', 'FunctionFailureDestinationArgsDict']]] = None,
+                 failure_destination: pulumi.Input[Optional[Union['FunctionFailureDestinationArgs', 'FunctionFailureDestinationArgsDict', 'outputs.FunctionFailureDestination']]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  image: pulumi.Input[Optional[_builtins.str]] = None,
                  image_digest: pulumi.Input[Optional[_builtins.str]] = None,
                  memory_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
-                 provisioned_concurrency_config: pulumi.Input[Optional[Union['FunctionProvisionedConcurrencyConfigArgs', 'FunctionProvisionedConcurrencyConfigArgsDict']]] = None,
-                 source_details: pulumi.Input[Optional[Union['FunctionSourceDetailsArgs', 'FunctionSourceDetailsArgsDict']]] = None,
-                 success_destination: pulumi.Input[Optional[Union['FunctionSuccessDestinationArgs', 'FunctionSuccessDestinationArgsDict']]] = None,
+                 provisioned_concurrency_config: pulumi.Input[Optional[Union['FunctionProvisionedConcurrencyConfigArgs', 'FunctionProvisionedConcurrencyConfigArgsDict', 'outputs.FunctionProvisionedConcurrencyConfig']]] = None,
+                 source_details: pulumi.Input[Optional[Union['FunctionSourceDetailsArgs', 'FunctionSourceDetailsArgsDict', 'outputs.FunctionSourceDetails']]] = None,
+                 success_destination: pulumi.Input[Optional[Union['FunctionSuccessDestinationArgs', 'FunctionSuccessDestinationArgsDict', 'outputs.FunctionSuccessDestination']]] = None,
                  timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
-                 trace_config: pulumi.Input[Optional[Union['FunctionTraceConfigArgs', 'FunctionTraceConfigArgsDict']]] = None,
+                 trace_config: pulumi.Input[Optional[Union['FunctionTraceConfigArgs', 'FunctionTraceConfigArgsDict', 'outputs.FunctionTraceConfig']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -877,21 +877,21 @@ class Function(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             detached_mode_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            failure_destination: pulumi.Input[Optional[Union['FunctionFailureDestinationArgs', 'FunctionFailureDestinationArgsDict']]] = None,
+            failure_destination: pulumi.Input[Optional[Union['FunctionFailureDestinationArgs', 'FunctionFailureDestinationArgsDict', 'outputs.FunctionFailureDestination']]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             image: pulumi.Input[Optional[_builtins.str]] = None,
             image_digest: pulumi.Input[Optional[_builtins.str]] = None,
             invoke_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
             memory_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
-            provisioned_concurrency_config: pulumi.Input[Optional[Union['FunctionProvisionedConcurrencyConfigArgs', 'FunctionProvisionedConcurrencyConfigArgsDict']]] = None,
+            provisioned_concurrency_config: pulumi.Input[Optional[Union['FunctionProvisionedConcurrencyConfigArgs', 'FunctionProvisionedConcurrencyConfigArgsDict', 'outputs.FunctionProvisionedConcurrencyConfig']]] = None,
             shape: pulumi.Input[Optional[_builtins.str]] = None,
-            source_details: pulumi.Input[Optional[Union['FunctionSourceDetailsArgs', 'FunctionSourceDetailsArgsDict']]] = None,
+            source_details: pulumi.Input[Optional[Union['FunctionSourceDetailsArgs', 'FunctionSourceDetailsArgsDict', 'outputs.FunctionSourceDetails']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            success_destination: pulumi.Input[Optional[Union['FunctionSuccessDestinationArgs', 'FunctionSuccessDestinationArgsDict']]] = None,
+            success_destination: pulumi.Input[Optional[Union['FunctionSuccessDestinationArgs', 'FunctionSuccessDestinationArgsDict', 'outputs.FunctionSuccessDestination']]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
             timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
-            trace_config: pulumi.Input[Optional[Union['FunctionTraceConfigArgs', 'FunctionTraceConfigArgsDict']]] = None) -> 'Function':
+            trace_config: pulumi.Input[Optional[Union['FunctionTraceConfigArgs', 'FunctionTraceConfigArgsDict', 'outputs.FunctionTraceConfig']]] = None) -> 'Function':
         """
         Get an existing Function resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -907,21 +907,21 @@ class Function(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.int] detached_mode_timeout_in_seconds: (Updatable) Timeout for detached function invocations. Value in seconds.
         :param pulumi.Input[_builtins.str] display_name: The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
-        :param pulumi.Input[Union['FunctionFailureDestinationArgs', 'FunctionFailureDestinationArgsDict']] failure_destination: (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
+        :param pulumi.Input[Union['FunctionFailureDestinationArgs', 'FunctionFailureDestinationArgsDict', 'outputs.FunctionFailureDestination']] failure_destination: (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] image: (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
         :param pulumi.Input[_builtins.str] image_digest: (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
         :param pulumi.Input[_builtins.str] invoke_endpoint: The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
         :param pulumi.Input[_builtins.str] memory_in_mbs: (Updatable) Maximum usable memory for the function (MiB).
-        :param pulumi.Input[Union['FunctionProvisionedConcurrencyConfigArgs', 'FunctionProvisionedConcurrencyConfigArgsDict']] provisioned_concurrency_config: (Updatable) Define the strategy for provisioned concurrency for the function.
+        :param pulumi.Input[Union['FunctionProvisionedConcurrencyConfigArgs', 'FunctionProvisionedConcurrencyConfigArgsDict', 'outputs.FunctionProvisionedConcurrencyConfig']] provisioned_concurrency_config: (Updatable) Define the strategy for provisioned concurrency for the function.
         :param pulumi.Input[_builtins.str] shape: The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
-        :param pulumi.Input[Union['FunctionSourceDetailsArgs', 'FunctionSourceDetailsArgsDict']] source_details: The source details for the Function. The function can be created from various sources.
+        :param pulumi.Input[Union['FunctionSourceDetailsArgs', 'FunctionSourceDetailsArgsDict', 'outputs.FunctionSourceDetails']] source_details: The source details for the Function. The function can be created from various sources.
         :param pulumi.Input[_builtins.str] state: The current state of the function.
-        :param pulumi.Input[Union['FunctionSuccessDestinationArgs', 'FunctionSuccessDestinationArgsDict']] success_destination: (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
+        :param pulumi.Input[Union['FunctionSuccessDestinationArgs', 'FunctionSuccessDestinationArgsDict', 'outputs.FunctionSuccessDestination']] success_destination: (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
         :param pulumi.Input[_builtins.str] time_created: The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
         :param pulumi.Input[_builtins.str] time_updated: The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
         :param pulumi.Input[_builtins.int] timeout_in_seconds: (Updatable) Timeout for executions of the function. Value in seconds.
-        :param pulumi.Input[Union['FunctionTraceConfigArgs', 'FunctionTraceConfigArgsDict']] trace_config: (Updatable) Define the tracing configuration for a function.
+        :param pulumi.Input[Union['FunctionTraceConfigArgs', 'FunctionTraceConfigArgsDict', 'outputs.FunctionTraceConfig']] trace_config: (Updatable) Define the tracing configuration for a function.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

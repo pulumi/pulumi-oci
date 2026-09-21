@@ -120,7 +120,7 @@ class AwaitableGetExportsResult(GetExportsResult):
 def get_exports(compartment_id: Optional[_builtins.str] = None,
                 export_set_id: Optional[_builtins.str] = None,
                 file_system_id: Optional[_builtins.str] = None,
-                filters: Optional[Sequence[Union['GetExportsFilterArgs', 'GetExportsFilterArgsDict']]] = None,
+                filters: Optional[Sequence[Union['GetExportsFilterArgs', 'GetExportsFilterArgsDict', 'outputs.GetExportsFilterResult']]] = None,
                 id: Optional[_builtins.str] = None,
                 state: Optional[_builtins.str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExportsResult:
@@ -172,7 +172,7 @@ def get_exports(compartment_id: Optional[_builtins.str] = None,
 def get_exports_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        export_set_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        file_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExportsFilterArgs', 'GetExportsFilterArgsDict']]]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExportsFilterArgs', 'GetExportsFilterArgsDict', 'outputs.GetExportsFilterResult']]]]] = None,
                        id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExportsResult]:

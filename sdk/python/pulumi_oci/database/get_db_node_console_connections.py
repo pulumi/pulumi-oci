@@ -85,7 +85,7 @@ class AwaitableGetDbNodeConsoleConnectionsResult(GetDbNodeConsoleConnectionsResu
 
 
 def get_db_node_console_connections(db_node_id: Optional[_builtins.str] = None,
-                                    filters: Optional[Sequence[Union['GetDbNodeConsoleConnectionsFilterArgs', 'GetDbNodeConsoleConnectionsFilterArgsDict']]] = None,
+                                    filters: Optional[Sequence[Union['GetDbNodeConsoleConnectionsFilterArgs', 'GetDbNodeConsoleConnectionsFilterArgsDict', 'outputs.GetDbNodeConsoleConnectionsFilterResult']]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbNodeConsoleConnectionsResult:
     """
     This data source provides the list of Db Node Console Connections in Oracle Cloud Infrastructure Database service.
@@ -116,7 +116,7 @@ def get_db_node_console_connections(db_node_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_db_node_console_connections_output(db_node_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbNodeConsoleConnectionsFilterArgs', 'GetDbNodeConsoleConnectionsFilterArgsDict']]]]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbNodeConsoleConnectionsFilterArgs', 'GetDbNodeConsoleConnectionsFilterArgsDict', 'outputs.GetDbNodeConsoleConnectionsFilterResult']]]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbNodeConsoleConnectionsResult]:
     """
     This data source provides the list of Db Node Console Connections in Oracle Cloud Infrastructure Database service.

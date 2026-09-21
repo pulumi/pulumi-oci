@@ -669,7 +669,7 @@ class ExadataInsight(pulumi.CustomResource):
                  exadata_infra_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_auto_sync_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 member_vm_cluster_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInsightMemberVmClusterDetailArgs', 'ExadataInsightMemberVmClusterDetailArgsDict']]]]] = None,
+                 member_vm_cluster_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInsightMemberVmClusterDetailArgs', 'ExadataInsightMemberVmClusterDetailArgsDict', 'outputs.ExadataInsightMemberVmClusterDetail']]]]] = None,
                  status: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -968,7 +968,7 @@ class ExadataInsight(pulumi.CustomResource):
                  exadata_infra_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_auto_sync_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 member_vm_cluster_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInsightMemberVmClusterDetailArgs', 'ExadataInsightMemberVmClusterDetailArgsDict']]]]] = None,
+                 member_vm_cluster_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInsightMemberVmClusterDetailArgs', 'ExadataInsightMemberVmClusterDetailArgsDict', 'outputs.ExadataInsightMemberVmClusterDetail']]]]] = None,
                  status: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -1021,7 +1021,7 @@ class ExadataInsight(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            chargeback_plan_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInsightChargebackPlanDetailArgs', 'ExadataInsightChargebackPlanDetailArgsDict']]]]] = None,
+            chargeback_plan_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInsightChargebackPlanDetailArgs', 'ExadataInsightChargebackPlanDetailArgsDict', 'outputs.ExadataInsightChargebackPlanDetail']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             enterprise_manager_bridge_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1042,7 +1042,7 @@ class ExadataInsight(pulumi.CustomResource):
             is_auto_sync_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_virtualized_exadata: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            member_vm_cluster_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInsightMemberVmClusterDetailArgs', 'ExadataInsightMemberVmClusterDetailArgsDict']]]]] = None,
+            member_vm_cluster_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInsightMemberVmClusterDetailArgs', 'ExadataInsightMemberVmClusterDetailArgsDict', 'outputs.ExadataInsightMemberVmClusterDetail']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
             status_details: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1056,7 +1056,7 @@ class ExadataInsight(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadataInsightChargebackPlanDetailArgs', 'ExadataInsightChargebackPlanDetailArgsDict']]]] chargeback_plan_details: Object containing chargeback plan details
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadataInsightChargebackPlanDetailArgs', 'ExadataInsightChargebackPlanDetailArgsDict', 'outputs.ExadataInsightChargebackPlanDetail']]]] chargeback_plan_details: Object containing chargeback plan details
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier of Exadata insight
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] enterprise_manager_bridge_id: OPSI Enterprise Manager Bridge OCID

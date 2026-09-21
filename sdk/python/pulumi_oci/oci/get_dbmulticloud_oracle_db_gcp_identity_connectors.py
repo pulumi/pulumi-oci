@@ -122,7 +122,7 @@ class AwaitableGetDbmulticloudOracleDbGcpIdentityConnectorsResult(GetDbmulticlou
 
 def get_dbmulticloud_oracle_db_gcp_identity_connectors(compartment_id: Optional[_builtins.str] = None,
                                                        display_name: Optional[_builtins.str] = None,
-                                                       filters: Optional[Sequence[Union['GetDbmulticloudOracleDbGcpIdentityConnectorsFilterArgs', 'GetDbmulticloudOracleDbGcpIdentityConnectorsFilterArgsDict']]] = None,
+                                                       filters: Optional[Sequence[Union['GetDbmulticloudOracleDbGcpIdentityConnectorsFilterArgs', 'GetDbmulticloudOracleDbGcpIdentityConnectorsFilterArgsDict', 'outputs.GetDbmulticloudOracleDbGcpIdentityConnectorsFilterResult']]] = None,
                                                        resource_id: Optional[_builtins.str] = None,
                                                        state: Optional[_builtins.str] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbmulticloudOracleDbGcpIdentityConnectorsResult:
@@ -168,7 +168,7 @@ def get_dbmulticloud_oracle_db_gcp_identity_connectors(compartment_id: Optional[
         state=pulumi.get(__ret__, 'state'))
 def get_dbmulticloud_oracle_db_gcp_identity_connectors_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbmulticloudOracleDbGcpIdentityConnectorsFilterArgs', 'GetDbmulticloudOracleDbGcpIdentityConnectorsFilterArgsDict']]]]] = None,
+                                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbmulticloudOracleDbGcpIdentityConnectorsFilterArgs', 'GetDbmulticloudOracleDbGcpIdentityConnectorsFilterArgsDict', 'outputs.GetDbmulticloudOracleDbGcpIdentityConnectorsFilterResult']]]]] = None,
                                                               resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbmulticloudOracleDbGcpIdentityConnectorsResult]:

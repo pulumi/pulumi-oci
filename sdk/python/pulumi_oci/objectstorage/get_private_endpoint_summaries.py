@@ -97,7 +97,7 @@ class AwaitableGetPrivateEndpointSummariesResult(GetPrivateEndpointSummariesResu
 
 
 def get_private_endpoint_summaries(compartment_id: Optional[_builtins.str] = None,
-                                   filters: Optional[Sequence[Union['GetPrivateEndpointSummariesFilterArgs', 'GetPrivateEndpointSummariesFilterArgsDict']]] = None,
+                                   filters: Optional[Sequence[Union['GetPrivateEndpointSummariesFilterArgs', 'GetPrivateEndpointSummariesFilterArgsDict', 'outputs.GetPrivateEndpointSummariesFilterResult']]] = None,
                                    namespace: Optional[_builtins.str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPrivateEndpointSummariesResult:
     """
@@ -141,7 +141,7 @@ def get_private_endpoint_summaries(compartment_id: Optional[_builtins.str] = Non
         namespace=pulumi.get(__ret__, 'namespace'),
         private_endpoint_summaries=pulumi.get(__ret__, 'private_endpoint_summaries'))
 def get_private_endpoint_summaries_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPrivateEndpointSummariesFilterArgs', 'GetPrivateEndpointSummariesFilterArgsDict']]]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPrivateEndpointSummariesFilterArgs', 'GetPrivateEndpointSummariesFilterArgsDict', 'outputs.GetPrivateEndpointSummariesFilterResult']]]]] = None,
                                           namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateEndpointSummariesResult]:
     """

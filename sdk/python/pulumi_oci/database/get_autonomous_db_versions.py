@@ -100,7 +100,7 @@ class AwaitableGetAutonomousDbVersionsResult(GetAutonomousDbVersionsResult):
 
 def get_autonomous_db_versions(compartment_id: Optional[_builtins.str] = None,
                                db_workload: Optional[_builtins.str] = None,
-                               filters: Optional[Sequence[Union['GetAutonomousDbVersionsFilterArgs', 'GetAutonomousDbVersionsFilterArgsDict']]] = None,
+                               filters: Optional[Sequence[Union['GetAutonomousDbVersionsFilterArgs', 'GetAutonomousDbVersionsFilterArgsDict', 'outputs.GetAutonomousDbVersionsFilterResult']]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDbVersionsResult:
     """
     This data source provides the list of Autonomous Db Versions in Oracle Cloud Infrastructure Database service.
@@ -136,7 +136,7 @@ def get_autonomous_db_versions(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'))
 def get_autonomous_db_versions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       db_workload: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDbVersionsFilterArgs', 'GetAutonomousDbVersionsFilterArgsDict']]]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDbVersionsFilterArgs', 'GetAutonomousDbVersionsFilterArgsDict', 'outputs.GetAutonomousDbVersionsFilterResult']]]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDbVersionsResult]:
     """
     This data source provides the list of Autonomous Db Versions in Oracle Cloud Infrastructure Database service.

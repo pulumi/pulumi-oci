@@ -119,7 +119,7 @@ class AwaitableGetCaBundlesResult(GetCaBundlesResult):
 
 def get_ca_bundles(ca_bundle_id: Optional[_builtins.str] = None,
                    compartment_id: Optional[_builtins.str] = None,
-                   filters: Optional[Sequence[Union['GetCaBundlesFilterArgs', 'GetCaBundlesFilterArgsDict']]] = None,
+                   filters: Optional[Sequence[Union['GetCaBundlesFilterArgs', 'GetCaBundlesFilterArgsDict', 'outputs.GetCaBundlesFilterResult']]] = None,
                    name: Optional[_builtins.str] = None,
                    state: Optional[_builtins.str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCaBundlesResult:
@@ -166,7 +166,7 @@ def get_ca_bundles(ca_bundle_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_ca_bundles_output(ca_bundle_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCaBundlesFilterArgs', 'GetCaBundlesFilterArgsDict']]]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCaBundlesFilterArgs', 'GetCaBundlesFilterArgsDict', 'outputs.GetCaBundlesFilterResult']]]]] = None,
                           name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCaBundlesResult]:

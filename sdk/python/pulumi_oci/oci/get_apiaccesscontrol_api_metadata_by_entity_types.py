@@ -119,7 +119,7 @@ class AwaitableGetApiaccesscontrolApiMetadataByEntityTypesResult(GetApiaccesscon
 
 def get_apiaccesscontrol_api_metadata_by_entity_types(compartment_id: Optional[_builtins.str] = None,
                                                       display_name: Optional[_builtins.str] = None,
-                                                      filters: Optional[Sequence[Union['GetApiaccesscontrolApiMetadataByEntityTypesFilterArgs', 'GetApiaccesscontrolApiMetadataByEntityTypesFilterArgsDict']]] = None,
+                                                      filters: Optional[Sequence[Union['GetApiaccesscontrolApiMetadataByEntityTypesFilterArgs', 'GetApiaccesscontrolApiMetadataByEntityTypesFilterArgsDict', 'outputs.GetApiaccesscontrolApiMetadataByEntityTypesFilterResult']]] = None,
                                                       resource_type: Optional[_builtins.str] = None,
                                                       state: Optional[_builtins.str] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApiaccesscontrolApiMetadataByEntityTypesResult:
@@ -165,7 +165,7 @@ def get_apiaccesscontrol_api_metadata_by_entity_types(compartment_id: Optional[_
         state=pulumi.get(__ret__, 'state'))
 def get_apiaccesscontrol_api_metadata_by_entity_types_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetApiaccesscontrolApiMetadataByEntityTypesFilterArgs', 'GetApiaccesscontrolApiMetadataByEntityTypesFilterArgsDict']]]]] = None,
+                                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetApiaccesscontrolApiMetadataByEntityTypesFilterArgs', 'GetApiaccesscontrolApiMetadataByEntityTypesFilterArgsDict', 'outputs.GetApiaccesscontrolApiMetadataByEntityTypesFilterResult']]]]] = None,
                                                              resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApiaccesscontrolApiMetadataByEntityTypesResult]:

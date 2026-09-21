@@ -122,7 +122,7 @@ class AwaitableGetMlApplicationInstancesResult(GetMlApplicationInstancesResult):
 
 def get_ml_application_instances(compartment_id: Optional[_builtins.str] = None,
                                  display_name: Optional[_builtins.str] = None,
-                                 filters: Optional[Sequence[Union['GetMlApplicationInstancesFilterArgs', 'GetMlApplicationInstancesFilterArgsDict']]] = None,
+                                 filters: Optional[Sequence[Union['GetMlApplicationInstancesFilterArgs', 'GetMlApplicationInstancesFilterArgsDict', 'outputs.GetMlApplicationInstancesFilterResult']]] = None,
                                  ml_application_id: Optional[_builtins.str] = None,
                                  state: Optional[_builtins.str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMlApplicationInstancesResult:
@@ -168,7 +168,7 @@ def get_ml_application_instances(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_ml_application_instances_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMlApplicationInstancesFilterArgs', 'GetMlApplicationInstancesFilterArgsDict']]]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMlApplicationInstancesFilterArgs', 'GetMlApplicationInstancesFilterArgsDict', 'outputs.GetMlApplicationInstancesFilterResult']]]]] = None,
                                         ml_application_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMlApplicationInstancesResult]:

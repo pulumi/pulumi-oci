@@ -542,8 +542,8 @@ class ManagedKafkaKafkaCluster(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedKafkaKafkaClusterAccessSubnetArgs', 'ManagedKafkaKafkaClusterAccessSubnetArgsDict']]]]] = None,
-                 broker_shape: pulumi.Input[Optional[Union['ManagedKafkaKafkaClusterBrokerShapeArgs', 'ManagedKafkaKafkaClusterBrokerShapeArgsDict']]] = None,
+                 access_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedKafkaKafkaClusterAccessSubnetArgs', 'ManagedKafkaKafkaClusterAccessSubnetArgsDict', 'outputs.ManagedKafkaKafkaClusterAccessSubnet']]]]] = None,
+                 broker_shape: pulumi.Input[Optional[Union['ManagedKafkaKafkaClusterBrokerShapeArgs', 'ManagedKafkaKafkaClusterBrokerShapeArgsDict', 'outputs.ManagedKafkaKafkaClusterBrokerShape']]] = None,
                  client_certificate_bundle: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_config_id: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_config_version: pulumi.Input[Optional[_builtins.int]] = None,
@@ -606,8 +606,8 @@ class ManagedKafkaKafkaCluster(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedKafkaKafkaClusterAccessSubnetArgs', 'ManagedKafkaKafkaClusterAccessSubnetArgsDict']]]] access_subnets: (Updatable) Subnets where broker/coordinator VNICs will be created.
-        :param pulumi.Input[Union['ManagedKafkaKafkaClusterBrokerShapeArgs', 'ManagedKafkaKafkaClusterBrokerShapeArgsDict']] broker_shape: (Updatable) Configuration of the broker node.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedKafkaKafkaClusterAccessSubnetArgs', 'ManagedKafkaKafkaClusterAccessSubnetArgsDict', 'outputs.ManagedKafkaKafkaClusterAccessSubnet']]]] access_subnets: (Updatable) Subnets where broker/coordinator VNICs will be created.
+        :param pulumi.Input[Union['ManagedKafkaKafkaClusterBrokerShapeArgs', 'ManagedKafkaKafkaClusterBrokerShapeArgsDict', 'outputs.ManagedKafkaKafkaClusterBrokerShape']] broker_shape: (Updatable) Configuration of the broker node.
         :param pulumi.Input[_builtins.str] client_certificate_bundle: (Updatable) CA certificate bundle for mTLS broker authentication.
         :param pulumi.Input[_builtins.str] cluster_config_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Kafka Cluster configuration object
         :param pulumi.Input[_builtins.int] cluster_config_version: (Updatable) The version of configuration object
@@ -692,8 +692,8 @@ class ManagedKafkaKafkaCluster(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedKafkaKafkaClusterAccessSubnetArgs', 'ManagedKafkaKafkaClusterAccessSubnetArgsDict']]]]] = None,
-                 broker_shape: pulumi.Input[Optional[Union['ManagedKafkaKafkaClusterBrokerShapeArgs', 'ManagedKafkaKafkaClusterBrokerShapeArgsDict']]] = None,
+                 access_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedKafkaKafkaClusterAccessSubnetArgs', 'ManagedKafkaKafkaClusterAccessSubnetArgsDict', 'outputs.ManagedKafkaKafkaClusterAccessSubnet']]]]] = None,
+                 broker_shape: pulumi.Input[Optional[Union['ManagedKafkaKafkaClusterBrokerShapeArgs', 'ManagedKafkaKafkaClusterBrokerShapeArgsDict', 'outputs.ManagedKafkaKafkaClusterBrokerShape']]] = None,
                  client_certificate_bundle: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_config_id: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_config_version: pulumi.Input[Optional[_builtins.int]] = None,
@@ -758,8 +758,8 @@ class ManagedKafkaKafkaCluster(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedKafkaKafkaClusterAccessSubnetArgs', 'ManagedKafkaKafkaClusterAccessSubnetArgsDict']]]]] = None,
-            broker_shape: pulumi.Input[Optional[Union['ManagedKafkaKafkaClusterBrokerShapeArgs', 'ManagedKafkaKafkaClusterBrokerShapeArgsDict']]] = None,
+            access_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedKafkaKafkaClusterAccessSubnetArgs', 'ManagedKafkaKafkaClusterAccessSubnetArgsDict', 'outputs.ManagedKafkaKafkaClusterAccessSubnet']]]]] = None,
+            broker_shape: pulumi.Input[Optional[Union['ManagedKafkaKafkaClusterBrokerShapeArgs', 'ManagedKafkaKafkaClusterBrokerShapeArgsDict', 'outputs.ManagedKafkaKafkaClusterBrokerShape']]] = None,
             client_certificate_bundle: pulumi.Input[Optional[_builtins.str]] = None,
             cluster_config_id: pulumi.Input[Optional[_builtins.str]] = None,
             cluster_config_version: pulumi.Input[Optional[_builtins.int]] = None,
@@ -769,7 +769,7 @@ class ManagedKafkaKafkaCluster(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            kafka_bootstrap_urls: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs', 'ManagedKafkaKafkaClusterKafkaBootstrapUrlArgsDict']]]]] = None,
+            kafka_bootstrap_urls: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs', 'ManagedKafkaKafkaClusterKafkaBootstrapUrlArgsDict', 'outputs.ManagedKafkaKafkaClusterKafkaBootstrapUrl']]]]] = None,
             kafka_version: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             secret_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -784,8 +784,8 @@ class ManagedKafkaKafkaCluster(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedKafkaKafkaClusterAccessSubnetArgs', 'ManagedKafkaKafkaClusterAccessSubnetArgsDict']]]] access_subnets: (Updatable) Subnets where broker/coordinator VNICs will be created.
-        :param pulumi.Input[Union['ManagedKafkaKafkaClusterBrokerShapeArgs', 'ManagedKafkaKafkaClusterBrokerShapeArgsDict']] broker_shape: (Updatable) Configuration of the broker node.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedKafkaKafkaClusterAccessSubnetArgs', 'ManagedKafkaKafkaClusterAccessSubnetArgsDict', 'outputs.ManagedKafkaKafkaClusterAccessSubnet']]]] access_subnets: (Updatable) Subnets where broker/coordinator VNICs will be created.
+        :param pulumi.Input[Union['ManagedKafkaKafkaClusterBrokerShapeArgs', 'ManagedKafkaKafkaClusterBrokerShapeArgsDict', 'outputs.ManagedKafkaKafkaClusterBrokerShape']] broker_shape: (Updatable) Configuration of the broker node.
         :param pulumi.Input[_builtins.str] client_certificate_bundle: (Updatable) CA certificate bundle for mTLS broker authentication.
         :param pulumi.Input[_builtins.str] cluster_config_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Kafka Cluster configuration object
         :param pulumi.Input[_builtins.int] cluster_config_version: (Updatable) The version of configuration object
@@ -795,7 +795,7 @@ class ManagedKafkaKafkaCluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs', 'ManagedKafkaKafkaClusterKafkaBootstrapUrlArgsDict']]]] kafka_bootstrap_urls: Bootstrap URL that can be used to connect to Kafka
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs', 'ManagedKafkaKafkaClusterKafkaBootstrapUrlArgsDict', 'outputs.ManagedKafkaKafkaClusterKafkaBootstrapUrl']]]] kafka_bootstrap_urls: Bootstrap URL that can be used to connect to Kafka
         :param pulumi.Input[_builtins.str] kafka_version: Version of Kafka to use to spin up the cluster
                
                ** IMPORTANT **

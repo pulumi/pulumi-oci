@@ -123,7 +123,7 @@ class AwaitableGetExecutionActionsResult(GetExecutionActionsResult):
 def get_execution_actions(compartment_id: Optional[_builtins.str] = None,
                           display_name: Optional[_builtins.str] = None,
                           execution_window_id: Optional[_builtins.str] = None,
-                          filters: Optional[Sequence[Union['GetExecutionActionsFilterArgs', 'GetExecutionActionsFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetExecutionActionsFilterArgs', 'GetExecutionActionsFilterArgsDict', 'outputs.GetExecutionActionsFilterResult']]] = None,
                           state: Optional[_builtins.str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExecutionActionsResult:
     """
@@ -169,7 +169,7 @@ def get_execution_actions(compartment_id: Optional[_builtins.str] = None,
 def get_execution_actions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  execution_window_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExecutionActionsFilterArgs', 'GetExecutionActionsFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExecutionActionsFilterArgs', 'GetExecutionActionsFilterArgsDict', 'outputs.GetExecutionActionsFilterResult']]]]] = None,
                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExecutionActionsResult]:
     """

@@ -84,7 +84,7 @@ class AwaitableGetSmtpCredentialsResult(GetSmtpCredentialsResult):
             user_id=self.user_id)
 
 
-def get_smtp_credentials(filters: Optional[Sequence[Union['GetSmtpCredentialsFilterArgs', 'GetSmtpCredentialsFilterArgsDict']]] = None,
+def get_smtp_credentials(filters: Optional[Sequence[Union['GetSmtpCredentialsFilterArgs', 'GetSmtpCredentialsFilterArgsDict', 'outputs.GetSmtpCredentialsFilterResult']]] = None,
                          user_id: Optional[_builtins.str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSmtpCredentialsResult:
     """
@@ -116,7 +116,7 @@ def get_smtp_credentials(filters: Optional[Sequence[Union['GetSmtpCredentialsFil
         id=pulumi.get(__ret__, 'id'),
         smtp_credentials=pulumi.get(__ret__, 'smtp_credentials'),
         user_id=pulumi.get(__ret__, 'user_id'))
-def get_smtp_credentials_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSmtpCredentialsFilterArgs', 'GetSmtpCredentialsFilterArgsDict']]]]] = None,
+def get_smtp_credentials_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSmtpCredentialsFilterArgs', 'GetSmtpCredentialsFilterArgsDict', 'outputs.GetSmtpCredentialsFilterResult']]]]] = None,
                                 user_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSmtpCredentialsResult]:
     """

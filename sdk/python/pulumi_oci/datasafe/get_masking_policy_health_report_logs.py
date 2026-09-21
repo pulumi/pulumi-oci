@@ -93,7 +93,7 @@ class AwaitableGetMaskingPolicyHealthReportLogsResult(GetMaskingPolicyHealthRepo
             message_type=self.message_type)
 
 
-def get_masking_policy_health_report_logs(filters: Optional[Sequence[Union['GetMaskingPolicyHealthReportLogsFilterArgs', 'GetMaskingPolicyHealthReportLogsFilterArgsDict']]] = None,
+def get_masking_policy_health_report_logs(filters: Optional[Sequence[Union['GetMaskingPolicyHealthReportLogsFilterArgs', 'GetMaskingPolicyHealthReportLogsFilterArgsDict', 'outputs.GetMaskingPolicyHealthReportLogsFilterResult']]] = None,
                                           masking_policy_health_report_id: Optional[_builtins.str] = None,
                                           message_type: Optional[_builtins.str] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMaskingPolicyHealthReportLogsResult:
@@ -129,7 +129,7 @@ def get_masking_policy_health_report_logs(filters: Optional[Sequence[Union['GetM
         masking_policy_health_report_id=pulumi.get(__ret__, 'masking_policy_health_report_id'),
         masking_policy_health_report_log_collections=pulumi.get(__ret__, 'masking_policy_health_report_log_collections'),
         message_type=pulumi.get(__ret__, 'message_type'))
-def get_masking_policy_health_report_logs_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingPolicyHealthReportLogsFilterArgs', 'GetMaskingPolicyHealthReportLogsFilterArgsDict']]]]] = None,
+def get_masking_policy_health_report_logs_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingPolicyHealthReportLogsFilterArgs', 'GetMaskingPolicyHealthReportLogsFilterArgsDict', 'outputs.GetMaskingPolicyHealthReportLogsFilterResult']]]]] = None,
                                                  masking_policy_health_report_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                  message_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingPolicyHealthReportLogsResult]:

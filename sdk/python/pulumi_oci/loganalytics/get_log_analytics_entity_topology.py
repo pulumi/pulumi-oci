@@ -121,7 +121,7 @@ class AwaitableGetLogAnalyticsEntityTopologyResult(GetLogAnalyticsEntityTopology
 
 
 def get_log_analytics_entity_topology(context: Optional[_builtins.str] = None,
-                                      filters: Optional[Sequence[Union['GetLogAnalyticsEntityTopologyFilterArgs', 'GetLogAnalyticsEntityTopologyFilterArgsDict']]] = None,
+                                      filters: Optional[Sequence[Union['GetLogAnalyticsEntityTopologyFilterArgs', 'GetLogAnalyticsEntityTopologyFilterArgsDict', 'outputs.GetLogAnalyticsEntityTopologyFilterResult']]] = None,
                                       log_analytics_entity_id: Optional[_builtins.str] = None,
                                       metadata_equals: Optional[Sequence[_builtins.str]] = None,
                                       namespace: Optional[_builtins.str] = None,
@@ -172,7 +172,7 @@ def get_log_analytics_entity_topology(context: Optional[_builtins.str] = None,
         namespace=pulumi.get(__ret__, 'namespace'),
         state=pulumi.get(__ret__, 'state'))
 def get_log_analytics_entity_topology_output(context: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLogAnalyticsEntityTopologyFilterArgs', 'GetLogAnalyticsEntityTopologyFilterArgsDict']]]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLogAnalyticsEntityTopologyFilterArgs', 'GetLogAnalyticsEntityTopologyFilterArgsDict', 'outputs.GetLogAnalyticsEntityTopologyFilterResult']]]]] = None,
                                              log_analytics_entity_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              metadata_equals: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                              namespace: pulumi.Input[Optional[_builtins.str]] = None,

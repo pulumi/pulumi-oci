@@ -110,7 +110,7 @@ class AwaitableGetManagedKafkaKafkaClusterConfigsResult(GetManagedKafkaKafkaClus
 
 def get_managed_kafka_kafka_cluster_configs(compartment_id: Optional[_builtins.str] = None,
                                             display_name: Optional[_builtins.str] = None,
-                                            filters: Optional[Sequence[Union['GetManagedKafkaKafkaClusterConfigsFilterArgs', 'GetManagedKafkaKafkaClusterConfigsFilterArgsDict']]] = None,
+                                            filters: Optional[Sequence[Union['GetManagedKafkaKafkaClusterConfigsFilterArgs', 'GetManagedKafkaKafkaClusterConfigsFilterArgsDict', 'outputs.GetManagedKafkaKafkaClusterConfigsFilterResult']]] = None,
                                             id: Optional[_builtins.str] = None,
                                             state: Optional[_builtins.str] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedKafkaKafkaClusterConfigsResult:
@@ -155,7 +155,7 @@ def get_managed_kafka_kafka_cluster_configs(compartment_id: Optional[_builtins.s
         state=pulumi.get(__ret__, 'state'))
 def get_managed_kafka_kafka_cluster_configs_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedKafkaKafkaClusterConfigsFilterArgs', 'GetManagedKafkaKafkaClusterConfigsFilterArgsDict']]]]] = None,
+                                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedKafkaKafkaClusterConfigsFilterArgs', 'GetManagedKafkaKafkaClusterConfigsFilterArgsDict', 'outputs.GetManagedKafkaKafkaClusterConfigsFilterResult']]]]] = None,
                                                    id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedKafkaKafkaClusterConfigsResult]:

@@ -152,7 +152,7 @@ class AwaitableGetFleetPerformanceTuningAnalysisResultsResult(GetFleetPerformanc
 
 def get_fleet_performance_tuning_analysis_results(application_id: Optional[_builtins.str] = None,
                                                   application_name: Optional[_builtins.str] = None,
-                                                  filters: Optional[Sequence[Union['GetFleetPerformanceTuningAnalysisResultsFilterArgs', 'GetFleetPerformanceTuningAnalysisResultsFilterArgsDict']]] = None,
+                                                  filters: Optional[Sequence[Union['GetFleetPerformanceTuningAnalysisResultsFilterArgs', 'GetFleetPerformanceTuningAnalysisResultsFilterArgsDict', 'outputs.GetFleetPerformanceTuningAnalysisResultsFilterResult']]] = None,
                                                   fleet_id: Optional[_builtins.str] = None,
                                                   host_name: Optional[_builtins.str] = None,
                                                   managed_instance_id: Optional[_builtins.str] = None,
@@ -213,7 +213,7 @@ def get_fleet_performance_tuning_analysis_results(application_id: Optional[_buil
         time_start=pulumi.get(__ret__, 'time_start'))
 def get_fleet_performance_tuning_analysis_results_output(application_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                          application_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetPerformanceTuningAnalysisResultsFilterArgs', 'GetFleetPerformanceTuningAnalysisResultsFilterArgsDict']]]]] = None,
+                                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetPerformanceTuningAnalysisResultsFilterArgs', 'GetFleetPerformanceTuningAnalysisResultsFilterArgsDict', 'outputs.GetFleetPerformanceTuningAnalysisResultsFilterResult']]]]] = None,
                                                          fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                          host_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                          managed_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

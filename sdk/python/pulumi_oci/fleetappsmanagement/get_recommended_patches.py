@@ -148,7 +148,7 @@ class AwaitableGetRecommendedPatchesResult(GetRecommendedPatchesResult):
 
 
 def get_recommended_patches(compartment_id: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetRecommendedPatchesFilterArgs', 'GetRecommendedPatchesFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetRecommendedPatchesFilterArgs', 'GetRecommendedPatchesFilterArgsDict', 'outputs.GetRecommendedPatchesFilterResult']]] = None,
                             patch_id: Optional[_builtins.str] = None,
                             patch_level: Optional[_builtins.str] = None,
                             patch_type: Optional[_builtins.str] = None,
@@ -209,7 +209,7 @@ def get_recommended_patches(compartment_id: Optional[_builtins.str] = None,
         target_id=pulumi.get(__ret__, 'target_id'),
         target_name=pulumi.get(__ret__, 'target_name'))
 def get_recommended_patches_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRecommendedPatchesFilterArgs', 'GetRecommendedPatchesFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRecommendedPatchesFilterArgs', 'GetRecommendedPatchesFilterArgsDict', 'outputs.GetRecommendedPatchesFilterResult']]]]] = None,
                                    patch_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    patch_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    patch_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

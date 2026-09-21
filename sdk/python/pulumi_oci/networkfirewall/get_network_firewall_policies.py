@@ -110,7 +110,7 @@ class AwaitableGetNetworkFirewallPoliciesResult(GetNetworkFirewallPoliciesResult
 
 def get_network_firewall_policies(compartment_id: Optional[_builtins.str] = None,
                                   display_name: Optional[_builtins.str] = None,
-                                  filters: Optional[Sequence[Union['GetNetworkFirewallPoliciesFilterArgs', 'GetNetworkFirewallPoliciesFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetNetworkFirewallPoliciesFilterArgs', 'GetNetworkFirewallPoliciesFilterArgsDict', 'outputs.GetNetworkFirewallPoliciesFilterResult']]] = None,
                                   id: Optional[_builtins.str] = None,
                                   state: Optional[_builtins.str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPoliciesResult:
@@ -155,7 +155,7 @@ def get_network_firewall_policies(compartment_id: Optional[_builtins.str] = None
         state=pulumi.get(__ret__, 'state'))
 def get_network_firewall_policies_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPoliciesFilterArgs', 'GetNetworkFirewallPoliciesFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPoliciesFilterArgs', 'GetNetworkFirewallPoliciesFilterArgsDict', 'outputs.GetNetworkFirewallPoliciesFilterResult']]]]] = None,
                                          id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPoliciesResult]:

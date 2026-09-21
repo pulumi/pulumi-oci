@@ -105,7 +105,7 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 query_definition: pulumi.Input[Optional[Union['UsageCarbonEmissionsQueryQueryDefinitionArgs', 'UsageCarbonEmissionsQueryQueryDefinitionArgsDict']]] = None,
+                 query_definition: pulumi.Input[Optional[Union['UsageCarbonEmissionsQueryQueryDefinitionArgs', 'UsageCarbonEmissionsQueryQueryDefinitionArgsDict', 'outputs.UsageCarbonEmissionsQueryQueryDefinition']]] = None,
                  __props__=None):
         """
         This resource provides the Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -163,7 +163,7 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID.
-        :param pulumi.Input[Union['UsageCarbonEmissionsQueryQueryDefinitionArgs', 'UsageCarbonEmissionsQueryQueryDefinitionArgsDict']] query_definition: (Updatable) The common fields for queries.
+        :param pulumi.Input[Union['UsageCarbonEmissionsQueryQueryDefinitionArgs', 'UsageCarbonEmissionsQueryQueryDefinitionArgsDict', 'outputs.UsageCarbonEmissionsQueryQueryDefinition']] query_definition: (Updatable) The common fields for queries.
         """
         ...
     @overload
@@ -240,7 +240,7 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 query_definition: pulumi.Input[Optional[Union['UsageCarbonEmissionsQueryQueryDefinitionArgs', 'UsageCarbonEmissionsQueryQueryDefinitionArgsDict']]] = None,
+                 query_definition: pulumi.Input[Optional[Union['UsageCarbonEmissionsQueryQueryDefinitionArgs', 'UsageCarbonEmissionsQueryQueryDefinitionArgsDict', 'outputs.UsageCarbonEmissionsQueryQueryDefinition']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -267,7 +267,7 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            query_definition: pulumi.Input[Optional[Union['UsageCarbonEmissionsQueryQueryDefinitionArgs', 'UsageCarbonEmissionsQueryQueryDefinitionArgsDict']]] = None) -> 'UsageCarbonEmissionsQuery':
+            query_definition: pulumi.Input[Optional[Union['UsageCarbonEmissionsQueryQueryDefinitionArgs', 'UsageCarbonEmissionsQueryQueryDefinitionArgsDict', 'outputs.UsageCarbonEmissionsQueryQueryDefinition']]] = None) -> 'UsageCarbonEmissionsQuery':
         """
         Get an existing UsageCarbonEmissionsQuery resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -276,7 +276,7 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID.
-        :param pulumi.Input[Union['UsageCarbonEmissionsQueryQueryDefinitionArgs', 'UsageCarbonEmissionsQueryQueryDefinitionArgsDict']] query_definition: (Updatable) The common fields for queries.
+        :param pulumi.Input[Union['UsageCarbonEmissionsQueryQueryDefinitionArgs', 'UsageCarbonEmissionsQueryQueryDefinitionArgsDict', 'outputs.UsageCarbonEmissionsQueryQueryDefinition']] query_definition: (Updatable) The common fields for queries.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

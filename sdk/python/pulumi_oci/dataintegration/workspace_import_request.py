@@ -454,7 +454,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
                  are_data_asset_references_included: pulumi.Input[Optional[_builtins.bool]] = None,
                  bucket: pulumi.Input[Optional[_builtins.str]] = None,
                  file_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 import_conflict_resolution: pulumi.Input[Optional[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict']]] = None,
+                 import_conflict_resolution: pulumi.Input[Optional[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict', 'outputs.WorkspaceImportRequestImportConflictResolution']]] = None,
                  object_key_for_import: pulumi.Input[Optional[_builtins.str]] = None,
                  object_storage_region: pulumi.Input[Optional[_builtins.str]] = None,
                  object_storage_tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -503,7 +503,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] are_data_asset_references_included: This field controls if the data asset references will be included during import.
         :param pulumi.Input[_builtins.str] bucket: Name of the Object Storage bucket where the object will be imported from.
         :param pulumi.Input[_builtins.str] file_name: Name of the zip file to be imported.
-        :param pulumi.Input[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict']] import_conflict_resolution: Import Objects Conflict resolution.
+        :param pulumi.Input[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict', 'outputs.WorkspaceImportRequestImportConflictResolution']] import_conflict_resolution: Import Objects Conflict resolution.
         :param pulumi.Input[_builtins.str] object_key_for_import: Key of the object inside which all the objects will be imported
         :param pulumi.Input[_builtins.str] object_storage_region: Region of the object storage (if using object storage of different region)
         :param pulumi.Input[_builtins.str] object_storage_tenancy_id: Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
@@ -574,7 +574,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
                  are_data_asset_references_included: pulumi.Input[Optional[_builtins.bool]] = None,
                  bucket: pulumi.Input[Optional[_builtins.str]] = None,
                  file_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 import_conflict_resolution: pulumi.Input[Optional[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict']]] = None,
+                 import_conflict_resolution: pulumi.Input[Optional[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict', 'outputs.WorkspaceImportRequestImportConflictResolution']]] = None,
                  object_key_for_import: pulumi.Input[Optional[_builtins.str]] = None,
                  object_storage_region: pulumi.Input[Optional[_builtins.str]] = None,
                  object_storage_tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -626,8 +626,8 @@ class WorkspaceImportRequest(pulumi.CustomResource):
             created_by: pulumi.Input[Optional[_builtins.str]] = None,
             error_messages: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             file_name: pulumi.Input[Optional[_builtins.str]] = None,
-            import_conflict_resolution: pulumi.Input[Optional[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict']]] = None,
-            imported_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceImportRequestImportedObjectArgs', 'WorkspaceImportRequestImportedObjectArgsDict']]]]] = None,
+            import_conflict_resolution: pulumi.Input[Optional[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict', 'outputs.WorkspaceImportRequestImportConflictResolution']]] = None,
+            imported_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceImportRequestImportedObjectArgs', 'WorkspaceImportRequestImportedObjectArgsDict', 'outputs.WorkspaceImportRequestImportedObject']]]]] = None,
             key: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             object_key_for_import: pulumi.Input[Optional[_builtins.str]] = None,
@@ -650,8 +650,8 @@ class WorkspaceImportRequest(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] created_by: Name of the user who initiated import request.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] error_messages: Contains key of the error
         :param pulumi.Input[_builtins.str] file_name: Name of the zip file to be imported.
-        :param pulumi.Input[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict']] import_conflict_resolution: Import Objects Conflict resolution.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceImportRequestImportedObjectArgs', 'WorkspaceImportRequestImportedObjectArgsDict']]]] imported_objects: The array of imported object details.
+        :param pulumi.Input[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict', 'outputs.WorkspaceImportRequestImportConflictResolution']] import_conflict_resolution: Import Objects Conflict resolution.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceImportRequestImportedObjectArgs', 'WorkspaceImportRequestImportedObjectArgsDict', 'outputs.WorkspaceImportRequestImportedObject']]]] imported_objects: The array of imported object details.
         :param pulumi.Input[_builtins.str] key: Import object request key
         :param pulumi.Input[_builtins.str] name: Name of the import request.
         :param pulumi.Input[_builtins.str] object_key_for_import: Key of the object inside which all the objects will be imported

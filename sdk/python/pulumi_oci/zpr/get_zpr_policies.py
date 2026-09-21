@@ -109,7 +109,7 @@ class AwaitableGetZprPoliciesResult(GetZprPoliciesResult):
 
 
 def get_zpr_policies(compartment_id: Optional[_builtins.str] = None,
-                     filters: Optional[Sequence[Union['GetZprPoliciesFilterArgs', 'GetZprPoliciesFilterArgsDict']]] = None,
+                     filters: Optional[Sequence[Union['GetZprPoliciesFilterArgs', 'GetZprPoliciesFilterArgsDict', 'outputs.GetZprPoliciesFilterResult']]] = None,
                      name: Optional[_builtins.str] = None,
                      state: Optional[_builtins.str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetZprPoliciesResult:
@@ -150,7 +150,7 @@ def get_zpr_policies(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         zpr_policies=pulumi.get(__ret__, 'zpr_policies'))
 def get_zpr_policies_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetZprPoliciesFilterArgs', 'GetZprPoliciesFilterArgsDict']]]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetZprPoliciesFilterArgs', 'GetZprPoliciesFilterArgsDict', 'outputs.GetZprPoliciesFilterResult']]]]] = None,
                             name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetZprPoliciesResult]:

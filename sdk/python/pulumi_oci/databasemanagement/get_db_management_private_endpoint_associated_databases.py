@@ -95,7 +95,7 @@ class AwaitableGetDbManagementPrivateEndpointAssociatedDatabasesResult(GetDbMana
 
 def get_db_management_private_endpoint_associated_databases(compartment_id: Optional[_builtins.str] = None,
                                                             db_management_private_endpoint_id: Optional[_builtins.str] = None,
-                                                            filters: Optional[Sequence[Union['GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs', 'GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgsDict']]] = None,
+                                                            filters: Optional[Sequence[Union['GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs', 'GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgsDict', 'outputs.GetDbManagementPrivateEndpointAssociatedDatabasesFilterResult']]] = None,
                                                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbManagementPrivateEndpointAssociatedDatabasesResult:
     """
     This data source provides the list of Db Management Private Endpoint Associated Databases in Oracle Cloud Infrastructure Database Management service.
@@ -131,7 +131,7 @@ def get_db_management_private_endpoint_associated_databases(compartment_id: Opti
         id=pulumi.get(__ret__, 'id'))
 def get_db_management_private_endpoint_associated_databases_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                    db_management_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs', 'GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgsDict']]]]] = None,
+                                                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs', 'GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgsDict', 'outputs.GetDbManagementPrivateEndpointAssociatedDatabasesFilterResult']]]]] = None,
                                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbManagementPrivateEndpointAssociatedDatabasesResult]:
     """
     This data source provides the list of Db Management Private Endpoint Associated Databases in Oracle Cloud Infrastructure Database Management service.

@@ -139,7 +139,7 @@ def get_guard_targets(access_level: Optional[_builtins.str] = None,
                       compartment_id: Optional[_builtins.str] = None,
                       compartment_id_in_subtree: Optional[_builtins.bool] = None,
                       display_name: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetGuardTargetsFilterArgs', 'GetGuardTargetsFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetGuardTargetsFilterArgs', 'GetGuardTargetsFilterArgsDict', 'outputs.GetGuardTargetsFilterResult']]] = None,
                       is_non_security_zone_targets_only_query: Optional[_builtins.bool] = None,
                       state: Optional[_builtins.str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGuardTargetsResult:
@@ -209,7 +209,7 @@ def get_guard_targets_output(access_level: pulumi.Input[Optional[Optional[_built
                              compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                              compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetGuardTargetsFilterArgs', 'GetGuardTargetsFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetGuardTargetsFilterArgs', 'GetGuardTargetsFilterArgsDict', 'outputs.GetGuardTargetsFilterResult']]]]] = None,
                              is_non_security_zone_targets_only_query: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGuardTargetsResult]:

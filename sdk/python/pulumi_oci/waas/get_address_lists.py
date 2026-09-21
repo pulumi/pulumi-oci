@@ -130,7 +130,7 @@ class AwaitableGetAddressListsResult(GetAddressListsResult):
 
 
 def get_address_lists(compartment_id: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetAddressListsFilterArgs', 'GetAddressListsFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetAddressListsFilterArgs', 'GetAddressListsFilterArgsDict', 'outputs.GetAddressListsFilterResult']]] = None,
                       ids: Optional[Sequence[_builtins.str]] = None,
                       names: Optional[Sequence[_builtins.str]] = None,
                       states: Optional[Sequence[_builtins.str]] = None,
@@ -186,7 +186,7 @@ def get_address_lists(compartment_id: Optional[_builtins.str] = None,
         time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
 def get_address_lists_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAddressListsFilterArgs', 'GetAddressListsFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAddressListsFilterArgs', 'GetAddressListsFilterArgsDict', 'outputs.GetAddressListsFilterResult']]]]] = None,
                              ids: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                              names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                              states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,

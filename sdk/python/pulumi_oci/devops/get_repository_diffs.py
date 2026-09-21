@@ -118,7 +118,7 @@ class AwaitableGetRepositoryDiffsResult(GetRepositoryDiffsResult):
 
 
 def get_repository_diffs(base_version: Optional[_builtins.str] = None,
-                         filters: Optional[Sequence[Union['GetRepositoryDiffsFilterArgs', 'GetRepositoryDiffsFilterArgsDict']]] = None,
+                         filters: Optional[Sequence[Union['GetRepositoryDiffsFilterArgs', 'GetRepositoryDiffsFilterArgsDict', 'outputs.GetRepositoryDiffsFilterResult']]] = None,
                          is_comparison_from_merge_base: Optional[_builtins.bool] = None,
                          repository_id: Optional[_builtins.str] = None,
                          target_repository_id: Optional[_builtins.str] = None,
@@ -169,7 +169,7 @@ def get_repository_diffs(base_version: Optional[_builtins.str] = None,
         target_repository_id=pulumi.get(__ret__, 'target_repository_id'),
         target_version=pulumi.get(__ret__, 'target_version'))
 def get_repository_diffs_output(base_version: pulumi.Input[Optional[_builtins.str]] = None,
-                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRepositoryDiffsFilterArgs', 'GetRepositoryDiffsFilterArgsDict']]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRepositoryDiffsFilterArgs', 'GetRepositoryDiffsFilterArgsDict', 'outputs.GetRepositoryDiffsFilterResult']]]]] = None,
                                 is_comparison_from_merge_base: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                 repository_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 target_repository_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

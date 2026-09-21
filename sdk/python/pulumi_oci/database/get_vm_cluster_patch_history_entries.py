@@ -81,7 +81,7 @@ class AwaitableGetVmClusterPatchHistoryEntriesResult(GetVmClusterPatchHistoryEnt
             vm_cluster_id=self.vm_cluster_id)
 
 
-def get_vm_cluster_patch_history_entries(filters: Optional[Sequence[Union['GetVmClusterPatchHistoryEntriesFilterArgs', 'GetVmClusterPatchHistoryEntriesFilterArgsDict']]] = None,
+def get_vm_cluster_patch_history_entries(filters: Optional[Sequence[Union['GetVmClusterPatchHistoryEntriesFilterArgs', 'GetVmClusterPatchHistoryEntriesFilterArgsDict', 'outputs.GetVmClusterPatchHistoryEntriesFilterResult']]] = None,
                                          vm_cluster_id: Optional[_builtins.str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVmClusterPatchHistoryEntriesResult:
     """
@@ -112,7 +112,7 @@ def get_vm_cluster_patch_history_entries(filters: Optional[Sequence[Union['GetVm
         id=pulumi.get(__ret__, 'id'),
         patch_history_entries=pulumi.get(__ret__, 'patch_history_entries'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
-def get_vm_cluster_patch_history_entries_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVmClusterPatchHistoryEntriesFilterArgs', 'GetVmClusterPatchHistoryEntriesFilterArgsDict']]]]] = None,
+def get_vm_cluster_patch_history_entries_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVmClusterPatchHistoryEntriesFilterArgs', 'GetVmClusterPatchHistoryEntriesFilterArgsDict', 'outputs.GetVmClusterPatchHistoryEntriesFilterResult']]]]] = None,
                                                 vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmClusterPatchHistoryEntriesResult]:
     """

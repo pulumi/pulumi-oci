@@ -81,7 +81,7 @@ class AwaitableGetPathRouteSetsResult(GetPathRouteSetsResult):
             path_route_sets=self.path_route_sets)
 
 
-def get_path_route_sets(filters: Optional[Sequence[Union['GetPathRouteSetsFilterArgs', 'GetPathRouteSetsFilterArgsDict']]] = None,
+def get_path_route_sets(filters: Optional[Sequence[Union['GetPathRouteSetsFilterArgs', 'GetPathRouteSetsFilterArgsDict', 'outputs.GetPathRouteSetsFilterResult']]] = None,
                         load_balancer_id: Optional[_builtins.str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPathRouteSetsResult:
     """
@@ -112,7 +112,7 @@ def get_path_route_sets(filters: Optional[Sequence[Union['GetPathRouteSetsFilter
         id=pulumi.get(__ret__, 'id'),
         load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'),
         path_route_sets=pulumi.get(__ret__, 'path_route_sets'))
-def get_path_route_sets_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPathRouteSetsFilterArgs', 'GetPathRouteSetsFilterArgsDict']]]]] = None,
+def get_path_route_sets_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPathRouteSetsFilterArgs', 'GetPathRouteSetsFilterArgsDict', 'outputs.GetPathRouteSetsFilterResult']]]]] = None,
                                load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPathRouteSetsResult]:
     """

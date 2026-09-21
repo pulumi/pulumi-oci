@@ -108,7 +108,7 @@ class AwaitableGetMediaWorkflowJobFactsResult(GetMediaWorkflowJobFactsResult):
             type=self.type)
 
 
-def get_media_workflow_job_facts(filters: Optional[Sequence[Union['GetMediaWorkflowJobFactsFilterArgs', 'GetMediaWorkflowJobFactsFilterArgsDict']]] = None,
+def get_media_workflow_job_facts(filters: Optional[Sequence[Union['GetMediaWorkflowJobFactsFilterArgs', 'GetMediaWorkflowJobFactsFilterArgsDict', 'outputs.GetMediaWorkflowJobFactsFilterResult']]] = None,
                                  key: Optional[_builtins.str] = None,
                                  media_workflow_job_id: Optional[_builtins.str] = None,
                                  type: Optional[_builtins.str] = None,
@@ -150,7 +150,7 @@ def get_media_workflow_job_facts(filters: Optional[Sequence[Union['GetMediaWorkf
         media_workflow_job_fact_collections=pulumi.get(__ret__, 'media_workflow_job_fact_collections'),
         media_workflow_job_id=pulumi.get(__ret__, 'media_workflow_job_id'),
         type=pulumi.get(__ret__, 'type'))
-def get_media_workflow_job_facts_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMediaWorkflowJobFactsFilterArgs', 'GetMediaWorkflowJobFactsFilterArgsDict']]]]] = None,
+def get_media_workflow_job_facts_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMediaWorkflowJobFactsFilterArgs', 'GetMediaWorkflowJobFactsFilterArgsDict', 'outputs.GetMediaWorkflowJobFactsFilterResult']]]]] = None,
                                         key: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         media_workflow_job_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

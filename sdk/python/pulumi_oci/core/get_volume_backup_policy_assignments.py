@@ -85,7 +85,7 @@ class AwaitableGetVolumeBackupPolicyAssignmentsResult(GetVolumeBackupPolicyAssig
 
 
 def get_volume_backup_policy_assignments(asset_id: Optional[_builtins.str] = None,
-                                         filters: Optional[Sequence[Union['GetVolumeBackupPolicyAssignmentsFilterArgs', 'GetVolumeBackupPolicyAssignmentsFilterArgsDict']]] = None,
+                                         filters: Optional[Sequence[Union['GetVolumeBackupPolicyAssignmentsFilterArgs', 'GetVolumeBackupPolicyAssignmentsFilterArgsDict', 'outputs.GetVolumeBackupPolicyAssignmentsFilterResult']]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVolumeBackupPolicyAssignmentsResult:
     """
     This data source provides the list of Volume Backup Policy Assignments in Oracle Cloud Infrastructure Core service.
@@ -118,7 +118,7 @@ def get_volume_backup_policy_assignments(asset_id: Optional[_builtins.str] = Non
         id=pulumi.get(__ret__, 'id'),
         volume_backup_policy_assignments=pulumi.get(__ret__, 'volume_backup_policy_assignments'))
 def get_volume_backup_policy_assignments_output(asset_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVolumeBackupPolicyAssignmentsFilterArgs', 'GetVolumeBackupPolicyAssignmentsFilterArgsDict']]]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVolumeBackupPolicyAssignmentsFilterArgs', 'GetVolumeBackupPolicyAssignmentsFilterArgsDict', 'outputs.GetVolumeBackupPolicyAssignmentsFilterResult']]]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeBackupPolicyAssignmentsResult]:
     """
     This data source provides the list of Volume Backup Policy Assignments in Oracle Cloud Infrastructure Core service.

@@ -133,7 +133,7 @@ def get_senders(compartment_id: Optional[_builtins.str] = None,
                 domain: Optional[_builtins.str] = None,
                 email_address: Optional[_builtins.str] = None,
                 email_ip_pool_id: Optional[_builtins.str] = None,
-                filters: Optional[Sequence[Union['GetSendersFilterArgs', 'GetSendersFilterArgsDict']]] = None,
+                filters: Optional[Sequence[Union['GetSendersFilterArgs', 'GetSendersFilterArgsDict', 'outputs.GetSendersFilterResult']]] = None,
                 state: Optional[_builtins.str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSendersResult:
     """
@@ -184,7 +184,7 @@ def get_senders_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = N
                        domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        email_address: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        email_ip_pool_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSendersFilterArgs', 'GetSendersFilterArgsDict']]]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSendersFilterArgs', 'GetSendersFilterArgsDict', 'outputs.GetSendersFilterResult']]]]] = None,
                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSendersResult]:
     """

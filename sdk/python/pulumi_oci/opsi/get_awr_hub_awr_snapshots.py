@@ -110,7 +110,7 @@ class AwaitableGetAwrHubAwrSnapshotsResult(GetAwrHubAwrSnapshotsResult):
 
 def get_awr_hub_awr_snapshots(awr_hub_id: Optional[_builtins.str] = None,
                               awr_source_database_identifier: Optional[_builtins.str] = None,
-                              filters: Optional[Sequence[Union['GetAwrHubAwrSnapshotsFilterArgs', 'GetAwrHubAwrSnapshotsFilterArgsDict']]] = None,
+                              filters: Optional[Sequence[Union['GetAwrHubAwrSnapshotsFilterArgs', 'GetAwrHubAwrSnapshotsFilterArgsDict', 'outputs.GetAwrHubAwrSnapshotsFilterResult']]] = None,
                               time_greater_than_or_equal_to: Optional[_builtins.str] = None,
                               time_less_than_or_equal_to: Optional[_builtins.str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAwrHubAwrSnapshotsResult:
@@ -157,7 +157,7 @@ def get_awr_hub_awr_snapshots(awr_hub_id: Optional[_builtins.str] = None,
         time_less_than_or_equal_to=pulumi.get(__ret__, 'time_less_than_or_equal_to'))
 def get_awr_hub_awr_snapshots_output(awr_hub_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      awr_source_database_identifier: pulumi.Input[Optional[_builtins.str]] = None,
-                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAwrHubAwrSnapshotsFilterArgs', 'GetAwrHubAwrSnapshotsFilterArgsDict']]]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAwrHubAwrSnapshotsFilterArgs', 'GetAwrHubAwrSnapshotsFilterArgsDict', 'outputs.GetAwrHubAwrSnapshotsFilterResult']]]]] = None,
                                      time_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      time_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAwrHubAwrSnapshotsResult]:

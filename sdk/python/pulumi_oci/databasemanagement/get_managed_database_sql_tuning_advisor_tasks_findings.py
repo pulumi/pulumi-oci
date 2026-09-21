@@ -158,7 +158,7 @@ class AwaitableGetManagedDatabaseSqlTuningAdvisorTasksFindingsResult(GetManagedD
 
 def get_managed_database_sql_tuning_advisor_tasks_findings(begin_exec_id: Optional[_builtins.str] = None,
                                                            end_exec_id: Optional[_builtins.str] = None,
-                                                           filters: Optional[Sequence[Union['GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgs', 'GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgsDict']]] = None,
+                                                           filters: Optional[Sequence[Union['GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgs', 'GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgsDict', 'outputs.GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterResult']]] = None,
                                                            finding_filter: Optional[_builtins.str] = None,
                                                            index_hash_filter: Optional[_builtins.str] = None,
                                                            managed_database_id: Optional[_builtins.str] = None,
@@ -229,7 +229,7 @@ def get_managed_database_sql_tuning_advisor_tasks_findings(begin_exec_id: Option
         stats_hash_filter=pulumi.get(__ret__, 'stats_hash_filter'))
 def get_managed_database_sql_tuning_advisor_tasks_findings_output(begin_exec_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                   end_exec_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgs', 'GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgsDict']]]]] = None,
+                                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgs', 'GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgsDict', 'outputs.GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterResult']]]]] = None,
                                                                   finding_filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                   index_hash_filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                   managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,

@@ -300,9 +300,9 @@ class CaptureFilter(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  filter_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 flow_log_capture_filter_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CaptureFilterFlowLogCaptureFilterRuleArgs', 'CaptureFilterFlowLogCaptureFilterRuleArgsDict']]]]] = None,
+                 flow_log_capture_filter_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CaptureFilterFlowLogCaptureFilterRuleArgs', 'CaptureFilterFlowLogCaptureFilterRuleArgsDict', 'outputs.CaptureFilterFlowLogCaptureFilterRule']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 vtap_capture_filter_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CaptureFilterVtapCaptureFilterRuleArgs', 'CaptureFilterVtapCaptureFilterRuleArgsDict']]]]] = None,
+                 vtap_capture_filter_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CaptureFilterVtapCaptureFilterRuleArgs', 'CaptureFilterVtapCaptureFilterRuleArgsDict', 'outputs.CaptureFilterVtapCaptureFilterRule']]]]] = None,
                  __props__=None):
         """
         This resource provides the Capture Filter resource in Oracle Cloud Infrastructure Core service.
@@ -418,9 +418,9 @@ class CaptureFilter(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] filter_type: Indicates which service will use this capture filter
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CaptureFilterFlowLogCaptureFilterRuleArgs', 'CaptureFilterFlowLogCaptureFilterRuleArgsDict']]]] flow_log_capture_filter_rules: (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CaptureFilterFlowLogCaptureFilterRuleArgs', 'CaptureFilterFlowLogCaptureFilterRuleArgsDict', 'outputs.CaptureFilterFlowLogCaptureFilterRule']]]] flow_log_capture_filter_rules: (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CaptureFilterVtapCaptureFilterRuleArgs', 'CaptureFilterVtapCaptureFilterRuleArgsDict']]]] vtap_capture_filter_rules: (Updatable) The set of rules governing what traffic a VTAP mirrors.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CaptureFilterVtapCaptureFilterRuleArgs', 'CaptureFilterVtapCaptureFilterRuleArgsDict', 'outputs.CaptureFilterVtapCaptureFilterRule']]]] vtap_capture_filter_rules: (Updatable) The set of rules governing what traffic a VTAP mirrors.
         """
         ...
     @overload
@@ -555,9 +555,9 @@ class CaptureFilter(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  filter_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 flow_log_capture_filter_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CaptureFilterFlowLogCaptureFilterRuleArgs', 'CaptureFilterFlowLogCaptureFilterRuleArgsDict']]]]] = None,
+                 flow_log_capture_filter_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CaptureFilterFlowLogCaptureFilterRuleArgs', 'CaptureFilterFlowLogCaptureFilterRuleArgsDict', 'outputs.CaptureFilterFlowLogCaptureFilterRule']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 vtap_capture_filter_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CaptureFilterVtapCaptureFilterRuleArgs', 'CaptureFilterVtapCaptureFilterRuleArgsDict']]]]] = None,
+                 vtap_capture_filter_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CaptureFilterVtapCaptureFilterRuleArgs', 'CaptureFilterVtapCaptureFilterRuleArgsDict', 'outputs.CaptureFilterVtapCaptureFilterRule']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -594,11 +594,11 @@ class CaptureFilter(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             filter_type: pulumi.Input[Optional[_builtins.str]] = None,
-            flow_log_capture_filter_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CaptureFilterFlowLogCaptureFilterRuleArgs', 'CaptureFilterFlowLogCaptureFilterRuleArgsDict']]]]] = None,
+            flow_log_capture_filter_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CaptureFilterFlowLogCaptureFilterRuleArgs', 'CaptureFilterFlowLogCaptureFilterRuleArgsDict', 'outputs.CaptureFilterFlowLogCaptureFilterRule']]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
-            vtap_capture_filter_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CaptureFilterVtapCaptureFilterRuleArgs', 'CaptureFilterVtapCaptureFilterRuleArgsDict']]]]] = None) -> 'CaptureFilter':
+            vtap_capture_filter_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CaptureFilterVtapCaptureFilterRuleArgs', 'CaptureFilterVtapCaptureFilterRuleArgsDict', 'outputs.CaptureFilterVtapCaptureFilterRule']]]]] = None) -> 'CaptureFilter':
         """
         Get an existing CaptureFilter resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -610,11 +610,11 @@ class CaptureFilter(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] filter_type: Indicates which service will use this capture filter
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CaptureFilterFlowLogCaptureFilterRuleArgs', 'CaptureFilterFlowLogCaptureFilterRuleArgsDict']]]] flow_log_capture_filter_rules: (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CaptureFilterFlowLogCaptureFilterRuleArgs', 'CaptureFilterFlowLogCaptureFilterRuleArgsDict', 'outputs.CaptureFilterFlowLogCaptureFilterRule']]]] flow_log_capture_filter_rules: (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] state: The capture filter's current administrative state.
         :param pulumi.Input[_builtins.str] time_created: The date and time the capture filter was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2021-08-25T21:10:29.600Z`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CaptureFilterVtapCaptureFilterRuleArgs', 'CaptureFilterVtapCaptureFilterRuleArgsDict']]]] vtap_capture_filter_rules: (Updatable) The set of rules governing what traffic a VTAP mirrors.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CaptureFilterVtapCaptureFilterRuleArgs', 'CaptureFilterVtapCaptureFilterRuleArgsDict', 'outputs.CaptureFilterVtapCaptureFilterRule']]]] vtap_capture_filter_rules: (Updatable) The set of rules governing what traffic a VTAP mirrors.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

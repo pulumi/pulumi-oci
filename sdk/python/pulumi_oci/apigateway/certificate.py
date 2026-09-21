@@ -450,7 +450,7 @@ class Certificate(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  intermediate_certificates: pulumi.Input[Optional[_builtins.str]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateLockArgs', 'CertificateLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateLockArgs', 'CertificateLockArgsDict', 'outputs.CertificateLock']]]]] = None,
                  private_key: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -502,7 +502,7 @@ class Certificate(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] intermediate_certificates: The intermediate certificate data associated with the certificate in pem format.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateLockArgs', 'CertificateLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateLockArgs', 'CertificateLockArgsDict', 'outputs.CertificateLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] private_key: The private key associated with the certificate in pem format.
                
                ** IMPORTANT **
@@ -577,7 +577,7 @@ class Certificate(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  intermediate_certificates: pulumi.Input[Optional[_builtins.str]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateLockArgs', 'CertificateLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateLockArgs', 'CertificateLockArgsDict', 'outputs.CertificateLock']]]]] = None,
                  private_key: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -630,7 +630,7 @@ class Certificate(pulumi.CustomResource):
             intermediate_certificates: pulumi.Input[Optional[_builtins.str]] = None,
             is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateLockArgs', 'CertificateLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateLockArgs', 'CertificateLockArgsDict', 'outputs.CertificateLock']]]]] = None,
             private_key: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             subject_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -652,7 +652,7 @@ class Certificate(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] intermediate_certificates: The intermediate certificate data associated with the certificate in pem format.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateLockArgs', 'CertificateLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateLockArgs', 'CertificateLockArgsDict', 'outputs.CertificateLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] private_key: The private key associated with the certificate in pem format.
                
                ** IMPORTANT **

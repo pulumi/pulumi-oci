@@ -108,7 +108,7 @@ class AwaitableGetSubscriptionRedemptionsResult(GetSubscriptionRedemptionsResult
             time_redeemed_less_than=self.time_redeemed_less_than)
 
 
-def get_subscription_redemptions(filters: Optional[Sequence[Union['GetSubscriptionRedemptionsFilterArgs', 'GetSubscriptionRedemptionsFilterArgsDict']]] = None,
+def get_subscription_redemptions(filters: Optional[Sequence[Union['GetSubscriptionRedemptionsFilterArgs', 'GetSubscriptionRedemptionsFilterArgsDict', 'outputs.GetSubscriptionRedemptionsFilterResult']]] = None,
                                  subscription_id: Optional[_builtins.str] = None,
                                  tenancy_id: Optional[_builtins.str] = None,
                                  time_redeemed_greater_than_or_equal_to: Optional[_builtins.str] = None,
@@ -154,7 +154,7 @@ def get_subscription_redemptions(filters: Optional[Sequence[Union['GetSubscripti
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
         time_redeemed_greater_than_or_equal_to=pulumi.get(__ret__, 'time_redeemed_greater_than_or_equal_to'),
         time_redeemed_less_than=pulumi.get(__ret__, 'time_redeemed_less_than'))
-def get_subscription_redemptions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionRedemptionsFilterArgs', 'GetSubscriptionRedemptionsFilterArgsDict']]]]] = None,
+def get_subscription_redemptions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionRedemptionsFilterArgs', 'GetSubscriptionRedemptionsFilterArgsDict', 'outputs.GetSubscriptionRedemptionsFilterResult']]]]] = None,
                                         subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         time_redeemed_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

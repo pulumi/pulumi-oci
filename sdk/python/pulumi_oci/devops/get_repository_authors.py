@@ -90,7 +90,7 @@ class AwaitableGetRepositoryAuthorsResult(GetRepositoryAuthorsResult):
             repository_id=self.repository_id)
 
 
-def get_repository_authors(filters: Optional[Sequence[Union['GetRepositoryAuthorsFilterArgs', 'GetRepositoryAuthorsFilterArgsDict']]] = None,
+def get_repository_authors(filters: Optional[Sequence[Union['GetRepositoryAuthorsFilterArgs', 'GetRepositoryAuthorsFilterArgsDict', 'outputs.GetRepositoryAuthorsFilterResult']]] = None,
                            ref_name: Optional[_builtins.str] = None,
                            repository_id: Optional[_builtins.str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRepositoryAuthorsResult:
@@ -126,7 +126,7 @@ def get_repository_authors(filters: Optional[Sequence[Union['GetRepositoryAuthor
         ref_name=pulumi.get(__ret__, 'ref_name'),
         repository_author_collections=pulumi.get(__ret__, 'repository_author_collections'),
         repository_id=pulumi.get(__ret__, 'repository_id'))
-def get_repository_authors_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRepositoryAuthorsFilterArgs', 'GetRepositoryAuthorsFilterArgsDict']]]]] = None,
+def get_repository_authors_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRepositoryAuthorsFilterArgs', 'GetRepositoryAuthorsFilterArgsDict', 'outputs.GetRepositoryAuthorsFilterResult']]]]] = None,
                                   ref_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   repository_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryAuthorsResult]:

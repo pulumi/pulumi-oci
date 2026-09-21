@@ -82,7 +82,7 @@ class AwaitableGetOpensearchVersionsResult(GetOpensearchVersionsResult):
 
 
 def get_opensearch_versions(compartment_id: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetOpensearchVersionsFilterArgs', 'GetOpensearchVersionsFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetOpensearchVersionsFilterArgs', 'GetOpensearchVersionsFilterArgsDict', 'outputs.GetOpensearchVersionsFilterResult']]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOpensearchVersionsResult:
     """
     This data source provides the list of Opensearch Versions in Oracle Cloud Infrastructure Opensearch service.
@@ -122,7 +122,7 @@ def get_opensearch_versions(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         opensearch_versions_collections=pulumi.get(__ret__, 'opensearch_versions_collections'))
 def get_opensearch_versions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOpensearchVersionsFilterArgs', 'GetOpensearchVersionsFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOpensearchVersionsFilterArgs', 'GetOpensearchVersionsFilterArgsDict', 'outputs.GetOpensearchVersionsFilterResult']]]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOpensearchVersionsResult]:
     """
     This data source provides the list of Opensearch Versions in Oracle Cloud Infrastructure Opensearch service.

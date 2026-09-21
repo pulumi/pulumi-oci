@@ -212,7 +212,7 @@ class AwaitableGetZonesResult(GetZonesResult):
 
 def get_zones(compartment_id: Optional[_builtins.str] = None,
               dnssec_state: Optional[_builtins.str] = None,
-              filters: Optional[Sequence[Union['GetZonesFilterArgs', 'GetZonesFilterArgsDict']]] = None,
+              filters: Optional[Sequence[Union['GetZonesFilterArgs', 'GetZonesFilterArgsDict', 'outputs.GetZonesFilterResult']]] = None,
               name: Optional[_builtins.str] = None,
               name_contains: Optional[_builtins.str] = None,
               scope: Optional[_builtins.str] = None,
@@ -304,7 +304,7 @@ def get_zones(compartment_id: Optional[_builtins.str] = None,
         zones=pulumi.get(__ret__, 'zones'))
 def get_zones_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                      dnssec_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetZonesFilterArgs', 'GetZonesFilterArgsDict']]]]] = None,
+                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetZonesFilterArgs', 'GetZonesFilterArgsDict', 'outputs.GetZonesFilterResult']]]]] = None,
                      name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      scope: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

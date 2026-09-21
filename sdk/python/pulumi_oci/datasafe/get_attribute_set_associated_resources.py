@@ -108,7 +108,7 @@ class AwaitableGetAttributeSetAssociatedResourcesResult(GetAttributeSetAssociate
 def get_attribute_set_associated_resources(associated_resource_id: Optional[_builtins.str] = None,
                                            associated_resource_type: Optional[_builtins.str] = None,
                                            attribute_set_id: Optional[_builtins.str] = None,
-                                           filters: Optional[Sequence[Union['GetAttributeSetAssociatedResourcesFilterArgs', 'GetAttributeSetAssociatedResourcesFilterArgsDict']]] = None,
+                                           filters: Optional[Sequence[Union['GetAttributeSetAssociatedResourcesFilterArgs', 'GetAttributeSetAssociatedResourcesFilterArgsDict', 'outputs.GetAttributeSetAssociatedResourcesFilterResult']]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAttributeSetAssociatedResourcesResult:
     """
     This data source provides the list of Attribute Set Associated Resources in Oracle Cloud Infrastructure Data Safe service.
@@ -149,7 +149,7 @@ def get_attribute_set_associated_resources(associated_resource_id: Optional[_bui
 def get_attribute_set_associated_resources_output(associated_resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   associated_resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   attribute_set_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAttributeSetAssociatedResourcesFilterArgs', 'GetAttributeSetAssociatedResourcesFilterArgsDict']]]]] = None,
+                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAttributeSetAssociatedResourcesFilterArgs', 'GetAttributeSetAssociatedResourcesFilterArgsDict', 'outputs.GetAttributeSetAssociatedResourcesFilterResult']]]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAttributeSetAssociatedResourcesResult]:
     """
     This data source provides the list of Attribute Set Associated Resources in Oracle Cloud Infrastructure Data Safe service.

@@ -123,7 +123,7 @@ class AwaitableGetBuildPipelineStagesResult(GetBuildPipelineStagesResult):
 def get_build_pipeline_stages(build_pipeline_id: Optional[_builtins.str] = None,
                               compartment_id: Optional[_builtins.str] = None,
                               display_name: Optional[_builtins.str] = None,
-                              filters: Optional[Sequence[Union['GetBuildPipelineStagesFilterArgs', 'GetBuildPipelineStagesFilterArgsDict']]] = None,
+                              filters: Optional[Sequence[Union['GetBuildPipelineStagesFilterArgs', 'GetBuildPipelineStagesFilterArgsDict', 'outputs.GetBuildPipelineStagesFilterResult']]] = None,
                               id: Optional[_builtins.str] = None,
                               state: Optional[_builtins.str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBuildPipelineStagesResult:
@@ -173,7 +173,7 @@ def get_build_pipeline_stages(build_pipeline_id: Optional[_builtins.str] = None,
 def get_build_pipeline_stages_output(build_pipeline_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBuildPipelineStagesFilterArgs', 'GetBuildPipelineStagesFilterArgsDict']]]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBuildPipelineStagesFilterArgs', 'GetBuildPipelineStagesFilterArgsDict', 'outputs.GetBuildPipelineStagesFilterResult']]]]] = None,
                                      id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBuildPipelineStagesResult]:

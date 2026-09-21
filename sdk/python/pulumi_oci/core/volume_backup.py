@@ -650,8 +650,8 @@ class VolumeBackup(pulumi.CustomResource):
                  is_prevent_deletion_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_retention_lock_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 retention_period: pulumi.Input[Optional[Union['VolumeBackupRetentionPeriodArgs', 'VolumeBackupRetentionPeriodArgsDict']]] = None,
-                 source_details: pulumi.Input[Optional[Union['VolumeBackupSourceDetailsArgs', 'VolumeBackupSourceDetailsArgsDict']]] = None,
+                 retention_period: pulumi.Input[Optional[Union['VolumeBackupRetentionPeriodArgs', 'VolumeBackupRetentionPeriodArgsDict', 'outputs.VolumeBackupRetentionPeriod']]] = None,
+                 source_details: pulumi.Input[Optional[Union['VolumeBackupSourceDetailsArgs', 'VolumeBackupSourceDetailsArgsDict', 'outputs.VolumeBackupSourceDetails']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  volume_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -713,8 +713,8 @@ class VolumeBackup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_prevent_deletion_enabled: (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
         :param pulumi.Input[_builtins.bool] is_retention_lock_enabled: (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
-        :param pulumi.Input[Union['VolumeBackupRetentionPeriodArgs', 'VolumeBackupRetentionPeriodArgsDict']] retention_period: (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
-        :param pulumi.Input[Union['VolumeBackupSourceDetailsArgs', 'VolumeBackupSourceDetailsArgsDict']] source_details: Details of the volume backup source in the cloud.
+        :param pulumi.Input[Union['VolumeBackupRetentionPeriodArgs', 'VolumeBackupRetentionPeriodArgsDict', 'outputs.VolumeBackupRetentionPeriod']] retention_period: (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        :param pulumi.Input[Union['VolumeBackupSourceDetailsArgs', 'VolumeBackupSourceDetailsArgsDict', 'outputs.VolumeBackupSourceDetails']] source_details: Details of the volume backup source in the cloud.
         :param pulumi.Input[_builtins.str] type: The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
         :param pulumi.Input[_builtins.str] volume_id: The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
         """
@@ -795,8 +795,8 @@ class VolumeBackup(pulumi.CustomResource):
                  is_prevent_deletion_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_retention_lock_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 retention_period: pulumi.Input[Optional[Union['VolumeBackupRetentionPeriodArgs', 'VolumeBackupRetentionPeriodArgsDict']]] = None,
-                 source_details: pulumi.Input[Optional[Union['VolumeBackupSourceDetailsArgs', 'VolumeBackupSourceDetailsArgsDict']]] = None,
+                 retention_period: pulumi.Input[Optional[Union['VolumeBackupRetentionPeriodArgs', 'VolumeBackupRetentionPeriodArgsDict', 'outputs.VolumeBackupRetentionPeriod']]] = None,
+                 source_details: pulumi.Input[Optional[Union['VolumeBackupSourceDetailsArgs', 'VolumeBackupSourceDetailsArgsDict', 'outputs.VolumeBackupSourceDetails']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  volume_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -852,10 +852,10 @@ class VolumeBackup(pulumi.CustomResource):
             is_prevent_deletion_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_retention_lock_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
-            retention_period: pulumi.Input[Optional[Union['VolumeBackupRetentionPeriodArgs', 'VolumeBackupRetentionPeriodArgsDict']]] = None,
+            retention_period: pulumi.Input[Optional[Union['VolumeBackupRetentionPeriodArgs', 'VolumeBackupRetentionPeriodArgsDict', 'outputs.VolumeBackupRetentionPeriod']]] = None,
             size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
             size_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
-            source_details: pulumi.Input[Optional[Union['VolumeBackupSourceDetailsArgs', 'VolumeBackupSourceDetailsArgsDict']]] = None,
+            source_details: pulumi.Input[Optional[Union['VolumeBackupSourceDetailsArgs', 'VolumeBackupSourceDetailsArgsDict', 'outputs.VolumeBackupSourceDetails']]] = None,
             source_type: pulumi.Input[Optional[_builtins.str]] = None,
             source_volume_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -884,10 +884,10 @@ class VolumeBackup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_prevent_deletion_enabled: (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
         :param pulumi.Input[_builtins.bool] is_retention_lock_enabled: (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
-        :param pulumi.Input[Union['VolumeBackupRetentionPeriodArgs', 'VolumeBackupRetentionPeriodArgsDict']] retention_period: (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        :param pulumi.Input[Union['VolumeBackupRetentionPeriodArgs', 'VolumeBackupRetentionPeriodArgsDict', 'outputs.VolumeBackupRetentionPeriod']] retention_period: (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
         :param pulumi.Input[_builtins.str] size_in_gbs: The size of the volume, in GBs.
         :param pulumi.Input[_builtins.str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
-        :param pulumi.Input[Union['VolumeBackupSourceDetailsArgs', 'VolumeBackupSourceDetailsArgsDict']] source_details: Details of the volume backup source in the cloud.
+        :param pulumi.Input[Union['VolumeBackupSourceDetailsArgs', 'VolumeBackupSourceDetailsArgsDict', 'outputs.VolumeBackupSourceDetails']] source_details: Details of the volume backup source in the cloud.
         :param pulumi.Input[_builtins.str] source_type: Specifies whether the backup was created manually, or via scheduled backup policy.
         :param pulumi.Input[_builtins.str] source_volume_backup_id: The OCID of the source volume backup.
         :param pulumi.Input[_builtins.str] state: The current state of a volume backup.

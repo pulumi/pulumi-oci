@@ -633,7 +633,7 @@ class Backup(pulumi.CustomResource):
             database_id: pulumi.Input[Optional[_builtins.str]] = None,
             database_size_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            encryption_key_location_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BackupEncryptionKeyLocationDetailArgs', 'BackupEncryptionKeyLocationDetailArgsDict']]]]] = None,
+            encryption_key_location_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BackupEncryptionKeyLocationDetailArgs', 'BackupEncryptionKeyLocationDetailArgsDict', 'outputs.BackupEncryptionKeyLocationDetail']]]]] = None,
             is_using_oracle_managed_keys: pulumi.Input[Optional[_builtins.bool]] = None,
             key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
             key_store_wallet_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -667,7 +667,7 @@ class Backup(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BackupEncryptionKeyLocationDetailArgs', 'BackupEncryptionKeyLocationDetailArgsDict']]]] encryption_key_location_details: Types of providers supported for managing database encryption keys
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BackupEncryptionKeyLocationDetailArgs', 'BackupEncryptionKeyLocationDetailArgsDict', 'outputs.BackupEncryptionKeyLocationDetail']]]] encryption_key_location_details: Types of providers supported for managing database encryption keys
         :param pulumi.Input[_builtins.str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param pulumi.Input[_builtins.str] key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.

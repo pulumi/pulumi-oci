@@ -110,7 +110,7 @@ class AwaitableGetDataccInfrastructuresResult(GetDataccInfrastructuresResult):
 
 def get_datacc_infrastructures(compartment_id: Optional[_builtins.str] = None,
                                display_name: Optional[_builtins.str] = None,
-                               filters: Optional[Sequence[Union['GetDataccInfrastructuresFilterArgs', 'GetDataccInfrastructuresFilterArgsDict']]] = None,
+                               filters: Optional[Sequence[Union['GetDataccInfrastructuresFilterArgs', 'GetDataccInfrastructuresFilterArgsDict', 'outputs.GetDataccInfrastructuresFilterResult']]] = None,
                                states: Optional[Sequence[_builtins.str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDataccInfrastructuresResult:
     """
@@ -151,7 +151,7 @@ def get_datacc_infrastructures(compartment_id: Optional[_builtins.str] = None,
         states=pulumi.get(__ret__, 'states'))
 def get_datacc_infrastructures_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDataccInfrastructuresFilterArgs', 'GetDataccInfrastructuresFilterArgsDict']]]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDataccInfrastructuresFilterArgs', 'GetDataccInfrastructuresFilterArgsDict', 'outputs.GetDataccInfrastructuresFilterResult']]]]] = None,
                                       states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataccInfrastructuresResult]:
     """

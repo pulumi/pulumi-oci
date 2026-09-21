@@ -114,7 +114,7 @@ class AwaitableGetAuditEventsResult(GetAuditEventsResult):
 def get_audit_events(access_level: Optional[_builtins.str] = None,
                      compartment_id: Optional[_builtins.str] = None,
                      compartment_id_in_subtree: Optional[_builtins.bool] = None,
-                     filters: Optional[Sequence[Union['GetAuditEventsFilterArgs', 'GetAuditEventsFilterArgsDict']]] = None,
+                     filters: Optional[Sequence[Union['GetAuditEventsFilterArgs', 'GetAuditEventsFilterArgsDict', 'outputs.GetAuditEventsFilterResult']]] = None,
                      scim_query: Optional[_builtins.str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuditEventsResult:
     """
@@ -174,7 +174,7 @@ def get_audit_events(access_level: Optional[_builtins.str] = None,
 def get_audit_events_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                             compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
-                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAuditEventsFilterArgs', 'GetAuditEventsFilterArgsDict']]]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAuditEventsFilterArgs', 'GetAuditEventsFilterArgsDict', 'outputs.GetAuditEventsFilterResult']]]]] = None,
                             scim_query: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditEventsResult]:
     """

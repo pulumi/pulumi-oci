@@ -109,7 +109,7 @@ class AwaitableGetEmailDomainsResult(GetEmailDomainsResult):
 
 
 def get_email_domains(compartment_id: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetEmailDomainsFilterArgs', 'GetEmailDomainsFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetEmailDomainsFilterArgs', 'GetEmailDomainsFilterArgsDict', 'outputs.GetEmailDomainsFilterResult']]] = None,
                       id: Optional[_builtins.str] = None,
                       name: Optional[_builtins.str] = None,
                       state: Optional[_builtins.str] = None,
@@ -154,7 +154,7 @@ def get_email_domains(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
 def get_email_domains_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetEmailDomainsFilterArgs', 'GetEmailDomainsFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetEmailDomainsFilterArgs', 'GetEmailDomainsFilterArgsDict', 'outputs.GetEmailDomainsFilterResult']]]]] = None,
                              id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

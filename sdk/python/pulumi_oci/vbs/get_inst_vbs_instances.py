@@ -109,7 +109,7 @@ class AwaitableGetInstVbsInstancesResult(GetInstVbsInstancesResult):
 
 
 def get_inst_vbs_instances(compartment_id: Optional[_builtins.str] = None,
-                           filters: Optional[Sequence[Union['GetInstVbsInstancesFilterArgs', 'GetInstVbsInstancesFilterArgsDict']]] = None,
+                           filters: Optional[Sequence[Union['GetInstVbsInstancesFilterArgs', 'GetInstVbsInstancesFilterArgsDict', 'outputs.GetInstVbsInstancesFilterResult']]] = None,
                            id: Optional[_builtins.str] = None,
                            name: Optional[_builtins.str] = None,
                            state: Optional[_builtins.str] = None,
@@ -154,7 +154,7 @@ def get_inst_vbs_instances(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         vbs_instance_summary_collections=pulumi.get(__ret__, 'vbs_instance_summary_collections'))
 def get_inst_vbs_instances_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstVbsInstancesFilterArgs', 'GetInstVbsInstancesFilterArgsDict']]]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstVbsInstancesFilterArgs', 'GetInstVbsInstancesFilterArgsDict', 'outputs.GetInstVbsInstancesFilterResult']]]]] = None,
                                   id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

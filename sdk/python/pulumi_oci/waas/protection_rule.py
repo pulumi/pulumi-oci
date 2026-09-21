@@ -233,7 +233,7 @@ class ProtectionRule(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: pulumi.Input[Optional[_builtins.str]] = None,
-                 exclusions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionRuleExclusionArgs', 'ProtectionRuleExclusionArgsDict']]]]] = None,
+                 exclusions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionRuleExclusionArgs', 'ProtectionRuleExclusionArgsDict', 'outputs.ProtectionRuleExclusion']]]]] = None,
                  key: pulumi.Input[Optional[_builtins.str]] = None,
                  waas_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -274,7 +274,7 @@ class ProtectionRule(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleExclusionArgs', 'ProtectionRuleExclusionArgsDict']]]] exclusions: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleExclusionArgs', 'ProtectionRuleExclusionArgsDict', 'outputs.ProtectionRuleExclusion']]]] exclusions: (Updatable)
         :param pulumi.Input[_builtins.str] key: (Updatable) The unique key of the protection rule.
         :param pulumi.Input[_builtins.str] waas_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
         """
@@ -334,7 +334,7 @@ class ProtectionRule(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: pulumi.Input[Optional[_builtins.str]] = None,
-                 exclusions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionRuleExclusionArgs', 'ProtectionRuleExclusionArgsDict']]]]] = None,
+                 exclusions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionRuleExclusionArgs', 'ProtectionRuleExclusionArgsDict', 'outputs.ProtectionRuleExclusion']]]]] = None,
                  key: pulumi.Input[Optional[_builtins.str]] = None,
                  waas_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -370,7 +370,7 @@ class ProtectionRule(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             action: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            exclusions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionRuleExclusionArgs', 'ProtectionRuleExclusionArgsDict']]]]] = None,
+            exclusions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionRuleExclusionArgs', 'ProtectionRuleExclusionArgsDict', 'outputs.ProtectionRuleExclusion']]]]] = None,
             key: pulumi.Input[Optional[_builtins.str]] = None,
             labels: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             mod_security_rule_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -385,7 +385,7 @@ class ProtectionRule(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
         :param pulumi.Input[_builtins.str] description: The description of the protection rule.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleExclusionArgs', 'ProtectionRuleExclusionArgsDict']]]] exclusions: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleExclusionArgs', 'ProtectionRuleExclusionArgsDict', 'outputs.ProtectionRuleExclusion']]]] exclusions: (Updatable)
         :param pulumi.Input[_builtins.str] key: (Updatable) The unique key of the protection rule.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] labels: The list of labels for the protection rule.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] mod_security_rule_ids: The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).

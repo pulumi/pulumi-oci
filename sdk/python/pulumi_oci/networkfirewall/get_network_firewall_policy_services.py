@@ -91,7 +91,7 @@ class AwaitableGetNetworkFirewallPolicyServicesResult(GetNetworkFirewallPolicySe
 
 
 def get_network_firewall_policy_services(display_name: Optional[_builtins.str] = None,
-                                         filters: Optional[Sequence[Union['GetNetworkFirewallPolicyServicesFilterArgs', 'GetNetworkFirewallPolicyServicesFilterArgsDict']]] = None,
+                                         filters: Optional[Sequence[Union['GetNetworkFirewallPolicyServicesFilterArgs', 'GetNetworkFirewallPolicyServicesFilterArgsDict', 'outputs.GetNetworkFirewallPolicyServicesFilterResult']]] = None,
                                          network_firewall_policy_id: Optional[_builtins.str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyServicesResult:
     """
@@ -127,7 +127,7 @@ def get_network_firewall_policy_services(display_name: Optional[_builtins.str] =
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'),
         service_summary_collections=pulumi.get(__ret__, 'service_summary_collections'))
 def get_network_firewall_policy_services_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPolicyServicesFilterArgs', 'GetNetworkFirewallPolicyServicesFilterArgsDict']]]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPolicyServicesFilterArgs', 'GetNetworkFirewallPolicyServicesFilterArgsDict', 'outputs.GetNetworkFirewallPolicyServicesFilterResult']]]]] = None,
                                                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyServicesResult]:
     """

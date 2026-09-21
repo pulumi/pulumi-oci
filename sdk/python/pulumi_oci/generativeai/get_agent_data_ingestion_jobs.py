@@ -123,7 +123,7 @@ class AwaitableGetAgentDataIngestionJobsResult(GetAgentDataIngestionJobsResult):
 def get_agent_data_ingestion_jobs(compartment_id: Optional[_builtins.str] = None,
                                   data_source_id: Optional[_builtins.str] = None,
                                   display_name: Optional[_builtins.str] = None,
-                                  filters: Optional[Sequence[Union['GetAgentDataIngestionJobsFilterArgs', 'GetAgentDataIngestionJobsFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetAgentDataIngestionJobsFilterArgs', 'GetAgentDataIngestionJobsFilterArgsDict', 'outputs.GetAgentDataIngestionJobsFilterResult']]] = None,
                                   state: Optional[_builtins.str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAgentDataIngestionJobsResult:
     """
@@ -171,7 +171,7 @@ def get_agent_data_ingestion_jobs(compartment_id: Optional[_builtins.str] = None
 def get_agent_data_ingestion_jobs_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          data_source_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAgentDataIngestionJobsFilterArgs', 'GetAgentDataIngestionJobsFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAgentDataIngestionJobsFilterArgs', 'GetAgentDataIngestionJobsFilterArgsDict', 'outputs.GetAgentDataIngestionJobsFilterResult']]]]] = None,
                                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentDataIngestionJobsResult]:
     """

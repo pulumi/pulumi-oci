@@ -456,7 +456,7 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 gpu_memory_cluster_scale_config: pulumi.Input[Optional[Union['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs', 'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict']]] = None,
+                 gpu_memory_cluster_scale_config: pulumi.Input[Optional[Union['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs', 'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict', 'outputs.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig']]] = None,
                  gpu_memory_fabric_id: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
                  private_ip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -515,7 +515,7 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs', 'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict']] gpu_memory_cluster_scale_config: (Updatable) Configuration settings for GPU Memory Cluster scaling.
+        :param pulumi.Input[Union['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs', 'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict', 'outputs.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig']] gpu_memory_cluster_scale_config: (Updatable) Configuration settings for GPU Memory Cluster scaling.
         :param pulumi.Input[_builtins.str] gpu_memory_fabric_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
         :param pulumi.Input[_builtins.str] instance_configuration_id: (Updatable) Instance Configuration to be used for this GPU Memory Cluster
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] private_ip_ids: (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
@@ -596,7 +596,7 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 gpu_memory_cluster_scale_config: pulumi.Input[Optional[Union['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs', 'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict']]] = None,
+                 gpu_memory_cluster_scale_config: pulumi.Input[Optional[Union['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs', 'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict', 'outputs.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig']]] = None,
                  gpu_memory_fabric_id: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
                  private_ip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -648,7 +648,7 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            gpu_memory_cluster_scale_config: pulumi.Input[Optional[Union['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs', 'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict']]] = None,
+            gpu_memory_cluster_scale_config: pulumi.Input[Optional[Union['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs', 'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict', 'outputs.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig']]] = None,
             gpu_memory_fabric_id: pulumi.Input[Optional[_builtins.str]] = None,
             instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
             private_ip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -669,7 +669,7 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs', 'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict']] gpu_memory_cluster_scale_config: (Updatable) Configuration settings for GPU Memory Cluster scaling.
+        :param pulumi.Input[Union['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs', 'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict', 'outputs.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig']] gpu_memory_cluster_scale_config: (Updatable) Configuration settings for GPU Memory Cluster scaling.
         :param pulumi.Input[_builtins.str] gpu_memory_fabric_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
         :param pulumi.Input[_builtins.str] instance_configuration_id: (Updatable) Instance Configuration to be used for this GPU Memory Cluster
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] private_ip_ids: (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster

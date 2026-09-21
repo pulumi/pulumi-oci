@@ -309,7 +309,7 @@ class StreamDistributionChannel(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamDistributionChannelLockArgs', 'StreamDistributionChannelLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamDistributionChannelLockArgs', 'StreamDistributionChannelLockArgsDict', 'outputs.StreamDistributionChannelLock']]]]] = None,
                  __props__=None):
         """
         This resource provides the Stream Distribution Channel resource in Oracle Cloud Infrastructure Media Services service.
@@ -358,7 +358,7 @@ class StreamDistributionChannel(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Stream Distribution Channel display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['StreamDistributionChannelLockArgs', 'StreamDistributionChannelLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StreamDistributionChannelLockArgs', 'StreamDistributionChannelLockArgsDict', 'outputs.StreamDistributionChannelLock']]]] locks: Locks associated with this resource.
         """
         ...
     @overload
@@ -427,7 +427,7 @@ class StreamDistributionChannel(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamDistributionChannelLockArgs', 'StreamDistributionChannelLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamDistributionChannelLockArgs', 'StreamDistributionChannelLockArgsDict', 'outputs.StreamDistributionChannelLock']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -468,7 +468,7 @@ class StreamDistributionChannel(pulumi.CustomResource):
             domain_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamDistributionChannelLockArgs', 'StreamDistributionChannelLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamDistributionChannelLockArgs', 'StreamDistributionChannelLockArgsDict', 'outputs.StreamDistributionChannelLock']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -485,7 +485,7 @@ class StreamDistributionChannel(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Stream Distribution Channel display name. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] domain_name: Unique domain name of the Distribution Channel.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['StreamDistributionChannelLockArgs', 'StreamDistributionChannelLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StreamDistributionChannelLockArgs', 'StreamDistributionChannelLockArgsDict', 'outputs.StreamDistributionChannelLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] state: The current state of the Stream Distribution Channel.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.

@@ -81,7 +81,7 @@ class AwaitableGetManagedMySqlDatabaseInboundReplicationsResult(GetManagedMySqlD
             managed_my_sql_database_inbound_replication_collections=self.managed_my_sql_database_inbound_replication_collections)
 
 
-def get_managed_my_sql_database_inbound_replications(filters: Optional[Sequence[Union['GetManagedMySqlDatabaseInboundReplicationsFilterArgs', 'GetManagedMySqlDatabaseInboundReplicationsFilterArgsDict']]] = None,
+def get_managed_my_sql_database_inbound_replications(filters: Optional[Sequence[Union['GetManagedMySqlDatabaseInboundReplicationsFilterArgs', 'GetManagedMySqlDatabaseInboundReplicationsFilterArgsDict', 'outputs.GetManagedMySqlDatabaseInboundReplicationsFilterResult']]] = None,
                                                      managed_my_sql_database_id: Optional[_builtins.str] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedMySqlDatabaseInboundReplicationsResult:
     """
@@ -113,7 +113,7 @@ def get_managed_my_sql_database_inbound_replications(filters: Optional[Sequence[
         id=pulumi.get(__ret__, 'id'),
         managed_my_sql_database_id=pulumi.get(__ret__, 'managed_my_sql_database_id'),
         managed_my_sql_database_inbound_replication_collections=pulumi.get(__ret__, 'managed_my_sql_database_inbound_replication_collections'))
-def get_managed_my_sql_database_inbound_replications_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedMySqlDatabaseInboundReplicationsFilterArgs', 'GetManagedMySqlDatabaseInboundReplicationsFilterArgsDict']]]]] = None,
+def get_managed_my_sql_database_inbound_replications_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedMySqlDatabaseInboundReplicationsFilterArgs', 'GetManagedMySqlDatabaseInboundReplicationsFilterArgsDict', 'outputs.GetManagedMySqlDatabaseInboundReplicationsFilterResult']]]]] = None,
                                                             managed_my_sql_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedMySqlDatabaseInboundReplicationsResult]:
     """

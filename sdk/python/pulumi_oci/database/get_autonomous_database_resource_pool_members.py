@@ -82,7 +82,7 @@ class AwaitableGetAutonomousDatabaseResourcePoolMembersResult(GetAutonomousDatab
 
 
 def get_autonomous_database_resource_pool_members(autonomous_database_id: Optional[_builtins.str] = None,
-                                                  filters: Optional[Sequence[Union['GetAutonomousDatabaseResourcePoolMembersFilterArgs', 'GetAutonomousDatabaseResourcePoolMembersFilterArgsDict']]] = None,
+                                                  filters: Optional[Sequence[Union['GetAutonomousDatabaseResourcePoolMembersFilterArgs', 'GetAutonomousDatabaseResourcePoolMembersFilterArgsDict', 'outputs.GetAutonomousDatabaseResourcePoolMembersFilterResult']]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabaseResourcePoolMembersResult:
     """
     This data source provides the list of Autonomous Database Resource Pool Members in Oracle Cloud Infrastructure Database service.
@@ -113,7 +113,7 @@ def get_autonomous_database_resource_pool_members(autonomous_database_id: Option
         id=pulumi.get(__ret__, 'id'),
         resource_pool_member_collections=pulumi.get(__ret__, 'resource_pool_member_collections'))
 def get_autonomous_database_resource_pool_members_output(autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDatabaseResourcePoolMembersFilterArgs', 'GetAutonomousDatabaseResourcePoolMembersFilterArgsDict']]]]] = None,
+                                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDatabaseResourcePoolMembersFilterArgs', 'GetAutonomousDatabaseResourcePoolMembersFilterArgsDict', 'outputs.GetAutonomousDatabaseResourcePoolMembersFilterResult']]]]] = None,
                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabaseResourcePoolMembersResult]:
     """
     This data source provides the list of Autonomous Database Resource Pool Members in Oracle Cloud Infrastructure Database service.

@@ -131,7 +131,7 @@ class AwaitableGetManagementAppliancesResult(GetManagementAppliancesResult):
 
 def get_management_appliances(compartment_id: Optional[_builtins.str] = None,
                               display_name: Optional[_builtins.str] = None,
-                              filters: Optional[Sequence[Union['GetManagementAppliancesFilterArgs', 'GetManagementAppliancesFilterArgsDict']]] = None,
+                              filters: Optional[Sequence[Union['GetManagementAppliancesFilterArgs', 'GetManagementAppliancesFilterArgsDict', 'outputs.GetManagementAppliancesFilterResult']]] = None,
                               management_appliance_id: Optional[_builtins.str] = None,
                               sddc_id: Optional[_builtins.str] = None,
                               state: Optional[_builtins.str] = None,
@@ -182,7 +182,7 @@ def get_management_appliances(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_management_appliances_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagementAppliancesFilterArgs', 'GetManagementAppliancesFilterArgsDict']]]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagementAppliancesFilterArgs', 'GetManagementAppliancesFilterArgsDict', 'outputs.GetManagementAppliancesFilterResult']]]]] = None,
                                      management_appliance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      sddc_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

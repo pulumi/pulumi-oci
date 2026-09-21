@@ -139,7 +139,7 @@ class AwaitableGetFleetJavaMigrationAnalysisResultsResult(GetFleetJavaMigrationA
 
 
 def get_fleet_java_migration_analysis_results(application_name: Optional[_builtins.str] = None,
-                                              filters: Optional[Sequence[Union['GetFleetJavaMigrationAnalysisResultsFilterArgs', 'GetFleetJavaMigrationAnalysisResultsFilterArgsDict']]] = None,
+                                              filters: Optional[Sequence[Union['GetFleetJavaMigrationAnalysisResultsFilterArgs', 'GetFleetJavaMigrationAnalysisResultsFilterArgsDict', 'outputs.GetFleetJavaMigrationAnalysisResultsFilterResult']]] = None,
                                               fleet_id: Optional[_builtins.str] = None,
                                               host_name: Optional[_builtins.str] = None,
                                               managed_instance_id: Optional[_builtins.str] = None,
@@ -195,7 +195,7 @@ def get_fleet_java_migration_analysis_results(application_name: Optional[_builti
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
 def get_fleet_java_migration_analysis_results_output(application_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetJavaMigrationAnalysisResultsFilterArgs', 'GetFleetJavaMigrationAnalysisResultsFilterArgsDict']]]]] = None,
+                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetJavaMigrationAnalysisResultsFilterArgs', 'GetFleetJavaMigrationAnalysisResultsFilterArgsDict', 'outputs.GetFleetJavaMigrationAnalysisResultsFilterResult']]]]] = None,
                                                      fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      host_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                      managed_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

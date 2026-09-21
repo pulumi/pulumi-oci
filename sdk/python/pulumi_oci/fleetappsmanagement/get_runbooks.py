@@ -143,7 +143,7 @@ class AwaitableGetRunbooksResult(GetRunbooksResult):
 
 def get_runbooks(compartment_id: Optional[_builtins.str] = None,
                  display_name: Optional[_builtins.str] = None,
-                 filters: Optional[Sequence[Union['GetRunbooksFilterArgs', 'GetRunbooksFilterArgsDict']]] = None,
+                 filters: Optional[Sequence[Union['GetRunbooksFilterArgs', 'GetRunbooksFilterArgsDict', 'outputs.GetRunbooksFilterResult']]] = None,
                  id: Optional[_builtins.str] = None,
                  operation: Optional[_builtins.str] = None,
                  platform: Optional[_builtins.str] = None,
@@ -204,7 +204,7 @@ def get_runbooks(compartment_id: Optional[_builtins.str] = None,
         type=pulumi.get(__ret__, 'type'))
 def get_runbooks_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRunbooksFilterArgs', 'GetRunbooksFilterArgsDict']]]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRunbooksFilterArgs', 'GetRunbooksFilterArgsDict', 'outputs.GetRunbooksFilterResult']]]]] = None,
                         id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         operation: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         platform: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

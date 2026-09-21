@@ -717,7 +717,7 @@ class CloudListener(pulumi.CustomResource):
             dbaas_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudListenerEndpointArgs', 'CloudListenerEndpointArgsDict']]]]] = None,
+            endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudListenerEndpointArgs', 'CloudListenerEndpointArgsDict', 'outputs.CloudListenerEndpoint']]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             host_name: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
@@ -726,8 +726,8 @@ class CloudListener(pulumi.CustomResource):
             listener_type: pulumi.Input[Optional[_builtins.str]] = None,
             log_directory: pulumi.Input[Optional[_builtins.str]] = None,
             oracle_home: pulumi.Input[Optional[_builtins.str]] = None,
-            serviced_asms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudListenerServicedAsmArgs', 'CloudListenerServicedAsmArgsDict']]]]] = None,
-            serviced_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudListenerServicedDatabaseArgs', 'CloudListenerServicedDatabaseArgsDict']]]]] = None,
+            serviced_asms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudListenerServicedAsmArgs', 'CloudListenerServicedAsmArgsDict', 'outputs.CloudListenerServicedAsm']]]]] = None,
+            serviced_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudListenerServicedDatabaseArgs', 'CloudListenerServicedDatabaseArgsDict', 'outputs.CloudListenerServicedDatabase']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -753,7 +753,7 @@ class CloudListener(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the database. The name does not have to be unique.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudListenerEndpointArgs', 'CloudListenerEndpointArgsDict']]]] endpoints: The list of protocol addresses the listener is configured to listen on.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudListenerEndpointArgs', 'CloudListenerEndpointArgsDict', 'outputs.CloudListenerEndpoint']]]] endpoints: The list of protocol addresses the listener is configured to listen on.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
                
                ** IMPORTANT **
@@ -765,8 +765,8 @@ class CloudListener(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] listener_type: The type of listener.
         :param pulumi.Input[_builtins.str] log_directory: The destination directory of the listener log file.
         :param pulumi.Input[_builtins.str] oracle_home: The Oracle home location of the listener.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudListenerServicedAsmArgs', 'CloudListenerServicedAsmArgsDict']]]] serviced_asms: The list of ASMs that are serviced by the listener.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudListenerServicedDatabaseArgs', 'CloudListenerServicedDatabaseArgsDict']]]] serviced_databases: The list of databases that are serviced by the listener.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudListenerServicedAsmArgs', 'CloudListenerServicedAsmArgsDict', 'outputs.CloudListenerServicedAsm']]]] serviced_asms: The list of ASMs that are serviced by the listener.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudListenerServicedDatabaseArgs', 'CloudListenerServicedDatabaseArgsDict', 'outputs.CloudListenerServicedDatabase']]]] serviced_databases: The list of databases that are serviced by the listener.
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the cloud listener.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The date and time the cloud listener was created.

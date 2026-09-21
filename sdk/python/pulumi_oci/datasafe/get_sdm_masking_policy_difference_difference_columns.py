@@ -155,7 +155,7 @@ class AwaitableGetSdmMaskingPolicyDifferenceDifferenceColumnsResult(GetSdmMaskin
 
 def get_sdm_masking_policy_difference_difference_columns(column_names: Optional[Sequence[_builtins.str]] = None,
                                                          difference_type: Optional[_builtins.str] = None,
-                                                         filters: Optional[Sequence[Union['GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs', 'GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgsDict']]] = None,
+                                                         filters: Optional[Sequence[Union['GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs', 'GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgsDict', 'outputs.GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterResult']]] = None,
                                                          objects: Optional[Sequence[_builtins.str]] = None,
                                                          planned_action: Optional[_builtins.str] = None,
                                                          schema_names: Optional[Sequence[_builtins.str]] = None,
@@ -216,7 +216,7 @@ def get_sdm_masking_policy_difference_difference_columns(column_names: Optional[
         sync_status=pulumi.get(__ret__, 'sync_status'))
 def get_sdm_masking_policy_difference_difference_columns_output(column_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                                                 difference_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs', 'GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgsDict']]]]] = None,
+                                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs', 'GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgsDict', 'outputs.GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterResult']]]]] = None,
                                                                 objects: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                                                 planned_action: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                 schema_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,

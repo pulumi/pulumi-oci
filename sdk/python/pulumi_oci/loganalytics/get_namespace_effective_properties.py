@@ -149,7 +149,7 @@ class AwaitableGetNamespaceEffectivePropertiesResult(GetNamespaceEffectiveProper
 
 def get_namespace_effective_properties(agent_id: Optional[_builtins.str] = None,
                                        entity_id: Optional[_builtins.str] = None,
-                                       filters: Optional[Sequence[Union['GetNamespaceEffectivePropertiesFilterArgs', 'GetNamespaceEffectivePropertiesFilterArgsDict']]] = None,
+                                       filters: Optional[Sequence[Union['GetNamespaceEffectivePropertiesFilterArgs', 'GetNamespaceEffectivePropertiesFilterArgsDict', 'outputs.GetNamespaceEffectivePropertiesFilterResult']]] = None,
                                        is_include_patterns: Optional[_builtins.bool] = None,
                                        name: Optional[_builtins.str] = None,
                                        namespace: Optional[_builtins.str] = None,
@@ -215,7 +215,7 @@ def get_namespace_effective_properties(agent_id: Optional[_builtins.str] = None,
         source_name=pulumi.get(__ret__, 'source_name'))
 def get_namespace_effective_properties_output(agent_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                               entity_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespaceEffectivePropertiesFilterArgs', 'GetNamespaceEffectivePropertiesFilterArgsDict']]]]] = None,
+                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespaceEffectivePropertiesFilterArgs', 'GetNamespaceEffectivePropertiesFilterArgsDict', 'outputs.GetNamespaceEffectivePropertiesFilterResult']]]]] = None,
                                               is_include_patterns: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                               name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                               namespace: pulumi.Input[Optional[_builtins.str]] = None,

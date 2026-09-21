@@ -131,7 +131,7 @@ class AwaitableGetDelegationControlsResult(GetDelegationControlsResult):
 
 def get_delegation_controls(compartment_id: Optional[_builtins.str] = None,
                             display_name: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetDelegationControlsFilterArgs', 'GetDelegationControlsFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetDelegationControlsFilterArgs', 'GetDelegationControlsFilterArgsDict', 'outputs.GetDelegationControlsFilterResult']]] = None,
                             resource_id: Optional[_builtins.str] = None,
                             resource_type: Optional[_builtins.str] = None,
                             state: Optional[_builtins.str] = None,
@@ -182,7 +182,7 @@ def get_delegation_controls(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_delegation_controls_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDelegationControlsFilterArgs', 'GetDelegationControlsFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDelegationControlsFilterArgs', 'GetDelegationControlsFilterArgsDict', 'outputs.GetDelegationControlsFilterResult']]]]] = None,
                                    resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

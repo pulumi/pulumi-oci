@@ -1054,7 +1054,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
             fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             host_name: pulumi.Input[Optional[_builtins.str]] = None,
             host_name_contains: pulumi.Input[Optional[_builtins.str]] = None,
-            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcesSearchItemArgs', 'MonitoredResourcesSearchItemArgsDict']]]]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcesSearchItemArgs', 'MonitoredResourcesSearchItemArgsDict', 'outputs.MonitoredResourcesSearchItem']]]]] = None,
             license: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_states: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1084,7 +1084,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
         :param pulumi.Input[_builtins.str] host_name: A filter to return resources with host name match.
         :param pulumi.Input[_builtins.str] host_name_contains: A filter to return resources with host name pattern.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesSearchItemArgs', 'MonitoredResourcesSearchItemArgsDict']]]] items: List of monitored resources.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesSearchItemArgs', 'MonitoredResourcesSearchItemArgsDict', 'outputs.MonitoredResourcesSearchItem']]]] items: List of monitored resources.
         :param pulumi.Input[_builtins.str] license: License edition of the monitored resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] lifecycle_states: Multiple lifecycle states filter.
         :param pulumi.Input[_builtins.str] management_agent_id: A filter to return resources with matching management agent id.

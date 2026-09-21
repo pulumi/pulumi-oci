@@ -154,7 +154,7 @@ class AwaitableGetMaskingReportMaskedColumnsResult(GetMaskingReportMaskedColumns
 
 
 def get_masking_report_masked_columns(column_names: Optional[Sequence[_builtins.str]] = None,
-                                      filters: Optional[Sequence[Union['GetMaskingReportMaskedColumnsFilterArgs', 'GetMaskingReportMaskedColumnsFilterArgsDict']]] = None,
+                                      filters: Optional[Sequence[Union['GetMaskingReportMaskedColumnsFilterArgs', 'GetMaskingReportMaskedColumnsFilterArgsDict', 'outputs.GetMaskingReportMaskedColumnsFilterResult']]] = None,
                                       masking_column_groups: Optional[Sequence[_builtins.str]] = None,
                                       masking_report_id: Optional[_builtins.str] = None,
                                       object_types: Optional[Sequence[_builtins.str]] = None,
@@ -215,7 +215,7 @@ def get_masking_report_masked_columns(column_names: Optional[Sequence[_builtins.
         schema_names=pulumi.get(__ret__, 'schema_names'),
         sensitive_type_id=pulumi.get(__ret__, 'sensitive_type_id'))
 def get_masking_report_masked_columns_output(column_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
-                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingReportMaskedColumnsFilterArgs', 'GetMaskingReportMaskedColumnsFilterArgsDict']]]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingReportMaskedColumnsFilterArgs', 'GetMaskingReportMaskedColumnsFilterArgsDict', 'outputs.GetMaskingReportMaskedColumnsFilterResult']]]]] = None,
                                              masking_column_groups: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                              masking_report_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              object_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,

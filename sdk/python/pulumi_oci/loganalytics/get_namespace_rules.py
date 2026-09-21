@@ -143,7 +143,7 @@ class AwaitableGetNamespaceRulesResult(GetNamespaceRulesResult):
 
 def get_namespace_rules(compartment_id: Optional[_builtins.str] = None,
                         display_name: Optional[_builtins.str] = None,
-                        filters: Optional[Sequence[Union['GetNamespaceRulesFilterArgs', 'GetNamespaceRulesFilterArgsDict']]] = None,
+                        filters: Optional[Sequence[Union['GetNamespaceRulesFilterArgs', 'GetNamespaceRulesFilterArgsDict', 'outputs.GetNamespaceRulesFilterResult']]] = None,
                         kind: Optional[_builtins.str] = None,
                         namespace: Optional[_builtins.str] = None,
                         state: Optional[_builtins.str] = None,
@@ -199,7 +199,7 @@ def get_namespace_rules(compartment_id: Optional[_builtins.str] = None,
         target_service=pulumi.get(__ret__, 'target_service'))
 def get_namespace_rules_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespaceRulesFilterArgs', 'GetNamespaceRulesFilterArgsDict']]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespaceRulesFilterArgs', 'GetNamespaceRulesFilterArgsDict', 'outputs.GetNamespaceRulesFilterResult']]]]] = None,
                                kind: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

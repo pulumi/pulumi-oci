@@ -418,7 +418,7 @@ class MonitoringTemplateAlarmCondition(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  composite_type: pulumi.Input[Optional[_builtins.str]] = None,
                  condition_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoringTemplateAlarmConditionConditionArgs', 'MonitoringTemplateAlarmConditionConditionArgsDict']]]]] = None,
+                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoringTemplateAlarmConditionConditionArgs', 'MonitoringTemplateAlarmConditionConditionArgsDict', 'outputs.MonitoringTemplateAlarmConditionCondition']]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  metric_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -476,7 +476,7 @@ class MonitoringTemplateAlarmCondition(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] composite_type: (Updatable) The OCID of the composite resource type like EBS/PEOPLE_SOFT.
         :param pulumi.Input[_builtins.str] condition_type: (Updatable) Type of defined monitoring template.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoringTemplateAlarmConditionConditionArgs', 'MonitoringTemplateAlarmConditionConditionArgsDict']]]] conditions: (Updatable) Monitoring template conditions.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoringTemplateAlarmConditionConditionArgs', 'MonitoringTemplateAlarmConditionConditionArgsDict', 'outputs.MonitoringTemplateAlarmConditionCondition']]]] conditions: (Updatable) Monitoring template conditions.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] metric_name: (Updatable) The metric name.
@@ -556,7 +556,7 @@ class MonitoringTemplateAlarmCondition(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  composite_type: pulumi.Input[Optional[_builtins.str]] = None,
                  condition_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoringTemplateAlarmConditionConditionArgs', 'MonitoringTemplateAlarmConditionConditionArgsDict']]]]] = None,
+                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoringTemplateAlarmConditionConditionArgs', 'MonitoringTemplateAlarmConditionConditionArgsDict', 'outputs.MonitoringTemplateAlarmConditionCondition']]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  metric_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -610,7 +610,7 @@ class MonitoringTemplateAlarmCondition(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             composite_type: pulumi.Input[Optional[_builtins.str]] = None,
             condition_type: pulumi.Input[Optional[_builtins.str]] = None,
-            conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoringTemplateAlarmConditionConditionArgs', 'MonitoringTemplateAlarmConditionConditionArgsDict']]]]] = None,
+            conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoringTemplateAlarmConditionConditionArgs', 'MonitoringTemplateAlarmConditionConditionArgsDict', 'outputs.MonitoringTemplateAlarmConditionCondition']]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             metric_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -631,7 +631,7 @@ class MonitoringTemplateAlarmCondition(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] composite_type: (Updatable) The OCID of the composite resource type like EBS/PEOPLE_SOFT.
         :param pulumi.Input[_builtins.str] condition_type: (Updatable) Type of defined monitoring template.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoringTemplateAlarmConditionConditionArgs', 'MonitoringTemplateAlarmConditionConditionArgsDict']]]] conditions: (Updatable) Monitoring template conditions.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoringTemplateAlarmConditionConditionArgs', 'MonitoringTemplateAlarmConditionConditionArgsDict', 'outputs.MonitoringTemplateAlarmConditionCondition']]]] conditions: (Updatable) Monitoring template conditions.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] metric_name: (Updatable) The metric name.

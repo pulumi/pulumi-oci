@@ -119,7 +119,7 @@ class AwaitableGetMulticloudExternalLocationSummariesMetadataResult(GetMulticlou
 
 def get_multicloud_external_location_summaries_metadata(compartment_id: Optional[_builtins.str] = None,
                                                         entity_type: Optional[_builtins.str] = None,
-                                                        filters: Optional[Sequence[Union['GetMulticloudExternalLocationSummariesMetadataFilterArgs', 'GetMulticloudExternalLocationSummariesMetadataFilterArgsDict']]] = None,
+                                                        filters: Optional[Sequence[Union['GetMulticloudExternalLocationSummariesMetadataFilterArgs', 'GetMulticloudExternalLocationSummariesMetadataFilterArgsDict', 'outputs.GetMulticloudExternalLocationSummariesMetadataFilterResult']]] = None,
                                                         limit: Optional[_builtins.int] = None,
                                                         subscription_id: Optional[_builtins.str] = None,
                                                         subscription_service_name: Optional[_builtins.str] = None,
@@ -168,7 +168,7 @@ def get_multicloud_external_location_summaries_metadata(compartment_id: Optional
         subscription_service_name=pulumi.get(__ret__, 'subscription_service_name'))
 def get_multicloud_external_location_summaries_metadata_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                entity_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMulticloudExternalLocationSummariesMetadataFilterArgs', 'GetMulticloudExternalLocationSummariesMetadataFilterArgsDict']]]]] = None,
+                                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMulticloudExternalLocationSummariesMetadataFilterArgs', 'GetMulticloudExternalLocationSummariesMetadataFilterArgsDict', 'outputs.GetMulticloudExternalLocationSummariesMetadataFilterResult']]]]] = None,
                                                                limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                                subscription_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                subscription_service_name: pulumi.Input[Optional[_builtins.str]] = None,

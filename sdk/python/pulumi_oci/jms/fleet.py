@@ -476,9 +476,9 @@ class Fleet(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 inventory_log: pulumi.Input[Optional[Union['FleetInventoryLogArgs', 'FleetInventoryLogArgsDict']]] = None,
+                 inventory_log: pulumi.Input[Optional[Union['FleetInventoryLogArgs', 'FleetInventoryLogArgsDict', 'outputs.FleetInventoryLog']]] = None,
                  is_advanced_features_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 operation_log: pulumi.Input[Optional[Union['FleetOperationLogArgs', 'FleetOperationLogArgsDict']]] = None,
+                 operation_log: pulumi.Input[Optional[Union['FleetOperationLogArgs', 'FleetOperationLogArgsDict', 'outputs.FleetOperationLog']]] = None,
                  __props__=None):
         """
         This resource provides the Fleet resource in Oracle Cloud Infrastructure Jms service.
@@ -537,9 +537,9 @@ class Fleet(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) The Fleet's description. If nothing is provided, the Fleet description will be null.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name of the Fleet. The displayName must be unique for Fleets in the same compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-        :param pulumi.Input[Union['FleetInventoryLogArgs', 'FleetInventoryLogArgsDict']] inventory_log: (Updatable) Custom Log for inventory or operation log.
+        :param pulumi.Input[Union['FleetInventoryLogArgs', 'FleetInventoryLogArgsDict', 'outputs.FleetInventoryLog']] inventory_log: (Updatable) Custom Log for inventory or operation log.
         :param pulumi.Input[_builtins.bool] is_advanced_features_enabled: (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
-        :param pulumi.Input[Union['FleetOperationLogArgs', 'FleetOperationLogArgsDict']] operation_log: (Updatable) Custom Log for inventory or operation log.
+        :param pulumi.Input[Union['FleetOperationLogArgs', 'FleetOperationLogArgsDict', 'outputs.FleetOperationLog']] operation_log: (Updatable) Custom Log for inventory or operation log.
         """
         ...
     @overload
@@ -617,9 +617,9 @@ class Fleet(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 inventory_log: pulumi.Input[Optional[Union['FleetInventoryLogArgs', 'FleetInventoryLogArgsDict']]] = None,
+                 inventory_log: pulumi.Input[Optional[Union['FleetInventoryLogArgs', 'FleetInventoryLogArgsDict', 'outputs.FleetInventoryLog']]] = None,
                  is_advanced_features_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 operation_log: pulumi.Input[Optional[Union['FleetOperationLogArgs', 'FleetOperationLogArgsDict']]] = None,
+                 operation_log: pulumi.Input[Optional[Union['FleetOperationLogArgs', 'FleetOperationLogArgsDict', 'outputs.FleetOperationLog']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -676,10 +676,10 @@ class Fleet(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            inventory_log: pulumi.Input[Optional[Union['FleetInventoryLogArgs', 'FleetInventoryLogArgsDict']]] = None,
+            inventory_log: pulumi.Input[Optional[Union['FleetInventoryLogArgs', 'FleetInventoryLogArgsDict', 'outputs.FleetInventoryLog']]] = None,
             is_advanced_features_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_export_setting_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            operation_log: pulumi.Input[Optional[Union['FleetOperationLogArgs', 'FleetOperationLogArgsDict']]] = None,
+            operation_log: pulumi.Input[Optional[Union['FleetOperationLogArgs', 'FleetOperationLogArgsDict', 'outputs.FleetOperationLog']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'Fleet':
@@ -702,10 +702,10 @@ class Fleet(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) The Fleet's description. If nothing is provided, the Fleet description will be null.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name of the Fleet. The displayName must be unique for Fleets in the same compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-        :param pulumi.Input[Union['FleetInventoryLogArgs', 'FleetInventoryLogArgsDict']] inventory_log: (Updatable) Custom Log for inventory or operation log.
+        :param pulumi.Input[Union['FleetInventoryLogArgs', 'FleetInventoryLogArgsDict', 'outputs.FleetInventoryLog']] inventory_log: (Updatable) Custom Log for inventory or operation log.
         :param pulumi.Input[_builtins.bool] is_advanced_features_enabled: (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
         :param pulumi.Input[_builtins.bool] is_export_setting_enabled: Whether or not export setting is enabled in this Fleet.
-        :param pulumi.Input[Union['FleetOperationLogArgs', 'FleetOperationLogArgsDict']] operation_log: (Updatable) Custom Log for inventory or operation log.
+        :param pulumi.Input[Union['FleetOperationLogArgs', 'FleetOperationLogArgsDict', 'outputs.FleetOperationLog']] operation_log: (Updatable) Custom Log for inventory or operation log.
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the Fleet.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).

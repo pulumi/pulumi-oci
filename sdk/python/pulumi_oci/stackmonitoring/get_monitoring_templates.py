@@ -158,7 +158,7 @@ class AwaitableGetMonitoringTemplatesResult(GetMonitoringTemplatesResult):
 
 def get_monitoring_templates(compartment_id: Optional[_builtins.str] = None,
                              display_name: Optional[_builtins.str] = None,
-                             filters: Optional[Sequence[Union['GetMonitoringTemplatesFilterArgs', 'GetMonitoringTemplatesFilterArgsDict']]] = None,
+                             filters: Optional[Sequence[Union['GetMonitoringTemplatesFilterArgs', 'GetMonitoringTemplatesFilterArgsDict', 'outputs.GetMonitoringTemplatesFilterResult']]] = None,
                              metric_names: Optional[Sequence[_builtins.str]] = None,
                              monitoring_template_id: Optional[_builtins.str] = None,
                              namespaces: Optional[Sequence[_builtins.str]] = None,
@@ -224,7 +224,7 @@ def get_monitoring_templates(compartment_id: Optional[_builtins.str] = None,
         status=pulumi.get(__ret__, 'status'))
 def get_monitoring_templates_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMonitoringTemplatesFilterArgs', 'GetMonitoringTemplatesFilterArgsDict']]]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMonitoringTemplatesFilterArgs', 'GetMonitoringTemplatesFilterArgsDict', 'outputs.GetMonitoringTemplatesFilterResult']]]]] = None,
                                     metric_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                     monitoring_template_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     namespaces: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,

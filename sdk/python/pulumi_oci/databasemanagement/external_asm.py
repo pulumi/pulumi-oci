@@ -548,7 +548,7 @@ class ExternalAsm(pulumi.CustomResource):
             is_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
             is_flex_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            serviced_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalAsmServicedDatabaseArgs', 'ExternalAsmServicedDatabaseArgsDict']]]]] = None,
+            serviced_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalAsmServicedDatabaseArgs', 'ExternalAsmServicedDatabaseArgsDict', 'outputs.ExternalAsmServicedDatabase']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -577,7 +577,7 @@ class ExternalAsm(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_cluster: Indicates whether the ASM is a cluster ASM or not.
         :param pulumi.Input[_builtins.bool] is_flex_enabled: Indicates whether Oracle Flex ASM is enabled or not.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalAsmServicedDatabaseArgs', 'ExternalAsmServicedDatabaseArgsDict']]]] serviced_databases: The list of databases that are serviced by the ASM.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalAsmServicedDatabaseArgs', 'ExternalAsmServicedDatabaseArgsDict', 'outputs.ExternalAsmServicedDatabase']]]] serviced_databases: The list of databases that are serviced by the ASM.
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the external ASM.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The date and time the external ASM was created.

@@ -305,7 +305,7 @@ class Rrset(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  domain: pulumi.Input[Optional[_builtins.str]] = None,
-                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict', 'outputs.RrsetItem']]]]] = None,
                  rtype: pulumi.Input[Optional[_builtins.str]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  view_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -363,7 +363,7 @@ class Rrset(pulumi.CustomResource):
                
                This parameter is deprecated and should be omitted.
         :param pulumi.Input[_builtins.str] domain: The target fully-qualified domain name (FQDN) within the target zone.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]] items: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict', 'outputs.RrsetItem']]]] items: (Updatable)
                **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
         :param pulumi.Input[_builtins.str] rtype: The type of the target RRSet within the target zone.
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
@@ -442,7 +442,7 @@ class Rrset(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  domain: pulumi.Input[Optional[_builtins.str]] = None,
-                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict', 'outputs.RrsetItem']]]]] = None,
                  rtype: pulumi.Input[Optional[_builtins.str]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  view_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -481,7 +481,7 @@ class Rrset(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             domain: pulumi.Input[Optional[_builtins.str]] = None,
-            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict', 'outputs.RrsetItem']]]]] = None,
             rtype: pulumi.Input[Optional[_builtins.str]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None,
             view_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -497,7 +497,7 @@ class Rrset(pulumi.CustomResource):
                
                This parameter is deprecated and should be omitted.
         :param pulumi.Input[_builtins.str] domain: The target fully-qualified domain name (FQDN) within the target zone.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]] items: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict', 'outputs.RrsetItem']]]] items: (Updatable)
                **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
         :param pulumi.Input[_builtins.str] rtype: The type of the target RRSet within the target zone.
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.

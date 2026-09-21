@@ -944,7 +944,7 @@ class ExadataInfrastructureCompute(pulumi.CustomResource):
             cloud_control_plane_server2: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             compute_count: pulumi.Input[Optional[_builtins.int]] = None,
-            contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInfrastructureComputeContactArgs', 'ExadataInfrastructureComputeContactArgsDict']]]]] = None,
+            contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInfrastructureComputeContactArgs', 'ExadataInfrastructureComputeContactArgsDict', 'outputs.ExadataInfrastructureComputeContact']]]]] = None,
             corporate_proxy: pulumi.Input[Optional[_builtins.str]] = None,
             cpus_enabled: pulumi.Input[Optional[_builtins.int]] = None,
             create_async: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -962,7 +962,7 @@ class ExadataInfrastructureCompute(pulumi.CustomResource):
             is_cps_offline_report_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             maintenance_slo_status: pulumi.Input[Optional[_builtins.str]] = None,
-            maintenance_windows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInfrastructureComputeMaintenanceWindowArgs', 'ExadataInfrastructureComputeMaintenanceWindowArgsDict']]]]] = None,
+            maintenance_windows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInfrastructureComputeMaintenanceWindowArgs', 'ExadataInfrastructureComputeMaintenanceWindowArgsDict', 'outputs.ExadataInfrastructureComputeMaintenanceWindow']]]]] = None,
             max_cpu_count: pulumi.Input[Optional[_builtins.int]] = None,
             max_data_storage_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
             max_db_node_storage_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
@@ -996,7 +996,7 @@ class ExadataInfrastructureCompute(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cloud_control_plane_server2: The IP address for the second control plane server.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.int] compute_count: The number of compute servers for the Exadata infrastructure.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadataInfrastructureComputeContactArgs', 'ExadataInfrastructureComputeContactArgsDict']]]] contacts: The list of contacts for the Exadata infrastructure.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadataInfrastructureComputeContactArgs', 'ExadataInfrastructureComputeContactArgsDict', 'outputs.ExadataInfrastructureComputeContact']]]] contacts: The list of contacts for the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] corporate_proxy: The corporate network proxy for access to the control plane network.
         :param pulumi.Input[_builtins.int] cpus_enabled: The number of enabled CPU cores.
         :param pulumi.Input[_builtins.str] csi_number: The CSI Number of the Exadata infrastructure.
@@ -1013,7 +1013,7 @@ class ExadataInfrastructureCompute(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_cps_offline_report_enabled: Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] maintenance_slo_status: A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadataInfrastructureComputeMaintenanceWindowArgs', 'ExadataInfrastructureComputeMaintenanceWindowArgsDict']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadataInfrastructureComputeMaintenanceWindowArgs', 'ExadataInfrastructureComputeMaintenanceWindowArgsDict', 'outputs.ExadataInfrastructureComputeMaintenanceWindow']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.int] max_cpu_count: The total number of CPU cores available.
         :param pulumi.Input[_builtins.float] max_data_storage_in_tbs: The total available DATA disk group size.
         :param pulumi.Input[_builtins.int] max_db_node_storage_in_gbs: The total local node storage available in GBs.

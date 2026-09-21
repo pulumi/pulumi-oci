@@ -561,7 +561,7 @@ class BackupDestination(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  local_mount_point_path: pulumi.Input[Optional[_builtins.str]] = None,
-                 mount_type_details: pulumi.Input[Optional[Union['BackupDestinationMountTypeDetailsArgs', 'BackupDestinationMountTypeDetailsArgsDict']]] = None,
+                 mount_type_details: pulumi.Input[Optional[Union['BackupDestinationMountTypeDetailsArgs', 'BackupDestinationMountTypeDetailsArgsDict', 'outputs.BackupDestinationMountTypeDetails']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  vpc_users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -615,7 +615,7 @@ class BackupDestination(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: The user-provided name of the backup destination.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] local_mount_point_path: (Updatable) **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes. This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
-        :param pulumi.Input[Union['BackupDestinationMountTypeDetailsArgs', 'BackupDestinationMountTypeDetailsArgsDict']] mount_type_details: Mount type details for backup destination.
+        :param pulumi.Input[Union['BackupDestinationMountTypeDetailsArgs', 'BackupDestinationMountTypeDetailsArgsDict', 'outputs.BackupDestinationMountTypeDetails']] mount_type_details: Mount type details for backup destination.
         :param pulumi.Input[_builtins.str] type: Type of the backup destination.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vpc_users: (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
                
@@ -691,7 +691,7 @@ class BackupDestination(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  local_mount_point_path: pulumi.Input[Optional[_builtins.str]] = None,
-                 mount_type_details: pulumi.Input[Optional[Union['BackupDestinationMountTypeDetailsArgs', 'BackupDestinationMountTypeDetailsArgsDict']]] = None,
+                 mount_type_details: pulumi.Input[Optional[Union['BackupDestinationMountTypeDetailsArgs', 'BackupDestinationMountTypeDetailsArgsDict', 'outputs.BackupDestinationMountTypeDetails']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  vpc_users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -741,9 +741,9 @@ class BackupDestination(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            associated_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BackupDestinationAssociatedDatabaseArgs', 'BackupDestinationAssociatedDatabaseArgsDict']]]]] = None,
+            associated_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BackupDestinationAssociatedDatabaseArgs', 'BackupDestinationAssociatedDatabaseArgsDict', 'outputs.BackupDestinationAssociatedDatabase']]]]] = None,
             associated_long_term_backup_count: pulumi.Input[Optional[_builtins.int]] = None,
-            associated_long_term_backups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BackupDestinationAssociatedLongTermBackupArgs', 'BackupDestinationAssociatedLongTermBackupArgsDict']]]]] = None,
+            associated_long_term_backups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BackupDestinationAssociatedLongTermBackupArgs', 'BackupDestinationAssociatedLongTermBackupArgsDict', 'outputs.BackupDestinationAssociatedLongTermBackup']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             connection_string: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -751,7 +751,7 @@ class BackupDestination(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             local_mount_point_path: pulumi.Input[Optional[_builtins.str]] = None,
-            mount_type_details: pulumi.Input[Optional[Union['BackupDestinationMountTypeDetailsArgs', 'BackupDestinationMountTypeDetailsArgsDict']]] = None,
+            mount_type_details: pulumi.Input[Optional[Union['BackupDestinationMountTypeDetailsArgs', 'BackupDestinationMountTypeDetailsArgsDict', 'outputs.BackupDestinationMountTypeDetails']]] = None,
             nfs_mount_type: pulumi.Input[Optional[_builtins.str]] = None,
             nfs_server_export: pulumi.Input[Optional[_builtins.str]] = None,
             nfs_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -770,9 +770,9 @@ class BackupDestination(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BackupDestinationAssociatedDatabaseArgs', 'BackupDestinationAssociatedDatabaseArgsDict']]]] associated_databases: List of databases associated with the backup destination.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BackupDestinationAssociatedDatabaseArgs', 'BackupDestinationAssociatedDatabaseArgsDict', 'outputs.BackupDestinationAssociatedDatabase']]]] associated_databases: List of databases associated with the backup destination.
         :param pulumi.Input[_builtins.int] associated_long_term_backup_count: Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BackupDestinationAssociatedLongTermBackupArgs', 'BackupDestinationAssociatedLongTermBackupArgsDict']]]] associated_long_term_backups: List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BackupDestinationAssociatedLongTermBackupArgs', 'BackupDestinationAssociatedLongTermBackupArgsDict', 'outputs.BackupDestinationAssociatedLongTermBackup']]]] associated_long_term_backups: List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] connection_string: (Updatable) The connection string for connecting to the Recovery Appliance.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -780,7 +780,7 @@ class BackupDestination(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: A descriptive text associated with the lifecycleState. Typically contains additional displayable text
         :param pulumi.Input[_builtins.str] local_mount_point_path: (Updatable) **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes. This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
-        :param pulumi.Input[Union['BackupDestinationMountTypeDetailsArgs', 'BackupDestinationMountTypeDetailsArgsDict']] mount_type_details: Mount type details for backup destination.
+        :param pulumi.Input[Union['BackupDestinationMountTypeDetailsArgs', 'BackupDestinationMountTypeDetailsArgsDict', 'outputs.BackupDestinationMountTypeDetails']] mount_type_details: Mount type details for backup destination.
         :param pulumi.Input[_builtins.str] nfs_mount_type: NFS Mount type for backup destination.
         :param pulumi.Input[_builtins.str] nfs_server_export: Specifies the directory on which to mount the file system
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nfs_servers: Host names or IP addresses for NFS Auto mount.

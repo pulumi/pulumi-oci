@@ -81,7 +81,7 @@ class AwaitableGetWlmsWlsDomainAgreementRecordsResult(GetWlmsWlsDomainAgreementR
             wls_domain_id=self.wls_domain_id)
 
 
-def get_wlms_wls_domain_agreement_records(filters: Optional[Sequence[Union['GetWlmsWlsDomainAgreementRecordsFilterArgs', 'GetWlmsWlsDomainAgreementRecordsFilterArgsDict']]] = None,
+def get_wlms_wls_domain_agreement_records(filters: Optional[Sequence[Union['GetWlmsWlsDomainAgreementRecordsFilterArgs', 'GetWlmsWlsDomainAgreementRecordsFilterArgsDict', 'outputs.GetWlmsWlsDomainAgreementRecordsFilterResult']]] = None,
                                           wls_domain_id: Optional[_builtins.str] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWlmsWlsDomainAgreementRecordsResult:
     """
@@ -112,7 +112,7 @@ def get_wlms_wls_domain_agreement_records(filters: Optional[Sequence[Union['GetW
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         wls_domain_id=pulumi.get(__ret__, 'wls_domain_id'))
-def get_wlms_wls_domain_agreement_records_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWlmsWlsDomainAgreementRecordsFilterArgs', 'GetWlmsWlsDomainAgreementRecordsFilterArgsDict']]]]] = None,
+def get_wlms_wls_domain_agreement_records_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWlmsWlsDomainAgreementRecordsFilterArgs', 'GetWlmsWlsDomainAgreementRecordsFilterArgsDict', 'outputs.GetWlmsWlsDomainAgreementRecordsFilterResult']]]]] = None,
                                                  wls_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWlmsWlsDomainAgreementRecordsResult]:
     """

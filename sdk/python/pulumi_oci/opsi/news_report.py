@@ -578,7 +578,7 @@ class NewsReport(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  are_child_compartments_included: pulumi.Input[Optional[_builtins.bool]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 content_types: pulumi.Input[Optional[Union['NewsReportContentTypesArgs', 'NewsReportContentTypesArgsDict']]] = None,
+                 content_types: pulumi.Input[Optional[Union['NewsReportContentTypesArgs', 'NewsReportContentTypesArgsDict', 'outputs.NewsReportContentTypes']]] = None,
                  day_of_week: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -648,7 +648,7 @@ class NewsReport(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] are_child_compartments_included: (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier where the news report will be created.
-        :param pulumi.Input[Union['NewsReportContentTypesArgs', 'NewsReportContentTypesArgsDict']] content_types: (Updatable) Content types that the news report can handle.
+        :param pulumi.Input[Union['NewsReportContentTypesArgs', 'NewsReportContentTypesArgsDict', 'outputs.NewsReportContentTypes']] content_types: (Updatable) Content types that the news report can handle.
         :param pulumi.Input[_builtins.str] day_of_week: (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the news report.
@@ -740,7 +740,7 @@ class NewsReport(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  are_child_compartments_included: pulumi.Input[Optional[_builtins.bool]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 content_types: pulumi.Input[Optional[Union['NewsReportContentTypesArgs', 'NewsReportContentTypesArgsDict']]] = None,
+                 content_types: pulumi.Input[Optional[Union['NewsReportContentTypesArgs', 'NewsReportContentTypesArgsDict', 'outputs.NewsReportContentTypes']]] = None,
                  day_of_week: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -804,7 +804,7 @@ class NewsReport(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             are_child_compartments_included: pulumi.Input[Optional[_builtins.bool]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            content_types: pulumi.Input[Optional[Union['NewsReportContentTypesArgs', 'NewsReportContentTypesArgsDict']]] = None,
+            content_types: pulumi.Input[Optional[Union['NewsReportContentTypesArgs', 'NewsReportContentTypesArgsDict', 'outputs.NewsReportContentTypes']]] = None,
             day_of_week: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -830,7 +830,7 @@ class NewsReport(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] are_child_compartments_included: (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier where the news report will be created.
-        :param pulumi.Input[Union['NewsReportContentTypesArgs', 'NewsReportContentTypesArgsDict']] content_types: (Updatable) Content types that the news report can handle.
+        :param pulumi.Input[Union['NewsReportContentTypesArgs', 'NewsReportContentTypesArgsDict', 'outputs.NewsReportContentTypes']] content_types: (Updatable) Content types that the news report can handle.
         :param pulumi.Input[_builtins.str] day_of_week: (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the news report.

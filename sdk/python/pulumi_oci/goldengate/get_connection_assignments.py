@@ -155,7 +155,7 @@ def get_connection_assignments(compartment_id: Optional[_builtins.str] = None,
                                connection_type_not_equal_tos: Optional[Sequence[_builtins.str]] = None,
                                connection_types: Optional[Sequence[_builtins.str]] = None,
                                deployment_id: Optional[_builtins.str] = None,
-                               filters: Optional[Sequence[Union['GetConnectionAssignmentsFilterArgs', 'GetConnectionAssignmentsFilterArgsDict']]] = None,
+                               filters: Optional[Sequence[Union['GetConnectionAssignmentsFilterArgs', 'GetConnectionAssignmentsFilterArgsDict', 'outputs.GetConnectionAssignmentsFilterResult']]] = None,
                                name: Optional[_builtins.str] = None,
                                state: Optional[_builtins.str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConnectionAssignmentsResult:
@@ -216,7 +216,7 @@ def get_connection_assignments_output(compartment_id: pulumi.Input[Optional[_bui
                                       connection_type_not_equal_tos: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                       connection_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                       deployment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConnectionAssignmentsFilterArgs', 'GetConnectionAssignmentsFilterArgsDict']]]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConnectionAssignmentsFilterArgs', 'GetConnectionAssignmentsFilterArgsDict', 'outputs.GetConnectionAssignmentsFilterResult']]]]] = None,
                                       name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectionAssignmentsResult]:

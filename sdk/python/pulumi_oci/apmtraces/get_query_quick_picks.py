@@ -82,7 +82,7 @@ class AwaitableGetQueryQuickPicksResult(GetQueryQuickPicksResult):
 
 
 def get_query_quick_picks(apm_domain_id: Optional[_builtins.str] = None,
-                          filters: Optional[Sequence[Union['GetQueryQuickPicksFilterArgs', 'GetQueryQuickPicksFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetQueryQuickPicksFilterArgs', 'GetQueryQuickPicksFilterArgsDict', 'outputs.GetQueryQuickPicksFilterResult']]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetQueryQuickPicksResult:
     """
     This data source provides the list of Query Quick Picks in Oracle Cloud Infrastructure Apm Traces service.
@@ -114,7 +114,7 @@ def get_query_quick_picks(apm_domain_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         quick_picks=pulumi.get(__ret__, 'quick_picks'))
 def get_query_quick_picks_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetQueryQuickPicksFilterArgs', 'GetQueryQuickPicksFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetQueryQuickPicksFilterArgs', 'GetQueryQuickPicksFilterArgsDict', 'outputs.GetQueryQuickPicksFilterResult']]]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetQueryQuickPicksResult]:
     """
     This data source provides the list of Query Quick Picks in Oracle Cloud Infrastructure Apm Traces service.

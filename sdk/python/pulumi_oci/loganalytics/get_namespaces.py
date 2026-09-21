@@ -94,7 +94,7 @@ class AwaitableGetNamespacesResult(GetNamespacesResult):
 
 
 def get_namespaces(compartment_id: Optional[_builtins.str] = None,
-                   filters: Optional[Sequence[Union['GetNamespacesFilterArgs', 'GetNamespacesFilterArgsDict']]] = None,
+                   filters: Optional[Sequence[Union['GetNamespacesFilterArgs', 'GetNamespacesFilterArgsDict', 'outputs.GetNamespacesFilterResult']]] = None,
                    is_compartment_delete: Optional[_builtins.bool] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespacesResult:
     """
@@ -131,7 +131,7 @@ def get_namespaces(compartment_id: Optional[_builtins.str] = None,
         is_compartment_delete=pulumi.get(__ret__, 'is_compartment_delete'),
         namespace_collections=pulumi.get(__ret__, 'namespace_collections'))
 def get_namespaces_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespacesFilterArgs', 'GetNamespacesFilterArgsDict']]]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespacesFilterArgs', 'GetNamespacesFilterArgsDict', 'outputs.GetNamespacesFilterResult']]]]] = None,
                           is_compartment_delete: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespacesResult]:
     """

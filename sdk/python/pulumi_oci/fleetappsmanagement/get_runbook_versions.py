@@ -127,7 +127,7 @@ class AwaitableGetRunbookVersionsResult(GetRunbookVersionsResult):
 
 
 def get_runbook_versions(compartment_id: Optional[_builtins.str] = None,
-                         filters: Optional[Sequence[Union['GetRunbookVersionsFilterArgs', 'GetRunbookVersionsFilterArgsDict']]] = None,
+                         filters: Optional[Sequence[Union['GetRunbookVersionsFilterArgs', 'GetRunbookVersionsFilterArgsDict', 'outputs.GetRunbookVersionsFilterResult']]] = None,
                          id: Optional[_builtins.str] = None,
                          name: Optional[_builtins.str] = None,
                          runbook_id: Optional[_builtins.str] = None,
@@ -178,7 +178,7 @@ def get_runbook_versions(compartment_id: Optional[_builtins.str] = None,
         runbook_version_collections=pulumi.get(__ret__, 'runbook_version_collections'),
         state=pulumi.get(__ret__, 'state'))
 def get_runbook_versions_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRunbookVersionsFilterArgs', 'GetRunbookVersionsFilterArgsDict']]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRunbookVersionsFilterArgs', 'GetRunbookVersionsFilterArgsDict', 'outputs.GetRunbookVersionsFilterResult']]]]] = None,
                                 id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 runbook_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

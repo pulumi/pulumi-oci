@@ -522,7 +522,7 @@ class MonitoredResourceType(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['MonitoredResourceTypeMetadataArgs', 'MonitoredResourceTypeMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['MonitoredResourceTypeMetadataArgs', 'MonitoredResourceTypeMetadataArgsDict', 'outputs.MonitoredResourceTypeMetadata']]] = None,
                  metric_namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_category: pulumi.Input[Optional[_builtins.str]] = None,
@@ -586,7 +586,7 @@ class MonitoredResourceType(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) A friendly description.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Monitored resource type display name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Union['MonitoredResourceTypeMetadataArgs', 'MonitoredResourceTypeMetadataArgsDict']] metadata: (Updatable) The metadata details for resource type.
+        :param pulumi.Input[Union['MonitoredResourceTypeMetadataArgs', 'MonitoredResourceTypeMetadataArgsDict', 'outputs.MonitoredResourceTypeMetadata']] metadata: (Updatable) The metadata details for resource type.
         :param pulumi.Input[_builtins.str] metric_namespace: (Updatable) Metric namespace for resource type.
         :param pulumi.Input[_builtins.str] name: A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
         :param pulumi.Input[_builtins.str] resource_category: (Updatable) Resource Category to indicate the kind of resource type.
@@ -672,7 +672,7 @@ class MonitoredResourceType(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['MonitoredResourceTypeMetadataArgs', 'MonitoredResourceTypeMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['MonitoredResourceTypeMetadataArgs', 'MonitoredResourceTypeMetadataArgsDict', 'outputs.MonitoredResourceTypeMetadata']]] = None,
                  metric_namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_category: pulumi.Input[Optional[_builtins.str]] = None,
@@ -718,15 +718,15 @@ class MonitoredResourceType(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             additional_namespace_map: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            availability_metrics_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceTypeAvailabilityMetricsConfigArgs', 'MonitoredResourceTypeAvailabilityMetricsConfigArgsDict']]]]] = None,
+            availability_metrics_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceTypeAvailabilityMetricsConfigArgs', 'MonitoredResourceTypeAvailabilityMetricsConfigArgsDict', 'outputs.MonitoredResourceTypeAvailabilityMetricsConfig']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            handler_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceTypeHandlerConfigArgs', 'MonitoredResourceTypeHandlerConfigArgsDict']]]]] = None,
+            handler_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceTypeHandlerConfigArgs', 'MonitoredResourceTypeHandlerConfigArgsDict', 'outputs.MonitoredResourceTypeHandlerConfig']]]]] = None,
             is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
-            metadata: pulumi.Input[Optional[Union['MonitoredResourceTypeMetadataArgs', 'MonitoredResourceTypeMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['MonitoredResourceTypeMetadataArgs', 'MonitoredResourceTypeMetadataArgsDict', 'outputs.MonitoredResourceTypeMetadata']]] = None,
             metric_namespace: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             resource_category: pulumi.Input[Optional[_builtins.str]] = None,
@@ -744,15 +744,15 @@ class MonitoredResourceType(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_namespace_map: Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceTypeAvailabilityMetricsConfigArgs', 'MonitoredResourceTypeAvailabilityMetricsConfigArgsDict']]]] availability_metrics_configs: Availability metrics details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceTypeAvailabilityMetricsConfigArgs', 'MonitoredResourceTypeAvailabilityMetricsConfigArgsDict', 'outputs.MonitoredResourceTypeAvailabilityMetricsConfig']]]] availability_metrics_configs: Availability metrics details.
         :param pulumi.Input[_builtins.str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A friendly description.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Monitored resource type display name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceTypeHandlerConfigArgs', 'MonitoredResourceTypeHandlerConfigArgsDict']]]] handler_configs: Specific resource mapping configurations for Agent Extension Handlers.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceTypeHandlerConfigArgs', 'MonitoredResourceTypeHandlerConfigArgsDict', 'outputs.MonitoredResourceTypeHandlerConfig']]]] handler_configs: Specific resource mapping configurations for Agent Extension Handlers.
         :param pulumi.Input[_builtins.bool] is_system_defined: If boolean flag is true, then the resource type cannot be modified or deleted.
-        :param pulumi.Input[Union['MonitoredResourceTypeMetadataArgs', 'MonitoredResourceTypeMetadataArgsDict']] metadata: (Updatable) The metadata details for resource type.
+        :param pulumi.Input[Union['MonitoredResourceTypeMetadataArgs', 'MonitoredResourceTypeMetadataArgsDict', 'outputs.MonitoredResourceTypeMetadata']] metadata: (Updatable) The metadata details for resource type.
         :param pulumi.Input[_builtins.str] metric_namespace: (Updatable) Metric namespace for resource type.
         :param pulumi.Input[_builtins.str] name: A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
         :param pulumi.Input[_builtins.str] resource_category: (Updatable) Resource Category to indicate the kind of resource type.

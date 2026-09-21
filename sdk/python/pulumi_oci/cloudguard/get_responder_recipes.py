@@ -139,7 +139,7 @@ def get_responder_recipes(access_level: Optional[_builtins.str] = None,
                           compartment_id: Optional[_builtins.str] = None,
                           compartment_id_in_subtree: Optional[_builtins.bool] = None,
                           display_name: Optional[_builtins.str] = None,
-                          filters: Optional[Sequence[Union['GetResponderRecipesFilterArgs', 'GetResponderRecipesFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetResponderRecipesFilterArgs', 'GetResponderRecipesFilterArgsDict', 'outputs.GetResponderRecipesFilterResult']]] = None,
                           resource_metadata_only: Optional[_builtins.bool] = None,
                           state: Optional[_builtins.str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetResponderRecipesResult:
@@ -209,7 +209,7 @@ def get_responder_recipes_output(access_level: pulumi.Input[Optional[Optional[_b
                                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetResponderRecipesFilterArgs', 'GetResponderRecipesFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetResponderRecipesFilterArgs', 'GetResponderRecipesFilterArgsDict', 'outputs.GetResponderRecipesFilterResult']]]]] = None,
                                  resource_metadata_only: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResponderRecipesResult]:

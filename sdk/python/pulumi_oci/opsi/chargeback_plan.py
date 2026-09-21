@@ -420,7 +420,7 @@ class ChargebackPlan(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  entity_source: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 plan_custom_items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ChargebackPlanPlanCustomItemArgs', 'ChargebackPlanPlanCustomItemArgsDict']]]]] = None,
+                 plan_custom_items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ChargebackPlanPlanCustomItemArgs', 'ChargebackPlanPlanCustomItemArgsDict', 'outputs.ChargebackPlanPlanCustomItem']]]]] = None,
                  plan_description: pulumi.Input[Optional[_builtins.str]] = None,
                  plan_name: pulumi.Input[Optional[_builtins.str]] = None,
                  plan_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -473,7 +473,7 @@ class ChargebackPlan(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] entity_source: Source of the chargeback plan.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ChargebackPlanPlanCustomItemArgs', 'ChargebackPlanPlanCustomItemArgsDict']]]] plan_custom_items: (Updatable) List of chargeback plan customizations. At least one item is required.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ChargebackPlanPlanCustomItemArgs', 'ChargebackPlanPlanCustomItemArgsDict', 'outputs.ChargebackPlanPlanCustomItem']]]] plan_custom_items: (Updatable) List of chargeback plan customizations. At least one item is required.
         :param pulumi.Input[_builtins.str] plan_description: (Updatable) Description of OPSI Chargeback Plan.
         :param pulumi.Input[_builtins.str] plan_name: (Updatable) Name for the OPSI Chargeback plan.
         :param pulumi.Input[_builtins.str] plan_type: Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
@@ -548,7 +548,7 @@ class ChargebackPlan(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  entity_source: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 plan_custom_items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ChargebackPlanPlanCustomItemArgs', 'ChargebackPlanPlanCustomItemArgsDict']]]]] = None,
+                 plan_custom_items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ChargebackPlanPlanCustomItemArgs', 'ChargebackPlanPlanCustomItemArgsDict', 'outputs.ChargebackPlanPlanCustomItem']]]]] = None,
                  plan_description: pulumi.Input[Optional[_builtins.str]] = None,
                  plan_name: pulumi.Input[Optional[_builtins.str]] = None,
                  plan_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -605,7 +605,7 @@ class ChargebackPlan(pulumi.CustomResource):
             is_customizable: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             plan_category: pulumi.Input[Optional[_builtins.str]] = None,
-            plan_custom_items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ChargebackPlanPlanCustomItemArgs', 'ChargebackPlanPlanCustomItemArgsDict']]]]] = None,
+            plan_custom_items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ChargebackPlanPlanCustomItemArgs', 'ChargebackPlanPlanCustomItemArgsDict', 'outputs.ChargebackPlanPlanCustomItem']]]]] = None,
             plan_description: pulumi.Input[Optional[_builtins.str]] = None,
             plan_name: pulumi.Input[Optional[_builtins.str]] = None,
             plan_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -627,7 +627,7 @@ class ChargebackPlan(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_customizable: Indicates whether the chargeback plan customization item can be customized.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[_builtins.str] plan_category: Chargeback Plan category of the chargeback entity. It can be OOB, or CUSTOM.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ChargebackPlanPlanCustomItemArgs', 'ChargebackPlanPlanCustomItemArgsDict']]]] plan_custom_items: (Updatable) List of chargeback plan customizations. At least one item is required.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ChargebackPlanPlanCustomItemArgs', 'ChargebackPlanPlanCustomItemArgsDict', 'outputs.ChargebackPlanPlanCustomItem']]]] plan_custom_items: (Updatable) List of chargeback plan customizations. At least one item is required.
         :param pulumi.Input[_builtins.str] plan_description: (Updatable) Description of OPSI Chargeback Plan.
         :param pulumi.Input[_builtins.str] plan_name: (Updatable) Name for the OPSI Chargeback plan.
         :param pulumi.Input[_builtins.str] plan_type: Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.

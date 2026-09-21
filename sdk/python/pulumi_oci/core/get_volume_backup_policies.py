@@ -85,7 +85,7 @@ class AwaitableGetVolumeBackupPoliciesResult(GetVolumeBackupPoliciesResult):
 
 
 def get_volume_backup_policies(compartment_id: Optional[_builtins.str] = None,
-                               filters: Optional[Sequence[Union['GetVolumeBackupPoliciesFilterArgs', 'GetVolumeBackupPoliciesFilterArgsDict']]] = None,
+                               filters: Optional[Sequence[Union['GetVolumeBackupPoliciesFilterArgs', 'GetVolumeBackupPoliciesFilterArgsDict', 'outputs.GetVolumeBackupPoliciesFilterResult']]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVolumeBackupPoliciesResult:
     """
     This data source provides the list of Volume Backup Policies in Oracle Cloud Infrastructure Core service.
@@ -119,7 +119,7 @@ def get_volume_backup_policies(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         volume_backup_policies=pulumi.get(__ret__, 'volume_backup_policies'))
 def get_volume_backup_policies_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVolumeBackupPoliciesFilterArgs', 'GetVolumeBackupPoliciesFilterArgsDict']]]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVolumeBackupPoliciesFilterArgs', 'GetVolumeBackupPoliciesFilterArgsDict', 'outputs.GetVolumeBackupPoliciesFilterResult']]]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeBackupPoliciesResult]:
     """
     This data source provides the list of Volume Backup Policies in Oracle Cloud Infrastructure Core service.

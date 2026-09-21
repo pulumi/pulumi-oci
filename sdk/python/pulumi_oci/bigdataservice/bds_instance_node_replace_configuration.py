@@ -314,7 +314,7 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
                  cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  duration_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
-                 level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgsDict']]] = None,
+                 level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgsDict', 'outputs.BdsInstanceNodeReplaceConfigurationLevelTypeDetails']]] = None,
                  metric_type: pulumi.Input[Optional[_builtins.str]] = None,
                  secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -361,7 +361,7 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         :param pulumi.Input[_builtins.int] duration_in_minutes: (Updatable) This value is the minimum period of time to wait before triggering node replacement. The value is in minutes.
-        :param pulumi.Input[Union['BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgsDict']] level_type_details: (Updatable) Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+        :param pulumi.Input[Union['BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgsDict', 'outputs.BdsInstanceNodeReplaceConfigurationLevelTypeDetails']] level_type_details: (Updatable) Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
         :param pulumi.Input[_builtins.str] metric_type: (Updatable) Type of compute instance health metric to use for node replacement
         :param pulumi.Input[_builtins.str] secret_id: The secretId for the clusterAdminPassword.
         """
@@ -427,7 +427,7 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
                  cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  duration_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
-                 level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgsDict']]] = None,
+                 level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgsDict', 'outputs.BdsInstanceNodeReplaceConfigurationLevelTypeDetails']]] = None,
                  metric_type: pulumi.Input[Optional[_builtins.str]] = None,
                  secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -473,7 +473,7 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
             cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             duration_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
-            level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgsDict']]] = None,
+            level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgsDict', 'outputs.BdsInstanceNodeReplaceConfigurationLevelTypeDetails']]] = None,
             metric_type: pulumi.Input[Optional[_builtins.str]] = None,
             secret_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -490,7 +490,7 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         :param pulumi.Input[_builtins.int] duration_in_minutes: (Updatable) This value is the minimum period of time to wait before triggering node replacement. The value is in minutes.
-        :param pulumi.Input[Union['BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgsDict']] level_type_details: (Updatable) Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+        :param pulumi.Input[Union['BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgsDict', 'outputs.BdsInstanceNodeReplaceConfigurationLevelTypeDetails']] level_type_details: (Updatable) Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
         :param pulumi.Input[_builtins.str] metric_type: (Updatable) Type of compute instance health metric to use for node replacement
         :param pulumi.Input[_builtins.str] secret_id: The secretId for the clusterAdminPassword.
         :param pulumi.Input[_builtins.str] state: The state of the NodeReplaceConfiguration.

@@ -199,7 +199,7 @@ class OciCacheConfigSetlistAssociatedOciCacheCluster(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs', 'OciCacheConfigSetlistAssociatedOciCacheClusterItemArgsDict']]]]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs', 'OciCacheConfigSetlistAssociatedOciCacheClusterItemArgsDict', 'outputs.OciCacheConfigSetlistAssociatedOciCacheClusterItem']]]]] = None,
             oci_cache_config_set_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'OciCacheConfigSetlistAssociatedOciCacheCluster':
         """
         Get an existing OciCacheConfigSetlistAssociatedOciCacheCluster resource's state with the given name, id, and optional extra
@@ -208,7 +208,7 @@ class OciCacheConfigSetlistAssociatedOciCacheCluster(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs', 'OciCacheConfigSetlistAssociatedOciCacheClusterItemArgsDict']]]] items: List of clusters with the same Oracle Cloud Infrastructure Cache Config Set ID.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs', 'OciCacheConfigSetlistAssociatedOciCacheClusterItemArgsDict', 'outputs.OciCacheConfigSetlistAssociatedOciCacheClusterItem']]]] items: List of clusters with the same Oracle Cloud Infrastructure Cache Config Set ID.
         :param pulumi.Input[_builtins.str] oci_cache_config_set_id: Unique Oracle Cloud Infrastructure Cache Config Set identifier.
                
                ** IMPORTANT **

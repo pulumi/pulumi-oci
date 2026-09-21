@@ -111,7 +111,7 @@ class AwaitableGetExternalClusterInstancesResult(GetExternalClusterInstancesResu
 def get_external_cluster_instances(compartment_id: Optional[_builtins.str] = None,
                                    display_name: Optional[_builtins.str] = None,
                                    external_cluster_id: Optional[_builtins.str] = None,
-                                   filters: Optional[Sequence[Union['GetExternalClusterInstancesFilterArgs', 'GetExternalClusterInstancesFilterArgsDict']]] = None,
+                                   filters: Optional[Sequence[Union['GetExternalClusterInstancesFilterArgs', 'GetExternalClusterInstancesFilterArgsDict', 'outputs.GetExternalClusterInstancesFilterResult']]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalClusterInstancesResult:
     """
     This data source provides the list of External Cluster Instances in Oracle Cloud Infrastructure Database Management service.
@@ -152,7 +152,7 @@ def get_external_cluster_instances(compartment_id: Optional[_builtins.str] = Non
 def get_external_cluster_instances_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           external_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalClusterInstancesFilterArgs', 'GetExternalClusterInstancesFilterArgsDict']]]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalClusterInstancesFilterArgs', 'GetExternalClusterInstancesFilterArgsDict', 'outputs.GetExternalClusterInstancesFilterResult']]]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalClusterInstancesResult]:
     """
     This data source provides the list of External Cluster Instances in Oracle Cloud Infrastructure Database Management service.

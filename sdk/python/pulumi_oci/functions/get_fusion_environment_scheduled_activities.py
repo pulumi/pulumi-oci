@@ -139,7 +139,7 @@ class AwaitableGetFusionEnvironmentScheduledActivitiesResult(GetFusionEnvironmen
 
 
 def get_fusion_environment_scheduled_activities(display_name: Optional[_builtins.str] = None,
-                                                filters: Optional[Sequence[Union['GetFusionEnvironmentScheduledActivitiesFilterArgs', 'GetFusionEnvironmentScheduledActivitiesFilterArgsDict']]] = None,
+                                                filters: Optional[Sequence[Union['GetFusionEnvironmentScheduledActivitiesFilterArgs', 'GetFusionEnvironmentScheduledActivitiesFilterArgsDict', 'outputs.GetFusionEnvironmentScheduledActivitiesFilterResult']]] = None,
                                                 fusion_environment_id: Optional[_builtins.str] = None,
                                                 run_cycle: Optional[_builtins.str] = None,
                                                 state: Optional[_builtins.str] = None,
@@ -195,7 +195,7 @@ def get_fusion_environment_scheduled_activities(display_name: Optional[_builtins
         time_expected_finish_less_than_or_equal_to=pulumi.get(__ret__, 'time_expected_finish_less_than_or_equal_to'),
         time_scheduled_start_greater_than_or_equal_to=pulumi.get(__ret__, 'time_scheduled_start_greater_than_or_equal_to'))
 def get_fusion_environment_scheduled_activities_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFusionEnvironmentScheduledActivitiesFilterArgs', 'GetFusionEnvironmentScheduledActivitiesFilterArgsDict']]]]] = None,
+                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFusionEnvironmentScheduledActivitiesFilterArgs', 'GetFusionEnvironmentScheduledActivitiesFilterArgsDict', 'outputs.GetFusionEnvironmentScheduledActivitiesFilterResult']]]]] = None,
                                                        fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                        run_cycle: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

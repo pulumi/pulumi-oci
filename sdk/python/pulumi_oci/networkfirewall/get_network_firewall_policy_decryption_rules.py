@@ -101,7 +101,7 @@ class AwaitableGetNetworkFirewallPolicyDecryptionRulesResult(GetNetworkFirewallP
 
 def get_network_firewall_policy_decryption_rules(decryption_rule_priority_order: Optional[_builtins.int] = None,
                                                  display_name: Optional[_builtins.str] = None,
-                                                 filters: Optional[Sequence[Union['GetNetworkFirewallPolicyDecryptionRulesFilterArgs', 'GetNetworkFirewallPolicyDecryptionRulesFilterArgsDict']]] = None,
+                                                 filters: Optional[Sequence[Union['GetNetworkFirewallPolicyDecryptionRulesFilterArgs', 'GetNetworkFirewallPolicyDecryptionRulesFilterArgsDict', 'outputs.GetNetworkFirewallPolicyDecryptionRulesFilterResult']]] = None,
                                                  network_firewall_policy_id: Optional[_builtins.str] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyDecryptionRulesResult:
     """
@@ -142,7 +142,7 @@ def get_network_firewall_policy_decryption_rules(decryption_rule_priority_order:
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'))
 def get_network_firewall_policy_decryption_rules_output(decryption_rule_priority_order: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPolicyDecryptionRulesFilterArgs', 'GetNetworkFirewallPolicyDecryptionRulesFilterArgsDict']]]]] = None,
+                                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPolicyDecryptionRulesFilterArgs', 'GetNetworkFirewallPolicyDecryptionRulesFilterArgsDict', 'outputs.GetNetworkFirewallPolicyDecryptionRulesFilterResult']]]]] = None,
                                                         network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyDecryptionRulesResult]:
     """

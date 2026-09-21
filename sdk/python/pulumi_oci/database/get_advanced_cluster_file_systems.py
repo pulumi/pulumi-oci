@@ -130,7 +130,7 @@ class AwaitableGetAdvancedClusterFileSystemsResult(GetAdvancedClusterFileSystems
 
 
 def get_advanced_cluster_file_systems(compartment_id: Optional[_builtins.str] = None,
-                                      filters: Optional[Sequence[Union['GetAdvancedClusterFileSystemsFilterArgs', 'GetAdvancedClusterFileSystemsFilterArgsDict']]] = None,
+                                      filters: Optional[Sequence[Union['GetAdvancedClusterFileSystemsFilterArgs', 'GetAdvancedClusterFileSystemsFilterArgsDict', 'outputs.GetAdvancedClusterFileSystemsFilterResult']]] = None,
                                       name: Optional[_builtins.str] = None,
                                       resource_id: Optional[_builtins.str] = None,
                                       state: Optional[_builtins.str] = None,
@@ -181,7 +181,7 @@ def get_advanced_cluster_file_systems(compartment_id: Optional[_builtins.str] = 
         state=pulumi.get(__ret__, 'state'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
 def get_advanced_cluster_file_systems_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAdvancedClusterFileSystemsFilterArgs', 'GetAdvancedClusterFileSystemsFilterArgsDict']]]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAdvancedClusterFileSystemsFilterArgs', 'GetAdvancedClusterFileSystemsFilterArgsDict', 'outputs.GetAdvancedClusterFileSystemsFilterResult']]]]] = None,
                                              name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

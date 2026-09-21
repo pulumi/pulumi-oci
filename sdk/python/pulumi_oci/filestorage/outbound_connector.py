@@ -543,10 +543,10 @@ class OutboundConnector(pulumi.CustomResource):
                  connector_type: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OutboundConnectorEndpointArgs', 'OutboundConnectorEndpointArgsDict']]]]] = None,
+                 endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OutboundConnectorEndpointArgs', 'OutboundConnectorEndpointArgsDict', 'outputs.OutboundConnectorEndpoint']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict', 'outputs.OutboundConnectorLock']]]]] = None,
                  password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  password_secret_version: pulumi.Input[Optional[_builtins.int]] = None,
                  trusted_certificate_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -630,9 +630,9 @@ class OutboundConnector(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] connector_type: The account type of this outbound connector.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorEndpointArgs', 'OutboundConnectorEndpointArgsDict']]]] endpoints: Array of server endpoints to use when connecting with the LDAP bind account.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorEndpointArgs', 'OutboundConnectorEndpointArgsDict', 'outputs.OutboundConnectorEndpoint']]]] endpoints: Array of server endpoints to use when connecting with the LDAP bind account.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict', 'outputs.OutboundConnectorLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
         :param pulumi.Input[_builtins.int] password_secret_version: Version of the password secret in the Vault to use.
         :param pulumi.Input[_builtins.str] trusted_certificate_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
@@ -738,10 +738,10 @@ class OutboundConnector(pulumi.CustomResource):
                  connector_type: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OutboundConnectorEndpointArgs', 'OutboundConnectorEndpointArgsDict']]]]] = None,
+                 endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OutboundConnectorEndpointArgs', 'OutboundConnectorEndpointArgsDict', 'outputs.OutboundConnectorEndpoint']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict', 'outputs.OutboundConnectorLock']]]]] = None,
                  password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  password_secret_version: pulumi.Input[Optional[_builtins.int]] = None,
                  trusted_certificate_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -798,10 +798,10 @@ class OutboundConnector(pulumi.CustomResource):
             connector_type: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OutboundConnectorEndpointArgs', 'OutboundConnectorEndpointArgsDict']]]]] = None,
+            endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OutboundConnectorEndpointArgs', 'OutboundConnectorEndpointArgsDict', 'outputs.OutboundConnectorEndpoint']]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict', 'outputs.OutboundConnectorLock']]]]] = None,
             password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
             password_secret_version: pulumi.Input[Optional[_builtins.int]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -822,9 +822,9 @@ class OutboundConnector(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] connector_type: The account type of this outbound connector.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorEndpointArgs', 'OutboundConnectorEndpointArgsDict']]]] endpoints: Array of server endpoints to use when connecting with the LDAP bind account.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorEndpointArgs', 'OutboundConnectorEndpointArgsDict', 'outputs.OutboundConnectorEndpoint']]]] endpoints: Array of server endpoints to use when connecting with the LDAP bind account.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict', 'outputs.OutboundConnectorLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
         :param pulumi.Input[_builtins.int] password_secret_version: Version of the password secret in the Vault to use.
         :param pulumi.Input[_builtins.str] state: The current state of this outbound connector.

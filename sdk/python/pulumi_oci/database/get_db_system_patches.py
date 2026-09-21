@@ -82,7 +82,7 @@ class AwaitableGetDbSystemPatchesResult(GetDbSystemPatchesResult):
 
 
 def get_db_system_patches(db_system_id: Optional[_builtins.str] = None,
-                          filters: Optional[Sequence[Union['GetDbSystemPatchesFilterArgs', 'GetDbSystemPatchesFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetDbSystemPatchesFilterArgs', 'GetDbSystemPatchesFilterArgsDict', 'outputs.GetDbSystemPatchesFilterResult']]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbSystemPatchesResult:
     """
     This data source provides the list of Db System Patches in Oracle Cloud Infrastructure Database service.
@@ -113,7 +113,7 @@ def get_db_system_patches(db_system_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         patches=pulumi.get(__ret__, 'patches'))
 def get_db_system_patches_output(db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemPatchesFilterArgs', 'GetDbSystemPatchesFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemPatchesFilterArgs', 'GetDbSystemPatchesFilterArgsDict', 'outputs.GetDbSystemPatchesFilterResult']]]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemPatchesResult]:
     """
     This data source provides the list of Db System Patches in Oracle Cloud Infrastructure Database service.

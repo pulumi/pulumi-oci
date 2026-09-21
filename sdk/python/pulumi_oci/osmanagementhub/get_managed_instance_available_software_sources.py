@@ -117,7 +117,7 @@ class AwaitableGetManagedInstanceAvailableSoftwareSourcesResult(GetManagedInstan
 def get_managed_instance_available_software_sources(compartment_id: Optional[_builtins.str] = None,
                                                     display_name_contains: Optional[_builtins.str] = None,
                                                     display_names: Optional[Sequence[_builtins.str]] = None,
-                                                    filters: Optional[Sequence[Union['GetManagedInstanceAvailableSoftwareSourcesFilterArgs', 'GetManagedInstanceAvailableSoftwareSourcesFilterArgsDict']]] = None,
+                                                    filters: Optional[Sequence[Union['GetManagedInstanceAvailableSoftwareSourcesFilterArgs', 'GetManagedInstanceAvailableSoftwareSourcesFilterArgsDict', 'outputs.GetManagedInstanceAvailableSoftwareSourcesFilterResult']]] = None,
                                                     managed_instance_id: Optional[_builtins.str] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedInstanceAvailableSoftwareSourcesResult:
     """
@@ -163,7 +163,7 @@ def get_managed_instance_available_software_sources(compartment_id: Optional[_bu
 def get_managed_instance_available_software_sources_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                            display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                            display_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
-                                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceAvailableSoftwareSourcesFilterArgs', 'GetManagedInstanceAvailableSoftwareSourcesFilterArgsDict']]]]] = None,
+                                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceAvailableSoftwareSourcesFilterArgs', 'GetManagedInstanceAvailableSoftwareSourcesFilterArgsDict', 'outputs.GetManagedInstanceAvailableSoftwareSourcesFilterResult']]]]] = None,
                                                            managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceAvailableSoftwareSourcesResult]:
     """

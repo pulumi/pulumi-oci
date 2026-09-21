@@ -414,10 +414,10 @@ class Policy(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  domain: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 origin_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PolicyOriginGroupArgs', 'PolicyOriginGroupArgsDict']]]]] = None,
-                 origins: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PolicyOriginArgs', 'PolicyOriginArgsDict']]]]] = None,
-                 policy_config: pulumi.Input[Optional[Union['PolicyPolicyConfigArgs', 'PolicyPolicyConfigArgsDict']]] = None,
-                 waf_config: pulumi.Input[Optional[Union['PolicyWafConfigArgs', 'PolicyWafConfigArgsDict']]] = None,
+                 origin_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PolicyOriginGroupArgs', 'PolicyOriginGroupArgsDict', 'outputs.PolicyOriginGroup']]]]] = None,
+                 origins: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PolicyOriginArgs', 'PolicyOriginArgsDict', 'outputs.PolicyOrigin']]]]] = None,
+                 policy_config: pulumi.Input[Optional[Union['PolicyPolicyConfigArgs', 'PolicyPolicyConfigArgsDict', 'outputs.PolicyPolicyConfig']]] = None,
+                 waf_config: pulumi.Input[Optional[Union['PolicyWafConfigArgs', 'PolicyWafConfigArgsDict', 'outputs.PolicyWafConfig']]] = None,
                  __props__=None):
         """
         This resource provides the Waas Policy resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -678,10 +678,10 @@ class Policy(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
         :param pulumi.Input[_builtins.str] domain: The web application domain that the WAAS policy protects.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PolicyOriginGroupArgs', 'PolicyOriginGroupArgsDict']]]] origin_groups: (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PolicyOriginArgs', 'PolicyOriginArgsDict']]]] origins: (Updatable) A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
-        :param pulumi.Input[Union['PolicyPolicyConfigArgs', 'PolicyPolicyConfigArgsDict']] policy_config: (Updatable) The configuration details for the WAAS policy.
-        :param pulumi.Input[Union['PolicyWafConfigArgs', 'PolicyWafConfigArgsDict']] waf_config: (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PolicyOriginGroupArgs', 'PolicyOriginGroupArgsDict', 'outputs.PolicyOriginGroup']]]] origin_groups: (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PolicyOriginArgs', 'PolicyOriginArgsDict', 'outputs.PolicyOrigin']]]] origins: (Updatable) A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
+        :param pulumi.Input[Union['PolicyPolicyConfigArgs', 'PolicyPolicyConfigArgsDict', 'outputs.PolicyPolicyConfig']] policy_config: (Updatable) The configuration details for the WAAS policy.
+        :param pulumi.Input[Union['PolicyWafConfigArgs', 'PolicyWafConfigArgsDict', 'outputs.PolicyWafConfig']] waf_config: (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
         """
         ...
     @overload
@@ -961,10 +961,10 @@ class Policy(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  domain: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 origin_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PolicyOriginGroupArgs', 'PolicyOriginGroupArgsDict']]]]] = None,
-                 origins: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PolicyOriginArgs', 'PolicyOriginArgsDict']]]]] = None,
-                 policy_config: pulumi.Input[Optional[Union['PolicyPolicyConfigArgs', 'PolicyPolicyConfigArgsDict']]] = None,
-                 waf_config: pulumi.Input[Optional[Union['PolicyWafConfigArgs', 'PolicyWafConfigArgsDict']]] = None,
+                 origin_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PolicyOriginGroupArgs', 'PolicyOriginGroupArgsDict', 'outputs.PolicyOriginGroup']]]]] = None,
+                 origins: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PolicyOriginArgs', 'PolicyOriginArgsDict', 'outputs.PolicyOrigin']]]]] = None,
+                 policy_config: pulumi.Input[Optional[Union['PolicyPolicyConfigArgs', 'PolicyPolicyConfigArgsDict', 'outputs.PolicyPolicyConfig']]] = None,
+                 waf_config: pulumi.Input[Optional[Union['PolicyWafConfigArgs', 'PolicyWafConfigArgsDict', 'outputs.PolicyWafConfig']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1008,12 +1008,12 @@ class Policy(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             domain: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            origin_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PolicyOriginGroupArgs', 'PolicyOriginGroupArgsDict']]]]] = None,
-            origins: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PolicyOriginArgs', 'PolicyOriginArgsDict']]]]] = None,
-            policy_config: pulumi.Input[Optional[Union['PolicyPolicyConfigArgs', 'PolicyPolicyConfigArgsDict']]] = None,
+            origin_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PolicyOriginGroupArgs', 'PolicyOriginGroupArgsDict', 'outputs.PolicyOriginGroup']]]]] = None,
+            origins: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PolicyOriginArgs', 'PolicyOriginArgsDict', 'outputs.PolicyOrigin']]]]] = None,
+            policy_config: pulumi.Input[Optional[Union['PolicyPolicyConfigArgs', 'PolicyPolicyConfigArgsDict', 'outputs.PolicyPolicyConfig']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
-            waf_config: pulumi.Input[Optional[Union['PolicyWafConfigArgs', 'PolicyWafConfigArgsDict']]] = None) -> 'Policy':
+            waf_config: pulumi.Input[Optional[Union['PolicyWafConfigArgs', 'PolicyWafConfigArgsDict', 'outputs.PolicyWafConfig']]] = None) -> 'Policy':
         """
         Get an existing Policy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1028,12 +1028,12 @@ class Policy(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
         :param pulumi.Input[_builtins.str] domain: The web application domain that the WAAS policy protects.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PolicyOriginGroupArgs', 'PolicyOriginGroupArgsDict']]]] origin_groups: (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PolicyOriginArgs', 'PolicyOriginArgsDict']]]] origins: (Updatable) A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
-        :param pulumi.Input[Union['PolicyPolicyConfigArgs', 'PolicyPolicyConfigArgsDict']] policy_config: (Updatable) The configuration details for the WAAS policy.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PolicyOriginGroupArgs', 'PolicyOriginGroupArgsDict', 'outputs.PolicyOriginGroup']]]] origin_groups: (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PolicyOriginArgs', 'PolicyOriginArgsDict', 'outputs.PolicyOrigin']]]] origins: (Updatable) A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
+        :param pulumi.Input[Union['PolicyPolicyConfigArgs', 'PolicyPolicyConfigArgsDict', 'outputs.PolicyPolicyConfig']] policy_config: (Updatable) The configuration details for the WAAS policy.
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the WAAS policy.
         :param pulumi.Input[_builtins.str] time_created: The date and time the policy was created, expressed in RFC 3339 timestamp format.
-        :param pulumi.Input[Union['PolicyWafConfigArgs', 'PolicyWafConfigArgsDict']] waf_config: (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
+        :param pulumi.Input[Union['PolicyWafConfigArgs', 'PolicyWafConfigArgsDict', 'outputs.PolicyWafConfig']] waf_config: (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

@@ -1288,7 +1288,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
                  autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  fast_start_fail_over_lag_limit_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  is_automatic_failover_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 peer_autonomous_container_database_backup_config: pulumi.Input[Optional[Union['AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
+                 peer_autonomous_container_database_backup_config: pulumi.Input[Optional[Union['AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgsDict', 'outputs.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfig']]] = None,
                  peer_autonomous_container_database_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  peer_autonomous_container_database_display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  peer_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1354,7 +1354,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.int] fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
         :param pulumi.Input[_builtins.bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
-        :param pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgsDict']] peer_autonomous_container_database_backup_config: Backup options for the standby Autonomous Container Database.
+        :param pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgsDict', 'outputs.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfig']] peer_autonomous_container_database_backup_config: Backup options for the standby Autonomous Container Database.
         :param pulumi.Input[_builtins.str] peer_autonomous_container_database_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
         :param pulumi.Input[_builtins.str] peer_autonomous_container_database_display_name: The display name for the peer Autonomous Container Database.
         :param pulumi.Input[_builtins.str] peer_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
@@ -1442,7 +1442,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
                  autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  fast_start_fail_over_lag_limit_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  is_automatic_failover_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 peer_autonomous_container_database_backup_config: pulumi.Input[Optional[Union['AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
+                 peer_autonomous_container_database_backup_config: pulumi.Input[Optional[Union['AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgsDict', 'outputs.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfig']]] = None,
                  peer_autonomous_container_database_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  peer_autonomous_container_database_display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  peer_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1542,12 +1542,12 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
             autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
             availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
             available_cpus: pulumi.Input[Optional[_builtins.float]] = None,
-            backup_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyBackupConfigArgs', 'AutonomousContainerDatabaseAddStandbyBackupConfigArgsDict']]]]] = None,
+            backup_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyBackupConfigArgs', 'AutonomousContainerDatabaseAddStandbyBackupConfigArgsDict', 'outputs.AutonomousContainerDatabaseAddStandbyBackupConfig']]]]] = None,
             cloud_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             compute_model: pulumi.Input[Optional[_builtins.str]] = None,
-            dataguard_group_members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyDataguardGroupMemberArgs', 'AutonomousContainerDatabaseAddStandbyDataguardGroupMemberArgsDict']]]]] = None,
-            dataguards: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyDataguardArgs', 'AutonomousContainerDatabaseAddStandbyDataguardArgsDict']]]]] = None,
+            dataguard_group_members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyDataguardGroupMemberArgs', 'AutonomousContainerDatabaseAddStandbyDataguardGroupMemberArgsDict', 'outputs.AutonomousContainerDatabaseAddStandbyDataguardGroupMember']]]]] = None,
+            dataguards: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyDataguardArgs', 'AutonomousContainerDatabaseAddStandbyDataguardArgsDict', 'outputs.AutonomousContainerDatabaseAddStandbyDataguard']]]]] = None,
             db_name: pulumi.Input[Optional[_builtins.str]] = None,
             db_split_threshold: pulumi.Input[Optional[_builtins.int]] = None,
             db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1556,7 +1556,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             distribution_affinity: pulumi.Input[Optional[_builtins.str]] = None,
             dst_file_version: pulumi.Input[Optional[_builtins.str]] = None,
-            encryption_key_location_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgs', 'AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgsDict']]]]] = None,
+            encryption_key_location_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgs', 'AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgsDict', 'outputs.AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetail']]]]] = None,
             fast_start_fail_over_lag_limit_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             infrastructure_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1564,7 +1564,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
             is_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_dst_file_update_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_multiple_standby: pulumi.Input[Optional[_builtins.bool]] = None,
-            key_history_entries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgs', 'AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgsDict']]]]] = None,
+            key_history_entries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgs', 'AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgsDict', 'outputs.AutonomousContainerDatabaseAddStandbyKeyHistoryEntry']]]]] = None,
             key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
             key_store_wallet_name: pulumi.Input[Optional[_builtins.str]] = None,
             kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1573,7 +1573,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
             last_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             list_one_off_patches: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            maintenance_windows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyMaintenanceWindowArgs', 'AutonomousContainerDatabaseAddStandbyMaintenanceWindowArgsDict']]]]] = None,
+            maintenance_windows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyMaintenanceWindowArgs', 'AutonomousContainerDatabaseAddStandbyMaintenanceWindowArgsDict', 'outputs.AutonomousContainerDatabaseAddStandbyMaintenanceWindow']]]]] = None,
             memory_per_compute_unit_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
             memory_per_oracle_compute_unit_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
             net_services_architecture: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1581,7 +1581,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
             okv_end_point_group_name: pulumi.Input[Optional[_builtins.str]] = None,
             patch_id: pulumi.Input[Optional[_builtins.str]] = None,
             patch_model: pulumi.Input[Optional[_builtins.str]] = None,
-            peer_autonomous_container_database_backup_config: pulumi.Input[Optional[Union['AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
+            peer_autonomous_container_database_backup_config: pulumi.Input[Optional[Union['AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgsDict', 'outputs.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfig']]] = None,
             peer_autonomous_container_database_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             peer_autonomous_container_database_display_name: pulumi.Input[Optional[_builtins.str]] = None,
             peer_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1615,12 +1615,12 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] autonomous_vm_cluster_id: The OCID of the Autonomous VM Cluster.
         :param pulumi.Input[_builtins.str] availability_domain: The domain of the Autonomous Container Database
         :param pulumi.Input[_builtins.float] available_cpus: Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyBackupConfigArgs', 'AutonomousContainerDatabaseAddStandbyBackupConfigArgsDict']]]] backup_configs: Backup options for the Autonomous Container Database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyBackupConfigArgs', 'AutonomousContainerDatabaseAddStandbyBackupConfigArgsDict', 'outputs.AutonomousContainerDatabaseAddStandbyBackupConfig']]]] backup_configs: Backup options for the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous Container Database. For Autonomous AI Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyDataguardGroupMemberArgs', 'AutonomousContainerDatabaseAddStandbyDataguardGroupMemberArgsDict']]]] dataguard_group_members: Array of Dg associations.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyDataguardArgs', 'AutonomousContainerDatabaseAddStandbyDataguardArgsDict']]]] dataguards: The properties that define Autonomous Container Databases Dataguard.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyDataguardGroupMemberArgs', 'AutonomousContainerDatabaseAddStandbyDataguardGroupMemberArgsDict', 'outputs.AutonomousContainerDatabaseAddStandbyDataguardGroupMember']]]] dataguard_group_members: Array of Dg associations.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyDataguardArgs', 'AutonomousContainerDatabaseAddStandbyDataguardArgsDict', 'outputs.AutonomousContainerDatabaseAddStandbyDataguard']]]] dataguards: The properties that define Autonomous Container Databases Dataguard.
         :param pulumi.Input[_builtins.str] db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         :param pulumi.Input[_builtins.int] db_split_threshold: The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
         :param pulumi.Input[_builtins.str] db_unique_name: **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
@@ -1629,7 +1629,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: The user-provided name for the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] distribution_affinity: Determines whether an Autonomous AI Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
         :param pulumi.Input[_builtins.str] dst_file_version: DST Time-Zone File version of the Autonomous Container Database.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgs', 'AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgsDict']]]] encryption_key_location_details: Types of providers supported for managing database encryption keys
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgs', 'AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgsDict', 'outputs.AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetail']]]] encryption_key_location_details: Types of providers supported for managing database encryption keys
         :param pulumi.Input[_builtins.int] fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] infrastructure_type: The infrastructure type this resource belongs to.
@@ -1637,7 +1637,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_data_guard_enabled: **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param pulumi.Input[_builtins.bool] is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         :param pulumi.Input[_builtins.bool] is_multiple_standby: Indicates if it is multiple standby Autonomous Dataguard
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgs', 'AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgsDict']]]] key_history_entries: Key History Entry.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgs', 'AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgsDict', 'outputs.AutonomousContainerDatabaseAddStandbyKeyHistoryEntry']]]] key_history_entries: Key History Entry.
         :param pulumi.Input[_builtins.str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param pulumi.Input[_builtins.str] key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -1646,7 +1646,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] list_one_off_patches: List of One-Off patches that has been successfully applied to Autonomous Container Database
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyMaintenanceWindowArgs', 'AutonomousContainerDatabaseAddStandbyMaintenanceWindowArgsDict']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyMaintenanceWindowArgs', 'AutonomousContainerDatabaseAddStandbyMaintenanceWindowArgsDict', 'outputs.AutonomousContainerDatabaseAddStandbyMaintenanceWindow']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.float] memory_per_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU in the Autonomous VM Cluster. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
         :param pulumi.Input[_builtins.str] net_services_architecture: Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
@@ -1654,7 +1654,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] okv_end_point_group_name: The OKV End Point Group name for the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] patch_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
         :param pulumi.Input[_builtins.str] patch_model: Database patch model preference.
-        :param pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgsDict']] peer_autonomous_container_database_backup_config: Backup options for the standby Autonomous Container Database.
+        :param pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgsDict', 'outputs.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfig']] peer_autonomous_container_database_backup_config: Backup options for the standby Autonomous Container Database.
         :param pulumi.Input[_builtins.str] peer_autonomous_container_database_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
         :param pulumi.Input[_builtins.str] peer_autonomous_container_database_display_name: The display name for the peer Autonomous Container Database.
         :param pulumi.Input[_builtins.str] peer_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.

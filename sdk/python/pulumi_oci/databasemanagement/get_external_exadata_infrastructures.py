@@ -98,7 +98,7 @@ class AwaitableGetExternalExadataInfrastructuresResult(GetExternalExadataInfrast
 
 def get_external_exadata_infrastructures(compartment_id: Optional[_builtins.str] = None,
                                          display_name: Optional[_builtins.str] = None,
-                                         filters: Optional[Sequence[Union['GetExternalExadataInfrastructuresFilterArgs', 'GetExternalExadataInfrastructuresFilterArgsDict']]] = None,
+                                         filters: Optional[Sequence[Union['GetExternalExadataInfrastructuresFilterArgs', 'GetExternalExadataInfrastructuresFilterArgsDict', 'outputs.GetExternalExadataInfrastructuresFilterResult']]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalExadataInfrastructuresResult:
     """
     This data source provides the list of External Exadata Infrastructures in Oracle Cloud Infrastructure Database Management service.
@@ -134,7 +134,7 @@ def get_external_exadata_infrastructures(compartment_id: Optional[_builtins.str]
         id=pulumi.get(__ret__, 'id'))
 def get_external_exadata_infrastructures_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalExadataInfrastructuresFilterArgs', 'GetExternalExadataInfrastructuresFilterArgsDict']]]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalExadataInfrastructuresFilterArgs', 'GetExternalExadataInfrastructuresFilterArgsDict', 'outputs.GetExternalExadataInfrastructuresFilterResult']]]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalExadataInfrastructuresResult]:
     """
     This data source provides the list of External Exadata Infrastructures in Oracle Cloud Infrastructure Database Management service.

@@ -148,7 +148,7 @@ def get_volumes(availability_domain: Optional[_builtins.str] = None,
                 cluster_placement_group_id: Optional[_builtins.str] = None,
                 compartment_id: Optional[_builtins.str] = None,
                 display_name: Optional[_builtins.str] = None,
-                filters: Optional[Sequence[Union['GetVolumesFilterArgs', 'GetVolumesFilterArgsDict']]] = None,
+                filters: Optional[Sequence[Union['GetVolumesFilterArgs', 'GetVolumesFilterArgsDict', 'outputs.GetVolumesFilterResult']]] = None,
                 state: Optional[_builtins.str] = None,
                 volume_group_id: Optional[_builtins.str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVolumesResult:
@@ -204,7 +204,7 @@ def get_volumes_output(availability_domain: pulumi.Input[Optional[Optional[_buil
                        cluster_placement_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVolumesFilterArgs', 'GetVolumesFilterArgsDict']]]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVolumesFilterArgs', 'GetVolumesFilterArgsDict', 'outputs.GetVolumesFilterResult']]]]] = None,
                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        volume_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumesResult]:

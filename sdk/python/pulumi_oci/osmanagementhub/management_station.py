@@ -729,9 +729,9 @@ class ManagementStation(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
                  is_auto_config_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 mirror: pulumi.Input[Optional[Union['ManagementStationMirrorArgs', 'ManagementStationMirrorArgsDict']]] = None,
+                 mirror: pulumi.Input[Optional[Union['ManagementStationMirrorArgs', 'ManagementStationMirrorArgsDict', 'outputs.ManagementStationMirror']]] = None,
                  os_family: pulumi.Input[Optional[_builtins.str]] = None,
-                 proxy: pulumi.Input[Optional[Union['ManagementStationProxyArgs', 'ManagementStationProxyArgsDict']]] = None,
+                 proxy: pulumi.Input[Optional[Union['ManagementStationProxyArgs', 'ManagementStationProxyArgsDict', 'outputs.ManagementStationProxy']]] = None,
                  refresh_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
@@ -796,9 +796,9 @@ class ManagementStation(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] hostname: (Updatable) Hostname of the management station.
         :param pulumi.Input[_builtins.bool] is_auto_config_enabled: (Updatable) When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
-        :param pulumi.Input[Union['ManagementStationMirrorArgs', 'ManagementStationMirrorArgsDict']] mirror: (Updatable) Information used to create the mirror configuration for a management station.
+        :param pulumi.Input[Union['ManagementStationMirrorArgs', 'ManagementStationMirrorArgsDict', 'outputs.ManagementStationMirror']] mirror: (Updatable) Information used to create the mirror configuration for a management station.
         :param pulumi.Input[_builtins.str] os_family: (Updatable) The operating system family.
-        :param pulumi.Input[Union['ManagementStationProxyArgs', 'ManagementStationProxyArgsDict']] proxy: (Updatable) Information used to create the proxy configuration for a management station.
+        :param pulumi.Input[Union['ManagementStationProxyArgs', 'ManagementStationProxyArgsDict', 'outputs.ManagementStationProxy']] proxy: (Updatable) Information used to create the proxy configuration for a management station.
         :param pulumi.Input[_builtins.int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
                
                ** IMPORTANT **
@@ -885,9 +885,9 @@ class ManagementStation(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
                  is_auto_config_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 mirror: pulumi.Input[Optional[Union['ManagementStationMirrorArgs', 'ManagementStationMirrorArgsDict']]] = None,
+                 mirror: pulumi.Input[Optional[Union['ManagementStationMirrorArgs', 'ManagementStationMirrorArgsDict', 'outputs.ManagementStationMirror']]] = None,
                  os_family: pulumi.Input[Optional[_builtins.str]] = None,
-                 proxy: pulumi.Input[Optional[Union['ManagementStationProxyArgs', 'ManagementStationProxyArgsDict']]] = None,
+                 proxy: pulumi.Input[Optional[Union['ManagementStationProxyArgs', 'ManagementStationProxyArgsDict', 'outputs.ManagementStationProxy']]] = None,
                  refresh_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -954,25 +954,25 @@ class ManagementStation(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            healths: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementStationHealthArgs', 'ManagementStationHealthArgsDict']]]]] = None,
+            healths: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementStationHealthArgs', 'ManagementStationHealthArgsDict', 'outputs.ManagementStationHealth']]]]] = None,
             hostname: pulumi.Input[Optional[_builtins.str]] = None,
             is_auto_config_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             location: pulumi.Input[Optional[_builtins.str]] = None,
             managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
-            mirror: pulumi.Input[Optional[Union['ManagementStationMirrorArgs', 'ManagementStationMirrorArgsDict']]] = None,
+            mirror: pulumi.Input[Optional[Union['ManagementStationMirrorArgs', 'ManagementStationMirrorArgsDict', 'outputs.ManagementStationMirror']]] = None,
             mirror_capacity: pulumi.Input[Optional[_builtins.int]] = None,
             mirror_package_count: pulumi.Input[Optional[_builtins.int]] = None,
             mirror_size: pulumi.Input[Optional[_builtins.str]] = None,
             mirror_storage_available_size: pulumi.Input[Optional[_builtins.str]] = None,
             mirror_storage_size: pulumi.Input[Optional[_builtins.str]] = None,
-            mirror_sync_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementStationMirrorSyncStatusArgs', 'ManagementStationMirrorSyncStatusArgsDict']]]]] = None,
+            mirror_sync_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementStationMirrorSyncStatusArgs', 'ManagementStationMirrorSyncStatusArgsDict', 'outputs.ManagementStationMirrorSyncStatus']]]]] = None,
             mirror_unique_package_count: pulumi.Input[Optional[_builtins.int]] = None,
             os_family: pulumi.Input[Optional[_builtins.str]] = None,
             overall_percentage: pulumi.Input[Optional[_builtins.int]] = None,
             overall_state: pulumi.Input[Optional[_builtins.str]] = None,
-            peer_management_stations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementStationPeerManagementStationArgs', 'ManagementStationPeerManagementStationArgsDict']]]]] = None,
+            peer_management_stations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementStationPeerManagementStationArgs', 'ManagementStationPeerManagementStationArgsDict', 'outputs.ManagementStationPeerManagementStation']]]]] = None,
             profile_id: pulumi.Input[Optional[_builtins.str]] = None,
-            proxy: pulumi.Input[Optional[Union['ManagementStationProxyArgs', 'ManagementStationProxyArgsDict']]] = None,
+            proxy: pulumi.Input[Optional[Union['ManagementStationProxyArgs', 'ManagementStationProxyArgsDict', 'outputs.ManagementStationProxy']]] = None,
             refresh_trigger: pulumi.Input[Optional[_builtins.int]] = None,
             scheduled_job_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -991,25 +991,25 @@ class ManagementStation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) User-specified description of the management station. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementStationHealthArgs', 'ManagementStationHealthArgsDict']]]] healths: Overall health information of the management station.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementStationHealthArgs', 'ManagementStationHealthArgsDict', 'outputs.ManagementStationHealth']]]] healths: Overall health information of the management station.
         :param pulumi.Input[_builtins.str] hostname: (Updatable) Hostname of the management station.
         :param pulumi.Input[_builtins.bool] is_auto_config_enabled: (Updatable) When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
         :param pulumi.Input[_builtins.str] location: The location of the instance that is acting as the management station.
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
-        :param pulumi.Input[Union['ManagementStationMirrorArgs', 'ManagementStationMirrorArgsDict']] mirror: (Updatable) Information used to create the mirror configuration for a management station.
+        :param pulumi.Input[Union['ManagementStationMirrorArgs', 'ManagementStationMirrorArgsDict', 'outputs.ManagementStationMirror']] mirror: (Updatable) Information used to create the mirror configuration for a management station.
         :param pulumi.Input[_builtins.int] mirror_capacity: A decimal number representing the amount of mirror capacity used by the sync.
         :param pulumi.Input[_builtins.int] mirror_package_count: The total number of all packages within the mirrored software sources.
         :param pulumi.Input[_builtins.str] mirror_size: The total size of all software source mirrors in bytes.
         :param pulumi.Input[_builtins.str] mirror_storage_available_size: Amount of available mirror storage in bytes.
         :param pulumi.Input[_builtins.str] mirror_storage_size: Total mirror storage size in bytes.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementStationMirrorSyncStatusArgs', 'ManagementStationMirrorSyncStatusArgsDict']]]] mirror_sync_statuses: Status summary of the mirror sync.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementStationMirrorSyncStatusArgs', 'ManagementStationMirrorSyncStatusArgsDict', 'outputs.ManagementStationMirrorSyncStatus']]]] mirror_sync_statuses: Status summary of the mirror sync.
         :param pulumi.Input[_builtins.int] mirror_unique_package_count: The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
         :param pulumi.Input[_builtins.str] os_family: (Updatable) The operating system family.
         :param pulumi.Input[_builtins.int] overall_percentage: A decimal number representing the progress of the current mirror sync.
         :param pulumi.Input[_builtins.str] overall_state: Current state of the mirror sync for the management station.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementStationPeerManagementStationArgs', 'ManagementStationPeerManagementStationArgsDict']]]] peer_management_stations: A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementStationPeerManagementStationArgs', 'ManagementStationPeerManagementStationArgsDict', 'outputs.ManagementStationPeerManagementStation']]]] peer_management_stations: A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
         :param pulumi.Input[_builtins.str] profile_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
-        :param pulumi.Input[Union['ManagementStationProxyArgs', 'ManagementStationProxyArgsDict']] proxy: (Updatable) Information used to create the proxy configuration for a management station.
+        :param pulumi.Input[Union['ManagementStationProxyArgs', 'ManagementStationProxyArgsDict', 'outputs.ManagementStationProxy']] proxy: (Updatable) Information used to create the proxy configuration for a management station.
         :param pulumi.Input[_builtins.int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
                
                ** IMPORTANT **

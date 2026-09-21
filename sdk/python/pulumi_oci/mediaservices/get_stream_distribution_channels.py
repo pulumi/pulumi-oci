@@ -110,7 +110,7 @@ class AwaitableGetStreamDistributionChannelsResult(GetStreamDistributionChannels
 
 def get_stream_distribution_channels(compartment_id: Optional[_builtins.str] = None,
                                      display_name: Optional[_builtins.str] = None,
-                                     filters: Optional[Sequence[Union['GetStreamDistributionChannelsFilterArgs', 'GetStreamDistributionChannelsFilterArgsDict']]] = None,
+                                     filters: Optional[Sequence[Union['GetStreamDistributionChannelsFilterArgs', 'GetStreamDistributionChannelsFilterArgsDict', 'outputs.GetStreamDistributionChannelsFilterResult']]] = None,
                                      id: Optional[_builtins.str] = None,
                                      state: Optional[_builtins.str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetStreamDistributionChannelsResult:
@@ -155,7 +155,7 @@ def get_stream_distribution_channels(compartment_id: Optional[_builtins.str] = N
         stream_distribution_channel_collections=pulumi.get(__ret__, 'stream_distribution_channel_collections'))
 def get_stream_distribution_channels_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetStreamDistributionChannelsFilterArgs', 'GetStreamDistributionChannelsFilterArgsDict']]]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetStreamDistributionChannelsFilterArgs', 'GetStreamDistributionChannelsFilterArgsDict', 'outputs.GetStreamDistributionChannelsFilterResult']]]]] = None,
                                             id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStreamDistributionChannelsResult]:

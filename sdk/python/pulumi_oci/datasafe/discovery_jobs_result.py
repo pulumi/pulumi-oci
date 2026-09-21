@@ -538,7 +538,7 @@ class DiscoveryJobsResult(pulumi.CustomResource):
             app_name: pulumi.Input[Optional[_builtins.str]] = None,
             column_name: pulumi.Input[Optional[_builtins.str]] = None,
             confidence_level: pulumi.Input[Optional[_builtins.str]] = None,
-            confidence_level_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DiscoveryJobsResultConfidenceLevelDetailArgs', 'DiscoveryJobsResultConfidenceLevelDetailArgsDict']]]]] = None,
+            confidence_level_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DiscoveryJobsResultConfidenceLevelDetailArgs', 'DiscoveryJobsResultConfidenceLevelDetailArgsDict', 'outputs.DiscoveryJobsResultConfidenceLevelDetail']]]]] = None,
             data_type: pulumi.Input[Optional[_builtins.str]] = None,
             db_defined_child_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             discovery_job_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -546,7 +546,7 @@ class DiscoveryJobsResult(pulumi.CustomResource):
             estimated_data_value_count: pulumi.Input[Optional[_builtins.str]] = None,
             is_result_applied: pulumi.Input[Optional[_builtins.bool]] = None,
             key: pulumi.Input[Optional[_builtins.str]] = None,
-            modified_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DiscoveryJobsResultModifiedAttributeArgs', 'DiscoveryJobsResultModifiedAttributeArgsDict']]]]] = None,
+            modified_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DiscoveryJobsResultModifiedAttributeArgs', 'DiscoveryJobsResultModifiedAttributeArgsDict', 'outputs.DiscoveryJobsResultModifiedAttribute']]]]] = None,
             object: pulumi.Input[Optional[_builtins.str]] = None,
             object_type: pulumi.Input[Optional[_builtins.str]] = None,
             parent_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -573,7 +573,7 @@ class DiscoveryJobsResult(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] estimated_data_value_count: The estimated number of data values the column has in the associated database.
         :param pulumi.Input[_builtins.bool] is_result_applied: Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
         :param pulumi.Input[_builtins.str] key: The unique key that identifies the discovery result.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DiscoveryJobsResultModifiedAttributeArgs', 'DiscoveryJobsResultModifiedAttributeArgsDict']]]] modified_attributes: The attributes of a sensitive column that have been modified in the target database. It's populated only in the case of MODIFIED discovery results and shows the new values of the modified attributes.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DiscoveryJobsResultModifiedAttributeArgs', 'DiscoveryJobsResultModifiedAttributeArgsDict', 'outputs.DiscoveryJobsResultModifiedAttribute']]]] modified_attributes: The attributes of a sensitive column that have been modified in the target database. It's populated only in the case of MODIFIED discovery results and shows the new values of the modified attributes.
         :param pulumi.Input[_builtins.str] object: The database object that contains the sensitive column.
         :param pulumi.Input[_builtins.str] object_type: The type of the database object that contains the sensitive column.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] parent_column_keys: Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.

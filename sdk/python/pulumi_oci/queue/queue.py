@@ -564,7 +564,7 @@ class Queue(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 capabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QueueCapabilityArgs', 'QueueCapabilityArgsDict']]]]] = None,
+                 capabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QueueCapabilityArgs', 'QueueCapabilityArgsDict', 'outputs.QueueCapability']]]]] = None,
                  channel_consumption_limit: pulumi.Input[Optional[_builtins.int]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  custom_encryption_key_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -626,7 +626,7 @@ class Queue(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['QueueCapabilityArgs', 'QueueCapabilityArgsDict']]]] capabilities: (Updatable) The capability to add on the queue
+        :param pulumi.Input[Sequence[pulumi.Input[Union['QueueCapabilityArgs', 'QueueCapabilityArgsDict', 'outputs.QueueCapability']]]] capabilities: (Updatable) The capability to add on the queue
         :param pulumi.Input[_builtins.int] channel_consumption_limit: (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
         :param pulumi.Input[_builtins.str] custom_encryption_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
@@ -710,7 +710,7 @@ class Queue(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 capabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QueueCapabilityArgs', 'QueueCapabilityArgsDict']]]]] = None,
+                 capabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QueueCapabilityArgs', 'QueueCapabilityArgsDict', 'outputs.QueueCapability']]]]] = None,
                  channel_consumption_limit: pulumi.Input[Optional[_builtins.int]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  custom_encryption_key_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -765,7 +765,7 @@ class Queue(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            capabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QueueCapabilityArgs', 'QueueCapabilityArgsDict']]]]] = None,
+            capabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QueueCapabilityArgs', 'QueueCapabilityArgsDict', 'outputs.QueueCapability']]]]] = None,
             channel_consumption_limit: pulumi.Input[Optional[_builtins.int]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             custom_encryption_key_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -791,7 +791,7 @@ class Queue(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['QueueCapabilityArgs', 'QueueCapabilityArgsDict']]]] capabilities: (Updatable) The capability to add on the queue
+        :param pulumi.Input[Sequence[pulumi.Input[Union['QueueCapabilityArgs', 'QueueCapabilityArgsDict', 'outputs.QueueCapability']]]] capabilities: (Updatable) The capability to add on the queue
         :param pulumi.Input[_builtins.int] channel_consumption_limit: (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
         :param pulumi.Input[_builtins.str] custom_encryption_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.

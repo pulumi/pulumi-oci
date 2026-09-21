@@ -101,7 +101,7 @@ class AwaitableGetMulticloudMulticloudsubscriptionsResult(GetMulticloudMulticlou
 
 def get_multicloud_multicloudsubscriptions(compartment_id: Optional[_builtins.str] = None,
                                            display_name: Optional[_builtins.str] = None,
-                                           filters: Optional[Sequence[Union['GetMulticloudMulticloudsubscriptionsFilterArgs', 'GetMulticloudMulticloudsubscriptionsFilterArgsDict']]] = None,
+                                           filters: Optional[Sequence[Union['GetMulticloudMulticloudsubscriptionsFilterArgs', 'GetMulticloudMulticloudsubscriptionsFilterArgsDict', 'outputs.GetMulticloudMulticloudsubscriptionsFilterResult']]] = None,
                                            limit: Optional[_builtins.int] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMulticloudMulticloudsubscriptionsResult:
     """
@@ -141,7 +141,7 @@ def get_multicloud_multicloudsubscriptions(compartment_id: Optional[_builtins.st
         multicloud_subscription_collections=pulumi.get(__ret__, 'multicloud_subscription_collections'))
 def get_multicloud_multicloudsubscriptions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMulticloudMulticloudsubscriptionsFilterArgs', 'GetMulticloudMulticloudsubscriptionsFilterArgsDict']]]]] = None,
+                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMulticloudMulticloudsubscriptionsFilterArgs', 'GetMulticloudMulticloudsubscriptionsFilterArgsDict', 'outputs.GetMulticloudMulticloudsubscriptionsFilterResult']]]]] = None,
                                                   limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMulticloudMulticloudsubscriptionsResult]:
     """

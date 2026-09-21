@@ -126,7 +126,7 @@ class AwaitableGetPbfListingVersionsResult(GetPbfListingVersionsResult):
             state=self.state)
 
 
-def get_pbf_listing_versions(filters: Optional[Sequence[Union['GetPbfListingVersionsFilterArgs', 'GetPbfListingVersionsFilterArgsDict']]] = None,
+def get_pbf_listing_versions(filters: Optional[Sequence[Union['GetPbfListingVersionsFilterArgs', 'GetPbfListingVersionsFilterArgsDict', 'outputs.GetPbfListingVersionsFilterResult']]] = None,
                              is_current_version: Optional[_builtins.bool] = None,
                              name: Optional[_builtins.str] = None,
                              pbf_listing_id: Optional[_builtins.str] = None,
@@ -181,7 +181,7 @@ def get_pbf_listing_versions(filters: Optional[Sequence[Union['GetPbfListingVers
         pbf_listing_version_id=pulumi.get(__ret__, 'pbf_listing_version_id'),
         pbf_listing_versions_collections=pulumi.get(__ret__, 'pbf_listing_versions_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_pbf_listing_versions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPbfListingVersionsFilterArgs', 'GetPbfListingVersionsFilterArgsDict']]]]] = None,
+def get_pbf_listing_versions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPbfListingVersionsFilterArgs', 'GetPbfListingVersionsFilterArgsDict', 'outputs.GetPbfListingVersionsFilterResult']]]]] = None,
                                     is_current_version: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                     name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     pbf_listing_id: pulumi.Input[Optional[_builtins.str]] = None,

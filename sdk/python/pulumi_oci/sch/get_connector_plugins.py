@@ -109,7 +109,7 @@ class AwaitableGetConnectorPluginsResult(GetConnectorPluginsResult):
 
 
 def get_connector_plugins(display_name: Optional[_builtins.str] = None,
-                          filters: Optional[Sequence[Union['GetConnectorPluginsFilterArgs', 'GetConnectorPluginsFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetConnectorPluginsFilterArgs', 'GetConnectorPluginsFilterArgsDict', 'outputs.GetConnectorPluginsFilterResult']]] = None,
                           name: Optional[_builtins.str] = None,
                           state: Optional[_builtins.str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConnectorPluginsResult:
@@ -150,7 +150,7 @@ def get_connector_plugins(display_name: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
 def get_connector_plugins_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConnectorPluginsFilterArgs', 'GetConnectorPluginsFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConnectorPluginsFilterArgs', 'GetConnectorPluginsFilterArgsDict', 'outputs.GetConnectorPluginsFilterResult']]]]] = None,
                                  name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectorPluginsResult]:

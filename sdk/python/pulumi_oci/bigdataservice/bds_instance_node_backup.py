@@ -255,7 +255,7 @@ class BdsInstanceNodeBackup(pulumi.CustomResource):
                  backup_type: pulumi.Input[Optional[_builtins.str]] = None,
                  bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeBackupLevelTypeDetailsArgs', 'BdsInstanceNodeBackupLevelTypeDetailsArgsDict']]] = None,
+                 level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeBackupLevelTypeDetailsArgs', 'BdsInstanceNodeBackupLevelTypeDetailsArgsDict', 'outputs.BdsInstanceNodeBackupLevelTypeDetails']]] = None,
                  node_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -296,7 +296,7 @@ class BdsInstanceNodeBackup(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] backup_type: Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
-        :param pulumi.Input[Union['BdsInstanceNodeBackupLevelTypeDetailsArgs', 'BdsInstanceNodeBackupLevelTypeDetailsArgsDict']] level_type_details: Details of the type of level used to trigger the creation of a new node backup.
+        :param pulumi.Input[Union['BdsInstanceNodeBackupLevelTypeDetailsArgs', 'BdsInstanceNodeBackupLevelTypeDetailsArgsDict', 'outputs.BdsInstanceNodeBackupLevelTypeDetails']] level_type_details: Details of the type of level used to trigger the creation of a new node backup.
         """
         ...
     @overload
@@ -357,7 +357,7 @@ class BdsInstanceNodeBackup(pulumi.CustomResource):
                  backup_type: pulumi.Input[Optional[_builtins.str]] = None,
                  bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeBackupLevelTypeDetailsArgs', 'BdsInstanceNodeBackupLevelTypeDetailsArgsDict']]] = None,
+                 level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeBackupLevelTypeDetailsArgs', 'BdsInstanceNodeBackupLevelTypeDetailsArgsDict', 'outputs.BdsInstanceNodeBackupLevelTypeDetails']]] = None,
                  node_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -397,7 +397,7 @@ class BdsInstanceNodeBackup(pulumi.CustomResource):
             backup_type: pulumi.Input[Optional[_builtins.str]] = None,
             bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeBackupLevelTypeDetailsArgs', 'BdsInstanceNodeBackupLevelTypeDetailsArgsDict']]] = None,
+            level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeBackupLevelTypeDetailsArgs', 'BdsInstanceNodeBackupLevelTypeDetailsArgsDict', 'outputs.BdsInstanceNodeBackupLevelTypeDetails']]] = None,
             node_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -411,7 +411,7 @@ class BdsInstanceNodeBackup(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] backup_type: Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
-        :param pulumi.Input[Union['BdsInstanceNodeBackupLevelTypeDetailsArgs', 'BdsInstanceNodeBackupLevelTypeDetailsArgsDict']] level_type_details: Details of the type of level used to trigger the creation of a new node backup.
+        :param pulumi.Input[Union['BdsInstanceNodeBackupLevelTypeDetailsArgs', 'BdsInstanceNodeBackupLevelTypeDetailsArgsDict', 'outputs.BdsInstanceNodeBackupLevelTypeDetails']] level_type_details: Details of the type of level used to trigger the creation of a new node backup.
         :param pulumi.Input[_builtins.str] state: The state of the NodeBackup.
         :param pulumi.Input[_builtins.str] time_created: The time the NodeBackup was created, shown as an RFC 3339 formatted datetime string.
         """

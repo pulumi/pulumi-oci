@@ -109,7 +109,7 @@ class AwaitableGetOdaPrivateEndpointAttachmentsResult(GetOdaPrivateEndpointAttac
 
 
 def get_oda_private_endpoint_attachments(compartment_id: Optional[_builtins.str] = None,
-                                         filters: Optional[Sequence[Union['GetOdaPrivateEndpointAttachmentsFilterArgs', 'GetOdaPrivateEndpointAttachmentsFilterArgsDict']]] = None,
+                                         filters: Optional[Sequence[Union['GetOdaPrivateEndpointAttachmentsFilterArgs', 'GetOdaPrivateEndpointAttachmentsFilterArgsDict', 'outputs.GetOdaPrivateEndpointAttachmentsFilterResult']]] = None,
                                          oda_private_endpoint_id: Optional[_builtins.str] = None,
                                          state: Optional[_builtins.str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOdaPrivateEndpointAttachmentsResult:
@@ -154,7 +154,7 @@ def get_oda_private_endpoint_attachments(compartment_id: Optional[_builtins.str]
         oda_private_endpoint_id=pulumi.get(__ret__, 'oda_private_endpoint_id'),
         state=pulumi.get(__ret__, 'state'))
 def get_oda_private_endpoint_attachments_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOdaPrivateEndpointAttachmentsFilterArgs', 'GetOdaPrivateEndpointAttachmentsFilterArgsDict']]]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOdaPrivateEndpointAttachmentsFilterArgs', 'GetOdaPrivateEndpointAttachmentsFilterArgsDict', 'outputs.GetOdaPrivateEndpointAttachmentsFilterResult']]]]] = None,
                                                 oda_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOdaPrivateEndpointAttachmentsResult]:

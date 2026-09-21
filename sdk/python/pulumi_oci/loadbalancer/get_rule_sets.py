@@ -81,7 +81,7 @@ class AwaitableGetRuleSetsResult(GetRuleSetsResult):
             rule_sets=self.rule_sets)
 
 
-def get_rule_sets(filters: Optional[Sequence[Union['GetRuleSetsFilterArgs', 'GetRuleSetsFilterArgsDict']]] = None,
+def get_rule_sets(filters: Optional[Sequence[Union['GetRuleSetsFilterArgs', 'GetRuleSetsFilterArgsDict', 'outputs.GetRuleSetsFilterResult']]] = None,
                   load_balancer_id: Optional[_builtins.str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRuleSetsResult:
     """
@@ -112,7 +112,7 @@ def get_rule_sets(filters: Optional[Sequence[Union['GetRuleSetsFilterArgs', 'Get
         id=pulumi.get(__ret__, 'id'),
         load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'),
         rule_sets=pulumi.get(__ret__, 'rule_sets'))
-def get_rule_sets_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRuleSetsFilterArgs', 'GetRuleSetsFilterArgsDict']]]]] = None,
+def get_rule_sets_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRuleSetsFilterArgs', 'GetRuleSetsFilterArgsDict', 'outputs.GetRuleSetsFilterResult']]]]] = None,
                          load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRuleSetsResult]:
     """

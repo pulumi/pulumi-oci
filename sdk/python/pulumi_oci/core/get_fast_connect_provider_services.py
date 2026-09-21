@@ -82,7 +82,7 @@ class AwaitableGetFastConnectProviderServicesResult(GetFastConnectProviderServic
 
 
 def get_fast_connect_provider_services(compartment_id: Optional[_builtins.str] = None,
-                                       filters: Optional[Sequence[Union['GetFastConnectProviderServicesFilterArgs', 'GetFastConnectProviderServicesFilterArgsDict']]] = None,
+                                       filters: Optional[Sequence[Union['GetFastConnectProviderServicesFilterArgs', 'GetFastConnectProviderServicesFilterArgsDict', 'outputs.GetFastConnectProviderServicesFilterResult']]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFastConnectProviderServicesResult:
     """
     This data source provides the list of Fast Connect Provider Services in Oracle Cloud Infrastructure Core service.
@@ -119,7 +119,7 @@ def get_fast_connect_provider_services(compartment_id: Optional[_builtins.str] =
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_fast_connect_provider_services_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFastConnectProviderServicesFilterArgs', 'GetFastConnectProviderServicesFilterArgsDict']]]]] = None,
+                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFastConnectProviderServicesFilterArgs', 'GetFastConnectProviderServicesFilterArgsDict', 'outputs.GetFastConnectProviderServicesFilterResult']]]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFastConnectProviderServicesResult]:
     """
     This data source provides the list of Fast Connect Provider Services in Oracle Cloud Infrastructure Core service.

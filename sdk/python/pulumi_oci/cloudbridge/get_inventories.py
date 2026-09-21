@@ -97,7 +97,7 @@ class AwaitableGetInventoriesResult(GetInventoriesResult):
 
 
 def get_inventories(compartment_id: Optional[_builtins.str] = None,
-                    filters: Optional[Sequence[Union['GetInventoriesFilterArgs', 'GetInventoriesFilterArgsDict']]] = None,
+                    filters: Optional[Sequence[Union['GetInventoriesFilterArgs', 'GetInventoriesFilterArgsDict', 'outputs.GetInventoriesFilterResult']]] = None,
                     state: Optional[_builtins.str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInventoriesResult:
     """
@@ -133,7 +133,7 @@ def get_inventories(compartment_id: Optional[_builtins.str] = None,
         inventory_collections=pulumi.get(__ret__, 'inventory_collections'),
         state=pulumi.get(__ret__, 'state'))
 def get_inventories_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInventoriesFilterArgs', 'GetInventoriesFilterArgsDict']]]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInventoriesFilterArgs', 'GetInventoriesFilterArgsDict', 'outputs.GetInventoriesFilterResult']]]]] = None,
                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInventoriesResult]:
     """

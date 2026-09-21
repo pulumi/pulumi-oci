@@ -118,7 +118,7 @@ def get_saved_queries(access_level: Optional[_builtins.str] = None,
                       compartment_id: Optional[_builtins.str] = None,
                       compartment_id_in_subtree: Optional[_builtins.bool] = None,
                       display_name: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetSavedQueriesFilterArgs', 'GetSavedQueriesFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetSavedQueriesFilterArgs', 'GetSavedQueriesFilterArgsDict', 'outputs.GetSavedQueriesFilterResult']]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSavedQueriesResult:
     """
     This data source provides the list of Saved Queries in Oracle Cloud Infrastructure Cloud Guard service.
@@ -164,7 +164,7 @@ def get_saved_queries_output(access_level: pulumi.Input[Optional[Optional[_built
                              compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                              compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSavedQueriesFilterArgs', 'GetSavedQueriesFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSavedQueriesFilterArgs', 'GetSavedQueriesFilterArgsDict', 'outputs.GetSavedQueriesFilterResult']]]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSavedQueriesResult]:
     """
     This data source provides the list of Saved Queries in Oracle Cloud Infrastructure Cloud Guard service.

@@ -776,8 +776,8 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             geo_info: pulumi.Input[Optional[_builtins.str]] = None,
-            identity_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerIdentityInfoArgs', 'OnPremiseVantagePointWorkerIdentityInfoArgsDict']]]]] = None,
-            monitor_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerMonitorListArgs', 'OnPremiseVantagePointWorkerMonitorListArgsDict']]]]] = None,
+            identity_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerIdentityInfoArgs', 'OnPremiseVantagePointWorkerIdentityInfoArgsDict', 'outputs.OnPremiseVantagePointWorkerIdentityInfo']]]]] = None,
+            monitor_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerMonitorListArgs', 'OnPremiseVantagePointWorkerMonitorListArgsDict', 'outputs.OnPremiseVantagePointWorkerMonitorList']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             on_premise_vantage_point_id: pulumi.Input[Optional[_builtins.str]] = None,
             opvp_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -790,7 +790,7 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
             time_last_sync_up: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
             version: pulumi.Input[Optional[_builtins.str]] = None,
-            version_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerVersionDetailArgs', 'OnPremiseVantagePointWorkerVersionDetailArgsDict']]]]] = None,
+            version_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerVersionDetailArgs', 'OnPremiseVantagePointWorkerVersionDetailArgsDict', 'outputs.OnPremiseVantagePointWorkerVersionDetail']]]]] = None,
             worker_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'OnPremiseVantagePointWorker':
         """
         Get an existing OnPremiseVantagePointWorker resource's state with the given name, id, and optional extra
@@ -805,8 +805,8 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: Unique name that can be edited. The name should not contain any confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] geo_info: Geographical information of the On-premise VP worker.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerIdentityInfoArgs', 'OnPremiseVantagePointWorkerIdentityInfoArgsDict']]]] identity_infos: Domain details of the On-premise VP worker.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerMonitorListArgs', 'OnPremiseVantagePointWorkerMonitorListArgsDict']]]] monitor_lists: Monitors list assigned to the On-premise VP worker.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerIdentityInfoArgs', 'OnPremiseVantagePointWorkerIdentityInfoArgsDict', 'outputs.OnPremiseVantagePointWorkerIdentityInfo']]]] identity_infos: Domain details of the On-premise VP worker.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerMonitorListArgs', 'OnPremiseVantagePointWorkerMonitorListArgsDict', 'outputs.OnPremiseVantagePointWorkerMonitorList']]]] monitor_lists: Monitors list assigned to the On-premise VP worker.
         :param pulumi.Input[_builtins.str] name: Unique On-premise VP worker name that cannot be edited. The name should not contain any confidential information.
         :param pulumi.Input[_builtins.str] on_premise_vantage_point_id: The OCID of the On-premise vantage point.
         :param pulumi.Input[_builtins.str] opvp_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the On-premise vantage point.
@@ -819,7 +819,7 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_last_sync_up: The time the resource was last synced, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param pulumi.Input[_builtins.str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         :param pulumi.Input[_builtins.str] version: Image version of the On-premise VP worker.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerVersionDetailArgs', 'OnPremiseVantagePointWorkerVersionDetailArgsDict']]]] version_details: Image version details of the On-premise VP worker.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerVersionDetailArgs', 'OnPremiseVantagePointWorkerVersionDetailArgsDict', 'outputs.OnPremiseVantagePointWorkerVersionDetail']]]] version_details: Image version details of the On-premise VP worker.
         :param pulumi.Input[_builtins.str] worker_type: Type of the On-premise VP worker.
                
                ** IMPORTANT **

@@ -939,7 +939,7 @@ class MaintenanceRun(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             estimated_component_patching_start_time: pulumi.Input[Optional[_builtins.str]] = None,
-            estimated_patching_times: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MaintenanceRunEstimatedPatchingTimeArgs', 'MaintenanceRunEstimatedPatchingTimeArgsDict']]]]] = None,
+            estimated_patching_times: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MaintenanceRunEstimatedPatchingTimeArgs', 'MaintenanceRunEstimatedPatchingTimeArgsDict', 'outputs.MaintenanceRunEstimatedPatchingTime']]]]] = None,
             is_custom_action_timeout_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_dst_file_update_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_maintenance_run_granular: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -966,7 +966,7 @@ class MaintenanceRun(pulumi.CustomResource):
             time_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
             time_started: pulumi.Input[Optional[_builtins.str]] = None,
             total_time_taken_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
-            window_type_descriptions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MaintenanceRunWindowTypeDescriptionArgs', 'MaintenanceRunWindowTypeDescriptionArgsDict']]]]] = None) -> 'MaintenanceRun':
+            window_type_descriptions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MaintenanceRunWindowTypeDescriptionArgs', 'MaintenanceRunWindowTypeDescriptionArgsDict', 'outputs.MaintenanceRunWindowTypeDescription']]]]] = None) -> 'MaintenanceRun':
         """
         Get an existing MaintenanceRun resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -982,7 +982,7 @@ class MaintenanceRun(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: Description of the maintenance run.
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the maintenance run.
         :param pulumi.Input[_builtins.str] estimated_component_patching_start_time: The estimated start time of the next infrastruture component patching operation.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MaintenanceRunEstimatedPatchingTimeArgs', 'MaintenanceRunEstimatedPatchingTimeArgsDict']]]] estimated_patching_times: The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MaintenanceRunEstimatedPatchingTimeArgs', 'MaintenanceRunEstimatedPatchingTimeArgsDict', 'outputs.MaintenanceRunEstimatedPatchingTime']]]] estimated_patching_times: The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
         :param pulumi.Input[_builtins.bool] is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
         :param pulumi.Input[_builtins.bool] is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         :param pulumi.Input[_builtins.bool] is_maintenance_run_granular: If `FALSE`, the maintenance run doesn't support granular maintenance.
@@ -1014,7 +1014,7 @@ class MaintenanceRun(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] time_started: The date and time the maintenance run starts.
         :param pulumi.Input[_builtins.int] total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MaintenanceRunWindowTypeDescriptionArgs', 'MaintenanceRunWindowTypeDescriptionArgsDict']]]] window_type_descriptions: A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MaintenanceRunWindowTypeDescriptionArgs', 'MaintenanceRunWindowTypeDescriptionArgsDict', 'outputs.MaintenanceRunWindowTypeDescription']]]] window_type_descriptions: A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

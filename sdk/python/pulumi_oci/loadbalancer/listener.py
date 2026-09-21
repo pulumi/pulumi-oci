@@ -426,7 +426,7 @@ class Listener(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 connection_configuration: pulumi.Input[Optional[Union['ListenerConnectionConfigurationArgs', 'ListenerConnectionConfigurationArgsDict']]] = None,
+                 connection_configuration: pulumi.Input[Optional[Union['ListenerConnectionConfigurationArgs', 'ListenerConnectionConfigurationArgsDict', 'outputs.ListenerConnectionConfiguration']]] = None,
                  default_backend_set_name: pulumi.Input[Optional[_builtins.str]] = None,
                  hostname_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -436,7 +436,7 @@ class Listener(pulumi.CustomResource):
                  protocol: pulumi.Input[Optional[_builtins.str]] = None,
                  routing_policy_name: pulumi.Input[Optional[_builtins.str]] = None,
                  rule_set_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ssl_configuration: pulumi.Input[Optional[Union['ListenerSslConfigurationArgs', 'ListenerSslConfigurationArgsDict']]] = None,
+                 ssl_configuration: pulumi.Input[Optional[Union['ListenerSslConfigurationArgs', 'ListenerSslConfigurationArgsDict', 'outputs.ListenerSslConfiguration']]] = None,
                  __props__=None):
         """
         This resource provides the Listener resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -491,7 +491,7 @@ class Listener(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ListenerConnectionConfigurationArgs', 'ListenerConnectionConfigurationArgsDict']] connection_configuration: (Updatable) Configuration details for the connection between the client and backend servers.
+        :param pulumi.Input[Union['ListenerConnectionConfigurationArgs', 'ListenerConnectionConfigurationArgsDict', 'outputs.ListenerConnectionConfiguration']] connection_configuration: (Updatable) Configuration details for the connection between the client and backend servers.
         :param pulumi.Input[_builtins.str] default_backend_set_name: (Updatable) The name of the associated backend set.  Example: `example_backend_set`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] hostname_names: (Updatable) An array of hostname resource names.
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener.
@@ -505,7 +505,7 @@ class Listener(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] protocol: (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
         :param pulumi.Input[_builtins.str] routing_policy_name: (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `example_routing_policy`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] rule_set_names: (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["example_rule_set"]
-        :param pulumi.Input[Union['ListenerSslConfigurationArgs', 'ListenerSslConfigurationArgsDict']] ssl_configuration: (Updatable) The load balancer's SSL handling configuration details.
+        :param pulumi.Input[Union['ListenerSslConfigurationArgs', 'ListenerSslConfigurationArgsDict', 'outputs.ListenerSslConfiguration']] ssl_configuration: (Updatable) The load balancer's SSL handling configuration details.
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         """
@@ -581,7 +581,7 @@ class Listener(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 connection_configuration: pulumi.Input[Optional[Union['ListenerConnectionConfigurationArgs', 'ListenerConnectionConfigurationArgsDict']]] = None,
+                 connection_configuration: pulumi.Input[Optional[Union['ListenerConnectionConfigurationArgs', 'ListenerConnectionConfigurationArgsDict', 'outputs.ListenerConnectionConfiguration']]] = None,
                  default_backend_set_name: pulumi.Input[Optional[_builtins.str]] = None,
                  hostname_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -591,7 +591,7 @@ class Listener(pulumi.CustomResource):
                  protocol: pulumi.Input[Optional[_builtins.str]] = None,
                  routing_policy_name: pulumi.Input[Optional[_builtins.str]] = None,
                  rule_set_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ssl_configuration: pulumi.Input[Optional[Union['ListenerSslConfigurationArgs', 'ListenerSslConfigurationArgsDict']]] = None,
+                 ssl_configuration: pulumi.Input[Optional[Union['ListenerSslConfigurationArgs', 'ListenerSslConfigurationArgsDict', 'outputs.ListenerSslConfiguration']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -631,7 +631,7 @@ class Listener(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            connection_configuration: pulumi.Input[Optional[Union['ListenerConnectionConfigurationArgs', 'ListenerConnectionConfigurationArgsDict']]] = None,
+            connection_configuration: pulumi.Input[Optional[Union['ListenerConnectionConfigurationArgs', 'ListenerConnectionConfigurationArgsDict', 'outputs.ListenerConnectionConfiguration']]] = None,
             default_backend_set_name: pulumi.Input[Optional[_builtins.str]] = None,
             hostname_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -641,7 +641,7 @@ class Listener(pulumi.CustomResource):
             protocol: pulumi.Input[Optional[_builtins.str]] = None,
             routing_policy_name: pulumi.Input[Optional[_builtins.str]] = None,
             rule_set_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ssl_configuration: pulumi.Input[Optional[Union['ListenerSslConfigurationArgs', 'ListenerSslConfigurationArgsDict']]] = None,
+            ssl_configuration: pulumi.Input[Optional[Union['ListenerSslConfigurationArgs', 'ListenerSslConfigurationArgsDict', 'outputs.ListenerSslConfiguration']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None) -> 'Listener':
         """
         Get an existing Listener resource's state with the given name, id, and optional extra
@@ -650,7 +650,7 @@ class Listener(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ListenerConnectionConfigurationArgs', 'ListenerConnectionConfigurationArgsDict']] connection_configuration: (Updatable) Configuration details for the connection between the client and backend servers.
+        :param pulumi.Input[Union['ListenerConnectionConfigurationArgs', 'ListenerConnectionConfigurationArgsDict', 'outputs.ListenerConnectionConfiguration']] connection_configuration: (Updatable) Configuration details for the connection between the client and backend servers.
         :param pulumi.Input[_builtins.str] default_backend_set_name: (Updatable) The name of the associated backend set.  Example: `example_backend_set`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] hostname_names: (Updatable) An array of hostname resource names.
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener.
@@ -664,7 +664,7 @@ class Listener(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] protocol: (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
         :param pulumi.Input[_builtins.str] routing_policy_name: (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `example_routing_policy`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] rule_set_names: (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["example_rule_set"]
-        :param pulumi.Input[Union['ListenerSslConfigurationArgs', 'ListenerSslConfigurationArgsDict']] ssl_configuration: (Updatable) The load balancer's SSL handling configuration details.
+        :param pulumi.Input[Union['ListenerSslConfigurationArgs', 'ListenerSslConfigurationArgsDict', 'outputs.ListenerSslConfiguration']] ssl_configuration: (Updatable) The load balancer's SSL handling configuration details.
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         """

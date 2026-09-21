@@ -110,7 +110,7 @@ class AwaitableGetBdsInstanceNodeBackupConfigurationsResult(GetBdsInstanceNodeBa
 
 def get_bds_instance_node_backup_configurations(bds_instance_id: Optional[_builtins.str] = None,
                                                 display_name: Optional[_builtins.str] = None,
-                                                filters: Optional[Sequence[Union['GetBdsInstanceNodeBackupConfigurationsFilterArgs', 'GetBdsInstanceNodeBackupConfigurationsFilterArgsDict']]] = None,
+                                                filters: Optional[Sequence[Union['GetBdsInstanceNodeBackupConfigurationsFilterArgs', 'GetBdsInstanceNodeBackupConfigurationsFilterArgsDict', 'outputs.GetBdsInstanceNodeBackupConfigurationsFilterResult']]] = None,
                                                 state: Optional[_builtins.str] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBdsInstanceNodeBackupConfigurationsResult:
     """
@@ -151,7 +151,7 @@ def get_bds_instance_node_backup_configurations(bds_instance_id: Optional[_built
         state=pulumi.get(__ret__, 'state'))
 def get_bds_instance_node_backup_configurations_output(bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstanceNodeBackupConfigurationsFilterArgs', 'GetBdsInstanceNodeBackupConfigurationsFilterArgsDict']]]]] = None,
+                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstanceNodeBackupConfigurationsFilterArgs', 'GetBdsInstanceNodeBackupConfigurationsFilterArgsDict', 'outputs.GetBdsInstanceNodeBackupConfigurationsFilterResult']]]]] = None,
                                                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceNodeBackupConfigurationsResult]:
     """

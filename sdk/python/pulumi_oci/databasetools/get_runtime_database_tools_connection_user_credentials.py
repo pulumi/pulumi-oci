@@ -91,7 +91,7 @@ class AwaitableGetRuntimeDatabaseToolsConnectionUserCredentialsResult(GetRuntime
 
 
 def get_runtime_database_tools_connection_user_credentials(database_tools_connection_id: Optional[_builtins.str] = None,
-                                                           filters: Optional[Sequence[Union['GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArgs', 'GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArgsDict']]] = None,
+                                                           filters: Optional[Sequence[Union['GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArgs', 'GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArgsDict', 'outputs.GetRuntimeDatabaseToolsConnectionUserCredentialsFilterResult']]] = None,
                                                            user_key: Optional[_builtins.str] = None,
                                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRuntimeDatabaseToolsConnectionUserCredentialsResult:
     """
@@ -127,7 +127,7 @@ def get_runtime_database_tools_connection_user_credentials(database_tools_connec
         user_credential_collections=pulumi.get(__ret__, 'user_credential_collections'),
         user_key=pulumi.get(__ret__, 'user_key'))
 def get_runtime_database_tools_connection_user_credentials_output(database_tools_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArgs', 'GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArgsDict']]]]] = None,
+                                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArgs', 'GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArgsDict', 'outputs.GetRuntimeDatabaseToolsConnectionUserCredentialsFilterResult']]]]] = None,
                                                                   user_key: pulumi.Input[Optional[_builtins.str]] = None,
                                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRuntimeDatabaseToolsConnectionUserCredentialsResult]:
     """

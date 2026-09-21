@@ -879,13 +879,13 @@ class DatabaseSnapshotStandby(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             character_set: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyConnectionStringArgs', 'DatabaseSnapshotStandbyConnectionStringArgsDict']]]]] = None,
-            data_guard_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyDataGuardGroupArgs', 'DatabaseSnapshotStandbyDataGuardGroupArgsDict']]]]] = None,
+            connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyConnectionStringArgs', 'DatabaseSnapshotStandbyConnectionStringArgsDict', 'outputs.DatabaseSnapshotStandbyConnectionString']]]]] = None,
+            data_guard_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyDataGuardGroupArgs', 'DatabaseSnapshotStandbyDataGuardGroupArgsDict', 'outputs.DatabaseSnapshotStandbyDataGuardGroup']]]]] = None,
             database_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
             database_id: pulumi.Input[Optional[_builtins.str]] = None,
-            database_management_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyDatabaseManagementConfigArgs', 'DatabaseSnapshotStandbyDatabaseManagementConfigArgsDict']]]]] = None,
+            database_management_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyDatabaseManagementConfigArgs', 'DatabaseSnapshotStandbyDatabaseManagementConfigArgsDict', 'outputs.DatabaseSnapshotStandbyDatabaseManagementConfig']]]]] = None,
             database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
-            db_backup_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyDbBackupConfigArgs', 'DatabaseSnapshotStandbyDbBackupConfigArgsDict']]]]] = None,
+            db_backup_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyDbBackupConfigArgs', 'DatabaseSnapshotStandbyDbBackupConfigArgsDict', 'outputs.DatabaseSnapshotStandbyDbBackupConfig']]]]] = None,
             db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
             db_name: pulumi.Input[Optional[_builtins.str]] = None,
             db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -921,15 +921,15 @@ class DatabaseSnapshotStandby(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] character_set: The character set for the database.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyConnectionStringArgs', 'DatabaseSnapshotStandbyConnectionStringArgsDict']]]] connection_strings: The Connection strings used to connect to the Oracle Database.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyDataGuardGroupArgs', 'DatabaseSnapshotStandbyDataGuardGroupArgsDict']]]] data_guard_groups: Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyConnectionStringArgs', 'DatabaseSnapshotStandbyConnectionStringArgsDict', 'outputs.DatabaseSnapshotStandbyConnectionString']]]] connection_strings: The Connection strings used to connect to the Oracle Database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyDataGuardGroupArgs', 'DatabaseSnapshotStandbyDataGuardGroupArgsDict', 'outputs.DatabaseSnapshotStandbyDataGuardGroup']]]] data_guard_groups: Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
         :param pulumi.Input[_builtins.str] database_admin_password: The administrator password of the primary database in this Data Guard association.
                
                **The password MUST be the same as the primary admin password.**
         :param pulumi.Input[_builtins.str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyDatabaseManagementConfigArgs', 'DatabaseSnapshotStandbyDatabaseManagementConfigArgsDict']]]] database_management_configs: The configuration of the Database Management service.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyDatabaseManagementConfigArgs', 'DatabaseSnapshotStandbyDatabaseManagementConfigArgsDict', 'outputs.DatabaseSnapshotStandbyDatabaseManagementConfig']]]] database_management_configs: The configuration of the Database Management service.
         :param pulumi.Input[_builtins.str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyDbBackupConfigArgs', 'DatabaseSnapshotStandbyDbBackupConfigArgsDict']]]] db_backup_configs: Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyDbBackupConfigArgs', 'DatabaseSnapshotStandbyDbBackupConfigArgsDict', 'outputs.DatabaseSnapshotStandbyDbBackupConfig']]]] db_backup_configs: Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
         :param pulumi.Input[_builtins.str] db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         :param pulumi.Input[_builtins.str] db_name: The database name.
         :param pulumi.Input[_builtins.str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.

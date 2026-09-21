@@ -375,13 +375,13 @@ class SemanticStore(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 data_source: pulumi.Input[Optional[Union['SemanticStoreDataSourceArgs', 'SemanticStoreDataSourceArgsDict']]] = None,
+                 data_source: pulumi.Input[Optional[Union['SemanticStoreDataSourceArgs', 'SemanticStoreDataSourceArgsDict', 'outputs.SemanticStoreDataSource']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 refresh_schedule: pulumi.Input[Optional[Union['SemanticStoreRefreshScheduleArgs', 'SemanticStoreRefreshScheduleArgsDict']]] = None,
-                 schemas: pulumi.Input[Optional[Union['SemanticStoreSchemasArgs', 'SemanticStoreSchemasArgsDict']]] = None,
+                 refresh_schedule: pulumi.Input[Optional[Union['SemanticStoreRefreshScheduleArgs', 'SemanticStoreRefreshScheduleArgsDict', 'outputs.SemanticStoreRefreshSchedule']]] = None,
+                 schemas: pulumi.Input[Optional[Union['SemanticStoreSchemasArgs', 'SemanticStoreSchemasArgsDict', 'outputs.SemanticStoreSchemas']]] = None,
                  __props__=None):
         """
         This resource provides the Semantic Store resource in Oracle Cloud Infrastructure Generative AI service.
@@ -436,13 +436,13 @@ class SemanticStore(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Owning compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a SemanticStore.
-        :param pulumi.Input[Union['SemanticStoreDataSourceArgs', 'SemanticStoreDataSourceArgsDict']] data_source: Defines the data source that the semantic model connects to.
+        :param pulumi.Input[Union['SemanticStoreDataSourceArgs', 'SemanticStoreDataSourceArgsDict', 'outputs.SemanticStoreDataSource']] data_source: Defines the data source that the semantic model connects to.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the SemanticStore.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['SemanticStoreRefreshScheduleArgs', 'SemanticStoreRefreshScheduleArgsDict']] refresh_schedule: (Updatable) Specifies a refresh schedule. Null represents no automated synchronization schedule.
-        :param pulumi.Input[Union['SemanticStoreSchemasArgs', 'SemanticStoreSchemasArgsDict']] schemas: (Updatable) Array of database schemas or other database objects to include in enrichment pipeline.
+        :param pulumi.Input[Union['SemanticStoreRefreshScheduleArgs', 'SemanticStoreRefreshScheduleArgsDict', 'outputs.SemanticStoreRefreshSchedule']] refresh_schedule: (Updatable) Specifies a refresh schedule. Null represents no automated synchronization schedule.
+        :param pulumi.Input[Union['SemanticStoreSchemasArgs', 'SemanticStoreSchemasArgsDict', 'outputs.SemanticStoreSchemas']] schemas: (Updatable) Array of database schemas or other database objects to include in enrichment pipeline.
         """
         ...
     @overload
@@ -516,13 +516,13 @@ class SemanticStore(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 data_source: pulumi.Input[Optional[Union['SemanticStoreDataSourceArgs', 'SemanticStoreDataSourceArgsDict']]] = None,
+                 data_source: pulumi.Input[Optional[Union['SemanticStoreDataSourceArgs', 'SemanticStoreDataSourceArgsDict', 'outputs.SemanticStoreDataSource']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 refresh_schedule: pulumi.Input[Optional[Union['SemanticStoreRefreshScheduleArgs', 'SemanticStoreRefreshScheduleArgsDict']]] = None,
-                 schemas: pulumi.Input[Optional[Union['SemanticStoreSchemasArgs', 'SemanticStoreSchemasArgsDict']]] = None,
+                 refresh_schedule: pulumi.Input[Optional[Union['SemanticStoreRefreshScheduleArgs', 'SemanticStoreRefreshScheduleArgsDict', 'outputs.SemanticStoreRefreshSchedule']]] = None,
+                 schemas: pulumi.Input[Optional[Union['SemanticStoreSchemasArgs', 'SemanticStoreSchemasArgsDict', 'outputs.SemanticStoreSchemas']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -564,14 +564,14 @@ class SemanticStore(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            data_source: pulumi.Input[Optional[Union['SemanticStoreDataSourceArgs', 'SemanticStoreDataSourceArgsDict']]] = None,
+            data_source: pulumi.Input[Optional[Union['SemanticStoreDataSourceArgs', 'SemanticStoreDataSourceArgsDict', 'outputs.SemanticStoreDataSource']]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            refresh_schedule: pulumi.Input[Optional[Union['SemanticStoreRefreshScheduleArgs', 'SemanticStoreRefreshScheduleArgsDict']]] = None,
-            schemas: pulumi.Input[Optional[Union['SemanticStoreSchemasArgs', 'SemanticStoreSchemasArgsDict']]] = None,
+            refresh_schedule: pulumi.Input[Optional[Union['SemanticStoreRefreshScheduleArgs', 'SemanticStoreRefreshScheduleArgsDict', 'outputs.SemanticStoreRefreshSchedule']]] = None,
+            schemas: pulumi.Input[Optional[Union['SemanticStoreSchemasArgs', 'SemanticStoreSchemasArgsDict', 'outputs.SemanticStoreSchemas']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -584,14 +584,14 @@ class SemanticStore(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Owning compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a SemanticStore.
-        :param pulumi.Input[Union['SemanticStoreDataSourceArgs', 'SemanticStoreDataSourceArgsDict']] data_source: Defines the data source that the semantic model connects to.
+        :param pulumi.Input[Union['SemanticStoreDataSourceArgs', 'SemanticStoreDataSourceArgsDict', 'outputs.SemanticStoreDataSource']] data_source: Defines the data source that the semantic model connects to.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the SemanticStore.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail that can provide actionable information.
-        :param pulumi.Input[Union['SemanticStoreRefreshScheduleArgs', 'SemanticStoreRefreshScheduleArgsDict']] refresh_schedule: (Updatable) Specifies a refresh schedule. Null represents no automated synchronization schedule.
-        :param pulumi.Input[Union['SemanticStoreSchemasArgs', 'SemanticStoreSchemasArgsDict']] schemas: (Updatable) Array of database schemas or other database objects to include in enrichment pipeline.
+        :param pulumi.Input[Union['SemanticStoreRefreshScheduleArgs', 'SemanticStoreRefreshScheduleArgsDict', 'outputs.SemanticStoreRefreshSchedule']] refresh_schedule: (Updatable) Specifies a refresh schedule. Null represents no automated synchronization schedule.
+        :param pulumi.Input[Union['SemanticStoreSchemasArgs', 'SemanticStoreSchemasArgsDict', 'outputs.SemanticStoreSchemas']] schemas: (Updatable) Array of database schemas or other database objects to include in enrichment pipeline.
         :param pulumi.Input[_builtins.str] state: The lifecycle state of a SemanticStore.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The date and time that the SemanticStore was created in the format of an RFC3339 datetime string.

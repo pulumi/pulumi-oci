@@ -97,7 +97,7 @@ class AwaitableGetOnboardingsResult(GetOnboardingsResult):
 
 
 def get_onboardings(compartment_id: Optional[_builtins.str] = None,
-                    filters: Optional[Sequence[Union['GetOnboardingsFilterArgs', 'GetOnboardingsFilterArgsDict']]] = None,
+                    filters: Optional[Sequence[Union['GetOnboardingsFilterArgs', 'GetOnboardingsFilterArgsDict', 'outputs.GetOnboardingsFilterResult']]] = None,
                     id: Optional[_builtins.str] = None,
                     state: Optional[_builtins.str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOnboardingsResult:
@@ -138,7 +138,7 @@ def get_onboardings(compartment_id: Optional[_builtins.str] = None,
         onboarding_collections=pulumi.get(__ret__, 'onboarding_collections'),
         state=pulumi.get(__ret__, 'state'))
 def get_onboardings_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOnboardingsFilterArgs', 'GetOnboardingsFilterArgsDict']]]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOnboardingsFilterArgs', 'GetOnboardingsFilterArgsDict', 'outputs.GetOnboardingsFilterResult']]]]] = None,
                            id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOnboardingsResult]:

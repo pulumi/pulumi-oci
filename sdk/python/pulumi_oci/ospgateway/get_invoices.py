@@ -166,7 +166,7 @@ class AwaitableGetInvoicesResult(GetInvoicesResult):
 
 
 def get_invoices(compartment_id: Optional[_builtins.str] = None,
-                 filters: Optional[Sequence[Union['GetInvoicesFilterArgs', 'GetInvoicesFilterArgsDict']]] = None,
+                 filters: Optional[Sequence[Union['GetInvoicesFilterArgs', 'GetInvoicesFilterArgsDict', 'outputs.GetInvoicesFilterResult']]] = None,
                  invoice_id: Optional[_builtins.str] = None,
                  osp_home_region: Optional[_builtins.str] = None,
                  search_text: Optional[_builtins.str] = None,
@@ -242,7 +242,7 @@ def get_invoices(compartment_id: Optional[_builtins.str] = None,
         time_payment_start=pulumi.get(__ret__, 'time_payment_start'),
         types=pulumi.get(__ret__, 'types'))
 def get_invoices_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInvoicesFilterArgs', 'GetInvoicesFilterArgsDict']]]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInvoicesFilterArgs', 'GetInvoicesFilterArgsDict', 'outputs.GetInvoicesFilterResult']]]]] = None,
                         invoice_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         osp_home_region: pulumi.Input[Optional[_builtins.str]] = None,
                         search_text: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

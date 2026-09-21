@@ -105,7 +105,7 @@ class LifecycleStageDetachManagedInstancesManagement(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  lifecycle_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 managed_instance_details: pulumi.Input[Optional[Union['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs', 'LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgsDict']]] = None,
+                 managed_instance_details: pulumi.Input[Optional[Union['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs', 'LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgsDict', 'outputs.LifecycleStageDetachManagedInstancesManagementManagedInstanceDetails']]] = None,
                  __props__=None):
         """
         This resource provides the Lifecycle Stage Detach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -144,7 +144,7 @@ class LifecycleStageDetachManagedInstancesManagement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] lifecycle_stage_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
-        :param pulumi.Input[Union['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs', 'LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgsDict']] managed_instance_details: The details about the managed instances.
+        :param pulumi.Input[Union['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs', 'LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgsDict', 'outputs.LifecycleStageDetachManagedInstancesManagementManagedInstanceDetails']] managed_instance_details: The details about the managed instances.
         """
         ...
     @overload
@@ -202,7 +202,7 @@ class LifecycleStageDetachManagedInstancesManagement(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  lifecycle_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 managed_instance_details: pulumi.Input[Optional[Union['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs', 'LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgsDict']]] = None,
+                 managed_instance_details: pulumi.Input[Optional[Union['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs', 'LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgsDict', 'outputs.LifecycleStageDetachManagedInstancesManagementManagedInstanceDetails']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -229,7 +229,7 @@ class LifecycleStageDetachManagedInstancesManagement(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             lifecycle_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
-            managed_instance_details: pulumi.Input[Optional[Union['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs', 'LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgsDict']]] = None) -> 'LifecycleStageDetachManagedInstancesManagement':
+            managed_instance_details: pulumi.Input[Optional[Union['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs', 'LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgsDict', 'outputs.LifecycleStageDetachManagedInstancesManagementManagedInstanceDetails']]] = None) -> 'LifecycleStageDetachManagedInstancesManagement':
         """
         Get an existing LifecycleStageDetachManagedInstancesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -238,7 +238,7 @@ class LifecycleStageDetachManagedInstancesManagement(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] lifecycle_stage_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
-        :param pulumi.Input[Union['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs', 'LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgsDict']] managed_instance_details: The details about the managed instances.
+        :param pulumi.Input[Union['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs', 'LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgsDict', 'outputs.LifecycleStageDetachManagedInstancesManagementManagedInstanceDetails']] managed_instance_details: The details about the managed instances.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

@@ -627,8 +627,8 @@ class BootVolumeBackup(pulumi.CustomResource):
                  is_prevent_deletion_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_retention_lock_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 retention_period: pulumi.Input[Optional[Union['BootVolumeBackupRetentionPeriodArgs', 'BootVolumeBackupRetentionPeriodArgsDict']]] = None,
-                 source_details: pulumi.Input[Optional[Union['BootVolumeBackupSourceDetailsArgs', 'BootVolumeBackupSourceDetailsArgsDict']]] = None,
+                 retention_period: pulumi.Input[Optional[Union['BootVolumeBackupRetentionPeriodArgs', 'BootVolumeBackupRetentionPeriodArgsDict', 'outputs.BootVolumeBackupRetentionPeriod']]] = None,
+                 source_details: pulumi.Input[Optional[Union['BootVolumeBackupSourceDetailsArgs', 'BootVolumeBackupSourceDetailsArgsDict', 'outputs.BootVolumeBackupSourceDetails']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -690,8 +690,8 @@ class BootVolumeBackup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_prevent_deletion_enabled: (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
         :param pulumi.Input[_builtins.bool] is_retention_lock_enabled: (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
-        :param pulumi.Input[Union['BootVolumeBackupRetentionPeriodArgs', 'BootVolumeBackupRetentionPeriodArgsDict']] retention_period: (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
-        :param pulumi.Input[Union['BootVolumeBackupSourceDetailsArgs', 'BootVolumeBackupSourceDetailsArgsDict']] source_details: Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
+        :param pulumi.Input[Union['BootVolumeBackupRetentionPeriodArgs', 'BootVolumeBackupRetentionPeriodArgsDict', 'outputs.BootVolumeBackupRetentionPeriod']] retention_period: (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        :param pulumi.Input[Union['BootVolumeBackupSourceDetailsArgs', 'BootVolumeBackupSourceDetailsArgsDict', 'outputs.BootVolumeBackupSourceDetails']] source_details: Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
         :param pulumi.Input[_builtins.str] type: The type of backup to create. If omitted, defaults to incremental. Supported values are 'FULL' or 'INCREMENTAL'.
         """
         ...
@@ -772,8 +772,8 @@ class BootVolumeBackup(pulumi.CustomResource):
                  is_prevent_deletion_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_retention_lock_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 retention_period: pulumi.Input[Optional[Union['BootVolumeBackupRetentionPeriodArgs', 'BootVolumeBackupRetentionPeriodArgsDict']]] = None,
-                 source_details: pulumi.Input[Optional[Union['BootVolumeBackupSourceDetailsArgs', 'BootVolumeBackupSourceDetailsArgsDict']]] = None,
+                 retention_period: pulumi.Input[Optional[Union['BootVolumeBackupRetentionPeriodArgs', 'BootVolumeBackupRetentionPeriodArgsDict', 'outputs.BootVolumeBackupRetentionPeriod']]] = None,
+                 source_details: pulumi.Input[Optional[Union['BootVolumeBackupSourceDetailsArgs', 'BootVolumeBackupSourceDetailsArgsDict', 'outputs.BootVolumeBackupSourceDetails']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -829,10 +829,10 @@ class BootVolumeBackup(pulumi.CustomResource):
             is_prevent_deletion_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_retention_lock_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
-            retention_period: pulumi.Input[Optional[Union['BootVolumeBackupRetentionPeriodArgs', 'BootVolumeBackupRetentionPeriodArgsDict']]] = None,
+            retention_period: pulumi.Input[Optional[Union['BootVolumeBackupRetentionPeriodArgs', 'BootVolumeBackupRetentionPeriodArgsDict', 'outputs.BootVolumeBackupRetentionPeriod']]] = None,
             size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
             source_boot_volume_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
-            source_details: pulumi.Input[Optional[Union['BootVolumeBackupSourceDetailsArgs', 'BootVolumeBackupSourceDetailsArgsDict']]] = None,
+            source_details: pulumi.Input[Optional[Union['BootVolumeBackupSourceDetailsArgs', 'BootVolumeBackupSourceDetailsArgsDict', 'outputs.BootVolumeBackupSourceDetails']]] = None,
             source_type: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -860,10 +860,10 @@ class BootVolumeBackup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_prevent_deletion_enabled: (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
         :param pulumi.Input[_builtins.bool] is_retention_lock_enabled: (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
-        :param pulumi.Input[Union['BootVolumeBackupRetentionPeriodArgs', 'BootVolumeBackupRetentionPeriodArgsDict']] retention_period: (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        :param pulumi.Input[Union['BootVolumeBackupRetentionPeriodArgs', 'BootVolumeBackupRetentionPeriodArgsDict', 'outputs.BootVolumeBackupRetentionPeriod']] retention_period: (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
         :param pulumi.Input[_builtins.str] size_in_gbs: The size of the boot volume, in GBs.
         :param pulumi.Input[_builtins.str] source_boot_volume_backup_id: The OCID of the source boot volume backup.
-        :param pulumi.Input[Union['BootVolumeBackupSourceDetailsArgs', 'BootVolumeBackupSourceDetailsArgsDict']] source_details: Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
+        :param pulumi.Input[Union['BootVolumeBackupSourceDetailsArgs', 'BootVolumeBackupSourceDetailsArgsDict', 'outputs.BootVolumeBackupSourceDetails']] source_details: Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
         :param pulumi.Input[_builtins.str] source_type: Specifies whether the backup was created manually, or via scheduled backup policy.
         :param pulumi.Input[_builtins.str] state: The current state of a boot volume backup.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`

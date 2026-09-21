@@ -139,7 +139,7 @@ class ManagedInstanceGroupRebootManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  reboot_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
-                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRebootManagementWorkRequestDetailsArgsDict']]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRebootManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceGroupRebootManagementWorkRequestDetails']]] = None,
                  __props__=None):
         """
         This resource provides the Managed Instance Group Reboot Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -177,7 +177,7 @@ class ManagedInstanceGroupRebootManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[_builtins.int] reboot_timeout_in_mins: The number of minutes the service waits for the reboot to complete. If the instances in the group don't reboot  within this time, the reboot job status is set to failed.
-        :param pulumi.Input[Union['ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRebootManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRebootManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceGroupRebootManagementWorkRequestDetails']] work_request_details: Provides the name and description of the job.
         """
         ...
     @overload
@@ -234,7 +234,7 @@ class ManagedInstanceGroupRebootManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  reboot_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
-                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRebootManagementWorkRequestDetailsArgsDict']]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRebootManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceGroupRebootManagementWorkRequestDetails']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -261,7 +261,7 @@ class ManagedInstanceGroupRebootManagement(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
             reboot_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
-            work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRebootManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceGroupRebootManagement':
+            work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRebootManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceGroupRebootManagementWorkRequestDetails']]] = None) -> 'ManagedInstanceGroupRebootManagement':
         """
         Get an existing ManagedInstanceGroupRebootManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -271,7 +271,7 @@ class ManagedInstanceGroupRebootManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[_builtins.int] reboot_timeout_in_mins: The number of minutes the service waits for the reboot to complete. If the instances in the group don't reboot  within this time, the reboot job status is set to failed.
-        :param pulumi.Input[Union['ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRebootManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRebootManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceGroupRebootManagementWorkRequestDetails']] work_request_details: Provides the name and description of the job.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

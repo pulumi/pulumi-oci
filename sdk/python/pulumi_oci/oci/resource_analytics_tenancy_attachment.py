@@ -443,7 +443,7 @@ class ResourceAnalyticsTenancyAttachment(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             is_reporting_tenancy: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            monitored_regions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ResourceAnalyticsTenancyAttachmentMonitoredRegionArgs', 'ResourceAnalyticsTenancyAttachmentMonitoredRegionArgsDict']]]]] = None,
+            monitored_regions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ResourceAnalyticsTenancyAttachmentMonitoredRegionArgs', 'ResourceAnalyticsTenancyAttachmentMonitoredRegionArgsDict', 'outputs.ResourceAnalyticsTenancyAttachmentMonitoredRegion']]]]] = None,
             resource_analytics_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -463,7 +463,7 @@ class ResourceAnalyticsTenancyAttachment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) A description of the tenancy.
         :param pulumi.Input[_builtins.bool] is_reporting_tenancy: Whether the tenancy is the tenancy used when creating Resource Analytics Instance.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ResourceAnalyticsTenancyAttachmentMonitoredRegionArgs', 'ResourceAnalyticsTenancyAttachmentMonitoredRegionArgsDict']]]] monitored_regions: List of monitored regions with their data population status.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ResourceAnalyticsTenancyAttachmentMonitoredRegionArgs', 'ResourceAnalyticsTenancyAttachmentMonitoredRegionArgsDict', 'outputs.ResourceAnalyticsTenancyAttachmentMonitoredRegion']]]] monitored_regions: List of monitored regions with their data population status.
         :param pulumi.Input[_builtins.str] resource_analytics_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance associated with this TenancyAttachment.
         :param pulumi.Input[_builtins.str] state: The current state of the TenancyAttachment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`

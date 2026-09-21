@@ -139,7 +139,7 @@ class AwaitableGetLogsResult(GetLogsResult):
 
 
 def get_logs(display_name: Optional[_builtins.str] = None,
-             filters: Optional[Sequence[Union['GetLogsFilterArgs', 'GetLogsFilterArgsDict']]] = None,
+             filters: Optional[Sequence[Union['GetLogsFilterArgs', 'GetLogsFilterArgsDict', 'outputs.GetLogsFilterResult']]] = None,
              log_group_id: Optional[_builtins.str] = None,
              log_type: Optional[_builtins.str] = None,
              source_resource: Optional[_builtins.str] = None,
@@ -195,7 +195,7 @@ def get_logs(display_name: Optional[_builtins.str] = None,
         source_service=pulumi.get(__ret__, 'source_service'),
         state=pulumi.get(__ret__, 'state'))
 def get_logs_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLogsFilterArgs', 'GetLogsFilterArgsDict']]]]] = None,
+                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLogsFilterArgs', 'GetLogsFilterArgsDict', 'outputs.GetLogsFilterResult']]]]] = None,
                     log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                     log_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                     source_resource: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

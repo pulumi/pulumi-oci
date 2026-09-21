@@ -81,7 +81,7 @@ class AwaitableGetWlmsWlsDomainApplicablePatchesResult(GetWlmsWlsDomainApplicabl
             wls_domain_id=self.wls_domain_id)
 
 
-def get_wlms_wls_domain_applicable_patches(filters: Optional[Sequence[Union['GetWlmsWlsDomainApplicablePatchesFilterArgs', 'GetWlmsWlsDomainApplicablePatchesFilterArgsDict']]] = None,
+def get_wlms_wls_domain_applicable_patches(filters: Optional[Sequence[Union['GetWlmsWlsDomainApplicablePatchesFilterArgs', 'GetWlmsWlsDomainApplicablePatchesFilterArgsDict', 'outputs.GetWlmsWlsDomainApplicablePatchesFilterResult']]] = None,
                                            wls_domain_id: Optional[_builtins.str] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWlmsWlsDomainApplicablePatchesResult:
     """
@@ -112,7 +112,7 @@ def get_wlms_wls_domain_applicable_patches(filters: Optional[Sequence[Union['Get
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         wls_domain_id=pulumi.get(__ret__, 'wls_domain_id'))
-def get_wlms_wls_domain_applicable_patches_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWlmsWlsDomainApplicablePatchesFilterArgs', 'GetWlmsWlsDomainApplicablePatchesFilterArgsDict']]]]] = None,
+def get_wlms_wls_domain_applicable_patches_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWlmsWlsDomainApplicablePatchesFilterArgs', 'GetWlmsWlsDomainApplicablePatchesFilterArgsDict', 'outputs.GetWlmsWlsDomainApplicablePatchesFilterResult']]]]] = None,
                                                   wls_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWlmsWlsDomainApplicablePatchesResult]:
     """

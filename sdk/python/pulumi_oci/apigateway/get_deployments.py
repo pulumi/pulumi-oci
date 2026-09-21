@@ -122,7 +122,7 @@ class AwaitableGetDeploymentsResult(GetDeploymentsResult):
 
 def get_deployments(compartment_id: Optional[_builtins.str] = None,
                     display_name: Optional[_builtins.str] = None,
-                    filters: Optional[Sequence[Union['GetDeploymentsFilterArgs', 'GetDeploymentsFilterArgsDict']]] = None,
+                    filters: Optional[Sequence[Union['GetDeploymentsFilterArgs', 'GetDeploymentsFilterArgsDict', 'outputs.GetDeploymentsFilterResult']]] = None,
                     gateway_id: Optional[_builtins.str] = None,
                     state: Optional[_builtins.str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeploymentsResult:
@@ -168,7 +168,7 @@ def get_deployments(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_deployments_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDeploymentsFilterArgs', 'GetDeploymentsFilterArgsDict']]]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDeploymentsFilterArgs', 'GetDeploymentsFilterArgsDict', 'outputs.GetDeploymentsFilterResult']]]]] = None,
                            gateway_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentsResult]:

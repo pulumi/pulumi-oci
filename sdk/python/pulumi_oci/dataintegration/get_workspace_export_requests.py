@@ -136,7 +136,7 @@ class AwaitableGetWorkspaceExportRequestsResult(GetWorkspaceExportRequestsResult
 
 
 def get_workspace_export_requests(export_status: Optional[_builtins.str] = None,
-                                  filters: Optional[Sequence[Union['GetWorkspaceExportRequestsFilterArgs', 'GetWorkspaceExportRequestsFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetWorkspaceExportRequestsFilterArgs', 'GetWorkspaceExportRequestsFilterArgsDict', 'outputs.GetWorkspaceExportRequestsFilterResult']]] = None,
                                   name: Optional[_builtins.str] = None,
                                   projection: Optional[_builtins.str] = None,
                                   time_ended_in_millis: Optional[_builtins.str] = None,
@@ -192,7 +192,7 @@ def get_workspace_export_requests(export_status: Optional[_builtins.str] = None,
         time_started_in_millis=pulumi.get(__ret__, 'time_started_in_millis'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
 def get_workspace_export_requests_output(export_status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkspaceExportRequestsFilterArgs', 'GetWorkspaceExportRequestsFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkspaceExportRequestsFilterArgs', 'GetWorkspaceExportRequestsFilterArgsDict', 'outputs.GetWorkspaceExportRequestsFilterResult']]]]] = None,
                                          name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          projection: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          time_ended_in_millis: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

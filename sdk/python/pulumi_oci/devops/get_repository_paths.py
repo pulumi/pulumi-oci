@@ -118,7 +118,7 @@ class AwaitableGetRepositoryPathsResult(GetRepositoryPathsResult):
 
 
 def get_repository_paths(display_name: Optional[_builtins.str] = None,
-                         filters: Optional[Sequence[Union['GetRepositoryPathsFilterArgs', 'GetRepositoryPathsFilterArgsDict']]] = None,
+                         filters: Optional[Sequence[Union['GetRepositoryPathsFilterArgs', 'GetRepositoryPathsFilterArgsDict', 'outputs.GetRepositoryPathsFilterResult']]] = None,
                          folder_path: Optional[_builtins.str] = None,
                          paths_in_subtree: Optional[_builtins.bool] = None,
                          ref: Optional[_builtins.str] = None,
@@ -169,7 +169,7 @@ def get_repository_paths(display_name: Optional[_builtins.str] = None,
         repository_id=pulumi.get(__ret__, 'repository_id'),
         repository_path_collections=pulumi.get(__ret__, 'repository_path_collections'))
 def get_repository_paths_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRepositoryPathsFilterArgs', 'GetRepositoryPathsFilterArgsDict']]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRepositoryPathsFilterArgs', 'GetRepositoryPathsFilterArgsDict', 'outputs.GetRepositoryPathsFilterResult']]]]] = None,
                                 folder_path: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 paths_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                 ref: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

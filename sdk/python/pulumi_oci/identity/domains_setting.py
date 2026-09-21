@@ -4070,11 +4070,11 @@ class DomainsSetting(pulumi.CustomResource):
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  audit_event_retention_period: pulumi.Input[Optional[_builtins.int]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
-                 certificate_validation: pulumi.Input[Optional[Union['DomainsSettingCertificateValidationArgs', 'DomainsSettingCertificateValidationArgsDict']]] = None,
-                 cloud_gate_cors_settings: pulumi.Input[Optional[Union['DomainsSettingCloudGateCorsSettingsArgs', 'DomainsSettingCloudGateCorsSettingsArgsDict']]] = None,
+                 certificate_validation: pulumi.Input[Optional[Union['DomainsSettingCertificateValidationArgs', 'DomainsSettingCertificateValidationArgsDict', 'outputs.DomainsSettingCertificateValidation']]] = None,
+                 cloud_gate_cors_settings: pulumi.Input[Optional[Union['DomainsSettingCloudGateCorsSettingsArgs', 'DomainsSettingCloudGateCorsSettingsArgsDict', 'outputs.DomainsSettingCloudGateCorsSettings']]] = None,
                  cloud_migration_custom_url: pulumi.Input[Optional[_builtins.str]] = None,
                  cloud_migration_url_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 company_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingCompanyNameArgs', 'DomainsSettingCompanyNameArgsDict']]]]] = None,
+                 company_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingCompanyNameArgs', 'DomainsSettingCompanyNameArgsDict', 'outputs.DomainsSettingCompanyName']]]]] = None,
                  contact_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  csr_access: pulumi.Input[Optional[_builtins.str]] = None,
                  custom_branding: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -4089,18 +4089,18 @@ class DomainsSetting(pulumi.CustomResource):
                  iam_upst_session_expiry: pulumi.Input[Optional[_builtins.int]] = None,
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  identity_domains_setting_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 images: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingImageArgs', 'DomainsSettingImageArgsDict']]]]] = None,
+                 images: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingImageArgs', 'DomainsSettingImageArgsDict', 'outputs.DomainsSettingImage']]]]] = None,
                  is_hosted_page: pulumi.Input[Optional[_builtins.bool]] = None,
                  issuer: pulumi.Input[Optional[_builtins.str]] = None,
                  locale: pulumi.Input[Optional[_builtins.str]] = None,
-                 login_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingLoginTextArgs', 'DomainsSettingLoginTextArgsDict']]]]] = None,
+                 login_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingLoginTextArgs', 'DomainsSettingLoginTextArgsDict', 'outputs.DomainsSettingLoginText']]]]] = None,
                  max_no_of_app_cmva_to_return: pulumi.Input[Optional[_builtins.int]] = None,
                  max_no_of_app_role_members_to_return: pulumi.Input[Optional[_builtins.int]] = None,
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
                  preferred_language: pulumi.Input[Optional[_builtins.str]] = None,
                  prev_issuer: pulumi.Input[Optional[_builtins.str]] = None,
                  privacy_policy_url: pulumi.Input[Optional[_builtins.str]] = None,
-                 purge_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingPurgeConfigArgs', 'DomainsSettingPurgeConfigArgsDict']]]]] = None,
+                 purge_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingPurgeConfigArgs', 'DomainsSettingPurgeConfigArgsDict', 'outputs.DomainsSettingPurgeConfig']]]]] = None,
                  re_auth_factors: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  re_auth_when_changing_my_authentication_factors: pulumi.Input[Optional[_builtins.bool]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
@@ -4109,8 +4109,8 @@ class DomainsSetting(pulumi.CustomResource):
                  setting_id: pulumi.Input[Optional[_builtins.str]] = None,
                  signing_cert_public_access: pulumi.Input[Optional[_builtins.bool]] = None,
                  sub_mapping_attr: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingTagArgs', 'DomainsSettingTagArgsDict']]]]] = None,
-                 tenant_custom_claims: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingTenantCustomClaimArgs', 'DomainsSettingTenantCustomClaimArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingTagArgs', 'DomainsSettingTagArgsDict', 'outputs.DomainsSettingTag']]]]] = None,
+                 tenant_custom_claims: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingTenantCustomClaimArgs', 'DomainsSettingTenantCustomClaimArgsDict', 'outputs.DomainsSettingTenantCustomClaim']]]]] = None,
                  terms_of_use_url: pulumi.Input[Optional[_builtins.str]] = None,
                  timezone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -4291,7 +4291,7 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: default
                * type: integer
         :param pulumi.Input[_builtins.str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[Union['DomainsSettingCertificateValidationArgs', 'DomainsSettingCertificateValidationArgsDict']] certificate_validation: (Updatable) Certificate Validation Config
+        :param pulumi.Input[Union['DomainsSettingCertificateValidationArgs', 'DomainsSettingCertificateValidationArgsDict', 'outputs.DomainsSettingCertificateValidation']] certificate_validation: (Updatable) Certificate Validation Config
                
                **Added In:** 2010242156
                
@@ -4303,7 +4303,7 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsSettingCloudGateCorsSettingsArgs', 'DomainsSettingCloudGateCorsSettingsArgsDict']] cloud_gate_cors_settings: (Updatable) A complex attribute that specifies the Cloud Gate cross origin resource sharing settings.
+        :param pulumi.Input[Union['DomainsSettingCloudGateCorsSettingsArgs', 'DomainsSettingCloudGateCorsSettingsArgsDict', 'outputs.DomainsSettingCloudGateCorsSettings']] cloud_gate_cors_settings: (Updatable) A complex attribute that specifies the Cloud Gate cross origin resource sharing settings.
                
                **Added In:** 2011192329
                
@@ -4340,7 +4340,7 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingCompanyNameArgs', 'DomainsSettingCompanyNameArgsDict']]]] company_names: (Updatable) Name of the company in different locales
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingCompanyNameArgs', 'DomainsSettingCompanyNameArgsDict', 'outputs.DomainsSettingCompanyName']]]] company_names: (Updatable) Name of the company in different locales
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [locale]
@@ -4488,7 +4488,7 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: always
                * type: string
                * uniqueness: global
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingImageArgs', 'DomainsSettingImageArgsDict']]]] images: (Updatable) References to various images
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingImageArgs', 'DomainsSettingImageArgsDict', 'outputs.DomainsSettingImage']]]] images: (Updatable) References to various images
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [type]
@@ -4533,7 +4533,7 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingLoginTextArgs', 'DomainsSettingLoginTextArgsDict']]]] login_texts: (Updatable) Login text in different locales
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingLoginTextArgs', 'DomainsSettingLoginTextArgsDict', 'outputs.DomainsSettingLoginText']]]] login_texts: (Updatable) Login text in different locales
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [locale]
@@ -4613,7 +4613,7 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingPurgeConfigArgs', 'DomainsSettingPurgeConfigArgsDict']]]] purge_configs: (Updatable) Purge Configs for different Resource Types
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingPurgeConfigArgs', 'DomainsSettingPurgeConfigArgsDict', 'outputs.DomainsSettingPurgeConfig']]]] purge_configs: (Updatable) Purge Configs for different Resource Types
                
                **Deprecated Since: 19.1.6**
                
@@ -4690,7 +4690,7 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none Subject mapping user profile attribute. The input format should be SCIM compliant. This attribute should be of type String and multivalued to false.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingTagArgs', 'DomainsSettingTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingTagArgs', 'DomainsSettingTagArgsDict', 'outputs.DomainsSettingTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -4701,7 +4701,7 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingTenantCustomClaimArgs', 'DomainsSettingTenantCustomClaimArgsDict']]]] tenant_custom_claims: (Updatable) Custom claims associated with the specific tenant
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingTenantCustomClaimArgs', 'DomainsSettingTenantCustomClaimArgsDict', 'outputs.DomainsSettingTenantCustomClaim']]]] tenant_custom_claims: (Updatable) Custom claims associated with the specific tenant
                
                **Added In:** 18.4.2
                
@@ -4888,11 +4888,11 @@ class DomainsSetting(pulumi.CustomResource):
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  audit_event_retention_period: pulumi.Input[Optional[_builtins.int]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
-                 certificate_validation: pulumi.Input[Optional[Union['DomainsSettingCertificateValidationArgs', 'DomainsSettingCertificateValidationArgsDict']]] = None,
-                 cloud_gate_cors_settings: pulumi.Input[Optional[Union['DomainsSettingCloudGateCorsSettingsArgs', 'DomainsSettingCloudGateCorsSettingsArgsDict']]] = None,
+                 certificate_validation: pulumi.Input[Optional[Union['DomainsSettingCertificateValidationArgs', 'DomainsSettingCertificateValidationArgsDict', 'outputs.DomainsSettingCertificateValidation']]] = None,
+                 cloud_gate_cors_settings: pulumi.Input[Optional[Union['DomainsSettingCloudGateCorsSettingsArgs', 'DomainsSettingCloudGateCorsSettingsArgsDict', 'outputs.DomainsSettingCloudGateCorsSettings']]] = None,
                  cloud_migration_custom_url: pulumi.Input[Optional[_builtins.str]] = None,
                  cloud_migration_url_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 company_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingCompanyNameArgs', 'DomainsSettingCompanyNameArgsDict']]]]] = None,
+                 company_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingCompanyNameArgs', 'DomainsSettingCompanyNameArgsDict', 'outputs.DomainsSettingCompanyName']]]]] = None,
                  contact_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  csr_access: pulumi.Input[Optional[_builtins.str]] = None,
                  custom_branding: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -4907,18 +4907,18 @@ class DomainsSetting(pulumi.CustomResource):
                  iam_upst_session_expiry: pulumi.Input[Optional[_builtins.int]] = None,
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  identity_domains_setting_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 images: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingImageArgs', 'DomainsSettingImageArgsDict']]]]] = None,
+                 images: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingImageArgs', 'DomainsSettingImageArgsDict', 'outputs.DomainsSettingImage']]]]] = None,
                  is_hosted_page: pulumi.Input[Optional[_builtins.bool]] = None,
                  issuer: pulumi.Input[Optional[_builtins.str]] = None,
                  locale: pulumi.Input[Optional[_builtins.str]] = None,
-                 login_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingLoginTextArgs', 'DomainsSettingLoginTextArgsDict']]]]] = None,
+                 login_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingLoginTextArgs', 'DomainsSettingLoginTextArgsDict', 'outputs.DomainsSettingLoginText']]]]] = None,
                  max_no_of_app_cmva_to_return: pulumi.Input[Optional[_builtins.int]] = None,
                  max_no_of_app_role_members_to_return: pulumi.Input[Optional[_builtins.int]] = None,
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
                  preferred_language: pulumi.Input[Optional[_builtins.str]] = None,
                  prev_issuer: pulumi.Input[Optional[_builtins.str]] = None,
                  privacy_policy_url: pulumi.Input[Optional[_builtins.str]] = None,
-                 purge_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingPurgeConfigArgs', 'DomainsSettingPurgeConfigArgsDict']]]]] = None,
+                 purge_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingPurgeConfigArgs', 'DomainsSettingPurgeConfigArgsDict', 'outputs.DomainsSettingPurgeConfig']]]]] = None,
                  re_auth_factors: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  re_auth_when_changing_my_authentication_factors: pulumi.Input[Optional[_builtins.bool]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
@@ -4927,8 +4927,8 @@ class DomainsSetting(pulumi.CustomResource):
                  setting_id: pulumi.Input[Optional[_builtins.str]] = None,
                  signing_cert_public_access: pulumi.Input[Optional[_builtins.bool]] = None,
                  sub_mapping_attr: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingTagArgs', 'DomainsSettingTagArgsDict']]]]] = None,
-                 tenant_custom_claims: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingTenantCustomClaimArgs', 'DomainsSettingTenantCustomClaimArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingTagArgs', 'DomainsSettingTagArgsDict', 'outputs.DomainsSettingTag']]]]] = None,
+                 tenant_custom_claims: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingTenantCustomClaimArgs', 'DomainsSettingTenantCustomClaimArgsDict', 'outputs.DomainsSettingTenantCustomClaim']]]]] = None,
                  terms_of_use_url: pulumi.Input[Optional[_builtins.str]] = None,
                  timezone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -5035,12 +5035,12 @@ class DomainsSetting(pulumi.CustomResource):
             attributes: pulumi.Input[Optional[_builtins.str]] = None,
             audit_event_retention_period: pulumi.Input[Optional[_builtins.int]] = None,
             authorization: pulumi.Input[Optional[_builtins.str]] = None,
-            certificate_validation: pulumi.Input[Optional[Union['DomainsSettingCertificateValidationArgs', 'DomainsSettingCertificateValidationArgsDict']]] = None,
+            certificate_validation: pulumi.Input[Optional[Union['DomainsSettingCertificateValidationArgs', 'DomainsSettingCertificateValidationArgsDict', 'outputs.DomainsSettingCertificateValidation']]] = None,
             cloud_account_name: pulumi.Input[Optional[_builtins.str]] = None,
-            cloud_gate_cors_settings: pulumi.Input[Optional[Union['DomainsSettingCloudGateCorsSettingsArgs', 'DomainsSettingCloudGateCorsSettingsArgsDict']]] = None,
+            cloud_gate_cors_settings: pulumi.Input[Optional[Union['DomainsSettingCloudGateCorsSettingsArgs', 'DomainsSettingCloudGateCorsSettingsArgsDict', 'outputs.DomainsSettingCloudGateCorsSettings']]] = None,
             cloud_migration_custom_url: pulumi.Input[Optional[_builtins.str]] = None,
             cloud_migration_url_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            company_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingCompanyNameArgs', 'DomainsSettingCompanyNameArgsDict']]]]] = None,
+            company_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingCompanyNameArgs', 'DomainsSettingCompanyNameArgsDict', 'outputs.DomainsSettingCompanyName']]]]] = None,
             compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             contact_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             csr_access: pulumi.Input[Optional[_builtins.str]] = None,
@@ -5048,9 +5048,9 @@ class DomainsSetting(pulumi.CustomResource):
             custom_css_location: pulumi.Input[Optional[_builtins.str]] = None,
             custom_html_location: pulumi.Input[Optional[_builtins.str]] = None,
             custom_translation: pulumi.Input[Optional[_builtins.str]] = None,
-            default_company_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingDefaultCompanyNameArgs', 'DomainsSettingDefaultCompanyNameArgsDict']]]]] = None,
-            default_images: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingDefaultImageArgs', 'DomainsSettingDefaultImageArgsDict']]]]] = None,
-            default_login_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingDefaultLoginTextArgs', 'DomainsSettingDefaultLoginTextArgsDict']]]]] = None,
+            default_company_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingDefaultCompanyNameArgs', 'DomainsSettingDefaultCompanyNameArgsDict', 'outputs.DomainsSettingDefaultCompanyName']]]]] = None,
+            default_images: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingDefaultImageArgs', 'DomainsSettingDefaultImageArgsDict', 'outputs.DomainsSettingDefaultImage']]]]] = None,
+            default_login_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingDefaultLoginTextArgs', 'DomainsSettingDefaultLoginTextArgsDict', 'outputs.DomainsSettingDefaultLoginText']]]]] = None,
             default_trust_scope: pulumi.Input[Optional[_builtins.str]] = None,
             delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
             diagnostic_level: pulumi.Input[Optional[_builtins.int]] = None,
@@ -5060,27 +5060,27 @@ class DomainsSetting(pulumi.CustomResource):
             enable_terms_of_use: pulumi.Input[Optional[_builtins.bool]] = None,
             external_id: pulumi.Input[Optional[_builtins.str]] = None,
             iam_upst_session_expiry: pulumi.Input[Optional[_builtins.int]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingIdcsCreatedByArgs', 'DomainsSettingIdcsCreatedByArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingIdcsCreatedByArgs', 'DomainsSettingIdcsCreatedByArgsDict', 'outputs.DomainsSettingIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingIdcsLastModifiedByArgs', 'DomainsSettingIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingIdcsLastModifiedByArgs', 'DomainsSettingIdcsLastModifiedByArgsDict', 'outputs.DomainsSettingIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             identity_domains_setting_id: pulumi.Input[Optional[_builtins.str]] = None,
-            images: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingImageArgs', 'DomainsSettingImageArgsDict']]]]] = None,
+            images: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingImageArgs', 'DomainsSettingImageArgsDict', 'outputs.DomainsSettingImage']]]]] = None,
             is_hosted_page: pulumi.Input[Optional[_builtins.bool]] = None,
             issuer: pulumi.Input[Optional[_builtins.str]] = None,
             locale: pulumi.Input[Optional[_builtins.str]] = None,
-            login_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingLoginTextArgs', 'DomainsSettingLoginTextArgsDict']]]]] = None,
+            login_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingLoginTextArgs', 'DomainsSettingLoginTextArgsDict', 'outputs.DomainsSettingLoginText']]]]] = None,
             max_no_of_app_cmva_to_return: pulumi.Input[Optional[_builtins.int]] = None,
             max_no_of_app_role_members_to_return: pulumi.Input[Optional[_builtins.int]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingMetaArgs', 'DomainsSettingMetaArgsDict']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingMetaArgs', 'DomainsSettingMetaArgsDict', 'outputs.DomainsSettingMeta']]]]] = None,
             migration_status: pulumi.Input[Optional[_builtins.str]] = None,
             ocid: pulumi.Input[Optional[_builtins.str]] = None,
             on_premises_provisioning: pulumi.Input[Optional[_builtins.bool]] = None,
             preferred_language: pulumi.Input[Optional[_builtins.str]] = None,
             prev_issuer: pulumi.Input[Optional[_builtins.str]] = None,
             privacy_policy_url: pulumi.Input[Optional[_builtins.str]] = None,
-            purge_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingPurgeConfigArgs', 'DomainsSettingPurgeConfigArgsDict']]]]] = None,
+            purge_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingPurgeConfigArgs', 'DomainsSettingPurgeConfigArgsDict', 'outputs.DomainsSettingPurgeConfig']]]]] = None,
             re_auth_factors: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             re_auth_when_changing_my_authentication_factors: pulumi.Input[Optional[_builtins.bool]] = None,
             resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
@@ -5089,9 +5089,9 @@ class DomainsSetting(pulumi.CustomResource):
             setting_id: pulumi.Input[Optional[_builtins.str]] = None,
             signing_cert_public_access: pulumi.Input[Optional[_builtins.bool]] = None,
             sub_mapping_attr: pulumi.Input[Optional[_builtins.str]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingTagArgs', 'DomainsSettingTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingTagArgs', 'DomainsSettingTagArgsDict', 'outputs.DomainsSettingTag']]]]] = None,
             tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
-            tenant_custom_claims: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingTenantCustomClaimArgs', 'DomainsSettingTenantCustomClaimArgsDict']]]]] = None,
+            tenant_custom_claims: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSettingTenantCustomClaimArgs', 'DomainsSettingTenantCustomClaimArgsDict', 'outputs.DomainsSettingTenantCustomClaim']]]]] = None,
             terms_of_use_url: pulumi.Input[Optional[_builtins.str]] = None,
             timezone: pulumi.Input[Optional[_builtins.str]] = None) -> 'DomainsSetting':
         """
@@ -5158,7 +5158,7 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: default
                * type: integer
         :param pulumi.Input[_builtins.str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[Union['DomainsSettingCertificateValidationArgs', 'DomainsSettingCertificateValidationArgsDict']] certificate_validation: (Updatable) Certificate Validation Config
+        :param pulumi.Input[Union['DomainsSettingCertificateValidationArgs', 'DomainsSettingCertificateValidationArgsDict', 'outputs.DomainsSettingCertificateValidation']] certificate_validation: (Updatable) Certificate Validation Config
                
                **Added In:** 2010242156
                
@@ -5182,7 +5182,7 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsSettingCloudGateCorsSettingsArgs', 'DomainsSettingCloudGateCorsSettingsArgsDict']] cloud_gate_cors_settings: (Updatable) A complex attribute that specifies the Cloud Gate cross origin resource sharing settings.
+        :param pulumi.Input[Union['DomainsSettingCloudGateCorsSettingsArgs', 'DomainsSettingCloudGateCorsSettingsArgsDict', 'outputs.DomainsSettingCloudGateCorsSettings']] cloud_gate_cors_settings: (Updatable) A complex attribute that specifies the Cloud Gate cross origin resource sharing settings.
                
                **Added In:** 2011192329
                
@@ -5219,7 +5219,7 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingCompanyNameArgs', 'DomainsSettingCompanyNameArgsDict']]]] company_names: (Updatable) Name of the company in different locales
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingCompanyNameArgs', 'DomainsSettingCompanyNameArgsDict', 'outputs.DomainsSettingCompanyName']]]] company_names: (Updatable) Name of the company in different locales
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [locale]
@@ -5301,7 +5301,7 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingDefaultCompanyNameArgs', 'DomainsSettingDefaultCompanyNameArgsDict']]]] default_company_names: (Updatable) Default name of the Company in different locales
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingDefaultCompanyNameArgs', 'DomainsSettingDefaultCompanyNameArgsDict', 'outputs.DomainsSettingDefaultCompanyName']]]] default_company_names: (Updatable) Default name of the Company in different locales
                
                **Added In:** 18.2.2
                
@@ -5312,7 +5312,7 @@ class DomainsSetting(pulumi.CustomResource):
                * required: false
                * returned: default
                * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingDefaultImageArgs', 'DomainsSettingDefaultImageArgsDict']]]] default_images: (Updatable) References to various images
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingDefaultImageArgs', 'DomainsSettingDefaultImageArgsDict', 'outputs.DomainsSettingDefaultImage']]]] default_images: (Updatable) References to various images
                
                **Added In:** 18.2.2
                
@@ -5323,7 +5323,7 @@ class DomainsSetting(pulumi.CustomResource):
                * required: false
                * returned: default
                * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingDefaultLoginTextArgs', 'DomainsSettingDefaultLoginTextArgsDict']]]] default_login_texts: (Updatable) Default Login text in different locales
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingDefaultLoginTextArgs', 'DomainsSettingDefaultLoginTextArgsDict', 'outputs.DomainsSettingDefaultLoginText']]]] default_login_texts: (Updatable) Default Login text in different locales
                
                **Added In:** 18.2.2
                
@@ -5432,7 +5432,7 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: default
                * type: integer
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingIdcsCreatedByArgs', 'DomainsSettingIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingIdcsCreatedByArgs', 'DomainsSettingIdcsCreatedByArgsDict', 'outputs.DomainsSettingIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -5442,7 +5442,7 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingIdcsLastModifiedByArgs', 'DomainsSettingIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingIdcsLastModifiedByArgs', 'DomainsSettingIdcsLastModifiedByArgsDict', 'outputs.DomainsSettingIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -5483,7 +5483,7 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: always
                * type: string
                * uniqueness: global
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingImageArgs', 'DomainsSettingImageArgsDict']]]] images: (Updatable) References to various images
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingImageArgs', 'DomainsSettingImageArgsDict', 'outputs.DomainsSettingImage']]]] images: (Updatable) References to various images
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [type]
@@ -5528,7 +5528,7 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingLoginTextArgs', 'DomainsSettingLoginTextArgsDict']]]] login_texts: (Updatable) Login text in different locales
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingLoginTextArgs', 'DomainsSettingLoginTextArgsDict', 'outputs.DomainsSettingLoginText']]]] login_texts: (Updatable) Login text in different locales
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [locale]
@@ -5561,7 +5561,7 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: default
                * type: integer
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingMetaArgs', 'DomainsSettingMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingMetaArgs', 'DomainsSettingMetaArgsDict', 'outputs.DomainsSettingMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -5643,7 +5643,7 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingPurgeConfigArgs', 'DomainsSettingPurgeConfigArgsDict']]]] purge_configs: (Updatable) Purge Configs for different Resource Types
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingPurgeConfigArgs', 'DomainsSettingPurgeConfigArgsDict', 'outputs.DomainsSettingPurgeConfig']]]] purge_configs: (Updatable) Purge Configs for different Resource Types
                
                **Deprecated Since: 19.1.6**
                
@@ -5720,7 +5720,7 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none Subject mapping user profile attribute. The input format should be SCIM compliant. This attribute should be of type String and multivalued to false.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingTagArgs', 'DomainsSettingTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingTagArgs', 'DomainsSettingTagArgsDict', 'outputs.DomainsSettingTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -5742,7 +5742,7 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingTenantCustomClaimArgs', 'DomainsSettingTenantCustomClaimArgsDict']]]] tenant_custom_claims: (Updatable) Custom claims associated with the specific tenant
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingTenantCustomClaimArgs', 'DomainsSettingTenantCustomClaimArgsDict', 'outputs.DomainsSettingTenantCustomClaim']]]] tenant_custom_claims: (Updatable) Custom claims associated with the specific tenant
                
                **Added In:** 18.4.2
                

@@ -300,7 +300,7 @@ class SchedulingPolicySchedulingWindow(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  scheduling_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 window_preference: pulumi.Input[Optional[Union['SchedulingPolicySchedulingWindowWindowPreferenceArgs', 'SchedulingPolicySchedulingWindowWindowPreferenceArgsDict']]] = None,
+                 window_preference: pulumi.Input[Optional[Union['SchedulingPolicySchedulingWindowWindowPreferenceArgs', 'SchedulingPolicySchedulingWindowWindowPreferenceArgsDict', 'outputs.SchedulingPolicySchedulingWindowWindowPreference']]] = None,
                  __props__=None):
         """
         This resource provides the Scheduling Policy Scheduling Window resource in Oracle Cloud Infrastructure Database service.
@@ -349,7 +349,7 @@ class SchedulingPolicySchedulingWindow(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] scheduling_policy_id: The Scheduling Policy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Union['SchedulingPolicySchedulingWindowWindowPreferenceArgs', 'SchedulingPolicySchedulingWindowWindowPreferenceArgsDict']] window_preference: (Updatable) The Single Scheduling Window details.
+        :param pulumi.Input[Union['SchedulingPolicySchedulingWindowWindowPreferenceArgs', 'SchedulingPolicySchedulingWindowWindowPreferenceArgsDict', 'outputs.SchedulingPolicySchedulingWindowWindowPreference']] window_preference: (Updatable) The Single Scheduling Window details.
         """
         ...
     @overload
@@ -417,7 +417,7 @@ class SchedulingPolicySchedulingWindow(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  scheduling_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 window_preference: pulumi.Input[Optional[Union['SchedulingPolicySchedulingWindowWindowPreferenceArgs', 'SchedulingPolicySchedulingWindowWindowPreferenceArgsDict']]] = None,
+                 window_preference: pulumi.Input[Optional[Union['SchedulingPolicySchedulingWindowWindowPreferenceArgs', 'SchedulingPolicySchedulingWindowWindowPreferenceArgsDict', 'outputs.SchedulingPolicySchedulingWindowWindowPreference']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -462,7 +462,7 @@ class SchedulingPolicySchedulingWindow(pulumi.CustomResource):
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_next_scheduling_window_starts: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
-            window_preference: pulumi.Input[Optional[Union['SchedulingPolicySchedulingWindowWindowPreferenceArgs', 'SchedulingPolicySchedulingWindowWindowPreferenceArgsDict']]] = None) -> 'SchedulingPolicySchedulingWindow':
+            window_preference: pulumi.Input[Optional[Union['SchedulingPolicySchedulingWindowWindowPreferenceArgs', 'SchedulingPolicySchedulingWindowWindowPreferenceArgsDict', 'outputs.SchedulingPolicySchedulingWindowWindowPreference']]] = None) -> 'SchedulingPolicySchedulingWindow':
         """
         Get an existing SchedulingPolicySchedulingWindow resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -480,7 +480,7 @@ class SchedulingPolicySchedulingWindow(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: The date and time the Scheduling Window was created.
         :param pulumi.Input[_builtins.str] time_next_scheduling_window_starts: The date and time of the next upcoming window associated within the schedulingWindow is planned to start.
         :param pulumi.Input[_builtins.str] time_updated: The last date and time that the Scheduling Window was updated.
-        :param pulumi.Input[Union['SchedulingPolicySchedulingWindowWindowPreferenceArgs', 'SchedulingPolicySchedulingWindowWindowPreferenceArgsDict']] window_preference: (Updatable) The Single Scheduling Window details.
+        :param pulumi.Input[Union['SchedulingPolicySchedulingWindowWindowPreferenceArgs', 'SchedulingPolicySchedulingWindowWindowPreferenceArgsDict', 'outputs.SchedulingPolicySchedulingWindowWindowPreference']] window_preference: (Updatable) The Single Scheduling Window details.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

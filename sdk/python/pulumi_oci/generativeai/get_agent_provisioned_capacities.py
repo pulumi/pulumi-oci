@@ -119,7 +119,7 @@ class AwaitableGetAgentProvisionedCapacitiesResult(GetAgentProvisionedCapacities
 
 def get_agent_provisioned_capacities(compartment_id: Optional[_builtins.str] = None,
                                      display_name: Optional[_builtins.str] = None,
-                                     filters: Optional[Sequence[Union['GetAgentProvisionedCapacitiesFilterArgs', 'GetAgentProvisionedCapacitiesFilterArgsDict']]] = None,
+                                     filters: Optional[Sequence[Union['GetAgentProvisionedCapacitiesFilterArgs', 'GetAgentProvisionedCapacitiesFilterArgsDict', 'outputs.GetAgentProvisionedCapacitiesFilterResult']]] = None,
                                      provisioned_capacity_id: Optional[_builtins.str] = None,
                                      state: Optional[_builtins.str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAgentProvisionedCapacitiesResult:
@@ -165,7 +165,7 @@ def get_agent_provisioned_capacities(compartment_id: Optional[_builtins.str] = N
         state=pulumi.get(__ret__, 'state'))
 def get_agent_provisioned_capacities_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAgentProvisionedCapacitiesFilterArgs', 'GetAgentProvisionedCapacitiesFilterArgsDict']]]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAgentProvisionedCapacitiesFilterArgs', 'GetAgentProvisionedCapacitiesFilterArgsDict', 'outputs.GetAgentProvisionedCapacitiesFilterResult']]]]] = None,
                                             provisioned_capacity_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentProvisionedCapacitiesResult]:

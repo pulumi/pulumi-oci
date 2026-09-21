@@ -412,7 +412,7 @@ class HeatWaveCluster(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cluster_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HeatWaveClusterClusterNodeArgs', 'HeatWaveClusterClusterNodeArgsDict']]]]] = None,
+            cluster_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HeatWaveClusterClusterNodeArgs', 'HeatWaveClusterClusterNodeArgsDict', 'outputs.HeatWaveClusterClusterNode']]]]] = None,
             cluster_size: pulumi.Input[Optional[_builtins.int]] = None,
             db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
             is_lakehouse_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -428,7 +428,7 @@ class HeatWaveCluster(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['HeatWaveClusterClusterNodeArgs', 'HeatWaveClusterClusterNodeArgsDict']]]] cluster_nodes: A HeatWave node is a compute host that is part of a HeatWave cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['HeatWaveClusterClusterNodeArgs', 'HeatWaveClusterClusterNodeArgsDict', 'outputs.HeatWaveClusterClusterNode']]]] cluster_nodes: A HeatWave node is a compute host that is part of a HeatWave cluster.
         :param pulumi.Input[_builtins.int] cluster_size: (Updatable) A change to the number of nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with the new cluster of nodes. This may result in a significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
         :param pulumi.Input[_builtins.str] db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.bool] is_lakehouse_enabled: (Updatable) Enable/disable Lakehouse for the HeatWave cluster.

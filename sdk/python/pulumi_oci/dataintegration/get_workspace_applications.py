@@ -127,7 +127,7 @@ class AwaitableGetWorkspaceApplicationsResult(GetWorkspaceApplicationsResult):
 
 
 def get_workspace_applications(fields: Optional[Sequence[_builtins.str]] = None,
-                               filters: Optional[Sequence[Union['GetWorkspaceApplicationsFilterArgs', 'GetWorkspaceApplicationsFilterArgsDict']]] = None,
+                               filters: Optional[Sequence[Union['GetWorkspaceApplicationsFilterArgs', 'GetWorkspaceApplicationsFilterArgsDict', 'outputs.GetWorkspaceApplicationsFilterResult']]] = None,
                                identifiers: Optional[Sequence[_builtins.str]] = None,
                                name: Optional[_builtins.str] = None,
                                name_contains: Optional[_builtins.str] = None,
@@ -178,7 +178,7 @@ def get_workspace_applications(fields: Optional[Sequence[_builtins.str]] = None,
         name_contains=pulumi.get(__ret__, 'name_contains'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
 def get_workspace_applications_output(fields: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
-                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkspaceApplicationsFilterArgs', 'GetWorkspaceApplicationsFilterArgsDict']]]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkspaceApplicationsFilterArgs', 'GetWorkspaceApplicationsFilterArgsDict', 'outputs.GetWorkspaceApplicationsFilterResult']]]]] = None,
                                       identifiers: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                       name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

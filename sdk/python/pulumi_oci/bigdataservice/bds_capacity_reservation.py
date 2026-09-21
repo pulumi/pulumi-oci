@@ -276,7 +276,7 @@ class BdsCapacityReservation(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 compute_capacity_reservations: pulumi.Input[Optional[Union['BdsCapacityReservationComputeCapacityReservationsArgs', 'BdsCapacityReservationComputeCapacityReservationsArgsDict']]] = None,
+                 compute_capacity_reservations: pulumi.Input[Optional[Union['BdsCapacityReservationComputeCapacityReservationsArgs', 'BdsCapacityReservationComputeCapacityReservationsArgsDict', 'outputs.BdsCapacityReservationComputeCapacityReservations']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -319,7 +319,7 @@ class BdsCapacityReservation(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment in which to create the BDS capacity reservation.
-        :param pulumi.Input[Union['BdsCapacityReservationComputeCapacityReservationsArgs', 'BdsCapacityReservationComputeCapacityReservationsArgsDict']] compute_capacity_reservations: (Updatable) Compute capacity reservation ID mappings by domain. For a multi-AD region, domain1, domain2, and domain3 correspond to AD1, AD2, and AD3 respectively. For a single-AD region, domain1, domain2, and domain3 correspond to FD1, FD2, and FD3 respectively.
+        :param pulumi.Input[Union['BdsCapacityReservationComputeCapacityReservationsArgs', 'BdsCapacityReservationComputeCapacityReservationsArgsDict', 'outputs.BdsCapacityReservationComputeCapacityReservations']] compute_capacity_reservations: (Updatable) Compute capacity reservation ID mappings by domain. For a multi-AD region, domain1, domain2, and domain3 correspond to AD1, AD2, and AD3 respectively. For a single-AD region, domain1, domain2, and domain3 correspond to FD1, FD2, and FD3 respectively.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name for the BDS capacity reservation.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
@@ -384,7 +384,7 @@ class BdsCapacityReservation(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 compute_capacity_reservations: pulumi.Input[Optional[Union['BdsCapacityReservationComputeCapacityReservationsArgs', 'BdsCapacityReservationComputeCapacityReservationsArgsDict']]] = None,
+                 compute_capacity_reservations: pulumi.Input[Optional[Union['BdsCapacityReservationComputeCapacityReservationsArgs', 'BdsCapacityReservationComputeCapacityReservationsArgsDict', 'outputs.BdsCapacityReservationComputeCapacityReservations']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -423,7 +423,7 @@ class BdsCapacityReservation(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            compute_capacity_reservations: pulumi.Input[Optional[Union['BdsCapacityReservationComputeCapacityReservationsArgs', 'BdsCapacityReservationComputeCapacityReservationsArgsDict']]] = None,
+            compute_capacity_reservations: pulumi.Input[Optional[Union['BdsCapacityReservationComputeCapacityReservationsArgs', 'BdsCapacityReservationComputeCapacityReservationsArgsDict', 'outputs.BdsCapacityReservationComputeCapacityReservations']]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -439,7 +439,7 @@ class BdsCapacityReservation(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment in which to create the BDS capacity reservation.
-        :param pulumi.Input[Union['BdsCapacityReservationComputeCapacityReservationsArgs', 'BdsCapacityReservationComputeCapacityReservationsArgsDict']] compute_capacity_reservations: (Updatable) Compute capacity reservation ID mappings by domain. For a multi-AD region, domain1, domain2, and domain3 correspond to AD1, AD2, and AD3 respectively. For a single-AD region, domain1, domain2, and domain3 correspond to FD1, FD2, and FD3 respectively.
+        :param pulumi.Input[Union['BdsCapacityReservationComputeCapacityReservationsArgs', 'BdsCapacityReservationComputeCapacityReservationsArgsDict', 'outputs.BdsCapacityReservationComputeCapacityReservations']] compute_capacity_reservations: (Updatable) Compute capacity reservation ID mappings by domain. For a multi-AD region, domain1, domain2, and domain3 correspond to AD1, AD2, and AD3 respectively. For a single-AD region, domain1, domain2, and domain3 correspond to FD1, FD2, and FD3 respectively.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name for the BDS capacity reservation.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`

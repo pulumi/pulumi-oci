@@ -109,7 +109,7 @@ class AwaitableGetQuotasResult(GetQuotasResult):
 
 
 def get_quotas(compartment_id: Optional[_builtins.str] = None,
-               filters: Optional[Sequence[Union['GetQuotasFilterArgs', 'GetQuotasFilterArgsDict']]] = None,
+               filters: Optional[Sequence[Union['GetQuotasFilterArgs', 'GetQuotasFilterArgsDict', 'outputs.GetQuotasFilterResult']]] = None,
                name: Optional[_builtins.str] = None,
                state: Optional[_builtins.str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetQuotasResult:
@@ -150,7 +150,7 @@ def get_quotas(compartment_id: Optional[_builtins.str] = None,
         quotas=pulumi.get(__ret__, 'quotas'),
         state=pulumi.get(__ret__, 'state'))
 def get_quotas_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetQuotasFilterArgs', 'GetQuotasFilterArgsDict']]]]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetQuotasFilterArgs', 'GetQuotasFilterArgsDict', 'outputs.GetQuotasFilterResult']]]]] = None,
                       name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetQuotasResult]:

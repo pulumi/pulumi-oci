@@ -142,7 +142,7 @@ class AwaitableGetSensitiveDataModelReferentialRelationsResult(GetSensitiveDataM
 
 
 def get_sensitive_data_model_referential_relations(column_names: Optional[Sequence[_builtins.str]] = None,
-                                                   filters: Optional[Sequence[Union['GetSensitiveDataModelReferentialRelationsFilterArgs', 'GetSensitiveDataModelReferentialRelationsFilterArgsDict']]] = None,
+                                                   filters: Optional[Sequence[Union['GetSensitiveDataModelReferentialRelationsFilterArgs', 'GetSensitiveDataModelReferentialRelationsFilterArgsDict', 'outputs.GetSensitiveDataModelReferentialRelationsFilterResult']]] = None,
                                                    is_sensitive: Optional[_builtins.bool] = None,
                                                    objects: Optional[Sequence[_builtins.str]] = None,
                                                    relation_types: Optional[Sequence[_builtins.str]] = None,
@@ -198,7 +198,7 @@ def get_sensitive_data_model_referential_relations(column_names: Optional[Sequen
         schema_names=pulumi.get(__ret__, 'schema_names'),
         sensitive_data_model_id=pulumi.get(__ret__, 'sensitive_data_model_id'))
 def get_sensitive_data_model_referential_relations_output(column_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
-                                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSensitiveDataModelReferentialRelationsFilterArgs', 'GetSensitiveDataModelReferentialRelationsFilterArgsDict']]]]] = None,
+                                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSensitiveDataModelReferentialRelationsFilterArgs', 'GetSensitiveDataModelReferentialRelationsFilterArgsDict', 'outputs.GetSensitiveDataModelReferentialRelationsFilterResult']]]]] = None,
                                                           is_sensitive: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                                           objects: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                                           relation_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,

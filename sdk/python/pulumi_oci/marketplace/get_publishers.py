@@ -91,7 +91,7 @@ class AwaitableGetPublishersResult(GetPublishersResult):
 
 
 def get_publishers(compartment_id: Optional[_builtins.str] = None,
-                   filters: Optional[Sequence[Union['GetPublishersFilterArgs', 'GetPublishersFilterArgsDict']]] = None,
+                   filters: Optional[Sequence[Union['GetPublishersFilterArgs', 'GetPublishersFilterArgsDict', 'outputs.GetPublishersFilterResult']]] = None,
                    publisher_id: Optional[_builtins.str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPublishersResult:
     """
@@ -127,7 +127,7 @@ def get_publishers(compartment_id: Optional[_builtins.str] = None,
         publisher_id=pulumi.get(__ret__, 'publisher_id'),
         publishers=pulumi.get(__ret__, 'publishers'))
 def get_publishers_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPublishersFilterArgs', 'GetPublishersFilterArgsDict']]]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPublishersFilterArgs', 'GetPublishersFilterArgsDict', 'outputs.GetPublishersFilterResult']]]]] = None,
                           publisher_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPublishersResult]:
     """

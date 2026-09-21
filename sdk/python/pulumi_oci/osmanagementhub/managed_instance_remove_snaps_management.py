@@ -137,8 +137,8 @@ class ManagedInstanceRemoveSnapsManagement(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 snap_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceRemoveSnapsManagementSnapDetailArgs', 'ManagedInstanceRemoveSnapsManagementSnapDetailArgsDict']]]]] = None,
-                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs', 'ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgsDict']]] = None,
+                 snap_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceRemoveSnapsManagementSnapDetailArgs', 'ManagedInstanceRemoveSnapsManagementSnapDetailArgsDict', 'outputs.ManagedInstanceRemoveSnapsManagementSnapDetail']]]]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs', 'ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceRemoveSnapsManagementWorkRequestDetails']]] = None,
                  __props__=None):
         """
         This resource provides the Managed Instance Remove Snaps Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -178,8 +178,8 @@ class ManagedInstanceRemoveSnapsManagement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceRemoveSnapsManagementSnapDetailArgs', 'ManagedInstanceRemoveSnapsManagementSnapDetailArgsDict']]]] snap_details: The array of snaps to remove.
-        :param pulumi.Input[Union['ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs', 'ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceRemoveSnapsManagementSnapDetailArgs', 'ManagedInstanceRemoveSnapsManagementSnapDetailArgsDict', 'outputs.ManagedInstanceRemoveSnapsManagementSnapDetail']]]] snap_details: The array of snaps to remove.
+        :param pulumi.Input[Union['ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs', 'ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceRemoveSnapsManagementWorkRequestDetails']] work_request_details: Provides the name and description of the job.
         """
         ...
     @overload
@@ -238,8 +238,8 @@ class ManagedInstanceRemoveSnapsManagement(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 snap_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceRemoveSnapsManagementSnapDetailArgs', 'ManagedInstanceRemoveSnapsManagementSnapDetailArgsDict']]]]] = None,
-                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs', 'ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgsDict']]] = None,
+                 snap_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceRemoveSnapsManagementSnapDetailArgs', 'ManagedInstanceRemoveSnapsManagementSnapDetailArgsDict', 'outputs.ManagedInstanceRemoveSnapsManagementSnapDetail']]]]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs', 'ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceRemoveSnapsManagementWorkRequestDetails']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -267,8 +267,8 @@ class ManagedInstanceRemoveSnapsManagement(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
-            snap_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceRemoveSnapsManagementSnapDetailArgs', 'ManagedInstanceRemoveSnapsManagementSnapDetailArgsDict']]]]] = None,
-            work_request_details: pulumi.Input[Optional[Union['ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs', 'ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceRemoveSnapsManagement':
+            snap_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceRemoveSnapsManagementSnapDetailArgs', 'ManagedInstanceRemoveSnapsManagementSnapDetailArgsDict', 'outputs.ManagedInstanceRemoveSnapsManagementSnapDetail']]]]] = None,
+            work_request_details: pulumi.Input[Optional[Union['ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs', 'ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceRemoveSnapsManagementWorkRequestDetails']]] = None) -> 'ManagedInstanceRemoveSnapsManagement':
         """
         Get an existing ManagedInstanceRemoveSnapsManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -277,8 +277,8 @@ class ManagedInstanceRemoveSnapsManagement(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceRemoveSnapsManagementSnapDetailArgs', 'ManagedInstanceRemoveSnapsManagementSnapDetailArgsDict']]]] snap_details: The array of snaps to remove.
-        :param pulumi.Input[Union['ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs', 'ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceRemoveSnapsManagementSnapDetailArgs', 'ManagedInstanceRemoveSnapsManagementSnapDetailArgsDict', 'outputs.ManagedInstanceRemoveSnapsManagementSnapDetail']]]] snap_details: The array of snaps to remove.
+        :param pulumi.Input[Union['ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs', 'ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceRemoveSnapsManagementWorkRequestDetails']] work_request_details: Provides the name and description of the job.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

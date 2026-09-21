@@ -754,11 +754,11 @@ class MediaAsset(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaAssetLockArgs', 'MediaAssetLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaAssetLockArgs', 'MediaAssetLockArgsDict', 'outputs.MediaAssetLock']]]]] = None,
                  master_media_asset_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 media_asset_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaAssetMediaAssetTagArgs', 'MediaAssetMediaAssetTagArgsDict']]]]] = None,
+                 media_asset_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaAssetMediaAssetTagArgs', 'MediaAssetMediaAssetTagArgsDict', 'outputs.MediaAssetMediaAssetTag']]]]] = None,
                  media_workflow_job_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaAssetMetadataArgs', 'MediaAssetMetadataArgsDict']]]]] = None,
+                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaAssetMetadataArgs', 'MediaAssetMetadataArgsDict', 'outputs.MediaAssetMetadata']]]]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  object: pulumi.Input[Optional[_builtins.str]] = None,
                  object_etag: pulumi.Input[Optional[_builtins.str]] = None,
@@ -793,11 +793,11 @@ class MediaAsset(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaAssetLockArgs', 'MediaAssetLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaAssetLockArgs', 'MediaAssetLockArgsDict', 'outputs.MediaAssetLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] master_media_asset_id: (Updatable) The ID of the senior most asset from which this asset is derived.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaAssetMediaAssetTagArgs', 'MediaAssetMediaAssetTagArgsDict']]]] media_asset_tags: (Updatable) list of tags for the MediaAsset.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaAssetMediaAssetTagArgs', 'MediaAssetMediaAssetTagArgsDict', 'outputs.MediaAssetMediaAssetTag']]]] media_asset_tags: (Updatable) list of tags for the MediaAsset.
         :param pulumi.Input[_builtins.str] media_workflow_job_id: The ID of the MediaWorkflowJob used to produce this asset.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaAssetMetadataArgs', 'MediaAssetMetadataArgsDict']]]] metadatas: (Updatable) List of Metadata.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaAssetMetadataArgs', 'MediaAssetMetadataArgsDict', 'outputs.MediaAssetMetadata']]]] metadatas: (Updatable) List of Metadata.
         :param pulumi.Input[_builtins.str] namespace: The object storage namespace where this asset is located.
         :param pulumi.Input[_builtins.str] object: The object storage object name that identifies this asset.
         :param pulumi.Input[_builtins.str] object_etag: eTag of the underlying object storage object.
@@ -855,11 +855,11 @@ class MediaAsset(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaAssetLockArgs', 'MediaAssetLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaAssetLockArgs', 'MediaAssetLockArgsDict', 'outputs.MediaAssetLock']]]]] = None,
                  master_media_asset_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 media_asset_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaAssetMediaAssetTagArgs', 'MediaAssetMediaAssetTagArgsDict']]]]] = None,
+                 media_asset_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaAssetMediaAssetTagArgs', 'MediaAssetMediaAssetTagArgsDict', 'outputs.MediaAssetMediaAssetTag']]]]] = None,
                  media_workflow_job_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaAssetMetadataArgs', 'MediaAssetMetadataArgsDict']]]]] = None,
+                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaAssetMetadataArgs', 'MediaAssetMetadataArgsDict', 'outputs.MediaAssetMetadata']]]]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  object: pulumi.Input[Optional[_builtins.str]] = None,
                  object_etag: pulumi.Input[Optional[_builtins.str]] = None,
@@ -922,11 +922,11 @@ class MediaAsset(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaAssetLockArgs', 'MediaAssetLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaAssetLockArgs', 'MediaAssetLockArgsDict', 'outputs.MediaAssetLock']]]]] = None,
             master_media_asset_id: pulumi.Input[Optional[_builtins.str]] = None,
-            media_asset_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaAssetMediaAssetTagArgs', 'MediaAssetMediaAssetTagArgsDict']]]]] = None,
+            media_asset_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaAssetMediaAssetTagArgs', 'MediaAssetMediaAssetTagArgsDict', 'outputs.MediaAssetMediaAssetTag']]]]] = None,
             media_workflow_job_id: pulumi.Input[Optional[_builtins.str]] = None,
-            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaAssetMetadataArgs', 'MediaAssetMetadataArgsDict']]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaAssetMetadataArgs', 'MediaAssetMetadataArgsDict', 'outputs.MediaAssetMetadata']]]]] = None,
             namespace: pulumi.Input[Optional[_builtins.str]] = None,
             object: pulumi.Input[Optional[_builtins.str]] = None,
             object_etag: pulumi.Input[Optional[_builtins.str]] = None,
@@ -952,11 +952,11 @@ class MediaAsset(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaAssetLockArgs', 'MediaAssetLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaAssetLockArgs', 'MediaAssetLockArgsDict', 'outputs.MediaAssetLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] master_media_asset_id: (Updatable) The ID of the senior most asset from which this asset is derived.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaAssetMediaAssetTagArgs', 'MediaAssetMediaAssetTagArgsDict']]]] media_asset_tags: (Updatable) list of tags for the MediaAsset.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaAssetMediaAssetTagArgs', 'MediaAssetMediaAssetTagArgsDict', 'outputs.MediaAssetMediaAssetTag']]]] media_asset_tags: (Updatable) list of tags for the MediaAsset.
         :param pulumi.Input[_builtins.str] media_workflow_job_id: The ID of the MediaWorkflowJob used to produce this asset.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaAssetMetadataArgs', 'MediaAssetMetadataArgsDict']]]] metadatas: (Updatable) List of Metadata.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaAssetMetadataArgs', 'MediaAssetMetadataArgsDict', 'outputs.MediaAssetMetadata']]]] metadatas: (Updatable) List of Metadata.
         :param pulumi.Input[_builtins.str] namespace: The object storage namespace where this asset is located.
         :param pulumi.Input[_builtins.str] object: The object storage object name that identifies this asset.
         :param pulumi.Input[_builtins.str] object_etag: eTag of the underlying object storage object.

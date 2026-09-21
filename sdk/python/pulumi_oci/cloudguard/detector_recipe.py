@@ -464,7 +464,7 @@ class DetectorRecipe(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  detector: pulumi.Input[Optional[_builtins.str]] = None,
-                 detector_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DetectorRecipeDetectorRuleArgs', 'DetectorRecipeDetectorRuleArgsDict']]]]] = None,
+                 detector_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DetectorRecipeDetectorRuleArgs', 'DetectorRecipeDetectorRuleArgsDict', 'outputs.DetectorRecipeDetectorRule']]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  source_detector_recipe_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -494,7 +494,7 @@ class DetectorRecipe(pulumi.CustomResource):
                
                Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] detector: Detector for the rule
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DetectorRecipeDetectorRuleArgs', 'DetectorRecipeDetectorRuleArgsDict']]]] detector_rules: (Updatable) Detector rules to override from source detector recipe
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DetectorRecipeDetectorRuleArgs', 'DetectorRecipeDetectorRuleArgsDict', 'outputs.DetectorRecipeDetectorRule']]]] detector_rules: (Updatable) Detector rules to override from source detector recipe
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Detector recipe display name.
                
                Avoid entering confidential information.
@@ -548,7 +548,7 @@ class DetectorRecipe(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  detector: pulumi.Input[Optional[_builtins.str]] = None,
-                 detector_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DetectorRecipeDetectorRuleArgs', 'DetectorRecipeDetectorRuleArgsDict']]]]] = None,
+                 detector_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DetectorRecipeDetectorRuleArgs', 'DetectorRecipeDetectorRuleArgsDict', 'outputs.DetectorRecipeDetectorRule']]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  source_detector_recipe_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -596,9 +596,9 @@ class DetectorRecipe(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             detector: pulumi.Input[Optional[_builtins.str]] = None,
             detector_recipe_type: pulumi.Input[Optional[_builtins.str]] = None,
-            detector_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DetectorRecipeDetectorRuleArgs', 'DetectorRecipeDetectorRuleArgsDict']]]]] = None,
+            detector_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DetectorRecipeDetectorRuleArgs', 'DetectorRecipeDetectorRuleArgsDict', 'outputs.DetectorRecipeDetectorRule']]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            effective_detector_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DetectorRecipeEffectiveDetectorRuleArgs', 'DetectorRecipeEffectiveDetectorRuleArgsDict']]]]] = None,
+            effective_detector_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DetectorRecipeEffectiveDetectorRuleArgs', 'DetectorRecipeEffectiveDetectorRuleArgsDict', 'outputs.DetectorRecipeEffectiveDetectorRule']]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             owner: pulumi.Input[Optional[_builtins.str]] = None,
             source_detector_recipe_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -621,11 +621,11 @@ class DetectorRecipe(pulumi.CustomResource):
                Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] detector: Detector for the rule
         :param pulumi.Input[_builtins.str] detector_recipe_type: Recipe type ( STANDARD, ENTERPRISE )
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DetectorRecipeDetectorRuleArgs', 'DetectorRecipeDetectorRuleArgsDict']]]] detector_rules: (Updatable) Detector rules to override from source detector recipe
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DetectorRecipeDetectorRuleArgs', 'DetectorRecipeDetectorRuleArgsDict', 'outputs.DetectorRecipeDetectorRule']]]] detector_rules: (Updatable) Detector rules to override from source detector recipe
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Detector recipe display name.
                
                Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DetectorRecipeEffectiveDetectorRuleArgs', 'DetectorRecipeEffectiveDetectorRuleArgsDict']]]] effective_detector_rules: List of effective detector rules for the detector type for recipe after applying defaults
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DetectorRecipeEffectiveDetectorRuleArgs', 'DetectorRecipeEffectiveDetectorRuleArgsDict', 'outputs.DetectorRecipeEffectiveDetectorRule']]]] effective_detector_rules: List of effective detector rules for the detector type for recipe after applying defaults
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.

@@ -103,7 +103,7 @@ class AwaitableGetDbSystemsUpgradeHistoryEntriesResult(GetDbSystemsUpgradeHistor
 
 
 def get_db_systems_upgrade_history_entries(db_system_id: Optional[_builtins.str] = None,
-                                           filters: Optional[Sequence[Union['GetDbSystemsUpgradeHistoryEntriesFilterArgs', 'GetDbSystemsUpgradeHistoryEntriesFilterArgsDict']]] = None,
+                                           filters: Optional[Sequence[Union['GetDbSystemsUpgradeHistoryEntriesFilterArgs', 'GetDbSystemsUpgradeHistoryEntriesFilterArgsDict', 'outputs.GetDbSystemsUpgradeHistoryEntriesFilterResult']]] = None,
                                            state: Optional[_builtins.str] = None,
                                            upgrade_action: Optional[_builtins.str] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbSystemsUpgradeHistoryEntriesResult:
@@ -144,7 +144,7 @@ def get_db_systems_upgrade_history_entries(db_system_id: Optional[_builtins.str]
         state=pulumi.get(__ret__, 'state'),
         upgrade_action=pulumi.get(__ret__, 'upgrade_action'))
 def get_db_systems_upgrade_history_entries_output(db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemsUpgradeHistoryEntriesFilterArgs', 'GetDbSystemsUpgradeHistoryEntriesFilterArgsDict']]]]] = None,
+                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemsUpgradeHistoryEntriesFilterArgs', 'GetDbSystemsUpgradeHistoryEntriesFilterArgsDict', 'outputs.GetDbSystemsUpgradeHistoryEntriesFilterResult']]]]] = None,
                                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   upgrade_action: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemsUpgradeHistoryEntriesResult]:

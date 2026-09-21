@@ -94,7 +94,7 @@ class AwaitableGetUsageStatementEmailRecipientsGroupsResult(GetUsageStatementEma
 
 
 def get_usage_statement_email_recipients_groups(compartment_id: Optional[_builtins.str] = None,
-                                                filters: Optional[Sequence[Union['GetUsageStatementEmailRecipientsGroupsFilterArgs', 'GetUsageStatementEmailRecipientsGroupsFilterArgsDict']]] = None,
+                                                filters: Optional[Sequence[Union['GetUsageStatementEmailRecipientsGroupsFilterArgs', 'GetUsageStatementEmailRecipientsGroupsFilterArgsDict', 'outputs.GetUsageStatementEmailRecipientsGroupsFilterResult']]] = None,
                                                 subscription_id: Optional[_builtins.str] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUsageStatementEmailRecipientsGroupsResult:
     """
@@ -130,7 +130,7 @@ def get_usage_statement_email_recipients_groups(compartment_id: Optional[_builti
         id=pulumi.get(__ret__, 'id'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'))
 def get_usage_statement_email_recipients_groups_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUsageStatementEmailRecipientsGroupsFilterArgs', 'GetUsageStatementEmailRecipientsGroupsFilterArgsDict']]]]] = None,
+                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUsageStatementEmailRecipientsGroupsFilterArgs', 'GetUsageStatementEmailRecipientsGroupsFilterArgsDict', 'outputs.GetUsageStatementEmailRecipientsGroupsFilterResult']]]]] = None,
                                                        subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUsageStatementEmailRecipientsGroupsResult]:
     """

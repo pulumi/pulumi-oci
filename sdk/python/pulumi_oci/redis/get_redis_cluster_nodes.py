@@ -97,7 +97,7 @@ class AwaitableGetRedisClusterNodesResult(GetRedisClusterNodesResult):
 
 
 def get_redis_cluster_nodes(display_name: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetRedisClusterNodesFilterArgs', 'GetRedisClusterNodesFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetRedisClusterNodesFilterArgs', 'GetRedisClusterNodesFilterArgsDict', 'outputs.GetRedisClusterNodesFilterResult']]] = None,
                             redis_cluster_id: Optional[_builtins.str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRedisClusterNodesResult:
     """
@@ -133,7 +133,7 @@ def get_redis_cluster_nodes(display_name: Optional[_builtins.str] = None,
         redis_cluster_id=pulumi.get(__ret__, 'redis_cluster_id'),
         redis_node_collections=pulumi.get(__ret__, 'redis_node_collections'))
 def get_redis_cluster_nodes_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRedisClusterNodesFilterArgs', 'GetRedisClusterNodesFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRedisClusterNodesFilterArgs', 'GetRedisClusterNodesFilterArgsDict', 'outputs.GetRedisClusterNodesFilterResult']]]]] = None,
                                    redis_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRedisClusterNodesResult]:
     """

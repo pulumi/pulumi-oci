@@ -728,13 +728,13 @@ class BuildPipelineStage(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  build_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 build_pipeline_stage_predecessor_collection: pulumi.Input[Optional[Union['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs', 'BuildPipelineStageBuildPipelineStagePredecessorCollectionArgsDict']]] = None,
+                 build_pipeline_stage_predecessor_collection: pulumi.Input[Optional[Union['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs', 'BuildPipelineStageBuildPipelineStagePredecessorCollectionArgsDict', 'outputs.BuildPipelineStageBuildPipelineStagePredecessorCollection']]] = None,
                  build_pipeline_stage_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 build_runner_shape_config: pulumi.Input[Optional[Union['BuildPipelineStageBuildRunnerShapeConfigArgs', 'BuildPipelineStageBuildRunnerShapeConfigArgsDict']]] = None,
-                 build_source_collection: pulumi.Input[Optional[Union['BuildPipelineStageBuildSourceCollectionArgs', 'BuildPipelineStageBuildSourceCollectionArgsDict']]] = None,
+                 build_runner_shape_config: pulumi.Input[Optional[Union['BuildPipelineStageBuildRunnerShapeConfigArgs', 'BuildPipelineStageBuildRunnerShapeConfigArgsDict', 'outputs.BuildPipelineStageBuildRunnerShapeConfig']]] = None,
+                 build_source_collection: pulumi.Input[Optional[Union['BuildPipelineStageBuildSourceCollectionArgs', 'BuildPipelineStageBuildSourceCollectionArgsDict', 'outputs.BuildPipelineStageBuildSourceCollection']]] = None,
                  build_spec_file: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deliver_artifact_collection: pulumi.Input[Optional[Union['BuildPipelineStageDeliverArtifactCollectionArgs', 'BuildPipelineStageDeliverArtifactCollectionArgsDict']]] = None,
+                 deliver_artifact_collection: pulumi.Input[Optional[Union['BuildPipelineStageDeliverArtifactCollectionArgs', 'BuildPipelineStageDeliverArtifactCollectionArgsDict', 'outputs.BuildPipelineStageDeliverArtifactCollection']]] = None,
                  deploy_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -742,9 +742,9 @@ class BuildPipelineStage(pulumi.CustomResource):
                  image: pulumi.Input[Optional[_builtins.str]] = None,
                  is_pass_all_parameters_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  primary_build_source: pulumi.Input[Optional[_builtins.str]] = None,
-                 private_access_config: pulumi.Input[Optional[Union['BuildPipelineStagePrivateAccessConfigArgs', 'BuildPipelineStagePrivateAccessConfigArgsDict']]] = None,
+                 private_access_config: pulumi.Input[Optional[Union['BuildPipelineStagePrivateAccessConfigArgs', 'BuildPipelineStagePrivateAccessConfigArgsDict', 'outputs.BuildPipelineStagePrivateAccessConfig']]] = None,
                  stage_execution_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
-                 wait_criteria: pulumi.Input[Optional[Union['BuildPipelineStageWaitCriteriaArgs', 'BuildPipelineStageWaitCriteriaArgsDict']]] = None,
+                 wait_criteria: pulumi.Input[Optional[Union['BuildPipelineStageWaitCriteriaArgs', 'BuildPipelineStageWaitCriteriaArgsDict', 'outputs.BuildPipelineStageWaitCriteria']]] = None,
                  __props__=None):
         """
         This resource provides the Build Pipeline Stage resource in Oracle Cloud Infrastructure Devops service.
@@ -826,13 +826,13 @@ class BuildPipelineStage(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] build_pipeline_id: The OCID of the build pipeline.
-        :param pulumi.Input[Union['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs', 'BuildPipelineStageBuildPipelineStagePredecessorCollectionArgsDict']] build_pipeline_stage_predecessor_collection: (Updatable) The collection containing the predecessors of a stage.
+        :param pulumi.Input[Union['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs', 'BuildPipelineStageBuildPipelineStagePredecessorCollectionArgsDict', 'outputs.BuildPipelineStageBuildPipelineStagePredecessorCollection']] build_pipeline_stage_predecessor_collection: (Updatable) The collection containing the predecessors of a stage.
         :param pulumi.Input[_builtins.str] build_pipeline_stage_type: (Updatable) Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
-        :param pulumi.Input[Union['BuildPipelineStageBuildRunnerShapeConfigArgs', 'BuildPipelineStageBuildRunnerShapeConfigArgsDict']] build_runner_shape_config: (Updatable) The information about build runner.
-        :param pulumi.Input[Union['BuildPipelineStageBuildSourceCollectionArgs', 'BuildPipelineStageBuildSourceCollectionArgsDict']] build_source_collection: (Updatable) Collection of build sources.
+        :param pulumi.Input[Union['BuildPipelineStageBuildRunnerShapeConfigArgs', 'BuildPipelineStageBuildRunnerShapeConfigArgsDict', 'outputs.BuildPipelineStageBuildRunnerShapeConfig']] build_runner_shape_config: (Updatable) The information about build runner.
+        :param pulumi.Input[Union['BuildPipelineStageBuildSourceCollectionArgs', 'BuildPipelineStageBuildSourceCollectionArgsDict', 'outputs.BuildPipelineStageBuildSourceCollection']] build_source_collection: (Updatable) Collection of build sources.
         :param pulumi.Input[_builtins.str] build_spec_file: (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Union['BuildPipelineStageDeliverArtifactCollectionArgs', 'BuildPipelineStageDeliverArtifactCollectionArgsDict']] deliver_artifact_collection: (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
+        :param pulumi.Input[Union['BuildPipelineStageDeliverArtifactCollectionArgs', 'BuildPipelineStageDeliverArtifactCollectionArgsDict', 'outputs.BuildPipelineStageDeliverArtifactCollection']] deliver_artifact_collection: (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
         :param pulumi.Input[_builtins.str] deploy_pipeline_id: (Updatable) A target deployment pipeline OCID that will run in this stage.
         :param pulumi.Input[_builtins.str] description: (Updatable) Optional description about the stage.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
@@ -840,9 +840,9 @@ class BuildPipelineStage(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] image: (Updatable) Image name for the build environment
         :param pulumi.Input[_builtins.bool] is_pass_all_parameters_enabled: (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
         :param pulumi.Input[_builtins.str] primary_build_source: (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
-        :param pulumi.Input[Union['BuildPipelineStagePrivateAccessConfigArgs', 'BuildPipelineStagePrivateAccessConfigArgsDict']] private_access_config: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+        :param pulumi.Input[Union['BuildPipelineStagePrivateAccessConfigArgs', 'BuildPipelineStagePrivateAccessConfigArgsDict', 'outputs.BuildPipelineStagePrivateAccessConfig']] private_access_config: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         :param pulumi.Input[_builtins.int] stage_execution_timeout_in_seconds: (Updatable) Timeout for the build stage execution. Specify value in seconds.
-        :param pulumi.Input[Union['BuildPipelineStageWaitCriteriaArgs', 'BuildPipelineStageWaitCriteriaArgsDict']] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
+        :param pulumi.Input[Union['BuildPipelineStageWaitCriteriaArgs', 'BuildPipelineStageWaitCriteriaArgsDict', 'outputs.BuildPipelineStageWaitCriteria']] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
         """
         ...
     @overload
@@ -943,13 +943,13 @@ class BuildPipelineStage(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  build_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 build_pipeline_stage_predecessor_collection: pulumi.Input[Optional[Union['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs', 'BuildPipelineStageBuildPipelineStagePredecessorCollectionArgsDict']]] = None,
+                 build_pipeline_stage_predecessor_collection: pulumi.Input[Optional[Union['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs', 'BuildPipelineStageBuildPipelineStagePredecessorCollectionArgsDict', 'outputs.BuildPipelineStageBuildPipelineStagePredecessorCollection']]] = None,
                  build_pipeline_stage_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 build_runner_shape_config: pulumi.Input[Optional[Union['BuildPipelineStageBuildRunnerShapeConfigArgs', 'BuildPipelineStageBuildRunnerShapeConfigArgsDict']]] = None,
-                 build_source_collection: pulumi.Input[Optional[Union['BuildPipelineStageBuildSourceCollectionArgs', 'BuildPipelineStageBuildSourceCollectionArgsDict']]] = None,
+                 build_runner_shape_config: pulumi.Input[Optional[Union['BuildPipelineStageBuildRunnerShapeConfigArgs', 'BuildPipelineStageBuildRunnerShapeConfigArgsDict', 'outputs.BuildPipelineStageBuildRunnerShapeConfig']]] = None,
+                 build_source_collection: pulumi.Input[Optional[Union['BuildPipelineStageBuildSourceCollectionArgs', 'BuildPipelineStageBuildSourceCollectionArgsDict', 'outputs.BuildPipelineStageBuildSourceCollection']]] = None,
                  build_spec_file: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deliver_artifact_collection: pulumi.Input[Optional[Union['BuildPipelineStageDeliverArtifactCollectionArgs', 'BuildPipelineStageDeliverArtifactCollectionArgsDict']]] = None,
+                 deliver_artifact_collection: pulumi.Input[Optional[Union['BuildPipelineStageDeliverArtifactCollectionArgs', 'BuildPipelineStageDeliverArtifactCollectionArgsDict', 'outputs.BuildPipelineStageDeliverArtifactCollection']]] = None,
                  deploy_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -957,9 +957,9 @@ class BuildPipelineStage(pulumi.CustomResource):
                  image: pulumi.Input[Optional[_builtins.str]] = None,
                  is_pass_all_parameters_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  primary_build_source: pulumi.Input[Optional[_builtins.str]] = None,
-                 private_access_config: pulumi.Input[Optional[Union['BuildPipelineStagePrivateAccessConfigArgs', 'BuildPipelineStagePrivateAccessConfigArgsDict']]] = None,
+                 private_access_config: pulumi.Input[Optional[Union['BuildPipelineStagePrivateAccessConfigArgs', 'BuildPipelineStagePrivateAccessConfigArgsDict', 'outputs.BuildPipelineStagePrivateAccessConfig']]] = None,
                  stage_execution_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
-                 wait_criteria: pulumi.Input[Optional[Union['BuildPipelineStageWaitCriteriaArgs', 'BuildPipelineStageWaitCriteriaArgsDict']]] = None,
+                 wait_criteria: pulumi.Input[Optional[Union['BuildPipelineStageWaitCriteriaArgs', 'BuildPipelineStageWaitCriteriaArgsDict', 'outputs.BuildPipelineStageWaitCriteria']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1011,14 +1011,14 @@ class BuildPipelineStage(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             build_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
-            build_pipeline_stage_predecessor_collection: pulumi.Input[Optional[Union['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs', 'BuildPipelineStageBuildPipelineStagePredecessorCollectionArgsDict']]] = None,
+            build_pipeline_stage_predecessor_collection: pulumi.Input[Optional[Union['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs', 'BuildPipelineStageBuildPipelineStagePredecessorCollectionArgsDict', 'outputs.BuildPipelineStageBuildPipelineStagePredecessorCollection']]] = None,
             build_pipeline_stage_type: pulumi.Input[Optional[_builtins.str]] = None,
-            build_runner_shape_config: pulumi.Input[Optional[Union['BuildPipelineStageBuildRunnerShapeConfigArgs', 'BuildPipelineStageBuildRunnerShapeConfigArgsDict']]] = None,
-            build_source_collection: pulumi.Input[Optional[Union['BuildPipelineStageBuildSourceCollectionArgs', 'BuildPipelineStageBuildSourceCollectionArgsDict']]] = None,
+            build_runner_shape_config: pulumi.Input[Optional[Union['BuildPipelineStageBuildRunnerShapeConfigArgs', 'BuildPipelineStageBuildRunnerShapeConfigArgsDict', 'outputs.BuildPipelineStageBuildRunnerShapeConfig']]] = None,
+            build_source_collection: pulumi.Input[Optional[Union['BuildPipelineStageBuildSourceCollectionArgs', 'BuildPipelineStageBuildSourceCollectionArgsDict', 'outputs.BuildPipelineStageBuildSourceCollection']]] = None,
             build_spec_file: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            deliver_artifact_collection: pulumi.Input[Optional[Union['BuildPipelineStageDeliverArtifactCollectionArgs', 'BuildPipelineStageDeliverArtifactCollectionArgsDict']]] = None,
+            deliver_artifact_collection: pulumi.Input[Optional[Union['BuildPipelineStageDeliverArtifactCollectionArgs', 'BuildPipelineStageDeliverArtifactCollectionArgsDict', 'outputs.BuildPipelineStageDeliverArtifactCollection']]] = None,
             deploy_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1027,14 +1027,14 @@ class BuildPipelineStage(pulumi.CustomResource):
             is_pass_all_parameters_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             primary_build_source: pulumi.Input[Optional[_builtins.str]] = None,
-            private_access_config: pulumi.Input[Optional[Union['BuildPipelineStagePrivateAccessConfigArgs', 'BuildPipelineStagePrivateAccessConfigArgsDict']]] = None,
+            private_access_config: pulumi.Input[Optional[Union['BuildPipelineStagePrivateAccessConfigArgs', 'BuildPipelineStagePrivateAccessConfigArgsDict', 'outputs.BuildPipelineStagePrivateAccessConfig']]] = None,
             project_id: pulumi.Input[Optional[_builtins.str]] = None,
             stage_execution_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
-            wait_criteria: pulumi.Input[Optional[Union['BuildPipelineStageWaitCriteriaArgs', 'BuildPipelineStageWaitCriteriaArgsDict']]] = None) -> 'BuildPipelineStage':
+            wait_criteria: pulumi.Input[Optional[Union['BuildPipelineStageWaitCriteriaArgs', 'BuildPipelineStageWaitCriteriaArgsDict', 'outputs.BuildPipelineStageWaitCriteria']]] = None) -> 'BuildPipelineStage':
         """
         Get an existing BuildPipelineStage resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1043,14 +1043,14 @@ class BuildPipelineStage(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] build_pipeline_id: The OCID of the build pipeline.
-        :param pulumi.Input[Union['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs', 'BuildPipelineStageBuildPipelineStagePredecessorCollectionArgsDict']] build_pipeline_stage_predecessor_collection: (Updatable) The collection containing the predecessors of a stage.
+        :param pulumi.Input[Union['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs', 'BuildPipelineStageBuildPipelineStagePredecessorCollectionArgsDict', 'outputs.BuildPipelineStageBuildPipelineStagePredecessorCollection']] build_pipeline_stage_predecessor_collection: (Updatable) The collection containing the predecessors of a stage.
         :param pulumi.Input[_builtins.str] build_pipeline_stage_type: (Updatable) Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
-        :param pulumi.Input[Union['BuildPipelineStageBuildRunnerShapeConfigArgs', 'BuildPipelineStageBuildRunnerShapeConfigArgsDict']] build_runner_shape_config: (Updatable) The information about build runner.
-        :param pulumi.Input[Union['BuildPipelineStageBuildSourceCollectionArgs', 'BuildPipelineStageBuildSourceCollectionArgsDict']] build_source_collection: (Updatable) Collection of build sources.
+        :param pulumi.Input[Union['BuildPipelineStageBuildRunnerShapeConfigArgs', 'BuildPipelineStageBuildRunnerShapeConfigArgsDict', 'outputs.BuildPipelineStageBuildRunnerShapeConfig']] build_runner_shape_config: (Updatable) The information about build runner.
+        :param pulumi.Input[Union['BuildPipelineStageBuildSourceCollectionArgs', 'BuildPipelineStageBuildSourceCollectionArgsDict', 'outputs.BuildPipelineStageBuildSourceCollection']] build_source_collection: (Updatable) Collection of build sources.
         :param pulumi.Input[_builtins.str] build_spec_file: (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment where the pipeline is created.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Union['BuildPipelineStageDeliverArtifactCollectionArgs', 'BuildPipelineStageDeliverArtifactCollectionArgsDict']] deliver_artifact_collection: (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
+        :param pulumi.Input[Union['BuildPipelineStageDeliverArtifactCollectionArgs', 'BuildPipelineStageDeliverArtifactCollectionArgsDict', 'outputs.BuildPipelineStageDeliverArtifactCollection']] deliver_artifact_collection: (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
         :param pulumi.Input[_builtins.str] deploy_pipeline_id: (Updatable) A target deployment pipeline OCID that will run in this stage.
         :param pulumi.Input[_builtins.str] description: (Updatable) Optional description about the stage.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
@@ -1059,14 +1059,14 @@ class BuildPipelineStage(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_pass_all_parameters_enabled: (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[_builtins.str] primary_build_source: (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
-        :param pulumi.Input[Union['BuildPipelineStagePrivateAccessConfigArgs', 'BuildPipelineStagePrivateAccessConfigArgsDict']] private_access_config: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+        :param pulumi.Input[Union['BuildPipelineStagePrivateAccessConfigArgs', 'BuildPipelineStagePrivateAccessConfigArgsDict', 'outputs.BuildPipelineStagePrivateAccessConfig']] private_access_config: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         :param pulumi.Input[_builtins.str] project_id: The OCID of the DevOps project.
         :param pulumi.Input[_builtins.int] stage_execution_timeout_in_seconds: (Updatable) Timeout for the build stage execution. Specify value in seconds.
         :param pulumi.Input[_builtins.str] state: The current state of the stage.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[_builtins.str] time_updated: The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        :param pulumi.Input[Union['BuildPipelineStageWaitCriteriaArgs', 'BuildPipelineStageWaitCriteriaArgsDict']] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
+        :param pulumi.Input[Union['BuildPipelineStageWaitCriteriaArgs', 'BuildPipelineStageWaitCriteriaArgsDict', 'outputs.BuildPipelineStageWaitCriteria']] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

@@ -128,7 +128,7 @@ def get_dynamic_set_managed_instances(compartment_id: Optional[_builtins.str] = 
                                       display_name: Optional[_builtins.str] = None,
                                       display_name_contains: Optional[_builtins.str] = None,
                                       dynamic_set_id: Optional[_builtins.str] = None,
-                                      filters: Optional[Sequence[Union['GetDynamicSetManagedInstancesFilterArgs', 'GetDynamicSetManagedInstancesFilterArgsDict']]] = None,
+                                      filters: Optional[Sequence[Union['GetDynamicSetManagedInstancesFilterArgs', 'GetDynamicSetManagedInstancesFilterArgsDict', 'outputs.GetDynamicSetManagedInstancesFilterResult']]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDynamicSetManagedInstancesResult:
     """
     This data source provides the list of Dynamic Set Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
@@ -179,7 +179,7 @@ def get_dynamic_set_managed_instances_output(compartment_id: pulumi.Input[Option
                                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              dynamic_set_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDynamicSetManagedInstancesFilterArgs', 'GetDynamicSetManagedInstancesFilterArgsDict']]]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDynamicSetManagedInstancesFilterArgs', 'GetDynamicSetManagedInstancesFilterArgsDict', 'outputs.GetDynamicSetManagedInstancesFilterResult']]]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDynamicSetManagedInstancesResult]:
     """
     This data source provides the list of Dynamic Set Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.

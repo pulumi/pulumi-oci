@@ -81,7 +81,7 @@ class AwaitableGetTargetAlertPolicyAssociationUnassociatedTargetMembersResult(Ge
             target_alert_policy_unassociated_collections=self.target_alert_policy_unassociated_collections)
 
 
-def get_target_alert_policy_association_unassociated_target_members(filters: Optional[Sequence[Union['GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArgs', 'GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArgsDict']]] = None,
+def get_target_alert_policy_association_unassociated_target_members(filters: Optional[Sequence[Union['GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArgs', 'GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArgsDict', 'outputs.GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterResult']]] = None,
                                                                     target_alert_policy_association_id: Optional[_builtins.str] = None,
                                                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTargetAlertPolicyAssociationUnassociatedTargetMembersResult:
     """
@@ -112,7 +112,7 @@ def get_target_alert_policy_association_unassociated_target_members(filters: Opt
         id=pulumi.get(__ret__, 'id'),
         target_alert_policy_association_id=pulumi.get(__ret__, 'target_alert_policy_association_id'),
         target_alert_policy_unassociated_collections=pulumi.get(__ret__, 'target_alert_policy_unassociated_collections'))
-def get_target_alert_policy_association_unassociated_target_members_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArgs', 'GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArgsDict']]]]] = None,
+def get_target_alert_policy_association_unassociated_target_members_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArgs', 'GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterArgsDict', 'outputs.GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterResult']]]]] = None,
                                                                            target_alert_policy_association_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetAlertPolicyAssociationUnassociatedTargetMembersResult]:
     """

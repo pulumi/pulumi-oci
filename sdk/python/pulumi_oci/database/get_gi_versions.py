@@ -119,7 +119,7 @@ class AwaitableGetGiVersionsResult(GetGiVersionsResult):
 
 def get_gi_versions(availability_domain: Optional[_builtins.str] = None,
                     compartment_id: Optional[_builtins.str] = None,
-                    filters: Optional[Sequence[Union['GetGiVersionsFilterArgs', 'GetGiVersionsFilterArgsDict']]] = None,
+                    filters: Optional[Sequence[Union['GetGiVersionsFilterArgs', 'GetGiVersionsFilterArgsDict', 'outputs.GetGiVersionsFilterResult']]] = None,
                     resource_id: Optional[_builtins.str] = None,
                     shape: Optional[_builtins.str] = None,
                     shape_attribute: Optional[_builtins.str] = None,
@@ -170,7 +170,7 @@ def get_gi_versions(availability_domain: Optional[_builtins.str] = None,
         shape_attribute=pulumi.get(__ret__, 'shape_attribute'))
 def get_gi_versions_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetGiVersionsFilterArgs', 'GetGiVersionsFilterArgsDict']]]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetGiVersionsFilterArgs', 'GetGiVersionsFilterArgsDict', 'outputs.GetGiVersionsFilterResult']]]]] = None,
                            resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            shape: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            shape_attribute: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

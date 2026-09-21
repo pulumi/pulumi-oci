@@ -177,7 +177,7 @@ class AwaitableGetSecurityAssessmentFindingsChangeAuditLogsResult(GetSecurityAss
             time_valid_until_less_than=self.time_valid_until_less_than)
 
 
-def get_security_assessment_findings_change_audit_logs(filters: Optional[Sequence[Union['GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs', 'GetSecurityAssessmentFindingsChangeAuditLogsFilterArgsDict']]] = None,
+def get_security_assessment_findings_change_audit_logs(filters: Optional[Sequence[Union['GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs', 'GetSecurityAssessmentFindingsChangeAuditLogsFilterArgsDict', 'outputs.GetSecurityAssessmentFindingsChangeAuditLogsFilterResult']]] = None,
                                                        finding_key: Optional[_builtins.str] = None,
                                                        finding_title: Optional[_builtins.str] = None,
                                                        is_risk_deferred: Optional[_builtins.bool] = None,
@@ -257,7 +257,7 @@ def get_security_assessment_findings_change_audit_logs(filters: Optional[Sequenc
         time_updated_less_than=pulumi.get(__ret__, 'time_updated_less_than'),
         time_valid_until_greater_than_or_equal_to=pulumi.get(__ret__, 'time_valid_until_greater_than_or_equal_to'),
         time_valid_until_less_than=pulumi.get(__ret__, 'time_valid_until_less_than'))
-def get_security_assessment_findings_change_audit_logs_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs', 'GetSecurityAssessmentFindingsChangeAuditLogsFilterArgsDict']]]]] = None,
+def get_security_assessment_findings_change_audit_logs_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs', 'GetSecurityAssessmentFindingsChangeAuditLogsFilterArgsDict', 'outputs.GetSecurityAssessmentFindingsChangeAuditLogsFilterResult']]]]] = None,
                                                               finding_key: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                               finding_title: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                               is_risk_deferred: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,

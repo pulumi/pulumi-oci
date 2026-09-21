@@ -149,7 +149,7 @@ class AwaitableGetContainersResult(GetContainersResult):
 
 def get_containers(container_name: Optional[_builtins.str] = None,
                    display_name: Optional[_builtins.str] = None,
-                   filters: Optional[Sequence[Union['GetContainersFilterArgs', 'GetContainersFilterArgsDict']]] = None,
+                   filters: Optional[Sequence[Union['GetContainersFilterArgs', 'GetContainersFilterArgsDict', 'outputs.GetContainersFilterResult']]] = None,
                    is_latest: Optional[_builtins.bool] = None,
                    state: Optional[_builtins.str] = None,
                    tag_query_param: Optional[_builtins.str] = None,
@@ -210,7 +210,7 @@ def get_containers(container_name: Optional[_builtins.str] = None,
         usage_query_param=pulumi.get(__ret__, 'usage_query_param'))
 def get_containers_output(container_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetContainersFilterArgs', 'GetContainersFilterArgsDict']]]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetContainersFilterArgs', 'GetContainersFilterArgsDict', 'outputs.GetContainersFilterResult']]]]] = None,
                           is_latest: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           tag_query_param: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

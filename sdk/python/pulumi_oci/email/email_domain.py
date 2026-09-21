@@ -513,7 +513,7 @@ class EmailDomain(pulumi.CustomResource):
             domain_verification_status: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_spf: pulumi.Input[Optional[_builtins.bool]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EmailDomainLockArgs', 'EmailDomainLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EmailDomainLockArgs', 'EmailDomainLockArgsDict', 'outputs.EmailDomainLock']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,

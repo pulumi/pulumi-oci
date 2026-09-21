@@ -1368,7 +1368,7 @@ class DomainsCloudGate(pulumi.CustomResource):
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateTagArgs', 'DomainsCloudGateTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateTagArgs', 'DomainsCloudGateTagArgsDict', 'outputs.DomainsCloudGateTag']]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -1494,7 +1494,7 @@ class DomainsCloudGate(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateTagArgs', 'DomainsCloudGateTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateTagArgs', 'DomainsCloudGateTagArgsDict', 'outputs.DomainsCloudGateTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1591,7 +1591,7 @@ class DomainsCloudGate(pulumi.CustomResource):
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateTagArgs', 'DomainsCloudGateTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateTagArgs', 'DomainsCloudGateTagArgsDict', 'outputs.DomainsCloudGateTag']]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -1655,25 +1655,25 @@ class DomainsCloudGate(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateIdcsCreatedByArgs', 'DomainsCloudGateIdcsCreatedByArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateIdcsCreatedByArgs', 'DomainsCloudGateIdcsCreatedByArgsDict', 'outputs.DomainsCloudGateIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateIdcsLastModifiedByArgs', 'DomainsCloudGateIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateIdcsLastModifiedByArgs', 'DomainsCloudGateIdcsLastModifiedByArgsDict', 'outputs.DomainsCloudGateIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             is_opc_service: pulumi.Input[Optional[_builtins.bool]] = None,
             last_modified_time: pulumi.Input[Optional[_builtins.str]] = None,
-            mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateMappingArgs', 'DomainsCloudGateMappingArgsDict']]]]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateMetaArgs', 'DomainsCloudGateMetaArgsDict']]]]] = None,
-            oauth_clients: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateOauthClientArgs', 'DomainsCloudGateOauthClientArgsDict']]]]] = None,
+            mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateMappingArgs', 'DomainsCloudGateMappingArgsDict', 'outputs.DomainsCloudGateMapping']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateMetaArgs', 'DomainsCloudGateMetaArgsDict', 'outputs.DomainsCloudGateMeta']]]]] = None,
+            oauth_clients: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateOauthClientArgs', 'DomainsCloudGateOauthClientArgsDict', 'outputs.DomainsCloudGateOauthClient']]]]] = None,
             ocid: pulumi.Input[Optional[_builtins.str]] = None,
             resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
             schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateServerArgs', 'DomainsCloudGateServerArgsDict']]]]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateTagArgs', 'DomainsCloudGateTagArgsDict']]]]] = None,
+            servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateServerArgs', 'DomainsCloudGateServerArgsDict', 'outputs.DomainsCloudGateServer']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateTagArgs', 'DomainsCloudGateTagArgsDict', 'outputs.DomainsCloudGateTag']]]]] = None,
             tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
-            upstream_server_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateUpstreamServerGroupArgs', 'DomainsCloudGateUpstreamServerGroupArgsDict']]]]] = None,
-            upstream_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateUpstreamServerArgs', 'DomainsCloudGateUpstreamServerArgsDict']]]]] = None) -> 'DomainsCloudGate':
+            upstream_server_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateUpstreamServerGroupArgs', 'DomainsCloudGateUpstreamServerGroupArgsDict', 'outputs.DomainsCloudGateUpstreamServerGroup']]]]] = None,
+            upstream_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateUpstreamServerArgs', 'DomainsCloudGateUpstreamServerArgsDict', 'outputs.DomainsCloudGateUpstreamServer']]]]] = None) -> 'DomainsCloudGate':
         """
         Get an existing DomainsCloudGate resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1756,7 +1756,7 @@ class DomainsCloudGate(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateIdcsCreatedByArgs', 'DomainsCloudGateIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateIdcsCreatedByArgs', 'DomainsCloudGateIdcsCreatedByArgsDict', 'outputs.DomainsCloudGateIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1766,7 +1766,7 @@ class DomainsCloudGate(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateIdcsLastModifiedByArgs', 'DomainsCloudGateIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateIdcsLastModifiedByArgs', 'DomainsCloudGateIdcsLastModifiedByArgsDict', 'outputs.DomainsCloudGateIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1822,7 +1822,7 @@ class DomainsCloudGate(pulumi.CustomResource):
                * returned: default
                * type: dateTime
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateMappingArgs', 'DomainsCloudGateMappingArgsDict']]]] mappings: (Updatable) A list of Cloud Gate Mappings that map Apps to this Cloud Gate
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateMappingArgs', 'DomainsCloudGateMappingArgsDict', 'outputs.DomainsCloudGateMapping']]]] mappings: (Updatable) A list of Cloud Gate Mappings that map Apps to this Cloud Gate
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1834,7 +1834,7 @@ class DomainsCloudGate(pulumi.CustomResource):
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateMetaArgs', 'DomainsCloudGateMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateMetaArgs', 'DomainsCloudGateMetaArgsDict', 'outputs.DomainsCloudGateMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1845,7 +1845,7 @@ class DomainsCloudGate(pulumi.CustomResource):
                * returned: default
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
                * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateOauthClientArgs', 'DomainsCloudGateOauthClientArgsDict']]]] oauth_clients: (Updatable) A reference to the OAuth client App used by this Cloud Gate instance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateOauthClientArgs', 'DomainsCloudGateOauthClientArgsDict', 'outputs.DomainsCloudGateOauthClient']]]] oauth_clients: (Updatable) A reference to the OAuth client App used by this Cloud Gate instance.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1879,7 +1879,7 @@ class DomainsCloudGate(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateServerArgs', 'DomainsCloudGateServerArgsDict']]]] servers: (Updatable) A list of Server Blocks on this Cloud Gate
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateServerArgs', 'DomainsCloudGateServerArgsDict', 'outputs.DomainsCloudGateServer']]]] servers: (Updatable) A list of Server Blocks on this Cloud Gate
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1891,7 +1891,7 @@ class DomainsCloudGate(pulumi.CustomResource):
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateTagArgs', 'DomainsCloudGateTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateTagArgs', 'DomainsCloudGateTagArgsDict', 'outputs.DomainsCloudGateTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1924,7 +1924,7 @@ class DomainsCloudGate(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateUpstreamServerGroupArgs', 'DomainsCloudGateUpstreamServerGroupArgsDict']]]] upstream_server_groups: (Updatable) A list of upstream server groups
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateUpstreamServerGroupArgs', 'DomainsCloudGateUpstreamServerGroupArgsDict', 'outputs.DomainsCloudGateUpstreamServerGroup']]]] upstream_server_groups: (Updatable) A list of upstream server groups
                
                **Added In:** 20.1.3
                
@@ -1938,7 +1938,7 @@ class DomainsCloudGate(pulumi.CustomResource):
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateUpstreamServerArgs', 'DomainsCloudGateUpstreamServerArgsDict']]]] upstream_servers: (Updatable) A list of upstream servers
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateUpstreamServerArgs', 'DomainsCloudGateUpstreamServerArgsDict', 'outputs.DomainsCloudGateUpstreamServer']]]] upstream_servers: (Updatable) A list of upstream servers
                
                **Added In:** 20.1.3
                

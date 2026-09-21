@@ -466,14 +466,14 @@ class AlarmSuppression(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alarm_suppression_target: pulumi.Input[Optional[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict']]] = None,
+                 alarm_suppression_target: pulumi.Input[Optional[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict', 'outputs.AlarmSuppressionAlarmSuppressionTarget']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  dimensions: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  level: pulumi.Input[Optional[_builtins.str]] = None,
-                 suppression_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlarmSuppressionSuppressionConditionArgs', 'AlarmSuppressionSuppressionConditionArgsDict']]]]] = None,
+                 suppression_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlarmSuppressionSuppressionConditionArgs', 'AlarmSuppressionSuppressionConditionArgsDict', 'outputs.AlarmSuppressionSuppressionCondition']]]]] = None,
                  time_suppress_from: pulumi.Input[Optional[_builtins.str]] = None,
                  time_suppress_until: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -538,7 +538,7 @@ class AlarmSuppression(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict']] alarm_suppression_target: The target of the alarm suppression.
+        :param pulumi.Input[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict', 'outputs.AlarmSuppressionAlarmSuppressionTarget']] alarm_suppression_target: The target of the alarm suppression.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
                
@@ -553,7 +553,7 @@ class AlarmSuppression(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] level: The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
                
                Defaut: `DIMENSION`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AlarmSuppressionSuppressionConditionArgs', 'AlarmSuppressionSuppressionConditionArgsDict']]]] suppression_conditions: Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AlarmSuppressionSuppressionConditionArgs', 'AlarmSuppressionSuppressionConditionArgsDict', 'outputs.AlarmSuppressionSuppressionCondition']]]] suppression_conditions: Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
         :param pulumi.Input[_builtins.str] time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
         :param pulumi.Input[_builtins.str] time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
                
@@ -640,14 +640,14 @@ class AlarmSuppression(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alarm_suppression_target: pulumi.Input[Optional[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict']]] = None,
+                 alarm_suppression_target: pulumi.Input[Optional[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict', 'outputs.AlarmSuppressionAlarmSuppressionTarget']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  dimensions: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  level: pulumi.Input[Optional[_builtins.str]] = None,
-                 suppression_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlarmSuppressionSuppressionConditionArgs', 'AlarmSuppressionSuppressionConditionArgsDict']]]]] = None,
+                 suppression_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlarmSuppressionSuppressionConditionArgs', 'AlarmSuppressionSuppressionConditionArgsDict', 'outputs.AlarmSuppressionSuppressionCondition']]]]] = None,
                  time_suppress_from: pulumi.Input[Optional[_builtins.str]] = None,
                  time_suppress_until: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -691,7 +691,7 @@ class AlarmSuppression(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            alarm_suppression_target: pulumi.Input[Optional[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict']]] = None,
+            alarm_suppression_target: pulumi.Input[Optional[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict', 'outputs.AlarmSuppressionAlarmSuppressionTarget']]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -700,7 +700,7 @@ class AlarmSuppression(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             level: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            suppression_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlarmSuppressionSuppressionConditionArgs', 'AlarmSuppressionSuppressionConditionArgsDict']]]]] = None,
+            suppression_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlarmSuppressionSuppressionConditionArgs', 'AlarmSuppressionSuppressionConditionArgsDict', 'outputs.AlarmSuppressionSuppressionCondition']]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_suppress_from: pulumi.Input[Optional[_builtins.str]] = None,
             time_suppress_until: pulumi.Input[Optional[_builtins.str]] = None,
@@ -712,7 +712,7 @@ class AlarmSuppression(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict']] alarm_suppression_target: The target of the alarm suppression.
+        :param pulumi.Input[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict', 'outputs.AlarmSuppressionAlarmSuppressionTarget']] alarm_suppression_target: The target of the alarm suppression.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -729,7 +729,7 @@ class AlarmSuppression(pulumi.CustomResource):
                
                Defaut: `DIMENSION`
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the alarm suppression.  Example: `DELETED`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AlarmSuppressionSuppressionConditionArgs', 'AlarmSuppressionSuppressionConditionArgsDict']]]] suppression_conditions: Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AlarmSuppressionSuppressionConditionArgs', 'AlarmSuppressionSuppressionConditionArgsDict', 'outputs.AlarmSuppressionSuppressionCondition']]]] suppression_conditions: Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
         :param pulumi.Input[_builtins.str] time_created: The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
         :param pulumi.Input[_builtins.str] time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
         :param pulumi.Input[_builtins.str] time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`

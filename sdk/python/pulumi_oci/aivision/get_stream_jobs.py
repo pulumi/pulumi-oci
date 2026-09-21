@@ -110,7 +110,7 @@ class AwaitableGetStreamJobsResult(GetStreamJobsResult):
 
 def get_stream_jobs(compartment_id: Optional[_builtins.str] = None,
                     display_name: Optional[_builtins.str] = None,
-                    filters: Optional[Sequence[Union['GetStreamJobsFilterArgs', 'GetStreamJobsFilterArgsDict']]] = None,
+                    filters: Optional[Sequence[Union['GetStreamJobsFilterArgs', 'GetStreamJobsFilterArgsDict', 'outputs.GetStreamJobsFilterResult']]] = None,
                     id: Optional[_builtins.str] = None,
                     state: Optional[_builtins.str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetStreamJobsResult:
@@ -155,7 +155,7 @@ def get_stream_jobs(compartment_id: Optional[_builtins.str] = None,
         stream_job_collections=pulumi.get(__ret__, 'stream_job_collections'))
 def get_stream_jobs_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetStreamJobsFilterArgs', 'GetStreamJobsFilterArgsDict']]]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetStreamJobsFilterArgs', 'GetStreamJobsFilterArgsDict', 'outputs.GetStreamJobsFilterResult']]]]] = None,
                            id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStreamJobsResult]:

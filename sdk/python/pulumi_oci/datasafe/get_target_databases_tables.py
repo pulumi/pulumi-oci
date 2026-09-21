@@ -123,7 +123,7 @@ class AwaitableGetTargetDatabasesTablesResult(GetTargetDatabasesTablesResult):
             target_database_id=self.target_database_id)
 
 
-def get_target_databases_tables(filters: Optional[Sequence[Union['GetTargetDatabasesTablesFilterArgs', 'GetTargetDatabasesTablesFilterArgsDict']]] = None,
+def get_target_databases_tables(filters: Optional[Sequence[Union['GetTargetDatabasesTablesFilterArgs', 'GetTargetDatabasesTablesFilterArgsDict', 'outputs.GetTargetDatabasesTablesFilterResult']]] = None,
                                 schema_name_contains: Optional[_builtins.str] = None,
                                 schema_names: Optional[Sequence[_builtins.str]] = None,
                                 table_name_contains: Optional[_builtins.str] = None,
@@ -174,7 +174,7 @@ def get_target_databases_tables(filters: Optional[Sequence[Union['GetTargetDatab
         table_names=pulumi.get(__ret__, 'table_names'),
         tables=pulumi.get(__ret__, 'tables'),
         target_database_id=pulumi.get(__ret__, 'target_database_id'))
-def get_target_databases_tables_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTargetDatabasesTablesFilterArgs', 'GetTargetDatabasesTablesFilterArgsDict']]]]] = None,
+def get_target_databases_tables_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTargetDatabasesTablesFilterArgs', 'GetTargetDatabasesTablesFilterArgsDict', 'outputs.GetTargetDatabasesTablesFilterResult']]]]] = None,
                                        schema_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        schema_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                        table_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

@@ -134,7 +134,7 @@ class AwaitableGetProtectedDatabasesResult(GetProtectedDatabasesResult):
 
 def get_protected_databases(compartment_id: Optional[_builtins.str] = None,
                             display_name: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetProtectedDatabasesFilterArgs', 'GetProtectedDatabasesFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetProtectedDatabasesFilterArgs', 'GetProtectedDatabasesFilterArgsDict', 'outputs.GetProtectedDatabasesFilterResult']]] = None,
                             id: Optional[_builtins.str] = None,
                             protection_policy_id: Optional[_builtins.str] = None,
                             recovery_service_subnet_id: Optional[_builtins.str] = None,
@@ -177,7 +177,7 @@ def get_protected_databases(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_protected_databases_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProtectedDatabasesFilterArgs', 'GetProtectedDatabasesFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProtectedDatabasesFilterArgs', 'GetProtectedDatabasesFilterArgsDict', 'outputs.GetProtectedDatabasesFilterResult']]]]] = None,
                                    id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    protection_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    recovery_service_subnet_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

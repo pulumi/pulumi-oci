@@ -106,7 +106,7 @@ class AwaitableGetWorkspacesResult(GetWorkspacesResult):
 
 
 def get_workspaces(compartment_id: Optional[_builtins.str] = None,
-                   filters: Optional[Sequence[Union['GetWorkspacesFilterArgs', 'GetWorkspacesFilterArgsDict']]] = None,
+                   filters: Optional[Sequence[Union['GetWorkspacesFilterArgs', 'GetWorkspacesFilterArgsDict', 'outputs.GetWorkspacesFilterResult']]] = None,
                    name: Optional[_builtins.str] = None,
                    state: Optional[_builtins.str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWorkspacesResult:
@@ -147,7 +147,7 @@ def get_workspaces(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         workspaces=pulumi.get(__ret__, 'workspaces'))
 def get_workspaces_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkspacesFilterArgs', 'GetWorkspacesFilterArgsDict']]]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkspacesFilterArgs', 'GetWorkspacesFilterArgsDict', 'outputs.GetWorkspacesFilterResult']]]]] = None,
                           name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspacesResult]:

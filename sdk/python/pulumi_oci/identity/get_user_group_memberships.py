@@ -109,7 +109,7 @@ class AwaitableGetUserGroupMembershipsResult(GetUserGroupMembershipsResult):
 
 
 def get_user_group_memberships(compartment_id: Optional[_builtins.str] = None,
-                               filters: Optional[Sequence[Union['GetUserGroupMembershipsFilterArgs', 'GetUserGroupMembershipsFilterArgsDict']]] = None,
+                               filters: Optional[Sequence[Union['GetUserGroupMembershipsFilterArgs', 'GetUserGroupMembershipsFilterArgsDict', 'outputs.GetUserGroupMembershipsFilterResult']]] = None,
                                group_id: Optional[_builtins.str] = None,
                                user_id: Optional[_builtins.str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUserGroupMembershipsResult:
@@ -159,7 +159,7 @@ def get_user_group_memberships(compartment_id: Optional[_builtins.str] = None,
         memberships=pulumi.get(__ret__, 'memberships'),
         user_id=pulumi.get(__ret__, 'user_id'))
 def get_user_group_memberships_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUserGroupMembershipsFilterArgs', 'GetUserGroupMembershipsFilterArgsDict']]]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUserGroupMembershipsFilterArgs', 'GetUserGroupMembershipsFilterArgsDict', 'outputs.GetUserGroupMembershipsFilterResult']]]]] = None,
                                       group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       user_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserGroupMembershipsResult]:

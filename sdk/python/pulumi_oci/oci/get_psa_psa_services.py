@@ -94,7 +94,7 @@ class AwaitableGetPsaPsaServicesResult(GetPsaPsaServicesResult):
 
 
 def get_psa_psa_services(display_name: Optional[_builtins.str] = None,
-                         filters: Optional[Sequence[Union['GetPsaPsaServicesFilterArgs', 'GetPsaPsaServicesFilterArgsDict']]] = None,
+                         filters: Optional[Sequence[Union['GetPsaPsaServicesFilterArgs', 'GetPsaPsaServicesFilterArgsDict', 'outputs.GetPsaPsaServicesFilterResult']]] = None,
                          service_id: Optional[_builtins.str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPsaPsaServicesResult:
     """
@@ -130,7 +130,7 @@ def get_psa_psa_services(display_name: Optional[_builtins.str] = None,
         psa_service_collections=pulumi.get(__ret__, 'psa_service_collections'),
         service_id=pulumi.get(__ret__, 'service_id'))
 def get_psa_psa_services_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPsaPsaServicesFilterArgs', 'GetPsaPsaServicesFilterArgsDict']]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPsaPsaServicesFilterArgs', 'GetPsaPsaServicesFilterArgsDict', 'outputs.GetPsaPsaServicesFilterResult']]]]] = None,
                                 service_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPsaPsaServicesResult]:
     """

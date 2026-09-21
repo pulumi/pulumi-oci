@@ -105,7 +105,7 @@ class AwaitableGetCloudExadataStorageServersResult(GetCloudExadataStorageServers
 def get_cloud_exadata_storage_servers(cloud_exadata_infrastructure_id: Optional[_builtins.str] = None,
                                       compartment_id: Optional[_builtins.str] = None,
                                       display_name: Optional[_builtins.str] = None,
-                                      filters: Optional[Sequence[Union['GetCloudExadataStorageServersFilterArgs', 'GetCloudExadataStorageServersFilterArgsDict']]] = None,
+                                      filters: Optional[Sequence[Union['GetCloudExadataStorageServersFilterArgs', 'GetCloudExadataStorageServersFilterArgsDict', 'outputs.GetCloudExadataStorageServersFilterResult']]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudExadataStorageServersResult:
     """
     This data source provides the list of Cloud Exadata Storage Servers in Oracle Cloud Infrastructure Database Management service.
@@ -146,7 +146,7 @@ def get_cloud_exadata_storage_servers(cloud_exadata_infrastructure_id: Optional[
 def get_cloud_exadata_storage_servers_output(cloud_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudExadataStorageServersFilterArgs', 'GetCloudExadataStorageServersFilterArgsDict']]]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudExadataStorageServersFilterArgs', 'GetCloudExadataStorageServersFilterArgsDict', 'outputs.GetCloudExadataStorageServersFilterResult']]]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudExadataStorageServersResult]:
     """
     This data source provides the list of Cloud Exadata Storage Servers in Oracle Cloud Infrastructure Database Management service.

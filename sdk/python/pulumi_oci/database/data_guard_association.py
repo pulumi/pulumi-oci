@@ -1612,7 +1612,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                  cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
                  create_async: pulumi.Input[Optional[_builtins.bool]] = None,
                  creation_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 data_collection_options: pulumi.Input[Optional[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict']]] = None,
+                 data_collection_options: pulumi.Input[Optional[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict', 'outputs.DataGuardAssociationDataCollectionOptions']]] = None,
                  database_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
                  database_defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  database_freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1724,7 +1724,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compute_model: The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
         :param pulumi.Input[_builtins.int] cpu_core_count: The number of CPU cores available for AMD-based virtual machine DB systems.
         :param pulumi.Input[_builtins.str] creation_type: Specifies whether to create the peer database in an existing DB system or in a new DB system.
-        :param pulumi.Input[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict']] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict', 'outputs.DataGuardAssociationDataCollectionOptions']] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[_builtins.str] database_admin_password: (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
                
                The password must contain no fewer than nine characters and include:
@@ -1890,7 +1890,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                  cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
                  create_async: pulumi.Input[Optional[_builtins.bool]] = None,
                  creation_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 data_collection_options: pulumi.Input[Optional[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict']]] = None,
+                 data_collection_options: pulumi.Input[Optional[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict', 'outputs.DataGuardAssociationDataCollectionOptions']]] = None,
                  database_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
                  database_defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  database_freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -2016,7 +2016,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
             create_async: pulumi.Input[Optional[_builtins.bool]] = None,
             creation_type: pulumi.Input[Optional[_builtins.str]] = None,
-            data_collection_options: pulumi.Input[Optional[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict']]] = None,
+            data_collection_options: pulumi.Input[Optional[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict', 'outputs.DataGuardAssociationDataCollectionOptions']]] = None,
             database_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
             database_defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             database_freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -2071,7 +2071,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compute_model: The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
         :param pulumi.Input[_builtins.int] cpu_core_count: The number of CPU cores available for AMD-based virtual machine DB systems.
         :param pulumi.Input[_builtins.str] creation_type: Specifies whether to create the peer database in an existing DB system or in a new DB system.
-        :param pulumi.Input[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict']] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict', 'outputs.DataGuardAssociationDataCollectionOptions']] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[_builtins.str] database_admin_password: (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
                
                The password must contain no fewer than nine characters and include:

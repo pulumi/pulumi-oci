@@ -122,7 +122,7 @@ class AwaitableGetSchedulingPolicySchedulingWindowsResult(GetSchedulingPolicySch
 
 def get_scheduling_policy_scheduling_windows(compartment_id: Optional[_builtins.str] = None,
                                              display_name: Optional[_builtins.str] = None,
-                                             filters: Optional[Sequence[Union['GetSchedulingPolicySchedulingWindowsFilterArgs', 'GetSchedulingPolicySchedulingWindowsFilterArgsDict']]] = None,
+                                             filters: Optional[Sequence[Union['GetSchedulingPolicySchedulingWindowsFilterArgs', 'GetSchedulingPolicySchedulingWindowsFilterArgsDict', 'outputs.GetSchedulingPolicySchedulingWindowsFilterResult']]] = None,
                                              scheduling_policy_id: Optional[_builtins.str] = None,
                                              state: Optional[_builtins.str] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSchedulingPolicySchedulingWindowsResult:
@@ -168,7 +168,7 @@ def get_scheduling_policy_scheduling_windows(compartment_id: Optional[_builtins.
         state=pulumi.get(__ret__, 'state'))
 def get_scheduling_policy_scheduling_windows_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulingPolicySchedulingWindowsFilterArgs', 'GetSchedulingPolicySchedulingWindowsFilterArgsDict']]]]] = None,
+                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulingPolicySchedulingWindowsFilterArgs', 'GetSchedulingPolicySchedulingWindowsFilterArgsDict', 'outputs.GetSchedulingPolicySchedulingWindowsFilterResult']]]]] = None,
                                                     scheduling_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSchedulingPolicySchedulingWindowsResult]:

@@ -131,7 +131,7 @@ class AwaitableGetInternalOccmDemandSignalItemsResult(GetInternalOccmDemandSigna
 
 def get_internal_occm_demand_signal_items(compartment_id: Optional[_builtins.str] = None,
                                           demand_signal_namespace: Optional[_builtins.str] = None,
-                                          filters: Optional[Sequence[Union['GetInternalOccmDemandSignalItemsFilterArgs', 'GetInternalOccmDemandSignalItemsFilterArgsDict']]] = None,
+                                          filters: Optional[Sequence[Union['GetInternalOccmDemandSignalItemsFilterArgs', 'GetInternalOccmDemandSignalItemsFilterArgsDict', 'outputs.GetInternalOccmDemandSignalItemsFilterResult']]] = None,
                                           occ_customer_group_id: Optional[_builtins.str] = None,
                                           occm_demand_signal_id: Optional[_builtins.str] = None,
                                           resource_name: Optional[_builtins.str] = None,
@@ -182,7 +182,7 @@ def get_internal_occm_demand_signal_items(compartment_id: Optional[_builtins.str
         resource_name=pulumi.get(__ret__, 'resource_name'))
 def get_internal_occm_demand_signal_items_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                  demand_signal_namespace: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInternalOccmDemandSignalItemsFilterArgs', 'GetInternalOccmDemandSignalItemsFilterArgsDict']]]]] = None,
+                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInternalOccmDemandSignalItemsFilterArgs', 'GetInternalOccmDemandSignalItemsFilterArgsDict', 'outputs.GetInternalOccmDemandSignalItemsFilterResult']]]]] = None,
                                                  occ_customer_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                  occm_demand_signal_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                  resource_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

@@ -1221,7 +1221,7 @@ class DataccInfrastructure(pulumi.CustomResource):
                  cloud_control_plane_server1: pulumi.Input[Optional[_builtins.str]] = None,
                  cloud_control_plane_server2: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccInfrastructureContactArgs', 'DataccInfrastructureContactArgsDict']]]]] = None,
+                 contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccInfrastructureContactArgs', 'DataccInfrastructureContactArgsDict', 'outputs.DataccInfrastructureContact']]]]] = None,
                  corporate_proxy: pulumi.Input[Optional[_builtins.str]] = None,
                  cps_network_bonding_interface: pulumi.Input[Optional[_builtins.str]] = None,
                  cps_network_bonding_mode: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1232,7 +1232,7 @@ class DataccInfrastructure(pulumi.CustomResource):
                  dns_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  gateway: pulumi.Input[Optional[_builtins.str]] = None,
-                 maintenance_window: pulumi.Input[Optional[Union['DataccInfrastructureMaintenanceWindowArgs', 'DataccInfrastructureMaintenanceWindowArgsDict']]] = None,
+                 maintenance_window: pulumi.Input[Optional[Union['DataccInfrastructureMaintenanceWindowArgs', 'DataccInfrastructureMaintenanceWindowArgsDict', 'outputs.DataccInfrastructureMaintenanceWindow']]] = None,
                  netmask: pulumi.Input[Optional[_builtins.str]] = None,
                  ntp_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  scale_storage_trigger: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1324,7 +1324,7 @@ class DataccInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cloud_control_plane_server1: (Updatable) The IP address for the first control plane server.
         :param pulumi.Input[_builtins.str] cloud_control_plane_server2: (Updatable) The IP address for the second control plane server.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DataccInfrastructureContactArgs', 'DataccInfrastructureContactArgsDict']]]] contacts: (Updatable) The list of contacts for the Database Infrastructure.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DataccInfrastructureContactArgs', 'DataccInfrastructureContactArgsDict', 'outputs.DataccInfrastructureContact']]]] contacts: (Updatable) The list of contacts for the Database Infrastructure.
         :param pulumi.Input[_builtins.str] corporate_proxy: (Updatable) The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible for enhanced security.
         :param pulumi.Input[_builtins.str] cps_network_bonding_interface: (Updatable) The network bonding interface for CPS network for the Database Infrastructure.
         :param pulumi.Input[_builtins.str] cps_network_bonding_mode: (Updatable) The network bonding mode for CPS networks for the Database Infrastructure.
@@ -1335,7 +1335,7 @@ class DataccInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dns_servers: (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. This tag option exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] gateway: (Updatable) The gateway for the control plane network.
-        :param pulumi.Input[Union['DataccInfrastructureMaintenanceWindowArgs', 'DataccInfrastructureMaintenanceWindowArgsDict']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Union['DataccInfrastructureMaintenanceWindowArgs', 'DataccInfrastructureMaintenanceWindowArgsDict', 'outputs.DataccInfrastructureMaintenanceWindow']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.str] netmask: (Updatable) The netmask for the control plane network.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ntp_servers: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
         :param pulumi.Input[_builtins.int] scale_storage_trigger: (Updatable) An optional property when incremented triggers Scale Storage. Could be set to any integer value.
@@ -1449,7 +1449,7 @@ class DataccInfrastructure(pulumi.CustomResource):
                  cloud_control_plane_server1: pulumi.Input[Optional[_builtins.str]] = None,
                  cloud_control_plane_server2: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccInfrastructureContactArgs', 'DataccInfrastructureContactArgsDict']]]]] = None,
+                 contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccInfrastructureContactArgs', 'DataccInfrastructureContactArgsDict', 'outputs.DataccInfrastructureContact']]]]] = None,
                  corporate_proxy: pulumi.Input[Optional[_builtins.str]] = None,
                  cps_network_bonding_interface: pulumi.Input[Optional[_builtins.str]] = None,
                  cps_network_bonding_mode: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1460,7 +1460,7 @@ class DataccInfrastructure(pulumi.CustomResource):
                  dns_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  gateway: pulumi.Input[Optional[_builtins.str]] = None,
-                 maintenance_window: pulumi.Input[Optional[Union['DataccInfrastructureMaintenanceWindowArgs', 'DataccInfrastructureMaintenanceWindowArgsDict']]] = None,
+                 maintenance_window: pulumi.Input[Optional[Union['DataccInfrastructureMaintenanceWindowArgs', 'DataccInfrastructureMaintenanceWindowArgsDict', 'outputs.DataccInfrastructureMaintenanceWindow']]] = None,
                  netmask: pulumi.Input[Optional[_builtins.str]] = None,
                  ntp_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  scale_storage_trigger: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1562,8 +1562,8 @@ class DataccInfrastructure(pulumi.CustomResource):
             cloud_control_plane_server1: pulumi.Input[Optional[_builtins.str]] = None,
             cloud_control_plane_server2: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            compute_capacities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccInfrastructureComputeCapacityArgs', 'DataccInfrastructureComputeCapacityArgsDict']]]]] = None,
-            contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccInfrastructureContactArgs', 'DataccInfrastructureContactArgsDict']]]]] = None,
+            compute_capacities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccInfrastructureComputeCapacityArgs', 'DataccInfrastructureComputeCapacityArgsDict', 'outputs.DataccInfrastructureComputeCapacity']]]]] = None,
+            contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccInfrastructureContactArgs', 'DataccInfrastructureContactArgsDict', 'outputs.DataccInfrastructureContact']]]]] = None,
             corporate_proxy: pulumi.Input[Optional[_builtins.str]] = None,
             cps_network_bonding_interface: pulumi.Input[Optional[_builtins.str]] = None,
             cps_network_bonding_mode: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1575,21 +1575,21 @@ class DataccInfrastructure(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             gateway: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
-            maintenance_window: pulumi.Input[Optional[Union['DataccInfrastructureMaintenanceWindowArgs', 'DataccInfrastructureMaintenanceWindowArgsDict']]] = None,
+            maintenance_window: pulumi.Input[Optional[Union['DataccInfrastructureMaintenanceWindowArgs', 'DataccInfrastructureMaintenanceWindowArgsDict', 'outputs.DataccInfrastructureMaintenanceWindow']]] = None,
             netmask: pulumi.Input[Optional[_builtins.str]] = None,
             network_adapter_configuration: pulumi.Input[Optional[_builtins.str]] = None,
             ntp_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             rack_serial_number: pulumi.Input[Optional[_builtins.str]] = None,
             reco_disk_percentage: pulumi.Input[Optional[_builtins.int]] = None,
             scale_storage_trigger: pulumi.Input[Optional[_builtins.int]] = None,
-            servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccInfrastructureServerArgs', 'DataccInfrastructureServerArgsDict']]]]] = None,
+            servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccInfrastructureServerArgs', 'DataccInfrastructureServerArgsDict', 'outputs.DataccInfrastructureServer']]]]] = None,
             shape: pulumi.Input[Optional[_builtins.str]] = None,
             ssd_configuration_requested: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            storage_capacities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccInfrastructureStorageCapacityArgs', 'DataccInfrastructureStorageCapacityArgsDict']]]]] = None,
+            storage_capacities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccInfrastructureStorageCapacityArgs', 'DataccInfrastructureStorageCapacityArgsDict', 'outputs.DataccInfrastructureStorageCapacity']]]]] = None,
             subscription_plan_number: pulumi.Input[Optional[_builtins.str]] = None,
             system_model: pulumi.Input[Optional[_builtins.str]] = None,
-            system_storage_capacities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccInfrastructureSystemStorageCapacityArgs', 'DataccInfrastructureSystemStorageCapacityArgsDict']]]]] = None,
+            system_storage_capacities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccInfrastructureSystemStorageCapacityArgs', 'DataccInfrastructureSystemStorageCapacityArgsDict', 'outputs.DataccInfrastructureSystemStorageCapacity']]]]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_activated: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1615,8 +1615,8 @@ class DataccInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cloud_control_plane_server1: (Updatable) The IP address for the first control plane server.
         :param pulumi.Input[_builtins.str] cloud_control_plane_server2: (Updatable) The IP address for the second control plane server.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DataccInfrastructureComputeCapacityArgs', 'DataccInfrastructureComputeCapacityArgsDict']]]] compute_capacities: Capacity details of the Database Infrastructure.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DataccInfrastructureContactArgs', 'DataccInfrastructureContactArgsDict']]]] contacts: (Updatable) The list of contacts for the Database Infrastructure.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DataccInfrastructureComputeCapacityArgs', 'DataccInfrastructureComputeCapacityArgsDict', 'outputs.DataccInfrastructureComputeCapacity']]]] compute_capacities: Capacity details of the Database Infrastructure.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DataccInfrastructureContactArgs', 'DataccInfrastructureContactArgsDict', 'outputs.DataccInfrastructureContact']]]] contacts: (Updatable) The list of contacts for the Database Infrastructure.
         :param pulumi.Input[_builtins.str] corporate_proxy: (Updatable) The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible for enhanced security.
         :param pulumi.Input[_builtins.str] cps_network_bonding_interface: (Updatable) The network bonding interface for CPS network for the Database Infrastructure.
         :param pulumi.Input[_builtins.str] cps_network_bonding_mode: (Updatable) The network bonding mode for CPS networks for the Database Infrastructure.
@@ -1628,7 +1628,7 @@ class DataccInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. This tag option exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] gateway: (Updatable) The gateway for the control plane network.
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Lifecycle state details of the Database Infrastructure.
-        :param pulumi.Input[Union['DataccInfrastructureMaintenanceWindowArgs', 'DataccInfrastructureMaintenanceWindowArgsDict']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Union['DataccInfrastructureMaintenanceWindowArgs', 'DataccInfrastructureMaintenanceWindowArgsDict', 'outputs.DataccInfrastructureMaintenanceWindow']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.str] netmask: (Updatable) The netmask for the control plane network.
         :param pulumi.Input[_builtins.str] network_adapter_configuration: The network adapter, transceiver and cable configuration for the client and backup networks.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ntp_servers: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -1638,14 +1638,14 @@ class DataccInfrastructure(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DataccInfrastructureServerArgs', 'DataccInfrastructureServerArgsDict']]]] servers: A list of Database Infrastructure nodes.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DataccInfrastructureServerArgs', 'DataccInfrastructureServerArgsDict', 'outputs.DataccInfrastructureServer']]]] servers: A list of Database Infrastructure nodes.
         :param pulumi.Input[_builtins.str] shape: (Updatable) The shape of the Database Infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         :param pulumi.Input[_builtins.str] ssd_configuration_requested: SSD configuration requested for the infrastructure.
         :param pulumi.Input[_builtins.str] state: The current state of the Database Infrastructure.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DataccInfrastructureStorageCapacityArgs', 'DataccInfrastructureStorageCapacityArgsDict']]]] storage_capacities: Capacity details of the Storage disk group.  This attribute is deprecated and will be removed in a subsequent release. Please use systemStorageCapacity instead.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DataccInfrastructureStorageCapacityArgs', 'DataccInfrastructureStorageCapacityArgsDict', 'outputs.DataccInfrastructureStorageCapacity']]]] storage_capacities: Capacity details of the Storage disk group.  This attribute is deprecated and will be removed in a subsequent release. Please use systemStorageCapacity instead.
         :param pulumi.Input[_builtins.str] subscription_plan_number: The unique identifier for the subscription plan number.
         :param pulumi.Input[_builtins.str] system_model: (Updatable) Database Infrastructure System Model specification. The system model determines the model of the Database Infrastructure hardware to be used.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DataccInfrastructureSystemStorageCapacityArgs', 'DataccInfrastructureSystemStorageCapacityArgsDict']]]] system_storage_capacities: Capacity details of different storage types.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DataccInfrastructureSystemStorageCapacityArgs', 'DataccInfrastructureSystemStorageCapacityArgsDict', 'outputs.DataccInfrastructureSystemStorageCapacity']]]] system_storage_capacities: Capacity details of different storage types.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_activated: The time, in RFC3339 format, when the Database Infrastructure was activated.
         :param pulumi.Input[_builtins.str] time_created: The time that the Database Infrastructure cluster was created. An RFC3339 formatted datetime string.

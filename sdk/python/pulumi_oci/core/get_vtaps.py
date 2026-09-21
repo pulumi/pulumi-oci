@@ -169,7 +169,7 @@ class AwaitableGetVtapsResult(GetVtapsResult):
 
 def get_vtaps(compartment_id: Optional[_builtins.str] = None,
               display_name: Optional[_builtins.str] = None,
-              filters: Optional[Sequence[Union['GetVtapsFilterArgs', 'GetVtapsFilterArgsDict']]] = None,
+              filters: Optional[Sequence[Union['GetVtapsFilterArgs', 'GetVtapsFilterArgsDict', 'outputs.GetVtapsFilterResult']]] = None,
               is_vtap_enabled: Optional[_builtins.bool] = None,
               source: Optional[_builtins.str] = None,
               state: Optional[_builtins.str] = None,
@@ -237,7 +237,7 @@ def get_vtaps(compartment_id: Optional[_builtins.str] = None,
         vtaps=pulumi.get(__ret__, 'vtaps'))
 def get_vtaps_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVtapsFilterArgs', 'GetVtapsFilterArgsDict']]]]] = None,
+                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVtapsFilterArgs', 'GetVtapsFilterArgsDict', 'outputs.GetVtapsFilterResult']]]]] = None,
                      is_vtap_enabled: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                      source: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

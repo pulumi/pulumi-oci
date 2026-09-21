@@ -110,7 +110,7 @@ class AwaitableGetApisResult(GetApisResult):
 
 def get_apis(compartment_id: Optional[_builtins.str] = None,
              display_name: Optional[_builtins.str] = None,
-             filters: Optional[Sequence[Union['GetApisFilterArgs', 'GetApisFilterArgsDict']]] = None,
+             filters: Optional[Sequence[Union['GetApisFilterArgs', 'GetApisFilterArgsDict', 'outputs.GetApisFilterResult']]] = None,
              state: Optional[_builtins.str] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApisResult:
     """
@@ -151,7 +151,7 @@ def get_apis(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_apis_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetApisFilterArgs', 'GetApisFilterArgsDict']]]]] = None,
+                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetApisFilterArgs', 'GetApisFilterArgsDict', 'outputs.GetApisFilterResult']]]]] = None,
                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApisResult]:
     """

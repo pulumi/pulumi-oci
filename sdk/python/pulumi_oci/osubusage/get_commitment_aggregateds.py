@@ -142,7 +142,7 @@ class AwaitableGetCommitmentAggregatedsResult(GetCommitmentAggregatedsResult):
 
 
 def get_commitment_aggregateds(compartment_id: Optional[_builtins.str] = None,
-                               filters: Optional[Sequence[Union['GetCommitmentAggregatedsFilterArgs', 'GetCommitmentAggregatedsFilterArgsDict']]] = None,
+                               filters: Optional[Sequence[Union['GetCommitmentAggregatedsFilterArgs', 'GetCommitmentAggregatedsFilterArgsDict', 'outputs.GetCommitmentAggregatedsFilterResult']]] = None,
                                grouping: Optional[_builtins.str] = None,
                                parent_product: Optional[_builtins.str] = None,
                                subscription_id: Optional[_builtins.str] = None,
@@ -188,7 +188,7 @@ def get_commitment_aggregateds(compartment_id: Optional[_builtins.str] = None,
         time_to=pulumi.get(__ret__, 'time_to'),
         x_one_origin_region=pulumi.get(__ret__, 'x_one_origin_region'))
 def get_commitment_aggregateds_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCommitmentAggregatedsFilterArgs', 'GetCommitmentAggregatedsFilterArgsDict']]]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCommitmentAggregatedsFilterArgs', 'GetCommitmentAggregatedsFilterArgsDict', 'outputs.GetCommitmentAggregatedsFilterResult']]]]] = None,
                                       grouping: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       parent_product: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       subscription_id: pulumi.Input[Optional[_builtins.str]] = None,

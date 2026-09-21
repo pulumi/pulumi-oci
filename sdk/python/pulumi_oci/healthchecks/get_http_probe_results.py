@@ -114,7 +114,7 @@ class AwaitableGetHttpProbeResultsResult(GetHttpProbeResultsResult):
             target=self.target)
 
 
-def get_http_probe_results(filters: Optional[Sequence[Union['GetHttpProbeResultsFilterArgs', 'GetHttpProbeResultsFilterArgsDict']]] = None,
+def get_http_probe_results(filters: Optional[Sequence[Union['GetHttpProbeResultsFilterArgs', 'GetHttpProbeResultsFilterArgsDict', 'outputs.GetHttpProbeResultsFilterResult']]] = None,
                            probe_configuration_id: Optional[_builtins.str] = None,
                            start_time_greater_than_or_equal_to: Optional[_builtins.float] = None,
                            start_time_less_than_or_equal_to: Optional[_builtins.float] = None,
@@ -162,7 +162,7 @@ def get_http_probe_results(filters: Optional[Sequence[Union['GetHttpProbeResults
         start_time_greater_than_or_equal_to=pulumi.get(__ret__, 'start_time_greater_than_or_equal_to'),
         start_time_less_than_or_equal_to=pulumi.get(__ret__, 'start_time_less_than_or_equal_to'),
         target=pulumi.get(__ret__, 'target'))
-def get_http_probe_results_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetHttpProbeResultsFilterArgs', 'GetHttpProbeResultsFilterArgsDict']]]]] = None,
+def get_http_probe_results_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetHttpProbeResultsFilterArgs', 'GetHttpProbeResultsFilterArgsDict', 'outputs.GetHttpProbeResultsFilterResult']]]]] = None,
                                   probe_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   start_time_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.float]]] = None,
                                   start_time_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.float]]] = None,

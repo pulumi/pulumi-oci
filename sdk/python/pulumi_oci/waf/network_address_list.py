@@ -367,7 +367,7 @@ class NetworkAddressList(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
-                 vcn_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkAddressListVcnAddressArgs', 'NetworkAddressListVcnAddressArgsDict']]]]] = None,
+                 vcn_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkAddressListVcnAddressArgs', 'NetworkAddressListVcnAddressArgsDict', 'outputs.NetworkAddressListVcnAddress']]]]] = None,
                  __props__=None):
         """
         This resource provides the Network Address List resource in Oracle Cloud Infrastructure Waf service.
@@ -419,7 +419,7 @@ class NetworkAddressList(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] type: (Updatable) Type of NetworkAddressList.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkAddressListVcnAddressArgs', 'NetworkAddressListVcnAddressArgsDict']]]] vcn_addresses: (Updatable) A list of private address prefixes, each associated with a particular VCN. To specify all addresses in a VCN, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkAddressListVcnAddressArgs', 'NetworkAddressListVcnAddressArgsDict', 'outputs.NetworkAddressListVcnAddress']]]] vcn_addresses: (Updatable) A list of private address prefixes, each associated with a particular VCN. To specify all addresses in a VCN, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
         """
         ...
     @overload
@@ -490,7 +490,7 @@ class NetworkAddressList(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
-                 vcn_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkAddressListVcnAddressArgs', 'NetworkAddressListVcnAddressArgsDict']]]]] = None,
+                 vcn_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkAddressListVcnAddressArgs', 'NetworkAddressListVcnAddressArgsDict', 'outputs.NetworkAddressListVcnAddress']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -537,7 +537,7 @@ class NetworkAddressList(pulumi.CustomResource):
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
-            vcn_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkAddressListVcnAddressArgs', 'NetworkAddressListVcnAddressArgsDict']]]]] = None) -> 'NetworkAddressList':
+            vcn_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkAddressListVcnAddressArgs', 'NetworkAddressListVcnAddressArgsDict', 'outputs.NetworkAddressListVcnAddress']]]]] = None) -> 'NetworkAddressList':
         """
         Get an existing NetworkAddressList resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -556,7 +556,7 @@ class NetworkAddressList(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: The time the NetworkAddressList was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time the NetworkAddressList was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] type: (Updatable) Type of NetworkAddressList.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkAddressListVcnAddressArgs', 'NetworkAddressListVcnAddressArgsDict']]]] vcn_addresses: (Updatable) A list of private address prefixes, each associated with a particular VCN. To specify all addresses in a VCN, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkAddressListVcnAddressArgs', 'NetworkAddressListVcnAddressArgsDict', 'outputs.NetworkAddressListVcnAddress']]]] vcn_addresses: (Updatable) A list of private address prefixes, each associated with a particular VCN. To specify all addresses in a VCN, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

@@ -143,7 +143,7 @@ class AwaitableGetMulticloudOmHubMulticloudResourcesResult(GetMulticloudOmHubMul
 
 def get_multicloud_om_hub_multicloud_resources(compartment_id: Optional[_builtins.str] = None,
                                                external_location: Optional[_builtins.str] = None,
-                                               filters: Optional[Sequence[Union['GetMulticloudOmHubMulticloudResourcesFilterArgs', 'GetMulticloudOmHubMulticloudResourcesFilterArgsDict']]] = None,
+                                               filters: Optional[Sequence[Union['GetMulticloudOmHubMulticloudResourcesFilterArgs', 'GetMulticloudOmHubMulticloudResourcesFilterArgsDict', 'outputs.GetMulticloudOmHubMulticloudResourcesFilterResult']]] = None,
                                                limit: Optional[_builtins.int] = None,
                                                resource_anchor_id: Optional[_builtins.str] = None,
                                                resource_type: Optional[_builtins.str] = None,
@@ -204,7 +204,7 @@ def get_multicloud_om_hub_multicloud_resources(compartment_id: Optional[_builtin
         subscription_service_name=pulumi.get(__ret__, 'subscription_service_name'))
 def get_multicloud_om_hub_multicloud_resources_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                       external_location: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMulticloudOmHubMulticloudResourcesFilterArgs', 'GetMulticloudOmHubMulticloudResourcesFilterArgsDict']]]]] = None,
+                                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMulticloudOmHubMulticloudResourcesFilterArgs', 'GetMulticloudOmHubMulticloudResourcesFilterArgsDict', 'outputs.GetMulticloudOmHubMulticloudResourcesFilterResult']]]]] = None,
                                                       limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                       resource_anchor_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                       resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

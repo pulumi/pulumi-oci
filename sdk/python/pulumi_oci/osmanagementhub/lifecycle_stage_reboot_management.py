@@ -139,7 +139,7 @@ class LifecycleStageRebootManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  lifecycle_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
                  reboot_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
-                 work_request_details: pulumi.Input[Optional[Union['LifecycleStageRebootManagementWorkRequestDetailsArgs', 'LifecycleStageRebootManagementWorkRequestDetailsArgsDict']]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['LifecycleStageRebootManagementWorkRequestDetailsArgs', 'LifecycleStageRebootManagementWorkRequestDetailsArgsDict', 'outputs.LifecycleStageRebootManagementWorkRequestDetails']]] = None,
                  __props__=None):
         """
         This resource provides the Lifecycle Stage Reboot Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -177,7 +177,7 @@ class LifecycleStageRebootManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] lifecycle_stage_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
         :param pulumi.Input[_builtins.int] reboot_timeout_in_mins: The number of minutes the service waits for the reboot to complete. If the instances in the stage don't reboot  within this time, the reboot job status is set to failed.
-        :param pulumi.Input[Union['LifecycleStageRebootManagementWorkRequestDetailsArgs', 'LifecycleStageRebootManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['LifecycleStageRebootManagementWorkRequestDetailsArgs', 'LifecycleStageRebootManagementWorkRequestDetailsArgsDict', 'outputs.LifecycleStageRebootManagementWorkRequestDetails']] work_request_details: Provides the name and description of the job.
         """
         ...
     @overload
@@ -234,7 +234,7 @@ class LifecycleStageRebootManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  lifecycle_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
                  reboot_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
-                 work_request_details: pulumi.Input[Optional[Union['LifecycleStageRebootManagementWorkRequestDetailsArgs', 'LifecycleStageRebootManagementWorkRequestDetailsArgsDict']]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['LifecycleStageRebootManagementWorkRequestDetailsArgs', 'LifecycleStageRebootManagementWorkRequestDetailsArgsDict', 'outputs.LifecycleStageRebootManagementWorkRequestDetails']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -261,7 +261,7 @@ class LifecycleStageRebootManagement(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             lifecycle_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
             reboot_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
-            work_request_details: pulumi.Input[Optional[Union['LifecycleStageRebootManagementWorkRequestDetailsArgs', 'LifecycleStageRebootManagementWorkRequestDetailsArgsDict']]] = None) -> 'LifecycleStageRebootManagement':
+            work_request_details: pulumi.Input[Optional[Union['LifecycleStageRebootManagementWorkRequestDetailsArgs', 'LifecycleStageRebootManagementWorkRequestDetailsArgsDict', 'outputs.LifecycleStageRebootManagementWorkRequestDetails']]] = None) -> 'LifecycleStageRebootManagement':
         """
         Get an existing LifecycleStageRebootManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -271,7 +271,7 @@ class LifecycleStageRebootManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] lifecycle_stage_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
         :param pulumi.Input[_builtins.int] reboot_timeout_in_mins: The number of minutes the service waits for the reboot to complete. If the instances in the stage don't reboot  within this time, the reboot job status is set to failed.
-        :param pulumi.Input[Union['LifecycleStageRebootManagementWorkRequestDetailsArgs', 'LifecycleStageRebootManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['LifecycleStageRebootManagementWorkRequestDetailsArgs', 'LifecycleStageRebootManagementWorkRequestDetailsArgsDict', 'outputs.LifecycleStageRebootManagementWorkRequestDetails']] work_request_details: Provides the name and description of the job.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

@@ -118,7 +118,7 @@ class AwaitableGetPrivateApplicationPackagesResult(GetPrivateApplicationPackages
 
 
 def get_private_application_packages(display_name: Optional[_builtins.str] = None,
-                                     filters: Optional[Sequence[Union['GetPrivateApplicationPackagesFilterArgs', 'GetPrivateApplicationPackagesFilterArgsDict']]] = None,
+                                     filters: Optional[Sequence[Union['GetPrivateApplicationPackagesFilterArgs', 'GetPrivateApplicationPackagesFilterArgsDict', 'outputs.GetPrivateApplicationPackagesFilterResult']]] = None,
                                      package_types: Optional[Sequence[_builtins.str]] = None,
                                      private_application_id: Optional[_builtins.str] = None,
                                      private_application_package_id: Optional[_builtins.str] = None,
@@ -164,7 +164,7 @@ def get_private_application_packages(display_name: Optional[_builtins.str] = Non
         private_application_package_collections=pulumi.get(__ret__, 'private_application_package_collections'),
         private_application_package_id=pulumi.get(__ret__, 'private_application_package_id'))
 def get_private_application_packages_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPrivateApplicationPackagesFilterArgs', 'GetPrivateApplicationPackagesFilterArgsDict']]]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPrivateApplicationPackagesFilterArgs', 'GetPrivateApplicationPackagesFilterArgsDict', 'outputs.GetPrivateApplicationPackagesFilterResult']]]]] = None,
                                             package_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                             private_application_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             private_application_package_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

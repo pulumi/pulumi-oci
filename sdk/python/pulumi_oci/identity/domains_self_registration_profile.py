@@ -2129,22 +2129,22 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  activation_email_required: pulumi.Input[Optional[_builtins.bool]] = None,
                  active: pulumi.Input[Optional[_builtins.bool]] = None,
-                 after_submit_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileAfterSubmitTextArgs', 'DomainsSelfRegistrationProfileAfterSubmitTextArgsDict']]]]] = None,
+                 after_submit_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileAfterSubmitTextArgs', 'DomainsSelfRegistrationProfileAfterSubmitTextArgsDict', 'outputs.DomainsSelfRegistrationProfileAfterSubmitText']]]]] = None,
                  allowed_email_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
                  consent_text_present: pulumi.Input[Optional[_builtins.bool]] = None,
-                 consent_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileConsentTextArgs', 'DomainsSelfRegistrationProfileConsentTextArgsDict']]]]] = None,
-                 default_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileDefaultGroupArgs', 'DomainsSelfRegistrationProfileDefaultGroupArgsDict']]]]] = None,
+                 consent_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileConsentTextArgs', 'DomainsSelfRegistrationProfileConsentTextArgsDict', 'outputs.DomainsSelfRegistrationProfileConsentText']]]]] = None,
+                 default_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileDefaultGroupArgs', 'DomainsSelfRegistrationProfileDefaultGroupArgsDict', 'outputs.DomainsSelfRegistrationProfileDefaultGroup']]]]] = None,
                  disallowed_email_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 display_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileDisplayNameArgs', 'DomainsSelfRegistrationProfileDisplayNameArgsDict']]]]] = None,
-                 email_template: pulumi.Input[Optional[Union['DomainsSelfRegistrationProfileEmailTemplateArgs', 'DomainsSelfRegistrationProfileEmailTemplateArgsDict']]] = None,
+                 display_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileDisplayNameArgs', 'DomainsSelfRegistrationProfileDisplayNameArgsDict', 'outputs.DomainsSelfRegistrationProfileDisplayName']]]]] = None,
+                 email_template: pulumi.Input[Optional[Union['DomainsSelfRegistrationProfileEmailTemplateArgs', 'DomainsSelfRegistrationProfileEmailTemplateArgsDict', 'outputs.DomainsSelfRegistrationProfileEmailTemplate']]] = None,
                  external_id: pulumi.Input[Optional[_builtins.str]] = None,
                  footer_logo: pulumi.Input[Optional[_builtins.str]] = None,
-                 footer_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileFooterTextArgs', 'DomainsSelfRegistrationProfileFooterTextArgsDict']]]]] = None,
+                 footer_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileFooterTextArgs', 'DomainsSelfRegistrationProfileFooterTextArgsDict', 'outputs.DomainsSelfRegistrationProfileFooterText']]]]] = None,
                  header_logo: pulumi.Input[Optional[_builtins.str]] = None,
-                 header_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileHeaderTextArgs', 'DomainsSelfRegistrationProfileHeaderTextArgsDict']]]]] = None,
+                 header_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileHeaderTextArgs', 'DomainsSelfRegistrationProfileHeaderTextArgsDict', 'outputs.DomainsSelfRegistrationProfileHeaderText']]]]] = None,
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  number_of_days_redirect_url_is_valid: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2153,8 +2153,8 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  show_on_login_page: pulumi.Input[Optional[_builtins.bool]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileTagArgs', 'DomainsSelfRegistrationProfileTagArgsDict']]]]] = None,
-                 user_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileUserAttributeArgs', 'DomainsSelfRegistrationProfileUserAttributeArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileTagArgs', 'DomainsSelfRegistrationProfileTagArgsDict', 'outputs.DomainsSelfRegistrationProfileTag']]]]] = None,
+                 user_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileUserAttributeArgs', 'DomainsSelfRegistrationProfileUserAttributeArgsDict', 'outputs.DomainsSelfRegistrationProfileUserAttribute']]]]] = None,
                  __props__=None):
         """
         This resource provides the Self Registration Profile resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -2264,7 +2264,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileAfterSubmitTextArgs', 'DomainsSelfRegistrationProfileAfterSubmitTextArgsDict']]]] after_submit_texts: (Updatable) Text to be displayed on UI after doing self registration
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileAfterSubmitTextArgs', 'DomainsSelfRegistrationProfileAfterSubmitTextArgsDict', 'outputs.DomainsSelfRegistrationProfileAfterSubmitText']]]] after_submit_texts: (Updatable) Text to be displayed on UI after doing self registration
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [locale]
@@ -2301,7 +2301,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileConsentTextArgs', 'DomainsSelfRegistrationProfileConsentTextArgsDict']]]] consent_texts: (Updatable) Consent text
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileConsentTextArgs', 'DomainsSelfRegistrationProfileConsentTextArgsDict', 'outputs.DomainsSelfRegistrationProfileConsentText']]]] consent_texts: (Updatable) Consent text
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [locale]
@@ -2313,7 +2313,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileDefaultGroupArgs', 'DomainsSelfRegistrationProfileDefaultGroupArgsDict']]]] default_groups: (Updatable) Default groups assigned to the user
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileDefaultGroupArgs', 'DomainsSelfRegistrationProfileDefaultGroupArgsDict', 'outputs.DomainsSelfRegistrationProfileDefaultGroup']]]] default_groups: (Updatable) Default groups assigned to the user
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [value]
@@ -2334,7 +2334,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileDisplayNameArgs', 'DomainsSelfRegistrationProfileDisplayNameArgsDict']]]] display_names: (Updatable) Registration page name
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileDisplayNameArgs', 'DomainsSelfRegistrationProfileDisplayNameArgsDict', 'outputs.DomainsSelfRegistrationProfileDisplayName']]]] display_names: (Updatable) Registration page name
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [locale]
@@ -2346,7 +2346,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsSelfRegistrationProfileEmailTemplateArgs', 'DomainsSelfRegistrationProfileEmailTemplateArgsDict']] email_template: (Updatable) Email template
+        :param pulumi.Input[Union['DomainsSelfRegistrationProfileEmailTemplateArgs', 'DomainsSelfRegistrationProfileEmailTemplateArgsDict', 'outputs.DomainsSelfRegistrationProfileEmailTemplate']] email_template: (Updatable) Email template
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -2373,7 +2373,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                * required: false
                * returned: default
                * type: reference
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileFooterTextArgs', 'DomainsSelfRegistrationProfileFooterTextArgsDict']]]] footer_texts: (Updatable) Footer text
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileFooterTextArgs', 'DomainsSelfRegistrationProfileFooterTextArgsDict', 'outputs.DomainsSelfRegistrationProfileFooterText']]]] footer_texts: (Updatable) Footer text
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [locale]
@@ -2394,7 +2394,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                * required: false
                * returned: default
                * type: reference
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileHeaderTextArgs', 'DomainsSelfRegistrationProfileHeaderTextArgsDict']]]] header_texts: (Updatable) Header text
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileHeaderTextArgs', 'DomainsSelfRegistrationProfileHeaderTextArgsDict', 'outputs.DomainsSelfRegistrationProfileHeaderText']]]] header_texts: (Updatable) Header text
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [locale]
@@ -2473,7 +2473,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileTagArgs', 'DomainsSelfRegistrationProfileTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileTagArgs', 'DomainsSelfRegistrationProfileTagArgsDict', 'outputs.DomainsSelfRegistrationProfileTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -2484,7 +2484,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileUserAttributeArgs', 'DomainsSelfRegistrationProfileUserAttributeArgsDict']]]] user_attributes: (Updatable) **SCIM++ Properties:**
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileUserAttributeArgs', 'DomainsSelfRegistrationProfileUserAttributeArgsDict', 'outputs.DomainsSelfRegistrationProfileUserAttribute']]]] user_attributes: (Updatable) **SCIM++ Properties:**
                * idcsCompositeKey: [value]
                * idcsSearchable: true
                * multiValued: true
@@ -2603,22 +2603,22 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  activation_email_required: pulumi.Input[Optional[_builtins.bool]] = None,
                  active: pulumi.Input[Optional[_builtins.bool]] = None,
-                 after_submit_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileAfterSubmitTextArgs', 'DomainsSelfRegistrationProfileAfterSubmitTextArgsDict']]]]] = None,
+                 after_submit_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileAfterSubmitTextArgs', 'DomainsSelfRegistrationProfileAfterSubmitTextArgsDict', 'outputs.DomainsSelfRegistrationProfileAfterSubmitText']]]]] = None,
                  allowed_email_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
                  consent_text_present: pulumi.Input[Optional[_builtins.bool]] = None,
-                 consent_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileConsentTextArgs', 'DomainsSelfRegistrationProfileConsentTextArgsDict']]]]] = None,
-                 default_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileDefaultGroupArgs', 'DomainsSelfRegistrationProfileDefaultGroupArgsDict']]]]] = None,
+                 consent_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileConsentTextArgs', 'DomainsSelfRegistrationProfileConsentTextArgsDict', 'outputs.DomainsSelfRegistrationProfileConsentText']]]]] = None,
+                 default_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileDefaultGroupArgs', 'DomainsSelfRegistrationProfileDefaultGroupArgsDict', 'outputs.DomainsSelfRegistrationProfileDefaultGroup']]]]] = None,
                  disallowed_email_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 display_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileDisplayNameArgs', 'DomainsSelfRegistrationProfileDisplayNameArgsDict']]]]] = None,
-                 email_template: pulumi.Input[Optional[Union['DomainsSelfRegistrationProfileEmailTemplateArgs', 'DomainsSelfRegistrationProfileEmailTemplateArgsDict']]] = None,
+                 display_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileDisplayNameArgs', 'DomainsSelfRegistrationProfileDisplayNameArgsDict', 'outputs.DomainsSelfRegistrationProfileDisplayName']]]]] = None,
+                 email_template: pulumi.Input[Optional[Union['DomainsSelfRegistrationProfileEmailTemplateArgs', 'DomainsSelfRegistrationProfileEmailTemplateArgsDict', 'outputs.DomainsSelfRegistrationProfileEmailTemplate']]] = None,
                  external_id: pulumi.Input[Optional[_builtins.str]] = None,
                  footer_logo: pulumi.Input[Optional[_builtins.str]] = None,
-                 footer_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileFooterTextArgs', 'DomainsSelfRegistrationProfileFooterTextArgsDict']]]]] = None,
+                 footer_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileFooterTextArgs', 'DomainsSelfRegistrationProfileFooterTextArgsDict', 'outputs.DomainsSelfRegistrationProfileFooterText']]]]] = None,
                  header_logo: pulumi.Input[Optional[_builtins.str]] = None,
-                 header_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileHeaderTextArgs', 'DomainsSelfRegistrationProfileHeaderTextArgsDict']]]]] = None,
+                 header_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileHeaderTextArgs', 'DomainsSelfRegistrationProfileHeaderTextArgsDict', 'outputs.DomainsSelfRegistrationProfileHeaderText']]]]] = None,
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  number_of_days_redirect_url_is_valid: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2627,8 +2627,8 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  show_on_login_page: pulumi.Input[Optional[_builtins.bool]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileTagArgs', 'DomainsSelfRegistrationProfileTagArgsDict']]]]] = None,
-                 user_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileUserAttributeArgs', 'DomainsSelfRegistrationProfileUserAttributeArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileTagArgs', 'DomainsSelfRegistrationProfileTagArgsDict', 'outputs.DomainsSelfRegistrationProfileTag']]]]] = None,
+                 user_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileUserAttributeArgs', 'DomainsSelfRegistrationProfileUserAttributeArgsDict', 'outputs.DomainsSelfRegistrationProfileUserAttribute']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -2705,31 +2705,31 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             activation_email_required: pulumi.Input[Optional[_builtins.bool]] = None,
             active: pulumi.Input[Optional[_builtins.bool]] = None,
-            after_submit_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileAfterSubmitTextArgs', 'DomainsSelfRegistrationProfileAfterSubmitTextArgsDict']]]]] = None,
+            after_submit_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileAfterSubmitTextArgs', 'DomainsSelfRegistrationProfileAfterSubmitTextArgsDict', 'outputs.DomainsSelfRegistrationProfileAfterSubmitText']]]]] = None,
             allowed_email_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             attributes: pulumi.Input[Optional[_builtins.str]] = None,
             authorization: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             consent_text_present: pulumi.Input[Optional[_builtins.bool]] = None,
-            consent_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileConsentTextArgs', 'DomainsSelfRegistrationProfileConsentTextArgsDict']]]]] = None,
-            default_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileDefaultGroupArgs', 'DomainsSelfRegistrationProfileDefaultGroupArgsDict']]]]] = None,
+            consent_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileConsentTextArgs', 'DomainsSelfRegistrationProfileConsentTextArgsDict', 'outputs.DomainsSelfRegistrationProfileConsentText']]]]] = None,
+            default_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileDefaultGroupArgs', 'DomainsSelfRegistrationProfileDefaultGroupArgsDict', 'outputs.DomainsSelfRegistrationProfileDefaultGroup']]]]] = None,
             delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
             disallowed_email_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            display_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileDisplayNameArgs', 'DomainsSelfRegistrationProfileDisplayNameArgsDict']]]]] = None,
+            display_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileDisplayNameArgs', 'DomainsSelfRegistrationProfileDisplayNameArgsDict', 'outputs.DomainsSelfRegistrationProfileDisplayName']]]]] = None,
             domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
-            email_template: pulumi.Input[Optional[Union['DomainsSelfRegistrationProfileEmailTemplateArgs', 'DomainsSelfRegistrationProfileEmailTemplateArgsDict']]] = None,
+            email_template: pulumi.Input[Optional[Union['DomainsSelfRegistrationProfileEmailTemplateArgs', 'DomainsSelfRegistrationProfileEmailTemplateArgsDict', 'outputs.DomainsSelfRegistrationProfileEmailTemplate']]] = None,
             external_id: pulumi.Input[Optional[_builtins.str]] = None,
             footer_logo: pulumi.Input[Optional[_builtins.str]] = None,
-            footer_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileFooterTextArgs', 'DomainsSelfRegistrationProfileFooterTextArgsDict']]]]] = None,
+            footer_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileFooterTextArgs', 'DomainsSelfRegistrationProfileFooterTextArgsDict', 'outputs.DomainsSelfRegistrationProfileFooterText']]]]] = None,
             header_logo: pulumi.Input[Optional[_builtins.str]] = None,
-            header_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileHeaderTextArgs', 'DomainsSelfRegistrationProfileHeaderTextArgsDict']]]]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileIdcsCreatedByArgs', 'DomainsSelfRegistrationProfileIdcsCreatedByArgsDict']]]]] = None,
+            header_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileHeaderTextArgs', 'DomainsSelfRegistrationProfileHeaderTextArgsDict', 'outputs.DomainsSelfRegistrationProfileHeaderText']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileIdcsCreatedByArgs', 'DomainsSelfRegistrationProfileIdcsCreatedByArgsDict', 'outputs.DomainsSelfRegistrationProfileIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileIdcsLastModifiedByArgs', 'DomainsSelfRegistrationProfileIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileIdcsLastModifiedByArgs', 'DomainsSelfRegistrationProfileIdcsLastModifiedByArgsDict', 'outputs.DomainsSelfRegistrationProfileIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileMetaArgs', 'DomainsSelfRegistrationProfileMetaArgsDict']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileMetaArgs', 'DomainsSelfRegistrationProfileMetaArgsDict', 'outputs.DomainsSelfRegistrationProfileMeta']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             number_of_days_redirect_url_is_valid: pulumi.Input[Optional[_builtins.int]] = None,
             ocid: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2737,9 +2737,9 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
             resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
             schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             show_on_login_page: pulumi.Input[Optional[_builtins.bool]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileTagArgs', 'DomainsSelfRegistrationProfileTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileTagArgs', 'DomainsSelfRegistrationProfileTagArgsDict', 'outputs.DomainsSelfRegistrationProfileTag']]]]] = None,
             tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
-            user_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileUserAttributeArgs', 'DomainsSelfRegistrationProfileUserAttributeArgsDict']]]]] = None) -> 'DomainsSelfRegistrationProfile':
+            user_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileUserAttributeArgs', 'DomainsSelfRegistrationProfileUserAttributeArgsDict', 'outputs.DomainsSelfRegistrationProfileUserAttribute']]]]] = None) -> 'DomainsSelfRegistrationProfile':
         """
         Get an existing DomainsSelfRegistrationProfile resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -2767,7 +2767,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileAfterSubmitTextArgs', 'DomainsSelfRegistrationProfileAfterSubmitTextArgsDict']]]] after_submit_texts: (Updatable) Text to be displayed on UI after doing self registration
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileAfterSubmitTextArgs', 'DomainsSelfRegistrationProfileAfterSubmitTextArgsDict', 'outputs.DomainsSelfRegistrationProfileAfterSubmitText']]]] after_submit_texts: (Updatable) Text to be displayed on UI after doing self registration
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [locale]
@@ -2815,7 +2815,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileConsentTextArgs', 'DomainsSelfRegistrationProfileConsentTextArgsDict']]]] consent_texts: (Updatable) Consent text
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileConsentTextArgs', 'DomainsSelfRegistrationProfileConsentTextArgsDict', 'outputs.DomainsSelfRegistrationProfileConsentText']]]] consent_texts: (Updatable) Consent text
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [locale]
@@ -2827,7 +2827,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileDefaultGroupArgs', 'DomainsSelfRegistrationProfileDefaultGroupArgsDict']]]] default_groups: (Updatable) Default groups assigned to the user
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileDefaultGroupArgs', 'DomainsSelfRegistrationProfileDefaultGroupArgsDict', 'outputs.DomainsSelfRegistrationProfileDefaultGroup']]]] default_groups: (Updatable) Default groups assigned to the user
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [value]
@@ -2859,7 +2859,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileDisplayNameArgs', 'DomainsSelfRegistrationProfileDisplayNameArgsDict']]]] display_names: (Updatable) Registration page name
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileDisplayNameArgs', 'DomainsSelfRegistrationProfileDisplayNameArgsDict', 'outputs.DomainsSelfRegistrationProfileDisplayName']]]] display_names: (Updatable) Registration page name
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [locale]
@@ -2882,7 +2882,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsSelfRegistrationProfileEmailTemplateArgs', 'DomainsSelfRegistrationProfileEmailTemplateArgsDict']] email_template: (Updatable) Email template
+        :param pulumi.Input[Union['DomainsSelfRegistrationProfileEmailTemplateArgs', 'DomainsSelfRegistrationProfileEmailTemplateArgsDict', 'outputs.DomainsSelfRegistrationProfileEmailTemplate']] email_template: (Updatable) Email template
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -2909,7 +2909,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                * required: false
                * returned: default
                * type: reference
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileFooterTextArgs', 'DomainsSelfRegistrationProfileFooterTextArgsDict']]]] footer_texts: (Updatable) Footer text
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileFooterTextArgs', 'DomainsSelfRegistrationProfileFooterTextArgsDict', 'outputs.DomainsSelfRegistrationProfileFooterText']]]] footer_texts: (Updatable) Footer text
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [locale]
@@ -2930,7 +2930,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                * required: false
                * returned: default
                * type: reference
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileHeaderTextArgs', 'DomainsSelfRegistrationProfileHeaderTextArgsDict']]]] header_texts: (Updatable) Header text
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileHeaderTextArgs', 'DomainsSelfRegistrationProfileHeaderTextArgsDict', 'outputs.DomainsSelfRegistrationProfileHeaderText']]]] header_texts: (Updatable) Header text
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [locale]
@@ -2942,7 +2942,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileIdcsCreatedByArgs', 'DomainsSelfRegistrationProfileIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileIdcsCreatedByArgs', 'DomainsSelfRegistrationProfileIdcsCreatedByArgsDict', 'outputs.DomainsSelfRegistrationProfileIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -2952,7 +2952,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileIdcsLastModifiedByArgs', 'DomainsSelfRegistrationProfileIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileIdcsLastModifiedByArgs', 'DomainsSelfRegistrationProfileIdcsLastModifiedByArgsDict', 'outputs.DomainsSelfRegistrationProfileIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -2982,7 +2982,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileMetaArgs', 'DomainsSelfRegistrationProfileMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileMetaArgs', 'DomainsSelfRegistrationProfileMetaArgsDict', 'outputs.DomainsSelfRegistrationProfileMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -3059,7 +3059,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileTagArgs', 'DomainsSelfRegistrationProfileTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileTagArgs', 'DomainsSelfRegistrationProfileTagArgsDict', 'outputs.DomainsSelfRegistrationProfileTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -3081,7 +3081,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileUserAttributeArgs', 'DomainsSelfRegistrationProfileUserAttributeArgsDict']]]] user_attributes: (Updatable) **SCIM++ Properties:**
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileUserAttributeArgs', 'DomainsSelfRegistrationProfileUserAttributeArgsDict', 'outputs.DomainsSelfRegistrationProfileUserAttribute']]]] user_attributes: (Updatable) **SCIM++ Properties:**
                * idcsCompositeKey: [value]
                * idcsSearchable: true
                * multiValued: true

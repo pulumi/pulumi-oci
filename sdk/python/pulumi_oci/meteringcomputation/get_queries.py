@@ -88,7 +88,7 @@ class AwaitableGetQueriesResult(GetQueriesResult):
 
 
 def get_queries(compartment_id: Optional[_builtins.str] = None,
-                filters: Optional[Sequence[Union['GetQueriesFilterArgs', 'GetQueriesFilterArgsDict']]] = None,
+                filters: Optional[Sequence[Union['GetQueriesFilterArgs', 'GetQueriesFilterArgsDict', 'outputs.GetQueriesFilterResult']]] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetQueriesResult:
     """
     This data source provides the list of Queries in Oracle Cloud Infrastructure Metering Computation service.
@@ -106,7 +106,7 @@ def get_queries(compartment_id: Optional[_builtins.str] = None,
 
 
     :param _builtins.str compartment_id: The compartment ID in which to list resources.
-    :param Sequence[Union['GetQueriesFilterArgs', 'GetQueriesFilterArgsDict']] filters: The filter object for query usage.
+    :param Sequence[Union['GetQueriesFilterArgs', 'GetQueriesFilterArgsDict', 'outputs.GetQueriesFilterResult']] filters: The filter object for query usage.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -120,7 +120,7 @@ def get_queries(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         query_collections=pulumi.get(__ret__, 'query_collections'))
 def get_queries_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetQueriesFilterArgs', 'GetQueriesFilterArgsDict']]]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetQueriesFilterArgs', 'GetQueriesFilterArgsDict', 'outputs.GetQueriesFilterResult']]]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetQueriesResult]:
     """
     This data source provides the list of Queries in Oracle Cloud Infrastructure Metering Computation service.
@@ -138,7 +138,7 @@ def get_queries_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = N
 
 
     :param _builtins.str compartment_id: The compartment ID in which to list resources.
-    :param Sequence[Union['GetQueriesFilterArgs', 'GetQueriesFilterArgsDict']] filters: The filter object for query usage.
+    :param Sequence[Union['GetQueriesFilterArgs', 'GetQueriesFilterArgsDict', 'outputs.GetQueriesFilterResult']] filters: The filter object for query usage.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id

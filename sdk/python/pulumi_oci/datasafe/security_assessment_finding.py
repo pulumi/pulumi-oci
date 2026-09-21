@@ -429,7 +429,7 @@ class SecurityAssessmentFinding(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentFindingPatchOperationArgs', 'SecurityAssessmentFindingPatchOperationArgsDict']]]]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentFindingPatchOperationArgs', 'SecurityAssessmentFindingPatchOperationArgsDict', 'outputs.SecurityAssessmentFindingPatchOperation']]]]] = None,
                  security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -466,7 +466,7 @@ class SecurityAssessmentFinding(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentFindingPatchOperationArgs', 'SecurityAssessmentFindingPatchOperationArgsDict']]]] patch_operations: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentFindingPatchOperationArgs', 'SecurityAssessmentFindingPatchOperationArgsDict', 'outputs.SecurityAssessmentFindingPatchOperation']]]] patch_operations: (Updatable)
         :param pulumi.Input[_builtins.str] security_assessment_id: ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -523,7 +523,7 @@ class SecurityAssessmentFinding(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentFindingPatchOperationArgs', 'SecurityAssessmentFindingPatchOperationArgsDict']]]]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentFindingPatchOperationArgs', 'SecurityAssessmentFindingPatchOperationArgsDict', 'outputs.SecurityAssessmentFindingPatchOperation']]]]] = None,
                  security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -579,8 +579,8 @@ class SecurityAssessmentFinding(pulumi.CustomResource):
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             oneline: pulumi.Input[Optional[_builtins.str]] = None,
             oracle_defined_severity: pulumi.Input[Optional[_builtins.str]] = None,
-            patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentFindingPatchOperationArgs', 'SecurityAssessmentFindingPatchOperationArgsDict']]]]] = None,
-            references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentFindingReferenceArgs', 'SecurityAssessmentFindingReferenceArgsDict']]]]] = None,
+            patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentFindingPatchOperationArgs', 'SecurityAssessmentFindingPatchOperationArgsDict', 'outputs.SecurityAssessmentFindingPatchOperation']]]]] = None,
+            references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentFindingReferenceArgs', 'SecurityAssessmentFindingReferenceArgsDict', 'outputs.SecurityAssessmentFindingReference']]]]] = None,
             remarks: pulumi.Input[Optional[_builtins.str]] = None,
             security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
             severity: pulumi.Input[Optional[_builtins.str]] = None,
@@ -608,8 +608,8 @@ class SecurityAssessmentFinding(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the current state of the finding.
         :param pulumi.Input[_builtins.str] oneline: Provides a recommended approach to take to remediate the finding reported.
         :param pulumi.Input[_builtins.str] oracle_defined_severity: The severity of the finding as determined by security assessment. This cannot be modified by user.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentFindingPatchOperationArgs', 'SecurityAssessmentFindingPatchOperationArgsDict']]]] patch_operations: (Updatable)
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentFindingReferenceArgs', 'SecurityAssessmentFindingReferenceArgsDict']]]] references: Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentFindingPatchOperationArgs', 'SecurityAssessmentFindingPatchOperationArgsDict', 'outputs.SecurityAssessmentFindingPatchOperation']]]] patch_operations: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentFindingReferenceArgs', 'SecurityAssessmentFindingReferenceArgsDict', 'outputs.SecurityAssessmentFindingReference']]]] references: Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
         :param pulumi.Input[_builtins.str] remarks: The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         :param pulumi.Input[_builtins.str] security_assessment_id: ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

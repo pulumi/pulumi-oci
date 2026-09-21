@@ -264,7 +264,7 @@ class LogAnalyticsEntityType(pulumi.CustomResource):
                  category: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
-                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsEntityTypePropertyArgs', 'LogAnalyticsEntityTypePropertyArgsDict']]]]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsEntityTypePropertyArgs', 'LogAnalyticsEntityTypePropertyArgsDict', 'outputs.LogAnalyticsEntityTypeProperty']]]]] = None,
                  __props__=None):
         """
         This resource provides the Log Analytics Entity Type resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -304,7 +304,7 @@ class LogAnalyticsEntityType(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] category: Log analytics entity type category. Category will be used for grouping and filtering.
         :param pulumi.Input[_builtins.str] name: Log analytics entity type name.
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
-        :param pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsEntityTypePropertyArgs', 'LogAnalyticsEntityTypePropertyArgsDict']]]] properties: Log analytics entity type property definition.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsEntityTypePropertyArgs', 'LogAnalyticsEntityTypePropertyArgsDict', 'outputs.LogAnalyticsEntityTypeProperty']]]] properties: Log analytics entity type property definition.
         """
         ...
     @overload
@@ -363,7 +363,7 @@ class LogAnalyticsEntityType(pulumi.CustomResource):
                  category: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
-                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsEntityTypePropertyArgs', 'LogAnalyticsEntityTypePropertyArgsDict']]]]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsEntityTypePropertyArgs', 'LogAnalyticsEntityTypePropertyArgsDict', 'outputs.LogAnalyticsEntityTypeProperty']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -401,7 +401,7 @@ class LogAnalyticsEntityType(pulumi.CustomResource):
             management_agent_eligibility_status: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             namespace: pulumi.Input[Optional[_builtins.str]] = None,
-            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsEntityTypePropertyArgs', 'LogAnalyticsEntityTypePropertyArgsDict']]]]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsEntityTypePropertyArgs', 'LogAnalyticsEntityTypePropertyArgsDict', 'outputs.LogAnalyticsEntityTypeProperty']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'LogAnalyticsEntityType':
@@ -417,7 +417,7 @@ class LogAnalyticsEntityType(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] internal_name: Internal name for the log analytics entity type.
         :param pulumi.Input[_builtins.str] name: Log analytics entity type name.
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
-        :param pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsEntityTypePropertyArgs', 'LogAnalyticsEntityTypePropertyArgsDict']]]] properties: Log analytics entity type property definition.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsEntityTypePropertyArgs', 'LogAnalyticsEntityTypePropertyArgsDict', 'outputs.LogAnalyticsEntityTypeProperty']]]] properties: Log analytics entity type property definition.
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the log analytics entity type.
         :param pulumi.Input[_builtins.str] time_created: Time the log analytics entity type was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: Time the log analytics entity type was updated. An RFC3339 formatted datetime string.

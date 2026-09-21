@@ -127,7 +127,7 @@ class AwaitableGetCostadCostAnomalyMonitorsResult(GetCostadCostAnomalyMonitorsRe
 
 
 def get_costad_cost_anomaly_monitors(compartment_id: Optional[_builtins.str] = None,
-                                     filters: Optional[Sequence[Union['GetCostadCostAnomalyMonitorsFilterArgs', 'GetCostadCostAnomalyMonitorsFilterArgsDict']]] = None,
+                                     filters: Optional[Sequence[Union['GetCostadCostAnomalyMonitorsFilterArgs', 'GetCostadCostAnomalyMonitorsFilterArgsDict', 'outputs.GetCostadCostAnomalyMonitorsFilterResult']]] = None,
                                      name: Optional[_builtins.str] = None,
                                      regions: Optional[Sequence[_builtins.str]] = None,
                                      state: Optional[_builtins.str] = None,
@@ -178,7 +178,7 @@ def get_costad_cost_anomaly_monitors(compartment_id: Optional[_builtins.str] = N
         state=pulumi.get(__ret__, 'state'),
         target_tenant_ids=pulumi.get(__ret__, 'target_tenant_ids'))
 def get_costad_cost_anomaly_monitors_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCostadCostAnomalyMonitorsFilterArgs', 'GetCostadCostAnomalyMonitorsFilterArgsDict']]]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCostadCostAnomalyMonitorsFilterArgs', 'GetCostadCostAnomalyMonitorsFilterArgsDict', 'outputs.GetCostadCostAnomalyMonitorsFilterResult']]]]] = None,
                                             name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             regions: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

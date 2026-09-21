@@ -134,7 +134,7 @@ class AwaitableGetUsersResult(GetUsersResult):
 
 def get_users(compartment_id: Optional[_builtins.str] = None,
               external_identifier: Optional[_builtins.str] = None,
-              filters: Optional[Sequence[Union['GetUsersFilterArgs', 'GetUsersFilterArgsDict']]] = None,
+              filters: Optional[Sequence[Union['GetUsersFilterArgs', 'GetUsersFilterArgsDict', 'outputs.GetUsersFilterResult']]] = None,
               identity_provider_id: Optional[_builtins.str] = None,
               name: Optional[_builtins.str] = None,
               state: Optional[_builtins.str] = None,
@@ -187,7 +187,7 @@ def get_users(compartment_id: Optional[_builtins.str] = None,
         users=pulumi.get(__ret__, 'users'))
 def get_users_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                      external_identifier: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUsersFilterArgs', 'GetUsersFilterArgsDict']]]]] = None,
+                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUsersFilterArgs', 'GetUsersFilterArgsDict', 'outputs.GetUsersFilterResult']]]]] = None,
                      identity_provider_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

@@ -107,7 +107,7 @@ class AwaitableGetShapeResult(GetShapeResult):
 
 def get_shape(availability_domain: Optional[_builtins.str] = None,
               compartment_id: Optional[_builtins.str] = None,
-              filters: Optional[Sequence[Union['GetShapeFilterArgs', 'GetShapeFilterArgsDict']]] = None,
+              filters: Optional[Sequence[Union['GetShapeFilterArgs', 'GetShapeFilterArgsDict', 'outputs.GetShapeFilterResult']]] = None,
               image_id: Optional[_builtins.str] = None,
               shape: Optional[_builtins.str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetShapeResult:
@@ -133,7 +133,7 @@ def get_shape(availability_domain: Optional[_builtins.str] = None,
         shapes=pulumi.get(__ret__, 'shapes'))
 def get_shape_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetShapeFilterArgs', 'GetShapeFilterArgsDict']]]]] = None,
+                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetShapeFilterArgs', 'GetShapeFilterArgsDict', 'outputs.GetShapeFilterResult']]]]] = None,
                      image_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      shape: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetShapeResult]:

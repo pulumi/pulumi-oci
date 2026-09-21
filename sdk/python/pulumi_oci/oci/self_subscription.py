@@ -545,7 +545,7 @@ class SelfSubscription(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfSubscriptionAdditionalDetailArgs', 'SelfSubscriptionAdditionalDetailArgsDict']]]]] = None,
+                 additional_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfSubscriptionAdditionalDetailArgs', 'SelfSubscriptionAdditionalDetailArgsDict', 'outputs.SelfSubscriptionAdditionalDetail']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -555,7 +555,7 @@ class SelfSubscription(pulumi.CustomResource):
                  region: pulumi.Input[Optional[_builtins.str]] = None,
                  seller_id: pulumi.Input[Optional[_builtins.str]] = None,
                  source_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 subscription_details: pulumi.Input[Optional[Union['SelfSubscriptionSubscriptionDetailsArgs', 'SelfSubscriptionSubscriptionDetailsArgsDict']]] = None,
+                 subscription_details: pulumi.Input[Optional[Union['SelfSubscriptionSubscriptionDetailsArgs', 'SelfSubscriptionSubscriptionDetailsArgsDict', 'outputs.SelfSubscriptionSubscriptionDetails']]] = None,
                  tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -635,7 +635,7 @@ class SelfSubscription(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SelfSubscriptionAdditionalDetailArgs', 'SelfSubscriptionAdditionalDetailArgsDict']]]] additional_details: Additional details that are specific for this subscription such as activation details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SelfSubscriptionAdditionalDetailArgs', 'SelfSubscriptionAdditionalDetailArgsDict', 'outputs.SelfSubscriptionAdditionalDetail']]]] additional_details: Additional details that are specific for this subscription such as activation details.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the subscription in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The subscription name. Must be unique within the compartment. This value can be updated.
@@ -645,7 +645,7 @@ class SelfSubscription(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] region: The region from where customer is buying the subscription.
         :param pulumi.Input[_builtins.str] seller_id: The OCID for the seller in SELF Service.
         :param pulumi.Input[_builtins.str] source_type: The type of seller in SELF Service.
-        :param pulumi.Input[Union['SelfSubscriptionSubscriptionDetailsArgs', 'SelfSubscriptionSubscriptionDetailsArgsDict']] subscription_details: The details of a subscription
+        :param pulumi.Input[Union['SelfSubscriptionSubscriptionDetailsArgs', 'SelfSubscriptionSubscriptionDetailsArgsDict', 'outputs.SelfSubscriptionSubscriptionDetails']] subscription_details: The details of a subscription
         :param pulumi.Input[_builtins.str] tenant_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant to create the subscription in.
                
                ** IMPORTANT **
@@ -747,7 +747,7 @@ class SelfSubscription(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfSubscriptionAdditionalDetailArgs', 'SelfSubscriptionAdditionalDetailArgsDict']]]]] = None,
+                 additional_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfSubscriptionAdditionalDetailArgs', 'SelfSubscriptionAdditionalDetailArgsDict', 'outputs.SelfSubscriptionAdditionalDetail']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -757,7 +757,7 @@ class SelfSubscription(pulumi.CustomResource):
                  region: pulumi.Input[Optional[_builtins.str]] = None,
                  seller_id: pulumi.Input[Optional[_builtins.str]] = None,
                  source_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 subscription_details: pulumi.Input[Optional[Union['SelfSubscriptionSubscriptionDetailsArgs', 'SelfSubscriptionSubscriptionDetailsArgsDict']]] = None,
+                 subscription_details: pulumi.Input[Optional[Union['SelfSubscriptionSubscriptionDetailsArgs', 'SelfSubscriptionSubscriptionDetailsArgsDict', 'outputs.SelfSubscriptionSubscriptionDetails']]] = None,
                  tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -807,7 +807,7 @@ class SelfSubscription(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfSubscriptionAdditionalDetailArgs', 'SelfSubscriptionAdditionalDetailArgsDict']]]]] = None,
+            additional_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfSubscriptionAdditionalDetailArgs', 'SelfSubscriptionAdditionalDetailArgsDict', 'outputs.SelfSubscriptionAdditionalDetail']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -819,7 +819,7 @@ class SelfSubscription(pulumi.CustomResource):
             seller_id: pulumi.Input[Optional[_builtins.str]] = None,
             source_type: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            subscription_details: pulumi.Input[Optional[Union['SelfSubscriptionSubscriptionDetailsArgs', 'SelfSubscriptionSubscriptionDetailsArgsDict']]] = None,
+            subscription_details: pulumi.Input[Optional[Union['SelfSubscriptionSubscriptionDetailsArgs', 'SelfSubscriptionSubscriptionDetailsArgsDict', 'outputs.SelfSubscriptionSubscriptionDetails']]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -833,7 +833,7 @@ class SelfSubscription(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SelfSubscriptionAdditionalDetailArgs', 'SelfSubscriptionAdditionalDetailArgsDict']]]] additional_details: Additional details that are specific for this subscription such as activation details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SelfSubscriptionAdditionalDetailArgs', 'SelfSubscriptionAdditionalDetailArgsDict', 'outputs.SelfSubscriptionAdditionalDetail']]]] additional_details: Additional details that are specific for this subscription such as activation details.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the subscription in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The subscription name. Must be unique within the compartment. This value can be updated.
@@ -845,7 +845,7 @@ class SelfSubscription(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] seller_id: The OCID for the seller in SELF Service.
         :param pulumi.Input[_builtins.str] source_type: The type of seller in SELF Service.
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Subscription.
-        :param pulumi.Input[Union['SelfSubscriptionSubscriptionDetailsArgs', 'SelfSubscriptionSubscriptionDetailsArgsDict']] subscription_details: The details of a subscription
+        :param pulumi.Input[Union['SelfSubscriptionSubscriptionDetailsArgs', 'SelfSubscriptionSubscriptionDetailsArgsDict', 'outputs.SelfSubscriptionSubscriptionDetails']] subscription_details: The details of a subscription
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] tenant_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant to create the subscription in.
                

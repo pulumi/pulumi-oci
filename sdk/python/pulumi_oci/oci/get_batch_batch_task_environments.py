@@ -110,7 +110,7 @@ class AwaitableGetBatchBatchTaskEnvironmentsResult(GetBatchBatchTaskEnvironments
 
 def get_batch_batch_task_environments(compartment_id: Optional[_builtins.str] = None,
                                       display_name: Optional[_builtins.str] = None,
-                                      filters: Optional[Sequence[Union['GetBatchBatchTaskEnvironmentsFilterArgs', 'GetBatchBatchTaskEnvironmentsFilterArgsDict']]] = None,
+                                      filters: Optional[Sequence[Union['GetBatchBatchTaskEnvironmentsFilterArgs', 'GetBatchBatchTaskEnvironmentsFilterArgsDict', 'outputs.GetBatchBatchTaskEnvironmentsFilterResult']]] = None,
                                       id: Optional[_builtins.str] = None,
                                       state: Optional[_builtins.str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBatchBatchTaskEnvironmentsResult:
@@ -155,7 +155,7 @@ def get_batch_batch_task_environments(compartment_id: Optional[_builtins.str] = 
         state=pulumi.get(__ret__, 'state'))
 def get_batch_batch_task_environments_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBatchBatchTaskEnvironmentsFilterArgs', 'GetBatchBatchTaskEnvironmentsFilterArgsDict']]]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBatchBatchTaskEnvironmentsFilterArgs', 'GetBatchBatchTaskEnvironmentsFilterArgsDict', 'outputs.GetBatchBatchTaskEnvironmentsFilterResult']]]]] = None,
                                              id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBatchBatchTaskEnvironmentsResult]:

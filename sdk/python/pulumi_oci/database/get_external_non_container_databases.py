@@ -110,7 +110,7 @@ class AwaitableGetExternalNonContainerDatabasesResult(GetExternalNonContainerDat
 
 def get_external_non_container_databases(compartment_id: Optional[_builtins.str] = None,
                                          display_name: Optional[_builtins.str] = None,
-                                         filters: Optional[Sequence[Union['GetExternalNonContainerDatabasesFilterArgs', 'GetExternalNonContainerDatabasesFilterArgsDict']]] = None,
+                                         filters: Optional[Sequence[Union['GetExternalNonContainerDatabasesFilterArgs', 'GetExternalNonContainerDatabasesFilterArgsDict', 'outputs.GetExternalNonContainerDatabasesFilterResult']]] = None,
                                          state: Optional[_builtins.str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalNonContainerDatabasesResult:
     """
@@ -151,7 +151,7 @@ def get_external_non_container_databases(compartment_id: Optional[_builtins.str]
         state=pulumi.get(__ret__, 'state'))
 def get_external_non_container_databases_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalNonContainerDatabasesFilterArgs', 'GetExternalNonContainerDatabasesFilterArgsDict']]]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalNonContainerDatabasesFilterArgs', 'GetExternalNonContainerDatabasesFilterArgsDict', 'outputs.GetExternalNonContainerDatabasesFilterResult']]]]] = None,
                                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalNonContainerDatabasesResult]:
     """

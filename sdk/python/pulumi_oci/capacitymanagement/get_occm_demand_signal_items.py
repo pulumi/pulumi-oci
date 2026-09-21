@@ -119,7 +119,7 @@ class AwaitableGetOccmDemandSignalItemsResult(GetOccmDemandSignalItemsResult):
 
 def get_occm_demand_signal_items(compartment_id: Optional[_builtins.str] = None,
                                  demand_signal_namespace: Optional[_builtins.str] = None,
-                                 filters: Optional[Sequence[Union['GetOccmDemandSignalItemsFilterArgs', 'GetOccmDemandSignalItemsFilterArgsDict']]] = None,
+                                 filters: Optional[Sequence[Union['GetOccmDemandSignalItemsFilterArgs', 'GetOccmDemandSignalItemsFilterArgsDict', 'outputs.GetOccmDemandSignalItemsFilterResult']]] = None,
                                  occm_demand_signal_id: Optional[_builtins.str] = None,
                                  resource_name: Optional[_builtins.str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOccmDemandSignalItemsResult:
@@ -165,7 +165,7 @@ def get_occm_demand_signal_items(compartment_id: Optional[_builtins.str] = None,
         resource_name=pulumi.get(__ret__, 'resource_name'))
 def get_occm_demand_signal_items_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         demand_signal_namespace: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOccmDemandSignalItemsFilterArgs', 'GetOccmDemandSignalItemsFilterArgsDict']]]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOccmDemandSignalItemsFilterArgs', 'GetOccmDemandSignalItemsFilterArgsDict', 'outputs.GetOccmDemandSignalItemsFilterResult']]]]] = None,
                                         occm_demand_signal_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         resource_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccmDemandSignalItemsResult]:

@@ -110,7 +110,7 @@ class AwaitableGetDbSystemOsPatchHistoryEntriesResult(GetDbSystemOsPatchHistoryE
 
 def get_db_system_os_patch_history_entries(action: Optional[_builtins.str] = None,
                                            db_system_id: Optional[_builtins.str] = None,
-                                           filters: Optional[Sequence[Union['GetDbSystemOsPatchHistoryEntriesFilterArgs', 'GetDbSystemOsPatchHistoryEntriesFilterArgsDict']]] = None,
+                                           filters: Optional[Sequence[Union['GetDbSystemOsPatchHistoryEntriesFilterArgs', 'GetDbSystemOsPatchHistoryEntriesFilterArgsDict', 'outputs.GetDbSystemOsPatchHistoryEntriesFilterResult']]] = None,
                                            state: Optional[_builtins.str] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbSystemOsPatchHistoryEntriesResult:
     """
@@ -151,7 +151,7 @@ def get_db_system_os_patch_history_entries(action: Optional[_builtins.str] = Non
         state=pulumi.get(__ret__, 'state'))
 def get_db_system_os_patch_history_entries_output(action: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemOsPatchHistoryEntriesFilterArgs', 'GetDbSystemOsPatchHistoryEntriesFilterArgsDict']]]]] = None,
+                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemOsPatchHistoryEntriesFilterArgs', 'GetDbSystemOsPatchHistoryEntriesFilterArgsDict', 'outputs.GetDbSystemOsPatchHistoryEntriesFilterResult']]]]] = None,
                                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemOsPatchHistoryEntriesResult]:
     """

@@ -116,7 +116,7 @@ class AwaitableGetProfileLevelsResult(GetProfileLevelsResult):
 
 def get_profile_levels(compartment_id: Optional[_builtins.str] = None,
                        compartment_id_in_subtree: Optional[_builtins.bool] = None,
-                       filters: Optional[Sequence[Union['GetProfileLevelsFilterArgs', 'GetProfileLevelsFilterArgsDict']]] = None,
+                       filters: Optional[Sequence[Union['GetProfileLevelsFilterArgs', 'GetProfileLevelsFilterArgsDict', 'outputs.GetProfileLevelsFilterResult']]] = None,
                        name: Optional[_builtins.str] = None,
                        recommendation_name: Optional[_builtins.str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProfileLevelsResult:
@@ -164,7 +164,7 @@ def get_profile_levels(compartment_id: Optional[_builtins.str] = None,
         recommendation_name=pulumi.get(__ret__, 'recommendation_name'))
 def get_profile_levels_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                               compartment_id_in_subtree: pulumi.Input[Optional[_builtins.bool]] = None,
-                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProfileLevelsFilterArgs', 'GetProfileLevelsFilterArgsDict']]]]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProfileLevelsFilterArgs', 'GetProfileLevelsFilterArgsDict', 'outputs.GetProfileLevelsFilterResult']]]]] = None,
                               name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               recommendation_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProfileLevelsResult]:

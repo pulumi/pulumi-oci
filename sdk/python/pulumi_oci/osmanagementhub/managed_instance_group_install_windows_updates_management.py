@@ -138,7 +138,7 @@ class ManagedInstanceGroupInstallWindowsUpdatesManagement(pulumi.CustomResource)
                  opts: Optional[pulumi.ResourceOptions] = None,
                  managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  windows_update_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict']]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetails']]] = None,
                  __props__=None):
         """
         This resource provides the Managed Instance Group Install Windows Updates Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -176,7 +176,7 @@ class ManagedInstanceGroupInstallWindowsUpdatesManagement(pulumi.CustomResource)
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] windows_update_types: The type of Windows updates to be applied.
-        :param pulumi.Input[Union['ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetails']] work_request_details: Provides the name and description of the job.
         """
         ...
     @overload
@@ -233,7 +233,7 @@ class ManagedInstanceGroupInstallWindowsUpdatesManagement(pulumi.CustomResource)
                  opts: Optional[pulumi.ResourceOptions] = None,
                  managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  windows_update_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict']]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetails']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -262,7 +262,7 @@ class ManagedInstanceGroupInstallWindowsUpdatesManagement(pulumi.CustomResource)
             opts: Optional[pulumi.ResourceOptions] = None,
             managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
             windows_update_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceGroupInstallWindowsUpdatesManagement':
+            work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetails']]] = None) -> 'ManagedInstanceGroupInstallWindowsUpdatesManagement':
         """
         Get an existing ManagedInstanceGroupInstallWindowsUpdatesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -272,7 +272,7 @@ class ManagedInstanceGroupInstallWindowsUpdatesManagement(pulumi.CustomResource)
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] windows_update_types: The type of Windows updates to be applied.
-        :param pulumi.Input[Union['ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetails']] work_request_details: Provides the name and description of the job.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

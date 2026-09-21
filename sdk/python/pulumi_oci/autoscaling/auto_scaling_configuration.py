@@ -359,14 +359,14 @@ class AutoScalingConfiguration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_scaling_resources: pulumi.Input[Optional[Union['AutoScalingConfigurationAutoScalingResourcesArgs', 'AutoScalingConfigurationAutoScalingResourcesArgsDict']]] = None,
+                 auto_scaling_resources: pulumi.Input[Optional[Union['AutoScalingConfigurationAutoScalingResourcesArgs', 'AutoScalingConfigurationAutoScalingResourcesArgsDict', 'outputs.AutoScalingConfigurationAutoScalingResources']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  cool_down_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]]]] = None,
+                 policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict', 'outputs.AutoScalingConfigurationPolicy']]]]] = None,
                  __props__=None):
         """
         This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Auto Scaling service.
@@ -449,7 +449,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['AutoScalingConfigurationAutoScalingResourcesArgs', 'AutoScalingConfigurationAutoScalingResourcesArgsDict']] auto_scaling_resources: A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
+        :param pulumi.Input[Union['AutoScalingConfigurationAutoScalingResourcesArgs', 'AutoScalingConfigurationAutoScalingResourcesArgsDict', 'outputs.AutoScalingConfigurationAutoScalingResources']] auto_scaling_resources: A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
                
                Each instance pool can have one autoscaling configuration.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
@@ -460,7 +460,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether the autoscaling configuration is enabled.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]]] policies: Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict', 'outputs.AutoScalingConfigurationPolicy']]]] policies: Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
         """
         ...
     @overload
@@ -562,14 +562,14 @@ class AutoScalingConfiguration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_scaling_resources: pulumi.Input[Optional[Union['AutoScalingConfigurationAutoScalingResourcesArgs', 'AutoScalingConfigurationAutoScalingResourcesArgsDict']]] = None,
+                 auto_scaling_resources: pulumi.Input[Optional[Union['AutoScalingConfigurationAutoScalingResourcesArgs', 'AutoScalingConfigurationAutoScalingResourcesArgsDict', 'outputs.AutoScalingConfigurationAutoScalingResources']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  cool_down_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]]]] = None,
+                 policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict', 'outputs.AutoScalingConfigurationPolicy']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -606,7 +606,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            auto_scaling_resources: pulumi.Input[Optional[Union['AutoScalingConfigurationAutoScalingResourcesArgs', 'AutoScalingConfigurationAutoScalingResourcesArgsDict']]] = None,
+            auto_scaling_resources: pulumi.Input[Optional[Union['AutoScalingConfigurationAutoScalingResourcesArgs', 'AutoScalingConfigurationAutoScalingResourcesArgsDict', 'outputs.AutoScalingConfigurationAutoScalingResources']]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             cool_down_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -615,7 +615,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
             is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             max_resource_count: pulumi.Input[Optional[_builtins.int]] = None,
             min_resource_count: pulumi.Input[Optional[_builtins.int]] = None,
-            policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]]]] = None,
+            policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict', 'outputs.AutoScalingConfigurationPolicy']]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'AutoScalingConfiguration':
         """
         Get an existing AutoScalingConfiguration resource's state with the given name, id, and optional extra
@@ -624,7 +624,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['AutoScalingConfigurationAutoScalingResourcesArgs', 'AutoScalingConfigurationAutoScalingResourcesArgsDict']] auto_scaling_resources: A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
+        :param pulumi.Input[Union['AutoScalingConfigurationAutoScalingResourcesArgs', 'AutoScalingConfigurationAutoScalingResourcesArgsDict', 'outputs.AutoScalingConfigurationAutoScalingResources']] auto_scaling_resources: A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
                
                Each instance pool can have one autoscaling configuration.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
@@ -637,7 +637,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether the autoscaling configuration is enabled.
         :param pulumi.Input[_builtins.int] max_resource_count: The maximum number of resources to scale out to.
         :param pulumi.Input[_builtins.int] min_resource_count: The minimum number of resources to scale in to.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]]] policies: Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict', 'outputs.AutoScalingConfigurationPolicy']]]] policies: Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
         :param pulumi.Input[_builtins.str] time_created: The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

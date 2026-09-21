@@ -671,7 +671,7 @@ class WorkspaceExportRequest(pulumi.CustomResource):
             bucket: pulumi.Input[Optional[_builtins.str]] = None,
             created_by: pulumi.Input[Optional[_builtins.str]] = None,
             error_messages: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            exported_items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceExportRequestExportedItemArgs', 'WorkspaceExportRequestExportedItemArgsDict']]]]] = None,
+            exported_items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceExportRequestExportedItemArgs', 'WorkspaceExportRequestExportedItemArgsDict', 'outputs.WorkspaceExportRequestExportedItem']]]]] = None,
             file_name: pulumi.Input[Optional[_builtins.str]] = None,
             filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             is_object_overwrite_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -697,7 +697,7 @@ class WorkspaceExportRequest(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] bucket: Name of the Object Storage bucket where the object will be exported.
         :param pulumi.Input[_builtins.str] created_by: Name of the user who initiated export request.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] error_messages: Contains key of the error
-        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceExportRequestExportedItemArgs', 'WorkspaceExportRequestExportedItemArgsDict']]]] exported_items: The array of exported object details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceExportRequestExportedItemArgs', 'WorkspaceExportRequestExportedItemArgsDict', 'outputs.WorkspaceExportRequestExportedItem']]]] exported_items: The array of exported object details.
         :param pulumi.Input[_builtins.str] file_name: Name of the exported zip file.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] filters: Filters for exported objects
         :param pulumi.Input[_builtins.bool] is_object_overwrite_enabled: Flag to control whether to overwrite the object if it is already present at the provided object storage location.

@@ -158,7 +158,7 @@ class AwaitableGetFleetContainersResult(GetFleetContainersResult):
 
 def get_fleet_containers(application_name: Optional[_builtins.str] = None,
                          display_name: Optional[_builtins.str] = None,
-                         filters: Optional[Sequence[Union['GetFleetContainersFilterArgs', 'GetFleetContainersFilterArgsDict']]] = None,
+                         filters: Optional[Sequence[Union['GetFleetContainersFilterArgs', 'GetFleetContainersFilterArgsDict', 'outputs.GetFleetContainersFilterResult']]] = None,
                          fleet_id: Optional[_builtins.str] = None,
                          jre_security_status: Optional[_builtins.str] = None,
                          jre_version: Optional[_builtins.str] = None,
@@ -224,7 +224,7 @@ def get_fleet_containers(application_name: Optional[_builtins.str] = None,
         time_started_less_than_or_equal_to=pulumi.get(__ret__, 'time_started_less_than_or_equal_to'))
 def get_fleet_containers_output(application_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetContainersFilterArgs', 'GetFleetContainersFilterArgsDict']]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetContainersFilterArgs', 'GetFleetContainersFilterArgsDict', 'outputs.GetFleetContainersFilterResult']]]]] = None,
                                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 jre_security_status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 jre_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

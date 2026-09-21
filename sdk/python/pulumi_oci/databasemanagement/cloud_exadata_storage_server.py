@@ -614,7 +614,7 @@ class CloudExadataStorageServer(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             additional_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             cloud_exadata_storage_server_id: pulumi.Input[Optional[_builtins.str]] = None,
-            connectors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataStorageServerConnectorArgs', 'CloudExadataStorageServerConnectorArgsDict']]]]] = None,
+            connectors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataStorageServerConnectorArgs', 'CloudExadataStorageServerConnectorArgsDict', 'outputs.CloudExadataStorageServerConnector']]]]] = None,
             cpu_count: pulumi.Input[Optional[_builtins.float]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -646,7 +646,7 @@ class CloudExadataStorageServer(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] cloud_exadata_storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataStorageServerConnectorArgs', 'CloudExadataStorageServerConnectorArgsDict']]]] connectors: The connector of the Exadata storage server.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataStorageServerConnectorArgs', 'CloudExadataStorageServerConnectorArgsDict', 'outputs.CloudExadataStorageServerConnector']]]] connectors: The connector of the Exadata storage server.
         :param pulumi.Input[_builtins.float] cpu_count: The CPU count of the Exadata storage server.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.

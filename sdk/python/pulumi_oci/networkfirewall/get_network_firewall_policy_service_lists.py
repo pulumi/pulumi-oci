@@ -91,7 +91,7 @@ class AwaitableGetNetworkFirewallPolicyServiceListsResult(GetNetworkFirewallPoli
 
 
 def get_network_firewall_policy_service_lists(display_name: Optional[_builtins.str] = None,
-                                              filters: Optional[Sequence[Union['GetNetworkFirewallPolicyServiceListsFilterArgs', 'GetNetworkFirewallPolicyServiceListsFilterArgsDict']]] = None,
+                                              filters: Optional[Sequence[Union['GetNetworkFirewallPolicyServiceListsFilterArgs', 'GetNetworkFirewallPolicyServiceListsFilterArgsDict', 'outputs.GetNetworkFirewallPolicyServiceListsFilterResult']]] = None,
                                               network_firewall_policy_id: Optional[_builtins.str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyServiceListsResult:
     """
@@ -127,7 +127,7 @@ def get_network_firewall_policy_service_lists(display_name: Optional[_builtins.s
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'),
         service_list_summary_collections=pulumi.get(__ret__, 'service_list_summary_collections'))
 def get_network_firewall_policy_service_lists_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPolicyServiceListsFilterArgs', 'GetNetworkFirewallPolicyServiceListsFilterArgsDict']]]]] = None,
+                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPolicyServiceListsFilterArgs', 'GetNetworkFirewallPolicyServiceListsFilterArgsDict', 'outputs.GetNetworkFirewallPolicyServiceListsFilterResult']]]]] = None,
                                                      network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyServiceListsResult]:
     """

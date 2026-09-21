@@ -1602,43 +1602,43 @@ class MysqlDbSystem(pulumi.CustomResource):
                  admin_password: pulumi.Input[Optional[_builtins.str]] = None,
                  admin_username: pulumi.Input[Optional[_builtins.str]] = None,
                  availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
-                 backup_policy: pulumi.Input[Optional[Union['MysqlDbSystemBackupPolicyArgs', 'MysqlDbSystemBackupPolicyArgsDict']]] = None,
+                 backup_policy: pulumi.Input[Optional[Union['MysqlDbSystemBackupPolicyArgs', 'MysqlDbSystemBackupPolicyArgsDict', 'outputs.MysqlDbSystemBackupPolicy']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
                  crash_recovery: pulumi.Input[Optional[_builtins.str]] = None,
-                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict']]]]] = None,
-                 data_storage: pulumi.Input[Optional[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']]] = None,
+                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict', 'outputs.MysqlDbSystemCustomerContact']]]]] = None,
+                 data_storage: pulumi.Input[Optional[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict', 'outputs.MysqlDbSystemDataStorage']]] = None,
                  data_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
-                 database_console: pulumi.Input[Optional[Union['MysqlDbSystemDatabaseConsoleArgs', 'MysqlDbSystemDatabaseConsoleArgsDict']]] = None,
+                 database_console: pulumi.Input[Optional[Union['MysqlDbSystemDatabaseConsoleArgs', 'MysqlDbSystemDatabaseConsoleArgsDict', 'outputs.MysqlDbSystemDatabaseConsole']]] = None,
                  database_management: pulumi.Input[Optional[_builtins.str]] = None,
                  database_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deletion_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict']]]]] = None,
+                 deletion_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict', 'outputs.MysqlDbSystemDeletionPolicy']]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 encrypt_data: pulumi.Input[Optional[Union['MysqlDbSystemEncryptDataArgs', 'MysqlDbSystemEncryptDataArgsDict']]] = None,
+                 encrypt_data: pulumi.Input[Optional[Union['MysqlDbSystemEncryptDataArgs', 'MysqlDbSystemEncryptDataArgsDict', 'outputs.MysqlDbSystemEncryptData']]] = None,
                  fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
                  ip_address: pulumi.Input[Optional[_builtins.str]] = None,
-                 ipv6address_ipv6subnet_cidr_pair_details: pulumi.Input[Optional[Union['MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs', 'MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgsDict']]] = None,
+                 ipv6address_ipv6subnet_cidr_pair_details: pulumi.Input[Optional[Union['MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs', 'MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgsDict', 'outputs.MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails']]] = None,
                  is_highly_available: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_ipv6enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 maintenance: pulumi.Input[Optional[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict']]] = None,
+                 maintenance: pulumi.Input[Optional[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict', 'outputs.MysqlDbSystemMaintenance']]] = None,
                  mysql_version: pulumi.Input[Optional[_builtins.str]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  port: pulumi.Input[Optional[_builtins.int]] = None,
                  port_x: pulumi.Input[Optional[_builtins.int]] = None,
-                 read_endpoint: pulumi.Input[Optional[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']]] = None,
-                 rest: pulumi.Input[Optional[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict']]] = None,
-                 secure_connections: pulumi.Input[Optional[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']]] = None,
+                 read_endpoint: pulumi.Input[Optional[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict', 'outputs.MysqlDbSystemReadEndpoint']]] = None,
+                 rest: pulumi.Input[Optional[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict', 'outputs.MysqlDbSystemRest']]] = None,
+                 secure_connections: pulumi.Input[Optional[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict', 'outputs.MysqlDbSystemSecureConnections']]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape_name: pulumi.Input[Optional[_builtins.str]] = None,
                  shutdown_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 source: pulumi.Input[Optional[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict']]] = None,
+                 source: pulumi.Input[Optional[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict', 'outputs.MysqlDbSystemSource']]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 telemetry_configuration: pulumi.Input[Optional[Union['MysqlDbSystemTelemetryConfigurationArgs', 'MysqlDbSystemTelemetryConfigurationArgsDict']]] = None,
+                 telemetry_configuration: pulumi.Input[Optional[Union['MysqlDbSystemTelemetryConfigurationArgs', 'MysqlDbSystemTelemetryConfigurationArgsDict', 'outputs.MysqlDbSystemTelemetryConfiguration']]] = None,
                  __props__=None):
         """
         This resource provides the Mysql Db System resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -1792,23 +1792,23 @@ class MysqlDbSystem(pulumi.CustomResource):
                In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
                
                For a standalone DB System, this defines the availability domain in which the DB System is placed.
-        :param pulumi.Input[Union['MysqlDbSystemBackupPolicyArgs', 'MysqlDbSystemBackupPolicyArgsDict']] backup_policy: (Updatable) Backup policy as optionally used for DB System Creation.
+        :param pulumi.Input[Union['MysqlDbSystemBackupPolicyArgs', 'MysqlDbSystemBackupPolicyArgsDict', 'outputs.MysqlDbSystemBackupPolicy']] backup_policy: (Updatable) Backup policy as optionally used for DB System Creation.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[_builtins.str] configuration_id: (Updatable) The OCID of the Configuration to be used for this DB System.
         :param pulumi.Input[_builtins.str] crash_recovery: (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict']]]] customer_contacts: (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
-        :param pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']] data_storage: (Updatable) Data Storage configuration properties.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict', 'outputs.MysqlDbSystemCustomerContact']]]] customer_contacts: (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+        :param pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict', 'outputs.MysqlDbSystemDataStorage']] data_storage: (Updatable) Data Storage configuration properties.
         :param pulumi.Input[_builtins.int] data_storage_size_in_gb: (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
-        :param pulumi.Input[Union['MysqlDbSystemDatabaseConsoleArgs', 'MysqlDbSystemDatabaseConsoleArgsDict']] database_console: (Updatable) Details required to configure the database console while creating a DB System.
+        :param pulumi.Input[Union['MysqlDbSystemDatabaseConsoleArgs', 'MysqlDbSystemDatabaseConsoleArgsDict', 'outputs.MysqlDbSystemDatabaseConsole']] database_console: (Updatable) Details required to configure the database console while creating a DB System.
         :param pulumi.Input[_builtins.str] database_management: (Updatable) Whether to enable monitoring via the Database Management service.
         :param pulumi.Input[_builtins.str] database_mode: (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
                * READ_WRITE (default): allow running read and write statements on the DB system;
                * READ_ONLY: only allow running read statements on the DB system.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict']]]] deletion_policies: (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict', 'outputs.MysqlDbSystemDeletionPolicy']]]] deletion_policies: (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
         :param pulumi.Input[_builtins.str] description: (Updatable) User-provided data about the DB System.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the DB System. It does not have to be unique.
-        :param pulumi.Input[Union['MysqlDbSystemEncryptDataArgs', 'MysqlDbSystemEncryptDataArgsDict']] encrypt_data: (Updatable) Encrypt data details.
+        :param pulumi.Input[Union['MysqlDbSystemEncryptDataArgs', 'MysqlDbSystemEncryptDataArgsDict', 'outputs.MysqlDbSystemEncryptData']] encrypt_data: (Updatable) Encrypt data details.
         :param pulumi.Input[_builtins.str] fault_domain: The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
                
                In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
@@ -1821,19 +1821,19 @@ class MysqlDbSystem(pulumi.CustomResource):
                
                Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         :param pulumi.Input[_builtins.str] ip_address: The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
-        :param pulumi.Input[Union['MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs', 'MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgsDict']] ipv6address_ipv6subnet_cidr_pair_details: (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+        :param pulumi.Input[Union['MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs', 'MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgsDict', 'outputs.MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails']] ipv6address_ipv6subnet_cidr_pair_details: (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
         :param pulumi.Input[_builtins.bool] is_highly_available: (Updatable) Specifies if the DB System is highly available.
                
                When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
         :param pulumi.Input[_builtins.bool] is_ipv6enabled: (Updatable) Whether to allocate an IPv6 address at DB system creation from an IPv6 enabled subnet. When provided you may optionally provide an IPv6 prefix (ipv6AddressIpv6SubnetCidrPairDetails) of your choice to assign the IPv6 address from. If ipv6AddressIpv6SubnetCidrPairDetails is not provided then an IPv6 prefix is chosen for you.
-        :param pulumi.Input[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict']] maintenance: (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
+        :param pulumi.Input[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict', 'outputs.MysqlDbSystemMaintenance']] maintenance: (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
         :param pulumi.Input[_builtins.str] mysql_version: The specific MySQL version identifier.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) Network Security Group OCIDs used for the VNIC attachment.
         :param pulumi.Input[_builtins.int] port: The port for primary endpoint of the DB System to listen on.
         :param pulumi.Input[_builtins.int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
-        :param pulumi.Input[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']] read_endpoint: (Updatable) Details required to create a Read Endpoint.
-        :param pulumi.Input[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict']] rest: (Updatable) Details required to configure REST while creating a DB System.
-        :param pulumi.Input[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']] secure_connections: (Updatable) Secure connection configuration details.
+        :param pulumi.Input[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict', 'outputs.MysqlDbSystemReadEndpoint']] read_endpoint: (Updatable) Details required to create a Read Endpoint.
+        :param pulumi.Input[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict', 'outputs.MysqlDbSystemRest']] rest: (Updatable) Details required to configure REST while creating a DB System.
+        :param pulumi.Input[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict', 'outputs.MysqlDbSystemSecureConnections']] secure_connections: (Updatable) Secure connection configuration details.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
@@ -1841,10 +1841,10 @@ class MysqlDbSystem(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict']] source: Parameters detailing how to provision the initial data of the system.
+        :param pulumi.Input[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict', 'outputs.MysqlDbSystemSource']] source: Parameters detailing how to provision the initial data of the system.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet the DB System is associated with.
-        :param pulumi.Input[Union['MysqlDbSystemTelemetryConfigurationArgs', 'MysqlDbSystemTelemetryConfigurationArgsDict']] telemetry_configuration: (Updatable) Details required to configure how MySQL telemetry should be exposed.
+        :param pulumi.Input[Union['MysqlDbSystemTelemetryConfigurationArgs', 'MysqlDbSystemTelemetryConfigurationArgsDict', 'outputs.MysqlDbSystemTelemetryConfiguration']] telemetry_configuration: (Updatable) Details required to configure how MySQL telemetry should be exposed.
         """
         ...
     @overload
@@ -2011,43 +2011,43 @@ class MysqlDbSystem(pulumi.CustomResource):
                  admin_password: pulumi.Input[Optional[_builtins.str]] = None,
                  admin_username: pulumi.Input[Optional[_builtins.str]] = None,
                  availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
-                 backup_policy: pulumi.Input[Optional[Union['MysqlDbSystemBackupPolicyArgs', 'MysqlDbSystemBackupPolicyArgsDict']]] = None,
+                 backup_policy: pulumi.Input[Optional[Union['MysqlDbSystemBackupPolicyArgs', 'MysqlDbSystemBackupPolicyArgsDict', 'outputs.MysqlDbSystemBackupPolicy']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
                  crash_recovery: pulumi.Input[Optional[_builtins.str]] = None,
-                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict']]]]] = None,
-                 data_storage: pulumi.Input[Optional[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']]] = None,
+                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict', 'outputs.MysqlDbSystemCustomerContact']]]]] = None,
+                 data_storage: pulumi.Input[Optional[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict', 'outputs.MysqlDbSystemDataStorage']]] = None,
                  data_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
-                 database_console: pulumi.Input[Optional[Union['MysqlDbSystemDatabaseConsoleArgs', 'MysqlDbSystemDatabaseConsoleArgsDict']]] = None,
+                 database_console: pulumi.Input[Optional[Union['MysqlDbSystemDatabaseConsoleArgs', 'MysqlDbSystemDatabaseConsoleArgsDict', 'outputs.MysqlDbSystemDatabaseConsole']]] = None,
                  database_management: pulumi.Input[Optional[_builtins.str]] = None,
                  database_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deletion_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict']]]]] = None,
+                 deletion_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict', 'outputs.MysqlDbSystemDeletionPolicy']]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 encrypt_data: pulumi.Input[Optional[Union['MysqlDbSystemEncryptDataArgs', 'MysqlDbSystemEncryptDataArgsDict']]] = None,
+                 encrypt_data: pulumi.Input[Optional[Union['MysqlDbSystemEncryptDataArgs', 'MysqlDbSystemEncryptDataArgsDict', 'outputs.MysqlDbSystemEncryptData']]] = None,
                  fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
                  ip_address: pulumi.Input[Optional[_builtins.str]] = None,
-                 ipv6address_ipv6subnet_cidr_pair_details: pulumi.Input[Optional[Union['MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs', 'MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgsDict']]] = None,
+                 ipv6address_ipv6subnet_cidr_pair_details: pulumi.Input[Optional[Union['MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs', 'MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgsDict', 'outputs.MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails']]] = None,
                  is_highly_available: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_ipv6enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 maintenance: pulumi.Input[Optional[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict']]] = None,
+                 maintenance: pulumi.Input[Optional[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict', 'outputs.MysqlDbSystemMaintenance']]] = None,
                  mysql_version: pulumi.Input[Optional[_builtins.str]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  port: pulumi.Input[Optional[_builtins.int]] = None,
                  port_x: pulumi.Input[Optional[_builtins.int]] = None,
-                 read_endpoint: pulumi.Input[Optional[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']]] = None,
-                 rest: pulumi.Input[Optional[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict']]] = None,
-                 secure_connections: pulumi.Input[Optional[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']]] = None,
+                 read_endpoint: pulumi.Input[Optional[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict', 'outputs.MysqlDbSystemReadEndpoint']]] = None,
+                 rest: pulumi.Input[Optional[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict', 'outputs.MysqlDbSystemRest']]] = None,
+                 secure_connections: pulumi.Input[Optional[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict', 'outputs.MysqlDbSystemSecureConnections']]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape_name: pulumi.Input[Optional[_builtins.str]] = None,
                  shutdown_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 source: pulumi.Input[Optional[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict']]] = None,
+                 source: pulumi.Input[Optional[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict', 'outputs.MysqlDbSystemSource']]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 telemetry_configuration: pulumi.Input[Optional[Union['MysqlDbSystemTelemetryConfigurationArgs', 'MysqlDbSystemTelemetryConfigurationArgsDict']]] = None,
+                 telemetry_configuration: pulumi.Input[Optional[Union['MysqlDbSystemTelemetryConfigurationArgs', 'MysqlDbSystemTelemetryConfigurationArgsDict', 'outputs.MysqlDbSystemTelemetryConfiguration']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -2132,51 +2132,51 @@ class MysqlDbSystem(pulumi.CustomResource):
             admin_password: pulumi.Input[Optional[_builtins.str]] = None,
             admin_username: pulumi.Input[Optional[_builtins.str]] = None,
             availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
-            backup_policy: pulumi.Input[Optional[Union['MysqlDbSystemBackupPolicyArgs', 'MysqlDbSystemBackupPolicyArgsDict']]] = None,
-            channels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemChannelArgs', 'MysqlDbSystemChannelArgsDict']]]]] = None,
+            backup_policy: pulumi.Input[Optional[Union['MysqlDbSystemBackupPolicyArgs', 'MysqlDbSystemBackupPolicyArgsDict', 'outputs.MysqlDbSystemBackupPolicy']]] = None,
+            channels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemChannelArgs', 'MysqlDbSystemChannelArgsDict', 'outputs.MysqlDbSystemChannel']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
             crash_recovery: pulumi.Input[Optional[_builtins.str]] = None,
-            current_placements: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemCurrentPlacementArgs', 'MysqlDbSystemCurrentPlacementArgsDict']]]]] = None,
-            customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict']]]]] = None,
-            data_storage: pulumi.Input[Optional[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']]] = None,
+            current_placements: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemCurrentPlacementArgs', 'MysqlDbSystemCurrentPlacementArgsDict', 'outputs.MysqlDbSystemCurrentPlacement']]]]] = None,
+            customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict', 'outputs.MysqlDbSystemCustomerContact']]]]] = None,
+            data_storage: pulumi.Input[Optional[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict', 'outputs.MysqlDbSystemDataStorage']]] = None,
             data_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
-            database_console: pulumi.Input[Optional[Union['MysqlDbSystemDatabaseConsoleArgs', 'MysqlDbSystemDatabaseConsoleArgsDict']]] = None,
+            database_console: pulumi.Input[Optional[Union['MysqlDbSystemDatabaseConsoleArgs', 'MysqlDbSystemDatabaseConsoleArgsDict', 'outputs.MysqlDbSystemDatabaseConsole']]] = None,
             database_management: pulumi.Input[Optional[_builtins.str]] = None,
             database_mode: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            deletion_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict']]]]] = None,
+            deletion_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict', 'outputs.MysqlDbSystemDeletionPolicy']]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            encrypt_data: pulumi.Input[Optional[Union['MysqlDbSystemEncryptDataArgs', 'MysqlDbSystemEncryptDataArgsDict']]] = None,
-            endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemEndpointArgs', 'MysqlDbSystemEndpointArgsDict']]]]] = None,
+            encrypt_data: pulumi.Input[Optional[Union['MysqlDbSystemEncryptDataArgs', 'MysqlDbSystemEncryptDataArgsDict', 'outputs.MysqlDbSystemEncryptData']]] = None,
+            endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemEndpointArgs', 'MysqlDbSystemEndpointArgsDict', 'outputs.MysqlDbSystemEndpoint']]]]] = None,
             fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            heat_wave_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemHeatWaveClusterArgs', 'MysqlDbSystemHeatWaveClusterArgsDict']]]]] = None,
+            heat_wave_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemHeatWaveClusterArgs', 'MysqlDbSystemHeatWaveClusterArgsDict', 'outputs.MysqlDbSystemHeatWaveCluster']]]]] = None,
             hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
             ip_address: pulumi.Input[Optional[_builtins.str]] = None,
-            ipv6address_ipv6subnet_cidr_pair_details: pulumi.Input[Optional[Union['MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs', 'MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgsDict']]] = None,
+            ipv6address_ipv6subnet_cidr_pair_details: pulumi.Input[Optional[Union['MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs', 'MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgsDict', 'outputs.MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails']]] = None,
             is_heat_wave_cluster_attached: pulumi.Input[Optional[_builtins.bool]] = None,
             is_highly_available: pulumi.Input[Optional[_builtins.bool]] = None,
             is_ipv6enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            maintenance: pulumi.Input[Optional[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict']]] = None,
+            maintenance: pulumi.Input[Optional[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict', 'outputs.MysqlDbSystemMaintenance']]] = None,
             mysql_version: pulumi.Input[Optional[_builtins.str]] = None,
             nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            point_in_time_recovery_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemPointInTimeRecoveryDetailArgs', 'MysqlDbSystemPointInTimeRecoveryDetailArgsDict']]]]] = None,
+            point_in_time_recovery_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemPointInTimeRecoveryDetailArgs', 'MysqlDbSystemPointInTimeRecoveryDetailArgsDict', 'outputs.MysqlDbSystemPointInTimeRecoveryDetail']]]]] = None,
             port: pulumi.Input[Optional[_builtins.int]] = None,
             port_x: pulumi.Input[Optional[_builtins.int]] = None,
-            read_endpoint: pulumi.Input[Optional[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']]] = None,
-            rest: pulumi.Input[Optional[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict']]] = None,
-            secure_connections: pulumi.Input[Optional[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']]] = None,
+            read_endpoint: pulumi.Input[Optional[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict', 'outputs.MysqlDbSystemReadEndpoint']]] = None,
+            rest: pulumi.Input[Optional[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict', 'outputs.MysqlDbSystemRest']]] = None,
+            secure_connections: pulumi.Input[Optional[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict', 'outputs.MysqlDbSystemSecureConnections']]] = None,
             security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             shape_name: pulumi.Input[Optional[_builtins.str]] = None,
             shutdown_type: pulumi.Input[Optional[_builtins.str]] = None,
-            source: pulumi.Input[Optional[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict']]] = None,
+            source: pulumi.Input[Optional[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict', 'outputs.MysqlDbSystemSource']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            telemetry_configuration: pulumi.Input[Optional[Union['MysqlDbSystemTelemetryConfigurationArgs', 'MysqlDbSystemTelemetryConfigurationArgsDict']]] = None,
+            telemetry_configuration: pulumi.Input[Optional[Union['MysqlDbSystemTelemetryConfigurationArgs', 'MysqlDbSystemTelemetryConfigurationArgsDict', 'outputs.MysqlDbSystemTelemetryConfiguration']]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'MysqlDbSystem':
         """
@@ -2196,55 +2196,55 @@ class MysqlDbSystem(pulumi.CustomResource):
                In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
                
                For a standalone DB System, this defines the availability domain in which the DB System is placed.
-        :param pulumi.Input[Union['MysqlDbSystemBackupPolicyArgs', 'MysqlDbSystemBackupPolicyArgsDict']] backup_policy: (Updatable) Backup policy as optionally used for DB System Creation.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemChannelArgs', 'MysqlDbSystemChannelArgsDict']]]] channels: A list with a summary of all the Channels attached to the DB System.
+        :param pulumi.Input[Union['MysqlDbSystemBackupPolicyArgs', 'MysqlDbSystemBackupPolicyArgsDict', 'outputs.MysqlDbSystemBackupPolicy']] backup_policy: (Updatable) Backup policy as optionally used for DB System Creation.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemChannelArgs', 'MysqlDbSystemChannelArgsDict', 'outputs.MysqlDbSystemChannel']]]] channels: A list with a summary of all the Channels attached to the DB System.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[_builtins.str] configuration_id: (Updatable) The OCID of the Configuration to be used for this DB System.
         :param pulumi.Input[_builtins.str] crash_recovery: (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCurrentPlacementArgs', 'MysqlDbSystemCurrentPlacementArgsDict']]]] current_placements: The availability domain and fault domain a DB System is placed in.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict']]]] customer_contacts: (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
-        :param pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']] data_storage: (Updatable) Data Storage configuration properties.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCurrentPlacementArgs', 'MysqlDbSystemCurrentPlacementArgsDict', 'outputs.MysqlDbSystemCurrentPlacement']]]] current_placements: The availability domain and fault domain a DB System is placed in.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict', 'outputs.MysqlDbSystemCustomerContact']]]] customer_contacts: (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
+        :param pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict', 'outputs.MysqlDbSystemDataStorage']] data_storage: (Updatable) Data Storage configuration properties.
         :param pulumi.Input[_builtins.int] data_storage_size_in_gb: (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
-        :param pulumi.Input[Union['MysqlDbSystemDatabaseConsoleArgs', 'MysqlDbSystemDatabaseConsoleArgsDict']] database_console: (Updatable) Details required to configure the database console while creating a DB System.
+        :param pulumi.Input[Union['MysqlDbSystemDatabaseConsoleArgs', 'MysqlDbSystemDatabaseConsoleArgsDict', 'outputs.MysqlDbSystemDatabaseConsole']] database_console: (Updatable) Details required to configure the database console while creating a DB System.
         :param pulumi.Input[_builtins.str] database_management: (Updatable) Whether to enable monitoring via the Database Management service.
         :param pulumi.Input[_builtins.str] database_mode: (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
                * READ_WRITE (default): allow running read and write statements on the DB system;
                * READ_ONLY: only allow running read statements on the DB system.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict']]]] deletion_policies: (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict', 'outputs.MysqlDbSystemDeletionPolicy']]]] deletion_policies: (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
         :param pulumi.Input[_builtins.str] description: (Updatable) User-provided data about the DB System.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the DB System. It does not have to be unique.
-        :param pulumi.Input[Union['MysqlDbSystemEncryptDataArgs', 'MysqlDbSystemEncryptDataArgsDict']] encrypt_data: (Updatable) Encrypt data details.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemEndpointArgs', 'MysqlDbSystemEndpointArgsDict']]]] endpoints: The network endpoints available for this DB System.
+        :param pulumi.Input[Union['MysqlDbSystemEncryptDataArgs', 'MysqlDbSystemEncryptDataArgsDict', 'outputs.MysqlDbSystemEncryptData']] encrypt_data: (Updatable) Encrypt data details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemEndpointArgs', 'MysqlDbSystemEndpointArgsDict', 'outputs.MysqlDbSystemEndpoint']]]] endpoints: The network endpoints available for this DB System.
         :param pulumi.Input[_builtins.str] fault_domain: The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
                
                In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
                
                For a standalone DB System, this defines the fault domain in which the DB System is placed.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemHeatWaveClusterArgs', 'MysqlDbSystemHeatWaveClusterArgsDict']]]] heat_wave_clusters: A summary of a HeatWave cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemHeatWaveClusterArgs', 'MysqlDbSystemHeatWaveClusterArgsDict', 'outputs.MysqlDbSystemHeatWaveCluster']]]] heat_wave_clusters: A summary of a HeatWave cluster.
         :param pulumi.Input[_builtins.str] hostname_label: (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
                
                The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
                
                Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         :param pulumi.Input[_builtins.str] ip_address: The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
-        :param pulumi.Input[Union['MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs', 'MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgsDict']] ipv6address_ipv6subnet_cidr_pair_details: (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+        :param pulumi.Input[Union['MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs', 'MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgsDict', 'outputs.MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails']] ipv6address_ipv6subnet_cidr_pair_details: (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
         :param pulumi.Input[_builtins.bool] is_heat_wave_cluster_attached: If the DB System has a HeatWave Cluster attached.
         :param pulumi.Input[_builtins.bool] is_highly_available: (Updatable) Specifies if the DB System is highly available.
                
                When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
         :param pulumi.Input[_builtins.bool] is_ipv6enabled: (Updatable) Whether to allocate an IPv6 address at DB system creation from an IPv6 enabled subnet. When provided you may optionally provide an IPv6 prefix (ipv6AddressIpv6SubnetCidrPairDetails) of your choice to assign the IPv6 address from. If ipv6AddressIpv6SubnetCidrPairDetails is not provided then an IPv6 prefix is chosen for you.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycleState.
-        :param pulumi.Input[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict']] maintenance: (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
+        :param pulumi.Input[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict', 'outputs.MysqlDbSystemMaintenance']] maintenance: (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
         :param pulumi.Input[_builtins.str] mysql_version: The specific MySQL version identifier.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) Network Security Group OCIDs used for the VNIC attachment.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemPointInTimeRecoveryDetailArgs', 'MysqlDbSystemPointInTimeRecoveryDetailArgsDict']]]] point_in_time_recovery_details: Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemPointInTimeRecoveryDetailArgs', 'MysqlDbSystemPointInTimeRecoveryDetailArgsDict', 'outputs.MysqlDbSystemPointInTimeRecoveryDetail']]]] point_in_time_recovery_details: Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
         :param pulumi.Input[_builtins.int] port: The port for primary endpoint of the DB System to listen on.
         :param pulumi.Input[_builtins.int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
-        :param pulumi.Input[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']] read_endpoint: (Updatable) Details required to create a Read Endpoint.
-        :param pulumi.Input[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict']] rest: (Updatable) Details required to configure REST while creating a DB System.
-        :param pulumi.Input[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']] secure_connections: (Updatable) Secure connection configuration details.
+        :param pulumi.Input[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict', 'outputs.MysqlDbSystemReadEndpoint']] read_endpoint: (Updatable) Details required to create a Read Endpoint.
+        :param pulumi.Input[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict', 'outputs.MysqlDbSystemRest']] rest: (Updatable) Details required to configure REST while creating a DB System.
+        :param pulumi.Input[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict', 'outputs.MysqlDbSystemSecureConnections']] secure_connections: (Updatable) Secure connection configuration details.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
@@ -2252,11 +2252,11 @@ class MysqlDbSystem(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict']] source: Parameters detailing how to provision the initial data of the system.
+        :param pulumi.Input[Union['MysqlDbSystemSourceArgs', 'MysqlDbSystemSourceArgsDict', 'outputs.MysqlDbSystemSource']] source: Parameters detailing how to provision the initial data of the system.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet the DB System is associated with.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Union['MysqlDbSystemTelemetryConfigurationArgs', 'MysqlDbSystemTelemetryConfigurationArgsDict']] telemetry_configuration: (Updatable) Details required to configure how MySQL telemetry should be exposed.
+        :param pulumi.Input[Union['MysqlDbSystemTelemetryConfigurationArgs', 'MysqlDbSystemTelemetryConfigurationArgsDict', 'outputs.MysqlDbSystemTelemetryConfiguration']] telemetry_configuration: (Updatable) Details required to configure how MySQL telemetry should be exposed.
         :param pulumi.Input[_builtins.str] time_created: The date and time the DB System was created.
         :param pulumi.Input[_builtins.str] time_updated: The time the DB System was last updated.
         """

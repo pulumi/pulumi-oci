@@ -275,7 +275,7 @@ class RedisClusterGetOciCacheUser(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            oci_cache_users: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RedisClusterGetOciCacheUserOciCacheUserArgs', 'RedisClusterGetOciCacheUserOciCacheUserArgsDict']]]]] = None,
+            oci_cache_users: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RedisClusterGetOciCacheUserOciCacheUserArgs', 'RedisClusterGetOciCacheUserOciCacheUserArgsDict', 'outputs.RedisClusterGetOciCacheUserOciCacheUser']]]]] = None,
             redis_cluster_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'RedisClusterGetOciCacheUser':
         """
         Get an existing RedisClusterGetOciCacheUser resource's state with the given name, id, and optional extra

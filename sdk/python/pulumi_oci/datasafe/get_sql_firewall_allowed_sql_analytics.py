@@ -120,7 +120,7 @@ class AwaitableGetSqlFirewallAllowedSqlAnalyticsResult(GetSqlFirewallAllowedSqlA
 def get_sql_firewall_allowed_sql_analytics(access_level: Optional[_builtins.str] = None,
                                            compartment_id: Optional[_builtins.str] = None,
                                            compartment_id_in_subtree: Optional[_builtins.bool] = None,
-                                           filters: Optional[Sequence[Union['GetSqlFirewallAllowedSqlAnalyticsFilterArgs', 'GetSqlFirewallAllowedSqlAnalyticsFilterArgsDict']]] = None,
+                                           filters: Optional[Sequence[Union['GetSqlFirewallAllowedSqlAnalyticsFilterArgs', 'GetSqlFirewallAllowedSqlAnalyticsFilterArgsDict', 'outputs.GetSqlFirewallAllowedSqlAnalyticsFilterResult']]] = None,
                                            group_bies: Optional[Sequence[_builtins.str]] = None,
                                            scim_query: Optional[_builtins.str] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSqlFirewallAllowedSqlAnalyticsResult:
@@ -186,7 +186,7 @@ def get_sql_firewall_allowed_sql_analytics(access_level: Optional[_builtins.str]
 def get_sql_firewall_allowed_sql_analytics_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                   compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
-                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSqlFirewallAllowedSqlAnalyticsFilterArgs', 'GetSqlFirewallAllowedSqlAnalyticsFilterArgsDict']]]]] = None,
+                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSqlFirewallAllowedSqlAnalyticsFilterArgs', 'GetSqlFirewallAllowedSqlAnalyticsFilterArgsDict', 'outputs.GetSqlFirewallAllowedSqlAnalyticsFilterResult']]]]] = None,
                                                   group_bies: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                                   scim_query: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSqlFirewallAllowedSqlAnalyticsResult]:

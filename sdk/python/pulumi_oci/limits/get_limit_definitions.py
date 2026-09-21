@@ -115,7 +115,7 @@ class AwaitableGetLimitDefinitionsResult(GetLimitDefinitionsResult):
 
 
 def get_limit_definitions(compartment_id: Optional[_builtins.str] = None,
-                          filters: Optional[Sequence[Union['GetLimitDefinitionsFilterArgs', 'GetLimitDefinitionsFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetLimitDefinitionsFilterArgs', 'GetLimitDefinitionsFilterArgsDict', 'outputs.GetLimitDefinitionsFilterResult']]] = None,
                           name: Optional[_builtins.str] = None,
                           service_name: Optional[_builtins.str] = None,
                           subscription_id: Optional[_builtins.str] = None,
@@ -163,7 +163,7 @@ def get_limit_definitions(compartment_id: Optional[_builtins.str] = None,
         service_name=pulumi.get(__ret__, 'service_name'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'))
 def get_limit_definitions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLimitDefinitionsFilterArgs', 'GetLimitDefinitionsFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLimitDefinitionsFilterArgs', 'GetLimitDefinitionsFilterArgsDict', 'outputs.GetLimitDefinitionsFilterResult']]]]] = None,
                                  name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  service_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  subscription_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

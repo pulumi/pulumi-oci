@@ -105,7 +105,7 @@ class AwaitableGetDbCredentialsResult(GetDbCredentialsResult):
             user_id=self.user_id)
 
 
-def get_db_credentials(filters: Optional[Sequence[Union['GetDbCredentialsFilterArgs', 'GetDbCredentialsFilterArgsDict']]] = None,
+def get_db_credentials(filters: Optional[Sequence[Union['GetDbCredentialsFilterArgs', 'GetDbCredentialsFilterArgsDict', 'outputs.GetDbCredentialsFilterResult']]] = None,
                        name: Optional[_builtins.str] = None,
                        state: Optional[_builtins.str] = None,
                        user_id: Optional[_builtins.str] = None,
@@ -146,7 +146,7 @@ def get_db_credentials(filters: Optional[Sequence[Union['GetDbCredentialsFilterA
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'),
         user_id=pulumi.get(__ret__, 'user_id'))
-def get_db_credentials_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbCredentialsFilterArgs', 'GetDbCredentialsFilterArgsDict']]]]] = None,
+def get_db_credentials_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbCredentialsFilterArgs', 'GetDbCredentialsFilterArgsDict', 'outputs.GetDbCredentialsFilterResult']]]]] = None,
                               name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               user_id: pulumi.Input[Optional[_builtins.str]] = None,

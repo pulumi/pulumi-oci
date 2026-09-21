@@ -472,7 +472,7 @@ class InstancePoolInstance(pulumi.CustomResource):
             instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
             instance_id: pulumi.Input[Optional[_builtins.str]] = None,
             instance_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
-            load_balancer_backends: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstancePoolInstanceLoadBalancerBackendArgs', 'InstancePoolInstanceLoadBalancerBackendArgsDict']]]]] = None,
+            load_balancer_backends: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstancePoolInstanceLoadBalancerBackendArgs', 'InstancePoolInstanceLoadBalancerBackendArgsDict', 'outputs.InstancePoolInstanceLoadBalancerBackend']]]]] = None,
             region: pulumi.Input[Optional[_builtins.str]] = None,
             shape: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -494,7 +494,7 @@ class InstancePoolInstance(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolInstanceLoadBalancerBackendArgs', 'InstancePoolInstanceLoadBalancerBackendArgsDict']]]] load_balancer_backends: The load balancer backends that are configured for the instance pool instance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolInstanceLoadBalancerBackendArgs', 'InstancePoolInstanceLoadBalancerBackendArgsDict', 'outputs.InstancePoolInstanceLoadBalancerBackend']]]] load_balancer_backends: The load balancer backends that are configured for the instance pool instance.
         :param pulumi.Input[_builtins.str] region: The region that contains the availability domain the instance is running in.
         :param pulumi.Input[_builtins.str] shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.

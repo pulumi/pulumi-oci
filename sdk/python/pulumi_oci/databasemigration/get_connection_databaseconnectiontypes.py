@@ -116,7 +116,7 @@ class AwaitableGetConnectionDatabaseconnectiontypesResult(GetConnectionDatabasec
 
 def get_connection_databaseconnectiontypes(compartment_id: Optional[_builtins.str] = None,
                                            connection_types: Optional[Sequence[_builtins.str]] = None,
-                                           filters: Optional[Sequence[Union['GetConnectionDatabaseconnectiontypesFilterArgs', 'GetConnectionDatabaseconnectiontypesFilterArgsDict']]] = None,
+                                           filters: Optional[Sequence[Union['GetConnectionDatabaseconnectiontypesFilterArgs', 'GetConnectionDatabaseconnectiontypesFilterArgsDict', 'outputs.GetConnectionDatabaseconnectiontypesFilterResult']]] = None,
                                            source_connection_id: Optional[_builtins.str] = None,
                                            technology_types: Optional[Sequence[_builtins.str]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConnectionDatabaseconnectiontypesResult:
@@ -162,7 +162,7 @@ def get_connection_databaseconnectiontypes(compartment_id: Optional[_builtins.st
         technology_types=pulumi.get(__ret__, 'technology_types'))
 def get_connection_databaseconnectiontypes_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                   connection_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
-                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConnectionDatabaseconnectiontypesFilterArgs', 'GetConnectionDatabaseconnectiontypesFilterArgsDict']]]]] = None,
+                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConnectionDatabaseconnectiontypesFilterArgs', 'GetConnectionDatabaseconnectiontypesFilterArgsDict', 'outputs.GetConnectionDatabaseconnectiontypesFilterResult']]]]] = None,
                                                   source_connection_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   technology_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectionDatabaseconnectiontypesResult]:

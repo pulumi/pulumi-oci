@@ -130,7 +130,7 @@ class AwaitableGetOccAvailabilityCatalogOccAvailabilitiesResult(GetOccAvailabili
 
 
 def get_occ_availability_catalog_occ_availabilities(date_expected_capacity_handover: Optional[_builtins.str] = None,
-                                                    filters: Optional[Sequence[Union['GetOccAvailabilityCatalogOccAvailabilitiesFilterArgs', 'GetOccAvailabilityCatalogOccAvailabilitiesFilterArgsDict']]] = None,
+                                                    filters: Optional[Sequence[Union['GetOccAvailabilityCatalogOccAvailabilitiesFilterArgs', 'GetOccAvailabilityCatalogOccAvailabilitiesFilterArgsDict', 'outputs.GetOccAvailabilityCatalogOccAvailabilitiesFilterResult']]] = None,
                                                     occ_availability_catalog_id: Optional[_builtins.str] = None,
                                                     resource_name: Optional[_builtins.str] = None,
                                                     resource_type: Optional[_builtins.str] = None,
@@ -181,7 +181,7 @@ def get_occ_availability_catalog_occ_availabilities(date_expected_capacity_hando
         resource_type=pulumi.get(__ret__, 'resource_type'),
         workload_type=pulumi.get(__ret__, 'workload_type'))
 def get_occ_availability_catalog_occ_availabilities_output(date_expected_capacity_handover: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOccAvailabilityCatalogOccAvailabilitiesFilterArgs', 'GetOccAvailabilityCatalogOccAvailabilitiesFilterArgsDict']]]]] = None,
+                                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOccAvailabilityCatalogOccAvailabilitiesFilterArgs', 'GetOccAvailabilityCatalogOccAvailabilitiesFilterArgsDict', 'outputs.GetOccAvailabilityCatalogOccAvailabilitiesFilterResult']]]]] = None,
                                                            occ_availability_catalog_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                            resource_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                            resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

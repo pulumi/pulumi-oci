@@ -132,7 +132,7 @@ class AwaitableGetPrivateEndpointsResult(GetPrivateEndpointsResult):
 def get_private_endpoints(compartment_id: Optional[_builtins.str] = None,
                           display_name: Optional[_builtins.str] = None,
                           display_name_starts_with: Optional[_builtins.str] = None,
-                          filters: Optional[Sequence[Union['GetPrivateEndpointsFilterArgs', 'GetPrivateEndpointsFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetPrivateEndpointsFilterArgs', 'GetPrivateEndpointsFilterArgsDict', 'outputs.GetPrivateEndpointsFilterResult']]] = None,
                           owner_principal_id: Optional[_builtins.str] = None,
                           state: Optional[_builtins.str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPrivateEndpointsResult:
@@ -183,7 +183,7 @@ def get_private_endpoints(compartment_id: Optional[_builtins.str] = None,
 def get_private_endpoints_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  display_name_starts_with: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPrivateEndpointsFilterArgs', 'GetPrivateEndpointsFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPrivateEndpointsFilterArgs', 'GetPrivateEndpointsFilterArgsDict', 'outputs.GetPrivateEndpointsFilterResult']]]]] = None,
                                  owner_principal_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateEndpointsResult]:

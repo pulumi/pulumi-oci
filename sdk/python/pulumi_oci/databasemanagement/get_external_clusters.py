@@ -111,7 +111,7 @@ class AwaitableGetExternalClustersResult(GetExternalClustersResult):
 def get_external_clusters(compartment_id: Optional[_builtins.str] = None,
                           display_name: Optional[_builtins.str] = None,
                           external_db_system_id: Optional[_builtins.str] = None,
-                          filters: Optional[Sequence[Union['GetExternalClustersFilterArgs', 'GetExternalClustersFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetExternalClustersFilterArgs', 'GetExternalClustersFilterArgsDict', 'outputs.GetExternalClustersFilterResult']]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalClustersResult:
     """
     This data source provides the list of External Clusters in Oracle Cloud Infrastructure Database Management service.
@@ -152,7 +152,7 @@ def get_external_clusters(compartment_id: Optional[_builtins.str] = None,
 def get_external_clusters_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  external_db_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalClustersFilterArgs', 'GetExternalClustersFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalClustersFilterArgs', 'GetExternalClustersFilterArgsDict', 'outputs.GetExternalClustersFilterResult']]]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalClustersResult]:
     """
     This data source provides the list of External Clusters in Oracle Cloud Infrastructure Database Management service.

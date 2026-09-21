@@ -1087,7 +1087,7 @@ class SoftwareSource(pulumi.CustomResource):
                  advanced_repo_options: pulumi.Input[Optional[_builtins.str]] = None,
                  arch_type: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 custom_software_source_filter: pulumi.Input[Optional[Union['SoftwareSourceCustomSoftwareSourceFilterArgs', 'SoftwareSourceCustomSoftwareSourceFilterArgsDict']]] = None,
+                 custom_software_source_filter: pulumi.Input[Optional[Union['SoftwareSourceCustomSoftwareSourceFilterArgs', 'SoftwareSourceCustomSoftwareSourceFilterArgsDict', 'outputs.SoftwareSourceCustomSoftwareSourceFilter']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1108,7 +1108,7 @@ class SoftwareSource(pulumi.CustomResource):
                  software_source_type: pulumi.Input[Optional[_builtins.str]] = None,
                  software_source_version: pulumi.Input[Optional[_builtins.str]] = None,
                  url: pulumi.Input[Optional[_builtins.str]] = None,
-                 vendor_software_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SoftwareSourceVendorSoftwareSourceArgs', 'SoftwareSourceVendorSoftwareSourceArgsDict']]]]] = None,
+                 vendor_software_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SoftwareSourceVendorSoftwareSourceArgs', 'SoftwareSourceVendorSoftwareSourceArgsDict', 'outputs.SoftwareSourceVendorSoftwareSource']]]]] = None,
                  __props__=None):
         """
         This resource provides the Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -1132,7 +1132,7 @@ class SoftwareSource(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] advanced_repo_options: (Updatable) Advanced repository options for the software source
         :param pulumi.Input[_builtins.str] arch_type: The architecture type supported by the third-party software source.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
-        :param pulumi.Input[Union['SoftwareSourceCustomSoftwareSourceFilterArgs', 'SoftwareSourceCustomSoftwareSourceFilterArgsDict']] custom_software_source_filter: (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
+        :param pulumi.Input[Union['SoftwareSourceCustomSoftwareSourceFilterArgs', 'SoftwareSourceCustomSoftwareSourceFilterArgsDict', 'outputs.SoftwareSourceCustomSoftwareSourceFilter']] custom_software_source_filter: (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) User-specified description for the software source. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
@@ -1158,7 +1158,7 @@ class SoftwareSource(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] software_source_type: (Updatable) Type of software source.
         :param pulumi.Input[_builtins.str] software_source_version: The version to assign to this custom software source.
         :param pulumi.Input[_builtins.str] url: (Updatable) URL for the third-party software source.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceVendorSoftwareSourceArgs', 'SoftwareSourceVendorSoftwareSourceArgsDict']]]] vendor_software_sources: (Updatable) List of vendor software sources.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceVendorSoftwareSourceArgs', 'SoftwareSourceVendorSoftwareSourceArgsDict', 'outputs.SoftwareSourceVendorSoftwareSource']]]] vendor_software_sources: (Updatable) List of vendor software sources.
         """
         ...
     @overload
@@ -1201,7 +1201,7 @@ class SoftwareSource(pulumi.CustomResource):
                  advanced_repo_options: pulumi.Input[Optional[_builtins.str]] = None,
                  arch_type: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 custom_software_source_filter: pulumi.Input[Optional[Union['SoftwareSourceCustomSoftwareSourceFilterArgs', 'SoftwareSourceCustomSoftwareSourceFilterArgsDict']]] = None,
+                 custom_software_source_filter: pulumi.Input[Optional[Union['SoftwareSourceCustomSoftwareSourceFilterArgs', 'SoftwareSourceCustomSoftwareSourceFilterArgsDict', 'outputs.SoftwareSourceCustomSoftwareSourceFilter']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1222,7 +1222,7 @@ class SoftwareSource(pulumi.CustomResource):
                  software_source_type: pulumi.Input[Optional[_builtins.str]] = None,
                  software_source_version: pulumi.Input[Optional[_builtins.str]] = None,
                  url: pulumi.Input[Optional[_builtins.str]] = None,
-                 vendor_software_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SoftwareSourceVendorSoftwareSourceArgs', 'SoftwareSourceVendorSoftwareSourceArgsDict']]]]] = None,
+                 vendor_software_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SoftwareSourceVendorSoftwareSourceArgs', 'SoftwareSourceVendorSoftwareSourceArgsDict', 'outputs.SoftwareSourceVendorSoftwareSource']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1291,7 +1291,7 @@ class SoftwareSource(pulumi.CustomResource):
             availability_at_oci: pulumi.Input[Optional[_builtins.str]] = None,
             checksum_type: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            custom_software_source_filter: pulumi.Input[Optional[Union['SoftwareSourceCustomSoftwareSourceFilterArgs', 'SoftwareSourceCustomSoftwareSourceFilterArgsDict']]] = None,
+            custom_software_source_filter: pulumi.Input[Optional[Union['SoftwareSourceCustomSoftwareSourceFilterArgs', 'SoftwareSourceCustomSoftwareSourceFilterArgsDict', 'outputs.SoftwareSourceCustomSoftwareSourceFilter']]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1323,7 +1323,7 @@ class SoftwareSource(pulumi.CustomResource):
             time_metadata_updated: pulumi.Input[Optional[_builtins.str]] = None,
             url: pulumi.Input[Optional[_builtins.str]] = None,
             vendor_name: pulumi.Input[Optional[_builtins.str]] = None,
-            vendor_software_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SoftwareSourceVendorSoftwareSourceArgs', 'SoftwareSourceVendorSoftwareSourceArgsDict']]]]] = None) -> 'SoftwareSource':
+            vendor_software_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SoftwareSourceVendorSoftwareSourceArgs', 'SoftwareSourceVendorSoftwareSourceArgsDict', 'outputs.SoftwareSourceVendorSoftwareSource']]]]] = None) -> 'SoftwareSource':
         """
         Get an existing SoftwareSource resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1337,7 +1337,7 @@ class SoftwareSource(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] availability_at_oci: Availability of the software source (for Oracle Cloud Infrastructure environments).
         :param pulumi.Input[_builtins.str] checksum_type: The yum repository checksum type used by this software source.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
-        :param pulumi.Input[Union['SoftwareSourceCustomSoftwareSourceFilterArgs', 'SoftwareSourceCustomSoftwareSourceFilterArgsDict']] custom_software_source_filter: (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
+        :param pulumi.Input[Union['SoftwareSourceCustomSoftwareSourceFilterArgs', 'SoftwareSourceCustomSoftwareSourceFilterArgsDict', 'outputs.SoftwareSourceCustomSoftwareSourceFilter']] custom_software_source_filter: (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) User-specified description for the software source. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
@@ -1374,7 +1374,7 @@ class SoftwareSource(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_metadata_updated: The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[_builtins.str] url: (Updatable) URL for the third-party software source.
         :param pulumi.Input[_builtins.str] vendor_name: Name of the vendor providing the software source.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceVendorSoftwareSourceArgs', 'SoftwareSourceVendorSoftwareSourceArgsDict']]]] vendor_software_sources: (Updatable) List of vendor software sources.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceVendorSoftwareSourceArgs', 'SoftwareSourceVendorSoftwareSourceArgsDict', 'outputs.SoftwareSourceVendorSoftwareSource']]]] vendor_software_sources: (Updatable) List of vendor software sources.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

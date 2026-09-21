@@ -114,7 +114,7 @@ class AwaitableGetWindowsUpdatesResult(GetWindowsUpdatesResult):
 def get_windows_updates(classification_types: Optional[Sequence[_builtins.str]] = None,
                         compartment_id: Optional[_builtins.str] = None,
                         display_name_contains: Optional[_builtins.str] = None,
-                        filters: Optional[Sequence[Union['GetWindowsUpdatesFilterArgs', 'GetWindowsUpdatesFilterArgsDict']]] = None,
+                        filters: Optional[Sequence[Union['GetWindowsUpdatesFilterArgs', 'GetWindowsUpdatesFilterArgsDict', 'outputs.GetWindowsUpdatesFilterResult']]] = None,
                         names: Optional[Sequence[_builtins.str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWindowsUpdatesResult:
     """
@@ -160,7 +160,7 @@ def get_windows_updates(classification_types: Optional[Sequence[_builtins.str]] 
 def get_windows_updates_output(classification_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWindowsUpdatesFilterArgs', 'GetWindowsUpdatesFilterArgsDict']]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWindowsUpdatesFilterArgs', 'GetWindowsUpdatesFilterArgsDict', 'outputs.GetWindowsUpdatesFilterResult']]]]] = None,
                                names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWindowsUpdatesResult]:
     """

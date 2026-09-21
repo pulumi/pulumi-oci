@@ -151,7 +151,7 @@ class AwaitableGetWorkspaceTasksResult(GetWorkspaceTasksResult):
 
 
 def get_workspace_tasks(fields: Optional[Sequence[_builtins.str]] = None,
-                        filters: Optional[Sequence[Union['GetWorkspaceTasksFilterArgs', 'GetWorkspaceTasksFilterArgsDict']]] = None,
+                        filters: Optional[Sequence[Union['GetWorkspaceTasksFilterArgs', 'GetWorkspaceTasksFilterArgsDict', 'outputs.GetWorkspaceTasksFilterResult']]] = None,
                         folder_id: Optional[_builtins.str] = None,
                         identifiers: Optional[Sequence[_builtins.str]] = None,
                         keys: Optional[Sequence[_builtins.str]] = None,
@@ -212,7 +212,7 @@ def get_workspace_tasks(fields: Optional[Sequence[_builtins.str]] = None,
         types=pulumi.get(__ret__, 'types'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
 def get_workspace_tasks_output(fields: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
-                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkspaceTasksFilterArgs', 'GetWorkspaceTasksFilterArgsDict']]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkspaceTasksFilterArgs', 'GetWorkspaceTasksFilterArgsDict', 'outputs.GetWorkspaceTasksFilterResult']]]]] = None,
                                folder_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                identifiers: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                keys: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,

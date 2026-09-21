@@ -451,7 +451,7 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  access_token: pulumi.Input[Optional[_builtins.str]] = None,
-                 arc_agent_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs', 'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict']]]]] = None,
+                 arc_agent_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs', 'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict', 'outputs.DbmulticloudOracleDbAzureConnectorArcAgentNode']]]]] = None,
                  azure_identity_mechanism: pulumi.Input[Optional[_builtins.str]] = None,
                  azure_resource_group: pulumi.Input[Optional[_builtins.str]] = None,
                  azure_subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -484,7 +484,7 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_token: (Updatable) Azure bearer access token.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs', 'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict']]]] arc_agent_nodes: List of all VMs where Arc Agent is installed under Cloud VM Cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs', 'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict', 'outputs.DbmulticloudOracleDbAzureConnectorArcAgentNode']]]] arc_agent_nodes: List of all VMs where Arc Agent is installed under Cloud VM Cluster.
         :param pulumi.Input[_builtins.str] azure_identity_mechanism: (Updatable) Azure Identity mechanism.
         :param pulumi.Input[_builtins.str] azure_resource_group: (Updatable) Azure Resource group name.
         :param pulumi.Input[_builtins.str] azure_subscription_id: (Updatable) Azure Subscription ID.
@@ -536,7 +536,7 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  access_token: pulumi.Input[Optional[_builtins.str]] = None,
-                 arc_agent_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs', 'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict']]]]] = None,
+                 arc_agent_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs', 'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict', 'outputs.DbmulticloudOracleDbAzureConnectorArcAgentNode']]]]] = None,
                  azure_identity_mechanism: pulumi.Input[Optional[_builtins.str]] = None,
                  azure_resource_group: pulumi.Input[Optional[_builtins.str]] = None,
                  azure_subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -597,7 +597,7 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             access_token: pulumi.Input[Optional[_builtins.str]] = None,
-            arc_agent_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs', 'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict']]]]] = None,
+            arc_agent_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs', 'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict', 'outputs.DbmulticloudOracleDbAzureConnectorArcAgentNode']]]]] = None,
             azure_identity_connectivity_status: pulumi.Input[Optional[_builtins.str]] = None,
             azure_identity_mechanism: pulumi.Input[Optional[_builtins.str]] = None,
             azure_resource_group: pulumi.Input[Optional[_builtins.str]] = None,
@@ -619,7 +619,7 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_token: (Updatable) Azure bearer access token.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs', 'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict']]]] arc_agent_nodes: List of all VMs where Arc Agent is installed under Cloud VM Cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs', 'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict', 'outputs.DbmulticloudOracleDbAzureConnectorArcAgentNode']]]] arc_agent_nodes: List of all VMs where Arc Agent is installed under Cloud VM Cluster.
         :param pulumi.Input[_builtins.str] azure_identity_connectivity_status: The current Connectivity status of Azure Identity Connector resource.
         :param pulumi.Input[_builtins.str] azure_identity_mechanism: (Updatable) Azure Identity mechanism.
         :param pulumi.Input[_builtins.str] azure_resource_group: (Updatable) Azure Resource group name.

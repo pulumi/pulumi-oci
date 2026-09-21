@@ -90,7 +90,7 @@ class AwaitableGetRepositoryProtectedBranchesResult(GetRepositoryProtectedBranch
             repository_id=self.repository_id)
 
 
-def get_repository_protected_branches(filters: Optional[Sequence[Union['GetRepositoryProtectedBranchesFilterArgs', 'GetRepositoryProtectedBranchesFilterArgsDict']]] = None,
+def get_repository_protected_branches(filters: Optional[Sequence[Union['GetRepositoryProtectedBranchesFilterArgs', 'GetRepositoryProtectedBranchesFilterArgsDict', 'outputs.GetRepositoryProtectedBranchesFilterResult']]] = None,
                                       name: Optional[_builtins.str] = None,
                                       repository_id: Optional[_builtins.str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRepositoryProtectedBranchesResult:
@@ -126,7 +126,7 @@ def get_repository_protected_branches(filters: Optional[Sequence[Union['GetRepos
         name=pulumi.get(__ret__, 'name'),
         protected_branch_collections=pulumi.get(__ret__, 'protected_branch_collections'),
         repository_id=pulumi.get(__ret__, 'repository_id'))
-def get_repository_protected_branches_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRepositoryProtectedBranchesFilterArgs', 'GetRepositoryProtectedBranchesFilterArgsDict']]]]] = None,
+def get_repository_protected_branches_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRepositoryProtectedBranchesFilterArgs', 'GetRepositoryProtectedBranchesFilterArgsDict', 'outputs.GetRepositoryProtectedBranchesFilterResult']]]]] = None,
                                              name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              repository_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryProtectedBranchesResult]:

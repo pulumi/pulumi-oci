@@ -472,11 +472,11 @@ class BatchBatchContext(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  entitlements: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 fleets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchContextFleetArgs', 'BatchBatchContextFleetArgsDict']]]]] = None,
+                 fleets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchContextFleetArgs', 'BatchBatchContextFleetArgsDict', 'outputs.BatchBatchContextFleet']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 job_priority_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchContextJobPriorityConfigurationArgs', 'BatchBatchContextJobPriorityConfigurationArgsDict']]]]] = None,
-                 logging_configuration: pulumi.Input[Optional[Union['BatchBatchContextLoggingConfigurationArgs', 'BatchBatchContextLoggingConfigurationArgsDict']]] = None,
-                 network: pulumi.Input[Optional[Union['BatchBatchContextNetworkArgs', 'BatchBatchContextNetworkArgsDict']]] = None,
+                 job_priority_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchContextJobPriorityConfigurationArgs', 'BatchBatchContextJobPriorityConfigurationArgsDict', 'outputs.BatchBatchContextJobPriorityConfiguration']]]]] = None,
+                 logging_configuration: pulumi.Input[Optional[Union['BatchBatchContextLoggingConfigurationArgs', 'BatchBatchContextLoggingConfigurationArgsDict', 'outputs.BatchBatchContextLoggingConfiguration']]] = None,
+                 network: pulumi.Input[Optional[Union['BatchBatchContextNetworkArgs', 'BatchBatchContextNetworkArgsDict', 'outputs.BatchBatchContextNetwork']]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -550,11 +550,11 @@ class BatchBatchContext(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) Summarized information about the batch context.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it will be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchcontext20250914115623.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] entitlements: (Updatable) Mapping of concurrent/shared resources used in job tasks to their limits.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchContextFleetArgs', 'BatchBatchContextFleetArgsDict']]]] fleets: List of fleet configurations related to the batch context.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchContextFleetArgs', 'BatchBatchContextFleetArgsDict', 'outputs.BatchBatchContextFleet']]]] fleets: List of fleet configurations related to the batch context.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchContextJobPriorityConfigurationArgs', 'BatchBatchContextJobPriorityConfigurationArgsDict']]]] job_priority_configurations: (Updatable) List of job priority configurations related to the batch context.
-        :param pulumi.Input[Union['BatchBatchContextLoggingConfigurationArgs', 'BatchBatchContextLoggingConfigurationArgsDict']] logging_configuration: (Updatable) Logging configuration of the batch context.
-        :param pulumi.Input[Union['BatchBatchContextNetworkArgs', 'BatchBatchContextNetworkArgsDict']] network: Network configuration of the batch context.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchContextJobPriorityConfigurationArgs', 'BatchBatchContextJobPriorityConfigurationArgsDict', 'outputs.BatchBatchContextJobPriorityConfiguration']]]] job_priority_configurations: (Updatable) List of job priority configurations related to the batch context.
+        :param pulumi.Input[Union['BatchBatchContextLoggingConfigurationArgs', 'BatchBatchContextLoggingConfigurationArgsDict', 'outputs.BatchBatchContextLoggingConfiguration']] logging_configuration: (Updatable) Logging configuration of the batch context.
+        :param pulumi.Input[Union['BatchBatchContextNetworkArgs', 'BatchBatchContextNetworkArgsDict', 'outputs.BatchBatchContextNetwork']] network: Network configuration of the batch context.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
@@ -650,11 +650,11 @@ class BatchBatchContext(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  entitlements: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 fleets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchContextFleetArgs', 'BatchBatchContextFleetArgsDict']]]]] = None,
+                 fleets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchContextFleetArgs', 'BatchBatchContextFleetArgsDict', 'outputs.BatchBatchContextFleet']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 job_priority_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchContextJobPriorityConfigurationArgs', 'BatchBatchContextJobPriorityConfigurationArgsDict']]]]] = None,
-                 logging_configuration: pulumi.Input[Optional[Union['BatchBatchContextLoggingConfigurationArgs', 'BatchBatchContextLoggingConfigurationArgsDict']]] = None,
-                 network: pulumi.Input[Optional[Union['BatchBatchContextNetworkArgs', 'BatchBatchContextNetworkArgsDict']]] = None,
+                 job_priority_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchContextJobPriorityConfigurationArgs', 'BatchBatchContextJobPriorityConfigurationArgsDict', 'outputs.BatchBatchContextJobPriorityConfiguration']]]]] = None,
+                 logging_configuration: pulumi.Input[Optional[Union['BatchBatchContextLoggingConfigurationArgs', 'BatchBatchContextLoggingConfigurationArgsDict', 'outputs.BatchBatchContextLoggingConfiguration']]] = None,
+                 network: pulumi.Input[Optional[Union['BatchBatchContextNetworkArgs', 'BatchBatchContextNetworkArgsDict', 'outputs.BatchBatchContextNetwork']]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -701,12 +701,12 @@ class BatchBatchContext(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             entitlements: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            fleets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchContextFleetArgs', 'BatchBatchContextFleetArgsDict']]]]] = None,
+            fleets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchContextFleetArgs', 'BatchBatchContextFleetArgsDict', 'outputs.BatchBatchContextFleet']]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            job_priority_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchContextJobPriorityConfigurationArgs', 'BatchBatchContextJobPriorityConfigurationArgsDict']]]]] = None,
+            job_priority_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchContextJobPriorityConfigurationArgs', 'BatchBatchContextJobPriorityConfigurationArgsDict', 'outputs.BatchBatchContextJobPriorityConfiguration']]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            logging_configuration: pulumi.Input[Optional[Union['BatchBatchContextLoggingConfigurationArgs', 'BatchBatchContextLoggingConfigurationArgsDict']]] = None,
-            network: pulumi.Input[Optional[Union['BatchBatchContextNetworkArgs', 'BatchBatchContextNetworkArgsDict']]] = None,
+            logging_configuration: pulumi.Input[Optional[Union['BatchBatchContextLoggingConfigurationArgs', 'BatchBatchContextLoggingConfigurationArgsDict', 'outputs.BatchBatchContextLoggingConfiguration']]] = None,
+            network: pulumi.Input[Optional[Union['BatchBatchContextNetworkArgs', 'BatchBatchContextNetworkArgsDict', 'outputs.BatchBatchContextNetwork']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -723,12 +723,12 @@ class BatchBatchContext(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) Summarized information about the batch context.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it will be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchcontext20250914115623.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] entitlements: (Updatable) Mapping of concurrent/shared resources used in job tasks to their limits.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchContextFleetArgs', 'BatchBatchContextFleetArgsDict']]]] fleets: List of fleet configurations related to the batch context.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchContextFleetArgs', 'BatchBatchContextFleetArgsDict', 'outputs.BatchBatchContextFleet']]]] fleets: List of fleet configurations related to the batch context.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchContextJobPriorityConfigurationArgs', 'BatchBatchContextJobPriorityConfigurationArgsDict']]]] job_priority_configurations: (Updatable) List of job priority configurations related to the batch context.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchContextJobPriorityConfigurationArgs', 'BatchBatchContextJobPriorityConfigurationArgsDict', 'outputs.BatchBatchContextJobPriorityConfiguration']]]] job_priority_configurations: (Updatable) List of job priority configurations related to the batch context.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
-        :param pulumi.Input[Union['BatchBatchContextLoggingConfigurationArgs', 'BatchBatchContextLoggingConfigurationArgsDict']] logging_configuration: (Updatable) Logging configuration of the batch context.
-        :param pulumi.Input[Union['BatchBatchContextNetworkArgs', 'BatchBatchContextNetworkArgsDict']] network: Network configuration of the batch context.
+        :param pulumi.Input[Union['BatchBatchContextLoggingConfigurationArgs', 'BatchBatchContextLoggingConfigurationArgsDict', 'outputs.BatchBatchContextLoggingConfiguration']] logging_configuration: (Updatable) Logging configuration of the batch context.
+        :param pulumi.Input[Union['BatchBatchContextNetworkArgs', 'BatchBatchContextNetworkArgsDict', 'outputs.BatchBatchContextNetwork']] network: Network configuration of the batch context.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **

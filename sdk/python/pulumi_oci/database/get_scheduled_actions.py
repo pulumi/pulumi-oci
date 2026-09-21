@@ -131,7 +131,7 @@ class AwaitableGetScheduledActionsResult(GetScheduledActionsResult):
 
 def get_scheduled_actions(compartment_id: Optional[_builtins.str] = None,
                           display_name: Optional[_builtins.str] = None,
-                          filters: Optional[Sequence[Union['GetScheduledActionsFilterArgs', 'GetScheduledActionsFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetScheduledActionsFilterArgs', 'GetScheduledActionsFilterArgsDict', 'outputs.GetScheduledActionsFilterResult']]] = None,
                           id: Optional[_builtins.str] = None,
                           scheduling_plan_id: Optional[_builtins.str] = None,
                           service_type: Optional[_builtins.str] = None,
@@ -186,7 +186,7 @@ def get_scheduled_actions(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_scheduled_actions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetScheduledActionsFilterArgs', 'GetScheduledActionsFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetScheduledActionsFilterArgs', 'GetScheduledActionsFilterArgsDict', 'outputs.GetScheduledActionsFilterResult']]]]] = None,
                                  id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  scheduling_plan_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  service_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

@@ -94,7 +94,7 @@ class AwaitableGetNetworkSecurityGroupSecurityRulesResult(GetNetworkSecurityGrou
 
 
 def get_network_security_group_security_rules(direction: Optional[_builtins.str] = None,
-                                              filters: Optional[Sequence[Union['GetNetworkSecurityGroupSecurityRulesFilterArgs', 'GetNetworkSecurityGroupSecurityRulesFilterArgsDict']]] = None,
+                                              filters: Optional[Sequence[Union['GetNetworkSecurityGroupSecurityRulesFilterArgs', 'GetNetworkSecurityGroupSecurityRulesFilterArgsDict', 'outputs.GetNetworkSecurityGroupSecurityRulesFilterResult']]] = None,
                                               network_security_group_id: Optional[_builtins.str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkSecurityGroupSecurityRulesResult:
     """
@@ -130,7 +130,7 @@ def get_network_security_group_security_rules(direction: Optional[_builtins.str]
         network_security_group_id=pulumi.get(__ret__, 'network_security_group_id'),
         security_rules=pulumi.get(__ret__, 'security_rules'))
 def get_network_security_group_security_rules_output(direction: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkSecurityGroupSecurityRulesFilterArgs', 'GetNetworkSecurityGroupSecurityRulesFilterArgsDict']]]]] = None,
+                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkSecurityGroupSecurityRulesFilterArgs', 'GetNetworkSecurityGroupSecurityRulesFilterArgsDict', 'outputs.GetNetworkSecurityGroupSecurityRulesFilterResult']]]]] = None,
                                                      network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkSecurityGroupSecurityRulesResult]:
     """

@@ -626,7 +626,7 @@ class User(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            capabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserCapabilityArgs', 'UserCapabilityArgsDict']]]]] = None,
+            capabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserCapabilityArgs', 'UserCapabilityArgsDict', 'outputs.UserCapability']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             db_user_name: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -649,7 +649,7 @@ class User(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UserCapabilityArgs', 'UserCapabilityArgsDict']]]] capabilities: Properties indicating how the user is allowed to authenticate.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UserCapabilityArgs', 'UserCapabilityArgsDict', 'outputs.UserCapability']]]] capabilities: Properties indicating how the user is allowed to authenticate.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the tenancy containing the user.
         :param pulumi.Input[_builtins.str] db_user_name: DB username of the DB credential. Has to be unique across the tenancy.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`

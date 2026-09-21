@@ -127,7 +127,7 @@ def get_desktops(availability_domain: Optional[_builtins.str] = None,
                  compartment_id: Optional[_builtins.str] = None,
                  desktop_pool_id: Optional[_builtins.str] = None,
                  display_name: Optional[_builtins.str] = None,
-                 filters: Optional[Sequence[Union['GetDesktopsFilterArgs', 'GetDesktopsFilterArgsDict']]] = None,
+                 filters: Optional[Sequence[Union['GetDesktopsFilterArgs', 'GetDesktopsFilterArgsDict', 'outputs.GetDesktopsFilterResult']]] = None,
                  id: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDesktopsResult:
@@ -182,7 +182,7 @@ def get_desktops_output(availability_domain: pulumi.Input[Optional[Optional[_bui
                         compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                         desktop_pool_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDesktopsFilterArgs', 'GetDesktopsFilterArgsDict']]]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDesktopsFilterArgs', 'GetDesktopsFilterArgsDict', 'outputs.GetDesktopsFilterResult']]]]] = None,
                         id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDesktopsResult]:

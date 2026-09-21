@@ -82,7 +82,7 @@ class AwaitableGetDelegationControlResourcesResult(GetDelegationControlResources
 
 
 def get_delegation_control_resources(delegation_control_id: Optional[_builtins.str] = None,
-                                     filters: Optional[Sequence[Union['GetDelegationControlResourcesFilterArgs', 'GetDelegationControlResourcesFilterArgsDict']]] = None,
+                                     filters: Optional[Sequence[Union['GetDelegationControlResourcesFilterArgs', 'GetDelegationControlResourcesFilterArgsDict', 'outputs.GetDelegationControlResourcesFilterResult']]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDelegationControlResourcesResult:
     """
     This data source provides the list of Delegation Control Resources in Oracle Cloud Infrastructure Delegate Access Control service.
@@ -113,7 +113,7 @@ def get_delegation_control_resources(delegation_control_id: Optional[_builtins.s
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_delegation_control_resources_output(delegation_control_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDelegationControlResourcesFilterArgs', 'GetDelegationControlResourcesFilterArgsDict']]]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDelegationControlResourcesFilterArgs', 'GetDelegationControlResourcesFilterArgsDict', 'outputs.GetDelegationControlResourcesFilterResult']]]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDelegationControlResourcesResult]:
     """
     This data source provides the list of Delegation Control Resources in Oracle Cloud Infrastructure Delegate Access Control service.

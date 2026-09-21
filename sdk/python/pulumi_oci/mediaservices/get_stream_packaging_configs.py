@@ -119,7 +119,7 @@ class AwaitableGetStreamPackagingConfigsResult(GetStreamPackagingConfigsResult):
 
 def get_stream_packaging_configs(display_name: Optional[_builtins.str] = None,
                                  distribution_channel_id: Optional[_builtins.str] = None,
-                                 filters: Optional[Sequence[Union['GetStreamPackagingConfigsFilterArgs', 'GetStreamPackagingConfigsFilterArgsDict']]] = None,
+                                 filters: Optional[Sequence[Union['GetStreamPackagingConfigsFilterArgs', 'GetStreamPackagingConfigsFilterArgsDict', 'outputs.GetStreamPackagingConfigsFilterResult']]] = None,
                                  state: Optional[_builtins.str] = None,
                                  stream_packaging_config_id: Optional[_builtins.str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetStreamPackagingConfigsResult:
@@ -165,7 +165,7 @@ def get_stream_packaging_configs(display_name: Optional[_builtins.str] = None,
         stream_packaging_config_id=pulumi.get(__ret__, 'stream_packaging_config_id'))
 def get_stream_packaging_configs_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         distribution_channel_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetStreamPackagingConfigsFilterArgs', 'GetStreamPackagingConfigsFilterArgsDict']]]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetStreamPackagingConfigsFilterArgs', 'GetStreamPackagingConfigsFilterArgsDict', 'outputs.GetStreamPackagingConfigsFilterResult']]]]] = None,
                                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         stream_packaging_config_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStreamPackagingConfigsResult]:

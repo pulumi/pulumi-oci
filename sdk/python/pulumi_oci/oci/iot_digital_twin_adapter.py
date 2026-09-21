@@ -411,8 +411,8 @@ class IotDigitalTwinAdapter(pulumi.CustomResource):
                  digital_twin_model_spec_uri: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 inbound_envelope: pulumi.Input[Optional[Union['IotDigitalTwinAdapterInboundEnvelopeArgs', 'IotDigitalTwinAdapterInboundEnvelopeArgsDict']]] = None,
-                 inbound_routes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IotDigitalTwinAdapterInboundRouteArgs', 'IotDigitalTwinAdapterInboundRouteArgsDict']]]]] = None,
+                 inbound_envelope: pulumi.Input[Optional[Union['IotDigitalTwinAdapterInboundEnvelopeArgs', 'IotDigitalTwinAdapterInboundEnvelopeArgsDict', 'outputs.IotDigitalTwinAdapterInboundEnvelope']]] = None,
+                 inbound_routes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IotDigitalTwinAdapterInboundRouteArgs', 'IotDigitalTwinAdapterInboundRouteArgsDict', 'outputs.IotDigitalTwinAdapterInboundRoute']]]]] = None,
                  iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -483,8 +483,8 @@ class IotDigitalTwinAdapter(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] digital_twin_model_spec_uri: The URI of the digital twin model specification.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['IotDigitalTwinAdapterInboundEnvelopeArgs', 'IotDigitalTwinAdapterInboundEnvelopeArgsDict']] inbound_envelope: (Updatable) Payload containing device-specific metadata and optional value mappings used to interpret or transform that metadata. This structure includes the device endpoint, the actual payload, and an optional envelope mapping that applies [JQ](https://stedolan.github.io/jq/) expressions to extract or reshape the data as needed.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IotDigitalTwinAdapterInboundRouteArgs', 'IotDigitalTwinAdapterInboundRouteArgsDict']]]] inbound_routes: (Updatable) list of inbound routes
+        :param pulumi.Input[Union['IotDigitalTwinAdapterInboundEnvelopeArgs', 'IotDigitalTwinAdapterInboundEnvelopeArgsDict', 'outputs.IotDigitalTwinAdapterInboundEnvelope']] inbound_envelope: (Updatable) Payload containing device-specific metadata and optional value mappings used to interpret or transform that metadata. This structure includes the device endpoint, the actual payload, and an optional envelope mapping that applies [JQ](https://stedolan.github.io/jq/) expressions to extract or reshape the data as needed.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IotDigitalTwinAdapterInboundRouteArgs', 'IotDigitalTwinAdapterInboundRouteArgsDict', 'outputs.IotDigitalTwinAdapterInboundRoute']]]] inbound_routes: (Updatable) list of inbound routes
         :param pulumi.Input[_builtins.str] iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
                
                ** IMPORTANT **
@@ -577,8 +577,8 @@ class IotDigitalTwinAdapter(pulumi.CustomResource):
                  digital_twin_model_spec_uri: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 inbound_envelope: pulumi.Input[Optional[Union['IotDigitalTwinAdapterInboundEnvelopeArgs', 'IotDigitalTwinAdapterInboundEnvelopeArgsDict']]] = None,
-                 inbound_routes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IotDigitalTwinAdapterInboundRouteArgs', 'IotDigitalTwinAdapterInboundRouteArgsDict']]]]] = None,
+                 inbound_envelope: pulumi.Input[Optional[Union['IotDigitalTwinAdapterInboundEnvelopeArgs', 'IotDigitalTwinAdapterInboundEnvelopeArgsDict', 'outputs.IotDigitalTwinAdapterInboundEnvelope']]] = None,
+                 inbound_routes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IotDigitalTwinAdapterInboundRouteArgs', 'IotDigitalTwinAdapterInboundRouteArgsDict', 'outputs.IotDigitalTwinAdapterInboundRoute']]]]] = None,
                  iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -620,8 +620,8 @@ class IotDigitalTwinAdapter(pulumi.CustomResource):
             digital_twin_model_spec_uri: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            inbound_envelope: pulumi.Input[Optional[Union['IotDigitalTwinAdapterInboundEnvelopeArgs', 'IotDigitalTwinAdapterInboundEnvelopeArgsDict']]] = None,
-            inbound_routes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IotDigitalTwinAdapterInboundRouteArgs', 'IotDigitalTwinAdapterInboundRouteArgsDict']]]]] = None,
+            inbound_envelope: pulumi.Input[Optional[Union['IotDigitalTwinAdapterInboundEnvelopeArgs', 'IotDigitalTwinAdapterInboundEnvelopeArgsDict', 'outputs.IotDigitalTwinAdapterInboundEnvelope']]] = None,
+            inbound_routes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IotDigitalTwinAdapterInboundRouteArgs', 'IotDigitalTwinAdapterInboundRouteArgsDict', 'outputs.IotDigitalTwinAdapterInboundRoute']]]]] = None,
             iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -640,8 +640,8 @@ class IotDigitalTwinAdapter(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] digital_twin_model_spec_uri: The URI of the digital twin model specification.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['IotDigitalTwinAdapterInboundEnvelopeArgs', 'IotDigitalTwinAdapterInboundEnvelopeArgsDict']] inbound_envelope: (Updatable) Payload containing device-specific metadata and optional value mappings used to interpret or transform that metadata. This structure includes the device endpoint, the actual payload, and an optional envelope mapping that applies [JQ](https://stedolan.github.io/jq/) expressions to extract or reshape the data as needed.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IotDigitalTwinAdapterInboundRouteArgs', 'IotDigitalTwinAdapterInboundRouteArgsDict']]]] inbound_routes: (Updatable) list of inbound routes
+        :param pulumi.Input[Union['IotDigitalTwinAdapterInboundEnvelopeArgs', 'IotDigitalTwinAdapterInboundEnvelopeArgsDict', 'outputs.IotDigitalTwinAdapterInboundEnvelope']] inbound_envelope: (Updatable) Payload containing device-specific metadata and optional value mappings used to interpret or transform that metadata. This structure includes the device endpoint, the actual payload, and an optional envelope mapping that applies [JQ](https://stedolan.github.io/jq/) expressions to extract or reshape the data as needed.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IotDigitalTwinAdapterInboundRouteArgs', 'IotDigitalTwinAdapterInboundRouteArgsDict', 'outputs.IotDigitalTwinAdapterInboundRoute']]]] inbound_routes: (Updatable) list of inbound routes
         :param pulumi.Input[_builtins.str] iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
                
                ** IMPORTANT **

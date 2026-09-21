@@ -605,8 +605,8 @@ class VolumeGroupBackup(pulumi.CustomResource):
                  is_indefinite_retention_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_prevent_deletion_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_retention_lock_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 retention_period: pulumi.Input[Optional[Union['VolumeGroupBackupRetentionPeriodArgs', 'VolumeGroupBackupRetentionPeriodArgsDict']]] = None,
-                 source_details: pulumi.Input[Optional[Union['VolumeGroupBackupSourceDetailsArgs', 'VolumeGroupBackupSourceDetailsArgsDict']]] = None,
+                 retention_period: pulumi.Input[Optional[Union['VolumeGroupBackupRetentionPeriodArgs', 'VolumeGroupBackupRetentionPeriodArgsDict', 'outputs.VolumeGroupBackupRetentionPeriod']]] = None,
+                 source_details: pulumi.Input[Optional[Union['VolumeGroupBackupSourceDetailsArgs', 'VolumeGroupBackupSourceDetailsArgsDict', 'outputs.VolumeGroupBackupSourceDetails']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  volume_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -663,8 +663,8 @@ class VolumeGroupBackup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_indefinite_retention_enabled: (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
         :param pulumi.Input[_builtins.bool] is_prevent_deletion_enabled: (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
         :param pulumi.Input[_builtins.bool] is_retention_lock_enabled: (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
-        :param pulumi.Input[Union['VolumeGroupBackupRetentionPeriodArgs', 'VolumeGroupBackupRetentionPeriodArgsDict']] retention_period: (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
-        :param pulumi.Input[Union['VolumeGroupBackupSourceDetailsArgs', 'VolumeGroupBackupSourceDetailsArgsDict']] source_details: Details of the volume group backup source in the cloud.
+        :param pulumi.Input[Union['VolumeGroupBackupRetentionPeriodArgs', 'VolumeGroupBackupRetentionPeriodArgsDict', 'outputs.VolumeGroupBackupRetentionPeriod']] retention_period: (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        :param pulumi.Input[Union['VolumeGroupBackupSourceDetailsArgs', 'VolumeGroupBackupSourceDetailsArgsDict', 'outputs.VolumeGroupBackupSourceDetails']] source_details: Details of the volume group backup source in the cloud.
         :param pulumi.Input[_builtins.str] type: The type of backup to create. If omitted, defaults to incremental.
                * Allowed values are :
                * FULL
@@ -743,8 +743,8 @@ class VolumeGroupBackup(pulumi.CustomResource):
                  is_indefinite_retention_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_prevent_deletion_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_retention_lock_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 retention_period: pulumi.Input[Optional[Union['VolumeGroupBackupRetentionPeriodArgs', 'VolumeGroupBackupRetentionPeriodArgsDict']]] = None,
-                 source_details: pulumi.Input[Optional[Union['VolumeGroupBackupSourceDetailsArgs', 'VolumeGroupBackupSourceDetailsArgsDict']]] = None,
+                 retention_period: pulumi.Input[Optional[Union['VolumeGroupBackupRetentionPeriodArgs', 'VolumeGroupBackupRetentionPeriodArgsDict', 'outputs.VolumeGroupBackupRetentionPeriod']]] = None,
+                 source_details: pulumi.Input[Optional[Union['VolumeGroupBackupSourceDetailsArgs', 'VolumeGroupBackupSourceDetailsArgsDict', 'outputs.VolumeGroupBackupSourceDetails']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  volume_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -797,10 +797,10 @@ class VolumeGroupBackup(pulumi.CustomResource):
             is_indefinite_retention_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_prevent_deletion_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_retention_lock_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            retention_period: pulumi.Input[Optional[Union['VolumeGroupBackupRetentionPeriodArgs', 'VolumeGroupBackupRetentionPeriodArgsDict']]] = None,
+            retention_period: pulumi.Input[Optional[Union['VolumeGroupBackupRetentionPeriodArgs', 'VolumeGroupBackupRetentionPeriodArgsDict', 'outputs.VolumeGroupBackupRetentionPeriod']]] = None,
             size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
             size_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
-            source_details: pulumi.Input[Optional[Union['VolumeGroupBackupSourceDetailsArgs', 'VolumeGroupBackupSourceDetailsArgsDict']]] = None,
+            source_details: pulumi.Input[Optional[Union['VolumeGroupBackupSourceDetailsArgs', 'VolumeGroupBackupSourceDetailsArgsDict', 'outputs.VolumeGroupBackupSourceDetails']]] = None,
             source_type: pulumi.Input[Optional[_builtins.str]] = None,
             source_volume_group_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -827,10 +827,10 @@ class VolumeGroupBackup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_indefinite_retention_enabled: (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
         :param pulumi.Input[_builtins.bool] is_prevent_deletion_enabled: (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
         :param pulumi.Input[_builtins.bool] is_retention_lock_enabled: (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
-        :param pulumi.Input[Union['VolumeGroupBackupRetentionPeriodArgs', 'VolumeGroupBackupRetentionPeriodArgsDict']] retention_period: (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        :param pulumi.Input[Union['VolumeGroupBackupRetentionPeriodArgs', 'VolumeGroupBackupRetentionPeriodArgsDict', 'outputs.VolumeGroupBackupRetentionPeriod']] retention_period: (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
         :param pulumi.Input[_builtins.str] size_in_gbs: The aggregate size of the volume group backup, in GBs.
         :param pulumi.Input[_builtins.str] size_in_mbs: The aggregate size of the volume group backup, in MBs.
-        :param pulumi.Input[Union['VolumeGroupBackupSourceDetailsArgs', 'VolumeGroupBackupSourceDetailsArgsDict']] source_details: Details of the volume group backup source in the cloud.
+        :param pulumi.Input[Union['VolumeGroupBackupSourceDetailsArgs', 'VolumeGroupBackupSourceDetailsArgsDict', 'outputs.VolumeGroupBackupSourceDetails']] source_details: Details of the volume group backup source in the cloud.
         :param pulumi.Input[_builtins.str] source_type: Specifies whether the volume group backup was created manually, or via scheduled backup policy.
         :param pulumi.Input[_builtins.str] source_volume_group_backup_id: The OCID of the source volume group backup.
         :param pulumi.Input[_builtins.str] state: The current state of a volume group backup.

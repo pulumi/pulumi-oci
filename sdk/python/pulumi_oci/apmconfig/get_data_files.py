@@ -125,7 +125,7 @@ class AwaitableGetDataFilesResult(GetDataFilesResult):
 
 def get_data_files(apm_domain_id: Optional[_builtins.str] = None,
                    apm_type: Optional[_builtins.str] = None,
-                   filters: Optional[Sequence[Union['GetDataFilesFilterArgs', 'GetDataFilesFilterArgsDict']]] = None,
+                   filters: Optional[Sequence[Union['GetDataFilesFilterArgs', 'GetDataFilesFilterArgsDict', 'outputs.GetDataFilesFilterResult']]] = None,
                    metadata: Optional[Mapping[str, _builtins.str]] = None,
                    name: Optional[_builtins.str] = None,
                    time_last_modified_after: Optional[_builtins.str] = None,
@@ -181,7 +181,7 @@ def get_data_files(apm_domain_id: Optional[_builtins.str] = None,
         time_last_modified_before=pulumi.get(__ret__, 'time_last_modified_before'))
 def get_data_files_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                           apm_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDataFilesFilterArgs', 'GetDataFilesFilterArgsDict']]]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDataFilesFilterArgs', 'GetDataFilesFilterArgsDict', 'outputs.GetDataFilesFilterResult']]]]] = None,
                           metadata: pulumi.Input[Optional[Optional[Mapping[str, _builtins.str]]]] = None,
                           name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           time_last_modified_after: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

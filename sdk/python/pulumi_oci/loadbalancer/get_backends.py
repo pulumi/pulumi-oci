@@ -91,7 +91,7 @@ class AwaitableGetBackendsResult(GetBackendsResult):
 
 
 def get_backends(backendset_name: Optional[_builtins.str] = None,
-                 filters: Optional[Sequence[Union['GetBackendsFilterArgs', 'GetBackendsFilterArgsDict']]] = None,
+                 filters: Optional[Sequence[Union['GetBackendsFilterArgs', 'GetBackendsFilterArgsDict', 'outputs.GetBackendsFilterResult']]] = None,
                  load_balancer_id: Optional[_builtins.str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBackendsResult:
     """
@@ -127,7 +127,7 @@ def get_backends(backendset_name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'))
 def get_backends_output(backendset_name: pulumi.Input[Optional[_builtins.str]] = None,
-                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBackendsFilterArgs', 'GetBackendsFilterArgsDict']]]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBackendsFilterArgs', 'GetBackendsFilterArgsDict', 'outputs.GetBackendsFilterResult']]]]] = None,
                         load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBackendsResult]:
     """

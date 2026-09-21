@@ -672,9 +672,9 @@ class Model(pulumi.CustomResource):
                  model_type: pulumi.Input[Optional[_builtins.str]] = None,
                  model_version: pulumi.Input[Optional[_builtins.str]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 testing_dataset: pulumi.Input[Optional[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']]] = None,
-                 training_dataset: pulumi.Input[Optional[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
-                 validation_dataset: pulumi.Input[Optional[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']]] = None,
+                 testing_dataset: pulumi.Input[Optional[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict', 'outputs.ModelTestingDataset']]] = None,
+                 training_dataset: pulumi.Input[Optional[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict', 'outputs.ModelTrainingDataset']]] = None,
+                 validation_dataset: pulumi.Input[Optional[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict', 'outputs.ModelValidationDataset']]] = None,
                  __props__=None):
         """
         This resource provides the Model resource in Oracle Cloud Infrastructure Ai Vision service.
@@ -745,9 +745,9 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] model_type: Which type of Vision model this is.
         :param pulumi.Input[_builtins.str] model_version: The model version
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
-        :param pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']] testing_dataset: The base entity which is the input for creating and training a model.
-        :param pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']] training_dataset: The base entity which is the input for creating and training a model.
-        :param pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']] validation_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict', 'outputs.ModelTestingDataset']] testing_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict', 'outputs.ModelTrainingDataset']] training_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict', 'outputs.ModelValidationDataset']] validation_dataset: The base entity which is the input for creating and training a model.
         """
         ...
     @overload
@@ -837,9 +837,9 @@ class Model(pulumi.CustomResource):
                  model_type: pulumi.Input[Optional[_builtins.str]] = None,
                  model_version: pulumi.Input[Optional[_builtins.str]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 testing_dataset: pulumi.Input[Optional[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']]] = None,
-                 training_dataset: pulumi.Input[Optional[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
-                 validation_dataset: pulumi.Input[Optional[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']]] = None,
+                 testing_dataset: pulumi.Input[Optional[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict', 'outputs.ModelTestingDataset']]] = None,
+                 training_dataset: pulumi.Input[Optional[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict', 'outputs.ModelTrainingDataset']]] = None,
+                 validation_dataset: pulumi.Input[Optional[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict', 'outputs.ModelValidationDataset']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -912,13 +912,13 @@ class Model(pulumi.CustomResource):
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             test_image_count: pulumi.Input[Optional[_builtins.int]] = None,
-            testing_dataset: pulumi.Input[Optional[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']]] = None,
+            testing_dataset: pulumi.Input[Optional[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict', 'outputs.ModelTestingDataset']]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
             total_image_count: pulumi.Input[Optional[_builtins.int]] = None,
             trained_duration_in_hours: pulumi.Input[Optional[_builtins.float]] = None,
-            training_dataset: pulumi.Input[Optional[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
-            validation_dataset: pulumi.Input[Optional[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']]] = None) -> 'Model':
+            training_dataset: pulumi.Input[Optional[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict', 'outputs.ModelTrainingDataset']]] = None,
+            validation_dataset: pulumi.Input[Optional[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict', 'outputs.ModelValidationDataset']]] = None) -> 'Model':
         """
         Get an existing Model resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -945,13 +945,13 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The current state of the model.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         :param pulumi.Input[_builtins.int] test_image_count: The number of images set aside for evaluating model performance metrics after training.
-        :param pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']] testing_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict', 'outputs.ModelTestingDataset']] testing_dataset: The base entity which is the input for creating and training a model.
         :param pulumi.Input[_builtins.str] time_created: When the model was created, as an RFC3339 datetime string.
         :param pulumi.Input[_builtins.str] time_updated: When the model was updated, as an RFC3339 datetime string.
         :param pulumi.Input[_builtins.int] total_image_count: The number of images in the dataset used to train, validate, and test the model.
         :param pulumi.Input[_builtins.float] trained_duration_in_hours: The total hours actually used for model training.
-        :param pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']] training_dataset: The base entity which is the input for creating and training a model.
-        :param pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']] validation_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict', 'outputs.ModelTrainingDataset']] training_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict', 'outputs.ModelValidationDataset']] validation_dataset: The base entity which is the input for creating and training a model.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

@@ -115,7 +115,7 @@ class AwaitableGetListingPackagesResult(GetListingPackagesResult):
 
 
 def get_listing_packages(compartment_id: Optional[_builtins.str] = None,
-                         filters: Optional[Sequence[Union['GetListingPackagesFilterArgs', 'GetListingPackagesFilterArgsDict']]] = None,
+                         filters: Optional[Sequence[Union['GetListingPackagesFilterArgs', 'GetListingPackagesFilterArgsDict', 'outputs.GetListingPackagesFilterResult']]] = None,
                          listing_id: Optional[_builtins.str] = None,
                          package_type: Optional[_builtins.str] = None,
                          package_version: Optional[_builtins.str] = None,
@@ -174,7 +174,7 @@ def get_listing_packages(compartment_id: Optional[_builtins.str] = None,
         package_type=pulumi.get(__ret__, 'package_type'),
         package_version=pulumi.get(__ret__, 'package_version'))
 def get_listing_packages_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetListingPackagesFilterArgs', 'GetListingPackagesFilterArgsDict']]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetListingPackagesFilterArgs', 'GetListingPackagesFilterArgsDict', 'outputs.GetListingPackagesFilterResult']]]]] = None,
                                 listing_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 package_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 package_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

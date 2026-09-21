@@ -81,7 +81,7 @@ class AwaitableGetScheduledActionParamsResult(GetScheduledActionParamsResult):
             type=self.type)
 
 
-def get_scheduled_action_params(filters: Optional[Sequence[Union['GetScheduledActionParamsFilterArgs', 'GetScheduledActionParamsFilterArgsDict']]] = None,
+def get_scheduled_action_params(filters: Optional[Sequence[Union['GetScheduledActionParamsFilterArgs', 'GetScheduledActionParamsFilterArgsDict', 'outputs.GetScheduledActionParamsFilterResult']]] = None,
                                 type: Optional[_builtins.str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetScheduledActionParamsResult:
     """
@@ -112,7 +112,7 @@ def get_scheduled_action_params(filters: Optional[Sequence[Union['GetScheduledAc
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         type=pulumi.get(__ret__, 'type'))
-def get_scheduled_action_params_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetScheduledActionParamsFilterArgs', 'GetScheduledActionParamsFilterArgsDict']]]]] = None,
+def get_scheduled_action_params_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetScheduledActionParamsFilterArgs', 'GetScheduledActionParamsFilterArgsDict', 'outputs.GetScheduledActionParamsFilterResult']]]]] = None,
                                        type: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScheduledActionParamsResult]:
     """

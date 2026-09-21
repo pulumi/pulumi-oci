@@ -81,7 +81,7 @@ class AwaitableGetVmClusterPatchesResult(GetVmClusterPatchesResult):
             vm_cluster_id=self.vm_cluster_id)
 
 
-def get_vm_cluster_patches(filters: Optional[Sequence[Union['GetVmClusterPatchesFilterArgs', 'GetVmClusterPatchesFilterArgsDict']]] = None,
+def get_vm_cluster_patches(filters: Optional[Sequence[Union['GetVmClusterPatchesFilterArgs', 'GetVmClusterPatchesFilterArgsDict', 'outputs.GetVmClusterPatchesFilterResult']]] = None,
                            vm_cluster_id: Optional[_builtins.str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVmClusterPatchesResult:
     """
@@ -112,7 +112,7 @@ def get_vm_cluster_patches(filters: Optional[Sequence[Union['GetVmClusterPatches
         id=pulumi.get(__ret__, 'id'),
         patches=pulumi.get(__ret__, 'patches'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
-def get_vm_cluster_patches_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVmClusterPatchesFilterArgs', 'GetVmClusterPatchesFilterArgsDict']]]]] = None,
+def get_vm_cluster_patches_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVmClusterPatchesFilterArgs', 'GetVmClusterPatchesFilterArgsDict', 'outputs.GetVmClusterPatchesFilterResult']]]]] = None,
                                   vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmClusterPatchesResult]:
     """

@@ -123,7 +123,7 @@ class AwaitableGetDesktopPoolsResult(GetDesktopPoolsResult):
 def get_desktop_pools(availability_domain: Optional[_builtins.str] = None,
                       compartment_id: Optional[_builtins.str] = None,
                       display_name: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetDesktopPoolsFilterArgs', 'GetDesktopPoolsFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetDesktopPoolsFilterArgs', 'GetDesktopPoolsFilterArgsDict', 'outputs.GetDesktopPoolsFilterResult']]] = None,
                       id: Optional[_builtins.str] = None,
                       state: Optional[_builtins.str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDesktopPoolsResult:
@@ -173,7 +173,7 @@ def get_desktop_pools(availability_domain: Optional[_builtins.str] = None,
 def get_desktop_pools_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDesktopPoolsFilterArgs', 'GetDesktopPoolsFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDesktopPoolsFilterArgs', 'GetDesktopPoolsFilterArgsDict', 'outputs.GetDesktopPoolsFilterResult']]]]] = None,
                              id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDesktopPoolsResult]:

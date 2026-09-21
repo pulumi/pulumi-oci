@@ -1169,18 +1169,18 @@ class DomainsMyRequest(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: pulumi.Input[Optional[_builtins.str]] = None,
-                 approval_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyRequestApprovalDetailArgs', 'DomainsMyRequestApprovalDetailArgsDict']]]]] = None,
+                 approval_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyRequestApprovalDetailArgs', 'DomainsMyRequestApprovalDetailArgsDict', 'outputs.DomainsMyRequestApprovalDetail']]]]] = None,
                  attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  justification: pulumi.Input[Optional[_builtins.str]] = None,
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
-                 requesting: pulumi.Input[Optional[Union['DomainsMyRequestRequestingArgs', 'DomainsMyRequestRequestingArgsDict']]] = None,
-                 requestor: pulumi.Input[Optional[Union['DomainsMyRequestRequestorArgs', 'DomainsMyRequestRequestorArgsDict']]] = None,
+                 requesting: pulumi.Input[Optional[Union['DomainsMyRequestRequestingArgs', 'DomainsMyRequestRequestingArgsDict', 'outputs.DomainsMyRequestRequesting']]] = None,
+                 requestor: pulumi.Input[Optional[Union['DomainsMyRequestRequestorArgs', 'DomainsMyRequestRequestorArgsDict', 'outputs.DomainsMyRequestRequestor']]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyRequestTagArgs', 'DomainsMyRequestTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyRequestTagArgs', 'DomainsMyRequestTagArgsDict', 'outputs.DomainsMyRequestTag']]]]] = None,
                  __props__=None):
         """
         This resource provides the My Request resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1244,7 +1244,7 @@ class DomainsMyRequest(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyRequestApprovalDetailArgs', 'DomainsMyRequestApprovalDetailArgsDict']]]] approval_details: Approvals created for this request.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyRequestApprovalDetailArgs', 'DomainsMyRequestApprovalDetailArgsDict', 'outputs.DomainsMyRequestApprovalDetail']]]] approval_details: Approvals created for this request.
                
                **Added In:** 2307071836
                
@@ -1281,7 +1281,7 @@ class DomainsMyRequest(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: global
-        :param pulumi.Input[Union['DomainsMyRequestRequestingArgs', 'DomainsMyRequestRequestingArgsDict']] requesting: Requestable resource reference.
+        :param pulumi.Input[Union['DomainsMyRequestRequestingArgs', 'DomainsMyRequestRequestingArgsDict', 'outputs.DomainsMyRequestRequesting']] requesting: Requestable resource reference.
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1291,7 +1291,7 @@ class DomainsMyRequest(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsMyRequestRequestorArgs', 'DomainsMyRequestRequestorArgsDict']] requestor: Requesting User
+        :param pulumi.Input[Union['DomainsMyRequestRequestorArgs', 'DomainsMyRequestRequestorArgsDict', 'outputs.DomainsMyRequestRequestor']] requestor: Requesting User
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1313,7 +1313,7 @@ class DomainsMyRequest(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyRequestTagArgs', 'DomainsMyRequestTagArgsDict']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyRequestTagArgs', 'DomainsMyRequestTagArgsDict', 'outputs.DomainsMyRequestTag']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1394,18 +1394,18 @@ class DomainsMyRequest(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: pulumi.Input[Optional[_builtins.str]] = None,
-                 approval_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyRequestApprovalDetailArgs', 'DomainsMyRequestApprovalDetailArgsDict']]]]] = None,
+                 approval_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyRequestApprovalDetailArgs', 'DomainsMyRequestApprovalDetailArgsDict', 'outputs.DomainsMyRequestApprovalDetail']]]]] = None,
                  attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  justification: pulumi.Input[Optional[_builtins.str]] = None,
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
-                 requesting: pulumi.Input[Optional[Union['DomainsMyRequestRequestingArgs', 'DomainsMyRequestRequestingArgsDict']]] = None,
-                 requestor: pulumi.Input[Optional[Union['DomainsMyRequestRequestorArgs', 'DomainsMyRequestRequestorArgsDict']]] = None,
+                 requesting: pulumi.Input[Optional[Union['DomainsMyRequestRequestingArgs', 'DomainsMyRequestRequestingArgsDict', 'outputs.DomainsMyRequestRequesting']]] = None,
+                 requestor: pulumi.Input[Optional[Union['DomainsMyRequestRequestorArgs', 'DomainsMyRequestRequestorArgsDict', 'outputs.DomainsMyRequestRequestor']]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyRequestTagArgs', 'DomainsMyRequestTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyRequestTagArgs', 'DomainsMyRequestTagArgsDict', 'outputs.DomainsMyRequestTag']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1458,7 +1458,7 @@ class DomainsMyRequest(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             action: pulumi.Input[Optional[_builtins.str]] = None,
-            approval_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyRequestApprovalDetailArgs', 'DomainsMyRequestApprovalDetailArgsDict']]]]] = None,
+            approval_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyRequestApprovalDetailArgs', 'DomainsMyRequestApprovalDetailArgsDict', 'outputs.DomainsMyRequestApprovalDetail']]]]] = None,
             attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             attributes: pulumi.Input[Optional[_builtins.str]] = None,
             authorization: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1466,20 +1466,20 @@ class DomainsMyRequest(pulumi.CustomResource):
             delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
             domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             expires: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyRequestIdcsCreatedByArgs', 'DomainsMyRequestIdcsCreatedByArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyRequestIdcsCreatedByArgs', 'DomainsMyRequestIdcsCreatedByArgsDict', 'outputs.DomainsMyRequestIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyRequestIdcsLastModifiedByArgs', 'DomainsMyRequestIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyRequestIdcsLastModifiedByArgs', 'DomainsMyRequestIdcsLastModifiedByArgsDict', 'outputs.DomainsMyRequestIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             justification: pulumi.Input[Optional[_builtins.str]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyRequestMetaArgs', 'DomainsMyRequestMetaArgsDict']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyRequestMetaArgs', 'DomainsMyRequestMetaArgsDict', 'outputs.DomainsMyRequestMeta']]]]] = None,
             ocid: pulumi.Input[Optional[_builtins.str]] = None,
-            requesting: pulumi.Input[Optional[Union['DomainsMyRequestRequestingArgs', 'DomainsMyRequestRequestingArgsDict']]] = None,
-            requestor: pulumi.Input[Optional[Union['DomainsMyRequestRequestorArgs', 'DomainsMyRequestRequestorArgsDict']]] = None,
+            requesting: pulumi.Input[Optional[Union['DomainsMyRequestRequestingArgs', 'DomainsMyRequestRequestingArgsDict', 'outputs.DomainsMyRequestRequesting']]] = None,
+            requestor: pulumi.Input[Optional[Union['DomainsMyRequestRequestorArgs', 'DomainsMyRequestRequestorArgsDict', 'outputs.DomainsMyRequestRequestor']]] = None,
             resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
             schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyRequestTagArgs', 'DomainsMyRequestTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyRequestTagArgs', 'DomainsMyRequestTagArgsDict', 'outputs.DomainsMyRequestTag']]]]] = None,
             tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None) -> 'DomainsMyRequest':
         """
         Get an existing DomainsMyRequest resource's state with the given name, id, and optional extra
@@ -1501,7 +1501,7 @@ class DomainsMyRequest(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyRequestApprovalDetailArgs', 'DomainsMyRequestApprovalDetailArgsDict']]]] approval_details: Approvals created for this request.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyRequestApprovalDetailArgs', 'DomainsMyRequestApprovalDetailArgsDict', 'outputs.DomainsMyRequestApprovalDetail']]]] approval_details: Approvals created for this request.
                
                **Added In:** 2307071836
                
@@ -1560,7 +1560,7 @@ class DomainsMyRequest(pulumi.CustomResource):
                * returned: default
                * type: dateTime
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyRequestIdcsCreatedByArgs', 'DomainsMyRequestIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyRequestIdcsCreatedByArgs', 'DomainsMyRequestIdcsCreatedByArgsDict', 'outputs.DomainsMyRequestIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1570,7 +1570,7 @@ class DomainsMyRequest(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyRequestIdcsLastModifiedByArgs', 'DomainsMyRequestIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyRequestIdcsLastModifiedByArgs', 'DomainsMyRequestIdcsLastModifiedByArgsDict', 'outputs.DomainsMyRequestIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1611,7 +1611,7 @@ class DomainsMyRequest(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyRequestMetaArgs', 'DomainsMyRequestMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyRequestMetaArgs', 'DomainsMyRequestMetaArgsDict', 'outputs.DomainsMyRequestMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1633,7 +1633,7 @@ class DomainsMyRequest(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: global
-        :param pulumi.Input[Union['DomainsMyRequestRequestingArgs', 'DomainsMyRequestRequestingArgsDict']] requesting: Requestable resource reference.
+        :param pulumi.Input[Union['DomainsMyRequestRequestingArgs', 'DomainsMyRequestRequestingArgsDict', 'outputs.DomainsMyRequestRequesting']] requesting: Requestable resource reference.
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1643,7 +1643,7 @@ class DomainsMyRequest(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsMyRequestRequestorArgs', 'DomainsMyRequestRequestorArgsDict']] requestor: Requesting User
+        :param pulumi.Input[Union['DomainsMyRequestRequestorArgs', 'DomainsMyRequestRequestorArgsDict', 'outputs.DomainsMyRequestRequestor']] requestor: Requesting User
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1676,7 +1676,7 @@ class DomainsMyRequest(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyRequestTagArgs', 'DomainsMyRequestTagArgsDict']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyRequestTagArgs', 'DomainsMyRequestTagArgsDict', 'outputs.DomainsMyRequestTag']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]

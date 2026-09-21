@@ -219,10 +219,10 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 credentials: pulumi.Input[Optional[Union['ManagedDatabasesChangeDatabaseParameterCredentialsArgs', 'ManagedDatabasesChangeDatabaseParameterCredentialsArgsDict']]] = None,
-                 database_credential: pulumi.Input[Optional[Union['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs', 'ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgsDict']]] = None,
+                 credentials: pulumi.Input[Optional[Union['ManagedDatabasesChangeDatabaseParameterCredentialsArgs', 'ManagedDatabasesChangeDatabaseParameterCredentialsArgsDict', 'outputs.ManagedDatabasesChangeDatabaseParameterCredentials']]] = None,
+                 database_credential: pulumi.Input[Optional[Union['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs', 'ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgsDict', 'outputs.ManagedDatabasesChangeDatabaseParameterDatabaseCredential']]] = None,
                  managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedDatabasesChangeDatabaseParameterParameterArgs', 'ManagedDatabasesChangeDatabaseParameterParameterArgsDict']]]]] = None,
+                 parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedDatabasesChangeDatabaseParameterParameterArgs', 'ManagedDatabasesChangeDatabaseParameterParameterArgsDict', 'outputs.ManagedDatabasesChangeDatabaseParameterParameter']]]]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -282,10 +282,10 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ManagedDatabasesChangeDatabaseParameterCredentialsArgs', 'ManagedDatabasesChangeDatabaseParameterCredentialsArgsDict']] credentials: The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
-        :param pulumi.Input[Union['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs', 'ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgsDict']] database_credential: The credential to connect to the database to perform tablespace administration tasks.
+        :param pulumi.Input[Union['ManagedDatabasesChangeDatabaseParameterCredentialsArgs', 'ManagedDatabasesChangeDatabaseParameterCredentialsArgsDict', 'outputs.ManagedDatabasesChangeDatabaseParameterCredentials']] credentials: The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
+        :param pulumi.Input[Union['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs', 'ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgsDict', 'outputs.ManagedDatabasesChangeDatabaseParameterDatabaseCredential']] database_credential: The credential to connect to the database to perform tablespace administration tasks.
         :param pulumi.Input[_builtins.str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedDatabasesChangeDatabaseParameterParameterArgs', 'ManagedDatabasesChangeDatabaseParameterParameterArgsDict']]]] parameters: A list of database parameters and their values.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedDatabasesChangeDatabaseParameterParameterArgs', 'ManagedDatabasesChangeDatabaseParameterParameterArgsDict', 'outputs.ManagedDatabasesChangeDatabaseParameterParameter']]]] parameters: A list of database parameters and their values.
         :param pulumi.Input[_builtins.str] scope: The clause used to specify when the parameter change takes effect.
                
                Use `MEMORY` to make the change in memory and affect it immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
@@ -369,10 +369,10 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 credentials: pulumi.Input[Optional[Union['ManagedDatabasesChangeDatabaseParameterCredentialsArgs', 'ManagedDatabasesChangeDatabaseParameterCredentialsArgsDict']]] = None,
-                 database_credential: pulumi.Input[Optional[Union['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs', 'ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgsDict']]] = None,
+                 credentials: pulumi.Input[Optional[Union['ManagedDatabasesChangeDatabaseParameterCredentialsArgs', 'ManagedDatabasesChangeDatabaseParameterCredentialsArgsDict', 'outputs.ManagedDatabasesChangeDatabaseParameterCredentials']]] = None,
+                 database_credential: pulumi.Input[Optional[Union['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs', 'ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgsDict', 'outputs.ManagedDatabasesChangeDatabaseParameterDatabaseCredential']]] = None,
                  managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedDatabasesChangeDatabaseParameterParameterArgs', 'ManagedDatabasesChangeDatabaseParameterParameterArgsDict']]]]] = None,
+                 parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedDatabasesChangeDatabaseParameterParameterArgs', 'ManagedDatabasesChangeDatabaseParameterParameterArgsDict', 'outputs.ManagedDatabasesChangeDatabaseParameterParameter']]]]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -404,10 +404,10 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            credentials: pulumi.Input[Optional[Union['ManagedDatabasesChangeDatabaseParameterCredentialsArgs', 'ManagedDatabasesChangeDatabaseParameterCredentialsArgsDict']]] = None,
-            database_credential: pulumi.Input[Optional[Union['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs', 'ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgsDict']]] = None,
+            credentials: pulumi.Input[Optional[Union['ManagedDatabasesChangeDatabaseParameterCredentialsArgs', 'ManagedDatabasesChangeDatabaseParameterCredentialsArgsDict', 'outputs.ManagedDatabasesChangeDatabaseParameterCredentials']]] = None,
+            database_credential: pulumi.Input[Optional[Union['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs', 'ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgsDict', 'outputs.ManagedDatabasesChangeDatabaseParameterDatabaseCredential']]] = None,
             managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
-            parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedDatabasesChangeDatabaseParameterParameterArgs', 'ManagedDatabasesChangeDatabaseParameterParameterArgsDict']]]]] = None,
+            parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedDatabasesChangeDatabaseParameterParameterArgs', 'ManagedDatabasesChangeDatabaseParameterParameterArgsDict', 'outputs.ManagedDatabasesChangeDatabaseParameterParameter']]]]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'ManagedDatabasesChangeDatabaseParameter':
         """
         Get an existing ManagedDatabasesChangeDatabaseParameter resource's state with the given name, id, and optional extra
@@ -416,10 +416,10 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ManagedDatabasesChangeDatabaseParameterCredentialsArgs', 'ManagedDatabasesChangeDatabaseParameterCredentialsArgsDict']] credentials: The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
-        :param pulumi.Input[Union['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs', 'ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgsDict']] database_credential: The credential to connect to the database to perform tablespace administration tasks.
+        :param pulumi.Input[Union['ManagedDatabasesChangeDatabaseParameterCredentialsArgs', 'ManagedDatabasesChangeDatabaseParameterCredentialsArgsDict', 'outputs.ManagedDatabasesChangeDatabaseParameterCredentials']] credentials: The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
+        :param pulumi.Input[Union['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs', 'ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgsDict', 'outputs.ManagedDatabasesChangeDatabaseParameterDatabaseCredential']] database_credential: The credential to connect to the database to perform tablespace administration tasks.
         :param pulumi.Input[_builtins.str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedDatabasesChangeDatabaseParameterParameterArgs', 'ManagedDatabasesChangeDatabaseParameterParameterArgsDict']]]] parameters: A list of database parameters and their values.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedDatabasesChangeDatabaseParameterParameterArgs', 'ManagedDatabasesChangeDatabaseParameterParameterArgsDict', 'outputs.ManagedDatabasesChangeDatabaseParameterParameter']]]] parameters: A list of database parameters and their values.
         :param pulumi.Input[_builtins.str] scope: The clause used to specify when the parameter change takes effect.
                
                Use `MEMORY` to make the change in memory and affect it immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.

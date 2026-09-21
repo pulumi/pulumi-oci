@@ -715,7 +715,7 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
                  ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
                  opc_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
                  pipeline_configuration_body: pulumi.Input[Optional[_builtins.str]] = None,
-                 reverse_connection_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OpensearchClusterPipelineReverseConnectionEndpointArgs', 'OpensearchClusterPipelineReverseConnectionEndpointArgsDict']]]]] = None,
+                 reverse_connection_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OpensearchClusterPipelineReverseConnectionEndpointArgs', 'OpensearchClusterPipelineReverseConnectionEndpointArgsDict', 'outputs.OpensearchClusterPipelineReverseConnectionEndpoint']]]]] = None,
                  subnet_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vcn_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -785,7 +785,7 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] ocpu_count: (Updatable) The number of OCPUs configured for each pipeline node.
         :param pulumi.Input[_builtins.bool] opc_dry_run: (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
         :param pulumi.Input[_builtins.str] pipeline_configuration_body: (Updatable) The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OpensearchClusterPipelineReverseConnectionEndpointArgs', 'OpensearchClusterPipelineReverseConnectionEndpointArgsDict']]]] reverse_connection_endpoints: (Updatable) The customer IP and the corresponding fully qualified domain name that the pipeline will connect to.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OpensearchClusterPipelineReverseConnectionEndpointArgs', 'OpensearchClusterPipelineReverseConnectionEndpointArgsDict', 'outputs.OpensearchClusterPipelineReverseConnectionEndpoint']]]] reverse_connection_endpoints: (Updatable) The customer IP and the corresponding fully qualified domain name that the pipeline will connect to.
         :param pulumi.Input[_builtins.str] subnet_compartment_id: (Updatable) The OCID for the compartment where the pipeline's subnet is located.
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The OCID of the pipeline's subnet.
         :param pulumi.Input[_builtins.str] vcn_compartment_id: (Updatable) The OCID for the compartment where the pipeline's VCN is located.
@@ -877,7 +877,7 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
                  ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
                  opc_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
                  pipeline_configuration_body: pulumi.Input[Optional[_builtins.str]] = None,
-                 reverse_connection_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OpensearchClusterPipelineReverseConnectionEndpointArgs', 'OpensearchClusterPipelineReverseConnectionEndpointArgsDict']]]]] = None,
+                 reverse_connection_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OpensearchClusterPipelineReverseConnectionEndpointArgs', 'OpensearchClusterPipelineReverseConnectionEndpointArgsDict', 'outputs.OpensearchClusterPipelineReverseConnectionEndpoint']]]]] = None,
                  subnet_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vcn_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -954,7 +954,7 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
             opensearch_pipeline_private_ip: pulumi.Input[Optional[_builtins.str]] = None,
             pipeline_configuration_body: pulumi.Input[Optional[_builtins.str]] = None,
             pipeline_mode: pulumi.Input[Optional[_builtins.str]] = None,
-            reverse_connection_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OpensearchClusterPipelineReverseConnectionEndpointArgs', 'OpensearchClusterPipelineReverseConnectionEndpointArgsDict']]]]] = None,
+            reverse_connection_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OpensearchClusterPipelineReverseConnectionEndpointArgs', 'OpensearchClusterPipelineReverseConnectionEndpointArgsDict', 'outputs.OpensearchClusterPipelineReverseConnectionEndpoint']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             subnet_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -985,7 +985,7 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] opensearch_pipeline_private_ip: The pipeline's private IP address.
         :param pulumi.Input[_builtins.str] pipeline_configuration_body: (Updatable) The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\.
         :param pulumi.Input[_builtins.str] pipeline_mode: The current state of the pipeline.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OpensearchClusterPipelineReverseConnectionEndpointArgs', 'OpensearchClusterPipelineReverseConnectionEndpointArgsDict']]]] reverse_connection_endpoints: (Updatable) The customer IP and the corresponding fully qualified domain name that the pipeline will connect to.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OpensearchClusterPipelineReverseConnectionEndpointArgs', 'OpensearchClusterPipelineReverseConnectionEndpointArgsDict', 'outputs.OpensearchClusterPipelineReverseConnectionEndpoint']]]] reverse_connection_endpoints: (Updatable) The customer IP and the corresponding fully qualified domain name that the pipeline will connect to.
         :param pulumi.Input[_builtins.str] state: The current state of the cluster backup.
         :param pulumi.Input[_builtins.str] subnet_compartment_id: (Updatable) The OCID for the compartment where the pipeline's subnet is located.
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The OCID of the pipeline's subnet.

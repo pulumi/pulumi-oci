@@ -364,8 +364,8 @@ class MaintenanceWindow(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MaintenanceWindowResourceArgs', 'MaintenanceWindowResourceArgsDict']]]]] = None,
-                 schedule: pulumi.Input[Optional[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']]] = None,
+                 resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MaintenanceWindowResourceArgs', 'MaintenanceWindowResourceArgsDict', 'outputs.MaintenanceWindowResource']]]]] = None,
+                 schedule: pulumi.Input[Optional[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict', 'outputs.MaintenanceWindowSchedule']]] = None,
                  __props__=None):
         """
         This resource provides the Maintenance Window resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -421,8 +421,8 @@ class MaintenanceWindow(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) Maintenance Window description.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] name: Maintenance Window name.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MaintenanceWindowResourceArgs', 'MaintenanceWindowResourceArgsDict']]]] resources: (Updatable) List of resource Ids which are part of the Maintenance Window
-        :param pulumi.Input[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']] schedule: (Updatable) Schedule information of the Maintenance Window
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MaintenanceWindowResourceArgs', 'MaintenanceWindowResourceArgsDict', 'outputs.MaintenanceWindowResource']]]] resources: (Updatable) List of resource Ids which are part of the Maintenance Window
+        :param pulumi.Input[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict', 'outputs.MaintenanceWindowSchedule']] schedule: (Updatable) Schedule information of the Maintenance Window
         """
         ...
     @overload
@@ -497,8 +497,8 @@ class MaintenanceWindow(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MaintenanceWindowResourceArgs', 'MaintenanceWindowResourceArgsDict']]]]] = None,
-                 schedule: pulumi.Input[Optional[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']]] = None,
+                 resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MaintenanceWindowResourceArgs', 'MaintenanceWindowResourceArgsDict', 'outputs.MaintenanceWindowResource']]]]] = None,
+                 schedule: pulumi.Input[Optional[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict', 'outputs.MaintenanceWindowSchedule']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -543,9 +543,9 @@ class MaintenanceWindow(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MaintenanceWindowResourceArgs', 'MaintenanceWindowResourceArgsDict']]]]] = None,
-            resources_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MaintenanceWindowResourcesDetailArgs', 'MaintenanceWindowResourcesDetailArgsDict']]]]] = None,
-            schedule: pulumi.Input[Optional[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']]] = None,
+            resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MaintenanceWindowResourceArgs', 'MaintenanceWindowResourceArgsDict', 'outputs.MaintenanceWindowResource']]]]] = None,
+            resources_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MaintenanceWindowResourcesDetailArgs', 'MaintenanceWindowResourcesDetailArgsDict', 'outputs.MaintenanceWindowResourcesDetail']]]]] = None,
+            schedule: pulumi.Input[Optional[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict', 'outputs.MaintenanceWindowSchedule']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -563,9 +563,9 @@ class MaintenanceWindow(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: Lifecycle Details of the Maintenance Window.
         :param pulumi.Input[_builtins.str] name: Maintenance Window name.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MaintenanceWindowResourceArgs', 'MaintenanceWindowResourceArgsDict']]]] resources: (Updatable) List of resource Ids which are part of the Maintenance Window
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MaintenanceWindowResourcesDetailArgs', 'MaintenanceWindowResourcesDetailArgsDict']]]] resources_details: List of resource details that are part of the Maintenance Window.
-        :param pulumi.Input[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']] schedule: (Updatable) Schedule information of the Maintenance Window
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MaintenanceWindowResourceArgs', 'MaintenanceWindowResourceArgsDict', 'outputs.MaintenanceWindowResource']]]] resources: (Updatable) List of resource Ids which are part of the Maintenance Window
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MaintenanceWindowResourcesDetailArgs', 'MaintenanceWindowResourcesDetailArgsDict', 'outputs.MaintenanceWindowResourcesDetail']]]] resources_details: List of resource details that are part of the Maintenance Window.
+        :param pulumi.Input[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict', 'outputs.MaintenanceWindowSchedule']] schedule: (Updatable) Schedule information of the Maintenance Window
         :param pulumi.Input[_builtins.str] state: Lifecycle state of the monitored resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time the the maintenance window was created. An RFC3339 formatted datetime string

@@ -1018,9 +1018,9 @@ class DomainsApiKey(pulumi.CustomResource):
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsApiKeyTagArgs', 'DomainsApiKeyTagArgsDict']]]]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionself_change_user: pulumi.Input[Optional[Union['DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict']]] = None,
-                 user: pulumi.Input[Optional[Union['DomainsApiKeyUserArgs', 'DomainsApiKeyUserArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsApiKeyTagArgs', 'DomainsApiKeyTagArgsDict', 'outputs.DomainsApiKeyTag']]]]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionself_change_user: pulumi.Input[Optional[Union['DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict', 'outputs.DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser']]] = None,
+                 user: pulumi.Input[Optional[Union['DomainsApiKeyUserArgs', 'DomainsApiKeyUserArgsDict', 'outputs.DomainsApiKeyUser']]] = None,
                  __props__=None):
         """
         This resource provides the Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1119,7 +1119,7 @@ class DomainsApiKey(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApiKeyTagArgs', 'DomainsApiKeyTagArgsDict']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApiKeyTagArgs', 'DomainsApiKeyTagArgsDict', 'outputs.DomainsApiKeyTag']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1130,8 +1130,8 @@ class DomainsApiKey(pulumi.CustomResource):
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict']] urnietfparamsscimschemasoracleidcsextensionself_change_user: Controls whether a user can update themselves or not via User related APIs
-        :param pulumi.Input[Union['DomainsApiKeyUserArgs', 'DomainsApiKeyUserArgsDict']] user: The user linked to the API key.
+        :param pulumi.Input[Union['DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict', 'outputs.DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser']] urnietfparamsscimschemasoracleidcsextensionself_change_user: Controls whether a user can update themselves or not via User related APIs
+        :param pulumi.Input[Union['DomainsApiKeyUserArgs', 'DomainsApiKeyUserArgsDict', 'outputs.DomainsApiKeyUser']] user: The user linked to the API key.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1220,9 +1220,9 @@ class DomainsApiKey(pulumi.CustomResource):
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsApiKeyTagArgs', 'DomainsApiKeyTagArgsDict']]]]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionself_change_user: pulumi.Input[Optional[Union['DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict']]] = None,
-                 user: pulumi.Input[Optional[Union['DomainsApiKeyUserArgs', 'DomainsApiKeyUserArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsApiKeyTagArgs', 'DomainsApiKeyTagArgsDict', 'outputs.DomainsApiKeyTag']]]]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionself_change_user: pulumi.Input[Optional[Union['DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict', 'outputs.DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser']]] = None,
+                 user: pulumi.Input[Optional[Union['DomainsApiKeyUserArgs', 'DomainsApiKeyUserArgsDict', 'outputs.DomainsApiKeyUser']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1278,20 +1278,20 @@ class DomainsApiKey(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsApiKeyIdcsCreatedByArgs', 'DomainsApiKeyIdcsCreatedByArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsApiKeyIdcsCreatedByArgs', 'DomainsApiKeyIdcsCreatedByArgsDict', 'outputs.DomainsApiKeyIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsApiKeyIdcsLastModifiedByArgs', 'DomainsApiKeyIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsApiKeyIdcsLastModifiedByArgs', 'DomainsApiKeyIdcsLastModifiedByArgsDict', 'outputs.DomainsApiKeyIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             key: pulumi.Input[Optional[_builtins.str]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsApiKeyMetaArgs', 'DomainsApiKeyMetaArgsDict']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsApiKeyMetaArgs', 'DomainsApiKeyMetaArgsDict', 'outputs.DomainsApiKeyMeta']]]]] = None,
             ocid: pulumi.Input[Optional[_builtins.str]] = None,
             resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
             schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsApiKeyTagArgs', 'DomainsApiKeyTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsApiKeyTagArgs', 'DomainsApiKeyTagArgsDict', 'outputs.DomainsApiKeyTag']]]]] = None,
             tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
-            urnietfparamsscimschemasoracleidcsextensionself_change_user: pulumi.Input[Optional[Union['DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict']]] = None,
-            user: pulumi.Input[Optional[Union['DomainsApiKeyUserArgs', 'DomainsApiKeyUserArgsDict']]] = None) -> 'DomainsApiKey':
+            urnietfparamsscimschemasoracleidcsextensionself_change_user: pulumi.Input[Optional[Union['DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict', 'outputs.DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser']]] = None,
+            user: pulumi.Input[Optional[Union['DomainsApiKeyUserArgs', 'DomainsApiKeyUserArgsDict', 'outputs.DomainsApiKeyUser']]] = None) -> 'DomainsApiKey':
         """
         Get an existing DomainsApiKey resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1356,7 +1356,7 @@ class DomainsApiKey(pulumi.CustomResource):
                * mutability: readOnly
                * required: true
                * returned: default
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApiKeyIdcsCreatedByArgs', 'DomainsApiKeyIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApiKeyIdcsCreatedByArgs', 'DomainsApiKeyIdcsCreatedByArgsDict', 'outputs.DomainsApiKeyIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1366,7 +1366,7 @@ class DomainsApiKey(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApiKeyIdcsLastModifiedByArgs', 'DomainsApiKeyIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApiKeyIdcsLastModifiedByArgs', 'DomainsApiKeyIdcsLastModifiedByArgsDict', 'outputs.DomainsApiKeyIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1407,7 +1407,7 @@ class DomainsApiKey(pulumi.CustomResource):
                * mutability: immutable
                * required: true
                * returned: default
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApiKeyMetaArgs', 'DomainsApiKeyMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApiKeyMetaArgs', 'DomainsApiKeyMetaArgsDict', 'outputs.DomainsApiKeyMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1441,7 +1441,7 @@ class DomainsApiKey(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApiKeyTagArgs', 'DomainsApiKeyTagArgsDict']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApiKeyTagArgs', 'DomainsApiKeyTagArgsDict', 'outputs.DomainsApiKeyTag']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1463,8 +1463,8 @@ class DomainsApiKey(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict']] urnietfparamsscimschemasoracleidcsextensionself_change_user: Controls whether a user can update themselves or not via User related APIs
-        :param pulumi.Input[Union['DomainsApiKeyUserArgs', 'DomainsApiKeyUserArgsDict']] user: The user linked to the API key.
+        :param pulumi.Input[Union['DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict', 'outputs.DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser']] urnietfparamsscimschemasoracleidcsextensionself_change_user: Controls whether a user can update themselves or not via User related APIs
+        :param pulumi.Input[Union['DomainsApiKeyUserArgs', 'DomainsApiKeyUserArgsDict', 'outputs.DomainsApiKeyUser']] user: The user linked to the API key.
                
                **SCIM++ Properties:**
                * caseExact: false

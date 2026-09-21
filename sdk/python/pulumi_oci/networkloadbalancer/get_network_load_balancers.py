@@ -110,7 +110,7 @@ class AwaitableGetNetworkLoadBalancersResult(GetNetworkLoadBalancersResult):
 
 def get_network_load_balancers(compartment_id: Optional[_builtins.str] = None,
                                display_name: Optional[_builtins.str] = None,
-                               filters: Optional[Sequence[Union['GetNetworkLoadBalancersFilterArgs', 'GetNetworkLoadBalancersFilterArgsDict']]] = None,
+                               filters: Optional[Sequence[Union['GetNetworkLoadBalancersFilterArgs', 'GetNetworkLoadBalancersFilterArgsDict', 'outputs.GetNetworkLoadBalancersFilterResult']]] = None,
                                state: Optional[_builtins.str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkLoadBalancersResult:
     """
@@ -151,7 +151,7 @@ def get_network_load_balancers(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_network_load_balancers_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkLoadBalancersFilterArgs', 'GetNetworkLoadBalancersFilterArgsDict']]]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkLoadBalancersFilterArgs', 'GetNetworkLoadBalancersFilterArgsDict', 'outputs.GetNetworkLoadBalancersFilterResult']]]]] = None,
                                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkLoadBalancersResult]:
     """

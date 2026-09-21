@@ -123,7 +123,7 @@ class AwaitableGetAgentAgentEndpointsResult(GetAgentAgentEndpointsResult):
 def get_agent_agent_endpoints(agent_id: Optional[_builtins.str] = None,
                               compartment_id: Optional[_builtins.str] = None,
                               display_name: Optional[_builtins.str] = None,
-                              filters: Optional[Sequence[Union['GetAgentAgentEndpointsFilterArgs', 'GetAgentAgentEndpointsFilterArgsDict']]] = None,
+                              filters: Optional[Sequence[Union['GetAgentAgentEndpointsFilterArgs', 'GetAgentAgentEndpointsFilterArgsDict', 'outputs.GetAgentAgentEndpointsFilterResult']]] = None,
                               state: Optional[_builtins.str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAgentAgentEndpointsResult:
     """
@@ -169,7 +169,7 @@ def get_agent_agent_endpoints(agent_id: Optional[_builtins.str] = None,
 def get_agent_agent_endpoints_output(agent_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAgentAgentEndpointsFilterArgs', 'GetAgentAgentEndpointsFilterArgsDict']]]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAgentAgentEndpointsFilterArgs', 'GetAgentAgentEndpointsFilterArgsDict', 'outputs.GetAgentAgentEndpointsFilterResult']]]]] = None,
                                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentAgentEndpointsResult]:
     """

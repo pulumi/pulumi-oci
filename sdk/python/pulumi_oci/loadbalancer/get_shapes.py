@@ -82,7 +82,7 @@ class AwaitableGetShapesResult(GetShapesResult):
 
 
 def get_shapes(compartment_id: Optional[_builtins.str] = None,
-               filters: Optional[Sequence[Union['GetShapesFilterArgs', 'GetShapesFilterArgsDict']]] = None,
+               filters: Optional[Sequence[Union['GetShapesFilterArgs', 'GetShapesFilterArgsDict', 'outputs.GetShapesFilterResult']]] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetShapesResult:
     """
     This data source provides the list of Load Balancer Shapes in Oracle Cloud Infrastructure Load Balancer service.
@@ -113,7 +113,7 @@ def get_shapes(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         shapes=pulumi.get(__ret__, 'shapes'))
 def get_shapes_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetShapesFilterArgs', 'GetShapesFilterArgsDict']]]]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetShapesFilterArgs', 'GetShapesFilterArgsDict', 'outputs.GetShapesFilterResult']]]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetShapesResult]:
     """
     This data source provides the list of Load Balancer Shapes in Oracle Cloud Infrastructure Load Balancer service.

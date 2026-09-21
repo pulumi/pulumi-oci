@@ -110,7 +110,7 @@ class AwaitableGetExternalContainerDatabasesResult(GetExternalContainerDatabases
 
 def get_external_container_databases(compartment_id: Optional[_builtins.str] = None,
                                      display_name: Optional[_builtins.str] = None,
-                                     filters: Optional[Sequence[Union['GetExternalContainerDatabasesFilterArgs', 'GetExternalContainerDatabasesFilterArgsDict']]] = None,
+                                     filters: Optional[Sequence[Union['GetExternalContainerDatabasesFilterArgs', 'GetExternalContainerDatabasesFilterArgsDict', 'outputs.GetExternalContainerDatabasesFilterResult']]] = None,
                                      state: Optional[_builtins.str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalContainerDatabasesResult:
     """
@@ -151,7 +151,7 @@ def get_external_container_databases(compartment_id: Optional[_builtins.str] = N
         state=pulumi.get(__ret__, 'state'))
 def get_external_container_databases_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalContainerDatabasesFilterArgs', 'GetExternalContainerDatabasesFilterArgsDict']]]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalContainerDatabasesFilterArgs', 'GetExternalContainerDatabasesFilterArgsDict', 'outputs.GetExternalContainerDatabasesFilterResult']]]]] = None,
                                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalContainerDatabasesResult]:
     """

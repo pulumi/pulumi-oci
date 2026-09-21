@@ -115,7 +115,7 @@ class AwaitableGetBdsInstancePatchHistoriesResult(GetBdsInstancePatchHistoriesRe
 
 
 def get_bds_instance_patch_histories(bds_instance_id: Optional[_builtins.str] = None,
-                                     filters: Optional[Sequence[Union['GetBdsInstancePatchHistoriesFilterArgs', 'GetBdsInstancePatchHistoriesFilterArgsDict']]] = None,
+                                     filters: Optional[Sequence[Union['GetBdsInstancePatchHistoriesFilterArgs', 'GetBdsInstancePatchHistoriesFilterArgsDict', 'outputs.GetBdsInstancePatchHistoriesFilterResult']]] = None,
                                      patch_type: Optional[_builtins.str] = None,
                                      patch_version: Optional[_builtins.str] = None,
                                      state: Optional[_builtins.str] = None,
@@ -161,7 +161,7 @@ def get_bds_instance_patch_histories(bds_instance_id: Optional[_builtins.str] = 
         patch_version=pulumi.get(__ret__, 'patch_version'),
         state=pulumi.get(__ret__, 'state'))
 def get_bds_instance_patch_histories_output(bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstancePatchHistoriesFilterArgs', 'GetBdsInstancePatchHistoriesFilterArgsDict']]]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstancePatchHistoriesFilterArgs', 'GetBdsInstancePatchHistoriesFilterArgsDict', 'outputs.GetBdsInstancePatchHistoriesFilterResult']]]]] = None,
                                             patch_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             patch_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

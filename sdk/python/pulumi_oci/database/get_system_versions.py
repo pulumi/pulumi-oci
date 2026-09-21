@@ -124,7 +124,7 @@ class AwaitableGetSystemVersionsResult(GetSystemVersionsResult):
 
 
 def get_system_versions(compartment_id: Optional[_builtins.str] = None,
-                        filters: Optional[Sequence[Union['GetSystemVersionsFilterArgs', 'GetSystemVersionsFilterArgsDict']]] = None,
+                        filters: Optional[Sequence[Union['GetSystemVersionsFilterArgs', 'GetSystemVersionsFilterArgsDict', 'outputs.GetSystemVersionsFilterResult']]] = None,
                         gi_version: Optional[_builtins.str] = None,
                         is_latest: Optional[_builtins.bool] = None,
                         resource_id: Optional[_builtins.str] = None,
@@ -175,7 +175,7 @@ def get_system_versions(compartment_id: Optional[_builtins.str] = None,
         shape=pulumi.get(__ret__, 'shape'),
         system_version_collections=pulumi.get(__ret__, 'system_version_collections'))
 def get_system_versions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSystemVersionsFilterArgs', 'GetSystemVersionsFilterArgsDict']]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSystemVersionsFilterArgs', 'GetSystemVersionsFilterArgsDict', 'outputs.GetSystemVersionsFilterResult']]]]] = None,
                                gi_version: pulumi.Input[Optional[_builtins.str]] = None,
                                is_latest: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

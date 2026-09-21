@@ -110,7 +110,7 @@ class AwaitableGetDeploymentPeersResult(GetDeploymentPeersResult):
 
 def get_deployment_peers(deployment_id: Optional[_builtins.str] = None,
                          display_name: Optional[_builtins.str] = None,
-                         filters: Optional[Sequence[Union['GetDeploymentPeersFilterArgs', 'GetDeploymentPeersFilterArgsDict']]] = None,
+                         filters: Optional[Sequence[Union['GetDeploymentPeersFilterArgs', 'GetDeploymentPeersFilterArgsDict', 'outputs.GetDeploymentPeersFilterResult']]] = None,
                          state: Optional[_builtins.str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeploymentPeersResult:
     """
@@ -151,7 +151,7 @@ def get_deployment_peers(deployment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_deployment_peers_output(deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDeploymentPeersFilterArgs', 'GetDeploymentPeersFilterArgsDict']]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDeploymentPeersFilterArgs', 'GetDeploymentPeersFilterArgsDict', 'outputs.GetDeploymentPeersFilterResult']]]]] = None,
                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentPeersResult]:
     """

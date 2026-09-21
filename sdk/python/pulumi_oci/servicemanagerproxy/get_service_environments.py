@@ -116,7 +116,7 @@ class AwaitableGetServiceEnvironmentsResult(GetServiceEnvironmentsResult):
 
 def get_service_environments(compartment_id: Optional[_builtins.str] = None,
                              display_name: Optional[_builtins.str] = None,
-                             filters: Optional[Sequence[Union['GetServiceEnvironmentsFilterArgs', 'GetServiceEnvironmentsFilterArgsDict']]] = None,
+                             filters: Optional[Sequence[Union['GetServiceEnvironmentsFilterArgs', 'GetServiceEnvironmentsFilterArgsDict', 'outputs.GetServiceEnvironmentsFilterResult']]] = None,
                              service_environment_id: Optional[_builtins.str] = None,
                              service_environment_type: Optional[_builtins.str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServiceEnvironmentsResult:
@@ -165,7 +165,7 @@ def get_service_environments(compartment_id: Optional[_builtins.str] = None,
         service_environment_type=pulumi.get(__ret__, 'service_environment_type'))
 def get_service_environments_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetServiceEnvironmentsFilterArgs', 'GetServiceEnvironmentsFilterArgsDict']]]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetServiceEnvironmentsFilterArgs', 'GetServiceEnvironmentsFilterArgsDict', 'outputs.GetServiceEnvironmentsFilterResult']]]]] = None,
                                     service_environment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     service_environment_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceEnvironmentsResult]:

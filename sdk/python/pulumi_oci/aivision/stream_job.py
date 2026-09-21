@@ -389,10 +389,10 @@ class StreamJob(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamJobFeatureArgs', 'StreamJobFeatureArgsDict']]]]] = None,
+                 features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamJobFeatureArgs', 'StreamJobFeatureArgsDict', 'outputs.StreamJobFeature']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
-                 stream_output_location: pulumi.Input[Optional[Union['StreamJobStreamOutputLocationArgs', 'StreamJobStreamOutputLocationArgsDict']]] = None,
+                 stream_output_location: pulumi.Input[Optional[Union['StreamJobStreamOutputLocationArgs', 'StreamJobStreamOutputLocationArgsDict', 'outputs.StreamJobStreamOutputLocation']]] = None,
                  stream_source_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -452,13 +452,13 @@ class StreamJob(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Stream job display name.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['StreamJobFeatureArgs', 'StreamJobFeatureArgsDict']]]] features: (Updatable) a list of stream analysis features.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StreamJobFeatureArgs', 'StreamJobFeatureArgsDict', 'outputs.StreamJobFeature']]]] features: (Updatable) a list of stream analysis features.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Stream Job. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Union['StreamJobStreamOutputLocationArgs', 'StreamJobStreamOutputLocationArgsDict']] stream_output_location: (Updatable) Details about a where results will be Sent
+        :param pulumi.Input[Union['StreamJobStreamOutputLocationArgs', 'StreamJobStreamOutputLocationArgsDict', 'outputs.StreamJobStreamOutputLocation']] stream_output_location: (Updatable) Details about a where results will be Sent
         :param pulumi.Input[_builtins.str] stream_source_id: (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of streamSource.
         """
         ...
@@ -537,10 +537,10 @@ class StreamJob(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamJobFeatureArgs', 'StreamJobFeatureArgsDict']]]]] = None,
+                 features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamJobFeatureArgs', 'StreamJobFeatureArgsDict', 'outputs.StreamJobFeature']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
-                 stream_output_location: pulumi.Input[Optional[Union['StreamJobStreamOutputLocationArgs', 'StreamJobStreamOutputLocationArgsDict']]] = None,
+                 stream_output_location: pulumi.Input[Optional[Union['StreamJobStreamOutputLocationArgs', 'StreamJobStreamOutputLocationArgsDict', 'outputs.StreamJobStreamOutputLocation']]] = None,
                  stream_source_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -586,11 +586,11 @@ class StreamJob(pulumi.CustomResource):
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamJobFeatureArgs', 'StreamJobFeatureArgsDict']]]]] = None,
+            features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamJobFeatureArgs', 'StreamJobFeatureArgsDict', 'outputs.StreamJobFeature']]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            stream_output_location: pulumi.Input[Optional[Union['StreamJobStreamOutputLocationArgs', 'StreamJobStreamOutputLocationArgsDict']]] = None,
+            stream_output_location: pulumi.Input[Optional[Union['StreamJobStreamOutputLocationArgs', 'StreamJobStreamOutputLocationArgsDict', 'outputs.StreamJobStreamOutputLocation']]] = None,
             stream_source_id: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -606,14 +606,14 @@ class StreamJob(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Stream job display name.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['StreamJobFeatureArgs', 'StreamJobFeatureArgsDict']]]] features: (Updatable) a list of stream analysis features.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StreamJobFeatureArgs', 'StreamJobFeatureArgsDict', 'outputs.StreamJobFeature']]]] features: (Updatable) a list of stream analysis features.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional details about current state of streamJob
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Stream Job. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Union['StreamJobStreamOutputLocationArgs', 'StreamJobStreamOutputLocationArgsDict']] stream_output_location: (Updatable) Details about a where results will be Sent
+        :param pulumi.Input[Union['StreamJobStreamOutputLocationArgs', 'StreamJobStreamOutputLocationArgsDict', 'outputs.StreamJobStreamOutputLocation']] stream_output_location: (Updatable) Details about a where results will be Sent
         :param pulumi.Input[_builtins.str] stream_source_id: (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of streamSource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         :param pulumi.Input[_builtins.str] time_created: When the streamJob was created, as an RFC3339 datetime string.

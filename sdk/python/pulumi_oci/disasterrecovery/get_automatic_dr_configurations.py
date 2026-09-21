@@ -129,7 +129,7 @@ class AwaitableGetAutomaticDrConfigurationsResult(GetAutomaticDrConfigurationsRe
 def get_automatic_dr_configurations(automatic_dr_configuration_id: Optional[_builtins.str] = None,
                                     display_name: Optional[_builtins.str] = None,
                                     dr_protection_group_id: Optional[_builtins.str] = None,
-                                    filters: Optional[Sequence[Union['GetAutomaticDrConfigurationsFilterArgs', 'GetAutomaticDrConfigurationsFilterArgsDict']]] = None,
+                                    filters: Optional[Sequence[Union['GetAutomaticDrConfigurationsFilterArgs', 'GetAutomaticDrConfigurationsFilterArgsDict', 'outputs.GetAutomaticDrConfigurationsFilterResult']]] = None,
                                     lifecycle_state_not_equal_to: Optional[_builtins.str] = None,
                                     state: Optional[_builtins.str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutomaticDrConfigurationsResult:
@@ -180,7 +180,7 @@ def get_automatic_dr_configurations(automatic_dr_configuration_id: Optional[_bui
 def get_automatic_dr_configurations_output(automatic_dr_configuration_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            dr_protection_group_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutomaticDrConfigurationsFilterArgs', 'GetAutomaticDrConfigurationsFilterArgsDict']]]]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutomaticDrConfigurationsFilterArgs', 'GetAutomaticDrConfigurationsFilterArgsDict', 'outputs.GetAutomaticDrConfigurationsFilterResult']]]]] = None,
                                            lifecycle_state_not_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutomaticDrConfigurationsResult]:

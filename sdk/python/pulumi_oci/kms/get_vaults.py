@@ -85,7 +85,7 @@ class AwaitableGetVaultsResult(GetVaultsResult):
 
 
 def get_vaults(compartment_id: Optional[_builtins.str] = None,
-               filters: Optional[Sequence[Union['GetVaultsFilterArgs', 'GetVaultsFilterArgsDict']]] = None,
+               filters: Optional[Sequence[Union['GetVaultsFilterArgs', 'GetVaultsFilterArgsDict', 'outputs.GetVaultsFilterResult']]] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVaultsResult:
     """
     This data source provides the list of Vaults in Oracle Cloud Infrastructure Kms service.
@@ -121,7 +121,7 @@ def get_vaults(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         vaults=pulumi.get(__ret__, 'vaults'))
 def get_vaults_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVaultsFilterArgs', 'GetVaultsFilterArgsDict']]]]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVaultsFilterArgs', 'GetVaultsFilterArgsDict', 'outputs.GetVaultsFilterResult']]]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVaultsResult]:
     """
     This data source provides the list of Vaults in Oracle Cloud Infrastructure Kms service.

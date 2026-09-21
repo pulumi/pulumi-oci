@@ -343,12 +343,12 @@ class PathAnalysi(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  cache_control: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 destination_endpoint: pulumi.Input[Optional[Union['PathAnalysiDestinationEndpointArgs', 'PathAnalysiDestinationEndpointArgsDict']]] = None,
+                 destination_endpoint: pulumi.Input[Optional[Union['PathAnalysiDestinationEndpointArgs', 'PathAnalysiDestinationEndpointArgsDict', 'outputs.PathAnalysiDestinationEndpoint']]] = None,
                  path_analyzer_test_id: pulumi.Input[Optional[_builtins.str]] = None,
                  protocol: pulumi.Input[Optional[_builtins.int]] = None,
-                 protocol_parameters: pulumi.Input[Optional[Union['PathAnalysiProtocolParametersArgs', 'PathAnalysiProtocolParametersArgsDict']]] = None,
-                 query_options: pulumi.Input[Optional[Union['PathAnalysiQueryOptionsArgs', 'PathAnalysiQueryOptionsArgsDict']]] = None,
-                 source_endpoint: pulumi.Input[Optional[Union['PathAnalysiSourceEndpointArgs', 'PathAnalysiSourceEndpointArgsDict']]] = None,
+                 protocol_parameters: pulumi.Input[Optional[Union['PathAnalysiProtocolParametersArgs', 'PathAnalysiProtocolParametersArgsDict', 'outputs.PathAnalysiProtocolParameters']]] = None,
+                 query_options: pulumi.Input[Optional[Union['PathAnalysiQueryOptionsArgs', 'PathAnalysiQueryOptionsArgsDict', 'outputs.PathAnalysiQueryOptions']]] = None,
+                 source_endpoint: pulumi.Input[Optional[Union['PathAnalysiSourceEndpointArgs', 'PathAnalysiSourceEndpointArgsDict', 'outputs.PathAnalysiSourceEndpoint']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -427,12 +427,12 @@ class PathAnalysi(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cache_control: The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-        :param pulumi.Input[Union['PathAnalysiDestinationEndpointArgs', 'PathAnalysiDestinationEndpointArgsDict']] destination_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
+        :param pulumi.Input[Union['PathAnalysiDestinationEndpointArgs', 'PathAnalysiDestinationEndpointArgsDict', 'outputs.PathAnalysiDestinationEndpoint']] destination_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
         :param pulumi.Input[_builtins.str] path_analyzer_test_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
         :param pulumi.Input[_builtins.int] protocol: The IP protocol to used for the path analysis.
-        :param pulumi.Input[Union['PathAnalysiProtocolParametersArgs', 'PathAnalysiProtocolParametersArgsDict']] protocol_parameters: Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
-        :param pulumi.Input[Union['PathAnalysiQueryOptionsArgs', 'PathAnalysiQueryOptionsArgsDict']] query_options: Defines the query options required for a `PathAnalyzerTest` resource.
-        :param pulumi.Input[Union['PathAnalysiSourceEndpointArgs', 'PathAnalysiSourceEndpointArgsDict']] source_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
+        :param pulumi.Input[Union['PathAnalysiProtocolParametersArgs', 'PathAnalysiProtocolParametersArgsDict', 'outputs.PathAnalysiProtocolParameters']] protocol_parameters: Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
+        :param pulumi.Input[Union['PathAnalysiQueryOptionsArgs', 'PathAnalysiQueryOptionsArgsDict', 'outputs.PathAnalysiQueryOptions']] query_options: Defines the query options required for a `PathAnalyzerTest` resource.
+        :param pulumi.Input[Union['PathAnalysiSourceEndpointArgs', 'PathAnalysiSourceEndpointArgsDict', 'outputs.PathAnalysiSourceEndpoint']] source_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
         :param pulumi.Input[_builtins.str] type: The type of the `PathAnalysis` query.
                
                ** IMPORTANT **
@@ -533,12 +533,12 @@ class PathAnalysi(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  cache_control: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 destination_endpoint: pulumi.Input[Optional[Union['PathAnalysiDestinationEndpointArgs', 'PathAnalysiDestinationEndpointArgsDict']]] = None,
+                 destination_endpoint: pulumi.Input[Optional[Union['PathAnalysiDestinationEndpointArgs', 'PathAnalysiDestinationEndpointArgsDict', 'outputs.PathAnalysiDestinationEndpoint']]] = None,
                  path_analyzer_test_id: pulumi.Input[Optional[_builtins.str]] = None,
                  protocol: pulumi.Input[Optional[_builtins.int]] = None,
-                 protocol_parameters: pulumi.Input[Optional[Union['PathAnalysiProtocolParametersArgs', 'PathAnalysiProtocolParametersArgsDict']]] = None,
-                 query_options: pulumi.Input[Optional[Union['PathAnalysiQueryOptionsArgs', 'PathAnalysiQueryOptionsArgsDict']]] = None,
-                 source_endpoint: pulumi.Input[Optional[Union['PathAnalysiSourceEndpointArgs', 'PathAnalysiSourceEndpointArgsDict']]] = None,
+                 protocol_parameters: pulumi.Input[Optional[Union['PathAnalysiProtocolParametersArgs', 'PathAnalysiProtocolParametersArgsDict', 'outputs.PathAnalysiProtocolParameters']]] = None,
+                 query_options: pulumi.Input[Optional[Union['PathAnalysiQueryOptionsArgs', 'PathAnalysiQueryOptionsArgsDict', 'outputs.PathAnalysiQueryOptions']]] = None,
+                 source_endpoint: pulumi.Input[Optional[Union['PathAnalysiSourceEndpointArgs', 'PathAnalysiSourceEndpointArgsDict', 'outputs.PathAnalysiSourceEndpoint']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -572,12 +572,12 @@ class PathAnalysi(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             cache_control: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            destination_endpoint: pulumi.Input[Optional[Union['PathAnalysiDestinationEndpointArgs', 'PathAnalysiDestinationEndpointArgsDict']]] = None,
+            destination_endpoint: pulumi.Input[Optional[Union['PathAnalysiDestinationEndpointArgs', 'PathAnalysiDestinationEndpointArgsDict', 'outputs.PathAnalysiDestinationEndpoint']]] = None,
             path_analyzer_test_id: pulumi.Input[Optional[_builtins.str]] = None,
             protocol: pulumi.Input[Optional[_builtins.int]] = None,
-            protocol_parameters: pulumi.Input[Optional[Union['PathAnalysiProtocolParametersArgs', 'PathAnalysiProtocolParametersArgsDict']]] = None,
-            query_options: pulumi.Input[Optional[Union['PathAnalysiQueryOptionsArgs', 'PathAnalysiQueryOptionsArgsDict']]] = None,
-            source_endpoint: pulumi.Input[Optional[Union['PathAnalysiSourceEndpointArgs', 'PathAnalysiSourceEndpointArgsDict']]] = None,
+            protocol_parameters: pulumi.Input[Optional[Union['PathAnalysiProtocolParametersArgs', 'PathAnalysiProtocolParametersArgsDict', 'outputs.PathAnalysiProtocolParameters']]] = None,
+            query_options: pulumi.Input[Optional[Union['PathAnalysiQueryOptionsArgs', 'PathAnalysiQueryOptionsArgsDict', 'outputs.PathAnalysiQueryOptions']]] = None,
+            source_endpoint: pulumi.Input[Optional[Union['PathAnalysiSourceEndpointArgs', 'PathAnalysiSourceEndpointArgsDict', 'outputs.PathAnalysiSourceEndpoint']]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None) -> 'PathAnalysi':
         """
         Get an existing PathAnalysi resource's state with the given name, id, and optional extra
@@ -588,12 +588,12 @@ class PathAnalysi(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cache_control: The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-        :param pulumi.Input[Union['PathAnalysiDestinationEndpointArgs', 'PathAnalysiDestinationEndpointArgsDict']] destination_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
+        :param pulumi.Input[Union['PathAnalysiDestinationEndpointArgs', 'PathAnalysiDestinationEndpointArgsDict', 'outputs.PathAnalysiDestinationEndpoint']] destination_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
         :param pulumi.Input[_builtins.str] path_analyzer_test_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
         :param pulumi.Input[_builtins.int] protocol: The IP protocol to used for the path analysis.
-        :param pulumi.Input[Union['PathAnalysiProtocolParametersArgs', 'PathAnalysiProtocolParametersArgsDict']] protocol_parameters: Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
-        :param pulumi.Input[Union['PathAnalysiQueryOptionsArgs', 'PathAnalysiQueryOptionsArgsDict']] query_options: Defines the query options required for a `PathAnalyzerTest` resource.
-        :param pulumi.Input[Union['PathAnalysiSourceEndpointArgs', 'PathAnalysiSourceEndpointArgsDict']] source_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
+        :param pulumi.Input[Union['PathAnalysiProtocolParametersArgs', 'PathAnalysiProtocolParametersArgsDict', 'outputs.PathAnalysiProtocolParameters']] protocol_parameters: Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
+        :param pulumi.Input[Union['PathAnalysiQueryOptionsArgs', 'PathAnalysiQueryOptionsArgsDict', 'outputs.PathAnalysiQueryOptions']] query_options: Defines the query options required for a `PathAnalyzerTest` resource.
+        :param pulumi.Input[Union['PathAnalysiSourceEndpointArgs', 'PathAnalysiSourceEndpointArgsDict', 'outputs.PathAnalysiSourceEndpoint']] source_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
         :param pulumi.Input[_builtins.str] type: The type of the `PathAnalysis` query.
                
                ** IMPORTANT **

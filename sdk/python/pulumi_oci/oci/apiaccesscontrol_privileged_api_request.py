@@ -744,7 +744,7 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
                  duration_in_hrs: pulumi.Input[Optional[_builtins.int]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 privileged_operation_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgsDict']]]]] = None,
+                 privileged_operation_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgsDict', 'outputs.ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationList']]]]] = None,
                  reason_detail: pulumi.Input[Optional[_builtins.str]] = None,
                  reason_summary: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -806,7 +806,7 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] duration_in_hrs: Duration in hours for which access is sought on the target resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] notification_topic_id: The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Request.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgsDict']]]] privileged_operation_lists: List of api names, attributes for which approval is sought by the user.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgsDict', 'outputs.ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationList']]]] privileged_operation_lists: List of api names, attributes for which approval is sought by the user.
         :param pulumi.Input[_builtins.str] reason_detail: Reason in detail for which the operator is requesting access on the target resource.
         :param pulumi.Input[_builtins.str] reason_summary: Summary comment by the operator creating the access request.
         :param pulumi.Input[_builtins.str] resource_id: The OCID of the target resource associated with the access request. The operator raises an access request to get approval to access the target resource.
@@ -890,7 +890,7 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
                  duration_in_hrs: pulumi.Input[Optional[_builtins.int]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 privileged_operation_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgsDict']]]]] = None,
+                 privileged_operation_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgsDict', 'outputs.ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationList']]]]] = None,
                  reason_detail: pulumi.Input[Optional[_builtins.str]] = None,
                  reason_summary: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -953,7 +953,7 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            approver_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs', 'ApiaccesscontrolPrivilegedApiRequestApproverDetailArgsDict']]]]] = None,
+            approver_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs', 'ApiaccesscontrolPrivilegedApiRequestApproverDetailArgsDict', 'outputs.ApiaccesscontrolPrivilegedApiRequestApproverDetail']]]]] = None,
             closure_comment: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -966,7 +966,7 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
             number_of_approvers_required: pulumi.Input[Optional[_builtins.int]] = None,
             privileged_api_control_id: pulumi.Input[Optional[_builtins.str]] = None,
             privileged_api_control_name: pulumi.Input[Optional[_builtins.str]] = None,
-            privileged_operation_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgsDict']]]]] = None,
+            privileged_operation_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgsDict', 'outputs.ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationList']]]]] = None,
             reason_detail: pulumi.Input[Optional[_builtins.str]] = None,
             reason_summary: pulumi.Input[Optional[_builtins.str]] = None,
             request_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -990,7 +990,7 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs', 'ApiaccesscontrolPrivilegedApiRequestApproverDetailArgsDict']]]] approver_details: Contains the approver details who have approved the privilegedApi Request during the initial request.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs', 'ApiaccesscontrolPrivilegedApiRequestApproverDetailArgsDict', 'outputs.ApiaccesscontrolPrivilegedApiRequestApproverDetail']]]] approver_details: Contains the approver details who have approved the privilegedApi Request during the initial request.
         :param pulumi.Input[_builtins.str] closure_comment: The comment entered by the operator while closing the request.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -1003,7 +1003,7 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] number_of_approvers_required: Number of approvers required to approve an privilegedApi request.
         :param pulumi.Input[_builtins.str] privileged_api_control_id: The OCID of the privilegedApi control governing the target resource.
         :param pulumi.Input[_builtins.str] privileged_api_control_name: Name of the privilegedApi control governing the target resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgsDict']]]] privileged_operation_lists: List of api names, attributes for which approval is sought by the user.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgsDict', 'outputs.ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationList']]]] privileged_operation_lists: List of api names, attributes for which approval is sought by the user.
         :param pulumi.Input[_builtins.str] reason_detail: Reason in detail for which the operator is requesting access on the target resource.
         :param pulumi.Input[_builtins.str] reason_summary: Summary comment by the operator creating the access request.
         :param pulumi.Input[_builtins.str] request_id: This is an automatic identifier generated by the system which is easier for human comprehension.

@@ -236,7 +236,7 @@ class AwaitableGetMaskingPoliciesMaskingColumnsResult(GetMaskingPoliciesMaskingC
 
 def get_masking_policies_masking_columns(column_names: Optional[Sequence[_builtins.str]] = None,
                                          data_types: Optional[Sequence[_builtins.str]] = None,
-                                         filters: Optional[Sequence[Union['GetMaskingPoliciesMaskingColumnsFilterArgs', 'GetMaskingPoliciesMaskingColumnsFilterArgsDict']]] = None,
+                                         filters: Optional[Sequence[Union['GetMaskingPoliciesMaskingColumnsFilterArgs', 'GetMaskingPoliciesMaskingColumnsFilterArgsDict', 'outputs.GetMaskingPoliciesMaskingColumnsFilterResult']]] = None,
                                          is_masking_enabled: Optional[_builtins.bool] = None,
                                          is_seed_required: Optional[_builtins.bool] = None,
                                          masking_column_groups: Optional[Sequence[_builtins.str]] = None,
@@ -341,7 +341,7 @@ def get_masking_policies_masking_columns(column_names: Optional[Sequence[_builti
         time_updated_less_than=pulumi.get(__ret__, 'time_updated_less_than'))
 def get_masking_policies_masking_columns_output(column_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                                 data_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
-                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingPoliciesMaskingColumnsFilterArgs', 'GetMaskingPoliciesMaskingColumnsFilterArgsDict']]]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingPoliciesMaskingColumnsFilterArgs', 'GetMaskingPoliciesMaskingColumnsFilterArgsDict', 'outputs.GetMaskingPoliciesMaskingColumnsFilterResult']]]]] = None,
                                                 is_masking_enabled: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                                 is_seed_required: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                                 masking_column_groups: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,

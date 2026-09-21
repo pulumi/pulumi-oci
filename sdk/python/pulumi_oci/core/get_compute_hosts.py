@@ -187,7 +187,7 @@ def get_compute_hosts(availability_domain: Optional[_builtins.str] = None,
                       compute_host_in_subtree: Optional[_builtins.bool] = None,
                       compute_host_lifecycle_state: Optional[_builtins.str] = None,
                       display_name: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetComputeHostsFilterArgs', 'GetComputeHostsFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetComputeHostsFilterArgs', 'GetComputeHostsFilterArgsDict', 'outputs.GetComputeHostsFilterResult']]] = None,
                       network_resource_id: Optional[_builtins.str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeHostsResult:
     """
@@ -258,7 +258,7 @@ def get_compute_hosts_output(availability_domain: pulumi.Input[Optional[Optional
                              compute_host_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                              compute_host_lifecycle_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeHostsFilterArgs', 'GetComputeHostsFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeHostsFilterArgs', 'GetComputeHostsFilterArgsDict', 'outputs.GetComputeHostsFilterResult']]]]] = None,
                              network_resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeHostsResult]:
     """

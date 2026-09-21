@@ -493,7 +493,7 @@ class NamespaceAssociation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 association_properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamespaceAssociationAssociationPropertyArgs', 'NamespaceAssociationAssociationPropertyArgsDict']]]]] = None,
+                 association_properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamespaceAssociationAssociationPropertyArgs', 'NamespaceAssociationAssociationPropertyArgsDict', 'outputs.NamespaceAssociationAssociationProperty']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  entity_id: pulumi.Input[Optional[_builtins.str]] = None,
                  is_from_republish: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -543,7 +543,7 @@ class NamespaceAssociation(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NamespaceAssociationAssociationPropertyArgs', 'NamespaceAssociationAssociationPropertyArgsDict']]]] association_properties: A list of association properties.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NamespaceAssociationAssociationPropertyArgs', 'NamespaceAssociationAssociationPropertyArgsDict', 'outputs.NamespaceAssociationAssociationProperty']]]] association_properties: A list of association properties.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment ID
         :param pulumi.Input[_builtins.str] entity_id: The entity unique identifier.
         :param pulumi.Input[_builtins.bool] is_from_republish: isFromRepublish
@@ -615,7 +615,7 @@ class NamespaceAssociation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 association_properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamespaceAssociationAssociationPropertyArgs', 'NamespaceAssociationAssociationPropertyArgsDict']]]]] = None,
+                 association_properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamespaceAssociationAssociationPropertyArgs', 'NamespaceAssociationAssociationPropertyArgsDict', 'outputs.NamespaceAssociationAssociationProperty']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  entity_id: pulumi.Input[Optional[_builtins.str]] = None,
                  is_from_republish: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -674,7 +674,7 @@ class NamespaceAssociation(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             agent_entity_name: pulumi.Input[Optional[_builtins.str]] = None,
             agent_id: pulumi.Input[Optional[_builtins.str]] = None,
-            association_properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamespaceAssociationAssociationPropertyArgs', 'NamespaceAssociationAssociationPropertyArgsDict']]]]] = None,
+            association_properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamespaceAssociationAssociationPropertyArgs', 'NamespaceAssociationAssociationPropertyArgsDict', 'outputs.NamespaceAssociationAssociationProperty']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             entity_id: pulumi.Input[Optional[_builtins.str]] = None,
             entity_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -702,7 +702,7 @@ class NamespaceAssociation(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] agent_entity_name: The agent unique identifier.
         :param pulumi.Input[_builtins.str] agent_id: The agent unique identifier.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NamespaceAssociationAssociationPropertyArgs', 'NamespaceAssociationAssociationPropertyArgsDict']]]] association_properties: A list of association properties.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NamespaceAssociationAssociationPropertyArgs', 'NamespaceAssociationAssociationPropertyArgsDict', 'outputs.NamespaceAssociationAssociationProperty']]]] association_properties: A list of association properties.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment ID
         :param pulumi.Input[_builtins.str] entity_id: The entity unique identifier.
         :param pulumi.Input[_builtins.str] entity_name: The entity name.

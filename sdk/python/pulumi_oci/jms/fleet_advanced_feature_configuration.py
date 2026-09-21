@@ -345,15 +345,15 @@ class FleetAdvancedFeatureConfiguration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 advanced_usage_tracking: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs', 'FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgsDict']]] = None,
+                 advanced_usage_tracking: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs', 'FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgsDict', 'outputs.FleetAdvancedFeatureConfigurationAdvancedUsageTracking']]] = None,
                  analytic_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
                  analytic_namespace: pulumi.Input[Optional[_builtins.str]] = None,
-                 crypto_event_analysis: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs', 'FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgsDict']]] = None,
+                 crypto_event_analysis: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs', 'FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgsDict', 'outputs.FleetAdvancedFeatureConfigurationCryptoEventAnalysis']]] = None,
                  fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 java_migration_analysis: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs', 'FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgsDict']]] = None,
-                 jfr_recording: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationJfrRecordingArgs', 'FleetAdvancedFeatureConfigurationJfrRecordingArgsDict']]] = None,
-                 lcm: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationLcmArgs', 'FleetAdvancedFeatureConfigurationLcmArgsDict']]] = None,
-                 performance_tuning_analysis: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs', 'FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict']]] = None,
+                 java_migration_analysis: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs', 'FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgsDict', 'outputs.FleetAdvancedFeatureConfigurationJavaMigrationAnalysis']]] = None,
+                 jfr_recording: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationJfrRecordingArgs', 'FleetAdvancedFeatureConfigurationJfrRecordingArgsDict', 'outputs.FleetAdvancedFeatureConfigurationJfrRecording']]] = None,
+                 lcm: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationLcmArgs', 'FleetAdvancedFeatureConfigurationLcmArgsDict', 'outputs.FleetAdvancedFeatureConfigurationLcm']]] = None,
+                 performance_tuning_analysis: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs', 'FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict', 'outputs.FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis']]] = None,
                  __props__=None):
         """
         This resource provides the Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
@@ -440,15 +440,15 @@ class FleetAdvancedFeatureConfiguration(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs', 'FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgsDict']] advanced_usage_tracking: (Updatable) AdvancedUsageTracking configuration
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs', 'FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgsDict', 'outputs.FleetAdvancedFeatureConfigurationAdvancedUsageTracking']] advanced_usage_tracking: (Updatable) AdvancedUsageTracking configuration
         :param pulumi.Input[_builtins.str] analytic_bucket_name: (Updatable) Bucket name required to store JFR and related data.
         :param pulumi.Input[_builtins.str] analytic_namespace: (Updatable) Namespace for the Fleet advanced feature.
-        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs', 'FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgsDict']] crypto_event_analysis: (Updatable) CryptoEventAnalysis configuration
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs', 'FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgsDict', 'outputs.FleetAdvancedFeatureConfigurationCryptoEventAnalysis']] crypto_event_analysis: (Updatable) CryptoEventAnalysis configuration
         :param pulumi.Input[_builtins.str] fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs', 'FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgsDict']] java_migration_analysis: (Updatable) JavaMigrationAnalysis configuration
-        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationJfrRecordingArgs', 'FleetAdvancedFeatureConfigurationJfrRecordingArgsDict']] jfr_recording: (Updatable) JfrRecording configuration
-        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationLcmArgs', 'FleetAdvancedFeatureConfigurationLcmArgsDict']] lcm: (Updatable) Enable lifecycle management and set post action configurations.
-        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs', 'FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict']] performance_tuning_analysis: (Updatable) Performance tuning analysis configuration
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs', 'FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgsDict', 'outputs.FleetAdvancedFeatureConfigurationJavaMigrationAnalysis']] java_migration_analysis: (Updatable) JavaMigrationAnalysis configuration
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationJfrRecordingArgs', 'FleetAdvancedFeatureConfigurationJfrRecordingArgsDict', 'outputs.FleetAdvancedFeatureConfigurationJfrRecording']] jfr_recording: (Updatable) JfrRecording configuration
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationLcmArgs', 'FleetAdvancedFeatureConfigurationLcmArgsDict', 'outputs.FleetAdvancedFeatureConfigurationLcm']] lcm: (Updatable) Enable lifecycle management and set post action configurations.
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs', 'FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict', 'outputs.FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis']] performance_tuning_analysis: (Updatable) Performance tuning analysis configuration
         """
         ...
     @overload
@@ -554,15 +554,15 @@ class FleetAdvancedFeatureConfiguration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 advanced_usage_tracking: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs', 'FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgsDict']]] = None,
+                 advanced_usage_tracking: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs', 'FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgsDict', 'outputs.FleetAdvancedFeatureConfigurationAdvancedUsageTracking']]] = None,
                  analytic_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
                  analytic_namespace: pulumi.Input[Optional[_builtins.str]] = None,
-                 crypto_event_analysis: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs', 'FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgsDict']]] = None,
+                 crypto_event_analysis: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs', 'FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgsDict', 'outputs.FleetAdvancedFeatureConfigurationCryptoEventAnalysis']]] = None,
                  fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 java_migration_analysis: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs', 'FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgsDict']]] = None,
-                 jfr_recording: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationJfrRecordingArgs', 'FleetAdvancedFeatureConfigurationJfrRecordingArgsDict']]] = None,
-                 lcm: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationLcmArgs', 'FleetAdvancedFeatureConfigurationLcmArgsDict']]] = None,
-                 performance_tuning_analysis: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs', 'FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict']]] = None,
+                 java_migration_analysis: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs', 'FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgsDict', 'outputs.FleetAdvancedFeatureConfigurationJavaMigrationAnalysis']]] = None,
+                 jfr_recording: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationJfrRecordingArgs', 'FleetAdvancedFeatureConfigurationJfrRecordingArgsDict', 'outputs.FleetAdvancedFeatureConfigurationJfrRecording']]] = None,
+                 lcm: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationLcmArgs', 'FleetAdvancedFeatureConfigurationLcmArgsDict', 'outputs.FleetAdvancedFeatureConfigurationLcm']]] = None,
+                 performance_tuning_analysis: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs', 'FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict', 'outputs.FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -594,15 +594,15 @@ class FleetAdvancedFeatureConfiguration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            advanced_usage_tracking: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs', 'FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgsDict']]] = None,
+            advanced_usage_tracking: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs', 'FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgsDict', 'outputs.FleetAdvancedFeatureConfigurationAdvancedUsageTracking']]] = None,
             analytic_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
             analytic_namespace: pulumi.Input[Optional[_builtins.str]] = None,
-            crypto_event_analysis: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs', 'FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgsDict']]] = None,
+            crypto_event_analysis: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs', 'FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgsDict', 'outputs.FleetAdvancedFeatureConfigurationCryptoEventAnalysis']]] = None,
             fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
-            java_migration_analysis: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs', 'FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgsDict']]] = None,
-            jfr_recording: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationJfrRecordingArgs', 'FleetAdvancedFeatureConfigurationJfrRecordingArgsDict']]] = None,
-            lcm: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationLcmArgs', 'FleetAdvancedFeatureConfigurationLcmArgsDict']]] = None,
-            performance_tuning_analysis: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs', 'FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict']]] = None,
+            java_migration_analysis: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs', 'FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgsDict', 'outputs.FleetAdvancedFeatureConfigurationJavaMigrationAnalysis']]] = None,
+            jfr_recording: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationJfrRecordingArgs', 'FleetAdvancedFeatureConfigurationJfrRecordingArgsDict', 'outputs.FleetAdvancedFeatureConfigurationJfrRecording']]] = None,
+            lcm: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationLcmArgs', 'FleetAdvancedFeatureConfigurationLcmArgsDict', 'outputs.FleetAdvancedFeatureConfigurationLcm']]] = None,
+            performance_tuning_analysis: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs', 'FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict', 'outputs.FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis']]] = None,
             time_last_modified: pulumi.Input[Optional[_builtins.str]] = None) -> 'FleetAdvancedFeatureConfiguration':
         """
         Get an existing FleetAdvancedFeatureConfiguration resource's state with the given name, id, and optional extra
@@ -611,15 +611,15 @@ class FleetAdvancedFeatureConfiguration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs', 'FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgsDict']] advanced_usage_tracking: (Updatable) AdvancedUsageTracking configuration
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs', 'FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgsDict', 'outputs.FleetAdvancedFeatureConfigurationAdvancedUsageTracking']] advanced_usage_tracking: (Updatable) AdvancedUsageTracking configuration
         :param pulumi.Input[_builtins.str] analytic_bucket_name: (Updatable) Bucket name required to store JFR and related data.
         :param pulumi.Input[_builtins.str] analytic_namespace: (Updatable) Namespace for the Fleet advanced feature.
-        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs', 'FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgsDict']] crypto_event_analysis: (Updatable) CryptoEventAnalysis configuration
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs', 'FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgsDict', 'outputs.FleetAdvancedFeatureConfigurationCryptoEventAnalysis']] crypto_event_analysis: (Updatable) CryptoEventAnalysis configuration
         :param pulumi.Input[_builtins.str] fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs', 'FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgsDict']] java_migration_analysis: (Updatable) JavaMigrationAnalysis configuration
-        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationJfrRecordingArgs', 'FleetAdvancedFeatureConfigurationJfrRecordingArgsDict']] jfr_recording: (Updatable) JfrRecording configuration
-        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationLcmArgs', 'FleetAdvancedFeatureConfigurationLcmArgsDict']] lcm: (Updatable) Enable lifecycle management and set post action configurations.
-        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs', 'FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict']] performance_tuning_analysis: (Updatable) Performance tuning analysis configuration
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs', 'FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgsDict', 'outputs.FleetAdvancedFeatureConfigurationJavaMigrationAnalysis']] java_migration_analysis: (Updatable) JavaMigrationAnalysis configuration
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationJfrRecordingArgs', 'FleetAdvancedFeatureConfigurationJfrRecordingArgsDict', 'outputs.FleetAdvancedFeatureConfigurationJfrRecording']] jfr_recording: (Updatable) JfrRecording configuration
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationLcmArgs', 'FleetAdvancedFeatureConfigurationLcmArgsDict', 'outputs.FleetAdvancedFeatureConfigurationLcm']] lcm: (Updatable) Enable lifecycle management and set post action configurations.
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs', 'FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict', 'outputs.FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis']] performance_tuning_analysis: (Updatable) Performance tuning analysis configuration
         :param pulumi.Input[_builtins.str] time_last_modified: The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

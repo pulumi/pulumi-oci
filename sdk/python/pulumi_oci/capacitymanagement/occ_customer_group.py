@@ -373,7 +373,7 @@ class OccCustomerGroup(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 customers_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccCustomerGroupCustomersListArgs', 'OccCustomerGroupCustomersListArgsDict']]]]] = None,
+                 customers_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccCustomerGroupCustomersListArgs', 'OccCustomerGroupCustomersListArgsDict', 'outputs.OccCustomerGroupCustomersList']]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -427,7 +427,7 @@ class OccCustomerGroup(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OccCustomerGroupCustomersListArgs', 'OccCustomerGroupCustomersListArgsDict']]]] customers_lists: A list containing all the customers that belong to this customer group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OccCustomerGroupCustomersListArgs', 'OccCustomerGroupCustomersListArgsDict', 'outputs.OccCustomerGroupCustomersList']]]] customers_lists: A list containing all the customers that belong to this customer group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A description about the customer group.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name of the customer group.
@@ -503,7 +503,7 @@ class OccCustomerGroup(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 customers_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccCustomerGroupCustomersListArgs', 'OccCustomerGroupCustomersListArgsDict']]]]] = None,
+                 customers_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccCustomerGroupCustomersListArgs', 'OccCustomerGroupCustomersListArgsDict', 'outputs.OccCustomerGroupCustomersList']]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -546,7 +546,7 @@ class OccCustomerGroup(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            customers_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccCustomerGroupCustomersListArgs', 'OccCustomerGroupCustomersListArgsDict']]]]] = None,
+            customers_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccCustomerGroupCustomersListArgs', 'OccCustomerGroupCustomersListArgsDict', 'outputs.OccCustomerGroupCustomersList']]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -565,7 +565,7 @@ class OccCustomerGroup(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OccCustomerGroupCustomersListArgs', 'OccCustomerGroupCustomersListArgsDict']]]] customers_lists: A list containing all the customers that belong to this customer group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OccCustomerGroupCustomersListArgs', 'OccCustomerGroupCustomersListArgsDict', 'outputs.OccCustomerGroupCustomersList']]]] customers_lists: A list containing all the customers that belong to this customer group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A description about the customer group.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name of the customer group.

@@ -142,7 +142,7 @@ def get_data_safe_private_endpoints(access_level: Optional[_builtins.str] = None
                                     compartment_id: Optional[_builtins.str] = None,
                                     compartment_id_in_subtree: Optional[_builtins.bool] = None,
                                     display_name: Optional[_builtins.str] = None,
-                                    filters: Optional[Sequence[Union['GetDataSafePrivateEndpointsFilterArgs', 'GetDataSafePrivateEndpointsFilterArgsDict']]] = None,
+                                    filters: Optional[Sequence[Union['GetDataSafePrivateEndpointsFilterArgs', 'GetDataSafePrivateEndpointsFilterArgsDict', 'outputs.GetDataSafePrivateEndpointsFilterResult']]] = None,
                                     state: Optional[_builtins.str] = None,
                                     vcn_id: Optional[_builtins.str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDataSafePrivateEndpointsResult:
@@ -198,7 +198,7 @@ def get_data_safe_private_endpoints_output(access_level: pulumi.Input[Optional[O
                                            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDataSafePrivateEndpointsFilterArgs', 'GetDataSafePrivateEndpointsFilterArgsDict']]]]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDataSafePrivateEndpointsFilterArgs', 'GetDataSafePrivateEndpointsFilterArgsDict', 'outputs.GetDataSafePrivateEndpointsFilterResult']]]]] = None,
                                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            vcn_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataSafePrivateEndpointsResult]:

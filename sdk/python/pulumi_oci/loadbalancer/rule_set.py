@@ -160,7 +160,7 @@ class RuleSet(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RuleSetItemArgs', 'RuleSetItemArgsDict']]]]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RuleSetItemArgs', 'RuleSetItemArgsDict', 'outputs.RuleSetItem']]]]] = None,
                  load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -225,7 +225,7 @@ class RuleSet(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RuleSetItemArgs', 'RuleSetItemArgsDict']]]] items: (Updatable) An array of rules that compose the rule set. For more information, see [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RuleSetItemArgs', 'RuleSetItemArgsDict', 'outputs.RuleSetItem']]]] items: (Updatable) An array of rules that compose the rule set. For more information, see [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm)
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
         :param pulumi.Input[_builtins.str] name: The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
                
@@ -312,7 +312,7 @@ class RuleSet(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RuleSetItemArgs', 'RuleSetItemArgsDict']]]]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RuleSetItemArgs', 'RuleSetItemArgsDict', 'outputs.RuleSetItem']]]]] = None,
                  load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -342,7 +342,7 @@ class RuleSet(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RuleSetItemArgs', 'RuleSetItemArgsDict']]]]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RuleSetItemArgs', 'RuleSetItemArgsDict', 'outputs.RuleSetItem']]]]] = None,
             load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None) -> 'RuleSet':
@@ -353,7 +353,7 @@ class RuleSet(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RuleSetItemArgs', 'RuleSetItemArgsDict']]]] items: (Updatable) An array of rules that compose the rule set. For more information, see [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RuleSetItemArgs', 'RuleSetItemArgsDict', 'outputs.RuleSetItem']]]] items: (Updatable) An array of rules that compose the rule set. For more information, see [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm)
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
         :param pulumi.Input[_builtins.str] name: The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
                

@@ -947,7 +947,7 @@ class VirtualCircuit(pulumi.CustomResource):
                  bandwidth_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
                  bgp_admin_state: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 cross_connect_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitCrossConnectMappingArgs', 'VirtualCircuitCrossConnectMappingArgsDict']]]]] = None,
+                 cross_connect_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitCrossConnectMappingArgs', 'VirtualCircuitCrossConnectMappingArgsDict', 'outputs.VirtualCircuitCrossConnectMapping']]]]] = None,
                  customer_asn: pulumi.Input[Optional[_builtins.str]] = None,
                  customer_bgp_asn: pulumi.Input[Optional[_builtins.int]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -960,7 +960,7 @@ class VirtualCircuit(pulumi.CustomResource):
                  provider_remote_region: pulumi.Input[Optional[_builtins.str]] = None,
                  provider_service_id: pulumi.Input[Optional[_builtins.str]] = None,
                  provider_service_key_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 public_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]]] = None,
+                 public_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict', 'outputs.VirtualCircuitPublicPrefix']]]]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
                  remote_account_id: pulumi.Input[Optional[_builtins.str]] = None,
                  routing_policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -1054,7 +1054,7 @@ class VirtualCircuit(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] bandwidth_shape_name: (Updatable) The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
         :param pulumi.Input[_builtins.str] bgp_admin_state: (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the virtual circuit.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitCrossConnectMappingArgs', 'VirtualCircuitCrossConnectMappingArgsDict']]]] cross_connect_mappings: (Updatable) Create a `CrossConnectMapping` for each cross-connect or cross-connect group this virtual circuit will run on.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitCrossConnectMappingArgs', 'VirtualCircuitCrossConnectMappingArgsDict', 'outputs.VirtualCircuitCrossConnectMapping']]]] cross_connect_mappings: (Updatable) Create a `CrossConnectMapping` for each cross-connect or cross-connect group this virtual circuit will run on.
         :param pulumi.Input[_builtins.str] customer_asn: (Updatable) Your BGP ASN (either public or private). Provide this value only if there's a BGP session that goes from your edge router to Oracle. Otherwise, leave this empty or null. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.  Example: `12345` (2-byte) or `1587232876` (4-byte)
         :param pulumi.Input[_builtins.int] customer_bgp_asn: (Updatable) Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -1067,7 +1067,7 @@ class VirtualCircuit(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] provider_remote_region: The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
         :param pulumi.Input[_builtins.str] provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
         :param pulumi.Input[_builtins.str] provider_service_key_name: (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]] public_prefixes: (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict', 'outputs.VirtualCircuitPublicPrefix']]]] public_prefixes: (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
         :param pulumi.Input[_builtins.str] region: The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
         :param pulumi.Input[_builtins.str] remote_account_id: Customer's account on Provider/Partner cloud (AWS, GCP or any other)
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] routing_policies: (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
@@ -1183,7 +1183,7 @@ class VirtualCircuit(pulumi.CustomResource):
                  bandwidth_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
                  bgp_admin_state: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 cross_connect_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitCrossConnectMappingArgs', 'VirtualCircuitCrossConnectMappingArgsDict']]]]] = None,
+                 cross_connect_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitCrossConnectMappingArgs', 'VirtualCircuitCrossConnectMappingArgsDict', 'outputs.VirtualCircuitCrossConnectMapping']]]]] = None,
                  customer_asn: pulumi.Input[Optional[_builtins.str]] = None,
                  customer_bgp_asn: pulumi.Input[Optional[_builtins.int]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1196,7 +1196,7 @@ class VirtualCircuit(pulumi.CustomResource):
                  provider_remote_region: pulumi.Input[Optional[_builtins.str]] = None,
                  provider_service_id: pulumi.Input[Optional[_builtins.str]] = None,
                  provider_service_key_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 public_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]]] = None,
+                 public_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict', 'outputs.VirtualCircuitPublicPrefix']]]]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
                  remote_account_id: pulumi.Input[Optional[_builtins.str]] = None,
                  routing_policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -1264,7 +1264,7 @@ class VirtualCircuit(pulumi.CustomResource):
             bgp_management: pulumi.Input[Optional[_builtins.str]] = None,
             bgp_session_state: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            cross_connect_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitCrossConnectMappingArgs', 'VirtualCircuitCrossConnectMappingArgsDict']]]]] = None,
+            cross_connect_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitCrossConnectMappingArgs', 'VirtualCircuitCrossConnectMappingArgsDict', 'outputs.VirtualCircuitCrossConnectMapping']]]]] = None,
             customer_asn: pulumi.Input[Optional[_builtins.str]] = None,
             customer_bgp_asn: pulumi.Input[Optional[_builtins.int]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1279,7 +1279,7 @@ class VirtualCircuit(pulumi.CustomResource):
             provider_service_id: pulumi.Input[Optional[_builtins.str]] = None,
             provider_service_key_name: pulumi.Input[Optional[_builtins.str]] = None,
             provider_state: pulumi.Input[Optional[_builtins.str]] = None,
-            public_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]]] = None,
+            public_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict', 'outputs.VirtualCircuitPublicPrefix']]]]] = None,
             reference_comment: pulumi.Input[Optional[_builtins.str]] = None,
             region: pulumi.Input[Optional[_builtins.str]] = None,
             remote_account_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1290,7 +1290,7 @@ class VirtualCircuit(pulumi.CustomResource):
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             traffic_mode: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
-            virtual_circuit_redundancy_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitVirtualCircuitRedundancyMetadataArgs', 'VirtualCircuitVirtualCircuitRedundancyMetadataArgsDict']]]]] = None) -> 'VirtualCircuit':
+            virtual_circuit_redundancy_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitVirtualCircuitRedundancyMetadataArgs', 'VirtualCircuitVirtualCircuitRedundancyMetadataArgsDict', 'outputs.VirtualCircuitVirtualCircuitRedundancyMetadata']]]]] = None) -> 'VirtualCircuit':
         """
         Get an existing VirtualCircuit resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1304,7 +1304,7 @@ class VirtualCircuit(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] bgp_management: Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
         :param pulumi.Input[_builtins.str] bgp_session_state: The state of the Ipv4 BGP session associated with the virtual circuit.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the virtual circuit.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitCrossConnectMappingArgs', 'VirtualCircuitCrossConnectMappingArgsDict']]]] cross_connect_mappings: (Updatable) Create a `CrossConnectMapping` for each cross-connect or cross-connect group this virtual circuit will run on.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitCrossConnectMappingArgs', 'VirtualCircuitCrossConnectMappingArgsDict', 'outputs.VirtualCircuitCrossConnectMapping']]]] cross_connect_mappings: (Updatable) Create a `CrossConnectMapping` for each cross-connect or cross-connect group this virtual circuit will run on.
         :param pulumi.Input[_builtins.str] customer_asn: (Updatable) Your BGP ASN (either public or private). Provide this value only if there's a BGP session that goes from your edge router to Oracle. Otherwise, leave this empty or null. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.  Example: `12345` (2-byte) or `1587232876` (4-byte)
         :param pulumi.Input[_builtins.int] customer_bgp_asn: (Updatable) Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -1319,7 +1319,7 @@ class VirtualCircuit(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
         :param pulumi.Input[_builtins.str] provider_service_key_name: (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
         :param pulumi.Input[_builtins.str] provider_state: The provider's state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]] public_prefixes: (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict', 'outputs.VirtualCircuitPublicPrefix']]]] public_prefixes: (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
         :param pulumi.Input[_builtins.str] reference_comment: Provider-supplied reference information about this virtual circuit (if the customer is connecting via a provider).
         :param pulumi.Input[_builtins.str] region: The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
         :param pulumi.Input[_builtins.str] remote_account_id: Customer's account on Provider/Partner cloud (AWS, GCP or any other)
@@ -1333,7 +1333,7 @@ class VirtualCircuit(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitVirtualCircuitRedundancyMetadataArgs', 'VirtualCircuitVirtualCircuitRedundancyMetadataArgsDict']]]] virtual_circuit_redundancy_metadatas: This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitVirtualCircuitRedundancyMetadataArgs', 'VirtualCircuitVirtualCircuitRedundancyMetadataArgsDict', 'outputs.VirtualCircuitVirtualCircuitRedundancyMetadata']]]] virtual_circuit_redundancy_metadatas: This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

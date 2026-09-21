@@ -459,13 +459,13 @@ class SteeringPolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 answers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SteeringPolicyAnswerArgs', 'SteeringPolicyAnswerArgsDict']]]]] = None,
+                 answers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SteeringPolicyAnswerArgs', 'SteeringPolicyAnswerArgsDict', 'outputs.SteeringPolicyAnswer']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  health_check_monitor_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SteeringPolicyRuleArgs', 'SteeringPolicyRuleArgsDict']]]]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SteeringPolicyRuleArgs', 'SteeringPolicyRuleArgsDict', 'outputs.SteeringPolicyRule']]]]] = None,
                  template: pulumi.Input[Optional[_builtins.str]] = None,
                  ttl: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
@@ -531,7 +531,7 @@ class SteeringPolicy(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SteeringPolicyAnswerArgs', 'SteeringPolicyAnswerArgsDict']]]] answers: The set of all answers that can potentially issue from the steering policy.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SteeringPolicyAnswerArgs', 'SteeringPolicyAnswerArgsDict', 'outputs.SteeringPolicyAnswer']]]] answers: The set of all answers that can potentially issue from the steering policy.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the steering policy.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
@@ -539,7 +539,7 @@ class SteeringPolicy(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] health_check_monitor_id: (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
                
                **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SteeringPolicyRuleArgs', 'SteeringPolicyRuleArgsDict']]]] rules: The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SteeringPolicyRuleArgs', 'SteeringPolicyRuleArgsDict', 'outputs.SteeringPolicyRule']]]] rules: The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
                
                The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
         :param pulumi.Input[_builtins.str] template: (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
@@ -643,13 +643,13 @@ class SteeringPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 answers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SteeringPolicyAnswerArgs', 'SteeringPolicyAnswerArgsDict']]]]] = None,
+                 answers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SteeringPolicyAnswerArgs', 'SteeringPolicyAnswerArgsDict', 'outputs.SteeringPolicyAnswer']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  health_check_monitor_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SteeringPolicyRuleArgs', 'SteeringPolicyRuleArgsDict']]]]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SteeringPolicyRuleArgs', 'SteeringPolicyRuleArgsDict', 'outputs.SteeringPolicyRule']]]]] = None,
                  template: pulumi.Input[Optional[_builtins.str]] = None,
                  ttl: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
@@ -689,13 +689,13 @@ class SteeringPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            answers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SteeringPolicyAnswerArgs', 'SteeringPolicyAnswerArgsDict']]]]] = None,
+            answers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SteeringPolicyAnswerArgs', 'SteeringPolicyAnswerArgsDict', 'outputs.SteeringPolicyAnswer']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             health_check_monitor_id: pulumi.Input[Optional[_builtins.str]] = None,
-            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SteeringPolicyRuleArgs', 'SteeringPolicyRuleArgsDict']]]]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SteeringPolicyRuleArgs', 'SteeringPolicyRuleArgsDict', 'outputs.SteeringPolicyRule']]]]] = None,
             self: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             template: pulumi.Input[Optional[_builtins.str]] = None,
@@ -708,7 +708,7 @@ class SteeringPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SteeringPolicyAnswerArgs', 'SteeringPolicyAnswerArgsDict']]]] answers: The set of all answers that can potentially issue from the steering policy.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SteeringPolicyAnswerArgs', 'SteeringPolicyAnswerArgsDict', 'outputs.SteeringPolicyAnswer']]]] answers: The set of all answers that can potentially issue from the steering policy.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the steering policy.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
@@ -716,7 +716,7 @@ class SteeringPolicy(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] health_check_monitor_id: (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
                
                **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SteeringPolicyRuleArgs', 'SteeringPolicyRuleArgsDict']]]] rules: The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SteeringPolicyRuleArgs', 'SteeringPolicyRuleArgsDict', 'outputs.SteeringPolicyRule']]]] rules: The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
                
                The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
         :param pulumi.Input[_builtins.str] self: The canonical absolute URL of the resource.

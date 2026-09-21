@@ -134,7 +134,7 @@ class AwaitableGetApiaccesscontrolPrivilegedApiRequestsResult(GetApiaccesscontro
 
 def get_apiaccesscontrol_privileged_api_requests(compartment_id: Optional[_builtins.str] = None,
                                                  display_name: Optional[_builtins.str] = None,
-                                                 filters: Optional[Sequence[Union['GetApiaccesscontrolPrivilegedApiRequestsFilterArgs', 'GetApiaccesscontrolPrivilegedApiRequestsFilterArgsDict']]] = None,
+                                                 filters: Optional[Sequence[Union['GetApiaccesscontrolPrivilegedApiRequestsFilterArgs', 'GetApiaccesscontrolPrivilegedApiRequestsFilterArgsDict', 'outputs.GetApiaccesscontrolPrivilegedApiRequestsFilterResult']]] = None,
                                                  id: Optional[_builtins.str] = None,
                                                  resource_id: Optional[_builtins.str] = None,
                                                  resource_type: Optional[_builtins.str] = None,
@@ -189,7 +189,7 @@ def get_apiaccesscontrol_privileged_api_requests(compartment_id: Optional[_built
         state=pulumi.get(__ret__, 'state'))
 def get_apiaccesscontrol_privileged_api_requests_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetApiaccesscontrolPrivilegedApiRequestsFilterArgs', 'GetApiaccesscontrolPrivilegedApiRequestsFilterArgsDict']]]]] = None,
+                                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetApiaccesscontrolPrivilegedApiRequestsFilterArgs', 'GetApiaccesscontrolPrivilegedApiRequestsFilterArgsDict', 'outputs.GetApiaccesscontrolPrivilegedApiRequestsFilterResult']]]]] = None,
                                                         id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                         resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                         resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

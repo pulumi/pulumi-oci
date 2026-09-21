@@ -146,7 +146,7 @@ class AwaitableGetIotDigitalTwinRelationshipsResult(GetIotDigitalTwinRelationshi
 
 def get_iot_digital_twin_relationships(content_path: Optional[_builtins.str] = None,
                                        display_name: Optional[_builtins.str] = None,
-                                       filters: Optional[Sequence[Union['GetIotDigitalTwinRelationshipsFilterArgs', 'GetIotDigitalTwinRelationshipsFilterArgsDict']]] = None,
+                                       filters: Optional[Sequence[Union['GetIotDigitalTwinRelationshipsFilterArgs', 'GetIotDigitalTwinRelationshipsFilterArgsDict', 'outputs.GetIotDigitalTwinRelationshipsFilterResult']]] = None,
                                        id: Optional[_builtins.str] = None,
                                        iot_domain_id: Optional[_builtins.str] = None,
                                        source_digital_twin_instance_id: Optional[_builtins.str] = None,
@@ -206,7 +206,7 @@ def get_iot_digital_twin_relationships(content_path: Optional[_builtins.str] = N
         target_digital_twin_instance_id=pulumi.get(__ret__, 'target_digital_twin_instance_id'))
 def get_iot_digital_twin_relationships_output(content_path: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIotDigitalTwinRelationshipsFilterArgs', 'GetIotDigitalTwinRelationshipsFilterArgsDict']]]]] = None,
+                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIotDigitalTwinRelationshipsFilterArgs', 'GetIotDigitalTwinRelationshipsFilterArgsDict', 'outputs.GetIotDigitalTwinRelationshipsFilterResult']]]]] = None,
                                               id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                               iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               source_digital_twin_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

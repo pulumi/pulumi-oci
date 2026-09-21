@@ -381,8 +381,8 @@ class InstanceConfiguration(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 gmc_configs: pulumi.Input[Optional[Union['InstanceConfigurationGmcConfigsArgs', 'InstanceConfigurationGmcConfigsArgsDict']]] = None,
-                 instance_details: pulumi.Input[Optional[Union['InstanceConfigurationInstanceDetailsArgs', 'InstanceConfigurationInstanceDetailsArgsDict']]] = None,
+                 gmc_configs: pulumi.Input[Optional[Union['InstanceConfigurationGmcConfigsArgs', 'InstanceConfigurationGmcConfigsArgsDict', 'outputs.InstanceConfigurationGmcConfigs']]] = None,
+                 instance_details: pulumi.Input[Optional[Union['InstanceConfigurationInstanceDetailsArgs', 'InstanceConfigurationInstanceDetailsArgsDict', 'outputs.InstanceConfigurationInstanceDetails']]] = None,
                  instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -410,7 +410,7 @@ class InstanceConfiguration(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['InstanceConfigurationGmcConfigsArgs', 'InstanceConfigurationGmcConfigsArgsDict']] gmc_configs: The GPU Memory Cluster configuration entries for.
+        :param pulumi.Input[Union['InstanceConfigurationGmcConfigsArgs', 'InstanceConfigurationGmcConfigsArgsDict', 'outputs.InstanceConfigurationGmcConfigs']] gmc_configs: The GPU Memory Cluster configuration entries for.
         :param pulumi.Input[_builtins.str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
         :param pulumi.Input[_builtins.str] source: The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration.
                
@@ -471,8 +471,8 @@ class InstanceConfiguration(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 gmc_configs: pulumi.Input[Optional[Union['InstanceConfigurationGmcConfigsArgs', 'InstanceConfigurationGmcConfigsArgsDict']]] = None,
-                 instance_details: pulumi.Input[Optional[Union['InstanceConfigurationInstanceDetailsArgs', 'InstanceConfigurationInstanceDetailsArgsDict']]] = None,
+                 gmc_configs: pulumi.Input[Optional[Union['InstanceConfigurationGmcConfigsArgs', 'InstanceConfigurationGmcConfigsArgsDict', 'outputs.InstanceConfigurationGmcConfigs']]] = None,
+                 instance_details: pulumi.Input[Optional[Union['InstanceConfigurationInstanceDetailsArgs', 'InstanceConfigurationInstanceDetailsArgsDict', 'outputs.InstanceConfigurationInstanceDetails']]] = None,
                  instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -511,8 +511,8 @@ class InstanceConfiguration(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            gmc_configs: pulumi.Input[Optional[Union['InstanceConfigurationGmcConfigsArgs', 'InstanceConfigurationGmcConfigsArgsDict']]] = None,
-            instance_details: pulumi.Input[Optional[Union['InstanceConfigurationInstanceDetailsArgs', 'InstanceConfigurationInstanceDetailsArgsDict']]] = None,
+            gmc_configs: pulumi.Input[Optional[Union['InstanceConfigurationGmcConfigsArgs', 'InstanceConfigurationGmcConfigsArgsDict', 'outputs.InstanceConfigurationGmcConfigs']]] = None,
+            instance_details: pulumi.Input[Optional[Union['InstanceConfigurationInstanceDetailsArgs', 'InstanceConfigurationInstanceDetailsArgsDict', 'outputs.InstanceConfigurationInstanceDetails']]] = None,
             instance_id: pulumi.Input[Optional[_builtins.str]] = None,
             source: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'InstanceConfiguration':
@@ -528,7 +528,7 @@ class InstanceConfiguration(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['InstanceConfigurationGmcConfigsArgs', 'InstanceConfigurationGmcConfigsArgsDict']] gmc_configs: The GPU Memory Cluster configuration entries for.
+        :param pulumi.Input[Union['InstanceConfigurationGmcConfigsArgs', 'InstanceConfigurationGmcConfigsArgsDict', 'outputs.InstanceConfigurationGmcConfigs']] gmc_configs: The GPU Memory Cluster configuration entries for.
         :param pulumi.Input[_builtins.str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
         :param pulumi.Input[_builtins.str] source: The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration.
                

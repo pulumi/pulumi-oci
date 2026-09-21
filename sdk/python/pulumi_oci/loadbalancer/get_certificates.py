@@ -81,7 +81,7 @@ class AwaitableGetCertificatesResult(GetCertificatesResult):
             load_balancer_id=self.load_balancer_id)
 
 
-def get_certificates(filters: Optional[Sequence[Union['GetCertificatesFilterArgs', 'GetCertificatesFilterArgsDict']]] = None,
+def get_certificates(filters: Optional[Sequence[Union['GetCertificatesFilterArgs', 'GetCertificatesFilterArgsDict', 'outputs.GetCertificatesFilterResult']]] = None,
                      load_balancer_id: Optional[_builtins.str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCertificatesResult:
     """
@@ -112,7 +112,7 @@ def get_certificates(filters: Optional[Sequence[Union['GetCertificatesFilterArgs
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'))
-def get_certificates_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCertificatesFilterArgs', 'GetCertificatesFilterArgsDict']]]]] = None,
+def get_certificates_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCertificatesFilterArgs', 'GetCertificatesFilterArgsDict', 'outputs.GetCertificatesFilterResult']]]]] = None,
                             load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCertificatesResult]:
     """

@@ -568,7 +568,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  endpoint_service_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsPrivateEndpointLockArgs', 'DatabaseToolsPrivateEndpointLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsPrivateEndpointLockArgs', 'DatabaseToolsPrivateEndpointLockArgsDict', 'outputs.DatabaseToolsPrivateEndpointLock']]]]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -628,7 +628,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] endpoint_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsPrivateEndpointLockArgs', 'DatabaseToolsPrivateEndpointLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsPrivateEndpointLockArgs', 'DatabaseToolsPrivateEndpointLockArgsDict', 'outputs.DatabaseToolsPrivateEndpointLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param pulumi.Input[_builtins.str] private_endpoint_ip: The private IP address that represents the access point for the associated endpoint service.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
@@ -710,7 +710,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  endpoint_service_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsPrivateEndpointLockArgs', 'DatabaseToolsPrivateEndpointLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsPrivateEndpointLockArgs', 'DatabaseToolsPrivateEndpointLockArgsDict', 'outputs.DatabaseToolsPrivateEndpointLock']]]]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -772,11 +772,11 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
             endpoint_service_id: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsPrivateEndpointLockArgs', 'DatabaseToolsPrivateEndpointLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsPrivateEndpointLockArgs', 'DatabaseToolsPrivateEndpointLockArgsDict', 'outputs.DatabaseToolsPrivateEndpointLock']]]]] = None,
             nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
             private_endpoint_vnic_id: pulumi.Input[Optional[_builtins.str]] = None,
-            reverse_connection_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs', 'DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgsDict']]]]] = None,
+            reverse_connection_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs', 'DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgsDict', 'outputs.DatabaseToolsPrivateEndpointReverseConnectionConfiguration']]]]] = None,
             security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -800,11 +800,11 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] endpoint_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsPrivateEndpointLockArgs', 'DatabaseToolsPrivateEndpointLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsPrivateEndpointLockArgs', 'DatabaseToolsPrivateEndpointLockArgsDict', 'outputs.DatabaseToolsPrivateEndpointLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param pulumi.Input[_builtins.str] private_endpoint_ip: The private IP address that represents the access point for the associated endpoint service.
         :param pulumi.Input[_builtins.str] private_endpoint_vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs', 'DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgsDict']]]] reverse_connection_configurations: Reverse connection configuration details of the private endpoint.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs', 'DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgsDict', 'outputs.DatabaseToolsPrivateEndpointReverseConnectionConfiguration']]]] reverse_connection_configurations: Reverse connection configuration details of the private endpoint.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] state: The current state of the Database Tools private endpoint.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.

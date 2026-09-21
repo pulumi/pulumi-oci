@@ -355,12 +355,12 @@ class Export(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 export_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExportExportOptionArgs', 'ExportExportOptionArgsDict']]]]] = None,
+                 export_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExportExportOptionArgs', 'ExportExportOptionArgsDict', 'outputs.ExportExportOption']]]]] = None,
                  export_set_id: pulumi.Input[Optional[_builtins.str]] = None,
                  file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
                  is_idmap_groups_for_sys_auth: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExportLockArgs', 'ExportLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExportLockArgs', 'ExportLockArgsDict', 'outputs.ExportLock']]]]] = None,
                  path: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -412,7 +412,7 @@ class Export(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ExportExportOptionArgs', 'ExportExportOptionArgsDict']]]] export_options: (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExportExportOptionArgs', 'ExportExportOptionArgsDict', 'outputs.ExportExportOption']]]] export_options: (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
                
                [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
                
@@ -426,7 +426,7 @@ class Export(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] export_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
         :param pulumi.Input[_builtins.str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
         :param pulumi.Input[_builtins.bool] is_idmap_groups_for_sys_auth: (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ExportLockArgs', 'ExportLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExportLockArgs', 'ExportLockArgsDict', 'outputs.ExportLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] path: Path used to access the associated file system.
                
                Avoid entering confidential information.
@@ -504,12 +504,12 @@ class Export(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 export_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExportExportOptionArgs', 'ExportExportOptionArgsDict']]]]] = None,
+                 export_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExportExportOptionArgs', 'ExportExportOptionArgsDict', 'outputs.ExportExportOption']]]]] = None,
                  export_set_id: pulumi.Input[Optional[_builtins.str]] = None,
                  file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
                  is_idmap_groups_for_sys_auth: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExportLockArgs', 'ExportLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExportLockArgs', 'ExportLockArgsDict', 'outputs.ExportLock']]]]] = None,
                  path: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -545,12 +545,12 @@ class Export(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            export_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExportExportOptionArgs', 'ExportExportOptionArgsDict']]]]] = None,
+            export_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExportExportOptionArgs', 'ExportExportOptionArgsDict', 'outputs.ExportExportOption']]]]] = None,
             export_set_id: pulumi.Input[Optional[_builtins.str]] = None,
             file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
             is_idmap_groups_for_sys_auth: pulumi.Input[Optional[_builtins.bool]] = None,
             is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExportLockArgs', 'ExportLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExportLockArgs', 'ExportLockArgsDict', 'outputs.ExportLock']]]]] = None,
             path: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'Export':
@@ -561,7 +561,7 @@ class Export(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ExportExportOptionArgs', 'ExportExportOptionArgsDict']]]] export_options: (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExportExportOptionArgs', 'ExportExportOptionArgsDict', 'outputs.ExportExportOption']]]] export_options: (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
                
                [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
                
@@ -575,7 +575,7 @@ class Export(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] export_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
         :param pulumi.Input[_builtins.str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
         :param pulumi.Input[_builtins.bool] is_idmap_groups_for_sys_auth: (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ExportLockArgs', 'ExportLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExportLockArgs', 'ExportLockArgsDict', 'outputs.ExportLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] path: Path used to access the associated file system.
                
                Avoid entering confidential information.

@@ -236,7 +236,7 @@ class DefaultDhcpOptions(pulumi.CustomResource):
                  domain_name_type: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  manage_default_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultDhcpOptionsOptionArgs', 'DefaultDhcpOptionsOptionArgsDict']]]]] = None,
+                 options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultDhcpOptionsOptionArgs', 'DefaultDhcpOptionsOptionArgsDict', 'outputs.DefaultDhcpOptionsOption']]]]] = None,
                  __props__=None):
         """
         Create a DefaultDhcpOptions resource with the given unique name, props, and options.
@@ -274,7 +274,7 @@ class DefaultDhcpOptions(pulumi.CustomResource):
                  domain_name_type: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  manage_default_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultDhcpOptionsOptionArgs', 'DefaultDhcpOptionsOptionArgsDict']]]]] = None,
+                 options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultDhcpOptionsOptionArgs', 'DefaultDhcpOptionsOptionArgsDict', 'outputs.DefaultDhcpOptionsOption']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -313,7 +313,7 @@ class DefaultDhcpOptions(pulumi.CustomResource):
             domain_name_type: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             manage_default_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
-            options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultDhcpOptionsOptionArgs', 'DefaultDhcpOptionsOptionArgsDict']]]]] = None,
+            options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultDhcpOptionsOptionArgs', 'DefaultDhcpOptionsOptionArgsDict', 'outputs.DefaultDhcpOptionsOption']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'DefaultDhcpOptions':
         """

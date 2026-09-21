@@ -124,7 +124,7 @@ class AwaitableGetSoftwareSourcePackageGroupsResult(GetSoftwareSourcePackageGrou
 
 
 def get_software_source_package_groups(compartment_id: Optional[_builtins.str] = None,
-                                       filters: Optional[Sequence[Union['GetSoftwareSourcePackageGroupsFilterArgs', 'GetSoftwareSourcePackageGroupsFilterArgsDict']]] = None,
+                                       filters: Optional[Sequence[Union['GetSoftwareSourcePackageGroupsFilterArgs', 'GetSoftwareSourcePackageGroupsFilterArgsDict', 'outputs.GetSoftwareSourcePackageGroupsFilterResult']]] = None,
                                        group_types: Optional[Sequence[_builtins.str]] = None,
                                        name: Optional[_builtins.str] = None,
                                        name_contains: Optional[_builtins.str] = None,
@@ -176,7 +176,7 @@ def get_software_source_package_groups(compartment_id: Optional[_builtins.str] =
         package_group_collections=pulumi.get(__ret__, 'package_group_collections'),
         software_source_id=pulumi.get(__ret__, 'software_source_id'))
 def get_software_source_package_groups_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSoftwareSourcePackageGroupsFilterArgs', 'GetSoftwareSourcePackageGroupsFilterArgsDict']]]]] = None,
+                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSoftwareSourcePackageGroupsFilterArgs', 'GetSoftwareSourcePackageGroupsFilterArgsDict', 'outputs.GetSoftwareSourcePackageGroupsFilterResult']]]]] = None,
                                               group_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                               name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                               name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

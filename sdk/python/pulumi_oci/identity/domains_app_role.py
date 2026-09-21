@@ -1523,7 +1523,7 @@ class DomainsAppRole(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  admin_role: pulumi.Input[Optional[_builtins.bool]] = None,
-                 app: pulumi.Input[Optional[Union['DomainsAppRoleAppArgs', 'DomainsAppRoleAppArgsDict']]] = None,
+                 app: pulumi.Input[Optional[Union['DomainsAppRoleAppArgs', 'DomainsAppRoleAppArgsDict', 'outputs.DomainsAppRoleApp']]] = None,
                  attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1538,7 +1538,7 @@ class DomainsAppRole(pulumi.CustomResource):
                  public: pulumi.Input[Optional[_builtins.bool]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppRoleTagArgs', 'DomainsAppRoleTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppRoleTagArgs', 'DomainsAppRoleTagArgsDict', 'outputs.DomainsAppRoleTag']]]]] = None,
                  __props__=None):
         """
         This resource provides the App Role resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1601,7 +1601,7 @@ class DomainsAppRole(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsAppRoleAppArgs', 'DomainsAppRoleAppArgsDict']] app: A unique identifier for the application that references this role.
+        :param pulumi.Input[Union['DomainsAppRoleAppArgs', 'DomainsAppRoleAppArgsDict', 'outputs.DomainsAppRoleApp']] app: A unique identifier for the application that references this role.
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1714,7 +1714,7 @@ class DomainsAppRole(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppRoleTagArgs', 'DomainsAppRoleTagArgsDict']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppRoleTagArgs', 'DomainsAppRoleTagArgsDict', 'outputs.DomainsAppRoleTag']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1797,7 +1797,7 @@ class DomainsAppRole(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  admin_role: pulumi.Input[Optional[_builtins.bool]] = None,
-                 app: pulumi.Input[Optional[Union['DomainsAppRoleAppArgs', 'DomainsAppRoleAppArgsDict']]] = None,
+                 app: pulumi.Input[Optional[Union['DomainsAppRoleAppArgs', 'DomainsAppRoleAppArgsDict', 'outputs.DomainsAppRoleApp']]] = None,
                  attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1812,7 +1812,7 @@ class DomainsAppRole(pulumi.CustomResource):
                  public: pulumi.Input[Optional[_builtins.bool]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppRoleTagArgs', 'DomainsAppRoleTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppRoleTagArgs', 'DomainsAppRoleTagArgsDict', 'outputs.DomainsAppRoleTag']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1871,7 +1871,7 @@ class DomainsAppRole(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             admin_role: pulumi.Input[Optional[_builtins.bool]] = None,
-            app: pulumi.Input[Optional[Union['DomainsAppRoleAppArgs', 'DomainsAppRoleAppArgsDict']]] = None,
+            app: pulumi.Input[Optional[Union['DomainsAppRoleAppArgs', 'DomainsAppRoleAppArgsDict', 'outputs.DomainsAppRoleApp']]] = None,
             attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             attributes: pulumi.Input[Optional[_builtins.str]] = None,
             authorization: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1883,21 +1883,21 @@ class DomainsAppRole(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppRoleIdcsCreatedByArgs', 'DomainsAppRoleIdcsCreatedByArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppRoleIdcsCreatedByArgs', 'DomainsAppRoleIdcsCreatedByArgsDict', 'outputs.DomainsAppRoleIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppRoleIdcsLastModifiedByArgs', 'DomainsAppRoleIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppRoleIdcsLastModifiedByArgs', 'DomainsAppRoleIdcsLastModifiedByArgsDict', 'outputs.DomainsAppRoleIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             legacy_group_name: pulumi.Input[Optional[_builtins.str]] = None,
             limited_to_one_or_more_groups: pulumi.Input[Optional[_builtins.bool]] = None,
             localized_display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppRoleMemberArgs', 'DomainsAppRoleMemberArgsDict']]]]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppRoleMetaArgs', 'DomainsAppRoleMetaArgsDict']]]]] = None,
+            members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppRoleMemberArgs', 'DomainsAppRoleMemberArgsDict', 'outputs.DomainsAppRoleMember']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppRoleMetaArgs', 'DomainsAppRoleMetaArgsDict', 'outputs.DomainsAppRoleMeta']]]]] = None,
             ocid: pulumi.Input[Optional[_builtins.str]] = None,
             public: pulumi.Input[Optional[_builtins.bool]] = None,
             resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
             schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppRoleTagArgs', 'DomainsAppRoleTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppRoleTagArgs', 'DomainsAppRoleTagArgsDict', 'outputs.DomainsAppRoleTag']]]]] = None,
             tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             unique_name: pulumi.Input[Optional[_builtins.str]] = None) -> 'DomainsAppRole':
         """
@@ -1917,7 +1917,7 @@ class DomainsAppRole(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsAppRoleAppArgs', 'DomainsAppRoleAppArgsDict']] app: A unique identifier for the application that references this role.
+        :param pulumi.Input[Union['DomainsAppRoleAppArgs', 'DomainsAppRoleAppArgsDict', 'outputs.DomainsAppRoleApp']] app: A unique identifier for the application that references this role.
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -2018,7 +2018,7 @@ class DomainsAppRole(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppRoleIdcsCreatedByArgs', 'DomainsAppRoleIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppRoleIdcsCreatedByArgs', 'DomainsAppRoleIdcsCreatedByArgsDict', 'outputs.DomainsAppRoleIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -2028,7 +2028,7 @@ class DomainsAppRole(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppRoleIdcsLastModifiedByArgs', 'DomainsAppRoleIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppRoleIdcsLastModifiedByArgs', 'DomainsAppRoleIdcsLastModifiedByArgsDict', 'outputs.DomainsAppRoleIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -2094,7 +2094,7 @@ class DomainsAppRole(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppRoleMemberArgs', 'DomainsAppRoleMemberArgsDict']]]] members: (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppRoleMemberArgs', 'DomainsAppRoleMemberArgsDict', 'outputs.DomainsAppRoleMember']]]] members: (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [value, type]
@@ -2107,7 +2107,7 @@ class DomainsAppRole(pulumi.CustomResource):
                * idcsPaginateResponse: true
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppRoleMetaArgs', 'DomainsAppRoleMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppRoleMetaArgs', 'DomainsAppRoleMetaArgsDict', 'outputs.DomainsAppRoleMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -2151,7 +2151,7 @@ class DomainsAppRole(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppRoleTagArgs', 'DomainsAppRoleTagArgsDict']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppRoleTagArgs', 'DomainsAppRoleTagArgsDict', 'outputs.DomainsAppRoleTag']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]

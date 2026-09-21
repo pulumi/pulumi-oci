@@ -85,7 +85,7 @@ class AwaitableGetAutonomousDatabaseDataguardAssociationsResult(GetAutonomousDat
 
 
 def get_autonomous_database_dataguard_associations(autonomous_database_id: Optional[_builtins.str] = None,
-                                                   filters: Optional[Sequence[Union['GetAutonomousDatabaseDataguardAssociationsFilterArgs', 'GetAutonomousDatabaseDataguardAssociationsFilterArgsDict']]] = None,
+                                                   filters: Optional[Sequence[Union['GetAutonomousDatabaseDataguardAssociationsFilterArgs', 'GetAutonomousDatabaseDataguardAssociationsFilterArgsDict', 'outputs.GetAutonomousDatabaseDataguardAssociationsFilterResult']]] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabaseDataguardAssociationsResult:
     """
     This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
@@ -116,7 +116,7 @@ def get_autonomous_database_dataguard_associations(autonomous_database_id: Optio
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_autonomous_database_dataguard_associations_output(autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDatabaseDataguardAssociationsFilterArgs', 'GetAutonomousDatabaseDataguardAssociationsFilterArgsDict']]]]] = None,
+                                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDatabaseDataguardAssociationsFilterArgs', 'GetAutonomousDatabaseDataguardAssociationsFilterArgsDict', 'outputs.GetAutonomousDatabaseDataguardAssociationsFilterResult']]]]] = None,
                                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabaseDataguardAssociationsResult]:
     """
     This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.

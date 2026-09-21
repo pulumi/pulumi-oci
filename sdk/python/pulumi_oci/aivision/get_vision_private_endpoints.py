@@ -110,7 +110,7 @@ class AwaitableGetVisionPrivateEndpointsResult(GetVisionPrivateEndpointsResult):
 
 def get_vision_private_endpoints(compartment_id: Optional[_builtins.str] = None,
                                  display_name: Optional[_builtins.str] = None,
-                                 filters: Optional[Sequence[Union['GetVisionPrivateEndpointsFilterArgs', 'GetVisionPrivateEndpointsFilterArgsDict']]] = None,
+                                 filters: Optional[Sequence[Union['GetVisionPrivateEndpointsFilterArgs', 'GetVisionPrivateEndpointsFilterArgsDict', 'outputs.GetVisionPrivateEndpointsFilterResult']]] = None,
                                  id: Optional[_builtins.str] = None,
                                  state: Optional[_builtins.str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVisionPrivateEndpointsResult:
@@ -155,7 +155,7 @@ def get_vision_private_endpoints(compartment_id: Optional[_builtins.str] = None,
         vision_private_endpoint_collections=pulumi.get(__ret__, 'vision_private_endpoint_collections'))
 def get_vision_private_endpoints_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVisionPrivateEndpointsFilterArgs', 'GetVisionPrivateEndpointsFilterArgsDict']]]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVisionPrivateEndpointsFilterArgs', 'GetVisionPrivateEndpointsFilterArgsDict', 'outputs.GetVisionPrivateEndpointsFilterResult']]]]] = None,
                                         id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVisionPrivateEndpointsResult]:

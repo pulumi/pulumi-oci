@@ -122,7 +122,7 @@ class AwaitableGetCompliancePoliciesResult(GetCompliancePoliciesResult):
 
 def get_compliance_policies(compartment_id: Optional[_builtins.str] = None,
                             display_name: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetCompliancePoliciesFilterArgs', 'GetCompliancePoliciesFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetCompliancePoliciesFilterArgs', 'GetCompliancePoliciesFilterArgsDict', 'outputs.GetCompliancePoliciesFilterResult']]] = None,
                             id: Optional[_builtins.str] = None,
                             state: Optional[_builtins.str] = None,
                             type: Optional[_builtins.str] = None,
@@ -173,7 +173,7 @@ def get_compliance_policies(compartment_id: Optional[_builtins.str] = None,
         type=pulumi.get(__ret__, 'type'))
 def get_compliance_policies_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCompliancePoliciesFilterArgs', 'GetCompliancePoliciesFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCompliancePoliciesFilterArgs', 'GetCompliancePoliciesFilterArgsDict', 'outputs.GetCompliancePoliciesFilterResult']]]]] = None,
                                    id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

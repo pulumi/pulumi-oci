@@ -485,7 +485,7 @@ class Image(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 image_source_details: pulumi.Input[Optional[Union['ImageImageSourceDetailsArgs', 'ImageImageSourceDetailsArgsDict']]] = None,
+                 image_source_details: pulumi.Input[Optional[Union['ImageImageSourceDetailsArgs', 'ImageImageSourceDetailsArgsDict', 'outputs.ImageImageSourceDetails']]] = None,
                  instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  launch_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -729,7 +729,7 @@ class Image(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 image_source_details: pulumi.Input[Optional[Union['ImageImageSourceDetailsArgs', 'ImageImageSourceDetailsArgsDict']]] = None,
+                 image_source_details: pulumi.Input[Optional[Union['ImageImageSourceDetailsArgs', 'ImageImageSourceDetailsArgsDict', 'outputs.ImageImageSourceDetails']]] = None,
                  instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  launch_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -771,7 +771,7 @@ class Image(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            agent_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImageAgentFeatureArgs', 'ImageAgentFeatureArgsDict']]]]] = None,
+            agent_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImageAgentFeatureArgs', 'ImageAgentFeatureArgsDict', 'outputs.ImageAgentFeature']]]]] = None,
             base_image_id: pulumi.Input[Optional[_builtins.str]] = None,
             billable_size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -779,10 +779,10 @@ class Image(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            image_source_details: pulumi.Input[Optional[Union['ImageImageSourceDetailsArgs', 'ImageImageSourceDetailsArgsDict']]] = None,
+            image_source_details: pulumi.Input[Optional[Union['ImageImageSourceDetailsArgs', 'ImageImageSourceDetailsArgsDict', 'outputs.ImageImageSourceDetails']]] = None,
             instance_id: pulumi.Input[Optional[_builtins.str]] = None,
             launch_mode: pulumi.Input[Optional[_builtins.str]] = None,
-            launch_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImageLaunchOptionArgs', 'ImageLaunchOptionArgsDict']]]]] = None,
+            launch_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImageLaunchOptionArgs', 'ImageLaunchOptionArgsDict', 'outputs.ImageLaunchOption']]]]] = None,
             listing_type: pulumi.Input[Optional[_builtins.str]] = None,
             operating_system: pulumi.Input[Optional[_builtins.str]] = None,
             operating_system_version: pulumi.Input[Optional[_builtins.str]] = None,
@@ -796,7 +796,7 @@ class Image(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ImageAgentFeatureArgs', 'ImageAgentFeatureArgsDict']]]] agent_features: Oracle Cloud Agent features supported on the image.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ImageAgentFeatureArgs', 'ImageAgentFeatureArgsDict', 'outputs.ImageAgentFeature']]]] agent_features: Oracle Cloud Agent features supported on the image.
         :param pulumi.Input[_builtins.str] base_image_id: The OCID of the image originally used to launch the instance.
         :param pulumi.Input[_builtins.str] billable_size_in_gbs: The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment you want the image to be created in.
@@ -818,7 +818,7 @@ class Image(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ImageLaunchOptionArgs', 'ImageLaunchOptionArgsDict']]]] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ImageLaunchOptionArgs', 'ImageLaunchOptionArgsDict', 'outputs.ImageLaunchOption']]]] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param pulumi.Input[_builtins.str] listing_type: The listing type of the image. The default value is "NONE".
         :param pulumi.Input[_builtins.str] operating_system: The image's operating system.  Example: `Oracle Linux`
         :param pulumi.Input[_builtins.str] operating_system_version: The image's operating system version.  Example: `7.2`

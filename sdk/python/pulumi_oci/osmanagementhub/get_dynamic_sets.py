@@ -118,7 +118,7 @@ def get_dynamic_sets(compartment_id: Optional[_builtins.str] = None,
                      display_name: Optional[_builtins.str] = None,
                      display_name_contains: Optional[_builtins.str] = None,
                      dynamic_set_id: Optional[_builtins.str] = None,
-                     filters: Optional[Sequence[Union['GetDynamicSetsFilterArgs', 'GetDynamicSetsFilterArgsDict']]] = None,
+                     filters: Optional[Sequence[Union['GetDynamicSetsFilterArgs', 'GetDynamicSetsFilterArgsDict', 'outputs.GetDynamicSetsFilterResult']]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDynamicSetsResult:
     """
     This data source provides the list of Dynamic Sets in Oracle Cloud Infrastructure Os Management Hub service.
@@ -164,7 +164,7 @@ def get_dynamic_sets_output(compartment_id: pulumi.Input[Optional[Optional[_buil
                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             dynamic_set_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDynamicSetsFilterArgs', 'GetDynamicSetsFilterArgsDict']]]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDynamicSetsFilterArgs', 'GetDynamicSetsFilterArgsDict', 'outputs.GetDynamicSetsFilterResult']]]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDynamicSetsResult]:
     """
     This data source provides the list of Dynamic Sets in Oracle Cloud Infrastructure Os Management Hub service.

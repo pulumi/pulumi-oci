@@ -122,7 +122,7 @@ class AwaitableGetLinksResult(GetLinksResult):
 
 def get_links(child_tenancy_id: Optional[_builtins.str] = None,
               feature: Optional[_builtins.str] = None,
-              filters: Optional[Sequence[Union['GetLinksFilterArgs', 'GetLinksFilterArgsDict']]] = None,
+              filters: Optional[Sequence[Union['GetLinksFilterArgs', 'GetLinksFilterArgsDict', 'outputs.GetLinksFilterResult']]] = None,
               parent_tenancy_id: Optional[_builtins.str] = None,
               state: Optional[_builtins.str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLinksResult:
@@ -168,7 +168,7 @@ def get_links(child_tenancy_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_links_output(child_tenancy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      feature: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLinksFilterArgs', 'GetLinksFilterArgsDict']]]]] = None,
+                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLinksFilterArgs', 'GetLinksFilterArgsDict', 'outputs.GetLinksFilterResult']]]]] = None,
                      parent_tenancy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLinksResult]:

@@ -561,7 +561,7 @@ class MediaWorkflowJob(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaWorkflowJobLockArgs', 'MediaWorkflowJobLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaWorkflowJobLockArgs', 'MediaWorkflowJobLockArgsDict', 'outputs.MediaWorkflowJobLock']]]]] = None,
                  media_workflow_configuration_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  media_workflow_id: pulumi.Input[Optional[_builtins.str]] = None,
                  media_workflow_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -620,7 +620,7 @@ class MediaWorkflowJob(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowJobLockArgs', 'MediaWorkflowJobLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowJobLockArgs', 'MediaWorkflowJobLockArgsDict', 'outputs.MediaWorkflowJobLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] media_workflow_configuration_ids: Configurations to be applied to this run of the workflow.
         :param pulumi.Input[_builtins.str] media_workflow_id: OCID of the MediaWorkflow that should be run.
         :param pulumi.Input[_builtins.str] media_workflow_name: Name of the system MediaWorkflow that should be run.
@@ -702,7 +702,7 @@ class MediaWorkflowJob(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaWorkflowJobLockArgs', 'MediaWorkflowJobLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaWorkflowJobLockArgs', 'MediaWorkflowJobLockArgsDict', 'outputs.MediaWorkflowJobLock']]]]] = None,
                  media_workflow_configuration_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  media_workflow_id: pulumi.Input[Optional[_builtins.str]] = None,
                  media_workflow_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -758,16 +758,16 @@ class MediaWorkflowJob(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaWorkflowJobLockArgs', 'MediaWorkflowJobLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaWorkflowJobLockArgs', 'MediaWorkflowJobLockArgsDict', 'outputs.MediaWorkflowJobLock']]]]] = None,
             media_workflow_configuration_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             media_workflow_id: pulumi.Input[Optional[_builtins.str]] = None,
             media_workflow_name: pulumi.Input[Optional[_builtins.str]] = None,
-            outputs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaWorkflowJobOutputArgs', 'MediaWorkflowJobOutputArgsDict']]]]] = None,
+            outputs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaWorkflowJobOutputArgs', 'MediaWorkflowJobOutputArgsDict', 'outputs.MediaWorkflowJobOutput']]]]] = None,
             parameters: pulumi.Input[Optional[_builtins.str]] = None,
             runnable: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            task_lifecycle_states: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaWorkflowJobTaskLifecycleStateArgs', 'MediaWorkflowJobTaskLifecycleStateArgsDict']]]]] = None,
+            task_lifecycle_states: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaWorkflowJobTaskLifecycleStateArgs', 'MediaWorkflowJobTaskLifecycleStateArgsDict', 'outputs.MediaWorkflowJobTaskLifecycleState']]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_ended: pulumi.Input[Optional[_builtins.str]] = None,
             time_started: pulumi.Input[Optional[_builtins.str]] = None,
@@ -785,16 +785,16 @@ class MediaWorkflowJob(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: The lifecycle details of MediaWorkflowJob task.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowJobLockArgs', 'MediaWorkflowJobLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowJobLockArgs', 'MediaWorkflowJobLockArgsDict', 'outputs.MediaWorkflowJobLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] media_workflow_configuration_ids: Configurations to be applied to this run of the workflow.
         :param pulumi.Input[_builtins.str] media_workflow_id: OCID of the MediaWorkflow that should be run.
         :param pulumi.Input[_builtins.str] media_workflow_name: Name of the system MediaWorkflow that should be run.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowJobOutputArgs', 'MediaWorkflowJobOutputArgsDict']]]] outputs: A list of JobOutput for the workflowJob.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowJobOutputArgs', 'MediaWorkflowJobOutputArgsDict', 'outputs.MediaWorkflowJobOutput']]]] outputs: A list of JobOutput for the workflowJob.
         :param pulumi.Input[_builtins.str] parameters: Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON. The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
         :param pulumi.Input[_builtins.str] runnable: A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
         :param pulumi.Input[_builtins.str] state: The current state of the MediaWorkflowJob task.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowJobTaskLifecycleStateArgs', 'MediaWorkflowJobTaskLifecycleStateArgsDict']]]] task_lifecycle_states: Status of each task.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowJobTaskLifecycleStateArgs', 'MediaWorkflowJobTaskLifecycleStateArgsDict', 'outputs.MediaWorkflowJobTaskLifecycleState']]]] task_lifecycle_states: Status of each task.
         :param pulumi.Input[_builtins.str] time_created: Creation time of the job. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_ended: Time when the job finished. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_started: Time when the job started to execute. An RFC3339 formatted datetime string.

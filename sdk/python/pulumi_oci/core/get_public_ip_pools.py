@@ -108,7 +108,7 @@ class AwaitableGetPublicIpPoolsResult(GetPublicIpPoolsResult):
 def get_public_ip_pools(byoip_range_id: Optional[_builtins.str] = None,
                         compartment_id: Optional[_builtins.str] = None,
                         display_name: Optional[_builtins.str] = None,
-                        filters: Optional[Sequence[Union['GetPublicIpPoolsFilterArgs', 'GetPublicIpPoolsFilterArgsDict']]] = None,
+                        filters: Optional[Sequence[Union['GetPublicIpPoolsFilterArgs', 'GetPublicIpPoolsFilterArgsDict', 'outputs.GetPublicIpPoolsFilterResult']]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPublicIpPoolsResult:
     """
     This data source provides the list of Public Ip Pools in Oracle Cloud Infrastructure Core service.
@@ -150,7 +150,7 @@ def get_public_ip_pools(byoip_range_id: Optional[_builtins.str] = None,
 def get_public_ip_pools_output(byoip_range_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPublicIpPoolsFilterArgs', 'GetPublicIpPoolsFilterArgsDict']]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPublicIpPoolsFilterArgs', 'GetPublicIpPoolsFilterArgsDict', 'outputs.GetPublicIpPoolsFilterResult']]]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPublicIpPoolsResult]:
     """
     This data source provides the list of Public Ip Pools in Oracle Cloud Infrastructure Core service.

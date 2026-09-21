@@ -111,7 +111,7 @@ class AwaitableGetCloudClustersResult(GetCloudClustersResult):
 def get_cloud_clusters(cloud_db_system_id: Optional[_builtins.str] = None,
                        compartment_id: Optional[_builtins.str] = None,
                        display_name: Optional[_builtins.str] = None,
-                       filters: Optional[Sequence[Union['GetCloudClustersFilterArgs', 'GetCloudClustersFilterArgsDict']]] = None,
+                       filters: Optional[Sequence[Union['GetCloudClustersFilterArgs', 'GetCloudClustersFilterArgsDict', 'outputs.GetCloudClustersFilterResult']]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudClustersResult:
     """
     This data source provides the list of Cloud Clusters in Oracle Cloud Infrastructure Database Management service.
@@ -152,7 +152,7 @@ def get_cloud_clusters(cloud_db_system_id: Optional[_builtins.str] = None,
 def get_cloud_clusters_output(cloud_db_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudClustersFilterArgs', 'GetCloudClustersFilterArgsDict']]]]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudClustersFilterArgs', 'GetCloudClustersFilterArgsDict', 'outputs.GetCloudClustersFilterResult']]]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudClustersResult]:
     """
     This data source provides the list of Cloud Clusters in Oracle Cloud Infrastructure Database Management service.

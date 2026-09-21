@@ -132,7 +132,7 @@ class AwaitableGetDataccVmInstancesResult(GetDataccVmInstancesResult):
 def get_datacc_vm_instances(base_server_id: Optional[_builtins.str] = None,
                             compartment_id: Optional[_builtins.str] = None,
                             display_name: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetDataccVmInstancesFilterArgs', 'GetDataccVmInstancesFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetDataccVmInstancesFilterArgs', 'GetDataccVmInstancesFilterArgsDict', 'outputs.GetDataccVmInstancesFilterResult']]] = None,
                             infrastructure_id: Optional[_builtins.str] = None,
                             states: Optional[Sequence[_builtins.str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDataccVmInstancesResult:
@@ -183,7 +183,7 @@ def get_datacc_vm_instances(base_server_id: Optional[_builtins.str] = None,
 def get_datacc_vm_instances_output(base_server_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDataccVmInstancesFilterArgs', 'GetDataccVmInstancesFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDataccVmInstancesFilterArgs', 'GetDataccVmInstancesFilterArgsDict', 'outputs.GetDataccVmInstancesFilterResult']]]]] = None,
                                    infrastructure_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataccVmInstancesResult]:

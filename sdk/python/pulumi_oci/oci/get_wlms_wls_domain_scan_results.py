@@ -96,7 +96,7 @@ class AwaitableGetWlmsWlsDomainScanResultsResult(GetWlmsWlsDomainScanResultsResu
             wls_domain_id=self.wls_domain_id)
 
 
-def get_wlms_wls_domain_scan_results(filters: Optional[Sequence[Union['GetWlmsWlsDomainScanResultsFilterArgs', 'GetWlmsWlsDomainScanResultsFilterArgsDict']]] = None,
+def get_wlms_wls_domain_scan_results(filters: Optional[Sequence[Union['GetWlmsWlsDomainScanResultsFilterArgs', 'GetWlmsWlsDomainScanResultsFilterArgsDict', 'outputs.GetWlmsWlsDomainScanResultsFilterResult']]] = None,
                                      server_name: Optional[_builtins.str] = None,
                                      wls_domain_id: Optional[_builtins.str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWlmsWlsDomainScanResultsResult:
@@ -132,7 +132,7 @@ def get_wlms_wls_domain_scan_results(filters: Optional[Sequence[Union['GetWlmsWl
         scan_result_collections=pulumi.get(__ret__, 'scan_result_collections'),
         server_name=pulumi.get(__ret__, 'server_name'),
         wls_domain_id=pulumi.get(__ret__, 'wls_domain_id'))
-def get_wlms_wls_domain_scan_results_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWlmsWlsDomainScanResultsFilterArgs', 'GetWlmsWlsDomainScanResultsFilterArgsDict']]]]] = None,
+def get_wlms_wls_domain_scan_results_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWlmsWlsDomainScanResultsFilterArgs', 'GetWlmsWlsDomainScanResultsFilterArgsDict', 'outputs.GetWlmsWlsDomainScanResultsFilterResult']]]]] = None,
                                             server_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             wls_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWlmsWlsDomainScanResultsResult]:

@@ -610,7 +610,7 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
                  domain: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
-                 maintenance_window_details: pulumi.Input[Optional[Union['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs', 'AutonomousExadataInfrastructureMaintenanceWindowDetailsArgsDict']]] = None,
+                 maintenance_window_details: pulumi.Input[Optional[Union['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs', 'AutonomousExadataInfrastructureMaintenanceWindowDetailsArgsDict', 'outputs.AutonomousExadataInfrastructureMaintenanceWindowDetails']]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -680,7 +680,7 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] domain: A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] license_model: The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-        :param pulumi.Input[Union['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs', 'AutonomousExadataInfrastructureMaintenanceWindowDetailsArgsDict']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Union['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs', 'AutonomousExadataInfrastructureMaintenanceWindowDetailsArgsDict', 'outputs.AutonomousExadataInfrastructureMaintenanceWindowDetails']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[_builtins.str] shape: The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
@@ -779,7 +779,7 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
                  domain: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
-                 maintenance_window_details: pulumi.Input[Optional[Union['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs', 'AutonomousExadataInfrastructureMaintenanceWindowDetailsArgsDict']]] = None,
+                 maintenance_window_details: pulumi.Input[Optional[Union['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs', 'AutonomousExadataInfrastructureMaintenanceWindowDetailsArgsDict', 'outputs.AutonomousExadataInfrastructureMaintenanceWindowDetails']]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -842,8 +842,8 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
             last_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
             license_model: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            maintenance_window_details: pulumi.Input[Optional[Union['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs', 'AutonomousExadataInfrastructureMaintenanceWindowDetailsArgsDict']]] = None,
-            maintenance_windows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousExadataInfrastructureMaintenanceWindowArgs', 'AutonomousExadataInfrastructureMaintenanceWindowArgsDict']]]]] = None,
+            maintenance_window_details: pulumi.Input[Optional[Union['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs', 'AutonomousExadataInfrastructureMaintenanceWindowDetailsArgsDict', 'outputs.AutonomousExadataInfrastructureMaintenanceWindowDetails']]] = None,
+            maintenance_windows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousExadataInfrastructureMaintenanceWindowArgs', 'AutonomousExadataInfrastructureMaintenanceWindowArgsDict', 'outputs.AutonomousExadataInfrastructureMaintenanceWindow']]]]] = None,
             next_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
             nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             scan_dns_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -869,8 +869,8 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param pulumi.Input[_builtins.str] license_model: The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state of the Autonomous Exadata Infrastructure.
-        :param pulumi.Input[Union['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs', 'AutonomousExadataInfrastructureMaintenanceWindowDetailsArgsDict']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousExadataInfrastructureMaintenanceWindowArgs', 'AutonomousExadataInfrastructureMaintenanceWindowArgsDict']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Union['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs', 'AutonomousExadataInfrastructureMaintenanceWindowDetailsArgsDict', 'outputs.AutonomousExadataInfrastructureMaintenanceWindowDetails']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousExadataInfrastructureMaintenanceWindowArgs', 'AutonomousExadataInfrastructureMaintenanceWindowArgsDict', 'outputs.AutonomousExadataInfrastructureMaintenanceWindow']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.

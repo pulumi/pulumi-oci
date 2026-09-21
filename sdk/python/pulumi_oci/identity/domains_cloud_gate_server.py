@@ -1286,7 +1286,7 @@ class DomainsCloudGateServer(pulumi.CustomResource):
                  attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
-                 cloud_gate: pulumi.Input[Optional[Union['DomainsCloudGateServerCloudGateArgs', 'DomainsCloudGateServerCloudGateArgsDict']]] = None,
+                 cloud_gate: pulumi.Input[Optional[Union['DomainsCloudGateServerCloudGateArgs', 'DomainsCloudGateServerCloudGateArgsDict', 'outputs.DomainsCloudGateServerCloudGate']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  host_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1297,7 +1297,7 @@ class DomainsCloudGateServer(pulumi.CustomResource):
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  ssl: pulumi.Input[Optional[_builtins.bool]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateServerTagArgs', 'DomainsCloudGateServerTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateServerTagArgs', 'DomainsCloudGateServerTagArgsDict', 'outputs.DomainsCloudGateServerTag']]]]] = None,
                  __props__=None):
         """
         This resource provides the Cloud Gate Server resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1351,7 +1351,7 @@ class DomainsCloudGateServer(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[_builtins.str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[_builtins.str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[Union['DomainsCloudGateServerCloudGateArgs', 'DomainsCloudGateServerCloudGateArgsDict']] cloud_gate: (Updatable) Reference to owning Cloud Gate
+        :param pulumi.Input[Union['DomainsCloudGateServerCloudGateArgs', 'DomainsCloudGateServerCloudGateArgsDict', 'outputs.DomainsCloudGateServerCloudGate']] cloud_gate: (Updatable) Reference to owning Cloud Gate
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1454,7 +1454,7 @@ class DomainsCloudGateServer(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateServerTagArgs', 'DomainsCloudGateServerTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateServerTagArgs', 'DomainsCloudGateServerTagArgsDict', 'outputs.DomainsCloudGateServerTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1537,7 +1537,7 @@ class DomainsCloudGateServer(pulumi.CustomResource):
                  attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
-                 cloud_gate: pulumi.Input[Optional[Union['DomainsCloudGateServerCloudGateArgs', 'DomainsCloudGateServerCloudGateArgsDict']]] = None,
+                 cloud_gate: pulumi.Input[Optional[Union['DomainsCloudGateServerCloudGateArgs', 'DomainsCloudGateServerCloudGateArgsDict', 'outputs.DomainsCloudGateServerCloudGate']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  host_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1548,7 +1548,7 @@ class DomainsCloudGateServer(pulumi.CustomResource):
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  ssl: pulumi.Input[Optional[_builtins.bool]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateServerTagArgs', 'DomainsCloudGateServerTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateServerTagArgs', 'DomainsCloudGateServerTagArgsDict', 'outputs.DomainsCloudGateServerTag']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1610,27 +1610,27 @@ class DomainsCloudGateServer(pulumi.CustomResource):
             attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             attributes: pulumi.Input[Optional[_builtins.str]] = None,
             authorization: pulumi.Input[Optional[_builtins.str]] = None,
-            cloud_gate: pulumi.Input[Optional[Union['DomainsCloudGateServerCloudGateArgs', 'DomainsCloudGateServerCloudGateArgsDict']]] = None,
+            cloud_gate: pulumi.Input[Optional[Union['DomainsCloudGateServerCloudGateArgs', 'DomainsCloudGateServerCloudGateArgsDict', 'outputs.DomainsCloudGateServerCloudGate']]] = None,
             compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             host_name: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateServerIdcsCreatedByArgs', 'DomainsCloudGateServerIdcsCreatedByArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateServerIdcsCreatedByArgs', 'DomainsCloudGateServerIdcsCreatedByArgsDict', 'outputs.DomainsCloudGateServerIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateServerIdcsLastModifiedByArgs', 'DomainsCloudGateServerIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateServerIdcsLastModifiedByArgs', 'DomainsCloudGateServerIdcsLastModifiedByArgsDict', 'outputs.DomainsCloudGateServerIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             is_opc_service: pulumi.Input[Optional[_builtins.bool]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateServerMetaArgs', 'DomainsCloudGateServerMetaArgsDict']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateServerMetaArgs', 'DomainsCloudGateServerMetaArgsDict', 'outputs.DomainsCloudGateServerMeta']]]]] = None,
             nginx_settings: pulumi.Input[Optional[_builtins.str]] = None,
             ocid: pulumi.Input[Optional[_builtins.str]] = None,
             port: pulumi.Input[Optional[_builtins.int]] = None,
             resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
             schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             ssl: pulumi.Input[Optional[_builtins.bool]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateServerTagArgs', 'DomainsCloudGateServerTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateServerTagArgs', 'DomainsCloudGateServerTagArgsDict', 'outputs.DomainsCloudGateServerTag']]]]] = None,
             tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None) -> 'DomainsCloudGateServer':
         """
         Get an existing DomainsCloudGateServer resource's state with the given name, id, and optional extra
@@ -1642,7 +1642,7 @@ class DomainsCloudGateServer(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[_builtins.str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[_builtins.str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[Union['DomainsCloudGateServerCloudGateArgs', 'DomainsCloudGateServerCloudGateArgsDict']] cloud_gate: (Updatable) Reference to owning Cloud Gate
+        :param pulumi.Input[Union['DomainsCloudGateServerCloudGateArgs', 'DomainsCloudGateServerCloudGateArgsDict', 'outputs.DomainsCloudGateServerCloudGate']] cloud_gate: (Updatable) Reference to owning Cloud Gate
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1719,7 +1719,7 @@ class DomainsCloudGateServer(pulumi.CustomResource):
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateServerIdcsCreatedByArgs', 'DomainsCloudGateServerIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateServerIdcsCreatedByArgs', 'DomainsCloudGateServerIdcsCreatedByArgsDict', 'outputs.DomainsCloudGateServerIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1729,7 +1729,7 @@ class DomainsCloudGateServer(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateServerIdcsLastModifiedByArgs', 'DomainsCloudGateServerIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateServerIdcsLastModifiedByArgs', 'DomainsCloudGateServerIdcsLastModifiedByArgsDict', 'outputs.DomainsCloudGateServerIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1772,7 +1772,7 @@ class DomainsCloudGateServer(pulumi.CustomResource):
                * returned: always
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateServerMetaArgs', 'DomainsCloudGateServerMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateServerMetaArgs', 'DomainsCloudGateServerMetaArgsDict', 'outputs.DomainsCloudGateServerMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1841,7 +1841,7 @@ class DomainsCloudGateServer(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateServerTagArgs', 'DomainsCloudGateServerTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateServerTagArgs', 'DomainsCloudGateServerTagArgsDict', 'outputs.DomainsCloudGateServerTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]

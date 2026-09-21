@@ -119,7 +119,7 @@ class AwaitableGetJavaDownloadsJavaDownloadReportsResult(GetJavaDownloadsJavaDow
 
 def get_java_downloads_java_download_reports(compartment_id: Optional[_builtins.str] = None,
                                              display_name: Optional[_builtins.str] = None,
-                                             filters: Optional[Sequence[Union['GetJavaDownloadsJavaDownloadReportsFilterArgs', 'GetJavaDownloadsJavaDownloadReportsFilterArgsDict']]] = None,
+                                             filters: Optional[Sequence[Union['GetJavaDownloadsJavaDownloadReportsFilterArgs', 'GetJavaDownloadsJavaDownloadReportsFilterArgsDict', 'outputs.GetJavaDownloadsJavaDownloadReportsFilterResult']]] = None,
                                              java_download_report_id: Optional[_builtins.str] = None,
                                              state: Optional[_builtins.str] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetJavaDownloadsJavaDownloadReportsResult:
@@ -165,7 +165,7 @@ def get_java_downloads_java_download_reports(compartment_id: Optional[_builtins.
         state=pulumi.get(__ret__, 'state'))
 def get_java_downloads_java_download_reports_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJavaDownloadsJavaDownloadReportsFilterArgs', 'GetJavaDownloadsJavaDownloadReportsFilterArgsDict']]]]] = None,
+                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJavaDownloadsJavaDownloadReportsFilterArgs', 'GetJavaDownloadsJavaDownloadReportsFilterArgsDict', 'outputs.GetJavaDownloadsJavaDownloadReportsFilterResult']]]]] = None,
                                                     java_download_report_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJavaDownloadsJavaDownloadReportsResult]:

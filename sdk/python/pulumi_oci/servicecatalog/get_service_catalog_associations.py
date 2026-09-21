@@ -119,7 +119,7 @@ class AwaitableGetServiceCatalogAssociationsResult(GetServiceCatalogAssociations
 
 def get_service_catalog_associations(entity_id: Optional[_builtins.str] = None,
                                      entity_type: Optional[_builtins.str] = None,
-                                     filters: Optional[Sequence[Union['GetServiceCatalogAssociationsFilterArgs', 'GetServiceCatalogAssociationsFilterArgsDict']]] = None,
+                                     filters: Optional[Sequence[Union['GetServiceCatalogAssociationsFilterArgs', 'GetServiceCatalogAssociationsFilterArgsDict', 'outputs.GetServiceCatalogAssociationsFilterResult']]] = None,
                                      service_catalog_association_id: Optional[_builtins.str] = None,
                                      service_catalog_id: Optional[_builtins.str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServiceCatalogAssociationsResult:
@@ -165,7 +165,7 @@ def get_service_catalog_associations(entity_id: Optional[_builtins.str] = None,
         service_catalog_id=pulumi.get(__ret__, 'service_catalog_id'))
 def get_service_catalog_associations_output(entity_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             entity_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetServiceCatalogAssociationsFilterArgs', 'GetServiceCatalogAssociationsFilterArgsDict']]]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetServiceCatalogAssociationsFilterArgs', 'GetServiceCatalogAssociationsFilterArgsDict', 'outputs.GetServiceCatalogAssociationsFilterResult']]]]] = None,
                                             service_catalog_association_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             service_catalog_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceCatalogAssociationsResult]:

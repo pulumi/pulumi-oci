@@ -143,7 +143,7 @@ class AwaitableGetPluginErrorsResult(GetPluginErrorsResult):
 
 def get_plugin_errors(compartment_id: Optional[_builtins.str] = None,
                       compartment_id_in_subtree: Optional[_builtins.bool] = None,
-                      filters: Optional[Sequence[Union['GetPluginErrorsFilterArgs', 'GetPluginErrorsFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetPluginErrorsFilterArgs', 'GetPluginErrorsFilterArgsDict', 'outputs.GetPluginErrorsFilterResult']]] = None,
                       managed_instance_id: Optional[_builtins.str] = None,
                       time_first_seen_greater_than_or_equal_to: Optional[_builtins.str] = None,
                       time_first_seen_less_than_or_equal_to: Optional[_builtins.str] = None,
@@ -204,7 +204,7 @@ def get_plugin_errors(compartment_id: Optional[_builtins.str] = None,
         time_last_seen_less_than_or_equal_to=pulumi.get(__ret__, 'time_last_seen_less_than_or_equal_to'))
 def get_plugin_errors_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPluginErrorsFilterArgs', 'GetPluginErrorsFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPluginErrorsFilterArgs', 'GetPluginErrorsFilterArgsDict', 'outputs.GetPluginErrorsFilterResult']]]]] = None,
                              managed_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              time_first_seen_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              time_first_seen_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

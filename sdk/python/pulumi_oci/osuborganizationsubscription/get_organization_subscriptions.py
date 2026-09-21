@@ -100,7 +100,7 @@ class AwaitableGetOrganizationSubscriptionsResult(GetOrganizationSubscriptionsRe
 
 
 def get_organization_subscriptions(compartment_id: Optional[_builtins.str] = None,
-                                   filters: Optional[Sequence[Union['GetOrganizationSubscriptionsFilterArgs', 'GetOrganizationSubscriptionsFilterArgsDict']]] = None,
+                                   filters: Optional[Sequence[Union['GetOrganizationSubscriptionsFilterArgs', 'GetOrganizationSubscriptionsFilterArgsDict', 'outputs.GetOrganizationSubscriptionsFilterResult']]] = None,
                                    subscription_ids: Optional[_builtins.str] = None,
                                    x_one_origin_region: Optional[_builtins.str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOrganizationSubscriptionsResult:
@@ -141,7 +141,7 @@ def get_organization_subscriptions(compartment_id: Optional[_builtins.str] = Non
         subscriptions=pulumi.get(__ret__, 'subscriptions'),
         x_one_origin_region=pulumi.get(__ret__, 'x_one_origin_region'))
 def get_organization_subscriptions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOrganizationSubscriptionsFilterArgs', 'GetOrganizationSubscriptionsFilterArgsDict']]]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOrganizationSubscriptionsFilterArgs', 'GetOrganizationSubscriptionsFilterArgsDict', 'outputs.GetOrganizationSubscriptionsFilterResult']]]]] = None,
                                           subscription_ids: pulumi.Input[Optional[_builtins.str]] = None,
                                           x_one_origin_region: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOrganizationSubscriptionsResult]:

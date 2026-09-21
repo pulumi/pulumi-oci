@@ -672,7 +672,7 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
                  fast_start_fail_over_lag_limit_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  is_automatic_failover_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  migrate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
-                 peer_autonomous_container_database_backup_config: pulumi.Input[Optional[Union['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
+                 peer_autonomous_container_database_backup_config: pulumi.Input[Optional[Union['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgsDict', 'outputs.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig']]] = None,
                  peer_autonomous_container_database_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  peer_autonomous_container_database_display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  peer_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -742,7 +742,7 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.int] migrate_trigger: (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
-        :param pulumi.Input[Union['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgsDict']] peer_autonomous_container_database_backup_config: Backup options for the standby Autonomous Container Database.
+        :param pulumi.Input[Union['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgsDict', 'outputs.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig']] peer_autonomous_container_database_backup_config: Backup options for the standby Autonomous Container Database.
         :param pulumi.Input[_builtins.str] peer_autonomous_container_database_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
         :param pulumi.Input[_builtins.str] peer_autonomous_container_database_display_name: The display name for the peer Autonomous Container Database.
         :param pulumi.Input[_builtins.str] peer_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
@@ -829,7 +829,7 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
                  fast_start_fail_over_lag_limit_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  is_automatic_failover_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  migrate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
-                 peer_autonomous_container_database_backup_config: pulumi.Input[Optional[Union['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
+                 peer_autonomous_container_database_backup_config: pulumi.Input[Optional[Union['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgsDict', 'outputs.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig']]] = None,
                  peer_autonomous_container_database_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  peer_autonomous_container_database_display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  peer_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -896,7 +896,7 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
             is_automatic_failover_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             migrate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
-            peer_autonomous_container_database_backup_config: pulumi.Input[Optional[Union['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
+            peer_autonomous_container_database_backup_config: pulumi.Input[Optional[Union['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgsDict', 'outputs.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig']]] = None,
             peer_autonomous_container_database_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             peer_autonomous_container_database_dataguard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
             peer_autonomous_container_database_display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -931,7 +931,7 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycleState, if available.
         :param pulumi.Input[_builtins.int] migrate_trigger: (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
-        :param pulumi.Input[Union['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgsDict']] peer_autonomous_container_database_backup_config: Backup options for the standby Autonomous Container Database.
+        :param pulumi.Input[Union['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgsDict', 'outputs.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig']] peer_autonomous_container_database_backup_config: Backup options for the standby Autonomous Container Database.
         :param pulumi.Input[_builtins.str] peer_autonomous_container_database_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
         :param pulumi.Input[_builtins.str] peer_autonomous_container_database_dataguard_association_id: The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
         :param pulumi.Input[_builtins.str] peer_autonomous_container_database_display_name: The display name for the peer Autonomous Container Database.

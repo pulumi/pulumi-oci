@@ -102,7 +102,7 @@ class AwaitableGetSecurityPolicyReportDatabaseViewAccessEntriesResult(GetSecurit
             target_id=self.target_id)
 
 
-def get_security_policy_report_database_view_access_entries(filters: Optional[Sequence[Union['GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgs', 'GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgsDict']]] = None,
+def get_security_policy_report_database_view_access_entries(filters: Optional[Sequence[Union['GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgs', 'GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgsDict', 'outputs.GetSecurityPolicyReportDatabaseViewAccessEntriesFilterResult']]] = None,
                                                             scim_query: Optional[_builtins.str] = None,
                                                             security_policy_report_id: Optional[_builtins.str] = None,
                                                             target_id: Optional[_builtins.str] = None,
@@ -147,7 +147,7 @@ def get_security_policy_report_database_view_access_entries(filters: Optional[Se
         scim_query=pulumi.get(__ret__, 'scim_query'),
         security_policy_report_id=pulumi.get(__ret__, 'security_policy_report_id'),
         target_id=pulumi.get(__ret__, 'target_id'))
-def get_security_policy_report_database_view_access_entries_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgs', 'GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgsDict']]]]] = None,
+def get_security_policy_report_database_view_access_entries_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgs', 'GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgsDict', 'outputs.GetSecurityPolicyReportDatabaseViewAccessEntriesFilterResult']]]]] = None,
                                                                    scim_query: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                    security_policy_report_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                    target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

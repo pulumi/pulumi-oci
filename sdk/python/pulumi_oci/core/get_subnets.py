@@ -122,7 +122,7 @@ class AwaitableGetSubnetsResult(GetSubnetsResult):
 
 def get_subnets(compartment_id: Optional[_builtins.str] = None,
                 display_name: Optional[_builtins.str] = None,
-                filters: Optional[Sequence[Union['GetSubnetsFilterArgs', 'GetSubnetsFilterArgsDict']]] = None,
+                filters: Optional[Sequence[Union['GetSubnetsFilterArgs', 'GetSubnetsFilterArgsDict', 'outputs.GetSubnetsFilterResult']]] = None,
                 state: Optional[_builtins.str] = None,
                 vcn_id: Optional[_builtins.str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSubnetsResult:
@@ -169,7 +169,7 @@ def get_subnets(compartment_id: Optional[_builtins.str] = None,
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
 def get_subnets_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubnetsFilterArgs', 'GetSubnetsFilterArgsDict']]]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubnetsFilterArgs', 'GetSubnetsFilterArgsDict', 'outputs.GetSubnetsFilterResult']]]]] = None,
                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        vcn_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubnetsResult]:

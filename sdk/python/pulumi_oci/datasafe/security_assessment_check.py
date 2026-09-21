@@ -221,7 +221,7 @@ class SecurityAssessmentCheck(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentCheckPatchOperationArgs', 'SecurityAssessmentCheckPatchOperationArgsDict']]]]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentCheckPatchOperationArgs', 'SecurityAssessmentCheckPatchOperationArgsDict', 'outputs.SecurityAssessmentCheckPatchOperation']]]]] = None,
                  security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -259,7 +259,7 @@ class SecurityAssessmentCheck(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentCheckPatchOperationArgs', 'SecurityAssessmentCheckPatchOperationArgsDict']]]] patch_operations: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentCheckPatchOperationArgs', 'SecurityAssessmentCheckPatchOperationArgsDict', 'outputs.SecurityAssessmentCheckPatchOperation']]]] patch_operations: (Updatable)
         :param pulumi.Input[_builtins.str] security_assessment_id: ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -317,7 +317,7 @@ class SecurityAssessmentCheck(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentCheckPatchOperationArgs', 'SecurityAssessmentCheckPatchOperationArgsDict']]]]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentCheckPatchOperationArgs', 'SecurityAssessmentCheckPatchOperationArgsDict', 'outputs.SecurityAssessmentCheckPatchOperation']]]]] = None,
                  security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -352,8 +352,8 @@ class SecurityAssessmentCheck(pulumi.CustomResource):
             category: pulumi.Input[Optional[_builtins.str]] = None,
             key: pulumi.Input[Optional[_builtins.str]] = None,
             oneline: pulumi.Input[Optional[_builtins.str]] = None,
-            patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentCheckPatchOperationArgs', 'SecurityAssessmentCheckPatchOperationArgsDict']]]]] = None,
-            references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentCheckReferenceArgs', 'SecurityAssessmentCheckReferenceArgsDict']]]]] = None,
+            patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentCheckPatchOperationArgs', 'SecurityAssessmentCheckPatchOperationArgsDict', 'outputs.SecurityAssessmentCheckPatchOperation']]]]] = None,
+            references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentCheckReferenceArgs', 'SecurityAssessmentCheckReferenceArgsDict', 'outputs.SecurityAssessmentCheckReference']]]]] = None,
             remarks: pulumi.Input[Optional[_builtins.str]] = None,
             security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
             suggested_severity: pulumi.Input[Optional[_builtins.str]] = None,
@@ -368,8 +368,8 @@ class SecurityAssessmentCheck(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] category: The category to which the check belongs to.
         :param pulumi.Input[_builtins.str] key: A unique identifier for the check.
         :param pulumi.Input[_builtins.str] oneline: Provides a recommended approach to take to remediate the check reported.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentCheckPatchOperationArgs', 'SecurityAssessmentCheckPatchOperationArgsDict']]]] patch_operations: (Updatable)
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentCheckReferenceArgs', 'SecurityAssessmentCheckReferenceArgsDict']]]] references: Provides information on whether the check is related to a CIS Oracle Database Benchmark recommendation, STIG rule, GDPR Article/Recital or related to the Oracle Best Practice.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentCheckPatchOperationArgs', 'SecurityAssessmentCheckPatchOperationArgsDict', 'outputs.SecurityAssessmentCheckPatchOperation']]]] patch_operations: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentCheckReferenceArgs', 'SecurityAssessmentCheckReferenceArgsDict', 'outputs.SecurityAssessmentCheckReference']]]] references: Provides information on whether the check is related to a CIS Oracle Database Benchmark recommendation, STIG rule, GDPR Article/Recital or related to the Oracle Best Practice.
         :param pulumi.Input[_builtins.str] remarks: The explanation of the issue in this check. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         :param pulumi.Input[_builtins.str] security_assessment_id: ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

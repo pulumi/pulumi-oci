@@ -134,7 +134,7 @@ class AwaitableGetPropertiesResult(GetPropertiesResult):
 
 def get_properties(compartment_id: Optional[_builtins.str] = None,
                    display_name: Optional[_builtins.str] = None,
-                   filters: Optional[Sequence[Union['GetPropertiesFilterArgs', 'GetPropertiesFilterArgsDict']]] = None,
+                   filters: Optional[Sequence[Union['GetPropertiesFilterArgs', 'GetPropertiesFilterArgsDict', 'outputs.GetPropertiesFilterResult']]] = None,
                    id: Optional[_builtins.str] = None,
                    scope: Optional[_builtins.str] = None,
                    state: Optional[_builtins.str] = None,
@@ -190,7 +190,7 @@ def get_properties(compartment_id: Optional[_builtins.str] = None,
         type=pulumi.get(__ret__, 'type'))
 def get_properties_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPropertiesFilterArgs', 'GetPropertiesFilterArgsDict']]]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPropertiesFilterArgs', 'GetPropertiesFilterArgsDict', 'outputs.GetPropertiesFilterResult']]]]] = None,
                           id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           scope: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

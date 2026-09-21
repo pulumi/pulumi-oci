@@ -170,7 +170,7 @@ class AwaitableGetMulticloudResourceAnchorsResult(GetMulticloudResourceAnchorsRe
 
 def get_multicloud_resource_anchors(compartment_id: Optional[_builtins.str] = None,
                                     display_name: Optional[_builtins.str] = None,
-                                    filters: Optional[Sequence[Union['GetMulticloudResourceAnchorsFilterArgs', 'GetMulticloudResourceAnchorsFilterArgsDict']]] = None,
+                                    filters: Optional[Sequence[Union['GetMulticloudResourceAnchorsFilterArgs', 'GetMulticloudResourceAnchorsFilterArgsDict', 'outputs.GetMulticloudResourceAnchorsFilterResult']]] = None,
                                     id: Optional[_builtins.str] = None,
                                     is_compartment_id_in_subtree: Optional[_builtins.bool] = None,
                                     lifecycle_state: Optional[_builtins.str] = None,
@@ -246,7 +246,7 @@ def get_multicloud_resource_anchors(compartment_id: Optional[_builtins.str] = No
         subscription_service_name=pulumi.get(__ret__, 'subscription_service_name'))
 def get_multicloud_resource_anchors_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMulticloudResourceAnchorsFilterArgs', 'GetMulticloudResourceAnchorsFilterArgsDict']]]]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMulticloudResourceAnchorsFilterArgs', 'GetMulticloudResourceAnchorsFilterArgsDict', 'outputs.GetMulticloudResourceAnchorsFilterResult']]]]] = None,
                                            id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            is_compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                            lifecycle_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

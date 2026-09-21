@@ -110,7 +110,7 @@ class AwaitableGetOccDemandSignalsResult(GetOccDemandSignalsResult):
 
 def get_occ_demand_signals(compartment_id: Optional[_builtins.str] = None,
                            display_name: Optional[_builtins.str] = None,
-                           filters: Optional[Sequence[Union['GetOccDemandSignalsFilterArgs', 'GetOccDemandSignalsFilterArgsDict']]] = None,
+                           filters: Optional[Sequence[Union['GetOccDemandSignalsFilterArgs', 'GetOccDemandSignalsFilterArgsDict', 'outputs.GetOccDemandSignalsFilterResult']]] = None,
                            id: Optional[_builtins.str] = None,
                            state: Optional[_builtins.str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOccDemandSignalsResult:
@@ -155,7 +155,7 @@ def get_occ_demand_signals(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_occ_demand_signals_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOccDemandSignalsFilterArgs', 'GetOccDemandSignalsFilterArgsDict']]]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOccDemandSignalsFilterArgs', 'GetOccDemandSignalsFilterArgsDict', 'outputs.GetOccDemandSignalsFilterResult']]]]] = None,
                                   id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccDemandSignalsResult]:

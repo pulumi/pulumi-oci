@@ -93,7 +93,7 @@ class AwaitableGetFileStorageObjectStorageLinkSyncJobsResult(GetFileStorageObjec
             sync_job_collections=self.sync_job_collections)
 
 
-def get_file_storage_object_storage_link_sync_jobs(filters: Optional[Sequence[Union['GetFileStorageObjectStorageLinkSyncJobsFilterArgs', 'GetFileStorageObjectStorageLinkSyncJobsFilterArgsDict']]] = None,
+def get_file_storage_object_storage_link_sync_jobs(filters: Optional[Sequence[Union['GetFileStorageObjectStorageLinkSyncJobsFilterArgs', 'GetFileStorageObjectStorageLinkSyncJobsFilterArgsDict', 'outputs.GetFileStorageObjectStorageLinkSyncJobsFilterResult']]] = None,
                                                    object_storage_link_id: Optional[_builtins.str] = None,
                                                    state: Optional[_builtins.str] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFileStorageObjectStorageLinkSyncJobsResult:
@@ -129,7 +129,7 @@ def get_file_storage_object_storage_link_sync_jobs(filters: Optional[Sequence[Un
         object_storage_link_id=pulumi.get(__ret__, 'object_storage_link_id'),
         state=pulumi.get(__ret__, 'state'),
         sync_job_collections=pulumi.get(__ret__, 'sync_job_collections'))
-def get_file_storage_object_storage_link_sync_jobs_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFileStorageObjectStorageLinkSyncJobsFilterArgs', 'GetFileStorageObjectStorageLinkSyncJobsFilterArgsDict']]]]] = None,
+def get_file_storage_object_storage_link_sync_jobs_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFileStorageObjectStorageLinkSyncJobsFilterArgs', 'GetFileStorageObjectStorageLinkSyncJobsFilterArgsDict', 'outputs.GetFileStorageObjectStorageLinkSyncJobsFilterResult']]]]] = None,
                                                           object_storage_link_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFileStorageObjectStorageLinkSyncJobsResult]:

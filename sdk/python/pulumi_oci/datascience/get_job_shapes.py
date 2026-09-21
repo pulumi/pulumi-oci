@@ -82,7 +82,7 @@ class AwaitableGetJobShapesResult(GetJobShapesResult):
 
 
 def get_job_shapes(compartment_id: Optional[_builtins.str] = None,
-                   filters: Optional[Sequence[Union['GetJobShapesFilterArgs', 'GetJobShapesFilterArgsDict']]] = None,
+                   filters: Optional[Sequence[Union['GetJobShapesFilterArgs', 'GetJobShapesFilterArgsDict', 'outputs.GetJobShapesFilterResult']]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetJobShapesResult:
     """
     This data source provides the list of Job Shapes in Oracle Cloud Infrastructure Data Science service.
@@ -113,7 +113,7 @@ def get_job_shapes(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         job_shapes=pulumi.get(__ret__, 'job_shapes'))
 def get_job_shapes_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJobShapesFilterArgs', 'GetJobShapesFilterArgsDict']]]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJobShapesFilterArgs', 'GetJobShapesFilterArgsDict', 'outputs.GetJobShapesFilterResult']]]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJobShapesResult]:
     """
     This data source provides the list of Job Shapes in Oracle Cloud Infrastructure Data Science service.

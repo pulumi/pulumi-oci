@@ -714,7 +714,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                  is_symmetric_hash_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  nlb_ip_version: pulumi.Input[Optional[_builtins.str]] = None,
-                 reserved_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkLoadBalancerReservedIpArgs', 'NetworkLoadBalancerReservedIpArgsDict']]]]] = None,
+                 reserved_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkLoadBalancerReservedIpArgs', 'NetworkLoadBalancerReservedIpArgsDict', 'outputs.NetworkLoadBalancerReservedIp']]]]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_ipv6cidr: pulumi.Input[Optional[_builtins.str]] = None,
@@ -768,7 +768,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                
                Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         :param pulumi.Input[_builtins.str] nlb_ip_version: (Updatable) IP version associated with the NLB.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancerReservedIpArgs', 'NetworkLoadBalancerReservedIpArgsDict']]]] reserved_ips: An array of reserved Ips. NLB supports reserved public ip, reserved private IP and reserved IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a maximum of 1 allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB does not support changing an IP’s lifecycle state between ephemeral and reserved if the IP is already assigned to the NLB. While this type of lifecycle state change is supported by VCN IPs even when the IP is assigned to a resource, such changes will not be recognized or reflected by NLB.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancerReservedIpArgs', 'NetworkLoadBalancerReservedIpArgsDict', 'outputs.NetworkLoadBalancerReservedIp']]]] reserved_ips: An array of reserved Ips. NLB supports reserved public ip, reserved private IP and reserved IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a maximum of 1 allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB does not support changing an IP’s lifecycle state between ephemeral and reserved if the IP is already assigned to the NLB. While this type of lifecycle state change is supported by VCN IPs even when the IP is assigned to a resource, such changes will not be recognized or reflected by NLB.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] subnet_id: The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] subnet_ipv6cidr: IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
@@ -825,7 +825,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                  is_symmetric_hash_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  nlb_ip_version: pulumi.Input[Optional[_builtins.str]] = None,
-                 reserved_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkLoadBalancerReservedIpArgs', 'NetworkLoadBalancerReservedIpArgsDict']]]]] = None,
+                 reserved_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkLoadBalancerReservedIpArgs', 'NetworkLoadBalancerReservedIpArgsDict', 'outputs.NetworkLoadBalancerReservedIp']]]]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_ipv6cidr: pulumi.Input[Optional[_builtins.str]] = None,
@@ -881,14 +881,14 @@ class NetworkLoadBalancer(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkLoadBalancerIpAddressArgs', 'NetworkLoadBalancerIpAddressArgsDict']]]]] = None,
+            ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkLoadBalancerIpAddressArgs', 'NetworkLoadBalancerIpAddressArgsDict', 'outputs.NetworkLoadBalancerIpAddress']]]]] = None,
             is_preserve_source_destination: pulumi.Input[Optional[_builtins.bool]] = None,
             is_private: pulumi.Input[Optional[_builtins.bool]] = None,
             is_symmetric_hash_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             nlb_ip_version: pulumi.Input[Optional[_builtins.str]] = None,
-            reserved_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkLoadBalancerReservedIpArgs', 'NetworkLoadBalancerReservedIpArgsDict']]]]] = None,
+            reserved_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkLoadBalancerReservedIpArgs', 'NetworkLoadBalancerReservedIpArgsDict', 'outputs.NetworkLoadBalancerReservedIp']]]]] = None,
             security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -909,7 +909,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Network load balancer identifier, which can be renamed.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancerIpAddressArgs', 'NetworkLoadBalancerIpAddressArgsDict']]]] ip_addresses: An array of IP addresses.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancerIpAddressArgs', 'NetworkLoadBalancerIpAddressArgsDict', 'outputs.NetworkLoadBalancerIpAddress']]]] ip_addresses: An array of IP addresses.
         :param pulumi.Input[_builtins.bool] is_preserve_source_destination: (Updatable) This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
         :param pulumi.Input[_builtins.bool] is_private: Whether the network load balancer has a virtual cloud network-local (private) IP address.
                
@@ -935,7 +935,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                
                Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         :param pulumi.Input[_builtins.str] nlb_ip_version: (Updatable) IP version associated with the NLB.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancerReservedIpArgs', 'NetworkLoadBalancerReservedIpArgsDict']]]] reserved_ips: An array of reserved Ips. NLB supports reserved public ip, reserved private IP and reserved IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a maximum of 1 allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB does not support changing an IP’s lifecycle state between ephemeral and reserved if the IP is already assigned to the NLB. While this type of lifecycle state change is supported by VCN IPs even when the IP is assigned to a resource, such changes will not be recognized or reflected by NLB.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancerReservedIpArgs', 'NetworkLoadBalancerReservedIpArgsDict', 'outputs.NetworkLoadBalancerReservedIp']]]] reserved_ips: An array of reserved Ips. NLB supports reserved public ip, reserved private IP and reserved IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a maximum of 1 allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB does not support changing an IP’s lifecycle state between ephemeral and reserved if the IP is already assigned to the NLB. While this type of lifecycle state change is supported by VCN IPs even when the IP is assigned to a resource, such changes will not be recognized or reflected by NLB.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] state: The current state of the network load balancer.
         :param pulumi.Input[_builtins.str] subnet_id: The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

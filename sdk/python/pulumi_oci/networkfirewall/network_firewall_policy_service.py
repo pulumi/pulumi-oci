@@ -230,7 +230,7 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 port_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFirewallPolicyServicePortRangeArgs', 'NetworkFirewallPolicyServicePortRangeArgsDict']]]]] = None,
+                 port_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFirewallPolicyServicePortRangeArgs', 'NetworkFirewallPolicyServicePortRangeArgsDict', 'outputs.NetworkFirewallPolicyServicePortRange']]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -272,7 +272,7 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the service. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name of the service
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicyServicePortRangeArgs', 'NetworkFirewallPolicyServicePortRangeArgsDict']]]] port_ranges: (Updatable) List of port-ranges to be used.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicyServicePortRangeArgs', 'NetworkFirewallPolicyServicePortRangeArgsDict', 'outputs.NetworkFirewallPolicyServicePortRange']]]] port_ranges: (Updatable) List of port-ranges to be used.
         :param pulumi.Input[_builtins.str] type: Describes the type of Service. The accepted values are
                
                ** IMPORTANT **
@@ -336,7 +336,7 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 port_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFirewallPolicyServicePortRangeArgs', 'NetworkFirewallPolicyServicePortRangeArgsDict']]]]] = None,
+                 port_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFirewallPolicyServicePortRangeArgs', 'NetworkFirewallPolicyServicePortRangeArgsDict', 'outputs.NetworkFirewallPolicyServicePortRange']]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -373,7 +373,7 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
             name: pulumi.Input[Optional[_builtins.str]] = None,
             network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
             parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
-            port_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFirewallPolicyServicePortRangeArgs', 'NetworkFirewallPolicyServicePortRangeArgsDict']]]]] = None,
+            port_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFirewallPolicyServicePortRangeArgs', 'NetworkFirewallPolicyServicePortRangeArgsDict', 'outputs.NetworkFirewallPolicyServicePortRange']]]]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None) -> 'NetworkFirewallPolicyService':
         """
         Get an existing NetworkFirewallPolicyService resource's state with the given name, id, and optional extra
@@ -386,7 +386,7 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: Name of the service
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] parent_resource_id: OCID of the Network Firewall Policy this service belongs to.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicyServicePortRangeArgs', 'NetworkFirewallPolicyServicePortRangeArgsDict']]]] port_ranges: (Updatable) List of port-ranges to be used.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicyServicePortRangeArgs', 'NetworkFirewallPolicyServicePortRangeArgsDict', 'outputs.NetworkFirewallPolicyServicePortRange']]]] port_ranges: (Updatable) List of port-ranges to be used.
         :param pulumi.Input[_builtins.str] type: Describes the type of Service. The accepted values are
                
                ** IMPORTANT **

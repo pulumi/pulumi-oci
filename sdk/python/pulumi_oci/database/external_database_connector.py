@@ -417,8 +417,8 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 connection_credentials: pulumi.Input[Optional[Union['ExternalDatabaseConnectorConnectionCredentialsArgs', 'ExternalDatabaseConnectorConnectionCredentialsArgsDict']]] = None,
-                 connection_string: pulumi.Input[Optional[Union['ExternalDatabaseConnectorConnectionStringArgs', 'ExternalDatabaseConnectorConnectionStringArgsDict']]] = None,
+                 connection_credentials: pulumi.Input[Optional[Union['ExternalDatabaseConnectorConnectionCredentialsArgs', 'ExternalDatabaseConnectorConnectionCredentialsArgsDict', 'outputs.ExternalDatabaseConnectorConnectionCredentials']]] = None,
+                 connection_string: pulumi.Input[Optional[Union['ExternalDatabaseConnectorConnectionStringArgs', 'ExternalDatabaseConnectorConnectionStringArgsDict', 'outputs.ExternalDatabaseConnectorConnectionString']]] = None,
                  connector_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  connector_type: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -476,8 +476,8 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ExternalDatabaseConnectorConnectionCredentialsArgs', 'ExternalDatabaseConnectorConnectionCredentialsArgsDict']] connection_credentials: (Updatable) Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
-        :param pulumi.Input[Union['ExternalDatabaseConnectorConnectionStringArgs', 'ExternalDatabaseConnectorConnectionStringArgsDict']] connection_string: (Updatable) The Oracle AI Database connection string.
+        :param pulumi.Input[Union['ExternalDatabaseConnectorConnectionCredentialsArgs', 'ExternalDatabaseConnectorConnectionCredentialsArgsDict', 'outputs.ExternalDatabaseConnectorConnectionCredentials']] connection_credentials: (Updatable) Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
+        :param pulumi.Input[Union['ExternalDatabaseConnectorConnectionStringArgs', 'ExternalDatabaseConnectorConnectionStringArgsDict', 'outputs.ExternalDatabaseConnectorConnectionString']] connection_string: (Updatable) The Oracle AI Database connection string.
         :param pulumi.Input[_builtins.str] connector_agent_id: The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[_builtins.str] connector_type: (Updatable) The type of connector used by the external database resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -557,8 +557,8 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 connection_credentials: pulumi.Input[Optional[Union['ExternalDatabaseConnectorConnectionCredentialsArgs', 'ExternalDatabaseConnectorConnectionCredentialsArgsDict']]] = None,
-                 connection_string: pulumi.Input[Optional[Union['ExternalDatabaseConnectorConnectionStringArgs', 'ExternalDatabaseConnectorConnectionStringArgsDict']]] = None,
+                 connection_credentials: pulumi.Input[Optional[Union['ExternalDatabaseConnectorConnectionCredentialsArgs', 'ExternalDatabaseConnectorConnectionCredentialsArgsDict', 'outputs.ExternalDatabaseConnectorConnectionCredentials']]] = None,
+                 connection_string: pulumi.Input[Optional[Union['ExternalDatabaseConnectorConnectionStringArgs', 'ExternalDatabaseConnectorConnectionStringArgsDict', 'outputs.ExternalDatabaseConnectorConnectionString']]] = None,
                  connector_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  connector_type: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -610,9 +610,9 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            connection_credentials: pulumi.Input[Optional[Union['ExternalDatabaseConnectorConnectionCredentialsArgs', 'ExternalDatabaseConnectorConnectionCredentialsArgsDict']]] = None,
+            connection_credentials: pulumi.Input[Optional[Union['ExternalDatabaseConnectorConnectionCredentialsArgs', 'ExternalDatabaseConnectorConnectionCredentialsArgsDict', 'outputs.ExternalDatabaseConnectorConnectionCredentials']]] = None,
             connection_status: pulumi.Input[Optional[_builtins.str]] = None,
-            connection_string: pulumi.Input[Optional[Union['ExternalDatabaseConnectorConnectionStringArgs', 'ExternalDatabaseConnectorConnectionStringArgsDict']]] = None,
+            connection_string: pulumi.Input[Optional[Union['ExternalDatabaseConnectorConnectionStringArgs', 'ExternalDatabaseConnectorConnectionStringArgsDict', 'outputs.ExternalDatabaseConnectorConnectionString']]] = None,
             connector_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
             connector_type: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -632,9 +632,9 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Union['ExternalDatabaseConnectorConnectionCredentialsArgs', 'ExternalDatabaseConnectorConnectionCredentialsArgsDict']] connection_credentials: (Updatable) Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
+        :param pulumi.Input[Union['ExternalDatabaseConnectorConnectionCredentialsArgs', 'ExternalDatabaseConnectorConnectionCredentialsArgsDict', 'outputs.ExternalDatabaseConnectorConnectionCredentials']] connection_credentials: (Updatable) Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
         :param pulumi.Input[_builtins.str] connection_status: The status of connectivity to the external database.
-        :param pulumi.Input[Union['ExternalDatabaseConnectorConnectionStringArgs', 'ExternalDatabaseConnectorConnectionStringArgsDict']] connection_string: (Updatable) The Oracle AI Database connection string.
+        :param pulumi.Input[Union['ExternalDatabaseConnectorConnectionStringArgs', 'ExternalDatabaseConnectorConnectionStringArgsDict', 'outputs.ExternalDatabaseConnectorConnectionString']] connection_string: (Updatable) The Oracle AI Database connection string.
         :param pulumi.Input[_builtins.str] connector_agent_id: The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[_builtins.str] connector_type: (Updatable) The type of connector used by the external database resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).

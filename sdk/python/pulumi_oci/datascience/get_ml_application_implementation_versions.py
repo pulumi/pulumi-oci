@@ -96,7 +96,7 @@ class AwaitableGetMlApplicationImplementationVersionsResult(GetMlApplicationImpl
             state=self.state)
 
 
-def get_ml_application_implementation_versions(filters: Optional[Sequence[Union['GetMlApplicationImplementationVersionsFilterArgs', 'GetMlApplicationImplementationVersionsFilterArgsDict']]] = None,
+def get_ml_application_implementation_versions(filters: Optional[Sequence[Union['GetMlApplicationImplementationVersionsFilterArgs', 'GetMlApplicationImplementationVersionsFilterArgsDict', 'outputs.GetMlApplicationImplementationVersionsFilterResult']]] = None,
                                                ml_application_implementation_id: Optional[_builtins.str] = None,
                                                state: Optional[_builtins.str] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMlApplicationImplementationVersionsResult:
@@ -132,7 +132,7 @@ def get_ml_application_implementation_versions(filters: Optional[Sequence[Union[
         ml_application_implementation_id=pulumi.get(__ret__, 'ml_application_implementation_id'),
         ml_application_implementation_version_collections=pulumi.get(__ret__, 'ml_application_implementation_version_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_ml_application_implementation_versions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMlApplicationImplementationVersionsFilterArgs', 'GetMlApplicationImplementationVersionsFilterArgsDict']]]]] = None,
+def get_ml_application_implementation_versions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMlApplicationImplementationVersionsFilterArgs', 'GetMlApplicationImplementationVersionsFilterArgsDict', 'outputs.GetMlApplicationImplementationVersionsFilterResult']]]]] = None,
                                                       ml_application_implementation_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMlApplicationImplementationVersionsResult]:

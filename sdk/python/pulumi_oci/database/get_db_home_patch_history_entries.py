@@ -82,7 +82,7 @@ class AwaitableGetDbHomePatchHistoryEntriesResult(GetDbHomePatchHistoryEntriesRe
 
 
 def get_db_home_patch_history_entries(db_home_id: Optional[_builtins.str] = None,
-                                      filters: Optional[Sequence[Union['GetDbHomePatchHistoryEntriesFilterArgs', 'GetDbHomePatchHistoryEntriesFilterArgsDict']]] = None,
+                                      filters: Optional[Sequence[Union['GetDbHomePatchHistoryEntriesFilterArgs', 'GetDbHomePatchHistoryEntriesFilterArgsDict', 'outputs.GetDbHomePatchHistoryEntriesFilterResult']]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbHomePatchHistoryEntriesResult:
     """
     This data source provides the list of Db Home Patch History Entries in Oracle Cloud Infrastructure Database service.
@@ -113,7 +113,7 @@ def get_db_home_patch_history_entries(db_home_id: Optional[_builtins.str] = None
         id=pulumi.get(__ret__, 'id'),
         patch_history_entries=pulumi.get(__ret__, 'patch_history_entries'))
 def get_db_home_patch_history_entries_output(db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbHomePatchHistoryEntriesFilterArgs', 'GetDbHomePatchHistoryEntriesFilterArgsDict']]]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbHomePatchHistoryEntriesFilterArgs', 'GetDbHomePatchHistoryEntriesFilterArgsDict', 'outputs.GetDbHomePatchHistoryEntriesFilterResult']]]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbHomePatchHistoryEntriesResult]:
     """
     This data source provides the list of Db Home Patch History Entries in Oracle Cloud Infrastructure Database service.

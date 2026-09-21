@@ -547,16 +547,16 @@ class Cluster(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_pod_network_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterClusterPodNetworkOptionArgs', 'ClusterClusterPodNetworkOptionArgsDict']]]]] = None,
+                 cluster_pod_network_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterClusterPodNetworkOptionArgs', 'ClusterClusterPodNetworkOptionArgsDict', 'outputs.ClusterClusterPodNetworkOption']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 endpoint_config: pulumi.Input[Optional[Union['ClusterEndpointConfigArgs', 'ClusterEndpointConfigArgsDict']]] = None,
+                 endpoint_config: pulumi.Input[Optional[Union['ClusterEndpointConfigArgs', 'ClusterEndpointConfigArgsDict', 'outputs.ClusterEndpointConfig']]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 image_policy_config: pulumi.Input[Optional[Union['ClusterImagePolicyConfigArgs', 'ClusterImagePolicyConfigArgsDict']]] = None,
+                 image_policy_config: pulumi.Input[Optional[Union['ClusterImagePolicyConfigArgs', 'ClusterImagePolicyConfigArgsDict', 'outputs.ClusterImagePolicyConfig']]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  kubernetes_version: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 options: pulumi.Input[Optional[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict']]] = None,
+                 options: pulumi.Input[Optional[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict', 'outputs.ClusterOptions']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -666,16 +666,16 @@ class Cluster(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterClusterPodNetworkOptionArgs', 'ClusterClusterPodNetworkOptionArgsDict']]]] cluster_pod_network_options: Available CNIs and network options for existing and new node pools of the cluster
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterClusterPodNetworkOptionArgs', 'ClusterClusterPodNetworkOptionArgsDict', 'outputs.ClusterClusterPodNetworkOption']]]] cluster_pod_network_options: Available CNIs and network options for existing and new node pools of the cluster
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment in which to create the cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Union['ClusterEndpointConfigArgs', 'ClusterEndpointConfigArgsDict']] endpoint_config: The network configuration for access to the Cluster control plane.
+        :param pulumi.Input[Union['ClusterEndpointConfigArgs', 'ClusterEndpointConfigArgsDict', 'outputs.ClusterEndpointConfig']] endpoint_config: The network configuration for access to the Cluster control plane.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['ClusterImagePolicyConfigArgs', 'ClusterImagePolicyConfigArgsDict']] image_policy_config: (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
+        :param pulumi.Input[Union['ClusterImagePolicyConfigArgs', 'ClusterImagePolicyConfigArgsDict', 'outputs.ClusterImagePolicyConfig']] image_policy_config: (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
         :param pulumi.Input[_builtins.str] kubernetes_version: (Updatable) The version of Kubernetes to install into the cluster masters.
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the cluster. Avoid entering confidential information.
-        :param pulumi.Input[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict']] options: (Updatable) Optional attributes for the cluster.
+        :param pulumi.Input[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict', 'outputs.ClusterOptions']] options: (Updatable) Optional attributes for the cluster.
         :param pulumi.Input[_builtins.str] type: (Updatable) Type of cluster
         :param pulumi.Input[_builtins.str] vcn_id: The OCID of the virtual cloud network (VCN) in which to create the cluster.
                
@@ -807,16 +807,16 @@ class Cluster(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_pod_network_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterClusterPodNetworkOptionArgs', 'ClusterClusterPodNetworkOptionArgsDict']]]]] = None,
+                 cluster_pod_network_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterClusterPodNetworkOptionArgs', 'ClusterClusterPodNetworkOptionArgsDict', 'outputs.ClusterClusterPodNetworkOption']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 endpoint_config: pulumi.Input[Optional[Union['ClusterEndpointConfigArgs', 'ClusterEndpointConfigArgsDict']]] = None,
+                 endpoint_config: pulumi.Input[Optional[Union['ClusterEndpointConfigArgs', 'ClusterEndpointConfigArgsDict', 'outputs.ClusterEndpointConfig']]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 image_policy_config: pulumi.Input[Optional[Union['ClusterImagePolicyConfigArgs', 'ClusterImagePolicyConfigArgsDict']]] = None,
+                 image_policy_config: pulumi.Input[Optional[Union['ClusterImagePolicyConfigArgs', 'ClusterImagePolicyConfigArgsDict', 'outputs.ClusterImagePolicyConfig']]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  kubernetes_version: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 options: pulumi.Input[Optional[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict']]] = None,
+                 options: pulumi.Input[Optional[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict', 'outputs.ClusterOptions']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -864,21 +864,21 @@ class Cluster(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             available_kubernetes_upgrades: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            cluster_pod_network_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterClusterPodNetworkOptionArgs', 'ClusterClusterPodNetworkOptionArgsDict']]]]] = None,
+            cluster_pod_network_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterClusterPodNetworkOptionArgs', 'ClusterClusterPodNetworkOptionArgsDict', 'outputs.ClusterClusterPodNetworkOption']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            endpoint_config: pulumi.Input[Optional[Union['ClusterEndpointConfigArgs', 'ClusterEndpointConfigArgsDict']]] = None,
-            endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterEndpointArgs', 'ClusterEndpointArgsDict']]]]] = None,
+            endpoint_config: pulumi.Input[Optional[Union['ClusterEndpointConfigArgs', 'ClusterEndpointConfigArgsDict', 'outputs.ClusterEndpointConfig']]] = None,
+            endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterEndpointArgs', 'ClusterEndpointArgsDict', 'outputs.ClusterEndpoint']]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            image_policy_config: pulumi.Input[Optional[Union['ClusterImagePolicyConfigArgs', 'ClusterImagePolicyConfigArgsDict']]] = None,
+            image_policy_config: pulumi.Input[Optional[Union['ClusterImagePolicyConfigArgs', 'ClusterImagePolicyConfigArgsDict', 'outputs.ClusterImagePolicyConfig']]] = None,
             kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
             kubernetes_version: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterMetadataArgs', 'ClusterMetadataArgsDict']]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterMetadataArgs', 'ClusterMetadataArgsDict', 'outputs.ClusterMetadata']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             open_id_connect_discovery_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
             open_id_connect_discovery_key: pulumi.Input[Optional[_builtins.str]] = None,
-            options: pulumi.Input[Optional[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict']]] = None,
+            options: pulumi.Input[Optional[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict', 'outputs.ClusterOptions']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
             vcn_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'Cluster':
@@ -890,21 +890,21 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] available_kubernetes_upgrades: Available Kubernetes versions to which the clusters masters may be upgraded.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterClusterPodNetworkOptionArgs', 'ClusterClusterPodNetworkOptionArgsDict']]]] cluster_pod_network_options: Available CNIs and network options for existing and new node pools of the cluster
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterClusterPodNetworkOptionArgs', 'ClusterClusterPodNetworkOptionArgsDict', 'outputs.ClusterClusterPodNetworkOption']]]] cluster_pod_network_options: Available CNIs and network options for existing and new node pools of the cluster
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment in which to create the cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Union['ClusterEndpointConfigArgs', 'ClusterEndpointConfigArgsDict']] endpoint_config: The network configuration for access to the Cluster control plane.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterEndpointArgs', 'ClusterEndpointArgsDict']]]] endpoints: Endpoints served up by the cluster masters.
+        :param pulumi.Input[Union['ClusterEndpointConfigArgs', 'ClusterEndpointConfigArgsDict', 'outputs.ClusterEndpointConfig']] endpoint_config: The network configuration for access to the Cluster control plane.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterEndpointArgs', 'ClusterEndpointArgsDict', 'outputs.ClusterEndpoint']]]] endpoints: Endpoints served up by the cluster masters.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['ClusterImagePolicyConfigArgs', 'ClusterImagePolicyConfigArgsDict']] image_policy_config: (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
+        :param pulumi.Input[Union['ClusterImagePolicyConfigArgs', 'ClusterImagePolicyConfigArgsDict', 'outputs.ClusterImagePolicyConfig']] image_policy_config: (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
         :param pulumi.Input[_builtins.str] kubernetes_version: (Updatable) The version of Kubernetes to install into the cluster masters.
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the state of the cluster masters.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterMetadataArgs', 'ClusterMetadataArgsDict']]]] metadatas: Metadata about the cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterMetadataArgs', 'ClusterMetadataArgsDict', 'outputs.ClusterMetadata']]]] metadatas: Metadata about the cluster.
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the cluster. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] open_id_connect_discovery_endpoint: The cluster-specific OpenID Connect Discovery endpoint
         :param pulumi.Input[_builtins.str] open_id_connect_discovery_key: The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
-        :param pulumi.Input[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict']] options: (Updatable) Optional attributes for the cluster.
+        :param pulumi.Input[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict', 'outputs.ClusterOptions']] options: (Updatable) Optional attributes for the cluster.
         :param pulumi.Input[_builtins.str] state: The state of the cluster masters.
         :param pulumi.Input[_builtins.str] type: (Updatable) Type of cluster
         :param pulumi.Input[_builtins.str] vcn_id: The OCID of the virtual cloud network (VCN) in which to create the cluster.

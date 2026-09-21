@@ -97,7 +97,7 @@ class AwaitableGetCertificateVersionsResult(GetCertificateVersionsResult):
 
 
 def get_certificate_versions(certificate_id: Optional[_builtins.str] = None,
-                             filters: Optional[Sequence[Union['GetCertificateVersionsFilterArgs', 'GetCertificateVersionsFilterArgsDict']]] = None,
+                             filters: Optional[Sequence[Union['GetCertificateVersionsFilterArgs', 'GetCertificateVersionsFilterArgsDict', 'outputs.GetCertificateVersionsFilterResult']]] = None,
                              version_number: Optional[_builtins.str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCertificateVersionsResult:
     """
@@ -134,7 +134,7 @@ def get_certificate_versions(certificate_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         version_number=pulumi.get(__ret__, 'version_number'))
 def get_certificate_versions_output(certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCertificateVersionsFilterArgs', 'GetCertificateVersionsFilterArgsDict']]]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCertificateVersionsFilterArgs', 'GetCertificateVersionsFilterArgsDict', 'outputs.GetCertificateVersionsFilterResult']]]]] = None,
                                     version_number: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCertificateVersionsResult]:
     """

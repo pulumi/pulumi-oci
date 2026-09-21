@@ -550,7 +550,7 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
             checksum_type: pulumi.Input[Optional[_builtins.str]] = None,
             checksum_value: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JavaDownloadsJavaDownloadReportCreatedByArgs', 'JavaDownloadsJavaDownloadReportCreatedByArgsDict']]]]] = None,
+            created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JavaDownloadsJavaDownloadReportCreatedByArgs', 'JavaDownloadsJavaDownloadReportCreatedByArgsDict', 'outputs.JavaDownloadsJavaDownloadReportCreatedBy']]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             file_size_in_bytes: pulumi.Input[Optional[_builtins.str]] = None,
@@ -573,7 +573,7 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] checksum_type: The algorithm used for calculating the checksum.
         :param pulumi.Input[_builtins.str] checksum_value: The checksum value of the Java download report file.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) here should be the tenancy OCID.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['JavaDownloadsJavaDownloadReportCreatedByArgs', 'JavaDownloadsJavaDownloadReportCreatedByArgsDict']]]] created_bies: An authorized principal.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['JavaDownloadsJavaDownloadReportCreatedByArgs', 'JavaDownloadsJavaDownloadReportCreatedByArgsDict', 'outputs.JavaDownloadsJavaDownloadReportCreatedBy']]]] created_bies: An authorized principal.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
         :param pulumi.Input[_builtins.str] display_name: Display name for the Java download report.
         :param pulumi.Input[_builtins.str] file_size_in_bytes: Approximate size of the Java download report file in bytes.

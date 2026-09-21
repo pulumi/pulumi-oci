@@ -82,7 +82,7 @@ class AwaitableGetAutonomousDatabaseAvailableMaintenanceWindowsResult(GetAutonom
 
 
 def get_autonomous_database_available_maintenance_windows(autonomous_database_id: Optional[_builtins.str] = None,
-                                                          filters: Optional[Sequence[Union['GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArgs', 'GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArgsDict']]] = None,
+                                                          filters: Optional[Sequence[Union['GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArgs', 'GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArgsDict', 'outputs.GetAutonomousDatabaseAvailableMaintenanceWindowsFilterResult']]] = None,
                                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabaseAvailableMaintenanceWindowsResult:
     """
     This data source provides the list of Autonomous Database Available Maintenance Windows in Oracle Cloud Infrastructure Database service.
@@ -113,7 +113,7 @@ def get_autonomous_database_available_maintenance_windows(autonomous_database_id
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_autonomous_database_available_maintenance_windows_output(autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArgs', 'GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArgsDict']]]]] = None,
+                                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArgs', 'GetAutonomousDatabaseAvailableMaintenanceWindowsFilterArgsDict', 'outputs.GetAutonomousDatabaseAvailableMaintenanceWindowsFilterResult']]]]] = None,
                                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabaseAvailableMaintenanceWindowsResult]:
     """
     This data source provides the list of Autonomous Database Available Maintenance Windows in Oracle Cloud Infrastructure Database service.

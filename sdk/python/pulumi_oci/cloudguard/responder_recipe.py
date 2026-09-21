@@ -416,7 +416,7 @@ class ResponderRecipe(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 responder_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ResponderRecipeResponderRuleArgs', 'ResponderRecipeResponderRuleArgsDict']]]]] = None,
+                 responder_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ResponderRecipeResponderRuleArgs', 'ResponderRecipeResponderRuleArgsDict', 'outputs.ResponderRecipeResponderRule']]]]] = None,
                  source_responder_recipe_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -450,7 +450,7 @@ class ResponderRecipe(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ResponderRecipeResponderRuleArgs', 'ResponderRecipeResponderRuleArgsDict']]]] responder_rules: (Updatable) List of responder rules to override from source responder recipe
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ResponderRecipeResponderRuleArgs', 'ResponderRecipeResponderRuleArgsDict', 'outputs.ResponderRecipeResponderRule']]]] responder_rules: (Updatable) List of responder rules to override from source responder recipe
         :param pulumi.Input[_builtins.str] source_responder_recipe_id: The unique identifier of the source responder recipe
                
                ** IMPORTANT **
@@ -500,7 +500,7 @@ class ResponderRecipe(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 responder_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ResponderRecipeResponderRuleArgs', 'ResponderRecipeResponderRuleArgsDict']]]]] = None,
+                 responder_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ResponderRecipeResponderRuleArgs', 'ResponderRecipeResponderRuleArgsDict', 'outputs.ResponderRecipeResponderRule']]]]] = None,
                  source_responder_recipe_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -545,11 +545,11 @@ class ResponderRecipe(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            effective_responder_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ResponderRecipeEffectiveResponderRuleArgs', 'ResponderRecipeEffectiveResponderRuleArgsDict']]]]] = None,
+            effective_responder_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ResponderRecipeEffectiveResponderRuleArgs', 'ResponderRecipeEffectiveResponderRuleArgsDict', 'outputs.ResponderRecipeEffectiveResponderRule']]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             owner: pulumi.Input[Optional[_builtins.str]] = None,
-            responder_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ResponderRecipeResponderRuleArgs', 'ResponderRecipeResponderRuleArgsDict']]]]] = None,
+            responder_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ResponderRecipeResponderRuleArgs', 'ResponderRecipeResponderRuleArgsDict', 'outputs.ResponderRecipeResponderRule']]]]] = None,
             source_responder_recipe_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -570,13 +570,13 @@ class ResponderRecipe(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Responder recipe display name.
                
                Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ResponderRecipeEffectiveResponderRuleArgs', 'ResponderRecipeEffectiveResponderRuleArgsDict']]]] effective_responder_rules: List of currently enabled responder rules for the responder type, for recipe after applying defaults
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ResponderRecipeEffectiveResponderRuleArgs', 'ResponderRecipeEffectiveResponderRuleArgsDict', 'outputs.ResponderRecipeEffectiveResponderRule']]]] effective_responder_rules: List of currently enabled responder rules for the responder type, for recipe after applying defaults
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[_builtins.str] owner: Owner of responder recipe
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ResponderRecipeResponderRuleArgs', 'ResponderRecipeResponderRuleArgsDict']]]] responder_rules: (Updatable) List of responder rules to override from source responder recipe
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ResponderRecipeResponderRuleArgs', 'ResponderRecipeResponderRuleArgsDict', 'outputs.ResponderRecipeResponderRule']]]] responder_rules: (Updatable) List of responder rules to override from source responder recipe
         :param pulumi.Input[_builtins.str] source_responder_recipe_id: The unique identifier of the source responder recipe
                
                ** IMPORTANT **

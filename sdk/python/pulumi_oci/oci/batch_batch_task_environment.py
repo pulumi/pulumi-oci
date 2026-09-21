@@ -418,8 +418,8 @@ class BatchBatchTaskEnvironment(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  image_url: pulumi.Input[Optional[_builtins.str]] = None,
-                 security_context: pulumi.Input[Optional[Union['BatchBatchTaskEnvironmentSecurityContextArgs', 'BatchBatchTaskEnvironmentSecurityContextArgsDict']]] = None,
-                 volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchTaskEnvironmentVolumeArgs', 'BatchBatchTaskEnvironmentVolumeArgsDict']]]]] = None,
+                 security_context: pulumi.Input[Optional[Union['BatchBatchTaskEnvironmentSecurityContextArgs', 'BatchBatchTaskEnvironmentSecurityContextArgsDict', 'outputs.BatchBatchTaskEnvironmentSecurityContext']]] = None,
+                 volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchTaskEnvironmentVolumeArgs', 'BatchBatchTaskEnvironmentVolumeArgsDict', 'outputs.BatchBatchTaskEnvironmentVolume']]]]] = None,
                  working_directory: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -479,10 +479,10 @@ class BatchBatchTaskEnvironment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchtaskenvironment20250914115623.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] image_url: The URL of the ocir image.
-        :param pulumi.Input[Union['BatchBatchTaskEnvironmentSecurityContextArgs', 'BatchBatchTaskEnvironmentSecurityContextArgsDict']] security_context: Security context for container runtime configuration.
+        :param pulumi.Input[Union['BatchBatchTaskEnvironmentSecurityContextArgs', 'BatchBatchTaskEnvironmentSecurityContextArgsDict', 'outputs.BatchBatchTaskEnvironmentSecurityContext']] security_context: Security context for container runtime configuration.
                
                See also [docs](https://docs.oracle.com/en-us/iaas/api/#/en/container-instances/20210415/datatypes/LinuxSecurityContext).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchTaskEnvironmentVolumeArgs', 'BatchBatchTaskEnvironmentVolumeArgsDict']]]] volumes: List of volumes attached to the image. The use cases of the volumes are but not limited to: read the input of the task and write the output.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchTaskEnvironmentVolumeArgs', 'BatchBatchTaskEnvironmentVolumeArgsDict', 'outputs.BatchBatchTaskEnvironmentVolume']]]] volumes: List of volumes attached to the image. The use cases of the volumes are but not limited to: read the input of the task and write the output.
         :param pulumi.Input[_builtins.str] working_directory: Container's working directory.
                
                ** IMPORTANT **
@@ -564,8 +564,8 @@ class BatchBatchTaskEnvironment(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  image_url: pulumi.Input[Optional[_builtins.str]] = None,
-                 security_context: pulumi.Input[Optional[Union['BatchBatchTaskEnvironmentSecurityContextArgs', 'BatchBatchTaskEnvironmentSecurityContextArgsDict']]] = None,
-                 volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchTaskEnvironmentVolumeArgs', 'BatchBatchTaskEnvironmentVolumeArgsDict']]]]] = None,
+                 security_context: pulumi.Input[Optional[Union['BatchBatchTaskEnvironmentSecurityContextArgs', 'BatchBatchTaskEnvironmentSecurityContextArgsDict', 'outputs.BatchBatchTaskEnvironmentSecurityContext']]] = None,
+                 volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchTaskEnvironmentVolumeArgs', 'BatchBatchTaskEnvironmentVolumeArgsDict', 'outputs.BatchBatchTaskEnvironmentVolume']]]]] = None,
                  working_directory: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -609,12 +609,12 @@ class BatchBatchTaskEnvironment(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             image_url: pulumi.Input[Optional[_builtins.str]] = None,
-            security_context: pulumi.Input[Optional[Union['BatchBatchTaskEnvironmentSecurityContextArgs', 'BatchBatchTaskEnvironmentSecurityContextArgsDict']]] = None,
+            security_context: pulumi.Input[Optional[Union['BatchBatchTaskEnvironmentSecurityContextArgs', 'BatchBatchTaskEnvironmentSecurityContextArgsDict', 'outputs.BatchBatchTaskEnvironmentSecurityContext']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
-            volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchTaskEnvironmentVolumeArgs', 'BatchBatchTaskEnvironmentVolumeArgsDict']]]]] = None,
+            volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchTaskEnvironmentVolumeArgs', 'BatchBatchTaskEnvironmentVolumeArgsDict', 'outputs.BatchBatchTaskEnvironmentVolume']]]]] = None,
             working_directory: pulumi.Input[Optional[_builtins.str]] = None) -> 'BatchBatchTaskEnvironment':
         """
         Get an existing BatchBatchTaskEnvironment resource's state with the given name, id, and optional extra
@@ -629,14 +629,14 @@ class BatchBatchTaskEnvironment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchtaskenvironment20250914115623.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] image_url: The URL of the ocir image.
-        :param pulumi.Input[Union['BatchBatchTaskEnvironmentSecurityContextArgs', 'BatchBatchTaskEnvironmentSecurityContextArgsDict']] security_context: Security context for container runtime configuration.
+        :param pulumi.Input[Union['BatchBatchTaskEnvironmentSecurityContextArgs', 'BatchBatchTaskEnvironmentSecurityContextArgsDict', 'outputs.BatchBatchTaskEnvironmentSecurityContext']] security_context: Security context for container runtime configuration.
                
                See also [docs](https://docs.oracle.com/en-us/iaas/api/#/en/container-instances/20210415/datatypes/LinuxSecurityContext).
         :param pulumi.Input[_builtins.str] state: The current state of the batch task environment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The date and time the batch task environment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_updated: The date and time the batch task environment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchTaskEnvironmentVolumeArgs', 'BatchBatchTaskEnvironmentVolumeArgsDict']]]] volumes: List of volumes attached to the image. The use cases of the volumes are but not limited to: read the input of the task and write the output.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchTaskEnvironmentVolumeArgs', 'BatchBatchTaskEnvironmentVolumeArgsDict', 'outputs.BatchBatchTaskEnvironmentVolume']]]] volumes: List of volumes attached to the image. The use cases of the volumes are but not limited to: read the input of the task and write the output.
         :param pulumi.Input[_builtins.str] working_directory: Container's working directory.
                
                ** IMPORTANT **

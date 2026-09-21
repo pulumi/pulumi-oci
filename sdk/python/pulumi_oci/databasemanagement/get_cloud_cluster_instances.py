@@ -111,7 +111,7 @@ class AwaitableGetCloudClusterInstancesResult(GetCloudClusterInstancesResult):
 def get_cloud_cluster_instances(cloud_cluster_id: Optional[_builtins.str] = None,
                                 compartment_id: Optional[_builtins.str] = None,
                                 display_name: Optional[_builtins.str] = None,
-                                filters: Optional[Sequence[Union['GetCloudClusterInstancesFilterArgs', 'GetCloudClusterInstancesFilterArgsDict']]] = None,
+                                filters: Optional[Sequence[Union['GetCloudClusterInstancesFilterArgs', 'GetCloudClusterInstancesFilterArgsDict', 'outputs.GetCloudClusterInstancesFilterResult']]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudClusterInstancesResult:
     """
     This data source provides the list of Cloud Cluster Instances in Oracle Cloud Infrastructure Database Management service.
@@ -152,7 +152,7 @@ def get_cloud_cluster_instances(cloud_cluster_id: Optional[_builtins.str] = None
 def get_cloud_cluster_instances_output(cloud_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudClusterInstancesFilterArgs', 'GetCloudClusterInstancesFilterArgsDict']]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudClusterInstancesFilterArgs', 'GetCloudClusterInstancesFilterArgsDict', 'outputs.GetCloudClusterInstancesFilterResult']]]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudClusterInstancesResult]:
     """
     This data source provides the list of Cloud Cluster Instances in Oracle Cloud Infrastructure Database Management service.

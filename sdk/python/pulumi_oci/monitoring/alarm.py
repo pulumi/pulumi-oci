@@ -1054,7 +1054,7 @@ class Alarm(pulumi.CustomResource):
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  notification_title: pulumi.Input[Optional[_builtins.str]] = None,
                  notification_version: pulumi.Input[Optional[_builtins.str]] = None,
-                 overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlarmOverrideArgs', 'AlarmOverrideArgsDict']]]]] = None,
+                 overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlarmOverrideArgs', 'AlarmOverrideArgsDict', 'outputs.AlarmOverride']]]]] = None,
                  pending_duration: pulumi.Input[Optional[_builtins.str]] = None,
                  query: pulumi.Input[Optional[_builtins.str]] = None,
                  repeat_notification_duration: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1062,7 +1062,7 @@ class Alarm(pulumi.CustomResource):
                  resource_group: pulumi.Input[Optional[_builtins.str]] = None,
                  rule_name: pulumi.Input[Optional[_builtins.str]] = None,
                  severity: pulumi.Input[Optional[_builtins.str]] = None,
-                 suppression: pulumi.Input[Optional[Union['AlarmSuppressionArgs', 'AlarmSuppressionArgsDict']]] = None,
+                 suppression: pulumi.Input[Optional[Union['AlarmSuppressionArgs', 'AlarmSuppressionArgsDict', 'outputs.AlarmSuppression']]] = None,
                  __props__=None):
         """
         This resource provides the Alarm resource in Oracle Cloud Infrastructure Monitoring service.
@@ -1162,7 +1162,7 @@ class Alarm(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] namespace: (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
         :param pulumi.Input[_builtins.str] notification_title: (Updatable) Customizable notification title (`title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
         :param pulumi.Input[_builtins.str] notification_version: (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AlarmOverrideArgs', 'AlarmOverrideArgsDict']]]] overrides: (Updatable) A set of overrides that control evaluations of the alarm.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AlarmOverrideArgs', 'AlarmOverrideArgsDict', 'outputs.AlarmOverride']]]] overrides: (Updatable) A set of overrides that control evaluations of the alarm.
                
                Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
         :param pulumi.Input[_builtins.str] pending_duration: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
@@ -1202,7 +1202,7 @@ class Alarm(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] resource_group: (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
         :param pulumi.Input[_builtins.str] rule_name: (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
         :param pulumi.Input[_builtins.str] severity: (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
-        :param pulumi.Input[Union['AlarmSuppressionArgs', 'AlarmSuppressionArgsDict']] suppression: (Updatable) The configuration details for suppressing an alarm.
+        :param pulumi.Input[Union['AlarmSuppressionArgs', 'AlarmSuppressionArgsDict', 'outputs.AlarmSuppression']] suppression: (Updatable) The configuration details for suppressing an alarm.
         """
         ...
     @overload
@@ -1314,7 +1314,7 @@ class Alarm(pulumi.CustomResource):
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  notification_title: pulumi.Input[Optional[_builtins.str]] = None,
                  notification_version: pulumi.Input[Optional[_builtins.str]] = None,
-                 overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlarmOverrideArgs', 'AlarmOverrideArgsDict']]]]] = None,
+                 overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlarmOverrideArgs', 'AlarmOverrideArgsDict', 'outputs.AlarmOverride']]]]] = None,
                  pending_duration: pulumi.Input[Optional[_builtins.str]] = None,
                  query: pulumi.Input[Optional[_builtins.str]] = None,
                  repeat_notification_duration: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1322,7 +1322,7 @@ class Alarm(pulumi.CustomResource):
                  resource_group: pulumi.Input[Optional[_builtins.str]] = None,
                  rule_name: pulumi.Input[Optional[_builtins.str]] = None,
                  severity: pulumi.Input[Optional[_builtins.str]] = None,
-                 suppression: pulumi.Input[Optional[Union['AlarmSuppressionArgs', 'AlarmSuppressionArgsDict']]] = None,
+                 suppression: pulumi.Input[Optional[Union['AlarmSuppressionArgs', 'AlarmSuppressionArgsDict', 'outputs.AlarmSuppression']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1402,7 +1402,7 @@ class Alarm(pulumi.CustomResource):
             namespace: pulumi.Input[Optional[_builtins.str]] = None,
             notification_title: pulumi.Input[Optional[_builtins.str]] = None,
             notification_version: pulumi.Input[Optional[_builtins.str]] = None,
-            overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlarmOverrideArgs', 'AlarmOverrideArgsDict']]]]] = None,
+            overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlarmOverrideArgs', 'AlarmOverrideArgsDict', 'outputs.AlarmOverride']]]]] = None,
             pending_duration: pulumi.Input[Optional[_builtins.str]] = None,
             query: pulumi.Input[Optional[_builtins.str]] = None,
             repeat_notification_duration: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1411,7 +1411,7 @@ class Alarm(pulumi.CustomResource):
             rule_name: pulumi.Input[Optional[_builtins.str]] = None,
             severity: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            suppression: pulumi.Input[Optional[Union['AlarmSuppressionArgs', 'AlarmSuppressionArgsDict']]] = None,
+            suppression: pulumi.Input[Optional[Union['AlarmSuppressionArgs', 'AlarmSuppressionArgsDict', 'outputs.AlarmSuppression']]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'Alarm':
         """
@@ -1444,7 +1444,7 @@ class Alarm(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] namespace: (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
         :param pulumi.Input[_builtins.str] notification_title: (Updatable) Customizable notification title (`title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
         :param pulumi.Input[_builtins.str] notification_version: (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AlarmOverrideArgs', 'AlarmOverrideArgsDict']]]] overrides: (Updatable) A set of overrides that control evaluations of the alarm.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AlarmOverrideArgs', 'AlarmOverrideArgsDict', 'outputs.AlarmOverride']]]] overrides: (Updatable) A set of overrides that control evaluations of the alarm.
                
                Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
         :param pulumi.Input[_builtins.str] pending_duration: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
@@ -1485,7 +1485,7 @@ class Alarm(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] rule_name: (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
         :param pulumi.Input[_builtins.str] severity: (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the alarm.  Example: `DELETED`
-        :param pulumi.Input[Union['AlarmSuppressionArgs', 'AlarmSuppressionArgsDict']] suppression: (Updatable) The configuration details for suppressing an alarm.
+        :param pulumi.Input[Union['AlarmSuppressionArgs', 'AlarmSuppressionArgsDict', 'outputs.AlarmSuppression']] suppression: (Updatable) The configuration details for suppressing an alarm.
         :param pulumi.Input[_builtins.str] time_created: The date and time the alarm was created. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
         :param pulumi.Input[_builtins.str] time_updated: The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2023-02-03T01:02:29.600Z`
         """

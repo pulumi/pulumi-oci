@@ -93,7 +93,7 @@ class AwaitableGetMaskingPolicyMaskingSchemasResult(GetMaskingPolicyMaskingSchem
             schema_names=self.schema_names)
 
 
-def get_masking_policy_masking_schemas(filters: Optional[Sequence[Union['GetMaskingPolicyMaskingSchemasFilterArgs', 'GetMaskingPolicyMaskingSchemasFilterArgsDict']]] = None,
+def get_masking_policy_masking_schemas(filters: Optional[Sequence[Union['GetMaskingPolicyMaskingSchemasFilterArgs', 'GetMaskingPolicyMaskingSchemasFilterArgsDict', 'outputs.GetMaskingPolicyMaskingSchemasFilterResult']]] = None,
                                        masking_policy_id: Optional[_builtins.str] = None,
                                        schema_names: Optional[Sequence[_builtins.str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMaskingPolicyMaskingSchemasResult:
@@ -129,7 +129,7 @@ def get_masking_policy_masking_schemas(filters: Optional[Sequence[Union['GetMask
         masking_policy_id=pulumi.get(__ret__, 'masking_policy_id'),
         masking_schema_collections=pulumi.get(__ret__, 'masking_schema_collections'),
         schema_names=pulumi.get(__ret__, 'schema_names'))
-def get_masking_policy_masking_schemas_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingPolicyMaskingSchemasFilterArgs', 'GetMaskingPolicyMaskingSchemasFilterArgsDict']]]]] = None,
+def get_masking_policy_masking_schemas_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingPolicyMaskingSchemasFilterArgs', 'GetMaskingPolicyMaskingSchemasFilterArgsDict', 'outputs.GetMaskingPolicyMaskingSchemasFilterResult']]]]] = None,
                                               masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               schema_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingPolicyMaskingSchemasResult]:

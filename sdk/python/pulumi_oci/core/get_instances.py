@@ -146,7 +146,7 @@ def get_instances(availability_domain: Optional[_builtins.str] = None,
                   compartment_id: Optional[_builtins.str] = None,
                   compute_cluster_id: Optional[_builtins.str] = None,
                   display_name: Optional[_builtins.str] = None,
-                  filters: Optional[Sequence[Union['GetInstancesFilterArgs', 'GetInstancesFilterArgsDict']]] = None,
+                  filters: Optional[Sequence[Union['GetInstancesFilterArgs', 'GetInstancesFilterArgsDict', 'outputs.GetInstancesFilterResult']]] = None,
                   state: Optional[_builtins.str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInstancesResult:
     """
@@ -207,7 +207,7 @@ def get_instances_output(availability_domain: pulumi.Input[Optional[Optional[_bu
                          compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                          compute_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstancesFilterArgs', 'GetInstancesFilterArgsDict']]]]] = None,
+                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstancesFilterArgs', 'GetInstancesFilterArgsDict', 'outputs.GetInstancesFilterResult']]]]] = None,
                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstancesResult]:
     """

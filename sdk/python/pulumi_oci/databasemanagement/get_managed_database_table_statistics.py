@@ -81,7 +81,7 @@ class AwaitableGetManagedDatabaseTableStatisticsResult(GetManagedDatabaseTableSt
             table_statistics_collections=self.table_statistics_collections)
 
 
-def get_managed_database_table_statistics(filters: Optional[Sequence[Union['GetManagedDatabaseTableStatisticsFilterArgs', 'GetManagedDatabaseTableStatisticsFilterArgsDict']]] = None,
+def get_managed_database_table_statistics(filters: Optional[Sequence[Union['GetManagedDatabaseTableStatisticsFilterArgs', 'GetManagedDatabaseTableStatisticsFilterArgsDict', 'outputs.GetManagedDatabaseTableStatisticsFilterResult']]] = None,
                                           managed_database_id: Optional[_builtins.str] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseTableStatisticsResult:
     """
@@ -113,7 +113,7 @@ def get_managed_database_table_statistics(filters: Optional[Sequence[Union['GetM
         id=pulumi.get(__ret__, 'id'),
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         table_statistics_collections=pulumi.get(__ret__, 'table_statistics_collections'))
-def get_managed_database_table_statistics_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseTableStatisticsFilterArgs', 'GetManagedDatabaseTableStatisticsFilterArgsDict']]]]] = None,
+def get_managed_database_table_statistics_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseTableStatisticsFilterArgs', 'GetManagedDatabaseTableStatisticsFilterArgsDict', 'outputs.GetManagedDatabaseTableStatisticsFilterResult']]]]] = None,
                                                  managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseTableStatisticsResult]:
     """

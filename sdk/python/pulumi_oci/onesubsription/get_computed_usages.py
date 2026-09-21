@@ -131,7 +131,7 @@ class AwaitableGetComputedUsagesResult(GetComputedUsagesResult):
 
 def get_computed_usages(compartment_id: Optional[_builtins.str] = None,
                         computed_product: Optional[_builtins.str] = None,
-                        filters: Optional[Sequence[Union['GetComputedUsagesFilterArgs', 'GetComputedUsagesFilterArgsDict']]] = None,
+                        filters: Optional[Sequence[Union['GetComputedUsagesFilterArgs', 'GetComputedUsagesFilterArgsDict', 'outputs.GetComputedUsagesFilterResult']]] = None,
                         parent_product: Optional[_builtins.str] = None,
                         subscription_id: Optional[_builtins.str] = None,
                         time_from: Optional[_builtins.str] = None,
@@ -173,7 +173,7 @@ def get_computed_usages(compartment_id: Optional[_builtins.str] = None,
         time_to=pulumi.get(__ret__, 'time_to'))
 def get_computed_usages_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                computed_product: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputedUsagesFilterArgs', 'GetComputedUsagesFilterArgsDict']]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputedUsagesFilterArgs', 'GetComputedUsagesFilterArgsDict', 'outputs.GetComputedUsagesFilterResult']]]]] = None,
                                parent_product: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                                time_from: pulumi.Input[Optional[_builtins.str]] = None,

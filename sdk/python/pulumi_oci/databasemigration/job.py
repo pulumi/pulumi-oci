@@ -507,22 +507,22 @@ class Job(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            collect_traces_datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobCollectTracesDataArgs', 'JobCollectTracesDataArgsDict']]]]] = None,
+            collect_traces_datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobCollectTracesDataArgs', 'JobCollectTracesDataArgsDict', 'outputs.JobCollectTracesData']]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             job_id: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             migration_id: pulumi.Input[Optional[_builtins.str]] = None,
-            parameter_file_versions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobParameterFileVersionArgs', 'JobParameterFileVersionArgsDict']]]]] = None,
-            progresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobProgressArgs', 'JobProgressArgsDict']]]]] = None,
+            parameter_file_versions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobParameterFileVersionArgs', 'JobParameterFileVersionArgsDict', 'outputs.JobParameterFileVersion']]]]] = None,
+            progresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobProgressArgs', 'JobProgressArgsDict', 'outputs.JobProgress']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             suspend_trigger: pulumi.Input[Optional[_builtins.int]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
-            unsupported_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobUnsupportedObjectArgs', 'JobUnsupportedObjectArgsDict']]]]] = None) -> 'Job':
+            unsupported_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobUnsupportedObjectArgs', 'JobUnsupportedObjectArgsDict', 'outputs.JobUnsupportedObject']]]]] = None) -> 'Job':
         """
         Get an existing Job resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -530,15 +530,15 @@ class Job(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['JobCollectTracesDataArgs', 'JobCollectTracesDataArgsDict']]]] collect_traces_datas: Information regarding the DB trace and alert log collection
+        :param pulumi.Input[Sequence[pulumi.Input[Union['JobCollectTracesDataArgs', 'JobCollectTracesDataArgsDict', 'outputs.JobCollectTracesData']]]] collect_traces_datas: Information regarding the DB trace and alert log collection
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Name of the job.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         :param pulumi.Input[_builtins.str] job_id: The OCID of the job
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[_builtins.str] migration_id: The OCID of the Migration that this job belongs to.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['JobParameterFileVersionArgs', 'JobParameterFileVersionArgsDict']]]] parameter_file_versions: A list of parameter file versions that can be viewed or edited for the current job.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['JobProgressArgs', 'JobProgressArgsDict']]]] progresses: Percent progress of job phase.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['JobParameterFileVersionArgs', 'JobParameterFileVersionArgsDict', 'outputs.JobParameterFileVersion']]]] parameter_file_versions: A list of parameter file versions that can be viewed or edited for the current job.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['JobProgressArgs', 'JobProgressArgsDict', 'outputs.JobProgress']]]] progresses: Percent progress of job phase.
         :param pulumi.Input[_builtins.str] state: The current state of the migration job.
         :param pulumi.Input[_builtins.int] suspend_trigger: (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
                
@@ -548,7 +548,7 @@ class Job(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: The time the Migration Job was created. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] time_updated: The time the Migration Job was last updated. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] type: Type of unsupported object
-        :param pulumi.Input[Sequence[pulumi.Input[Union['JobUnsupportedObjectArgs', 'JobUnsupportedObjectArgsDict']]]] unsupported_objects: Database objects not supported.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['JobUnsupportedObjectArgs', 'JobUnsupportedObjectArgsDict', 'outputs.JobUnsupportedObject']]]] unsupported_objects: Database objects not supported.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

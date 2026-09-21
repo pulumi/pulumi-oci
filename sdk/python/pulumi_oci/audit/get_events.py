@@ -104,7 +104,7 @@ class AwaitableGetEventsResult(GetEventsResult):
 
 def get_events(compartment_id: Optional[_builtins.str] = None,
                end_time: Optional[_builtins.str] = None,
-               filters: Optional[Sequence[Union['GetEventsFilterArgs', 'GetEventsFilterArgsDict']]] = None,
+               filters: Optional[Sequence[Union['GetEventsFilterArgs', 'GetEventsFilterArgsDict', 'outputs.GetEventsFilterResult']]] = None,
                start_time: Optional[_builtins.str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEventsResult:
     """
@@ -150,7 +150,7 @@ def get_events(compartment_id: Optional[_builtins.str] = None,
         start_time=pulumi.get(__ret__, 'start_time'))
 def get_events_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                       end_time: pulumi.Input[Optional[_builtins.str]] = None,
-                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetEventsFilterArgs', 'GetEventsFilterArgsDict']]]]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetEventsFilterArgs', 'GetEventsFilterArgsDict', 'outputs.GetEventsFilterResult']]]]] = None,
                       start_time: pulumi.Input[Optional[_builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEventsResult]:
     """

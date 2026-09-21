@@ -105,7 +105,7 @@ class AwaitableGetInstanceDevicesResult(GetInstanceDevicesResult):
             name=self.name)
 
 
-def get_instance_devices(filters: Optional[Sequence[Union['GetInstanceDevicesFilterArgs', 'GetInstanceDevicesFilterArgsDict']]] = None,
+def get_instance_devices(filters: Optional[Sequence[Union['GetInstanceDevicesFilterArgs', 'GetInstanceDevicesFilterArgsDict', 'outputs.GetInstanceDevicesFilterResult']]] = None,
                          instance_id: Optional[_builtins.str] = None,
                          is_available: Optional[_builtins.bool] = None,
                          name: Optional[_builtins.str] = None,
@@ -146,7 +146,7 @@ def get_instance_devices(filters: Optional[Sequence[Union['GetInstanceDevicesFil
         instance_id=pulumi.get(__ret__, 'instance_id'),
         is_available=pulumi.get(__ret__, 'is_available'),
         name=pulumi.get(__ret__, 'name'))
-def get_instance_devices_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstanceDevicesFilterArgs', 'GetInstanceDevicesFilterArgsDict']]]]] = None,
+def get_instance_devices_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstanceDevicesFilterArgs', 'GetInstanceDevicesFilterArgsDict', 'outputs.GetInstanceDevicesFilterResult']]]]] = None,
                                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 is_available: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                 name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

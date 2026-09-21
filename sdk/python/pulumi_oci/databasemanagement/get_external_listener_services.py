@@ -103,7 +103,7 @@ class AwaitableGetExternalListenerServicesResult(GetExternalListenerServicesResu
 
 
 def get_external_listener_services(external_listener_id: Optional[_builtins.str] = None,
-                                   filters: Optional[Sequence[Union['GetExternalListenerServicesFilterArgs', 'GetExternalListenerServicesFilterArgsDict']]] = None,
+                                   filters: Optional[Sequence[Union['GetExternalListenerServicesFilterArgs', 'GetExternalListenerServicesFilterArgsDict', 'outputs.GetExternalListenerServicesFilterResult']]] = None,
                                    managed_database_id: Optional[_builtins.str] = None,
                                    opc_named_credential_id: Optional[_builtins.str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalListenerServicesResult:
@@ -145,7 +145,7 @@ def get_external_listener_services(external_listener_id: Optional[_builtins.str]
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'))
 def get_external_listener_services_output(external_listener_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalListenerServicesFilterArgs', 'GetExternalListenerServicesFilterArgsDict']]]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalListenerServicesFilterArgs', 'GetExternalListenerServicesFilterArgsDict', 'outputs.GetExternalListenerServicesFilterResult']]]]] = None,
                                           managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalListenerServicesResult]:

@@ -85,7 +85,7 @@ class AwaitableGetComputeHostGroupsResult(GetComputeHostGroupsResult):
 
 
 def get_compute_host_groups(compartment_id: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetComputeHostGroupsFilterArgs', 'GetComputeHostGroupsFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetComputeHostGroupsFilterArgs', 'GetComputeHostGroupsFilterArgsDict', 'outputs.GetComputeHostGroupsFilterResult']]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeHostGroupsResult:
     """
     This data source provides the list of Compute Host Groups in Oracle Cloud Infrastructure Core service.
@@ -116,7 +116,7 @@ def get_compute_host_groups(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_compute_host_groups_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeHostGroupsFilterArgs', 'GetComputeHostGroupsFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeHostGroupsFilterArgs', 'GetComputeHostGroupsFilterArgsDict', 'outputs.GetComputeHostGroupsFilterResult']]]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeHostGroupsResult]:
     """
     This data source provides the list of Compute Host Groups in Oracle Cloud Infrastructure Core service.

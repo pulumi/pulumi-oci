@@ -131,7 +131,7 @@ class AwaitableGetWaasPoliciesResult(GetWaasPoliciesResult):
 
 def get_waas_policies(compartment_id: Optional[_builtins.str] = None,
                       display_names: Optional[Sequence[_builtins.str]] = None,
-                      filters: Optional[Sequence[Union['GetWaasPoliciesFilterArgs', 'GetWaasPoliciesFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetWaasPoliciesFilterArgs', 'GetWaasPoliciesFilterArgsDict', 'outputs.GetWaasPoliciesFilterResult']]] = None,
                       ids: Optional[Sequence[_builtins.str]] = None,
                       states: Optional[Sequence[_builtins.str]] = None,
                       time_created_greater_than_or_equal_to: Optional[_builtins.str] = None,
@@ -187,7 +187,7 @@ def get_waas_policies(compartment_id: Optional[_builtins.str] = None,
         waas_policies=pulumi.get(__ret__, 'waas_policies'))
 def get_waas_policies_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                              display_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWaasPoliciesFilterArgs', 'GetWaasPoliciesFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWaasPoliciesFilterArgs', 'GetWaasPoliciesFilterArgsDict', 'outputs.GetWaasPoliciesFilterResult']]]]] = None,
                              ids: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                              states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                              time_created_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

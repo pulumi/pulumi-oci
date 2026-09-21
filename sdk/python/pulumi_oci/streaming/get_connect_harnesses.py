@@ -109,7 +109,7 @@ class AwaitableGetConnectHarnessesResult(GetConnectHarnessesResult):
 
 
 def get_connect_harnesses(compartment_id: Optional[_builtins.str] = None,
-                          filters: Optional[Sequence[Union['GetConnectHarnessesFilterArgs', 'GetConnectHarnessesFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetConnectHarnessesFilterArgs', 'GetConnectHarnessesFilterArgsDict', 'outputs.GetConnectHarnessesFilterResult']]] = None,
                           id: Optional[_builtins.str] = None,
                           name: Optional[_builtins.str] = None,
                           state: Optional[_builtins.str] = None,
@@ -154,7 +154,7 @@ def get_connect_harnesses(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
 def get_connect_harnesses_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConnectHarnessesFilterArgs', 'GetConnectHarnessesFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConnectHarnessesFilterArgs', 'GetConnectHarnessesFilterArgsDict', 'outputs.GetConnectHarnessesFilterResult']]]]] = None,
                                  id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

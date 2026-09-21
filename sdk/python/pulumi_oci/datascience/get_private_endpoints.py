@@ -136,7 +136,7 @@ def get_private_endpoints(compartment_id: Optional[_builtins.str] = None,
                           created_by: Optional[_builtins.str] = None,
                           data_science_resource_type: Optional[_builtins.str] = None,
                           display_name: Optional[_builtins.str] = None,
-                          filters: Optional[Sequence[Union['GetPrivateEndpointsFilterArgs', 'GetPrivateEndpointsFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetPrivateEndpointsFilterArgs', 'GetPrivateEndpointsFilterArgsDict', 'outputs.GetPrivateEndpointsFilterResult']]] = None,
                           state: Optional[_builtins.str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPrivateEndpointsResult:
     """
@@ -187,7 +187,7 @@ def get_private_endpoints_output(compartment_id: pulumi.Input[Optional[_builtins
                                  created_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  data_science_resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPrivateEndpointsFilterArgs', 'GetPrivateEndpointsFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPrivateEndpointsFilterArgs', 'GetPrivateEndpointsFilterArgsDict', 'outputs.GetPrivateEndpointsFilterResult']]]]] = None,
                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateEndpointsResult]:
     """

@@ -958,13 +958,13 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                  cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_count: pulumi.Input[Optional[_builtins.int]] = None,
-                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict']]]]] = None,
+                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict', 'outputs.CloudExadataInfrastructureCustomerContact']]]]] = None,
                  database_server_type: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 maintenance_version_preferences: pulumi.Input[Optional[Union['CloudExadataInfrastructureMaintenanceVersionPreferencesArgs', 'CloudExadataInfrastructureMaintenanceVersionPreferencesArgsDict']]] = None,
-                 maintenance_window: pulumi.Input[Optional[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']]] = None,
+                 maintenance_version_preferences: pulumi.Input[Optional[Union['CloudExadataInfrastructureMaintenanceVersionPreferencesArgs', 'CloudExadataInfrastructureMaintenanceVersionPreferencesArgsDict', 'outputs.CloudExadataInfrastructureMaintenanceVersionPreferences']]] = None,
+                 maintenance_window: pulumi.Input[Optional[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict', 'outputs.CloudExadataInfrastructureMaintenanceWindow']]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_count: pulumi.Input[Optional[_builtins.int]] = None,
                  storage_server_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1038,15 +1038,15 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.int] compute_count: (Updatable) The number of compute servers for the cloud Exadata infrastructure.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict']]]] customer_contacts: (Updatable) Customer contacts.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict', 'outputs.CloudExadataInfrastructureCustomerContact']]]] customer_contacts: (Updatable) Customer contacts.
         :param pulumi.Input[_builtins.str] database_server_type: The database server type of the Exadata infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['CloudExadataInfrastructureMaintenanceVersionPreferencesArgs', 'CloudExadataInfrastructureMaintenanceVersionPreferencesArgsDict']] maintenance_version_preferences: (Updatable) The preferences for target versions of future maintenance runs.
+        :param pulumi.Input[Union['CloudExadataInfrastructureMaintenanceVersionPreferencesArgs', 'CloudExadataInfrastructureMaintenanceVersionPreferencesArgsDict', 'outputs.CloudExadataInfrastructureMaintenanceVersionPreferences']] maintenance_version_preferences: (Updatable) The preferences for target versions of future maintenance runs.
                
                Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
-        :param pulumi.Input[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict', 'outputs.CloudExadataInfrastructureMaintenanceWindow']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.str] shape: The shape of the cloud Exadata infrastructure resource.
         :param pulumi.Input[_builtins.int] storage_count: (Updatable) The number of storage servers for the cloud Exadata infrastructure.
         :param pulumi.Input[_builtins.str] storage_server_type: The storage server type of the Exadata infrastructure.
@@ -1142,13 +1142,13 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                  cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_count: pulumi.Input[Optional[_builtins.int]] = None,
-                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict']]]]] = None,
+                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict', 'outputs.CloudExadataInfrastructureCustomerContact']]]]] = None,
                  database_server_type: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 maintenance_version_preferences: pulumi.Input[Optional[Union['CloudExadataInfrastructureMaintenanceVersionPreferencesArgs', 'CloudExadataInfrastructureMaintenanceVersionPreferencesArgsDict']]] = None,
-                 maintenance_window: pulumi.Input[Optional[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']]] = None,
+                 maintenance_version_preferences: pulumi.Input[Optional[Union['CloudExadataInfrastructureMaintenanceVersionPreferencesArgs', 'CloudExadataInfrastructureMaintenanceVersionPreferencesArgsDict', 'outputs.CloudExadataInfrastructureMaintenanceVersionPreferences']]] = None,
+                 maintenance_window: pulumi.Input[Optional[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict', 'outputs.CloudExadataInfrastructureMaintenanceWindow']]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_count: pulumi.Input[Optional[_builtins.int]] = None,
                  storage_server_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1230,21 +1230,21 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             compute_count: pulumi.Input[Optional[_builtins.int]] = None,
             compute_model: pulumi.Input[Optional[_builtins.str]] = None,
             cpu_count: pulumi.Input[Optional[_builtins.int]] = None,
-            customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict']]]]] = None,
+            customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict', 'outputs.CloudExadataInfrastructureCustomerContact']]]]] = None,
             data_storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
             database_server_type: pulumi.Input[Optional[_builtins.str]] = None,
             db_node_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
             db_server_version: pulumi.Input[Optional[_builtins.str]] = None,
-            defined_file_system_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs', 'CloudExadataInfrastructureDefinedFileSystemConfigurationArgsDict']]]]] = None,
+            defined_file_system_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs', 'CloudExadataInfrastructureDefinedFileSystemConfigurationArgsDict', 'outputs.CloudExadataInfrastructureDefinedFileSystemConfiguration']]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            exascale_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataInfrastructureExascaleConfigArgs', 'CloudExadataInfrastructureExascaleConfigArgsDict']]]]] = None,
+            exascale_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataInfrastructureExascaleConfigArgs', 'CloudExadataInfrastructureExascaleConfigArgsDict', 'outputs.CloudExadataInfrastructureExascaleConfig']]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_scheduling_policy_associated: pulumi.Input[Optional[_builtins.bool]] = None,
             last_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            maintenance_version_preferences: pulumi.Input[Optional[Union['CloudExadataInfrastructureMaintenanceVersionPreferencesArgs', 'CloudExadataInfrastructureMaintenanceVersionPreferencesArgsDict']]] = None,
-            maintenance_window: pulumi.Input[Optional[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']]] = None,
+            maintenance_version_preferences: pulumi.Input[Optional[Union['CloudExadataInfrastructureMaintenanceVersionPreferencesArgs', 'CloudExadataInfrastructureMaintenanceVersionPreferencesArgsDict', 'outputs.CloudExadataInfrastructureMaintenanceVersionPreferences']]] = None,
+            maintenance_window: pulumi.Input[Optional[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict', 'outputs.CloudExadataInfrastructureMaintenanceWindow']]] = None,
             max_cpu_count: pulumi.Input[Optional[_builtins.int]] = None,
             max_data_storage_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
             max_db_node_storage_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1278,23 +1278,23 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] compute_count: (Updatable) The number of compute servers for the cloud Exadata infrastructure.
         :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param pulumi.Input[_builtins.int] cpu_count: The total number of CPU cores allocated.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict']]]] customer_contacts: (Updatable) Customer contacts.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict', 'outputs.CloudExadataInfrastructureCustomerContact']]]] customer_contacts: (Updatable) Customer contacts.
         :param pulumi.Input[_builtins.float] data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
         :param pulumi.Input[_builtins.str] database_server_type: The database server type of the Exadata infrastructure.
         :param pulumi.Input[_builtins.int] db_node_storage_size_in_gbs: The local node storage allocated in GBs.
         :param pulumi.Input[_builtins.str] db_server_version: The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs', 'CloudExadataInfrastructureDefinedFileSystemConfigurationArgsDict']]]] defined_file_system_configurations: Details of the file system configuration of the Exadata infrastructure.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs', 'CloudExadataInfrastructureDefinedFileSystemConfigurationArgsDict', 'outputs.CloudExadataInfrastructureDefinedFileSystemConfiguration']]]] defined_file_system_configurations: Details of the file system configuration of the Exadata infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureExascaleConfigArgs', 'CloudExadataInfrastructureExascaleConfigArgsDict']]]] exascale_configs: The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureExascaleConfigArgs', 'CloudExadataInfrastructureExascaleConfigArgsDict', 'outputs.CloudExadataInfrastructureExascaleConfig']]]] exascale_configs: The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_scheduling_policy_associated: If true, the infrastructure is using granular maintenance scheduling preference.
         :param pulumi.Input[_builtins.str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[Union['CloudExadataInfrastructureMaintenanceVersionPreferencesArgs', 'CloudExadataInfrastructureMaintenanceVersionPreferencesArgsDict']] maintenance_version_preferences: (Updatable) The preferences for target versions of future maintenance runs.
+        :param pulumi.Input[Union['CloudExadataInfrastructureMaintenanceVersionPreferencesArgs', 'CloudExadataInfrastructureMaintenanceVersionPreferencesArgsDict', 'outputs.CloudExadataInfrastructureMaintenanceVersionPreferences']] maintenance_version_preferences: (Updatable) The preferences for target versions of future maintenance runs.
                
                Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
-        :param pulumi.Input[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict', 'outputs.CloudExadataInfrastructureMaintenanceWindow']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.int] max_cpu_count: The total number of CPU cores available.
         :param pulumi.Input[_builtins.float] max_data_storage_in_tbs: The total available DATA disk group size.
         :param pulumi.Input[_builtins.int] max_db_node_storage_in_gbs: The total local node storage available in GBs.

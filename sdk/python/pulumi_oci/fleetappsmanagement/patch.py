@@ -512,15 +512,15 @@ class Patch(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 artifact_details: pulumi.Input[Optional[Union['PatchArtifactDetailsArgs', 'PatchArtifactDetailsArgsDict']]] = None,
+                 artifact_details: pulumi.Input[Optional[Union['PatchArtifactDetailsArgs', 'PatchArtifactDetailsArgsDict', 'outputs.PatchArtifactDetails']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dependent_patches: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PatchDependentPatchArgs', 'PatchDependentPatchArgsDict']]]]] = None,
+                 dependent_patches: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PatchDependentPatchArgs', 'PatchDependentPatchArgsDict', 'outputs.PatchDependentPatch']]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 patch_type: pulumi.Input[Optional[Union['PatchPatchTypeArgs', 'PatchPatchTypeArgsDict']]] = None,
-                 product: pulumi.Input[Optional[Union['PatchProductArgs', 'PatchProductArgsDict']]] = None,
+                 patch_type: pulumi.Input[Optional[Union['PatchPatchTypeArgs', 'PatchPatchTypeArgsDict', 'outputs.PatchPatchType']]] = None,
+                 product: pulumi.Input[Optional[Union['PatchProductArgs', 'PatchProductArgsDict', 'outputs.PatchProduct']]] = None,
                  severity: pulumi.Input[Optional[_builtins.str]] = None,
                  time_released: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -596,15 +596,15 @@ class Patch(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['PatchArtifactDetailsArgs', 'PatchArtifactDetailsArgsDict']] artifact_details: (Updatable) Patch artifact description and content details.
+        :param pulumi.Input[Union['PatchArtifactDetailsArgs', 'PatchArtifactDetailsArgsDict', 'outputs.PatchArtifactDetails']] artifact_details: (Updatable) Patch artifact description and content details.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable)
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PatchDependentPatchArgs', 'PatchDependentPatchArgsDict']]]] dependent_patches: (Updatable) Dependent Patches for this patch.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PatchDependentPatchArgs', 'PatchDependentPatchArgsDict', 'outputs.PatchDependentPatch']]]] dependent_patches: (Updatable) Dependent Patches for this patch.
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] name: A user-friendly name. Should be unique within the tenancy, and cannot be changed after creation.  Avoid entering confidential information.
-        :param pulumi.Input[Union['PatchPatchTypeArgs', 'PatchPatchTypeArgsDict']] patch_type: (Updatable) Patch Type
-        :param pulumi.Input[Union['PatchProductArgs', 'PatchProductArgsDict']] product: (Updatable) Product
+        :param pulumi.Input[Union['PatchPatchTypeArgs', 'PatchPatchTypeArgsDict', 'outputs.PatchPatchType']] patch_type: (Updatable) Patch Type
+        :param pulumi.Input[Union['PatchProductArgs', 'PatchProductArgsDict', 'outputs.PatchProduct']] product: (Updatable) Product
         :param pulumi.Input[_builtins.str] severity: (Updatable) Patch Severity.
         :param pulumi.Input[_builtins.str] time_released: (Updatable) Date when the patch was released.
                
@@ -702,15 +702,15 @@ class Patch(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 artifact_details: pulumi.Input[Optional[Union['PatchArtifactDetailsArgs', 'PatchArtifactDetailsArgsDict']]] = None,
+                 artifact_details: pulumi.Input[Optional[Union['PatchArtifactDetailsArgs', 'PatchArtifactDetailsArgsDict', 'outputs.PatchArtifactDetails']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dependent_patches: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PatchDependentPatchArgs', 'PatchDependentPatchArgsDict']]]]] = None,
+                 dependent_patches: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PatchDependentPatchArgs', 'PatchDependentPatchArgsDict', 'outputs.PatchDependentPatch']]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 patch_type: pulumi.Input[Optional[Union['PatchPatchTypeArgs', 'PatchPatchTypeArgsDict']]] = None,
-                 product: pulumi.Input[Optional[Union['PatchProductArgs', 'PatchProductArgsDict']]] = None,
+                 patch_type: pulumi.Input[Optional[Union['PatchPatchTypeArgs', 'PatchPatchTypeArgsDict', 'outputs.PatchPatchType']]] = None,
+                 product: pulumi.Input[Optional[Union['PatchProductArgs', 'PatchProductArgsDict', 'outputs.PatchProduct']]] = None,
                  severity: pulumi.Input[Optional[_builtins.str]] = None,
                  time_released: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -762,16 +762,16 @@ class Patch(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            artifact_details: pulumi.Input[Optional[Union['PatchArtifactDetailsArgs', 'PatchArtifactDetailsArgsDict']]] = None,
+            artifact_details: pulumi.Input[Optional[Union['PatchArtifactDetailsArgs', 'PatchArtifactDetailsArgsDict', 'outputs.PatchArtifactDetails']]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            dependent_patches: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PatchDependentPatchArgs', 'PatchDependentPatchArgsDict']]]]] = None,
+            dependent_patches: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PatchDependentPatchArgs', 'PatchDependentPatchArgsDict', 'outputs.PatchDependentPatch']]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            patch_type: pulumi.Input[Optional[Union['PatchPatchTypeArgs', 'PatchPatchTypeArgsDict']]] = None,
-            product: pulumi.Input[Optional[Union['PatchProductArgs', 'PatchProductArgsDict']]] = None,
+            patch_type: pulumi.Input[Optional[Union['PatchPatchTypeArgs', 'PatchPatchTypeArgsDict', 'outputs.PatchPatchType']]] = None,
+            product: pulumi.Input[Optional[Union['PatchProductArgs', 'PatchProductArgsDict', 'outputs.PatchProduct']]] = None,
             resource_region: pulumi.Input[Optional[_builtins.str]] = None,
             severity: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -787,16 +787,16 @@ class Patch(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['PatchArtifactDetailsArgs', 'PatchArtifactDetailsArgsDict']] artifact_details: (Updatable) Patch artifact description and content details.
+        :param pulumi.Input[Union['PatchArtifactDetailsArgs', 'PatchArtifactDetailsArgsDict', 'outputs.PatchArtifactDetails']] artifact_details: (Updatable) Patch artifact description and content details.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable)
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PatchDependentPatchArgs', 'PatchDependentPatchArgsDict']]]] dependent_patches: (Updatable) Dependent Patches for this patch.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PatchDependentPatchArgs', 'PatchDependentPatchArgsDict', 'outputs.PatchDependentPatch']]]] dependent_patches: (Updatable) Dependent Patches for this patch.
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[_builtins.str] name: A user-friendly name. Should be unique within the tenancy, and cannot be changed after creation.  Avoid entering confidential information.
-        :param pulumi.Input[Union['PatchPatchTypeArgs', 'PatchPatchTypeArgsDict']] patch_type: (Updatable) Patch Type
-        :param pulumi.Input[Union['PatchProductArgs', 'PatchProductArgsDict']] product: (Updatable) Product
+        :param pulumi.Input[Union['PatchPatchTypeArgs', 'PatchPatchTypeArgsDict', 'outputs.PatchPatchType']] patch_type: (Updatable) Patch Type
+        :param pulumi.Input[Union['PatchProductArgs', 'PatchProductArgsDict', 'outputs.PatchProduct']] product: (Updatable) Product
         :param pulumi.Input[_builtins.str] resource_region: Associated region
         :param pulumi.Input[_builtins.str] severity: (Updatable) Patch Severity.
         :param pulumi.Input[_builtins.str] state: The current state of the Patch.

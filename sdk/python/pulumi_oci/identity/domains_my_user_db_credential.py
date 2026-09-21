@@ -1204,8 +1204,8 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  status: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialTagArgs', 'DomainsMyUserDbCredentialTagArgsDict']]]]] = None,
-                 user: pulumi.Input[Optional[Union['DomainsMyUserDbCredentialUserArgs', 'DomainsMyUserDbCredentialUserArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialTagArgs', 'DomainsMyUserDbCredentialTagArgsDict', 'outputs.DomainsMyUserDbCredentialTag']]]]] = None,
+                 user: pulumi.Input[Optional[Union['DomainsMyUserDbCredentialUserArgs', 'DomainsMyUserDbCredentialUserArgsDict', 'outputs.DomainsMyUserDbCredentialUser']]] = None,
                  __props__=None):
         """
         This resource provides the My User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1321,7 +1321,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
                * returned: never
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialTagArgs', 'DomainsMyUserDbCredentialTagArgsDict']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialTagArgs', 'DomainsMyUserDbCredentialTagArgsDict', 'outputs.DomainsMyUserDbCredentialTag']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1332,7 +1332,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsMyUserDbCredentialUserArgs', 'DomainsMyUserDbCredentialUserArgsDict']] user: The user linked to the database credential.
+        :param pulumi.Input[Union['DomainsMyUserDbCredentialUserArgs', 'DomainsMyUserDbCredentialUserArgsDict', 'outputs.DomainsMyUserDbCredentialUser']] user: The user linked to the database credential.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1419,8 +1419,8 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  status: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialTagArgs', 'DomainsMyUserDbCredentialTagArgsDict']]]]] = None,
-                 user: pulumi.Input[Optional[Union['DomainsMyUserDbCredentialUserArgs', 'DomainsMyUserDbCredentialUserArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialTagArgs', 'DomainsMyUserDbCredentialTagArgsDict', 'outputs.DomainsMyUserDbCredentialTag']]]]] = None,
+                 user: pulumi.Input[Optional[Union['DomainsMyUserDbCredentialUserArgs', 'DomainsMyUserDbCredentialUserArgsDict', 'outputs.DomainsMyUserDbCredentialUser']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1482,13 +1482,13 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
             domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             expired: pulumi.Input[Optional[_builtins.bool]] = None,
             expires_on: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialIdcsCreatedByArgs', 'DomainsMyUserDbCredentialIdcsCreatedByArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialIdcsCreatedByArgs', 'DomainsMyUserDbCredentialIdcsCreatedByArgsDict', 'outputs.DomainsMyUserDbCredentialIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialIdcsLastModifiedByArgs', 'DomainsMyUserDbCredentialIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialIdcsLastModifiedByArgs', 'DomainsMyUserDbCredentialIdcsLastModifiedByArgsDict', 'outputs.DomainsMyUserDbCredentialIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             last_set_date: pulumi.Input[Optional[_builtins.str]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialMetaArgs', 'DomainsMyUserDbCredentialMetaArgsDict']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialMetaArgs', 'DomainsMyUserDbCredentialMetaArgsDict', 'outputs.DomainsMyUserDbCredentialMeta']]]]] = None,
             mixed_db_password: pulumi.Input[Optional[_builtins.str]] = None,
             mixed_salt: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1497,9 +1497,9 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
             salt: pulumi.Input[Optional[_builtins.str]] = None,
             schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialTagArgs', 'DomainsMyUserDbCredentialTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialTagArgs', 'DomainsMyUserDbCredentialTagArgsDict', 'outputs.DomainsMyUserDbCredentialTag']]]]] = None,
             tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
-            user: pulumi.Input[Optional[Union['DomainsMyUserDbCredentialUserArgs', 'DomainsMyUserDbCredentialUserArgsDict']]] = None) -> 'DomainsMyUserDbCredential':
+            user: pulumi.Input[Optional[Union['DomainsMyUserDbCredentialUserArgs', 'DomainsMyUserDbCredentialUserArgsDict', 'outputs.DomainsMyUserDbCredentialUser']]] = None) -> 'DomainsMyUserDbCredential':
         """
         Get an existing DomainsMyUserDbCredential resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1577,7 +1577,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
                * returned: default
                * type: dateTime
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialIdcsCreatedByArgs', 'DomainsMyUserDbCredentialIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialIdcsCreatedByArgs', 'DomainsMyUserDbCredentialIdcsCreatedByArgsDict', 'outputs.DomainsMyUserDbCredentialIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1587,7 +1587,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialIdcsLastModifiedByArgs', 'DomainsMyUserDbCredentialIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialIdcsLastModifiedByArgs', 'DomainsMyUserDbCredentialIdcsLastModifiedByArgsDict', 'outputs.DomainsMyUserDbCredentialIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1623,7 +1623,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
                * type: dateTime
                * mutability: readOnly
                * returned: default
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialMetaArgs', 'DomainsMyUserDbCredentialMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialMetaArgs', 'DomainsMyUserDbCredentialMetaArgsDict', 'outputs.DomainsMyUserDbCredentialMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1701,7 +1701,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
                * returned: never
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialTagArgs', 'DomainsMyUserDbCredentialTagArgsDict']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialTagArgs', 'DomainsMyUserDbCredentialTagArgsDict', 'outputs.DomainsMyUserDbCredentialTag']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1723,7 +1723,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsMyUserDbCredentialUserArgs', 'DomainsMyUserDbCredentialUserArgsDict']] user: The user linked to the database credential.
+        :param pulumi.Input[Union['DomainsMyUserDbCredentialUserArgs', 'DomainsMyUserDbCredentialUserArgsDict', 'outputs.DomainsMyUserDbCredentialUser']] user: The user linked to the database credential.
                
                **SCIM++ Properties:**
                * caseExact: false

@@ -110,7 +110,7 @@ class AwaitableGetCatalogPrivateEndpointsResult(GetCatalogPrivateEndpointsResult
 
 def get_catalog_private_endpoints(compartment_id: Optional[_builtins.str] = None,
                                   display_name: Optional[_builtins.str] = None,
-                                  filters: Optional[Sequence[Union['GetCatalogPrivateEndpointsFilterArgs', 'GetCatalogPrivateEndpointsFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetCatalogPrivateEndpointsFilterArgs', 'GetCatalogPrivateEndpointsFilterArgsDict', 'outputs.GetCatalogPrivateEndpointsFilterResult']]] = None,
                                   state: Optional[_builtins.str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCatalogPrivateEndpointsResult:
     """
@@ -151,7 +151,7 @@ def get_catalog_private_endpoints(compartment_id: Optional[_builtins.str] = None
         state=pulumi.get(__ret__, 'state'))
 def get_catalog_private_endpoints_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCatalogPrivateEndpointsFilterArgs', 'GetCatalogPrivateEndpointsFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCatalogPrivateEndpointsFilterArgs', 'GetCatalogPrivateEndpointsFilterArgsDict', 'outputs.GetCatalogPrivateEndpointsFilterResult']]]]] = None,
                                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCatalogPrivateEndpointsResult]:
     """

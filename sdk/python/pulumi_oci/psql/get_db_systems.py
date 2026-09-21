@@ -122,7 +122,7 @@ class AwaitableGetDbSystemsResult(GetDbSystemsResult):
 
 def get_db_systems(compartment_id: Optional[_builtins.str] = None,
                    display_name: Optional[_builtins.str] = None,
-                   filters: Optional[Sequence[Union['GetDbSystemsFilterArgs', 'GetDbSystemsFilterArgsDict']]] = None,
+                   filters: Optional[Sequence[Union['GetDbSystemsFilterArgs', 'GetDbSystemsFilterArgsDict', 'outputs.GetDbSystemsFilterResult']]] = None,
                    id: Optional[_builtins.str] = None,
                    state: Optional[_builtins.str] = None,
                    system_role: Optional[_builtins.str] = None,
@@ -172,7 +172,7 @@ def get_db_systems(compartment_id: Optional[_builtins.str] = None,
         system_role=pulumi.get(__ret__, 'system_role'))
 def get_db_systems_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemsFilterArgs', 'GetDbSystemsFilterArgsDict']]]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemsFilterArgs', 'GetDbSystemsFilterArgsDict', 'outputs.GetDbSystemsFilterResult']]]]] = None,
                           id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           system_role: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

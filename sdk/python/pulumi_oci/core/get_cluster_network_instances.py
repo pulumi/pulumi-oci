@@ -108,7 +108,7 @@ class AwaitableGetClusterNetworkInstancesResult(GetClusterNetworkInstancesResult
 def get_cluster_network_instances(cluster_network_id: Optional[_builtins.str] = None,
                                   compartment_id: Optional[_builtins.str] = None,
                                   display_name: Optional[_builtins.str] = None,
-                                  filters: Optional[Sequence[Union['GetClusterNetworkInstancesFilterArgs', 'GetClusterNetworkInstancesFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetClusterNetworkInstancesFilterArgs', 'GetClusterNetworkInstancesFilterArgsDict', 'outputs.GetClusterNetworkInstancesFilterResult']]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetClusterNetworkInstancesResult:
     """
     This data source provides the list of Cluster Network Instances in Oracle Cloud Infrastructure Core service.
@@ -149,7 +149,7 @@ def get_cluster_network_instances(cluster_network_id: Optional[_builtins.str] = 
 def get_cluster_network_instances_output(cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetClusterNetworkInstancesFilterArgs', 'GetClusterNetworkInstancesFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetClusterNetworkInstancesFilterArgs', 'GetClusterNetworkInstancesFilterArgsDict', 'outputs.GetClusterNetworkInstancesFilterResult']]]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterNetworkInstancesResult]:
     """
     This data source provides the list of Cluster Network Instances in Oracle Cloud Infrastructure Core service.

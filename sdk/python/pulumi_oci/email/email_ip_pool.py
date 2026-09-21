@@ -544,10 +544,10 @@ class EmailIpPool(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             last_ip_drain_period_in_hours: pulumi.Input[Optional[_builtins.int]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EmailIpPoolLockArgs', 'EmailIpPoolLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EmailIpPoolLockArgs', 'EmailIpPoolLockArgsDict', 'outputs.EmailIpPoolLock']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             outbound_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            outbound_ips_responses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EmailIpPoolOutboundIpsResponseArgs', 'EmailIpPoolOutboundIpsResponseArgsDict']]]]] = None,
+            outbound_ips_responses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EmailIpPoolOutboundIpsResponseArgs', 'EmailIpPoolOutboundIpsResponseArgsDict', 'outputs.EmailIpPoolOutboundIpsResponse']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -565,7 +565,7 @@ class EmailIpPool(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.int] last_ip_drain_period_in_hours: (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['EmailIpPoolLockArgs', 'EmailIpPoolLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['EmailIpPoolLockArgs', 'EmailIpPoolLockArgsDict', 'outputs.EmailIpPoolLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] name: The name of the IpPool. The name must be unique within a region.  The name is case sensitive and supported characters include alphanumeric, hyphens ("-") and underscore ("_") characters.  Example: green_pool-1
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] outbound_ips: A list of outbound public IPs for assignment to the IpPool. These IPs must be in the AVAILABLE state to be eligible for assignment.
                

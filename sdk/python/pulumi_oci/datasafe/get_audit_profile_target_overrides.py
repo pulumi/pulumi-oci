@@ -92,7 +92,7 @@ class AwaitableGetAuditProfileTargetOverridesResult(GetAuditProfileTargetOverrid
 
 def get_audit_profile_target_overrides(audit_profile_id: Optional[_builtins.str] = None,
                                        display_name: Optional[_builtins.str] = None,
-                                       filters: Optional[Sequence[Union['GetAuditProfileTargetOverridesFilterArgs', 'GetAuditProfileTargetOverridesFilterArgsDict']]] = None,
+                                       filters: Optional[Sequence[Union['GetAuditProfileTargetOverridesFilterArgs', 'GetAuditProfileTargetOverridesFilterArgsDict', 'outputs.GetAuditProfileTargetOverridesFilterResult']]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuditProfileTargetOverridesResult:
     """
     This data source provides the list of Audit Profile Target Overrides in Oracle Cloud Infrastructure Data Safe service.
@@ -128,7 +128,7 @@ def get_audit_profile_target_overrides(audit_profile_id: Optional[_builtins.str]
         target_override_collections=pulumi.get(__ret__, 'target_override_collections'))
 def get_audit_profile_target_overrides_output(audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAuditProfileTargetOverridesFilterArgs', 'GetAuditProfileTargetOverridesFilterArgsDict']]]]] = None,
+                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAuditProfileTargetOverridesFilterArgs', 'GetAuditProfileTargetOverridesFilterArgsDict', 'outputs.GetAuditProfileTargetOverridesFilterResult']]]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditProfileTargetOverridesResult]:
     """
     This data source provides the list of Audit Profile Target Overrides in Oracle Cloud Infrastructure Data Safe service.

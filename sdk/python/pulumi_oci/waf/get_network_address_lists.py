@@ -110,7 +110,7 @@ class AwaitableGetNetworkAddressListsResult(GetNetworkAddressListsResult):
 
 def get_network_address_lists(compartment_id: Optional[_builtins.str] = None,
                               display_name: Optional[_builtins.str] = None,
-                              filters: Optional[Sequence[Union['GetNetworkAddressListsFilterArgs', 'GetNetworkAddressListsFilterArgsDict']]] = None,
+                              filters: Optional[Sequence[Union['GetNetworkAddressListsFilterArgs', 'GetNetworkAddressListsFilterArgsDict', 'outputs.GetNetworkAddressListsFilterResult']]] = None,
                               id: Optional[_builtins.str] = None,
                               states: Optional[Sequence[_builtins.str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkAddressListsResult:
@@ -155,7 +155,7 @@ def get_network_address_lists(compartment_id: Optional[_builtins.str] = None,
         states=pulumi.get(__ret__, 'states'))
 def get_network_address_lists_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkAddressListsFilterArgs', 'GetNetworkAddressListsFilterArgsDict']]]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkAddressListsFilterArgs', 'GetNetworkAddressListsFilterArgsDict', 'outputs.GetNetworkAddressListsFilterResult']]]]] = None,
                                      id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkAddressListsResult]:

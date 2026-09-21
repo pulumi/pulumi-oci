@@ -111,7 +111,7 @@ class AwaitableGetCloudAsmInstancesResult(GetCloudAsmInstancesResult):
 def get_cloud_asm_instances(cloud_asm_id: Optional[_builtins.str] = None,
                             compartment_id: Optional[_builtins.str] = None,
                             display_name: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetCloudAsmInstancesFilterArgs', 'GetCloudAsmInstancesFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetCloudAsmInstancesFilterArgs', 'GetCloudAsmInstancesFilterArgsDict', 'outputs.GetCloudAsmInstancesFilterResult']]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudAsmInstancesResult:
     """
     This data source provides the list of Cloud Asm Instances in Oracle Cloud Infrastructure Database Management service.
@@ -152,7 +152,7 @@ def get_cloud_asm_instances(cloud_asm_id: Optional[_builtins.str] = None,
 def get_cloud_asm_instances_output(cloud_asm_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudAsmInstancesFilterArgs', 'GetCloudAsmInstancesFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudAsmInstancesFilterArgs', 'GetCloudAsmInstancesFilterArgsDict', 'outputs.GetCloudAsmInstancesFilterResult']]]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudAsmInstancesResult]:
     """
     This data source provides the list of Cloud Asm Instances in Oracle Cloud Infrastructure Database Management service.

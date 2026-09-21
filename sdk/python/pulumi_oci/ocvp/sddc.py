@@ -1870,7 +1870,7 @@ class Sddc(pulumi.CustomResource):
                  capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
-                 datastores: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcDatastoreArgs', 'SddcDatastoreArgsDict']]]]] = None,
+                 datastores: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcDatastoreArgs', 'SddcDatastoreArgsDict', 'outputs.SddcDatastore']]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  esxi_hosts_count: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1878,7 +1878,7 @@ class Sddc(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  hcx_action: pulumi.Input[Optional[_builtins.str]] = None,
                  hcx_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 initial_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcInitialConfigurationArgs', 'SddcInitialConfigurationArgsDict']]]]] = None,
+                 initial_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcInitialConfigurationArgs', 'SddcInitialConfigurationArgsDict', 'outputs.SddcInitialConfiguration']]]]] = None,
                  initial_host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
                  initial_host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
                  initial_sku: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1895,7 +1895,7 @@ class Sddc(pulumi.CustomResource):
                  refresh_hcx_license_status: pulumi.Input[Optional[_builtins.bool]] = None,
                  replication_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
                  reserving_hcx_on_premise_license_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 sddc_byol_allocation_details: pulumi.Input[Optional[Union['SddcSddcByolAllocationDetailsArgs', 'SddcSddcByolAllocationDetailsArgsDict']]] = None,
+                 sddc_byol_allocation_details: pulumi.Input[Optional[Union['SddcSddcByolAllocationDetailsArgs', 'SddcSddcByolAllocationDetailsArgsDict', 'outputs.SddcSddcByolAllocationDetails']]] = None,
                  ssh_authorized_keys: pulumi.Input[Optional[_builtins.str]] = None,
                  vmotion_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vmware_software_version: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2004,7 +2004,7 @@ class Sddc(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] capacity_reservation_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation. **Deprecated**. Please use `capacity_reservation_id` of `initial_cluster_configurations` instead.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
         :param pulumi.Input[_builtins.str] compute_availability_domain: (Required) The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`. **Deprecated**. Please use `compute_availability_domain` of `initial_cluster_configurations` instead.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SddcDatastoreArgs', 'SddcDatastoreArgsDict']]]] datastores: (Optional) A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape. **Deprecated**. Please use `datastores` of `initial_cluster_configurations` instead.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SddcDatastoreArgs', 'SddcDatastoreArgsDict', 'outputs.SddcDatastore']]]] datastores: (Optional) A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape. **Deprecated**. Please use `datastores` of `initial_cluster_configurations` instead.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         :param pulumi.Input[_builtins.int] esxi_hosts_count: (Required) The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC. **Deprecated**. Please use `esxi_hosts_count` of `initial_cluster_configurations` instead.
@@ -2014,7 +2014,7 @@ class Sddc(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] hcx_action: (Updatable) The action to be performed upon HCX licenses. "UPGRADE" will upgrade the SDDC from HCX Advanced to HCX Enterprise. "DOWNGRADE" will downgrade the SDDC from HCX Enterprise to HCX Advanced after current HCX Enterprise billing cycle end date. After downgrade completion, you can run `terraform refresh` to update the Terraform state. "CANCEL_DOWNGRADE" will cancel the pending downgrade of HCX licenses. The action will only be performed when its value is changed. This field can also be used to enable HCX Enterprise during SDDC creation. If "UPGRADE" is set during SDDC creation, the SDDC will be created with HCX Enterprise enable. Supported actions during update: UPGRADE, DOWNGRADE, CANCEL_DOWNGRADE. Supported actions during creation: UPGRADE.
         :param pulumi.Input[_builtins.str] hcx_vlan_id: (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true. **Deprecated**. Please use `hcx_vlan_id` of `network_configuration` instead.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SddcInitialConfigurationArgs', 'SddcInitialConfigurationArgsDict']]]] initial_configurations: Details of SDDC initial configuration
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SddcInitialConfigurationArgs', 'SddcInitialConfigurationArgsDict', 'outputs.SddcInitialConfiguration']]]] initial_configurations: Details of SDDC initial configuration
         :param pulumi.Input[_builtins.float] initial_host_ocpu_count: (Optional) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initial_host_ocpu_count` of `initial_cluster_configurations` instead.
         :param pulumi.Input[_builtins.str] initial_host_shape_name: (Optional) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initial_host_shape_name` of `initial_cluster_configurations` instead.
         :param pulumi.Input[_builtins.str] initial_sku: (Optional) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use  `initial_commitment` of `initial_cluster_configurations` instead.
@@ -2035,7 +2035,7 @@ class Sddc(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] refresh_hcx_license_status: (Updatable) HCX on-premise licenses status will be refreshed whenever the value of this field is changed.
         :param pulumi.Input[_builtins.str] replication_vlan_id: (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replication_vlan_id` of `network_configuration` instead.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] reserving_hcx_on_premise_license_keys: (Updatable) The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced. It should not be provided during resource creation. It is required and can only be set when the hcx_action is "DOWNGRADE". Its value can only be changed when hcx_action is updated.
-        :param pulumi.Input[Union['SddcSddcByolAllocationDetailsArgs', 'SddcSddcByolAllocationDetailsArgsDict']] sddc_byol_allocation_details: (Updatable) The BYOL allocations used for VMware SDDC provisioning.
+        :param pulumi.Input[Union['SddcSddcByolAllocationDetailsArgs', 'SddcSddcByolAllocationDetailsArgsDict', 'outputs.SddcSddcByolAllocationDetails']] sddc_byol_allocation_details: (Updatable) The BYOL allocations used for VMware SDDC provisioning.
         :param pulumi.Input[_builtins.str] ssh_authorized_keys: (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorized_keys` file
         :param pulumi.Input[_builtins.str] vmotion_vlan_id: (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment. **Deprecated**. Please use `vmotion_vlan_id` of `network_configuration` instead.
         :param pulumi.Input[_builtins.str] vmware_software_version: (Updatable) The VMware software bundle to install on the ESXi hosts in the SDDC. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
@@ -2166,7 +2166,7 @@ class Sddc(pulumi.CustomResource):
                  capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
-                 datastores: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcDatastoreArgs', 'SddcDatastoreArgsDict']]]]] = None,
+                 datastores: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcDatastoreArgs', 'SddcDatastoreArgsDict', 'outputs.SddcDatastore']]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  esxi_hosts_count: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2174,7 +2174,7 @@ class Sddc(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  hcx_action: pulumi.Input[Optional[_builtins.str]] = None,
                  hcx_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 initial_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcInitialConfigurationArgs', 'SddcInitialConfigurationArgsDict']]]]] = None,
+                 initial_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcInitialConfigurationArgs', 'SddcInitialConfigurationArgsDict', 'outputs.SddcInitialConfiguration']]]]] = None,
                  initial_host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
                  initial_host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
                  initial_sku: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2191,7 +2191,7 @@ class Sddc(pulumi.CustomResource):
                  refresh_hcx_license_status: pulumi.Input[Optional[_builtins.bool]] = None,
                  replication_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
                  reserving_hcx_on_premise_license_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 sddc_byol_allocation_details: pulumi.Input[Optional[Union['SddcSddcByolAllocationDetailsArgs', 'SddcSddcByolAllocationDetailsArgsDict']]] = None,
+                 sddc_byol_allocation_details: pulumi.Input[Optional[Union['SddcSddcByolAllocationDetailsArgs', 'SddcSddcByolAllocationDetailsArgsDict', 'outputs.SddcSddcByolAllocationDetails']]] = None,
                  ssh_authorized_keys: pulumi.Input[Optional[_builtins.str]] = None,
                  vmotion_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vmware_software_version: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2292,7 +2292,7 @@ class Sddc(pulumi.CustomResource):
             clusters_count: pulumi.Input[Optional[_builtins.int]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             compute_availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
-            datastores: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcDatastoreArgs', 'SddcDatastoreArgsDict']]]]] = None,
+            datastores: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcDatastoreArgs', 'SddcDatastoreArgsDict', 'outputs.SddcDatastore']]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             esxi_hosts_count: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2303,10 +2303,10 @@ class Sddc(pulumi.CustomResource):
             hcx_initial_password: pulumi.Input[Optional[_builtins.str]] = None,
             hcx_mode: pulumi.Input[Optional[_builtins.str]] = None,
             hcx_on_prem_key: pulumi.Input[Optional[_builtins.str]] = None,
-            hcx_on_prem_licenses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcHcxOnPremLicenseArgs', 'SddcHcxOnPremLicenseArgsDict']]]]] = None,
+            hcx_on_prem_licenses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcHcxOnPremLicenseArgs', 'SddcHcxOnPremLicenseArgsDict', 'outputs.SddcHcxOnPremLicense']]]]] = None,
             hcx_private_ip_id: pulumi.Input[Optional[_builtins.str]] = None,
             hcx_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
-            initial_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcInitialConfigurationArgs', 'SddcInitialConfigurationArgsDict']]]]] = None,
+            initial_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcInitialConfigurationArgs', 'SddcInitialConfigurationArgsDict', 'outputs.SddcInitialConfiguration']]]]] = None,
             initial_host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
             initial_host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
             initial_sku: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2331,7 +2331,7 @@ class Sddc(pulumi.CustomResource):
             refresh_hcx_license_status: pulumi.Input[Optional[_builtins.bool]] = None,
             replication_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
             reserving_hcx_on_premise_license_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            sddc_byol_allocation_details: pulumi.Input[Optional[Union['SddcSddcByolAllocationDetailsArgs', 'SddcSddcByolAllocationDetailsArgsDict']]] = None,
+            sddc_byol_allocation_details: pulumi.Input[Optional[Union['SddcSddcByolAllocationDetailsArgs', 'SddcSddcByolAllocationDetailsArgsDict', 'outputs.SddcSddcByolAllocationDetails']]] = None,
             ssh_authorized_keys: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -2339,7 +2339,7 @@ class Sddc(pulumi.CustomResource):
             time_hcx_billing_cycle_end: pulumi.Input[Optional[_builtins.str]] = None,
             time_hcx_license_status_updated: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
-            upgrade_licenses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcUpgradeLicenseArgs', 'SddcUpgradeLicenseArgsDict']]]]] = None,
+            upgrade_licenses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcUpgradeLicenseArgs', 'SddcUpgradeLicenseArgsDict', 'outputs.SddcUpgradeLicense']]]]] = None,
             vcenter_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
             vcenter_initial_password: pulumi.Input[Optional[_builtins.str]] = None,
             vcenter_private_ip_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2348,7 +2348,7 @@ class Sddc(pulumi.CustomResource):
             vmware_software_version: pulumi.Input[Optional[_builtins.str]] = None,
             vsan_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
             vsphere_upgrade_guide: pulumi.Input[Optional[_builtins.str]] = None,
-            vsphere_upgrade_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcVsphereUpgradeObjectArgs', 'SddcVsphereUpgradeObjectArgsDict']]]]] = None,
+            vsphere_upgrade_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SddcVsphereUpgradeObjectArgs', 'SddcVsphereUpgradeObjectArgsDict', 'outputs.SddcVsphereUpgradeObject']]]]] = None,
             vsphere_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
             workload_network_cidr: pulumi.Input[Optional[_builtins.str]] = None) -> 'Sddc':
         """
@@ -2363,7 +2363,7 @@ class Sddc(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] clusters_count: The number of Clusters in the SDDC.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
         :param pulumi.Input[_builtins.str] compute_availability_domain: (Required) The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`. **Deprecated**. Please use `compute_availability_domain` of `initial_cluster_configurations` instead.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SddcDatastoreArgs', 'SddcDatastoreArgsDict']]]] datastores: (Optional) A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape. **Deprecated**. Please use `datastores` of `initial_cluster_configurations` instead.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SddcDatastoreArgs', 'SddcDatastoreArgsDict', 'outputs.SddcDatastore']]]] datastores: (Optional) A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape. **Deprecated**. Please use `datastores` of `initial_cluster_configurations` instead.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         :param pulumi.Input[_builtins.int] esxi_hosts_count: (Required) The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC. **Deprecated**. Please use `esxi_hosts_count` of `initial_cluster_configurations` instead.
@@ -2376,10 +2376,10 @@ class Sddc(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] hcx_initial_password: (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value. **Deprecated**. Please use the `ocvp_get_retrieve_password` data source instead.
         :param pulumi.Input[_builtins.str] hcx_mode: HCX configuration of the SDDC.
         :param pulumi.Input[_builtins.str] hcx_on_prem_key: (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys. **Deprecated**. Please use `hcx_on_prem_licenses` instead.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SddcHcxOnPremLicenseArgs', 'SddcHcxOnPremLicenseArgsDict']]]] hcx_on_prem_licenses: The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SddcHcxOnPremLicenseArgs', 'SddcHcxOnPremLicenseArgsDict', 'outputs.SddcHcxOnPremLicense']]]] hcx_on_prem_licenses: The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
         :param pulumi.Input[_builtins.str] hcx_private_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the Core Services API.
         :param pulumi.Input[_builtins.str] hcx_vlan_id: (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true. **Deprecated**. Please use `hcx_vlan_id` of `network_configuration` instead.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SddcInitialConfigurationArgs', 'SddcInitialConfigurationArgsDict']]]] initial_configurations: Details of SDDC initial configuration
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SddcInitialConfigurationArgs', 'SddcInitialConfigurationArgsDict', 'outputs.SddcInitialConfiguration']]]] initial_configurations: Details of SDDC initial configuration
         :param pulumi.Input[_builtins.float] initial_host_ocpu_count: (Optional) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initial_host_ocpu_count` of `initial_cluster_configurations` instead.
         :param pulumi.Input[_builtins.str] initial_host_shape_name: (Optional) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initial_host_shape_name` of `initial_cluster_configurations` instead.
         :param pulumi.Input[_builtins.str] initial_sku: (Optional) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use  `initial_commitment` of `initial_cluster_configurations` instead.
@@ -2408,7 +2408,7 @@ class Sddc(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] refresh_hcx_license_status: (Updatable) HCX on-premise licenses status will be refreshed whenever the value of this field is changed.
         :param pulumi.Input[_builtins.str] replication_vlan_id: (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replication_vlan_id` of `network_configuration` instead.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] reserving_hcx_on_premise_license_keys: (Updatable) The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced. It should not be provided during resource creation. It is required and can only be set when the hcx_action is "DOWNGRADE". Its value can only be changed when hcx_action is updated.
-        :param pulumi.Input[Union['SddcSddcByolAllocationDetailsArgs', 'SddcSddcByolAllocationDetailsArgsDict']] sddc_byol_allocation_details: (Updatable) The BYOL allocations used for VMware SDDC provisioning.
+        :param pulumi.Input[Union['SddcSddcByolAllocationDetailsArgs', 'SddcSddcByolAllocationDetailsArgsDict', 'outputs.SddcSddcByolAllocationDetails']] sddc_byol_allocation_details: (Updatable) The BYOL allocations used for VMware SDDC provisioning.
         :param pulumi.Input[_builtins.str] ssh_authorized_keys: (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorized_keys` file
         :param pulumi.Input[_builtins.str] state: The current state of the SDDC.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -2416,7 +2416,7 @@ class Sddc(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_hcx_billing_cycle_end: The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_hcx_license_status_updated: The date and time the SDDC's HCX on-premise license status was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_updated: The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SddcUpgradeLicenseArgs', 'SddcUpgradeLicenseArgsDict']]]] upgrade_licenses: (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SddcUpgradeLicenseArgs', 'SddcUpgradeLicenseArgsDict', 'outputs.SddcUpgradeLicense']]]] upgrade_licenses: (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
         :param pulumi.Input[_builtins.str] vcenter_fqdn: The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
         :param pulumi.Input[_builtins.str] vcenter_initial_password: (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value. **Deprecated**. Please use the `ocvp_get_retrieve_password` data source instead.
         :param pulumi.Input[_builtins.str] vcenter_private_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the Core Services API.
@@ -2425,7 +2425,7 @@ class Sddc(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] vmware_software_version: (Updatable) The VMware software bundle to install on the ESXi hosts in the SDDC. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
         :param pulumi.Input[_builtins.str] vsan_vlan_id: (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment. **Deprecated**. Please use `vsan_vlan_id` of `network_configuration` instead.
         :param pulumi.Input[_builtins.str] vsphere_upgrade_guide: (**Deprecated**) The link to guidance for upgrading vSphere.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SddcVsphereUpgradeObjectArgs', 'SddcVsphereUpgradeObjectArgsDict']]]] vsphere_upgrade_objects: (**Deprecated**) The links to binary objects needed to upgrade vSphere.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SddcVsphereUpgradeObjectArgs', 'SddcVsphereUpgradeObjectArgsDict', 'outputs.SddcVsphereUpgradeObject']]]] vsphere_upgrade_objects: (**Deprecated**) The links to binary objects needed to upgrade vSphere.
         :param pulumi.Input[_builtins.str] vsphere_vlan_id: (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment. **Deprecated**. Please use `vsphere_vlan_id` of `network_configuration` instead.
         :param pulumi.Input[_builtins.str] workload_network_cidr: (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.  **Deprecated**. Please use `workload_network_cidr` of `initial_cluster_configurations` instead.
                

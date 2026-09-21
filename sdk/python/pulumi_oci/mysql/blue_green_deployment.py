@@ -497,7 +497,7 @@ class BlueGreenDeployment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 channel_details: pulumi.Input[Optional[Union['BlueGreenDeploymentChannelDetailsArgs', 'BlueGreenDeploymentChannelDetailsArgsDict']]] = None,
+                 channel_details: pulumi.Input[Optional[Union['BlueGreenDeploymentChannelDetailsArgs', 'BlueGreenDeploymentChannelDetailsArgsDict', 'outputs.BlueGreenDeploymentChannelDetails']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  delete_target_db_system_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -505,7 +505,7 @@ class BlueGreenDeployment(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  source_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
                  switchover_trigger: pulumi.Input[Optional[_builtins.int]] = None,
-                 target_db_system_details: pulumi.Input[Optional[Union['BlueGreenDeploymentTargetDbSystemDetailsArgs', 'BlueGreenDeploymentTargetDbSystemDetailsArgsDict']]] = None,
+                 target_db_system_details: pulumi.Input[Optional[Union['BlueGreenDeploymentTargetDbSystemDetailsArgs', 'BlueGreenDeploymentTargetDbSystemDetailsArgsDict', 'outputs.BlueGreenDeploymentTargetDbSystemDetails']]] = None,
                  __props__=None):
         """
         This resource provides the Blue Green Deployment resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -560,7 +560,7 @@ class BlueGreenDeployment(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['BlueGreenDeploymentChannelDetailsArgs', 'BlueGreenDeploymentChannelDetailsArgsDict']] channel_details: Replication channel details for a blue/green deployment.
+        :param pulumi.Input[Union['BlueGreenDeploymentChannelDetailsArgs', 'BlueGreenDeploymentChannelDetailsArgsDict', 'outputs.BlueGreenDeploymentChannelDetails']] channel_details: Replication channel details for a blue/green deployment.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] delete_target_db_system_on_delete: (Updatable) Whether to delete the target DB System when this Blue/Green deployment is destroyed. The service deletes the associated replication channel as part of deleting the target DB System. Defaults to `false`. Run `pulumi up` after changing this value so it is stored in state before running `terraform destroy`.
@@ -571,7 +571,7 @@ class BlueGreenDeployment(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Union['BlueGreenDeploymentTargetDbSystemDetailsArgs', 'BlueGreenDeploymentTargetDbSystemDetailsArgsDict']] target_db_system_details: Target DB System overrides for a blue/green deployment.
+        :param pulumi.Input[Union['BlueGreenDeploymentTargetDbSystemDetailsArgs', 'BlueGreenDeploymentTargetDbSystemDetailsArgsDict', 'outputs.BlueGreenDeploymentTargetDbSystemDetails']] target_db_system_details: Target DB System overrides for a blue/green deployment.
         """
         ...
     @overload
@@ -645,7 +645,7 @@ class BlueGreenDeployment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 channel_details: pulumi.Input[Optional[Union['BlueGreenDeploymentChannelDetailsArgs', 'BlueGreenDeploymentChannelDetailsArgsDict']]] = None,
+                 channel_details: pulumi.Input[Optional[Union['BlueGreenDeploymentChannelDetailsArgs', 'BlueGreenDeploymentChannelDetailsArgsDict', 'outputs.BlueGreenDeploymentChannelDetails']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  delete_target_db_system_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -653,7 +653,7 @@ class BlueGreenDeployment(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  source_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
                  switchover_trigger: pulumi.Input[Optional[_builtins.int]] = None,
-                 target_db_system_details: pulumi.Input[Optional[Union['BlueGreenDeploymentTargetDbSystemDetailsArgs', 'BlueGreenDeploymentTargetDbSystemDetailsArgsDict']]] = None,
+                 target_db_system_details: pulumi.Input[Optional[Union['BlueGreenDeploymentTargetDbSystemDetailsArgs', 'BlueGreenDeploymentTargetDbSystemDetailsArgsDict', 'outputs.BlueGreenDeploymentTargetDbSystemDetails']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -703,7 +703,7 @@ class BlueGreenDeployment(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             active_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
-            channel_details: pulumi.Input[Optional[Union['BlueGreenDeploymentChannelDetailsArgs', 'BlueGreenDeploymentChannelDetailsArgsDict']]] = None,
+            channel_details: pulumi.Input[Optional[Union['BlueGreenDeploymentChannelDetailsArgs', 'BlueGreenDeploymentChannelDetailsArgsDict', 'outputs.BlueGreenDeploymentChannelDetails']]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             delete_target_db_system_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -717,7 +717,7 @@ class BlueGreenDeployment(pulumi.CustomResource):
             switchover_status: pulumi.Input[Optional[_builtins.str]] = None,
             switchover_trigger: pulumi.Input[Optional[_builtins.int]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            target_db_system_details: pulumi.Input[Optional[Union['BlueGreenDeploymentTargetDbSystemDetailsArgs', 'BlueGreenDeploymentTargetDbSystemDetailsArgsDict']]] = None,
+            target_db_system_details: pulumi.Input[Optional[Union['BlueGreenDeploymentTargetDbSystemDetailsArgs', 'BlueGreenDeploymentTargetDbSystemDetailsArgsDict', 'outputs.BlueGreenDeploymentTargetDbSystemDetails']]] = None,
             target_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'BlueGreenDeployment':
@@ -729,7 +729,7 @@ class BlueGreenDeployment(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] active_db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that currently owns the client-facing VIP and serves traffic.
-        :param pulumi.Input[Union['BlueGreenDeploymentChannelDetailsArgs', 'BlueGreenDeploymentChannelDetailsArgsDict']] channel_details: Replication channel details for a blue/green deployment.
+        :param pulumi.Input[Union['BlueGreenDeploymentChannelDetailsArgs', 'BlueGreenDeploymentChannelDetailsArgsDict', 'outputs.BlueGreenDeploymentChannelDetails']] channel_details: Replication channel details for a blue/green deployment.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] delete_target_db_system_on_delete: (Updatable) Whether to delete the target DB System when this Blue/Green deployment is destroyed. The service deletes the associated replication channel as part of deleting the target DB System. Defaults to `false`. Run `pulumi up` after changing this value so it is stored in state before running `terraform destroy`.
@@ -746,7 +746,7 @@ class BlueGreenDeployment(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Union['BlueGreenDeploymentTargetDbSystemDetailsArgs', 'BlueGreenDeploymentTargetDbSystemDetailsArgsDict']] target_db_system_details: Target DB System overrides for a blue/green deployment.
+        :param pulumi.Input[Union['BlueGreenDeploymentTargetDbSystemDetailsArgs', 'BlueGreenDeploymentTargetDbSystemDetailsArgsDict', 'outputs.BlueGreenDeploymentTargetDbSystemDetails']] target_db_system_details: Target DB System overrides for a blue/green deployment.
         :param pulumi.Input[_builtins.str] target_db_system_id: Green/target DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the deployment pair.
         :param pulumi.Input[_builtins.str] time_created: The time the deployment was created.
         :param pulumi.Input[_builtins.str] time_updated: The time the deployment was last updated.

@@ -158,7 +158,7 @@ class AwaitableGetMonitorsResult(GetMonitorsResult):
 
 def get_monitors(apm_domain_id: Optional[_builtins.str] = None,
                  display_name: Optional[_builtins.str] = None,
-                 filters: Optional[Sequence[Union['GetMonitorsFilterArgs', 'GetMonitorsFilterArgsDict']]] = None,
+                 filters: Optional[Sequence[Union['GetMonitorsFilterArgs', 'GetMonitorsFilterArgsDict', 'outputs.GetMonitorsFilterResult']]] = None,
                  is_maintenance_window_active: Optional[_builtins.bool] = None,
                  is_maintenance_window_set: Optional[_builtins.bool] = None,
                  monitor_type: Optional[_builtins.str] = None,
@@ -224,7 +224,7 @@ def get_monitors(apm_domain_id: Optional[_builtins.str] = None,
         vantage_point=pulumi.get(__ret__, 'vantage_point'))
 def get_monitors_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMonitorsFilterArgs', 'GetMonitorsFilterArgsDict']]]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMonitorsFilterArgs', 'GetMonitorsFilterArgsDict', 'outputs.GetMonitorsFilterResult']]]]] = None,
                         is_maintenance_window_active: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                         is_maintenance_window_set: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                         monitor_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

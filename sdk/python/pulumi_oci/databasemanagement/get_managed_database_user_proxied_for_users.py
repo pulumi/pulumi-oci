@@ -111,7 +111,7 @@ class AwaitableGetManagedDatabaseUserProxiedForUsersResult(GetManagedDatabaseUse
             user_name=self.user_name)
 
 
-def get_managed_database_user_proxied_for_users(filters: Optional[Sequence[Union['GetManagedDatabaseUserProxiedForUsersFilterArgs', 'GetManagedDatabaseUserProxiedForUsersFilterArgsDict']]] = None,
+def get_managed_database_user_proxied_for_users(filters: Optional[Sequence[Union['GetManagedDatabaseUserProxiedForUsersFilterArgs', 'GetManagedDatabaseUserProxiedForUsersFilterArgsDict', 'outputs.GetManagedDatabaseUserProxiedForUsersFilterResult']]] = None,
                                                 managed_database_id: Optional[_builtins.str] = None,
                                                 name: Optional[_builtins.str] = None,
                                                 opc_named_credential_id: Optional[_builtins.str] = None,
@@ -157,7 +157,7 @@ def get_managed_database_user_proxied_for_users(filters: Optional[Sequence[Union
         opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         proxied_for_user_collections=pulumi.get(__ret__, 'proxied_for_user_collections'),
         user_name=pulumi.get(__ret__, 'user_name'))
-def get_managed_database_user_proxied_for_users_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseUserProxiedForUsersFilterArgs', 'GetManagedDatabaseUserProxiedForUsersFilterArgsDict']]]]] = None,
+def get_managed_database_user_proxied_for_users_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseUserProxiedForUsersFilterArgs', 'GetManagedDatabaseUserProxiedForUsersFilterArgsDict', 'outputs.GetManagedDatabaseUserProxiedForUsersFilterResult']]]]] = None,
                                                        managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                        name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                        opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

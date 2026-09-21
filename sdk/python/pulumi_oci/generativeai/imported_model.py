@@ -438,7 +438,7 @@ class ImportedModel(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  capabilities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 data_source: pulumi.Input[Optional[Union['ImportedModelDataSourceArgs', 'ImportedModelDataSourceArgsDict']]] = None,
+                 data_source: pulumi.Input[Optional[Union['ImportedModelDataSourceArgs', 'ImportedModelDataSourceArgsDict', 'outputs.ImportedModelDataSource']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -498,7 +498,7 @@ class ImportedModel(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] capabilities: Specifies the intended use or supported capabilities of the imported model.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID from which the model is imported.
-        :param pulumi.Input[Union['ImportedModelDataSourceArgs', 'ImportedModelDataSourceArgsDict']] data_source: Defines the source location and method used to import the model. Supports importing from Hugging Face,  an Object Storage location, or by referencing an already imported model.
+        :param pulumi.Input[Union['ImportedModelDataSourceArgs', 'ImportedModelDataSourceArgsDict', 'outputs.ImportedModelDataSource']] data_source: Defines the source location and method used to import the model. Supports importing from Hugging Face,  an Object Storage location, or by referencing an already imported model.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the imported model.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name for the imported model.
@@ -580,7 +580,7 @@ class ImportedModel(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  capabilities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 data_source: pulumi.Input[Optional[Union['ImportedModelDataSourceArgs', 'ImportedModelDataSourceArgsDict']]] = None,
+                 data_source: pulumi.Input[Optional[Union['ImportedModelDataSourceArgs', 'ImportedModelDataSourceArgsDict', 'outputs.ImportedModelDataSource']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -627,7 +627,7 @@ class ImportedModel(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             capabilities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            data_source: pulumi.Input[Optional[Union['ImportedModelDataSourceArgs', 'ImportedModelDataSourceArgsDict']]] = None,
+            data_source: pulumi.Input[Optional[Union['ImportedModelDataSourceArgs', 'ImportedModelDataSourceArgsDict', 'outputs.ImportedModelDataSource']]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -649,7 +649,7 @@ class ImportedModel(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] capabilities: Specifies the intended use or supported capabilities of the imported model.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID from which the model is imported.
-        :param pulumi.Input[Union['ImportedModelDataSourceArgs', 'ImportedModelDataSourceArgsDict']] data_source: Defines the source location and method used to import the model. Supports importing from Hugging Face,  an Object Storage location, or by referencing an already imported model.
+        :param pulumi.Input[Union['ImportedModelDataSourceArgs', 'ImportedModelDataSourceArgsDict', 'outputs.ImportedModelDataSource']] data_source: Defines the source location and method used to import the model. Supports importing from Hugging Face,  an Object Storage location, or by referencing an already imported model.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the imported model.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name for the imported model.

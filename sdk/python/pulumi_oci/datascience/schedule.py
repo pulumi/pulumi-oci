@@ -469,15 +469,15 @@ class Schedule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: pulumi.Input[Optional[Union['ScheduleActionArgs', 'ScheduleActionArgsDict']]] = None,
+                 action: pulumi.Input[Optional[Union['ScheduleActionArgs', 'ScheduleActionArgsDict', 'outputs.ScheduleAction']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 log_details: pulumi.Input[Optional[Union['ScheduleLogDetailsArgs', 'ScheduleLogDetailsArgsDict']]] = None,
+                 log_details: pulumi.Input[Optional[Union['ScheduleLogDetailsArgs', 'ScheduleLogDetailsArgsDict', 'outputs.ScheduleLogDetails']]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 trigger: pulumi.Input[Optional[Union['ScheduleTriggerArgs', 'ScheduleTriggerArgsDict']]] = None,
+                 trigger: pulumi.Input[Optional[Union['ScheduleTriggerArgs', 'ScheduleTriggerArgsDict', 'outputs.ScheduleTrigger']]] = None,
                  __props__=None):
         """
         This resource provides the Schedule resource in Oracle Cloud Infrastructure Data Science service.
@@ -616,15 +616,15 @@ class Schedule(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ScheduleActionArgs', 'ScheduleActionArgsDict']] action: (Updatable) The schedule action
+        :param pulumi.Input[Union['ScheduleActionArgs', 'ScheduleActionArgsDict', 'outputs.ScheduleAction']] action: (Updatable) The schedule action
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the schedule.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the schedule.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['ScheduleLogDetailsArgs', 'ScheduleLogDetailsArgsDict']] log_details: (Updatable) Custom logging details for schedule execution.
+        :param pulumi.Input[Union['ScheduleLogDetailsArgs', 'ScheduleLogDetailsArgsDict', 'outputs.ScheduleLogDetails']] log_details: (Updatable) Custom logging details for schedule execution.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the schedule with.
-        :param pulumi.Input[Union['ScheduleTriggerArgs', 'ScheduleTriggerArgsDict']] trigger: (Updatable) The trigger of the schedule can be UNIX cron or iCal expression or simple interval
+        :param pulumi.Input[Union['ScheduleTriggerArgs', 'ScheduleTriggerArgsDict', 'outputs.ScheduleTrigger']] trigger: (Updatable) The trigger of the schedule can be UNIX cron or iCal expression or simple interval
         """
         ...
     @overload
@@ -782,15 +782,15 @@ class Schedule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: pulumi.Input[Optional[Union['ScheduleActionArgs', 'ScheduleActionArgsDict']]] = None,
+                 action: pulumi.Input[Optional[Union['ScheduleActionArgs', 'ScheduleActionArgsDict', 'outputs.ScheduleAction']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 log_details: pulumi.Input[Optional[Union['ScheduleLogDetailsArgs', 'ScheduleLogDetailsArgsDict']]] = None,
+                 log_details: pulumi.Input[Optional[Union['ScheduleLogDetailsArgs', 'ScheduleLogDetailsArgsDict', 'outputs.ScheduleLogDetails']]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 trigger: pulumi.Input[Optional[Union['ScheduleTriggerArgs', 'ScheduleTriggerArgsDict']]] = None,
+                 trigger: pulumi.Input[Optional[Union['ScheduleTriggerArgs', 'ScheduleTriggerArgsDict', 'outputs.ScheduleTrigger']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -838,7 +838,7 @@ class Schedule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action: pulumi.Input[Optional[Union['ScheduleActionArgs', 'ScheduleActionArgsDict']]] = None,
+            action: pulumi.Input[Optional[Union['ScheduleActionArgs', 'ScheduleActionArgsDict', 'outputs.ScheduleAction']]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             created_by: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -847,7 +847,7 @@ class Schedule(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             last_schedule_run_details: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            log_details: pulumi.Input[Optional[Union['ScheduleLogDetailsArgs', 'ScheduleLogDetailsArgsDict']]] = None,
+            log_details: pulumi.Input[Optional[Union['ScheduleLogDetailsArgs', 'ScheduleLogDetailsArgsDict', 'outputs.ScheduleLogDetails']]] = None,
             project_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -855,7 +855,7 @@ class Schedule(pulumi.CustomResource):
             time_last_schedule_run: pulumi.Input[Optional[_builtins.str]] = None,
             time_next_scheduled_run: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
-            trigger: pulumi.Input[Optional[Union['ScheduleTriggerArgs', 'ScheduleTriggerArgsDict']]] = None) -> 'Schedule':
+            trigger: pulumi.Input[Optional[Union['ScheduleTriggerArgs', 'ScheduleTriggerArgsDict', 'outputs.ScheduleTrigger']]] = None) -> 'Schedule':
         """
         Get an existing Schedule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -863,7 +863,7 @@ class Schedule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ScheduleActionArgs', 'ScheduleActionArgsDict']] action: (Updatable) The schedule action
+        :param pulumi.Input[Union['ScheduleActionArgs', 'ScheduleActionArgsDict', 'outputs.ScheduleAction']] action: (Updatable) The schedule action
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the schedule.
         :param pulumi.Input[_builtins.str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the schedule.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -872,7 +872,7 @@ class Schedule(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] last_schedule_run_details: Details about the action performed by the last schedule execution. Example: `Invoked ML Application trigger.`
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail.
-        :param pulumi.Input[Union['ScheduleLogDetailsArgs', 'ScheduleLogDetailsArgsDict']] log_details: (Updatable) Custom logging details for schedule execution.
+        :param pulumi.Input[Union['ScheduleLogDetailsArgs', 'ScheduleLogDetailsArgsDict', 'outputs.ScheduleLogDetails']] log_details: (Updatable) Custom logging details for schedule execution.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the schedule with.
         :param pulumi.Input[_builtins.str] state: The current state of the schedule.           Example: `ACTIVE`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -880,7 +880,7 @@ class Schedule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_last_schedule_run: The last schedule execution time. Format is defined by RFC3339. Example: `2022-08-05T01:02:29.600Z`
         :param pulumi.Input[_builtins.str] time_next_scheduled_run: The next scheduled execution time for the schedule. Format is defined by RFC3339. Example: `2022-08-05T01:02:29.600Z`
         :param pulumi.Input[_builtins.str] time_updated: The date and time the schedule was updated. Format is defined by RFC3339.           Example: `2022-09-05T01:02:29.600Z`
-        :param pulumi.Input[Union['ScheduleTriggerArgs', 'ScheduleTriggerArgsDict']] trigger: (Updatable) The trigger of the schedule can be UNIX cron or iCal expression or simple interval
+        :param pulumi.Input[Union['ScheduleTriggerArgs', 'ScheduleTriggerArgsDict', 'outputs.ScheduleTrigger']] trigger: (Updatable) The trigger of the schedule can be UNIX cron or iCal expression or simple interval
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

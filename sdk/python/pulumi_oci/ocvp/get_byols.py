@@ -146,7 +146,7 @@ def get_byols(available_units_greater_than_or_equal_to: Optional[_builtins.float
               byol_id: Optional[_builtins.str] = None,
               compartment_id: Optional[_builtins.str] = None,
               display_name: Optional[_builtins.str] = None,
-              filters: Optional[Sequence[Union['GetByolsFilterArgs', 'GetByolsFilterArgsDict']]] = None,
+              filters: Optional[Sequence[Union['GetByolsFilterArgs', 'GetByolsFilterArgsDict', 'outputs.GetByolsFilterResult']]] = None,
               software_type: Optional[_builtins.str] = None,
               state: Optional[_builtins.str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetByolsResult:
@@ -203,7 +203,7 @@ def get_byols_output(available_units_greater_than_or_equal_to: pulumi.Input[Opti
                      byol_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetByolsFilterArgs', 'GetByolsFilterArgsDict']]]]] = None,
+                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetByolsFilterArgs', 'GetByolsFilterArgsDict', 'outputs.GetByolsFilterResult']]]]] = None,
                      software_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetByolsResult]:

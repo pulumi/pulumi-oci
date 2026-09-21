@@ -150,7 +150,7 @@ class WorkRequestRerunManagement(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: pulumi.Input[Optional[Union['WorkRequestRerunManagementWorkRequestDetailsArgs', 'WorkRequestRerunManagementWorkRequestDetailsArgsDict']]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['WorkRequestRerunManagementWorkRequestDetailsArgs', 'WorkRequestRerunManagementWorkRequestDetailsArgsDict', 'outputs.WorkRequestRerunManagementWorkRequestDetails']]] = None,
                  work_request_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -188,7 +188,7 @@ class WorkRequestRerunManagement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instances: List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to affected by the rerun of the work request.
-        :param pulumi.Input[Union['WorkRequestRerunManagementWorkRequestDetailsArgs', 'WorkRequestRerunManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['WorkRequestRerunManagementWorkRequestDetailsArgs', 'WorkRequestRerunManagementWorkRequestDetailsArgsDict', 'outputs.WorkRequestRerunManagementWorkRequestDetails']] work_request_details: Provides the name and description of the job.
         :param pulumi.Input[_builtins.str] work_request_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
                
                ** IMPORTANT **
@@ -248,7 +248,7 @@ class WorkRequestRerunManagement(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: pulumi.Input[Optional[Union['WorkRequestRerunManagementWorkRequestDetailsArgs', 'WorkRequestRerunManagementWorkRequestDetailsArgsDict']]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['WorkRequestRerunManagementWorkRequestDetailsArgs', 'WorkRequestRerunManagementWorkRequestDetailsArgsDict', 'outputs.WorkRequestRerunManagementWorkRequestDetails']]] = None,
                  work_request_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -275,7 +275,7 @@ class WorkRequestRerunManagement(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            work_request_details: pulumi.Input[Optional[Union['WorkRequestRerunManagementWorkRequestDetailsArgs', 'WorkRequestRerunManagementWorkRequestDetailsArgsDict']]] = None,
+            work_request_details: pulumi.Input[Optional[Union['WorkRequestRerunManagementWorkRequestDetailsArgs', 'WorkRequestRerunManagementWorkRequestDetailsArgsDict', 'outputs.WorkRequestRerunManagementWorkRequestDetails']]] = None,
             work_request_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'WorkRequestRerunManagement':
         """
         Get an existing WorkRequestRerunManagement resource's state with the given name, id, and optional extra
@@ -285,7 +285,7 @@ class WorkRequestRerunManagement(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instances: List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to affected by the rerun of the work request.
-        :param pulumi.Input[Union['WorkRequestRerunManagementWorkRequestDetailsArgs', 'WorkRequestRerunManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['WorkRequestRerunManagementWorkRequestDetailsArgs', 'WorkRequestRerunManagementWorkRequestDetailsArgsDict', 'outputs.WorkRequestRerunManagementWorkRequestDetails']] work_request_details: Provides the name and description of the job.
         :param pulumi.Input[_builtins.str] work_request_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
                
                ** IMPORTANT **

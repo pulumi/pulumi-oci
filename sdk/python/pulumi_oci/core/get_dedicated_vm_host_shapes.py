@@ -104,7 +104,7 @@ class AwaitableGetDedicatedVmHostShapesResult(GetDedicatedVmHostShapesResult):
 
 def get_dedicated_vm_host_shapes(availability_domain: Optional[_builtins.str] = None,
                                  compartment_id: Optional[_builtins.str] = None,
-                                 filters: Optional[Sequence[Union['GetDedicatedVmHostShapesFilterArgs', 'GetDedicatedVmHostShapesFilterArgsDict']]] = None,
+                                 filters: Optional[Sequence[Union['GetDedicatedVmHostShapesFilterArgs', 'GetDedicatedVmHostShapesFilterArgsDict', 'outputs.GetDedicatedVmHostShapesFilterResult']]] = None,
                                  instance_shape_name: Optional[_builtins.str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDedicatedVmHostShapesResult:
     """
@@ -145,7 +145,7 @@ def get_dedicated_vm_host_shapes(availability_domain: Optional[_builtins.str] = 
         instance_shape_name=pulumi.get(__ret__, 'instance_shape_name'))
 def get_dedicated_vm_host_shapes_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDedicatedVmHostShapesFilterArgs', 'GetDedicatedVmHostShapesFilterArgsDict']]]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDedicatedVmHostShapesFilterArgs', 'GetDedicatedVmHostShapesFilterArgsDict', 'outputs.GetDedicatedVmHostShapesFilterResult']]]]] = None,
                                         instance_shape_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDedicatedVmHostShapesResult]:
     """

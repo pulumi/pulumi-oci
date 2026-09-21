@@ -118,7 +118,7 @@ class AwaitableGetFusionEnvironmentServiceAttachmentsResult(GetFusionEnvironment
 
 
 def get_fusion_environment_service_attachments(display_name: Optional[_builtins.str] = None,
-                                               filters: Optional[Sequence[Union['GetFusionEnvironmentServiceAttachmentsFilterArgs', 'GetFusionEnvironmentServiceAttachmentsFilterArgsDict']]] = None,
+                                               filters: Optional[Sequence[Union['GetFusionEnvironmentServiceAttachmentsFilterArgs', 'GetFusionEnvironmentServiceAttachmentsFilterArgsDict', 'outputs.GetFusionEnvironmentServiceAttachmentsFilterResult']]] = None,
                                                fusion_environment_id: Optional[_builtins.str] = None,
                                                service_instance_type: Optional[_builtins.str] = None,
                                                state: Optional[_builtins.str] = None,
@@ -164,7 +164,7 @@ def get_fusion_environment_service_attachments(display_name: Optional[_builtins.
         service_instance_type=pulumi.get(__ret__, 'service_instance_type'),
         state=pulumi.get(__ret__, 'state'))
 def get_fusion_environment_service_attachments_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFusionEnvironmentServiceAttachmentsFilterArgs', 'GetFusionEnvironmentServiceAttachmentsFilterArgsDict']]]]] = None,
+                                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFusionEnvironmentServiceAttachmentsFilterArgs', 'GetFusionEnvironmentServiceAttachmentsFilterArgsDict', 'outputs.GetFusionEnvironmentServiceAttachmentsFilterResult']]]]] = None,
                                                       fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                       service_instance_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

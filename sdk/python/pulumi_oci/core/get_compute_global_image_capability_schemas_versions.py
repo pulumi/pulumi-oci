@@ -98,7 +98,7 @@ class AwaitableGetComputeGlobalImageCapabilitySchemasVersionsResult(GetComputeGl
 
 def get_compute_global_image_capability_schemas_versions(compute_global_image_capability_schema_id: Optional[_builtins.str] = None,
                                                          display_name: Optional[_builtins.str] = None,
-                                                         filters: Optional[Sequence[Union['GetComputeGlobalImageCapabilitySchemasVersionsFilterArgs', 'GetComputeGlobalImageCapabilitySchemasVersionsFilterArgsDict']]] = None,
+                                                         filters: Optional[Sequence[Union['GetComputeGlobalImageCapabilitySchemasVersionsFilterArgs', 'GetComputeGlobalImageCapabilitySchemasVersionsFilterArgsDict', 'outputs.GetComputeGlobalImageCapabilitySchemasVersionsFilterResult']]] = None,
                                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeGlobalImageCapabilitySchemasVersionsResult:
     """
     This data source provides the list of Compute Global Image Capability Schemas Versions in Oracle Cloud Infrastructure Core service.
@@ -134,7 +134,7 @@ def get_compute_global_image_capability_schemas_versions(compute_global_image_ca
         id=pulumi.get(__ret__, 'id'))
 def get_compute_global_image_capability_schemas_versions_output(compute_global_image_capability_schema_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeGlobalImageCapabilitySchemasVersionsFilterArgs', 'GetComputeGlobalImageCapabilitySchemasVersionsFilterArgsDict']]]]] = None,
+                                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeGlobalImageCapabilitySchemasVersionsFilterArgs', 'GetComputeGlobalImageCapabilitySchemasVersionsFilterArgsDict', 'outputs.GetComputeGlobalImageCapabilitySchemasVersionsFilterResult']]]]] = None,
                                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeGlobalImageCapabilitySchemasVersionsResult]:
     """
     This data source provides the list of Compute Global Image Capability Schemas Versions in Oracle Cloud Infrastructure Core service.

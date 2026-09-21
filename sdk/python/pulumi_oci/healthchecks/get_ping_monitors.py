@@ -110,7 +110,7 @@ class AwaitableGetPingMonitorsResult(GetPingMonitorsResult):
 
 def get_ping_monitors(compartment_id: Optional[_builtins.str] = None,
                       display_name: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetPingMonitorsFilterArgs', 'GetPingMonitorsFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetPingMonitorsFilterArgs', 'GetPingMonitorsFilterArgsDict', 'outputs.GetPingMonitorsFilterResult']]] = None,
                       home_region: Optional[_builtins.str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPingMonitorsResult:
     """
@@ -154,7 +154,7 @@ def get_ping_monitors(compartment_id: Optional[_builtins.str] = None,
         ping_monitors=pulumi.get(__ret__, 'ping_monitors'))
 def get_ping_monitors_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPingMonitorsFilterArgs', 'GetPingMonitorsFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPingMonitorsFilterArgs', 'GetPingMonitorsFilterArgsDict', 'outputs.GetPingMonitorsFilterResult']]]]] = None,
                              home_region: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPingMonitorsResult]:
     """

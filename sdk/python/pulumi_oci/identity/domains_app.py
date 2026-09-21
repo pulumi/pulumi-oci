@@ -7158,27 +7158,27 @@ class DomainsApp(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  access_token_expiry: pulumi.Input[Optional[_builtins.int]] = None,
                  active: pulumi.Input[Optional[_builtins.bool]] = None,
-                 alias_apps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAliasAppArgs', 'DomainsAppAliasAppArgsDict']]]]] = None,
+                 alias_apps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAliasAppArgs', 'DomainsAppAliasAppArgsDict', 'outputs.DomainsAppAliasApp']]]]] = None,
                  all_url_schemes_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
                  allow_access_control: pulumi.Input[Optional[_builtins.bool]] = None,
                  allow_offline: pulumi.Input[Optional[_builtins.bool]] = None,
                  allowed_grants: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  allowed_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_scopes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAllowedScopeArgs', 'DomainsAppAllowedScopeArgsDict']]]]] = None,
-                 allowed_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAllowedTagArgs', 'DomainsAppAllowedTagArgsDict']]]]] = None,
+                 allowed_scopes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAllowedScopeArgs', 'DomainsAppAllowedScopeArgsDict', 'outputs.DomainsAppAllowedScope']]]]] = None,
+                 allowed_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAllowedTagArgs', 'DomainsAppAllowedTagArgsDict', 'outputs.DomainsAppAllowedTag']]]]] = None,
                  app_icon: pulumi.Input[Optional[_builtins.str]] = None,
-                 app_signon_policy: pulumi.Input[Optional[Union['DomainsAppAppSignonPolicyArgs', 'DomainsAppAppSignonPolicyArgsDict']]] = None,
+                 app_signon_policy: pulumi.Input[Optional[Union['DomainsAppAppSignonPolicyArgs', 'DomainsAppAppSignonPolicyArgsDict', 'outputs.DomainsAppAppSignonPolicy']]] = None,
                  app_thumbnail: pulumi.Input[Optional[_builtins.str]] = None,
-                 apps_network_perimeters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAppsNetworkPerimeterArgs', 'DomainsAppAppsNetworkPerimeterArgsDict']]]]] = None,
-                 as_opc_service: pulumi.Input[Optional[Union['DomainsAppAsOpcServiceArgs', 'DomainsAppAsOpcServiceArgsDict']]] = None,
-                 attr_rendering_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAttrRenderingMetadataArgs', 'DomainsAppAttrRenderingMetadataArgsDict']]]]] = None,
+                 apps_network_perimeters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAppsNetworkPerimeterArgs', 'DomainsAppAppsNetworkPerimeterArgsDict', 'outputs.DomainsAppAppsNetworkPerimeter']]]]] = None,
+                 as_opc_service: pulumi.Input[Optional[Union['DomainsAppAsOpcServiceArgs', 'DomainsAppAsOpcServiceArgsDict', 'outputs.DomainsAppAsOpcService']]] = None,
+                 attr_rendering_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAttrRenderingMetadataArgs', 'DomainsAppAttrRenderingMetadataArgsDict', 'outputs.DomainsAppAttrRenderingMetadata']]]]] = None,
                  attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  audience: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
-                 based_on_template: pulumi.Input[Optional[Union['DomainsAppBasedOnTemplateArgs', 'DomainsAppBasedOnTemplateArgsDict']]] = None,
+                 based_on_template: pulumi.Input[Optional[Union['DomainsAppBasedOnTemplateArgs', 'DomainsAppBasedOnTemplateArgsDict', 'outputs.DomainsAppBasedOnTemplate']]] = None,
                  bypass_consent: pulumi.Input[Optional[_builtins.bool]] = None,
-                 certificates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppCertificateArgs', 'DomainsAppCertificateArgsDict']]]]] = None,
+                 certificates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppCertificateArgs', 'DomainsAppCertificateArgsDict', 'outputs.DomainsAppCertificate']]]]] = None,
                  client_ip_checking: pulumi.Input[Optional[_builtins.str]] = None,
                  client_type: pulumi.Input[Optional[_builtins.str]] = None,
                  contact_email_address: pulumi.Input[Optional[_builtins.str]] = None,
@@ -7192,8 +7192,8 @@ class DomainsApp(pulumi.CustomResource):
                  icon: pulumi.Input[Optional[_builtins.str]] = None,
                  id_token_enc_algo: pulumi.Input[Optional[_builtins.str]] = None,
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-                 identity_providers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppIdentityProviderArgs', 'DomainsAppIdentityProviderArgsDict']]]]] = None,
-                 idp_policy: pulumi.Input[Optional[Union['DomainsAppIdpPolicyArgs', 'DomainsAppIdpPolicyArgsDict']]] = None,
+                 identity_providers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppIdentityProviderArgs', 'DomainsAppIdentityProviderArgsDict', 'outputs.DomainsAppIdentityProvider']]]]] = None,
+                 idp_policy: pulumi.Input[Optional[Union['DomainsAppIdpPolicyArgs', 'DomainsAppIdpPolicyArgsDict', 'outputs.DomainsAppIdpPolicy']]] = None,
                  is_alias_app: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_enterprise_app: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_form_fill: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -7220,38 +7220,38 @@ class DomainsApp(pulumi.CustomResource):
                  privacy_policy_url: pulumi.Input[Optional[_builtins.str]] = None,
                  product_logo_url: pulumi.Input[Optional[_builtins.str]] = None,
                  product_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 protectable_secondary_audiences: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppProtectableSecondaryAudienceArgs', 'DomainsAppProtectableSecondaryAudienceArgsDict']]]]] = None,
-                 radius_policy: pulumi.Input[Optional[Union['DomainsAppRadiusPolicyArgs', 'DomainsAppRadiusPolicyArgsDict']]] = None,
+                 protectable_secondary_audiences: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppProtectableSecondaryAudienceArgs', 'DomainsAppProtectableSecondaryAudienceArgsDict', 'outputs.DomainsAppProtectableSecondaryAudience']]]]] = None,
+                 radius_policy: pulumi.Input[Optional[Union['DomainsAppRadiusPolicyArgs', 'DomainsAppRadiusPolicyArgsDict', 'outputs.DomainsAppRadiusPolicy']]] = None,
                  redirect_uris: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  refresh_token_expiry: pulumi.Input[Optional[_builtins.int]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
-                 saml_service_provider: pulumi.Input[Optional[Union['DomainsAppSamlServiceProviderArgs', 'DomainsAppSamlServiceProviderArgsDict']]] = None,
+                 saml_service_provider: pulumi.Input[Optional[Union['DomainsAppSamlServiceProviderArgs', 'DomainsAppSamlServiceProviderArgsDict', 'outputs.DomainsAppSamlServiceProvider']]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppScopeArgs', 'DomainsAppScopeArgsDict']]]]] = None,
+                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppScopeArgs', 'DomainsAppScopeArgsDict', 'outputs.DomainsAppScope']]]]] = None,
                  secondary_audiences: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 service_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppServiceParamArgs', 'DomainsAppServiceParamArgsDict']]]]] = None,
+                 service_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppServiceParamArgs', 'DomainsAppServiceParamArgsDict', 'outputs.DomainsAppServiceParam']]]]] = None,
                  service_type_urn: pulumi.Input[Optional[_builtins.str]] = None,
                  service_type_version: pulumi.Input[Optional[_builtins.str]] = None,
                  show_in_my_apps: pulumi.Input[Optional[_builtins.bool]] = None,
-                 signon_policy: pulumi.Input[Optional[Union['DomainsAppSignonPolicyArgs', 'DomainsAppSignonPolicyArgsDict']]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppTagArgs', 'DomainsAppTagArgsDict']]]]] = None,
+                 signon_policy: pulumi.Input[Optional[Union['DomainsAppSignonPolicyArgs', 'DomainsAppSignonPolicyArgsDict', 'outputs.DomainsAppSignonPolicy']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppTagArgs', 'DomainsAppTagArgsDict', 'outputs.DomainsAppTag']]]]] = None,
                  terms_of_service_url: pulumi.Input[Optional[_builtins.str]] = None,
-                 terms_of_use: pulumi.Input[Optional[Union['DomainsAppTermsOfUseArgs', 'DomainsAppTermsOfUseArgsDict']]] = None,
-                 trust_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppTrustPolicyArgs', 'DomainsAppTrustPolicyArgsDict']]]]] = None,
+                 terms_of_use: pulumi.Input[Optional[Union['DomainsAppTermsOfUseArgs', 'DomainsAppTermsOfUseArgsDict', 'outputs.DomainsAppTermsOfUse']]] = None,
+                 trust_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppTrustPolicyArgs', 'DomainsAppTrustPolicyArgsDict', 'outputs.DomainsAppTrustPolicy']]]]] = None,
                  trust_scope: pulumi.Input[Optional[_builtins.str]] = None,
-                 urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensiondbcs_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionopc_service_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionradius_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionrequestable_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensiondbcs_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionopc_service_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionradius_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionrequestable_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp']]] = None,
                  __props__=None):
         """
         This resource provides the App resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -7626,7 +7626,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAliasAppArgs', 'DomainsAppAliasAppArgsDict']]]] alias_apps: (Updatable) Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAliasAppArgs', 'DomainsAppAliasAppArgsDict', 'outputs.DomainsAppAliasApp']]]] alias_apps: (Updatable) Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -7690,7 +7690,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAllowedScopeArgs', 'DomainsAppAllowedScopeArgsDict']]]] allowed_scopes: (Updatable) A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAllowedScopeArgs', 'DomainsAppAllowedScopeArgsDict', 'outputs.DomainsAppAllowedScope']]]] allowed_scopes: (Updatable) A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -7702,7 +7702,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAllowedTagArgs', 'DomainsAppAllowedTagArgsDict']]]] allowed_tags: (Updatable) A list of tags, acting as an OAuthClient, this App is allowed to access.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAllowedTagArgs', 'DomainsAppAllowedTagArgsDict', 'outputs.DomainsAppAllowedTag']]]] allowed_tags: (Updatable) A list of tags, acting as an OAuthClient, this App is allowed to access.
                
                **Added In:** 17.4.6
                
@@ -7725,7 +7725,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsAppAppSignonPolicyArgs', 'DomainsAppAppSignonPolicyArgsDict']] app_signon_policy: (Updatable) App Sign-on Policy.
+        :param pulumi.Input[Union['DomainsAppAppSignonPolicyArgs', 'DomainsAppAppSignonPolicyArgsDict', 'outputs.DomainsAppAppSignonPolicy']] app_signon_policy: (Updatable) App Sign-on Policy.
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -7744,7 +7744,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAppsNetworkPerimeterArgs', 'DomainsAppAppsNetworkPerimeterArgsDict']]]] apps_network_perimeters: (Updatable) Network Perimeter
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAppsNetworkPerimeterArgs', 'DomainsAppAppsNetworkPerimeterArgsDict', 'outputs.DomainsAppAppsNetworkPerimeter']]]] apps_network_perimeters: (Updatable) Network Perimeter
                
                **Added In:** 2010242156
                
@@ -7755,7 +7755,7 @@ class DomainsApp(pulumi.CustomResource):
                * required: false
                * returned: default
                * type: complex
-        :param pulumi.Input[Union['DomainsAppAsOpcServiceArgs', 'DomainsAppAsOpcServiceArgsDict']] as_opc_service: (Updatable) OPCService facet of the application.
+        :param pulumi.Input[Union['DomainsAppAsOpcServiceArgs', 'DomainsAppAsOpcServiceArgsDict', 'outputs.DomainsAppAsOpcService']] as_opc_service: (Updatable) OPCService facet of the application.
                
                **Deprecated Since: 17.3.4**
                
@@ -7766,7 +7766,7 @@ class DomainsApp(pulumi.CustomResource):
                * required: false
                * returned: default
                * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAttrRenderingMetadataArgs', 'DomainsAppAttrRenderingMetadataArgsDict']]]] attr_rendering_metadatas: (Updatable) Label for the attribute to be shown in the UI.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAttrRenderingMetadataArgs', 'DomainsAppAttrRenderingMetadataArgsDict', 'outputs.DomainsAppAttrRenderingMetadata']]]] attr_rendering_metadatas: (Updatable) Label for the attribute to be shown in the UI.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [name]
@@ -7791,7 +7791,7 @@ class DomainsApp(pulumi.CustomResource):
                * type: string
                * uniqueness: none
         :param pulumi.Input[_builtins.str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[Union['DomainsAppBasedOnTemplateArgs', 'DomainsAppBasedOnTemplateArgsDict']] based_on_template: (Updatable) Application template on which the application is based.
+        :param pulumi.Input[Union['DomainsAppBasedOnTemplateArgs', 'DomainsAppBasedOnTemplateArgsDict', 'outputs.DomainsAppBasedOnTemplate']] based_on_template: (Updatable) Application template on which the application is based.
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -7813,7 +7813,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppCertificateArgs', 'DomainsAppCertificateArgsDict']]]] certificates: (Updatable) Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppCertificateArgs', 'DomainsAppCertificateArgsDict', 'outputs.DomainsAppCertificate']]]] certificates: (Updatable) Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -7956,7 +7956,7 @@ class DomainsApp(pulumi.CustomResource):
                * type: string
                * uniqueness: none
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppIdentityProviderArgs', 'DomainsAppIdentityProviderArgsDict']]]] identity_providers: (Updatable) A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppIdentityProviderArgs', 'DomainsAppIdentityProviderArgsDict', 'outputs.DomainsAppIdentityProvider']]]] identity_providers: (Updatable) A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [value]
@@ -7966,7 +7966,7 @@ class DomainsApp(pulumi.CustomResource):
                * required: false
                * returned: request
                * type: complex
-        :param pulumi.Input[Union['DomainsAppIdpPolicyArgs', 'DomainsAppIdpPolicyArgsDict']] idp_policy: (Updatable) IDP Policy.
+        :param pulumi.Input[Union['DomainsAppIdpPolicyArgs', 'DomainsAppIdpPolicyArgsDict', 'outputs.DomainsAppIdpPolicy']] idp_policy: (Updatable) IDP Policy.
                
                **Added In:** 18.1.2
                
@@ -8262,7 +8262,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppProtectableSecondaryAudienceArgs', 'DomainsAppProtectableSecondaryAudienceArgsDict']]]] protectable_secondary_audiences: (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppProtectableSecondaryAudienceArgs', 'DomainsAppProtectableSecondaryAudienceArgsDict', 'outputs.DomainsAppProtectableSecondaryAudience']]]] protectable_secondary_audiences: (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
                
                **Added In:** 18.2.2
                
@@ -8276,7 +8276,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsAppRadiusPolicyArgs', 'DomainsAppRadiusPolicyArgsDict']] radius_policy: (Updatable) RADIUS Policy assigned to this application.
+        :param pulumi.Input[Union['DomainsAppRadiusPolicyArgs', 'DomainsAppRadiusPolicyArgsDict', 'outputs.DomainsAppRadiusPolicy']] radius_policy: (Updatable) RADIUS Policy assigned to this application.
                
                **Added In:** 2209070044
                
@@ -8309,7 +8309,7 @@ class DomainsApp(pulumi.CustomResource):
                * type: integer
                * uniqueness: none
         :param pulumi.Input[_builtins.str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[Union['DomainsAppSamlServiceProviderArgs', 'DomainsAppSamlServiceProviderArgsDict']] saml_service_provider: (Updatable) An attribute that refers to the SAML Service Provider that runtime services will use to log an end user in to this App automatically. Note that this will be used only if the loginMechanism is 'SAML'.
+        :param pulumi.Input[Union['DomainsAppSamlServiceProviderArgs', 'DomainsAppSamlServiceProviderArgsDict', 'outputs.DomainsAppSamlServiceProvider']] saml_service_provider: (Updatable) An attribute that refers to the SAML Service Provider that runtime services will use to log an end user in to this App automatically. Note that this will be used only if the loginMechanism is 'SAML'.
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -8330,7 +8330,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppScopeArgs', 'DomainsAppScopeArgsDict']]]] scopes: (Updatable) Scopes defined by this App. Used when this App acts as an OAuth Resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppScopeArgs', 'DomainsAppScopeArgsDict', 'outputs.DomainsAppScope']]]] scopes: (Updatable) Scopes defined by this App. Used when this App acts as an OAuth Resource.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -8355,7 +8355,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppServiceParamArgs', 'DomainsAppServiceParamArgsDict']]]] service_params: (Updatable) Custom attribute that is required to compute other attribute values during app creation.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppServiceParamArgs', 'DomainsAppServiceParamArgsDict', 'outputs.DomainsAppServiceParam']]]] service_params: (Updatable) Custom attribute that is required to compute other attribute values during app creation.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [name]
@@ -8400,7 +8400,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsAppSignonPolicyArgs', 'DomainsAppSignonPolicyArgsDict']] signon_policy: (Updatable) Sign-on Policy.
+        :param pulumi.Input[Union['DomainsAppSignonPolicyArgs', 'DomainsAppSignonPolicyArgsDict', 'outputs.DomainsAppSignonPolicy']] signon_policy: (Updatable) Sign-on Policy.
                
                **Deprecated Since: 17.3.4**
                
@@ -8411,7 +8411,7 @@ class DomainsApp(pulumi.CustomResource):
                * required: false
                * returned: default
                * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppTagArgs', 'DomainsAppTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppTagArgs', 'DomainsAppTagArgsDict', 'outputs.DomainsAppTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -8434,7 +8434,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsAppTermsOfUseArgs', 'DomainsAppTermsOfUseArgsDict']] terms_of_use: (Updatable) Terms Of Use.
+        :param pulumi.Input[Union['DomainsAppTermsOfUseArgs', 'DomainsAppTermsOfUseArgsDict', 'outputs.DomainsAppTermsOfUse']] terms_of_use: (Updatable) Terms Of Use.
                
                **Added In:** 18.2.6
                
@@ -8445,7 +8445,7 @@ class DomainsApp(pulumi.CustomResource):
                * required: false
                * returned: default
                * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppTrustPolicyArgs', 'DomainsAppTrustPolicyArgsDict']]]] trust_policies: (Updatable) Trust Policies.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppTrustPolicyArgs', 'DomainsAppTrustPolicyArgsDict', 'outputs.DomainsAppTrustPolicy']]]] trust_policies: (Updatable) Trust Policies.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [value]
@@ -8468,19 +8468,19 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgsDict']] urnietfparamsscimschemasoracleidcsextensiondbcs_app: (Updatable) This extension provides attributes for database service facet of an App
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgsDict']] urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: (Updatable) This extension defines the Enterprise App related attributes.
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgsDict']] urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: (Updatable) This extension provides attributes for Form-Fill facet of App
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgsDict']] urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: (Updatable) This extension provides attributes for Form-Fill facet of AppTemplate
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgsDict']] urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: (Updatable) Kerberos Realm
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict']] urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: (Updatable) Managed App
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgsDict']] urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: (Updatable) This extension defines attributes specific to Apps that represent instances of Multicloud Service App
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgsDict']] urnietfparamsscimschemasoracleidcsextensionopc_service_app: (Updatable) This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgsDict']] urnietfparamsscimschemasoracleidcsextensionradius_app_app: (Updatable) This extension defines attributes specific to Apps that represent instances of Radius App.
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgsDict']] urnietfparamsscimschemasoracleidcsextensionrequestable_app: (Updatable) Requestable App
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgsDict']] urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: (Updatable) This extension defines attributes related to the Service Providers configuration.
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgsDict']] urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: (Updatable) WebTier Policy
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags']] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp']] urnietfparamsscimschemasoracleidcsextensiondbcs_app: (Updatable) This extension provides attributes for database service facet of an App
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp']] urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: (Updatable) This extension defines the Enterprise App related attributes.
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp']] urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: (Updatable) This extension provides attributes for Form-Fill facet of App
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate']] urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: (Updatable) This extension provides attributes for Form-Fill facet of AppTemplate
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp']] urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: (Updatable) Kerberos Realm
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp']] urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: (Updatable) Managed App
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp']] urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: (Updatable) This extension defines attributes specific to Apps that represent instances of Multicloud Service App
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp']] urnietfparamsscimschemasoracleidcsextensionopc_service_app: (Updatable) This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp']] urnietfparamsscimschemasoracleidcsextensionradius_app_app: (Updatable) This extension defines attributes specific to Apps that represent instances of Radius App.
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp']] urnietfparamsscimschemasoracleidcsextensionrequestable_app: (Updatable) Requestable App
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp']] urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: (Updatable) This extension defines attributes related to the Service Providers configuration.
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp']] urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: (Updatable) WebTier Policy
         """
         ...
     @overload
@@ -8856,27 +8856,27 @@ class DomainsApp(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  access_token_expiry: pulumi.Input[Optional[_builtins.int]] = None,
                  active: pulumi.Input[Optional[_builtins.bool]] = None,
-                 alias_apps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAliasAppArgs', 'DomainsAppAliasAppArgsDict']]]]] = None,
+                 alias_apps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAliasAppArgs', 'DomainsAppAliasAppArgsDict', 'outputs.DomainsAppAliasApp']]]]] = None,
                  all_url_schemes_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
                  allow_access_control: pulumi.Input[Optional[_builtins.bool]] = None,
                  allow_offline: pulumi.Input[Optional[_builtins.bool]] = None,
                  allowed_grants: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  allowed_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 allowed_scopes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAllowedScopeArgs', 'DomainsAppAllowedScopeArgsDict']]]]] = None,
-                 allowed_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAllowedTagArgs', 'DomainsAppAllowedTagArgsDict']]]]] = None,
+                 allowed_scopes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAllowedScopeArgs', 'DomainsAppAllowedScopeArgsDict', 'outputs.DomainsAppAllowedScope']]]]] = None,
+                 allowed_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAllowedTagArgs', 'DomainsAppAllowedTagArgsDict', 'outputs.DomainsAppAllowedTag']]]]] = None,
                  app_icon: pulumi.Input[Optional[_builtins.str]] = None,
-                 app_signon_policy: pulumi.Input[Optional[Union['DomainsAppAppSignonPolicyArgs', 'DomainsAppAppSignonPolicyArgsDict']]] = None,
+                 app_signon_policy: pulumi.Input[Optional[Union['DomainsAppAppSignonPolicyArgs', 'DomainsAppAppSignonPolicyArgsDict', 'outputs.DomainsAppAppSignonPolicy']]] = None,
                  app_thumbnail: pulumi.Input[Optional[_builtins.str]] = None,
-                 apps_network_perimeters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAppsNetworkPerimeterArgs', 'DomainsAppAppsNetworkPerimeterArgsDict']]]]] = None,
-                 as_opc_service: pulumi.Input[Optional[Union['DomainsAppAsOpcServiceArgs', 'DomainsAppAsOpcServiceArgsDict']]] = None,
-                 attr_rendering_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAttrRenderingMetadataArgs', 'DomainsAppAttrRenderingMetadataArgsDict']]]]] = None,
+                 apps_network_perimeters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAppsNetworkPerimeterArgs', 'DomainsAppAppsNetworkPerimeterArgsDict', 'outputs.DomainsAppAppsNetworkPerimeter']]]]] = None,
+                 as_opc_service: pulumi.Input[Optional[Union['DomainsAppAsOpcServiceArgs', 'DomainsAppAsOpcServiceArgsDict', 'outputs.DomainsAppAsOpcService']]] = None,
+                 attr_rendering_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAttrRenderingMetadataArgs', 'DomainsAppAttrRenderingMetadataArgsDict', 'outputs.DomainsAppAttrRenderingMetadata']]]]] = None,
                  attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  audience: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
-                 based_on_template: pulumi.Input[Optional[Union['DomainsAppBasedOnTemplateArgs', 'DomainsAppBasedOnTemplateArgsDict']]] = None,
+                 based_on_template: pulumi.Input[Optional[Union['DomainsAppBasedOnTemplateArgs', 'DomainsAppBasedOnTemplateArgsDict', 'outputs.DomainsAppBasedOnTemplate']]] = None,
                  bypass_consent: pulumi.Input[Optional[_builtins.bool]] = None,
-                 certificates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppCertificateArgs', 'DomainsAppCertificateArgsDict']]]]] = None,
+                 certificates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppCertificateArgs', 'DomainsAppCertificateArgsDict', 'outputs.DomainsAppCertificate']]]]] = None,
                  client_ip_checking: pulumi.Input[Optional[_builtins.str]] = None,
                  client_type: pulumi.Input[Optional[_builtins.str]] = None,
                  contact_email_address: pulumi.Input[Optional[_builtins.str]] = None,
@@ -8890,8 +8890,8 @@ class DomainsApp(pulumi.CustomResource):
                  icon: pulumi.Input[Optional[_builtins.str]] = None,
                  id_token_enc_algo: pulumi.Input[Optional[_builtins.str]] = None,
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-                 identity_providers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppIdentityProviderArgs', 'DomainsAppIdentityProviderArgsDict']]]]] = None,
-                 idp_policy: pulumi.Input[Optional[Union['DomainsAppIdpPolicyArgs', 'DomainsAppIdpPolicyArgsDict']]] = None,
+                 identity_providers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppIdentityProviderArgs', 'DomainsAppIdentityProviderArgsDict', 'outputs.DomainsAppIdentityProvider']]]]] = None,
+                 idp_policy: pulumi.Input[Optional[Union['DomainsAppIdpPolicyArgs', 'DomainsAppIdpPolicyArgsDict', 'outputs.DomainsAppIdpPolicy']]] = None,
                  is_alias_app: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_enterprise_app: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_form_fill: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -8918,38 +8918,38 @@ class DomainsApp(pulumi.CustomResource):
                  privacy_policy_url: pulumi.Input[Optional[_builtins.str]] = None,
                  product_logo_url: pulumi.Input[Optional[_builtins.str]] = None,
                  product_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 protectable_secondary_audiences: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppProtectableSecondaryAudienceArgs', 'DomainsAppProtectableSecondaryAudienceArgsDict']]]]] = None,
-                 radius_policy: pulumi.Input[Optional[Union['DomainsAppRadiusPolicyArgs', 'DomainsAppRadiusPolicyArgsDict']]] = None,
+                 protectable_secondary_audiences: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppProtectableSecondaryAudienceArgs', 'DomainsAppProtectableSecondaryAudienceArgsDict', 'outputs.DomainsAppProtectableSecondaryAudience']]]]] = None,
+                 radius_policy: pulumi.Input[Optional[Union['DomainsAppRadiusPolicyArgs', 'DomainsAppRadiusPolicyArgsDict', 'outputs.DomainsAppRadiusPolicy']]] = None,
                  redirect_uris: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  refresh_token_expiry: pulumi.Input[Optional[_builtins.int]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
-                 saml_service_provider: pulumi.Input[Optional[Union['DomainsAppSamlServiceProviderArgs', 'DomainsAppSamlServiceProviderArgsDict']]] = None,
+                 saml_service_provider: pulumi.Input[Optional[Union['DomainsAppSamlServiceProviderArgs', 'DomainsAppSamlServiceProviderArgsDict', 'outputs.DomainsAppSamlServiceProvider']]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppScopeArgs', 'DomainsAppScopeArgsDict']]]]] = None,
+                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppScopeArgs', 'DomainsAppScopeArgsDict', 'outputs.DomainsAppScope']]]]] = None,
                  secondary_audiences: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 service_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppServiceParamArgs', 'DomainsAppServiceParamArgsDict']]]]] = None,
+                 service_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppServiceParamArgs', 'DomainsAppServiceParamArgsDict', 'outputs.DomainsAppServiceParam']]]]] = None,
                  service_type_urn: pulumi.Input[Optional[_builtins.str]] = None,
                  service_type_version: pulumi.Input[Optional[_builtins.str]] = None,
                  show_in_my_apps: pulumi.Input[Optional[_builtins.bool]] = None,
-                 signon_policy: pulumi.Input[Optional[Union['DomainsAppSignonPolicyArgs', 'DomainsAppSignonPolicyArgsDict']]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppTagArgs', 'DomainsAppTagArgsDict']]]]] = None,
+                 signon_policy: pulumi.Input[Optional[Union['DomainsAppSignonPolicyArgs', 'DomainsAppSignonPolicyArgsDict', 'outputs.DomainsAppSignonPolicy']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppTagArgs', 'DomainsAppTagArgsDict', 'outputs.DomainsAppTag']]]]] = None,
                  terms_of_service_url: pulumi.Input[Optional[_builtins.str]] = None,
-                 terms_of_use: pulumi.Input[Optional[Union['DomainsAppTermsOfUseArgs', 'DomainsAppTermsOfUseArgsDict']]] = None,
-                 trust_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppTrustPolicyArgs', 'DomainsAppTrustPolicyArgsDict']]]]] = None,
+                 terms_of_use: pulumi.Input[Optional[Union['DomainsAppTermsOfUseArgs', 'DomainsAppTermsOfUseArgsDict', 'outputs.DomainsAppTermsOfUse']]] = None,
+                 trust_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppTrustPolicyArgs', 'DomainsAppTrustPolicyArgsDict', 'outputs.DomainsAppTrustPolicy']]]]] = None,
                  trust_scope: pulumi.Input[Optional[_builtins.str]] = None,
-                 urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensiondbcs_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionopc_service_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionradius_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionrequestable_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensiondbcs_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionopc_service_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionradius_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionrequestable_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -9100,35 +9100,35 @@ class DomainsApp(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             access_token_expiry: pulumi.Input[Optional[_builtins.int]] = None,
-            accounts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAccountArgs', 'DomainsAppAccountArgsDict']]]]] = None,
+            accounts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAccountArgs', 'DomainsAppAccountArgsDict', 'outputs.DomainsAppAccount']]]]] = None,
             active: pulumi.Input[Optional[_builtins.bool]] = None,
-            admin_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAdminRoleArgs', 'DomainsAppAdminRoleArgsDict']]]]] = None,
-            alias_apps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAliasAppArgs', 'DomainsAppAliasAppArgsDict']]]]] = None,
+            admin_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAdminRoleArgs', 'DomainsAppAdminRoleArgsDict', 'outputs.DomainsAppAdminRole']]]]] = None,
+            alias_apps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAliasAppArgs', 'DomainsAppAliasAppArgsDict', 'outputs.DomainsAppAliasApp']]]]] = None,
             all_url_schemes_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
             allow_access_control: pulumi.Input[Optional[_builtins.bool]] = None,
             allow_offline: pulumi.Input[Optional[_builtins.bool]] = None,
             allowed_grants: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             allowed_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            allowed_scopes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAllowedScopeArgs', 'DomainsAppAllowedScopeArgsDict']]]]] = None,
-            allowed_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAllowedTagArgs', 'DomainsAppAllowedTagArgsDict']]]]] = None,
+            allowed_scopes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAllowedScopeArgs', 'DomainsAppAllowedScopeArgsDict', 'outputs.DomainsAppAllowedScope']]]]] = None,
+            allowed_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAllowedTagArgs', 'DomainsAppAllowedTagArgsDict', 'outputs.DomainsAppAllowedTag']]]]] = None,
             app_icon: pulumi.Input[Optional[_builtins.str]] = None,
-            app_signon_policy: pulumi.Input[Optional[Union['DomainsAppAppSignonPolicyArgs', 'DomainsAppAppSignonPolicyArgsDict']]] = None,
+            app_signon_policy: pulumi.Input[Optional[Union['DomainsAppAppSignonPolicyArgs', 'DomainsAppAppSignonPolicyArgsDict', 'outputs.DomainsAppAppSignonPolicy']]] = None,
             app_thumbnail: pulumi.Input[Optional[_builtins.str]] = None,
-            apps_network_perimeters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAppsNetworkPerimeterArgs', 'DomainsAppAppsNetworkPerimeterArgsDict']]]]] = None,
-            as_opc_service: pulumi.Input[Optional[Union['DomainsAppAsOpcServiceArgs', 'DomainsAppAsOpcServiceArgsDict']]] = None,
-            attr_rendering_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAttrRenderingMetadataArgs', 'DomainsAppAttrRenderingMetadataArgsDict']]]]] = None,
+            apps_network_perimeters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAppsNetworkPerimeterArgs', 'DomainsAppAppsNetworkPerimeterArgsDict', 'outputs.DomainsAppAppsNetworkPerimeter']]]]] = None,
+            as_opc_service: pulumi.Input[Optional[Union['DomainsAppAsOpcServiceArgs', 'DomainsAppAsOpcServiceArgsDict', 'outputs.DomainsAppAsOpcService']]] = None,
+            attr_rendering_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppAttrRenderingMetadataArgs', 'DomainsAppAttrRenderingMetadataArgsDict', 'outputs.DomainsAppAttrRenderingMetadata']]]]] = None,
             attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             attributes: pulumi.Input[Optional[_builtins.str]] = None,
             audience: pulumi.Input[Optional[_builtins.str]] = None,
             authorization: pulumi.Input[Optional[_builtins.str]] = None,
-            based_on_template: pulumi.Input[Optional[Union['DomainsAppBasedOnTemplateArgs', 'DomainsAppBasedOnTemplateArgsDict']]] = None,
+            based_on_template: pulumi.Input[Optional[Union['DomainsAppBasedOnTemplateArgs', 'DomainsAppBasedOnTemplateArgsDict', 'outputs.DomainsAppBasedOnTemplate']]] = None,
             bypass_consent: pulumi.Input[Optional[_builtins.bool]] = None,
             callback_service_url: pulumi.Input[Optional[_builtins.str]] = None,
-            certificates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppCertificateArgs', 'DomainsAppCertificateArgsDict']]]]] = None,
+            certificates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppCertificateArgs', 'DomainsAppCertificateArgsDict', 'outputs.DomainsAppCertificate']]]]] = None,
             client_ip_checking: pulumi.Input[Optional[_builtins.str]] = None,
             client_secret: pulumi.Input[Optional[_builtins.str]] = None,
             client_type: pulumi.Input[Optional[_builtins.str]] = None,
-            cloud_control_properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppCloudControlPropertyArgs', 'DomainsAppCloudControlPropertyArgsDict']]]]] = None,
+            cloud_control_properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppCloudControlPropertyArgs', 'DomainsAppCloudControlPropertyArgsDict', 'outputs.DomainsAppCloudControlProperty']]]]] = None,
             compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             contact_email_address: pulumi.Input[Optional[_builtins.str]] = None,
             delegated_service_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -9137,22 +9137,22 @@ class DomainsApp(pulumi.CustomResource):
             disable_kmsi_token_authentication: pulumi.Input[Optional[_builtins.bool]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
-            editable_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppEditableAttributeArgs', 'DomainsAppEditableAttributeArgsDict']]]]] = None,
+            editable_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppEditableAttributeArgs', 'DomainsAppEditableAttributeArgsDict', 'outputs.DomainsAppEditableAttribute']]]]] = None,
             error_page_url: pulumi.Input[Optional[_builtins.str]] = None,
             force_delete: pulumi.Input[Optional[_builtins.bool]] = None,
-            granted_app_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppGrantedAppRoleArgs', 'DomainsAppGrantedAppRoleArgsDict']]]]] = None,
-            grants: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppGrantArgs', 'DomainsAppGrantArgsDict']]]]] = None,
+            granted_app_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppGrantedAppRoleArgs', 'DomainsAppGrantedAppRoleArgsDict', 'outputs.DomainsAppGrantedAppRole']]]]] = None,
+            grants: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppGrantArgs', 'DomainsAppGrantArgsDict', 'outputs.DomainsAppGrant']]]]] = None,
             hashed_client_secret: pulumi.Input[Optional[_builtins.str]] = None,
             home_page_url: pulumi.Input[Optional[_builtins.str]] = None,
             icon: pulumi.Input[Optional[_builtins.str]] = None,
             id_token_enc_algo: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppIdcsCreatedByArgs', 'DomainsAppIdcsCreatedByArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppIdcsCreatedByArgs', 'DomainsAppIdcsCreatedByArgsDict', 'outputs.DomainsAppIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppIdcsLastModifiedByArgs', 'DomainsAppIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppIdcsLastModifiedByArgs', 'DomainsAppIdcsLastModifiedByArgsDict', 'outputs.DomainsAppIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            identity_providers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppIdentityProviderArgs', 'DomainsAppIdentityProviderArgsDict']]]]] = None,
-            idp_policy: pulumi.Input[Optional[Union['DomainsAppIdpPolicyArgs', 'DomainsAppIdpPolicyArgsDict']]] = None,
+            identity_providers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppIdentityProviderArgs', 'DomainsAppIdentityProviderArgsDict', 'outputs.DomainsAppIdentityProvider']]]]] = None,
+            idp_policy: pulumi.Input[Optional[Union['DomainsAppIdpPolicyArgs', 'DomainsAppIdpPolicyArgsDict', 'outputs.DomainsAppIdpPolicy']]] = None,
             infrastructure: pulumi.Input[Optional[_builtins.bool]] = None,
             is_alias_app: pulumi.Input[Optional[_builtins.bool]] = None,
             is_database_service: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -9177,7 +9177,7 @@ class DomainsApp(pulumi.CustomResource):
             login_page_url: pulumi.Input[Optional[_builtins.str]] = None,
             logout_page_url: pulumi.Input[Optional[_builtins.str]] = None,
             logout_uri: pulumi.Input[Optional[_builtins.str]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppMetaArgs', 'DomainsAppMetaArgsDict']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppMetaArgs', 'DomainsAppMetaArgsDict', 'outputs.DomainsAppMeta']]]]] = None,
             meter_as_opc_service: pulumi.Input[Optional[_builtins.bool]] = None,
             migrated: pulumi.Input[Optional[_builtins.bool]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -9186,41 +9186,41 @@ class DomainsApp(pulumi.CustomResource):
             privacy_policy_url: pulumi.Input[Optional[_builtins.str]] = None,
             product_logo_url: pulumi.Input[Optional[_builtins.str]] = None,
             product_name: pulumi.Input[Optional[_builtins.str]] = None,
-            protectable_secondary_audiences: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppProtectableSecondaryAudienceArgs', 'DomainsAppProtectableSecondaryAudienceArgsDict']]]]] = None,
-            radius_policy: pulumi.Input[Optional[Union['DomainsAppRadiusPolicyArgs', 'DomainsAppRadiusPolicyArgsDict']]] = None,
+            protectable_secondary_audiences: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppProtectableSecondaryAudienceArgs', 'DomainsAppProtectableSecondaryAudienceArgsDict', 'outputs.DomainsAppProtectableSecondaryAudience']]]]] = None,
+            radius_policy: pulumi.Input[Optional[Union['DomainsAppRadiusPolicyArgs', 'DomainsAppRadiusPolicyArgsDict', 'outputs.DomainsAppRadiusPolicy']]] = None,
             ready_to_upgrade: pulumi.Input[Optional[_builtins.bool]] = None,
             redirect_uris: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             refresh_token_expiry: pulumi.Input[Optional[_builtins.int]] = None,
             resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
-            saml_service_provider: pulumi.Input[Optional[Union['DomainsAppSamlServiceProviderArgs', 'DomainsAppSamlServiceProviderArgsDict']]] = None,
+            saml_service_provider: pulumi.Input[Optional[Union['DomainsAppSamlServiceProviderArgs', 'DomainsAppSamlServiceProviderArgsDict', 'outputs.DomainsAppSamlServiceProvider']]] = None,
             schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            scopes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppScopeArgs', 'DomainsAppScopeArgsDict']]]]] = None,
+            scopes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppScopeArgs', 'DomainsAppScopeArgsDict', 'outputs.DomainsAppScope']]]]] = None,
             secondary_audiences: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            service_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppServiceParamArgs', 'DomainsAppServiceParamArgsDict']]]]] = None,
+            service_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppServiceParamArgs', 'DomainsAppServiceParamArgsDict', 'outputs.DomainsAppServiceParam']]]]] = None,
             service_type_urn: pulumi.Input[Optional[_builtins.str]] = None,
             service_type_version: pulumi.Input[Optional[_builtins.str]] = None,
             show_in_my_apps: pulumi.Input[Optional[_builtins.bool]] = None,
-            signon_policy: pulumi.Input[Optional[Union['DomainsAppSignonPolicyArgs', 'DomainsAppSignonPolicyArgsDict']]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppTagArgs', 'DomainsAppTagArgsDict']]]]] = None,
+            signon_policy: pulumi.Input[Optional[Union['DomainsAppSignonPolicyArgs', 'DomainsAppSignonPolicyArgsDict', 'outputs.DomainsAppSignonPolicy']]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppTagArgs', 'DomainsAppTagArgsDict', 'outputs.DomainsAppTag']]]]] = None,
             tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             terms_of_service_url: pulumi.Input[Optional[_builtins.str]] = None,
-            terms_of_use: pulumi.Input[Optional[Union['DomainsAppTermsOfUseArgs', 'DomainsAppTermsOfUseArgsDict']]] = None,
-            trust_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppTrustPolicyArgs', 'DomainsAppTrustPolicyArgsDict']]]]] = None,
+            terms_of_use: pulumi.Input[Optional[Union['DomainsAppTermsOfUseArgs', 'DomainsAppTermsOfUseArgsDict', 'outputs.DomainsAppTermsOfUse']]] = None,
+            trust_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppTrustPolicyArgs', 'DomainsAppTrustPolicyArgsDict', 'outputs.DomainsAppTrustPolicy']]]]] = None,
             trust_scope: pulumi.Input[Optional[_builtins.str]] = None,
-            urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensiondbcs_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionopc_service_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionradius_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionrequestable_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgsDict']]] = None,
-            user_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppUserRoleArgs', 'DomainsAppUserRoleArgsDict']]]]] = None) -> 'DomainsApp':
+            urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags']]] = None,
+            urnietfparamsscimschemasoracleidcsextensiondbcs_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionopc_service_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionradius_app_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionrequestable_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: pulumi.Input[Optional[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp']]] = None,
+            user_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppUserRoleArgs', 'DomainsAppUserRoleArgsDict', 'outputs.DomainsAppUserRole']]]]] = None) -> 'DomainsApp':
         """
         Get an existing DomainsApp resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -9238,7 +9238,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: integer
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAccountArgs', 'DomainsAppAccountArgsDict']]]] accounts: (Updatable) Accounts of App
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAccountArgs', 'DomainsAppAccountArgsDict', 'outputs.DomainsAppAccount']]]] accounts: (Updatable) Accounts of App
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [value]
@@ -9259,7 +9259,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAdminRoleArgs', 'DomainsAppAdminRoleArgsDict']]]] admin_roles: (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAdminRoleArgs', 'DomainsAppAdminRoleArgsDict', 'outputs.DomainsAppAdminRole']]]] admin_roles: (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [value]
@@ -9269,7 +9269,7 @@ class DomainsApp(pulumi.CustomResource):
                * required: false
                * returned: request
                * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAliasAppArgs', 'DomainsAppAliasAppArgsDict']]]] alias_apps: (Updatable) Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAliasAppArgs', 'DomainsAppAliasAppArgsDict', 'outputs.DomainsAppAliasApp']]]] alias_apps: (Updatable) Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -9333,7 +9333,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAllowedScopeArgs', 'DomainsAppAllowedScopeArgsDict']]]] allowed_scopes: (Updatable) A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAllowedScopeArgs', 'DomainsAppAllowedScopeArgsDict', 'outputs.DomainsAppAllowedScope']]]] allowed_scopes: (Updatable) A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -9345,7 +9345,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAllowedTagArgs', 'DomainsAppAllowedTagArgsDict']]]] allowed_tags: (Updatable) A list of tags, acting as an OAuthClient, this App is allowed to access.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAllowedTagArgs', 'DomainsAppAllowedTagArgsDict', 'outputs.DomainsAppAllowedTag']]]] allowed_tags: (Updatable) A list of tags, acting as an OAuthClient, this App is allowed to access.
                
                **Added In:** 17.4.6
                
@@ -9368,7 +9368,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsAppAppSignonPolicyArgs', 'DomainsAppAppSignonPolicyArgsDict']] app_signon_policy: (Updatable) App Sign-on Policy.
+        :param pulumi.Input[Union['DomainsAppAppSignonPolicyArgs', 'DomainsAppAppSignonPolicyArgsDict', 'outputs.DomainsAppAppSignonPolicy']] app_signon_policy: (Updatable) App Sign-on Policy.
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -9387,7 +9387,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAppsNetworkPerimeterArgs', 'DomainsAppAppsNetworkPerimeterArgsDict']]]] apps_network_perimeters: (Updatable) Network Perimeter
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAppsNetworkPerimeterArgs', 'DomainsAppAppsNetworkPerimeterArgsDict', 'outputs.DomainsAppAppsNetworkPerimeter']]]] apps_network_perimeters: (Updatable) Network Perimeter
                
                **Added In:** 2010242156
                
@@ -9398,7 +9398,7 @@ class DomainsApp(pulumi.CustomResource):
                * required: false
                * returned: default
                * type: complex
-        :param pulumi.Input[Union['DomainsAppAsOpcServiceArgs', 'DomainsAppAsOpcServiceArgsDict']] as_opc_service: (Updatable) OPCService facet of the application.
+        :param pulumi.Input[Union['DomainsAppAsOpcServiceArgs', 'DomainsAppAsOpcServiceArgsDict', 'outputs.DomainsAppAsOpcService']] as_opc_service: (Updatable) OPCService facet of the application.
                
                **Deprecated Since: 17.3.4**
                
@@ -9409,7 +9409,7 @@ class DomainsApp(pulumi.CustomResource):
                * required: false
                * returned: default
                * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAttrRenderingMetadataArgs', 'DomainsAppAttrRenderingMetadataArgsDict']]]] attr_rendering_metadatas: (Updatable) Label for the attribute to be shown in the UI.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppAttrRenderingMetadataArgs', 'DomainsAppAttrRenderingMetadataArgsDict', 'outputs.DomainsAppAttrRenderingMetadata']]]] attr_rendering_metadatas: (Updatable) Label for the attribute to be shown in the UI.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [name]
@@ -9434,7 +9434,7 @@ class DomainsApp(pulumi.CustomResource):
                * type: string
                * uniqueness: none
         :param pulumi.Input[_builtins.str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[Union['DomainsAppBasedOnTemplateArgs', 'DomainsAppBasedOnTemplateArgsDict']] based_on_template: (Updatable) Application template on which the application is based.
+        :param pulumi.Input[Union['DomainsAppBasedOnTemplateArgs', 'DomainsAppBasedOnTemplateArgsDict', 'outputs.DomainsAppBasedOnTemplate']] based_on_template: (Updatable) Application template on which the application is based.
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -9467,7 +9467,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppCertificateArgs', 'DomainsAppCertificateArgsDict']]]] certificates: (Updatable) Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppCertificateArgs', 'DomainsAppCertificateArgsDict', 'outputs.DomainsAppCertificate']]]] certificates: (Updatable) Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -9515,7 +9515,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppCloudControlPropertyArgs', 'DomainsAppCloudControlPropertyArgsDict']]]] cloud_control_properties: (Updatable) A collection of arbitrary properties that scope the privileges of a cloud-control App.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppCloudControlPropertyArgs', 'DomainsAppCloudControlPropertyArgsDict', 'outputs.DomainsAppCloudControlProperty']]]] cloud_control_properties: (Updatable) A collection of arbitrary properties that scope the privileges of a cloud-control App.
                
                **Added In:** 18.4.2
                
@@ -9620,7 +9620,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppEditableAttributeArgs', 'DomainsAppEditableAttributeArgsDict']]]] editable_attributes: (Updatable) App attributes editable by subject
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppEditableAttributeArgs', 'DomainsAppEditableAttributeArgsDict', 'outputs.DomainsAppEditableAttribute']]]] editable_attributes: (Updatable) App attributes editable by subject
                
                **Added In:** 18.2.6
                
@@ -9646,7 +9646,7 @@ class DomainsApp(pulumi.CustomResource):
                * type: string
                * uniqueness: none
         :param pulumi.Input[_builtins.bool] force_delete: (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppGrantedAppRoleArgs', 'DomainsAppGrantedAppRoleArgsDict']]]] granted_app_roles: (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppGrantedAppRoleArgs', 'DomainsAppGrantedAppRoleArgsDict', 'outputs.DomainsAppGrantedAppRole']]]] granted_app_roles: (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -9658,7 +9658,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppGrantArgs', 'DomainsAppGrantArgsDict']]]] grants: (Updatable) Grants assigned to the app
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppGrantArgs', 'DomainsAppGrantArgsDict', 'outputs.DomainsAppGrant']]]] grants: (Updatable) Grants assigned to the app
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [value]
@@ -9717,7 +9717,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppIdcsCreatedByArgs', 'DomainsAppIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppIdcsCreatedByArgs', 'DomainsAppIdcsCreatedByArgsDict', 'outputs.DomainsAppIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -9727,7 +9727,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppIdcsLastModifiedByArgs', 'DomainsAppIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppIdcsLastModifiedByArgs', 'DomainsAppIdcsLastModifiedByArgsDict', 'outputs.DomainsAppIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -9757,7 +9757,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppIdentityProviderArgs', 'DomainsAppIdentityProviderArgsDict']]]] identity_providers: (Updatable) A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppIdentityProviderArgs', 'DomainsAppIdentityProviderArgsDict', 'outputs.DomainsAppIdentityProvider']]]] identity_providers: (Updatable) A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [value]
@@ -9767,7 +9767,7 @@ class DomainsApp(pulumi.CustomResource):
                * required: false
                * returned: request
                * type: complex
-        :param pulumi.Input[Union['DomainsAppIdpPolicyArgs', 'DomainsAppIdpPolicyArgsDict']] idp_policy: (Updatable) IDP Policy.
+        :param pulumi.Input[Union['DomainsAppIdpPolicyArgs', 'DomainsAppIdpPolicyArgsDict', 'outputs.DomainsAppIdpPolicy']] idp_policy: (Updatable) IDP Policy.
                
                **Added In:** 18.1.2
                
@@ -10034,7 +10034,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppMetaArgs', 'DomainsAppMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppMetaArgs', 'DomainsAppMetaArgsDict', 'outputs.DomainsAppMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -10136,7 +10136,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppProtectableSecondaryAudienceArgs', 'DomainsAppProtectableSecondaryAudienceArgsDict']]]] protectable_secondary_audiences: (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppProtectableSecondaryAudienceArgs', 'DomainsAppProtectableSecondaryAudienceArgsDict', 'outputs.DomainsAppProtectableSecondaryAudience']]]] protectable_secondary_audiences: (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
                
                **Added In:** 18.2.2
                
@@ -10150,7 +10150,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsAppRadiusPolicyArgs', 'DomainsAppRadiusPolicyArgsDict']] radius_policy: (Updatable) RADIUS Policy assigned to this application.
+        :param pulumi.Input[Union['DomainsAppRadiusPolicyArgs', 'DomainsAppRadiusPolicyArgsDict', 'outputs.DomainsAppRadiusPolicy']] radius_policy: (Updatable) RADIUS Policy assigned to this application.
                
                **Added In:** 2209070044
                
@@ -10193,7 +10193,7 @@ class DomainsApp(pulumi.CustomResource):
                * type: integer
                * uniqueness: none
         :param pulumi.Input[_builtins.str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[Union['DomainsAppSamlServiceProviderArgs', 'DomainsAppSamlServiceProviderArgsDict']] saml_service_provider: (Updatable) An attribute that refers to the SAML Service Provider that runtime services will use to log an end user in to this App automatically. Note that this will be used only if the loginMechanism is 'SAML'.
+        :param pulumi.Input[Union['DomainsAppSamlServiceProviderArgs', 'DomainsAppSamlServiceProviderArgsDict', 'outputs.DomainsAppSamlServiceProvider']] saml_service_provider: (Updatable) An attribute that refers to the SAML Service Provider that runtime services will use to log an end user in to this App automatically. Note that this will be used only if the loginMechanism is 'SAML'.
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -10214,7 +10214,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppScopeArgs', 'DomainsAppScopeArgsDict']]]] scopes: (Updatable) Scopes defined by this App. Used when this App acts as an OAuth Resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppScopeArgs', 'DomainsAppScopeArgsDict', 'outputs.DomainsAppScope']]]] scopes: (Updatable) Scopes defined by this App. Used when this App acts as an OAuth Resource.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -10239,7 +10239,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppServiceParamArgs', 'DomainsAppServiceParamArgsDict']]]] service_params: (Updatable) Custom attribute that is required to compute other attribute values during app creation.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppServiceParamArgs', 'DomainsAppServiceParamArgsDict', 'outputs.DomainsAppServiceParam']]]] service_params: (Updatable) Custom attribute that is required to compute other attribute values during app creation.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [name]
@@ -10284,7 +10284,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsAppSignonPolicyArgs', 'DomainsAppSignonPolicyArgsDict']] signon_policy: (Updatable) Sign-on Policy.
+        :param pulumi.Input[Union['DomainsAppSignonPolicyArgs', 'DomainsAppSignonPolicyArgsDict', 'outputs.DomainsAppSignonPolicy']] signon_policy: (Updatable) Sign-on Policy.
                
                **Deprecated Since: 17.3.4**
                
@@ -10295,7 +10295,7 @@ class DomainsApp(pulumi.CustomResource):
                * required: false
                * returned: default
                * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppTagArgs', 'DomainsAppTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppTagArgs', 'DomainsAppTagArgsDict', 'outputs.DomainsAppTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -10329,7 +10329,7 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsAppTermsOfUseArgs', 'DomainsAppTermsOfUseArgsDict']] terms_of_use: (Updatable) Terms Of Use.
+        :param pulumi.Input[Union['DomainsAppTermsOfUseArgs', 'DomainsAppTermsOfUseArgsDict', 'outputs.DomainsAppTermsOfUse']] terms_of_use: (Updatable) Terms Of Use.
                
                **Added In:** 18.2.6
                
@@ -10340,7 +10340,7 @@ class DomainsApp(pulumi.CustomResource):
                * required: false
                * returned: default
                * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppTrustPolicyArgs', 'DomainsAppTrustPolicyArgsDict']]]] trust_policies: (Updatable) Trust Policies.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppTrustPolicyArgs', 'DomainsAppTrustPolicyArgsDict', 'outputs.DomainsAppTrustPolicy']]]] trust_policies: (Updatable) Trust Policies.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [value]
@@ -10363,20 +10363,20 @@ class DomainsApp(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgsDict']] urnietfparamsscimschemasoracleidcsextensiondbcs_app: (Updatable) This extension provides attributes for database service facet of an App
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgsDict']] urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: (Updatable) This extension defines the Enterprise App related attributes.
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgsDict']] urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: (Updatable) This extension provides attributes for Form-Fill facet of App
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgsDict']] urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: (Updatable) This extension provides attributes for Form-Fill facet of AppTemplate
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgsDict']] urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: (Updatable) Kerberos Realm
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict']] urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: (Updatable) Managed App
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgsDict']] urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: (Updatable) This extension defines attributes specific to Apps that represent instances of Multicloud Service App
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgsDict']] urnietfparamsscimschemasoracleidcsextensionopc_service_app: (Updatable) This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgsDict']] urnietfparamsscimschemasoracleidcsextensionradius_app_app: (Updatable) This extension defines attributes specific to Apps that represent instances of Radius App.
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgsDict']] urnietfparamsscimschemasoracleidcsextensionrequestable_app: (Updatable) Requestable App
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgsDict']] urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: (Updatable) This extension defines attributes related to the Service Providers configuration.
-        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgsDict']] urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: (Updatable) WebTier Policy
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppUserRoleArgs', 'DomainsAppUserRoleArgsDict']]]] user_roles: (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers end-user privilege within this App.
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags']] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp']] urnietfparamsscimschemasoracleidcsextensiondbcs_app: (Updatable) This extension provides attributes for database service facet of an App
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp']] urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: (Updatable) This extension defines the Enterprise App related attributes.
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp']] urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: (Updatable) This extension provides attributes for Form-Fill facet of App
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate']] urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: (Updatable) This extension provides attributes for Form-Fill facet of AppTemplate
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp']] urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: (Updatable) Kerberos Realm
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp']] urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: (Updatable) Managed App
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp']] urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: (Updatable) This extension defines attributes specific to Apps that represent instances of Multicloud Service App
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp']] urnietfparamsscimschemasoracleidcsextensionopc_service_app: (Updatable) This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp']] urnietfparamsscimschemasoracleidcsextensionradius_app_app: (Updatable) This extension defines attributes specific to Apps that represent instances of Radius App.
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp']] urnietfparamsscimschemasoracleidcsextensionrequestable_app: (Updatable) Requestable App
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp']] urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: (Updatable) This extension defines attributes related to the Service Providers configuration.
+        :param pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgsDict', 'outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp']] urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: (Updatable) WebTier Policy
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppUserRoleArgs', 'DomainsAppUserRoleArgsDict', 'outputs.DomainsAppUserRole']]]] user_roles: (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers end-user privilege within this App.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [value]

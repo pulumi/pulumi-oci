@@ -446,7 +446,7 @@ class DataMaskRule(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  iam_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
-                 target_selected: pulumi.Input[Optional[Union['DataMaskRuleTargetSelectedArgs', 'DataMaskRuleTargetSelectedArgsDict']]] = None,
+                 target_selected: pulumi.Input[Optional[Union['DataMaskRuleTargetSelectedArgs', 'DataMaskRuleTargetSelectedArgsDict', 'outputs.DataMaskRuleTargetSelected']]] = None,
                  __props__=None):
         """
         This resource provides the Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -506,7 +506,7 @@ class DataMaskRule(pulumi.CustomResource):
                Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] iam_group_id: (Updatable) IAM group ID associated with the data mask rule
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the data mask rule
-        :param pulumi.Input[Union['DataMaskRuleTargetSelectedArgs', 'DataMaskRuleTargetSelectedArgsDict']] target_selected: (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
+        :param pulumi.Input[Union['DataMaskRuleTargetSelectedArgs', 'DataMaskRuleTargetSelectedArgsDict', 'outputs.DataMaskRuleTargetSelected']] target_selected: (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
         """
         ...
     @overload
@@ -581,7 +581,7 @@ class DataMaskRule(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  iam_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
-                 target_selected: pulumi.Input[Optional[Union['DataMaskRuleTargetSelectedArgs', 'DataMaskRuleTargetSelectedArgsDict']]] = None,
+                 target_selected: pulumi.Input[Optional[Union['DataMaskRuleTargetSelectedArgs', 'DataMaskRuleTargetSelectedArgsDict', 'outputs.DataMaskRuleTargetSelected']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -636,7 +636,7 @@ class DataMaskRule(pulumi.CustomResource):
             lifecyle_details: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            target_selected: pulumi.Input[Optional[Union['DataMaskRuleTargetSelectedArgs', 'DataMaskRuleTargetSelectedArgsDict']]] = None,
+            target_selected: pulumi.Input[Optional[Union['DataMaskRuleTargetSelectedArgs', 'DataMaskRuleTargetSelectedArgsDict', 'outputs.DataMaskRuleTargetSelected']]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'DataMaskRule':
         """
@@ -661,7 +661,7 @@ class DataMaskRule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecyle_details: Additional details on the substate of the lifecycle state [DEPRECATE]
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the data mask rule
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Union['DataMaskRuleTargetSelectedArgs', 'DataMaskRuleTargetSelectedArgsDict']] target_selected: (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
+        :param pulumi.Input[Union['DataMaskRuleTargetSelectedArgs', 'DataMaskRuleTargetSelectedArgsDict', 'outputs.DataMaskRuleTargetSelected']] target_selected: (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
         :param pulumi.Input[_builtins.str] time_created: The date and time the target was created. Format defined by RFC3339.
         :param pulumi.Input[_builtins.str] time_updated: The date and time the target was updated. Format defined by RFC3339.
         """

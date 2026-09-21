@@ -121,7 +121,7 @@ class AwaitableGetRatecardsResult(GetRatecardsResult):
 
 
 def get_ratecards(compartment_id: Optional[_builtins.str] = None,
-                  filters: Optional[Sequence[Union['GetRatecardsFilterArgs', 'GetRatecardsFilterArgsDict']]] = None,
+                  filters: Optional[Sequence[Union['GetRatecardsFilterArgs', 'GetRatecardsFilterArgsDict', 'outputs.GetRatecardsFilterResult']]] = None,
                   part_number: Optional[_builtins.str] = None,
                   subscription_id: Optional[_builtins.str] = None,
                   time_from: Optional[_builtins.str] = None,
@@ -173,7 +173,7 @@ def get_ratecards(compartment_id: Optional[_builtins.str] = None,
         time_from=pulumi.get(__ret__, 'time_from'),
         time_to=pulumi.get(__ret__, 'time_to'))
 def get_ratecards_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRatecardsFilterArgs', 'GetRatecardsFilterArgsDict']]]]] = None,
+                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRatecardsFilterArgs', 'GetRatecardsFilterArgsDict', 'outputs.GetRatecardsFilterResult']]]]] = None,
                          part_number: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                          time_from: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

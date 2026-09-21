@@ -446,7 +446,7 @@ class Table(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_auto_reclaimable: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 table_limits: pulumi.Input[Optional[Union['TableTableLimitsArgs', 'TableTableLimitsArgsDict']]] = None,
+                 table_limits: pulumi.Input[Optional[Union['TableTableLimitsArgs', 'TableTableLimitsArgsDict', 'outputs.TableTableLimits']]] = None,
                  __props__=None):
         """
         This resource provides the Table resource in Oracle Cloud Infrastructure NoSQL Database service.
@@ -496,7 +496,7 @@ class Table(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_auto_reclaimable: True if table can be reclaimed after an idle period.
         :param pulumi.Input[_builtins.str] name: Table name.
-        :param pulumi.Input[Union['TableTableLimitsArgs', 'TableTableLimitsArgsDict']] table_limits: (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
+        :param pulumi.Input[Union['TableTableLimitsArgs', 'TableTableLimitsArgsDict', 'outputs.TableTableLimits']] table_limits: (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
         """
         ...
     @overload
@@ -565,7 +565,7 @@ class Table(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_auto_reclaimable: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 table_limits: pulumi.Input[Optional[Union['TableTableLimitsArgs', 'TableTableLimitsArgsDict']]] = None,
+                 table_limits: pulumi.Input[Optional[Union['TableTableLimitsArgs', 'TableTableLimitsArgsDict', 'outputs.TableTableLimits']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -616,12 +616,12 @@ class Table(pulumi.CustomResource):
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             local_replica_initialization_in_percent: pulumi.Input[Optional[_builtins.int]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            replicas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TableReplicaArgs', 'TableReplicaArgsDict']]]]] = None,
+            replicas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TableReplicaArgs', 'TableReplicaArgsDict', 'outputs.TableReplica']]]]] = None,
             schema_state: pulumi.Input[Optional[_builtins.str]] = None,
-            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TableSchemaArgs', 'TableSchemaArgsDict']]]]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TableSchemaArgs', 'TableSchemaArgsDict', 'outputs.TableSchema']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            table_limits: pulumi.Input[Optional[Union['TableTableLimitsArgs', 'TableTableLimitsArgsDict']]] = None,
+            table_limits: pulumi.Input[Optional[Union['TableTableLimitsArgs', 'TableTableLimitsArgsDict', 'outputs.TableTableLimits']]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_of_expiration: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'Table':
@@ -641,12 +641,12 @@ class Table(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail.
         :param pulumi.Input[_builtins.int] local_replica_initialization_in_percent: If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
         :param pulumi.Input[_builtins.str] name: Table name.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['TableReplicaArgs', 'TableReplicaArgsDict']]]] replicas: An array of Replica listing this table's replicas, if any
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TableReplicaArgs', 'TableReplicaArgsDict', 'outputs.TableReplica']]]] replicas: An array of Replica listing this table's replicas, if any
         :param pulumi.Input[_builtins.str] schema_state: The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['TableSchemaArgs', 'TableSchemaArgsDict']]]] schemas: The table schema information as a JSON object.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TableSchemaArgs', 'TableSchemaArgsDict', 'outputs.TableSchema']]]] schemas: The table schema information as a JSON object.
         :param pulumi.Input[_builtins.str] state: The state of a table.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
-        :param pulumi.Input[Union['TableTableLimitsArgs', 'TableTableLimitsArgsDict']] table_limits: (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
+        :param pulumi.Input[Union['TableTableLimitsArgs', 'TableTableLimitsArgsDict', 'outputs.TableTableLimits']] table_limits: (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
         :param pulumi.Input[_builtins.str] time_created: The time the the table was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_of_expiration: If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time the the table's metadata was last updated. An RFC3339 formatted datetime string.

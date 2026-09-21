@@ -98,7 +98,7 @@ class AwaitableGetUtilsJavaMigrationAnalysisResult(GetUtilsJavaMigrationAnalysis
 
 def get_utils_java_migration_analysis(analysis_project_name: Optional[_builtins.str] = None,
                                       compartment_id: Optional[_builtins.str] = None,
-                                      filters: Optional[Sequence[Union['GetUtilsJavaMigrationAnalysisFilterArgs', 'GetUtilsJavaMigrationAnalysisFilterArgsDict']]] = None,
+                                      filters: Optional[Sequence[Union['GetUtilsJavaMigrationAnalysisFilterArgs', 'GetUtilsJavaMigrationAnalysisFilterArgsDict', 'outputs.GetUtilsJavaMigrationAnalysisFilterResult']]] = None,
                                       id: Optional[_builtins.str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUtilsJavaMigrationAnalysisResult:
     """
@@ -138,7 +138,7 @@ def get_utils_java_migration_analysis(analysis_project_name: Optional[_builtins.
         java_migration_analysis_collections=pulumi.get(__ret__, 'java_migration_analysis_collections'))
 def get_utils_java_migration_analysis_output(analysis_project_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUtilsJavaMigrationAnalysisFilterArgs', 'GetUtilsJavaMigrationAnalysisFilterArgsDict']]]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUtilsJavaMigrationAnalysisFilterArgs', 'GetUtilsJavaMigrationAnalysisFilterArgsDict', 'outputs.GetUtilsJavaMigrationAnalysisFilterResult']]]]] = None,
                                              id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUtilsJavaMigrationAnalysisResult]:
     """

@@ -85,7 +85,7 @@ class AwaitableGetDataGuardAssociationsResult(GetDataGuardAssociationsResult):
 
 
 def get_data_guard_associations(database_id: Optional[_builtins.str] = None,
-                                filters: Optional[Sequence[Union['GetDataGuardAssociationsFilterArgs', 'GetDataGuardAssociationsFilterArgsDict']]] = None,
+                                filters: Optional[Sequence[Union['GetDataGuardAssociationsFilterArgs', 'GetDataGuardAssociationsFilterArgsDict', 'outputs.GetDataGuardAssociationsFilterResult']]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDataGuardAssociationsResult:
     """
     This data source provides the list of Data Guard Associations in Oracle Cloud Infrastructure Database service.
@@ -116,7 +116,7 @@ def get_data_guard_associations(database_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_data_guard_associations_output(database_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDataGuardAssociationsFilterArgs', 'GetDataGuardAssociationsFilterArgsDict']]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDataGuardAssociationsFilterArgs', 'GetDataGuardAssociationsFilterArgsDict', 'outputs.GetDataGuardAssociationsFilterResult']]]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataGuardAssociationsResult]:
     """
     This data source provides the list of Data Guard Associations in Oracle Cloud Infrastructure Database service.

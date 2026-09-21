@@ -134,7 +134,7 @@ class AwaitableGetOccCapacityRequestsResult(GetOccCapacityRequestsResult):
 
 def get_occ_capacity_requests(compartment_id: Optional[_builtins.str] = None,
                               display_name: Optional[_builtins.str] = None,
-                              filters: Optional[Sequence[Union['GetOccCapacityRequestsFilterArgs', 'GetOccCapacityRequestsFilterArgsDict']]] = None,
+                              filters: Optional[Sequence[Union['GetOccCapacityRequestsFilterArgs', 'GetOccCapacityRequestsFilterArgsDict', 'outputs.GetOccCapacityRequestsFilterResult']]] = None,
                               id: Optional[_builtins.str] = None,
                               namespace: Optional[_builtins.str] = None,
                               occ_availability_catalog_id: Optional[_builtins.str] = None,
@@ -189,7 +189,7 @@ def get_occ_capacity_requests(compartment_id: Optional[_builtins.str] = None,
         request_type=pulumi.get(__ret__, 'request_type'))
 def get_occ_capacity_requests_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOccCapacityRequestsFilterArgs', 'GetOccCapacityRequestsFilterArgsDict']]]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOccCapacityRequestsFilterArgs', 'GetOccCapacityRequestsFilterArgsDict', 'outputs.GetOccCapacityRequestsFilterResult']]]]] = None,
                                      id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      namespace: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      occ_availability_catalog_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

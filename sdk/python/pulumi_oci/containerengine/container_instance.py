@@ -715,20 +715,20 @@ class ContainerInstance(pulumi.CustomResource):
                  availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  container_restart_policy: pulumi.Input[Optional[_builtins.str]] = None,
-                 containers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceContainerArgs', 'ContainerInstanceContainerArgsDict']]]]] = None,
+                 containers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceContainerArgs', 'ContainerInstanceContainerArgsDict', 'outputs.ContainerInstanceContainer']]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 dns_config: pulumi.Input[Optional[Union['ContainerInstanceDnsConfigArgs', 'ContainerInstanceDnsConfigArgsDict']]] = None,
+                 dns_config: pulumi.Input[Optional[Union['ContainerInstanceDnsConfigArgs', 'ContainerInstanceDnsConfigArgsDict', 'outputs.ContainerInstanceDnsConfig']]] = None,
                  fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  graceful_shutdown_timeout_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
-                 image_pull_secrets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict']]]]] = None,
-                 security_context: pulumi.Input[Optional[Union['ContainerInstanceSecurityContextArgs', 'ContainerInstanceSecurityContextArgsDict']]] = None,
+                 image_pull_secrets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict', 'outputs.ContainerInstanceImagePullSecret']]]]] = None,
+                 security_context: pulumi.Input[Optional[Union['ContainerInstanceSecurityContextArgs', 'ContainerInstanceSecurityContextArgsDict', 'outputs.ContainerInstanceSecurityContext']]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
-                 shape_config: pulumi.Input[Optional[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict']]] = None,
+                 shape_config: pulumi.Input[Optional[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict', 'outputs.ContainerInstanceShapeConfig']]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
-                 vnics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceVnicArgs', 'ContainerInstanceVnicArgsDict']]]]] = None,
-                 volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceVolumeArgs', 'ContainerInstanceVolumeArgsDict']]]]] = None,
+                 vnics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceVnicArgs', 'ContainerInstanceVnicArgsDict', 'outputs.ContainerInstanceVnic']]]]] = None,
+                 volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceVolumeArgs', 'ContainerInstanceVolumeArgsDict', 'outputs.ContainerInstanceVolume']]]]] = None,
                  __props__=None):
         """
         This resource provides the Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
@@ -884,23 +884,23 @@ class ContainerInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain where the container instance runs.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID.
         :param pulumi.Input[_builtins.str] container_restart_policy: Container restart policy
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceContainerArgs', 'ContainerInstanceContainerArgsDict']]]] containers: The containers to create on this container instance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceContainerArgs', 'ContainerInstanceContainerArgsDict', 'outputs.ContainerInstanceContainer']]]] containers: The containers to create on this container instance.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
-        :param pulumi.Input[Union['ContainerInstanceDnsConfigArgs', 'ContainerInstanceDnsConfigArgsDict']] dns_config: Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
+        :param pulumi.Input[Union['ContainerInstanceDnsConfigArgs', 'ContainerInstanceDnsConfigArgsDict', 'outputs.ContainerInstanceDnsConfig']] dns_config: Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
         :param pulumi.Input[_builtins.str] fault_domain: The fault domain where the container instance runs.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] graceful_shutdown_timeout_in_seconds: The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict']]]] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
-        :param pulumi.Input[Union['ContainerInstanceSecurityContextArgs', 'ContainerInstanceSecurityContextArgsDict']] security_context: Security context for all containers in a container instance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict', 'outputs.ContainerInstanceImagePullSecret']]]] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
+        :param pulumi.Input[Union['ContainerInstanceSecurityContextArgs', 'ContainerInstanceSecurityContextArgsDict', 'outputs.ContainerInstanceSecurityContext']] security_context: Security context for all containers in a container instance.
         :param pulumi.Input[_builtins.str] shape: The shape of the container instance. The shape determines the resources available to the container instance.
-        :param pulumi.Input[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict']] shape_config: The size and amount of resources available to the container instance.
+        :param pulumi.Input[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict', 'outputs.ContainerInstanceShapeConfig']] shape_config: The size and amount of resources available to the container instance.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceVnicArgs', 'ContainerInstanceVnicArgsDict']]]] vnics: The networks available to containers on this container instance.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceVolumeArgs', 'ContainerInstanceVolumeArgsDict']]]] volumes: A volume is a directory with data that is accessible across multiple containers in a container instance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceVnicArgs', 'ContainerInstanceVnicArgsDict', 'outputs.ContainerInstanceVnic']]]] vnics: The networks available to containers on this container instance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceVolumeArgs', 'ContainerInstanceVolumeArgsDict', 'outputs.ContainerInstanceVolume']]]] volumes: A volume is a directory with data that is accessible across multiple containers in a container instance.
                
                You can attach up to 32 volumes to single container instance.
         """
@@ -1077,20 +1077,20 @@ class ContainerInstance(pulumi.CustomResource):
                  availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  container_restart_policy: pulumi.Input[Optional[_builtins.str]] = None,
-                 containers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceContainerArgs', 'ContainerInstanceContainerArgsDict']]]]] = None,
+                 containers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceContainerArgs', 'ContainerInstanceContainerArgsDict', 'outputs.ContainerInstanceContainer']]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 dns_config: pulumi.Input[Optional[Union['ContainerInstanceDnsConfigArgs', 'ContainerInstanceDnsConfigArgsDict']]] = None,
+                 dns_config: pulumi.Input[Optional[Union['ContainerInstanceDnsConfigArgs', 'ContainerInstanceDnsConfigArgsDict', 'outputs.ContainerInstanceDnsConfig']]] = None,
                  fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  graceful_shutdown_timeout_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
-                 image_pull_secrets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict']]]]] = None,
-                 security_context: pulumi.Input[Optional[Union['ContainerInstanceSecurityContextArgs', 'ContainerInstanceSecurityContextArgsDict']]] = None,
+                 image_pull_secrets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict', 'outputs.ContainerInstanceImagePullSecret']]]]] = None,
+                 security_context: pulumi.Input[Optional[Union['ContainerInstanceSecurityContextArgs', 'ContainerInstanceSecurityContextArgsDict', 'outputs.ContainerInstanceSecurityContext']]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
-                 shape_config: pulumi.Input[Optional[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict']]] = None,
+                 shape_config: pulumi.Input[Optional[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict', 'outputs.ContainerInstanceShapeConfig']]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
-                 vnics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceVnicArgs', 'ContainerInstanceVnicArgsDict']]]]] = None,
-                 volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceVolumeArgs', 'ContainerInstanceVolumeArgsDict']]]]] = None,
+                 vnics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceVnicArgs', 'ContainerInstanceVnicArgsDict', 'outputs.ContainerInstanceVnic']]]]] = None,
+                 volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceVolumeArgs', 'ContainerInstanceVolumeArgsDict', 'outputs.ContainerInstanceVolume']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1150,26 +1150,26 @@ class ContainerInstance(pulumi.CustomResource):
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             container_count: pulumi.Input[Optional[_builtins.int]] = None,
             container_restart_policy: pulumi.Input[Optional[_builtins.str]] = None,
-            containers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceContainerArgs', 'ContainerInstanceContainerArgsDict']]]]] = None,
+            containers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceContainerArgs', 'ContainerInstanceContainerArgsDict', 'outputs.ContainerInstanceContainer']]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            dns_config: pulumi.Input[Optional[Union['ContainerInstanceDnsConfigArgs', 'ContainerInstanceDnsConfigArgsDict']]] = None,
+            dns_config: pulumi.Input[Optional[Union['ContainerInstanceDnsConfigArgs', 'ContainerInstanceDnsConfigArgsDict', 'outputs.ContainerInstanceDnsConfig']]] = None,
             fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             graceful_shutdown_timeout_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
-            image_pull_secrets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict']]]]] = None,
+            image_pull_secrets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict', 'outputs.ContainerInstanceImagePullSecret']]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            security_context: pulumi.Input[Optional[Union['ContainerInstanceSecurityContextArgs', 'ContainerInstanceSecurityContextArgsDict']]] = None,
+            security_context: pulumi.Input[Optional[Union['ContainerInstanceSecurityContextArgs', 'ContainerInstanceSecurityContextArgsDict', 'outputs.ContainerInstanceSecurityContext']]] = None,
             shape: pulumi.Input[Optional[_builtins.str]] = None,
-            shape_config: pulumi.Input[Optional[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict']]] = None,
+            shape_config: pulumi.Input[Optional[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict', 'outputs.ContainerInstanceShapeConfig']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
-            vnics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceVnicArgs', 'ContainerInstanceVnicArgsDict']]]]] = None,
+            vnics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceVnicArgs', 'ContainerInstanceVnicArgsDict', 'outputs.ContainerInstanceVnic']]]]] = None,
             volume_count: pulumi.Input[Optional[_builtins.int]] = None,
-            volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceVolumeArgs', 'ContainerInstanceVolumeArgsDict']]]]] = None) -> 'ContainerInstance':
+            volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceVolumeArgs', 'ContainerInstanceVolumeArgsDict', 'outputs.ContainerInstanceVolume']]]]] = None) -> 'ContainerInstance':
         """
         Get an existing ContainerInstance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1181,18 +1181,18 @@ class ContainerInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID.
         :param pulumi.Input[_builtins.int] container_count: The number of containers on the container instance.
         :param pulumi.Input[_builtins.str] container_restart_policy: Container restart policy
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceContainerArgs', 'ContainerInstanceContainerArgsDict']]]] containers: The containers to create on this container instance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceContainerArgs', 'ContainerInstanceContainerArgsDict', 'outputs.ContainerInstanceContainer']]]] containers: The containers to create on this container instance.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
-        :param pulumi.Input[Union['ContainerInstanceDnsConfigArgs', 'ContainerInstanceDnsConfigArgsDict']] dns_config: Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
+        :param pulumi.Input[Union['ContainerInstanceDnsConfigArgs', 'ContainerInstanceDnsConfigArgsDict', 'outputs.ContainerInstanceDnsConfig']] dns_config: Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
         :param pulumi.Input[_builtins.str] fault_domain: The fault domain where the container instance runs.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] graceful_shutdown_timeout_in_seconds: The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict']]]] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict', 'outputs.ContainerInstanceImagePullSecret']]]] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
-        :param pulumi.Input[Union['ContainerInstanceSecurityContextArgs', 'ContainerInstanceSecurityContextArgsDict']] security_context: Security context for all containers in a container instance.
+        :param pulumi.Input[Union['ContainerInstanceSecurityContextArgs', 'ContainerInstanceSecurityContextArgsDict', 'outputs.ContainerInstanceSecurityContext']] security_context: Security context for all containers in a container instance.
         :param pulumi.Input[_builtins.str] shape: The shape of the container instance. The shape determines the resources available to the container instance.
-        :param pulumi.Input[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict']] shape_config: The size and amount of resources available to the container instance.
+        :param pulumi.Input[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict', 'outputs.ContainerInstanceShapeConfig']] shape_config: The size and amount of resources available to the container instance.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
@@ -1201,9 +1201,9 @@ class ContainerInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] tenant_id: TenantId id of the container instance.
         :param pulumi.Input[_builtins.str] time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[_builtins.str] time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceVnicArgs', 'ContainerInstanceVnicArgsDict']]]] vnics: The networks available to containers on this container instance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceVnicArgs', 'ContainerInstanceVnicArgsDict', 'outputs.ContainerInstanceVnic']]]] vnics: The networks available to containers on this container instance.
         :param pulumi.Input[_builtins.int] volume_count: The number of volumes that are attached to the container instance.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceVolumeArgs', 'ContainerInstanceVolumeArgsDict']]]] volumes: A volume is a directory with data that is accessible across multiple containers in a container instance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceVolumeArgs', 'ContainerInstanceVolumeArgsDict', 'outputs.ContainerInstanceVolume']]]] volumes: A volume is a directory with data that is accessible across multiple containers in a container instance.
                
                You can attach up to 32 volumes to single container instance.
         """

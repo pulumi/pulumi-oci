@@ -98,7 +98,7 @@ class AwaitableGetFaultDomainsResult(GetFaultDomainsResult):
 
 def get_fault_domains(availability_domain: Optional[_builtins.str] = None,
                       compartment_id: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetFaultDomainsFilterArgs', 'GetFaultDomainsFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetFaultDomainsFilterArgs', 'GetFaultDomainsFilterArgsDict', 'outputs.GetFaultDomainsFilterResult']]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFaultDomainsResult:
     """
     This data source provides the list of Fault Domains in Oracle Cloud Infrastructure Identity service.
@@ -136,7 +136,7 @@ def get_fault_domains(availability_domain: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'))
 def get_fault_domains_output(availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
                              compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFaultDomainsFilterArgs', 'GetFaultDomainsFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFaultDomainsFilterArgs', 'GetFaultDomainsFilterArgsDict', 'outputs.GetFaultDomainsFilterResult']]]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFaultDomainsResult]:
     """
     This data source provides the list of Fault Domains in Oracle Cloud Infrastructure Identity service.

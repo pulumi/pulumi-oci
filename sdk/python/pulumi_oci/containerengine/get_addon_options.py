@@ -100,7 +100,7 @@ class AwaitableGetAddonOptionsResult(GetAddonOptionsResult):
 
 
 def get_addon_options(addon_name: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetAddonOptionsFilterArgs', 'GetAddonOptionsFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetAddonOptionsFilterArgs', 'GetAddonOptionsFilterArgsDict', 'outputs.GetAddonOptionsFilterResult']]] = None,
                       kubernetes_version: Optional[_builtins.str] = None,
                       should_show_all_versions: Optional[_builtins.bool] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAddonOptionsResult:
@@ -141,7 +141,7 @@ def get_addon_options(addon_name: Optional[_builtins.str] = None,
         kubernetes_version=pulumi.get(__ret__, 'kubernetes_version'),
         should_show_all_versions=pulumi.get(__ret__, 'should_show_all_versions'))
 def get_addon_options_output(addon_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAddonOptionsFilterArgs', 'GetAddonOptionsFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAddonOptionsFilterArgs', 'GetAddonOptionsFilterArgsDict', 'outputs.GetAddonOptionsFilterResult']]]]] = None,
                              kubernetes_version: pulumi.Input[Optional[_builtins.str]] = None,
                              should_show_all_versions: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAddonOptionsResult]:

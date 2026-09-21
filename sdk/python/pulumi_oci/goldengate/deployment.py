@@ -1532,7 +1532,7 @@ class Deployment(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
-                 backup_schedule: pulumi.Input[Optional[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']]] = None,
+                 backup_schedule: pulumi.Input[Optional[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict', 'outputs.DeploymentBackupSchedule']]] = None,
                  byol_cpu_core_count_limit: pulumi.Input[Optional[_builtins.int]] = None,
                  cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1553,12 +1553,12 @@ class Deployment(pulumi.CustomResource):
                  is_public: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  load_balancer_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict']]]]] = None,
-                 maintenance_configuration: pulumi.Input[Optional[Union['DeploymentMaintenanceConfigurationArgs', 'DeploymentMaintenanceConfigurationArgsDict']]] = None,
-                 maintenance_window: pulumi.Input[Optional[Union['DeploymentMaintenanceWindowArgs', 'DeploymentMaintenanceWindowArgsDict']]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict', 'outputs.DeploymentLock']]]]] = None,
+                 maintenance_configuration: pulumi.Input[Optional[Union['DeploymentMaintenanceConfigurationArgs', 'DeploymentMaintenanceConfigurationArgsDict', 'outputs.DeploymentMaintenanceConfiguration']]] = None,
+                 maintenance_window: pulumi.Input[Optional[Union['DeploymentMaintenanceWindowArgs', 'DeploymentMaintenanceWindowArgsDict', 'outputs.DeploymentMaintenanceWindow']]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ogg_data: pulumi.Input[Optional[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict']]] = None,
-                 placements: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentPlacementArgs', 'DeploymentPlacementArgsDict']]]]] = None,
+                 ogg_data: pulumi.Input[Optional[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict', 'outputs.DeploymentOggData']]] = None,
+                 placements: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentPlacementArgs', 'DeploymentPlacementArgsDict', 'outputs.DeploymentPlacement']]]]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  source_deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1585,7 +1585,7 @@ class Deployment(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a placement.
-        :param pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']] backup_schedule: (Updatable) Defines the backup schedule details for create operation.
+        :param pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict', 'outputs.DeploymentBackupSchedule']] backup_schedule: (Updatable) Defines the backup schedule details for create operation.
         :param pulumi.Input[_builtins.int] byol_cpu_core_count_limit: (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -1616,12 +1616,12 @@ class Deployment(pulumi.CustomResource):
                * Must reference a public subnet.
                * Must be a regional subnet.
                * Must be in the same VCN as subnetId.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict']]]] locks: Locks associated with this resource.
-        :param pulumi.Input[Union['DeploymentMaintenanceConfigurationArgs', 'DeploymentMaintenanceConfigurationArgsDict']] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
-        :param pulumi.Input[Union['DeploymentMaintenanceWindowArgs', 'DeploymentMaintenanceWindowArgsDict']] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict', 'outputs.DeploymentLock']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Union['DeploymentMaintenanceConfigurationArgs', 'DeploymentMaintenanceConfigurationArgsDict', 'outputs.DeploymentMaintenanceConfiguration']] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
+        :param pulumi.Input[Union['DeploymentMaintenanceWindowArgs', 'DeploymentMaintenanceWindowArgsDict', 'outputs.DeploymentMaintenanceWindow']] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        :param pulumi.Input[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict']] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentPlacementArgs', 'DeploymentPlacementArgsDict']]]] placements: (Updatable) An array of local peers of deployment
+        :param pulumi.Input[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict', 'outputs.DeploymentOggData']] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentPlacementArgs', 'DeploymentPlacementArgsDict', 'outputs.DeploymentPlacement']]]] placements: (Updatable) An array of local peers of deployment
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] source_deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param pulumi.Input[_builtins.str] state: Possible lifecycle states for a Deployment.
@@ -1670,7 +1670,7 @@ class Deployment(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
-                 backup_schedule: pulumi.Input[Optional[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']]] = None,
+                 backup_schedule: pulumi.Input[Optional[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict', 'outputs.DeploymentBackupSchedule']]] = None,
                  byol_cpu_core_count_limit: pulumi.Input[Optional[_builtins.int]] = None,
                  cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1691,12 +1691,12 @@ class Deployment(pulumi.CustomResource):
                  is_public: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  load_balancer_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict']]]]] = None,
-                 maintenance_configuration: pulumi.Input[Optional[Union['DeploymentMaintenanceConfigurationArgs', 'DeploymentMaintenanceConfigurationArgsDict']]] = None,
-                 maintenance_window: pulumi.Input[Optional[Union['DeploymentMaintenanceWindowArgs', 'DeploymentMaintenanceWindowArgsDict']]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict', 'outputs.DeploymentLock']]]]] = None,
+                 maintenance_configuration: pulumi.Input[Optional[Union['DeploymentMaintenanceConfigurationArgs', 'DeploymentMaintenanceConfigurationArgsDict', 'outputs.DeploymentMaintenanceConfiguration']]] = None,
+                 maintenance_window: pulumi.Input[Optional[Union['DeploymentMaintenanceWindowArgs', 'DeploymentMaintenanceWindowArgsDict', 'outputs.DeploymentMaintenanceWindow']]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ogg_data: pulumi.Input[Optional[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict']]] = None,
-                 placements: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentPlacementArgs', 'DeploymentPlacementArgsDict']]]]] = None,
+                 ogg_data: pulumi.Input[Optional[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict', 'outputs.DeploymentOggData']]] = None,
+                 placements: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentPlacementArgs', 'DeploymentPlacementArgsDict', 'outputs.DeploymentPlacement']]]]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  source_deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1785,7 +1785,7 @@ class Deployment(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
-            backup_schedule: pulumi.Input[Optional[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']]] = None,
+            backup_schedule: pulumi.Input[Optional[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict', 'outputs.DeploymentBackupSchedule']]] = None,
             byol_cpu_core_count_limit: pulumi.Input[Optional[_builtins.int]] = None,
             category: pulumi.Input[Optional[_builtins.str]] = None,
             cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1793,7 +1793,7 @@ class Deployment(pulumi.CustomResource):
             cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             deployment_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
-            deployment_diagnostic_datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentDeploymentDiagnosticDataArgs', 'DeploymentDeploymentDiagnosticDataArgsDict']]]]] = None,
+            deployment_diagnostic_datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentDeploymentDiagnosticDataArgs', 'DeploymentDeploymentDiagnosticDataArgsDict', 'outputs.DeploymentDeploymentDiagnosticData']]]]] = None,
             deployment_role: pulumi.Input[Optional[_builtins.str]] = None,
             deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
             deployment_url: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1804,7 +1804,7 @@ class Deployment(pulumi.CustomResource):
             fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
             fqdn: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            ingress_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentIngressIpArgs', 'DeploymentIngressIpArgsDict']]]]] = None,
+            ingress_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentIngressIpArgs', 'DeploymentIngressIpArgsDict', 'outputs.DeploymentIngressIp']]]]] = None,
             is_auto_scaling_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_byol_cpu_core_count_limit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_healthy: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1817,14 +1817,14 @@ class Deployment(pulumi.CustomResource):
             lifecycle_sub_state: pulumi.Input[Optional[_builtins.str]] = None,
             load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
             load_balancer_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict']]]]] = None,
-            maintenance_configuration: pulumi.Input[Optional[Union['DeploymentMaintenanceConfigurationArgs', 'DeploymentMaintenanceConfigurationArgsDict']]] = None,
-            maintenance_window: pulumi.Input[Optional[Union['DeploymentMaintenanceWindowArgs', 'DeploymentMaintenanceWindowArgsDict']]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict', 'outputs.DeploymentLock']]]]] = None,
+            maintenance_configuration: pulumi.Input[Optional[Union['DeploymentMaintenanceConfigurationArgs', 'DeploymentMaintenanceConfigurationArgsDict', 'outputs.DeploymentMaintenanceConfiguration']]] = None,
+            maintenance_window: pulumi.Input[Optional[Union['DeploymentMaintenanceWindowArgs', 'DeploymentMaintenanceWindowArgsDict', 'outputs.DeploymentMaintenanceWindow']]] = None,
             next_maintenance_action_type: pulumi.Input[Optional[_builtins.str]] = None,
             next_maintenance_description: pulumi.Input[Optional[_builtins.str]] = None,
             nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ogg_data: pulumi.Input[Optional[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict']]] = None,
-            placements: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentPlacementArgs', 'DeploymentPlacementArgsDict']]]]] = None,
+            ogg_data: pulumi.Input[Optional[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict', 'outputs.DeploymentOggData']]] = None,
+            placements: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentPlacementArgs', 'DeploymentPlacementArgsDict', 'outputs.DeploymentPlacement']]]]] = None,
             private_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
             public_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
             security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1849,7 +1849,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a placement.
-        :param pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']] backup_schedule: (Updatable) Defines the backup schedule details for create operation.
+        :param pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict', 'outputs.DeploymentBackupSchedule']] backup_schedule: (Updatable) Defines the backup schedule details for create operation.
         :param pulumi.Input[_builtins.int] byol_cpu_core_count_limit: (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
         :param pulumi.Input[_builtins.str] category: The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
@@ -1857,7 +1857,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentDeploymentDiagnosticDataArgs', 'DeploymentDeploymentDiagnosticDataArgsDict']]]] deployment_diagnostic_datas: Information regarding the deployment diagnostic collection
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentDeploymentDiagnosticDataArgs', 'DeploymentDeploymentDiagnosticDataArgsDict', 'outputs.DeploymentDeploymentDiagnosticData']]]] deployment_diagnostic_datas: Information regarding the deployment diagnostic collection
         :param pulumi.Input[_builtins.str] deployment_role: The type of the deployment role.
         :param pulumi.Input[_builtins.str] deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         :param pulumi.Input[_builtins.str] deployment_url: The URL of a resource.
@@ -1868,7 +1868,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] fault_domain: The fault domain of a placement.
         :param pulumi.Input[_builtins.str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentIngressIpArgs', 'DeploymentIngressIpArgsDict']]]] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentIngressIpArgs', 'DeploymentIngressIpArgsDict', 'outputs.DeploymentIngressIp']]]] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         :param pulumi.Input[_builtins.bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
         :param pulumi.Input[_builtins.bool] is_byol_cpu_core_count_limit_enabled: (Updatable) Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
         :param pulumi.Input[_builtins.bool] is_healthy: True if all of the aggregate resources are working correctly.
@@ -1891,14 +1891,14 @@ class Deployment(pulumi.CustomResource):
                * Must reference a public subnet.
                * Must be a regional subnet.
                * Must be in the same VCN as subnetId.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict']]]] locks: Locks associated with this resource.
-        :param pulumi.Input[Union['DeploymentMaintenanceConfigurationArgs', 'DeploymentMaintenanceConfigurationArgsDict']] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
-        :param pulumi.Input[Union['DeploymentMaintenanceWindowArgs', 'DeploymentMaintenanceWindowArgsDict']] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict', 'outputs.DeploymentLock']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Union['DeploymentMaintenanceConfigurationArgs', 'DeploymentMaintenanceConfigurationArgsDict', 'outputs.DeploymentMaintenanceConfiguration']] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
+        :param pulumi.Input[Union['DeploymentMaintenanceWindowArgs', 'DeploymentMaintenanceWindowArgsDict', 'outputs.DeploymentMaintenanceWindow']] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
         :param pulumi.Input[_builtins.str] next_maintenance_action_type: Type of the next maintenance.
         :param pulumi.Input[_builtins.str] next_maintenance_description: Description of the next maintenance.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        :param pulumi.Input[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict']] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentPlacementArgs', 'DeploymentPlacementArgsDict']]]] placements: (Updatable) An array of local peers of deployment
+        :param pulumi.Input[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict', 'outputs.DeploymentOggData']] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentPlacementArgs', 'DeploymentPlacementArgsDict', 'outputs.DeploymentPlacement']]]] placements: (Updatable) An array of local peers of deployment
         :param pulumi.Input[_builtins.str] private_ip_address: The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
         :param pulumi.Input[_builtins.str] public_ip_address: The public IP address representing the access point for the Deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`

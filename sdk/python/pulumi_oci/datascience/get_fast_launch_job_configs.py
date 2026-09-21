@@ -82,7 +82,7 @@ class AwaitableGetFastLaunchJobConfigsResult(GetFastLaunchJobConfigsResult):
 
 
 def get_fast_launch_job_configs(compartment_id: Optional[_builtins.str] = None,
-                                filters: Optional[Sequence[Union['GetFastLaunchJobConfigsFilterArgs', 'GetFastLaunchJobConfigsFilterArgsDict']]] = None,
+                                filters: Optional[Sequence[Union['GetFastLaunchJobConfigsFilterArgs', 'GetFastLaunchJobConfigsFilterArgsDict', 'outputs.GetFastLaunchJobConfigsFilterResult']]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFastLaunchJobConfigsResult:
     """
     This data source provides the list of Fast Launch Job Configs in Oracle Cloud Infrastructure Data Science service.
@@ -113,7 +113,7 @@ def get_fast_launch_job_configs(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_fast_launch_job_configs_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFastLaunchJobConfigsFilterArgs', 'GetFastLaunchJobConfigsFilterArgsDict']]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFastLaunchJobConfigsFilterArgs', 'GetFastLaunchJobConfigsFilterArgsDict', 'outputs.GetFastLaunchJobConfigsFilterResult']]]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFastLaunchJobConfigsResult]:
     """
     This data source provides the list of Fast Launch Job Configs in Oracle Cloud Infrastructure Data Science service.

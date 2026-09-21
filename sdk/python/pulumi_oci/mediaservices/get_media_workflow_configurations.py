@@ -110,7 +110,7 @@ class AwaitableGetMediaWorkflowConfigurationsResult(GetMediaWorkflowConfiguratio
 
 def get_media_workflow_configurations(compartment_id: Optional[_builtins.str] = None,
                                       display_name: Optional[_builtins.str] = None,
-                                      filters: Optional[Sequence[Union['GetMediaWorkflowConfigurationsFilterArgs', 'GetMediaWorkflowConfigurationsFilterArgsDict']]] = None,
+                                      filters: Optional[Sequence[Union['GetMediaWorkflowConfigurationsFilterArgs', 'GetMediaWorkflowConfigurationsFilterArgsDict', 'outputs.GetMediaWorkflowConfigurationsFilterResult']]] = None,
                                       id: Optional[_builtins.str] = None,
                                       state: Optional[_builtins.str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMediaWorkflowConfigurationsResult:
@@ -155,7 +155,7 @@ def get_media_workflow_configurations(compartment_id: Optional[_builtins.str] = 
         state=pulumi.get(__ret__, 'state'))
 def get_media_workflow_configurations_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMediaWorkflowConfigurationsFilterArgs', 'GetMediaWorkflowConfigurationsFilterArgsDict']]]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMediaWorkflowConfigurationsFilterArgs', 'GetMediaWorkflowConfigurationsFilterArgsDict', 'outputs.GetMediaWorkflowConfigurationsFilterResult']]]]] = None,
                                              id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMediaWorkflowConfigurationsResult]:

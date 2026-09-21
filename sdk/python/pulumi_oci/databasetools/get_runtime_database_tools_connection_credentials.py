@@ -82,7 +82,7 @@ class AwaitableGetRuntimeDatabaseToolsConnectionCredentialsResult(GetRuntimeData
 
 
 def get_runtime_database_tools_connection_credentials(database_tools_connection_id: Optional[_builtins.str] = None,
-                                                      filters: Optional[Sequence[Union['GetRuntimeDatabaseToolsConnectionCredentialsFilterArgs', 'GetRuntimeDatabaseToolsConnectionCredentialsFilterArgsDict']]] = None,
+                                                      filters: Optional[Sequence[Union['GetRuntimeDatabaseToolsConnectionCredentialsFilterArgs', 'GetRuntimeDatabaseToolsConnectionCredentialsFilterArgsDict', 'outputs.GetRuntimeDatabaseToolsConnectionCredentialsFilterResult']]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRuntimeDatabaseToolsConnectionCredentialsResult:
     """
     This data source provides the list of Database Tools Connection Credentials in Oracle Cloud Infrastructure Database Tools Runtime service.
@@ -113,7 +113,7 @@ def get_runtime_database_tools_connection_credentials(database_tools_connection_
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_runtime_database_tools_connection_credentials_output(database_tools_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRuntimeDatabaseToolsConnectionCredentialsFilterArgs', 'GetRuntimeDatabaseToolsConnectionCredentialsFilterArgsDict']]]]] = None,
+                                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRuntimeDatabaseToolsConnectionCredentialsFilterArgs', 'GetRuntimeDatabaseToolsConnectionCredentialsFilterArgsDict', 'outputs.GetRuntimeDatabaseToolsConnectionCredentialsFilterResult']]]]] = None,
                                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRuntimeDatabaseToolsConnectionCredentialsResult]:
     """
     This data source provides the list of Database Tools Connection Credentials in Oracle Cloud Infrastructure Database Tools Runtime service.

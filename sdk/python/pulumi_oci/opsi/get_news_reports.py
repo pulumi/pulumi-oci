@@ -128,7 +128,7 @@ class AwaitableGetNewsReportsResult(GetNewsReportsResult):
 
 def get_news_reports(compartment_id: Optional[_builtins.str] = None,
                      compartment_id_in_subtree: Optional[_builtins.bool] = None,
-                     filters: Optional[Sequence[Union['GetNewsReportsFilterArgs', 'GetNewsReportsFilterArgsDict']]] = None,
+                     filters: Optional[Sequence[Union['GetNewsReportsFilterArgs', 'GetNewsReportsFilterArgsDict', 'outputs.GetNewsReportsFilterResult']]] = None,
                      news_report_id: Optional[_builtins.str] = None,
                      states: Optional[Sequence[_builtins.str]] = None,
                      statuses: Optional[Sequence[_builtins.str]] = None,
@@ -179,7 +179,7 @@ def get_news_reports(compartment_id: Optional[_builtins.str] = None,
         statuses=pulumi.get(__ret__, 'statuses'))
 def get_news_reports_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
-                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNewsReportsFilterArgs', 'GetNewsReportsFilterArgsDict']]]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNewsReportsFilterArgs', 'GetNewsReportsFilterArgsDict', 'outputs.GetNewsReportsFilterResult']]]]] = None,
                             news_report_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                             statuses: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,

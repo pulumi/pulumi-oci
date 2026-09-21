@@ -107,7 +107,7 @@ class AwaitableGetRecipesResult(GetRecipesResult):
 
 def get_recipes(compartment_id: Optional[_builtins.str] = None,
                 display_name: Optional[_builtins.str] = None,
-                filters: Optional[Sequence[Union['GetRecipesFilterArgs', 'GetRecipesFilterArgsDict']]] = None,
+                filters: Optional[Sequence[Union['GetRecipesFilterArgs', 'GetRecipesFilterArgsDict', 'outputs.GetRecipesFilterResult']]] = None,
                 recipe_type: Optional[_builtins.str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRecipesResult:
     """
@@ -148,7 +148,7 @@ def get_recipes(compartment_id: Optional[_builtins.str] = None,
         recipe_type=pulumi.get(__ret__, 'recipe_type'))
 def get_recipes_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRecipesFilterArgs', 'GetRecipesFilterArgsDict']]]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRecipesFilterArgs', 'GetRecipesFilterArgsDict', 'outputs.GetRecipesFilterResult']]]]] = None,
                        recipe_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecipesResult]:
     """

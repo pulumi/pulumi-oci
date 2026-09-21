@@ -79,7 +79,7 @@ class AwaitableGetFileStorageAvailableOverrideMaintenanceStartTimesResult(GetFil
 
 
 def get_file_storage_available_override_maintenance_start_times(date: Optional[_builtins.str] = None,
-                                                                filters: Optional[Sequence[Union['GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgs', 'GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgsDict']]] = None,
+                                                                filters: Optional[Sequence[Union['GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgs', 'GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgsDict', 'outputs.GetFileStorageAvailableOverrideMaintenanceStartTimesFilterResult']]] = None,
                                                                 id: Optional[_builtins.str] = None,
                                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFileStorageAvailableOverrideMaintenanceStartTimesResult:
     """
@@ -114,7 +114,7 @@ def get_file_storage_available_override_maintenance_start_times(date: Optional[_
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_file_storage_available_override_maintenance_start_times_output(date: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgs', 'GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgsDict']]]]] = None,
+                                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgs', 'GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgsDict', 'outputs.GetFileStorageAvailableOverrideMaintenanceStartTimesFilterResult']]]]] = None,
                                                                        id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFileStorageAvailableOverrideMaintenanceStartTimesResult]:
     """

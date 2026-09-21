@@ -119,7 +119,7 @@ class AwaitableGetSecurityAttributeNamespacesResult(GetSecurityAttributeNamespac
 
 def get_security_attribute_namespaces(compartment_id: Optional[_builtins.str] = None,
                                       compartment_id_in_subtree: Optional[_builtins.bool] = None,
-                                      filters: Optional[Sequence[Union['GetSecurityAttributeNamespacesFilterArgs', 'GetSecurityAttributeNamespacesFilterArgsDict']]] = None,
+                                      filters: Optional[Sequence[Union['GetSecurityAttributeNamespacesFilterArgs', 'GetSecurityAttributeNamespacesFilterArgsDict', 'outputs.GetSecurityAttributeNamespacesFilterResult']]] = None,
                                       name: Optional[_builtins.str] = None,
                                       state: Optional[_builtins.str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityAttributeNamespacesResult:
@@ -165,7 +165,7 @@ def get_security_attribute_namespaces(compartment_id: Optional[_builtins.str] = 
         state=pulumi.get(__ret__, 'state'))
 def get_security_attribute_namespaces_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
-                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityAttributeNamespacesFilterArgs', 'GetSecurityAttributeNamespacesFilterArgsDict']]]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityAttributeNamespacesFilterArgs', 'GetSecurityAttributeNamespacesFilterArgsDict', 'outputs.GetSecurityAttributeNamespacesFilterResult']]]]] = None,
                                              name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAttributeNamespacesResult]:

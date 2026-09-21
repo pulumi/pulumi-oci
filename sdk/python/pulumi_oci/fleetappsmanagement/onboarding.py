@@ -483,7 +483,7 @@ class Onboarding(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            applied_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OnboardingAppliedPolicyArgs', 'OnboardingAppliedPolicyArgsDict']]]]] = None,
+            applied_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OnboardingAppliedPolicyArgs', 'OnboardingAppliedPolicyArgsDict', 'outputs.OnboardingAppliedPolicy']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             discovery_frequency: pulumi.Input[Optional[_builtins.str]] = None,
@@ -503,7 +503,7 @@ class Onboarding(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OnboardingAppliedPolicyArgs', 'OnboardingAppliedPolicyArgsDict']]]] applied_policies: Summary of the Fleet Application Management Onboard Policy.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OnboardingAppliedPolicyArgs', 'OnboardingAppliedPolicyArgsDict', 'outputs.OnboardingAppliedPolicy']]]] applied_policies: Summary of the Fleet Application Management Onboard Policy.
         :param pulumi.Input[_builtins.str] compartment_id: Tenancy OCID
                <<<<<<< ours
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`

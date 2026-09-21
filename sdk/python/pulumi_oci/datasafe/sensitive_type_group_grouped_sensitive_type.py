@@ -125,7 +125,7 @@ class SensitiveTypeGroupGroupedSensitiveType(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs', 'SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgsDict']]]]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs', 'SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgsDict', 'outputs.SensitiveTypeGroupGroupedSensitiveTypePatchOperation']]]]] = None,
                  sensitive_type_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -163,7 +163,7 @@ class SensitiveTypeGroupGroupedSensitiveType(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs', 'SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgsDict']]]] patch_operations: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs', 'SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgsDict', 'outputs.SensitiveTypeGroupGroupedSensitiveTypePatchOperation']]]] patch_operations: (Updatable)
         :param pulumi.Input[_builtins.str] sensitive_type_group_id: ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -221,7 +221,7 @@ class SensitiveTypeGroupGroupedSensitiveType(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs', 'SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgsDict']]]]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs', 'SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgsDict', 'outputs.SensitiveTypeGroupGroupedSensitiveTypePatchOperation']]]]] = None,
                  sensitive_type_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -247,8 +247,8 @@ class SensitiveTypeGroupGroupedSensitiveType(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SensitiveTypeGroupGroupedSensitiveTypeItemArgs', 'SensitiveTypeGroupGroupedSensitiveTypeItemArgsDict']]]]] = None,
-            patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs', 'SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgsDict']]]]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SensitiveTypeGroupGroupedSensitiveTypeItemArgs', 'SensitiveTypeGroupGroupedSensitiveTypeItemArgsDict', 'outputs.SensitiveTypeGroupGroupedSensitiveTypeItem']]]]] = None,
+            patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs', 'SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgsDict', 'outputs.SensitiveTypeGroupGroupedSensitiveTypePatchOperation']]]]] = None,
             sensitive_type_group_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'SensitiveTypeGroupGroupedSensitiveType':
         """
         Get an existing SensitiveTypeGroupGroupedSensitiveType resource's state with the given name, id, and optional extra
@@ -257,8 +257,8 @@ class SensitiveTypeGroupGroupedSensitiveType(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SensitiveTypeGroupGroupedSensitiveTypeItemArgs', 'SensitiveTypeGroupGroupedSensitiveTypeItemArgsDict']]]] items: List of sensitive type id summary objects present in the sensitive type group.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs', 'SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgsDict']]]] patch_operations: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SensitiveTypeGroupGroupedSensitiveTypeItemArgs', 'SensitiveTypeGroupGroupedSensitiveTypeItemArgsDict', 'outputs.SensitiveTypeGroupGroupedSensitiveTypeItem']]]] items: List of sensitive type id summary objects present in the sensitive type group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs', 'SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgsDict', 'outputs.SensitiveTypeGroupGroupedSensitiveTypePatchOperation']]]] patch_operations: (Updatable)
         :param pulumi.Input[_builtins.str] sensitive_type_group_id: ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """

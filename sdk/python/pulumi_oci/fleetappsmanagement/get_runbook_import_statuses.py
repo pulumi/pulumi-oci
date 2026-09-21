@@ -79,7 +79,7 @@ class AwaitableGetRunbookImportStatusesResult(GetRunbookImportStatusesResult):
 
 
 def get_runbook_import_statuses(compartment_id: Optional[_builtins.str] = None,
-                                filters: Optional[Sequence[Union['GetRunbookImportStatusesFilterArgs', 'GetRunbookImportStatusesFilterArgsDict']]] = None,
+                                filters: Optional[Sequence[Union['GetRunbookImportStatusesFilterArgs', 'GetRunbookImportStatusesFilterArgsDict', 'outputs.GetRunbookImportStatusesFilterResult']]] = None,
                                 id: Optional[_builtins.str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRunbookImportStatusesResult:
     """
@@ -113,7 +113,7 @@ def get_runbook_import_statuses(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         runbook_import_status_collections=pulumi.get(__ret__, 'runbook_import_status_collections'))
 def get_runbook_import_statuses_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRunbookImportStatusesFilterArgs', 'GetRunbookImportStatusesFilterArgsDict']]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRunbookImportStatusesFilterArgs', 'GetRunbookImportStatusesFilterArgsDict', 'outputs.GetRunbookImportStatusesFilterResult']]]]] = None,
                                        id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRunbookImportStatusesResult]:
     """

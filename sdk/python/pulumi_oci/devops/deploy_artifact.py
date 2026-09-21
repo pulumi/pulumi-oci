@@ -404,7 +404,7 @@ class DeployArtifact(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  argument_substitution_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deploy_artifact_source: pulumi.Input[Optional[Union['DeployArtifactDeployArtifactSourceArgs', 'DeployArtifactDeployArtifactSourceArgsDict']]] = None,
+                 deploy_artifact_source: pulumi.Input[Optional[Union['DeployArtifactDeployArtifactSourceArgs', 'DeployArtifactDeployArtifactSourceArgsDict', 'outputs.DeployArtifactDeployArtifactSource']]] = None,
                  deploy_artifact_type: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -469,7 +469,7 @@ class DeployArtifact(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] argument_substitution_mode: (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Union['DeployArtifactDeployArtifactSourceArgs', 'DeployArtifactDeployArtifactSourceArgsDict']] deploy_artifact_source: (Updatable) Specifies source of an artifact.
+        :param pulumi.Input[Union['DeployArtifactDeployArtifactSourceArgs', 'DeployArtifactDeployArtifactSourceArgsDict', 'outputs.DeployArtifactDeployArtifactSource']] deploy_artifact_source: (Updatable) Specifies source of an artifact.
         :param pulumi.Input[_builtins.str] deploy_artifact_type: (Updatable) Type of the deployment artifact.
         :param pulumi.Input[_builtins.str] description: (Updatable) Optional description about the deployment artifact.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Deployment artifact display name. Avoid entering confidential information.
@@ -556,7 +556,7 @@ class DeployArtifact(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  argument_substitution_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deploy_artifact_source: pulumi.Input[Optional[Union['DeployArtifactDeployArtifactSourceArgs', 'DeployArtifactDeployArtifactSourceArgsDict']]] = None,
+                 deploy_artifact_source: pulumi.Input[Optional[Union['DeployArtifactDeployArtifactSourceArgs', 'DeployArtifactDeployArtifactSourceArgsDict', 'outputs.DeployArtifactDeployArtifactSource']]] = None,
                  deploy_artifact_type: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -606,7 +606,7 @@ class DeployArtifact(pulumi.CustomResource):
             argument_substitution_mode: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            deploy_artifact_source: pulumi.Input[Optional[Union['DeployArtifactDeployArtifactSourceArgs', 'DeployArtifactDeployArtifactSourceArgsDict']]] = None,
+            deploy_artifact_source: pulumi.Input[Optional[Union['DeployArtifactDeployArtifactSourceArgs', 'DeployArtifactDeployArtifactSourceArgsDict', 'outputs.DeployArtifactDeployArtifactSource']]] = None,
             deploy_artifact_type: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -627,7 +627,7 @@ class DeployArtifact(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] argument_substitution_mode: (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of a compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Union['DeployArtifactDeployArtifactSourceArgs', 'DeployArtifactDeployArtifactSourceArgsDict']] deploy_artifact_source: (Updatable) Specifies source of an artifact.
+        :param pulumi.Input[Union['DeployArtifactDeployArtifactSourceArgs', 'DeployArtifactDeployArtifactSourceArgsDict', 'outputs.DeployArtifactDeployArtifactSource']] deploy_artifact_source: (Updatable) Specifies source of an artifact.
         :param pulumi.Input[_builtins.str] deploy_artifact_type: (Updatable) Type of the deployment artifact.
         :param pulumi.Input[_builtins.str] description: (Updatable) Optional description about the deployment artifact.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Deployment artifact display name. Avoid entering confidential information.

@@ -102,7 +102,7 @@ class AwaitableGetPublicationPackagesResult(GetPublicationPackagesResult):
             publication_packages=self.publication_packages)
 
 
-def get_publication_packages(filters: Optional[Sequence[Union['GetPublicationPackagesFilterArgs', 'GetPublicationPackagesFilterArgsDict']]] = None,
+def get_publication_packages(filters: Optional[Sequence[Union['GetPublicationPackagesFilterArgs', 'GetPublicationPackagesFilterArgsDict', 'outputs.GetPublicationPackagesFilterResult']]] = None,
                              package_type: Optional[_builtins.str] = None,
                              package_version: Optional[_builtins.str] = None,
                              publication_id: Optional[_builtins.str] = None,
@@ -143,7 +143,7 @@ def get_publication_packages(filters: Optional[Sequence[Union['GetPublicationPac
         package_version=pulumi.get(__ret__, 'package_version'),
         publication_id=pulumi.get(__ret__, 'publication_id'),
         publication_packages=pulumi.get(__ret__, 'publication_packages'))
-def get_publication_packages_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPublicationPackagesFilterArgs', 'GetPublicationPackagesFilterArgsDict']]]]] = None,
+def get_publication_packages_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPublicationPackagesFilterArgs', 'GetPublicationPackagesFilterArgsDict', 'outputs.GetPublicationPackagesFilterResult']]]]] = None,
                                     package_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     package_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     publication_id: pulumi.Input[Optional[_builtins.str]] = None,

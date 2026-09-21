@@ -130,7 +130,7 @@ class AwaitableGetControlAssignmentsResult(GetControlAssignmentsResult):
 
 
 def get_control_assignments(compartment_id: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetControlAssignmentsFilterArgs', 'GetControlAssignmentsFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetControlAssignmentsFilterArgs', 'GetControlAssignmentsFilterArgsDict', 'outputs.GetControlAssignmentsFilterResult']]] = None,
                             operator_control_name: Optional[_builtins.str] = None,
                             resource_name: Optional[_builtins.str] = None,
                             resource_type: Optional[_builtins.str] = None,
@@ -181,7 +181,7 @@ def get_control_assignments(compartment_id: Optional[_builtins.str] = None,
         resource_type=pulumi.get(__ret__, 'resource_type'),
         state=pulumi.get(__ret__, 'state'))
 def get_control_assignments_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetControlAssignmentsFilterArgs', 'GetControlAssignmentsFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetControlAssignmentsFilterArgs', 'GetControlAssignmentsFilterArgsDict', 'outputs.GetControlAssignmentsFilterResult']]]]] = None,
                                    operator_control_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    resource_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

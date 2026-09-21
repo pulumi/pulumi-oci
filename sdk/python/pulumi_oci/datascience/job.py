@@ -673,12 +673,12 @@ class Job(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  job_artifact: pulumi.Input[Optional[_builtins.str]] = None,
-                 job_configuration_details: pulumi.Input[Optional[Union['JobJobConfigurationDetailsArgs', 'JobJobConfigurationDetailsArgsDict']]] = None,
-                 job_environment_configuration_details: pulumi.Input[Optional[Union['JobJobEnvironmentConfigurationDetailsArgs', 'JobJobEnvironmentConfigurationDetailsArgsDict']]] = None,
-                 job_infrastructure_configuration_details: pulumi.Input[Optional[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict']]] = None,
-                 job_log_configuration_details: pulumi.Input[Optional[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict']]] = None,
-                 job_node_configuration_details: pulumi.Input[Optional[Union['JobJobNodeConfigurationDetailsArgs', 'JobJobNodeConfigurationDetailsArgsDict']]] = None,
-                 job_storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict']]]]] = None,
+                 job_configuration_details: pulumi.Input[Optional[Union['JobJobConfigurationDetailsArgs', 'JobJobConfigurationDetailsArgsDict', 'outputs.JobJobConfigurationDetails']]] = None,
+                 job_environment_configuration_details: pulumi.Input[Optional[Union['JobJobEnvironmentConfigurationDetailsArgs', 'JobJobEnvironmentConfigurationDetailsArgsDict', 'outputs.JobJobEnvironmentConfigurationDetails']]] = None,
+                 job_infrastructure_configuration_details: pulumi.Input[Optional[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict', 'outputs.JobJobInfrastructureConfigurationDetails']]] = None,
+                 job_log_configuration_details: pulumi.Input[Optional[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict', 'outputs.JobJobLogConfigurationDetails']]] = None,
+                 job_node_configuration_details: pulumi.Input[Optional[Union['JobJobNodeConfigurationDetailsArgs', 'JobJobNodeConfigurationDetailsArgsDict', 'outputs.JobJobNodeConfigurationDetails']]] = None,
+                 job_storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict', 'outputs.JobJobStorageMountConfigurationDetailsList']]]]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -850,12 +850,12 @@ class Job(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] job_artifact: The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
-        :param pulumi.Input[Union['JobJobConfigurationDetailsArgs', 'JobJobConfigurationDetailsArgsDict']] job_configuration_details: The job configuration details
-        :param pulumi.Input[Union['JobJobEnvironmentConfigurationDetailsArgs', 'JobJobEnvironmentConfigurationDetailsArgsDict']] job_environment_configuration_details: Environment configuration to capture job runtime dependencies.
-        :param pulumi.Input[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict']] job_infrastructure_configuration_details: (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
-        :param pulumi.Input[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict']] job_log_configuration_details: Logging configuration for resource.
-        :param pulumi.Input[Union['JobJobNodeConfigurationDetailsArgs', 'JobJobNodeConfigurationDetailsArgsDict']] job_node_configuration_details: The job node configuration details
-        :param pulumi.Input[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict']]]] job_storage_mount_configuration_details_lists: (Updatable) Collection of JobStorageMountConfigurationDetails.
+        :param pulumi.Input[Union['JobJobConfigurationDetailsArgs', 'JobJobConfigurationDetailsArgsDict', 'outputs.JobJobConfigurationDetails']] job_configuration_details: The job configuration details
+        :param pulumi.Input[Union['JobJobEnvironmentConfigurationDetailsArgs', 'JobJobEnvironmentConfigurationDetailsArgsDict', 'outputs.JobJobEnvironmentConfigurationDetails']] job_environment_configuration_details: Environment configuration to capture job runtime dependencies.
+        :param pulumi.Input[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict', 'outputs.JobJobInfrastructureConfigurationDetails']] job_infrastructure_configuration_details: (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
+        :param pulumi.Input[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict', 'outputs.JobJobLogConfigurationDetails']] job_log_configuration_details: Logging configuration for resource.
+        :param pulumi.Input[Union['JobJobNodeConfigurationDetailsArgs', 'JobJobNodeConfigurationDetailsArgsDict', 'outputs.JobJobNodeConfigurationDetails']] job_node_configuration_details: The job node configuration details
+        :param pulumi.Input[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict', 'outputs.JobJobStorageMountConfigurationDetailsList']]]] job_storage_mount_configuration_details_lists: (Updatable) Collection of JobStorageMountConfigurationDetails.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
         """
         ...
@@ -1043,12 +1043,12 @@ class Job(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  job_artifact: pulumi.Input[Optional[_builtins.str]] = None,
-                 job_configuration_details: pulumi.Input[Optional[Union['JobJobConfigurationDetailsArgs', 'JobJobConfigurationDetailsArgsDict']]] = None,
-                 job_environment_configuration_details: pulumi.Input[Optional[Union['JobJobEnvironmentConfigurationDetailsArgs', 'JobJobEnvironmentConfigurationDetailsArgsDict']]] = None,
-                 job_infrastructure_configuration_details: pulumi.Input[Optional[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict']]] = None,
-                 job_log_configuration_details: pulumi.Input[Optional[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict']]] = None,
-                 job_node_configuration_details: pulumi.Input[Optional[Union['JobJobNodeConfigurationDetailsArgs', 'JobJobNodeConfigurationDetailsArgsDict']]] = None,
-                 job_storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict']]]]] = None,
+                 job_configuration_details: pulumi.Input[Optional[Union['JobJobConfigurationDetailsArgs', 'JobJobConfigurationDetailsArgsDict', 'outputs.JobJobConfigurationDetails']]] = None,
+                 job_environment_configuration_details: pulumi.Input[Optional[Union['JobJobEnvironmentConfigurationDetailsArgs', 'JobJobEnvironmentConfigurationDetailsArgsDict', 'outputs.JobJobEnvironmentConfigurationDetails']]] = None,
+                 job_infrastructure_configuration_details: pulumi.Input[Optional[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict', 'outputs.JobJobInfrastructureConfigurationDetails']]] = None,
+                 job_log_configuration_details: pulumi.Input[Optional[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict', 'outputs.JobJobLogConfigurationDetails']]] = None,
+                 job_node_configuration_details: pulumi.Input[Optional[Union['JobJobNodeConfigurationDetailsArgs', 'JobJobNodeConfigurationDetailsArgsDict', 'outputs.JobJobNodeConfigurationDetails']]] = None,
+                 job_storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict', 'outputs.JobJobStorageMountConfigurationDetailsList']]]]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -1109,12 +1109,12 @@ class Job(pulumi.CustomResource):
             empty_artifact: pulumi.Input[Optional[_builtins.bool]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             job_artifact: pulumi.Input[Optional[_builtins.str]] = None,
-            job_configuration_details: pulumi.Input[Optional[Union['JobJobConfigurationDetailsArgs', 'JobJobConfigurationDetailsArgsDict']]] = None,
-            job_environment_configuration_details: pulumi.Input[Optional[Union['JobJobEnvironmentConfigurationDetailsArgs', 'JobJobEnvironmentConfigurationDetailsArgsDict']]] = None,
-            job_infrastructure_configuration_details: pulumi.Input[Optional[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict']]] = None,
-            job_log_configuration_details: pulumi.Input[Optional[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict']]] = None,
-            job_node_configuration_details: pulumi.Input[Optional[Union['JobJobNodeConfigurationDetailsArgs', 'JobJobNodeConfigurationDetailsArgsDict']]] = None,
-            job_storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict']]]]] = None,
+            job_configuration_details: pulumi.Input[Optional[Union['JobJobConfigurationDetailsArgs', 'JobJobConfigurationDetailsArgsDict', 'outputs.JobJobConfigurationDetails']]] = None,
+            job_environment_configuration_details: pulumi.Input[Optional[Union['JobJobEnvironmentConfigurationDetailsArgs', 'JobJobEnvironmentConfigurationDetailsArgsDict', 'outputs.JobJobEnvironmentConfigurationDetails']]] = None,
+            job_infrastructure_configuration_details: pulumi.Input[Optional[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict', 'outputs.JobJobInfrastructureConfigurationDetails']]] = None,
+            job_log_configuration_details: pulumi.Input[Optional[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict', 'outputs.JobJobLogConfigurationDetails']]] = None,
+            job_node_configuration_details: pulumi.Input[Optional[Union['JobJobNodeConfigurationDetailsArgs', 'JobJobNodeConfigurationDetailsArgsDict', 'outputs.JobJobNodeConfigurationDetails']]] = None,
+            job_storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict', 'outputs.JobJobStorageMountConfigurationDetailsList']]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             project_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1139,12 +1139,12 @@ class Job(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] job_artifact: The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
-        :param pulumi.Input[Union['JobJobConfigurationDetailsArgs', 'JobJobConfigurationDetailsArgsDict']] job_configuration_details: The job configuration details
-        :param pulumi.Input[Union['JobJobEnvironmentConfigurationDetailsArgs', 'JobJobEnvironmentConfigurationDetailsArgsDict']] job_environment_configuration_details: Environment configuration to capture job runtime dependencies.
-        :param pulumi.Input[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict']] job_infrastructure_configuration_details: (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
-        :param pulumi.Input[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict']] job_log_configuration_details: Logging configuration for resource.
-        :param pulumi.Input[Union['JobJobNodeConfigurationDetailsArgs', 'JobJobNodeConfigurationDetailsArgsDict']] job_node_configuration_details: The job node configuration details
-        :param pulumi.Input[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict']]]] job_storage_mount_configuration_details_lists: (Updatable) Collection of JobStorageMountConfigurationDetails.
+        :param pulumi.Input[Union['JobJobConfigurationDetailsArgs', 'JobJobConfigurationDetailsArgsDict', 'outputs.JobJobConfigurationDetails']] job_configuration_details: The job configuration details
+        :param pulumi.Input[Union['JobJobEnvironmentConfigurationDetailsArgs', 'JobJobEnvironmentConfigurationDetailsArgsDict', 'outputs.JobJobEnvironmentConfigurationDetails']] job_environment_configuration_details: Environment configuration to capture job runtime dependencies.
+        :param pulumi.Input[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict', 'outputs.JobJobInfrastructureConfigurationDetails']] job_infrastructure_configuration_details: (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
+        :param pulumi.Input[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict', 'outputs.JobJobLogConfigurationDetails']] job_log_configuration_details: Logging configuration for resource.
+        :param pulumi.Input[Union['JobJobNodeConfigurationDetailsArgs', 'JobJobNodeConfigurationDetailsArgsDict', 'outputs.JobJobNodeConfigurationDetails']] job_node_configuration_details: The job node configuration details
+        :param pulumi.Input[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict', 'outputs.JobJobStorageMountConfigurationDetailsList']]]] job_storage_mount_configuration_details_lists: (Updatable) Collection of JobStorageMountConfigurationDetails.
         :param pulumi.Input[_builtins.str] lifecycle_details: The state of the job.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
         :param pulumi.Input[_builtins.str] state: The state of the job.

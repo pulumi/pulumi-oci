@@ -108,7 +108,7 @@ class AwaitableGetSubscriptionProductsResult(GetSubscriptionProductsResult):
             usage_period_key=self.usage_period_key)
 
 
-def get_subscription_products(filters: Optional[Sequence[Union['GetSubscriptionProductsFilterArgs', 'GetSubscriptionProductsFilterArgsDict']]] = None,
+def get_subscription_products(filters: Optional[Sequence[Union['GetSubscriptionProductsFilterArgs', 'GetSubscriptionProductsFilterArgsDict', 'outputs.GetSubscriptionProductsFilterResult']]] = None,
                               producttype: Optional[_builtins.str] = None,
                               subscription_id: Optional[_builtins.str] = None,
                               tenancy_id: Optional[_builtins.str] = None,
@@ -154,7 +154,7 @@ def get_subscription_products(filters: Optional[Sequence[Union['GetSubscriptionP
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
         usage_period_key=pulumi.get(__ret__, 'usage_period_key'))
-def get_subscription_products_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionProductsFilterArgs', 'GetSubscriptionProductsFilterArgsDict']]]]] = None,
+def get_subscription_products_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionProductsFilterArgs', 'GetSubscriptionProductsFilterArgsDict', 'outputs.GetSubscriptionProductsFilterResult']]]]] = None,
                                      producttype: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,

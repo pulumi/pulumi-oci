@@ -261,7 +261,7 @@ class Peer(pulumi.CustomResource):
                  ad: pulumi.Input[Optional[_builtins.str]] = None,
                  alias: pulumi.Input[Optional[_builtins.str]] = None,
                  blockchain_platform_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 ocpu_allocation_param: pulumi.Input[Optional[Union['PeerOcpuAllocationParamArgs', 'PeerOcpuAllocationParamArgsDict']]] = None,
+                 ocpu_allocation_param: pulumi.Input[Optional[Union['PeerOcpuAllocationParamArgs', 'PeerOcpuAllocationParamArgsDict', 'outputs.PeerOcpuAllocationParam']]] = None,
                  role: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -302,7 +302,7 @@ class Peer(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] ad: Availability Domain to place new peer
         :param pulumi.Input[_builtins.str] alias: peer alias
         :param pulumi.Input[_builtins.str] blockchain_platform_id: Unique service identifier.
-        :param pulumi.Input[Union['PeerOcpuAllocationParamArgs', 'PeerOcpuAllocationParamArgsDict']] ocpu_allocation_param: (Updatable) OCPU allocation parameter
+        :param pulumi.Input[Union['PeerOcpuAllocationParamArgs', 'PeerOcpuAllocationParamArgsDict', 'outputs.PeerOcpuAllocationParam']] ocpu_allocation_param: (Updatable) OCPU allocation parameter
         :param pulumi.Input[_builtins.str] role: Peer role
                
                ** IMPORTANT **
@@ -365,7 +365,7 @@ class Peer(pulumi.CustomResource):
                  ad: pulumi.Input[Optional[_builtins.str]] = None,
                  alias: pulumi.Input[Optional[_builtins.str]] = None,
                  blockchain_platform_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 ocpu_allocation_param: pulumi.Input[Optional[Union['PeerOcpuAllocationParamArgs', 'PeerOcpuAllocationParamArgsDict']]] = None,
+                 ocpu_allocation_param: pulumi.Input[Optional[Union['PeerOcpuAllocationParamArgs', 'PeerOcpuAllocationParamArgsDict', 'outputs.PeerOcpuAllocationParam']]] = None,
                  role: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -406,7 +406,7 @@ class Peer(pulumi.CustomResource):
             alias: pulumi.Input[Optional[_builtins.str]] = None,
             blockchain_platform_id: pulumi.Input[Optional[_builtins.str]] = None,
             host: pulumi.Input[Optional[_builtins.str]] = None,
-            ocpu_allocation_param: pulumi.Input[Optional[Union['PeerOcpuAllocationParamArgs', 'PeerOcpuAllocationParamArgsDict']]] = None,
+            ocpu_allocation_param: pulumi.Input[Optional[Union['PeerOcpuAllocationParamArgs', 'PeerOcpuAllocationParamArgsDict', 'outputs.PeerOcpuAllocationParam']]] = None,
             peer_key: pulumi.Input[Optional[_builtins.str]] = None,
             role: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None) -> 'Peer':
@@ -421,7 +421,7 @@ class Peer(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] alias: peer alias
         :param pulumi.Input[_builtins.str] blockchain_platform_id: Unique service identifier.
         :param pulumi.Input[_builtins.str] host: Host on which the Peer exists
-        :param pulumi.Input[Union['PeerOcpuAllocationParamArgs', 'PeerOcpuAllocationParamArgsDict']] ocpu_allocation_param: (Updatable) OCPU allocation parameter
+        :param pulumi.Input[Union['PeerOcpuAllocationParamArgs', 'PeerOcpuAllocationParamArgsDict', 'outputs.PeerOcpuAllocationParam']] ocpu_allocation_param: (Updatable) OCPU allocation parameter
         :param pulumi.Input[_builtins.str] peer_key: peer identifier
         :param pulumi.Input[_builtins.str] role: Peer role
                

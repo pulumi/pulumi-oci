@@ -116,7 +116,7 @@ class AwaitableGetSuppressionsResult(GetSuppressionsResult):
 
 def get_suppressions(compartment_id: Optional[_builtins.str] = None,
                      email_address: Optional[_builtins.str] = None,
-                     filters: Optional[Sequence[Union['GetSuppressionsFilterArgs', 'GetSuppressionsFilterArgsDict']]] = None,
+                     filters: Optional[Sequence[Union['GetSuppressionsFilterArgs', 'GetSuppressionsFilterArgsDict', 'outputs.GetSuppressionsFilterResult']]] = None,
                      time_created_greater_than_or_equal_to: Optional[_builtins.str] = None,
                      time_created_less_than: Optional[_builtins.str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSuppressionsResult:
@@ -168,7 +168,7 @@ def get_suppressions(compartment_id: Optional[_builtins.str] = None,
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
 def get_suppressions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                             email_address: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSuppressionsFilterArgs', 'GetSuppressionsFilterArgsDict']]]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSuppressionsFilterArgs', 'GetSuppressionsFilterArgsDict', 'outputs.GetSuppressionsFilterResult']]]]] = None,
                             time_created_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             time_created_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSuppressionsResult]:

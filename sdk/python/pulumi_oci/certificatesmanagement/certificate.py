@@ -500,8 +500,8 @@ class Certificate(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 certificate_config: pulumi.Input[Optional[Union['CertificateCertificateConfigArgs', 'CertificateCertificateConfigArgsDict']]] = None,
-                 certificate_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateCertificateRuleArgs', 'CertificateCertificateRuleArgsDict']]]]] = None,
+                 certificate_config: pulumi.Input[Optional[Union['CertificateCertificateConfigArgs', 'CertificateCertificateConfigArgsDict', 'outputs.CertificateCertificateConfig']]] = None,
+                 certificate_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateCertificateRuleArgs', 'CertificateCertificateRuleArgsDict', 'outputs.CertificateCertificateRule']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  current_version_number: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -592,8 +592,8 @@ class Certificate(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['CertificateCertificateConfigArgs', 'CertificateCertificateConfigArgsDict']] certificate_config: (Updatable) The details of the contents of the certificate and certificate metadata.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateCertificateRuleArgs', 'CertificateCertificateRuleArgsDict']]]] certificate_rules: (Updatable) An optional list of rules that control how the certificate is used and managed.
+        :param pulumi.Input[Union['CertificateCertificateConfigArgs', 'CertificateCertificateConfigArgsDict', 'outputs.CertificateCertificateConfig']] certificate_config: (Updatable) The details of the contents of the certificate and certificate metadata.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateCertificateRuleArgs', 'CertificateCertificateRuleArgsDict', 'outputs.CertificateCertificateRule']]]] certificate_rules: (Updatable) An optional list of rules that control how the certificate is used and managed.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the certificate.
         :param pulumi.Input[_builtins.str] current_version_number: (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificate_config`, `description`, `defined_tags`, `freeform_tags`, or `certificate_rules`.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -706,8 +706,8 @@ class Certificate(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 certificate_config: pulumi.Input[Optional[Union['CertificateCertificateConfigArgs', 'CertificateCertificateConfigArgsDict']]] = None,
-                 certificate_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateCertificateRuleArgs', 'CertificateCertificateRuleArgsDict']]]]] = None,
+                 certificate_config: pulumi.Input[Optional[Union['CertificateCertificateConfigArgs', 'CertificateCertificateConfigArgsDict', 'outputs.CertificateCertificateConfig']]] = None,
+                 certificate_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateCertificateRuleArgs', 'CertificateCertificateRuleArgsDict', 'outputs.CertificateCertificateRule']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  current_version_number: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -757,14 +757,14 @@ class Certificate(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            certificate_config: pulumi.Input[Optional[Union['CertificateCertificateConfigArgs', 'CertificateCertificateConfigArgsDict']]] = None,
+            certificate_config: pulumi.Input[Optional[Union['CertificateCertificateConfigArgs', 'CertificateCertificateConfigArgsDict', 'outputs.CertificateCertificateConfig']]] = None,
             certificate_profile_type: pulumi.Input[Optional[_builtins.str]] = None,
-            certificate_revocation_list_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateCertificateRevocationListDetailArgs', 'CertificateCertificateRevocationListDetailArgsDict']]]]] = None,
-            certificate_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateCertificateRuleArgs', 'CertificateCertificateRuleArgsDict']]]]] = None,
+            certificate_revocation_list_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateCertificateRevocationListDetailArgs', 'CertificateCertificateRevocationListDetailArgsDict', 'outputs.CertificateCertificateRevocationListDetail']]]]] = None,
+            certificate_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateCertificateRuleArgs', 'CertificateCertificateRuleArgsDict', 'outputs.CertificateCertificateRule']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             config_type: pulumi.Input[Optional[_builtins.str]] = None,
             current_version_number: pulumi.Input[Optional[_builtins.str]] = None,
-            current_versions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateCurrentVersionArgs', 'CertificateCurrentVersionArgsDict']]]]] = None,
+            current_versions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateCurrentVersionArgs', 'CertificateCurrentVersionArgsDict', 'outputs.CertificateCurrentVersion']]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -774,7 +774,7 @@ class Certificate(pulumi.CustomResource):
             name: pulumi.Input[Optional[_builtins.str]] = None,
             signature_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            subjects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateSubjectArgs', 'CertificateSubjectArgsDict']]]]] = None,
+            subjects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateSubjectArgs', 'CertificateSubjectArgsDict', 'outputs.CertificateSubject']]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None) -> 'Certificate':
         """
@@ -784,14 +784,14 @@ class Certificate(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['CertificateCertificateConfigArgs', 'CertificateCertificateConfigArgsDict']] certificate_config: (Updatable) The details of the contents of the certificate and certificate metadata.
+        :param pulumi.Input[Union['CertificateCertificateConfigArgs', 'CertificateCertificateConfigArgsDict', 'outputs.CertificateCertificateConfig']] certificate_config: (Updatable) The details of the contents of the certificate and certificate metadata.
         :param pulumi.Input[_builtins.str] certificate_profile_type: The name of the profile used to create the certificate, which depends on the type of certificate you need.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateCertificateRevocationListDetailArgs', 'CertificateCertificateRevocationListDetailArgsDict']]]] certificate_revocation_list_details: The details of the certificate revocation list (CRL).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateCertificateRuleArgs', 'CertificateCertificateRuleArgsDict']]]] certificate_rules: (Updatable) An optional list of rules that control how the certificate is used and managed.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateCertificateRevocationListDetailArgs', 'CertificateCertificateRevocationListDetailArgsDict', 'outputs.CertificateCertificateRevocationListDetail']]]] certificate_revocation_list_details: The details of the certificate revocation list (CRL).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateCertificateRuleArgs', 'CertificateCertificateRuleArgsDict', 'outputs.CertificateCertificateRule']]]] certificate_rules: (Updatable) An optional list of rules that control how the certificate is used and managed.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the certificate.
         :param pulumi.Input[_builtins.str] config_type: The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
         :param pulumi.Input[_builtins.str] current_version_number: (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificate_config`, `description`, `defined_tags`, `freeform_tags`, or `certificate_rules`.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateCurrentVersionArgs', 'CertificateCurrentVersionArgsDict']]]] current_versions: The details of the certificate version. This object does not contain the certificate contents.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateCurrentVersionArgs', 'CertificateCurrentVersionArgsDict', 'outputs.CertificateCurrentVersion']]]] current_versions: The details of the certificate version. This object does not contain the certificate contents.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A brief description of the certificate. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -804,7 +804,7 @@ class Certificate(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] signature_algorithm: The algorithm used to sign the public key certificate.
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the certificate.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateSubjectArgs', 'CertificateSubjectArgsDict']]]] subjects: The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateSubjectArgs', 'CertificateSubjectArgsDict', 'outputs.CertificateSubject']]]] subjects: The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
         :param pulumi.Input[_builtins.str] time_created: A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_of_deletion: An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """

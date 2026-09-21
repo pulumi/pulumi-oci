@@ -115,7 +115,7 @@ class AwaitableGetFirmwareBundlesResult(GetFirmwareBundlesResult):
 
 
 def get_firmware_bundles(compartment_id: Optional[_builtins.str] = None,
-                         filters: Optional[Sequence[Union['GetFirmwareBundlesFilterArgs', 'GetFirmwareBundlesFilterArgsDict']]] = None,
+                         filters: Optional[Sequence[Union['GetFirmwareBundlesFilterArgs', 'GetFirmwareBundlesFilterArgsDict', 'outputs.GetFirmwareBundlesFilterResult']]] = None,
                          is_default_bundle: Optional[_builtins.bool] = None,
                          lifecycle_state: Optional[_builtins.str] = None,
                          platform: Optional[_builtins.str] = None,
@@ -151,7 +151,7 @@ def get_firmware_bundles(compartment_id: Optional[_builtins.str] = None,
         lifecycle_state=pulumi.get(__ret__, 'lifecycle_state'),
         platform=pulumi.get(__ret__, 'platform'))
 def get_firmware_bundles_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFirmwareBundlesFilterArgs', 'GetFirmwareBundlesFilterArgsDict']]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFirmwareBundlesFilterArgs', 'GetFirmwareBundlesFilterArgsDict', 'outputs.GetFirmwareBundlesFilterResult']]]]] = None,
                                 is_default_bundle: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                 lifecycle_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 platform: pulumi.Input[Optional[_builtins.str]] = None,

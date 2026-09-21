@@ -98,7 +98,7 @@ class AwaitableGetStreamGroupsResult(GetStreamGroupsResult):
 
 def get_stream_groups(compartment_id: Optional[_builtins.str] = None,
                       display_name: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetStreamGroupsFilterArgs', 'GetStreamGroupsFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetStreamGroupsFilterArgs', 'GetStreamGroupsFilterArgsDict', 'outputs.GetStreamGroupsFilterResult']]] = None,
                       id: Optional[_builtins.str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetStreamGroupsResult:
     """
@@ -138,7 +138,7 @@ def get_stream_groups(compartment_id: Optional[_builtins.str] = None,
         stream_group_collections=pulumi.get(__ret__, 'stream_group_collections'))
 def get_stream_groups_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetStreamGroupsFilterArgs', 'GetStreamGroupsFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetStreamGroupsFilterArgs', 'GetStreamGroupsFilterArgsDict', 'outputs.GetStreamGroupsFilterResult']]]]] = None,
                              id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStreamGroupsResult]:
     """

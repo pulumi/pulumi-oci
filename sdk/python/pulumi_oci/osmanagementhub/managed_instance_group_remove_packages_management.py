@@ -138,7 +138,7 @@ class ManagedInstanceGroupRemovePackagesManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  package_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict']]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceGroupRemovePackagesManagementWorkRequestDetails']]] = None,
                  __props__=None):
         """
         This resource provides the Managed Instance Group Remove Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -176,7 +176,7 @@ class ManagedInstanceGroupRemovePackagesManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] package_names: The list of package names.
-        :param pulumi.Input[Union['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceGroupRemovePackagesManagementWorkRequestDetails']] work_request_details: Provides the name and description of the job.
         """
         ...
     @overload
@@ -233,7 +233,7 @@ class ManagedInstanceGroupRemovePackagesManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  package_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict']]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceGroupRemovePackagesManagementWorkRequestDetails']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -262,7 +262,7 @@ class ManagedInstanceGroupRemovePackagesManagement(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
             package_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceGroupRemovePackagesManagement':
+            work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceGroupRemovePackagesManagementWorkRequestDetails']]] = None) -> 'ManagedInstanceGroupRemovePackagesManagement':
         """
         Get an existing ManagedInstanceGroupRemovePackagesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -272,7 +272,7 @@ class ManagedInstanceGroupRemovePackagesManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] package_names: The list of package names.
-        :param pulumi.Input[Union['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceGroupRemovePackagesManagementWorkRequestDetails']] work_request_details: Provides the name and description of the job.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

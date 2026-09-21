@@ -127,7 +127,7 @@ class AwaitableGetSystemVersionMinorVersionsResult(GetSystemVersionMinorVersions
 
 
 def get_system_version_minor_versions(compartment_id: Optional[_builtins.str] = None,
-                                      filters: Optional[Sequence[Union['GetSystemVersionMinorVersionsFilterArgs', 'GetSystemVersionMinorVersionsFilterArgsDict']]] = None,
+                                      filters: Optional[Sequence[Union['GetSystemVersionMinorVersionsFilterArgs', 'GetSystemVersionMinorVersionsFilterArgsDict', 'outputs.GetSystemVersionMinorVersionsFilterResult']]] = None,
                                       gi_version: Optional[_builtins.str] = None,
                                       is_latest: Optional[_builtins.bool] = None,
                                       major_version: Optional[_builtins.str] = None,
@@ -183,7 +183,7 @@ def get_system_version_minor_versions(compartment_id: Optional[_builtins.str] = 
         shape=pulumi.get(__ret__, 'shape'),
         system_version_minor_version_collections=pulumi.get(__ret__, 'system_version_minor_version_collections'))
 def get_system_version_minor_versions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSystemVersionMinorVersionsFilterArgs', 'GetSystemVersionMinorVersionsFilterArgsDict']]]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSystemVersionMinorVersionsFilterArgs', 'GetSystemVersionMinorVersionsFilterArgsDict', 'outputs.GetSystemVersionMinorVersionsFilterResult']]]]] = None,
                                              gi_version: pulumi.Input[Optional[_builtins.str]] = None,
                                              is_latest: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                              major_version: pulumi.Input[Optional[_builtins.str]] = None,

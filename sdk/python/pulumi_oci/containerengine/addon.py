@@ -309,7 +309,7 @@ class Addon(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  addon_name: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddonConfigurationArgs', 'AddonConfigurationArgsDict']]]]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddonConfigurationArgs', 'AddonConfigurationArgsDict', 'outputs.AddonConfiguration']]]]] = None,
                  override_existing: pulumi.Input[Optional[_builtins.bool]] = None,
                  remove_addon_resources_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
                  version: pulumi.Input[Optional[_builtins.str]] = None,
@@ -335,7 +335,7 @@ class Addon(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] addon_name: The name of the addon.
         :param pulumi.Input[_builtins.str] cluster_id: The OCID of the cluster.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AddonConfigurationArgs', 'AddonConfigurationArgsDict']]]] configurations: (Updatable) Addon configuration details
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AddonConfigurationArgs', 'AddonConfigurationArgsDict', 'outputs.AddonConfiguration']]]] configurations: (Updatable) Addon configuration details
         :param pulumi.Input[_builtins.bool] override_existing: Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
         :param pulumi.Input[_builtins.bool] remove_addon_resources_on_delete: Whether to remove addon resource in deletion.
         :param pulumi.Input[_builtins.str] version: (Updatable) The version of addon to be installed.
@@ -383,7 +383,7 @@ class Addon(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  addon_name: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddonConfigurationArgs', 'AddonConfigurationArgsDict']]]]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddonConfigurationArgs', 'AddonConfigurationArgsDict', 'outputs.AddonConfiguration']]]]] = None,
                  override_existing: pulumi.Input[Optional[_builtins.bool]] = None,
                  remove_addon_resources_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
                  version: pulumi.Input[Optional[_builtins.str]] = None,
@@ -422,10 +422,10 @@ class Addon(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            addon_errors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddonAddonErrorArgs', 'AddonAddonErrorArgsDict']]]]] = None,
+            addon_errors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddonAddonErrorArgs', 'AddonAddonErrorArgsDict', 'outputs.AddonAddonError']]]]] = None,
             addon_name: pulumi.Input[Optional[_builtins.str]] = None,
             cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-            configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddonConfigurationArgs', 'AddonConfigurationArgsDict']]]]] = None,
+            configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddonConfigurationArgs', 'AddonConfigurationArgsDict', 'outputs.AddonConfiguration']]]]] = None,
             current_installed_version: pulumi.Input[Optional[_builtins.str]] = None,
             override_existing: pulumi.Input[Optional[_builtins.bool]] = None,
             remove_addon_resources_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -439,10 +439,10 @@ class Addon(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AddonAddonErrorArgs', 'AddonAddonErrorArgsDict']]]] addon_errors: The error info of the addon.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AddonAddonErrorArgs', 'AddonAddonErrorArgsDict', 'outputs.AddonAddonError']]]] addon_errors: The error info of the addon.
         :param pulumi.Input[_builtins.str] addon_name: The name of the addon.
         :param pulumi.Input[_builtins.str] cluster_id: The OCID of the cluster.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AddonConfigurationArgs', 'AddonConfigurationArgsDict']]]] configurations: (Updatable) Addon configuration details
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AddonConfigurationArgs', 'AddonConfigurationArgsDict', 'outputs.AddonConfiguration']]]] configurations: (Updatable) Addon configuration details
         :param pulumi.Input[_builtins.str] current_installed_version: current installed version of the addon
         :param pulumi.Input[_builtins.bool] override_existing: Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
         :param pulumi.Input[_builtins.bool] remove_addon_resources_on_delete: Whether to remove addon resource in deletion.

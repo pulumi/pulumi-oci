@@ -119,7 +119,7 @@ class AwaitableGetViewsResult(GetViewsResult):
 
 def get_views(compartment_id: Optional[_builtins.str] = None,
               display_name: Optional[_builtins.str] = None,
-              filters: Optional[Sequence[Union['GetViewsFilterArgs', 'GetViewsFilterArgsDict']]] = None,
+              filters: Optional[Sequence[Union['GetViewsFilterArgs', 'GetViewsFilterArgsDict', 'outputs.GetViewsFilterResult']]] = None,
               id: Optional[_builtins.str] = None,
               scope: Optional[_builtins.str] = None,
               state: Optional[_builtins.str] = None,
@@ -174,7 +174,7 @@ def get_views(compartment_id: Optional[_builtins.str] = None,
         views=pulumi.get(__ret__, 'views'))
 def get_views_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetViewsFilterArgs', 'GetViewsFilterArgsDict']]]]] = None,
+                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetViewsFilterArgs', 'GetViewsFilterArgsDict', 'outputs.GetViewsFilterResult']]]]] = None,
                      id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      scope: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

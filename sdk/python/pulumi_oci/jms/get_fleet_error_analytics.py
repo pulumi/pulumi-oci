@@ -92,7 +92,7 @@ class AwaitableGetFleetErrorAnalyticsResult(GetFleetErrorAnalyticsResult):
 
 def get_fleet_error_analytics(compartment_id: Optional[_builtins.str] = None,
                               compartment_id_in_subtree: Optional[_builtins.bool] = None,
-                              filters: Optional[Sequence[Union['GetFleetErrorAnalyticsFilterArgs', 'GetFleetErrorAnalyticsFilterArgsDict']]] = None,
+                              filters: Optional[Sequence[Union['GetFleetErrorAnalyticsFilterArgs', 'GetFleetErrorAnalyticsFilterArgsDict', 'outputs.GetFleetErrorAnalyticsFilterResult']]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFleetErrorAnalyticsResult:
     """
     This data source provides the list of Fleet Error Analytics in Oracle Cloud Infrastructure Jms service.
@@ -128,7 +128,7 @@ def get_fleet_error_analytics(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'))
 def get_fleet_error_analytics_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
-                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetErrorAnalyticsFilterArgs', 'GetFleetErrorAnalyticsFilterArgsDict']]]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetErrorAnalyticsFilterArgs', 'GetFleetErrorAnalyticsFilterArgsDict', 'outputs.GetFleetErrorAnalyticsFilterResult']]]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetErrorAnalyticsResult]:
     """
     This data source provides the list of Fleet Error Analytics in Oracle Cloud Infrastructure Jms service.

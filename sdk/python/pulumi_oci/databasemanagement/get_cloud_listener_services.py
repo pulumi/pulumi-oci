@@ -103,7 +103,7 @@ class AwaitableGetCloudListenerServicesResult(GetCloudListenerServicesResult):
 
 
 def get_cloud_listener_services(cloud_listener_id: Optional[_builtins.str] = None,
-                                filters: Optional[Sequence[Union['GetCloudListenerServicesFilterArgs', 'GetCloudListenerServicesFilterArgsDict']]] = None,
+                                filters: Optional[Sequence[Union['GetCloudListenerServicesFilterArgs', 'GetCloudListenerServicesFilterArgsDict', 'outputs.GetCloudListenerServicesFilterResult']]] = None,
                                 managed_database_id: Optional[_builtins.str] = None,
                                 opc_named_credential_id: Optional[_builtins.str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudListenerServicesResult:
@@ -145,7 +145,7 @@ def get_cloud_listener_services(cloud_listener_id: Optional[_builtins.str] = Non
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'))
 def get_cloud_listener_services_output(cloud_listener_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudListenerServicesFilterArgs', 'GetCloudListenerServicesFilterArgsDict']]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudListenerServicesFilterArgs', 'GetCloudListenerServicesFilterArgsDict', 'outputs.GetCloudListenerServicesFilterResult']]]]] = None,
                                        managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudListenerServicesResult]:

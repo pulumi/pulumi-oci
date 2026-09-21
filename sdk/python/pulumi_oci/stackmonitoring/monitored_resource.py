@@ -740,12 +740,12 @@ class MonitoredResource(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_aliases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalAliasArgs', 'MonitoredResourceAdditionalAliasArgsDict']]]]] = None,
-                 additional_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalCredentialArgs', 'MonitoredResourceAdditionalCredentialArgsDict']]]]] = None,
-                 aliases: pulumi.Input[Optional[Union['MonitoredResourceAliasesArgs', 'MonitoredResourceAliasesArgsDict']]] = None,
+                 additional_aliases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalAliasArgs', 'MonitoredResourceAdditionalAliasArgsDict', 'outputs.MonitoredResourceAdditionalAlias']]]]] = None,
+                 additional_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalCredentialArgs', 'MonitoredResourceAdditionalCredentialArgsDict', 'outputs.MonitoredResourceAdditionalCredential']]]]] = None,
+                 aliases: pulumi.Input[Optional[Union['MonitoredResourceAliasesArgs', 'MonitoredResourceAliasesArgsDict', 'outputs.MonitoredResourceAliases']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 credentials: pulumi.Input[Optional[Union['MonitoredResourceCredentialsArgs', 'MonitoredResourceCredentialsArgsDict']]] = None,
-                 database_connection_details: pulumi.Input[Optional[Union['MonitoredResourceDatabaseConnectionDetailsArgs', 'MonitoredResourceDatabaseConnectionDetailsArgsDict']]] = None,
+                 credentials: pulumi.Input[Optional[Union['MonitoredResourceCredentialsArgs', 'MonitoredResourceCredentialsArgsDict', 'outputs.MonitoredResourceCredentials']]] = None,
+                 database_connection_details: pulumi.Input[Optional[Union['MonitoredResourceDatabaseConnectionDetailsArgs', 'MonitoredResourceDatabaseConnectionDetailsArgsDict', 'outputs.MonitoredResourceDatabaseConnectionDetails']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  external_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -755,7 +755,7 @@ class MonitoredResource(pulumi.CustomResource):
                  license: pulumi.Input[Optional[_builtins.str]] = None,
                  management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcePropertyArgs', 'MonitoredResourcePropertyArgsDict']]]]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcePropertyArgs', 'MonitoredResourcePropertyArgsDict', 'outputs.MonitoredResourceProperty']]]]] = None,
                  resource_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -860,12 +860,12 @@ class MonitoredResource(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalAliasArgs', 'MonitoredResourceAdditionalAliasArgsDict']]]] additional_aliases: (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalCredentialArgs', 'MonitoredResourceAdditionalCredentialArgsDict']]]] additional_credentials: (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
-        :param pulumi.Input[Union['MonitoredResourceAliasesArgs', 'MonitoredResourceAliasesArgsDict']] aliases: (Updatable) Monitored Resource Alias Credential Details
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalAliasArgs', 'MonitoredResourceAdditionalAliasArgsDict', 'outputs.MonitoredResourceAdditionalAlias']]]] additional_aliases: (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalCredentialArgs', 'MonitoredResourceAdditionalCredentialArgsDict', 'outputs.MonitoredResourceAdditionalCredential']]]] additional_credentials: (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
+        :param pulumi.Input[Union['MonitoredResourceAliasesArgs', 'MonitoredResourceAliasesArgsDict', 'outputs.MonitoredResourceAliases']] aliases: (Updatable) Monitored Resource Alias Credential Details
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Union['MonitoredResourceCredentialsArgs', 'MonitoredResourceCredentialsArgsDict']] credentials: (Updatable) Monitored Resource Credential Details.
-        :param pulumi.Input[Union['MonitoredResourceDatabaseConnectionDetailsArgs', 'MonitoredResourceDatabaseConnectionDetailsArgsDict']] database_connection_details: (Updatable) Connection details for the database.
+        :param pulumi.Input[Union['MonitoredResourceCredentialsArgs', 'MonitoredResourceCredentialsArgsDict', 'outputs.MonitoredResourceCredentials']] credentials: (Updatable) Monitored Resource Credential Details.
+        :param pulumi.Input[Union['MonitoredResourceDatabaseConnectionDetailsArgs', 'MonitoredResourceDatabaseConnectionDetailsArgsDict', 'outputs.MonitoredResourceDatabaseConnectionDetails']] database_connection_details: (Updatable) Connection details for the database.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Monitored resource display name.
         :param pulumi.Input[_builtins.str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
@@ -875,7 +875,7 @@ class MonitoredResource(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] license: (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
         :param pulumi.Input[_builtins.str] management_agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] name: Monitored Resource Name.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcePropertyArgs', 'MonitoredResourcePropertyArgsDict']]]] properties: (Updatable) List of monitored resource properties.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcePropertyArgs', 'MonitoredResourcePropertyArgsDict', 'outputs.MonitoredResourceProperty']]]] properties: (Updatable) List of monitored resource properties.
         :param pulumi.Input[_builtins.str] resource_time_zone: (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         :param pulumi.Input[_builtins.str] type: Monitored Resource Type.
                
@@ -1002,12 +1002,12 @@ class MonitoredResource(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_aliases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalAliasArgs', 'MonitoredResourceAdditionalAliasArgsDict']]]]] = None,
-                 additional_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalCredentialArgs', 'MonitoredResourceAdditionalCredentialArgsDict']]]]] = None,
-                 aliases: pulumi.Input[Optional[Union['MonitoredResourceAliasesArgs', 'MonitoredResourceAliasesArgsDict']]] = None,
+                 additional_aliases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalAliasArgs', 'MonitoredResourceAdditionalAliasArgsDict', 'outputs.MonitoredResourceAdditionalAlias']]]]] = None,
+                 additional_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalCredentialArgs', 'MonitoredResourceAdditionalCredentialArgsDict', 'outputs.MonitoredResourceAdditionalCredential']]]]] = None,
+                 aliases: pulumi.Input[Optional[Union['MonitoredResourceAliasesArgs', 'MonitoredResourceAliasesArgsDict', 'outputs.MonitoredResourceAliases']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 credentials: pulumi.Input[Optional[Union['MonitoredResourceCredentialsArgs', 'MonitoredResourceCredentialsArgsDict']]] = None,
-                 database_connection_details: pulumi.Input[Optional[Union['MonitoredResourceDatabaseConnectionDetailsArgs', 'MonitoredResourceDatabaseConnectionDetailsArgsDict']]] = None,
+                 credentials: pulumi.Input[Optional[Union['MonitoredResourceCredentialsArgs', 'MonitoredResourceCredentialsArgsDict', 'outputs.MonitoredResourceCredentials']]] = None,
+                 database_connection_details: pulumi.Input[Optional[Union['MonitoredResourceDatabaseConnectionDetailsArgs', 'MonitoredResourceDatabaseConnectionDetailsArgsDict', 'outputs.MonitoredResourceDatabaseConnectionDetails']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  external_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1017,7 +1017,7 @@ class MonitoredResource(pulumi.CustomResource):
                  license: pulumi.Input[Optional[_builtins.str]] = None,
                  management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcePropertyArgs', 'MonitoredResourcePropertyArgsDict']]]]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcePropertyArgs', 'MonitoredResourcePropertyArgsDict', 'outputs.MonitoredResourceProperty']]]]] = None,
                  resource_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -1068,12 +1068,12 @@ class MonitoredResource(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_aliases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalAliasArgs', 'MonitoredResourceAdditionalAliasArgsDict']]]]] = None,
-            additional_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalCredentialArgs', 'MonitoredResourceAdditionalCredentialArgsDict']]]]] = None,
-            aliases: pulumi.Input[Optional[Union['MonitoredResourceAliasesArgs', 'MonitoredResourceAliasesArgsDict']]] = None,
+            additional_aliases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalAliasArgs', 'MonitoredResourceAdditionalAliasArgsDict', 'outputs.MonitoredResourceAdditionalAlias']]]]] = None,
+            additional_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalCredentialArgs', 'MonitoredResourceAdditionalCredentialArgsDict', 'outputs.MonitoredResourceAdditionalCredential']]]]] = None,
+            aliases: pulumi.Input[Optional[Union['MonitoredResourceAliasesArgs', 'MonitoredResourceAliasesArgsDict', 'outputs.MonitoredResourceAliases']]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            credentials: pulumi.Input[Optional[Union['MonitoredResourceCredentialsArgs', 'MonitoredResourceCredentialsArgsDict']]] = None,
-            database_connection_details: pulumi.Input[Optional[Union['MonitoredResourceDatabaseConnectionDetailsArgs', 'MonitoredResourceDatabaseConnectionDetailsArgsDict']]] = None,
+            credentials: pulumi.Input[Optional[Union['MonitoredResourceCredentialsArgs', 'MonitoredResourceCredentialsArgsDict', 'outputs.MonitoredResourceCredentials']]] = None,
+            database_connection_details: pulumi.Input[Optional[Union['MonitoredResourceDatabaseConnectionDetailsArgs', 'MonitoredResourceDatabaseConnectionDetailsArgsDict', 'outputs.MonitoredResourceDatabaseConnectionDetails']]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             external_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1083,7 +1083,7 @@ class MonitoredResource(pulumi.CustomResource):
             license: pulumi.Input[Optional[_builtins.str]] = None,
             management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcePropertyArgs', 'MonitoredResourcePropertyArgsDict']]]]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcePropertyArgs', 'MonitoredResourcePropertyArgsDict', 'outputs.MonitoredResourceProperty']]]]] = None,
             resource_category: pulumi.Input[Optional[_builtins.str]] = None,
             resource_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
             source_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1100,12 +1100,12 @@ class MonitoredResource(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalAliasArgs', 'MonitoredResourceAdditionalAliasArgsDict']]]] additional_aliases: (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalCredentialArgs', 'MonitoredResourceAdditionalCredentialArgsDict']]]] additional_credentials: (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
-        :param pulumi.Input[Union['MonitoredResourceAliasesArgs', 'MonitoredResourceAliasesArgsDict']] aliases: (Updatable) Monitored Resource Alias Credential Details
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalAliasArgs', 'MonitoredResourceAdditionalAliasArgsDict', 'outputs.MonitoredResourceAdditionalAlias']]]] additional_aliases: (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalCredentialArgs', 'MonitoredResourceAdditionalCredentialArgsDict', 'outputs.MonitoredResourceAdditionalCredential']]]] additional_credentials: (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
+        :param pulumi.Input[Union['MonitoredResourceAliasesArgs', 'MonitoredResourceAliasesArgsDict', 'outputs.MonitoredResourceAliases']] aliases: (Updatable) Monitored Resource Alias Credential Details
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Union['MonitoredResourceCredentialsArgs', 'MonitoredResourceCredentialsArgsDict']] credentials: (Updatable) Monitored Resource Credential Details.
-        :param pulumi.Input[Union['MonitoredResourceDatabaseConnectionDetailsArgs', 'MonitoredResourceDatabaseConnectionDetailsArgsDict']] database_connection_details: (Updatable) Connection details for the database.
+        :param pulumi.Input[Union['MonitoredResourceCredentialsArgs', 'MonitoredResourceCredentialsArgsDict', 'outputs.MonitoredResourceCredentials']] credentials: (Updatable) Monitored Resource Credential Details.
+        :param pulumi.Input[Union['MonitoredResourceDatabaseConnectionDetailsArgs', 'MonitoredResourceDatabaseConnectionDetailsArgsDict', 'outputs.MonitoredResourceDatabaseConnectionDetails']] database_connection_details: (Updatable) Connection details for the database.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Monitored resource display name.
         :param pulumi.Input[_builtins.str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
@@ -1115,7 +1115,7 @@ class MonitoredResource(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] license: (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
         :param pulumi.Input[_builtins.str] management_agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] name: Monitored Resource Name.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcePropertyArgs', 'MonitoredResourcePropertyArgsDict']]]] properties: (Updatable) List of monitored resource properties.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcePropertyArgs', 'MonitoredResourcePropertyArgsDict', 'outputs.MonitoredResourceProperty']]]] properties: (Updatable) List of monitored resource properties.
         :param pulumi.Input[_builtins.str] resource_category: Resource Category to indicate the kind of resource type.
         :param pulumi.Input[_builtins.str] resource_time_zone: (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         :param pulumi.Input[_builtins.str] source_type: Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.

@@ -468,7 +468,7 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  advanced_properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 certificate_bundle: pulumi.Input[Optional[Union['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs', 'RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgsDict']]] = None,
+                 certificate_bundle: pulumi.Input[Optional[Union['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs', 'RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgsDict', 'outputs.RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle']]] = None,
                  database_api_status: pulumi.Input[Optional[_builtins.str]] = None,
                  database_tools_database_api_gateway_config_id: pulumi.Input[Optional[_builtins.str]] = None,
                  document_root: pulumi.Input[Optional[_builtins.str]] = None,
@@ -529,7 +529,7 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] advanced_properties: (Updatable) Advanced global properties.
-        :param pulumi.Input[Union['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs', 'RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgsDict']] certificate_bundle: (Updatable) The certificate bundle that describes the SSL certicicate. Ignored if the httpsPort is 0.
+        :param pulumi.Input[Union['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs', 'RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgsDict', 'outputs.RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle']] certificate_bundle: (Updatable) The certificate bundle that describes the SSL certicicate. Ignored if the httpsPort is 0.
         :param pulumi.Input[_builtins.str] database_api_status: (Updatable) ORDS database API is a database management and monitoring REST API. Database Actions requires this feature.
         :param pulumi.Input[_builtins.str] database_tools_database_api_gateway_config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools database API gateway config.
         :param pulumi.Input[_builtins.str] document_root: (Updatable) The location of the static resources to be served under the / root server path.
@@ -612,7 +612,7 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  advanced_properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 certificate_bundle: pulumi.Input[Optional[Union['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs', 'RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgsDict']]] = None,
+                 certificate_bundle: pulumi.Input[Optional[Union['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs', 'RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgsDict', 'outputs.RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle']]] = None,
                  database_api_status: pulumi.Input[Optional[_builtins.str]] = None,
                  database_tools_database_api_gateway_config_id: pulumi.Input[Optional[_builtins.str]] = None,
                  document_root: pulumi.Input[Optional[_builtins.str]] = None,
@@ -663,7 +663,7 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             advanced_properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            certificate_bundle: pulumi.Input[Optional[Union['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs', 'RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgsDict']]] = None,
+            certificate_bundle: pulumi.Input[Optional[Union['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs', 'RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgsDict', 'outputs.RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle']]] = None,
             database_api_status: pulumi.Input[Optional[_builtins.str]] = None,
             database_tools_database_api_gateway_config_id: pulumi.Input[Optional[_builtins.str]] = None,
             document_root: pulumi.Input[Optional[_builtins.str]] = None,
@@ -685,7 +685,7 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] advanced_properties: (Updatable) Advanced global properties.
-        :param pulumi.Input[Union['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs', 'RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgsDict']] certificate_bundle: (Updatable) The certificate bundle that describes the SSL certicicate. Ignored if the httpsPort is 0.
+        :param pulumi.Input[Union['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs', 'RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgsDict', 'outputs.RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle']] certificate_bundle: (Updatable) The certificate bundle that describes the SSL certicicate. Ignored if the httpsPort is 0.
         :param pulumi.Input[_builtins.str] database_api_status: (Updatable) ORDS database API is a database management and monitoring REST API. Database Actions requires this feature.
         :param pulumi.Input[_builtins.str] database_tools_database_api_gateway_config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools database API gateway config.
         :param pulumi.Input[_builtins.str] document_root: (Updatable) The location of the static resources to be served under the / root server path.

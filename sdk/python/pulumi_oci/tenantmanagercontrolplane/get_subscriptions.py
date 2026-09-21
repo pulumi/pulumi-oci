@@ -107,7 +107,7 @@ class AwaitableGetSubscriptionsResult(GetSubscriptionsResult):
 
 def get_subscriptions(compartment_id: Optional[_builtins.str] = None,
                       entity_version: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetSubscriptionsFilterArgs', 'GetSubscriptionsFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetSubscriptionsFilterArgs', 'GetSubscriptionsFilterArgsDict', 'outputs.GetSubscriptionsFilterResult']]] = None,
                       subscription_id: Optional[_builtins.str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSubscriptionsResult:
     """
@@ -148,7 +148,7 @@ def get_subscriptions(compartment_id: Optional[_builtins.str] = None,
         subscription_id=pulumi.get(__ret__, 'subscription_id'))
 def get_subscriptions_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              entity_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionsFilterArgs', 'GetSubscriptionsFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionsFilterArgs', 'GetSubscriptionsFilterArgsDict', 'outputs.GetSubscriptionsFilterResult']]]]] = None,
                              subscription_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionsResult]:
     """

@@ -84,7 +84,7 @@ class AwaitableGetPbfListingTriggersResult(GetPbfListingTriggersResult):
             triggers_collections=self.triggers_collections)
 
 
-def get_pbf_listing_triggers(filters: Optional[Sequence[Union['GetPbfListingTriggersFilterArgs', 'GetPbfListingTriggersFilterArgsDict']]] = None,
+def get_pbf_listing_triggers(filters: Optional[Sequence[Union['GetPbfListingTriggersFilterArgs', 'GetPbfListingTriggersFilterArgsDict', 'outputs.GetPbfListingTriggersFilterResult']]] = None,
                              name: Optional[_builtins.str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPbfListingTriggersResult:
     """
@@ -115,7 +115,7 @@ def get_pbf_listing_triggers(filters: Optional[Sequence[Union['GetPbfListingTrig
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         triggers_collections=pulumi.get(__ret__, 'triggers_collections'))
-def get_pbf_listing_triggers_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPbfListingTriggersFilterArgs', 'GetPbfListingTriggersFilterArgsDict']]]]] = None,
+def get_pbf_listing_triggers_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPbfListingTriggersFilterArgs', 'GetPbfListingTriggersFilterArgsDict', 'outputs.GetPbfListingTriggersFilterResult']]]]] = None,
                                     name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPbfListingTriggersResult]:
     """

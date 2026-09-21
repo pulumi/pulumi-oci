@@ -121,7 +121,7 @@ def get_desktop_pool_desktops(availability_domain: Optional[_builtins.str] = Non
                               compartment_id: Optional[_builtins.str] = None,
                               desktop_pool_id: Optional[_builtins.str] = None,
                               display_name: Optional[_builtins.str] = None,
-                              filters: Optional[Sequence[Union['GetDesktopPoolDesktopsFilterArgs', 'GetDesktopPoolDesktopsFilterArgsDict']]] = None,
+                              filters: Optional[Sequence[Union['GetDesktopPoolDesktopsFilterArgs', 'GetDesktopPoolDesktopsFilterArgsDict', 'outputs.GetDesktopPoolDesktopsFilterResult']]] = None,
                               id: Optional[_builtins.str] = None,
                               state: Optional[_builtins.str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDesktopPoolDesktopsResult:
@@ -176,7 +176,7 @@ def get_desktop_pool_desktops_output(availability_domain: pulumi.Input[Optional[
                                      compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      desktop_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDesktopPoolDesktopsFilterArgs', 'GetDesktopPoolDesktopsFilterArgsDict']]]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDesktopPoolDesktopsFilterArgs', 'GetDesktopPoolDesktopsFilterArgsDict', 'outputs.GetDesktopPoolDesktopsFilterResult']]]]] = None,
                                      id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDesktopPoolDesktopsResult]:

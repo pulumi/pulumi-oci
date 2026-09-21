@@ -110,7 +110,7 @@ class AwaitableGetRulesResult(GetRulesResult):
 
 def get_rules(compartment_id: Optional[_builtins.str] = None,
               display_name: Optional[_builtins.str] = None,
-              filters: Optional[Sequence[Union['GetRulesFilterArgs', 'GetRulesFilterArgsDict']]] = None,
+              filters: Optional[Sequence[Union['GetRulesFilterArgs', 'GetRulesFilterArgsDict', 'outputs.GetRulesFilterResult']]] = None,
               state: Optional[_builtins.str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRulesResult:
     """
@@ -151,7 +151,7 @@ def get_rules(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_rules_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRulesFilterArgs', 'GetRulesFilterArgsDict']]]]] = None,
+                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRulesFilterArgs', 'GetRulesFilterArgsDict', 'outputs.GetRulesFilterResult']]]]] = None,
                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRulesResult]:
     """

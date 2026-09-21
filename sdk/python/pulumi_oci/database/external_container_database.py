@@ -570,7 +570,7 @@ class ExternalContainerDatabase(pulumi.CustomResource):
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             database_configuration: pulumi.Input[Optional[_builtins.str]] = None,
             database_edition: pulumi.Input[Optional[_builtins.str]] = None,
-            database_management_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalContainerDatabaseDatabaseManagementConfigArgs', 'ExternalContainerDatabaseDatabaseManagementConfigArgsDict']]]]] = None,
+            database_management_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalContainerDatabaseDatabaseManagementConfigArgs', 'ExternalContainerDatabaseDatabaseManagementConfigArgsDict', 'outputs.ExternalContainerDatabaseDatabaseManagementConfig']]]]] = None,
             database_version: pulumi.Input[Optional[_builtins.str]] = None,
             db_id: pulumi.Input[Optional[_builtins.str]] = None,
             db_packs: pulumi.Input[Optional[_builtins.str]] = None,
@@ -580,7 +580,7 @@ class ExternalContainerDatabase(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             ncharacter_set: pulumi.Input[Optional[_builtins.str]] = None,
-            stack_monitoring_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalContainerDatabaseStackMonitoringConfigArgs', 'ExternalContainerDatabaseStackMonitoringConfigArgsDict']]]]] = None,
+            stack_monitoring_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalContainerDatabaseStackMonitoringConfigArgs', 'ExternalContainerDatabaseStackMonitoringConfigArgsDict', 'outputs.ExternalContainerDatabaseStackMonitoringConfig']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -596,7 +596,7 @@ class ExternalContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] database_configuration: The Oracle Database configuration
         :param pulumi.Input[_builtins.str] database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalContainerDatabaseDatabaseManagementConfigArgs', 'ExternalContainerDatabaseDatabaseManagementConfigArgsDict']]]] database_management_configs: The configuration of the Database Management service.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalContainerDatabaseDatabaseManagementConfigArgs', 'ExternalContainerDatabaseDatabaseManagementConfigArgsDict', 'outputs.ExternalContainerDatabaseDatabaseManagementConfig']]]] database_management_configs: The configuration of the Database Management service.
         :param pulumi.Input[_builtins.str] database_version: The Oracle Database version.
         :param pulumi.Input[_builtins.str] db_id: The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
         :param pulumi.Input[_builtins.str] db_packs: The database packs licensed for the external Oracle Database.
@@ -609,7 +609,7 @@ class ExternalContainerDatabase(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] ncharacter_set: The national character of the external database.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalContainerDatabaseStackMonitoringConfigArgs', 'ExternalContainerDatabaseStackMonitoringConfigArgsDict']]]] stack_monitoring_configs: The configuration of Stack Monitoring for the external database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalContainerDatabaseStackMonitoringConfigArgs', 'ExternalContainerDatabaseStackMonitoringConfigArgsDict', 'outputs.ExternalContainerDatabaseStackMonitoringConfig']]]] stack_monitoring_configs: The configuration of Stack Monitoring for the external database.
         :param pulumi.Input[_builtins.str] state: The current state of the Oracle Cloud Infrastructure external database resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] time_created: The date and time the database was created.

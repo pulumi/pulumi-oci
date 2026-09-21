@@ -110,7 +110,7 @@ class AwaitableGetWebAppFirewallPoliciesResult(GetWebAppFirewallPoliciesResult):
 
 def get_web_app_firewall_policies(compartment_id: Optional[_builtins.str] = None,
                                   display_name: Optional[_builtins.str] = None,
-                                  filters: Optional[Sequence[Union['GetWebAppFirewallPoliciesFilterArgs', 'GetWebAppFirewallPoliciesFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetWebAppFirewallPoliciesFilterArgs', 'GetWebAppFirewallPoliciesFilterArgsDict', 'outputs.GetWebAppFirewallPoliciesFilterResult']]] = None,
                                   id: Optional[_builtins.str] = None,
                                   states: Optional[Sequence[_builtins.str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWebAppFirewallPoliciesResult:
@@ -155,7 +155,7 @@ def get_web_app_firewall_policies(compartment_id: Optional[_builtins.str] = None
         web_app_firewall_policy_collections=pulumi.get(__ret__, 'web_app_firewall_policy_collections'))
 def get_web_app_firewall_policies_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWebAppFirewallPoliciesFilterArgs', 'GetWebAppFirewallPoliciesFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWebAppFirewallPoliciesFilterArgs', 'GetWebAppFirewallPoliciesFilterArgsDict', 'outputs.GetWebAppFirewallPoliciesFilterResult']]]]] = None,
                                          id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWebAppFirewallPoliciesResult]:

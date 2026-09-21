@@ -85,7 +85,7 @@ class AwaitableGetByoasnsResult(GetByoasnsResult):
 
 
 def get_byoasns(compartment_id: Optional[_builtins.str] = None,
-                filters: Optional[Sequence[Union['GetByoasnsFilterArgs', 'GetByoasnsFilterArgsDict']]] = None,
+                filters: Optional[Sequence[Union['GetByoasnsFilterArgs', 'GetByoasnsFilterArgsDict', 'outputs.GetByoasnsFilterResult']]] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetByoasnsResult:
     """
     This data source provides the list of Byoasns in Oracle Cloud Infrastructure Core service.
@@ -110,7 +110,7 @@ def get_byoasns(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_byoasns_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetByoasnsFilterArgs', 'GetByoasnsFilterArgsDict']]]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetByoasnsFilterArgs', 'GetByoasnsFilterArgsDict', 'outputs.GetByoasnsFilterResult']]]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetByoasnsResult]:
     """
     This data source provides the list of Byoasns in Oracle Cloud Infrastructure Core service.

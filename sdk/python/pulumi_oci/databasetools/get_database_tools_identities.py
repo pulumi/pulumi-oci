@@ -135,7 +135,7 @@ class AwaitableGetDatabaseToolsIdentitiesResult(GetDatabaseToolsIdentitiesResult
 def get_database_tools_identities(compartment_id: Optional[_builtins.str] = None,
                                   database_tools_connection_id: Optional[_builtins.str] = None,
                                   display_name: Optional[_builtins.str] = None,
-                                  filters: Optional[Sequence[Union['GetDatabaseToolsIdentitiesFilterArgs', 'GetDatabaseToolsIdentitiesFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetDatabaseToolsIdentitiesFilterArgs', 'GetDatabaseToolsIdentitiesFilterArgsDict', 'outputs.GetDatabaseToolsIdentitiesFilterResult']]] = None,
                                   state: Optional[_builtins.str] = None,
                                   types: Optional[Sequence[_builtins.str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabaseToolsIdentitiesResult:
@@ -186,7 +186,7 @@ def get_database_tools_identities(compartment_id: Optional[_builtins.str] = None
 def get_database_tools_identities_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          database_tools_connection_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabaseToolsIdentitiesFilterArgs', 'GetDatabaseToolsIdentitiesFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabaseToolsIdentitiesFilterArgs', 'GetDatabaseToolsIdentitiesFilterArgsDict', 'outputs.GetDatabaseToolsIdentitiesFilterResult']]]]] = None,
                                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseToolsIdentitiesResult]:

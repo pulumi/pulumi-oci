@@ -594,7 +594,7 @@ class ManagementAgentDataSource(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  connection_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 metric_dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementAgentDataSourceMetricDimensionArgs', 'ManagementAgentDataSourceMetricDimensionArgsDict']]]]] = None,
+                 metric_dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementAgentDataSourceMetricDimensionArgs', 'ManagementAgentDataSourceMetricDimensionArgsDict', 'outputs.ManagementAgentDataSourceMetricDimension']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  proxy_url: pulumi.Input[Optional[_builtins.str]] = None,
@@ -654,7 +654,7 @@ class ManagementAgentDataSource(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: Compartment owning this DataSource.
         :param pulumi.Input[_builtins.int] connection_timeout: (Updatable) Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
         :param pulumi.Input[_builtins.str] management_agent_id: Unique Management Agent identifier
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementAgentDataSourceMetricDimensionArgs', 'ManagementAgentDataSourceMetricDimensionArgsDict']]]] metric_dimensions: (Updatable) The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementAgentDataSourceMetricDimensionArgs', 'ManagementAgentDataSourceMetricDimensionArgsDict', 'outputs.ManagementAgentDataSourceMetricDimension']]]] metric_dimensions: (Updatable) The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
         :param pulumi.Input[_builtins.str] name: Unique name of the DataSource.
         :param pulumi.Input[_builtins.str] namespace: The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
         :param pulumi.Input[_builtins.str] proxy_url: (Updatable) The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
@@ -736,7 +736,7 @@ class ManagementAgentDataSource(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  connection_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 metric_dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementAgentDataSourceMetricDimensionArgs', 'ManagementAgentDataSourceMetricDimensionArgsDict']]]]] = None,
+                 metric_dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementAgentDataSourceMetricDimensionArgs', 'ManagementAgentDataSourceMetricDimensionArgsDict', 'outputs.ManagementAgentDataSourceMetricDimension']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  proxy_url: pulumi.Input[Optional[_builtins.str]] = None,
@@ -799,7 +799,7 @@ class ManagementAgentDataSource(pulumi.CustomResource):
             data_source_key: pulumi.Input[Optional[_builtins.str]] = None,
             is_daemon_set: pulumi.Input[Optional[_builtins.bool]] = None,
             management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
-            metric_dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementAgentDataSourceMetricDimensionArgs', 'ManagementAgentDataSourceMetricDimensionArgsDict']]]]] = None,
+            metric_dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementAgentDataSourceMetricDimensionArgs', 'ManagementAgentDataSourceMetricDimensionArgsDict', 'outputs.ManagementAgentDataSourceMetricDimension']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             namespace: pulumi.Input[Optional[_builtins.str]] = None,
             proxy_url: pulumi.Input[Optional[_builtins.str]] = None,
@@ -825,7 +825,7 @@ class ManagementAgentDataSource(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] connection_timeout: (Updatable) Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
         :param pulumi.Input[_builtins.bool] is_daemon_set: If the Kubernetes cluster type is Daemon set then this will be set to true.
         :param pulumi.Input[_builtins.str] management_agent_id: Unique Management Agent identifier
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementAgentDataSourceMetricDimensionArgs', 'ManagementAgentDataSourceMetricDimensionArgsDict']]]] metric_dimensions: (Updatable) The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementAgentDataSourceMetricDimensionArgs', 'ManagementAgentDataSourceMetricDimensionArgsDict', 'outputs.ManagementAgentDataSourceMetricDimension']]]] metric_dimensions: (Updatable) The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
         :param pulumi.Input[_builtins.str] name: Unique name of the DataSource.
         :param pulumi.Input[_builtins.str] namespace: The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
         :param pulumi.Input[_builtins.str] proxy_url: (Updatable) The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).

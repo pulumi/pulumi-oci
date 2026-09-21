@@ -707,7 +707,7 @@ class GdpGdpPipeline(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  approval_key_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization_details: pulumi.Input[Optional[_builtins.str]] = None,
-                 bucket_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GdpGdpPipelineBucketDetailArgs', 'GdpGdpPipelineBucketDetailArgsDict']]]]] = None,
+                 bucket_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GdpGdpPipelineBucketDetailArgs', 'GdpGdpPipelineBucketDetailArgsDict', 'outputs.GdpGdpPipelineBucketDetail']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -780,7 +780,7 @@ class GdpGdpPipeline(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] approval_key_vault_id: (Updatable) The KMS vault OCID used for cryptographic approvals of transfers.
         :param pulumi.Input[_builtins.str] authorization_details: (Updatable) Authorization information about the pipeline being configured.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['GdpGdpPipelineBucketDetailArgs', 'GdpGdpPipelineBucketDetailArgsDict']]]] bucket_details: Configuration information about the buckets used for this pipeline.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['GdpGdpPipelineBucketDetailArgs', 'GdpGdpPipelineBucketDetailArgsDict', 'outputs.GdpGdpPipelineBucketDetail']]]] bucket_details: Configuration information about the buckets used for this pipeline.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Short field input by customer for a description of the data pipeline use-case.
@@ -875,7 +875,7 @@ class GdpGdpPipeline(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  approval_key_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization_details: pulumi.Input[Optional[_builtins.str]] = None,
-                 bucket_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GdpGdpPipelineBucketDetailArgs', 'GdpGdpPipelineBucketDetailArgsDict']]]]] = None,
+                 bucket_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GdpGdpPipelineBucketDetailArgs', 'GdpGdpPipelineBucketDetailArgsDict', 'outputs.GdpGdpPipelineBucketDetail']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -945,7 +945,7 @@ class GdpGdpPipeline(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             approval_key_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
             authorization_details: pulumi.Input[Optional[_builtins.str]] = None,
-            bucket_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GdpGdpPipelineBucketDetailArgs', 'GdpGdpPipelineBucketDetailArgsDict']]]]] = None,
+            bucket_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GdpGdpPipelineBucketDetailArgs', 'GdpGdpPipelineBucketDetailArgsDict', 'outputs.GdpGdpPipelineBucketDetail']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -975,7 +975,7 @@ class GdpGdpPipeline(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] approval_key_vault_id: (Updatable) The KMS vault OCID used for cryptographic approvals of transfers.
         :param pulumi.Input[_builtins.str] authorization_details: (Updatable) Authorization information about the pipeline being configured.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['GdpGdpPipelineBucketDetailArgs', 'GdpGdpPipelineBucketDetailArgsDict']]]] bucket_details: Configuration information about the buckets used for this pipeline.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['GdpGdpPipelineBucketDetailArgs', 'GdpGdpPipelineBucketDetailArgsDict', 'outputs.GdpGdpPipelineBucketDetail']]]] bucket_details: Configuration information about the buckets used for this pipeline.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Short field input by customer for a description of the data pipeline use-case.

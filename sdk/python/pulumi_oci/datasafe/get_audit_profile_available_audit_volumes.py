@@ -124,7 +124,7 @@ class AwaitableGetAuditProfileAvailableAuditVolumesResult(GetAuditProfileAvailab
 
 
 def get_audit_profile_available_audit_volumes(audit_profile_id: Optional[_builtins.str] = None,
-                                              filters: Optional[Sequence[Union['GetAuditProfileAvailableAuditVolumesFilterArgs', 'GetAuditProfileAvailableAuditVolumesFilterArgsDict']]] = None,
+                                              filters: Optional[Sequence[Union['GetAuditProfileAvailableAuditVolumesFilterArgs', 'GetAuditProfileAvailableAuditVolumesFilterArgsDict', 'outputs.GetAuditProfileAvailableAuditVolumesFilterResult']]] = None,
                                               month_in_consideration_greater_than: Optional[_builtins.str] = None,
                                               month_in_consideration_less_than: Optional[_builtins.str] = None,
                                               trail_location: Optional[_builtins.str] = None,
@@ -179,7 +179,7 @@ def get_audit_profile_available_audit_volumes(audit_profile_id: Optional[_builti
         trail_location=pulumi.get(__ret__, 'trail_location'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
 def get_audit_profile_available_audit_volumes_output(audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAuditProfileAvailableAuditVolumesFilterArgs', 'GetAuditProfileAvailableAuditVolumesFilterArgsDict']]]]] = None,
+                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAuditProfileAvailableAuditVolumesFilterArgs', 'GetAuditProfileAvailableAuditVolumesFilterArgsDict', 'outputs.GetAuditProfileAvailableAuditVolumesFilterResult']]]]] = None,
                                                      month_in_consideration_greater_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                      month_in_consideration_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                      trail_location: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

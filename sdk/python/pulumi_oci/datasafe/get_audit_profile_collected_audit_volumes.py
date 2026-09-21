@@ -112,7 +112,7 @@ class AwaitableGetAuditProfileCollectedAuditVolumesResult(GetAuditProfileCollect
 
 
 def get_audit_profile_collected_audit_volumes(audit_profile_id: Optional[_builtins.str] = None,
-                                              filters: Optional[Sequence[Union['GetAuditProfileCollectedAuditVolumesFilterArgs', 'GetAuditProfileCollectedAuditVolumesFilterArgsDict']]] = None,
+                                              filters: Optional[Sequence[Union['GetAuditProfileCollectedAuditVolumesFilterArgs', 'GetAuditProfileCollectedAuditVolumesFilterArgsDict', 'outputs.GetAuditProfileCollectedAuditVolumesFilterResult']]] = None,
                                               month_in_consideration_greater_than: Optional[_builtins.str] = None,
                                               month_in_consideration_less_than: Optional[_builtins.str] = None,
                                               work_request_id: Optional[_builtins.str] = None,
@@ -162,7 +162,7 @@ def get_audit_profile_collected_audit_volumes(audit_profile_id: Optional[_builti
         month_in_consideration_less_than=pulumi.get(__ret__, 'month_in_consideration_less_than'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
 def get_audit_profile_collected_audit_volumes_output(audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAuditProfileCollectedAuditVolumesFilterArgs', 'GetAuditProfileCollectedAuditVolumesFilterArgsDict']]]]] = None,
+                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAuditProfileCollectedAuditVolumesFilterArgs', 'GetAuditProfileCollectedAuditVolumesFilterArgsDict', 'outputs.GetAuditProfileCollectedAuditVolumesFilterResult']]]]] = None,
                                                      month_in_consideration_greater_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                      month_in_consideration_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                      work_request_id: pulumi.Input[Optional[_builtins.str]] = None,

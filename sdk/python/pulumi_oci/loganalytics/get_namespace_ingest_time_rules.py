@@ -158,7 +158,7 @@ def get_namespace_ingest_time_rules(compartment_id: Optional[_builtins.str] = No
                                     display_name: Optional[_builtins.str] = None,
                                     field_name: Optional[_builtins.str] = None,
                                     field_value: Optional[_builtins.str] = None,
-                                    filters: Optional[Sequence[Union['GetNamespaceIngestTimeRulesFilterArgs', 'GetNamespaceIngestTimeRulesFilterArgsDict']]] = None,
+                                    filters: Optional[Sequence[Union['GetNamespaceIngestTimeRulesFilterArgs', 'GetNamespaceIngestTimeRulesFilterArgsDict', 'outputs.GetNamespaceIngestTimeRulesFilterResult']]] = None,
                                     namespace: Optional[_builtins.str] = None,
                                     state: Optional[_builtins.str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespaceIngestTimeRulesResult:
@@ -219,7 +219,7 @@ def get_namespace_ingest_time_rules_output(compartment_id: pulumi.Input[Optional
                                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            field_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            field_value: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespaceIngestTimeRulesFilterArgs', 'GetNamespaceIngestTimeRulesFilterArgsDict']]]]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespaceIngestTimeRulesFilterArgs', 'GetNamespaceIngestTimeRulesFilterArgsDict', 'outputs.GetNamespaceIngestTimeRulesFilterResult']]]]] = None,
                                            namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceIngestTimeRulesResult]:

@@ -122,7 +122,7 @@ class AwaitableGetFirewallsResult(GetFirewallsResult):
 
 def get_firewalls(compartment_id: Optional[_builtins.str] = None,
                   display_name: Optional[_builtins.str] = None,
-                  filters: Optional[Sequence[Union['GetFirewallsFilterArgs', 'GetFirewallsFilterArgsDict']]] = None,
+                  filters: Optional[Sequence[Union['GetFirewallsFilterArgs', 'GetFirewallsFilterArgsDict', 'outputs.GetFirewallsFilterResult']]] = None,
                   id: Optional[_builtins.str] = None,
                   states: Optional[Sequence[_builtins.str]] = None,
                   web_app_firewall_policy_id: Optional[_builtins.str] = None,
@@ -172,7 +172,7 @@ def get_firewalls(compartment_id: Optional[_builtins.str] = None,
         web_app_firewall_policy_id=pulumi.get(__ret__, 'web_app_firewall_policy_id'))
 def get_firewalls_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFirewallsFilterArgs', 'GetFirewallsFilterArgsDict']]]]] = None,
+                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFirewallsFilterArgs', 'GetFirewallsFilterArgsDict', 'outputs.GetFirewallsFilterResult']]]]] = None,
                          id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                          web_app_firewall_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

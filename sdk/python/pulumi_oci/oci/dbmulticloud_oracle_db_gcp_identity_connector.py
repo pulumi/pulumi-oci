@@ -713,7 +713,7 @@ class DbmulticloudOracleDbGcpIdentityConnector(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             gcp_identity_connectivity_status: pulumi.Input[Optional[_builtins.str]] = None,
             gcp_location: pulumi.Input[Optional[_builtins.str]] = None,
-            gcp_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs', 'DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgsDict']]]]] = None,
+            gcp_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs', 'DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgsDict', 'outputs.DbmulticloudOracleDbGcpIdentityConnectorGcpNode']]]]] = None,
             gcp_resource_service_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
             gcp_workload_identity_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
             gcp_workload_identity_provider_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -738,7 +738,7 @@ class DbmulticloudOracleDbGcpIdentityConnector(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] gcp_identity_connectivity_status: The current Connectivity status of GCP Identity Connector resource.
         :param pulumi.Input[_builtins.str] gcp_location: (Updatable) GCP Location.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs', 'DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgsDict']]]] gcp_nodes: List of All VMs where GCP Identity Connector is configured for this VMCluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs', 'DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgsDict', 'outputs.DbmulticloudOracleDbGcpIdentityConnectorGcpNode']]]] gcp_nodes: List of All VMs where GCP Identity Connector is configured for this VMCluster.
         :param pulumi.Input[_builtins.str] gcp_resource_service_agent_id: (Updatable) The ID of the GCP resource service agent.
         :param pulumi.Input[_builtins.str] gcp_workload_identity_pool_id: (Updatable) The ID of the cloud GCP Workload Identity Pool.
         :param pulumi.Input[_builtins.str] gcp_workload_identity_provider_id: (Updatable) The ID of the GCP Workload Identity Provider.

@@ -436,7 +436,7 @@ class ExecutionAction(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action_members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExecutionActionActionMemberArgs', 'ExecutionActionActionMemberArgsDict']]]]] = None,
+                 action_members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExecutionActionActionMemberArgs', 'ExecutionActionActionMemberArgsDict', 'outputs.ExecutionActionActionMember']]]]] = None,
                  action_params: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  action_type: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -484,7 +484,7 @@ class ExecutionAction(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ExecutionActionActionMemberArgs', 'ExecutionActionActionMemberArgsDict']]]] action_members: (Updatable) List of action members of this execution action.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExecutionActionActionMemberArgs', 'ExecutionActionActionMemberArgsDict', 'outputs.ExecutionActionActionMember']]]] action_members: (Updatable) List of action members of this execution action.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] action_params: (Updatable) Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
         :param pulumi.Input[_builtins.str] action_type: The action type of the execution action being performed
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -554,7 +554,7 @@ class ExecutionAction(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action_members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExecutionActionActionMemberArgs', 'ExecutionActionActionMemberArgsDict']]]]] = None,
+                 action_members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExecutionActionActionMemberArgs', 'ExecutionActionActionMemberArgsDict', 'outputs.ExecutionActionActionMember']]]]] = None,
                  action_params: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  action_type: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -601,7 +601,7 @@ class ExecutionAction(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action_members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExecutionActionActionMemberArgs', 'ExecutionActionActionMemberArgsDict']]]]] = None,
+            action_members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExecutionActionActionMemberArgs', 'ExecutionActionActionMemberArgsDict', 'outputs.ExecutionActionActionMember']]]]] = None,
             action_params: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             action_type: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -625,7 +625,7 @@ class ExecutionAction(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ExecutionActionActionMemberArgs', 'ExecutionActionActionMemberArgsDict']]]] action_members: (Updatable) List of action members of this execution action.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExecutionActionActionMemberArgs', 'ExecutionActionActionMemberArgsDict', 'outputs.ExecutionActionActionMember']]]] action_members: (Updatable) List of action members of this execution action.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] action_params: (Updatable) Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
         :param pulumi.Input[_builtins.str] action_type: The action type of the execution action being performed
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

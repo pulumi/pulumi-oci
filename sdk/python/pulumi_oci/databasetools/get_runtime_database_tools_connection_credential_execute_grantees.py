@@ -92,7 +92,7 @@ class AwaitableGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesResult(
 
 def get_runtime_database_tools_connection_credential_execute_grantees(credential_key: Optional[_builtins.str] = None,
                                                                       database_tools_connection_id: Optional[_builtins.str] = None,
-                                                                      filters: Optional[Sequence[Union['GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArgs', 'GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArgsDict']]] = None,
+                                                                      filters: Optional[Sequence[Union['GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArgs', 'GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArgsDict', 'outputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterResult']]] = None,
                                                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesResult:
     """
     This data source provides the list of Database Tools Connection Credential Execute Grantees in Oracle Cloud Infrastructure Database Tools Runtime service.
@@ -128,7 +128,7 @@ def get_runtime_database_tools_connection_credential_execute_grantees(credential
         id=pulumi.get(__ret__, 'id'))
 def get_runtime_database_tools_connection_credential_execute_grantees_output(credential_key: pulumi.Input[Optional[_builtins.str]] = None,
                                                                              database_tools_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArgs', 'GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArgsDict']]]]] = None,
+                                                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArgs', 'GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArgsDict', 'outputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterResult']]]]] = None,
                                                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesResult]:
     """
     This data source provides the list of Database Tools Connection Credential Execute Grantees in Oracle Cloud Infrastructure Database Tools Runtime service.

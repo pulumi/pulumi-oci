@@ -510,10 +510,10 @@ class Vault(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 external_key_manager_metadata: pulumi.Input[Optional[Union['VaultExternalKeyManagerMetadataArgs', 'VaultExternalKeyManagerMetadataArgsDict']]] = None,
+                 external_key_manager_metadata: pulumi.Input[Optional[Union['VaultExternalKeyManagerMetadataArgs', 'VaultExternalKeyManagerMetadataArgsDict', 'outputs.VaultExternalKeyManagerMetadata']]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 restore_from_file: pulumi.Input[Optional[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict']]] = None,
-                 restore_from_object_store: pulumi.Input[Optional[Union['VaultRestoreFromObjectStoreArgs', 'VaultRestoreFromObjectStoreArgsDict']]] = None,
+                 restore_from_file: pulumi.Input[Optional[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict', 'outputs.VaultRestoreFromFile']]] = None,
+                 restore_from_object_store: pulumi.Input[Optional[Union['VaultRestoreFromObjectStoreArgs', 'VaultRestoreFromObjectStoreArgsDict', 'outputs.VaultRestoreFromObjectStore']]] = None,
                  restore_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
                  time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
                  vault_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -575,10 +575,10 @@ class Vault(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create this vault.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
-        :param pulumi.Input[Union['VaultExternalKeyManagerMetadataArgs', 'VaultExternalKeyManagerMetadataArgsDict']] external_key_manager_metadata: Metadata required for accessing External Key manager
+        :param pulumi.Input[Union['VaultExternalKeyManagerMetadataArgs', 'VaultExternalKeyManagerMetadataArgsDict', 'outputs.VaultExternalKeyManagerMetadata']] external_key_manager_metadata: Metadata required for accessing External Key manager
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict']] restore_from_file: (Updatable) Details where vault was backed up.
-        :param pulumi.Input[Union['VaultRestoreFromObjectStoreArgs', 'VaultRestoreFromObjectStoreArgsDict']] restore_from_object_store: (Updatable) Details where vault was backed up
+        :param pulumi.Input[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict', 'outputs.VaultRestoreFromFile']] restore_from_file: (Updatable) Details where vault was backed up.
+        :param pulumi.Input[Union['VaultRestoreFromObjectStoreArgs', 'VaultRestoreFromObjectStoreArgsDict', 'outputs.VaultRestoreFromObjectStore']] restore_from_object_store: (Updatable) Details where vault was backed up
         :param pulumi.Input[_builtins.str] time_of_deletion: (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
                
                ** IMPORTANT **
@@ -661,10 +661,10 @@ class Vault(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 external_key_manager_metadata: pulumi.Input[Optional[Union['VaultExternalKeyManagerMetadataArgs', 'VaultExternalKeyManagerMetadataArgsDict']]] = None,
+                 external_key_manager_metadata: pulumi.Input[Optional[Union['VaultExternalKeyManagerMetadataArgs', 'VaultExternalKeyManagerMetadataArgsDict', 'outputs.VaultExternalKeyManagerMetadata']]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 restore_from_file: pulumi.Input[Optional[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict']]] = None,
-                 restore_from_object_store: pulumi.Input[Optional[Union['VaultRestoreFromObjectStoreArgs', 'VaultRestoreFromObjectStoreArgsDict']]] = None,
+                 restore_from_file: pulumi.Input[Optional[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict', 'outputs.VaultRestoreFromFile']]] = None,
+                 restore_from_object_store: pulumi.Input[Optional[Union['VaultRestoreFromObjectStoreArgs', 'VaultRestoreFromObjectStoreArgsDict', 'outputs.VaultRestoreFromObjectStore']]] = None,
                  restore_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
                  time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
                  vault_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -716,15 +716,15 @@ class Vault(pulumi.CustomResource):
             crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            external_key_manager_metadata: pulumi.Input[Optional[Union['VaultExternalKeyManagerMetadataArgs', 'VaultExternalKeyManagerMetadataArgsDict']]] = None,
-            external_key_manager_metadata_summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VaultExternalKeyManagerMetadataSummaryArgs', 'VaultExternalKeyManagerMetadataSummaryArgsDict']]]]] = None,
+            external_key_manager_metadata: pulumi.Input[Optional[Union['VaultExternalKeyManagerMetadataArgs', 'VaultExternalKeyManagerMetadataArgsDict', 'outputs.VaultExternalKeyManagerMetadata']]] = None,
+            external_key_manager_metadata_summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VaultExternalKeyManagerMetadataSummaryArgs', 'VaultExternalKeyManagerMetadataSummaryArgsDict', 'outputs.VaultExternalKeyManagerMetadataSummary']]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_primary: pulumi.Input[Optional[_builtins.bool]] = None,
             is_vault_replicable: pulumi.Input[Optional[_builtins.bool]] = None,
             management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            replica_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VaultReplicaDetailArgs', 'VaultReplicaDetailArgsDict']]]]] = None,
-            restore_from_file: pulumi.Input[Optional[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict']]] = None,
-            restore_from_object_store: pulumi.Input[Optional[Union['VaultRestoreFromObjectStoreArgs', 'VaultRestoreFromObjectStoreArgsDict']]] = None,
+            replica_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VaultReplicaDetailArgs', 'VaultReplicaDetailArgsDict', 'outputs.VaultReplicaDetail']]]]] = None,
+            restore_from_file: pulumi.Input[Optional[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict', 'outputs.VaultRestoreFromFile']]] = None,
+            restore_from_object_store: pulumi.Input[Optional[Union['VaultRestoreFromObjectStoreArgs', 'VaultRestoreFromObjectStoreArgsDict', 'outputs.VaultRestoreFromObjectStore']]] = None,
             restore_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
             restored_from_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -742,15 +742,15 @@ class Vault(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
-        :param pulumi.Input[Union['VaultExternalKeyManagerMetadataArgs', 'VaultExternalKeyManagerMetadataArgsDict']] external_key_manager_metadata: Metadata required for accessing External Key manager
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VaultExternalKeyManagerMetadataSummaryArgs', 'VaultExternalKeyManagerMetadataSummaryArgsDict']]]] external_key_manager_metadata_summaries: Summary about metadata of external key manager to be returned to the customer as a response.
+        :param pulumi.Input[Union['VaultExternalKeyManagerMetadataArgs', 'VaultExternalKeyManagerMetadataArgsDict', 'outputs.VaultExternalKeyManagerMetadata']] external_key_manager_metadata: Metadata required for accessing External Key manager
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VaultExternalKeyManagerMetadataSummaryArgs', 'VaultExternalKeyManagerMetadataSummaryArgsDict', 'outputs.VaultExternalKeyManagerMetadataSummary']]]] external_key_manager_metadata_summaries: Summary about metadata of external key manager to be returned to the customer as a response.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_primary: A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
         :param pulumi.Input[_builtins.bool] is_vault_replicable: A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
         :param pulumi.Input[_builtins.str] management_endpoint: The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VaultReplicaDetailArgs', 'VaultReplicaDetailArgsDict']]]] replica_details: Vault replica details
-        :param pulumi.Input[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict']] restore_from_file: (Updatable) Details where vault was backed up.
-        :param pulumi.Input[Union['VaultRestoreFromObjectStoreArgs', 'VaultRestoreFromObjectStoreArgsDict']] restore_from_object_store: (Updatable) Details where vault was backed up
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VaultReplicaDetailArgs', 'VaultReplicaDetailArgsDict', 'outputs.VaultReplicaDetail']]]] replica_details: Vault replica details
+        :param pulumi.Input[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict', 'outputs.VaultRestoreFromFile']] restore_from_file: (Updatable) Details where vault was backed up.
+        :param pulumi.Input[Union['VaultRestoreFromObjectStoreArgs', 'VaultRestoreFromObjectStoreArgsDict', 'outputs.VaultRestoreFromObjectStore']] restore_from_object_store: (Updatable) Details where vault was backed up
         :param pulumi.Input[_builtins.str] restored_from_vault_id: The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
         :param pulumi.Input[_builtins.str] state: The vault's current lifecycle state.  Example: `DELETED`
         :param pulumi.Input[_builtins.str] time_created: The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`

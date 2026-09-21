@@ -180,7 +180,7 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: pulumi.Input[Optional[_builtins.str]] = None,
                  drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 match_criteria: pulumi.Input[Optional[Union['DrgRouteDistributionStatementMatchCriteriaArgs', 'DrgRouteDistributionStatementMatchCriteriaArgsDict']]] = None,
+                 match_criteria: pulumi.Input[Optional[Union['DrgRouteDistributionStatementMatchCriteriaArgs', 'DrgRouteDistributionStatementMatchCriteriaArgsDict', 'outputs.DrgRouteDistributionStatementMatchCriteria']]] = None,
                  priority: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
@@ -221,7 +221,7 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: Accept: import/export the route "as is"
         :param pulumi.Input[_builtins.str] drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
-        :param pulumi.Input[Union['DrgRouteDistributionStatementMatchCriteriaArgs', 'DrgRouteDistributionStatementMatchCriteriaArgsDict']] match_criteria: (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
+        :param pulumi.Input[Union['DrgRouteDistributionStatementMatchCriteriaArgs', 'DrgRouteDistributionStatementMatchCriteriaArgsDict', 'outputs.DrgRouteDistributionStatementMatchCriteria']] match_criteria: (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
         :param pulumi.Input[_builtins.int] priority: (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route.
                
                ** IMPORTANT **
@@ -284,7 +284,7 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: pulumi.Input[Optional[_builtins.str]] = None,
                  drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 match_criteria: pulumi.Input[Optional[Union['DrgRouteDistributionStatementMatchCriteriaArgs', 'DrgRouteDistributionStatementMatchCriteriaArgsDict']]] = None,
+                 match_criteria: pulumi.Input[Optional[Union['DrgRouteDistributionStatementMatchCriteriaArgs', 'DrgRouteDistributionStatementMatchCriteriaArgsDict', 'outputs.DrgRouteDistributionStatementMatchCriteria']]] = None,
                  priority: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -319,7 +319,7 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             action: pulumi.Input[Optional[_builtins.str]] = None,
             drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
-            match_criteria: pulumi.Input[Optional[Union['DrgRouteDistributionStatementMatchCriteriaArgs', 'DrgRouteDistributionStatementMatchCriteriaArgsDict']]] = None,
+            match_criteria: pulumi.Input[Optional[Union['DrgRouteDistributionStatementMatchCriteriaArgs', 'DrgRouteDistributionStatementMatchCriteriaArgsDict', 'outputs.DrgRouteDistributionStatementMatchCriteria']]] = None,
             priority: pulumi.Input[Optional[_builtins.int]] = None) -> 'DrgRouteDistributionStatement':
         """
         Get an existing DrgRouteDistributionStatement resource's state with the given name, id, and optional extra
@@ -330,7 +330,7 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: Accept: import/export the route "as is"
         :param pulumi.Input[_builtins.str] drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
-        :param pulumi.Input[Union['DrgRouteDistributionStatementMatchCriteriaArgs', 'DrgRouteDistributionStatementMatchCriteriaArgsDict']] match_criteria: (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
+        :param pulumi.Input[Union['DrgRouteDistributionStatementMatchCriteriaArgs', 'DrgRouteDistributionStatementMatchCriteriaArgsDict', 'outputs.DrgRouteDistributionStatementMatchCriteria']] match_criteria: (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
         :param pulumi.Input[_builtins.int] priority: (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route.
                
                ** IMPORTANT **

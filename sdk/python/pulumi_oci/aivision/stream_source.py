@@ -268,7 +268,7 @@ class StreamSource(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 stream_source_details: pulumi.Input[Optional[Union['StreamSourceStreamSourceDetailsArgs', 'StreamSourceStreamSourceDetailsArgsDict']]] = None,
+                 stream_source_details: pulumi.Input[Optional[Union['StreamSourceStreamSourceDetailsArgs', 'StreamSourceStreamSourceDetailsArgsDict', 'outputs.StreamSourceStreamSourceDetails']]] = None,
                  __props__=None):
         """
         This resource provides the Stream Source resource in Oracle Cloud Infrastructure Ai Vision service.
@@ -315,7 +315,7 @@ class StreamSource(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A human-friendly name for the streamSource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-        :param pulumi.Input[Union['StreamSourceStreamSourceDetailsArgs', 'StreamSourceStreamSourceDetailsArgsDict']] stream_source_details: (Updatable) Details about a stream source
+        :param pulumi.Input[Union['StreamSourceStreamSourceDetailsArgs', 'StreamSourceStreamSourceDetailsArgsDict', 'outputs.StreamSourceStreamSourceDetails']] stream_source_details: (Updatable) Details about a stream source
         """
         ...
     @overload
@@ -381,7 +381,7 @@ class StreamSource(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 stream_source_details: pulumi.Input[Optional[Union['StreamSourceStreamSourceDetailsArgs', 'StreamSourceStreamSourceDetailsArgsDict']]] = None,
+                 stream_source_details: pulumi.Input[Optional[Union['StreamSourceStreamSourceDetailsArgs', 'StreamSourceStreamSourceDetailsArgsDict', 'outputs.StreamSourceStreamSourceDetails']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -419,7 +419,7 @@ class StreamSource(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            stream_source_details: pulumi.Input[Optional[Union['StreamSourceStreamSourceDetailsArgs', 'StreamSourceStreamSourceDetailsArgsDict']]] = None,
+            stream_source_details: pulumi.Input[Optional[Union['StreamSourceStreamSourceDetailsArgs', 'StreamSourceStreamSourceDetailsArgsDict', 'outputs.StreamSourceStreamSourceDetails']]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'StreamSource':
@@ -435,7 +435,7 @@ class StreamSource(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A human-friendly name for the streamSource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] state: The current state of the streamSource.
-        :param pulumi.Input[Union['StreamSourceStreamSourceDetailsArgs', 'StreamSourceStreamSourceDetailsArgsDict']] stream_source_details: (Updatable) Details about a stream source
+        :param pulumi.Input[Union['StreamSourceStreamSourceDetailsArgs', 'StreamSourceStreamSourceDetailsArgsDict', 'outputs.StreamSourceStreamSourceDetails']] stream_source_details: (Updatable) Details about a stream source
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         :param pulumi.Input[_builtins.str] time_created: When the streamSource was created, as an RFC3339 datetime string.
         :param pulumi.Input[_builtins.str] time_updated: When the streamSource was updated, as an RFC3339 datetime string.

@@ -294,7 +294,7 @@ class GeneratedKey(pulumi.CustomResource):
                  crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  include_plaintext_key: pulumi.Input[Optional[_builtins.bool]] = None,
                  key_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 key_shape: pulumi.Input[Optional[Union['GeneratedKeyKeyShapeArgs', 'GeneratedKeyKeyShapeArgsDict']]] = None,
+                 key_shape: pulumi.Input[Optional[Union['GeneratedKeyKeyShapeArgs', 'GeneratedKeyKeyShapeArgsDict', 'outputs.GeneratedKeyKeyShape']]] = None,
                  logging_context: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
@@ -335,7 +335,7 @@ class GeneratedKey(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
         :param pulumi.Input[_builtins.bool] include_plaintext_key: If true, the generated key is also returned unencrypted.
         :param pulumi.Input[_builtins.str] key_id: The OCID of the master encryption key to encrypt the generated data encryption key with.
-        :param pulumi.Input[Union['GeneratedKeyKeyShapeArgs', 'GeneratedKeyKeyShapeArgsDict']] key_shape: The cryptographic properties of a key.
+        :param pulumi.Input[Union['GeneratedKeyKeyShapeArgs', 'GeneratedKeyKeyShapeArgsDict', 'outputs.GeneratedKeyKeyShape']] key_shape: The cryptographic properties of a key.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] logging_context: Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
                
                ** IMPORTANT **
@@ -398,7 +398,7 @@ class GeneratedKey(pulumi.CustomResource):
                  crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  include_plaintext_key: pulumi.Input[Optional[_builtins.bool]] = None,
                  key_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 key_shape: pulumi.Input[Optional[Union['GeneratedKeyKeyShapeArgs', 'GeneratedKeyKeyShapeArgsDict']]] = None,
+                 key_shape: pulumi.Input[Optional[Union['GeneratedKeyKeyShapeArgs', 'GeneratedKeyKeyShapeArgsDict', 'outputs.GeneratedKeyKeyShape']]] = None,
                  logging_context: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -441,7 +441,7 @@ class GeneratedKey(pulumi.CustomResource):
             crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
             include_plaintext_key: pulumi.Input[Optional[_builtins.bool]] = None,
             key_id: pulumi.Input[Optional[_builtins.str]] = None,
-            key_shape: pulumi.Input[Optional[Union['GeneratedKeyKeyShapeArgs', 'GeneratedKeyKeyShapeArgsDict']]] = None,
+            key_shape: pulumi.Input[Optional[Union['GeneratedKeyKeyShapeArgs', 'GeneratedKeyKeyShapeArgsDict', 'outputs.GeneratedKeyKeyShape']]] = None,
             logging_context: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             plaintext: pulumi.Input[Optional[_builtins.str]] = None,
             plaintext_checksum: pulumi.Input[Optional[_builtins.str]] = None) -> 'GeneratedKey':
@@ -457,7 +457,7 @@ class GeneratedKey(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
         :param pulumi.Input[_builtins.bool] include_plaintext_key: If true, the generated key is also returned unencrypted.
         :param pulumi.Input[_builtins.str] key_id: The OCID of the master encryption key to encrypt the generated data encryption key with.
-        :param pulumi.Input[Union['GeneratedKeyKeyShapeArgs', 'GeneratedKeyKeyShapeArgsDict']] key_shape: The cryptographic properties of a key.
+        :param pulumi.Input[Union['GeneratedKeyKeyShapeArgs', 'GeneratedKeyKeyShapeArgsDict', 'outputs.GeneratedKeyKeyShape']] key_shape: The cryptographic properties of a key.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] logging_context: Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
                
                ** IMPORTANT **

@@ -101,7 +101,7 @@ class AwaitableGetBatchBatchContextShapesResult(GetBatchBatchContextShapesResult
 
 def get_batch_batch_context_shapes(availability_domain: Optional[_builtins.str] = None,
                                    compartment_id: Optional[_builtins.str] = None,
-                                   filters: Optional[Sequence[Union['GetBatchBatchContextShapesFilterArgs', 'GetBatchBatchContextShapesFilterArgsDict']]] = None,
+                                   filters: Optional[Sequence[Union['GetBatchBatchContextShapesFilterArgs', 'GetBatchBatchContextShapesFilterArgsDict', 'outputs.GetBatchBatchContextShapesFilterResult']]] = None,
                                    shape_type: Optional[_builtins.str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBatchBatchContextShapesResult:
     """
@@ -142,7 +142,7 @@ def get_batch_batch_context_shapes(availability_domain: Optional[_builtins.str] 
         shape_type=pulumi.get(__ret__, 'shape_type'))
 def get_batch_batch_context_shapes_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBatchBatchContextShapesFilterArgs', 'GetBatchBatchContextShapesFilterArgsDict']]]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBatchBatchContextShapesFilterArgs', 'GetBatchBatchContextShapesFilterArgsDict', 'outputs.GetBatchBatchContextShapesFilterResult']]]]] = None,
                                           shape_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBatchBatchContextShapesResult]:
     """

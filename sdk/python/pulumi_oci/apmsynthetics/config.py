@@ -818,26 +818,26 @@ class Config(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 availability_configuration: pulumi.Input[Optional[Union['ConfigAvailabilityConfigurationArgs', 'ConfigAvailabilityConfigurationArgsDict']]] = None,
+                 availability_configuration: pulumi.Input[Optional[Union['ConfigAvailabilityConfigurationArgs', 'ConfigAvailabilityConfigurationArgsDict', 'outputs.ConfigAvailabilityConfiguration']]] = None,
                  batch_interval_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
-                 configuration: pulumi.Input[Optional[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict']]] = None,
+                 configuration: pulumi.Input[Optional[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict', 'outputs.ConfigConfiguration']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_ipv6: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_run_now: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_run_once: pulumi.Input[Optional[_builtins.bool]] = None,
-                 maintenance_window_schedule: pulumi.Input[Optional[Union['ConfigMaintenanceWindowScheduleArgs', 'ConfigMaintenanceWindowScheduleArgsDict']]] = None,
+                 maintenance_window_schedule: pulumi.Input[Optional[Union['ConfigMaintenanceWindowScheduleArgs', 'ConfigMaintenanceWindowScheduleArgsDict', 'outputs.ConfigMaintenanceWindowSchedule']]] = None,
                  monitor_type: pulumi.Input[Optional[_builtins.str]] = None,
                  repeat_interval_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  scheduling_policy: pulumi.Input[Optional[_builtins.str]] = None,
                  script_id: pulumi.Input[Optional[_builtins.str]] = None,
                  script_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 script_parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigScriptParameterArgs', 'ConfigScriptParameterArgsDict']]]]] = None,
+                 script_parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigScriptParameterArgs', 'ConfigScriptParameterArgsDict', 'outputs.ConfigScriptParameter']]]]] = None,
                  status: pulumi.Input[Optional[_builtins.str]] = None,
                  target: pulumi.Input[Optional[_builtins.str]] = None,
                  timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
-                 vantage_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigVantagePointArgs', 'ConfigVantagePointArgsDict']]]]] = None,
+                 vantage_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigVantagePointArgs', 'ConfigVantagePointArgsDict', 'outputs.ConfigVantagePoint']]]]] = None,
                  __props__=None):
         """
         This resource provides the Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -994,26 +994,26 @@ class Config(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
-        :param pulumi.Input[Union['ConfigAvailabilityConfigurationArgs', 'ConfigAvailabilityConfigurationArgsDict']] availability_configuration: (Updatable) Monitor availability configuration details.
+        :param pulumi.Input[Union['ConfigAvailabilityConfigurationArgs', 'ConfigAvailabilityConfigurationArgsDict', 'outputs.ConfigAvailabilityConfiguration']] availability_configuration: (Updatable) Monitor availability configuration details.
         :param pulumi.Input[_builtins.int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-        :param pulumi.Input[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict']] configuration: (Updatable) Details of monitor configuration.
+        :param pulumi.Input[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict', 'outputs.ConfigConfiguration']] configuration: (Updatable) Details of monitor configuration.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_ipv6: (Updatable) If enabled, domain name will resolve to an IPv6 address.
         :param pulumi.Input[_builtins.bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         :param pulumi.Input[_builtins.bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
-        :param pulumi.Input[Union['ConfigMaintenanceWindowScheduleArgs', 'ConfigMaintenanceWindowScheduleArgsDict']] maintenance_window_schedule: (Updatable) Details required to schedule maintenance window.
+        :param pulumi.Input[Union['ConfigMaintenanceWindowScheduleArgs', 'ConfigMaintenanceWindowScheduleArgsDict', 'outputs.ConfigMaintenanceWindowSchedule']] maintenance_window_schedule: (Updatable) Details required to schedule maintenance window.
         :param pulumi.Input[_builtins.str] monitor_type: Type of monitor.
         :param pulumi.Input[_builtins.int] repeat_interval_in_seconds: (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
         :param pulumi.Input[_builtins.str] scheduling_policy: (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
         :param pulumi.Input[_builtins.str] script_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
         :param pulumi.Input[_builtins.str] script_name: Name of the script.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigScriptParameterArgs', 'ConfigScriptParameterArgsDict']]]] script_parameters: (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigScriptParameterArgs', 'ConfigScriptParameterArgsDict', 'outputs.ConfigScriptParameter']]]] script_parameters: (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
         :param pulumi.Input[_builtins.str] status: (Updatable) Enables or disables the monitor.
         :param pulumi.Input[_builtins.str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
         :param pulumi.Input[_builtins.int] timeout_in_seconds: (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigVantagePointArgs', 'ConfigVantagePointArgsDict']]]] vantage_points: (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigVantagePointArgs', 'ConfigVantagePointArgsDict', 'outputs.ConfigVantagePoint']]]] vantage_points: (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1192,26 +1192,26 @@ class Config(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 availability_configuration: pulumi.Input[Optional[Union['ConfigAvailabilityConfigurationArgs', 'ConfigAvailabilityConfigurationArgsDict']]] = None,
+                 availability_configuration: pulumi.Input[Optional[Union['ConfigAvailabilityConfigurationArgs', 'ConfigAvailabilityConfigurationArgsDict', 'outputs.ConfigAvailabilityConfiguration']]] = None,
                  batch_interval_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
-                 configuration: pulumi.Input[Optional[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict']]] = None,
+                 configuration: pulumi.Input[Optional[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict', 'outputs.ConfigConfiguration']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_ipv6: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_run_now: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_run_once: pulumi.Input[Optional[_builtins.bool]] = None,
-                 maintenance_window_schedule: pulumi.Input[Optional[Union['ConfigMaintenanceWindowScheduleArgs', 'ConfigMaintenanceWindowScheduleArgsDict']]] = None,
+                 maintenance_window_schedule: pulumi.Input[Optional[Union['ConfigMaintenanceWindowScheduleArgs', 'ConfigMaintenanceWindowScheduleArgsDict', 'outputs.ConfigMaintenanceWindowSchedule']]] = None,
                  monitor_type: pulumi.Input[Optional[_builtins.str]] = None,
                  repeat_interval_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  scheduling_policy: pulumi.Input[Optional[_builtins.str]] = None,
                  script_id: pulumi.Input[Optional[_builtins.str]] = None,
                  script_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 script_parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigScriptParameterArgs', 'ConfigScriptParameterArgsDict']]]]] = None,
+                 script_parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigScriptParameterArgs', 'ConfigScriptParameterArgsDict', 'outputs.ConfigScriptParameter']]]]] = None,
                  status: pulumi.Input[Optional[_builtins.str]] = None,
                  target: pulumi.Input[Optional[_builtins.str]] = None,
                  timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
-                 vantage_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigVantagePointArgs', 'ConfigVantagePointArgsDict']]]]] = None,
+                 vantage_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigVantagePointArgs', 'ConfigVantagePointArgsDict', 'outputs.ConfigVantagePoint']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1269,9 +1269,9 @@ class Config(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
-            availability_configuration: pulumi.Input[Optional[Union['ConfigAvailabilityConfigurationArgs', 'ConfigAvailabilityConfigurationArgsDict']]] = None,
+            availability_configuration: pulumi.Input[Optional[Union['ConfigAvailabilityConfigurationArgs', 'ConfigAvailabilityConfigurationArgsDict', 'outputs.ConfigAvailabilityConfiguration']]] = None,
             batch_interval_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
-            configuration: pulumi.Input[Optional[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict']]] = None,
+            configuration: pulumi.Input[Optional[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict', 'outputs.ConfigConfiguration']]] = None,
             content_type: pulumi.Input[Optional[_builtins.str]] = None,
             created_by: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1281,20 +1281,20 @@ class Config(pulumi.CustomResource):
             is_run_now: pulumi.Input[Optional[_builtins.bool]] = None,
             is_run_once: pulumi.Input[Optional[_builtins.bool]] = None,
             last_updated_by: pulumi.Input[Optional[_builtins.str]] = None,
-            maintenance_window_schedule: pulumi.Input[Optional[Union['ConfigMaintenanceWindowScheduleArgs', 'ConfigMaintenanceWindowScheduleArgsDict']]] = None,
+            maintenance_window_schedule: pulumi.Input[Optional[Union['ConfigMaintenanceWindowScheduleArgs', 'ConfigMaintenanceWindowScheduleArgsDict', 'outputs.ConfigMaintenanceWindowSchedule']]] = None,
             monitor_type: pulumi.Input[Optional[_builtins.str]] = None,
             repeat_interval_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
             scheduling_policy: pulumi.Input[Optional[_builtins.str]] = None,
             script_id: pulumi.Input[Optional[_builtins.str]] = None,
             script_name: pulumi.Input[Optional[_builtins.str]] = None,
-            script_parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigScriptParameterArgs', 'ConfigScriptParameterArgsDict']]]]] = None,
+            script_parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigScriptParameterArgs', 'ConfigScriptParameterArgsDict', 'outputs.ConfigScriptParameter']]]]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
             target: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
             timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
             vantage_point_count: pulumi.Input[Optional[_builtins.int]] = None,
-            vantage_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigVantagePointArgs', 'ConfigVantagePointArgsDict']]]]] = None) -> 'Config':
+            vantage_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigVantagePointArgs', 'ConfigVantagePointArgsDict', 'outputs.ConfigVantagePoint']]]]] = None) -> 'Config':
         """
         Get an existing Config resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1303,9 +1303,9 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
-        :param pulumi.Input[Union['ConfigAvailabilityConfigurationArgs', 'ConfigAvailabilityConfigurationArgsDict']] availability_configuration: (Updatable) Monitor availability configuration details.
+        :param pulumi.Input[Union['ConfigAvailabilityConfigurationArgs', 'ConfigAvailabilityConfigurationArgsDict', 'outputs.ConfigAvailabilityConfiguration']] availability_configuration: (Updatable) Monitor availability configuration details.
         :param pulumi.Input[_builtins.int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-        :param pulumi.Input[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict']] configuration: (Updatable) Details of monitor configuration.
+        :param pulumi.Input[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict', 'outputs.ConfigConfiguration']] configuration: (Updatable) Details of monitor configuration.
         :param pulumi.Input[_builtins.str] content_type: Content type of the script.
         :param pulumi.Input[_builtins.str] created_by: Name of the user that created the monitor.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1315,20 +1315,20 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         :param pulumi.Input[_builtins.bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
         :param pulumi.Input[_builtins.str] last_updated_by: Name of the user that recently updated the monitor.
-        :param pulumi.Input[Union['ConfigMaintenanceWindowScheduleArgs', 'ConfigMaintenanceWindowScheduleArgsDict']] maintenance_window_schedule: (Updatable) Details required to schedule maintenance window.
+        :param pulumi.Input[Union['ConfigMaintenanceWindowScheduleArgs', 'ConfigMaintenanceWindowScheduleArgsDict', 'outputs.ConfigMaintenanceWindowSchedule']] maintenance_window_schedule: (Updatable) Details required to schedule maintenance window.
         :param pulumi.Input[_builtins.str] monitor_type: Type of monitor.
         :param pulumi.Input[_builtins.int] repeat_interval_in_seconds: (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
         :param pulumi.Input[_builtins.str] scheduling_policy: (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
         :param pulumi.Input[_builtins.str] script_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
         :param pulumi.Input[_builtins.str] script_name: Name of the script.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigScriptParameterArgs', 'ConfigScriptParameterArgsDict']]]] script_parameters: (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigScriptParameterArgs', 'ConfigScriptParameterArgsDict', 'outputs.ConfigScriptParameter']]]] script_parameters: (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
         :param pulumi.Input[_builtins.str] status: (Updatable) Enables or disables the monitor.
         :param pulumi.Input[_builtins.str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
         :param pulumi.Input[_builtins.str] time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param pulumi.Input[_builtins.str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         :param pulumi.Input[_builtins.int] timeout_in_seconds: (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         :param pulumi.Input[_builtins.int] vantage_point_count: Number of vantage points where monitor is running.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigVantagePointArgs', 'ConfigVantagePointArgsDict']]]] vantage_points: (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigVantagePointArgs', 'ConfigVantagePointArgsDict', 'outputs.ConfigVantagePoint']]]] vantage_points: (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

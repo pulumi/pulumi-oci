@@ -119,7 +119,7 @@ class AwaitableGetOciCacheDefaultConfigSetsResult(GetOciCacheDefaultConfigSetsRe
 
 def get_oci_cache_default_config_sets(compartment_id: Optional[_builtins.str] = None,
                                       display_name: Optional[_builtins.str] = None,
-                                      filters: Optional[Sequence[Union['GetOciCacheDefaultConfigSetsFilterArgs', 'GetOciCacheDefaultConfigSetsFilterArgsDict']]] = None,
+                                      filters: Optional[Sequence[Union['GetOciCacheDefaultConfigSetsFilterArgs', 'GetOciCacheDefaultConfigSetsFilterArgsDict', 'outputs.GetOciCacheDefaultConfigSetsFilterResult']]] = None,
                                       id: Optional[_builtins.str] = None,
                                       software_version: Optional[_builtins.str] = None,
                                       state: Optional[_builtins.str] = None,
@@ -169,7 +169,7 @@ def get_oci_cache_default_config_sets(compartment_id: Optional[_builtins.str] = 
         state=pulumi.get(__ret__, 'state'))
 def get_oci_cache_default_config_sets_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOciCacheDefaultConfigSetsFilterArgs', 'GetOciCacheDefaultConfigSetsFilterArgsDict']]]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOciCacheDefaultConfigSetsFilterArgs', 'GetOciCacheDefaultConfigSetsFilterArgsDict', 'outputs.GetOciCacheDefaultConfigSetsFilterResult']]]]] = None,
                                              id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              software_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

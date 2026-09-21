@@ -82,7 +82,7 @@ class AwaitableGetByoipAllocatedRangesResult(GetByoipAllocatedRangesResult):
 
 
 def get_byoip_allocated_ranges(byoip_range_id: Optional[_builtins.str] = None,
-                               filters: Optional[Sequence[Union['GetByoipAllocatedRangesFilterArgs', 'GetByoipAllocatedRangesFilterArgsDict']]] = None,
+                               filters: Optional[Sequence[Union['GetByoipAllocatedRangesFilterArgs', 'GetByoipAllocatedRangesFilterArgsDict', 'outputs.GetByoipAllocatedRangesFilterResult']]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetByoipAllocatedRangesResult:
     """
     This data source provides the list of Byoip Allocated Ranges in Oracle Cloud Infrastructure Core service.
@@ -114,7 +114,7 @@ def get_byoip_allocated_ranges(byoip_range_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_byoip_allocated_ranges_output(byoip_range_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetByoipAllocatedRangesFilterArgs', 'GetByoipAllocatedRangesFilterArgsDict']]]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetByoipAllocatedRangesFilterArgs', 'GetByoipAllocatedRangesFilterArgsDict', 'outputs.GetByoipAllocatedRangesFilterResult']]]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetByoipAllocatedRangesResult]:
     """
     This data source provides the list of Byoip Allocated Ranges in Oracle Cloud Infrastructure Core service.

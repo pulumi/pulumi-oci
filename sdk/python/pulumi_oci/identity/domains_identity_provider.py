@@ -4093,7 +4093,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  authn_request_binding: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
-                 correlation_policy: pulumi.Input[Optional[Union['DomainsIdentityProviderCorrelationPolicyArgs', 'DomainsIdentityProviderCorrelationPolicyArgsDict']]] = None,
+                 correlation_policy: pulumi.Input[Optional[Union['DomainsIdentityProviderCorrelationPolicyArgs', 'DomainsIdentityProviderCorrelationPolicyArgsDict', 'outputs.DomainsIdentityProviderCorrelationPolicy']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  encryption_certificate: pulumi.Input[Optional[_builtins.str]] = None,
@@ -4102,15 +4102,15 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  idp_sso_url: pulumi.Input[Optional[_builtins.str]] = None,
                  include_signing_cert_in_signature: pulumi.Input[Optional[_builtins.bool]] = None,
-                 jit_user_prov_assigned_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderJitUserProvAssignedGroupArgs', 'DomainsIdentityProviderJitUserProvAssignedGroupArgsDict']]]]] = None,
+                 jit_user_prov_assigned_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderJitUserProvAssignedGroupArgs', 'DomainsIdentityProviderJitUserProvAssignedGroupArgsDict', 'outputs.DomainsIdentityProviderJitUserProvAssignedGroup']]]]] = None,
                  jit_user_prov_attribute_update_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 jit_user_prov_attributes: pulumi.Input[Optional[Union['DomainsIdentityProviderJitUserProvAttributesArgs', 'DomainsIdentityProviderJitUserProvAttributesArgsDict']]] = None,
+                 jit_user_prov_attributes: pulumi.Input[Optional[Union['DomainsIdentityProviderJitUserProvAttributesArgs', 'DomainsIdentityProviderJitUserProvAttributesArgsDict', 'outputs.DomainsIdentityProviderJitUserProvAttributes']]] = None,
                  jit_user_prov_create_user_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  jit_user_prov_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  jit_user_prov_group_assertion_attribute_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  jit_user_prov_group_assignment_method: pulumi.Input[Optional[_builtins.str]] = None,
                  jit_user_prov_group_mapping_mode: pulumi.Input[Optional[_builtins.str]] = None,
-                 jit_user_prov_group_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderJitUserProvGroupMappingArgs', 'DomainsIdentityProviderJitUserProvGroupMappingArgsDict']]]]] = None,
+                 jit_user_prov_group_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderJitUserProvGroupMappingArgs', 'DomainsIdentityProviderJitUserProvGroupMappingArgsDict', 'outputs.DomainsIdentityProviderJitUserProvGroupMapping']]]]] = None,
                  jit_user_prov_group_saml_attribute_name: pulumi.Input[Optional[_builtins.str]] = None,
                  jit_user_prov_group_static_list_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  jit_user_prov_ignore_error_on_absent_groups: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -4134,10 +4134,10 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                  signature_hash_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
                  signing_certificate: pulumi.Input[Optional[_builtins.str]] = None,
                  succinct_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderTagArgs', 'DomainsIdentityProviderTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderTagArgs', 'DomainsIdentityProviderTagArgsDict', 'outputs.DomainsIdentityProviderTag']]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider: pulumi.Input[Optional[Union['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs', 'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionx509identity_provider: pulumi.Input[Optional[Union['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs', 'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider: pulumi.Input[Optional[Union['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs', 'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgsDict', 'outputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionx509identity_provider: pulumi.Input[Optional[Union['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs', 'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgsDict', 'outputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider']]] = None,
                  user_mapping_method: pulumi.Input[Optional[_builtins.str]] = None,
                  user_mapping_store_attribute: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -4308,7 +4308,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                * type: string
                * uniqueness: none
         :param pulumi.Input[_builtins.str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[Union['DomainsIdentityProviderCorrelationPolicyArgs', 'DomainsIdentityProviderCorrelationPolicyArgsDict']] correlation_policy: (Updatable) Correlation policy
+        :param pulumi.Input[Union['DomainsIdentityProviderCorrelationPolicyArgs', 'DomainsIdentityProviderCorrelationPolicyArgsDict', 'outputs.DomainsIdentityProviderCorrelationPolicy']] correlation_policy: (Updatable) Correlation policy
                
                **Added In:** 20.1.3
                
@@ -4397,7 +4397,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProviderJitUserProvAssignedGroupArgs', 'DomainsIdentityProviderJitUserProvAssignedGroupArgsDict']]]] jit_user_prov_assigned_groups: (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProviderJitUserProvAssignedGroupArgs', 'DomainsIdentityProviderJitUserProvAssignedGroupArgsDict', 'outputs.DomainsIdentityProviderJitUserProvAssignedGroup']]]] jit_user_prov_assigned_groups: (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
                
                **Added In:** 20.1.3
                
@@ -4423,7 +4423,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsIdentityProviderJitUserProvAttributesArgs', 'DomainsIdentityProviderJitUserProvAttributesArgsDict']] jit_user_prov_attributes: (Updatable) Assertion To User Mapping
+        :param pulumi.Input[Union['DomainsIdentityProviderJitUserProvAttributesArgs', 'DomainsIdentityProviderJitUserProvAttributesArgsDict', 'outputs.DomainsIdentityProviderJitUserProvAttributes']] jit_user_prov_attributes: (Updatable) Assertion To User Mapping
                
                **Added In:** 20.1.3
                
@@ -4501,7 +4501,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProviderJitUserProvGroupMappingArgs', 'DomainsIdentityProviderJitUserProvGroupMappingArgsDict']]]] jit_user_prov_group_mappings: (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProviderJitUserProvGroupMappingArgs', 'DomainsIdentityProviderJitUserProvGroupMappingArgsDict', 'outputs.DomainsIdentityProviderJitUserProvGroupMapping']]]] jit_user_prov_group_mappings: (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
                
                **Added In:** 2205120021
                
@@ -4773,7 +4773,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: server
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProviderTagArgs', 'DomainsIdentityProviderTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProviderTagArgs', 'DomainsIdentityProviderTagArgsDict', 'outputs.DomainsIdentityProviderTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -4797,8 +4797,8 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs', 'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgsDict']] urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider: (Updatable) Social Identity Provider Extension Schema
-        :param pulumi.Input[Union['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs', 'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgsDict']] urnietfparamsscimschemasoracleidcsextensionx509identity_provider: (Updatable) X509 Identity Provider Extension Schema
+        :param pulumi.Input[Union['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs', 'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgsDict', 'outputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider']] urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider: (Updatable) Social Identity Provider Extension Schema
+        :param pulumi.Input[Union['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs', 'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgsDict', 'outputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider']] urnietfparamsscimschemasoracleidcsextensionx509identity_provider: (Updatable) X509 Identity Provider Extension Schema
         :param pulumi.Input[_builtins.str] user_mapping_method: (Updatable) User mapping method.
                
                **Deprecated Since: 20.1.3**
@@ -4994,7 +4994,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  authn_request_binding: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
-                 correlation_policy: pulumi.Input[Optional[Union['DomainsIdentityProviderCorrelationPolicyArgs', 'DomainsIdentityProviderCorrelationPolicyArgsDict']]] = None,
+                 correlation_policy: pulumi.Input[Optional[Union['DomainsIdentityProviderCorrelationPolicyArgs', 'DomainsIdentityProviderCorrelationPolicyArgsDict', 'outputs.DomainsIdentityProviderCorrelationPolicy']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  encryption_certificate: pulumi.Input[Optional[_builtins.str]] = None,
@@ -5003,15 +5003,15 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  idp_sso_url: pulumi.Input[Optional[_builtins.str]] = None,
                  include_signing_cert_in_signature: pulumi.Input[Optional[_builtins.bool]] = None,
-                 jit_user_prov_assigned_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderJitUserProvAssignedGroupArgs', 'DomainsIdentityProviderJitUserProvAssignedGroupArgsDict']]]]] = None,
+                 jit_user_prov_assigned_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderJitUserProvAssignedGroupArgs', 'DomainsIdentityProviderJitUserProvAssignedGroupArgsDict', 'outputs.DomainsIdentityProviderJitUserProvAssignedGroup']]]]] = None,
                  jit_user_prov_attribute_update_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 jit_user_prov_attributes: pulumi.Input[Optional[Union['DomainsIdentityProviderJitUserProvAttributesArgs', 'DomainsIdentityProviderJitUserProvAttributesArgsDict']]] = None,
+                 jit_user_prov_attributes: pulumi.Input[Optional[Union['DomainsIdentityProviderJitUserProvAttributesArgs', 'DomainsIdentityProviderJitUserProvAttributesArgsDict', 'outputs.DomainsIdentityProviderJitUserProvAttributes']]] = None,
                  jit_user_prov_create_user_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  jit_user_prov_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  jit_user_prov_group_assertion_attribute_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  jit_user_prov_group_assignment_method: pulumi.Input[Optional[_builtins.str]] = None,
                  jit_user_prov_group_mapping_mode: pulumi.Input[Optional[_builtins.str]] = None,
-                 jit_user_prov_group_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderJitUserProvGroupMappingArgs', 'DomainsIdentityProviderJitUserProvGroupMappingArgsDict']]]]] = None,
+                 jit_user_prov_group_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderJitUserProvGroupMappingArgs', 'DomainsIdentityProviderJitUserProvGroupMappingArgsDict', 'outputs.DomainsIdentityProviderJitUserProvGroupMapping']]]]] = None,
                  jit_user_prov_group_saml_attribute_name: pulumi.Input[Optional[_builtins.str]] = None,
                  jit_user_prov_group_static_list_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  jit_user_prov_ignore_error_on_absent_groups: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -5035,10 +5035,10 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                  signature_hash_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
                  signing_certificate: pulumi.Input[Optional[_builtins.str]] = None,
                  succinct_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderTagArgs', 'DomainsIdentityProviderTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderTagArgs', 'DomainsIdentityProviderTagArgsDict', 'outputs.DomainsIdentityProviderTag']]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider: pulumi.Input[Optional[Union['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs', 'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionx509identity_provider: pulumi.Input[Optional[Union['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs', 'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider: pulumi.Input[Optional[Union['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs', 'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgsDict', 'outputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionx509identity_provider: pulumi.Input[Optional[Union['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs', 'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgsDict', 'outputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider']]] = None,
                  user_mapping_method: pulumi.Input[Optional[_builtins.str]] = None,
                  user_mapping_store_attribute: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -5137,7 +5137,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
             authn_request_binding: pulumi.Input[Optional[_builtins.str]] = None,
             authorization: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
-            correlation_policy: pulumi.Input[Optional[Union['DomainsIdentityProviderCorrelationPolicyArgs', 'DomainsIdentityProviderCorrelationPolicyArgsDict']]] = None,
+            correlation_policy: pulumi.Input[Optional[Union['DomainsIdentityProviderCorrelationPolicyArgs', 'DomainsIdentityProviderCorrelationPolicyArgsDict', 'outputs.DomainsIdentityProviderCorrelationPolicy']]] = None,
             delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
@@ -5145,22 +5145,22 @@ class DomainsIdentityProvider(pulumi.CustomResource):
             encryption_certificate: pulumi.Input[Optional[_builtins.str]] = None,
             external_id: pulumi.Input[Optional[_builtins.str]] = None,
             icon_url: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderIdcsCreatedByArgs', 'DomainsIdentityProviderIdcsCreatedByArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderIdcsCreatedByArgs', 'DomainsIdentityProviderIdcsCreatedByArgsDict', 'outputs.DomainsIdentityProviderIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderIdcsLastModifiedByArgs', 'DomainsIdentityProviderIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderIdcsLastModifiedByArgs', 'DomainsIdentityProviderIdcsLastModifiedByArgsDict', 'outputs.DomainsIdentityProviderIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             idp_sso_url: pulumi.Input[Optional[_builtins.str]] = None,
             include_signing_cert_in_signature: pulumi.Input[Optional[_builtins.bool]] = None,
-            jit_user_prov_assigned_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderJitUserProvAssignedGroupArgs', 'DomainsIdentityProviderJitUserProvAssignedGroupArgsDict']]]]] = None,
+            jit_user_prov_assigned_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderJitUserProvAssignedGroupArgs', 'DomainsIdentityProviderJitUserProvAssignedGroupArgsDict', 'outputs.DomainsIdentityProviderJitUserProvAssignedGroup']]]]] = None,
             jit_user_prov_attribute_update_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            jit_user_prov_attributes: pulumi.Input[Optional[Union['DomainsIdentityProviderJitUserProvAttributesArgs', 'DomainsIdentityProviderJitUserProvAttributesArgsDict']]] = None,
+            jit_user_prov_attributes: pulumi.Input[Optional[Union['DomainsIdentityProviderJitUserProvAttributesArgs', 'DomainsIdentityProviderJitUserProvAttributesArgsDict', 'outputs.DomainsIdentityProviderJitUserProvAttributes']]] = None,
             jit_user_prov_create_user_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             jit_user_prov_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             jit_user_prov_group_assertion_attribute_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             jit_user_prov_group_assignment_method: pulumi.Input[Optional[_builtins.str]] = None,
             jit_user_prov_group_mapping_mode: pulumi.Input[Optional[_builtins.str]] = None,
-            jit_user_prov_group_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderJitUserProvGroupMappingArgs', 'DomainsIdentityProviderJitUserProvGroupMappingArgsDict']]]]] = None,
+            jit_user_prov_group_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderJitUserProvGroupMappingArgs', 'DomainsIdentityProviderJitUserProvGroupMappingArgsDict', 'outputs.DomainsIdentityProviderJitUserProvGroupMapping']]]]] = None,
             jit_user_prov_group_saml_attribute_name: pulumi.Input[Optional[_builtins.str]] = None,
             jit_user_prov_group_static_list_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             jit_user_prov_ignore_error_on_absent_groups: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -5170,7 +5170,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
             logout_request_url: pulumi.Input[Optional[_builtins.str]] = None,
             logout_response_url: pulumi.Input[Optional[_builtins.str]] = None,
             metadata: pulumi.Input[Optional[_builtins.str]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderMetaArgs', 'DomainsIdentityProviderMetaArgsDict']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderMetaArgs', 'DomainsIdentityProviderMetaArgsDict', 'outputs.DomainsIdentityProviderMeta']]]]] = None,
             name_id_format: pulumi.Input[Optional[_builtins.str]] = None,
             ocid: pulumi.Input[Optional[_builtins.str]] = None,
             partner_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -5186,12 +5186,12 @@ class DomainsIdentityProvider(pulumi.CustomResource):
             signature_hash_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
             signing_certificate: pulumi.Input[Optional[_builtins.str]] = None,
             succinct_id: pulumi.Input[Optional[_builtins.str]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderTagArgs', 'DomainsIdentityProviderTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProviderTagArgs', 'DomainsIdentityProviderTagArgsDict', 'outputs.DomainsIdentityProviderTag']]]]] = None,
             tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             tenant_provider_id: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
-            urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider: pulumi.Input[Optional[Union['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs', 'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionx509identity_provider: pulumi.Input[Optional[Union['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs', 'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider: pulumi.Input[Optional[Union['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs', 'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgsDict', 'outputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionx509identity_provider: pulumi.Input[Optional[Union['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs', 'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgsDict', 'outputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider']]] = None,
             user_mapping_method: pulumi.Input[Optional[_builtins.str]] = None,
             user_mapping_store_attribute: pulumi.Input[Optional[_builtins.str]] = None) -> 'DomainsIdentityProvider':
         """
@@ -5240,7 +5240,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsIdentityProviderCorrelationPolicyArgs', 'DomainsIdentityProviderCorrelationPolicyArgsDict']] correlation_policy: (Updatable) Correlation policy
+        :param pulumi.Input[Union['DomainsIdentityProviderCorrelationPolicyArgs', 'DomainsIdentityProviderCorrelationPolicyArgsDict', 'outputs.DomainsIdentityProviderCorrelationPolicy']] correlation_policy: (Updatable) Correlation policy
                
                **Added In:** 20.1.3
                
@@ -5328,7 +5328,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProviderIdcsCreatedByArgs', 'DomainsIdentityProviderIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProviderIdcsCreatedByArgs', 'DomainsIdentityProviderIdcsCreatedByArgsDict', 'outputs.DomainsIdentityProviderIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -5338,7 +5338,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProviderIdcsLastModifiedByArgs', 'DomainsIdentityProviderIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProviderIdcsLastModifiedByArgs', 'DomainsIdentityProviderIdcsLastModifiedByArgsDict', 'outputs.DomainsIdentityProviderIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -5390,7 +5390,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProviderJitUserProvAssignedGroupArgs', 'DomainsIdentityProviderJitUserProvAssignedGroupArgsDict']]]] jit_user_prov_assigned_groups: (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProviderJitUserProvAssignedGroupArgs', 'DomainsIdentityProviderJitUserProvAssignedGroupArgsDict', 'outputs.DomainsIdentityProviderJitUserProvAssignedGroup']]]] jit_user_prov_assigned_groups: (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
                
                **Added In:** 20.1.3
                
@@ -5416,7 +5416,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsIdentityProviderJitUserProvAttributesArgs', 'DomainsIdentityProviderJitUserProvAttributesArgsDict']] jit_user_prov_attributes: (Updatable) Assertion To User Mapping
+        :param pulumi.Input[Union['DomainsIdentityProviderJitUserProvAttributesArgs', 'DomainsIdentityProviderJitUserProvAttributesArgsDict', 'outputs.DomainsIdentityProviderJitUserProvAttributes']] jit_user_prov_attributes: (Updatable) Assertion To User Mapping
                
                **Added In:** 20.1.3
                
@@ -5494,7 +5494,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProviderJitUserProvGroupMappingArgs', 'DomainsIdentityProviderJitUserProvGroupMappingArgsDict']]]] jit_user_prov_group_mappings: (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProviderJitUserProvGroupMappingArgs', 'DomainsIdentityProviderJitUserProvGroupMappingArgsDict', 'outputs.DomainsIdentityProviderJitUserProvGroupMapping']]]] jit_user_prov_group_mappings: (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
                
                **Added In:** 2205120021
                
@@ -5614,7 +5614,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProviderMetaArgs', 'DomainsIdentityProviderMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProviderMetaArgs', 'DomainsIdentityProviderMetaArgsDict', 'outputs.DomainsIdentityProviderMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -5790,7 +5790,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: server
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProviderTagArgs', 'DomainsIdentityProviderTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProviderTagArgs', 'DomainsIdentityProviderTagArgsDict', 'outputs.DomainsIdentityProviderTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -5838,8 +5838,8 @@ class DomainsIdentityProvider(pulumi.CustomResource):
                * returned: always
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs', 'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgsDict']] urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider: (Updatable) Social Identity Provider Extension Schema
-        :param pulumi.Input[Union['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs', 'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgsDict']] urnietfparamsscimschemasoracleidcsextensionx509identity_provider: (Updatable) X509 Identity Provider Extension Schema
+        :param pulumi.Input[Union['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs', 'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgsDict', 'outputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider']] urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider: (Updatable) Social Identity Provider Extension Schema
+        :param pulumi.Input[Union['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs', 'DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgsDict', 'outputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider']] urnietfparamsscimschemasoracleidcsextensionx509identity_provider: (Updatable) X509 Identity Provider Extension Schema
         :param pulumi.Input[_builtins.str] user_mapping_method: (Updatable) User mapping method.
                
                **Deprecated Since: 20.1.3**

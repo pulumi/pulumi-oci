@@ -84,7 +84,7 @@ class AwaitableGetSecretbundleVersionsResult(GetSecretbundleVersionsResult):
             secret_id=self.secret_id)
 
 
-def get_secretbundle_versions(filters: Optional[Sequence[Union['GetSecretbundleVersionsFilterArgs', 'GetSecretbundleVersionsFilterArgsDict']]] = None,
+def get_secretbundle_versions(filters: Optional[Sequence[Union['GetSecretbundleVersionsFilterArgs', 'GetSecretbundleVersionsFilterArgsDict', 'outputs.GetSecretbundleVersionsFilterResult']]] = None,
                               secret_id: Optional[_builtins.str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecretbundleVersionsResult:
     """
@@ -115,7 +115,7 @@ def get_secretbundle_versions(filters: Optional[Sequence[Union['GetSecretbundleV
         id=pulumi.get(__ret__, 'id'),
         secret_bundle_versions=pulumi.get(__ret__, 'secret_bundle_versions'),
         secret_id=pulumi.get(__ret__, 'secret_id'))
-def get_secretbundle_versions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecretbundleVersionsFilterArgs', 'GetSecretbundleVersionsFilterArgsDict']]]]] = None,
+def get_secretbundle_versions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecretbundleVersionsFilterArgs', 'GetSecretbundleVersionsFilterArgsDict', 'outputs.GetSecretbundleVersionsFilterResult']]]]] = None,
                                      secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecretbundleVersionsResult]:
     """

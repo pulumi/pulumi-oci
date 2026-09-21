@@ -125,7 +125,7 @@ class AwaitableGetSupportedHostShapesResult(GetSupportedHostShapesResult):
 
 
 def get_supported_host_shapes(compartment_id: Optional[_builtins.str] = None,
-                              filters: Optional[Sequence[Union['GetSupportedHostShapesFilterArgs', 'GetSupportedHostShapesFilterArgsDict']]] = None,
+                              filters: Optional[Sequence[Union['GetSupportedHostShapesFilterArgs', 'GetSupportedHostShapesFilterArgsDict', 'outputs.GetSupportedHostShapesFilterResult']]] = None,
                               initial_host_shape_name: Optional[_builtins.str] = None,
                               is_single_host_sddc_supported: Optional[_builtins.bool] = None,
                               name: Optional[_builtins.str] = None,
@@ -175,7 +175,7 @@ def get_supported_host_shapes(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         sddc_type=pulumi.get(__ret__, 'sddc_type'))
 def get_supported_host_shapes_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSupportedHostShapesFilterArgs', 'GetSupportedHostShapesFilterArgsDict']]]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSupportedHostShapesFilterArgs', 'GetSupportedHostShapesFilterArgsDict', 'outputs.GetSupportedHostShapesFilterResult']]]]] = None,
                                      initial_host_shape_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      is_single_host_sddc_supported: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                      name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

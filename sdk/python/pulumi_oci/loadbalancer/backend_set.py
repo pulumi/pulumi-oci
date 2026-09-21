@@ -468,13 +468,13 @@ class BackendSet(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  backend_max_connections: pulumi.Input[Optional[_builtins.int]] = None,
-                 health_checker: pulumi.Input[Optional[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict']]] = None,
-                 lb_cookie_session_persistence_configuration: pulumi.Input[Optional[Union['BackendSetLbCookieSessionPersistenceConfigurationArgs', 'BackendSetLbCookieSessionPersistenceConfigurationArgsDict']]] = None,
+                 health_checker: pulumi.Input[Optional[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict', 'outputs.BackendSetHealthChecker']]] = None,
+                 lb_cookie_session_persistence_configuration: pulumi.Input[Optional[Union['BackendSetLbCookieSessionPersistenceConfigurationArgs', 'BackendSetLbCookieSessionPersistenceConfigurationArgsDict', 'outputs.BackendSetLbCookieSessionPersistenceConfiguration']]] = None,
                  load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  policy: pulumi.Input[Optional[_builtins.str]] = None,
-                 session_persistence_configuration: pulumi.Input[Optional[Union['BackendSetSessionPersistenceConfigurationArgs', 'BackendSetSessionPersistenceConfigurationArgsDict']]] = None,
-                 ssl_configuration: pulumi.Input[Optional[Union['BackendSetSslConfigurationArgs', 'BackendSetSslConfigurationArgsDict']]] = None,
+                 session_persistence_configuration: pulumi.Input[Optional[Union['BackendSetSessionPersistenceConfigurationArgs', 'BackendSetSessionPersistenceConfigurationArgsDict', 'outputs.BackendSetSessionPersistenceConfiguration']]] = None,
+                 ssl_configuration: pulumi.Input[Optional[Union['BackendSetSslConfigurationArgs', 'BackendSetSslConfigurationArgsDict', 'outputs.BackendSetSslConfiguration']]] = None,
                  __props__=None):
         """
         This resource provides the Backend Set resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -554,8 +554,8 @@ class BackendSet(pulumi.CustomResource):
                If setting backendMaxConnections to some value other than 0 then that value must be greater or equal to 256.
                
                Example: `300`
-        :param pulumi.Input[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict']] health_checker: (Updatable) The health check policy's configuration details.
-        :param pulumi.Input[Union['BackendSetLbCookieSessionPersistenceConfigurationArgs', 'BackendSetLbCookieSessionPersistenceConfigurationArgsDict']] lb_cookie_session_persistence_configuration: (Updatable) The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
+        :param pulumi.Input[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict', 'outputs.BackendSetHealthChecker']] health_checker: (Updatable) The health check policy's configuration details.
+        :param pulumi.Input[Union['BackendSetLbCookieSessionPersistenceConfigurationArgs', 'BackendSetLbCookieSessionPersistenceConfigurationArgsDict', 'outputs.BackendSetLbCookieSessionPersistenceConfiguration']] lb_cookie_session_persistence_configuration: (Updatable) The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
                
                Session persistence enables the Load Balancing service to direct all requests that originate from a single logical client to a single backend web server. For more information, see [Session Persistence](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/sessionpersistence.htm).
                
@@ -577,7 +577,7 @@ class BackendSet(pulumi.CustomResource):
                
                Example: `example_backend_set`
         :param pulumi.Input[_builtins.str] policy: (Updatable) The load balancer policy for the backend set. To get a list of available policies, use the [ListPolicies](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies) operation.  Example: `LEAST_CONNECTIONS`
-        :param pulumi.Input[Union['BackendSetSessionPersistenceConfigurationArgs', 'BackendSetSessionPersistenceConfigurationArgsDict']] session_persistence_configuration: (Updatable) The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).
+        :param pulumi.Input[Union['BackendSetSessionPersistenceConfigurationArgs', 'BackendSetSessionPersistenceConfigurationArgsDict', 'outputs.BackendSetSessionPersistenceConfiguration']] session_persistence_configuration: (Updatable) The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).
                
                Session persistence enables the Load Balancing service to direct any number of requests that originate from a single logical client to a single backend web server. For more information, see [Session Persistence](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/sessionpersistence.htm).
                
@@ -590,7 +590,7 @@ class BackendSet(pulumi.CustomResource):
                **Note:** `SessionPersistenceConfigurationDetails` (application cookie stickiness) and `LBCookieSessionPersistenceConfigurationDetails` (LB cookie stickiness) are mutually exclusive. An error results if you try to enable both types of session persistence.
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-        :param pulumi.Input[Union['BackendSetSslConfigurationArgs', 'BackendSetSslConfigurationArgsDict']] ssl_configuration: (Updatable) The load balancer's SSL handling configuration details.
+        :param pulumi.Input[Union['BackendSetSslConfigurationArgs', 'BackendSetSslConfigurationArgsDict', 'outputs.BackendSetSslConfiguration']] ssl_configuration: (Updatable) The load balancer's SSL handling configuration details.
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         """
@@ -687,13 +687,13 @@ class BackendSet(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  backend_max_connections: pulumi.Input[Optional[_builtins.int]] = None,
-                 health_checker: pulumi.Input[Optional[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict']]] = None,
-                 lb_cookie_session_persistence_configuration: pulumi.Input[Optional[Union['BackendSetLbCookieSessionPersistenceConfigurationArgs', 'BackendSetLbCookieSessionPersistenceConfigurationArgsDict']]] = None,
+                 health_checker: pulumi.Input[Optional[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict', 'outputs.BackendSetHealthChecker']]] = None,
+                 lb_cookie_session_persistence_configuration: pulumi.Input[Optional[Union['BackendSetLbCookieSessionPersistenceConfigurationArgs', 'BackendSetLbCookieSessionPersistenceConfigurationArgsDict', 'outputs.BackendSetLbCookieSessionPersistenceConfiguration']]] = None,
                  load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  policy: pulumi.Input[Optional[_builtins.str]] = None,
-                 session_persistence_configuration: pulumi.Input[Optional[Union['BackendSetSessionPersistenceConfigurationArgs', 'BackendSetSessionPersistenceConfigurationArgsDict']]] = None,
-                 ssl_configuration: pulumi.Input[Optional[Union['BackendSetSslConfigurationArgs', 'BackendSetSslConfigurationArgsDict']]] = None,
+                 session_persistence_configuration: pulumi.Input[Optional[Union['BackendSetSessionPersistenceConfigurationArgs', 'BackendSetSessionPersistenceConfigurationArgsDict', 'outputs.BackendSetSessionPersistenceConfiguration']]] = None,
+                 ssl_configuration: pulumi.Input[Optional[Union['BackendSetSslConfigurationArgs', 'BackendSetSslConfigurationArgsDict', 'outputs.BackendSetSslConfiguration']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -730,14 +730,14 @@ class BackendSet(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             backend_max_connections: pulumi.Input[Optional[_builtins.int]] = None,
-            backends: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BackendSetBackendArgs', 'BackendSetBackendArgsDict']]]]] = None,
-            health_checker: pulumi.Input[Optional[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict']]] = None,
-            lb_cookie_session_persistence_configuration: pulumi.Input[Optional[Union['BackendSetLbCookieSessionPersistenceConfigurationArgs', 'BackendSetLbCookieSessionPersistenceConfigurationArgsDict']]] = None,
+            backends: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BackendSetBackendArgs', 'BackendSetBackendArgsDict', 'outputs.BackendSetBackend']]]]] = None,
+            health_checker: pulumi.Input[Optional[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict', 'outputs.BackendSetHealthChecker']]] = None,
+            lb_cookie_session_persistence_configuration: pulumi.Input[Optional[Union['BackendSetLbCookieSessionPersistenceConfigurationArgs', 'BackendSetLbCookieSessionPersistenceConfigurationArgsDict', 'outputs.BackendSetLbCookieSessionPersistenceConfiguration']]] = None,
             load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             policy: pulumi.Input[Optional[_builtins.str]] = None,
-            session_persistence_configuration: pulumi.Input[Optional[Union['BackendSetSessionPersistenceConfigurationArgs', 'BackendSetSessionPersistenceConfigurationArgsDict']]] = None,
-            ssl_configuration: pulumi.Input[Optional[Union['BackendSetSslConfigurationArgs', 'BackendSetSslConfigurationArgsDict']]] = None,
+            session_persistence_configuration: pulumi.Input[Optional[Union['BackendSetSessionPersistenceConfigurationArgs', 'BackendSetSessionPersistenceConfigurationArgsDict', 'outputs.BackendSetSessionPersistenceConfiguration']]] = None,
+            ssl_configuration: pulumi.Input[Optional[Union['BackendSetSslConfigurationArgs', 'BackendSetSslConfigurationArgsDict', 'outputs.BackendSetSslConfiguration']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None) -> 'BackendSet':
         """
         Get an existing BackendSet resource's state with the given name, id, and optional extra
@@ -751,9 +751,9 @@ class BackendSet(pulumi.CustomResource):
                If setting backendMaxConnections to some value other than 0 then that value must be greater or equal to 256.
                
                Example: `300`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BackendSetBackendArgs', 'BackendSetBackendArgsDict']]]] backends: (Updatable)
-        :param pulumi.Input[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict']] health_checker: (Updatable) The health check policy's configuration details.
-        :param pulumi.Input[Union['BackendSetLbCookieSessionPersistenceConfigurationArgs', 'BackendSetLbCookieSessionPersistenceConfigurationArgsDict']] lb_cookie_session_persistence_configuration: (Updatable) The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BackendSetBackendArgs', 'BackendSetBackendArgsDict', 'outputs.BackendSetBackend']]]] backends: (Updatable)
+        :param pulumi.Input[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict', 'outputs.BackendSetHealthChecker']] health_checker: (Updatable) The health check policy's configuration details.
+        :param pulumi.Input[Union['BackendSetLbCookieSessionPersistenceConfigurationArgs', 'BackendSetLbCookieSessionPersistenceConfigurationArgsDict', 'outputs.BackendSetLbCookieSessionPersistenceConfiguration']] lb_cookie_session_persistence_configuration: (Updatable) The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
                
                Session persistence enables the Load Balancing service to direct all requests that originate from a single logical client to a single backend web server. For more information, see [Session Persistence](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/sessionpersistence.htm).
                
@@ -775,7 +775,7 @@ class BackendSet(pulumi.CustomResource):
                
                Example: `example_backend_set`
         :param pulumi.Input[_builtins.str] policy: (Updatable) The load balancer policy for the backend set. To get a list of available policies, use the [ListPolicies](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies) operation.  Example: `LEAST_CONNECTIONS`
-        :param pulumi.Input[Union['BackendSetSessionPersistenceConfigurationArgs', 'BackendSetSessionPersistenceConfigurationArgsDict']] session_persistence_configuration: (Updatable) The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).
+        :param pulumi.Input[Union['BackendSetSessionPersistenceConfigurationArgs', 'BackendSetSessionPersistenceConfigurationArgsDict', 'outputs.BackendSetSessionPersistenceConfiguration']] session_persistence_configuration: (Updatable) The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).
                
                Session persistence enables the Load Balancing service to direct any number of requests that originate from a single logical client to a single backend web server. For more information, see [Session Persistence](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/sessionpersistence.htm).
                
@@ -788,7 +788,7 @@ class BackendSet(pulumi.CustomResource):
                **Note:** `SessionPersistenceConfigurationDetails` (application cookie stickiness) and `LBCookieSessionPersistenceConfigurationDetails` (LB cookie stickiness) are mutually exclusive. An error results if you try to enable both types of session persistence.
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-        :param pulumi.Input[Union['BackendSetSslConfigurationArgs', 'BackendSetSslConfigurationArgsDict']] ssl_configuration: (Updatable) The load balancer's SSL handling configuration details.
+        :param pulumi.Input[Union['BackendSetSslConfigurationArgs', 'BackendSetSslConfigurationArgsDict', 'outputs.BackendSetSslConfiguration']] ssl_configuration: (Updatable) The load balancer's SSL handling configuration details.
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         """

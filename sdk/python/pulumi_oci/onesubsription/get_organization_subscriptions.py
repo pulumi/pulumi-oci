@@ -82,7 +82,7 @@ class AwaitableGetOrganizationSubscriptionsResult(GetOrganizationSubscriptionsRe
 
 
 def get_organization_subscriptions(compartment_id: Optional[_builtins.str] = None,
-                                   filters: Optional[Sequence[Union['GetOrganizationSubscriptionsFilterArgs', 'GetOrganizationSubscriptionsFilterArgsDict']]] = None,
+                                   filters: Optional[Sequence[Union['GetOrganizationSubscriptionsFilterArgs', 'GetOrganizationSubscriptionsFilterArgsDict', 'outputs.GetOrganizationSubscriptionsFilterResult']]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOrganizationSubscriptionsResult:
     """
     This data source provides the list of Organization Subscriptions in Oracle Cloud Infrastructure Onesubscription service.
@@ -113,7 +113,7 @@ def get_organization_subscriptions(compartment_id: Optional[_builtins.str] = Non
         id=pulumi.get(__ret__, 'id'),
         organization_subscriptions=pulumi.get(__ret__, 'organization_subscriptions'))
 def get_organization_subscriptions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOrganizationSubscriptionsFilterArgs', 'GetOrganizationSubscriptionsFilterArgsDict']]]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOrganizationSubscriptionsFilterArgs', 'GetOrganizationSubscriptionsFilterArgsDict', 'outputs.GetOrganizationSubscriptionsFilterResult']]]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOrganizationSubscriptionsResult]:
     """
     This data source provides the list of Organization Subscriptions in Oracle Cloud Infrastructure Onesubscription service.

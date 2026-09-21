@@ -110,7 +110,7 @@ class AwaitableGetUsagePlansResult(GetUsagePlansResult):
 
 def get_usage_plans(compartment_id: Optional[_builtins.str] = None,
                     display_name: Optional[_builtins.str] = None,
-                    filters: Optional[Sequence[Union['GetUsagePlansFilterArgs', 'GetUsagePlansFilterArgsDict']]] = None,
+                    filters: Optional[Sequence[Union['GetUsagePlansFilterArgs', 'GetUsagePlansFilterArgsDict', 'outputs.GetUsagePlansFilterResult']]] = None,
                     state: Optional[_builtins.str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUsagePlansResult:
     """
@@ -151,7 +151,7 @@ def get_usage_plans(compartment_id: Optional[_builtins.str] = None,
         usage_plan_collections=pulumi.get(__ret__, 'usage_plan_collections'))
 def get_usage_plans_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUsagePlansFilterArgs', 'GetUsagePlansFilterArgsDict']]]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUsagePlansFilterArgs', 'GetUsagePlansFilterArgsDict', 'outputs.GetUsagePlansFilterResult']]]]] = None,
                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUsagePlansResult]:
     """

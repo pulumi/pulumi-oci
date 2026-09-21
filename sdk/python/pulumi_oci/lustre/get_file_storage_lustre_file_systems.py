@@ -123,7 +123,7 @@ class AwaitableGetFileStorageLustreFileSystemsResult(GetFileStorageLustreFileSys
 def get_file_storage_lustre_file_systems(availability_domain: Optional[_builtins.str] = None,
                                          compartment_id: Optional[_builtins.str] = None,
                                          display_name: Optional[_builtins.str] = None,
-                                         filters: Optional[Sequence[Union['GetFileStorageLustreFileSystemsFilterArgs', 'GetFileStorageLustreFileSystemsFilterArgsDict']]] = None,
+                                         filters: Optional[Sequence[Union['GetFileStorageLustreFileSystemsFilterArgs', 'GetFileStorageLustreFileSystemsFilterArgsDict', 'outputs.GetFileStorageLustreFileSystemsFilterResult']]] = None,
                                          id: Optional[_builtins.str] = None,
                                          state: Optional[_builtins.str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFileStorageLustreFileSystemsResult:
@@ -173,7 +173,7 @@ def get_file_storage_lustre_file_systems(availability_domain: Optional[_builtins
 def get_file_storage_lustre_file_systems_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFileStorageLustreFileSystemsFilterArgs', 'GetFileStorageLustreFileSystemsFilterArgsDict']]]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFileStorageLustreFileSystemsFilterArgs', 'GetFileStorageLustreFileSystemsFilterArgsDict', 'outputs.GetFileStorageLustreFileSystemsFilterResult']]]]] = None,
                                                 id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFileStorageLustreFileSystemsResult]:

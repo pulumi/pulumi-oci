@@ -129,7 +129,7 @@ class AwaitableGetCompartmentsResult(GetCompartmentsResult):
 def get_compartments(access_level: Optional[_builtins.str] = None,
                      compartment_id: Optional[_builtins.str] = None,
                      compartment_id_in_subtree: Optional[_builtins.bool] = None,
-                     filters: Optional[Sequence[Union['GetCompartmentsFilterArgs', 'GetCompartmentsFilterArgsDict']]] = None,
+                     filters: Optional[Sequence[Union['GetCompartmentsFilterArgs', 'GetCompartmentsFilterArgsDict', 'outputs.GetCompartmentsFilterResult']]] = None,
                      name: Optional[_builtins.str] = None,
                      state: Optional[_builtins.str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCompartmentsResult:
@@ -199,7 +199,7 @@ def get_compartments(access_level: Optional[_builtins.str] = None,
 def get_compartments_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                             compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
-                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCompartmentsFilterArgs', 'GetCompartmentsFilterArgsDict']]]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCompartmentsFilterArgs', 'GetCompartmentsFilterArgsDict', 'outputs.GetCompartmentsFilterResult']]]]] = None,
                             name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCompartmentsResult]:

@@ -703,7 +703,7 @@ class FileSystem(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileSystemLockArgs', 'FileSystemLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileSystemLockArgs', 'FileSystemLockArgsDict', 'outputs.FileSystemLock']]]]] = None,
                  source_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -797,7 +797,7 @@ class FileSystem(pulumi.CustomResource):
                May be unset as a blank value.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FileSystemLockArgs', 'FileSystemLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FileSystemLockArgs', 'FileSystemLockArgsDict', 'outputs.FileSystemLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         ...
@@ -906,7 +906,7 @@ class FileSystem(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileSystemLockArgs', 'FileSystemLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileSystemLockArgs', 'FileSystemLockArgsDict', 'outputs.FileSystemLock']]]]] = None,
                  source_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -975,12 +975,12 @@ class FileSystem(pulumi.CustomResource):
             is_targetable: pulumi.Input[Optional[_builtins.bool]] = None,
             kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileSystemLockArgs', 'FileSystemLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileSystemLockArgs', 'FileSystemLockArgsDict', 'outputs.FileSystemLock']]]]] = None,
             metered_bytes: pulumi.Input[Optional[_builtins.str]] = None,
             quota_enforcement_state: pulumi.Input[Optional[_builtins.str]] = None,
             replication_source_count: pulumi.Input[Optional[_builtins.int]] = None,
             replication_target_id: pulumi.Input[Optional[_builtins.str]] = None,
-            source_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileSystemSourceDetailArgs', 'FileSystemSourceDetailArgsDict']]]]] = None,
+            source_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileSystemSourceDetailArgs', 'FileSystemSourceDetailArgsDict', 'outputs.FileSystemSourceDetail']]]]] = None,
             source_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1013,12 +1013,12 @@ class FileSystem(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_targetable: Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current 'lifecycleState'.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FileSystemLockArgs', 'FileSystemLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FileSystemLockArgs', 'FileSystemLockArgsDict', 'outputs.FileSystemLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] metered_bytes: The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
         :param pulumi.Input[_builtins.str] quota_enforcement_state: Displays the state of enforcement of quota rules on the file system.
         :param pulumi.Input[_builtins.int] replication_source_count: Specifies the total number of replications for which this file system is a source.
         :param pulumi.Input[_builtins.str] replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FileSystemSourceDetailArgs', 'FileSystemSourceDetailArgsDict']]]] source_details: Source information for the file system.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FileSystemSourceDetailArgs', 'FileSystemSourceDetailArgsDict', 'outputs.FileSystemSourceDetail']]]] source_details: Source information for the file system.
         :param pulumi.Input[_builtins.str] source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         :param pulumi.Input[_builtins.str] state: The current state of the file system.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.

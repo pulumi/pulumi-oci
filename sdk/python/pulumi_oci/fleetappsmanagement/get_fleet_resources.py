@@ -115,7 +115,7 @@ class AwaitableGetFleetResourcesResult(GetFleetResourcesResult):
 
 
 def get_fleet_resources(display_name: Optional[_builtins.str] = None,
-                        filters: Optional[Sequence[Union['GetFleetResourcesFilterArgs', 'GetFleetResourcesFilterArgsDict']]] = None,
+                        filters: Optional[Sequence[Union['GetFleetResourcesFilterArgs', 'GetFleetResourcesFilterArgsDict', 'outputs.GetFleetResourcesFilterResult']]] = None,
                         fleet_id: Optional[_builtins.str] = None,
                         fleet_resource_type: Optional[_builtins.str] = None,
                         id: Optional[_builtins.str] = None,
@@ -165,7 +165,7 @@ def get_fleet_resources(display_name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
 def get_fleet_resources_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetResourcesFilterArgs', 'GetFleetResourcesFilterArgsDict']]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetResourcesFilterArgs', 'GetFleetResourcesFilterArgsDict', 'outputs.GetFleetResourcesFilterResult']]]]] = None,
                                fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
                                fleet_resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

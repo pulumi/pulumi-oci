@@ -197,7 +197,7 @@ class AwaitableGetDataccMaintenanceExecutionsResult(GetDataccMaintenanceExecutio
 
 def get_datacc_maintenance_executions(compartment_id: Optional[_builtins.str] = None,
                                       display_name: Optional[_builtins.str] = None,
-                                      filters: Optional[Sequence[Union['GetDataccMaintenanceExecutionsFilterArgs', 'GetDataccMaintenanceExecutionsFilterArgsDict']]] = None,
+                                      filters: Optional[Sequence[Union['GetDataccMaintenanceExecutionsFilterArgs', 'GetDataccMaintenanceExecutionsFilterArgsDict', 'outputs.GetDataccMaintenanceExecutionsFilterResult']]] = None,
                                       infrastructure_id: Optional[_builtins.str] = None,
                                       maintenance_run_id: Optional[_builtins.str] = None,
                                       maintenance_subtype: Optional[_builtins.str] = None,
@@ -278,7 +278,7 @@ def get_datacc_maintenance_executions(compartment_id: Optional[_builtins.str] = 
         type=pulumi.get(__ret__, 'type'))
 def get_datacc_maintenance_executions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDataccMaintenanceExecutionsFilterArgs', 'GetDataccMaintenanceExecutionsFilterArgsDict']]]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDataccMaintenanceExecutionsFilterArgs', 'GetDataccMaintenanceExecutionsFilterArgsDict', 'outputs.GetDataccMaintenanceExecutionsFilterResult']]]]] = None,
                                              infrastructure_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              maintenance_run_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              maintenance_subtype: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

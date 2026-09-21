@@ -127,7 +127,7 @@ def get_desktop_pool_volumes(availability_domain: Optional[_builtins.str] = None
                              compartment_id: Optional[_builtins.str] = None,
                              desktop_pool_id: Optional[_builtins.str] = None,
                              display_name: Optional[_builtins.str] = None,
-                             filters: Optional[Sequence[Union['GetDesktopPoolVolumesFilterArgs', 'GetDesktopPoolVolumesFilterArgsDict']]] = None,
+                             filters: Optional[Sequence[Union['GetDesktopPoolVolumesFilterArgs', 'GetDesktopPoolVolumesFilterArgsDict', 'outputs.GetDesktopPoolVolumesFilterResult']]] = None,
                              id: Optional[_builtins.str] = None,
                              state: Optional[_builtins.str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDesktopPoolVolumesResult:
@@ -182,7 +182,7 @@ def get_desktop_pool_volumes_output(availability_domain: pulumi.Input[Optional[O
                                     compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     desktop_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDesktopPoolVolumesFilterArgs', 'GetDesktopPoolVolumesFilterArgsDict']]]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDesktopPoolVolumesFilterArgs', 'GetDesktopPoolVolumesFilterArgsDict', 'outputs.GetDesktopPoolVolumesFilterResult']]]]] = None,
                                     id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDesktopPoolVolumesResult]:

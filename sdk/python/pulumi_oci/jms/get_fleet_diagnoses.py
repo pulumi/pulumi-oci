@@ -81,7 +81,7 @@ class AwaitableGetFleetDiagnosesResult(GetFleetDiagnosesResult):
             id=self.id)
 
 
-def get_fleet_diagnoses(filters: Optional[Sequence[Union['GetFleetDiagnosesFilterArgs', 'GetFleetDiagnosesFilterArgsDict']]] = None,
+def get_fleet_diagnoses(filters: Optional[Sequence[Union['GetFleetDiagnosesFilterArgs', 'GetFleetDiagnosesFilterArgsDict', 'outputs.GetFleetDiagnosesFilterResult']]] = None,
                         fleet_id: Optional[_builtins.str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFleetDiagnosesResult:
     """
@@ -112,7 +112,7 @@ def get_fleet_diagnoses(filters: Optional[Sequence[Union['GetFleetDiagnosesFilte
         fleet_diagnosis_collections=pulumi.get(__ret__, 'fleet_diagnosis_collections'),
         fleet_id=pulumi.get(__ret__, 'fleet_id'),
         id=pulumi.get(__ret__, 'id'))
-def get_fleet_diagnoses_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetDiagnosesFilterArgs', 'GetFleetDiagnosesFilterArgsDict']]]]] = None,
+def get_fleet_diagnoses_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetDiagnosesFilterArgs', 'GetFleetDiagnosesFilterArgsDict', 'outputs.GetFleetDiagnosesFilterResult']]]]] = None,
                                fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetDiagnosesResult]:
     """

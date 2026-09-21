@@ -81,7 +81,7 @@ class AwaitableGetRegionSubscriptionsResult(GetRegionSubscriptionsResult):
             tenancy_id=self.tenancy_id)
 
 
-def get_region_subscriptions(filters: Optional[Sequence[Union['GetRegionSubscriptionsFilterArgs', 'GetRegionSubscriptionsFilterArgsDict']]] = None,
+def get_region_subscriptions(filters: Optional[Sequence[Union['GetRegionSubscriptionsFilterArgs', 'GetRegionSubscriptionsFilterArgsDict', 'outputs.GetRegionSubscriptionsFilterResult']]] = None,
                              tenancy_id: Optional[_builtins.str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRegionSubscriptionsResult:
     """
@@ -112,7 +112,7 @@ def get_region_subscriptions(filters: Optional[Sequence[Union['GetRegionSubscrip
         id=pulumi.get(__ret__, 'id'),
         region_subscriptions=pulumi.get(__ret__, 'region_subscriptions'),
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'))
-def get_region_subscriptions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRegionSubscriptionsFilterArgs', 'GetRegionSubscriptionsFilterArgsDict']]]]] = None,
+def get_region_subscriptions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRegionSubscriptionsFilterArgs', 'GetRegionSubscriptionsFilterArgsDict', 'outputs.GetRegionSubscriptionsFilterResult']]]]] = None,
                                     tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRegionSubscriptionsResult]:
     """

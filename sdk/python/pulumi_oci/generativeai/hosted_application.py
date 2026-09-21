@@ -444,12 +444,12 @@ class HostedApplication(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 environment_variables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HostedApplicationEnvironmentVariableArgs', 'HostedApplicationEnvironmentVariableArgsDict']]]]] = None,
+                 environment_variables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HostedApplicationEnvironmentVariableArgs', 'HostedApplicationEnvironmentVariableArgsDict', 'outputs.HostedApplicationEnvironmentVariable']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 inbound_auth_config: pulumi.Input[Optional[Union['HostedApplicationInboundAuthConfigArgs', 'HostedApplicationInboundAuthConfigArgsDict']]] = None,
-                 networking_config: pulumi.Input[Optional[Union['HostedApplicationNetworkingConfigArgs', 'HostedApplicationNetworkingConfigArgsDict']]] = None,
-                 scaling_config: pulumi.Input[Optional[Union['HostedApplicationScalingConfigArgs', 'HostedApplicationScalingConfigArgsDict']]] = None,
-                 storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HostedApplicationStorageConfigArgs', 'HostedApplicationStorageConfigArgsDict']]]]] = None,
+                 inbound_auth_config: pulumi.Input[Optional[Union['HostedApplicationInboundAuthConfigArgs', 'HostedApplicationInboundAuthConfigArgsDict', 'outputs.HostedApplicationInboundAuthConfig']]] = None,
+                 networking_config: pulumi.Input[Optional[Union['HostedApplicationNetworkingConfigArgs', 'HostedApplicationNetworkingConfigArgsDict', 'outputs.HostedApplicationNetworkingConfig']]] = None,
+                 scaling_config: pulumi.Input[Optional[Union['HostedApplicationScalingConfigArgs', 'HostedApplicationScalingConfigArgsDict', 'outputs.HostedApplicationScalingConfig']]] = None,
+                 storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HostedApplicationStorageConfigArgs', 'HostedApplicationStorageConfigArgsDict', 'outputs.HostedApplicationStorageConfig']]]]] = None,
                  __props__=None):
         """
         This resource provides the Hosted Application resource in Oracle Cloud Infrastructure Generative AI service.
@@ -529,12 +529,12 @@ class HostedApplication(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description for the Hosted Application.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly display name for the Hosted Application.  Does not need to be unique and can be updated after creation.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['HostedApplicationEnvironmentVariableArgs', 'HostedApplicationEnvironmentVariableArgsDict']]]] environment_variables: (Updatable) The list of environment variables for the Hosted Application.  Defines a list of environment variables injected at runtime.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['HostedApplicationEnvironmentVariableArgs', 'HostedApplicationEnvironmentVariableArgsDict', 'outputs.HostedApplicationEnvironmentVariable']]]] environment_variables: (Updatable) The list of environment variables for the Hosted Application.  Defines a list of environment variables injected at runtime.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['HostedApplicationInboundAuthConfigArgs', 'HostedApplicationInboundAuthConfigArgsDict']] inbound_auth_config: (Updatable) The client-side inbound authentication configuration for the Hosted Application. Defines the network access rules. When unspecified, the service applies the default inbound authentication configuration type.
-        :param pulumi.Input[Union['HostedApplicationNetworkingConfigArgs', 'HostedApplicationNetworkingConfigArgsDict']] networking_config: Networking configuration.
-        :param pulumi.Input[Union['HostedApplicationScalingConfigArgs', 'HostedApplicationScalingConfigArgsDict']] scaling_config: (Updatable) The auto scaling configuration for the Hosted Application.  Defines the minimum and maximum number of replicas. When unspecified, the service applies service-defined default scaling values.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['HostedApplicationStorageConfigArgs', 'HostedApplicationStorageConfigArgsDict']]]] storage_configs: The list of storage configuration for the Hosted Application.  Defines a list of service-managed storage back-ends.
+        :param pulumi.Input[Union['HostedApplicationInboundAuthConfigArgs', 'HostedApplicationInboundAuthConfigArgsDict', 'outputs.HostedApplicationInboundAuthConfig']] inbound_auth_config: (Updatable) The client-side inbound authentication configuration for the Hosted Application. Defines the network access rules. When unspecified, the service applies the default inbound authentication configuration type.
+        :param pulumi.Input[Union['HostedApplicationNetworkingConfigArgs', 'HostedApplicationNetworkingConfigArgsDict', 'outputs.HostedApplicationNetworkingConfig']] networking_config: Networking configuration.
+        :param pulumi.Input[Union['HostedApplicationScalingConfigArgs', 'HostedApplicationScalingConfigArgsDict', 'outputs.HostedApplicationScalingConfig']] scaling_config: (Updatable) The auto scaling configuration for the Hosted Application.  Defines the minimum and maximum number of replicas. When unspecified, the service applies service-defined default scaling values.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['HostedApplicationStorageConfigArgs', 'HostedApplicationStorageConfigArgsDict', 'outputs.HostedApplicationStorageConfig']]]] storage_configs: The list of storage configuration for the Hosted Application.  Defines a list of service-managed storage back-ends.
         """
         ...
     @overload
@@ -633,12 +633,12 @@ class HostedApplication(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 environment_variables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HostedApplicationEnvironmentVariableArgs', 'HostedApplicationEnvironmentVariableArgsDict']]]]] = None,
+                 environment_variables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HostedApplicationEnvironmentVariableArgs', 'HostedApplicationEnvironmentVariableArgsDict', 'outputs.HostedApplicationEnvironmentVariable']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 inbound_auth_config: pulumi.Input[Optional[Union['HostedApplicationInboundAuthConfigArgs', 'HostedApplicationInboundAuthConfigArgsDict']]] = None,
-                 networking_config: pulumi.Input[Optional[Union['HostedApplicationNetworkingConfigArgs', 'HostedApplicationNetworkingConfigArgsDict']]] = None,
-                 scaling_config: pulumi.Input[Optional[Union['HostedApplicationScalingConfigArgs', 'HostedApplicationScalingConfigArgsDict']]] = None,
-                 storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HostedApplicationStorageConfigArgs', 'HostedApplicationStorageConfigArgsDict']]]]] = None,
+                 inbound_auth_config: pulumi.Input[Optional[Union['HostedApplicationInboundAuthConfigArgs', 'HostedApplicationInboundAuthConfigArgsDict', 'outputs.HostedApplicationInboundAuthConfig']]] = None,
+                 networking_config: pulumi.Input[Optional[Union['HostedApplicationNetworkingConfigArgs', 'HostedApplicationNetworkingConfigArgsDict', 'outputs.HostedApplicationNetworkingConfig']]] = None,
+                 scaling_config: pulumi.Input[Optional[Union['HostedApplicationScalingConfigArgs', 'HostedApplicationScalingConfigArgsDict', 'outputs.HostedApplicationScalingConfig']]] = None,
+                 storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HostedApplicationStorageConfigArgs', 'HostedApplicationStorageConfigArgsDict', 'outputs.HostedApplicationStorageConfig']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -681,14 +681,14 @@ class HostedApplication(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            environment_variables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HostedApplicationEnvironmentVariableArgs', 'HostedApplicationEnvironmentVariableArgsDict']]]]] = None,
+            environment_variables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HostedApplicationEnvironmentVariableArgs', 'HostedApplicationEnvironmentVariableArgsDict', 'outputs.HostedApplicationEnvironmentVariable']]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            inbound_auth_config: pulumi.Input[Optional[Union['HostedApplicationInboundAuthConfigArgs', 'HostedApplicationInboundAuthConfigArgsDict']]] = None,
+            inbound_auth_config: pulumi.Input[Optional[Union['HostedApplicationInboundAuthConfigArgs', 'HostedApplicationInboundAuthConfigArgsDict', 'outputs.HostedApplicationInboundAuthConfig']]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            networking_config: pulumi.Input[Optional[Union['HostedApplicationNetworkingConfigArgs', 'HostedApplicationNetworkingConfigArgsDict']]] = None,
-            scaling_config: pulumi.Input[Optional[Union['HostedApplicationScalingConfigArgs', 'HostedApplicationScalingConfigArgsDict']]] = None,
+            networking_config: pulumi.Input[Optional[Union['HostedApplicationNetworkingConfigArgs', 'HostedApplicationNetworkingConfigArgsDict', 'outputs.HostedApplicationNetworkingConfig']]] = None,
+            scaling_config: pulumi.Input[Optional[Union['HostedApplicationScalingConfigArgs', 'HostedApplicationScalingConfigArgsDict', 'outputs.HostedApplicationScalingConfig']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HostedApplicationStorageConfigArgs', 'HostedApplicationStorageConfigArgsDict']]]]] = None,
+            storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HostedApplicationStorageConfigArgs', 'HostedApplicationStorageConfigArgsDict', 'outputs.HostedApplicationStorageConfig']]]]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'HostedApplication':
@@ -703,14 +703,14 @@ class HostedApplication(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description for the Hosted Application.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly display name for the Hosted Application.  Does not need to be unique and can be updated after creation.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['HostedApplicationEnvironmentVariableArgs', 'HostedApplicationEnvironmentVariableArgsDict']]]] environment_variables: (Updatable) The list of environment variables for the Hosted Application.  Defines a list of environment variables injected at runtime.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['HostedApplicationEnvironmentVariableArgs', 'HostedApplicationEnvironmentVariableArgsDict', 'outputs.HostedApplicationEnvironmentVariable']]]] environment_variables: (Updatable) The list of environment variables for the Hosted Application.  Defines a list of environment variables injected at runtime.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['HostedApplicationInboundAuthConfigArgs', 'HostedApplicationInboundAuthConfigArgsDict']] inbound_auth_config: (Updatable) The client-side inbound authentication configuration for the Hosted Application. Defines the network access rules. When unspecified, the service applies the default inbound authentication configuration type.
+        :param pulumi.Input[Union['HostedApplicationInboundAuthConfigArgs', 'HostedApplicationInboundAuthConfigArgsDict', 'outputs.HostedApplicationInboundAuthConfig']] inbound_auth_config: (Updatable) The client-side inbound authentication configuration for the Hosted Application. Defines the network access rules. When unspecified, the service applies the default inbound authentication configuration type.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state of the endpoint in more detail that can provide actionable information.
-        :param pulumi.Input[Union['HostedApplicationNetworkingConfigArgs', 'HostedApplicationNetworkingConfigArgsDict']] networking_config: Networking configuration.
-        :param pulumi.Input[Union['HostedApplicationScalingConfigArgs', 'HostedApplicationScalingConfigArgsDict']] scaling_config: (Updatable) The auto scaling configuration for the Hosted Application.  Defines the minimum and maximum number of replicas. When unspecified, the service applies service-defined default scaling values.
+        :param pulumi.Input[Union['HostedApplicationNetworkingConfigArgs', 'HostedApplicationNetworkingConfigArgsDict', 'outputs.HostedApplicationNetworkingConfig']] networking_config: Networking configuration.
+        :param pulumi.Input[Union['HostedApplicationScalingConfigArgs', 'HostedApplicationScalingConfigArgsDict', 'outputs.HostedApplicationScalingConfig']] scaling_config: (Updatable) The auto scaling configuration for the Hosted Application.  Defines the minimum and maximum number of replicas. When unspecified, the service applies service-defined default scaling values.
         :param pulumi.Input[_builtins.str] state: The current state of the hosted application.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['HostedApplicationStorageConfigArgs', 'HostedApplicationStorageConfigArgsDict']]]] storage_configs: The list of storage configuration for the Hosted Application.  Defines a list of service-managed storage back-ends.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['HostedApplicationStorageConfigArgs', 'HostedApplicationStorageConfigArgsDict', 'outputs.HostedApplicationStorageConfig']]]] storage_configs: The list of storage configuration for the Hosted Application.  Defines a list of service-managed storage back-ends.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The date and time the hosted application was created, in the format defined by RFC 3339
         :param pulumi.Input[_builtins.str] time_updated: The date and time the hosted application was updated, in the format defined by RFC 3339

@@ -391,7 +391,7 @@ class DatabaseToolsIdentity(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsIdentityLockArgs', 'DatabaseToolsIdentityLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsIdentityLockArgs', 'DatabaseToolsIdentityLockArgsDict', 'outputs.DatabaseToolsIdentityLock']]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -442,7 +442,7 @@ class DatabaseToolsIdentity(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsIdentityLockArgs', 'DatabaseToolsIdentityLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsIdentityLockArgs', 'DatabaseToolsIdentityLockArgsDict', 'outputs.DatabaseToolsIdentityLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] type: (Updatable) The Database Tools identity type.
                
                ** IMPORTANT **
@@ -515,7 +515,7 @@ class DatabaseToolsIdentity(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsIdentityLockArgs', 'DatabaseToolsIdentityLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsIdentityLockArgs', 'DatabaseToolsIdentityLockArgsDict', 'outputs.DatabaseToolsIdentityLock']]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -566,7 +566,7 @@ class DatabaseToolsIdentity(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsIdentityLockArgs', 'DatabaseToolsIdentityLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsIdentityLockArgs', 'DatabaseToolsIdentityLockArgsDict', 'outputs.DatabaseToolsIdentityLock']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -586,7 +586,7 @@ class DatabaseToolsIdentity(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsIdentityLockArgs', 'DatabaseToolsIdentityLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsIdentityLockArgs', 'DatabaseToolsIdentityLockArgsDict', 'outputs.DatabaseToolsIdentityLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] state: The current state of the Database Tools identity.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time the Database Tools identity was created. An RFC3339 formatted datetime string.

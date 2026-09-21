@@ -121,7 +121,7 @@ class AwaitableGetEmailReturnPathsResult(GetEmailReturnPathsResult):
 
 
 def get_email_return_paths(compartment_id: Optional[_builtins.str] = None,
-                           filters: Optional[Sequence[Union['GetEmailReturnPathsFilterArgs', 'GetEmailReturnPathsFilterArgsDict']]] = None,
+                           filters: Optional[Sequence[Union['GetEmailReturnPathsFilterArgs', 'GetEmailReturnPathsFilterArgsDict', 'outputs.GetEmailReturnPathsFilterResult']]] = None,
                            id: Optional[_builtins.str] = None,
                            name: Optional[_builtins.str] = None,
                            parent_resource_id: Optional[_builtins.str] = None,
@@ -171,7 +171,7 @@ def get_email_return_paths(compartment_id: Optional[_builtins.str] = None,
         parent_resource_id=pulumi.get(__ret__, 'parent_resource_id'),
         state=pulumi.get(__ret__, 'state'))
 def get_email_return_paths_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetEmailReturnPathsFilterArgs', 'GetEmailReturnPathsFilterArgsDict']]]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetEmailReturnPathsFilterArgs', 'GetEmailReturnPathsFilterArgsDict', 'outputs.GetEmailReturnPathsFilterResult']]]]] = None,
                                   id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   parent_resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

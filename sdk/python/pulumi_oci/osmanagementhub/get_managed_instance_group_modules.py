@@ -121,7 +121,7 @@ class AwaitableGetManagedInstanceGroupModulesResult(GetManagedInstanceGroupModul
 
 
 def get_managed_instance_group_modules(compartment_id: Optional[_builtins.str] = None,
-                                       filters: Optional[Sequence[Union['GetManagedInstanceGroupModulesFilterArgs', 'GetManagedInstanceGroupModulesFilterArgsDict']]] = None,
+                                       filters: Optional[Sequence[Union['GetManagedInstanceGroupModulesFilterArgs', 'GetManagedInstanceGroupModulesFilterArgsDict', 'outputs.GetManagedInstanceGroupModulesFilterResult']]] = None,
                                        managed_instance_group_id: Optional[_builtins.str] = None,
                                        name: Optional[_builtins.str] = None,
                                        name_contains: Optional[_builtins.str] = None,
@@ -192,7 +192,7 @@ def get_managed_instance_group_modules(compartment_id: Optional[_builtins.str] =
         name_contains=pulumi.get(__ret__, 'name_contains'),
         stream_name=pulumi.get(__ret__, 'stream_name'))
 def get_managed_instance_group_modules_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceGroupModulesFilterArgs', 'GetManagedInstanceGroupModulesFilterArgsDict']]]]] = None,
+                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceGroupModulesFilterArgs', 'GetManagedInstanceGroupModulesFilterArgsDict', 'outputs.GetManagedInstanceGroupModulesFilterResult']]]]] = None,
                                               managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                               name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

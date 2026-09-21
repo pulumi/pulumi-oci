@@ -345,7 +345,7 @@ class DataSafeConfiguration(pulumi.CustomResource):
             data_safe_nat_gateway_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            global_settings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataSafeConfigurationGlobalSettingArgs', 'DataSafeConfigurationGlobalSettingArgsDict']]]]] = None,
+            global_settings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataSafeConfigurationGlobalSettingArgs', 'DataSafeConfigurationGlobalSettingArgsDict', 'outputs.DataSafeConfigurationGlobalSetting']]]]] = None,
             is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_enabled: pulumi.Input[Optional[_builtins.str]] = None,
@@ -361,7 +361,7 @@ class DataSafeConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] data_safe_nat_gateway_ip_address: The Oracle Data Safe's NAT Gateway IP Address.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DataSafeConfigurationGlobalSettingArgs', 'DataSafeConfigurationGlobalSettingArgsDict']]]] global_settings: Details of the tenancy level global settings in Data Safe.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DataSafeConfigurationGlobalSettingArgs', 'DataSafeConfigurationGlobalSettingArgsDict', 'outputs.DataSafeConfigurationGlobalSetting']]]] global_settings: Details of the tenancy level global settings in Data Safe.
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Indicates if Data Safe is enabled.
                
                ** IMPORTANT **

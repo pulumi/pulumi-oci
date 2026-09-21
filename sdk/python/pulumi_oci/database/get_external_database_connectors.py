@@ -123,7 +123,7 @@ class AwaitableGetExternalDatabaseConnectorsResult(GetExternalDatabaseConnectors
 def get_external_database_connectors(compartment_id: Optional[_builtins.str] = None,
                                      display_name: Optional[_builtins.str] = None,
                                      external_database_id: Optional[_builtins.str] = None,
-                                     filters: Optional[Sequence[Union['GetExternalDatabaseConnectorsFilterArgs', 'GetExternalDatabaseConnectorsFilterArgsDict']]] = None,
+                                     filters: Optional[Sequence[Union['GetExternalDatabaseConnectorsFilterArgs', 'GetExternalDatabaseConnectorsFilterArgsDict', 'outputs.GetExternalDatabaseConnectorsFilterResult']]] = None,
                                      state: Optional[_builtins.str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalDatabaseConnectorsResult:
     """
@@ -169,7 +169,7 @@ def get_external_database_connectors(compartment_id: Optional[_builtins.str] = N
 def get_external_database_connectors_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             external_database_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalDatabaseConnectorsFilterArgs', 'GetExternalDatabaseConnectorsFilterArgsDict']]]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalDatabaseConnectorsFilterArgs', 'GetExternalDatabaseConnectorsFilterArgsDict', 'outputs.GetExternalDatabaseConnectorsFilterResult']]]]] = None,
                                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalDatabaseConnectorsResult]:
     """

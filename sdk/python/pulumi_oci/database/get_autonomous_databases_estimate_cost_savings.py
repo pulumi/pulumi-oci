@@ -94,7 +94,7 @@ class AwaitableGetAutonomousDatabasesEstimateCostSavingsResult(GetAutonomousData
 
 
 def get_autonomous_databases_estimate_cost_savings(autonomous_database_id: Optional[_builtins.str] = None,
-                                                   filters: Optional[Sequence[Union['GetAutonomousDatabasesEstimateCostSavingsFilterArgs', 'GetAutonomousDatabasesEstimateCostSavingsFilterArgsDict']]] = None,
+                                                   filters: Optional[Sequence[Union['GetAutonomousDatabasesEstimateCostSavingsFilterArgs', 'GetAutonomousDatabasesEstimateCostSavingsFilterArgsDict', 'outputs.GetAutonomousDatabasesEstimateCostSavingsFilterResult']]] = None,
                                                    is_cpu_autoscale: Optional[_builtins.bool] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabasesEstimateCostSavingsResult:
     """
@@ -130,7 +130,7 @@ def get_autonomous_databases_estimate_cost_savings(autonomous_database_id: Optio
         id=pulumi.get(__ret__, 'id'),
         is_cpu_autoscale=pulumi.get(__ret__, 'is_cpu_autoscale'))
 def get_autonomous_databases_estimate_cost_savings_output(autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDatabasesEstimateCostSavingsFilterArgs', 'GetAutonomousDatabasesEstimateCostSavingsFilterArgsDict']]]]] = None,
+                                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDatabasesEstimateCostSavingsFilterArgs', 'GetAutonomousDatabasesEstimateCostSavingsFilterArgsDict', 'outputs.GetAutonomousDatabasesEstimateCostSavingsFilterResult']]]]] = None,
                                                           is_cpu_autoscale: pulumi.Input[Optional[_builtins.bool]] = None,
                                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabasesEstimateCostSavingsResult]:
     """

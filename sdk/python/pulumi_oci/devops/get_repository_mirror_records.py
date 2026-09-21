@@ -81,7 +81,7 @@ class AwaitableGetRepositoryMirrorRecordsResult(GetRepositoryMirrorRecordsResult
             repository_mirror_record_collections=self.repository_mirror_record_collections)
 
 
-def get_repository_mirror_records(filters: Optional[Sequence[Union['GetRepositoryMirrorRecordsFilterArgs', 'GetRepositoryMirrorRecordsFilterArgsDict']]] = None,
+def get_repository_mirror_records(filters: Optional[Sequence[Union['GetRepositoryMirrorRecordsFilterArgs', 'GetRepositoryMirrorRecordsFilterArgsDict', 'outputs.GetRepositoryMirrorRecordsFilterResult']]] = None,
                                   repository_id: Optional[_builtins.str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRepositoryMirrorRecordsResult:
     """
@@ -112,7 +112,7 @@ def get_repository_mirror_records(filters: Optional[Sequence[Union['GetRepositor
         id=pulumi.get(__ret__, 'id'),
         repository_id=pulumi.get(__ret__, 'repository_id'),
         repository_mirror_record_collections=pulumi.get(__ret__, 'repository_mirror_record_collections'))
-def get_repository_mirror_records_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRepositoryMirrorRecordsFilterArgs', 'GetRepositoryMirrorRecordsFilterArgsDict']]]]] = None,
+def get_repository_mirror_records_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRepositoryMirrorRecordsFilterArgs', 'GetRepositoryMirrorRecordsFilterArgsDict', 'outputs.GetRepositoryMirrorRecordsFilterResult']]]]] = None,
                                          repository_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryMirrorRecordsResult]:
     """

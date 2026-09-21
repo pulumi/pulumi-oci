@@ -124,7 +124,7 @@ class AwaitableGetWorkspaceProjectsResult(GetWorkspaceProjectsResult):
 
 
 def get_workspace_projects(fields: Optional[Sequence[_builtins.str]] = None,
-                           filters: Optional[Sequence[Union['GetWorkspaceProjectsFilterArgs', 'GetWorkspaceProjectsFilterArgsDict']]] = None,
+                           filters: Optional[Sequence[Union['GetWorkspaceProjectsFilterArgs', 'GetWorkspaceProjectsFilterArgsDict', 'outputs.GetWorkspaceProjectsFilterResult']]] = None,
                            identifiers: Optional[Sequence[_builtins.str]] = None,
                            name: Optional[_builtins.str] = None,
                            name_contains: Optional[_builtins.str] = None,
@@ -175,7 +175,7 @@ def get_workspace_projects(fields: Optional[Sequence[_builtins.str]] = None,
         project_summary_collections=pulumi.get(__ret__, 'project_summary_collections'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
 def get_workspace_projects_output(fields: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
-                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkspaceProjectsFilterArgs', 'GetWorkspaceProjectsFilterArgsDict']]]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkspaceProjectsFilterArgs', 'GetWorkspaceProjectsFilterArgsDict', 'outputs.GetWorkspaceProjectsFilterResult']]]]] = None,
                                   identifiers: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                   name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

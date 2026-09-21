@@ -85,7 +85,7 @@ class AwaitableGetAvailabilityDomainsResult(GetAvailabilityDomainsResult):
 
 
 def get_availability_domains(compartment_id: Optional[_builtins.str] = None,
-                             filters: Optional[Sequence[Union['GetAvailabilityDomainsFilterArgs', 'GetAvailabilityDomainsFilterArgsDict']]] = None,
+                             filters: Optional[Sequence[Union['GetAvailabilityDomainsFilterArgs', 'GetAvailabilityDomainsFilterArgsDict', 'outputs.GetAvailabilityDomainsFilterResult']]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAvailabilityDomainsResult:
     """
     This data source provides the list of Availability Domains in Oracle Cloud Infrastructure Identity service.
@@ -120,7 +120,7 @@ def get_availability_domains(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_availability_domains_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAvailabilityDomainsFilterArgs', 'GetAvailabilityDomainsFilterArgsDict']]]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAvailabilityDomainsFilterArgs', 'GetAvailabilityDomainsFilterArgsDict', 'outputs.GetAvailabilityDomainsFilterResult']]]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAvailabilityDomainsResult]:
     """
     This data source provides the list of Availability Domains in Oracle Cloud Infrastructure Identity service.

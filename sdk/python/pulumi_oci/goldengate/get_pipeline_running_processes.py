@@ -81,7 +81,7 @@ class AwaitableGetPipelineRunningProcessesResult(GetPipelineRunningProcessesResu
             pipeline_running_process_collections=self.pipeline_running_process_collections)
 
 
-def get_pipeline_running_processes(filters: Optional[Sequence[Union['GetPipelineRunningProcessesFilterArgs', 'GetPipelineRunningProcessesFilterArgsDict']]] = None,
+def get_pipeline_running_processes(filters: Optional[Sequence[Union['GetPipelineRunningProcessesFilterArgs', 'GetPipelineRunningProcessesFilterArgsDict', 'outputs.GetPipelineRunningProcessesFilterResult']]] = None,
                                    pipeline_id: Optional[_builtins.str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPipelineRunningProcessesResult:
     """
@@ -112,7 +112,7 @@ def get_pipeline_running_processes(filters: Optional[Sequence[Union['GetPipeline
         id=pulumi.get(__ret__, 'id'),
         pipeline_id=pulumi.get(__ret__, 'pipeline_id'),
         pipeline_running_process_collections=pulumi.get(__ret__, 'pipeline_running_process_collections'))
-def get_pipeline_running_processes_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPipelineRunningProcessesFilterArgs', 'GetPipelineRunningProcessesFilterArgsDict']]]]] = None,
+def get_pipeline_running_processes_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPipelineRunningProcessesFilterArgs', 'GetPipelineRunningProcessesFilterArgsDict', 'outputs.GetPipelineRunningProcessesFilterResult']]]]] = None,
                                           pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPipelineRunningProcessesResult]:
     """

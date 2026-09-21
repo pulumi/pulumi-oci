@@ -116,7 +116,7 @@ class AwaitableGetSoftwareSourceSoftwarePackagesResult(GetSoftwareSourceSoftware
 
 def get_software_source_software_packages(display_name: Optional[_builtins.str] = None,
                                           display_name_contains: Optional[_builtins.str] = None,
-                                          filters: Optional[Sequence[Union['GetSoftwareSourceSoftwarePackagesFilterArgs', 'GetSoftwareSourceSoftwarePackagesFilterArgsDict']]] = None,
+                                          filters: Optional[Sequence[Union['GetSoftwareSourceSoftwarePackagesFilterArgs', 'GetSoftwareSourceSoftwarePackagesFilterArgsDict', 'outputs.GetSoftwareSourceSoftwarePackagesFilterResult']]] = None,
                                           is_latest: Optional[_builtins.bool] = None,
                                           software_source_id: Optional[_builtins.str] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSoftwareSourceSoftwarePackagesResult:
@@ -163,7 +163,7 @@ def get_software_source_software_packages(display_name: Optional[_builtins.str] 
         software_source_id=pulumi.get(__ret__, 'software_source_id'))
 def get_software_source_software_packages_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                  display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSoftwareSourceSoftwarePackagesFilterArgs', 'GetSoftwareSourceSoftwarePackagesFilterArgsDict']]]]] = None,
+                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSoftwareSourceSoftwarePackagesFilterArgs', 'GetSoftwareSourceSoftwarePackagesFilterArgsDict', 'outputs.GetSoftwareSourceSoftwarePackagesFilterResult']]]]] = None,
                                                  is_latest: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                                  software_source_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSoftwareSourceSoftwarePackagesResult]:

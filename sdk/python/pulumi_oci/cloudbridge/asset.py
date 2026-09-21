@@ -762,21 +762,21 @@ class Asset(pulumi.CustomResource):
                  asset_details: pulumi.Input[Optional[_builtins.str]] = None,
                  asset_source_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  asset_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 attached_ebs_volumes_cost: pulumi.Input[Optional[Union['AssetAttachedEbsVolumesCostArgs', 'AssetAttachedEbsVolumesCostArgsDict']]] = None,
-                 aws_ebs: pulumi.Input[Optional[Union['AssetAwsEbsArgs', 'AssetAwsEbsArgsDict']]] = None,
-                 aws_ec2: pulumi.Input[Optional[Union['AssetAwsEc2Args', 'AssetAwsEc2ArgsDict']]] = None,
-                 aws_ec2cost: pulumi.Input[Optional[Union['AssetAwsEc2costArgs', 'AssetAwsEc2costArgsDict']]] = None,
+                 attached_ebs_volumes_cost: pulumi.Input[Optional[Union['AssetAttachedEbsVolumesCostArgs', 'AssetAttachedEbsVolumesCostArgsDict', 'outputs.AssetAttachedEbsVolumesCost']]] = None,
+                 aws_ebs: pulumi.Input[Optional[Union['AssetAwsEbsArgs', 'AssetAwsEbsArgsDict', 'outputs.AssetAwsEbs']]] = None,
+                 aws_ec2: pulumi.Input[Optional[Union['AssetAwsEc2Args', 'AssetAwsEc2ArgsDict', 'outputs.AssetAwsEc2']]] = None,
+                 aws_ec2cost: pulumi.Input[Optional[Union['AssetAwsEc2costArgs', 'AssetAwsEc2costArgsDict', 'outputs.AssetAwsEc2cost']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 compute: pulumi.Input[Optional[Union['AssetComputeArgs', 'AssetComputeArgsDict']]] = None,
+                 compute: pulumi.Input[Optional[Union['AssetComputeArgs', 'AssetComputeArgsDict', 'outputs.AssetCompute']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  external_asset_key: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  inventory_id: pulumi.Input[Optional[_builtins.str]] = None,
                  source_key: pulumi.Input[Optional[_builtins.str]] = None,
-                 vm: pulumi.Input[Optional[Union['AssetVmArgs', 'AssetVmArgsDict']]] = None,
-                 vmware_vcenter: pulumi.Input[Optional[Union['AssetVmwareVcenterArgs', 'AssetVmwareVcenterArgsDict']]] = None,
-                 vmware_vm: pulumi.Input[Optional[Union['AssetVmwareVmArgs', 'AssetVmwareVmArgsDict']]] = None,
+                 vm: pulumi.Input[Optional[Union['AssetVmArgs', 'AssetVmArgsDict', 'outputs.AssetVm']]] = None,
+                 vmware_vcenter: pulumi.Input[Optional[Union['AssetVmwareVcenterArgs', 'AssetVmwareVcenterArgsDict', 'outputs.AssetVmwareVcenter']]] = None,
+                 vmware_vm: pulumi.Input[Optional[Union['AssetVmwareVmArgs', 'AssetVmwareVmArgsDict', 'outputs.AssetVmwareVm']]] = None,
                  __props__=None):
         """
         This resource provides the Asset resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -1044,21 +1044,21 @@ class Asset(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] asset_details: (Updatable) The details of the asset.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] asset_source_ids: (Updatable) List of asset source OCID.
         :param pulumi.Input[_builtins.str] asset_type: (Updatable) The type of asset.
-        :param pulumi.Input[Union['AssetAttachedEbsVolumesCostArgs', 'AssetAttachedEbsVolumesCostArgsDict']] attached_ebs_volumes_cost: (Updatable) Cost information for monthly maintenance.
-        :param pulumi.Input[Union['AssetAwsEbsArgs', 'AssetAwsEbsArgsDict']] aws_ebs: (Updatable) AWS EBS volume related properties.
-        :param pulumi.Input[Union['AssetAwsEc2Args', 'AssetAwsEc2ArgsDict']] aws_ec2: (Updatable) AWS virtual machine related properties.
-        :param pulumi.Input[Union['AssetAwsEc2costArgs', 'AssetAwsEc2costArgsDict']] aws_ec2cost: (Updatable) Cost information for monthly maintenance.
+        :param pulumi.Input[Union['AssetAttachedEbsVolumesCostArgs', 'AssetAttachedEbsVolumesCostArgsDict', 'outputs.AssetAttachedEbsVolumesCost']] attached_ebs_volumes_cost: (Updatable) Cost information for monthly maintenance.
+        :param pulumi.Input[Union['AssetAwsEbsArgs', 'AssetAwsEbsArgsDict', 'outputs.AssetAwsEbs']] aws_ebs: (Updatable) AWS EBS volume related properties.
+        :param pulumi.Input[Union['AssetAwsEc2Args', 'AssetAwsEc2ArgsDict', 'outputs.AssetAwsEc2']] aws_ec2: (Updatable) AWS virtual machine related properties.
+        :param pulumi.Input[Union['AssetAwsEc2costArgs', 'AssetAwsEc2costArgsDict', 'outputs.AssetAwsEc2cost']] aws_ec2cost: (Updatable) Cost information for monthly maintenance.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that the asset belongs to.
-        :param pulumi.Input[Union['AssetComputeArgs', 'AssetComputeArgsDict']] compute: (Updatable) Compute related properties.
+        :param pulumi.Input[Union['AssetComputeArgs', 'AssetComputeArgsDict', 'outputs.AssetCompute']] compute: (Updatable) Compute related properties.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Asset display name.
         :param pulumi.Input[_builtins.str] external_asset_key: The key of the asset from the external environment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] inventory_id: Inventory ID to which an asset belongs.
         :param pulumi.Input[_builtins.str] source_key: The source key to which the asset belongs.
-        :param pulumi.Input[Union['AssetVmArgs', 'AssetVmArgsDict']] vm: (Updatable) Virtual machine related properties.
-        :param pulumi.Input[Union['AssetVmwareVcenterArgs', 'AssetVmwareVcenterArgsDict']] vmware_vcenter: (Updatable) VMware vCenter related properties.
-        :param pulumi.Input[Union['AssetVmwareVmArgs', 'AssetVmwareVmArgsDict']] vmware_vm: (Updatable) VMware virtual machine related properties.
+        :param pulumi.Input[Union['AssetVmArgs', 'AssetVmArgsDict', 'outputs.AssetVm']] vm: (Updatable) Virtual machine related properties.
+        :param pulumi.Input[Union['AssetVmwareVcenterArgs', 'AssetVmwareVcenterArgsDict', 'outputs.AssetVmwareVcenter']] vmware_vcenter: (Updatable) VMware vCenter related properties.
+        :param pulumi.Input[Union['AssetVmwareVmArgs', 'AssetVmwareVmArgsDict', 'outputs.AssetVmwareVm']] vmware_vm: (Updatable) VMware virtual machine related properties.
         """
         ...
     @overload
@@ -1345,21 +1345,21 @@ class Asset(pulumi.CustomResource):
                  asset_details: pulumi.Input[Optional[_builtins.str]] = None,
                  asset_source_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  asset_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 attached_ebs_volumes_cost: pulumi.Input[Optional[Union['AssetAttachedEbsVolumesCostArgs', 'AssetAttachedEbsVolumesCostArgsDict']]] = None,
-                 aws_ebs: pulumi.Input[Optional[Union['AssetAwsEbsArgs', 'AssetAwsEbsArgsDict']]] = None,
-                 aws_ec2: pulumi.Input[Optional[Union['AssetAwsEc2Args', 'AssetAwsEc2ArgsDict']]] = None,
-                 aws_ec2cost: pulumi.Input[Optional[Union['AssetAwsEc2costArgs', 'AssetAwsEc2costArgsDict']]] = None,
+                 attached_ebs_volumes_cost: pulumi.Input[Optional[Union['AssetAttachedEbsVolumesCostArgs', 'AssetAttachedEbsVolumesCostArgsDict', 'outputs.AssetAttachedEbsVolumesCost']]] = None,
+                 aws_ebs: pulumi.Input[Optional[Union['AssetAwsEbsArgs', 'AssetAwsEbsArgsDict', 'outputs.AssetAwsEbs']]] = None,
+                 aws_ec2: pulumi.Input[Optional[Union['AssetAwsEc2Args', 'AssetAwsEc2ArgsDict', 'outputs.AssetAwsEc2']]] = None,
+                 aws_ec2cost: pulumi.Input[Optional[Union['AssetAwsEc2costArgs', 'AssetAwsEc2costArgsDict', 'outputs.AssetAwsEc2cost']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 compute: pulumi.Input[Optional[Union['AssetComputeArgs', 'AssetComputeArgsDict']]] = None,
+                 compute: pulumi.Input[Optional[Union['AssetComputeArgs', 'AssetComputeArgsDict', 'outputs.AssetCompute']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  external_asset_key: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  inventory_id: pulumi.Input[Optional[_builtins.str]] = None,
                  source_key: pulumi.Input[Optional[_builtins.str]] = None,
-                 vm: pulumi.Input[Optional[Union['AssetVmArgs', 'AssetVmArgsDict']]] = None,
-                 vmware_vcenter: pulumi.Input[Optional[Union['AssetVmwareVcenterArgs', 'AssetVmwareVcenterArgsDict']]] = None,
-                 vmware_vm: pulumi.Input[Optional[Union['AssetVmwareVmArgs', 'AssetVmwareVmArgsDict']]] = None,
+                 vm: pulumi.Input[Optional[Union['AssetVmArgs', 'AssetVmArgsDict', 'outputs.AssetVm']]] = None,
+                 vmware_vcenter: pulumi.Input[Optional[Union['AssetVmwareVcenterArgs', 'AssetVmwareVcenterArgsDict', 'outputs.AssetVmwareVcenter']]] = None,
+                 vmware_vm: pulumi.Input[Optional[Union['AssetVmwareVmArgs', 'AssetVmwareVmArgsDict', 'outputs.AssetVmwareVm']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1419,12 +1419,12 @@ class Asset(pulumi.CustomResource):
             asset_details: pulumi.Input[Optional[_builtins.str]] = None,
             asset_source_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             asset_type: pulumi.Input[Optional[_builtins.str]] = None,
-            attached_ebs_volumes_cost: pulumi.Input[Optional[Union['AssetAttachedEbsVolumesCostArgs', 'AssetAttachedEbsVolumesCostArgsDict']]] = None,
-            aws_ebs: pulumi.Input[Optional[Union['AssetAwsEbsArgs', 'AssetAwsEbsArgsDict']]] = None,
-            aws_ec2: pulumi.Input[Optional[Union['AssetAwsEc2Args', 'AssetAwsEc2ArgsDict']]] = None,
-            aws_ec2cost: pulumi.Input[Optional[Union['AssetAwsEc2costArgs', 'AssetAwsEc2costArgsDict']]] = None,
+            attached_ebs_volumes_cost: pulumi.Input[Optional[Union['AssetAttachedEbsVolumesCostArgs', 'AssetAttachedEbsVolumesCostArgsDict', 'outputs.AssetAttachedEbsVolumesCost']]] = None,
+            aws_ebs: pulumi.Input[Optional[Union['AssetAwsEbsArgs', 'AssetAwsEbsArgsDict', 'outputs.AssetAwsEbs']]] = None,
+            aws_ec2: pulumi.Input[Optional[Union['AssetAwsEc2Args', 'AssetAwsEc2ArgsDict', 'outputs.AssetAwsEc2']]] = None,
+            aws_ec2cost: pulumi.Input[Optional[Union['AssetAwsEc2costArgs', 'AssetAwsEc2costArgsDict', 'outputs.AssetAwsEc2cost']]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            compute: pulumi.Input[Optional[Union['AssetComputeArgs', 'AssetComputeArgsDict']]] = None,
+            compute: pulumi.Input[Optional[Union['AssetComputeArgs', 'AssetComputeArgsDict', 'outputs.AssetCompute']]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             environment_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1436,9 +1436,9 @@ class Asset(pulumi.CustomResource):
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
-            vm: pulumi.Input[Optional[Union['AssetVmArgs', 'AssetVmArgsDict']]] = None,
-            vmware_vcenter: pulumi.Input[Optional[Union['AssetVmwareVcenterArgs', 'AssetVmwareVcenterArgsDict']]] = None,
-            vmware_vm: pulumi.Input[Optional[Union['AssetVmwareVmArgs', 'AssetVmwareVmArgsDict']]] = None) -> 'Asset':
+            vm: pulumi.Input[Optional[Union['AssetVmArgs', 'AssetVmArgsDict', 'outputs.AssetVm']]] = None,
+            vmware_vcenter: pulumi.Input[Optional[Union['AssetVmwareVcenterArgs', 'AssetVmwareVcenterArgsDict', 'outputs.AssetVmwareVcenter']]] = None,
+            vmware_vm: pulumi.Input[Optional[Union['AssetVmwareVmArgs', 'AssetVmwareVmArgsDict', 'outputs.AssetVmwareVm']]] = None) -> 'Asset':
         """
         Get an existing Asset resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1451,12 +1451,12 @@ class Asset(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] asset_details: (Updatable) The details of the asset.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] asset_source_ids: (Updatable) List of asset source OCID.
         :param pulumi.Input[_builtins.str] asset_type: (Updatable) The type of asset.
-        :param pulumi.Input[Union['AssetAttachedEbsVolumesCostArgs', 'AssetAttachedEbsVolumesCostArgsDict']] attached_ebs_volumes_cost: (Updatable) Cost information for monthly maintenance.
-        :param pulumi.Input[Union['AssetAwsEbsArgs', 'AssetAwsEbsArgsDict']] aws_ebs: (Updatable) AWS EBS volume related properties.
-        :param pulumi.Input[Union['AssetAwsEc2Args', 'AssetAwsEc2ArgsDict']] aws_ec2: (Updatable) AWS virtual machine related properties.
-        :param pulumi.Input[Union['AssetAwsEc2costArgs', 'AssetAwsEc2costArgsDict']] aws_ec2cost: (Updatable) Cost information for monthly maintenance.
+        :param pulumi.Input[Union['AssetAttachedEbsVolumesCostArgs', 'AssetAttachedEbsVolumesCostArgsDict', 'outputs.AssetAttachedEbsVolumesCost']] attached_ebs_volumes_cost: (Updatable) Cost information for monthly maintenance.
+        :param pulumi.Input[Union['AssetAwsEbsArgs', 'AssetAwsEbsArgsDict', 'outputs.AssetAwsEbs']] aws_ebs: (Updatable) AWS EBS volume related properties.
+        :param pulumi.Input[Union['AssetAwsEc2Args', 'AssetAwsEc2ArgsDict', 'outputs.AssetAwsEc2']] aws_ec2: (Updatable) AWS virtual machine related properties.
+        :param pulumi.Input[Union['AssetAwsEc2costArgs', 'AssetAwsEc2costArgsDict', 'outputs.AssetAwsEc2cost']] aws_ec2cost: (Updatable) Cost information for monthly maintenance.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that the asset belongs to.
-        :param pulumi.Input[Union['AssetComputeArgs', 'AssetComputeArgsDict']] compute: (Updatable) Compute related properties.
+        :param pulumi.Input[Union['AssetComputeArgs', 'AssetComputeArgsDict', 'outputs.AssetCompute']] compute: (Updatable) Compute related properties.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Asset display name.
         :param pulumi.Input[_builtins.str] environment_type: Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
@@ -1468,9 +1468,9 @@ class Asset(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[_builtins.str] time_created: The time when the asset was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time when the asset was updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[Union['AssetVmArgs', 'AssetVmArgsDict']] vm: (Updatable) Virtual machine related properties.
-        :param pulumi.Input[Union['AssetVmwareVcenterArgs', 'AssetVmwareVcenterArgsDict']] vmware_vcenter: (Updatable) VMware vCenter related properties.
-        :param pulumi.Input[Union['AssetVmwareVmArgs', 'AssetVmwareVmArgsDict']] vmware_vm: (Updatable) VMware virtual machine related properties.
+        :param pulumi.Input[Union['AssetVmArgs', 'AssetVmArgsDict', 'outputs.AssetVm']] vm: (Updatable) Virtual machine related properties.
+        :param pulumi.Input[Union['AssetVmwareVcenterArgs', 'AssetVmwareVcenterArgsDict', 'outputs.AssetVmwareVcenter']] vmware_vcenter: (Updatable) VMware vCenter related properties.
+        :param pulumi.Input[Union['AssetVmwareVmArgs', 'AssetVmwareVmArgsDict', 'outputs.AssetVmwareVm']] vmware_vm: (Updatable) VMware virtual machine related properties.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

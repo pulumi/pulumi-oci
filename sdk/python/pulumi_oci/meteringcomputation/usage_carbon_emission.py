@@ -424,7 +424,7 @@ class UsageCarbonEmission(pulumi.CustomResource):
                  emission_type: pulumi.Input[Optional[_builtins.str]] = None,
                  granularity: pulumi.Input[Optional[_builtins.str]] = None,
                  group_bies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 group_by_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageCarbonEmissionGroupByTagArgs', 'UsageCarbonEmissionGroupByTagArgsDict']]]]] = None,
+                 group_by_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageCarbonEmissionGroupByTagArgs', 'UsageCarbonEmissionGroupByTagArgsDict', 'outputs.UsageCarbonEmissionGroupByTag']]]]] = None,
                  is_aggregate_by_time: pulumi.Input[Optional[_builtins.bool]] = None,
                  tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
                  time_usage_ended: pulumi.Input[Optional[_builtins.str]] = None,
@@ -479,7 +479,7 @@ class UsageCarbonEmission(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] emission_type: Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
         :param pulumi.Input[_builtins.str] granularity: The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] group_bies: Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "resourceName", "tenantId", "tenantName", "subscriptionId"]`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UsageCarbonEmissionGroupByTagArgs', 'UsageCarbonEmissionGroupByTagArgsDict']]]] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UsageCarbonEmissionGroupByTagArgs', 'UsageCarbonEmissionGroupByTagArgsDict', 'outputs.UsageCarbonEmissionGroupByTag']]]] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
         :param pulumi.Input[_builtins.bool] is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
         :param pulumi.Input[_builtins.str] tenant_id: Tenant ID.
         :param pulumi.Input[_builtins.str] time_usage_ended: The usage end time.
@@ -556,7 +556,7 @@ class UsageCarbonEmission(pulumi.CustomResource):
                  emission_type: pulumi.Input[Optional[_builtins.str]] = None,
                  granularity: pulumi.Input[Optional[_builtins.str]] = None,
                  group_bies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 group_by_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageCarbonEmissionGroupByTagArgs', 'UsageCarbonEmissionGroupByTagArgsDict']]]]] = None,
+                 group_by_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageCarbonEmissionGroupByTagArgs', 'UsageCarbonEmissionGroupByTagArgsDict', 'outputs.UsageCarbonEmissionGroupByTag']]]]] = None,
                  is_aggregate_by_time: pulumi.Input[Optional[_builtins.bool]] = None,
                  tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
                  time_usage_ended: pulumi.Input[Optional[_builtins.str]] = None,
@@ -604,9 +604,9 @@ class UsageCarbonEmission(pulumi.CustomResource):
             emission_type: pulumi.Input[Optional[_builtins.str]] = None,
             granularity: pulumi.Input[Optional[_builtins.str]] = None,
             group_bies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            group_by_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageCarbonEmissionGroupByTagArgs', 'UsageCarbonEmissionGroupByTagArgsDict']]]]] = None,
+            group_by_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageCarbonEmissionGroupByTagArgs', 'UsageCarbonEmissionGroupByTagArgsDict', 'outputs.UsageCarbonEmissionGroupByTag']]]]] = None,
             is_aggregate_by_time: pulumi.Input[Optional[_builtins.bool]] = None,
-            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageCarbonEmissionItemArgs', 'UsageCarbonEmissionItemArgsDict']]]]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageCarbonEmissionItemArgs', 'UsageCarbonEmissionItemArgsDict', 'outputs.UsageCarbonEmissionItem']]]]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
             time_usage_ended: pulumi.Input[Optional[_builtins.str]] = None,
             time_usage_started: pulumi.Input[Optional[_builtins.str]] = None,
@@ -623,9 +623,9 @@ class UsageCarbonEmission(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] emission_type: Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
         :param pulumi.Input[_builtins.str] granularity: The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] group_bies: Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "resourceName", "tenantId", "tenantName", "subscriptionId"]`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UsageCarbonEmissionGroupByTagArgs', 'UsageCarbonEmissionGroupByTagArgsDict']]]] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UsageCarbonEmissionGroupByTagArgs', 'UsageCarbonEmissionGroupByTagArgsDict', 'outputs.UsageCarbonEmissionGroupByTag']]]] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
         :param pulumi.Input[_builtins.bool] is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UsageCarbonEmissionItemArgs', 'UsageCarbonEmissionItemArgsDict']]]] items: A list of carbon emission usage items.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UsageCarbonEmissionItemArgs', 'UsageCarbonEmissionItemArgsDict', 'outputs.UsageCarbonEmissionItem']]]] items: A list of carbon emission usage items.
         :param pulumi.Input[_builtins.str] tenant_id: Tenant ID.
         :param pulumi.Input[_builtins.str] time_usage_ended: The usage end time.
         :param pulumi.Input[_builtins.str] time_usage_started: The usage start time.

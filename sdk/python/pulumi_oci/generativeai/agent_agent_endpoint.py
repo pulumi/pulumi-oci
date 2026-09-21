@@ -678,17 +678,17 @@ class AgentAgentEndpoint(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  agent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 content_moderation_config: pulumi.Input[Optional[Union['AgentAgentEndpointContentModerationConfigArgs', 'AgentAgentEndpointContentModerationConfigArgsDict']]] = None,
+                 content_moderation_config: pulumi.Input[Optional[Union['AgentAgentEndpointContentModerationConfigArgs', 'AgentAgentEndpointContentModerationConfigArgsDict', 'outputs.AgentAgentEndpointContentModerationConfig']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 guardrail_config: pulumi.Input[Optional[Union['AgentAgentEndpointGuardrailConfigArgs', 'AgentAgentEndpointGuardrailConfigArgsDict']]] = None,
-                 human_input_config: pulumi.Input[Optional[Union['AgentAgentEndpointHumanInputConfigArgs', 'AgentAgentEndpointHumanInputConfigArgsDict']]] = None,
+                 guardrail_config: pulumi.Input[Optional[Union['AgentAgentEndpointGuardrailConfigArgs', 'AgentAgentEndpointGuardrailConfigArgsDict', 'outputs.AgentAgentEndpointGuardrailConfig']]] = None,
+                 human_input_config: pulumi.Input[Optional[Union['AgentAgentEndpointHumanInputConfigArgs', 'AgentAgentEndpointHumanInputConfigArgsDict', 'outputs.AgentAgentEndpointHumanInputConfig']]] = None,
                  metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 output_config: pulumi.Input[Optional[Union['AgentAgentEndpointOutputConfigArgs', 'AgentAgentEndpointOutputConfigArgsDict']]] = None,
-                 provisioned_capacity_config: pulumi.Input[Optional[Union['AgentAgentEndpointProvisionedCapacityConfigArgs', 'AgentAgentEndpointProvisionedCapacityConfigArgsDict']]] = None,
-                 session_config: pulumi.Input[Optional[Union['AgentAgentEndpointSessionConfigArgs', 'AgentAgentEndpointSessionConfigArgsDict']]] = None,
+                 output_config: pulumi.Input[Optional[Union['AgentAgentEndpointOutputConfigArgs', 'AgentAgentEndpointOutputConfigArgsDict', 'outputs.AgentAgentEndpointOutputConfig']]] = None,
+                 provisioned_capacity_config: pulumi.Input[Optional[Union['AgentAgentEndpointProvisionedCapacityConfigArgs', 'AgentAgentEndpointProvisionedCapacityConfigArgsDict', 'outputs.AgentAgentEndpointProvisionedCapacityConfig']]] = None,
+                 session_config: pulumi.Input[Optional[Union['AgentAgentEndpointSessionConfigArgs', 'AgentAgentEndpointSessionConfigArgsDict', 'outputs.AgentAgentEndpointSessionConfig']]] = None,
                  should_enable_citation: pulumi.Input[Optional[_builtins.bool]] = None,
                  should_enable_multi_language: pulumi.Input[Optional[_builtins.bool]] = None,
                  should_enable_session: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -782,17 +782,17 @@ class AgentAgentEndpoint(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] agent_id: The OCID of the agent that this endpoint is associated with.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the endpoint in.
-        :param pulumi.Input[Union['AgentAgentEndpointContentModerationConfigArgs', 'AgentAgentEndpointContentModerationConfigArgsDict']] content_moderation_config: (Updatable) The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+        :param pulumi.Input[Union['AgentAgentEndpointContentModerationConfigArgs', 'AgentAgentEndpointContentModerationConfigArgsDict', 'outputs.AgentAgentEndpointContentModerationConfig']] content_moderation_config: (Updatable) The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the endpoint.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['AgentAgentEndpointGuardrailConfigArgs', 'AgentAgentEndpointGuardrailConfigArgsDict']] guardrail_config: (Updatable) The configuration details about whether to apply the guardrail checks to input and output.
-        :param pulumi.Input[Union['AgentAgentEndpointHumanInputConfigArgs', 'AgentAgentEndpointHumanInputConfigArgsDict']] human_input_config: (Updatable) Human Input Configuration for an AgentEndpoint.
+        :param pulumi.Input[Union['AgentAgentEndpointGuardrailConfigArgs', 'AgentAgentEndpointGuardrailConfigArgsDict', 'outputs.AgentAgentEndpointGuardrailConfig']] guardrail_config: (Updatable) The configuration details about whether to apply the guardrail checks to input and output.
+        :param pulumi.Input[Union['AgentAgentEndpointHumanInputConfigArgs', 'AgentAgentEndpointHumanInputConfigArgsDict', 'outputs.AgentAgentEndpointHumanInputConfig']] human_input_config: (Updatable) Human Input Configuration for an AgentEndpoint.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: (Updatable) Key-value pairs to allow additional configurations.
-        :param pulumi.Input[Union['AgentAgentEndpointOutputConfigArgs', 'AgentAgentEndpointOutputConfigArgsDict']] output_config: (Updatable) Configuration to store results generated by agent.
-        :param pulumi.Input[Union['AgentAgentEndpointProvisionedCapacityConfigArgs', 'AgentAgentEndpointProvisionedCapacityConfigArgsDict']] provisioned_capacity_config: (Updatable) The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
-        :param pulumi.Input[Union['AgentAgentEndpointSessionConfigArgs', 'AgentAgentEndpointSessionConfigArgsDict']] session_config: (Updatable) Session Configuration on AgentEndpoint.
+        :param pulumi.Input[Union['AgentAgentEndpointOutputConfigArgs', 'AgentAgentEndpointOutputConfigArgsDict', 'outputs.AgentAgentEndpointOutputConfig']] output_config: (Updatable) Configuration to store results generated by agent.
+        :param pulumi.Input[Union['AgentAgentEndpointProvisionedCapacityConfigArgs', 'AgentAgentEndpointProvisionedCapacityConfigArgsDict', 'outputs.AgentAgentEndpointProvisionedCapacityConfig']] provisioned_capacity_config: (Updatable) The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
+        :param pulumi.Input[Union['AgentAgentEndpointSessionConfigArgs', 'AgentAgentEndpointSessionConfigArgsDict', 'outputs.AgentAgentEndpointSessionConfig']] session_config: (Updatable) Session Configuration on AgentEndpoint.
         :param pulumi.Input[_builtins.bool] should_enable_citation: (Updatable) Whether to show citations in the chat result.
         :param pulumi.Input[_builtins.bool] should_enable_multi_language: (Updatable) Whether to enable multi-language for chat.
         :param pulumi.Input[_builtins.bool] should_enable_session: Whether or not to enable Session-based chat.
@@ -908,17 +908,17 @@ class AgentAgentEndpoint(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  agent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 content_moderation_config: pulumi.Input[Optional[Union['AgentAgentEndpointContentModerationConfigArgs', 'AgentAgentEndpointContentModerationConfigArgsDict']]] = None,
+                 content_moderation_config: pulumi.Input[Optional[Union['AgentAgentEndpointContentModerationConfigArgs', 'AgentAgentEndpointContentModerationConfigArgsDict', 'outputs.AgentAgentEndpointContentModerationConfig']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 guardrail_config: pulumi.Input[Optional[Union['AgentAgentEndpointGuardrailConfigArgs', 'AgentAgentEndpointGuardrailConfigArgsDict']]] = None,
-                 human_input_config: pulumi.Input[Optional[Union['AgentAgentEndpointHumanInputConfigArgs', 'AgentAgentEndpointHumanInputConfigArgsDict']]] = None,
+                 guardrail_config: pulumi.Input[Optional[Union['AgentAgentEndpointGuardrailConfigArgs', 'AgentAgentEndpointGuardrailConfigArgsDict', 'outputs.AgentAgentEndpointGuardrailConfig']]] = None,
+                 human_input_config: pulumi.Input[Optional[Union['AgentAgentEndpointHumanInputConfigArgs', 'AgentAgentEndpointHumanInputConfigArgsDict', 'outputs.AgentAgentEndpointHumanInputConfig']]] = None,
                  metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 output_config: pulumi.Input[Optional[Union['AgentAgentEndpointOutputConfigArgs', 'AgentAgentEndpointOutputConfigArgsDict']]] = None,
-                 provisioned_capacity_config: pulumi.Input[Optional[Union['AgentAgentEndpointProvisionedCapacityConfigArgs', 'AgentAgentEndpointProvisionedCapacityConfigArgsDict']]] = None,
-                 session_config: pulumi.Input[Optional[Union['AgentAgentEndpointSessionConfigArgs', 'AgentAgentEndpointSessionConfigArgsDict']]] = None,
+                 output_config: pulumi.Input[Optional[Union['AgentAgentEndpointOutputConfigArgs', 'AgentAgentEndpointOutputConfigArgsDict', 'outputs.AgentAgentEndpointOutputConfig']]] = None,
+                 provisioned_capacity_config: pulumi.Input[Optional[Union['AgentAgentEndpointProvisionedCapacityConfigArgs', 'AgentAgentEndpointProvisionedCapacityConfigArgsDict', 'outputs.AgentAgentEndpointProvisionedCapacityConfig']]] = None,
+                 session_config: pulumi.Input[Optional[Union['AgentAgentEndpointSessionConfigArgs', 'AgentAgentEndpointSessionConfigArgsDict', 'outputs.AgentAgentEndpointSessionConfig']]] = None,
                  should_enable_citation: pulumi.Input[Optional[_builtins.bool]] = None,
                  should_enable_multi_language: pulumi.Input[Optional[_builtins.bool]] = None,
                  should_enable_session: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -970,18 +970,18 @@ class AgentAgentEndpoint(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             agent_id: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            content_moderation_config: pulumi.Input[Optional[Union['AgentAgentEndpointContentModerationConfigArgs', 'AgentAgentEndpointContentModerationConfigArgsDict']]] = None,
+            content_moderation_config: pulumi.Input[Optional[Union['AgentAgentEndpointContentModerationConfigArgs', 'AgentAgentEndpointContentModerationConfigArgsDict', 'outputs.AgentAgentEndpointContentModerationConfig']]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            guardrail_config: pulumi.Input[Optional[Union['AgentAgentEndpointGuardrailConfigArgs', 'AgentAgentEndpointGuardrailConfigArgsDict']]] = None,
-            human_input_config: pulumi.Input[Optional[Union['AgentAgentEndpointHumanInputConfigArgs', 'AgentAgentEndpointHumanInputConfigArgsDict']]] = None,
+            guardrail_config: pulumi.Input[Optional[Union['AgentAgentEndpointGuardrailConfigArgs', 'AgentAgentEndpointGuardrailConfigArgsDict', 'outputs.AgentAgentEndpointGuardrailConfig']]] = None,
+            human_input_config: pulumi.Input[Optional[Union['AgentAgentEndpointHumanInputConfigArgs', 'AgentAgentEndpointHumanInputConfigArgsDict', 'outputs.AgentAgentEndpointHumanInputConfig']]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            output_config: pulumi.Input[Optional[Union['AgentAgentEndpointOutputConfigArgs', 'AgentAgentEndpointOutputConfigArgsDict']]] = None,
-            provisioned_capacity_config: pulumi.Input[Optional[Union['AgentAgentEndpointProvisionedCapacityConfigArgs', 'AgentAgentEndpointProvisionedCapacityConfigArgsDict']]] = None,
-            session_config: pulumi.Input[Optional[Union['AgentAgentEndpointSessionConfigArgs', 'AgentAgentEndpointSessionConfigArgsDict']]] = None,
+            output_config: pulumi.Input[Optional[Union['AgentAgentEndpointOutputConfigArgs', 'AgentAgentEndpointOutputConfigArgsDict', 'outputs.AgentAgentEndpointOutputConfig']]] = None,
+            provisioned_capacity_config: pulumi.Input[Optional[Union['AgentAgentEndpointProvisionedCapacityConfigArgs', 'AgentAgentEndpointProvisionedCapacityConfigArgsDict', 'outputs.AgentAgentEndpointProvisionedCapacityConfig']]] = None,
+            session_config: pulumi.Input[Optional[Union['AgentAgentEndpointSessionConfigArgs', 'AgentAgentEndpointSessionConfigArgsDict', 'outputs.AgentAgentEndpointSessionConfig']]] = None,
             should_enable_citation: pulumi.Input[Optional[_builtins.bool]] = None,
             should_enable_multi_language: pulumi.Input[Optional[_builtins.bool]] = None,
             should_enable_session: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -999,18 +999,18 @@ class AgentAgentEndpoint(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] agent_id: The OCID of the agent that this endpoint is associated with.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the endpoint in.
-        :param pulumi.Input[Union['AgentAgentEndpointContentModerationConfigArgs', 'AgentAgentEndpointContentModerationConfigArgsDict']] content_moderation_config: (Updatable) The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+        :param pulumi.Input[Union['AgentAgentEndpointContentModerationConfigArgs', 'AgentAgentEndpointContentModerationConfigArgsDict', 'outputs.AgentAgentEndpointContentModerationConfig']] content_moderation_config: (Updatable) The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the endpoint.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['AgentAgentEndpointGuardrailConfigArgs', 'AgentAgentEndpointGuardrailConfigArgsDict']] guardrail_config: (Updatable) The configuration details about whether to apply the guardrail checks to input and output.
-        :param pulumi.Input[Union['AgentAgentEndpointHumanInputConfigArgs', 'AgentAgentEndpointHumanInputConfigArgsDict']] human_input_config: (Updatable) Human Input Configuration for an AgentEndpoint.
+        :param pulumi.Input[Union['AgentAgentEndpointGuardrailConfigArgs', 'AgentAgentEndpointGuardrailConfigArgsDict', 'outputs.AgentAgentEndpointGuardrailConfig']] guardrail_config: (Updatable) The configuration details about whether to apply the guardrail checks to input and output.
+        :param pulumi.Input[Union['AgentAgentEndpointHumanInputConfigArgs', 'AgentAgentEndpointHumanInputConfigArgsDict', 'outputs.AgentAgentEndpointHumanInputConfig']] human_input_config: (Updatable) Human Input Configuration for an AgentEndpoint.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the endpoint in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: (Updatable) Key-value pairs to allow additional configurations.
-        :param pulumi.Input[Union['AgentAgentEndpointOutputConfigArgs', 'AgentAgentEndpointOutputConfigArgsDict']] output_config: (Updatable) Configuration to store results generated by agent.
-        :param pulumi.Input[Union['AgentAgentEndpointProvisionedCapacityConfigArgs', 'AgentAgentEndpointProvisionedCapacityConfigArgsDict']] provisioned_capacity_config: (Updatable) The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
-        :param pulumi.Input[Union['AgentAgentEndpointSessionConfigArgs', 'AgentAgentEndpointSessionConfigArgsDict']] session_config: (Updatable) Session Configuration on AgentEndpoint.
+        :param pulumi.Input[Union['AgentAgentEndpointOutputConfigArgs', 'AgentAgentEndpointOutputConfigArgsDict', 'outputs.AgentAgentEndpointOutputConfig']] output_config: (Updatable) Configuration to store results generated by agent.
+        :param pulumi.Input[Union['AgentAgentEndpointProvisionedCapacityConfigArgs', 'AgentAgentEndpointProvisionedCapacityConfigArgsDict', 'outputs.AgentAgentEndpointProvisionedCapacityConfig']] provisioned_capacity_config: (Updatable) The configuration includes the provisioned capacity id and component runtime (tool versions, and other relevant information).
+        :param pulumi.Input[Union['AgentAgentEndpointSessionConfigArgs', 'AgentAgentEndpointSessionConfigArgsDict', 'outputs.AgentAgentEndpointSessionConfig']] session_config: (Updatable) Session Configuration on AgentEndpoint.
         :param pulumi.Input[_builtins.bool] should_enable_citation: (Updatable) Whether to show citations in the chat result.
         :param pulumi.Input[_builtins.bool] should_enable_multi_language: (Updatable) Whether to enable multi-language for chat.
         :param pulumi.Input[_builtins.bool] should_enable_session: Whether or not to enable Session-based chat.

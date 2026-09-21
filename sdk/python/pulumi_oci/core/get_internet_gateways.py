@@ -122,7 +122,7 @@ class AwaitableGetInternetGatewaysResult(GetInternetGatewaysResult):
 
 def get_internet_gateways(compartment_id: Optional[_builtins.str] = None,
                           display_name: Optional[_builtins.str] = None,
-                          filters: Optional[Sequence[Union['GetInternetGatewaysFilterArgs', 'GetInternetGatewaysFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetInternetGatewaysFilterArgs', 'GetInternetGatewaysFilterArgsDict', 'outputs.GetInternetGatewaysFilterResult']]] = None,
                           state: Optional[_builtins.str] = None,
                           vcn_id: Optional[_builtins.str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInternetGatewaysResult:
@@ -169,7 +169,7 @@ def get_internet_gateways(compartment_id: Optional[_builtins.str] = None,
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
 def get_internet_gateways_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInternetGatewaysFilterArgs', 'GetInternetGatewaysFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInternetGatewaysFilterArgs', 'GetInternetGatewaysFilterArgsDict', 'outputs.GetInternetGatewaysFilterResult']]]]] = None,
                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  vcn_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInternetGatewaysResult]:

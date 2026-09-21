@@ -457,7 +457,7 @@ class Byoasn(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             asn: pulumi.Input[Optional[_builtins.str]] = None,
-            byoip_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ByoasnByoipRangeArgs', 'ByoasnByoipRangeArgsDict']]]]] = None,
+            byoip_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ByoasnByoipRangeArgs', 'ByoasnByoipRangeArgsDict', 'outputs.ByoasnByoipRange']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -475,7 +475,7 @@ class Byoasn(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] asn: The Autonomous System Number (ASN) you are importing to the Oracle cloud.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ByoasnByoipRangeArgs', 'ByoasnByoipRangeArgsDict']]]] byoip_ranges: The BYOIP Ranges that has the `Byoasn` as origin.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ByoasnByoipRangeArgs', 'ByoasnByoipRangeArgsDict', 'outputs.ByoasnByoipRange']]]] byoip_ranges: The BYOIP Ranges that has the `Byoasn` as origin.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOASN Resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.

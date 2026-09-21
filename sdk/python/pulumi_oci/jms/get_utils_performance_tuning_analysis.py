@@ -107,7 +107,7 @@ class AwaitableGetUtilsPerformanceTuningAnalysisResult(GetUtilsPerformanceTuning
 
 def get_utils_performance_tuning_analysis(analysis_project_name: Optional[_builtins.str] = None,
                                           compartment_id: Optional[_builtins.str] = None,
-                                          filters: Optional[Sequence[Union['GetUtilsPerformanceTuningAnalysisFilterArgs', 'GetUtilsPerformanceTuningAnalysisFilterArgsDict']]] = None,
+                                          filters: Optional[Sequence[Union['GetUtilsPerformanceTuningAnalysisFilterArgs', 'GetUtilsPerformanceTuningAnalysisFilterArgsDict', 'outputs.GetUtilsPerformanceTuningAnalysisFilterResult']]] = None,
                                           id: Optional[_builtins.str] = None,
                                           performance_tuning_analysis_result: Optional[_builtins.str] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUtilsPerformanceTuningAnalysisResult:
@@ -152,7 +152,7 @@ def get_utils_performance_tuning_analysis(analysis_project_name: Optional[_built
         performance_tuning_analysis_result=pulumi.get(__ret__, 'performance_tuning_analysis_result'))
 def get_utils_performance_tuning_analysis_output(analysis_project_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                  compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUtilsPerformanceTuningAnalysisFilterArgs', 'GetUtilsPerformanceTuningAnalysisFilterArgsDict']]]]] = None,
+                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUtilsPerformanceTuningAnalysisFilterArgs', 'GetUtilsPerformanceTuningAnalysisFilterArgsDict', 'outputs.GetUtilsPerformanceTuningAnalysisFilterResult']]]]] = None,
                                                  id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                  performance_tuning_analysis_result: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUtilsPerformanceTuningAnalysisResult]:

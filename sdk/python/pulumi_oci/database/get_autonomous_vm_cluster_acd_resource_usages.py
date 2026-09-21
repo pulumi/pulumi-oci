@@ -92,7 +92,7 @@ class AwaitableGetAutonomousVmClusterAcdResourceUsagesResult(GetAutonomousVmClus
 
 def get_autonomous_vm_cluster_acd_resource_usages(autonomous_vm_cluster_id: Optional[_builtins.str] = None,
                                                   compartment_id: Optional[_builtins.str] = None,
-                                                  filters: Optional[Sequence[Union['GetAutonomousVmClusterAcdResourceUsagesFilterArgs', 'GetAutonomousVmClusterAcdResourceUsagesFilterArgsDict']]] = None,
+                                                  filters: Optional[Sequence[Union['GetAutonomousVmClusterAcdResourceUsagesFilterArgs', 'GetAutonomousVmClusterAcdResourceUsagesFilterArgsDict', 'outputs.GetAutonomousVmClusterAcdResourceUsagesFilterResult']]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousVmClusterAcdResourceUsagesResult:
     """
     This data source provides the list of Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.
@@ -128,7 +128,7 @@ def get_autonomous_vm_cluster_acd_resource_usages(autonomous_vm_cluster_id: Opti
         id=pulumi.get(__ret__, 'id'))
 def get_autonomous_vm_cluster_acd_resource_usages_output(autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                          compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousVmClusterAcdResourceUsagesFilterArgs', 'GetAutonomousVmClusterAcdResourceUsagesFilterArgsDict']]]]] = None,
+                                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousVmClusterAcdResourceUsagesFilterArgs', 'GetAutonomousVmClusterAcdResourceUsagesFilterArgsDict', 'outputs.GetAutonomousVmClusterAcdResourceUsagesFilterResult']]]]] = None,
                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousVmClusterAcdResourceUsagesResult]:
     """
     This data source provides the list of Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.

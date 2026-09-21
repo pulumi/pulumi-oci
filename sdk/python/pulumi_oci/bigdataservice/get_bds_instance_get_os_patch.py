@@ -142,7 +142,7 @@ class AwaitableGetBdsInstanceGetOsPatchResult(GetBdsInstanceGetOsPatchResult):
 
 
 def get_bds_instance_get_os_patch(bds_instance_id: Optional[_builtins.str] = None,
-                                  filters: Optional[Sequence[Union['GetBdsInstanceGetOsPatchFilterArgs', 'GetBdsInstanceGetOsPatchFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetBdsInstanceGetOsPatchFilterArgs', 'GetBdsInstanceGetOsPatchFilterArgsDict', 'outputs.GetBdsInstanceGetOsPatchFilterResult']]] = None,
                                   os_patch_version: Optional[_builtins.str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBdsInstanceGetOsPatchResult:
     """
@@ -182,7 +182,7 @@ def get_bds_instance_get_os_patch(bds_instance_id: Optional[_builtins.str] = Non
         release_date=pulumi.get(__ret__, 'release_date'),
         target_packages=pulumi.get(__ret__, 'target_packages'))
 def get_bds_instance_get_os_patch_output(bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstanceGetOsPatchFilterArgs', 'GetBdsInstanceGetOsPatchFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstanceGetOsPatchFilterArgs', 'GetBdsInstanceGetOsPatchFilterArgsDict', 'outputs.GetBdsInstanceGetOsPatchFilterResult']]]]] = None,
                                          os_patch_version: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceGetOsPatchResult]:
     """

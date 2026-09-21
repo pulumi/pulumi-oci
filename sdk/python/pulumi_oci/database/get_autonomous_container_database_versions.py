@@ -91,7 +91,7 @@ class AwaitableGetAutonomousContainerDatabaseVersionsResult(GetAutonomousContain
 
 
 def get_autonomous_container_database_versions(compartment_id: Optional[_builtins.str] = None,
-                                               filters: Optional[Sequence[Union['GetAutonomousContainerDatabaseVersionsFilterArgs', 'GetAutonomousContainerDatabaseVersionsFilterArgsDict']]] = None,
+                                               filters: Optional[Sequence[Union['GetAutonomousContainerDatabaseVersionsFilterArgs', 'GetAutonomousContainerDatabaseVersionsFilterArgsDict', 'outputs.GetAutonomousContainerDatabaseVersionsFilterResult']]] = None,
                                                service_component: Optional[_builtins.str] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousContainerDatabaseVersionsResult:
     """
@@ -127,7 +127,7 @@ def get_autonomous_container_database_versions(compartment_id: Optional[_builtin
         id=pulumi.get(__ret__, 'id'),
         service_component=pulumi.get(__ret__, 'service_component'))
 def get_autonomous_container_database_versions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousContainerDatabaseVersionsFilterArgs', 'GetAutonomousContainerDatabaseVersionsFilterArgsDict']]]]] = None,
+                                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousContainerDatabaseVersionsFilterArgs', 'GetAutonomousContainerDatabaseVersionsFilterArgsDict', 'outputs.GetAutonomousContainerDatabaseVersionsFilterResult']]]]] = None,
                                                       service_component: pulumi.Input[Optional[_builtins.str]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousContainerDatabaseVersionsResult]:
     """

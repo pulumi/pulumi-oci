@@ -120,7 +120,7 @@ class NamespaceStorageArchivalConfig(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 archiving_configuration: pulumi.Input[Optional[Union['NamespaceStorageArchivalConfigArchivingConfigurationArgs', 'NamespaceStorageArchivalConfigArchivingConfigurationArgsDict']]] = None,
+                 archiving_configuration: pulumi.Input[Optional[Union['NamespaceStorageArchivalConfigArchivingConfigurationArgs', 'NamespaceStorageArchivalConfigArchivingConfigurationArgsDict', 'outputs.NamespaceStorageArchivalConfigArchivingConfiguration']]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -149,7 +149,7 @@ class NamespaceStorageArchivalConfig(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['NamespaceStorageArchivalConfigArchivingConfigurationArgs', 'NamespaceStorageArchivalConfigArchivingConfigurationArgsDict']] archiving_configuration: (Updatable) This is the configuration for data archiving in object storage
+        :param pulumi.Input[Union['NamespaceStorageArchivalConfigArchivingConfigurationArgs', 'NamespaceStorageArchivalConfigArchivingConfigurationArgsDict', 'outputs.NamespaceStorageArchivalConfigArchivingConfiguration']] archiving_configuration: (Updatable) This is the configuration for data archiving in object storage
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         ...
@@ -197,7 +197,7 @@ class NamespaceStorageArchivalConfig(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 archiving_configuration: pulumi.Input[Optional[Union['NamespaceStorageArchivalConfigArchivingConfigurationArgs', 'NamespaceStorageArchivalConfigArchivingConfigurationArgsDict']]] = None,
+                 archiving_configuration: pulumi.Input[Optional[Union['NamespaceStorageArchivalConfigArchivingConfigurationArgs', 'NamespaceStorageArchivalConfigArchivingConfigurationArgsDict', 'outputs.NamespaceStorageArchivalConfigArchivingConfiguration']]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -225,7 +225,7 @@ class NamespaceStorageArchivalConfig(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            archiving_configuration: pulumi.Input[Optional[Union['NamespaceStorageArchivalConfigArchivingConfigurationArgs', 'NamespaceStorageArchivalConfigArchivingConfigurationArgsDict']]] = None,
+            archiving_configuration: pulumi.Input[Optional[Union['NamespaceStorageArchivalConfigArchivingConfigurationArgs', 'NamespaceStorageArchivalConfigArchivingConfigurationArgsDict', 'outputs.NamespaceStorageArchivalConfigArchivingConfiguration']]] = None,
             is_archiving_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             namespace: pulumi.Input[Optional[_builtins.str]] = None) -> 'NamespaceStorageArchivalConfig':
         """
@@ -235,7 +235,7 @@ class NamespaceStorageArchivalConfig(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['NamespaceStorageArchivalConfigArchivingConfigurationArgs', 'NamespaceStorageArchivalConfigArchivingConfigurationArgsDict']] archiving_configuration: (Updatable) This is the configuration for data archiving in object storage
+        :param pulumi.Input[Union['NamespaceStorageArchivalConfigArchivingConfigurationArgs', 'NamespaceStorageArchivalConfigArchivingConfigurationArgsDict', 'outputs.NamespaceStorageArchivalConfigArchivingConfiguration']] archiving_configuration: (Updatable) This is the configuration for data archiving in object storage
         :param pulumi.Input[_builtins.bool] is_archiving_enabled: This indicates if old data can be archived for a tenancy
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """

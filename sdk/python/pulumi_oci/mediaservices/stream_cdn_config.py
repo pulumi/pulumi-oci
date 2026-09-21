@@ -383,14 +383,14 @@ class StreamCdnConfig(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config: pulumi.Input[Optional[Union['StreamCdnConfigConfigArgs', 'StreamCdnConfigConfigArgsDict']]] = None,
+                 config: pulumi.Input[Optional[Union['StreamCdnConfigConfigArgs', 'StreamCdnConfigConfigArgsDict', 'outputs.StreamCdnConfigConfig']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  distribution_channel_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamCdnConfigLockArgs', 'StreamCdnConfigLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamCdnConfigLockArgs', 'StreamCdnConfigLockArgsDict', 'outputs.StreamCdnConfigLock']]]]] = None,
                  __props__=None):
         """
         This resource provides the Stream Cdn Config resource in Oracle Cloud Infrastructure Media Services service.
@@ -450,13 +450,13 @@ class StreamCdnConfig(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['StreamCdnConfigConfigArgs', 'StreamCdnConfigConfigArgsDict']] config: (Updatable) Base fields of the StreamCdnConfig configuration object.
+        :param pulumi.Input[Union['StreamCdnConfigConfigArgs', 'StreamCdnConfigConfigArgsDict', 'outputs.StreamCdnConfigConfig']] config: (Updatable) Base fields of the StreamCdnConfig configuration object.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) CDN Config display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] distribution_channel_id: Distribution Channel Identifier.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether publishing to CDN is enabled.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['StreamCdnConfigLockArgs', 'StreamCdnConfigLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StreamCdnConfigLockArgs', 'StreamCdnConfigLockArgsDict', 'outputs.StreamCdnConfigLock']]]] locks: Locks associated with this resource.
         """
         ...
     @overload
@@ -535,14 +535,14 @@ class StreamCdnConfig(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config: pulumi.Input[Optional[Union['StreamCdnConfigConfigArgs', 'StreamCdnConfigConfigArgsDict']]] = None,
+                 config: pulumi.Input[Optional[Union['StreamCdnConfigConfigArgs', 'StreamCdnConfigConfigArgsDict', 'outputs.StreamCdnConfigConfig']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  distribution_channel_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamCdnConfigLockArgs', 'StreamCdnConfigLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamCdnConfigLockArgs', 'StreamCdnConfigLockArgsDict', 'outputs.StreamCdnConfigLock']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -583,7 +583,7 @@ class StreamCdnConfig(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            config: pulumi.Input[Optional[Union['StreamCdnConfigConfigArgs', 'StreamCdnConfigConfigArgsDict']]] = None,
+            config: pulumi.Input[Optional[Union['StreamCdnConfigConfigArgs', 'StreamCdnConfigConfigArgsDict', 'outputs.StreamCdnConfigConfig']]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             distribution_channel_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -591,7 +591,7 @@ class StreamCdnConfig(pulumi.CustomResource):
             is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecyle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamCdnConfigLockArgs', 'StreamCdnConfigLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamCdnConfigLockArgs', 'StreamCdnConfigLockArgsDict', 'outputs.StreamCdnConfigLock']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -604,14 +604,14 @@ class StreamCdnConfig(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment ID of the lock.
-        :param pulumi.Input[Union['StreamCdnConfigConfigArgs', 'StreamCdnConfigConfigArgsDict']] config: (Updatable) Base fields of the StreamCdnConfig configuration object.
+        :param pulumi.Input[Union['StreamCdnConfigConfigArgs', 'StreamCdnConfigConfigArgsDict', 'outputs.StreamCdnConfigConfig']] config: (Updatable) Base fields of the StreamCdnConfig configuration object.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) CDN Config display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] distribution_channel_id: Distribution Channel Identifier.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether publishing to CDN is enabled.
         :param pulumi.Input[_builtins.str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['StreamCdnConfigLockArgs', 'StreamCdnConfigLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StreamCdnConfigLockArgs', 'StreamCdnConfigLockArgsDict', 'outputs.StreamCdnConfigLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] state: The current state of the CDN Configuration.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time when the CDN Config was created. An RFC3339 formatted datetime string.

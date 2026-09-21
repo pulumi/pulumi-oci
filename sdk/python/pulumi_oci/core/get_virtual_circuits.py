@@ -110,7 +110,7 @@ class AwaitableGetVirtualCircuitsResult(GetVirtualCircuitsResult):
 
 def get_virtual_circuits(compartment_id: Optional[_builtins.str] = None,
                          display_name: Optional[_builtins.str] = None,
-                         filters: Optional[Sequence[Union['GetVirtualCircuitsFilterArgs', 'GetVirtualCircuitsFilterArgsDict']]] = None,
+                         filters: Optional[Sequence[Union['GetVirtualCircuitsFilterArgs', 'GetVirtualCircuitsFilterArgsDict', 'outputs.GetVirtualCircuitsFilterResult']]] = None,
                          state: Optional[_builtins.str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVirtualCircuitsResult:
     """
@@ -151,7 +151,7 @@ def get_virtual_circuits(compartment_id: Optional[_builtins.str] = None,
         virtual_circuits=pulumi.get(__ret__, 'virtual_circuits'))
 def get_virtual_circuits_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVirtualCircuitsFilterArgs', 'GetVirtualCircuitsFilterArgsDict']]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVirtualCircuitsFilterArgs', 'GetVirtualCircuitsFilterArgsDict', 'outputs.GetVirtualCircuitsFilterResult']]]]] = None,
                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVirtualCircuitsResult]:
     """

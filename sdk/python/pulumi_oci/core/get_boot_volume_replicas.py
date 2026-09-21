@@ -132,7 +132,7 @@ class AwaitableGetBootVolumeReplicasResult(GetBootVolumeReplicasResult):
 def get_boot_volume_replicas(availability_domain: Optional[_builtins.str] = None,
                              compartment_id: Optional[_builtins.str] = None,
                              display_name: Optional[_builtins.str] = None,
-                             filters: Optional[Sequence[Union['GetBootVolumeReplicasFilterArgs', 'GetBootVolumeReplicasFilterArgsDict']]] = None,
+                             filters: Optional[Sequence[Union['GetBootVolumeReplicasFilterArgs', 'GetBootVolumeReplicasFilterArgsDict', 'outputs.GetBootVolumeReplicasFilterResult']]] = None,
                              state: Optional[_builtins.str] = None,
                              volume_group_replica_id: Optional[_builtins.str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBootVolumeReplicasResult:
@@ -183,7 +183,7 @@ def get_boot_volume_replicas(availability_domain: Optional[_builtins.str] = None
 def get_boot_volume_replicas_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBootVolumeReplicasFilterArgs', 'GetBootVolumeReplicasFilterArgsDict']]]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBootVolumeReplicasFilterArgs', 'GetBootVolumeReplicasFilterArgsDict', 'outputs.GetBootVolumeReplicasFilterResult']]]]] = None,
                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     volume_group_replica_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBootVolumeReplicasResult]:

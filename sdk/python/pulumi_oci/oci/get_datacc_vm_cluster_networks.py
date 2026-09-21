@@ -155,7 +155,7 @@ class AwaitableGetDataccVmClusterNetworksResult(GetDataccVmClusterNetworksResult
 
 def get_datacc_vm_cluster_networks(compartment_id: Optional[_builtins.str] = None,
                                    display_name: Optional[_builtins.str] = None,
-                                   filters: Optional[Sequence[Union['GetDataccVmClusterNetworksFilterArgs', 'GetDataccVmClusterNetworksFilterArgsDict']]] = None,
+                                   filters: Optional[Sequence[Union['GetDataccVmClusterNetworksFilterArgs', 'GetDataccVmClusterNetworksFilterArgsDict', 'outputs.GetDataccVmClusterNetworksFilterResult']]] = None,
                                    infrastructure_id: Optional[_builtins.str] = None,
                                    is_scan_enabled: Optional[_builtins.bool] = None,
                                    node_count: Optional[_builtins.int] = None,
@@ -216,7 +216,7 @@ def get_datacc_vm_cluster_networks(compartment_id: Optional[_builtins.str] = Non
         vm_network_consumer_type=pulumi.get(__ret__, 'vm_network_consumer_type'))
 def get_datacc_vm_cluster_networks_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDataccVmClusterNetworksFilterArgs', 'GetDataccVmClusterNetworksFilterArgsDict']]]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDataccVmClusterNetworksFilterArgs', 'GetDataccVmClusterNetworksFilterArgsDict', 'outputs.GetDataccVmClusterNetworksFilterResult']]]]] = None,
                                           infrastructure_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           is_scan_enabled: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                           node_count: pulumi.Input[Optional[Optional[_builtins.int]]] = None,

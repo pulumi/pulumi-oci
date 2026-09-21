@@ -91,7 +91,7 @@ class AwaitableGetPipelineSchemasResult(GetPipelineSchemasResult):
 
 
 def get_pipeline_schemas(display_name: Optional[_builtins.str] = None,
-                         filters: Optional[Sequence[Union['GetPipelineSchemasFilterArgs', 'GetPipelineSchemasFilterArgsDict']]] = None,
+                         filters: Optional[Sequence[Union['GetPipelineSchemasFilterArgs', 'GetPipelineSchemasFilterArgsDict', 'outputs.GetPipelineSchemasFilterResult']]] = None,
                          pipeline_id: Optional[_builtins.str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPipelineSchemasResult:
     """
@@ -127,7 +127,7 @@ def get_pipeline_schemas(display_name: Optional[_builtins.str] = None,
         pipeline_id=pulumi.get(__ret__, 'pipeline_id'),
         pipeline_schema_collections=pulumi.get(__ret__, 'pipeline_schema_collections'))
 def get_pipeline_schemas_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPipelineSchemasFilterArgs', 'GetPipelineSchemasFilterArgsDict']]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPipelineSchemasFilterArgs', 'GetPipelineSchemasFilterArgsDict', 'outputs.GetPipelineSchemasFilterResult']]]]] = None,
                                 pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPipelineSchemasResult]:
     """

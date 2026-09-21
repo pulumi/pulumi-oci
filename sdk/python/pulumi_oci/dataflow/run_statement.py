@@ -317,7 +317,7 @@ class RunStatement(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             code: pulumi.Input[Optional[_builtins.str]] = None,
-            outputs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunStatementOutputArgs', 'RunStatementOutputArgsDict']]]]] = None,
+            outputs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunStatementOutputArgs', 'RunStatementOutputArgsDict', 'outputs.RunStatementOutput']]]]] = None,
             progress: pulumi.Input[Optional[_builtins.float]] = None,
             run_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -331,7 +331,7 @@ class RunStatement(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] code: The statement code to execute. Example: `println(sc.version)`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RunStatementOutputArgs', 'RunStatementOutputArgsDict']]]] outputs: The execution output of a statement.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RunStatementOutputArgs', 'RunStatementOutputArgsDict', 'outputs.RunStatementOutput']]]] outputs: The execution output of a statement.
         :param pulumi.Input[_builtins.float] progress: The execution progress.
         :param pulumi.Input[_builtins.str] run_id: The unique ID for the run
                

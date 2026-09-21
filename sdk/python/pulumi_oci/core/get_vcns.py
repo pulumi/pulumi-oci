@@ -110,7 +110,7 @@ class AwaitableGetVcnsResult(GetVcnsResult):
 
 def get_vcns(compartment_id: Optional[_builtins.str] = None,
              display_name: Optional[_builtins.str] = None,
-             filters: Optional[Sequence[Union['GetVcnsFilterArgs', 'GetVcnsFilterArgsDict']]] = None,
+             filters: Optional[Sequence[Union['GetVcnsFilterArgs', 'GetVcnsFilterArgsDict', 'outputs.GetVcnsFilterResult']]] = None,
              state: Optional[_builtins.str] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVcnsResult:
     """
@@ -155,7 +155,7 @@ def get_vcns(compartment_id: Optional[_builtins.str] = None,
         virtual_networks=pulumi.get(__ret__, 'virtual_networks'))
 def get_vcns_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVcnsFilterArgs', 'GetVcnsFilterArgsDict']]]]] = None,
+                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVcnsFilterArgs', 'GetVcnsFilterArgsDict', 'outputs.GetVcnsFilterResult']]]]] = None,
                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVcnsResult]:
     """

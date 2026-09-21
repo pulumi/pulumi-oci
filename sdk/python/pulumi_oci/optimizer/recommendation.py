@@ -494,10 +494,10 @@ class Recommendation(pulumi.CustomResource):
             importance: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             recommendation_id: pulumi.Input[Optional[_builtins.str]] = None,
-            resource_counts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecommendationResourceCountArgs', 'RecommendationResourceCountArgsDict']]]]] = None,
+            resource_counts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecommendationResourceCountArgs', 'RecommendationResourceCountArgsDict', 'outputs.RecommendationResourceCount']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
-            supported_levels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecommendationSupportedLevelArgs', 'RecommendationSupportedLevelArgsDict']]]]] = None,
+            supported_levels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecommendationSupportedLevelArgs', 'RecommendationSupportedLevelArgsDict', 'outputs.RecommendationSupportedLevel']]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_status_begin: pulumi.Input[Optional[_builtins.str]] = None,
             time_status_end: pulumi.Input[Optional[_builtins.str]] = None,
@@ -517,10 +517,10 @@ class Recommendation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] importance: The level of importance assigned to the recommendation.
         :param pulumi.Input[_builtins.str] name: The name of the profile level.
         :param pulumi.Input[_builtins.str] recommendation_id: The unique OCID associated with the recommendation.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RecommendationResourceCountArgs', 'RecommendationResourceCountArgsDict']]]] resource_counts: An array of `ResourceCount` objects grouped by the status of the resource actions.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RecommendationResourceCountArgs', 'RecommendationResourceCountArgsDict', 'outputs.RecommendationResourceCount']]]] resource_counts: An array of `ResourceCount` objects grouped by the status of the resource actions.
         :param pulumi.Input[_builtins.str] state: The recommendation's current state.
         :param pulumi.Input[_builtins.str] status: (Updatable) The status of the recommendation.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RecommendationSupportedLevelArgs', 'RecommendationSupportedLevelArgsDict']]]] supported_levels: Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RecommendationSupportedLevelArgs', 'RecommendationSupportedLevelArgsDict', 'outputs.RecommendationSupportedLevel']]]] supported_levels: Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
         :param pulumi.Input[_builtins.str] time_created: The date and time the recommendation details were created, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] time_status_begin: The date and time that the recommendation entered its current status. The format is defined by RFC3339.
         :param pulumi.Input[_builtins.str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.

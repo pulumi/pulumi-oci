@@ -110,7 +110,7 @@ class AwaitableGetRemediationRecipesResult(GetRemediationRecipesResult):
 
 def get_remediation_recipes(compartment_id: Optional[_builtins.str] = None,
                             display_name: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetRemediationRecipesFilterArgs', 'GetRemediationRecipesFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetRemediationRecipesFilterArgs', 'GetRemediationRecipesFilterArgsDict', 'outputs.GetRemediationRecipesFilterResult']]] = None,
                             id: Optional[_builtins.str] = None,
                             state: Optional[_builtins.str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRemediationRecipesResult:
@@ -156,7 +156,7 @@ def get_remediation_recipes(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_remediation_recipes_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRemediationRecipesFilterArgs', 'GetRemediationRecipesFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRemediationRecipesFilterArgs', 'GetRemediationRecipesFilterArgsDict', 'outputs.GetRemediationRecipesFilterResult']]]]] = None,
                                    id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRemediationRecipesResult]:

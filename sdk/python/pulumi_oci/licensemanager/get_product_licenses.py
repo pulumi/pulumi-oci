@@ -94,7 +94,7 @@ class AwaitableGetProductLicensesResult(GetProductLicensesResult):
 
 
 def get_product_licenses(compartment_id: Optional[_builtins.str] = None,
-                         filters: Optional[Sequence[Union['GetProductLicensesFilterArgs', 'GetProductLicensesFilterArgsDict']]] = None,
+                         filters: Optional[Sequence[Union['GetProductLicensesFilterArgs', 'GetProductLicensesFilterArgsDict', 'outputs.GetProductLicensesFilterResult']]] = None,
                          is_compartment_id_in_subtree: Optional[_builtins.bool] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProductLicensesResult:
     """
@@ -130,7 +130,7 @@ def get_product_licenses(compartment_id: Optional[_builtins.str] = None,
         is_compartment_id_in_subtree=pulumi.get(__ret__, 'is_compartment_id_in_subtree'),
         product_license_collections=pulumi.get(__ret__, 'product_license_collections'))
 def get_product_licenses_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProductLicensesFilterArgs', 'GetProductLicensesFilterArgsDict']]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProductLicensesFilterArgs', 'GetProductLicensesFilterArgsDict', 'outputs.GetProductLicensesFilterResult']]]]] = None,
                                 is_compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProductLicensesResult]:
     """

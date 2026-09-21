@@ -461,9 +461,9 @@ class FleetAgentConfiguration(pulumi.CustomResource):
                  is_libraries_scan_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  java_usage_tracker_processing_frequency_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
                  jre_scan_frequency_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
-                 linux_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationLinuxConfigurationArgs', 'FleetAgentConfigurationLinuxConfigurationArgsDict']]] = None,
-                 mac_os_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationMacOsConfigurationArgs', 'FleetAgentConfigurationMacOsConfigurationArgsDict']]] = None,
-                 windows_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationWindowsConfigurationArgs', 'FleetAgentConfigurationWindowsConfigurationArgsDict']]] = None,
+                 linux_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationLinuxConfigurationArgs', 'FleetAgentConfigurationLinuxConfigurationArgsDict', 'outputs.FleetAgentConfigurationLinuxConfiguration']]] = None,
+                 mac_os_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationMacOsConfigurationArgs', 'FleetAgentConfigurationMacOsConfigurationArgsDict', 'outputs.FleetAgentConfigurationMacOsConfiguration']]] = None,
+                 windows_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationWindowsConfigurationArgs', 'FleetAgentConfigurationWindowsConfigurationArgsDict', 'outputs.FleetAgentConfigurationWindowsConfiguration']]] = None,
                  work_request_validity_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
@@ -532,9 +532,9 @@ class FleetAgentConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_libraries_scan_enabled: (Updatable) Enable libraries scan on all managed instances in the fleet.
         :param pulumi.Input[_builtins.int] java_usage_tracker_processing_frequency_in_minutes: (Updatable) The frequency (in minutes) of Java Usage Tracker processing. (That is, how often should JMS process data from the Java Usage Tracker.)
         :param pulumi.Input[_builtins.int] jre_scan_frequency_in_minutes: (Updatable) The frequency (in minutes) of JRE scanning. (That is, how often should JMS scan for JRE installations.)
-        :param pulumi.Input[Union['FleetAgentConfigurationLinuxConfigurationArgs', 'FleetAgentConfigurationLinuxConfigurationArgsDict']] linux_configuration: (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
-        :param pulumi.Input[Union['FleetAgentConfigurationMacOsConfigurationArgs', 'FleetAgentConfigurationMacOsConfigurationArgsDict']] mac_os_configuration: (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
-        :param pulumi.Input[Union['FleetAgentConfigurationWindowsConfigurationArgs', 'FleetAgentConfigurationWindowsConfigurationArgsDict']] windows_configuration: (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
+        :param pulumi.Input[Union['FleetAgentConfigurationLinuxConfigurationArgs', 'FleetAgentConfigurationLinuxConfigurationArgsDict', 'outputs.FleetAgentConfigurationLinuxConfiguration']] linux_configuration: (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
+        :param pulumi.Input[Union['FleetAgentConfigurationMacOsConfigurationArgs', 'FleetAgentConfigurationMacOsConfigurationArgsDict', 'outputs.FleetAgentConfigurationMacOsConfiguration']] mac_os_configuration: (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
+        :param pulumi.Input[Union['FleetAgentConfigurationWindowsConfigurationArgs', 'FleetAgentConfigurationWindowsConfigurationArgsDict', 'outputs.FleetAgentConfigurationWindowsConfiguration']] windows_configuration: (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
         :param pulumi.Input[_builtins.int] work_request_validity_period_in_days: (Updatable) The validity period in days for work requests.
                
                ** IMPORTANT **
@@ -625,9 +625,9 @@ class FleetAgentConfiguration(pulumi.CustomResource):
                  is_libraries_scan_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  java_usage_tracker_processing_frequency_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
                  jre_scan_frequency_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
-                 linux_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationLinuxConfigurationArgs', 'FleetAgentConfigurationLinuxConfigurationArgsDict']]] = None,
-                 mac_os_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationMacOsConfigurationArgs', 'FleetAgentConfigurationMacOsConfigurationArgsDict']]] = None,
-                 windows_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationWindowsConfigurationArgs', 'FleetAgentConfigurationWindowsConfigurationArgsDict']]] = None,
+                 linux_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationLinuxConfigurationArgs', 'FleetAgentConfigurationLinuxConfigurationArgsDict', 'outputs.FleetAgentConfigurationLinuxConfiguration']]] = None,
+                 mac_os_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationMacOsConfigurationArgs', 'FleetAgentConfigurationMacOsConfigurationArgsDict', 'outputs.FleetAgentConfigurationMacOsConfiguration']]] = None,
+                 windows_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationWindowsConfigurationArgs', 'FleetAgentConfigurationWindowsConfigurationArgsDict', 'outputs.FleetAgentConfigurationWindowsConfiguration']]] = None,
                  work_request_validity_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -671,10 +671,10 @@ class FleetAgentConfiguration(pulumi.CustomResource):
             is_libraries_scan_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             java_usage_tracker_processing_frequency_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
             jre_scan_frequency_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
-            linux_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationLinuxConfigurationArgs', 'FleetAgentConfigurationLinuxConfigurationArgsDict']]] = None,
-            mac_os_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationMacOsConfigurationArgs', 'FleetAgentConfigurationMacOsConfigurationArgsDict']]] = None,
+            linux_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationLinuxConfigurationArgs', 'FleetAgentConfigurationLinuxConfigurationArgsDict', 'outputs.FleetAgentConfigurationLinuxConfiguration']]] = None,
+            mac_os_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationMacOsConfigurationArgs', 'FleetAgentConfigurationMacOsConfigurationArgsDict', 'outputs.FleetAgentConfigurationMacOsConfiguration']]] = None,
             time_last_modified: pulumi.Input[Optional[_builtins.str]] = None,
-            windows_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationWindowsConfigurationArgs', 'FleetAgentConfigurationWindowsConfigurationArgsDict']]] = None,
+            windows_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationWindowsConfigurationArgs', 'FleetAgentConfigurationWindowsConfigurationArgsDict', 'outputs.FleetAgentConfigurationWindowsConfiguration']]] = None,
             work_request_validity_period_in_days: pulumi.Input[Optional[_builtins.int]] = None) -> 'FleetAgentConfiguration':
         """
         Get an existing FleetAgentConfiguration resource's state with the given name, id, and optional extra
@@ -691,10 +691,10 @@ class FleetAgentConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_libraries_scan_enabled: (Updatable) Enable libraries scan on all managed instances in the fleet.
         :param pulumi.Input[_builtins.int] java_usage_tracker_processing_frequency_in_minutes: (Updatable) The frequency (in minutes) of Java Usage Tracker processing. (That is, how often should JMS process data from the Java Usage Tracker.)
         :param pulumi.Input[_builtins.int] jre_scan_frequency_in_minutes: (Updatable) The frequency (in minutes) of JRE scanning. (That is, how often should JMS scan for JRE installations.)
-        :param pulumi.Input[Union['FleetAgentConfigurationLinuxConfigurationArgs', 'FleetAgentConfigurationLinuxConfigurationArgsDict']] linux_configuration: (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
-        :param pulumi.Input[Union['FleetAgentConfigurationMacOsConfigurationArgs', 'FleetAgentConfigurationMacOsConfigurationArgsDict']] mac_os_configuration: (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
+        :param pulumi.Input[Union['FleetAgentConfigurationLinuxConfigurationArgs', 'FleetAgentConfigurationLinuxConfigurationArgsDict', 'outputs.FleetAgentConfigurationLinuxConfiguration']] linux_configuration: (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
+        :param pulumi.Input[Union['FleetAgentConfigurationMacOsConfigurationArgs', 'FleetAgentConfigurationMacOsConfigurationArgsDict', 'outputs.FleetAgentConfigurationMacOsConfiguration']] mac_os_configuration: (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
         :param pulumi.Input[_builtins.str] time_last_modified: The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param pulumi.Input[Union['FleetAgentConfigurationWindowsConfigurationArgs', 'FleetAgentConfigurationWindowsConfigurationArgsDict']] windows_configuration: (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
+        :param pulumi.Input[Union['FleetAgentConfigurationWindowsConfigurationArgs', 'FleetAgentConfigurationWindowsConfigurationArgsDict', 'outputs.FleetAgentConfigurationWindowsConfiguration']] windows_configuration: (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
         :param pulumi.Input[_builtins.int] work_request_validity_period_in_days: (Updatable) The validity period in days for work requests.
                
                ** IMPORTANT **

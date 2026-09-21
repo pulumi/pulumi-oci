@@ -643,7 +643,7 @@ class DrPlan(pulumi.CustomResource):
             lifecycle_sub_state: pulumi.Input[Optional[_builtins.str]] = None,
             peer_dr_protection_group_id: pulumi.Input[Optional[_builtins.str]] = None,
             peer_region: pulumi.Input[Optional[_builtins.str]] = None,
-            plan_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DrPlanPlanGroupArgs', 'DrPlanPlanGroupArgsDict']]]]] = None,
+            plan_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DrPlanPlanGroupArgs', 'DrPlanPlanGroupArgsDict', 'outputs.DrPlanPlanGroup']]]]] = None,
             refresh_trigger: pulumi.Input[Optional[_builtins.int]] = None,
             source_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -668,7 +668,7 @@ class DrPlan(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_sub_state: The current state of the DR plan.
         :param pulumi.Input[_builtins.str] peer_dr_protection_group_id: The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         :param pulumi.Input[_builtins.str] peer_region: The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DrPlanPlanGroupArgs', 'DrPlanPlanGroupArgsDict']]]] plan_groups: The list of groups in this DR plan.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DrPlanPlanGroupArgs', 'DrPlanPlanGroupArgsDict', 'outputs.DrPlanPlanGroup']]]] plan_groups: The list of groups in this DR plan.
         :param pulumi.Input[_builtins.int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
         :param pulumi.Input[_builtins.str] source_plan_id: The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
         :param pulumi.Input[_builtins.str] state: The current state of the DR plan.

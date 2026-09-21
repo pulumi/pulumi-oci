@@ -139,7 +139,7 @@ class ManagedInstanceRebootManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  reboot_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
-                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceRebootManagementWorkRequestDetailsArgs', 'ManagedInstanceRebootManagementWorkRequestDetailsArgsDict']]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceRebootManagementWorkRequestDetailsArgs', 'ManagedInstanceRebootManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceRebootManagementWorkRequestDetails']]] = None,
                  __props__=None):
         """
         This resource provides the Managed Instance Reboot Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -178,7 +178,7 @@ class ManagedInstanceRebootManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         :param pulumi.Input[_builtins.int] reboot_timeout_in_mins: The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within this  time, the reboot job status is set to failed.
-        :param pulumi.Input[Union['ManagedInstanceRebootManagementWorkRequestDetailsArgs', 'ManagedInstanceRebootManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['ManagedInstanceRebootManagementWorkRequestDetailsArgs', 'ManagedInstanceRebootManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceRebootManagementWorkRequestDetails']] work_request_details: Provides the name and description of the job.
         """
         ...
     @overload
@@ -236,7 +236,7 @@ class ManagedInstanceRebootManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  reboot_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
-                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceRebootManagementWorkRequestDetailsArgs', 'ManagedInstanceRebootManagementWorkRequestDetailsArgsDict']]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceRebootManagementWorkRequestDetailsArgs', 'ManagedInstanceRebootManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceRebootManagementWorkRequestDetails']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -263,7 +263,7 @@ class ManagedInstanceRebootManagement(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
             reboot_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
-            work_request_details: pulumi.Input[Optional[Union['ManagedInstanceRebootManagementWorkRequestDetailsArgs', 'ManagedInstanceRebootManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceRebootManagement':
+            work_request_details: pulumi.Input[Optional[Union['ManagedInstanceRebootManagementWorkRequestDetailsArgs', 'ManagedInstanceRebootManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceRebootManagementWorkRequestDetails']]] = None) -> 'ManagedInstanceRebootManagement':
         """
         Get an existing ManagedInstanceRebootManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -273,7 +273,7 @@ class ManagedInstanceRebootManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         :param pulumi.Input[_builtins.int] reboot_timeout_in_mins: The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within this  time, the reboot job status is set to failed.
-        :param pulumi.Input[Union['ManagedInstanceRebootManagementWorkRequestDetailsArgs', 'ManagedInstanceRebootManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['ManagedInstanceRebootManagementWorkRequestDetailsArgs', 'ManagedInstanceRebootManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceRebootManagementWorkRequestDetails']] work_request_details: Provides the name and description of the job.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

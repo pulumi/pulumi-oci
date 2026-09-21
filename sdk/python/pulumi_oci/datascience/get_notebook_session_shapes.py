@@ -82,7 +82,7 @@ class AwaitableGetNotebookSessionShapesResult(GetNotebookSessionShapesResult):
 
 
 def get_notebook_session_shapes(compartment_id: Optional[_builtins.str] = None,
-                                filters: Optional[Sequence[Union['GetNotebookSessionShapesFilterArgs', 'GetNotebookSessionShapesFilterArgsDict']]] = None,
+                                filters: Optional[Sequence[Union['GetNotebookSessionShapesFilterArgs', 'GetNotebookSessionShapesFilterArgsDict', 'outputs.GetNotebookSessionShapesFilterResult']]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNotebookSessionShapesResult:
     """
     This data source provides the list of Notebook Session Shapes in Oracle Cloud Infrastructure Data Science service.
@@ -113,7 +113,7 @@ def get_notebook_session_shapes(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         notebook_session_shapes=pulumi.get(__ret__, 'notebook_session_shapes'))
 def get_notebook_session_shapes_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNotebookSessionShapesFilterArgs', 'GetNotebookSessionShapesFilterArgsDict']]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNotebookSessionShapesFilterArgs', 'GetNotebookSessionShapesFilterArgsDict', 'outputs.GetNotebookSessionShapesFilterResult']]]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNotebookSessionShapesResult]:
     """
     This data source provides the list of Notebook Session Shapes in Oracle Cloud Infrastructure Data Science service.

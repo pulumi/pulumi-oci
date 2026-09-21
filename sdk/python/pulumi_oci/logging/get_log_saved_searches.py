@@ -106,7 +106,7 @@ class AwaitableGetLogSavedSearchesResult(GetLogSavedSearchesResult):
 
 
 def get_log_saved_searches(compartment_id: Optional[_builtins.str] = None,
-                           filters: Optional[Sequence[Union['GetLogSavedSearchesFilterArgs', 'GetLogSavedSearchesFilterArgsDict']]] = None,
+                           filters: Optional[Sequence[Union['GetLogSavedSearchesFilterArgs', 'GetLogSavedSearchesFilterArgsDict', 'outputs.GetLogSavedSearchesFilterResult']]] = None,
                            log_saved_search_id: Optional[_builtins.str] = None,
                            name: Optional[_builtins.str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogSavedSearchesResult:
@@ -147,7 +147,7 @@ def get_log_saved_searches(compartment_id: Optional[_builtins.str] = None,
         log_saved_search_summary_collections=pulumi.get(__ret__, 'log_saved_search_summary_collections'),
         name=pulumi.get(__ret__, 'name'))
 def get_log_saved_searches_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLogSavedSearchesFilterArgs', 'GetLogSavedSearchesFilterArgsDict']]]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLogSavedSearchesFilterArgs', 'GetLogSavedSearchesFilterArgsDict', 'outputs.GetLogSavedSearchesFilterResult']]]]] = None,
                                   log_saved_search_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogSavedSearchesResult]:

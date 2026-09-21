@@ -96,7 +96,7 @@ class AwaitableGetTagsResult(GetTagsResult):
             tags=self.tags)
 
 
-def get_tags(filters: Optional[Sequence[Union['GetTagsFilterArgs', 'GetTagsFilterArgsDict']]] = None,
+def get_tags(filters: Optional[Sequence[Union['GetTagsFilterArgs', 'GetTagsFilterArgsDict', 'outputs.GetTagsFilterResult']]] = None,
              state: Optional[_builtins.str] = None,
              tag_namespace_id: Optional[_builtins.str] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTagsResult:
@@ -132,7 +132,7 @@ def get_tags(filters: Optional[Sequence[Union['GetTagsFilterArgs', 'GetTagsFilte
         state=pulumi.get(__ret__, 'state'),
         tag_namespace_id=pulumi.get(__ret__, 'tag_namespace_id'),
         tags=pulumi.get(__ret__, 'tags'))
-def get_tags_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTagsFilterArgs', 'GetTagsFilterArgsDict']]]]] = None,
+def get_tags_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTagsFilterArgs', 'GetTagsFilterArgsDict', 'outputs.GetTagsFilterResult']]]]] = None,
                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                     tag_namespace_id: pulumi.Input[Optional[_builtins.str]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTagsResult]:

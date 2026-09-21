@@ -203,7 +203,7 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 urls: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFirewallPolicyUrlListUrlArgs', 'NetworkFirewallPolicyUrlListUrlArgsDict']]]]] = None,
+                 urls: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFirewallPolicyUrlListUrlArgs', 'NetworkFirewallPolicyUrlListUrlArgsDict', 'outputs.NetworkFirewallPolicyUrlListUrl']]]]] = None,
                  __props__=None):
         """
         This resource provides the Network Firewall Policy Url List resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -243,7 +243,7 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the Url list. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Unique name to identify the group of urls to be used in the policy rules.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicyUrlListUrlArgs', 'NetworkFirewallPolicyUrlListUrlArgsDict']]]] urls: (Updatable) List of urls.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicyUrlListUrlArgs', 'NetworkFirewallPolicyUrlListUrlArgsDict', 'outputs.NetworkFirewallPolicyUrlListUrl']]]] urls: (Updatable) List of urls.
         """
         ...
     @overload
@@ -302,7 +302,7 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 urls: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFirewallPolicyUrlListUrlArgs', 'NetworkFirewallPolicyUrlListUrlArgsDict']]]]] = None,
+                 urls: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFirewallPolicyUrlListUrlArgs', 'NetworkFirewallPolicyUrlListUrlArgsDict', 'outputs.NetworkFirewallPolicyUrlListUrl']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -337,7 +337,7 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
             network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
             parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
             total_urls: pulumi.Input[Optional[_builtins.int]] = None,
-            urls: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFirewallPolicyUrlListUrlArgs', 'NetworkFirewallPolicyUrlListUrlArgsDict']]]]] = None) -> 'NetworkFirewallPolicyUrlList':
+            urls: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFirewallPolicyUrlListUrlArgs', 'NetworkFirewallPolicyUrlListUrlArgsDict', 'outputs.NetworkFirewallPolicyUrlListUrl']]]]] = None) -> 'NetworkFirewallPolicyUrlList':
         """
         Get an existing NetworkFirewallPolicyUrlList resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -350,7 +350,7 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] parent_resource_id: OCID of the Network Firewall Policy this URL List belongs to.
         :param pulumi.Input[_builtins.int] total_urls: Total count of URLs in the URL List
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicyUrlListUrlArgs', 'NetworkFirewallPolicyUrlListUrlArgsDict']]]] urls: (Updatable) List of urls.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicyUrlListUrlArgs', 'NetworkFirewallPolicyUrlListUrlArgsDict', 'outputs.NetworkFirewallPolicyUrlListUrl']]]] urls: (Updatable) List of urls.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

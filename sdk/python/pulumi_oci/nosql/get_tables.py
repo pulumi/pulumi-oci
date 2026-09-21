@@ -109,7 +109,7 @@ class AwaitableGetTablesResult(GetTablesResult):
 
 
 def get_tables(compartment_id: Optional[_builtins.str] = None,
-               filters: Optional[Sequence[Union['GetTablesFilterArgs', 'GetTablesFilterArgsDict']]] = None,
+               filters: Optional[Sequence[Union['GetTablesFilterArgs', 'GetTablesFilterArgsDict', 'outputs.GetTablesFilterResult']]] = None,
                name: Optional[_builtins.str] = None,
                state: Optional[_builtins.str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTablesResult:
@@ -150,7 +150,7 @@ def get_tables(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         table_collections=pulumi.get(__ret__, 'table_collections'))
 def get_tables_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTablesFilterArgs', 'GetTablesFilterArgsDict']]]]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTablesFilterArgs', 'GetTablesFilterArgsDict', 'outputs.GetTablesFilterResult']]]]] = None,
                       name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTablesResult]:

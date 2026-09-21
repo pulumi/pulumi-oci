@@ -821,7 +821,7 @@ class ManagedInstance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autonomous_settings: pulumi.Input[Optional[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict']]] = None,
+                 autonomous_settings: pulumi.Input[Optional[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict', 'outputs.ManagedInstanceAutonomousSettings']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -847,7 +847,7 @@ class ManagedInstance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict']] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
+        :param pulumi.Input[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict', 'outputs.ManagedInstanceAutonomousSettings']] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         :param pulumi.Input[_builtins.str] description: (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         :param pulumi.Input[_builtins.str] notification_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
@@ -895,7 +895,7 @@ class ManagedInstance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autonomous_settings: pulumi.Input[Optional[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict']]] = None,
+                 autonomous_settings: pulumi.Input[Optional[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict', 'outputs.ManagedInstanceAutonomousSettings']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -967,7 +967,7 @@ class ManagedInstance(pulumi.CustomResource):
             agent_version: pulumi.Input[Optional[_builtins.str]] = None,
             architecture: pulumi.Input[Optional[_builtins.str]] = None,
             are_sources_managed: pulumi.Input[Optional[_builtins.bool]] = None,
-            autonomous_settings: pulumi.Input[Optional[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict']]] = None,
+            autonomous_settings: pulumi.Input[Optional[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict', 'outputs.ManagedInstanceAutonomousSettings']]] = None,
             bug_updates_available: pulumi.Input[Optional[_builtins.int]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -979,10 +979,10 @@ class ManagedInstance(pulumi.CustomResource):
             is_management_station: pulumi.Input[Optional[_builtins.bool]] = None,
             is_reboot_required: pulumi.Input[Optional[_builtins.bool]] = None,
             ksplice_effective_kernel_version: pulumi.Input[Optional[_builtins.str]] = None,
-            lifecycle_environments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceLifecycleEnvironmentArgs', 'ManagedInstanceLifecycleEnvironmentArgsDict']]]]] = None,
-            lifecycle_stages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceLifecycleStageArgs', 'ManagedInstanceLifecycleStageArgsDict']]]]] = None,
+            lifecycle_environments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceLifecycleEnvironmentArgs', 'ManagedInstanceLifecycleEnvironmentArgsDict', 'outputs.ManagedInstanceLifecycleEnvironment']]]]] = None,
+            lifecycle_stages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceLifecycleStageArgs', 'ManagedInstanceLifecycleStageArgsDict', 'outputs.ManagedInstanceLifecycleStage']]]]] = None,
             location: pulumi.Input[Optional[_builtins.str]] = None,
-            managed_instance_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceManagedInstanceGroupArgs', 'ManagedInstanceManagedInstanceGroupArgsDict']]]]] = None,
+            managed_instance_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceManagedInstanceGroupArgs', 'ManagedInstanceManagedInstanceGroupArgsDict', 'outputs.ManagedInstanceManagedInstanceGroup']]]]] = None,
             managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
             notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
             os_family: pulumi.Input[Optional[_builtins.str]] = None,
@@ -996,7 +996,7 @@ class ManagedInstance(pulumi.CustomResource):
             scheduled_job_count: pulumi.Input[Optional[_builtins.int]] = None,
             secondary_management_station_id: pulumi.Input[Optional[_builtins.str]] = None,
             security_updates_available: pulumi.Input[Optional[_builtins.int]] = None,
-            software_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceSoftwareSourceArgs', 'ManagedInstanceSoftwareSourceArgsDict']]]]] = None,
+            software_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceSoftwareSourceArgs', 'ManagedInstanceSoftwareSourceArgsDict', 'outputs.ManagedInstanceSoftwareSource']]]]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
             tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1016,7 +1016,7 @@ class ManagedInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] agent_version: The version of osmh-agent running on the managed instance
         :param pulumi.Input[_builtins.str] architecture: The CPU architecture type of the managed instance.
         :param pulumi.Input[_builtins.bool] are_sources_managed: Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
-        :param pulumi.Input[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict']] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
+        :param pulumi.Input[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict', 'outputs.ManagedInstanceAutonomousSettings']] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         :param pulumi.Input[_builtins.int] bug_updates_available: Number of bug fix type updates available for installation.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
         :param pulumi.Input[_builtins.str] description: (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
@@ -1028,10 +1028,10 @@ class ManagedInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_management_station: Indicates whether this managed instance is acting as an on-premises management station.
         :param pulumi.Input[_builtins.bool] is_reboot_required: Indicates whether a reboot is required to complete installation of updates.
         :param pulumi.Input[_builtins.str] ksplice_effective_kernel_version: The ksplice effective kernel version.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceLifecycleEnvironmentArgs', 'ManagedInstanceLifecycleEnvironmentArgsDict']]]] lifecycle_environments: Id and name of a resource to simplify the display for the user.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceLifecycleStageArgs', 'ManagedInstanceLifecycleStageArgsDict']]]] lifecycle_stages: Id and name of a resource to simplify the display for the user.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceLifecycleEnvironmentArgs', 'ManagedInstanceLifecycleEnvironmentArgsDict', 'outputs.ManagedInstanceLifecycleEnvironment']]]] lifecycle_environments: Id and name of a resource to simplify the display for the user.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceLifecycleStageArgs', 'ManagedInstanceLifecycleStageArgsDict', 'outputs.ManagedInstanceLifecycleStage']]]] lifecycle_stages: Id and name of a resource to simplify the display for the user.
         :param pulumi.Input[_builtins.str] location: The location of the managed instance.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceManagedInstanceGroupArgs', 'ManagedInstanceManagedInstanceGroupArgsDict']]]] managed_instance_groups: Id and name of a resource to simplify the display for the user.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceManagedInstanceGroupArgs', 'ManagedInstanceManagedInstanceGroupArgsDict', 'outputs.ManagedInstanceManagedInstanceGroup']]]] managed_instance_groups: Id and name of a resource to simplify the display for the user.
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         :param pulumi.Input[_builtins.str] notification_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
         :param pulumi.Input[_builtins.str] os_family: The operating system type of the managed instance.
@@ -1048,7 +1048,7 @@ class ManagedInstance(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.int] security_updates_available: Number of security type updates available for installation.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceSoftwareSourceArgs', 'ManagedInstanceSoftwareSourceArgsDict']]]] software_sources: The list of software sources currently attached to the managed instance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceSoftwareSourceArgs', 'ManagedInstanceSoftwareSourceArgsDict', 'outputs.ManagedInstanceSoftwareSource']]]] software_sources: The list of software sources currently attached to the managed instance.
         :param pulumi.Input[_builtins.str] status: Current status of the managed instance.
         :param pulumi.Input[_builtins.str] tenancy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy that the managed instance resides in.
         :param pulumi.Input[_builtins.str] time_created: The date and time the instance was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).

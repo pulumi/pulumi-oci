@@ -132,7 +132,7 @@ class AwaitableGetPbfListingsResult(GetPbfListingsResult):
             triggers=self.triggers)
 
 
-def get_pbf_listings(filters: Optional[Sequence[Union['GetPbfListingsFilterArgs', 'GetPbfListingsFilterArgsDict']]] = None,
+def get_pbf_listings(filters: Optional[Sequence[Union['GetPbfListingsFilterArgs', 'GetPbfListingsFilterArgsDict', 'outputs.GetPbfListingsFilterResult']]] = None,
                      name: Optional[_builtins.str] = None,
                      name_contains: Optional[_builtins.str] = None,
                      name_starts_with: Optional[_builtins.str] = None,
@@ -189,7 +189,7 @@ def get_pbf_listings(filters: Optional[Sequence[Union['GetPbfListingsFilterArgs'
         pbf_listings_collections=pulumi.get(__ret__, 'pbf_listings_collections'),
         state=pulumi.get(__ret__, 'state'),
         triggers=pulumi.get(__ret__, 'triggers'))
-def get_pbf_listings_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPbfListingsFilterArgs', 'GetPbfListingsFilterArgsDict']]]]] = None,
+def get_pbf_listings_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPbfListingsFilterArgs', 'GetPbfListingsFilterArgsDict', 'outputs.GetPbfListingsFilterResult']]]]] = None,
                             name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             name_starts_with: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

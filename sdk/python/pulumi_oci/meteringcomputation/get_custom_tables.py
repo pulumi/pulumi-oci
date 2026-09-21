@@ -97,7 +97,7 @@ class AwaitableGetCustomTablesResult(GetCustomTablesResult):
 
 
 def get_custom_tables(compartment_id: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetCustomTablesFilterArgs', 'GetCustomTablesFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetCustomTablesFilterArgs', 'GetCustomTablesFilterArgsDict', 'outputs.GetCustomTablesFilterResult']]] = None,
                       saved_report_id: Optional[_builtins.str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCustomTablesResult:
     """
@@ -133,7 +133,7 @@ def get_custom_tables(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         saved_report_id=pulumi.get(__ret__, 'saved_report_id'))
 def get_custom_tables_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCustomTablesFilterArgs', 'GetCustomTablesFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCustomTablesFilterArgs', 'GetCustomTablesFilterArgsDict', 'outputs.GetCustomTablesFilterResult']]]]] = None,
                              saved_report_id: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCustomTablesResult]:
     """

@@ -105,7 +105,7 @@ class AwaitableGetWlmsManagedInstanceScanResultsResult(GetWlmsManagedInstanceSca
             wls_domain_id=self.wls_domain_id)
 
 
-def get_wlms_managed_instance_scan_results(filters: Optional[Sequence[Union['GetWlmsManagedInstanceScanResultsFilterArgs', 'GetWlmsManagedInstanceScanResultsFilterArgsDict']]] = None,
+def get_wlms_managed_instance_scan_results(filters: Optional[Sequence[Union['GetWlmsManagedInstanceScanResultsFilterArgs', 'GetWlmsManagedInstanceScanResultsFilterArgsDict', 'outputs.GetWlmsManagedInstanceScanResultsFilterResult']]] = None,
                                            managed_instance_id: Optional[_builtins.str] = None,
                                            server_name: Optional[_builtins.str] = None,
                                            wls_domain_id: Optional[_builtins.str] = None,
@@ -146,7 +146,7 @@ def get_wlms_managed_instance_scan_results(filters: Optional[Sequence[Union['Get
         scan_result_collections=pulumi.get(__ret__, 'scan_result_collections'),
         server_name=pulumi.get(__ret__, 'server_name'),
         wls_domain_id=pulumi.get(__ret__, 'wls_domain_id'))
-def get_wlms_managed_instance_scan_results_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWlmsManagedInstanceScanResultsFilterArgs', 'GetWlmsManagedInstanceScanResultsFilterArgsDict']]]]] = None,
+def get_wlms_managed_instance_scan_results_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWlmsManagedInstanceScanResultsFilterArgs', 'GetWlmsManagedInstanceScanResultsFilterArgsDict', 'outputs.GetWlmsManagedInstanceScanResultsFilterResult']]]]] = None,
                                                   managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                   server_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   wls_domain_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

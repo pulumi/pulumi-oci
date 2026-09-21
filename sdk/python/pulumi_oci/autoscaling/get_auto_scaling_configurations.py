@@ -98,7 +98,7 @@ class AwaitableGetAutoScalingConfigurationsResult(GetAutoScalingConfigurationsRe
 
 def get_auto_scaling_configurations(compartment_id: Optional[_builtins.str] = None,
                                     display_name: Optional[_builtins.str] = None,
-                                    filters: Optional[Sequence[Union['GetAutoScalingConfigurationsFilterArgs', 'GetAutoScalingConfigurationsFilterArgsDict']]] = None,
+                                    filters: Optional[Sequence[Union['GetAutoScalingConfigurationsFilterArgs', 'GetAutoScalingConfigurationsFilterArgsDict', 'outputs.GetAutoScalingConfigurationsFilterResult']]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutoScalingConfigurationsResult:
     """
     This data source provides the list of Auto Scaling Configurations in Oracle Cloud Infrastructure Auto Scaling service.
@@ -134,7 +134,7 @@ def get_auto_scaling_configurations(compartment_id: Optional[_builtins.str] = No
         id=pulumi.get(__ret__, 'id'))
 def get_auto_scaling_configurations_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutoScalingConfigurationsFilterArgs', 'GetAutoScalingConfigurationsFilterArgsDict']]]]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutoScalingConfigurationsFilterArgs', 'GetAutoScalingConfigurationsFilterArgsDict', 'outputs.GetAutoScalingConfigurationsFilterResult']]]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutoScalingConfigurationsResult]:
     """
     This data source provides the list of Auto Scaling Configurations in Oracle Cloud Infrastructure Auto Scaling service.

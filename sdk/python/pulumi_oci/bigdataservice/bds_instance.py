@@ -1249,19 +1249,19 @@ class BdsInstance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bds_capacity_reservation_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceBdsCapacityReservationConfigurationArgs', 'BdsInstanceBdsCapacityReservationConfigurationArgsDict']]]]] = None,
-                 bds_cluster_version_summary: pulumi.Input[Optional[Union['BdsInstanceBdsClusterVersionSummaryArgs', 'BdsInstanceBdsClusterVersionSummaryArgsDict']]] = None,
+                 bds_capacity_reservation_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceBdsCapacityReservationConfigurationArgs', 'BdsInstanceBdsCapacityReservationConfigurationArgsDict', 'outputs.BdsInstanceBdsCapacityReservationConfiguration']]]]] = None,
+                 bds_cluster_version_summary: pulumi.Input[Optional[Union['BdsInstanceBdsClusterVersionSummaryArgs', 'BdsInstanceBdsClusterVersionSummaryArgsDict', 'outputs.BdsInstanceBdsClusterVersionSummary']]] = None,
                  bootstrap_script_url: pulumi.Input[Optional[_builtins.str]] = None,
-                 cloud_sql_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceCloudSqlDetailArgs', 'BdsInstanceCloudSqlDetailArgsDict']]]]] = None,
+                 cloud_sql_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceCloudSqlDetailArgs', 'BdsInstanceCloudSqlDetailArgsDict', 'outputs.BdsInstanceCloudSqlDetail']]]]] = None,
                  cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_profile: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_public_key: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_version: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 compute_only_worker_node: pulumi.Input[Optional[Union['BdsInstanceComputeOnlyWorkerNodeArgs', 'BdsInstanceComputeOnlyWorkerNodeArgsDict']]] = None,
+                 compute_only_worker_node: pulumi.Input[Optional[Union['BdsInstanceComputeOnlyWorkerNodeArgs', 'BdsInstanceComputeOnlyWorkerNodeArgsDict', 'outputs.BdsInstanceComputeOnlyWorkerNode']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 edge_node: pulumi.Input[Optional[Union['BdsInstanceEdgeNodeArgs', 'BdsInstanceEdgeNodeArgsDict']]] = None,
+                 edge_node: pulumi.Input[Optional[Union['BdsInstanceEdgeNodeArgs', 'BdsInstanceEdgeNodeArgsDict', 'outputs.BdsInstanceEdgeNode']]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  ignore_existing_nodes_shapes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  is_cloud_sql_configured: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1271,19 +1271,19 @@ class BdsInstance(pulumi.CustomResource):
                  is_kafka_configured: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_secret_reused: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_secure: pulumi.Input[Optional[_builtins.bool]] = None,
-                 kafka_broker_node: pulumi.Input[Optional[Union['BdsInstanceKafkaBrokerNodeArgs', 'BdsInstanceKafkaBrokerNodeArgsDict']]] = None,
+                 kafka_broker_node: pulumi.Input[Optional[Union['BdsInstanceKafkaBrokerNodeArgs', 'BdsInstanceKafkaBrokerNodeArgsDict', 'outputs.BdsInstanceKafkaBrokerNode']]] = None,
                  kerberos_realm_name: pulumi.Input[Optional[_builtins.str]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 master_node: pulumi.Input[Optional[Union['BdsInstanceMasterNodeArgs', 'BdsInstanceMasterNodeArgsDict']]] = None,
-                 network_config: pulumi.Input[Optional[Union['BdsInstanceNetworkConfigArgs', 'BdsInstanceNetworkConfigArgsDict']]] = None,
+                 master_node: pulumi.Input[Optional[Union['BdsInstanceMasterNodeArgs', 'BdsInstanceMasterNodeArgsDict', 'outputs.BdsInstanceMasterNode']]] = None,
+                 network_config: pulumi.Input[Optional[Union['BdsInstanceNetworkConfigArgs', 'BdsInstanceNetworkConfigArgsDict', 'outputs.BdsInstanceNetworkConfig']]] = None,
                  os_patch_version: pulumi.Input[Optional[_builtins.str]] = None,
                  remove_node: pulumi.Input[Optional[_builtins.str]] = None,
                  remove_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  secret_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 start_cluster_shape_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceStartClusterShapeConfigArgs', 'BdsInstanceStartClusterShapeConfigArgsDict']]]]] = None,
+                 start_cluster_shape_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceStartClusterShapeConfigArgs', 'BdsInstanceStartClusterShapeConfigArgsDict', 'outputs.BdsInstanceStartClusterShapeConfig']]]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
-                 util_node: pulumi.Input[Optional[Union['BdsInstanceUtilNodeArgs', 'BdsInstanceUtilNodeArgsDict']]] = None,
-                 worker_node: pulumi.Input[Optional[Union['BdsInstanceWorkerNodeArgs', 'BdsInstanceWorkerNodeArgsDict']]] = None,
+                 util_node: pulumi.Input[Optional[Union['BdsInstanceUtilNodeArgs', 'BdsInstanceUtilNodeArgsDict', 'outputs.BdsInstanceUtilNode']]] = None,
+                 worker_node: pulumi.Input[Optional[Union['BdsInstanceWorkerNodeArgs', 'BdsInstanceWorkerNodeArgsDict', 'outputs.BdsInstanceWorkerNode']]] = None,
                  __props__=None):
         """
         This resource provides the Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -1406,16 +1406,16 @@ class BdsInstance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceBdsCapacityReservationConfigurationArgs', 'BdsInstanceBdsCapacityReservationConfigurationArgsDict']]]] bds_capacity_reservation_configurations: Optional BDS capacity reservation configurations to associate with the cluster during creation.
-        :param pulumi.Input[Union['BdsInstanceBdsClusterVersionSummaryArgs', 'BdsInstanceBdsClusterVersionSummaryArgsDict']] bds_cluster_version_summary: Cluster version details including BDS and ODH version information. When this block is specified, provide at least one of `bds_version` or `odh_version`; if both values are null, the service rejects the request.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceBdsCapacityReservationConfigurationArgs', 'BdsInstanceBdsCapacityReservationConfigurationArgsDict', 'outputs.BdsInstanceBdsCapacityReservationConfiguration']]]] bds_capacity_reservation_configurations: Optional BDS capacity reservation configurations to associate with the cluster during creation.
+        :param pulumi.Input[Union['BdsInstanceBdsClusterVersionSummaryArgs', 'BdsInstanceBdsClusterVersionSummaryArgsDict', 'outputs.BdsInstanceBdsClusterVersionSummary']] bds_cluster_version_summary: Cluster version details including BDS and ODH version information. When this block is specified, provide at least one of `bds_version` or `odh_version`; if both values are null, the service rejects the request.
         :param pulumi.Input[_builtins.str] bootstrap_script_url: (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceCloudSqlDetailArgs', 'BdsInstanceCloudSqlDetailArgsDict']]]] cloud_sql_details: The information about added Cloud SQL capability
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceCloudSqlDetailArgs', 'BdsInstanceCloudSqlDetailArgsDict', 'outputs.BdsInstanceCloudSqlDetail']]]] cloud_sql_details: The information about added Cloud SQL capability
         :param pulumi.Input[_builtins.str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
         :param pulumi.Input[_builtins.str] cluster_profile: Profile of the Big Data Service cluster.
         :param pulumi.Input[_builtins.str] cluster_public_key: The SSH public key used to authenticate the cluster connection.
         :param pulumi.Input[_builtins.str] cluster_version: Version of the Hadoop distribution
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment
-        :param pulumi.Input[Union['BdsInstanceComputeOnlyWorkerNodeArgs', 'BdsInstanceComputeOnlyWorkerNodeArgsDict']] compute_only_worker_node: The compute-only worker node in the BDS instance
+        :param pulumi.Input[Union['BdsInstanceComputeOnlyWorkerNodeArgs', 'BdsInstanceComputeOnlyWorkerNodeArgsDict', 'outputs.BdsInstanceComputeOnlyWorkerNode']] compute_only_worker_node: The compute-only worker node in the BDS instance
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Name of the BDS instance
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -1426,17 +1426,17 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_kafka_configured: Boolean flag specifying whether or not Kafka should be configured.
         :param pulumi.Input[_builtins.bool] is_secret_reused: Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
         :param pulumi.Input[_builtins.bool] is_secure: Boolean flag specifying whether or not the cluster should be setup as secure.
-        :param pulumi.Input[Union['BdsInstanceKafkaBrokerNodeArgs', 'BdsInstanceKafkaBrokerNodeArgsDict']] kafka_broker_node: The kafka broker node in the BDS instance
+        :param pulumi.Input[Union['BdsInstanceKafkaBrokerNodeArgs', 'BdsInstanceKafkaBrokerNodeArgsDict', 'outputs.BdsInstanceKafkaBrokerNode']] kafka_broker_node: The kafka broker node in the BDS instance
         :param pulumi.Input[_builtins.str] kerberos_realm_name: The user-defined kerberos realm name.
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The OCID of the Key Management master encryption key.
-        :param pulumi.Input[Union['BdsInstanceMasterNodeArgs', 'BdsInstanceMasterNodeArgsDict']] master_node: The master node in the BDS instance
-        :param pulumi.Input[Union['BdsInstanceNetworkConfigArgs', 'BdsInstanceNetworkConfigArgsDict']] network_config: Additional configuration of the user's network.
+        :param pulumi.Input[Union['BdsInstanceMasterNodeArgs', 'BdsInstanceMasterNodeArgsDict', 'outputs.BdsInstanceMasterNode']] master_node: The master node in the BDS instance
+        :param pulumi.Input[Union['BdsInstanceNetworkConfigArgs', 'BdsInstanceNetworkConfigArgsDict', 'outputs.BdsInstanceNetworkConfig']] network_config: Additional configuration of the user's network.
         :param pulumi.Input[_builtins.str] os_patch_version: (Updatable) The version of the patch to be updated.
         :param pulumi.Input[_builtins.str] remove_node: (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
         :param pulumi.Input[_builtins.str] secret_id: (Updatable) The secretId for the clusterAdminPassword.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
-        :param pulumi.Input[Union['BdsInstanceUtilNodeArgs', 'BdsInstanceUtilNodeArgsDict']] util_node: The utility node in the BDS instance
-        :param pulumi.Input[Union['BdsInstanceWorkerNodeArgs', 'BdsInstanceWorkerNodeArgsDict']] worker_node: The worker node in the BDS instance
+        :param pulumi.Input[Union['BdsInstanceUtilNodeArgs', 'BdsInstanceUtilNodeArgsDict', 'outputs.BdsInstanceUtilNode']] util_node: The utility node in the BDS instance
+        :param pulumi.Input[Union['BdsInstanceWorkerNodeArgs', 'BdsInstanceWorkerNodeArgsDict', 'outputs.BdsInstanceWorkerNode']] worker_node: The worker node in the BDS instance
         """
         ...
     @overload
@@ -1578,19 +1578,19 @@ class BdsInstance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bds_capacity_reservation_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceBdsCapacityReservationConfigurationArgs', 'BdsInstanceBdsCapacityReservationConfigurationArgsDict']]]]] = None,
-                 bds_cluster_version_summary: pulumi.Input[Optional[Union['BdsInstanceBdsClusterVersionSummaryArgs', 'BdsInstanceBdsClusterVersionSummaryArgsDict']]] = None,
+                 bds_capacity_reservation_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceBdsCapacityReservationConfigurationArgs', 'BdsInstanceBdsCapacityReservationConfigurationArgsDict', 'outputs.BdsInstanceBdsCapacityReservationConfiguration']]]]] = None,
+                 bds_cluster_version_summary: pulumi.Input[Optional[Union['BdsInstanceBdsClusterVersionSummaryArgs', 'BdsInstanceBdsClusterVersionSummaryArgsDict', 'outputs.BdsInstanceBdsClusterVersionSummary']]] = None,
                  bootstrap_script_url: pulumi.Input[Optional[_builtins.str]] = None,
-                 cloud_sql_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceCloudSqlDetailArgs', 'BdsInstanceCloudSqlDetailArgsDict']]]]] = None,
+                 cloud_sql_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceCloudSqlDetailArgs', 'BdsInstanceCloudSqlDetailArgsDict', 'outputs.BdsInstanceCloudSqlDetail']]]]] = None,
                  cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_profile: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_public_key: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_version: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 compute_only_worker_node: pulumi.Input[Optional[Union['BdsInstanceComputeOnlyWorkerNodeArgs', 'BdsInstanceComputeOnlyWorkerNodeArgsDict']]] = None,
+                 compute_only_worker_node: pulumi.Input[Optional[Union['BdsInstanceComputeOnlyWorkerNodeArgs', 'BdsInstanceComputeOnlyWorkerNodeArgsDict', 'outputs.BdsInstanceComputeOnlyWorkerNode']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 edge_node: pulumi.Input[Optional[Union['BdsInstanceEdgeNodeArgs', 'BdsInstanceEdgeNodeArgsDict']]] = None,
+                 edge_node: pulumi.Input[Optional[Union['BdsInstanceEdgeNodeArgs', 'BdsInstanceEdgeNodeArgsDict', 'outputs.BdsInstanceEdgeNode']]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  ignore_existing_nodes_shapes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  is_cloud_sql_configured: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1600,19 +1600,19 @@ class BdsInstance(pulumi.CustomResource):
                  is_kafka_configured: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_secret_reused: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_secure: pulumi.Input[Optional[_builtins.bool]] = None,
-                 kafka_broker_node: pulumi.Input[Optional[Union['BdsInstanceKafkaBrokerNodeArgs', 'BdsInstanceKafkaBrokerNodeArgsDict']]] = None,
+                 kafka_broker_node: pulumi.Input[Optional[Union['BdsInstanceKafkaBrokerNodeArgs', 'BdsInstanceKafkaBrokerNodeArgsDict', 'outputs.BdsInstanceKafkaBrokerNode']]] = None,
                  kerberos_realm_name: pulumi.Input[Optional[_builtins.str]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 master_node: pulumi.Input[Optional[Union['BdsInstanceMasterNodeArgs', 'BdsInstanceMasterNodeArgsDict']]] = None,
-                 network_config: pulumi.Input[Optional[Union['BdsInstanceNetworkConfigArgs', 'BdsInstanceNetworkConfigArgsDict']]] = None,
+                 master_node: pulumi.Input[Optional[Union['BdsInstanceMasterNodeArgs', 'BdsInstanceMasterNodeArgsDict', 'outputs.BdsInstanceMasterNode']]] = None,
+                 network_config: pulumi.Input[Optional[Union['BdsInstanceNetworkConfigArgs', 'BdsInstanceNetworkConfigArgsDict', 'outputs.BdsInstanceNetworkConfig']]] = None,
                  os_patch_version: pulumi.Input[Optional[_builtins.str]] = None,
                  remove_node: pulumi.Input[Optional[_builtins.str]] = None,
                  remove_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  secret_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 start_cluster_shape_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceStartClusterShapeConfigArgs', 'BdsInstanceStartClusterShapeConfigArgsDict']]]]] = None,
+                 start_cluster_shape_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceStartClusterShapeConfigArgs', 'BdsInstanceStartClusterShapeConfigArgsDict', 'outputs.BdsInstanceStartClusterShapeConfig']]]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
-                 util_node: pulumi.Input[Optional[Union['BdsInstanceUtilNodeArgs', 'BdsInstanceUtilNodeArgsDict']]] = None,
-                 worker_node: pulumi.Input[Optional[Union['BdsInstanceWorkerNodeArgs', 'BdsInstanceWorkerNodeArgsDict']]] = None,
+                 util_node: pulumi.Input[Optional[Union['BdsInstanceUtilNodeArgs', 'BdsInstanceUtilNodeArgsDict', 'outputs.BdsInstanceUtilNode']]] = None,
+                 worker_node: pulumi.Input[Optional[Union['BdsInstanceWorkerNodeArgs', 'BdsInstanceWorkerNodeArgsDict', 'outputs.BdsInstanceWorkerNode']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1695,21 +1695,21 @@ class BdsInstance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bds_capacity_reservation_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceBdsCapacityReservationConfigurationArgs', 'BdsInstanceBdsCapacityReservationConfigurationArgsDict']]]]] = None,
-            bds_cluster_version_summary: pulumi.Input[Optional[Union['BdsInstanceBdsClusterVersionSummaryArgs', 'BdsInstanceBdsClusterVersionSummaryArgsDict']]] = None,
+            bds_capacity_reservation_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceBdsCapacityReservationConfigurationArgs', 'BdsInstanceBdsCapacityReservationConfigurationArgsDict', 'outputs.BdsInstanceBdsCapacityReservationConfiguration']]]]] = None,
+            bds_cluster_version_summary: pulumi.Input[Optional[Union['BdsInstanceBdsClusterVersionSummaryArgs', 'BdsInstanceBdsClusterVersionSummaryArgsDict', 'outputs.BdsInstanceBdsClusterVersionSummary']]] = None,
             bootstrap_script_url: pulumi.Input[Optional[_builtins.str]] = None,
-            cloud_sql_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceCloudSqlDetailArgs', 'BdsInstanceCloudSqlDetailArgsDict']]]]] = None,
+            cloud_sql_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceCloudSqlDetailArgs', 'BdsInstanceCloudSqlDetailArgsDict', 'outputs.BdsInstanceCloudSqlDetail']]]]] = None,
             cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
-            cluster_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceClusterDetailArgs', 'BdsInstanceClusterDetailArgsDict']]]]] = None,
+            cluster_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceClusterDetailArgs', 'BdsInstanceClusterDetailArgsDict', 'outputs.BdsInstanceClusterDetail']]]]] = None,
             cluster_profile: pulumi.Input[Optional[_builtins.str]] = None,
             cluster_public_key: pulumi.Input[Optional[_builtins.str]] = None,
             cluster_version: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            compute_only_worker_node: pulumi.Input[Optional[Union['BdsInstanceComputeOnlyWorkerNodeArgs', 'BdsInstanceComputeOnlyWorkerNodeArgsDict']]] = None,
+            compute_only_worker_node: pulumi.Input[Optional[Union['BdsInstanceComputeOnlyWorkerNodeArgs', 'BdsInstanceComputeOnlyWorkerNodeArgsDict', 'outputs.BdsInstanceComputeOnlyWorkerNode']]] = None,
             created_by: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            edge_node: pulumi.Input[Optional[Union['BdsInstanceEdgeNodeArgs', 'BdsInstanceEdgeNodeArgsDict']]] = None,
+            edge_node: pulumi.Input[Optional[Union['BdsInstanceEdgeNodeArgs', 'BdsInstanceEdgeNodeArgsDict', 'outputs.BdsInstanceEdgeNode']]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             ignore_existing_nodes_shapes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             is_cloud_sql_configured: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1719,25 +1719,25 @@ class BdsInstance(pulumi.CustomResource):
             is_kafka_configured: pulumi.Input[Optional[_builtins.bool]] = None,
             is_secret_reused: pulumi.Input[Optional[_builtins.bool]] = None,
             is_secure: pulumi.Input[Optional[_builtins.bool]] = None,
-            kafka_broker_node: pulumi.Input[Optional[Union['BdsInstanceKafkaBrokerNodeArgs', 'BdsInstanceKafkaBrokerNodeArgsDict']]] = None,
+            kafka_broker_node: pulumi.Input[Optional[Union['BdsInstanceKafkaBrokerNodeArgs', 'BdsInstanceKafkaBrokerNodeArgsDict', 'outputs.BdsInstanceKafkaBrokerNode']]] = None,
             kerberos_realm_name: pulumi.Input[Optional[_builtins.str]] = None,
             kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
-            master_node: pulumi.Input[Optional[Union['BdsInstanceMasterNodeArgs', 'BdsInstanceMasterNodeArgsDict']]] = None,
-            network_config: pulumi.Input[Optional[Union['BdsInstanceNetworkConfigArgs', 'BdsInstanceNetworkConfigArgsDict']]] = None,
-            nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceNodeArgs', 'BdsInstanceNodeArgsDict']]]]] = None,
+            master_node: pulumi.Input[Optional[Union['BdsInstanceMasterNodeArgs', 'BdsInstanceMasterNodeArgsDict', 'outputs.BdsInstanceMasterNode']]] = None,
+            network_config: pulumi.Input[Optional[Union['BdsInstanceNetworkConfigArgs', 'BdsInstanceNetworkConfigArgsDict', 'outputs.BdsInstanceNetworkConfig']]] = None,
+            nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceNodeArgs', 'BdsInstanceNodeArgsDict', 'outputs.BdsInstanceNode']]]]] = None,
             number_of_nodes: pulumi.Input[Optional[_builtins.int]] = None,
             number_of_nodes_requiring_maintenance_reboot: pulumi.Input[Optional[_builtins.int]] = None,
             os_patch_version: pulumi.Input[Optional[_builtins.str]] = None,
             remove_node: pulumi.Input[Optional[_builtins.str]] = None,
             remove_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             secret_id: pulumi.Input[Optional[_builtins.str]] = None,
-            start_cluster_shape_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceStartClusterShapeConfigArgs', 'BdsInstanceStartClusterShapeConfigArgsDict']]]]] = None,
+            start_cluster_shape_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceStartClusterShapeConfigArgs', 'BdsInstanceStartClusterShapeConfigArgsDict', 'outputs.BdsInstanceStartClusterShapeConfig']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_earliest_certificate_expiration: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
-            util_node: pulumi.Input[Optional[Union['BdsInstanceUtilNodeArgs', 'BdsInstanceUtilNodeArgsDict']]] = None,
-            worker_node: pulumi.Input[Optional[Union['BdsInstanceWorkerNodeArgs', 'BdsInstanceWorkerNodeArgsDict']]] = None) -> 'BdsInstance':
+            util_node: pulumi.Input[Optional[Union['BdsInstanceUtilNodeArgs', 'BdsInstanceUtilNodeArgsDict', 'outputs.BdsInstanceUtilNode']]] = None,
+            worker_node: pulumi.Input[Optional[Union['BdsInstanceWorkerNodeArgs', 'BdsInstanceWorkerNodeArgsDict', 'outputs.BdsInstanceWorkerNode']]] = None) -> 'BdsInstance':
         """
         Get an existing BdsInstance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1745,17 +1745,17 @@ class BdsInstance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceBdsCapacityReservationConfigurationArgs', 'BdsInstanceBdsCapacityReservationConfigurationArgsDict']]]] bds_capacity_reservation_configurations: Optional BDS capacity reservation configurations to associate with the cluster during creation.
-        :param pulumi.Input[Union['BdsInstanceBdsClusterVersionSummaryArgs', 'BdsInstanceBdsClusterVersionSummaryArgsDict']] bds_cluster_version_summary: Cluster version details including BDS and ODH version information. When this block is specified, provide at least one of `bds_version` or `odh_version`; if both values are null, the service rejects the request.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceBdsCapacityReservationConfigurationArgs', 'BdsInstanceBdsCapacityReservationConfigurationArgsDict', 'outputs.BdsInstanceBdsCapacityReservationConfiguration']]]] bds_capacity_reservation_configurations: Optional BDS capacity reservation configurations to associate with the cluster during creation.
+        :param pulumi.Input[Union['BdsInstanceBdsClusterVersionSummaryArgs', 'BdsInstanceBdsClusterVersionSummaryArgsDict', 'outputs.BdsInstanceBdsClusterVersionSummary']] bds_cluster_version_summary: Cluster version details including BDS and ODH version information. When this block is specified, provide at least one of `bds_version` or `odh_version`; if both values are null, the service rejects the request.
         :param pulumi.Input[_builtins.str] bootstrap_script_url: (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceCloudSqlDetailArgs', 'BdsInstanceCloudSqlDetailArgsDict']]]] cloud_sql_details: The information about added Cloud SQL capability
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceCloudSqlDetailArgs', 'BdsInstanceCloudSqlDetailArgsDict', 'outputs.BdsInstanceCloudSqlDetail']]]] cloud_sql_details: The information about added Cloud SQL capability
         :param pulumi.Input[_builtins.str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceClusterDetailArgs', 'BdsInstanceClusterDetailArgsDict']]]] cluster_details: Specific info about a Hadoop cluster
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceClusterDetailArgs', 'BdsInstanceClusterDetailArgsDict', 'outputs.BdsInstanceClusterDetail']]]] cluster_details: Specific info about a Hadoop cluster
         :param pulumi.Input[_builtins.str] cluster_profile: Profile of the Big Data Service cluster.
         :param pulumi.Input[_builtins.str] cluster_public_key: The SSH public key used to authenticate the cluster connection.
         :param pulumi.Input[_builtins.str] cluster_version: Version of the Hadoop distribution
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment
-        :param pulumi.Input[Union['BdsInstanceComputeOnlyWorkerNodeArgs', 'BdsInstanceComputeOnlyWorkerNodeArgsDict']] compute_only_worker_node: The compute-only worker node in the BDS instance
+        :param pulumi.Input[Union['BdsInstanceComputeOnlyWorkerNodeArgs', 'BdsInstanceComputeOnlyWorkerNodeArgsDict', 'outputs.BdsInstanceComputeOnlyWorkerNode']] compute_only_worker_node: The compute-only worker node in the BDS instance
         :param pulumi.Input[_builtins.str] created_by: The user who created the cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Name of the BDS instance
@@ -1767,12 +1767,12 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_kafka_configured: Boolean flag specifying whether or not Kafka should be configured.
         :param pulumi.Input[_builtins.bool] is_secret_reused: Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
         :param pulumi.Input[_builtins.bool] is_secure: Boolean flag specifying whether or not the cluster should be setup as secure.
-        :param pulumi.Input[Union['BdsInstanceKafkaBrokerNodeArgs', 'BdsInstanceKafkaBrokerNodeArgsDict']] kafka_broker_node: The kafka broker node in the BDS instance
+        :param pulumi.Input[Union['BdsInstanceKafkaBrokerNodeArgs', 'BdsInstanceKafkaBrokerNodeArgsDict', 'outputs.BdsInstanceKafkaBrokerNode']] kafka_broker_node: The kafka broker node in the BDS instance
         :param pulumi.Input[_builtins.str] kerberos_realm_name: The user-defined kerberos realm name.
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The OCID of the Key Management master encryption key.
-        :param pulumi.Input[Union['BdsInstanceMasterNodeArgs', 'BdsInstanceMasterNodeArgsDict']] master_node: The master node in the BDS instance
-        :param pulumi.Input[Union['BdsInstanceNetworkConfigArgs', 'BdsInstanceNetworkConfigArgsDict']] network_config: Additional configuration of the user's network.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceNodeArgs', 'BdsInstanceNodeArgsDict']]]] nodes: The list of nodes in the Big Data Service cluster.
+        :param pulumi.Input[Union['BdsInstanceMasterNodeArgs', 'BdsInstanceMasterNodeArgsDict', 'outputs.BdsInstanceMasterNode']] master_node: The master node in the BDS instance
+        :param pulumi.Input[Union['BdsInstanceNetworkConfigArgs', 'BdsInstanceNetworkConfigArgsDict', 'outputs.BdsInstanceNetworkConfig']] network_config: Additional configuration of the user's network.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceNodeArgs', 'BdsInstanceNodeArgsDict', 'outputs.BdsInstanceNode']]]] nodes: The list of nodes in the Big Data Service cluster.
         :param pulumi.Input[_builtins.int] number_of_nodes: The number of nodes that form the cluster.
         :param pulumi.Input[_builtins.int] number_of_nodes_requiring_maintenance_reboot: Number of nodes that require a maintenance reboot
         :param pulumi.Input[_builtins.str] os_patch_version: (Updatable) The version of the patch to be updated.
@@ -1782,8 +1782,8 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_earliest_certificate_expiration: The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
         :param pulumi.Input[_builtins.str] time_updated: The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
-        :param pulumi.Input[Union['BdsInstanceUtilNodeArgs', 'BdsInstanceUtilNodeArgsDict']] util_node: The utility node in the BDS instance
-        :param pulumi.Input[Union['BdsInstanceWorkerNodeArgs', 'BdsInstanceWorkerNodeArgsDict']] worker_node: The worker node in the BDS instance
+        :param pulumi.Input[Union['BdsInstanceUtilNodeArgs', 'BdsInstanceUtilNodeArgsDict', 'outputs.BdsInstanceUtilNode']] util_node: The utility node in the BDS instance
+        :param pulumi.Input[Union['BdsInstanceWorkerNodeArgs', 'BdsInstanceWorkerNodeArgsDict', 'outputs.BdsInstanceWorkerNode']] worker_node: The worker node in the BDS instance
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

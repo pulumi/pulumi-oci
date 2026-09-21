@@ -114,7 +114,7 @@ class AwaitableGetSqlFirewallViolationsResult(GetSqlFirewallViolationsResult):
 def get_sql_firewall_violations(access_level: Optional[_builtins.str] = None,
                                 compartment_id: Optional[_builtins.str] = None,
                                 compartment_id_in_subtree: Optional[_builtins.bool] = None,
-                                filters: Optional[Sequence[Union['GetSqlFirewallViolationsFilterArgs', 'GetSqlFirewallViolationsFilterArgsDict']]] = None,
+                                filters: Optional[Sequence[Union['GetSqlFirewallViolationsFilterArgs', 'GetSqlFirewallViolationsFilterArgsDict', 'outputs.GetSqlFirewallViolationsFilterResult']]] = None,
                                 scim_query: Optional[_builtins.str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSqlFirewallViolationsResult:
     """
@@ -162,7 +162,7 @@ def get_sql_firewall_violations(access_level: Optional[_builtins.str] = None,
 def get_sql_firewall_violations_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
-                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSqlFirewallViolationsFilterArgs', 'GetSqlFirewallViolationsFilterArgsDict']]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSqlFirewallViolationsFilterArgs', 'GetSqlFirewallViolationsFilterArgsDict', 'outputs.GetSqlFirewallViolationsFilterResult']]]]] = None,
                                        scim_query: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSqlFirewallViolationsResult]:
     """

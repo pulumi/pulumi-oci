@@ -839,22 +839,22 @@ class NodePool(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 initial_node_labels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NodePoolInitialNodeLabelArgs', 'NodePoolInitialNodeLabelArgsDict']]]]] = None,
+                 initial_node_labels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NodePoolInitialNodeLabelArgs', 'NodePoolInitialNodeLabelArgsDict', 'outputs.NodePoolInitialNodeLabel']]]]] = None,
                  kubernetes_version: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  network_launch_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 node_config_details: pulumi.Input[Optional[Union['NodePoolNodeConfigDetailsArgs', 'NodePoolNodeConfigDetailsArgsDict']]] = None,
-                 node_eviction_node_pool_settings: pulumi.Input[Optional[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict']]] = None,
+                 node_config_details: pulumi.Input[Optional[Union['NodePoolNodeConfigDetailsArgs', 'NodePoolNodeConfigDetailsArgsDict', 'outputs.NodePoolNodeConfigDetails']]] = None,
+                 node_eviction_node_pool_settings: pulumi.Input[Optional[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict', 'outputs.NodePoolNodeEvictionNodePoolSettings']]] = None,
                  node_image_id: pulumi.Input[Optional[_builtins.str]] = None,
                  node_image_name: pulumi.Input[Optional[_builtins.str]] = None,
                  node_metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 node_pool_cycling_details: pulumi.Input[Optional[Union['NodePoolNodePoolCyclingDetailsArgs', 'NodePoolNodePoolCyclingDetailsArgsDict']]] = None,
+                 node_pool_cycling_details: pulumi.Input[Optional[Union['NodePoolNodePoolCyclingDetailsArgs', 'NodePoolNodePoolCyclingDetailsArgsDict', 'outputs.NodePoolNodePoolCyclingDetails']]] = None,
                  node_shape: pulumi.Input[Optional[_builtins.str]] = None,
-                 node_shape_config: pulumi.Input[Optional[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict']]] = None,
-                 node_source_details: pulumi.Input[Optional[Union['NodePoolNodeSourceDetailsArgs', 'NodePoolNodeSourceDetailsArgsDict']]] = None,
-                 primary_vnic: pulumi.Input[Optional[Union['NodePoolPrimaryVnicArgs', 'NodePoolPrimaryVnicArgsDict']]] = None,
+                 node_shape_config: pulumi.Input[Optional[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict', 'outputs.NodePoolNodeShapeConfig']]] = None,
+                 node_source_details: pulumi.Input[Optional[Union['NodePoolNodeSourceDetailsArgs', 'NodePoolNodeSourceDetailsArgsDict', 'outputs.NodePoolNodeSourceDetails']]] = None,
+                 primary_vnic: pulumi.Input[Optional[Union['NodePoolPrimaryVnicArgs', 'NodePoolPrimaryVnicArgsDict', 'outputs.NodePoolPrimaryVnic']]] = None,
                  quantity_per_subnet: pulumi.Input[Optional[_builtins.int]] = None,
-                 secondary_vnics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict']]]]] = None,
+                 secondary_vnics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict', 'outputs.NodePoolSecondaryVnic']]]]] = None,
                  ssh_public_key: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -991,22 +991,22 @@ class NodePool(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment in which the node pool exists.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolInitialNodeLabelArgs', 'NodePoolInitialNodeLabelArgsDict']]]] initial_node_labels: (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolInitialNodeLabelArgs', 'NodePoolInitialNodeLabelArgsDict', 'outputs.NodePoolInitialNodeLabel']]]] initial_node_labels: (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
         :param pulumi.Input[_builtins.str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the node pool. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] network_launch_type: (Updatable) Emulation type for the physical network interface card (NIC) for nodes
-        :param pulumi.Input[Union['NodePoolNodeConfigDetailsArgs', 'NodePoolNodeConfigDetailsArgsDict']] node_config_details: (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
-        :param pulumi.Input[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict']] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
+        :param pulumi.Input[Union['NodePoolNodeConfigDetailsArgs', 'NodePoolNodeConfigDetailsArgsDict', 'outputs.NodePoolNodeConfigDetails']] node_config_details: (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
+        :param pulumi.Input[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict', 'outputs.NodePoolNodeEvictionNodePoolSettings']] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
         :param pulumi.Input[_builtins.str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         :param pulumi.Input[_builtins.str] node_image_name: Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-        :param pulumi.Input[Union['NodePoolNodePoolCyclingDetailsArgs', 'NodePoolNodePoolCyclingDetailsArgsDict']] node_pool_cycling_details: (Updatable) Node Pool Cycling Details
+        :param pulumi.Input[Union['NodePoolNodePoolCyclingDetailsArgs', 'NodePoolNodePoolCyclingDetailsArgsDict', 'outputs.NodePoolNodePoolCyclingDetails']] node_pool_cycling_details: (Updatable) Node Pool Cycling Details
         :param pulumi.Input[_builtins.str] node_shape: (Updatable) The name of the node shape of the nodes in the node pool.
-        :param pulumi.Input[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict']] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
-        :param pulumi.Input[Union['NodePoolNodeSourceDetailsArgs', 'NodePoolNodeSourceDetailsArgsDict']] node_source_details: (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
-        :param pulumi.Input[Union['NodePoolPrimaryVnicArgs', 'NodePoolPrimaryVnicArgsDict']] primary_vnic: (Updatable) Details for node's primary VNIC
+        :param pulumi.Input[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict', 'outputs.NodePoolNodeShapeConfig']] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
+        :param pulumi.Input[Union['NodePoolNodeSourceDetailsArgs', 'NodePoolNodeSourceDetailsArgsDict', 'outputs.NodePoolNodeSourceDetails']] node_source_details: (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
+        :param pulumi.Input[Union['NodePoolPrimaryVnicArgs', 'NodePoolPrimaryVnicArgsDict', 'outputs.NodePoolPrimaryVnic']] primary_vnic: (Updatable) Details for node's primary VNIC
         :param pulumi.Input[_builtins.int] quantity_per_subnet: (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict']]]] secondary_vnics: (Updatable) A list of secondary vnics to attach to nodes
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict', 'outputs.NodePoolSecondaryVnic']]]] secondary_vnics: (Updatable) A list of secondary vnics to attach to nodes
         :param pulumi.Input[_builtins.str] ssh_public_key: (Updatable) The SSH public key on each node in the node pool on launch.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnet_ids: (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
                
@@ -1165,22 +1165,22 @@ class NodePool(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 initial_node_labels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NodePoolInitialNodeLabelArgs', 'NodePoolInitialNodeLabelArgsDict']]]]] = None,
+                 initial_node_labels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NodePoolInitialNodeLabelArgs', 'NodePoolInitialNodeLabelArgsDict', 'outputs.NodePoolInitialNodeLabel']]]]] = None,
                  kubernetes_version: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  network_launch_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 node_config_details: pulumi.Input[Optional[Union['NodePoolNodeConfigDetailsArgs', 'NodePoolNodeConfigDetailsArgsDict']]] = None,
-                 node_eviction_node_pool_settings: pulumi.Input[Optional[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict']]] = None,
+                 node_config_details: pulumi.Input[Optional[Union['NodePoolNodeConfigDetailsArgs', 'NodePoolNodeConfigDetailsArgsDict', 'outputs.NodePoolNodeConfigDetails']]] = None,
+                 node_eviction_node_pool_settings: pulumi.Input[Optional[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict', 'outputs.NodePoolNodeEvictionNodePoolSettings']]] = None,
                  node_image_id: pulumi.Input[Optional[_builtins.str]] = None,
                  node_image_name: pulumi.Input[Optional[_builtins.str]] = None,
                  node_metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 node_pool_cycling_details: pulumi.Input[Optional[Union['NodePoolNodePoolCyclingDetailsArgs', 'NodePoolNodePoolCyclingDetailsArgsDict']]] = None,
+                 node_pool_cycling_details: pulumi.Input[Optional[Union['NodePoolNodePoolCyclingDetailsArgs', 'NodePoolNodePoolCyclingDetailsArgsDict', 'outputs.NodePoolNodePoolCyclingDetails']]] = None,
                  node_shape: pulumi.Input[Optional[_builtins.str]] = None,
-                 node_shape_config: pulumi.Input[Optional[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict']]] = None,
-                 node_source_details: pulumi.Input[Optional[Union['NodePoolNodeSourceDetailsArgs', 'NodePoolNodeSourceDetailsArgsDict']]] = None,
-                 primary_vnic: pulumi.Input[Optional[Union['NodePoolPrimaryVnicArgs', 'NodePoolPrimaryVnicArgsDict']]] = None,
+                 node_shape_config: pulumi.Input[Optional[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict', 'outputs.NodePoolNodeShapeConfig']]] = None,
+                 node_source_details: pulumi.Input[Optional[Union['NodePoolNodeSourceDetailsArgs', 'NodePoolNodeSourceDetailsArgsDict', 'outputs.NodePoolNodeSourceDetails']]] = None,
+                 primary_vnic: pulumi.Input[Optional[Union['NodePoolPrimaryVnicArgs', 'NodePoolPrimaryVnicArgsDict', 'outputs.NodePoolPrimaryVnic']]] = None,
                  quantity_per_subnet: pulumi.Input[Optional[_builtins.int]] = None,
-                 secondary_vnics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict']]]]] = None,
+                 secondary_vnics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict', 'outputs.NodePoolSecondaryVnic']]]]] = None,
                  ssh_public_key: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -1238,25 +1238,25 @@ class NodePool(pulumi.CustomResource):
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            initial_node_labels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NodePoolInitialNodeLabelArgs', 'NodePoolInitialNodeLabelArgsDict']]]]] = None,
+            initial_node_labels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NodePoolInitialNodeLabelArgs', 'NodePoolInitialNodeLabelArgsDict', 'outputs.NodePoolInitialNodeLabel']]]]] = None,
             kubernetes_version: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             network_launch_type: pulumi.Input[Optional[_builtins.str]] = None,
-            node_config_details: pulumi.Input[Optional[Union['NodePoolNodeConfigDetailsArgs', 'NodePoolNodeConfigDetailsArgsDict']]] = None,
-            node_eviction_node_pool_settings: pulumi.Input[Optional[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict']]] = None,
+            node_config_details: pulumi.Input[Optional[Union['NodePoolNodeConfigDetailsArgs', 'NodePoolNodeConfigDetailsArgsDict', 'outputs.NodePoolNodeConfigDetails']]] = None,
+            node_eviction_node_pool_settings: pulumi.Input[Optional[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict', 'outputs.NodePoolNodeEvictionNodePoolSettings']]] = None,
             node_image_id: pulumi.Input[Optional[_builtins.str]] = None,
             node_image_name: pulumi.Input[Optional[_builtins.str]] = None,
             node_metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            node_pool_cycling_details: pulumi.Input[Optional[Union['NodePoolNodePoolCyclingDetailsArgs', 'NodePoolNodePoolCyclingDetailsArgsDict']]] = None,
+            node_pool_cycling_details: pulumi.Input[Optional[Union['NodePoolNodePoolCyclingDetailsArgs', 'NodePoolNodePoolCyclingDetailsArgsDict', 'outputs.NodePoolNodePoolCyclingDetails']]] = None,
             node_shape: pulumi.Input[Optional[_builtins.str]] = None,
-            node_shape_config: pulumi.Input[Optional[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict']]] = None,
-            node_source_details: pulumi.Input[Optional[Union['NodePoolNodeSourceDetailsArgs', 'NodePoolNodeSourceDetailsArgsDict']]] = None,
-            node_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NodePoolNodeSourceArgs', 'NodePoolNodeSourceArgsDict']]]]] = None,
-            nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NodePoolNodeArgs', 'NodePoolNodeArgsDict']]]]] = None,
-            primary_vnic: pulumi.Input[Optional[Union['NodePoolPrimaryVnicArgs', 'NodePoolPrimaryVnicArgsDict']]] = None,
+            node_shape_config: pulumi.Input[Optional[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict', 'outputs.NodePoolNodeShapeConfig']]] = None,
+            node_source_details: pulumi.Input[Optional[Union['NodePoolNodeSourceDetailsArgs', 'NodePoolNodeSourceDetailsArgsDict', 'outputs.NodePoolNodeSourceDetails']]] = None,
+            node_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NodePoolNodeSourceArgs', 'NodePoolNodeSourceArgsDict', 'outputs.NodePoolNodeSource']]]]] = None,
+            nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NodePoolNodeArgs', 'NodePoolNodeArgsDict', 'outputs.NodePoolNode']]]]] = None,
+            primary_vnic: pulumi.Input[Optional[Union['NodePoolPrimaryVnicArgs', 'NodePoolPrimaryVnicArgsDict', 'outputs.NodePoolPrimaryVnic']]] = None,
             quantity_per_subnet: pulumi.Input[Optional[_builtins.int]] = None,
-            secondary_vnics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict']]]]] = None,
+            secondary_vnics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict', 'outputs.NodePoolSecondaryVnic']]]]] = None,
             ssh_public_key: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'NodePool':
@@ -1271,25 +1271,25 @@ class NodePool(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment in which the node pool exists.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolInitialNodeLabelArgs', 'NodePoolInitialNodeLabelArgsDict']]]] initial_node_labels: (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolInitialNodeLabelArgs', 'NodePoolInitialNodeLabelArgsDict', 'outputs.NodePoolInitialNodeLabel']]]] initial_node_labels: (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
         :param pulumi.Input[_builtins.str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the state of the node.
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the node pool. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] network_launch_type: (Updatable) Emulation type for the physical network interface card (NIC) for nodes
-        :param pulumi.Input[Union['NodePoolNodeConfigDetailsArgs', 'NodePoolNodeConfigDetailsArgsDict']] node_config_details: (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
-        :param pulumi.Input[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict']] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
+        :param pulumi.Input[Union['NodePoolNodeConfigDetailsArgs', 'NodePoolNodeConfigDetailsArgsDict', 'outputs.NodePoolNodeConfigDetails']] node_config_details: (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
+        :param pulumi.Input[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict', 'outputs.NodePoolNodeEvictionNodePoolSettings']] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
         :param pulumi.Input[_builtins.str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         :param pulumi.Input[_builtins.str] node_image_name: Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-        :param pulumi.Input[Union['NodePoolNodePoolCyclingDetailsArgs', 'NodePoolNodePoolCyclingDetailsArgsDict']] node_pool_cycling_details: (Updatable) Node Pool Cycling Details
+        :param pulumi.Input[Union['NodePoolNodePoolCyclingDetailsArgs', 'NodePoolNodePoolCyclingDetailsArgsDict', 'outputs.NodePoolNodePoolCyclingDetails']] node_pool_cycling_details: (Updatable) Node Pool Cycling Details
         :param pulumi.Input[_builtins.str] node_shape: (Updatable) The name of the node shape of the nodes in the node pool.
-        :param pulumi.Input[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict']] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
-        :param pulumi.Input[Union['NodePoolNodeSourceDetailsArgs', 'NodePoolNodeSourceDetailsArgsDict']] node_source_details: (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolNodeSourceArgs', 'NodePoolNodeSourceArgsDict']]]] node_sources: Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolNodeArgs', 'NodePoolNodeArgsDict']]]] nodes: The nodes in the node pool.
-        :param pulumi.Input[Union['NodePoolPrimaryVnicArgs', 'NodePoolPrimaryVnicArgsDict']] primary_vnic: (Updatable) Details for node's primary VNIC
+        :param pulumi.Input[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict', 'outputs.NodePoolNodeShapeConfig']] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
+        :param pulumi.Input[Union['NodePoolNodeSourceDetailsArgs', 'NodePoolNodeSourceDetailsArgsDict', 'outputs.NodePoolNodeSourceDetails']] node_source_details: (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolNodeSourceArgs', 'NodePoolNodeSourceArgsDict', 'outputs.NodePoolNodeSource']]]] node_sources: Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolNodeArgs', 'NodePoolNodeArgsDict', 'outputs.NodePoolNode']]]] nodes: The nodes in the node pool.
+        :param pulumi.Input[Union['NodePoolPrimaryVnicArgs', 'NodePoolPrimaryVnicArgsDict', 'outputs.NodePoolPrimaryVnic']] primary_vnic: (Updatable) Details for node's primary VNIC
         :param pulumi.Input[_builtins.int] quantity_per_subnet: (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict']]]] secondary_vnics: (Updatable) A list of secondary vnics to attach to nodes
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict', 'outputs.NodePoolSecondaryVnic']]]] secondary_vnics: (Updatable) A list of secondary vnics to attach to nodes
         :param pulumi.Input[_builtins.str] ssh_public_key: (Updatable) The SSH public key on each node in the node pool on launch.
         :param pulumi.Input[_builtins.str] state: The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnet_ids: (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.

@@ -103,7 +103,7 @@ class AwaitableGetListingPackageAgreementsResult(GetListingPackageAgreementsResu
 
 
 def get_listing_package_agreements(compartment_id: Optional[_builtins.str] = None,
-                                   filters: Optional[Sequence[Union['GetListingPackageAgreementsFilterArgs', 'GetListingPackageAgreementsFilterArgsDict']]] = None,
+                                   filters: Optional[Sequence[Union['GetListingPackageAgreementsFilterArgs', 'GetListingPackageAgreementsFilterArgsDict', 'outputs.GetListingPackageAgreementsFilterResult']]] = None,
                                    listing_id: Optional[_builtins.str] = None,
                                    package_version: Optional[_builtins.str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetListingPackageAgreementsResult:
@@ -144,7 +144,7 @@ def get_listing_package_agreements(compartment_id: Optional[_builtins.str] = Non
         listing_id=pulumi.get(__ret__, 'listing_id'),
         package_version=pulumi.get(__ret__, 'package_version'))
 def get_listing_package_agreements_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetListingPackageAgreementsFilterArgs', 'GetListingPackageAgreementsFilterArgsDict']]]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetListingPackageAgreementsFilterArgs', 'GetListingPackageAgreementsFilterArgsDict', 'outputs.GetListingPackageAgreementsFilterResult']]]]] = None,
                                           listing_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           package_version: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListingPackageAgreementsResult]:

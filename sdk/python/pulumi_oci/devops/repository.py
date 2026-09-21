@@ -568,7 +568,7 @@ class Repository(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 mirror_repository_config: pulumi.Input[Optional[Union['RepositoryMirrorRepositoryConfigArgs', 'RepositoryMirrorRepositoryConfigArgsDict']]] = None,
+                 mirror_repository_config: pulumi.Input[Optional[Union['RepositoryMirrorRepositoryConfigArgs', 'RepositoryMirrorRepositoryConfigArgsDict', 'outputs.RepositoryMirrorRepositoryConfig']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_repository_id: pulumi.Input[Optional[_builtins.str]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -597,7 +597,7 @@ class Repository(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Details of the repository. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Union['RepositoryMirrorRepositoryConfigArgs', 'RepositoryMirrorRepositoryConfigArgsDict']] mirror_repository_config: (Updatable) Configuration information for mirroring the repository.
+        :param pulumi.Input[Union['RepositoryMirrorRepositoryConfigArgs', 'RepositoryMirrorRepositoryConfigArgsDict', 'outputs.RepositoryMirrorRepositoryConfig']] mirror_repository_config: (Updatable) Configuration information for mirroring the repository.
         :param pulumi.Input[_builtins.str] name: (Updatable) Name of the repository. Should be unique within the project.
         :param pulumi.Input[_builtins.str] parent_repository_id: The OCID of the parent repository.
         :param pulumi.Input[_builtins.str] project_id: The OCID of the DevOps project containing the repository.
@@ -648,7 +648,7 @@ class Repository(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 mirror_repository_config: pulumi.Input[Optional[Union['RepositoryMirrorRepositoryConfigArgs', 'RepositoryMirrorRepositoryConfigArgsDict']]] = None,
+                 mirror_repository_config: pulumi.Input[Optional[Union['RepositoryMirrorRepositoryConfigArgs', 'RepositoryMirrorRepositoryConfigArgsDict', 'outputs.RepositoryMirrorRepositoryConfig']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_repository_id: pulumi.Input[Optional[_builtins.str]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -708,7 +708,7 @@ class Repository(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             http_url: pulumi.Input[Optional[_builtins.str]] = None,
             lifecyle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            mirror_repository_config: pulumi.Input[Optional[Union['RepositoryMirrorRepositoryConfigArgs', 'RepositoryMirrorRepositoryConfigArgsDict']]] = None,
+            mirror_repository_config: pulumi.Input[Optional[Union['RepositoryMirrorRepositoryConfigArgs', 'RepositoryMirrorRepositoryConfigArgsDict', 'outputs.RepositoryMirrorRepositoryConfig']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             namespace: pulumi.Input[Optional[_builtins.str]] = None,
             parent_repository_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -738,7 +738,7 @@ class Repository(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] http_url: HTTP URL that you use to git clone, pull and push.
         :param pulumi.Input[_builtins.str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Union['RepositoryMirrorRepositoryConfigArgs', 'RepositoryMirrorRepositoryConfigArgsDict']] mirror_repository_config: (Updatable) Configuration information for mirroring the repository.
+        :param pulumi.Input[Union['RepositoryMirrorRepositoryConfigArgs', 'RepositoryMirrorRepositoryConfigArgsDict', 'outputs.RepositoryMirrorRepositoryConfig']] mirror_repository_config: (Updatable) Configuration information for mirroring the repository.
         :param pulumi.Input[_builtins.str] name: (Updatable) Name of the repository. Should be unique within the project.
         :param pulumi.Input[_builtins.str] namespace: Tenancy unique namespace.
         :param pulumi.Input[_builtins.str] parent_repository_id: The OCID of the parent repository.

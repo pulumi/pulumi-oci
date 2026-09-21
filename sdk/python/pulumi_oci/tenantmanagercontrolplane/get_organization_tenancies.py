@@ -81,7 +81,7 @@ class AwaitableGetOrganizationTenanciesResult(GetOrganizationTenanciesResult):
             organization_tenancy_collections=self.organization_tenancy_collections)
 
 
-def get_organization_tenancies(filters: Optional[Sequence[Union['GetOrganizationTenanciesFilterArgs', 'GetOrganizationTenanciesFilterArgsDict']]] = None,
+def get_organization_tenancies(filters: Optional[Sequence[Union['GetOrganizationTenanciesFilterArgs', 'GetOrganizationTenanciesFilterArgsDict', 'outputs.GetOrganizationTenanciesFilterResult']]] = None,
                                organization_id: Optional[_builtins.str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOrganizationTenanciesResult:
     """
@@ -112,7 +112,7 @@ def get_organization_tenancies(filters: Optional[Sequence[Union['GetOrganization
         id=pulumi.get(__ret__, 'id'),
         organization_id=pulumi.get(__ret__, 'organization_id'),
         organization_tenancy_collections=pulumi.get(__ret__, 'organization_tenancy_collections'))
-def get_organization_tenancies_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOrganizationTenanciesFilterArgs', 'GetOrganizationTenanciesFilterArgsDict']]]]] = None,
+def get_organization_tenancies_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOrganizationTenanciesFilterArgs', 'GetOrganizationTenanciesFilterArgsDict', 'outputs.GetOrganizationTenanciesFilterResult']]]]] = None,
                                       organization_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOrganizationTenanciesResult]:
     """

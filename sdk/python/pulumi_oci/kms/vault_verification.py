@@ -169,7 +169,7 @@ class VaultVerification(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  replica_region: pulumi.Input[Optional[_builtins.str]] = None,
-                 replica_vault_metadata: pulumi.Input[Optional[Union['VaultVerificationReplicaVaultMetadataArgs', 'VaultVerificationReplicaVaultMetadataArgsDict']]] = None,
+                 replica_vault_metadata: pulumi.Input[Optional[Union['VaultVerificationReplicaVaultMetadataArgs', 'VaultVerificationReplicaVaultMetadataArgsDict', 'outputs.VaultVerificationReplicaVaultMetadata']]] = None,
                  vault_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -242,7 +242,7 @@ class VaultVerification(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  replica_region: pulumi.Input[Optional[_builtins.str]] = None,
-                 replica_vault_metadata: pulumi.Input[Optional[Union['VaultVerificationReplicaVaultMetadataArgs', 'VaultVerificationReplicaVaultMetadataArgsDict']]] = None,
+                 replica_vault_metadata: pulumi.Input[Optional[Union['VaultVerificationReplicaVaultMetadataArgs', 'VaultVerificationReplicaVaultMetadataArgsDict', 'outputs.VaultVerificationReplicaVaultMetadata']]] = None,
                  vault_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -276,7 +276,7 @@ class VaultVerification(pulumi.CustomResource):
             crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
             management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
             replica_region: pulumi.Input[Optional[_builtins.str]] = None,
-            replica_vault_metadata: pulumi.Input[Optional[Union['VaultVerificationReplicaVaultMetadataArgs', 'VaultVerificationReplicaVaultMetadataArgsDict']]] = None,
+            replica_vault_metadata: pulumi.Input[Optional[Union['VaultVerificationReplicaVaultMetadataArgs', 'VaultVerificationReplicaVaultMetadataArgsDict', 'outputs.VaultVerificationReplicaVaultMetadata']]] = None,
             vault_id: pulumi.Input[Optional[_builtins.str]] = None,
             vault_replica_status: pulumi.Input[Optional[_builtins.str]] = None) -> 'VaultVerification':
         """

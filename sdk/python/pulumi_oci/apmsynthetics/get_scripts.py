@@ -108,7 +108,7 @@ class AwaitableGetScriptsResult(GetScriptsResult):
 def get_scripts(apm_domain_id: Optional[_builtins.str] = None,
                 content_type: Optional[_builtins.str] = None,
                 display_name: Optional[_builtins.str] = None,
-                filters: Optional[Sequence[Union['GetScriptsFilterArgs', 'GetScriptsFilterArgsDict']]] = None,
+                filters: Optional[Sequence[Union['GetScriptsFilterArgs', 'GetScriptsFilterArgsDict', 'outputs.GetScriptsFilterResult']]] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetScriptsResult:
     """
     This data source provides the list of Scripts in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
@@ -149,7 +149,7 @@ def get_scripts(apm_domain_id: Optional[_builtins.str] = None,
 def get_scripts_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                        content_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetScriptsFilterArgs', 'GetScriptsFilterArgsDict']]]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetScriptsFilterArgs', 'GetScriptsFilterArgsDict', 'outputs.GetScriptsFilterResult']]]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScriptsResult]:
     """
     This data source provides the list of Scripts in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).

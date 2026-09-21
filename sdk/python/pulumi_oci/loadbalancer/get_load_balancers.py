@@ -120,7 +120,7 @@ class AwaitableGetLoadBalancersResult(GetLoadBalancersResult):
 def get_load_balancers(compartment_id: Optional[_builtins.str] = None,
                        detail: Optional[_builtins.str] = None,
                        display_name: Optional[_builtins.str] = None,
-                       filters: Optional[Sequence[Union['GetLoadBalancersFilterArgs', 'GetLoadBalancersFilterArgsDict']]] = None,
+                       filters: Optional[Sequence[Union['GetLoadBalancersFilterArgs', 'GetLoadBalancersFilterArgsDict', 'outputs.GetLoadBalancersFilterResult']]] = None,
                        state: Optional[_builtins.str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLoadBalancersResult:
     """
@@ -170,7 +170,7 @@ def get_load_balancers(compartment_id: Optional[_builtins.str] = None,
 def get_load_balancers_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                               detail: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLoadBalancersFilterArgs', 'GetLoadBalancersFilterArgsDict']]]]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLoadBalancersFilterArgs', 'GetLoadBalancersFilterArgsDict', 'outputs.GetLoadBalancersFilterResult']]]]] = None,
                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLoadBalancersResult]:
     """

@@ -520,7 +520,7 @@ class MlApplicationImplementation(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 logging: pulumi.Input[Optional[Union['MlApplicationImplementationLoggingArgs', 'MlApplicationImplementationLoggingArgsDict']]] = None,
+                 logging: pulumi.Input[Optional[Union['MlApplicationImplementationLoggingArgs', 'MlApplicationImplementationLoggingArgsDict', 'outputs.MlApplicationImplementationLogging']]] = None,
                  ml_application_id: pulumi.Input[Optional[_builtins.str]] = None,
                  ml_application_package: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -590,7 +590,7 @@ class MlApplicationImplementation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where ML Application Implementation is created.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['MlApplicationImplementationLoggingArgs', 'MlApplicationImplementationLoggingArgsDict']] logging: (Updatable) Configuration of Logging for ML Application Implementation.
+        :param pulumi.Input[Union['MlApplicationImplementationLoggingArgs', 'MlApplicationImplementationLoggingArgsDict', 'outputs.MlApplicationImplementationLogging']] logging: (Updatable) Configuration of Logging for ML Application Implementation.
         :param pulumi.Input[_builtins.str] ml_application_id: The OCID of the ML Application implemented by this ML Application Implementation
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] ml_application_package: (Updatable) Configuration of The ML Application Package to upload.
         :param pulumi.Input[_builtins.str] name: ML Application Implementation name which is unique for given ML Application.
@@ -682,7 +682,7 @@ class MlApplicationImplementation(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 logging: pulumi.Input[Optional[Union['MlApplicationImplementationLoggingArgs', 'MlApplicationImplementationLoggingArgsDict']]] = None,
+                 logging: pulumi.Input[Optional[Union['MlApplicationImplementationLoggingArgs', 'MlApplicationImplementationLoggingArgsDict', 'outputs.MlApplicationImplementationLogging']]] = None,
                  ml_application_id: pulumi.Input[Optional[_builtins.str]] = None,
                  ml_application_package: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -731,18 +731,18 @@ class MlApplicationImplementation(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             allowed_migration_destinations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            application_components: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MlApplicationImplementationApplicationComponentArgs', 'MlApplicationImplementationApplicationComponentArgsDict']]]]] = None,
+            application_components: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MlApplicationImplementationApplicationComponentArgs', 'MlApplicationImplementationApplicationComponentArgsDict', 'outputs.MlApplicationImplementationApplicationComponent']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            configuration_schemas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MlApplicationImplementationConfigurationSchemaArgs', 'MlApplicationImplementationConfigurationSchemaArgsDict']]]]] = None,
+            configuration_schemas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MlApplicationImplementationConfigurationSchemaArgs', 'MlApplicationImplementationConfigurationSchemaArgsDict', 'outputs.MlApplicationImplementationConfigurationSchema']]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            logging: pulumi.Input[Optional[Union['MlApplicationImplementationLoggingArgs', 'MlApplicationImplementationLoggingArgsDict']]] = None,
+            logging: pulumi.Input[Optional[Union['MlApplicationImplementationLoggingArgs', 'MlApplicationImplementationLoggingArgsDict', 'outputs.MlApplicationImplementationLogging']]] = None,
             ml_application_id: pulumi.Input[Optional[_builtins.str]] = None,
             ml_application_name: pulumi.Input[Optional[_builtins.str]] = None,
             ml_application_package: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            ml_application_package_arguments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MlApplicationImplementationMlApplicationPackageArgumentArgs', 'MlApplicationImplementationMlApplicationPackageArgumentArgsDict']]]]] = None,
+            ml_application_package_arguments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MlApplicationImplementationMlApplicationPackageArgumentArgs', 'MlApplicationImplementationMlApplicationPackageArgumentArgsDict', 'outputs.MlApplicationImplementationMlApplicationPackageArgument']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             opc_ml_app_package_args: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             package_version: pulumi.Input[Optional[_builtins.str]] = None,
@@ -758,18 +758,18 @@ class MlApplicationImplementation(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_migration_destinations: (Updatable) List of ML Application Implementation OCIDs for which migration from this implementation is allowed. Migration means that if consumers change implementation for their instances to implementation with OCID from this list, instance components will be updated in place otherwise new instance components are created based on the new implementation and old instance components are removed.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MlApplicationImplementationApplicationComponentArgs', 'MlApplicationImplementationApplicationComponentArgsDict']]]] application_components: List of application components (OCI resources shared for all MlApplicationInstances). These have been created automatically based on their definitions in the ML Application package.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MlApplicationImplementationApplicationComponentArgs', 'MlApplicationImplementationApplicationComponentArgsDict', 'outputs.MlApplicationImplementationApplicationComponent']]]] application_components: List of application components (OCI resources shared for all MlApplicationInstances). These have been created automatically based on their definitions in the ML Application package.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where ML Application Implementation is created.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MlApplicationImplementationConfigurationSchemaArgs', 'MlApplicationImplementationConfigurationSchemaArgsDict']]]] configuration_schemas: Schema of configuration which needs to be provided for each ML Application Instance. It is defined in the ML Application package descriptor.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MlApplicationImplementationConfigurationSchemaArgs', 'MlApplicationImplementationConfigurationSchemaArgsDict', 'outputs.MlApplicationImplementationConfigurationSchema']]]] configuration_schemas: Schema of configuration which needs to be provided for each ML Application Instance. It is defined in the ML Application package descriptor.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: short description of the argument
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Union['MlApplicationImplementationLoggingArgs', 'MlApplicationImplementationLoggingArgsDict']] logging: (Updatable) Configuration of Logging for ML Application Implementation.
+        :param pulumi.Input[Union['MlApplicationImplementationLoggingArgs', 'MlApplicationImplementationLoggingArgsDict', 'outputs.MlApplicationImplementationLogging']] logging: (Updatable) Configuration of Logging for ML Application Implementation.
         :param pulumi.Input[_builtins.str] ml_application_id: The OCID of the ML Application implemented by this ML Application Implementation
         :param pulumi.Input[_builtins.str] ml_application_name: The name of ML Application (based on mlApplicationId)
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] ml_application_package: (Updatable) Configuration of The ML Application Package to upload.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MlApplicationImplementationMlApplicationPackageArgumentArgs', 'MlApplicationImplementationMlApplicationPackageArgumentArgsDict']]]] ml_application_package_arguments: List of ML Application package arguments provided during ML Application package upload.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MlApplicationImplementationMlApplicationPackageArgumentArgs', 'MlApplicationImplementationMlApplicationPackageArgumentArgsDict', 'outputs.MlApplicationImplementationMlApplicationPackageArgument']]]] ml_application_package_arguments: List of ML Application package arguments provided during ML Application package upload.
         :param pulumi.Input[_builtins.str] name: ML Application Implementation name which is unique for given ML Application.
                
                ** IMPORTANT **

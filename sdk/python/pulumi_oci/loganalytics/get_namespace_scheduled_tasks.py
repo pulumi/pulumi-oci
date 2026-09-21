@@ -143,7 +143,7 @@ class AwaitableGetNamespaceScheduledTasksResult(GetNamespaceScheduledTasksResult
 
 def get_namespace_scheduled_tasks(compartment_id: Optional[_builtins.str] = None,
                                   display_name: Optional[_builtins.str] = None,
-                                  filters: Optional[Sequence[Union['GetNamespaceScheduledTasksFilterArgs', 'GetNamespaceScheduledTasksFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetNamespaceScheduledTasksFilterArgs', 'GetNamespaceScheduledTasksFilterArgsDict', 'outputs.GetNamespaceScheduledTasksFilterResult']]] = None,
                                   namespace: Optional[_builtins.str] = None,
                                   target_service: Optional[_builtins.str] = None,
                                   task_type: Optional[_builtins.str] = None,
@@ -199,7 +199,7 @@ def get_namespace_scheduled_tasks(compartment_id: Optional[_builtins.str] = None
         template_id=pulumi.get(__ret__, 'template_id'))
 def get_namespace_scheduled_tasks_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespaceScheduledTasksFilterArgs', 'GetNamespaceScheduledTasksFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespaceScheduledTasksFilterArgs', 'GetNamespaceScheduledTasksFilterArgsDict', 'outputs.GetNamespaceScheduledTasksFilterResult']]]]] = None,
                                          namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                          target_service: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          task_type: pulumi.Input[Optional[_builtins.str]] = None,

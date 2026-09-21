@@ -572,7 +572,7 @@ class ScheduledQuery(pulumi.CustomResource):
                  scheduled_query_description: pulumi.Input[Optional[_builtins.str]] = None,
                  scheduled_query_maximum_runtime_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
                  scheduled_query_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 scheduled_query_processing_configuration: pulumi.Input[Optional[Union['ScheduledQueryScheduledQueryProcessingConfigurationArgs', 'ScheduledQueryScheduledQueryProcessingConfigurationArgsDict']]] = None,
+                 scheduled_query_processing_configuration: pulumi.Input[Optional[Union['ScheduledQueryScheduledQueryProcessingConfigurationArgs', 'ScheduledQueryScheduledQueryProcessingConfigurationArgsDict', 'outputs.ScheduledQueryScheduledQueryProcessingConfiguration']]] = None,
                  scheduled_query_processing_sub_type: pulumi.Input[Optional[_builtins.str]] = None,
                  scheduled_query_processing_type: pulumi.Input[Optional[_builtins.str]] = None,
                  scheduled_query_retention_criteria: pulumi.Input[Optional[_builtins.str]] = None,
@@ -606,7 +606,7 @@ class ScheduledQuery(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] scheduled_query_description: (Updatable) Description for the scheduled query.
         :param pulumi.Input[_builtins.str] scheduled_query_maximum_runtime_in_seconds: (Updatable) Maximum runtime for the scheduled query in seconds.
         :param pulumi.Input[_builtins.str] scheduled_query_name: (Updatable) Name of the scheduled query.
-        :param pulumi.Input[Union['ScheduledQueryScheduledQueryProcessingConfigurationArgs', 'ScheduledQueryScheduledQueryProcessingConfigurationArgsDict']] scheduled_query_processing_configuration: (Updatable) Definition of the scheduled query processing configuration.
+        :param pulumi.Input[Union['ScheduledQueryScheduledQueryProcessingConfigurationArgs', 'ScheduledQueryScheduledQueryProcessingConfigurationArgsDict', 'outputs.ScheduledQueryScheduledQueryProcessingConfiguration']] scheduled_query_processing_configuration: (Updatable) Definition of the scheduled query processing configuration.
         :param pulumi.Input[_builtins.str] scheduled_query_processing_sub_type: (Updatable) Processing sub type of the scheduled query.
         :param pulumi.Input[_builtins.str] scheduled_query_processing_type: (Updatable) Type of the scheduled query.
         :param pulumi.Input[_builtins.str] scheduled_query_retention_criteria: (Updatable) Retention criteria for the scheduled query.
@@ -662,7 +662,7 @@ class ScheduledQuery(pulumi.CustomResource):
                  scheduled_query_description: pulumi.Input[Optional[_builtins.str]] = None,
                  scheduled_query_maximum_runtime_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
                  scheduled_query_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 scheduled_query_processing_configuration: pulumi.Input[Optional[Union['ScheduledQueryScheduledQueryProcessingConfigurationArgs', 'ScheduledQueryScheduledQueryProcessingConfigurationArgsDict']]] = None,
+                 scheduled_query_processing_configuration: pulumi.Input[Optional[Union['ScheduledQueryScheduledQueryProcessingConfigurationArgs', 'ScheduledQueryScheduledQueryProcessingConfigurationArgsDict', 'outputs.ScheduledQueryScheduledQueryProcessingConfiguration']]] = None,
                  scheduled_query_processing_sub_type: pulumi.Input[Optional[_builtins.str]] = None,
                  scheduled_query_processing_type: pulumi.Input[Optional[_builtins.str]] = None,
                  scheduled_query_retention_criteria: pulumi.Input[Optional[_builtins.str]] = None,
@@ -717,7 +717,7 @@ class ScheduledQuery(pulumi.CustomResource):
             scheduled_query_maximum_runtime_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
             scheduled_query_name: pulumi.Input[Optional[_builtins.str]] = None,
             scheduled_query_next_run_in_ms: pulumi.Input[Optional[_builtins.str]] = None,
-            scheduled_query_processing_configuration: pulumi.Input[Optional[Union['ScheduledQueryScheduledQueryProcessingConfigurationArgs', 'ScheduledQueryScheduledQueryProcessingConfigurationArgsDict']]] = None,
+            scheduled_query_processing_configuration: pulumi.Input[Optional[Union['ScheduledQueryScheduledQueryProcessingConfigurationArgs', 'ScheduledQueryScheduledQueryProcessingConfigurationArgsDict', 'outputs.ScheduledQueryScheduledQueryProcessingConfiguration']]] = None,
             scheduled_query_processing_sub_type: pulumi.Input[Optional[_builtins.str]] = None,
             scheduled_query_processing_type: pulumi.Input[Optional[_builtins.str]] = None,
             scheduled_query_retention_criteria: pulumi.Input[Optional[_builtins.str]] = None,
@@ -742,7 +742,7 @@ class ScheduledQuery(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] scheduled_query_maximum_runtime_in_seconds: (Updatable) Maximum runtime for the scheduled query in seconds.
         :param pulumi.Input[_builtins.str] scheduled_query_name: (Updatable) Name of the scheduled query.
         :param pulumi.Input[_builtins.str] scheduled_query_next_run_in_ms: Next run for the scheduled query.
-        :param pulumi.Input[Union['ScheduledQueryScheduledQueryProcessingConfigurationArgs', 'ScheduledQueryScheduledQueryProcessingConfigurationArgsDict']] scheduled_query_processing_configuration: (Updatable) Definition of the scheduled query processing configuration.
+        :param pulumi.Input[Union['ScheduledQueryScheduledQueryProcessingConfigurationArgs', 'ScheduledQueryScheduledQueryProcessingConfigurationArgsDict', 'outputs.ScheduledQueryScheduledQueryProcessingConfiguration']] scheduled_query_processing_configuration: (Updatable) Definition of the scheduled query processing configuration.
         :param pulumi.Input[_builtins.str] scheduled_query_processing_sub_type: (Updatable) Processing sub type of the scheduled query.
         :param pulumi.Input[_builtins.str] scheduled_query_processing_type: (Updatable) Type of the scheduled query.
         :param pulumi.Input[_builtins.str] scheduled_query_retention_criteria: (Updatable) Retention criteria for the scheduled query.

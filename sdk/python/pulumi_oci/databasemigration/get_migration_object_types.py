@@ -82,7 +82,7 @@ class AwaitableGetMigrationObjectTypesResult(GetMigrationObjectTypesResult):
 
 
 def get_migration_object_types(connection_type: Optional[_builtins.str] = None,
-                               filters: Optional[Sequence[Union['GetMigrationObjectTypesFilterArgs', 'GetMigrationObjectTypesFilterArgsDict']]] = None,
+                               filters: Optional[Sequence[Union['GetMigrationObjectTypesFilterArgs', 'GetMigrationObjectTypesFilterArgsDict', 'outputs.GetMigrationObjectTypesFilterResult']]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMigrationObjectTypesResult:
     """
     This data source provides the list of Migration Object Types in Oracle Cloud Infrastructure Database Migration service.
@@ -115,7 +115,7 @@ def get_migration_object_types(connection_type: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         migration_object_type_summary_collections=pulumi.get(__ret__, 'migration_object_type_summary_collections'))
 def get_migration_object_types_output(connection_type: pulumi.Input[Optional[_builtins.str]] = None,
-                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMigrationObjectTypesFilterArgs', 'GetMigrationObjectTypesFilterArgsDict']]]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMigrationObjectTypesFilterArgs', 'GetMigrationObjectTypesFilterArgsDict', 'outputs.GetMigrationObjectTypesFilterResult']]]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMigrationObjectTypesResult]:
     """
     This data source provides the list of Migration Object Types in Oracle Cloud Infrastructure Database Migration service.

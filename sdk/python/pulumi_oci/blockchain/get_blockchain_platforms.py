@@ -110,7 +110,7 @@ class AwaitableGetBlockchainPlatformsResult(GetBlockchainPlatformsResult):
 
 def get_blockchain_platforms(compartment_id: Optional[_builtins.str] = None,
                              display_name: Optional[_builtins.str] = None,
-                             filters: Optional[Sequence[Union['GetBlockchainPlatformsFilterArgs', 'GetBlockchainPlatformsFilterArgsDict']]] = None,
+                             filters: Optional[Sequence[Union['GetBlockchainPlatformsFilterArgs', 'GetBlockchainPlatformsFilterArgsDict', 'outputs.GetBlockchainPlatformsFilterResult']]] = None,
                              state: Optional[_builtins.str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBlockchainPlatformsResult:
     """
@@ -151,7 +151,7 @@ def get_blockchain_platforms(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_blockchain_platforms_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBlockchainPlatformsFilterArgs', 'GetBlockchainPlatformsFilterArgsDict']]]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBlockchainPlatformsFilterArgs', 'GetBlockchainPlatformsFilterArgsDict', 'outputs.GetBlockchainPlatformsFilterResult']]]]] = None,
                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBlockchainPlatformsResult]:
     """

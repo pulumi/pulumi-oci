@@ -2167,35 +2167,35 @@ class DeployStage(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 approval_policy: pulumi.Input[Optional[Union['DeployStageApprovalPolicyArgs', 'DeployStageApprovalPolicyArgsDict']]] = None,
+                 approval_policy: pulumi.Input[Optional[Union['DeployStageApprovalPolicyArgs', 'DeployStageApprovalPolicyArgsDict', 'outputs.DeployStageApprovalPolicy']]] = None,
                  are_hooks_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 blue_backend_ips: pulumi.Input[Optional[Union['DeployStageBlueBackendIpsArgs', 'DeployStageBlueBackendIpsArgsDict']]] = None,
-                 blue_green_strategy: pulumi.Input[Optional[Union['DeployStageBlueGreenStrategyArgs', 'DeployStageBlueGreenStrategyArgsDict']]] = None,
-                 canary_strategy: pulumi.Input[Optional[Union['DeployStageCanaryStrategyArgs', 'DeployStageCanaryStrategyArgsDict']]] = None,
+                 blue_backend_ips: pulumi.Input[Optional[Union['DeployStageBlueBackendIpsArgs', 'DeployStageBlueBackendIpsArgsDict', 'outputs.DeployStageBlueBackendIps']]] = None,
+                 blue_green_strategy: pulumi.Input[Optional[Union['DeployStageBlueGreenStrategyArgs', 'DeployStageBlueGreenStrategyArgsDict', 'outputs.DeployStageBlueGreenStrategy']]] = None,
+                 canary_strategy: pulumi.Input[Optional[Union['DeployStageCanaryStrategyArgs', 'DeployStageCanaryStrategyArgsDict', 'outputs.DeployStageCanaryStrategy']]] = None,
                  command_spec_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_instance_group_blue_green_deployment_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_instance_group_canary_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_instance_group_canary_traffic_shift_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_instance_group_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  config: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 container_config: pulumi.Input[Optional[Union['DeployStageContainerConfigArgs', 'DeployStageContainerConfigArgsDict']]] = None,
+                 container_config: pulumi.Input[Optional[Union['DeployStageContainerConfigArgs', 'DeployStageContainerConfigArgsDict', 'outputs.DeployStageContainerConfig']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
                  deploy_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  deploy_environment_id_a: pulumi.Input[Optional[_builtins.str]] = None,
                  deploy_environment_id_b: pulumi.Input[Optional[_builtins.str]] = None,
                  deploy_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 deploy_stage_predecessor_collection: pulumi.Input[Optional[Union['DeployStageDeployStagePredecessorCollectionArgs', 'DeployStageDeployStagePredecessorCollectionArgsDict']]] = None,
+                 deploy_stage_predecessor_collection: pulumi.Input[Optional[Union['DeployStageDeployStagePredecessorCollectionArgs', 'DeployStageDeployStagePredecessorCollectionArgsDict', 'outputs.DeployStageDeployStagePredecessorCollection']]] = None,
                  deploy_stage_type: pulumi.Input[Optional[_builtins.str]] = None,
                  deployment_spec_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  docker_image_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 failure_policy: pulumi.Input[Optional[Union['DeployStageFailurePolicyArgs', 'DeployStageFailurePolicyArgsDict']]] = None,
+                 failure_policy: pulumi.Input[Optional[Union['DeployStageFailurePolicyArgs', 'DeployStageFailurePolicyArgsDict', 'outputs.DeployStageFailurePolicy']]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  function_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  function_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
-                 green_backend_ips: pulumi.Input[Optional[Union['DeployStageGreenBackendIpsArgs', 'DeployStageGreenBackendIpsArgsDict']]] = None,
+                 green_backend_ips: pulumi.Input[Optional[Union['DeployStageGreenBackendIpsArgs', 'DeployStageGreenBackendIpsArgsDict', 'outputs.DeployStageGreenBackendIps']]] = None,
                  helm_chart_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
                  helm_command_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  is_async: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -2204,7 +2204,7 @@ class DeployStage(pulumi.CustomResource):
                  is_uninstall_on_stage_delete: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_validation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kubernetes_manifest_deploy_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 load_balancer_config: pulumi.Input[Optional[Union['DeployStageLoadBalancerConfigArgs', 'DeployStageLoadBalancerConfigArgsDict']]] = None,
+                 load_balancer_config: pulumi.Input[Optional[Union['DeployStageLoadBalancerConfigArgs', 'DeployStageLoadBalancerConfigArgsDict', 'outputs.DeployStageLoadBalancerConfig']]] = None,
                  max_history: pulumi.Input[Optional[_builtins.int]] = None,
                  max_memory_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2212,24 +2212,24 @@ class DeployStage(pulumi.CustomResource):
                  oke_canary_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
                  oke_canary_traffic_shift_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
                  oke_cluster_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 production_load_balancer_config: pulumi.Input[Optional[Union['DeployStageProductionLoadBalancerConfigArgs', 'DeployStageProductionLoadBalancerConfigArgsDict']]] = None,
+                 production_load_balancer_config: pulumi.Input[Optional[Union['DeployStageProductionLoadBalancerConfigArgs', 'DeployStageProductionLoadBalancerConfigArgsDict', 'outputs.DeployStageProductionLoadBalancerConfig']]] = None,
                  purpose: pulumi.Input[Optional[_builtins.str]] = None,
                  release_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 rollback_policy: pulumi.Input[Optional[Union['DeployStageRollbackPolicyArgs', 'DeployStageRollbackPolicyArgsDict']]] = None,
-                 rollout_policy: pulumi.Input[Optional[Union['DeployStageRolloutPolicyArgs', 'DeployStageRolloutPolicyArgsDict']]] = None,
-                 set_string: pulumi.Input[Optional[Union['DeployStageSetStringArgs', 'DeployStageSetStringArgsDict']]] = None,
-                 set_values: pulumi.Input[Optional[Union['DeployStageSetValuesArgs', 'DeployStageSetValuesArgsDict']]] = None,
+                 rollback_policy: pulumi.Input[Optional[Union['DeployStageRollbackPolicyArgs', 'DeployStageRollbackPolicyArgsDict', 'outputs.DeployStageRollbackPolicy']]] = None,
+                 rollout_policy: pulumi.Input[Optional[Union['DeployStageRolloutPolicyArgs', 'DeployStageRolloutPolicyArgsDict', 'outputs.DeployStageRolloutPolicy']]] = None,
+                 set_string: pulumi.Input[Optional[Union['DeployStageSetStringArgs', 'DeployStageSetStringArgsDict', 'outputs.DeployStageSetString']]] = None,
+                 set_values: pulumi.Input[Optional[Union['DeployStageSetValuesArgs', 'DeployStageSetValuesArgsDict', 'outputs.DeployStageSetValues']]] = None,
                  should_cleanup_on_fail: pulumi.Input[Optional[_builtins.bool]] = None,
                  should_not_wait: pulumi.Input[Optional[_builtins.bool]] = None,
                  should_reset_values: pulumi.Input[Optional[_builtins.bool]] = None,
                  should_reuse_values: pulumi.Input[Optional[_builtins.bool]] = None,
                  should_skip_crds: pulumi.Input[Optional[_builtins.bool]] = None,
                  should_skip_render_subchart_notes: pulumi.Input[Optional[_builtins.bool]] = None,
-                 test_load_balancer_config: pulumi.Input[Optional[Union['DeployStageTestLoadBalancerConfigArgs', 'DeployStageTestLoadBalancerConfigArgsDict']]] = None,
+                 test_load_balancer_config: pulumi.Input[Optional[Union['DeployStageTestLoadBalancerConfigArgs', 'DeployStageTestLoadBalancerConfigArgsDict', 'outputs.DeployStageTestLoadBalancerConfig']]] = None,
                  timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  traffic_shift_target: pulumi.Input[Optional[_builtins.str]] = None,
                  values_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 wait_criteria: pulumi.Input[Optional[Union['DeployStageWaitCriteriaArgs', 'DeployStageWaitCriteriaArgsDict']]] = None,
+                 wait_criteria: pulumi.Input[Optional[Union['DeployStageWaitCriteriaArgs', 'DeployStageWaitCriteriaArgsDict', 'outputs.DeployStageWaitCriteria']]] = None,
                  __props__=None):
         """
         This resource provides the Deploy Stage resource in Oracle Cloud Infrastructure Devops service.
@@ -2250,35 +2250,35 @@ class DeployStage(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DeployStageApprovalPolicyArgs', 'DeployStageApprovalPolicyArgsDict']] approval_policy: (Updatable) Specifies the approval policy.
+        :param pulumi.Input[Union['DeployStageApprovalPolicyArgs', 'DeployStageApprovalPolicyArgsDict', 'outputs.DeployStageApprovalPolicy']] approval_policy: (Updatable) Specifies the approval policy.
         :param pulumi.Input[_builtins.bool] are_hooks_enabled: (Updatable) Disable pre/post upgrade hooks. Set to false by default.
-        :param pulumi.Input[Union['DeployStageBlueBackendIpsArgs', 'DeployStageBlueBackendIpsArgsDict']] blue_backend_ips: (Updatable) Collection of backend environment IP addresses.
-        :param pulumi.Input[Union['DeployStageBlueGreenStrategyArgs', 'DeployStageBlueGreenStrategyArgsDict']] blue_green_strategy: Specifies the required blue green release strategy for OKE deployment.
-        :param pulumi.Input[Union['DeployStageCanaryStrategyArgs', 'DeployStageCanaryStrategyArgsDict']] canary_strategy: Specifies the required canary release strategy for OKE deployment.
+        :param pulumi.Input[Union['DeployStageBlueBackendIpsArgs', 'DeployStageBlueBackendIpsArgsDict', 'outputs.DeployStageBlueBackendIps']] blue_backend_ips: (Updatable) Collection of backend environment IP addresses.
+        :param pulumi.Input[Union['DeployStageBlueGreenStrategyArgs', 'DeployStageBlueGreenStrategyArgsDict', 'outputs.DeployStageBlueGreenStrategy']] blue_green_strategy: Specifies the required blue green release strategy for OKE deployment.
+        :param pulumi.Input[Union['DeployStageCanaryStrategyArgs', 'DeployStageCanaryStrategyArgsDict', 'outputs.DeployStageCanaryStrategy']] canary_strategy: Specifies the required canary release strategy for OKE deployment.
         :param pulumi.Input[_builtins.str] command_spec_deploy_artifact_id: (Updatable) The OCID of the artifact that contains the command specification.
         :param pulumi.Input[_builtins.str] compute_instance_group_blue_green_deployment_deploy_stage_id: The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
         :param pulumi.Input[_builtins.str] compute_instance_group_canary_deploy_stage_id: A compute instance group canary stage OCID for load balancer.
         :param pulumi.Input[_builtins.str] compute_instance_group_canary_traffic_shift_deploy_stage_id: (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
         :param pulumi.Input[_builtins.str] compute_instance_group_deploy_environment_id: (Updatable) A compute instance group environment OCID for rolling deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] config: (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
-        :param pulumi.Input[Union['DeployStageContainerConfigArgs', 'DeployStageContainerConfigArgsDict']] container_config: (Updatable) Specifies the container configuration.
+        :param pulumi.Input[Union['DeployStageContainerConfigArgs', 'DeployStageContainerConfigArgsDict', 'outputs.DeployStageContainerConfig']] container_config: (Updatable) Specifies the container configuration.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] deploy_artifact_id: (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] deploy_artifact_ids: (Updatable) The list of file artifact OCIDs to deploy.
         :param pulumi.Input[_builtins.str] deploy_environment_id_a: First compute instance group environment OCID for deployment.
         :param pulumi.Input[_builtins.str] deploy_environment_id_b: Second compute instance group environment OCID for deployment.
         :param pulumi.Input[_builtins.str] deploy_pipeline_id: The OCID of a pipeline.
-        :param pulumi.Input[Union['DeployStageDeployStagePredecessorCollectionArgs', 'DeployStageDeployStagePredecessorCollectionArgsDict']] deploy_stage_predecessor_collection: (Updatable) Collection containing the predecessors of a stage.
+        :param pulumi.Input[Union['DeployStageDeployStagePredecessorCollectionArgs', 'DeployStageDeployStagePredecessorCollectionArgsDict', 'outputs.DeployStageDeployStagePredecessorCollection']] deploy_stage_predecessor_collection: (Updatable) Collection containing the predecessors of a stage.
         :param pulumi.Input[_builtins.str] deploy_stage_type: (Updatable) Deployment stage type.
         :param pulumi.Input[_builtins.str] deployment_spec_deploy_artifact_id: (Updatable) The OCID of the artifact that contains the deployment specification.
         :param pulumi.Input[_builtins.str] description: (Updatable) Optional description about the deployment stage.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] docker_image_deploy_artifact_id: (Updatable) A Docker image artifact OCID.
-        :param pulumi.Input[Union['DeployStageFailurePolicyArgs', 'DeployStageFailurePolicyArgsDict']] failure_policy: (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
+        :param pulumi.Input[Union['DeployStageFailurePolicyArgs', 'DeployStageFailurePolicyArgsDict', 'outputs.DeployStageFailurePolicy']] failure_policy: (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] function_deploy_environment_id: (Updatable) Function environment OCID.
         :param pulumi.Input[_builtins.int] function_timeout_in_seconds: (Updatable) Timeout for execution of the Function. Value in seconds.
-        :param pulumi.Input[Union['DeployStageGreenBackendIpsArgs', 'DeployStageGreenBackendIpsArgsDict']] green_backend_ips: (Updatable) Collection of backend environment IP addresses.
+        :param pulumi.Input[Union['DeployStageGreenBackendIpsArgs', 'DeployStageGreenBackendIpsArgsDict', 'outputs.DeployStageGreenBackendIps']] green_backend_ips: (Updatable) Collection of backend environment IP addresses.
         :param pulumi.Input[_builtins.str] helm_chart_deploy_artifact_id: (Updatable) Helm chart artifact OCID.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] helm_command_artifact_ids: (Updatable) List of Helm command artifact OCIDs.
         :param pulumi.Input[_builtins.bool] is_async: (Updatable) A boolean flag specifies whether this stage executes asynchronously.
@@ -2287,7 +2287,7 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_uninstall_on_stage_delete: (Updatable) Uninstall the Helm chart release on deleting the stage.
         :param pulumi.Input[_builtins.bool] is_validation_enabled: (Updatable) A boolean flag specifies whether the invoked function should be validated.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] kubernetes_manifest_deploy_artifact_ids: (Updatable) List of Kubernetes manifest artifact OCIDs.
-        :param pulumi.Input[Union['DeployStageLoadBalancerConfigArgs', 'DeployStageLoadBalancerConfigArgsDict']] load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        :param pulumi.Input[Union['DeployStageLoadBalancerConfigArgs', 'DeployStageLoadBalancerConfigArgsDict', 'outputs.DeployStageLoadBalancerConfig']] load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
         :param pulumi.Input[_builtins.int] max_history: (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
         :param pulumi.Input[_builtins.str] max_memory_in_mbs: (Updatable) Maximum usable memory for the Function (in MB).
         :param pulumi.Input[_builtins.str] namespace: (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
@@ -2295,24 +2295,24 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] oke_canary_deploy_stage_id: The OCID of an upstream OKE canary deployment stage in this pipeline.
         :param pulumi.Input[_builtins.str] oke_canary_traffic_shift_deploy_stage_id: The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
         :param pulumi.Input[_builtins.str] oke_cluster_deploy_environment_id: (Updatable) Kubernetes cluster environment OCID for deployment.
-        :param pulumi.Input[Union['DeployStageProductionLoadBalancerConfigArgs', 'DeployStageProductionLoadBalancerConfigArgsDict']] production_load_balancer_config: Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
+        :param pulumi.Input[Union['DeployStageProductionLoadBalancerConfigArgs', 'DeployStageProductionLoadBalancerConfigArgsDict', 'outputs.DeployStageProductionLoadBalancerConfig']] production_load_balancer_config: Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         :param pulumi.Input[_builtins.str] purpose: (Updatable) The purpose of running this Helm stage
         :param pulumi.Input[_builtins.str] release_name: (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
-        :param pulumi.Input[Union['DeployStageRollbackPolicyArgs', 'DeployStageRollbackPolicyArgsDict']] rollback_policy: (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
-        :param pulumi.Input[Union['DeployStageRolloutPolicyArgs', 'DeployStageRolloutPolicyArgsDict']] rollout_policy: (Updatable) Description of rollout policy for load balancer traffic shift stage.
-        :param pulumi.Input[Union['DeployStageSetStringArgs', 'DeployStageSetStringArgsDict']] set_string: (Updatable) Specifies the name and value pairs to set helm values.
-        :param pulumi.Input[Union['DeployStageSetValuesArgs', 'DeployStageSetValuesArgsDict']] set_values: (Updatable) Specifies the name and value pairs to set helm values.
+        :param pulumi.Input[Union['DeployStageRollbackPolicyArgs', 'DeployStageRollbackPolicyArgsDict', 'outputs.DeployStageRollbackPolicy']] rollback_policy: (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
+        :param pulumi.Input[Union['DeployStageRolloutPolicyArgs', 'DeployStageRolloutPolicyArgsDict', 'outputs.DeployStageRolloutPolicy']] rollout_policy: (Updatable) Description of rollout policy for load balancer traffic shift stage.
+        :param pulumi.Input[Union['DeployStageSetStringArgs', 'DeployStageSetStringArgsDict', 'outputs.DeployStageSetString']] set_string: (Updatable) Specifies the name and value pairs to set helm values.
+        :param pulumi.Input[Union['DeployStageSetValuesArgs', 'DeployStageSetValuesArgsDict', 'outputs.DeployStageSetValues']] set_values: (Updatable) Specifies the name and value pairs to set helm values.
         :param pulumi.Input[_builtins.bool] should_cleanup_on_fail: (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
         :param pulumi.Input[_builtins.bool] should_not_wait: (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
         :param pulumi.Input[_builtins.bool] should_reset_values: (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
         :param pulumi.Input[_builtins.bool] should_reuse_values: (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
         :param pulumi.Input[_builtins.bool] should_skip_crds: (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
         :param pulumi.Input[_builtins.bool] should_skip_render_subchart_notes: (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
-        :param pulumi.Input[Union['DeployStageTestLoadBalancerConfigArgs', 'DeployStageTestLoadBalancerConfigArgsDict']] test_load_balancer_config: (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
+        :param pulumi.Input[Union['DeployStageTestLoadBalancerConfigArgs', 'DeployStageTestLoadBalancerConfigArgsDict', 'outputs.DeployStageTestLoadBalancerConfig']] test_load_balancer_config: (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         :param pulumi.Input[_builtins.int] timeout_in_seconds: (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
         :param pulumi.Input[_builtins.str] traffic_shift_target: (Updatable) Specifies the target or destination backend set.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values_artifact_ids: (Updatable) List of values.yaml file artifact OCIDs.
-        :param pulumi.Input[Union['DeployStageWaitCriteriaArgs', 'DeployStageWaitCriteriaArgsDict']] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
+        :param pulumi.Input[Union['DeployStageWaitCriteriaArgs', 'DeployStageWaitCriteriaArgsDict', 'outputs.DeployStageWaitCriteria']] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
         """
         ...
     @overload
@@ -2352,35 +2352,35 @@ class DeployStage(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 approval_policy: pulumi.Input[Optional[Union['DeployStageApprovalPolicyArgs', 'DeployStageApprovalPolicyArgsDict']]] = None,
+                 approval_policy: pulumi.Input[Optional[Union['DeployStageApprovalPolicyArgs', 'DeployStageApprovalPolicyArgsDict', 'outputs.DeployStageApprovalPolicy']]] = None,
                  are_hooks_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 blue_backend_ips: pulumi.Input[Optional[Union['DeployStageBlueBackendIpsArgs', 'DeployStageBlueBackendIpsArgsDict']]] = None,
-                 blue_green_strategy: pulumi.Input[Optional[Union['DeployStageBlueGreenStrategyArgs', 'DeployStageBlueGreenStrategyArgsDict']]] = None,
-                 canary_strategy: pulumi.Input[Optional[Union['DeployStageCanaryStrategyArgs', 'DeployStageCanaryStrategyArgsDict']]] = None,
+                 blue_backend_ips: pulumi.Input[Optional[Union['DeployStageBlueBackendIpsArgs', 'DeployStageBlueBackendIpsArgsDict', 'outputs.DeployStageBlueBackendIps']]] = None,
+                 blue_green_strategy: pulumi.Input[Optional[Union['DeployStageBlueGreenStrategyArgs', 'DeployStageBlueGreenStrategyArgsDict', 'outputs.DeployStageBlueGreenStrategy']]] = None,
+                 canary_strategy: pulumi.Input[Optional[Union['DeployStageCanaryStrategyArgs', 'DeployStageCanaryStrategyArgsDict', 'outputs.DeployStageCanaryStrategy']]] = None,
                  command_spec_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_instance_group_blue_green_deployment_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_instance_group_canary_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_instance_group_canary_traffic_shift_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_instance_group_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  config: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 container_config: pulumi.Input[Optional[Union['DeployStageContainerConfigArgs', 'DeployStageContainerConfigArgsDict']]] = None,
+                 container_config: pulumi.Input[Optional[Union['DeployStageContainerConfigArgs', 'DeployStageContainerConfigArgsDict', 'outputs.DeployStageContainerConfig']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
                  deploy_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  deploy_environment_id_a: pulumi.Input[Optional[_builtins.str]] = None,
                  deploy_environment_id_b: pulumi.Input[Optional[_builtins.str]] = None,
                  deploy_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 deploy_stage_predecessor_collection: pulumi.Input[Optional[Union['DeployStageDeployStagePredecessorCollectionArgs', 'DeployStageDeployStagePredecessorCollectionArgsDict']]] = None,
+                 deploy_stage_predecessor_collection: pulumi.Input[Optional[Union['DeployStageDeployStagePredecessorCollectionArgs', 'DeployStageDeployStagePredecessorCollectionArgsDict', 'outputs.DeployStageDeployStagePredecessorCollection']]] = None,
                  deploy_stage_type: pulumi.Input[Optional[_builtins.str]] = None,
                  deployment_spec_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  docker_image_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 failure_policy: pulumi.Input[Optional[Union['DeployStageFailurePolicyArgs', 'DeployStageFailurePolicyArgsDict']]] = None,
+                 failure_policy: pulumi.Input[Optional[Union['DeployStageFailurePolicyArgs', 'DeployStageFailurePolicyArgsDict', 'outputs.DeployStageFailurePolicy']]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  function_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  function_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
-                 green_backend_ips: pulumi.Input[Optional[Union['DeployStageGreenBackendIpsArgs', 'DeployStageGreenBackendIpsArgsDict']]] = None,
+                 green_backend_ips: pulumi.Input[Optional[Union['DeployStageGreenBackendIpsArgs', 'DeployStageGreenBackendIpsArgsDict', 'outputs.DeployStageGreenBackendIps']]] = None,
                  helm_chart_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
                  helm_command_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  is_async: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -2389,7 +2389,7 @@ class DeployStage(pulumi.CustomResource):
                  is_uninstall_on_stage_delete: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_validation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kubernetes_manifest_deploy_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 load_balancer_config: pulumi.Input[Optional[Union['DeployStageLoadBalancerConfigArgs', 'DeployStageLoadBalancerConfigArgsDict']]] = None,
+                 load_balancer_config: pulumi.Input[Optional[Union['DeployStageLoadBalancerConfigArgs', 'DeployStageLoadBalancerConfigArgsDict', 'outputs.DeployStageLoadBalancerConfig']]] = None,
                  max_history: pulumi.Input[Optional[_builtins.int]] = None,
                  max_memory_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2397,24 +2397,24 @@ class DeployStage(pulumi.CustomResource):
                  oke_canary_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
                  oke_canary_traffic_shift_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
                  oke_cluster_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 production_load_balancer_config: pulumi.Input[Optional[Union['DeployStageProductionLoadBalancerConfigArgs', 'DeployStageProductionLoadBalancerConfigArgsDict']]] = None,
+                 production_load_balancer_config: pulumi.Input[Optional[Union['DeployStageProductionLoadBalancerConfigArgs', 'DeployStageProductionLoadBalancerConfigArgsDict', 'outputs.DeployStageProductionLoadBalancerConfig']]] = None,
                  purpose: pulumi.Input[Optional[_builtins.str]] = None,
                  release_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 rollback_policy: pulumi.Input[Optional[Union['DeployStageRollbackPolicyArgs', 'DeployStageRollbackPolicyArgsDict']]] = None,
-                 rollout_policy: pulumi.Input[Optional[Union['DeployStageRolloutPolicyArgs', 'DeployStageRolloutPolicyArgsDict']]] = None,
-                 set_string: pulumi.Input[Optional[Union['DeployStageSetStringArgs', 'DeployStageSetStringArgsDict']]] = None,
-                 set_values: pulumi.Input[Optional[Union['DeployStageSetValuesArgs', 'DeployStageSetValuesArgsDict']]] = None,
+                 rollback_policy: pulumi.Input[Optional[Union['DeployStageRollbackPolicyArgs', 'DeployStageRollbackPolicyArgsDict', 'outputs.DeployStageRollbackPolicy']]] = None,
+                 rollout_policy: pulumi.Input[Optional[Union['DeployStageRolloutPolicyArgs', 'DeployStageRolloutPolicyArgsDict', 'outputs.DeployStageRolloutPolicy']]] = None,
+                 set_string: pulumi.Input[Optional[Union['DeployStageSetStringArgs', 'DeployStageSetStringArgsDict', 'outputs.DeployStageSetString']]] = None,
+                 set_values: pulumi.Input[Optional[Union['DeployStageSetValuesArgs', 'DeployStageSetValuesArgsDict', 'outputs.DeployStageSetValues']]] = None,
                  should_cleanup_on_fail: pulumi.Input[Optional[_builtins.bool]] = None,
                  should_not_wait: pulumi.Input[Optional[_builtins.bool]] = None,
                  should_reset_values: pulumi.Input[Optional[_builtins.bool]] = None,
                  should_reuse_values: pulumi.Input[Optional[_builtins.bool]] = None,
                  should_skip_crds: pulumi.Input[Optional[_builtins.bool]] = None,
                  should_skip_render_subchart_notes: pulumi.Input[Optional[_builtins.bool]] = None,
-                 test_load_balancer_config: pulumi.Input[Optional[Union['DeployStageTestLoadBalancerConfigArgs', 'DeployStageTestLoadBalancerConfigArgsDict']]] = None,
+                 test_load_balancer_config: pulumi.Input[Optional[Union['DeployStageTestLoadBalancerConfigArgs', 'DeployStageTestLoadBalancerConfigArgsDict', 'outputs.DeployStageTestLoadBalancerConfig']]] = None,
                  timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  traffic_shift_target: pulumi.Input[Optional[_builtins.str]] = None,
                  values_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 wait_criteria: pulumi.Input[Optional[Union['DeployStageWaitCriteriaArgs', 'DeployStageWaitCriteriaArgsDict']]] = None,
+                 wait_criteria: pulumi.Input[Optional[Union['DeployStageWaitCriteriaArgs', 'DeployStageWaitCriteriaArgsDict', 'outputs.DeployStageWaitCriteria']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -2510,11 +2510,11 @@ class DeployStage(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            approval_policy: pulumi.Input[Optional[Union['DeployStageApprovalPolicyArgs', 'DeployStageApprovalPolicyArgsDict']]] = None,
+            approval_policy: pulumi.Input[Optional[Union['DeployStageApprovalPolicyArgs', 'DeployStageApprovalPolicyArgsDict', 'outputs.DeployStageApprovalPolicy']]] = None,
             are_hooks_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            blue_backend_ips: pulumi.Input[Optional[Union['DeployStageBlueBackendIpsArgs', 'DeployStageBlueBackendIpsArgsDict']]] = None,
-            blue_green_strategy: pulumi.Input[Optional[Union['DeployStageBlueGreenStrategyArgs', 'DeployStageBlueGreenStrategyArgsDict']]] = None,
-            canary_strategy: pulumi.Input[Optional[Union['DeployStageCanaryStrategyArgs', 'DeployStageCanaryStrategyArgsDict']]] = None,
+            blue_backend_ips: pulumi.Input[Optional[Union['DeployStageBlueBackendIpsArgs', 'DeployStageBlueBackendIpsArgsDict', 'outputs.DeployStageBlueBackendIps']]] = None,
+            blue_green_strategy: pulumi.Input[Optional[Union['DeployStageBlueGreenStrategyArgs', 'DeployStageBlueGreenStrategyArgsDict', 'outputs.DeployStageBlueGreenStrategy']]] = None,
+            canary_strategy: pulumi.Input[Optional[Union['DeployStageCanaryStrategyArgs', 'DeployStageCanaryStrategyArgsDict', 'outputs.DeployStageCanaryStrategy']]] = None,
             command_spec_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             compute_instance_group_blue_green_deployment_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2522,24 +2522,24 @@ class DeployStage(pulumi.CustomResource):
             compute_instance_group_canary_traffic_shift_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
             compute_instance_group_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
             config: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            container_config: pulumi.Input[Optional[Union['DeployStageContainerConfigArgs', 'DeployStageContainerConfigArgsDict']]] = None,
+            container_config: pulumi.Input[Optional[Union['DeployStageContainerConfigArgs', 'DeployStageContainerConfigArgsDict', 'outputs.DeployStageContainerConfig']]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
             deploy_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             deploy_environment_id_a: pulumi.Input[Optional[_builtins.str]] = None,
             deploy_environment_id_b: pulumi.Input[Optional[_builtins.str]] = None,
             deploy_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
-            deploy_stage_predecessor_collection: pulumi.Input[Optional[Union['DeployStageDeployStagePredecessorCollectionArgs', 'DeployStageDeployStagePredecessorCollectionArgsDict']]] = None,
+            deploy_stage_predecessor_collection: pulumi.Input[Optional[Union['DeployStageDeployStagePredecessorCollectionArgs', 'DeployStageDeployStagePredecessorCollectionArgsDict', 'outputs.DeployStageDeployStagePredecessorCollection']]] = None,
             deploy_stage_type: pulumi.Input[Optional[_builtins.str]] = None,
             deployment_spec_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             docker_image_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
-            failure_policy: pulumi.Input[Optional[Union['DeployStageFailurePolicyArgs', 'DeployStageFailurePolicyArgsDict']]] = None,
+            failure_policy: pulumi.Input[Optional[Union['DeployStageFailurePolicyArgs', 'DeployStageFailurePolicyArgsDict', 'outputs.DeployStageFailurePolicy']]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             function_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
             function_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
-            green_backend_ips: pulumi.Input[Optional[Union['DeployStageGreenBackendIpsArgs', 'DeployStageGreenBackendIpsArgsDict']]] = None,
+            green_backend_ips: pulumi.Input[Optional[Union['DeployStageGreenBackendIpsArgs', 'DeployStageGreenBackendIpsArgsDict', 'outputs.DeployStageGreenBackendIps']]] = None,
             helm_chart_deploy_artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
             helm_command_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             is_async: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -2549,7 +2549,7 @@ class DeployStage(pulumi.CustomResource):
             is_validation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             kubernetes_manifest_deploy_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            load_balancer_config: pulumi.Input[Optional[Union['DeployStageLoadBalancerConfigArgs', 'DeployStageLoadBalancerConfigArgsDict']]] = None,
+            load_balancer_config: pulumi.Input[Optional[Union['DeployStageLoadBalancerConfigArgs', 'DeployStageLoadBalancerConfigArgsDict', 'outputs.DeployStageLoadBalancerConfig']]] = None,
             max_history: pulumi.Input[Optional[_builtins.int]] = None,
             max_memory_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
             namespace: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2557,14 +2557,14 @@ class DeployStage(pulumi.CustomResource):
             oke_canary_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
             oke_canary_traffic_shift_deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
             oke_cluster_deploy_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            production_load_balancer_config: pulumi.Input[Optional[Union['DeployStageProductionLoadBalancerConfigArgs', 'DeployStageProductionLoadBalancerConfigArgsDict']]] = None,
+            production_load_balancer_config: pulumi.Input[Optional[Union['DeployStageProductionLoadBalancerConfigArgs', 'DeployStageProductionLoadBalancerConfigArgsDict', 'outputs.DeployStageProductionLoadBalancerConfig']]] = None,
             project_id: pulumi.Input[Optional[_builtins.str]] = None,
             purpose: pulumi.Input[Optional[_builtins.str]] = None,
             release_name: pulumi.Input[Optional[_builtins.str]] = None,
-            rollback_policy: pulumi.Input[Optional[Union['DeployStageRollbackPolicyArgs', 'DeployStageRollbackPolicyArgsDict']]] = None,
-            rollout_policy: pulumi.Input[Optional[Union['DeployStageRolloutPolicyArgs', 'DeployStageRolloutPolicyArgsDict']]] = None,
-            set_string: pulumi.Input[Optional[Union['DeployStageSetStringArgs', 'DeployStageSetStringArgsDict']]] = None,
-            set_values: pulumi.Input[Optional[Union['DeployStageSetValuesArgs', 'DeployStageSetValuesArgsDict']]] = None,
+            rollback_policy: pulumi.Input[Optional[Union['DeployStageRollbackPolicyArgs', 'DeployStageRollbackPolicyArgsDict', 'outputs.DeployStageRollbackPolicy']]] = None,
+            rollout_policy: pulumi.Input[Optional[Union['DeployStageRolloutPolicyArgs', 'DeployStageRolloutPolicyArgsDict', 'outputs.DeployStageRolloutPolicy']]] = None,
+            set_string: pulumi.Input[Optional[Union['DeployStageSetStringArgs', 'DeployStageSetStringArgsDict', 'outputs.DeployStageSetString']]] = None,
+            set_values: pulumi.Input[Optional[Union['DeployStageSetValuesArgs', 'DeployStageSetValuesArgsDict', 'outputs.DeployStageSetValues']]] = None,
             should_cleanup_on_fail: pulumi.Input[Optional[_builtins.bool]] = None,
             should_not_wait: pulumi.Input[Optional[_builtins.bool]] = None,
             should_reset_values: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -2573,13 +2573,13 @@ class DeployStage(pulumi.CustomResource):
             should_skip_render_subchart_notes: pulumi.Input[Optional[_builtins.bool]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            test_load_balancer_config: pulumi.Input[Optional[Union['DeployStageTestLoadBalancerConfigArgs', 'DeployStageTestLoadBalancerConfigArgsDict']]] = None,
+            test_load_balancer_config: pulumi.Input[Optional[Union['DeployStageTestLoadBalancerConfigArgs', 'DeployStageTestLoadBalancerConfigArgsDict', 'outputs.DeployStageTestLoadBalancerConfig']]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
             timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
             traffic_shift_target: pulumi.Input[Optional[_builtins.str]] = None,
             values_artifact_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            wait_criteria: pulumi.Input[Optional[Union['DeployStageWaitCriteriaArgs', 'DeployStageWaitCriteriaArgsDict']]] = None) -> 'DeployStage':
+            wait_criteria: pulumi.Input[Optional[Union['DeployStageWaitCriteriaArgs', 'DeployStageWaitCriteriaArgsDict', 'outputs.DeployStageWaitCriteria']]] = None) -> 'DeployStage':
         """
         Get an existing DeployStage resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -2587,11 +2587,11 @@ class DeployStage(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DeployStageApprovalPolicyArgs', 'DeployStageApprovalPolicyArgsDict']] approval_policy: (Updatable) Specifies the approval policy.
+        :param pulumi.Input[Union['DeployStageApprovalPolicyArgs', 'DeployStageApprovalPolicyArgsDict', 'outputs.DeployStageApprovalPolicy']] approval_policy: (Updatable) Specifies the approval policy.
         :param pulumi.Input[_builtins.bool] are_hooks_enabled: (Updatable) Disable pre/post upgrade hooks. Set to false by default.
-        :param pulumi.Input[Union['DeployStageBlueBackendIpsArgs', 'DeployStageBlueBackendIpsArgsDict']] blue_backend_ips: (Updatable) Collection of backend environment IP addresses.
-        :param pulumi.Input[Union['DeployStageBlueGreenStrategyArgs', 'DeployStageBlueGreenStrategyArgsDict']] blue_green_strategy: Specifies the required blue green release strategy for OKE deployment.
-        :param pulumi.Input[Union['DeployStageCanaryStrategyArgs', 'DeployStageCanaryStrategyArgsDict']] canary_strategy: Specifies the required canary release strategy for OKE deployment.
+        :param pulumi.Input[Union['DeployStageBlueBackendIpsArgs', 'DeployStageBlueBackendIpsArgsDict', 'outputs.DeployStageBlueBackendIps']] blue_backend_ips: (Updatable) Collection of backend environment IP addresses.
+        :param pulumi.Input[Union['DeployStageBlueGreenStrategyArgs', 'DeployStageBlueGreenStrategyArgsDict', 'outputs.DeployStageBlueGreenStrategy']] blue_green_strategy: Specifies the required blue green release strategy for OKE deployment.
+        :param pulumi.Input[Union['DeployStageCanaryStrategyArgs', 'DeployStageCanaryStrategyArgsDict', 'outputs.DeployStageCanaryStrategy']] canary_strategy: Specifies the required canary release strategy for OKE deployment.
         :param pulumi.Input[_builtins.str] command_spec_deploy_artifact_id: (Updatable) The OCID of the artifact that contains the command specification.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment where the ContainerInstance will be created.
         :param pulumi.Input[_builtins.str] compute_instance_group_blue_green_deployment_deploy_stage_id: The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
@@ -2599,24 +2599,24 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compute_instance_group_canary_traffic_shift_deploy_stage_id: (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
         :param pulumi.Input[_builtins.str] compute_instance_group_deploy_environment_id: (Updatable) A compute instance group environment OCID for rolling deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] config: (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
-        :param pulumi.Input[Union['DeployStageContainerConfigArgs', 'DeployStageContainerConfigArgsDict']] container_config: (Updatable) Specifies the container configuration.
+        :param pulumi.Input[Union['DeployStageContainerConfigArgs', 'DeployStageContainerConfigArgsDict', 'outputs.DeployStageContainerConfig']] container_config: (Updatable) Specifies the container configuration.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] deploy_artifact_id: (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] deploy_artifact_ids: (Updatable) The list of file artifact OCIDs to deploy.
         :param pulumi.Input[_builtins.str] deploy_environment_id_a: First compute instance group environment OCID for deployment.
         :param pulumi.Input[_builtins.str] deploy_environment_id_b: Second compute instance group environment OCID for deployment.
         :param pulumi.Input[_builtins.str] deploy_pipeline_id: The OCID of a pipeline.
-        :param pulumi.Input[Union['DeployStageDeployStagePredecessorCollectionArgs', 'DeployStageDeployStagePredecessorCollectionArgsDict']] deploy_stage_predecessor_collection: (Updatable) Collection containing the predecessors of a stage.
+        :param pulumi.Input[Union['DeployStageDeployStagePredecessorCollectionArgs', 'DeployStageDeployStagePredecessorCollectionArgsDict', 'outputs.DeployStageDeployStagePredecessorCollection']] deploy_stage_predecessor_collection: (Updatable) Collection containing the predecessors of a stage.
         :param pulumi.Input[_builtins.str] deploy_stage_type: (Updatable) Deployment stage type.
         :param pulumi.Input[_builtins.str] deployment_spec_deploy_artifact_id: (Updatable) The OCID of the artifact that contains the deployment specification.
         :param pulumi.Input[_builtins.str] description: (Updatable) Optional description about the deployment stage.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] docker_image_deploy_artifact_id: (Updatable) A Docker image artifact OCID.
-        :param pulumi.Input[Union['DeployStageFailurePolicyArgs', 'DeployStageFailurePolicyArgsDict']] failure_policy: (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
+        :param pulumi.Input[Union['DeployStageFailurePolicyArgs', 'DeployStageFailurePolicyArgsDict', 'outputs.DeployStageFailurePolicy']] failure_policy: (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] function_deploy_environment_id: (Updatable) Function environment OCID.
         :param pulumi.Input[_builtins.int] function_timeout_in_seconds: (Updatable) Timeout for execution of the Function. Value in seconds.
-        :param pulumi.Input[Union['DeployStageGreenBackendIpsArgs', 'DeployStageGreenBackendIpsArgsDict']] green_backend_ips: (Updatable) Collection of backend environment IP addresses.
+        :param pulumi.Input[Union['DeployStageGreenBackendIpsArgs', 'DeployStageGreenBackendIpsArgsDict', 'outputs.DeployStageGreenBackendIps']] green_backend_ips: (Updatable) Collection of backend environment IP addresses.
         :param pulumi.Input[_builtins.str] helm_chart_deploy_artifact_id: (Updatable) Helm chart artifact OCID.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] helm_command_artifact_ids: (Updatable) List of Helm command artifact OCIDs.
         :param pulumi.Input[_builtins.bool] is_async: (Updatable) A boolean flag specifies whether this stage executes asynchronously.
@@ -2626,7 +2626,7 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_validation_enabled: (Updatable) A boolean flag specifies whether the invoked function should be validated.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] kubernetes_manifest_deploy_artifact_ids: (Updatable) List of Kubernetes manifest artifact OCIDs.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Union['DeployStageLoadBalancerConfigArgs', 'DeployStageLoadBalancerConfigArgsDict']] load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        :param pulumi.Input[Union['DeployStageLoadBalancerConfigArgs', 'DeployStageLoadBalancerConfigArgsDict', 'outputs.DeployStageLoadBalancerConfig']] load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
         :param pulumi.Input[_builtins.int] max_history: (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
         :param pulumi.Input[_builtins.str] max_memory_in_mbs: (Updatable) Maximum usable memory for the Function (in MB).
         :param pulumi.Input[_builtins.str] namespace: (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
@@ -2634,14 +2634,14 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] oke_canary_deploy_stage_id: The OCID of an upstream OKE canary deployment stage in this pipeline.
         :param pulumi.Input[_builtins.str] oke_canary_traffic_shift_deploy_stage_id: The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
         :param pulumi.Input[_builtins.str] oke_cluster_deploy_environment_id: (Updatable) Kubernetes cluster environment OCID for deployment.
-        :param pulumi.Input[Union['DeployStageProductionLoadBalancerConfigArgs', 'DeployStageProductionLoadBalancerConfigArgsDict']] production_load_balancer_config: Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
+        :param pulumi.Input[Union['DeployStageProductionLoadBalancerConfigArgs', 'DeployStageProductionLoadBalancerConfigArgsDict', 'outputs.DeployStageProductionLoadBalancerConfig']] production_load_balancer_config: Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         :param pulumi.Input[_builtins.str] project_id: The OCID of a project.
         :param pulumi.Input[_builtins.str] purpose: (Updatable) The purpose of running this Helm stage
         :param pulumi.Input[_builtins.str] release_name: (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
-        :param pulumi.Input[Union['DeployStageRollbackPolicyArgs', 'DeployStageRollbackPolicyArgsDict']] rollback_policy: (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
-        :param pulumi.Input[Union['DeployStageRolloutPolicyArgs', 'DeployStageRolloutPolicyArgsDict']] rollout_policy: (Updatable) Description of rollout policy for load balancer traffic shift stage.
-        :param pulumi.Input[Union['DeployStageSetStringArgs', 'DeployStageSetStringArgsDict']] set_string: (Updatable) Specifies the name and value pairs to set helm values.
-        :param pulumi.Input[Union['DeployStageSetValuesArgs', 'DeployStageSetValuesArgsDict']] set_values: (Updatable) Specifies the name and value pairs to set helm values.
+        :param pulumi.Input[Union['DeployStageRollbackPolicyArgs', 'DeployStageRollbackPolicyArgsDict', 'outputs.DeployStageRollbackPolicy']] rollback_policy: (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
+        :param pulumi.Input[Union['DeployStageRolloutPolicyArgs', 'DeployStageRolloutPolicyArgsDict', 'outputs.DeployStageRolloutPolicy']] rollout_policy: (Updatable) Description of rollout policy for load balancer traffic shift stage.
+        :param pulumi.Input[Union['DeployStageSetStringArgs', 'DeployStageSetStringArgsDict', 'outputs.DeployStageSetString']] set_string: (Updatable) Specifies the name and value pairs to set helm values.
+        :param pulumi.Input[Union['DeployStageSetValuesArgs', 'DeployStageSetValuesArgsDict', 'outputs.DeployStageSetValues']] set_values: (Updatable) Specifies the name and value pairs to set helm values.
         :param pulumi.Input[_builtins.bool] should_cleanup_on_fail: (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
         :param pulumi.Input[_builtins.bool] should_not_wait: (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
         :param pulumi.Input[_builtins.bool] should_reset_values: (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
@@ -2650,13 +2650,13 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] should_skip_render_subchart_notes: (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
         :param pulumi.Input[_builtins.str] state: The current state of the deployment stage.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Union['DeployStageTestLoadBalancerConfigArgs', 'DeployStageTestLoadBalancerConfigArgsDict']] test_load_balancer_config: (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
+        :param pulumi.Input[Union['DeployStageTestLoadBalancerConfigArgs', 'DeployStageTestLoadBalancerConfigArgsDict', 'outputs.DeployStageTestLoadBalancerConfig']] test_load_balancer_config: (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         :param pulumi.Input[_builtins.str] time_created: Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[_builtins.str] time_updated: Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[_builtins.int] timeout_in_seconds: (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
         :param pulumi.Input[_builtins.str] traffic_shift_target: (Updatable) Specifies the target or destination backend set.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values_artifact_ids: (Updatable) List of values.yaml file artifact OCIDs.
-        :param pulumi.Input[Union['DeployStageWaitCriteriaArgs', 'DeployStageWaitCriteriaArgsDict']] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
+        :param pulumi.Input[Union['DeployStageWaitCriteriaArgs', 'DeployStageWaitCriteriaArgsDict', 'outputs.DeployStageWaitCriteria']] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

@@ -131,7 +131,7 @@ class AwaitableGetFleetProductsResult(GetFleetProductsResult):
 
 def get_fleet_products(compartment_id: Optional[_builtins.str] = None,
                        display_name: Optional[_builtins.str] = None,
-                       filters: Optional[Sequence[Union['GetFleetProductsFilterArgs', 'GetFleetProductsFilterArgsDict']]] = None,
+                       filters: Optional[Sequence[Union['GetFleetProductsFilterArgs', 'GetFleetProductsFilterArgsDict', 'outputs.GetFleetProductsFilterResult']]] = None,
                        fleet_id: Optional[_builtins.str] = None,
                        resource_display_name: Optional[_builtins.str] = None,
                        resource_id: Optional[_builtins.str] = None,
@@ -182,7 +182,7 @@ def get_fleet_products(compartment_id: Optional[_builtins.str] = None,
         resource_id=pulumi.get(__ret__, 'resource_id'))
 def get_fleet_products_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetProductsFilterArgs', 'GetFleetProductsFilterArgsDict']]]]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetProductsFilterArgs', 'GetFleetProductsFilterArgsDict', 'outputs.GetFleetProductsFilterResult']]]]] = None,
                               fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
                               resource_display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

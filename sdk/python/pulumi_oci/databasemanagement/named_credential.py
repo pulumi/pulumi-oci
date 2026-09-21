@@ -420,7 +420,7 @@ class NamedCredential(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  associated_resource: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 content: pulumi.Input[Optional[Union['NamedCredentialContentArgs', 'NamedCredentialContentArgsDict']]] = None,
+                 content: pulumi.Input[Optional[Union['NamedCredentialContentArgs', 'NamedCredentialContentArgsDict', 'outputs.NamedCredentialContent']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -477,7 +477,7 @@ class NamedCredential(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] associated_resource: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that  is associated to the named credential.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the named credential resides.
-        :param pulumi.Input[Union['NamedCredentialContentArgs', 'NamedCredentialContentArgsDict']] content: (Updatable) The details of the named credential.
+        :param pulumi.Input[Union['NamedCredentialContentArgs', 'NamedCredentialContentArgsDict', 'outputs.NamedCredentialContent']] content: (Updatable) The details of the named credential.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The information specified by the user about the named credential.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -556,7 +556,7 @@ class NamedCredential(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  associated_resource: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 content: pulumi.Input[Optional[Union['NamedCredentialContentArgs', 'NamedCredentialContentArgsDict']]] = None,
+                 content: pulumi.Input[Optional[Union['NamedCredentialContentArgs', 'NamedCredentialContentArgsDict', 'outputs.NamedCredentialContent']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -606,7 +606,7 @@ class NamedCredential(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             associated_resource: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            content: pulumi.Input[Optional[Union['NamedCredentialContentArgs', 'NamedCredentialContentArgsDict']]] = None,
+            content: pulumi.Input[Optional[Union['NamedCredentialContentArgs', 'NamedCredentialContentArgsDict', 'outputs.NamedCredentialContent']]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -627,7 +627,7 @@ class NamedCredential(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] associated_resource: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that  is associated to the named credential.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the named credential resides.
-        :param pulumi.Input[Union['NamedCredentialContentArgs', 'NamedCredentialContentArgsDict']] content: (Updatable) The details of the named credential.
+        :param pulumi.Input[Union['NamedCredentialContentArgs', 'NamedCredentialContentArgsDict', 'outputs.NamedCredentialContent']] content: (Updatable) The details of the named credential.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The information specified by the user about the named credential.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`

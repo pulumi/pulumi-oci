@@ -182,7 +182,7 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
                  condition_language_version: pulumi.Input[Optional[_builtins.str]] = None,
                  load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LoadBalancerRoutingPolicyRuleArgs', 'LoadBalancerRoutingPolicyRuleArgsDict']]]]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LoadBalancerRoutingPolicyRuleArgs', 'LoadBalancerRoutingPolicyRuleArgsDict', 'outputs.LoadBalancerRoutingPolicyRule']]]]] = None,
                  __props__=None):
         """
         This resource provides the Load Balancer Routing Policy resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -227,7 +227,7 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] condition_language_version: (Updatable) The version of the language in which `condition` of `rules` are composed.
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
         :param pulumi.Input[_builtins.str] name: The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_routing_rules`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerRoutingPolicyRuleArgs', 'LoadBalancerRoutingPolicyRuleArgsDict']]]] rules: (Updatable) The list of routing rules.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerRoutingPolicyRuleArgs', 'LoadBalancerRoutingPolicyRuleArgsDict', 'outputs.LoadBalancerRoutingPolicyRule']]]] rules: (Updatable) The list of routing rules.
         """
         ...
     @overload
@@ -291,7 +291,7 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
                  condition_language_version: pulumi.Input[Optional[_builtins.str]] = None,
                  load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LoadBalancerRoutingPolicyRuleArgs', 'LoadBalancerRoutingPolicyRuleArgsDict']]]]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LoadBalancerRoutingPolicyRuleArgs', 'LoadBalancerRoutingPolicyRuleArgsDict', 'outputs.LoadBalancerRoutingPolicyRule']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -325,7 +325,7 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
             condition_language_version: pulumi.Input[Optional[_builtins.str]] = None,
             load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LoadBalancerRoutingPolicyRuleArgs', 'LoadBalancerRoutingPolicyRuleArgsDict']]]]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LoadBalancerRoutingPolicyRuleArgs', 'LoadBalancerRoutingPolicyRuleArgsDict', 'outputs.LoadBalancerRoutingPolicyRule']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None) -> 'LoadBalancerRoutingPolicy':
         """
         Get an existing LoadBalancerRoutingPolicy resource's state with the given name, id, and optional extra
@@ -337,7 +337,7 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] condition_language_version: (Updatable) The version of the language in which `condition` of `rules` are composed.
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
         :param pulumi.Input[_builtins.str] name: The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_routing_rules`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerRoutingPolicyRuleArgs', 'LoadBalancerRoutingPolicyRuleArgsDict']]]] rules: (Updatable) The list of routing rules.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerRoutingPolicyRuleArgs', 'LoadBalancerRoutingPolicyRuleArgsDict', 'outputs.LoadBalancerRoutingPolicyRule']]]] rules: (Updatable) The list of routing rules.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

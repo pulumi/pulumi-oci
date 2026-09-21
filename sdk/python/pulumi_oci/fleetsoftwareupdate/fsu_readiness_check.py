@@ -376,7 +376,7 @@ class FsuReadinessCheck(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FsuReadinessCheckTargetArgs', 'FsuReadinessCheckTargetArgsDict']]]]] = None,
+                 targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FsuReadinessCheckTargetArgs', 'FsuReadinessCheckTargetArgsDict', 'outputs.FsuReadinessCheckTarget']]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -424,7 +424,7 @@ class FsuReadinessCheck(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the Exadata Fleet Update Readiness Check resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FsuReadinessCheckTargetArgs', 'FsuReadinessCheckTargetArgsDict']]]] targets: List of targets that will run the Exadata Fleet Update Readiness Check. The targets have to be of the same entity type.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FsuReadinessCheckTargetArgs', 'FsuReadinessCheckTargetArgsDict', 'outputs.FsuReadinessCheckTarget']]]] targets: List of targets that will run the Exadata Fleet Update Readiness Check. The targets have to be of the same entity type.
         :param pulumi.Input[_builtins.str] type: Type of Exadata Fleet Update Readiness Check.
                
                ** IMPORTANT **
@@ -494,7 +494,7 @@ class FsuReadinessCheck(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FsuReadinessCheckTargetArgs', 'FsuReadinessCheckTargetArgsDict']]]]] = None,
+                 targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FsuReadinessCheckTargetArgs', 'FsuReadinessCheckTargetArgsDict', 'outputs.FsuReadinessCheckTarget']]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -538,11 +538,11 @@ class FsuReadinessCheck(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             issue_count: pulumi.Input[Optional[_builtins.int]] = None,
-            issues: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FsuReadinessCheckIssueArgs', 'FsuReadinessCheckIssueArgsDict']]]]] = None,
+            issues: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FsuReadinessCheckIssueArgs', 'FsuReadinessCheckIssueArgsDict', 'outputs.FsuReadinessCheckIssue']]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FsuReadinessCheckTargetArgs', 'FsuReadinessCheckTargetArgsDict']]]]] = None,
+            targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FsuReadinessCheckTargetArgs', 'FsuReadinessCheckTargetArgsDict', 'outputs.FsuReadinessCheckTarget']]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_finished: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
@@ -559,11 +559,11 @@ class FsuReadinessCheck(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the Exadata Fleet Update Readiness Check resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.int] issue_count: Number of issues found during the Exadata Fleet Update Readiness Check run.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FsuReadinessCheckIssueArgs', 'FsuReadinessCheckIssueArgsDict']]]] issues: Issues found during the Exadata Fleet Update Readiness Check run.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FsuReadinessCheckIssueArgs', 'FsuReadinessCheckIssueArgsDict', 'outputs.FsuReadinessCheckIssue']]]] issues: Issues found during the Exadata Fleet Update Readiness Check run.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[_builtins.str] state: Possible lifecycle states for the Exadata Fleet Update Readiness Check resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FsuReadinessCheckTargetArgs', 'FsuReadinessCheckTargetArgsDict']]]] targets: List of targets that will run the Exadata Fleet Update Readiness Check. The targets have to be of the same entity type.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FsuReadinessCheckTargetArgs', 'FsuReadinessCheckTargetArgsDict', 'outputs.FsuReadinessCheckTarget']]]] targets: List of targets that will run the Exadata Fleet Update Readiness Check. The targets have to be of the same entity type.
         :param pulumi.Input[_builtins.str] time_created: The date and time the Exadata Fleet Update Readiness Check was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         :param pulumi.Input[_builtins.str] time_finished: The date and time the Exadata Fleet Update Readiness Check was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[_builtins.str] time_updated: The date and time the Exadata Fleet Update Readiness Check was updated, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.

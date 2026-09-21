@@ -512,7 +512,7 @@ class EmailReturnPath(pulumi.CustomResource):
             dns_subdomain_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EmailReturnPathLockArgs', 'EmailReturnPathLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EmailReturnPathLockArgs', 'EmailReturnPathLockArgsDict', 'outputs.EmailReturnPathLock']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -533,7 +533,7 @@ class EmailReturnPath(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] dns_subdomain_name: The name of the DNS subdomain that must be provisioned to enable email recipients to verify Email Return Path. It is usually created with a CNAME record set to the cnameRecordValue.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['EmailReturnPathLockArgs', 'EmailReturnPathLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['EmailReturnPathLockArgs', 'EmailReturnPathLockArgsDict', 'outputs.EmailReturnPathLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] name: The name of the email return path domain in the Internet Domain Name System (DNS). The name must be a subdomain of the email domain used to send emails. The email return path name must be globally unique for this tenancy. If you do not provide the email return path name, we will generate one for you. If you do provide the email return path name, we suggest adding a short region indicator to allow using the same parent domain in other regions you might be subscribed to. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
         :param pulumi.Input[_builtins.str] parent_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this email return path.
                

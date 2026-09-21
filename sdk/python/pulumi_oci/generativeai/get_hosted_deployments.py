@@ -120,7 +120,7 @@ class AwaitableGetHostedDeploymentsResult(GetHostedDeploymentsResult):
 def get_hosted_deployments(application_id: Optional[_builtins.str] = None,
                            compartment_id: Optional[_builtins.str] = None,
                            display_name: Optional[_builtins.str] = None,
-                           filters: Optional[Sequence[Union['GetHostedDeploymentsFilterArgs', 'GetHostedDeploymentsFilterArgsDict']]] = None,
+                           filters: Optional[Sequence[Union['GetHostedDeploymentsFilterArgs', 'GetHostedDeploymentsFilterArgsDict', 'outputs.GetHostedDeploymentsFilterResult']]] = None,
                            id: Optional[_builtins.str] = None,
                            state: Optional[_builtins.str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetHostedDeploymentsResult:
@@ -170,7 +170,7 @@ def get_hosted_deployments(application_id: Optional[_builtins.str] = None,
 def get_hosted_deployments_output(application_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetHostedDeploymentsFilterArgs', 'GetHostedDeploymentsFilterArgsDict']]]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetHostedDeploymentsFilterArgs', 'GetHostedDeploymentsFilterArgsDict', 'outputs.GetHostedDeploymentsFilterResult']]]]] = None,
                                   id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHostedDeploymentsResult]:

@@ -146,7 +146,7 @@ class AwaitableGetWlmsWlsDomainsResult(GetWlmsWlsDomainsResult):
 
 def get_wlms_wls_domains(compartment_id: Optional[_builtins.str] = None,
                          display_name: Optional[_builtins.str] = None,
-                         filters: Optional[Sequence[Union['GetWlmsWlsDomainsFilterArgs', 'GetWlmsWlsDomainsFilterArgsDict']]] = None,
+                         filters: Optional[Sequence[Union['GetWlmsWlsDomainsFilterArgs', 'GetWlmsWlsDomainsFilterArgsDict', 'outputs.GetWlmsWlsDomainsFilterResult']]] = None,
                          id: Optional[_builtins.str] = None,
                          middleware_type: Optional[_builtins.str] = None,
                          patch_readiness_status: Optional[_builtins.str] = None,
@@ -206,7 +206,7 @@ def get_wlms_wls_domains(compartment_id: Optional[_builtins.str] = None,
         wls_domain_collections=pulumi.get(__ret__, 'wls_domain_collections'))
 def get_wlms_wls_domains_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWlmsWlsDomainsFilterArgs', 'GetWlmsWlsDomainsFilterArgsDict']]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWlmsWlsDomainsFilterArgs', 'GetWlmsWlsDomainsFilterArgsDict', 'outputs.GetWlmsWlsDomainsFilterResult']]]]] = None,
                                 id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 middleware_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 patch_readiness_status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

@@ -1068,8 +1068,8 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupTagArgs', 'DomainsDynamicResourceGroupTagArgsDict']]]]] = None,
-                 urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional[Union['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupTagArgs', 'DomainsDynamicResourceGroupTagArgsDict', 'outputs.DomainsDynamicResourceGroupTag']]]]] = None,
+                 urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional[Union['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict', 'outputs.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTags']]] = None,
                  __props__=None):
         """
         This resource provides the Dynamic Resource Group resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1187,7 +1187,7 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupTagArgs', 'DomainsDynamicResourceGroupTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupTagArgs', 'DomainsDynamicResourceGroupTagArgsDict', 'outputs.DomainsDynamicResourceGroupTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1198,7 +1198,7 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
+        :param pulumi.Input[Union['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict', 'outputs.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTags']] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
         """
         ...
     @overload
@@ -1283,8 +1283,8 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupTagArgs', 'DomainsDynamicResourceGroupTagArgsDict']]]]] = None,
-                 urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional[Union['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupTagArgs', 'DomainsDynamicResourceGroupTagArgsDict', 'outputs.DomainsDynamicResourceGroupTag']]]]] = None,
+                 urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional[Union['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict', 'outputs.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTags']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1343,21 +1343,21 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
-            dynamic_group_app_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupDynamicGroupAppRoleArgs', 'DomainsDynamicResourceGroupDynamicGroupAppRoleArgsDict']]]]] = None,
-            grants: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupGrantArgs', 'DomainsDynamicResourceGroupGrantArgsDict']]]]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupIdcsCreatedByArgs', 'DomainsDynamicResourceGroupIdcsCreatedByArgsDict']]]]] = None,
+            dynamic_group_app_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupDynamicGroupAppRoleArgs', 'DomainsDynamicResourceGroupDynamicGroupAppRoleArgsDict', 'outputs.DomainsDynamicResourceGroupDynamicGroupAppRole']]]]] = None,
+            grants: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupGrantArgs', 'DomainsDynamicResourceGroupGrantArgsDict', 'outputs.DomainsDynamicResourceGroupGrant']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupIdcsCreatedByArgs', 'DomainsDynamicResourceGroupIdcsCreatedByArgsDict', 'outputs.DomainsDynamicResourceGroupIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupIdcsLastModifiedByArgs', 'DomainsDynamicResourceGroupIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupIdcsLastModifiedByArgs', 'DomainsDynamicResourceGroupIdcsLastModifiedByArgsDict', 'outputs.DomainsDynamicResourceGroupIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             matching_rule: pulumi.Input[Optional[_builtins.str]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupMetaArgs', 'DomainsDynamicResourceGroupMetaArgsDict']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupMetaArgs', 'DomainsDynamicResourceGroupMetaArgsDict', 'outputs.DomainsDynamicResourceGroupMeta']]]]] = None,
             ocid: pulumi.Input[Optional[_builtins.str]] = None,
             resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
             schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupTagArgs', 'DomainsDynamicResourceGroupTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupTagArgs', 'DomainsDynamicResourceGroupTagArgsDict', 'outputs.DomainsDynamicResourceGroupTag']]]]] = None,
             tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
-            urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional[Union['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None) -> 'DomainsDynamicResourceGroup':
+            urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional[Union['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict', 'outputs.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTags']]] = None) -> 'DomainsDynamicResourceGroup':
         """
         Get an existing DomainsDynamicResourceGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1426,7 +1426,7 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupDynamicGroupAppRoleArgs', 'DomainsDynamicResourceGroupDynamicGroupAppRoleArgsDict']]]] dynamic_group_app_roles: (Updatable) A list of appRoles that are currently granted to this Dynamic Resource Group.  The Identity service will assert these AppRoles for any resource that satisfies the matching-rule of this DynamicResourceGroup.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupDynamicGroupAppRoleArgs', 'DomainsDynamicResourceGroupDynamicGroupAppRoleArgsDict', 'outputs.DomainsDynamicResourceGroupDynamicGroupAppRole']]]] dynamic_group_app_roles: (Updatable) A list of appRoles that are currently granted to this Dynamic Resource Group.  The Identity service will assert these AppRoles for any resource that satisfies the matching-rule of this DynamicResourceGroup.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1438,7 +1438,7 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupGrantArgs', 'DomainsDynamicResourceGroupGrantArgsDict']]]] grants: (Updatable) Grants assigned to group
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupGrantArgs', 'DomainsDynamicResourceGroupGrantArgsDict', 'outputs.DomainsDynamicResourceGroupGrant']]]] grants: (Updatable) Grants assigned to group
                
                **SCIM++ Properties:**
                * idcsAddedSinceVersion: 3
@@ -1449,7 +1449,7 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupIdcsCreatedByArgs', 'DomainsDynamicResourceGroupIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupIdcsCreatedByArgs', 'DomainsDynamicResourceGroupIdcsCreatedByArgsDict', 'outputs.DomainsDynamicResourceGroupIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1459,7 +1459,7 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupIdcsLastModifiedByArgs', 'DomainsDynamicResourceGroupIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupIdcsLastModifiedByArgs', 'DomainsDynamicResourceGroupIdcsLastModifiedByArgsDict', 'outputs.DomainsDynamicResourceGroupIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1499,7 +1499,7 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupMetaArgs', 'DomainsDynamicResourceGroupMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupMetaArgs', 'DomainsDynamicResourceGroupMetaArgsDict', 'outputs.DomainsDynamicResourceGroupMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1533,7 +1533,7 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupTagArgs', 'DomainsDynamicResourceGroupTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsDynamicResourceGroupTagArgs', 'DomainsDynamicResourceGroupTagArgsDict', 'outputs.DomainsDynamicResourceGroupTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1555,7 +1555,7 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
+        :param pulumi.Input[Union['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict', 'outputs.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTags']] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

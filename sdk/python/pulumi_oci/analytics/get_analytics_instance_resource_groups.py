@@ -91,7 +91,7 @@ class AwaitableGetAnalyticsInstanceResourceGroupsResult(GetAnalyticsInstanceReso
 
 
 def get_analytics_instance_resource_groups(analytics_instance_id: Optional[_builtins.str] = None,
-                                           filters: Optional[Sequence[Union['GetAnalyticsInstanceResourceGroupsFilterArgs', 'GetAnalyticsInstanceResourceGroupsFilterArgsDict']]] = None,
+                                           filters: Optional[Sequence[Union['GetAnalyticsInstanceResourceGroupsFilterArgs', 'GetAnalyticsInstanceResourceGroupsFilterArgsDict', 'outputs.GetAnalyticsInstanceResourceGroupsFilterResult']]] = None,
                                            name: Optional[_builtins.str] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAnalyticsInstanceResourceGroupsResult:
     """
@@ -127,7 +127,7 @@ def get_analytics_instance_resource_groups(analytics_instance_id: Optional[_buil
         instance_resource_groups=pulumi.get(__ret__, 'instance_resource_groups'),
         name=pulumi.get(__ret__, 'name'))
 def get_analytics_instance_resource_groups_output(analytics_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAnalyticsInstanceResourceGroupsFilterArgs', 'GetAnalyticsInstanceResourceGroupsFilterArgsDict']]]]] = None,
+                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAnalyticsInstanceResourceGroupsFilterArgs', 'GetAnalyticsInstanceResourceGroupsFilterArgsDict', 'outputs.GetAnalyticsInstanceResourceGroupsFilterResult']]]]] = None,
                                                   name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAnalyticsInstanceResourceGroupsResult]:
     """

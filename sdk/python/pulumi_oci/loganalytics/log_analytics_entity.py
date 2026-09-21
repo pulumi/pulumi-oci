@@ -650,7 +650,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
                  management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadata: pulumi.Input[Optional[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict', 'outputs.LogAnalyticsEntityMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -717,7 +717,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] hostname: (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
         :param pulumi.Input[_builtins.str] management_agent_id: (Updatable) The OCID of the Management Agent.
-        :param pulumi.Input[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict']] metadata: (Updatable) Details of Entity Metadata.
+        :param pulumi.Input[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict', 'outputs.LogAnalyticsEntityMetadata']] metadata: (Updatable) Details of Entity Metadata.
         :param pulumi.Input[_builtins.str] name: (Updatable) Log analytics entity name.
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
@@ -806,7 +806,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
                  management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadata: pulumi.Input[Optional[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict', 'outputs.LogAnalyticsEntityMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -874,7 +874,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
             management_agent_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             management_agent_display_name: pulumi.Input[Optional[_builtins.str]] = None,
             management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
-            metadata: pulumi.Input[Optional[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict', 'outputs.LogAnalyticsEntityMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             namespace: pulumi.Input[Optional[_builtins.str]] = None,
             properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -904,7 +904,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] management_agent_compartment_id: Management agent (management-agents resource kind) compartment OCID
         :param pulumi.Input[_builtins.str] management_agent_display_name: Management agent (management-agents resource kind) display name
         :param pulumi.Input[_builtins.str] management_agent_id: (Updatable) The OCID of the Management Agent.
-        :param pulumi.Input[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict']] metadata: (Updatable) Details of Entity Metadata.
+        :param pulumi.Input[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict', 'outputs.LogAnalyticsEntityMetadata']] metadata: (Updatable) Details of Entity Metadata.
         :param pulumi.Input[_builtins.str] name: (Updatable) Log analytics entity name.
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.

@@ -330,7 +330,7 @@ class Project(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectLockArgs', 'ProjectLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectLockArgs', 'ProjectLockArgsDict', 'outputs.ProjectLock']]]]] = None,
                  __props__=None):
         """
         This resource provides the Project resource in Oracle Cloud Infrastructure Ai Document service.
@@ -373,7 +373,7 @@ class Project(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ProjectLockArgs', 'ProjectLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ProjectLockArgs', 'ProjectLockArgsDict', 'outputs.ProjectLock']]]] locks: Locks associated with this resource.
         """
         ...
     @overload
@@ -432,7 +432,7 @@ class Project(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectLockArgs', 'ProjectLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectLockArgs', 'ProjectLockArgsDict', 'outputs.ProjectLock']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -471,7 +471,7 @@ class Project(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectLockArgs', 'ProjectLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectLockArgs', 'ProjectLockArgsDict', 'outputs.ProjectLock']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -492,7 +492,7 @@ class Project(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail, that can provide actionable information if creation failed.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ProjectLockArgs', 'ProjectLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ProjectLockArgs', 'ProjectLockArgsDict', 'outputs.ProjectLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] state: The current state of the project.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         :param pulumi.Input[_builtins.str] time_created: When the project was created, as an RFC3339 datetime string.

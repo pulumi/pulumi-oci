@@ -82,7 +82,7 @@ class AwaitableGetBdsInstanceListOsPatchesResult(GetBdsInstanceListOsPatchesResu
 
 
 def get_bds_instance_list_os_patches(bds_instance_id: Optional[_builtins.str] = None,
-                                     filters: Optional[Sequence[Union['GetBdsInstanceListOsPatchesFilterArgs', 'GetBdsInstanceListOsPatchesFilterArgsDict']]] = None,
+                                     filters: Optional[Sequence[Union['GetBdsInstanceListOsPatchesFilterArgs', 'GetBdsInstanceListOsPatchesFilterArgsDict', 'outputs.GetBdsInstanceListOsPatchesFilterResult']]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBdsInstanceListOsPatchesResult:
     """
     This data source provides the list of Bds Instance List Os Patches in Oracle Cloud Infrastructure Big Data Service service.
@@ -113,7 +113,7 @@ def get_bds_instance_list_os_patches(bds_instance_id: Optional[_builtins.str] = 
         id=pulumi.get(__ret__, 'id'),
         os_patches=pulumi.get(__ret__, 'os_patches'))
 def get_bds_instance_list_os_patches_output(bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstanceListOsPatchesFilterArgs', 'GetBdsInstanceListOsPatchesFilterArgsDict']]]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstanceListOsPatchesFilterArgs', 'GetBdsInstanceListOsPatchesFilterArgsDict', 'outputs.GetBdsInstanceListOsPatchesFilterResult']]]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceListOsPatchesResult]:
     """
     This data source provides the list of Bds Instance List Os Patches in Oracle Cloud Infrastructure Big Data Service service.

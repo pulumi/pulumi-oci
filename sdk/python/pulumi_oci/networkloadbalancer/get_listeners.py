@@ -81,7 +81,7 @@ class AwaitableGetListenersResult(GetListenersResult):
             network_load_balancer_id=self.network_load_balancer_id)
 
 
-def get_listeners(filters: Optional[Sequence[Union['GetListenersFilterArgs', 'GetListenersFilterArgsDict']]] = None,
+def get_listeners(filters: Optional[Sequence[Union['GetListenersFilterArgs', 'GetListenersFilterArgsDict', 'outputs.GetListenersFilterResult']]] = None,
                   network_load_balancer_id: Optional[_builtins.str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetListenersResult:
     """
@@ -112,7 +112,7 @@ def get_listeners(filters: Optional[Sequence[Union['GetListenersFilterArgs', 'Ge
         id=pulumi.get(__ret__, 'id'),
         listener_collections=pulumi.get(__ret__, 'listener_collections'),
         network_load_balancer_id=pulumi.get(__ret__, 'network_load_balancer_id'))
-def get_listeners_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetListenersFilterArgs', 'GetListenersFilterArgsDict']]]]] = None,
+def get_listeners_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetListenersFilterArgs', 'GetListenersFilterArgsDict', 'outputs.GetListenersFilterResult']]]]] = None,
                          network_load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListenersResult]:
     """

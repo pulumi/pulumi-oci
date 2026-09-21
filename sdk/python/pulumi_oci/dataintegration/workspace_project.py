@@ -419,7 +419,7 @@ class WorkspaceProject(pulumi.CustomResource):
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  object_status: pulumi.Input[Optional[_builtins.int]] = None,
                  project_key: pulumi.Input[Optional[_builtins.str]] = None,
-                 registry_metadata: pulumi.Input[Optional[Union['WorkspaceProjectRegistryMetadataArgs', 'WorkspaceProjectRegistryMetadataArgsDict']]] = None,
+                 registry_metadata: pulumi.Input[Optional[Union['WorkspaceProjectRegistryMetadataArgs', 'WorkspaceProjectRegistryMetadataArgsDict', 'outputs.WorkspaceProjectRegistryMetadata']]] = None,
                  workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -470,7 +470,7 @@ class WorkspaceProject(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] model_version: (Updatable) The model version of an object.
         :param pulumi.Input[_builtins.str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[_builtins.int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param pulumi.Input[Union['WorkspaceProjectRegistryMetadataArgs', 'WorkspaceProjectRegistryMetadataArgsDict']] registry_metadata: (Updatable) Information about the object and its parent.
+        :param pulumi.Input[Union['WorkspaceProjectRegistryMetadataArgs', 'WorkspaceProjectRegistryMetadataArgsDict', 'outputs.WorkspaceProjectRegistryMetadata']] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[_builtins.str] workspace_id: The workspace ID.
                
                ** IMPORTANT **
@@ -544,7 +544,7 @@ class WorkspaceProject(pulumi.CustomResource):
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  object_status: pulumi.Input[Optional[_builtins.int]] = None,
                  project_key: pulumi.Input[Optional[_builtins.str]] = None,
-                 registry_metadata: pulumi.Input[Optional[Union['WorkspaceProjectRegistryMetadataArgs', 'WorkspaceProjectRegistryMetadataArgsDict']]] = None,
+                 registry_metadata: pulumi.Input[Optional[Union['WorkspaceProjectRegistryMetadataArgs', 'WorkspaceProjectRegistryMetadataArgsDict', 'outputs.WorkspaceProjectRegistryMetadata']]] = None,
                  workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -587,15 +587,15 @@ class WorkspaceProject(pulumi.CustomResource):
             identifier: pulumi.Input[Optional[_builtins.str]] = None,
             key: pulumi.Input[Optional[_builtins.str]] = None,
             key_map: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceProjectMetadataArgs', 'WorkspaceProjectMetadataArgsDict']]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceProjectMetadataArgs', 'WorkspaceProjectMetadataArgsDict', 'outputs.WorkspaceProjectMetadata']]]]] = None,
             model_type: pulumi.Input[Optional[_builtins.str]] = None,
             model_version: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             object_status: pulumi.Input[Optional[_builtins.int]] = None,
             object_version: pulumi.Input[Optional[_builtins.int]] = None,
-            parent_reves: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceProjectParentRefArgs', 'WorkspaceProjectParentRefArgsDict']]]]] = None,
+            parent_reves: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceProjectParentRefArgs', 'WorkspaceProjectParentRefArgsDict', 'outputs.WorkspaceProjectParentRef']]]]] = None,
             project_key: pulumi.Input[Optional[_builtins.str]] = None,
-            registry_metadata: pulumi.Input[Optional[Union['WorkspaceProjectRegistryMetadataArgs', 'WorkspaceProjectRegistryMetadataArgsDict']]] = None,
+            registry_metadata: pulumi.Input[Optional[Union['WorkspaceProjectRegistryMetadataArgs', 'WorkspaceProjectRegistryMetadataArgsDict', 'outputs.WorkspaceProjectRegistryMetadata']]] = None,
             workspace_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'WorkspaceProject':
         """
         Get an existing WorkspaceProject resource's state with the given name, id, and optional extra
@@ -608,14 +608,14 @@ class WorkspaceProject(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[_builtins.str] key: (Updatable) Generated key that can be used in API calls to identify project.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] key_map: A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceProjectMetadataArgs', 'WorkspaceProjectMetadataArgsDict']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceProjectMetadataArgs', 'WorkspaceProjectMetadataArgsDict', 'outputs.WorkspaceProjectMetadata']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param pulumi.Input[_builtins.str] model_type: The type of the object.
         :param pulumi.Input[_builtins.str] model_version: (Updatable) The model version of an object.
         :param pulumi.Input[_builtins.str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[_builtins.int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[_builtins.int] object_version: The version of the object that is used to track changes in the object instance.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceProjectParentRefArgs', 'WorkspaceProjectParentRefArgsDict']]]] parent_reves: A reference to the object's parent.
-        :param pulumi.Input[Union['WorkspaceProjectRegistryMetadataArgs', 'WorkspaceProjectRegistryMetadataArgsDict']] registry_metadata: (Updatable) Information about the object and its parent.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceProjectParentRefArgs', 'WorkspaceProjectParentRefArgsDict', 'outputs.WorkspaceProjectParentRef']]]] parent_reves: A reference to the object's parent.
+        :param pulumi.Input[Union['WorkspaceProjectRegistryMetadataArgs', 'WorkspaceProjectRegistryMetadataArgsDict', 'outputs.WorkspaceProjectRegistryMetadata']] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[_builtins.str] workspace_id: The workspace ID.
                
                ** IMPORTANT **

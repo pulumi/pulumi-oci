@@ -378,13 +378,13 @@ class Project(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 conversation_config: pulumi.Input[Optional[Union['ProjectConversationConfigArgs', 'ProjectConversationConfigArgsDict']]] = None,
+                 conversation_config: pulumi.Input[Optional[Union['ProjectConversationConfigArgs', 'ProjectConversationConfigArgsDict', 'outputs.ProjectConversationConfig']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 long_term_memory_config: pulumi.Input[Optional[Union['ProjectLongTermMemoryConfigArgs', 'ProjectLongTermMemoryConfigArgsDict']]] = None,
-                 short_term_memory_optimization_config: pulumi.Input[Optional[Union['ProjectShortTermMemoryOptimizationConfigArgs', 'ProjectShortTermMemoryOptimizationConfigArgsDict']]] = None,
+                 long_term_memory_config: pulumi.Input[Optional[Union['ProjectLongTermMemoryConfigArgs', 'ProjectLongTermMemoryConfigArgsDict', 'outputs.ProjectLongTermMemoryConfig']]] = None,
+                 short_term_memory_optimization_config: pulumi.Input[Optional[Union['ProjectShortTermMemoryOptimizationConfigArgs', 'ProjectShortTermMemoryOptimizationConfigArgsDict', 'outputs.ProjectShortTermMemoryOptimizationConfig']]] = None,
                  __props__=None):
         """
         This resource provides the Project resource in Oracle Cloud Infrastructure Generative AI service.
@@ -455,13 +455,13 @@ class Project(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Owning compartment OCID for a GenerativeAiProject.
-        :param pulumi.Input[Union['ProjectConversationConfigArgs', 'ProjectConversationConfigArgsDict']] conversation_config: (Updatable) Holds configuration related to conversation retention
+        :param pulumi.Input[Union['ProjectConversationConfigArgs', 'ProjectConversationConfigArgsDict', 'outputs.ProjectConversationConfig']] conversation_config: (Updatable) Holds configuration related to conversation retention
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the GenerativeAiProject.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['ProjectLongTermMemoryConfigArgs', 'ProjectLongTermMemoryConfigArgsDict']] long_term_memory_config: (Updatable) Configuration settings for long-term memory behavior.
-        :param pulumi.Input[Union['ProjectShortTermMemoryOptimizationConfigArgs', 'ProjectShortTermMemoryOptimizationConfigArgsDict']] short_term_memory_optimization_config: (Updatable) Configuration settings for short-term memory optimization.
+        :param pulumi.Input[Union['ProjectLongTermMemoryConfigArgs', 'ProjectLongTermMemoryConfigArgsDict', 'outputs.ProjectLongTermMemoryConfig']] long_term_memory_config: (Updatable) Configuration settings for long-term memory behavior.
+        :param pulumi.Input[Union['ProjectShortTermMemoryOptimizationConfigArgs', 'ProjectShortTermMemoryOptimizationConfigArgsDict', 'outputs.ProjectShortTermMemoryOptimizationConfig']] short_term_memory_optimization_config: (Updatable) Configuration settings for short-term memory optimization.
         """
         ...
     @overload
@@ -551,13 +551,13 @@ class Project(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 conversation_config: pulumi.Input[Optional[Union['ProjectConversationConfigArgs', 'ProjectConversationConfigArgsDict']]] = None,
+                 conversation_config: pulumi.Input[Optional[Union['ProjectConversationConfigArgs', 'ProjectConversationConfigArgsDict', 'outputs.ProjectConversationConfig']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 long_term_memory_config: pulumi.Input[Optional[Union['ProjectLongTermMemoryConfigArgs', 'ProjectLongTermMemoryConfigArgsDict']]] = None,
-                 short_term_memory_optimization_config: pulumi.Input[Optional[Union['ProjectShortTermMemoryOptimizationConfigArgs', 'ProjectShortTermMemoryOptimizationConfigArgsDict']]] = None,
+                 long_term_memory_config: pulumi.Input[Optional[Union['ProjectLongTermMemoryConfigArgs', 'ProjectLongTermMemoryConfigArgsDict', 'outputs.ProjectLongTermMemoryConfig']]] = None,
+                 short_term_memory_optimization_config: pulumi.Input[Optional[Union['ProjectShortTermMemoryOptimizationConfigArgs', 'ProjectShortTermMemoryOptimizationConfigArgsDict', 'outputs.ProjectShortTermMemoryOptimizationConfig']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -593,14 +593,14 @@ class Project(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            conversation_config: pulumi.Input[Optional[Union['ProjectConversationConfigArgs', 'ProjectConversationConfigArgsDict']]] = None,
+            conversation_config: pulumi.Input[Optional[Union['ProjectConversationConfigArgs', 'ProjectConversationConfigArgsDict', 'outputs.ProjectConversationConfig']]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            long_term_memory_config: pulumi.Input[Optional[Union['ProjectLongTermMemoryConfigArgs', 'ProjectLongTermMemoryConfigArgsDict']]] = None,
-            short_term_memory_optimization_config: pulumi.Input[Optional[Union['ProjectShortTermMemoryOptimizationConfigArgs', 'ProjectShortTermMemoryOptimizationConfigArgsDict']]] = None,
+            long_term_memory_config: pulumi.Input[Optional[Union['ProjectLongTermMemoryConfigArgs', 'ProjectLongTermMemoryConfigArgsDict', 'outputs.ProjectLongTermMemoryConfig']]] = None,
+            short_term_memory_optimization_config: pulumi.Input[Optional[Union['ProjectShortTermMemoryOptimizationConfigArgs', 'ProjectShortTermMemoryOptimizationConfigArgsDict', 'outputs.ProjectShortTermMemoryOptimizationConfig']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -613,14 +613,14 @@ class Project(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Owning compartment OCID for a GenerativeAiProject.
-        :param pulumi.Input[Union['ProjectConversationConfigArgs', 'ProjectConversationConfigArgsDict']] conversation_config: (Updatable) Holds configuration related to conversation retention
+        :param pulumi.Input[Union['ProjectConversationConfigArgs', 'ProjectConversationConfigArgsDict', 'outputs.ProjectConversationConfig']] conversation_config: (Updatable) Holds configuration related to conversation retention
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the GenerativeAiProject.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail that can provide actionable information.
-        :param pulumi.Input[Union['ProjectLongTermMemoryConfigArgs', 'ProjectLongTermMemoryConfigArgsDict']] long_term_memory_config: (Updatable) Configuration settings for long-term memory behavior.
-        :param pulumi.Input[Union['ProjectShortTermMemoryOptimizationConfigArgs', 'ProjectShortTermMemoryOptimizationConfigArgsDict']] short_term_memory_optimization_config: (Updatable) Configuration settings for short-term memory optimization.
+        :param pulumi.Input[Union['ProjectLongTermMemoryConfigArgs', 'ProjectLongTermMemoryConfigArgsDict', 'outputs.ProjectLongTermMemoryConfig']] long_term_memory_config: (Updatable) Configuration settings for long-term memory behavior.
+        :param pulumi.Input[Union['ProjectShortTermMemoryOptimizationConfigArgs', 'ProjectShortTermMemoryOptimizationConfigArgsDict', 'outputs.ProjectShortTermMemoryOptimizationConfig']] short_term_memory_optimization_config: (Updatable) Configuration settings for short-term memory optimization.
         :param pulumi.Input[_builtins.str] state: The lifecycle state of a GenerativeAiProject.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The date and time that the generativeAiProject was created in the format of an RFC3339 datetime string.

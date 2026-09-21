@@ -121,7 +121,7 @@ class AwaitableGetTargetComponentsResult(GetTargetComponentsResult):
 
 
 def get_target_components(compartment_id: Optional[_builtins.str] = None,
-                          filters: Optional[Sequence[Union['GetTargetComponentsFilterArgs', 'GetTargetComponentsFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetTargetComponentsFilterArgs', 'GetTargetComponentsFilterArgsDict', 'outputs.GetTargetComponentsFilterResult']]] = None,
                           name: Optional[_builtins.str] = None,
                           severity: Optional[_builtins.str] = None,
                           target_id: Optional[_builtins.str] = None,
@@ -172,7 +172,7 @@ def get_target_components(compartment_id: Optional[_builtins.str] = None,
         target_id=pulumi.get(__ret__, 'target_id'),
         target_name=pulumi.get(__ret__, 'target_name'))
 def get_target_components_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTargetComponentsFilterArgs', 'GetTargetComponentsFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTargetComponentsFilterArgs', 'GetTargetComponentsFilterArgsDict', 'outputs.GetTargetComponentsFilterResult']]]]] = None,
                                  name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  severity: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

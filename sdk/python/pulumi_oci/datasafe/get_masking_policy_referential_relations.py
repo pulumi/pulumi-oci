@@ -130,7 +130,7 @@ class AwaitableGetMaskingPolicyReferentialRelationsResult(GetMaskingPolicyRefere
 
 
 def get_masking_policy_referential_relations(column_names: Optional[Sequence[_builtins.str]] = None,
-                                             filters: Optional[Sequence[Union['GetMaskingPolicyReferentialRelationsFilterArgs', 'GetMaskingPolicyReferentialRelationsFilterArgsDict']]] = None,
+                                             filters: Optional[Sequence[Union['GetMaskingPolicyReferentialRelationsFilterArgs', 'GetMaskingPolicyReferentialRelationsFilterArgsDict', 'outputs.GetMaskingPolicyReferentialRelationsFilterResult']]] = None,
                                              masking_policy_id: Optional[_builtins.str] = None,
                                              objects: Optional[Sequence[_builtins.str]] = None,
                                              relation_types: Optional[Sequence[_builtins.str]] = None,
@@ -181,7 +181,7 @@ def get_masking_policy_referential_relations(column_names: Optional[Sequence[_bu
         relation_types=pulumi.get(__ret__, 'relation_types'),
         schema_names=pulumi.get(__ret__, 'schema_names'))
 def get_masking_policy_referential_relations_output(column_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
-                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingPolicyReferentialRelationsFilterArgs', 'GetMaskingPolicyReferentialRelationsFilterArgsDict']]]]] = None,
+                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingPolicyReferentialRelationsFilterArgs', 'GetMaskingPolicyReferentialRelationsFilterArgsDict', 'outputs.GetMaskingPolicyReferentialRelationsFilterResult']]]]] = None,
                                                     masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                     objects: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                                     relation_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,

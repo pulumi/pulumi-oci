@@ -118,7 +118,7 @@ class AwaitableGetSecretsResult(GetSecretsResult):
 
 
 def get_secrets(compartment_id: Optional[_builtins.str] = None,
-                filters: Optional[Sequence[Union['GetSecretsFilterArgs', 'GetSecretsFilterArgsDict']]] = None,
+                filters: Optional[Sequence[Union['GetSecretsFilterArgs', 'GetSecretsFilterArgsDict', 'outputs.GetSecretsFilterResult']]] = None,
                 name: Optional[_builtins.str] = None,
                 state: Optional[_builtins.str] = None,
                 vault_id: Optional[_builtins.str] = None,
@@ -164,7 +164,7 @@ def get_secrets(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         vault_id=pulumi.get(__ret__, 'vault_id'))
 def get_secrets_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecretsFilterArgs', 'GetSecretsFilterArgsDict']]]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecretsFilterArgs', 'GetSecretsFilterArgsDict', 'outputs.GetSecretsFilterResult']]]]] = None,
                        name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        vault_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

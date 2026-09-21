@@ -111,7 +111,7 @@ class AwaitableGetCloudListenersResult(GetCloudListenersResult):
 def get_cloud_listeners(cloud_db_system_id: Optional[_builtins.str] = None,
                         compartment_id: Optional[_builtins.str] = None,
                         display_name: Optional[_builtins.str] = None,
-                        filters: Optional[Sequence[Union['GetCloudListenersFilterArgs', 'GetCloudListenersFilterArgsDict']]] = None,
+                        filters: Optional[Sequence[Union['GetCloudListenersFilterArgs', 'GetCloudListenersFilterArgsDict', 'outputs.GetCloudListenersFilterResult']]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudListenersResult:
     """
     This data source provides the list of Cloud Listeners in Oracle Cloud Infrastructure Database Management service.
@@ -152,7 +152,7 @@ def get_cloud_listeners(cloud_db_system_id: Optional[_builtins.str] = None,
 def get_cloud_listeners_output(cloud_db_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudListenersFilterArgs', 'GetCloudListenersFilterArgsDict']]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudListenersFilterArgs', 'GetCloudListenersFilterArgsDict', 'outputs.GetCloudListenersFilterResult']]]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudListenersResult]:
     """
     This data source provides the list of Cloud Listeners in Oracle Cloud Infrastructure Database Management service.

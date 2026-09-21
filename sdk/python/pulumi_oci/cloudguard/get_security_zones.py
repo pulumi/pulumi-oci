@@ -128,7 +128,7 @@ class AwaitableGetSecurityZonesResult(GetSecurityZonesResult):
 
 def get_security_zones(compartment_id: Optional[_builtins.str] = None,
                        display_name: Optional[_builtins.str] = None,
-                       filters: Optional[Sequence[Union['GetSecurityZonesFilterArgs', 'GetSecurityZonesFilterArgsDict']]] = None,
+                       filters: Optional[Sequence[Union['GetSecurityZonesFilterArgs', 'GetSecurityZonesFilterArgsDict', 'outputs.GetSecurityZonesFilterResult']]] = None,
                        id: Optional[_builtins.str] = None,
                        is_required_security_zones_in_subtree: Optional[_builtins.bool] = None,
                        security_recipe_id: Optional[_builtins.str] = None,
@@ -184,7 +184,7 @@ def get_security_zones(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_security_zones_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityZonesFilterArgs', 'GetSecurityZonesFilterArgsDict']]]]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityZonesFilterArgs', 'GetSecurityZonesFilterArgsDict', 'outputs.GetSecurityZonesFilterResult']]]]] = None,
                               id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               is_required_security_zones_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                               security_recipe_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

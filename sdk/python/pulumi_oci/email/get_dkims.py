@@ -109,7 +109,7 @@ class AwaitableGetDkimsResult(GetDkimsResult):
 
 
 def get_dkims(email_domain_id: Optional[_builtins.str] = None,
-              filters: Optional[Sequence[Union['GetDkimsFilterArgs', 'GetDkimsFilterArgsDict']]] = None,
+              filters: Optional[Sequence[Union['GetDkimsFilterArgs', 'GetDkimsFilterArgsDict', 'outputs.GetDkimsFilterResult']]] = None,
               id: Optional[_builtins.str] = None,
               name: Optional[_builtins.str] = None,
               state: Optional[_builtins.str] = None,
@@ -154,7 +154,7 @@ def get_dkims(email_domain_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
 def get_dkims_output(email_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
-                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDkimsFilterArgs', 'GetDkimsFilterArgsDict']]]]] = None,
+                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDkimsFilterArgs', 'GetDkimsFilterArgsDict', 'outputs.GetDkimsFilterResult']]]]] = None,
                      id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

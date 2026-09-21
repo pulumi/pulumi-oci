@@ -109,7 +109,7 @@ class AwaitableGetProfilesResult(GetProfilesResult):
 
 
 def get_profiles(compartment_id: Optional[_builtins.str] = None,
-                 filters: Optional[Sequence[Union['GetProfilesFilterArgs', 'GetProfilesFilterArgsDict']]] = None,
+                 filters: Optional[Sequence[Union['GetProfilesFilterArgs', 'GetProfilesFilterArgsDict', 'outputs.GetProfilesFilterResult']]] = None,
                  name: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProfilesResult:
@@ -150,7 +150,7 @@ def get_profiles(compartment_id: Optional[_builtins.str] = None,
         profile_collections=pulumi.get(__ret__, 'profile_collections'),
         state=pulumi.get(__ret__, 'state'))
 def get_profiles_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProfilesFilterArgs', 'GetProfilesFilterArgsDict']]]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProfilesFilterArgs', 'GetProfilesFilterArgsDict', 'outputs.GetProfilesFilterResult']]]]] = None,
                         name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProfilesResult]:

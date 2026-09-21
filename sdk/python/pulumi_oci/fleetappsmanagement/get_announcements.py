@@ -107,7 +107,7 @@ class AwaitableGetAnnouncementsResult(GetAnnouncementsResult):
 
 def get_announcements(compartment_id: Optional[_builtins.str] = None,
                       display_name: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetAnnouncementsFilterArgs', 'GetAnnouncementsFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetAnnouncementsFilterArgs', 'GetAnnouncementsFilterArgsDict', 'outputs.GetAnnouncementsFilterResult']]] = None,
                       summary_contains: Optional[_builtins.str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAnnouncementsResult:
     """
@@ -148,7 +148,7 @@ def get_announcements(compartment_id: Optional[_builtins.str] = None,
         summary_contains=pulumi.get(__ret__, 'summary_contains'))
 def get_announcements_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAnnouncementsFilterArgs', 'GetAnnouncementsFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAnnouncementsFilterArgs', 'GetAnnouncementsFilterArgsDict', 'outputs.GetAnnouncementsFilterResult']]]]] = None,
                              summary_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAnnouncementsResult]:
     """

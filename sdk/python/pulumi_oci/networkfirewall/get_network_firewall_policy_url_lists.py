@@ -91,7 +91,7 @@ class AwaitableGetNetworkFirewallPolicyUrlListsResult(GetNetworkFirewallPolicyUr
 
 
 def get_network_firewall_policy_url_lists(display_name: Optional[_builtins.str] = None,
-                                          filters: Optional[Sequence[Union['GetNetworkFirewallPolicyUrlListsFilterArgs', 'GetNetworkFirewallPolicyUrlListsFilterArgsDict']]] = None,
+                                          filters: Optional[Sequence[Union['GetNetworkFirewallPolicyUrlListsFilterArgs', 'GetNetworkFirewallPolicyUrlListsFilterArgsDict', 'outputs.GetNetworkFirewallPolicyUrlListsFilterResult']]] = None,
                                           network_firewall_policy_id: Optional[_builtins.str] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyUrlListsResult:
     """
@@ -127,7 +127,7 @@ def get_network_firewall_policy_url_lists(display_name: Optional[_builtins.str] 
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'),
         url_list_summary_collections=pulumi.get(__ret__, 'url_list_summary_collections'))
 def get_network_firewall_policy_url_lists_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPolicyUrlListsFilterArgs', 'GetNetworkFirewallPolicyUrlListsFilterArgsDict']]]]] = None,
+                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPolicyUrlListsFilterArgs', 'GetNetworkFirewallPolicyUrlListsFilterArgsDict', 'outputs.GetNetworkFirewallPolicyUrlListsFilterResult']]]]] = None,
                                                  network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyUrlListsResult]:
     """

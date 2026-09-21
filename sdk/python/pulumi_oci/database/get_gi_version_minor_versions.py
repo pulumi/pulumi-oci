@@ -131,7 +131,7 @@ class AwaitableGetGiVersionMinorVersionsResult(GetGiVersionMinorVersionsResult):
 
 def get_gi_version_minor_versions(availability_domain: Optional[_builtins.str] = None,
                                   compartment_id: Optional[_builtins.str] = None,
-                                  filters: Optional[Sequence[Union['GetGiVersionMinorVersionsFilterArgs', 'GetGiVersionMinorVersionsFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetGiVersionMinorVersionsFilterArgs', 'GetGiVersionMinorVersionsFilterArgsDict', 'outputs.GetGiVersionMinorVersionsFilterResult']]] = None,
                                   is_gi_version_for_provisioning: Optional[_builtins.bool] = None,
                                   shape: Optional[_builtins.str] = None,
                                   shape_family: Optional[_builtins.str] = None,
@@ -187,7 +187,7 @@ def get_gi_version_minor_versions(availability_domain: Optional[_builtins.str] =
         version=pulumi.get(__ret__, 'version'))
 def get_gi_version_minor_versions_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetGiVersionMinorVersionsFilterArgs', 'GetGiVersionMinorVersionsFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetGiVersionMinorVersionsFilterArgs', 'GetGiVersionMinorVersionsFilterArgsDict', 'outputs.GetGiVersionMinorVersionsFilterResult']]]]] = None,
                                          is_gi_version_for_provisioning: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                          shape: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          shape_family: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

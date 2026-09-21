@@ -438,9 +438,9 @@ class CompliancePolicyRule(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  grace_period: pulumi.Input[Optional[_builtins.str]] = None,
-                 patch_selection: pulumi.Input[Optional[Union['CompliancePolicyRulePatchSelectionArgs', 'CompliancePolicyRulePatchSelectionArgsDict']]] = None,
+                 patch_selection: pulumi.Input[Optional[Union['CompliancePolicyRulePatchSelectionArgs', 'CompliancePolicyRulePatchSelectionArgsDict', 'outputs.CompliancePolicyRulePatchSelection']]] = None,
                  patch_type_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 product_version: pulumi.Input[Optional[Union['CompliancePolicyRuleProductVersionArgs', 'CompliancePolicyRuleProductVersionArgsDict']]] = None,
+                 product_version: pulumi.Input[Optional[Union['CompliancePolicyRuleProductVersionArgs', 'CompliancePolicyRuleProductVersionArgsDict', 'outputs.CompliancePolicyRuleProductVersion']]] = None,
                  severities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
@@ -497,9 +497,9 @@ class CompliancePolicyRule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] grace_period: (Updatable) Grace period in days,weeks,months or years the exemption is applicable for the rule. This enables a grace period when Fleet Application Management doesn't report the product as noncompliant when patch is not applied.
-        :param pulumi.Input[Union['CompliancePolicyRulePatchSelectionArgs', 'CompliancePolicyRulePatchSelectionArgsDict']] patch_selection: (Updatable) Patch Selection Details
+        :param pulumi.Input[Union['CompliancePolicyRulePatchSelectionArgs', 'CompliancePolicyRulePatchSelectionArgsDict', 'outputs.CompliancePolicyRulePatchSelection']] patch_selection: (Updatable) Patch Selection Details
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] patch_type_ids: (Updatable) PlatformConfiguration OCID for the patch type to which this CompliancePolicyRule applies.
-        :param pulumi.Input[Union['CompliancePolicyRuleProductVersionArgs', 'CompliancePolicyRuleProductVersionArgsDict']] product_version: (Updatable) A specific product version or a specific version and succeeding. Example: 12.1 or 12.1 and above for Oracle WebLogic Application server. The policy applies to the next version only, and not to other versions such as, 12.1.x.
+        :param pulumi.Input[Union['CompliancePolicyRuleProductVersionArgs', 'CompliancePolicyRuleProductVersionArgsDict', 'outputs.CompliancePolicyRuleProductVersion']] product_version: (Updatable) A specific product version or a specific version and succeeding. Example: 12.1 or 12.1 and above for Oracle WebLogic Application server. The policy applies to the next version only, and not to other versions such as, 12.1.x.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] severities: (Updatable) Severity to which this CompliancePolicyRule applies.
                
                ** IMPORTANT **
@@ -578,9 +578,9 @@ class CompliancePolicyRule(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  grace_period: pulumi.Input[Optional[_builtins.str]] = None,
-                 patch_selection: pulumi.Input[Optional[Union['CompliancePolicyRulePatchSelectionArgs', 'CompliancePolicyRulePatchSelectionArgsDict']]] = None,
+                 patch_selection: pulumi.Input[Optional[Union['CompliancePolicyRulePatchSelectionArgs', 'CompliancePolicyRulePatchSelectionArgsDict', 'outputs.CompliancePolicyRulePatchSelection']]] = None,
                  patch_type_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 product_version: pulumi.Input[Optional[Union['CompliancePolicyRuleProductVersionArgs', 'CompliancePolicyRuleProductVersionArgsDict']]] = None,
+                 product_version: pulumi.Input[Optional[Union['CompliancePolicyRuleProductVersionArgs', 'CompliancePolicyRuleProductVersionArgsDict', 'outputs.CompliancePolicyRuleProductVersion']]] = None,
                  severities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -633,9 +633,9 @@ class CompliancePolicyRule(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             grace_period: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            patch_selection: pulumi.Input[Optional[Union['CompliancePolicyRulePatchSelectionArgs', 'CompliancePolicyRulePatchSelectionArgsDict']]] = None,
+            patch_selection: pulumi.Input[Optional[Union['CompliancePolicyRulePatchSelectionArgs', 'CompliancePolicyRulePatchSelectionArgsDict', 'outputs.CompliancePolicyRulePatchSelection']]] = None,
             patch_type_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            product_version: pulumi.Input[Optional[Union['CompliancePolicyRuleProductVersionArgs', 'CompliancePolicyRuleProductVersionArgsDict']]] = None,
+            product_version: pulumi.Input[Optional[Union['CompliancePolicyRuleProductVersionArgs', 'CompliancePolicyRuleProductVersionArgsDict', 'outputs.CompliancePolicyRuleProductVersion']]] = None,
             severities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -655,9 +655,9 @@ class CompliancePolicyRule(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] grace_period: (Updatable) Grace period in days,weeks,months or years the exemption is applicable for the rule. This enables a grace period when Fleet Application Management doesn't report the product as noncompliant when patch is not applied.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the CompliancePolicyRule in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
-        :param pulumi.Input[Union['CompliancePolicyRulePatchSelectionArgs', 'CompliancePolicyRulePatchSelectionArgsDict']] patch_selection: (Updatable) Patch Selection Details
+        :param pulumi.Input[Union['CompliancePolicyRulePatchSelectionArgs', 'CompliancePolicyRulePatchSelectionArgsDict', 'outputs.CompliancePolicyRulePatchSelection']] patch_selection: (Updatable) Patch Selection Details
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] patch_type_ids: (Updatable) PlatformConfiguration OCID for the patch type to which this CompliancePolicyRule applies.
-        :param pulumi.Input[Union['CompliancePolicyRuleProductVersionArgs', 'CompliancePolicyRuleProductVersionArgsDict']] product_version: (Updatable) A specific product version or a specific version and succeeding. Example: 12.1 or 12.1 and above for Oracle WebLogic Application server. The policy applies to the next version only, and not to other versions such as, 12.1.x.
+        :param pulumi.Input[Union['CompliancePolicyRuleProductVersionArgs', 'CompliancePolicyRuleProductVersionArgsDict', 'outputs.CompliancePolicyRuleProductVersion']] product_version: (Updatable) A specific product version or a specific version and succeeding. Example: 12.1 or 12.1 and above for Oracle WebLogic Application server. The policy applies to the next version only, and not to other versions such as, 12.1.x.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] severities: (Updatable) Severity to which this CompliancePolicyRule applies.
                
                ** IMPORTANT **

@@ -144,7 +144,7 @@ def get_compute_capacity_topology_compute_bare_metal_hosts(availability_domain: 
                                                            compute_hpc_island_id: Optional[_builtins.str] = None,
                                                            compute_local_block_id: Optional[_builtins.str] = None,
                                                            compute_network_block_id: Optional[_builtins.str] = None,
-                                                           filters: Optional[Sequence[Union['GetComputeCapacityTopologyComputeBareMetalHostsFilterArgs', 'GetComputeCapacityTopologyComputeBareMetalHostsFilterArgsDict']]] = None,
+                                                           filters: Optional[Sequence[Union['GetComputeCapacityTopologyComputeBareMetalHostsFilterArgs', 'GetComputeCapacityTopologyComputeBareMetalHostsFilterArgsDict', 'outputs.GetComputeCapacityTopologyComputeBareMetalHostsFilterResult']]] = None,
                                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeCapacityTopologyComputeBareMetalHostsResult:
     """
     This data source provides the list of Compute Capacity Topology Compute Bare Metal Hosts in Oracle Cloud Infrastructure Core service.
@@ -200,7 +200,7 @@ def get_compute_capacity_topology_compute_bare_metal_hosts_output(availability_d
                                                                   compute_hpc_island_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                   compute_local_block_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                   compute_network_block_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeCapacityTopologyComputeBareMetalHostsFilterArgs', 'GetComputeCapacityTopologyComputeBareMetalHostsFilterArgsDict']]]]] = None,
+                                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeCapacityTopologyComputeBareMetalHostsFilterArgs', 'GetComputeCapacityTopologyComputeBareMetalHostsFilterArgsDict', 'outputs.GetComputeCapacityTopologyComputeBareMetalHostsFilterResult']]]]] = None,
                                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeCapacityTopologyComputeBareMetalHostsResult]:
     """
     This data source provides the list of Compute Capacity Topology Compute Bare Metal Hosts in Oracle Cloud Infrastructure Core service.

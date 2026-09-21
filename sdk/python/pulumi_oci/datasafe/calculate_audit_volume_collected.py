@@ -281,7 +281,7 @@ class CalculateAuditVolumeCollected(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
-            collected_audit_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculateAuditVolumeCollectedCollectedAuditVolumeArgs', 'CalculateAuditVolumeCollectedCollectedAuditVolumeArgsDict']]]]] = None,
+            collected_audit_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculateAuditVolumeCollectedCollectedAuditVolumeArgs', 'CalculateAuditVolumeCollectedCollectedAuditVolumeArgsDict', 'outputs.CalculateAuditVolumeCollectedCollectedAuditVolume']]]]] = None,
             time_from_month: pulumi.Input[Optional[_builtins.str]] = None,
             time_to_month: pulumi.Input[Optional[_builtins.str]] = None) -> 'CalculateAuditVolumeCollected':
         """
@@ -292,7 +292,7 @@ class CalculateAuditVolumeCollected(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] audit_profile_id: The OCID of the audit.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CalculateAuditVolumeCollectedCollectedAuditVolumeArgs', 'CalculateAuditVolumeCollectedCollectedAuditVolumeArgsDict']]]] collected_audit_volumes: List of collected audit volumes.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CalculateAuditVolumeCollectedCollectedAuditVolumeArgs', 'CalculateAuditVolumeCollectedCollectedAuditVolumeArgsDict', 'outputs.CalculateAuditVolumeCollectedCollectedAuditVolume']]]] collected_audit_volumes: List of collected audit volumes.
         :param pulumi.Input[_builtins.str] time_from_month: The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] time_to_month: The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339. If not specified, this will default to the current date.
                

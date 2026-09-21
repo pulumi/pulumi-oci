@@ -859,10 +859,10 @@ class LoadBalancer(pulumi.CustomResource):
                  is_request_id_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  request_id_header: pulumi.Input[Optional[_builtins.str]] = None,
-                 reserved_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]]] = None,
+                 reserved_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict', 'outputs.LoadBalancerReservedIp']]]]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
-                 shape_details: pulumi.Input[Optional[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']]] = None,
+                 shape_details: pulumi.Input[Optional[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict', 'outputs.LoadBalancerShapeDetails']]] = None,
                  subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
@@ -1006,10 +1006,10 @@ class LoadBalancer(pulumi.CustomResource):
                **Notes:**
                * Unless the header name is "" it must start with "X-" prefix.
                * Setting the header name to "" will set it to the default: X-Request-Id.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]] reserved_ips: (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict', 'outputs.LoadBalancerReservedIp']]]] reserved_ips: (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
         :param pulumi.Input[_builtins.str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
-        :param pulumi.Input[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
+        :param pulumi.Input[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict', 'outputs.LoadBalancerShapeDetails']] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnet_ids: An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
                
                ** IMPORTANT **
@@ -1125,10 +1125,10 @@ class LoadBalancer(pulumi.CustomResource):
                  is_request_id_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  request_id_header: pulumi.Input[Optional[_builtins.str]] = None,
-                 reserved_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]]] = None,
+                 reserved_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict', 'outputs.LoadBalancerReservedIp']]]]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
-                 shape_details: pulumi.Input[Optional[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']]] = None,
+                 shape_details: pulumi.Input[Optional[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict', 'outputs.LoadBalancerShapeDetails']]] = None,
                  subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -1182,7 +1182,7 @@ class LoadBalancer(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            ip_address_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LoadBalancerIpAddressDetailArgs', 'LoadBalancerIpAddressDetailArgsDict']]]]] = None,
+            ip_address_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LoadBalancerIpAddressDetailArgs', 'LoadBalancerIpAddressDetailArgsDict', 'outputs.LoadBalancerIpAddressDetail']]]]] = None,
             ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             ip_mode: pulumi.Input[Optional[_builtins.str]] = None,
             ipv6subnet_cidr: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1191,10 +1191,10 @@ class LoadBalancer(pulumi.CustomResource):
             is_request_id_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             request_id_header: pulumi.Input[Optional[_builtins.str]] = None,
-            reserved_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]]] = None,
+            reserved_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict', 'outputs.LoadBalancerReservedIp']]]]] = None,
             security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             shape: pulumi.Input[Optional[_builtins.str]] = None,
-            shape_details: pulumi.Input[Optional[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']]] = None,
+            shape_details: pulumi.Input[Optional[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict', 'outputs.LoadBalancerShapeDetails']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1210,7 +1210,7 @@ class LoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerIpAddressDetailArgs', 'LoadBalancerIpAddressDetailArgsDict']]]] ip_address_details: An array of IP addresses.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerIpAddressDetailArgs', 'LoadBalancerIpAddressDetailArgsDict', 'outputs.LoadBalancerIpAddressDetail']]]] ip_address_details: An array of IP addresses.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ip_addresses: An array of IP addresses. Deprecated: use ip_address_details instead
                *
         :param pulumi.Input[_builtins.str] ip_mode: IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
@@ -1270,10 +1270,10 @@ class LoadBalancer(pulumi.CustomResource):
                **Notes:**
                * Unless the header name is "" it must start with "X-" prefix.
                * Setting the header name to "" will set it to the default: X-Request-Id.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]] reserved_ips: (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict', 'outputs.LoadBalancerReservedIp']]]] reserved_ips: (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
         :param pulumi.Input[_builtins.str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
-        :param pulumi.Input[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
+        :param pulumi.Input[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict', 'outputs.LoadBalancerShapeDetails']] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         :param pulumi.Input[_builtins.str] state: The current state of the load balancer.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnet_ids: An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
                

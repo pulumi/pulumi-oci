@@ -110,7 +110,7 @@ class AwaitableGetBdsInstanceBdsCapacityReservationConfigurationsResult(GetBdsIn
 
 def get_bds_instance_bds_capacity_reservation_configurations(bds_instance_id: Optional[_builtins.str] = None,
                                                              display_name: Optional[_builtins.str] = None,
-                                                             filters: Optional[Sequence[Union['GetBdsInstanceBdsCapacityReservationConfigurationsFilterArgs', 'GetBdsInstanceBdsCapacityReservationConfigurationsFilterArgsDict']]] = None,
+                                                             filters: Optional[Sequence[Union['GetBdsInstanceBdsCapacityReservationConfigurationsFilterArgs', 'GetBdsInstanceBdsCapacityReservationConfigurationsFilterArgsDict', 'outputs.GetBdsInstanceBdsCapacityReservationConfigurationsFilterResult']]] = None,
                                                              state: Optional[_builtins.str] = None,
                                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBdsInstanceBdsCapacityReservationConfigurationsResult:
     """
@@ -151,7 +151,7 @@ def get_bds_instance_bds_capacity_reservation_configurations(bds_instance_id: Op
         state=pulumi.get(__ret__, 'state'))
 def get_bds_instance_bds_capacity_reservation_configurations_output(bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstanceBdsCapacityReservationConfigurationsFilterArgs', 'GetBdsInstanceBdsCapacityReservationConfigurationsFilterArgsDict']]]]] = None,
+                                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstanceBdsCapacityReservationConfigurationsFilterArgs', 'GetBdsInstanceBdsCapacityReservationConfigurationsFilterArgsDict', 'outputs.GetBdsInstanceBdsCapacityReservationConfigurationsFilterResult']]]]] = None,
                                                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceBdsCapacityReservationConfigurationsResult]:
     """

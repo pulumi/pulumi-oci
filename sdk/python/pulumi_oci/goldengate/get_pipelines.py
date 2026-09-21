@@ -122,7 +122,7 @@ class AwaitableGetPipelinesResult(GetPipelinesResult):
 
 def get_pipelines(compartment_id: Optional[_builtins.str] = None,
                   display_name: Optional[_builtins.str] = None,
-                  filters: Optional[Sequence[Union['GetPipelinesFilterArgs', 'GetPipelinesFilterArgsDict']]] = None,
+                  filters: Optional[Sequence[Union['GetPipelinesFilterArgs', 'GetPipelinesFilterArgsDict', 'outputs.GetPipelinesFilterResult']]] = None,
                   lifecycle_sub_state: Optional[_builtins.str] = None,
                   state: Optional[_builtins.str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPipelinesResult:
@@ -168,7 +168,7 @@ def get_pipelines(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_pipelines_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPipelinesFilterArgs', 'GetPipelinesFilterArgsDict']]]]] = None,
+                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPipelinesFilterArgs', 'GetPipelinesFilterArgsDict', 'outputs.GetPipelinesFilterResult']]]]] = None,
                          lifecycle_sub_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPipelinesResult]:

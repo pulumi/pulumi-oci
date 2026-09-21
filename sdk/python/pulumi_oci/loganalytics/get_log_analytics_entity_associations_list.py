@@ -100,7 +100,7 @@ class AwaitableGetLogAnalyticsEntityAssociationsListResult(GetLogAnalyticsEntity
 
 
 def get_log_analytics_entity_associations_list(direct_or_all_associations: Optional[_builtins.str] = None,
-                                               filters: Optional[Sequence[Union['GetLogAnalyticsEntityAssociationsListFilterArgs', 'GetLogAnalyticsEntityAssociationsListFilterArgsDict']]] = None,
+                                               filters: Optional[Sequence[Union['GetLogAnalyticsEntityAssociationsListFilterArgs', 'GetLogAnalyticsEntityAssociationsListFilterArgsDict', 'outputs.GetLogAnalyticsEntityAssociationsListFilterResult']]] = None,
                                                log_analytics_entity_id: Optional[_builtins.str] = None,
                                                namespace: Optional[_builtins.str] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogAnalyticsEntityAssociationsListResult:
@@ -141,7 +141,7 @@ def get_log_analytics_entity_associations_list(direct_or_all_associations: Optio
         log_analytics_entity_id=pulumi.get(__ret__, 'log_analytics_entity_id'),
         namespace=pulumi.get(__ret__, 'namespace'))
 def get_log_analytics_entity_associations_list_output(direct_or_all_associations: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLogAnalyticsEntityAssociationsListFilterArgs', 'GetLogAnalyticsEntityAssociationsListFilterArgsDict']]]]] = None,
+                                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLogAnalyticsEntityAssociationsListFilterArgs', 'GetLogAnalyticsEntityAssociationsListFilterArgsDict', 'outputs.GetLogAnalyticsEntityAssociationsListFilterResult']]]]] = None,
                                                       log_analytics_entity_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                       namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsEntityAssociationsListResult]:

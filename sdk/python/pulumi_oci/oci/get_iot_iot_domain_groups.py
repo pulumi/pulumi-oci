@@ -122,7 +122,7 @@ class AwaitableGetIotIotDomainGroupsResult(GetIotIotDomainGroupsResult):
 
 def get_iot_iot_domain_groups(compartment_id: Optional[_builtins.str] = None,
                               display_name: Optional[_builtins.str] = None,
-                              filters: Optional[Sequence[Union['GetIotIotDomainGroupsFilterArgs', 'GetIotIotDomainGroupsFilterArgsDict']]] = None,
+                              filters: Optional[Sequence[Union['GetIotIotDomainGroupsFilterArgs', 'GetIotIotDomainGroupsFilterArgsDict', 'outputs.GetIotIotDomainGroupsFilterResult']]] = None,
                               id: Optional[_builtins.str] = None,
                               state: Optional[_builtins.str] = None,
                               type: Optional[_builtins.str] = None,
@@ -172,7 +172,7 @@ def get_iot_iot_domain_groups(compartment_id: Optional[_builtins.str] = None,
         type=pulumi.get(__ret__, 'type'))
 def get_iot_iot_domain_groups_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIotIotDomainGroupsFilterArgs', 'GetIotIotDomainGroupsFilterArgsDict']]]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIotIotDomainGroupsFilterArgs', 'GetIotIotDomainGroupsFilterArgsDict', 'outputs.GetIotIotDomainGroupsFilterResult']]]]] = None,
                                      id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

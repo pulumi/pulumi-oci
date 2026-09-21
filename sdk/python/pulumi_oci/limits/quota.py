@@ -327,7 +327,7 @@ class Quota(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QuotaLockArgs', 'QuotaLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QuotaLockArgs', 'QuotaLockArgsDict', 'outputs.QuotaLock']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  statements: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -378,7 +378,7 @@ class Quota(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description you assign to the quota.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['QuotaLockArgs', 'QuotaLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['QuotaLockArgs', 'QuotaLockArgsDict', 'outputs.QuotaLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] name: The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] statements: (Updatable) An array of quota statements written in the declarative quota statement language.
                
@@ -451,7 +451,7 @@ class Quota(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QuotaLockArgs', 'QuotaLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QuotaLockArgs', 'QuotaLockArgsDict', 'outputs.QuotaLock']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  statements: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -494,7 +494,7 @@ class Quota(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QuotaLockArgs', 'QuotaLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QuotaLockArgs', 'QuotaLockArgsDict', 'outputs.QuotaLock']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             statements: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -511,7 +511,7 @@ class Quota(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) The description you assign to the quota.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_lock_override: this is a computed field which is set to true if any lock is present`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['QuotaLockArgs', 'QuotaLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['QuotaLockArgs', 'QuotaLockArgsDict', 'outputs.QuotaLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] name: The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
         :param pulumi.Input[_builtins.str] state: The quota's current state.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] statements: (Updatable) An array of quota statements written in the declarative quota statement language.

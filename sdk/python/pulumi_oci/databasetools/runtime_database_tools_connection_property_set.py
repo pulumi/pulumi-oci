@@ -568,7 +568,7 @@ class RuntimeDatabaseToolsConnectionPropertySet(pulumi.CustomResource):
                  credential_key: pulumi.Input[Optional[_builtins.str]] = None,
                  database_tools_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
                  function_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 identity_provider: pulumi.Input[Optional[Union['RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs', 'RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgsDict']]] = None,
+                 identity_provider: pulumi.Input[Optional[Union['RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs', 'RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgsDict', 'outputs.RuntimeDatabaseToolsConnectionPropertySetIdentityProvider']]] = None,
                  instance_dbms_credential_enabled: pulumi.Input[Optional[_builtins.str]] = None,
                  invoke_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  key: pulumi.Input[Optional[_builtins.str]] = None,
@@ -628,7 +628,7 @@ class RuntimeDatabaseToolsConnectionPropertySet(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] credential_key: (Updatable) The name of the credential used by APEX to manage Object Storage Buckets and Objects as well as invoke the Document Generator function.
         :param pulumi.Input[_builtins.str] database_tools_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
         :param pulumi.Input[_builtins.str] function_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Document Generator function
-        :param pulumi.Input[Union['RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs', 'RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgsDict']] identity_provider: (Updatable) External identity type provider
+        :param pulumi.Input[Union['RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs', 'RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgsDict', 'outputs.RuntimeDatabaseToolsConnectionPropertySetIdentityProvider']] identity_provider: (Updatable) External identity type provider
         :param pulumi.Input[_builtins.str] instance_dbms_credential_enabled: (Updatable) Specifies whether database credentials can be used in all workspaces on the APEX instance. Supported values include: "Y", "N" and empty string.
         :param pulumi.Input[_builtins.str] invoke_endpoint: (Updatable) The base endpoint URL to use to invoke the Document Generator function
         :param pulumi.Input[_builtins.str] key: (Updatable) The name of the property set
@@ -710,7 +710,7 @@ class RuntimeDatabaseToolsConnectionPropertySet(pulumi.CustomResource):
                  credential_key: pulumi.Input[Optional[_builtins.str]] = None,
                  database_tools_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
                  function_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 identity_provider: pulumi.Input[Optional[Union['RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs', 'RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgsDict']]] = None,
+                 identity_provider: pulumi.Input[Optional[Union['RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs', 'RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgsDict', 'outputs.RuntimeDatabaseToolsConnectionPropertySetIdentityProvider']]] = None,
                  instance_dbms_credential_enabled: pulumi.Input[Optional[_builtins.str]] = None,
                  invoke_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  key: pulumi.Input[Optional[_builtins.str]] = None,
@@ -767,7 +767,7 @@ class RuntimeDatabaseToolsConnectionPropertySet(pulumi.CustomResource):
             credential_key: pulumi.Input[Optional[_builtins.str]] = None,
             database_tools_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
             function_id: pulumi.Input[Optional[_builtins.str]] = None,
-            identity_provider: pulumi.Input[Optional[Union['RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs', 'RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgsDict']]] = None,
+            identity_provider: pulumi.Input[Optional[Union['RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs', 'RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgsDict', 'outputs.RuntimeDatabaseToolsConnectionPropertySetIdentityProvider']]] = None,
             instance_dbms_credential_enabled: pulumi.Input[Optional[_builtins.str]] = None,
             invoke_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
             is_mutable: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -775,7 +775,7 @@ class RuntimeDatabaseToolsConnectionPropertySet(pulumi.CustomResource):
             object_storage_bucket_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             object_storage_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
             object_storage_namespace: pulumi.Input[Optional[_builtins.str]] = None,
-            prerequisites_checks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs', 'RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgsDict']]]]] = None,
+            prerequisites_checks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs', 'RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgsDict', 'outputs.RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck']]]]] = None,
             print_server_type: pulumi.Input[Optional[_builtins.str]] = None,
             property_set_key: pulumi.Input[Optional[_builtins.str]] = None,
             user_key: pulumi.Input[Optional[_builtins.str]] = None,
@@ -792,7 +792,7 @@ class RuntimeDatabaseToolsConnectionPropertySet(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] credential_key: (Updatable) The name of the credential used by APEX to manage Object Storage Buckets and Objects as well as invoke the Document Generator function.
         :param pulumi.Input[_builtins.str] database_tools_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
         :param pulumi.Input[_builtins.str] function_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Document Generator function
-        :param pulumi.Input[Union['RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs', 'RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgsDict']] identity_provider: (Updatable) External identity type provider
+        :param pulumi.Input[Union['RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs', 'RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgsDict', 'outputs.RuntimeDatabaseToolsConnectionPropertySetIdentityProvider']] identity_provider: (Updatable) External identity type provider
         :param pulumi.Input[_builtins.str] instance_dbms_credential_enabled: (Updatable) Specifies whether database credentials can be used in all workspaces on the APEX instance. Supported values include: "Y", "N" and empty string.
         :param pulumi.Input[_builtins.str] invoke_endpoint: (Updatable) The base endpoint URL to use to invoke the Document Generator function
         :param pulumi.Input[_builtins.bool] is_mutable: Indicates whether the property set is mutable or not
@@ -800,7 +800,7 @@ class RuntimeDatabaseToolsConnectionPropertySet(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] object_storage_bucket_compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Object Storage Buckets managed by APEX
         :param pulumi.Input[_builtins.str] object_storage_endpoint: (Updatable) Object Storage Endpoint
         :param pulumi.Input[_builtins.str] object_storage_namespace: (Updatable) The Object Storage Namespace containing the Object Storage Buckets managed by APEX
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs', 'RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgsDict']]]] prerequisites_checks: The results of a prerequisites check for APEX FA integration
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs', 'RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgsDict', 'outputs.RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck']]]] prerequisites_checks: The results of a prerequisites check for APEX FA integration
         :param pulumi.Input[_builtins.str] print_server_type: (Updatable) The print server type
         :param pulumi.Input[_builtins.str] property_set_key: The name of the property set
                

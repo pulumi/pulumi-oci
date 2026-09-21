@@ -97,7 +97,7 @@ class AwaitableGetBackupDestinationsResult(GetBackupDestinationsResult):
 
 
 def get_backup_destinations(compartment_id: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetBackupDestinationsFilterArgs', 'GetBackupDestinationsFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetBackupDestinationsFilterArgs', 'GetBackupDestinationsFilterArgsDict', 'outputs.GetBackupDestinationsFilterResult']]] = None,
                             type: Optional[_builtins.str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBackupDestinationsResult:
     """
@@ -133,7 +133,7 @@ def get_backup_destinations(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         type=pulumi.get(__ret__, 'type'))
 def get_backup_destinations_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBackupDestinationsFilterArgs', 'GetBackupDestinationsFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBackupDestinationsFilterArgs', 'GetBackupDestinationsFilterArgsDict', 'outputs.GetBackupDestinationsFilterResult']]]]] = None,
                                    type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBackupDestinationsResult]:
     """

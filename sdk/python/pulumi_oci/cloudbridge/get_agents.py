@@ -136,7 +136,7 @@ def get_agents(agent_id: Optional[_builtins.str] = None,
                compartment_id: Optional[_builtins.str] = None,
                display_name: Optional[_builtins.str] = None,
                environment_id: Optional[_builtins.str] = None,
-               filters: Optional[Sequence[Union['GetAgentsFilterArgs', 'GetAgentsFilterArgsDict']]] = None,
+               filters: Optional[Sequence[Union['GetAgentsFilterArgs', 'GetAgentsFilterArgsDict', 'outputs.GetAgentsFilterResult']]] = None,
                state: Optional[_builtins.str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAgentsResult:
     """
@@ -187,7 +187,7 @@ def get_agents_output(agent_id: pulumi.Input[Optional[Optional[_builtins.str]]] 
                       compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       environment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAgentsFilterArgs', 'GetAgentsFilterArgsDict']]]]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAgentsFilterArgs', 'GetAgentsFilterArgsDict', 'outputs.GetAgentsFilterResult']]]]] = None,
                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentsResult]:
     """

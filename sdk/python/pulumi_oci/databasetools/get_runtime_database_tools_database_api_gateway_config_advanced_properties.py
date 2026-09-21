@@ -72,7 +72,7 @@ class AwaitableGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties
             id=self.id)
 
 
-def get_runtime_database_tools_database_api_gateway_config_advanced_properties(filters: Optional[Sequence[Union['GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArgs', 'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArgsDict']]] = None,
+def get_runtime_database_tools_database_api_gateway_config_advanced_properties(filters: Optional[Sequence[Union['GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArgs', 'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArgsDict', 'outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterResult']]] = None,
                                                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesResult:
     """
     This data source provides the list of Database Tools Database Api Gateway Config Advanced Properties in Oracle Cloud Infrastructure Database Tools Runtime service.
@@ -97,7 +97,7 @@ def get_runtime_database_tools_database_api_gateway_config_advanced_properties(f
         database_tools_database_api_gateway_config_advanced_property_summary_collections=pulumi.get(__ret__, 'database_tools_database_api_gateway_config_advanced_property_summary_collections'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_runtime_database_tools_database_api_gateway_config_advanced_properties_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArgs', 'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArgsDict']]]]] = None,
+def get_runtime_database_tools_database_api_gateway_config_advanced_properties_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArgs', 'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArgsDict', 'outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterResult']]]]] = None,
                                                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesResult]:
     """
     This data source provides the list of Database Tools Database Api Gateway Config Advanced Properties in Oracle Cloud Infrastructure Database Tools Runtime service.

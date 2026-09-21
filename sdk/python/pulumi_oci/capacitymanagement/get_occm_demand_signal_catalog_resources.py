@@ -107,7 +107,7 @@ class AwaitableGetOccmDemandSignalCatalogResourcesResult(GetOccmDemandSignalCata
 
 def get_occm_demand_signal_catalog_resources(compartment_id: Optional[_builtins.str] = None,
                                              demand_signal_namespace: Optional[_builtins.str] = None,
-                                             filters: Optional[Sequence[Union['GetOccmDemandSignalCatalogResourcesFilterArgs', 'GetOccmDemandSignalCatalogResourcesFilterArgsDict']]] = None,
+                                             filters: Optional[Sequence[Union['GetOccmDemandSignalCatalogResourcesFilterArgs', 'GetOccmDemandSignalCatalogResourcesFilterArgsDict', 'outputs.GetOccmDemandSignalCatalogResourcesFilterResult']]] = None,
                                              name: Optional[_builtins.str] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOccmDemandSignalCatalogResourcesResult:
     """
@@ -148,7 +148,7 @@ def get_occm_demand_signal_catalog_resources(compartment_id: Optional[_builtins.
         occm_demand_signal_catalog_resource_collections=pulumi.get(__ret__, 'occm_demand_signal_catalog_resource_collections'))
 def get_occm_demand_signal_catalog_resources_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                     demand_signal_namespace: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOccmDemandSignalCatalogResourcesFilterArgs', 'GetOccmDemandSignalCatalogResourcesFilterArgsDict']]]]] = None,
+                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOccmDemandSignalCatalogResourcesFilterArgs', 'GetOccmDemandSignalCatalogResourcesFilterArgsDict', 'outputs.GetOccmDemandSignalCatalogResourcesFilterResult']]]]] = None,
                                                     name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccmDemandSignalCatalogResourcesResult]:
     """

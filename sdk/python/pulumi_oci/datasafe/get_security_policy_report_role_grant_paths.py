@@ -105,7 +105,7 @@ class AwaitableGetSecurityPolicyReportRoleGrantPathsResult(GetSecurityPolicyRepo
             security_policy_report_id=self.security_policy_report_id)
 
 
-def get_security_policy_report_role_grant_paths(filters: Optional[Sequence[Union['GetSecurityPolicyReportRoleGrantPathsFilterArgs', 'GetSecurityPolicyReportRoleGrantPathsFilterArgsDict']]] = None,
+def get_security_policy_report_role_grant_paths(filters: Optional[Sequence[Union['GetSecurityPolicyReportRoleGrantPathsFilterArgs', 'GetSecurityPolicyReportRoleGrantPathsFilterArgsDict', 'outputs.GetSecurityPolicyReportRoleGrantPathsFilterResult']]] = None,
                                                 granted_role: Optional[_builtins.str] = None,
                                                 grantee: Optional[_builtins.str] = None,
                                                 security_policy_report_id: Optional[_builtins.str] = None,
@@ -148,7 +148,7 @@ def get_security_policy_report_role_grant_paths(filters: Optional[Sequence[Union
         id=pulumi.get(__ret__, 'id'),
         role_grant_path_collections=pulumi.get(__ret__, 'role_grant_path_collections'),
         security_policy_report_id=pulumi.get(__ret__, 'security_policy_report_id'))
-def get_security_policy_report_role_grant_paths_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityPolicyReportRoleGrantPathsFilterArgs', 'GetSecurityPolicyReportRoleGrantPathsFilterArgsDict']]]]] = None,
+def get_security_policy_report_role_grant_paths_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityPolicyReportRoleGrantPathsFilterArgs', 'GetSecurityPolicyReportRoleGrantPathsFilterArgsDict', 'outputs.GetSecurityPolicyReportRoleGrantPathsFilterResult']]]]] = None,
                                                        granted_role: pulumi.Input[Optional[_builtins.str]] = None,
                                                        grantee: pulumi.Input[Optional[_builtins.str]] = None,
                                                        security_policy_report_id: pulumi.Input[Optional[_builtins.str]] = None,

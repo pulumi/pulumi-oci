@@ -91,7 +91,7 @@ class AwaitableGetJobAdvisorReportCheckObjectsResult(GetJobAdvisorReportCheckObj
 
 
 def get_job_advisor_report_check_objects(advisor_report_check_id: Optional[_builtins.str] = None,
-                                         filters: Optional[Sequence[Union['GetJobAdvisorReportCheckObjectsFilterArgs', 'GetJobAdvisorReportCheckObjectsFilterArgsDict']]] = None,
+                                         filters: Optional[Sequence[Union['GetJobAdvisorReportCheckObjectsFilterArgs', 'GetJobAdvisorReportCheckObjectsFilterArgsDict', 'outputs.GetJobAdvisorReportCheckObjectsFilterResult']]] = None,
                                          job_id: Optional[_builtins.str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetJobAdvisorReportCheckObjectsResult:
     """
@@ -127,7 +127,7 @@ def get_job_advisor_report_check_objects(advisor_report_check_id: Optional[_buil
         id=pulumi.get(__ret__, 'id'),
         job_id=pulumi.get(__ret__, 'job_id'))
 def get_job_advisor_report_check_objects_output(advisor_report_check_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJobAdvisorReportCheckObjectsFilterArgs', 'GetJobAdvisorReportCheckObjectsFilterArgsDict']]]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJobAdvisorReportCheckObjectsFilterArgs', 'GetJobAdvisorReportCheckObjectsFilterArgsDict', 'outputs.GetJobAdvisorReportCheckObjectsFilterResult']]]]] = None,
                                                 job_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJobAdvisorReportCheckObjectsResult]:
     """

@@ -169,7 +169,7 @@ class AssessmentAssessorAction(pulumi.CustomResource):
                  assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  assessor_action: pulumi.Input[Optional[_builtins.str]] = None,
                  assessor_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentAssessorActionItemArgs', 'AssessmentAssessorActionItemArgsDict']]]]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentAssessorActionItemArgs', 'AssessmentAssessorActionItemArgsDict', 'outputs.AssessmentAssessorActionItem']]]]] = None,
                  __props__=None):
         """
         This resource provides the Assessment Assessor Action resource in Oracle Cloud Infrastructure Database Migration service.
@@ -209,7 +209,7 @@ class AssessmentAssessorAction(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] assessment_id: The OCID of the Assessment
         :param pulumi.Input[_builtins.str] assessor_action: The Accessor Action
         :param pulumi.Input[_builtins.str] assessor_name: The name of the Assessor
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AssessmentAssessorActionItemArgs', 'AssessmentAssessorActionItemArgsDict']]]] items: Array of name-value details for assessor action.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AssessmentAssessorActionItemArgs', 'AssessmentAssessorActionItemArgsDict', 'outputs.AssessmentAssessorActionItem']]]] items: Array of name-value details for assessor action.
         """
         ...
     @overload
@@ -268,7 +268,7 @@ class AssessmentAssessorAction(pulumi.CustomResource):
                  assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  assessor_action: pulumi.Input[Optional[_builtins.str]] = None,
                  assessor_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentAssessorActionItemArgs', 'AssessmentAssessorActionItemArgsDict']]]]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentAssessorActionItemArgs', 'AssessmentAssessorActionItemArgsDict', 'outputs.AssessmentAssessorActionItem']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -303,7 +303,7 @@ class AssessmentAssessorAction(pulumi.CustomResource):
             assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
             assessor_action: pulumi.Input[Optional[_builtins.str]] = None,
             assessor_name: pulumi.Input[Optional[_builtins.str]] = None,
-            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentAssessorActionItemArgs', 'AssessmentAssessorActionItemArgsDict']]]]] = None) -> 'AssessmentAssessorAction':
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentAssessorActionItemArgs', 'AssessmentAssessorActionItemArgsDict', 'outputs.AssessmentAssessorActionItem']]]]] = None) -> 'AssessmentAssessorAction':
         """
         Get an existing AssessmentAssessorAction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -314,7 +314,7 @@ class AssessmentAssessorAction(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] assessment_id: The OCID of the Assessment
         :param pulumi.Input[_builtins.str] assessor_action: The Accessor Action
         :param pulumi.Input[_builtins.str] assessor_name: The name of the Assessor
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AssessmentAssessorActionItemArgs', 'AssessmentAssessorActionItemArgsDict']]]] items: Array of name-value details for assessor action.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AssessmentAssessorActionItemArgs', 'AssessmentAssessorActionItemArgsDict', 'outputs.AssessmentAssessorActionItem']]]] items: Array of name-value details for assessor action.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

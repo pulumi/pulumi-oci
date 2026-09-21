@@ -82,7 +82,7 @@ class AwaitableGetOnboardingPoliciesResult(GetOnboardingPoliciesResult):
 
 
 def get_onboarding_policies(compartment_id: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetOnboardingPoliciesFilterArgs', 'GetOnboardingPoliciesFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetOnboardingPoliciesFilterArgs', 'GetOnboardingPoliciesFilterArgsDict', 'outputs.GetOnboardingPoliciesFilterResult']]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOnboardingPoliciesResult:
     """
     This data source provides the list of Onboarding Policies in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -113,7 +113,7 @@ def get_onboarding_policies(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         onboarding_policy_collections=pulumi.get(__ret__, 'onboarding_policy_collections'))
 def get_onboarding_policies_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOnboardingPoliciesFilterArgs', 'GetOnboardingPoliciesFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOnboardingPoliciesFilterArgs', 'GetOnboardingPoliciesFilterArgsDict', 'outputs.GetOnboardingPoliciesFilterResult']]]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOnboardingPoliciesResult]:
     """
     This data source provides the list of Onboarding Policies in Oracle Cloud Infrastructure Fleet Apps Management service.

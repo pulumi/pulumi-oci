@@ -652,7 +652,7 @@ class Agent(pulumi.CustomResource):
             heart_beat_status: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             os_version: pulumi.Input[Optional[_builtins.str]] = None,
-            plugin_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AgentPluginListArgs', 'AgentPluginListArgsDict']]]]] = None,
+            plugin_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AgentPluginListArgs', 'AgentPluginListArgsDict', 'outputs.AgentPluginList']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -680,7 +680,7 @@ class Agent(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AgentPluginListArgs', 'AgentPluginListArgsDict']]]] plugin_lists: List of plugins associated with the agent.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AgentPluginListArgs', 'AgentPluginListArgsDict', 'outputs.AgentPluginList']]]] plugin_lists: List of plugins associated with the agent.
         :param pulumi.Input[_builtins.str] state: The current state of the Agent.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[_builtins.str] time_created: The time when the Agent was created. An RFC3339 formatted datetime string.

@@ -785,8 +785,8 @@ class ManagementAgent(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             availability_status: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            data_source_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementAgentDataSourceListArgs', 'ManagementAgentDataSourceListArgsDict']]]]] = None,
-            data_source_summary_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementAgentDataSourceSummaryListArgs', 'ManagementAgentDataSourceSummaryListArgsDict']]]]] = None,
+            data_source_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementAgentDataSourceListArgs', 'ManagementAgentDataSourceListArgsDict', 'outputs.ManagementAgentDataSourceList']]]]] = None,
+            data_source_summary_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementAgentDataSourceSummaryListArgs', 'ManagementAgentDataSourceSummaryListArgsDict', 'outputs.ManagementAgentDataSourceSummaryList']]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             deploy_plugins_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -801,11 +801,11 @@ class ManagementAgent(pulumi.CustomResource):
             latest_supported_version: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             managed_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
-            management_agent_properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementAgentManagementAgentPropertyArgs', 'ManagementAgentManagementAgentPropertyArgsDict']]]]] = None,
+            management_agent_properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementAgentManagementAgentPropertyArgs', 'ManagementAgentManagementAgentPropertyArgsDict', 'outputs.ManagementAgentManagementAgentProperty']]]]] = None,
             platform_name: pulumi.Input[Optional[_builtins.str]] = None,
             platform_type: pulumi.Input[Optional[_builtins.str]] = None,
             platform_version: pulumi.Input[Optional[_builtins.str]] = None,
-            plugin_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementAgentPluginListArgs', 'ManagementAgentPluginListArgsDict']]]]] = None,
+            plugin_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementAgentPluginListArgs', 'ManagementAgentPluginListArgsDict', 'outputs.ManagementAgentPluginList']]]]] = None,
             resource_artifact_version: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -822,7 +822,7 @@ class ManagementAgent(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_status: The current availability status of managementAgent
         :param pulumi.Input[_builtins.str] compartment_id: Compartment owning this DataSource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementAgentDataSourceListArgs', 'ManagementAgentDataSourceListArgsDict']]]] data_source_lists: list of dataSources associated with the agent
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementAgentDataSourceListArgs', 'ManagementAgentDataSourceListArgsDict', 'outputs.ManagementAgentDataSourceList']]]] data_source_lists: list of dataSources associated with the agent
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] deploy_plugins_ids: (Updatable) Plugin Id list to deploy to Management Agent. Once deployed, plugins cannot be undeployed.
                
@@ -845,11 +845,11 @@ class ManagementAgent(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_customer_deployed: true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[_builtins.str] managed_agent_id: Unique Management Agent identifier
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementAgentManagementAgentPropertyArgs', 'ManagementAgentManagementAgentPropertyArgsDict']]]] management_agent_properties: Additional properties for this Management Agent
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementAgentManagementAgentPropertyArgs', 'ManagementAgentManagementAgentPropertyArgsDict', 'outputs.ManagementAgentManagementAgentProperty']]]] management_agent_properties: Additional properties for this Management Agent
         :param pulumi.Input[_builtins.str] platform_name: Platform Name
         :param pulumi.Input[_builtins.str] platform_type: Platform Type
         :param pulumi.Input[_builtins.str] platform_version: Platform Version
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementAgentPluginListArgs', 'ManagementAgentPluginListArgsDict']]]] plugin_lists: list of managementAgentPlugins associated with the agent
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementAgentPluginListArgs', 'ManagementAgentPluginListArgsDict', 'outputs.ManagementAgentPluginList']]]] plugin_lists: list of managementAgentPlugins associated with the agent
         :param pulumi.Input[_builtins.str] resource_artifact_version: Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
         :param pulumi.Input[_builtins.str] state: The current state of managementAgent
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`

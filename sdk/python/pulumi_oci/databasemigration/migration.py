@@ -851,22 +851,22 @@ class Migration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 advanced_parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict']]]]] = None,
-                 advisor_settings: pulumi.Input[Optional[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict']]] = None,
+                 advanced_parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict', 'outputs.MigrationAdvancedParameter']]]]] = None,
+                 advisor_settings: pulumi.Input[Optional[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict', 'outputs.MigrationAdvisorSettings']]] = None,
                  assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  bulk_include_exclude_data: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 data_transfer_medium_details: pulumi.Input[Optional[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']]] = None,
+                 data_transfer_medium_details: pulumi.Input[Optional[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict', 'outputs.MigrationDataTransferMediumDetails']]] = None,
                  database_combination: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict']]]]] = None,
+                 exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict', 'outputs.MigrationExcludeObject']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ggs_details: pulumi.Input[Optional[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict']]] = None,
-                 hub_details: pulumi.Input[Optional[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict']]] = None,
-                 include_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict']]]]] = None,
-                 initial_load_settings: pulumi.Input[Optional[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict']]] = None,
+                 ggs_details: pulumi.Input[Optional[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict', 'outputs.MigrationGgsDetails']]] = None,
+                 hub_details: pulumi.Input[Optional[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict', 'outputs.MigrationHubDetails']]] = None,
+                 include_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict', 'outputs.MigrationIncludeObject']]]]] = None,
+                 initial_load_settings: pulumi.Input[Optional[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict', 'outputs.MigrationInitialLoadSettings']]] = None,
                  source_container_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
                  source_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
                  source_standby_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1031,22 +1031,22 @@ class Migration(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict']]]] advanced_parameters: (Updatable) List of Migration Parameter objects.
-        :param pulumi.Input[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict']] advisor_settings: (Updatable) Optional Pre-Migration advisor settings.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict', 'outputs.MigrationAdvancedParameter']]]] advanced_parameters: (Updatable) List of Migration Parameter objects.
+        :param pulumi.Input[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict', 'outputs.MigrationAdvisorSettings']] advisor_settings: (Updatable) Optional Pre-Migration advisor settings.
         :param pulumi.Input[_builtins.str] assessment_id: The OCID of the resource being referenced.
         :param pulumi.Input[_builtins.str] bulk_include_exclude_data: Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the resource being referenced.
-        :param pulumi.Input[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']] data_transfer_medium_details: (Updatable) Optional additional properties for data transfer.
+        :param pulumi.Input[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict', 'outputs.MigrationDataTransferMediumDetails']] data_transfer_medium_details: (Updatable) Optional additional properties for data transfer.
         :param pulumi.Input[_builtins.str] database_combination: (Updatable) The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict']]]] exclude_objects: Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict', 'outputs.MigrationExcludeObject']]]] exclude_objects: Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
-        :param pulumi.Input[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict']] ggs_details: (Updatable) Optional settings for Oracle GoldenGate processes
-        :param pulumi.Input[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict']] hub_details: (Updatable) Details about Oracle GoldenGate Microservices.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict']]]] include_objects: Database objects to include from migration, cannot be specified alongside 'excludeObjects'
-        :param pulumi.Input[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict']] initial_load_settings: (Updatable) Optional settings for Data Pump Export and Import jobs
+        :param pulumi.Input[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict', 'outputs.MigrationGgsDetails']] ggs_details: (Updatable) Optional settings for Oracle GoldenGate processes
+        :param pulumi.Input[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict', 'outputs.MigrationHubDetails']] hub_details: (Updatable) Details about Oracle GoldenGate Microservices.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict', 'outputs.MigrationIncludeObject']]]] include_objects: Database objects to include from migration, cannot be specified alongside 'excludeObjects'
+        :param pulumi.Input[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict', 'outputs.MigrationInitialLoadSettings']] initial_load_settings: (Updatable) Optional settings for Data Pump Export and Import jobs
         :param pulumi.Input[_builtins.str] source_container_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[_builtins.str] source_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[_builtins.str] source_standby_database_connection_id: (Updatable) The OCID of the resource being referenced.
@@ -1233,22 +1233,22 @@ class Migration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 advanced_parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict']]]]] = None,
-                 advisor_settings: pulumi.Input[Optional[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict']]] = None,
+                 advanced_parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict', 'outputs.MigrationAdvancedParameter']]]]] = None,
+                 advisor_settings: pulumi.Input[Optional[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict', 'outputs.MigrationAdvisorSettings']]] = None,
                  assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  bulk_include_exclude_data: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 data_transfer_medium_details: pulumi.Input[Optional[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']]] = None,
+                 data_transfer_medium_details: pulumi.Input[Optional[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict', 'outputs.MigrationDataTransferMediumDetails']]] = None,
                  database_combination: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict']]]]] = None,
+                 exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict', 'outputs.MigrationExcludeObject']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ggs_details: pulumi.Input[Optional[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict']]] = None,
-                 hub_details: pulumi.Input[Optional[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict']]] = None,
-                 include_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict']]]]] = None,
-                 initial_load_settings: pulumi.Input[Optional[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict']]] = None,
+                 ggs_details: pulumi.Input[Optional[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict', 'outputs.MigrationGgsDetails']]] = None,
+                 hub_details: pulumi.Input[Optional[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict', 'outputs.MigrationHubDetails']]] = None,
+                 include_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict', 'outputs.MigrationIncludeObject']]]]] = None,
+                 initial_load_settings: pulumi.Input[Optional[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict', 'outputs.MigrationInitialLoadSettings']]] = None,
                  source_container_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
                  source_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
                  source_standby_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1308,23 +1308,23 @@ class Migration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            advanced_parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict']]]]] = None,
-            advisor_settings: pulumi.Input[Optional[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict']]] = None,
+            advanced_parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict', 'outputs.MigrationAdvancedParameter']]]]] = None,
+            advisor_settings: pulumi.Input[Optional[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict', 'outputs.MigrationAdvisorSettings']]] = None,
             assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
             bulk_include_exclude_data: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            data_transfer_medium_details: pulumi.Input[Optional[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']]] = None,
+            data_transfer_medium_details: pulumi.Input[Optional[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict', 'outputs.MigrationDataTransferMediumDetails']]] = None,
             database_combination: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict']]]]] = None,
+            exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict', 'outputs.MigrationExcludeObject']]]]] = None,
             executing_job_id: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            ggs_details: pulumi.Input[Optional[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict']]] = None,
-            hub_details: pulumi.Input[Optional[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict']]] = None,
-            include_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict']]]]] = None,
-            initial_load_settings: pulumi.Input[Optional[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict']]] = None,
+            ggs_details: pulumi.Input[Optional[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict', 'outputs.MigrationGgsDetails']]] = None,
+            hub_details: pulumi.Input[Optional[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict', 'outputs.MigrationHubDetails']]] = None,
+            include_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict', 'outputs.MigrationIncludeObject']]]]] = None,
+            initial_load_settings: pulumi.Input[Optional[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict', 'outputs.MigrationInitialLoadSettings']]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             source_container_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
             source_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1344,23 +1344,23 @@ class Migration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict']]]] advanced_parameters: (Updatable) List of Migration Parameter objects.
-        :param pulumi.Input[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict']] advisor_settings: (Updatable) Optional Pre-Migration advisor settings.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict', 'outputs.MigrationAdvancedParameter']]]] advanced_parameters: (Updatable) List of Migration Parameter objects.
+        :param pulumi.Input[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict', 'outputs.MigrationAdvisorSettings']] advisor_settings: (Updatable) Optional Pre-Migration advisor settings.
         :param pulumi.Input[_builtins.str] assessment_id: The OCID of the resource being referenced.
         :param pulumi.Input[_builtins.str] bulk_include_exclude_data: Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the resource being referenced.
-        :param pulumi.Input[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']] data_transfer_medium_details: (Updatable) Optional additional properties for data transfer.
+        :param pulumi.Input[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict', 'outputs.MigrationDataTransferMediumDetails']] data_transfer_medium_details: (Updatable) Optional additional properties for data transfer.
         :param pulumi.Input[_builtins.str] database_combination: (Updatable) The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict']]]] exclude_objects: Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict', 'outputs.MigrationExcludeObject']]]] exclude_objects: Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
         :param pulumi.Input[_builtins.str] executing_job_id: The OCID of the resource being referenced.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
-        :param pulumi.Input[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict']] ggs_details: (Updatable) Optional settings for Oracle GoldenGate processes
-        :param pulumi.Input[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict']] hub_details: (Updatable) Details about Oracle GoldenGate Microservices.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict']]]] include_objects: Database objects to include from migration, cannot be specified alongside 'excludeObjects'
-        :param pulumi.Input[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict']] initial_load_settings: (Updatable) Optional settings for Data Pump Export and Import jobs
+        :param pulumi.Input[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict', 'outputs.MigrationGgsDetails']] ggs_details: (Updatable) Optional settings for Oracle GoldenGate processes
+        :param pulumi.Input[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict', 'outputs.MigrationHubDetails']] hub_details: (Updatable) Details about Oracle GoldenGate Microservices.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict', 'outputs.MigrationIncludeObject']]]] include_objects: Database objects to include from migration, cannot be specified alongside 'excludeObjects'
+        :param pulumi.Input[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict', 'outputs.MigrationInitialLoadSettings']] initial_load_settings: (Updatable) Optional settings for Data Pump Export and Import jobs
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional status related to the execution and current state of the Migration.
         :param pulumi.Input[_builtins.str] source_container_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[_builtins.str] source_database_connection_id: (Updatable) The OCID of the resource being referenced.

@@ -93,7 +93,7 @@ class AwaitableGetVirtualCircuitPublicPrefixesResult(GetVirtualCircuitPublicPref
             virtual_circuit_public_prefixes=self.virtual_circuit_public_prefixes)
 
 
-def get_virtual_circuit_public_prefixes(filters: Optional[Sequence[Union['GetVirtualCircuitPublicPrefixesFilterArgs', 'GetVirtualCircuitPublicPrefixesFilterArgsDict']]] = None,
+def get_virtual_circuit_public_prefixes(filters: Optional[Sequence[Union['GetVirtualCircuitPublicPrefixesFilterArgs', 'GetVirtualCircuitPublicPrefixesFilterArgsDict', 'outputs.GetVirtualCircuitPublicPrefixesFilterResult']]] = None,
                                         verification_state: Optional[_builtins.str] = None,
                                         virtual_circuit_id: Optional[_builtins.str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVirtualCircuitPublicPrefixesResult:
@@ -132,7 +132,7 @@ def get_virtual_circuit_public_prefixes(filters: Optional[Sequence[Union['GetVir
         verification_state=pulumi.get(__ret__, 'verification_state'),
         virtual_circuit_id=pulumi.get(__ret__, 'virtual_circuit_id'),
         virtual_circuit_public_prefixes=pulumi.get(__ret__, 'virtual_circuit_public_prefixes'))
-def get_virtual_circuit_public_prefixes_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVirtualCircuitPublicPrefixesFilterArgs', 'GetVirtualCircuitPublicPrefixesFilterArgsDict']]]]] = None,
+def get_virtual_circuit_public_prefixes_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVirtualCircuitPublicPrefixesFilterArgs', 'GetVirtualCircuitPublicPrefixesFilterArgsDict', 'outputs.GetVirtualCircuitPublicPrefixesFilterResult']]]]] = None,
                                                verification_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                virtual_circuit_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVirtualCircuitPublicPrefixesResult]:

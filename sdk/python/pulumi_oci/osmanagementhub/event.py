@@ -522,7 +522,7 @@ class Event(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EventDataArgs', 'EventDataArgsDict']]]]] = None,
+            datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EventDataArgs', 'EventDataArgsDict', 'outputs.EventData']]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             event_details: pulumi.Input[Optional[_builtins.str]] = None,
             event_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -532,7 +532,7 @@ class Event(pulumi.CustomResource):
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             resource_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            system_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EventSystemDetailArgs', 'EventSystemDetailArgsDict']]]]] = None,
+            system_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EventSystemDetailArgs', 'EventSystemDetailArgsDict', 'outputs.EventSystemDetail']]]]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_occurred: pulumi.Input[Optional[_builtins.str]] = None,
@@ -546,7 +546,7 @@ class Event(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['EventDataArgs', 'EventDataArgsDict']]]] datas: Provides additional information for a management station event.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['EventDataArgs', 'EventDataArgsDict', 'outputs.EventData']]]] datas: Provides additional information for a management station event.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] event_details: Details of an event.
         :param pulumi.Input[_builtins.str] event_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the event.
@@ -559,7 +559,7 @@ class Event(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: Describes the current state of the event in more detail. For example, the  message can provide actionable information for a resource in the 'FAILED' state.
         :param pulumi.Input[_builtins.str] resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance or resource where the event occurred.
         :param pulumi.Input[_builtins.str] state: The current state of the event.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['EventSystemDetailArgs', 'EventSystemDetailArgsDict']]]] system_details: Provides information about the system architecture and operating system.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['EventSystemDetailArgs', 'EventSystemDetailArgsDict', 'outputs.EventSystemDetail']]]] system_details: Provides information about the system architecture and operating system.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The date and time the Event was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_occurred: The date and time that the event occurred.

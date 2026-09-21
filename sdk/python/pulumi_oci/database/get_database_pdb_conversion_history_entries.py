@@ -103,7 +103,7 @@ class AwaitableGetDatabasePdbConversionHistoryEntriesResult(GetDatabasePdbConver
 
 
 def get_database_pdb_conversion_history_entries(database_id: Optional[_builtins.str] = None,
-                                                filters: Optional[Sequence[Union['GetDatabasePdbConversionHistoryEntriesFilterArgs', 'GetDatabasePdbConversionHistoryEntriesFilterArgsDict']]] = None,
+                                                filters: Optional[Sequence[Union['GetDatabasePdbConversionHistoryEntriesFilterArgs', 'GetDatabasePdbConversionHistoryEntriesFilterArgsDict', 'outputs.GetDatabasePdbConversionHistoryEntriesFilterResult']]] = None,
                                                 pdb_conversion_action: Optional[_builtins.str] = None,
                                                 state: Optional[_builtins.str] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabasePdbConversionHistoryEntriesResult:
@@ -144,7 +144,7 @@ def get_database_pdb_conversion_history_entries(database_id: Optional[_builtins.
         pdb_conversion_history_entries=pulumi.get(__ret__, 'pdb_conversion_history_entries'),
         state=pulumi.get(__ret__, 'state'))
 def get_database_pdb_conversion_history_entries_output(database_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabasePdbConversionHistoryEntriesFilterArgs', 'GetDatabasePdbConversionHistoryEntriesFilterArgsDict']]]]] = None,
+                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabasePdbConversionHistoryEntriesFilterArgs', 'GetDatabasePdbConversionHistoryEntriesFilterArgsDict', 'outputs.GetDatabasePdbConversionHistoryEntriesFilterResult']]]]] = None,
                                                        pdb_conversion_action: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabasePdbConversionHistoryEntriesResult]:

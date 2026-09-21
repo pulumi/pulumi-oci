@@ -249,7 +249,7 @@ class TaskSchedule(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  execution_recurrences: pulumi.Input[Optional[_builtins.str]] = None,
                  fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 task_details: pulumi.Input[Optional[Union['TaskScheduleTaskDetailsArgs', 'TaskScheduleTaskDetailsArgsDict']]] = None,
+                 task_details: pulumi.Input[Optional[Union['TaskScheduleTaskDetailsArgs', 'TaskScheduleTaskDetailsArgsDict', 'outputs.TaskScheduleTaskDetails']]] = None,
                  __props__=None):
         """
         This resource provides the Task Schedule resource in Oracle Cloud Infrastructure Jms service.
@@ -368,7 +368,7 @@ class TaskSchedule(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] execution_recurrences: (Updatable) Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 UTC, it should be 'DTSTART=20240902T090000Z; RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 UTC, it should be 'DTSTART=20240805T090000Z;RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
         :param pulumi.Input[_builtins.str] fleet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-        :param pulumi.Input[Union['TaskScheduleTaskDetailsArgs', 'TaskScheduleTaskDetailsArgsDict']] task_details: (Updatable) The minimum details of a task.
+        :param pulumi.Input[Union['TaskScheduleTaskDetailsArgs', 'TaskScheduleTaskDetailsArgsDict', 'outputs.TaskScheduleTaskDetails']] task_details: (Updatable) The minimum details of a task.
         """
         ...
     @overload
@@ -506,7 +506,7 @@ class TaskSchedule(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  execution_recurrences: pulumi.Input[Optional[_builtins.str]] = None,
                  fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 task_details: pulumi.Input[Optional[Union['TaskScheduleTaskDetailsArgs', 'TaskScheduleTaskDetailsArgsDict']]] = None,
+                 task_details: pulumi.Input[Optional[Union['TaskScheduleTaskDetailsArgs', 'TaskScheduleTaskDetailsArgsDict', 'outputs.TaskScheduleTaskDetails']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -547,7 +547,7 @@ class TaskSchedule(pulumi.CustomResource):
             fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            task_details: pulumi.Input[Optional[Union['TaskScheduleTaskDetailsArgs', 'TaskScheduleTaskDetailsArgsDict']]] = None,
+            task_details: pulumi.Input[Optional[Union['TaskScheduleTaskDetailsArgs', 'TaskScheduleTaskDetailsArgsDict', 'outputs.TaskScheduleTaskDetails']]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_last_run: pulumi.Input[Optional[_builtins.str]] = None,
             time_last_updated: pulumi.Input[Optional[_builtins.str]] = None,
@@ -564,7 +564,7 @@ class TaskSchedule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] fleet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
         :param pulumi.Input[_builtins.str] name: The name of the task schedule.
         :param pulumi.Input[_builtins.str] state: All possible status of task schedule.
-        :param pulumi.Input[Union['TaskScheduleTaskDetailsArgs', 'TaskScheduleTaskDetailsArgsDict']] task_details: (Updatable) The minimum details of a task.
+        :param pulumi.Input[Union['TaskScheduleTaskDetailsArgs', 'TaskScheduleTaskDetailsArgsDict', 'outputs.TaskScheduleTaskDetails']] task_details: (Updatable) The minimum details of a task.
         :param pulumi.Input[_builtins.str] time_created: The date and time the task schedule was created (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param pulumi.Input[_builtins.str] time_last_run: The date and time the task schedule ran last (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param pulumi.Input[_builtins.str] time_last_updated: The date and time the task schedule was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).

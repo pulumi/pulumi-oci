@@ -82,7 +82,7 @@ class AwaitableGetAssignedSubscriptionLineItemsResult(GetAssignedSubscriptionLin
 
 
 def get_assigned_subscription_line_items(assigned_subscription_id: Optional[_builtins.str] = None,
-                                         filters: Optional[Sequence[Union['GetAssignedSubscriptionLineItemsFilterArgs', 'GetAssignedSubscriptionLineItemsFilterArgsDict']]] = None,
+                                         filters: Optional[Sequence[Union['GetAssignedSubscriptionLineItemsFilterArgs', 'GetAssignedSubscriptionLineItemsFilterArgsDict', 'outputs.GetAssignedSubscriptionLineItemsFilterResult']]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAssignedSubscriptionLineItemsResult:
     """
     This data source provides the list of Assigned Subscription Line Items in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
@@ -113,7 +113,7 @@ def get_assigned_subscription_line_items(assigned_subscription_id: Optional[_bui
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_assigned_subscription_line_items_output(assigned_subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAssignedSubscriptionLineItemsFilterArgs', 'GetAssignedSubscriptionLineItemsFilterArgsDict']]]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAssignedSubscriptionLineItemsFilterArgs', 'GetAssignedSubscriptionLineItemsFilterArgsDict', 'outputs.GetAssignedSubscriptionLineItemsFilterResult']]]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAssignedSubscriptionLineItemsResult]:
     """
     This data source provides the list of Assigned Subscription Line Items in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.

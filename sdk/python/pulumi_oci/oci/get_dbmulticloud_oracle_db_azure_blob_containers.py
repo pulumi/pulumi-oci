@@ -145,7 +145,7 @@ def get_dbmulticloud_oracle_db_azure_blob_containers(azure_storage_account_name:
                                                      azure_storage_container_name: Optional[_builtins.str] = None,
                                                      compartment_id: Optional[_builtins.str] = None,
                                                      display_name: Optional[_builtins.str] = None,
-                                                     filters: Optional[Sequence[Union['GetDbmulticloudOracleDbAzureBlobContainersFilterArgs', 'GetDbmulticloudOracleDbAzureBlobContainersFilterArgsDict']]] = None,
+                                                     filters: Optional[Sequence[Union['GetDbmulticloudOracleDbAzureBlobContainersFilterArgs', 'GetDbmulticloudOracleDbAzureBlobContainersFilterArgsDict', 'outputs.GetDbmulticloudOracleDbAzureBlobContainersFilterResult']]] = None,
                                                      oracle_db_azure_blob_container_id: Optional[_builtins.str] = None,
                                                      state: Optional[_builtins.str] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbmulticloudOracleDbAzureBlobContainersResult:
@@ -201,7 +201,7 @@ def get_dbmulticloud_oracle_db_azure_blob_containers_output(azure_storage_accoun
                                                             azure_storage_container_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbmulticloudOracleDbAzureBlobContainersFilterArgs', 'GetDbmulticloudOracleDbAzureBlobContainersFilterArgsDict']]]]] = None,
+                                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbmulticloudOracleDbAzureBlobContainersFilterArgs', 'GetDbmulticloudOracleDbAzureBlobContainersFilterArgsDict', 'outputs.GetDbmulticloudOracleDbAzureBlobContainersFilterResult']]]]] = None,
                                                             oracle_db_azure_blob_container_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbmulticloudOracleDbAzureBlobContainersResult]:

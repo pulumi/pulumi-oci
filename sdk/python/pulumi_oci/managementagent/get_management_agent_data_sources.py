@@ -93,7 +93,7 @@ class AwaitableGetManagementAgentDataSourcesResult(GetManagementAgentDataSources
             name=self.name)
 
 
-def get_management_agent_data_sources(filters: Optional[Sequence[Union['GetManagementAgentDataSourcesFilterArgs', 'GetManagementAgentDataSourcesFilterArgsDict']]] = None,
+def get_management_agent_data_sources(filters: Optional[Sequence[Union['GetManagementAgentDataSourcesFilterArgs', 'GetManagementAgentDataSourcesFilterArgsDict', 'outputs.GetManagementAgentDataSourcesFilterResult']]] = None,
                                       management_agent_id: Optional[_builtins.str] = None,
                                       name: Optional[_builtins.str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementAgentDataSourcesResult:
@@ -129,7 +129,7 @@ def get_management_agent_data_sources(filters: Optional[Sequence[Union['GetManag
         id=pulumi.get(__ret__, 'id'),
         management_agent_id=pulumi.get(__ret__, 'management_agent_id'),
         name=pulumi.get(__ret__, 'name'))
-def get_management_agent_data_sources_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagementAgentDataSourcesFilterArgs', 'GetManagementAgentDataSourcesFilterArgsDict']]]]] = None,
+def get_management_agent_data_sources_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagementAgentDataSourcesFilterArgs', 'GetManagementAgentDataSourcesFilterArgsDict', 'outputs.GetManagementAgentDataSourcesFilterResult']]]]] = None,
                                              management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementAgentDataSourcesResult]:

@@ -134,7 +134,7 @@ class AwaitableGetDbNodeSnapshotsResult(GetDbNodeSnapshotsResult):
 
 def get_db_node_snapshots(cluster_id: Optional[_builtins.str] = None,
                           compartment_id: Optional[_builtins.str] = None,
-                          filters: Optional[Sequence[Union['GetDbNodeSnapshotsFilterArgs', 'GetDbNodeSnapshotsFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetDbNodeSnapshotsFilterArgs', 'GetDbNodeSnapshotsFilterArgsDict', 'outputs.GetDbNodeSnapshotsFilterResult']]] = None,
                           name: Optional[_builtins.str] = None,
                           source_dbnode_id: Optional[_builtins.str] = None,
                           state: Optional[_builtins.str] = None,
@@ -185,7 +185,7 @@ def get_db_node_snapshots(cluster_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_db_node_snapshots_output(cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbNodeSnapshotsFilterArgs', 'GetDbNodeSnapshotsFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbNodeSnapshotsFilterArgs', 'GetDbNodeSnapshotsFilterArgsDict', 'outputs.GetDbNodeSnapshotsFilterResult']]]]] = None,
                                  name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  source_dbnode_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

@@ -148,7 +148,7 @@ class AwaitableGetNamespaceTemplatesResult(GetNamespaceTemplatesResult):
 
 
 def get_namespace_templates(compartment_id: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetNamespaceTemplatesFilterArgs', 'GetNamespaceTemplatesFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetNamespaceTemplatesFilterArgs', 'GetNamespaceTemplatesFilterArgsDict', 'outputs.GetNamespaceTemplatesFilterResult']]] = None,
                             name: Optional[_builtins.str] = None,
                             namespace: Optional[_builtins.str] = None,
                             namespace_template_filter: Optional[_builtins.str] = None,
@@ -209,7 +209,7 @@ def get_namespace_templates(compartment_id: Optional[_builtins.str] = None,
         template_display_text=pulumi.get(__ret__, 'template_display_text'),
         type=pulumi.get(__ret__, 'type'))
 def get_namespace_templates_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespaceTemplatesFilterArgs', 'GetNamespaceTemplatesFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespaceTemplatesFilterArgs', 'GetNamespaceTemplatesFilterArgsDict', 'outputs.GetNamespaceTemplatesFilterResult']]]]] = None,
                                    name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                    namespace_template_filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

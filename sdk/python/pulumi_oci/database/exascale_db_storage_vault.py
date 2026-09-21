@@ -620,7 +620,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 high_capacity_database_storage: pulumi.Input[Optional[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict']]] = None,
+                 high_capacity_database_storage: pulumi.Input[Optional[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict', 'outputs.ExascaleDbStorageVaultHighCapacityDatabaseStorage']]] = None,
                  is_autoscale_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
@@ -681,7 +681,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
         :param pulumi.Input[_builtins.str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict']] high_capacity_database_storage: (Updatable) Create exadata Database Storage Details
+        :param pulumi.Input[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict', 'outputs.ExascaleDbStorageVaultHighCapacityDatabaseStorage']] high_capacity_database_storage: (Updatable) Create exadata Database Storage Details
         :param pulumi.Input[_builtins.bool] is_autoscale_enabled: (Updatable) Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
         :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[_builtins.str] time_zone: The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -764,7 +764,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 high_capacity_database_storage: pulumi.Input[Optional[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict']]] = None,
+                 high_capacity_database_storage: pulumi.Input[Optional[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict', 'outputs.ExascaleDbStorageVaultHighCapacityDatabaseStorage']]] = None,
                  is_autoscale_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
@@ -827,7 +827,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            high_capacity_database_storage: pulumi.Input[Optional[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict']]] = None,
+            high_capacity_database_storage: pulumi.Input[Optional[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict', 'outputs.ExascaleDbStorageVaultHighCapacityDatabaseStorage']]] = None,
             is_autoscale_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -855,7 +855,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
         :param pulumi.Input[_builtins.str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict']] high_capacity_database_storage: (Updatable) Create exadata Database Storage Details
+        :param pulumi.Input[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict', 'outputs.ExascaleDbStorageVaultHighCapacityDatabaseStorage']] high_capacity_database_storage: (Updatable) Create exadata Database Storage Details
         :param pulumi.Input[_builtins.bool] is_autoscale_enabled: (Updatable) Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] state: The current state of the Exadata Database Storage Vault.

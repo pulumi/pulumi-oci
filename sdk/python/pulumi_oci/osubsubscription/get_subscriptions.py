@@ -137,7 +137,7 @@ class AwaitableGetSubscriptionsResult(GetSubscriptionsResult):
 
 def get_subscriptions(buyer_email: Optional[_builtins.str] = None,
                       compartment_id: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetSubscriptionsFilterArgs', 'GetSubscriptionsFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetSubscriptionsFilterArgs', 'GetSubscriptionsFilterArgsDict', 'outputs.GetSubscriptionsFilterResult']]] = None,
                       is_commit_info_required: Optional[_builtins.bool] = None,
                       plan_number: Optional[_builtins.str] = None,
                       subscription_id: Optional[_builtins.str] = None,
@@ -201,7 +201,7 @@ def get_subscriptions(buyer_email: Optional[_builtins.str] = None,
         x_one_origin_region=pulumi.get(__ret__, 'x_one_origin_region'))
 def get_subscriptions_output(buyer_email: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionsFilterArgs', 'GetSubscriptionsFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionsFilterArgs', 'GetSubscriptionsFilterArgsDict', 'outputs.GetSubscriptionsFilterResult']]]]] = None,
                              is_commit_info_required: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                              plan_number: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              subscription_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

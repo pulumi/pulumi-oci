@@ -96,7 +96,7 @@ class AwaitableGetRunStatementsResult(GetRunStatementsResult):
             statement_collections=self.statement_collections)
 
 
-def get_run_statements(filters: Optional[Sequence[Union['GetRunStatementsFilterArgs', 'GetRunStatementsFilterArgsDict']]] = None,
+def get_run_statements(filters: Optional[Sequence[Union['GetRunStatementsFilterArgs', 'GetRunStatementsFilterArgsDict', 'outputs.GetRunStatementsFilterResult']]] = None,
                        run_id: Optional[_builtins.str] = None,
                        state: Optional[_builtins.str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRunStatementsResult:
@@ -132,7 +132,7 @@ def get_run_statements(filters: Optional[Sequence[Union['GetRunStatementsFilterA
         run_id=pulumi.get(__ret__, 'run_id'),
         state=pulumi.get(__ret__, 'state'),
         statement_collections=pulumi.get(__ret__, 'statement_collections'))
-def get_run_statements_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRunStatementsFilterArgs', 'GetRunStatementsFilterArgsDict']]]]] = None,
+def get_run_statements_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRunStatementsFilterArgs', 'GetRunStatementsFilterArgsDict', 'outputs.GetRunStatementsFilterResult']]]]] = None,
                               run_id: pulumi.Input[Optional[_builtins.str]] = None,
                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRunStatementsResult]:

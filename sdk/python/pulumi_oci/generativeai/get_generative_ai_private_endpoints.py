@@ -122,7 +122,7 @@ class AwaitableGetGenerativeAiPrivateEndpointsResult(GetGenerativeAiPrivateEndpo
 
 def get_generative_ai_private_endpoints(compartment_id: Optional[_builtins.str] = None,
                                         display_name: Optional[_builtins.str] = None,
-                                        filters: Optional[Sequence[Union['GetGenerativeAiPrivateEndpointsFilterArgs', 'GetGenerativeAiPrivateEndpointsFilterArgsDict']]] = None,
+                                        filters: Optional[Sequence[Union['GetGenerativeAiPrivateEndpointsFilterArgs', 'GetGenerativeAiPrivateEndpointsFilterArgsDict', 'outputs.GetGenerativeAiPrivateEndpointsFilterResult']]] = None,
                                         id: Optional[_builtins.str] = None,
                                         resource_type: Optional[_builtins.str] = None,
                                         state: Optional[_builtins.str] = None,
@@ -172,7 +172,7 @@ def get_generative_ai_private_endpoints(compartment_id: Optional[_builtins.str] 
         state=pulumi.get(__ret__, 'state'))
 def get_generative_ai_private_endpoints_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetGenerativeAiPrivateEndpointsFilterArgs', 'GetGenerativeAiPrivateEndpointsFilterArgsDict']]]]] = None,
+                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetGenerativeAiPrivateEndpointsFilterArgs', 'GetGenerativeAiPrivateEndpointsFilterArgsDict', 'outputs.GetGenerativeAiPrivateEndpointsFilterResult']]]]] = None,
                                                id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

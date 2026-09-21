@@ -82,7 +82,7 @@ class AwaitableGetPoliciesResult(GetPoliciesResult):
 
 
 def get_policies(compartment_id: Optional[_builtins.str] = None,
-                 filters: Optional[Sequence[Union['GetPoliciesFilterArgs', 'GetPoliciesFilterArgsDict']]] = None,
+                 filters: Optional[Sequence[Union['GetPoliciesFilterArgs', 'GetPoliciesFilterArgsDict', 'outputs.GetPoliciesFilterResult']]] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPoliciesResult:
     """
     This data source provides the list of Load Balancer Policies in Oracle Cloud Infrastructure Load Balancer service.
@@ -113,7 +113,7 @@ def get_policies(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         policies=pulumi.get(__ret__, 'policies'))
 def get_policies_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPoliciesFilterArgs', 'GetPoliciesFilterArgsDict']]]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPoliciesFilterArgs', 'GetPoliciesFilterArgsDict', 'outputs.GetPoliciesFilterResult']]]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPoliciesResult]:
     """
     This data source provides the list of Load Balancer Policies in Oracle Cloud Infrastructure Load Balancer service.

@@ -502,7 +502,7 @@ class ProductLicense(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 images: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProductLicenseImageArgs', 'ProductLicenseImageArgsDict']]]]] = None,
+                 images: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProductLicenseImageArgs', 'ProductLicenseImageArgsDict', 'outputs.ProductLicenseImage']]]]] = None,
                  is_vendor_oracle: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_unit: pulumi.Input[Optional[_builtins.str]] = None,
                  vendor_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -554,7 +554,7 @@ class ProductLicense(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: Name of the product license.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ProductLicenseImageArgs', 'ProductLicenseImageArgsDict']]]] images: (Updatable) The image details associated with the product license.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ProductLicenseImageArgs', 'ProductLicenseImageArgsDict', 'outputs.ProductLicenseImage']]]] images: (Updatable) The image details associated with the product license.
         :param pulumi.Input[_builtins.bool] is_vendor_oracle: Specifies if the product license vendor is Oracle or a third party.
         :param pulumi.Input[_builtins.str] license_unit: The product license unit.
         :param pulumi.Input[_builtins.str] vendor_name: The product license vendor name, for example: Microsoft, RHEL, and so on.
@@ -628,7 +628,7 @@ class ProductLicense(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 images: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProductLicenseImageArgs', 'ProductLicenseImageArgsDict']]]]] = None,
+                 images: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProductLicenseImageArgs', 'ProductLicenseImageArgsDict', 'outputs.ProductLicenseImage']]]]] = None,
                  is_vendor_oracle: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_unit: pulumi.Input[Optional[_builtins.str]] = None,
                  vendor_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -684,7 +684,7 @@ class ProductLicense(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            images: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProductLicenseImageArgs', 'ProductLicenseImageArgsDict']]]]] = None,
+            images: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProductLicenseImageArgs', 'ProductLicenseImageArgsDict', 'outputs.ProductLicenseImage']]]]] = None,
             is_over_subscribed: pulumi.Input[Optional[_builtins.bool]] = None,
             is_unlimited: pulumi.Input[Optional[_builtins.bool]] = None,
             is_vendor_oracle: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -711,7 +711,7 @@ class ProductLicense(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: Name of the product license.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ProductLicenseImageArgs', 'ProductLicenseImageArgsDict']]]] images: (Updatable) The image details associated with the product license.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ProductLicenseImageArgs', 'ProductLicenseImageArgsDict', 'outputs.ProductLicenseImage']]]] images: (Updatable) The image details associated with the product license.
         :param pulumi.Input[_builtins.bool] is_over_subscribed: Specifies whether or not the product license is oversubscribed.
         :param pulumi.Input[_builtins.bool] is_unlimited: Specifies if the license unit count is unlimited.
         :param pulumi.Input[_builtins.bool] is_vendor_oracle: Specifies if the product license vendor is Oracle or a third party.

@@ -308,7 +308,7 @@ class VnicAttachment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 create_vnic_details: pulumi.Input[Optional[Union['VnicAttachmentCreateVnicDetailsArgs', 'VnicAttachmentCreateVnicDetailsArgsDict']]] = None,
+                 create_vnic_details: pulumi.Input[Optional[Union['VnicAttachmentCreateVnicDetailsArgs', 'VnicAttachmentCreateVnicDetailsArgsDict', 'outputs.VnicAttachmentCreateVnicDetails']]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  nic_index: pulumi.Input[Optional[_builtins.int]] = None,
@@ -368,7 +368,7 @@ class VnicAttachment(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['VnicAttachmentCreateVnicDetailsArgs', 'VnicAttachmentCreateVnicDetailsArgsDict']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+        :param pulumi.Input[Union['VnicAttachmentCreateVnicDetailsArgs', 'VnicAttachmentCreateVnicDetailsArgsDict', 'outputs.VnicAttachmentCreateVnicDetails']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] instance_id: The OCID of the instance.
         :param pulumi.Input[_builtins.int] nic_index: Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
@@ -450,7 +450,7 @@ class VnicAttachment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 create_vnic_details: pulumi.Input[Optional[Union['VnicAttachmentCreateVnicDetailsArgs', 'VnicAttachmentCreateVnicDetailsArgsDict']]] = None,
+                 create_vnic_details: pulumi.Input[Optional[Union['VnicAttachmentCreateVnicDetailsArgs', 'VnicAttachmentCreateVnicDetailsArgsDict', 'outputs.VnicAttachmentCreateVnicDetails']]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  nic_index: pulumi.Input[Optional[_builtins.int]] = None,
@@ -491,7 +491,7 @@ class VnicAttachment(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            create_vnic_details: pulumi.Input[Optional[Union['VnicAttachmentCreateVnicDetailsArgs', 'VnicAttachmentCreateVnicDetailsArgsDict']]] = None,
+            create_vnic_details: pulumi.Input[Optional[Union['VnicAttachmentCreateVnicDetailsArgs', 'VnicAttachmentCreateVnicDetailsArgsDict', 'outputs.VnicAttachmentCreateVnicDetails']]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             instance_id: pulumi.Input[Optional[_builtins.str]] = None,
             nic_index: pulumi.Input[Optional[_builtins.int]] = None,
@@ -510,7 +510,7 @@ class VnicAttachment(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment the VNIC attachment is in, which is the same compartment the instance is in.
-        :param pulumi.Input[Union['VnicAttachmentCreateVnicDetailsArgs', 'VnicAttachmentCreateVnicDetailsArgsDict']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+        :param pulumi.Input[Union['VnicAttachmentCreateVnicDetailsArgs', 'VnicAttachmentCreateVnicDetailsArgsDict', 'outputs.VnicAttachmentCreateVnicDetails']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] instance_id: The OCID of the instance.
         :param pulumi.Input[_builtins.int] nic_index: Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).

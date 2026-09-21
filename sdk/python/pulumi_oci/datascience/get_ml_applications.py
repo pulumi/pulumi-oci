@@ -128,7 +128,7 @@ class AwaitableGetMlApplicationsResult(GetMlApplicationsResult):
 
 def get_ml_applications(compartment_id: Optional[_builtins.str] = None,
                         compartment_id_in_subtree: Optional[_builtins.bool] = None,
-                        filters: Optional[Sequence[Union['GetMlApplicationsFilterArgs', 'GetMlApplicationsFilterArgsDict']]] = None,
+                        filters: Optional[Sequence[Union['GetMlApplicationsFilterArgs', 'GetMlApplicationsFilterArgsDict', 'outputs.GetMlApplicationsFilterResult']]] = None,
                         ml_application_id: Optional[_builtins.str] = None,
                         name: Optional[_builtins.str] = None,
                         state: Optional[_builtins.str] = None,
@@ -179,7 +179,7 @@ def get_ml_applications(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_ml_applications_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
-                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMlApplicationsFilterArgs', 'GetMlApplicationsFilterArgsDict']]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMlApplicationsFilterArgs', 'GetMlApplicationsFilterArgsDict', 'outputs.GetMlApplicationsFilterResult']]]]] = None,
                                ml_application_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

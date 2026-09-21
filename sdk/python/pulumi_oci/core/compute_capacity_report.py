@@ -153,7 +153,7 @@ class ComputeCapacityReport(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 shape_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeCapacityReportShapeAvailabilityArgs', 'ComputeCapacityReportShapeAvailabilityArgsDict']]]]] = None,
+                 shape_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeCapacityReportShapeAvailabilityArgs', 'ComputeCapacityReportShapeAvailabilityArgsDict', 'outputs.ComputeCapacityReportShapeAvailability']]]]] = None,
                  __props__=None):
         """
         This resource provides the Compute Capacity Report resource in Oracle Cloud Infrastructure Core service.
@@ -202,7 +202,7 @@ class ComputeCapacityReport(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain for the capacity report.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeCapacityReportShapeAvailabilityArgs', 'ComputeCapacityReportShapeAvailabilityArgsDict']]]] shape_availabilities: Information about the shapes in the capacity report.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeCapacityReportShapeAvailabilityArgs', 'ComputeCapacityReportShapeAvailabilityArgsDict', 'outputs.ComputeCapacityReportShapeAvailability']]]] shape_availabilities: Information about the shapes in the capacity report.
         """
         ...
     @overload
@@ -270,7 +270,7 @@ class ComputeCapacityReport(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 shape_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeCapacityReportShapeAvailabilityArgs', 'ComputeCapacityReportShapeAvailabilityArgsDict']]]]] = None,
+                 shape_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeCapacityReportShapeAvailabilityArgs', 'ComputeCapacityReportShapeAvailabilityArgsDict', 'outputs.ComputeCapacityReportShapeAvailability']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -302,7 +302,7 @@ class ComputeCapacityReport(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            shape_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeCapacityReportShapeAvailabilityArgs', 'ComputeCapacityReportShapeAvailabilityArgsDict']]]]] = None,
+            shape_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeCapacityReportShapeAvailabilityArgs', 'ComputeCapacityReportShapeAvailabilityArgsDict', 'outputs.ComputeCapacityReportShapeAvailability']]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'ComputeCapacityReport':
         """
         Get an existing ComputeCapacityReport resource's state with the given name, id, and optional extra
@@ -313,7 +313,7 @@ class ComputeCapacityReport(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain for the capacity report.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeCapacityReportShapeAvailabilityArgs', 'ComputeCapacityReportShapeAvailabilityArgsDict']]]] shape_availabilities: Information about the shapes in the capacity report.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeCapacityReportShapeAvailabilityArgs', 'ComputeCapacityReportShapeAvailabilityArgsDict', 'outputs.ComputeCapacityReportShapeAvailability']]]] shape_availabilities: Information about the shapes in the capacity report.
         :param pulumi.Input[_builtins.str] time_created: The date and time the capacity report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

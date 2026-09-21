@@ -143,7 +143,7 @@ class AwaitableGetTaskRecordsResult(GetTaskRecordsResult):
 
 def get_task_records(compartment_id: Optional[_builtins.str] = None,
                      display_name: Optional[_builtins.str] = None,
-                     filters: Optional[Sequence[Union['GetTaskRecordsFilterArgs', 'GetTaskRecordsFilterArgsDict']]] = None,
+                     filters: Optional[Sequence[Union['GetTaskRecordsFilterArgs', 'GetTaskRecordsFilterArgsDict', 'outputs.GetTaskRecordsFilterResult']]] = None,
                      id: Optional[_builtins.str] = None,
                      operation: Optional[_builtins.str] = None,
                      platform: Optional[_builtins.str] = None,
@@ -204,7 +204,7 @@ def get_task_records(compartment_id: Optional[_builtins.str] = None,
         type=pulumi.get(__ret__, 'type'))
 def get_task_records_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTaskRecordsFilterArgs', 'GetTaskRecordsFilterArgsDict']]]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTaskRecordsFilterArgs', 'GetTaskRecordsFilterArgsDict', 'outputs.GetTaskRecordsFilterResult']]]]] = None,
                             id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             operation: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             platform: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

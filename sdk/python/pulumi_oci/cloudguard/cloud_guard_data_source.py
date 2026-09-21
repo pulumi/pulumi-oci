@@ -380,7 +380,7 @@ class CloudGuardDataSource(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 data_source_details: pulumi.Input[Optional[Union['CloudGuardDataSourceDataSourceDetailsArgs', 'CloudGuardDataSourceDataSourceDetailsArgsDict']]] = None,
+                 data_source_details: pulumi.Input[Optional[Union['CloudGuardDataSourceDataSourceDetailsArgs', 'CloudGuardDataSourceDataSourceDetailsArgsDict', 'outputs.CloudGuardDataSourceDataSourceDetails']]] = None,
                  data_source_feed_provider: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -452,7 +452,7 @@ class CloudGuardDataSource(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment OCID of the data source
-        :param pulumi.Input[Union['CloudGuardDataSourceDataSourceDetailsArgs', 'CloudGuardDataSourceDataSourceDetailsArgsDict']] data_source_details: (Updatable) Details specific to the data source type.
+        :param pulumi.Input[Union['CloudGuardDataSourceDataSourceDetailsArgs', 'CloudGuardDataSourceDataSourceDetailsArgsDict', 'outputs.CloudGuardDataSourceDataSourceDetails']] data_source_details: (Updatable) Details specific to the data source type.
         :param pulumi.Input[_builtins.str] data_source_feed_provider: Type of data source feed provider (LoggingQuery)
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Data source display name
@@ -548,7 +548,7 @@ class CloudGuardDataSource(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 data_source_details: pulumi.Input[Optional[Union['CloudGuardDataSourceDataSourceDetailsArgs', 'CloudGuardDataSourceDataSourceDetailsArgsDict']]] = None,
+                 data_source_details: pulumi.Input[Optional[Union['CloudGuardDataSourceDataSourceDetailsArgs', 'CloudGuardDataSourceDataSourceDetailsArgsDict', 'outputs.CloudGuardDataSourceDataSourceDetails']]] = None,
                  data_source_feed_provider: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -593,13 +593,13 @@ class CloudGuardDataSource(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            data_source_details: pulumi.Input[Optional[Union['CloudGuardDataSourceDataSourceDetailsArgs', 'CloudGuardDataSourceDataSourceDetailsArgsDict']]] = None,
-            data_source_detector_mapping_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudGuardDataSourceDataSourceDetectorMappingInfoArgs', 'CloudGuardDataSourceDataSourceDetectorMappingInfoArgsDict']]]]] = None,
+            data_source_details: pulumi.Input[Optional[Union['CloudGuardDataSourceDataSourceDetailsArgs', 'CloudGuardDataSourceDataSourceDetailsArgsDict', 'outputs.CloudGuardDataSourceDataSourceDetails']]] = None,
+            data_source_detector_mapping_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudGuardDataSourceDataSourceDetectorMappingInfoArgs', 'CloudGuardDataSourceDataSourceDetectorMappingInfoArgsDict', 'outputs.CloudGuardDataSourceDataSourceDetectorMappingInfo']]]]] = None,
             data_source_feed_provider: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            region_status_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudGuardDataSourceRegionStatusDetailArgs', 'CloudGuardDataSourceRegionStatusDetailArgsDict']]]]] = None,
+            region_status_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudGuardDataSourceRegionStatusDetailArgs', 'CloudGuardDataSourceRegionStatusDetailArgsDict', 'outputs.CloudGuardDataSourceRegionStatusDetail']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -613,15 +613,15 @@ class CloudGuardDataSource(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment OCID of the data source
-        :param pulumi.Input[Union['CloudGuardDataSourceDataSourceDetailsArgs', 'CloudGuardDataSourceDataSourceDetailsArgsDict']] data_source_details: (Updatable) Details specific to the data source type.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudGuardDataSourceDataSourceDetectorMappingInfoArgs', 'CloudGuardDataSourceDataSourceDetectorMappingInfoArgsDict']]]] data_source_detector_mapping_infos: Information about the detector recipe and rule attached
+        :param pulumi.Input[Union['CloudGuardDataSourceDataSourceDetailsArgs', 'CloudGuardDataSourceDataSourceDetailsArgsDict', 'outputs.CloudGuardDataSourceDataSourceDetails']] data_source_details: (Updatable) Details specific to the data source type.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudGuardDataSourceDataSourceDetectorMappingInfoArgs', 'CloudGuardDataSourceDataSourceDetectorMappingInfoArgsDict', 'outputs.CloudGuardDataSourceDataSourceDetectorMappingInfo']]]] data_source_detector_mapping_infos: Information about the detector recipe and rule attached
         :param pulumi.Input[_builtins.str] data_source_feed_provider: Type of data source feed provider (LoggingQuery)
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Data source display name
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudGuardDataSourceRegionStatusDetailArgs', 'CloudGuardDataSourceRegionStatusDetailArgsDict']]]] region_status_details: Information about the region and status of query replication
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudGuardDataSourceRegionStatusDetailArgs', 'CloudGuardDataSourceRegionStatusDetailArgsDict', 'outputs.CloudGuardDataSourceRegionStatusDetail']]]] region_status_details: Information about the region and status of query replication
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the resource.
         :param pulumi.Input[_builtins.str] status: (Updatable) Enablement status of data source.
                

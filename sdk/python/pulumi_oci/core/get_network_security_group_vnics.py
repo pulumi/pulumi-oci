@@ -81,7 +81,7 @@ class AwaitableGetNetworkSecurityGroupVnicsResult(GetNetworkSecurityGroupVnicsRe
             network_security_group_vnics=self.network_security_group_vnics)
 
 
-def get_network_security_group_vnics(filters: Optional[Sequence[Union['GetNetworkSecurityGroupVnicsFilterArgs', 'GetNetworkSecurityGroupVnicsFilterArgsDict']]] = None,
+def get_network_security_group_vnics(filters: Optional[Sequence[Union['GetNetworkSecurityGroupVnicsFilterArgs', 'GetNetworkSecurityGroupVnicsFilterArgsDict', 'outputs.GetNetworkSecurityGroupVnicsFilterResult']]] = None,
                                      network_security_group_id: Optional[_builtins.str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkSecurityGroupVnicsResult:
     """
@@ -112,7 +112,7 @@ def get_network_security_group_vnics(filters: Optional[Sequence[Union['GetNetwor
         id=pulumi.get(__ret__, 'id'),
         network_security_group_id=pulumi.get(__ret__, 'network_security_group_id'),
         network_security_group_vnics=pulumi.get(__ret__, 'network_security_group_vnics'))
-def get_network_security_group_vnics_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkSecurityGroupVnicsFilterArgs', 'GetNetworkSecurityGroupVnicsFilterArgsDict']]]]] = None,
+def get_network_security_group_vnics_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkSecurityGroupVnicsFilterArgs', 'GetNetworkSecurityGroupVnicsFilterArgsDict', 'outputs.GetNetworkSecurityGroupVnicsFilterResult']]]]] = None,
                                             network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkSecurityGroupVnicsResult]:
     """

@@ -138,7 +138,7 @@ class AwaitableGetPublicIpsResult(GetPublicIpsResult):
 
 def get_public_ips(availability_domain: Optional[_builtins.str] = None,
                    compartment_id: Optional[_builtins.str] = None,
-                   filters: Optional[Sequence[Union['GetPublicIpsFilterArgs', 'GetPublicIpsFilterArgsDict']]] = None,
+                   filters: Optional[Sequence[Union['GetPublicIpsFilterArgs', 'GetPublicIpsFilterArgsDict', 'outputs.GetPublicIpsFilterResult']]] = None,
                    lifetime: Optional[_builtins.str] = None,
                    public_ip_pool_id: Optional[_builtins.str] = None,
                    scope: Optional[_builtins.str] = None,
@@ -210,7 +210,7 @@ def get_public_ips(availability_domain: Optional[_builtins.str] = None,
         scope=pulumi.get(__ret__, 'scope'))
 def get_public_ips_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPublicIpsFilterArgs', 'GetPublicIpsFilterArgsDict']]]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPublicIpsFilterArgs', 'GetPublicIpsFilterArgsDict', 'outputs.GetPublicIpsFilterResult']]]]] = None,
                           lifetime: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           public_ip_pool_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           scope: pulumi.Input[Optional[_builtins.str]] = None,

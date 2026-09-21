@@ -352,7 +352,7 @@ class DbNodeSnapshotManagement(pulumi.CustomResource):
             exadb_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            snapshots: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbNodeSnapshotManagementSnapshotArgs', 'DbNodeSnapshotManagementSnapshotArgsDict']]]]] = None,
+            snapshots: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbNodeSnapshotManagementSnapshotArgs', 'DbNodeSnapshotManagementSnapshotArgsDict', 'outputs.DbNodeSnapshotManagementSnapshot']]]]] = None,
             source_dbnode_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'DbNodeSnapshotManagement':
         """
         Get an existing DbNodeSnapshotManagement resource's state with the given name, id, and optional extra
@@ -365,7 +365,7 @@ class DbNodeSnapshotManagement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] exadb_vm_cluster_id: The Exadata VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on Exascale Infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Free-form tags for the Exadata Database Node Snapshots. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] name: The suffix of the Exadata Database Node Snapshot names (Snpashot name = Node hostname + "-" + suffix). The Exadata Database Node Snapshot name should be unique.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DbNodeSnapshotManagementSnapshotArgs', 'DbNodeSnapshotManagementSnapshotArgsDict']]]] snapshots: The list of created Exadata Database Node Snapshots.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbNodeSnapshotManagementSnapshotArgs', 'DbNodeSnapshotManagementSnapshotArgsDict', 'outputs.DbNodeSnapshotManagementSnapshot']]]] snapshots: The list of created Exadata Database Node Snapshots.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] source_dbnode_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Nodes for which snapshots will be created.
                
                ** IMPORTANT **

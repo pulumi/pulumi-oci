@@ -413,7 +413,7 @@ class AutomaticDrConfiguration(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  dr_protection_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutomaticDrConfigurationMemberArgs', 'AutomaticDrConfigurationMemberArgsDict']]]]] = None,
+                 members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutomaticDrConfigurationMemberArgs', 'AutomaticDrConfigurationMemberArgsDict', 'outputs.AutomaticDrConfigurationMember']]]]] = None,
                  __props__=None):
         """
         This resource provides the Automatic Dr Configuration resource in Oracle Cloud Infrastructure Disaster Recovery service.
@@ -462,7 +462,7 @@ class AutomaticDrConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the Automatic DR configuration being created.  Example: `Automatic DR Configuration`
         :param pulumi.Input[_builtins.str] dr_protection_group_id: The OCID of the DR protection group to which this Automatic DR configuration belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AutomaticDrConfigurationMemberArgs', 'AutomaticDrConfigurationMemberArgsDict']]]] members: (Updatable) A list of members for Automatic DR configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutomaticDrConfigurationMemberArgs', 'AutomaticDrConfigurationMemberArgsDict', 'outputs.AutomaticDrConfigurationMember']]]] members: (Updatable) A list of members for Automatic DR configuration.
         """
         ...
     @overload
@@ -530,7 +530,7 @@ class AutomaticDrConfiguration(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  dr_protection_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutomaticDrConfigurationMemberArgs', 'AutomaticDrConfigurationMemberArgsDict']]]]] = None,
+                 members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutomaticDrConfigurationMemberArgs', 'AutomaticDrConfigurationMemberArgsDict', 'outputs.AutomaticDrConfigurationMember']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -582,7 +582,7 @@ class AutomaticDrConfiguration(pulumi.CustomResource):
             last_automatic_dr_execution_submit_details: pulumi.Input[Optional[_builtins.str]] = None,
             last_automatic_dr_execution_submit_status: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutomaticDrConfigurationMemberArgs', 'AutomaticDrConfigurationMemberArgsDict']]]]] = None,
+            members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutomaticDrConfigurationMemberArgs', 'AutomaticDrConfigurationMemberArgsDict', 'outputs.AutomaticDrConfigurationMember']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -605,7 +605,7 @@ class AutomaticDrConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] last_automatic_dr_execution_submit_details: A message describing the result of the most recent attempt made to submit an Automatic DR plan execution.
         :param pulumi.Input[_builtins.str] last_automatic_dr_execution_submit_status: The status of most recent attempt to submit Automatic DR plan execution.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the Automatic DR configuration's current state in more detail.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AutomaticDrConfigurationMemberArgs', 'AutomaticDrConfigurationMemberArgsDict']]]] members: (Updatable) A list of members for Automatic DR configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutomaticDrConfigurationMemberArgs', 'AutomaticDrConfigurationMemberArgsDict', 'outputs.AutomaticDrConfigurationMember']]]] members: (Updatable) A list of members for Automatic DR configuration.
         :param pulumi.Input[_builtins.str] state: The current state of the Automatic DR configuration.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The date and time the Automatic DR configuration was created. An RFC3339 formatted datetime string.  Example: `2024-03-29T09:36:42Z`

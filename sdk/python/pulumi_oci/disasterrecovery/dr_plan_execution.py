@@ -502,7 +502,7 @@ class DrPlanExecution(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 execution_options: pulumi.Input[Optional[Union['DrPlanExecutionExecutionOptionsArgs', 'DrPlanExecutionExecutionOptionsArgsDict']]] = None,
+                 execution_options: pulumi.Input[Optional[Union['DrPlanExecutionExecutionOptionsArgs', 'DrPlanExecutionExecutionOptionsArgsDict', 'outputs.DrPlanExecutionExecutionOptions']]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  plan_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -549,7 +549,7 @@ class DrPlanExecution(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
-        :param pulumi.Input[Union['DrPlanExecutionExecutionOptionsArgs', 'DrPlanExecutionExecutionOptionsArgsDict']] execution_options: The options for a plan execution.
+        :param pulumi.Input[Union['DrPlanExecutionExecutionOptionsArgs', 'DrPlanExecutionExecutionOptionsArgsDict', 'outputs.DrPlanExecutionExecutionOptions']] execution_options: The options for a plan execution.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] plan_id: The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
                
@@ -618,7 +618,7 @@ class DrPlanExecution(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 execution_options: pulumi.Input[Optional[Union['DrPlanExecutionExecutionOptionsArgs', 'DrPlanExecutionExecutionOptionsArgsDict']]] = None,
+                 execution_options: pulumi.Input[Optional[Union['DrPlanExecutionExecutionOptionsArgs', 'DrPlanExecutionExecutionOptionsArgsDict', 'outputs.DrPlanExecutionExecutionOptions']]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  plan_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -667,24 +667,24 @@ class DrPlanExecution(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            automatic_execution_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DrPlanExecutionAutomaticExecutionDetailArgs', 'DrPlanExecutionAutomaticExecutionDetailArgsDict']]]]] = None,
+            automatic_execution_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DrPlanExecutionAutomaticExecutionDetailArgs', 'DrPlanExecutionAutomaticExecutionDetailArgsDict', 'outputs.DrPlanExecutionAutomaticExecutionDetail']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             dr_protection_group_id: pulumi.Input[Optional[_builtins.str]] = None,
             execution_duration_in_sec: pulumi.Input[Optional[_builtins.int]] = None,
-            execution_options: pulumi.Input[Optional[Union['DrPlanExecutionExecutionOptionsArgs', 'DrPlanExecutionExecutionOptionsArgsDict']]] = None,
+            execution_options: pulumi.Input[Optional[Union['DrPlanExecutionExecutionOptionsArgs', 'DrPlanExecutionExecutionOptionsArgsDict', 'outputs.DrPlanExecutionExecutionOptions']]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            group_executions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DrPlanExecutionGroupExecutionArgs', 'DrPlanExecutionGroupExecutionArgsDict']]]]] = None,
+            group_executions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DrPlanExecutionGroupExecutionArgs', 'DrPlanExecutionGroupExecutionArgsDict', 'outputs.DrPlanExecutionGroupExecution']]]]] = None,
             is_automatic: pulumi.Input[Optional[_builtins.bool]] = None,
             life_cycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            log_locations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DrPlanExecutionLogLocationArgs', 'DrPlanExecutionLogLocationArgsDict']]]]] = None,
+            log_locations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DrPlanExecutionLogLocationArgs', 'DrPlanExecutionLogLocationArgsDict', 'outputs.DrPlanExecutionLogLocation']]]]] = None,
             peer_dr_protection_group_id: pulumi.Input[Optional[_builtins.str]] = None,
             peer_region: pulumi.Input[Optional[_builtins.str]] = None,
             plan_execution_type: pulumi.Input[Optional[_builtins.str]] = None,
             plan_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            step_status_counts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DrPlanExecutionStepStatusCountArgs', 'DrPlanExecutionStepStatusCountArgsDict']]]]] = None,
+            step_status_counts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DrPlanExecutionStepStatusCountArgs', 'DrPlanExecutionStepStatusCountArgsDict', 'outputs.DrPlanExecutionStepStatusCount']]]]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_ended: pulumi.Input[Optional[_builtins.str]] = None,
@@ -697,18 +697,18 @@ class DrPlanExecution(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DrPlanExecutionAutomaticExecutionDetailArgs', 'DrPlanExecutionAutomaticExecutionDetailArgsDict']]]] automatic_execution_details: The details of the event that started the automatic DR plan execution.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DrPlanExecutionAutomaticExecutionDetailArgs', 'DrPlanExecutionAutomaticExecutionDetailArgsDict', 'outputs.DrPlanExecutionAutomaticExecutionDetail']]]] automatic_execution_details: The details of the event that started the automatic DR plan execution.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
         :param pulumi.Input[_builtins.str] dr_protection_group_id: The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         :param pulumi.Input[_builtins.int] execution_duration_in_sec: The total duration in seconds taken to complete the step execution.  Example: `35`
-        :param pulumi.Input[Union['DrPlanExecutionExecutionOptionsArgs', 'DrPlanExecutionExecutionOptionsArgsDict']] execution_options: The options for a plan execution.
+        :param pulumi.Input[Union['DrPlanExecutionExecutionOptionsArgs', 'DrPlanExecutionExecutionOptionsArgsDict', 'outputs.DrPlanExecutionExecutionOptions']] execution_options: The options for a plan execution.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DrPlanExecutionGroupExecutionArgs', 'DrPlanExecutionGroupExecutionArgsDict']]]] group_executions: A list of groups executed in this DR plan execution.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DrPlanExecutionGroupExecutionArgs', 'DrPlanExecutionGroupExecutionArgsDict', 'outputs.DrPlanExecutionGroupExecution']]]] group_executions: A list of groups executed in this DR plan execution.
         :param pulumi.Input[_builtins.bool] is_automatic: A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
         :param pulumi.Input[_builtins.str] life_cycle_details: A message describing the DR plan execution's current state in more detail.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DrPlanExecutionLogLocationArgs', 'DrPlanExecutionLogLocationArgsDict']]]] log_locations: The details of an object storage log location for a DR protection group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DrPlanExecutionLogLocationArgs', 'DrPlanExecutionLogLocationArgsDict', 'outputs.DrPlanExecutionLogLocation']]]] log_locations: The details of an object storage log location for a DR protection group.
         :param pulumi.Input[_builtins.str] peer_dr_protection_group_id: The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         :param pulumi.Input[_builtins.str] peer_region: The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
         :param pulumi.Input[_builtins.str] plan_execution_type: The type of the DR plan executed.
@@ -717,7 +717,7 @@ class DrPlanExecution(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the DR plan execution.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DrPlanExecutionStepStatusCountArgs', 'DrPlanExecutionStepStatusCountArgsDict']]]] step_status_counts: A categorized summary of step execution statuses and their corresponding counts.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DrPlanExecutionStepStatusCountArgs', 'DrPlanExecutionStepStatusCountArgsDict', 'outputs.DrPlanExecutionStepStatusCount']]]] step_status_counts: A categorized summary of step execution statuses and their corresponding counts.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param pulumi.Input[_builtins.str] time_ended: The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`

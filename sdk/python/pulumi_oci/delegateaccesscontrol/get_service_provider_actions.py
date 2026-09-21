@@ -130,7 +130,7 @@ class AwaitableGetServiceProviderActionsResult(GetServiceProviderActionsResult):
 
 
 def get_service_provider_actions(compartment_id: Optional[_builtins.str] = None,
-                                 filters: Optional[Sequence[Union['GetServiceProviderActionsFilterArgs', 'GetServiceProviderActionsFilterArgsDict']]] = None,
+                                 filters: Optional[Sequence[Union['GetServiceProviderActionsFilterArgs', 'GetServiceProviderActionsFilterArgsDict', 'outputs.GetServiceProviderActionsFilterResult']]] = None,
                                  name: Optional[_builtins.str] = None,
                                  resource_type: Optional[_builtins.str] = None,
                                  service_provider_service_types: Optional[Sequence[_builtins.str]] = None,
@@ -181,7 +181,7 @@ def get_service_provider_actions(compartment_id: Optional[_builtins.str] = None,
         service_provider_service_types=pulumi.get(__ret__, 'service_provider_service_types'),
         state=pulumi.get(__ret__, 'state'))
 def get_service_provider_actions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetServiceProviderActionsFilterArgs', 'GetServiceProviderActionsFilterArgsDict']]]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetServiceProviderActionsFilterArgs', 'GetServiceProviderActionsFilterArgsDict', 'outputs.GetServiceProviderActionsFilterResult']]]]] = None,
                                         name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         service_provider_service_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,

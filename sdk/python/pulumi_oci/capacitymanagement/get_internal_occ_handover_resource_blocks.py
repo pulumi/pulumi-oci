@@ -148,7 +148,7 @@ class AwaitableGetInternalOccHandoverResourceBlocksResult(GetInternalOccHandover
 
 
 def get_internal_occ_handover_resource_blocks(compartment_id: Optional[_builtins.str] = None,
-                                              filters: Optional[Sequence[Union['GetInternalOccHandoverResourceBlocksFilterArgs', 'GetInternalOccHandoverResourceBlocksFilterArgsDict']]] = None,
+                                              filters: Optional[Sequence[Union['GetInternalOccHandoverResourceBlocksFilterArgs', 'GetInternalOccHandoverResourceBlocksFilterArgsDict', 'outputs.GetInternalOccHandoverResourceBlocksFilterResult']]] = None,
                                               handover_date_greater_than_or_equal_to: Optional[_builtins.str] = None,
                                               handover_date_less_than_or_equal_to: Optional[_builtins.str] = None,
                                               handover_resource_name: Optional[_builtins.str] = None,
@@ -209,7 +209,7 @@ def get_internal_occ_handover_resource_blocks(compartment_id: Optional[_builtins
         occ_handover_resource_block_collections=pulumi.get(__ret__, 'occ_handover_resource_block_collections'),
         occ_handover_resource_block_id=pulumi.get(__ret__, 'occ_handover_resource_block_id'))
 def get_internal_occ_handover_resource_blocks_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInternalOccHandoverResourceBlocksFilterArgs', 'GetInternalOccHandoverResourceBlocksFilterArgsDict']]]]] = None,
+                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInternalOccHandoverResourceBlocksFilterArgs', 'GetInternalOccHandoverResourceBlocksFilterArgsDict', 'outputs.GetInternalOccHandoverResourceBlocksFilterResult']]]]] = None,
                                                      handover_date_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                      handover_date_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                      handover_resource_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

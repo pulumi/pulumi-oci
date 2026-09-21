@@ -92,7 +92,7 @@ class AwaitableGetPluginErrorAnalyticsResult(GetPluginErrorAnalyticsResult):
 
 def get_plugin_error_analytics(compartment_id: Optional[_builtins.str] = None,
                                compartment_id_in_subtree: Optional[_builtins.bool] = None,
-                               filters: Optional[Sequence[Union['GetPluginErrorAnalyticsFilterArgs', 'GetPluginErrorAnalyticsFilterArgsDict']]] = None,
+                               filters: Optional[Sequence[Union['GetPluginErrorAnalyticsFilterArgs', 'GetPluginErrorAnalyticsFilterArgsDict', 'outputs.GetPluginErrorAnalyticsFilterResult']]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPluginErrorAnalyticsResult:
     """
     This data source provides the list of Plugin Error Analytics in Oracle Cloud Infrastructure Jms service.
@@ -128,7 +128,7 @@ def get_plugin_error_analytics(compartment_id: Optional[_builtins.str] = None,
         plugin_error_aggregation_collections=pulumi.get(__ret__, 'plugin_error_aggregation_collections'))
 def get_plugin_error_analytics_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
-                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPluginErrorAnalyticsFilterArgs', 'GetPluginErrorAnalyticsFilterArgsDict']]]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPluginErrorAnalyticsFilterArgs', 'GetPluginErrorAnalyticsFilterArgsDict', 'outputs.GetPluginErrorAnalyticsFilterResult']]]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPluginErrorAnalyticsResult]:
     """
     This data source provides the list of Plugin Error Analytics in Oracle Cloud Infrastructure Jms service.

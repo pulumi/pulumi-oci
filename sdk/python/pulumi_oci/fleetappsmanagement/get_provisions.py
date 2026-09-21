@@ -122,7 +122,7 @@ class AwaitableGetProvisionsResult(GetProvisionsResult):
 
 def get_provisions(compartment_id: Optional[_builtins.str] = None,
                    display_name: Optional[_builtins.str] = None,
-                   filters: Optional[Sequence[Union['GetProvisionsFilterArgs', 'GetProvisionsFilterArgsDict']]] = None,
+                   filters: Optional[Sequence[Union['GetProvisionsFilterArgs', 'GetProvisionsFilterArgsDict', 'outputs.GetProvisionsFilterResult']]] = None,
                    fleet_id: Optional[_builtins.str] = None,
                    id: Optional[_builtins.str] = None,
                    state: Optional[_builtins.str] = None,
@@ -173,7 +173,7 @@ def get_provisions(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_provisions_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProvisionsFilterArgs', 'GetProvisionsFilterArgsDict']]]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProvisionsFilterArgs', 'GetProvisionsFilterArgsDict', 'outputs.GetProvisionsFilterResult']]]]] = None,
                           fleet_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

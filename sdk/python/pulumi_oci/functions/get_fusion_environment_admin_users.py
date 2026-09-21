@@ -81,7 +81,7 @@ class AwaitableGetFusionEnvironmentAdminUsersResult(GetFusionEnvironmentAdminUse
             id=self.id)
 
 
-def get_fusion_environment_admin_users(filters: Optional[Sequence[Union['GetFusionEnvironmentAdminUsersFilterArgs', 'GetFusionEnvironmentAdminUsersFilterArgsDict']]] = None,
+def get_fusion_environment_admin_users(filters: Optional[Sequence[Union['GetFusionEnvironmentAdminUsersFilterArgs', 'GetFusionEnvironmentAdminUsersFilterArgsDict', 'outputs.GetFusionEnvironmentAdminUsersFilterResult']]] = None,
                                        fusion_environment_id: Optional[_builtins.str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFusionEnvironmentAdminUsersResult:
     """
@@ -112,7 +112,7 @@ def get_fusion_environment_admin_users(filters: Optional[Sequence[Union['GetFusi
         filters=pulumi.get(__ret__, 'filters'),
         fusion_environment_id=pulumi.get(__ret__, 'fusion_environment_id'),
         id=pulumi.get(__ret__, 'id'))
-def get_fusion_environment_admin_users_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFusionEnvironmentAdminUsersFilterArgs', 'GetFusionEnvironmentAdminUsersFilterArgsDict']]]]] = None,
+def get_fusion_environment_admin_users_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFusionEnvironmentAdminUsersFilterArgs', 'GetFusionEnvironmentAdminUsersFilterArgsDict', 'outputs.GetFusionEnvironmentAdminUsersFilterResult']]]]] = None,
                                               fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentAdminUsersResult]:
     """

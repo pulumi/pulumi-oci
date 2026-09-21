@@ -111,7 +111,7 @@ class AwaitableGetComputeClustersResult(GetComputeClustersResult):
 def get_compute_clusters(availability_domain: Optional[_builtins.str] = None,
                          compartment_id: Optional[_builtins.str] = None,
                          display_name: Optional[_builtins.str] = None,
-                         filters: Optional[Sequence[Union['GetComputeClustersFilterArgs', 'GetComputeClustersFilterArgsDict']]] = None,
+                         filters: Optional[Sequence[Union['GetComputeClustersFilterArgs', 'GetComputeClustersFilterArgsDict', 'outputs.GetComputeClustersFilterResult']]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeClustersResult:
     """
     This data source provides the list of Compute Clusters in Oracle Cloud Infrastructure Core service.
@@ -153,7 +153,7 @@ def get_compute_clusters(availability_domain: Optional[_builtins.str] = None,
 def get_compute_clusters_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeClustersFilterArgs', 'GetComputeClustersFilterArgsDict']]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeClustersFilterArgs', 'GetComputeClustersFilterArgsDict', 'outputs.GetComputeClustersFilterResult']]]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeClustersResult]:
     """
     This data source provides the list of Compute Clusters in Oracle Cloud Infrastructure Core service.

@@ -121,7 +121,7 @@ class AwaitableGetNamespaceOccOverviewsResult(GetNamespaceOccOverviewsResult):
 
 
 def get_namespace_occ_overviews(compartment_id: Optional[_builtins.str] = None,
-                                filters: Optional[Sequence[Union['GetNamespaceOccOverviewsFilterArgs', 'GetNamespaceOccOverviewsFilterArgsDict']]] = None,
+                                filters: Optional[Sequence[Union['GetNamespaceOccOverviewsFilterArgs', 'GetNamespaceOccOverviewsFilterArgsDict', 'outputs.GetNamespaceOccOverviewsFilterResult']]] = None,
                                 from_: Optional[_builtins.str] = None,
                                 namespace: Optional[_builtins.str] = None,
                                 to: Optional[_builtins.str] = None,
@@ -172,7 +172,7 @@ def get_namespace_occ_overviews(compartment_id: Optional[_builtins.str] = None,
         to=pulumi.get(__ret__, 'to'),
         workload_type=pulumi.get(__ret__, 'workload_type'))
 def get_namespace_occ_overviews_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespaceOccOverviewsFilterArgs', 'GetNamespaceOccOverviewsFilterArgsDict']]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespaceOccOverviewsFilterArgs', 'GetNamespaceOccOverviewsFilterArgsDict', 'outputs.GetNamespaceOccOverviewsFilterResult']]]]] = None,
                                        from_: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                        to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

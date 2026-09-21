@@ -92,7 +92,7 @@ class AwaitableGetSchedulerJobCountsResult(GetSchedulerJobCountsResult):
 
 def get_scheduler_job_counts(compartment_id: Optional[_builtins.str] = None,
                              compartment_id_in_subtree: Optional[_builtins.bool] = None,
-                             filters: Optional[Sequence[Union['GetSchedulerJobCountsFilterArgs', 'GetSchedulerJobCountsFilterArgsDict']]] = None,
+                             filters: Optional[Sequence[Union['GetSchedulerJobCountsFilterArgs', 'GetSchedulerJobCountsFilterArgsDict', 'outputs.GetSchedulerJobCountsFilterResult']]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSchedulerJobCountsResult:
     """
     This data source provides the list of Scheduler Job Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -128,7 +128,7 @@ def get_scheduler_job_counts(compartment_id: Optional[_builtins.str] = None,
         scheduler_job_aggregation_collections=pulumi.get(__ret__, 'scheduler_job_aggregation_collections'))
 def get_scheduler_job_counts_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
-                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulerJobCountsFilterArgs', 'GetSchedulerJobCountsFilterArgsDict']]]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulerJobCountsFilterArgs', 'GetSchedulerJobCountsFilterArgsDict', 'outputs.GetSchedulerJobCountsFilterResult']]]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSchedulerJobCountsResult]:
     """
     This data source provides the list of Scheduler Job Counts in Oracle Cloud Infrastructure Fleet Apps Management service.

@@ -91,7 +91,7 @@ class AwaitableGetReplicationSourcesResult(GetReplicationSourcesResult):
 
 
 def get_replication_sources(bucket: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetReplicationSourcesFilterArgs', 'GetReplicationSourcesFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetReplicationSourcesFilterArgs', 'GetReplicationSourcesFilterArgsDict', 'outputs.GetReplicationSourcesFilterResult']]] = None,
                             namespace: Optional[_builtins.str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetReplicationSourcesResult:
     """
@@ -127,7 +127,7 @@ def get_replication_sources(bucket: Optional[_builtins.str] = None,
         namespace=pulumi.get(__ret__, 'namespace'),
         replication_sources=pulumi.get(__ret__, 'replication_sources'))
 def get_replication_sources_output(bucket: pulumi.Input[Optional[_builtins.str]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetReplicationSourcesFilterArgs', 'GetReplicationSourcesFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetReplicationSourcesFilterArgs', 'GetReplicationSourcesFilterArgsDict', 'outputs.GetReplicationSourcesFilterResult']]]]] = None,
                                    namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReplicationSourcesResult]:
     """

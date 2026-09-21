@@ -119,7 +119,7 @@ class AwaitableGetConfigsResult(GetConfigsResult):
 
 def get_configs(compartment_id: Optional[_builtins.str] = None,
                 display_name: Optional[_builtins.str] = None,
-                filters: Optional[Sequence[Union['GetConfigsFilterArgs', 'GetConfigsFilterArgsDict']]] = None,
+                filters: Optional[Sequence[Union['GetConfigsFilterArgs', 'GetConfigsFilterArgsDict', 'outputs.GetConfigsFilterResult']]] = None,
                 state: Optional[_builtins.str] = None,
                 type: Optional[_builtins.str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConfigsResult:
@@ -165,7 +165,7 @@ def get_configs(compartment_id: Optional[_builtins.str] = None,
         type=pulumi.get(__ret__, 'type'))
 def get_configs_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConfigsFilterArgs', 'GetConfigsFilterArgsDict']]]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConfigsFilterArgs', 'GetConfigsFilterArgsDict', 'outputs.GetConfigsFilterResult']]]]] = None,
                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConfigsResult]:

@@ -496,7 +496,7 @@ class Replication(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReplicationLockArgs', 'ReplicationLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReplicationLockArgs', 'ReplicationLockArgsDict', 'outputs.ReplicationLock']]]]] = None,
                  replication_interval: pulumi.Input[Optional[_builtins.str]] = None,
                  source_id: pulumi.Input[Optional[_builtins.str]] = None,
                  target_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -576,7 +576,7 @@ class Replication(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ReplicationLockArgs', 'ReplicationLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ReplicationLockArgs', 'ReplicationLockArgsDict', 'outputs.ReplicationLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] replication_interval: (Updatable) Duration in minutes between replication snapshots.
         :param pulumi.Input[_builtins.str] source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
         :param pulumi.Input[_builtins.str] target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
@@ -679,7 +679,7 @@ class Replication(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReplicationLockArgs', 'ReplicationLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReplicationLockArgs', 'ReplicationLockArgsDict', 'outputs.ReplicationLock']]]]] = None,
                  replication_interval: pulumi.Input[Optional[_builtins.str]] = None,
                  source_id: pulumi.Input[Optional[_builtins.str]] = None,
                  target_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -737,7 +737,7 @@ class Replication(pulumi.CustomResource):
             is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
             last_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReplicationLockArgs', 'ReplicationLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReplicationLockArgs', 'ReplicationLockArgsDict', 'outputs.ReplicationLock']]]]] = None,
             recovery_point_time: pulumi.Input[Optional[_builtins.str]] = None,
             replication_interval: pulumi.Input[Optional[_builtins.str]] = None,
             replication_target_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -762,7 +762,7 @@ class Replication(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] last_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current 'lifecycleState'.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ReplicationLockArgs', 'ReplicationLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ReplicationLockArgs', 'ReplicationLockArgsDict', 'outputs.ReplicationLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] recovery_point_time: The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
         :param pulumi.Input[_builtins.str] replication_interval: (Updatable) Duration in minutes between replication snapshots.
         :param pulumi.Input[_builtins.str] replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).

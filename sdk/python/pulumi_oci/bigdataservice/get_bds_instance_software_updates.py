@@ -82,7 +82,7 @@ class AwaitableGetBdsInstanceSoftwareUpdatesResult(GetBdsInstanceSoftwareUpdates
 
 
 def get_bds_instance_software_updates(bds_instance_id: Optional[_builtins.str] = None,
-                                      filters: Optional[Sequence[Union['GetBdsInstanceSoftwareUpdatesFilterArgs', 'GetBdsInstanceSoftwareUpdatesFilterArgsDict']]] = None,
+                                      filters: Optional[Sequence[Union['GetBdsInstanceSoftwareUpdatesFilterArgs', 'GetBdsInstanceSoftwareUpdatesFilterArgsDict', 'outputs.GetBdsInstanceSoftwareUpdatesFilterResult']]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBdsInstanceSoftwareUpdatesResult:
     """
     This data source provides the list of Bds Instance Software Updates in Oracle Cloud Infrastructure Big Data Service service.
@@ -113,7 +113,7 @@ def get_bds_instance_software_updates(bds_instance_id: Optional[_builtins.str] =
         id=pulumi.get(__ret__, 'id'),
         software_update_collections=pulumi.get(__ret__, 'software_update_collections'))
 def get_bds_instance_software_updates_output(bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstanceSoftwareUpdatesFilterArgs', 'GetBdsInstanceSoftwareUpdatesFilterArgsDict']]]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstanceSoftwareUpdatesFilterArgs', 'GetBdsInstanceSoftwareUpdatesFilterArgsDict', 'outputs.GetBdsInstanceSoftwareUpdatesFilterResult']]]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceSoftwareUpdatesResult]:
     """
     This data source provides the list of Bds Instance Software Updates in Oracle Cloud Infrastructure Big Data Service service.

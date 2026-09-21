@@ -129,7 +129,7 @@ class AwaitableGetManagedDatabaseSqlTuningAdvisorTasksResult(GetManagedDatabaseS
             time_less_than_or_equal_to=self.time_less_than_or_equal_to)
 
 
-def get_managed_database_sql_tuning_advisor_tasks(filters: Optional[Sequence[Union['GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs', 'GetManagedDatabaseSqlTuningAdvisorTasksFilterArgsDict']]] = None,
+def get_managed_database_sql_tuning_advisor_tasks(filters: Optional[Sequence[Union['GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs', 'GetManagedDatabaseSqlTuningAdvisorTasksFilterArgsDict', 'outputs.GetManagedDatabaseSqlTuningAdvisorTasksFilterResult']]] = None,
                                                   managed_database_id: Optional[_builtins.str] = None,
                                                   name: Optional[_builtins.str] = None,
                                                   opc_named_credential_id: Optional[_builtins.str] = None,
@@ -185,7 +185,7 @@ def get_managed_database_sql_tuning_advisor_tasks(filters: Optional[Sequence[Uni
         status=pulumi.get(__ret__, 'status'),
         time_greater_than_or_equal_to=pulumi.get(__ret__, 'time_greater_than_or_equal_to'),
         time_less_than_or_equal_to=pulumi.get(__ret__, 'time_less_than_or_equal_to'))
-def get_managed_database_sql_tuning_advisor_tasks_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs', 'GetManagedDatabaseSqlTuningAdvisorTasksFilterArgsDict']]]]] = None,
+def get_managed_database_sql_tuning_advisor_tasks_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs', 'GetManagedDatabaseSqlTuningAdvisorTasksFilterArgsDict', 'outputs.GetManagedDatabaseSqlTuningAdvisorTasksFilterResult']]]]] = None,
                                                          managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                          name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                          opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

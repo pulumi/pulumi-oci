@@ -164,7 +164,7 @@ def get_compute_gpu_memory_fabrics(availability_domain: Optional[_builtins.str] 
                                    compute_hpc_island_id: Optional[_builtins.str] = None,
                                    compute_network_block_id: Optional[_builtins.str] = None,
                                    display_name: Optional[_builtins.str] = None,
-                                   filters: Optional[Sequence[Union['GetComputeGpuMemoryFabricsFilterArgs', 'GetComputeGpuMemoryFabricsFilterArgsDict']]] = None,
+                                   filters: Optional[Sequence[Union['GetComputeGpuMemoryFabricsFilterArgs', 'GetComputeGpuMemoryFabricsFilterArgsDict', 'outputs.GetComputeGpuMemoryFabricsFilterResult']]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeGpuMemoryFabricsResult:
     """
     This data source provides the list of Compute Gpu Memory Fabrics in Oracle Cloud Infrastructure Core service.
@@ -230,7 +230,7 @@ def get_compute_gpu_memory_fabrics_output(availability_domain: pulumi.Input[Opti
                                           compute_hpc_island_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           compute_network_block_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeGpuMemoryFabricsFilterArgs', 'GetComputeGpuMemoryFabricsFilterArgsDict']]]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeGpuMemoryFabricsFilterArgs', 'GetComputeGpuMemoryFabricsFilterArgsDict', 'outputs.GetComputeGpuMemoryFabricsFilterResult']]]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeGpuMemoryFabricsResult]:
     """
     This data source provides the list of Compute Gpu Memory Fabrics in Oracle Cloud Infrastructure Core service.

@@ -134,7 +134,7 @@ class AwaitableGetCertificateAuthoritiesResult(GetCertificateAuthoritiesResult):
 
 def get_certificate_authorities(certificate_authority_id: Optional[_builtins.str] = None,
                                 compartment_id: Optional[_builtins.str] = None,
-                                filters: Optional[Sequence[Union['GetCertificateAuthoritiesFilterArgs', 'GetCertificateAuthoritiesFilterArgsDict']]] = None,
+                                filters: Optional[Sequence[Union['GetCertificateAuthoritiesFilterArgs', 'GetCertificateAuthoritiesFilterArgsDict', 'outputs.GetCertificateAuthoritiesFilterResult']]] = None,
                                 issuer_certificate_authority_id: Optional[_builtins.str] = None,
                                 name: Optional[_builtins.str] = None,
                                 state: Optional[_builtins.str] = None,
@@ -186,7 +186,7 @@ def get_certificate_authorities(certificate_authority_id: Optional[_builtins.str
         state=pulumi.get(__ret__, 'state'))
 def get_certificate_authorities_output(certificate_authority_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCertificateAuthoritiesFilterArgs', 'GetCertificateAuthoritiesFilterArgsDict']]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCertificateAuthoritiesFilterArgs', 'GetCertificateAuthoritiesFilterArgsDict', 'outputs.GetCertificateAuthoritiesFilterResult']]]]] = None,
                                        issuer_certificate_authority_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

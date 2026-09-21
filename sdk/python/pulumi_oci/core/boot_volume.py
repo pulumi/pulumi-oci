@@ -691,10 +691,10 @@ class BootVolume(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autotune_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BootVolumeAutotunePolicyArgs', 'BootVolumeAutotunePolicyArgsDict']]]]] = None,
+                 autotune_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BootVolumeAutotunePolicyArgs', 'BootVolumeAutotunePolicyArgsDict', 'outputs.BootVolumeAutotunePolicy']]]]] = None,
                  availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 boot_volume_replicas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BootVolumeBootVolumeReplicaArgs', 'BootVolumeBootVolumeReplicaArgsDict']]]]] = None,
+                 boot_volume_replicas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BootVolumeBootVolumeReplicaArgs', 'BootVolumeBootVolumeReplicaArgsDict', 'outputs.BootVolumeBootVolumeReplica']]]]] = None,
                  boot_volume_replicas_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
                  cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -704,7 +704,7 @@ class BootVolume(pulumi.CustomResource):
                  is_auto_tune_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
-                 source_details: pulumi.Input[Optional[Union['BootVolumeSourceDetailsArgs', 'BootVolumeSourceDetailsArgsDict']]] = None,
+                 source_details: pulumi.Input[Optional[Union['BootVolumeSourceDetailsArgs', 'BootVolumeSourceDetailsArgsDict', 'outputs.BootVolumeSourceDetails']]] = None,
                  vpus_per_gb: pulumi.Input[Optional[_builtins.str]] = None,
                  xrc_kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -772,10 +772,10 @@ class BootVolume(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BootVolumeAutotunePolicyArgs', 'BootVolumeAutotunePolicyArgsDict']]]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BootVolumeAutotunePolicyArgs', 'BootVolumeAutotunePolicyArgsDict', 'outputs.BootVolumeAutotunePolicy']]]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] backup_policy_id: If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a boot volume.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BootVolumeBootVolumeReplicaArgs', 'BootVolumeBootVolumeReplicaArgsDict']]]] boot_volume_replicas: (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BootVolumeBootVolumeReplicaArgs', 'BootVolumeBootVolumeReplicaArgsDict', 'outputs.BootVolumeBootVolumeReplica']]]] boot_volume_replicas: (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The clusterPlacementGroup Id of the volume for volume placement.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the boot volume.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -875,10 +875,10 @@ class BootVolume(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autotune_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BootVolumeAutotunePolicyArgs', 'BootVolumeAutotunePolicyArgsDict']]]]] = None,
+                 autotune_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BootVolumeAutotunePolicyArgs', 'BootVolumeAutotunePolicyArgsDict', 'outputs.BootVolumeAutotunePolicy']]]]] = None,
                  availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 boot_volume_replicas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BootVolumeBootVolumeReplicaArgs', 'BootVolumeBootVolumeReplicaArgsDict']]]]] = None,
+                 boot_volume_replicas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BootVolumeBootVolumeReplicaArgs', 'BootVolumeBootVolumeReplicaArgsDict', 'outputs.BootVolumeBootVolumeReplica']]]]] = None,
                  boot_volume_replicas_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
                  cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -888,7 +888,7 @@ class BootVolume(pulumi.CustomResource):
                  is_auto_tune_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
-                 source_details: pulumi.Input[Optional[Union['BootVolumeSourceDetailsArgs', 'BootVolumeSourceDetailsArgsDict']]] = None,
+                 source_details: pulumi.Input[Optional[Union['BootVolumeSourceDetailsArgs', 'BootVolumeSourceDetailsArgsDict', 'outputs.BootVolumeSourceDetails']]] = None,
                  vpus_per_gb: pulumi.Input[Optional[_builtins.str]] = None,
                  xrc_kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -941,10 +941,10 @@ class BootVolume(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             auto_tuned_vpus_per_gb: pulumi.Input[Optional[_builtins.str]] = None,
-            autotune_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BootVolumeAutotunePolicyArgs', 'BootVolumeAutotunePolicyArgsDict']]]]] = None,
+            autotune_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BootVolumeAutotunePolicyArgs', 'BootVolumeAutotunePolicyArgsDict', 'outputs.BootVolumeAutotunePolicy']]]]] = None,
             availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
             backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-            boot_volume_replicas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BootVolumeBootVolumeReplicaArgs', 'BootVolumeBootVolumeReplicaArgsDict']]]]] = None,
+            boot_volume_replicas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BootVolumeBootVolumeReplicaArgs', 'BootVolumeBootVolumeReplicaArgsDict', 'outputs.BootVolumeBootVolumeReplica']]]]] = None,
             boot_volume_replicas_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
             cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -957,7 +957,7 @@ class BootVolume(pulumi.CustomResource):
             kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
             size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
             size_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
-            source_details: pulumi.Input[Optional[Union['BootVolumeSourceDetailsArgs', 'BootVolumeSourceDetailsArgsDict']]] = None,
+            source_details: pulumi.Input[Optional[Union['BootVolumeSourceDetailsArgs', 'BootVolumeSourceDetailsArgsDict', 'outputs.BootVolumeSourceDetails']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -972,10 +972,10 @@ class BootVolume(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] auto_tuned_vpus_per_gb: The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BootVolumeAutotunePolicyArgs', 'BootVolumeAutotunePolicyArgsDict']]]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BootVolumeAutotunePolicyArgs', 'BootVolumeAutotunePolicyArgsDict', 'outputs.BootVolumeAutotunePolicy']]]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] backup_policy_id: If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a boot volume.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BootVolumeBootVolumeReplicaArgs', 'BootVolumeBootVolumeReplicaArgsDict']]]] boot_volume_replicas: (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BootVolumeBootVolumeReplicaArgs', 'BootVolumeBootVolumeReplicaArgsDict', 'outputs.BootVolumeBootVolumeReplica']]]] boot_volume_replicas: (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The clusterPlacementGroup Id of the volume for volume placement.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the boot volume.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`

@@ -128,7 +128,7 @@ class AwaitableGetManagedDatabaseOptimizerStatisticsCollectionOperationsResult(G
 
 def get_managed_database_optimizer_statistics_collection_operations(end_time_less_than_or_equal_to: Optional[_builtins.str] = None,
                                                                     filter_by: Optional[_builtins.str] = None,
-                                                                    filters: Optional[Sequence[Union['GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs', 'GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgsDict']]] = None,
+                                                                    filters: Optional[Sequence[Union['GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs', 'GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgsDict', 'outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterResult']]] = None,
                                                                     limit: Optional[_builtins.int] = None,
                                                                     managed_database_id: Optional[_builtins.str] = None,
                                                                     start_time_greater_than_or_equal_to: Optional[_builtins.str] = None,
@@ -188,7 +188,7 @@ def get_managed_database_optimizer_statistics_collection_operations(end_time_les
         task_type=pulumi.get(__ret__, 'task_type'))
 def get_managed_database_optimizer_statistics_collection_operations_output(end_time_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                            filter_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs', 'GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgsDict']]]]] = None,
+                                                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs', 'GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgsDict', 'outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterResult']]]]] = None,
                                                                            limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                                            managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                            start_time_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

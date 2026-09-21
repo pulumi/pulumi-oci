@@ -123,7 +123,7 @@ class AwaitableGetCloudExadataInfrastructuresResult(GetCloudExadataInfrastructur
 def get_cloud_exadata_infrastructures(cluster_placement_group_id: Optional[_builtins.str] = None,
                                       compartment_id: Optional[_builtins.str] = None,
                                       display_name: Optional[_builtins.str] = None,
-                                      filters: Optional[Sequence[Union['GetCloudExadataInfrastructuresFilterArgs', 'GetCloudExadataInfrastructuresFilterArgsDict']]] = None,
+                                      filters: Optional[Sequence[Union['GetCloudExadataInfrastructuresFilterArgs', 'GetCloudExadataInfrastructuresFilterArgsDict', 'outputs.GetCloudExadataInfrastructuresFilterResult']]] = None,
                                       state: Optional[_builtins.str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudExadataInfrastructuresResult:
     """
@@ -169,7 +169,7 @@ def get_cloud_exadata_infrastructures(cluster_placement_group_id: Optional[_buil
 def get_cloud_exadata_infrastructures_output(cluster_placement_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudExadataInfrastructuresFilterArgs', 'GetCloudExadataInfrastructuresFilterArgsDict']]]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudExadataInfrastructuresFilterArgs', 'GetCloudExadataInfrastructuresFilterArgsDict', 'outputs.GetCloudExadataInfrastructuresFilterResult']]]]] = None,
                                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudExadataInfrastructuresResult]:
     """

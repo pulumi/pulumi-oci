@@ -115,7 +115,7 @@ def get_assessment_assessor_checks(assessment_id: Optional[_builtins.str] = None
                                    assessor_name: Optional[_builtins.str] = None,
                                    compartment_id: Optional[_builtins.str] = None,
                                    display_name: Optional[_builtins.str] = None,
-                                   filters: Optional[Sequence[Union['GetAssessmentAssessorChecksFilterArgs', 'GetAssessmentAssessorChecksFilterArgsDict']]] = None,
+                                   filters: Optional[Sequence[Union['GetAssessmentAssessorChecksFilterArgs', 'GetAssessmentAssessorChecksFilterArgsDict', 'outputs.GetAssessmentAssessorChecksFilterResult']]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAssessmentAssessorChecksResult:
     """
     This data source provides the list of Assessment Assessor Checks in Oracle Cloud Infrastructure Database Migration service.
@@ -161,7 +161,7 @@ def get_assessment_assessor_checks_output(assessment_id: pulumi.Input[Optional[_
                                           assessor_name: pulumi.Input[Optional[_builtins.str]] = None,
                                           compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAssessmentAssessorChecksFilterArgs', 'GetAssessmentAssessorChecksFilterArgsDict']]]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAssessmentAssessorChecksFilterArgs', 'GetAssessmentAssessorChecksFilterArgsDict', 'outputs.GetAssessmentAssessorChecksFilterResult']]]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAssessmentAssessorChecksResult]:
     """
     This data source provides the list of Assessment Assessor Checks in Oracle Cloud Infrastructure Database Migration service.

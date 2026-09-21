@@ -96,7 +96,7 @@ class AwaitableGetResourceAnalyticsMonitoredRegionsResult(GetResourceAnalyticsMo
             state=self.state)
 
 
-def get_resource_analytics_monitored_regions(filters: Optional[Sequence[Union['GetResourceAnalyticsMonitoredRegionsFilterArgs', 'GetResourceAnalyticsMonitoredRegionsFilterArgsDict']]] = None,
+def get_resource_analytics_monitored_regions(filters: Optional[Sequence[Union['GetResourceAnalyticsMonitoredRegionsFilterArgs', 'GetResourceAnalyticsMonitoredRegionsFilterArgsDict', 'outputs.GetResourceAnalyticsMonitoredRegionsFilterResult']]] = None,
                                              id: Optional[_builtins.str] = None,
                                              resource_analytics_instance_id: Optional[_builtins.str] = None,
                                              state: Optional[_builtins.str] = None,
@@ -136,7 +136,7 @@ def get_resource_analytics_monitored_regions(filters: Optional[Sequence[Union['G
         monitored_region_collections=pulumi.get(__ret__, 'monitored_region_collections'),
         resource_analytics_instance_id=pulumi.get(__ret__, 'resource_analytics_instance_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_resource_analytics_monitored_regions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetResourceAnalyticsMonitoredRegionsFilterArgs', 'GetResourceAnalyticsMonitoredRegionsFilterArgsDict']]]]] = None,
+def get_resource_analytics_monitored_regions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetResourceAnalyticsMonitoredRegionsFilterArgs', 'GetResourceAnalyticsMonitoredRegionsFilterArgsDict', 'outputs.GetResourceAnalyticsMonitoredRegionsFilterResult']]]]] = None,
                                                     id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     resource_analytics_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

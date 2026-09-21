@@ -118,7 +118,7 @@ class AwaitableGetIotDigitalTwinModelsResult(GetIotDigitalTwinModelsResult):
 
 
 def get_iot_digital_twin_models(display_name: Optional[_builtins.str] = None,
-                                filters: Optional[Sequence[Union['GetIotDigitalTwinModelsFilterArgs', 'GetIotDigitalTwinModelsFilterArgsDict']]] = None,
+                                filters: Optional[Sequence[Union['GetIotDigitalTwinModelsFilterArgs', 'GetIotDigitalTwinModelsFilterArgsDict', 'outputs.GetIotDigitalTwinModelsFilterResult']]] = None,
                                 id: Optional[_builtins.str] = None,
                                 iot_domain_id: Optional[_builtins.str] = None,
                                 spec_uri_starts_with: Optional[_builtins.str] = None,
@@ -168,7 +168,7 @@ def get_iot_digital_twin_models(display_name: Optional[_builtins.str] = None,
         spec_uri_starts_with=pulumi.get(__ret__, 'spec_uri_starts_with'),
         state=pulumi.get(__ret__, 'state'))
 def get_iot_digital_twin_models_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIotDigitalTwinModelsFilterArgs', 'GetIotDigitalTwinModelsFilterArgsDict']]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIotDigitalTwinModelsFilterArgs', 'GetIotDigitalTwinModelsFilterArgsDict', 'outputs.GetIotDigitalTwinModelsFilterResult']]]]] = None,
                                        id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        spec_uri_starts_with: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

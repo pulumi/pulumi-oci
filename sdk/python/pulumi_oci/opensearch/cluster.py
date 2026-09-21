@@ -2099,7 +2099,7 @@ class Cluster(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 certificate_config: pulumi.Input[Optional[Union['ClusterCertificateConfigArgs', 'ClusterCertificateConfigArgsDict']]] = None,
+                 certificate_config: pulumi.Input[Optional[Union['ClusterCertificateConfigArgs', 'ClusterCertificateConfigArgsDict', 'outputs.ClusterCertificateConfig']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  configure_outbound_cluster_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  coordinator_node_count: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2118,8 +2118,8 @@ class Cluster(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  inbound_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 load_balancer_config: pulumi.Input[Optional[Union['ClusterLoadBalancerConfigArgs', 'ClusterLoadBalancerConfigArgsDict']]] = None,
-                 maintenance_details: pulumi.Input[Optional[Union['ClusterMaintenanceDetailsArgs', 'ClusterMaintenanceDetailsArgsDict']]] = None,
+                 load_balancer_config: pulumi.Input[Optional[Union['ClusterLoadBalancerConfigArgs', 'ClusterLoadBalancerConfigArgsDict', 'outputs.ClusterLoadBalancerConfig']]] = None,
+                 maintenance_details: pulumi.Input[Optional[Union['ClusterMaintenanceDetailsArgs', 'ClusterMaintenanceDetailsArgsDict', 'outputs.ClusterMaintenanceDetails']]] = None,
                  master_node_count: pulumi.Input[Optional[_builtins.int]] = None,
                  master_node_host_bare_metal_shape: pulumi.Input[Optional[_builtins.str]] = None,
                  master_node_host_memory_gb: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2137,7 +2137,7 @@ class Cluster(pulumi.CustomResource):
                  opendashboard_node_host_memory_gb: pulumi.Input[Optional[_builtins.int]] = None,
                  opendashboard_node_host_ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
                  opendashboard_node_host_shape: pulumi.Input[Optional[_builtins.str]] = None,
-                 outbound_cluster_config: pulumi.Input[Optional[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict']]] = None,
+                 outbound_cluster_config: pulumi.Input[Optional[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict', 'outputs.ClusterOutboundClusterConfig']]] = None,
                  reverse_connection_endpoint_customer_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  search_node_count: pulumi.Input[Optional[_builtins.int]] = None,
                  search_node_host_memory_gb: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2149,7 +2149,7 @@ class Cluster(pulumi.CustomResource):
                  security_master_user_name: pulumi.Input[Optional[_builtins.str]] = None,
                  security_master_user_password_hash: pulumi.Input[Optional[_builtins.str]] = None,
                  security_mode: pulumi.Input[Optional[_builtins.str]] = None,
-                 security_saml_config: pulumi.Input[Optional[Union['ClusterSecuritySamlConfigArgs', 'ClusterSecuritySamlConfigArgsDict']]] = None,
+                 security_saml_config: pulumi.Input[Optional[Union['ClusterSecuritySamlConfigArgs', 'ClusterSecuritySamlConfigArgsDict', 'outputs.ClusterSecuritySamlConfig']]] = None,
                  software_version: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2186,7 +2186,7 @@ class Cluster(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ClusterCertificateConfigArgs', 'ClusterCertificateConfigArgsDict']] certificate_config: (Updatable) Custom certificate config for customer provided certs.
+        :param pulumi.Input[Union['ClusterCertificateConfigArgs', 'ClusterCertificateConfigArgsDict', 'outputs.ClusterCertificateConfig']] certificate_config: (Updatable) Custom certificate config for customer provided certs.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment to create the cluster in.
         :param pulumi.Input[_builtins.int] configure_outbound_cluster_trigger: (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] coordinator_node_count: (Updatable) The number of coordinator nodes configured for the cluster.
@@ -2205,8 +2205,8 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name of the cluster. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] inbound_cluster_ids: List of inbound clusters that will be queried using cross cluster search
-        :param pulumi.Input[Union['ClusterLoadBalancerConfigArgs', 'ClusterLoadBalancerConfigArgsDict']] load_balancer_config: (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
-        :param pulumi.Input[Union['ClusterMaintenanceDetailsArgs', 'ClusterMaintenanceDetailsArgsDict']] maintenance_details: (Updatable) Details for creation of maintenance details
+        :param pulumi.Input[Union['ClusterLoadBalancerConfigArgs', 'ClusterLoadBalancerConfigArgsDict', 'outputs.ClusterLoadBalancerConfig']] load_balancer_config: (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+        :param pulumi.Input[Union['ClusterMaintenanceDetailsArgs', 'ClusterMaintenanceDetailsArgsDict', 'outputs.ClusterMaintenanceDetails']] maintenance_details: (Updatable) Details for creation of maintenance details
         :param pulumi.Input[_builtins.int] master_node_count: (Updatable) The number of master nodes to configure for the cluster.
         :param pulumi.Input[_builtins.str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
         :param pulumi.Input[_builtins.int] master_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
@@ -2224,7 +2224,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] opendashboard_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
         :param pulumi.Input[_builtins.int] opendashboard_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
         :param pulumi.Input[_builtins.str] opendashboard_node_host_shape: (Updatable) The node shape for the cluster's OpenSearch Dashboard nodes.
-        :param pulumi.Input[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict']] outbound_cluster_config: (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+        :param pulumi.Input[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict', 'outputs.ClusterOutboundClusterConfig']] outbound_cluster_config: (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] reverse_connection_endpoint_customer_ips: (Updatable) The customer IP addresses of the endpoint in customer VCN
         :param pulumi.Input[_builtins.int] search_node_count: (Updatable) The number of search nodes configured for the cluster.
         :param pulumi.Input[_builtins.int] search_node_host_memory_gb: (Updatable) The amount of memory in GB, for the cluster's search nodes.
@@ -2236,7 +2236,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
         :param pulumi.Input[_builtins.str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
         :param pulumi.Input[_builtins.str] security_mode: (Updatable) The security mode of the cluster.
-        :param pulumi.Input[Union['ClusterSecuritySamlConfigArgs', 'ClusterSecuritySamlConfigArgsDict']] security_saml_config: SAML policy is optionally used for Opensearch cluster to config SAML authentication
+        :param pulumi.Input[Union['ClusterSecuritySamlConfigArgs', 'ClusterSecuritySamlConfigArgsDict', 'outputs.ClusterSecuritySamlConfig']] security_saml_config: SAML policy is optionally used for Opensearch cluster to config SAML authentication
         :param pulumi.Input[_builtins.str] software_version: (Updatable) The version of the software the cluster is running.
         :param pulumi.Input[_builtins.str] subnet_compartment_id: The OCID for the compartment where the cluster's subnet is located.
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of the cluster's subnet.
@@ -2295,7 +2295,7 @@ class Cluster(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 certificate_config: pulumi.Input[Optional[Union['ClusterCertificateConfigArgs', 'ClusterCertificateConfigArgsDict']]] = None,
+                 certificate_config: pulumi.Input[Optional[Union['ClusterCertificateConfigArgs', 'ClusterCertificateConfigArgsDict', 'outputs.ClusterCertificateConfig']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  configure_outbound_cluster_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  coordinator_node_count: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2314,8 +2314,8 @@ class Cluster(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  inbound_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 load_balancer_config: pulumi.Input[Optional[Union['ClusterLoadBalancerConfigArgs', 'ClusterLoadBalancerConfigArgsDict']]] = None,
-                 maintenance_details: pulumi.Input[Optional[Union['ClusterMaintenanceDetailsArgs', 'ClusterMaintenanceDetailsArgsDict']]] = None,
+                 load_balancer_config: pulumi.Input[Optional[Union['ClusterLoadBalancerConfigArgs', 'ClusterLoadBalancerConfigArgsDict', 'outputs.ClusterLoadBalancerConfig']]] = None,
+                 maintenance_details: pulumi.Input[Optional[Union['ClusterMaintenanceDetailsArgs', 'ClusterMaintenanceDetailsArgsDict', 'outputs.ClusterMaintenanceDetails']]] = None,
                  master_node_count: pulumi.Input[Optional[_builtins.int]] = None,
                  master_node_host_bare_metal_shape: pulumi.Input[Optional[_builtins.str]] = None,
                  master_node_host_memory_gb: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2333,7 +2333,7 @@ class Cluster(pulumi.CustomResource):
                  opendashboard_node_host_memory_gb: pulumi.Input[Optional[_builtins.int]] = None,
                  opendashboard_node_host_ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
                  opendashboard_node_host_shape: pulumi.Input[Optional[_builtins.str]] = None,
-                 outbound_cluster_config: pulumi.Input[Optional[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict']]] = None,
+                 outbound_cluster_config: pulumi.Input[Optional[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict', 'outputs.ClusterOutboundClusterConfig']]] = None,
                  reverse_connection_endpoint_customer_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  search_node_count: pulumi.Input[Optional[_builtins.int]] = None,
                  search_node_host_memory_gb: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2345,7 +2345,7 @@ class Cluster(pulumi.CustomResource):
                  security_master_user_name: pulumi.Input[Optional[_builtins.str]] = None,
                  security_master_user_password_hash: pulumi.Input[Optional[_builtins.str]] = None,
                  security_mode: pulumi.Input[Optional[_builtins.str]] = None,
-                 security_saml_config: pulumi.Input[Optional[Union['ClusterSecuritySamlConfigArgs', 'ClusterSecuritySamlConfigArgsDict']]] = None,
+                 security_saml_config: pulumi.Input[Optional[Union['ClusterSecuritySamlConfigArgs', 'ClusterSecuritySamlConfigArgsDict', 'outputs.ClusterSecuritySamlConfig']]] = None,
                  software_version: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2484,7 +2484,7 @@ class Cluster(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             availability_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            certificate_config: pulumi.Input[Optional[Union['ClusterCertificateConfigArgs', 'ClusterCertificateConfigArgsDict']]] = None,
+            certificate_config: pulumi.Input[Optional[Union['ClusterCertificateConfigArgs', 'ClusterCertificateConfigArgsDict', 'outputs.ClusterCertificateConfig']]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             configure_outbound_cluster_trigger: pulumi.Input[Optional[_builtins.int]] = None,
             coordinator_node_count: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2505,8 +2505,8 @@ class Cluster(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             inbound_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            load_balancer_config: pulumi.Input[Optional[Union['ClusterLoadBalancerConfigArgs', 'ClusterLoadBalancerConfigArgsDict']]] = None,
-            maintenance_details: pulumi.Input[Optional[Union['ClusterMaintenanceDetailsArgs', 'ClusterMaintenanceDetailsArgsDict']]] = None,
+            load_balancer_config: pulumi.Input[Optional[Union['ClusterLoadBalancerConfigArgs', 'ClusterLoadBalancerConfigArgsDict', 'outputs.ClusterLoadBalancerConfig']]] = None,
+            maintenance_details: pulumi.Input[Optional[Union['ClusterMaintenanceDetailsArgs', 'ClusterMaintenanceDetailsArgsDict', 'outputs.ClusterMaintenanceDetails']]] = None,
             master_node_count: pulumi.Input[Optional[_builtins.int]] = None,
             master_node_host_bare_metal_shape: pulumi.Input[Optional[_builtins.str]] = None,
             master_node_host_memory_gb: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2528,9 +2528,9 @@ class Cluster(pulumi.CustomResource):
             opendashboard_private_ip: pulumi.Input[Optional[_builtins.str]] = None,
             opensearch_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
             opensearch_private_ip: pulumi.Input[Optional[_builtins.str]] = None,
-            outbound_cluster_config: pulumi.Input[Optional[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict']]] = None,
+            outbound_cluster_config: pulumi.Input[Optional[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict', 'outputs.ClusterOutboundClusterConfig']]] = None,
             reverse_connection_endpoint_customer_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            reverse_connection_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterReverseConnectionEndpointArgs', 'ClusterReverseConnectionEndpointArgsDict']]]]] = None,
+            reverse_connection_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterReverseConnectionEndpointArgs', 'ClusterReverseConnectionEndpointArgsDict', 'outputs.ClusterReverseConnectionEndpoint']]]]] = None,
             search_node_count: pulumi.Input[Optional[_builtins.int]] = None,
             search_node_host_memory_gb: pulumi.Input[Optional[_builtins.int]] = None,
             search_node_host_ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2541,7 +2541,7 @@ class Cluster(pulumi.CustomResource):
             security_master_user_name: pulumi.Input[Optional[_builtins.str]] = None,
             security_master_user_password_hash: pulumi.Input[Optional[_builtins.str]] = None,
             security_mode: pulumi.Input[Optional[_builtins.str]] = None,
-            security_saml_config: pulumi.Input[Optional[Union['ClusterSecuritySamlConfigArgs', 'ClusterSecuritySamlConfigArgsDict']]] = None,
+            security_saml_config: pulumi.Input[Optional[Union['ClusterSecuritySamlConfigArgs', 'ClusterSecuritySamlConfigArgsDict', 'outputs.ClusterSecuritySamlConfig']]] = None,
             software_version: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             subnet_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2562,7 +2562,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] availability_domains: The availability domains to distribute the cluser nodes across.
-        :param pulumi.Input[Union['ClusterCertificateConfigArgs', 'ClusterCertificateConfigArgsDict']] certificate_config: (Updatable) Custom certificate config for customer provided certs.
+        :param pulumi.Input[Union['ClusterCertificateConfigArgs', 'ClusterCertificateConfigArgsDict', 'outputs.ClusterCertificateConfig']] certificate_config: (Updatable) Custom certificate config for customer provided certs.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment to create the cluster in.
         :param pulumi.Input[_builtins.int] configure_outbound_cluster_trigger: (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] coordinator_node_count: (Updatable) The number of coordinator nodes configured for the cluster.
@@ -2583,8 +2583,8 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] inbound_cluster_ids: List of inbound clusters that will be queried using cross cluster search
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state of the cluster.
-        :param pulumi.Input[Union['ClusterLoadBalancerConfigArgs', 'ClusterLoadBalancerConfigArgsDict']] load_balancer_config: (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
-        :param pulumi.Input[Union['ClusterMaintenanceDetailsArgs', 'ClusterMaintenanceDetailsArgsDict']] maintenance_details: (Updatable) Details for creation of maintenance details
+        :param pulumi.Input[Union['ClusterLoadBalancerConfigArgs', 'ClusterLoadBalancerConfigArgsDict', 'outputs.ClusterLoadBalancerConfig']] load_balancer_config: (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+        :param pulumi.Input[Union['ClusterMaintenanceDetailsArgs', 'ClusterMaintenanceDetailsArgsDict', 'outputs.ClusterMaintenanceDetails']] maintenance_details: (Updatable) Details for creation of maintenance details
         :param pulumi.Input[_builtins.int] master_node_count: (Updatable) The number of master nodes to configure for the cluster.
         :param pulumi.Input[_builtins.str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
         :param pulumi.Input[_builtins.int] master_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
@@ -2606,9 +2606,9 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] opendashboard_private_ip: The private IP address for the cluster's OpenSearch Dashboard.
         :param pulumi.Input[_builtins.str] opensearch_fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
         :param pulumi.Input[_builtins.str] opensearch_private_ip: The cluster's private IP address.
-        :param pulumi.Input[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict']] outbound_cluster_config: (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+        :param pulumi.Input[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict', 'outputs.ClusterOutboundClusterConfig']] outbound_cluster_config: (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] reverse_connection_endpoint_customer_ips: (Updatable) The customer IP addresses of the endpoint in customer VCN
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterReverseConnectionEndpointArgs', 'ClusterReverseConnectionEndpointArgsDict']]]] reverse_connection_endpoints: The list of reverse connection endpoints.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterReverseConnectionEndpointArgs', 'ClusterReverseConnectionEndpointArgsDict', 'outputs.ClusterReverseConnectionEndpoint']]]] reverse_connection_endpoints: The list of reverse connection endpoints.
         :param pulumi.Input[_builtins.int] search_node_count: (Updatable) The number of search nodes configured for the cluster.
         :param pulumi.Input[_builtins.int] search_node_host_memory_gb: (Updatable) The amount of memory in GB, for the cluster's search nodes.
         :param pulumi.Input[_builtins.int] search_node_host_ocpu_count: (Updatable) The number of OCPUs configured for the cluster's search nodes.
@@ -2619,7 +2619,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
         :param pulumi.Input[_builtins.str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
         :param pulumi.Input[_builtins.str] security_mode: (Updatable) The security mode of the cluster.
-        :param pulumi.Input[Union['ClusterSecuritySamlConfigArgs', 'ClusterSecuritySamlConfigArgsDict']] security_saml_config: SAML policy is optionally used for Opensearch cluster to config SAML authentication
+        :param pulumi.Input[Union['ClusterSecuritySamlConfigArgs', 'ClusterSecuritySamlConfigArgsDict', 'outputs.ClusterSecuritySamlConfig']] security_saml_config: SAML policy is optionally used for Opensearch cluster to config SAML authentication
         :param pulumi.Input[_builtins.str] software_version: (Updatable) The version of the software the cluster is running.
         :param pulumi.Input[_builtins.str] state: The current state of the cluster.
         :param pulumi.Input[_builtins.str] subnet_compartment_id: The OCID for the compartment where the cluster's subnet is located.

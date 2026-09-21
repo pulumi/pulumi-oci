@@ -1113,12 +1113,12 @@ class IntegrationInstance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alternate_custom_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstanceAlternateCustomEndpointArgs', 'IntegrationInstanceAlternateCustomEndpointArgsDict']]]]] = None,
+                 alternate_custom_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstanceAlternateCustomEndpointArgs', 'IntegrationInstanceAlternateCustomEndpointArgsDict', 'outputs.IntegrationInstanceAlternateCustomEndpoint']]]]] = None,
                  attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  consumption_model: pulumi.Input[Optional[_builtins.str]] = None,
                  convert_instance_trigger: pulumi.Input[Optional[_builtins.int]] = None,
-                 custom_endpoint: pulumi.Input[Optional[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict']]] = None,
+                 custom_endpoint: pulumi.Input[Optional[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict', 'outputs.IntegrationInstanceCustomEndpoint']]] = None,
                  data_retention_period: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  disable_process_automation_trigger: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1136,7 +1136,7 @@ class IntegrationInstance(pulumi.CustomResource):
                  is_visual_builder_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  message_packs: pulumi.Input[Optional[_builtins.int]] = None,
-                 network_endpoint_details: pulumi.Input[Optional[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']]] = None,
+                 network_endpoint_details: pulumi.Input[Optional[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict', 'outputs.IntegrationInstanceNetworkEndpointDetails']]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1224,11 +1224,11 @@ class IntegrationInstance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceAlternateCustomEndpointArgs', 'IntegrationInstanceAlternateCustomEndpointArgsDict']]]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceAlternateCustomEndpointArgs', 'IntegrationInstanceAlternateCustomEndpointArgsDict', 'outputs.IntegrationInstanceAlternateCustomEndpoint']]]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[_builtins.str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
         :param pulumi.Input[_builtins.int] convert_instance_trigger: (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
-        :param pulumi.Input[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict']] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
+        :param pulumi.Input[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict', 'outputs.IntegrationInstanceCustomEndpoint']] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
         :param pulumi.Input[_builtins.str] data_retention_period: Data retention period set for given integration instance
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.int] disable_process_automation_trigger: (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
@@ -1245,7 +1245,7 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
         :param pulumi.Input[_builtins.str] log_group_id: OCID of LogAnalytics LogGroup, enabled for given integration instance
         :param pulumi.Input[_builtins.int] message_packs: (Updatable) The number of configured message packs
-        :param pulumi.Input[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']] network_endpoint_details: Base representation of a network endpoint.
+        :param pulumi.Input[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict', 'outputs.IntegrationInstanceNetworkEndpointDetails']] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
                "oracle-zpr.sensitivity.value" = "low"
                "oracle-zpr.sensitivity.mode" = "enforce"
@@ -1358,12 +1358,12 @@ class IntegrationInstance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alternate_custom_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstanceAlternateCustomEndpointArgs', 'IntegrationInstanceAlternateCustomEndpointArgsDict']]]]] = None,
+                 alternate_custom_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstanceAlternateCustomEndpointArgs', 'IntegrationInstanceAlternateCustomEndpointArgsDict', 'outputs.IntegrationInstanceAlternateCustomEndpoint']]]]] = None,
                  attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  consumption_model: pulumi.Input[Optional[_builtins.str]] = None,
                  convert_instance_trigger: pulumi.Input[Optional[_builtins.int]] = None,
-                 custom_endpoint: pulumi.Input[Optional[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict']]] = None,
+                 custom_endpoint: pulumi.Input[Optional[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict', 'outputs.IntegrationInstanceCustomEndpoint']]] = None,
                  data_retention_period: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  disable_process_automation_trigger: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1381,7 +1381,7 @@ class IntegrationInstance(pulumi.CustomResource):
                  is_visual_builder_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  message_packs: pulumi.Input[Optional[_builtins.int]] = None,
-                 network_endpoint_details: pulumi.Input[Optional[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']]] = None,
+                 network_endpoint_details: pulumi.Input[Optional[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict', 'outputs.IntegrationInstanceNetworkEndpointDetails']]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1456,17 +1456,17 @@ class IntegrationInstance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            alternate_custom_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstanceAlternateCustomEndpointArgs', 'IntegrationInstanceAlternateCustomEndpointArgsDict']]]]] = None,
+            alternate_custom_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstanceAlternateCustomEndpointArgs', 'IntegrationInstanceAlternateCustomEndpointArgsDict', 'outputs.IntegrationInstanceAlternateCustomEndpoint']]]]] = None,
             attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
-            attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstanceAttachmentArgs', 'IntegrationInstanceAttachmentArgsDict']]]]] = None,
+            attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstanceAttachmentArgs', 'IntegrationInstanceAttachmentArgsDict', 'outputs.IntegrationInstanceAttachment']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             consumption_model: pulumi.Input[Optional[_builtins.str]] = None,
             convert_instance_trigger: pulumi.Input[Optional[_builtins.int]] = None,
-            custom_endpoint: pulumi.Input[Optional[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict']]] = None,
+            custom_endpoint: pulumi.Input[Optional[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict', 'outputs.IntegrationInstanceCustomEndpoint']]] = None,
             data_retention_period: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             disable_process_automation_trigger: pulumi.Input[Optional[_builtins.int]] = None,
-            disaster_recovery_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstanceDisasterRecoveryDetailArgs', 'IntegrationInstanceDisasterRecoveryDetailArgsDict']]]]] = None,
+            disaster_recovery_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstanceDisasterRecoveryDetailArgs', 'IntegrationInstanceDisasterRecoveryDetailArgsDict', 'outputs.IntegrationInstanceDisasterRecoveryDetail']]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             domain_id: pulumi.Input[Optional[_builtins.str]] = None,
             enable_process_automation_trigger: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1474,7 +1474,7 @@ class IntegrationInstance(pulumi.CustomResource):
             failover_trigger: pulumi.Input[Optional[_builtins.int]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             idcs_at: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstanceIdcsInfoArgs', 'IntegrationInstanceIdcsInfoArgsDict']]]]] = None,
+            idcs_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstanceIdcsInfoArgs', 'IntegrationInstanceIdcsInfoArgsDict', 'outputs.IntegrationInstanceIdcsInfo']]]]] = None,
             instance_design_time_url: pulumi.Input[Optional[_builtins.str]] = None,
             instance_url: pulumi.Input[Optional[_builtins.str]] = None,
             integration_instance_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1485,8 +1485,8 @@ class IntegrationInstance(pulumi.CustomResource):
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
             message_packs: pulumi.Input[Optional[_builtins.int]] = None,
-            network_endpoint_details: pulumi.Input[Optional[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']]] = None,
-            private_endpoint_outbound_connections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstancePrivateEndpointOutboundConnectionArgs', 'IntegrationInstancePrivateEndpointOutboundConnectionArgsDict']]]]] = None,
+            network_endpoint_details: pulumi.Input[Optional[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict', 'outputs.IntegrationInstanceNetworkEndpointDetails']]] = None,
+            private_endpoint_outbound_connections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstancePrivateEndpointOutboundConnectionArgs', 'IntegrationInstancePrivateEndpointOutboundConnectionArgsDict', 'outputs.IntegrationInstancePrivateEndpointOutboundConnection']]]]] = None,
             process_automation_log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
             security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             shape: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1502,23 +1502,23 @@ class IntegrationInstance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceAlternateCustomEndpointArgs', 'IntegrationInstanceAlternateCustomEndpointArgsDict']]]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceAttachmentArgs', 'IntegrationInstanceAttachmentArgsDict']]]] attachments: A list of associated attachments to other services
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceAlternateCustomEndpointArgs', 'IntegrationInstanceAlternateCustomEndpointArgsDict', 'outputs.IntegrationInstanceAlternateCustomEndpoint']]]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceAttachmentArgs', 'IntegrationInstanceAttachmentArgsDict', 'outputs.IntegrationInstanceAttachment']]]] attachments: A list of associated attachments to other services
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[_builtins.str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
         :param pulumi.Input[_builtins.int] convert_instance_trigger: (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
-        :param pulumi.Input[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict']] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
+        :param pulumi.Input[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict', 'outputs.IntegrationInstanceCustomEndpoint']] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
         :param pulumi.Input[_builtins.str] data_retention_period: Data retention period set for given integration instance
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.int] disable_process_automation_trigger: (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceDisasterRecoveryDetailArgs', 'IntegrationInstanceDisasterRecoveryDetailArgsDict']]]] disaster_recovery_details: Disaster recovery details for the integration instance created in the region.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceDisasterRecoveryDetailArgs', 'IntegrationInstanceDisasterRecoveryDetailArgsDict', 'outputs.IntegrationInstanceDisasterRecoveryDetail']]]] disaster_recovery_details: Disaster recovery details for the integration instance created in the region.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Integration Instance Identifier.
         :param pulumi.Input[_builtins.str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
         :param pulumi.Input[_builtins.int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] failover_trigger: (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceIdcsInfoArgs', 'IntegrationInstanceIdcsInfoArgsDict']]]] idcs_infos: Information for IDCS access
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceIdcsInfoArgs', 'IntegrationInstanceIdcsInfoArgsDict', 'outputs.IntegrationInstanceIdcsInfo']]]] idcs_infos: Information for IDCS access
         :param pulumi.Input[_builtins.str] instance_url: The Integration Instance URL.
         :param pulumi.Input[_builtins.str] integration_instance_type: (Updatable) Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         :param pulumi.Input[_builtins.bool] is_byol: (Updatable) Bring your own license.
@@ -1528,8 +1528,8 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional details of lifecycleState or substates
         :param pulumi.Input[_builtins.str] log_group_id: OCID of LogAnalytics LogGroup, enabled for given integration instance
         :param pulumi.Input[_builtins.int] message_packs: (Updatable) The number of configured message packs
-        :param pulumi.Input[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']] network_endpoint_details: Base representation of a network endpoint.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstancePrivateEndpointOutboundConnectionArgs', 'IntegrationInstancePrivateEndpointOutboundConnectionArgsDict']]]] private_endpoint_outbound_connections: Base representation for Outbound Connection (Reverse Connection).
+        :param pulumi.Input[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict', 'outputs.IntegrationInstanceNetworkEndpointDetails']] network_endpoint_details: Base representation of a network endpoint.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstancePrivateEndpointOutboundConnectionArgs', 'IntegrationInstancePrivateEndpointOutboundConnectionArgsDict', 'outputs.IntegrationInstancePrivateEndpointOutboundConnection']]]] private_endpoint_outbound_connections: Base representation for Outbound Connection (Reverse Connection).
         :param pulumi.Input[_builtins.str] process_automation_log_group_id: OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
                "oracle-zpr.sensitivity.value" = "low"

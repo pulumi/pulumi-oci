@@ -428,7 +428,7 @@ class DatabaseSecurityConfig(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  refresh_trigger: pulumi.Input[Optional[_builtins.int]] = None,
-                 sql_firewall_config: pulumi.Input[Optional[Union['DatabaseSecurityConfigSqlFirewallConfigArgs', 'DatabaseSecurityConfigSqlFirewallConfigArgsDict']]] = None,
+                 sql_firewall_config: pulumi.Input[Optional[Union['DatabaseSecurityConfigSqlFirewallConfigArgs', 'DatabaseSecurityConfigSqlFirewallConfigArgsDict', 'outputs.DatabaseSecurityConfigSqlFirewallConfig']]] = None,
                  __props__=None):
         """
         This resource provides the Database Security Config resource in Oracle Cloud Infrastructure Data Safe service.
@@ -459,7 +459,7 @@ class DatabaseSecurityConfig(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Union['DatabaseSecurityConfigSqlFirewallConfigArgs', 'DatabaseSecurityConfigSqlFirewallConfigArgsDict']] sql_firewall_config: (Updatable) Details to update the SQL Firewall config.
+        :param pulumi.Input[Union['DatabaseSecurityConfigSqlFirewallConfigArgs', 'DatabaseSecurityConfigSqlFirewallConfigArgsDict', 'outputs.DatabaseSecurityConfigSqlFirewallConfig']] sql_firewall_config: (Updatable) Details to update the SQL Firewall config.
         """
         ...
     @overload
@@ -506,7 +506,7 @@ class DatabaseSecurityConfig(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  refresh_trigger: pulumi.Input[Optional[_builtins.int]] = None,
-                 sql_firewall_config: pulumi.Input[Optional[Union['DatabaseSecurityConfigSqlFirewallConfigArgs', 'DatabaseSecurityConfigSqlFirewallConfigArgsDict']]] = None,
+                 sql_firewall_config: pulumi.Input[Optional[Union['DatabaseSecurityConfigSqlFirewallConfigArgs', 'DatabaseSecurityConfigSqlFirewallConfigArgsDict', 'outputs.DatabaseSecurityConfigSqlFirewallConfig']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -551,7 +551,7 @@ class DatabaseSecurityConfig(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             refresh_trigger: pulumi.Input[Optional[_builtins.int]] = None,
-            sql_firewall_config: pulumi.Input[Optional[Union['DatabaseSecurityConfigSqlFirewallConfigArgs', 'DatabaseSecurityConfigSqlFirewallConfigArgsDict']]] = None,
+            sql_firewall_config: pulumi.Input[Optional[Union['DatabaseSecurityConfigSqlFirewallConfigArgs', 'DatabaseSecurityConfigSqlFirewallConfigArgsDict', 'outputs.DatabaseSecurityConfigSqlFirewallConfig']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             target_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -576,7 +576,7 @@ class DatabaseSecurityConfig(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Union['DatabaseSecurityConfigSqlFirewallConfigArgs', 'DatabaseSecurityConfigSqlFirewallConfigArgsDict']] sql_firewall_config: (Updatable) Details to update the SQL Firewall config.
+        :param pulumi.Input[Union['DatabaseSecurityConfigSqlFirewallConfigArgs', 'DatabaseSecurityConfigSqlFirewallConfigArgsDict', 'outputs.DatabaseSecurityConfigSqlFirewallConfig']] sql_firewall_config: (Updatable) Details to update the SQL Firewall config.
         :param pulumi.Input[_builtins.str] state: The current state of the database security config.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] target_id: The target OCID corresponding to the database security config.

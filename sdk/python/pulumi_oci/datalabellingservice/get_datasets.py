@@ -123,7 +123,7 @@ class AwaitableGetDatasetsResult(GetDatasetsResult):
 def get_datasets(annotation_format: Optional[_builtins.str] = None,
                  compartment_id: Optional[_builtins.str] = None,
                  display_name: Optional[_builtins.str] = None,
-                 filters: Optional[Sequence[Union['GetDatasetsFilterArgs', 'GetDatasetsFilterArgsDict']]] = None,
+                 filters: Optional[Sequence[Union['GetDatasetsFilterArgs', 'GetDatasetsFilterArgsDict', 'outputs.GetDatasetsFilterResult']]] = None,
                  id: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatasetsResult:
@@ -173,7 +173,7 @@ def get_datasets(annotation_format: Optional[_builtins.str] = None,
 def get_datasets_output(annotation_format: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatasetsFilterArgs', 'GetDatasetsFilterArgsDict']]]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatasetsFilterArgs', 'GetDatasetsFilterArgsDict', 'outputs.GetDatasetsFilterResult']]]]] = None,
                         id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatasetsResult]:

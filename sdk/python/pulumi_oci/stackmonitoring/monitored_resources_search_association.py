@@ -480,7 +480,7 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
             destination_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
             destination_resource_name: pulumi.Input[Optional[_builtins.str]] = None,
             destination_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
-            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcesSearchAssociationItemArgs', 'MonitoredResourcesSearchAssociationItemArgsDict']]]]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcesSearchAssociationItemArgs', 'MonitoredResourcesSearchAssociationItemArgsDict', 'outputs.MonitoredResourcesSearchAssociationItem']]]]] = None,
             source_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
             source_resource_name: pulumi.Input[Optional[_builtins.str]] = None,
             source_resource_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'MonitoredResourcesSearchAssociation':
@@ -496,7 +496,7 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] destination_resource_name: Source Monitored Resource Name.
         :param pulumi.Input[_builtins.str] destination_resource_type: Source Monitored Resource Type.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesSearchAssociationItemArgs', 'MonitoredResourcesSearchAssociationItemArgsDict']]]] items: List of Monitored Resource Associations.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesSearchAssociationItemArgs', 'MonitoredResourcesSearchAssociationItemArgsDict', 'outputs.MonitoredResourcesSearchAssociationItem']]]] items: List of Monitored Resource Associations.
         :param pulumi.Input[_builtins.str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] source_resource_name: Source Monitored Resource Name.
         :param pulumi.Input[_builtins.str] source_resource_type: Source Monitored Resource Type.

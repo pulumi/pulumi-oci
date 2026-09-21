@@ -72,7 +72,7 @@ class AwaitableGetPeerRegionForRemotePeeringsResult(GetPeerRegionForRemotePeerin
             peer_region_for_remote_peerings=self.peer_region_for_remote_peerings)
 
 
-def get_peer_region_for_remote_peerings(filters: Optional[Sequence[Union['GetPeerRegionForRemotePeeringsFilterArgs', 'GetPeerRegionForRemotePeeringsFilterArgsDict']]] = None,
+def get_peer_region_for_remote_peerings(filters: Optional[Sequence[Union['GetPeerRegionForRemotePeeringsFilterArgs', 'GetPeerRegionForRemotePeeringsFilterArgsDict', 'outputs.GetPeerRegionForRemotePeeringsFilterResult']]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPeerRegionForRemotePeeringsResult:
     """
     This data source provides the list of Peer Region For Remote Peerings in Oracle Cloud Infrastructure Core service.
@@ -98,7 +98,7 @@ def get_peer_region_for_remote_peerings(filters: Optional[Sequence[Union['GetPee
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         peer_region_for_remote_peerings=pulumi.get(__ret__, 'peer_region_for_remote_peerings'))
-def get_peer_region_for_remote_peerings_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPeerRegionForRemotePeeringsFilterArgs', 'GetPeerRegionForRemotePeeringsFilterArgsDict']]]]] = None,
+def get_peer_region_for_remote_peerings_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPeerRegionForRemotePeeringsFilterArgs', 'GetPeerRegionForRemotePeeringsFilterArgsDict', 'outputs.GetPeerRegionForRemotePeeringsFilterResult']]]]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPeerRegionForRemotePeeringsResult]:
     """
     This data source provides the list of Peer Region For Remote Peerings in Oracle Cloud Infrastructure Core service.

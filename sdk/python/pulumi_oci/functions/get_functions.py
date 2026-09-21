@@ -110,7 +110,7 @@ class AwaitableGetFunctionsResult(GetFunctionsResult):
 
 def get_functions(application_id: Optional[_builtins.str] = None,
                   display_name: Optional[_builtins.str] = None,
-                  filters: Optional[Sequence[Union['GetFunctionsFilterArgs', 'GetFunctionsFilterArgsDict']]] = None,
+                  filters: Optional[Sequence[Union['GetFunctionsFilterArgs', 'GetFunctionsFilterArgsDict', 'outputs.GetFunctionsFilterResult']]] = None,
                   id: Optional[_builtins.str] = None,
                   state: Optional[_builtins.str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFunctionsResult:
@@ -155,7 +155,7 @@ def get_functions(application_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_functions_output(application_id: pulumi.Input[Optional[_builtins.str]] = None,
                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFunctionsFilterArgs', 'GetFunctionsFilterArgsDict']]]]] = None,
+                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFunctionsFilterArgs', 'GetFunctionsFilterArgsDict', 'outputs.GetFunctionsFilterResult']]]]] = None,
                          id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFunctionsResult]:

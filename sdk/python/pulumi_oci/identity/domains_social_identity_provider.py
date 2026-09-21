@@ -2867,7 +2867,7 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
                  icon_url: pulumi.Input[Optional[_builtins.str]] = None,
                  id_attribute: pulumi.Input[Optional[_builtins.str]] = None,
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-                 jit_prov_assigned_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderJitProvAssignedGroupArgs', 'DomainsSocialIdentityProviderJitProvAssignedGroupArgsDict']]]]] = None,
+                 jit_prov_assigned_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderJitProvAssignedGroupArgs', 'DomainsSocialIdentityProviderJitProvAssignedGroupArgsDict', 'outputs.DomainsSocialIdentityProviderJitProvAssignedGroup']]]]] = None,
                  jit_prov_group_static_list_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2875,7 +2875,7 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
                  redirect_url: pulumi.Input[Optional[_builtins.str]] = None,
                  refresh_token_url: pulumi.Input[Optional[_builtins.str]] = None,
                  registration_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 relay_idp_param_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderRelayIdpParamMappingArgs', 'DomainsSocialIdentityProviderRelayIdpParamMappingArgsDict']]]]] = None,
+                 relay_idp_param_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderRelayIdpParamMappingArgs', 'DomainsSocialIdentityProviderRelayIdpParamMappingArgsDict', 'outputs.DomainsSocialIdentityProviderRelayIdpParamMapping']]]]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -2883,7 +2883,7 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
                  show_on_login: pulumi.Input[Optional[_builtins.bool]] = None,
                  social_jit_provisioning_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  status: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderTagArgs', 'DomainsSocialIdentityProviderTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderTagArgs', 'DomainsSocialIdentityProviderTagArgsDict', 'outputs.DomainsSocialIdentityProviderTag']]]]] = None,
                  __props__=None):
         """
         This resource provides the Social Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -3146,7 +3146,7 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
                * type: string
                * uniqueness: none
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderJitProvAssignedGroupArgs', 'DomainsSocialIdentityProviderJitProvAssignedGroupArgsDict']]]] jit_prov_assigned_groups: (Updatable) Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderJitProvAssignedGroupArgs', 'DomainsSocialIdentityProviderJitProvAssignedGroupArgsDict', 'outputs.DomainsSocialIdentityProviderJitProvAssignedGroup']]]] jit_prov_assigned_groups: (Updatable) Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
                
                **Added In:** 2309290043
                
@@ -3240,7 +3240,7 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderRelayIdpParamMappingArgs', 'DomainsSocialIdentityProviderRelayIdpParamMappingArgsDict']]]] relay_idp_param_mappings: (Updatable) Relay Param variable for Social IDP
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderRelayIdpParamMappingArgs', 'DomainsSocialIdentityProviderRelayIdpParamMappingArgsDict', 'outputs.DomainsSocialIdentityProviderRelayIdpParamMapping']]]] relay_idp_param_mappings: (Updatable) Relay Param variable for Social IDP
                
                **Added In:** 2305190132
                
@@ -3324,7 +3324,7 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderTagArgs', 'DomainsSocialIdentityProviderTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderTagArgs', 'DomainsSocialIdentityProviderTagArgsDict', 'outputs.DomainsSocialIdentityProviderTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -3444,7 +3444,7 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
                  icon_url: pulumi.Input[Optional[_builtins.str]] = None,
                  id_attribute: pulumi.Input[Optional[_builtins.str]] = None,
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-                 jit_prov_assigned_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderJitProvAssignedGroupArgs', 'DomainsSocialIdentityProviderJitProvAssignedGroupArgsDict']]]]] = None,
+                 jit_prov_assigned_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderJitProvAssignedGroupArgs', 'DomainsSocialIdentityProviderJitProvAssignedGroupArgsDict', 'outputs.DomainsSocialIdentityProviderJitProvAssignedGroup']]]]] = None,
                  jit_prov_group_static_list_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
@@ -3452,7 +3452,7 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
                  redirect_url: pulumi.Input[Optional[_builtins.str]] = None,
                  refresh_token_url: pulumi.Input[Optional[_builtins.str]] = None,
                  registration_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 relay_idp_param_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderRelayIdpParamMappingArgs', 'DomainsSocialIdentityProviderRelayIdpParamMappingArgsDict']]]]] = None,
+                 relay_idp_param_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderRelayIdpParamMappingArgs', 'DomainsSocialIdentityProviderRelayIdpParamMappingArgsDict', 'outputs.DomainsSocialIdentityProviderRelayIdpParamMapping']]]]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -3460,7 +3460,7 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
                  show_on_login: pulumi.Input[Optional[_builtins.bool]] = None,
                  social_jit_provisioning_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  status: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderTagArgs', 'DomainsSocialIdentityProviderTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderTagArgs', 'DomainsSocialIdentityProviderTagArgsDict', 'outputs.DomainsSocialIdentityProviderTag']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -3562,21 +3562,21 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             icon_url: pulumi.Input[Optional[_builtins.str]] = None,
             id_attribute: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderIdcsCreatedByArgs', 'DomainsSocialIdentityProviderIdcsCreatedByArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderIdcsCreatedByArgs', 'DomainsSocialIdentityProviderIdcsCreatedByArgsDict', 'outputs.DomainsSocialIdentityProviderIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderIdcsLastModifiedByArgs', 'DomainsSocialIdentityProviderIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderIdcsLastModifiedByArgs', 'DomainsSocialIdentityProviderIdcsLastModifiedByArgsDict', 'outputs.DomainsSocialIdentityProviderIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            jit_prov_assigned_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderJitProvAssignedGroupArgs', 'DomainsSocialIdentityProviderJitProvAssignedGroupArgsDict']]]]] = None,
+            jit_prov_assigned_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderJitProvAssignedGroupArgs', 'DomainsSocialIdentityProviderJitProvAssignedGroupArgsDict', 'outputs.DomainsSocialIdentityProviderJitProvAssignedGroup']]]]] = None,
             jit_prov_group_static_list_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderMetaArgs', 'DomainsSocialIdentityProviderMetaArgsDict']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderMetaArgs', 'DomainsSocialIdentityProviderMetaArgsDict', 'outputs.DomainsSocialIdentityProviderMeta']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             ocid: pulumi.Input[Optional[_builtins.str]] = None,
             profile_url: pulumi.Input[Optional[_builtins.str]] = None,
             redirect_url: pulumi.Input[Optional[_builtins.str]] = None,
             refresh_token_url: pulumi.Input[Optional[_builtins.str]] = None,
             registration_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            relay_idp_param_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderRelayIdpParamMappingArgs', 'DomainsSocialIdentityProviderRelayIdpParamMappingArgsDict']]]]] = None,
+            relay_idp_param_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderRelayIdpParamMappingArgs', 'DomainsSocialIdentityProviderRelayIdpParamMappingArgsDict', 'outputs.DomainsSocialIdentityProviderRelayIdpParamMapping']]]]] = None,
             resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
             schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -3584,7 +3584,7 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
             show_on_login: pulumi.Input[Optional[_builtins.bool]] = None,
             social_jit_provisioning_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderTagArgs', 'DomainsSocialIdentityProviderTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderTagArgs', 'DomainsSocialIdentityProviderTagArgsDict', 'outputs.DomainsSocialIdentityProviderTag']]]]] = None,
             tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None) -> 'DomainsSocialIdentityProvider':
         """
         Get an existing DomainsSocialIdentityProvider resource's state with the given name, id, and optional extra
@@ -3815,7 +3815,7 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderIdcsCreatedByArgs', 'DomainsSocialIdentityProviderIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderIdcsCreatedByArgs', 'DomainsSocialIdentityProviderIdcsCreatedByArgsDict', 'outputs.DomainsSocialIdentityProviderIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -3825,7 +3825,7 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderIdcsLastModifiedByArgs', 'DomainsSocialIdentityProviderIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderIdcsLastModifiedByArgs', 'DomainsSocialIdentityProviderIdcsLastModifiedByArgsDict', 'outputs.DomainsSocialIdentityProviderIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -3855,7 +3855,7 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderJitProvAssignedGroupArgs', 'DomainsSocialIdentityProviderJitProvAssignedGroupArgsDict']]]] jit_prov_assigned_groups: (Updatable) Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderJitProvAssignedGroupArgs', 'DomainsSocialIdentityProviderJitProvAssignedGroupArgsDict', 'outputs.DomainsSocialIdentityProviderJitProvAssignedGroup']]]] jit_prov_assigned_groups: (Updatable) Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
                
                **Added In:** 2309290043
                
@@ -3881,7 +3881,7 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderMetaArgs', 'DomainsSocialIdentityProviderMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderMetaArgs', 'DomainsSocialIdentityProviderMetaArgsDict', 'outputs.DomainsSocialIdentityProviderMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -3960,7 +3960,7 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderRelayIdpParamMappingArgs', 'DomainsSocialIdentityProviderRelayIdpParamMappingArgsDict']]]] relay_idp_param_mappings: (Updatable) Relay Param variable for Social IDP
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderRelayIdpParamMappingArgs', 'DomainsSocialIdentityProviderRelayIdpParamMappingArgsDict', 'outputs.DomainsSocialIdentityProviderRelayIdpParamMapping']]]] relay_idp_param_mappings: (Updatable) Relay Param variable for Social IDP
                
                **Added In:** 2305190132
                
@@ -4044,7 +4044,7 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderTagArgs', 'DomainsSocialIdentityProviderTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderTagArgs', 'DomainsSocialIdentityProviderTagArgsDict', 'outputs.DomainsSocialIdentityProviderTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]

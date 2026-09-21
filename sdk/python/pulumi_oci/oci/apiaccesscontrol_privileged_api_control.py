@@ -546,7 +546,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  approver_group_id_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 approver_group_level_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs', 'ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgsDict']]]]] = None,
+                 approver_group_level_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs', 'ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgsDict', 'outputs.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -554,7 +554,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
                  number_of_approvers: pulumi.Input[Optional[_builtins.int]] = None,
-                 privileged_operation_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgsDict']]]]] = None,
+                 privileged_operation_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgsDict', 'outputs.ApiaccesscontrolPrivilegedApiControlPrivilegedOperationList']]]]] = None,
                  resource_type: pulumi.Input[Optional[_builtins.str]] = None,
                  resources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -610,7 +610,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] approver_group_id_lists: (Updatable) List of user IAM group ids who can approve an privilegedApi request associated with a resource governed by this operator control.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs', 'ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgsDict']]]] approver_group_level_lists: (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs', 'ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgsDict', 'outputs.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList']]]] approver_group_level_lists: (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the PrivilegedApiControl in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of the privilegedApi control.
@@ -618,7 +618,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] notification_topic_id: (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
         :param pulumi.Input[_builtins.int] number_of_approvers: (Updatable) Number of approvers required to approve an privilegedApi request.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgsDict']]]] privileged_operation_lists: (Updatable) List of privileged operator operations. If Privileged API Managment is enabled for a resource it will be validated whether the operation done by the operator is a part of privileged operation.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgsDict', 'outputs.ApiaccesscontrolPrivilegedApiControlPrivilegedOperationList']]]] privileged_operation_lists: (Updatable) List of privileged operator operations. If Privileged API Managment is enabled for a resource it will be validated whether the operation done by the operator is a part of privileged operation.
         :param pulumi.Input[_builtins.str] resource_type: (Updatable) resourceType for which the PrivilegedApiControl is applicable
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] resources: (Updatable) contains Resource details
                
@@ -696,7 +696,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  approver_group_id_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 approver_group_level_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs', 'ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgsDict']]]]] = None,
+                 approver_group_level_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs', 'ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgsDict', 'outputs.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -704,7 +704,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
                  number_of_approvers: pulumi.Input[Optional[_builtins.int]] = None,
-                 privileged_operation_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgsDict']]]]] = None,
+                 privileged_operation_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgsDict', 'outputs.ApiaccesscontrolPrivilegedApiControlPrivilegedOperationList']]]]] = None,
                  resource_type: pulumi.Input[Optional[_builtins.str]] = None,
                  resources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -756,7 +756,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             approver_group_id_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            approver_group_level_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs', 'ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgsDict']]]]] = None,
+            approver_group_level_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs', 'ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgsDict', 'outputs.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -765,7 +765,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
             number_of_approvers: pulumi.Input[Optional[_builtins.int]] = None,
-            privileged_operation_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgsDict']]]]] = None,
+            privileged_operation_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgsDict', 'outputs.ApiaccesscontrolPrivilegedApiControlPrivilegedOperationList']]]]] = None,
             resource_type: pulumi.Input[Optional[_builtins.str]] = None,
             resources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -782,7 +782,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] approver_group_id_lists: (Updatable) List of user IAM group ids who can approve an privilegedApi request associated with a resource governed by this operator control.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs', 'ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgsDict']]]] approver_group_level_lists: (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs', 'ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgsDict', 'outputs.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList']]]] approver_group_level_lists: (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the PrivilegedApiControl in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of the privilegedApi control.
@@ -791,7 +791,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the PrivilegedApiControl in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input[_builtins.str] notification_topic_id: (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
         :param pulumi.Input[_builtins.int] number_of_approvers: (Updatable) Number of approvers required to approve an privilegedApi request.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgsDict']]]] privileged_operation_lists: (Updatable) List of privileged operator operations. If Privileged API Managment is enabled for a resource it will be validated whether the operation done by the operator is a part of privileged operation.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgsDict', 'outputs.ApiaccesscontrolPrivilegedApiControlPrivilegedOperationList']]]] privileged_operation_lists: (Updatable) List of privileged operator operations. If Privileged API Managment is enabled for a resource it will be validated whether the operation done by the operator is a part of privileged operation.
         :param pulumi.Input[_builtins.str] resource_type: (Updatable) resourceType for which the PrivilegedApiControl is applicable
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] resources: (Updatable) contains Resource details
                

@@ -1750,15 +1750,15 @@ class Instance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 agent_config: pulumi.Input[Optional[Union['InstanceAgentConfigArgs', 'InstanceAgentConfigArgsDict']]] = None,
+                 agent_config: pulumi.Input[Optional[Union['InstanceAgentConfigArgs', 'InstanceAgentConfigArgsDict', 'outputs.InstanceAgentConfig']]] = None,
                  async_: pulumi.Input[Optional[_builtins.bool]] = None,
-                 availability_config: pulumi.Input[Optional[Union['InstanceAvailabilityConfigArgs', 'InstanceAvailabilityConfigArgsDict']]] = None,
+                 availability_config: pulumi.Input[Optional[Union['InstanceAvailabilityConfigArgs', 'InstanceAvailabilityConfigArgsDict', 'outputs.InstanceAvailabilityConfig']]] = None,
                  availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 create_vnic_details: pulumi.Input[Optional[Union['InstanceCreateVnicDetailsArgs', 'InstanceCreateVnicDetailsArgsDict']]] = None,
+                 create_vnic_details: pulumi.Input[Optional[Union['InstanceCreateVnicDetailsArgs', 'InstanceCreateVnicDetailsArgsDict', 'outputs.InstanceCreateVnicDetails']]] = None,
                  dedicated_vm_host_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1768,23 +1768,23 @@ class Instance(pulumi.CustomResource):
                  hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
                  image: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 instance_options: pulumi.Input[Optional[Union['InstanceInstanceOptionsArgs', 'InstanceInstanceOptionsArgsDict']]] = None,
+                 instance_options: pulumi.Input[Optional[Union['InstanceInstanceOptionsArgs', 'InstanceInstanceOptionsArgsDict', 'outputs.InstanceInstanceOptions']]] = None,
                  ipxe_script: pulumi.Input[Optional[_builtins.str]] = None,
                  is_ai_enterprise_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_pv_encryption_in_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 launch_options: pulumi.Input[Optional[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict']]] = None,
-                 launch_volume_attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]]] = None,
-                 licensing_configs: pulumi.Input[Optional[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict']]] = None,
+                 launch_options: pulumi.Input[Optional[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict', 'outputs.InstanceLaunchOptions']]] = None,
+                 launch_volume_attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict', 'outputs.InstanceLaunchVolumeAttachment']]]]] = None,
+                 licensing_configs: pulumi.Input[Optional[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict', 'outputs.InstanceLicensingConfigs']]] = None,
                  metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 placement_constraint_details: pulumi.Input[Optional[Union['InstancePlacementConstraintDetailsArgs', 'InstancePlacementConstraintDetailsArgsDict']]] = None,
-                 platform_config: pulumi.Input[Optional[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']]] = None,
-                 preemptible_instance_config: pulumi.Input[Optional[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']]] = None,
+                 placement_constraint_details: pulumi.Input[Optional[Union['InstancePlacementConstraintDetailsArgs', 'InstancePlacementConstraintDetailsArgsDict', 'outputs.InstancePlacementConstraintDetails']]] = None,
+                 platform_config: pulumi.Input[Optional[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict', 'outputs.InstancePlatformConfig']]] = None,
+                 preemptible_instance_config: pulumi.Input[Optional[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict', 'outputs.InstancePreemptibleInstanceConfig']]] = None,
                  preserve_boot_volume: pulumi.Input[Optional[_builtins.bool]] = None,
                  preserve_data_volumes_created_at_launch: pulumi.Input[Optional[_builtins.bool]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
-                 shape_config: pulumi.Input[Optional[Union['InstanceShapeConfigArgs', 'InstanceShapeConfigArgsDict']]] = None,
-                 source_details: pulumi.Input[Optional[Union['InstanceSourceDetailsArgs', 'InstanceSourceDetailsArgsDict']]] = None,
+                 shape_config: pulumi.Input[Optional[Union['InstanceShapeConfigArgs', 'InstanceShapeConfigArgsDict', 'outputs.InstanceShapeConfig']]] = None,
+                 source_details: pulumi.Input[Optional[Union['InstanceSourceDetailsArgs', 'InstanceSourceDetailsArgsDict', 'outputs.InstanceSourceDetails']]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  update_operation_constraint: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1856,19 +1856,19 @@ class Instance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['InstanceAgentConfigArgs', 'InstanceAgentConfigArgsDict']] agent_config: (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
+        :param pulumi.Input[Union['InstanceAgentConfigArgs', 'InstanceAgentConfigArgsDict', 'outputs.InstanceAgentConfig']] agent_config: (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
         :param pulumi.Input[_builtins.bool] async_: Whether Terraform creates and destroys the resource asynchronously. The default value is false.
                * If `async` is true, all the creation and deletion of instances are asynchronous
                * If `async` is false, all the creation and deletion of instances are synchronous as normal behavior
                
                > Please follow this guideline Terraform support asynchronous operation for more detail of this advanced option.
-        :param pulumi.Input[Union['InstanceAvailabilityConfigArgs', 'InstanceAvailabilityConfigArgsDict']] availability_config: (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
+        :param pulumi.Input[Union['InstanceAvailabilityConfigArgs', 'InstanceAvailabilityConfigArgsDict', 'outputs.InstanceAvailabilityConfig']] availability_config: (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The OCID of the cluster placement group of the instance.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[_builtins.str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
-        :param pulumi.Input[Union['InstanceCreateVnicDetailsArgs', 'InstanceCreateVnicDetailsArgsDict']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+        :param pulumi.Input[Union['InstanceCreateVnicDetailsArgs', 'InstanceCreateVnicDetailsArgsDict', 'outputs.InstanceCreateVnicDetails']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[_builtins.str] dedicated_vm_host_id: (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -1890,7 +1890,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param pulumi.Input[_builtins.str] image: Deprecated. Use `sourceDetails` with [InstanceSourceViaImageDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/InstanceSourceViaImageDetails) source type instead. If you specify values for both, the values must match.
         :param pulumi.Input[_builtins.str] instance_configuration_id: The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
-        :param pulumi.Input[Union['InstanceInstanceOptionsArgs', 'InstanceInstanceOptionsArgsDict']] instance_options: (Updatable) Optional mutable instance options
+        :param pulumi.Input[Union['InstanceInstanceOptionsArgs', 'InstanceInstanceOptionsArgsDict', 'outputs.InstanceInstanceOptions']] instance_options: (Updatable) Optional mutable instance options
         :param pulumi.Input[_builtins.str] ipxe_script: This is an advanced option.
                
                When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
@@ -1906,11 +1906,11 @@ class Instance(pulumi.CustomResource):
                For more information about iPXE, see http://ipxe.org.
         :param pulumi.Input[_builtins.bool] is_ai_enterprise_enabled: (Updatable) Whether to enable AI enterprise on the instance.
         :param pulumi.Input[_builtins.bool] is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
-        :param pulumi.Input[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict']] launch_options: (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
+        :param pulumi.Input[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict', 'outputs.InstanceLaunchOptions']] launch_options: (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict', 'outputs.InstanceLaunchVolumeAttachment']]]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
                
                **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
-        :param pulumi.Input[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict']] licensing_configs: (Updatable) List of licensing configurations associated with target launch values.
+        :param pulumi.Input[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict', 'outputs.InstanceLicensingConfigs']] licensing_configs: (Updatable) List of licensing configurations associated with target launch values.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
                
                A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -1944,8 +1944,8 @@ class Instance(pulumi.CustomResource):
                You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
                
                The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-        :param pulumi.Input[Union['InstancePlacementConstraintDetailsArgs', 'InstancePlacementConstraintDetailsArgsDict']] placement_constraint_details: Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
-        :param pulumi.Input[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']] platform_config: (Updatable) The platform configuration requested for the instance.
+        :param pulumi.Input[Union['InstancePlacementConstraintDetailsArgs', 'InstancePlacementConstraintDetailsArgsDict', 'outputs.InstancePlacementConstraintDetails']] placement_constraint_details: Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        :param pulumi.Input[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict', 'outputs.InstancePlatformConfig']] platform_config: (Updatable) The platform configuration requested for the instance.
                
                If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
                
@@ -1954,18 +1954,18 @@ class Instance(pulumi.CustomResource):
                For more information about shielded instances, see [Shielded Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/shielded-instances.htm).
                
                For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
-        :param pulumi.Input[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']] preemptible_instance_config: Configuration options for preemptible instances.
+        :param pulumi.Input[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict', 'outputs.InstancePreemptibleInstanceConfig']] preemptible_instance_config: Configuration options for preemptible instances.
         :param pulumi.Input[_builtins.bool] preserve_boot_volume: (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         :param pulumi.Input[_builtins.str] shape: (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
                
                You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
-        :param pulumi.Input[Union['InstanceShapeConfigArgs', 'InstanceShapeConfigArgsDict']] shape_config: (Updatable) The shape configuration requested for the instance.
+        :param pulumi.Input[Union['InstanceShapeConfigArgs', 'InstanceShapeConfigArgsDict', 'outputs.InstanceShapeConfig']] shape_config: (Updatable) The shape configuration requested for the instance.
                
                If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
                
                Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
-        :param pulumi.Input[Union['InstanceSourceDetailsArgs', 'InstanceSourceDetailsArgsDict']] source_details: (Updatable)
+        :param pulumi.Input[Union['InstanceSourceDetailsArgs', 'InstanceSourceDetailsArgsDict', 'outputs.InstanceSourceDetails']] source_details: (Updatable)
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the instance. Could be set to RUNNING or STOPPED.
                
                ** IMPORTANT **
@@ -2058,15 +2058,15 @@ class Instance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 agent_config: pulumi.Input[Optional[Union['InstanceAgentConfigArgs', 'InstanceAgentConfigArgsDict']]] = None,
+                 agent_config: pulumi.Input[Optional[Union['InstanceAgentConfigArgs', 'InstanceAgentConfigArgsDict', 'outputs.InstanceAgentConfig']]] = None,
                  async_: pulumi.Input[Optional[_builtins.bool]] = None,
-                 availability_config: pulumi.Input[Optional[Union['InstanceAvailabilityConfigArgs', 'InstanceAvailabilityConfigArgsDict']]] = None,
+                 availability_config: pulumi.Input[Optional[Union['InstanceAvailabilityConfigArgs', 'InstanceAvailabilityConfigArgsDict', 'outputs.InstanceAvailabilityConfig']]] = None,
                  availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 create_vnic_details: pulumi.Input[Optional[Union['InstanceCreateVnicDetailsArgs', 'InstanceCreateVnicDetailsArgsDict']]] = None,
+                 create_vnic_details: pulumi.Input[Optional[Union['InstanceCreateVnicDetailsArgs', 'InstanceCreateVnicDetailsArgsDict', 'outputs.InstanceCreateVnicDetails']]] = None,
                  dedicated_vm_host_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2076,23 +2076,23 @@ class Instance(pulumi.CustomResource):
                  hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
                  image: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 instance_options: pulumi.Input[Optional[Union['InstanceInstanceOptionsArgs', 'InstanceInstanceOptionsArgsDict']]] = None,
+                 instance_options: pulumi.Input[Optional[Union['InstanceInstanceOptionsArgs', 'InstanceInstanceOptionsArgsDict', 'outputs.InstanceInstanceOptions']]] = None,
                  ipxe_script: pulumi.Input[Optional[_builtins.str]] = None,
                  is_ai_enterprise_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_pv_encryption_in_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 launch_options: pulumi.Input[Optional[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict']]] = None,
-                 launch_volume_attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]]] = None,
-                 licensing_configs: pulumi.Input[Optional[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict']]] = None,
+                 launch_options: pulumi.Input[Optional[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict', 'outputs.InstanceLaunchOptions']]] = None,
+                 launch_volume_attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict', 'outputs.InstanceLaunchVolumeAttachment']]]]] = None,
+                 licensing_configs: pulumi.Input[Optional[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict', 'outputs.InstanceLicensingConfigs']]] = None,
                  metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 placement_constraint_details: pulumi.Input[Optional[Union['InstancePlacementConstraintDetailsArgs', 'InstancePlacementConstraintDetailsArgsDict']]] = None,
-                 platform_config: pulumi.Input[Optional[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']]] = None,
-                 preemptible_instance_config: pulumi.Input[Optional[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']]] = None,
+                 placement_constraint_details: pulumi.Input[Optional[Union['InstancePlacementConstraintDetailsArgs', 'InstancePlacementConstraintDetailsArgsDict', 'outputs.InstancePlacementConstraintDetails']]] = None,
+                 platform_config: pulumi.Input[Optional[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict', 'outputs.InstancePlatformConfig']]] = None,
+                 preemptible_instance_config: pulumi.Input[Optional[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict', 'outputs.InstancePreemptibleInstanceConfig']]] = None,
                  preserve_boot_volume: pulumi.Input[Optional[_builtins.bool]] = None,
                  preserve_data_volumes_created_at_launch: pulumi.Input[Optional[_builtins.bool]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
-                 shape_config: pulumi.Input[Optional[Union['InstanceShapeConfigArgs', 'InstanceShapeConfigArgsDict']]] = None,
-                 source_details: pulumi.Input[Optional[Union['InstanceSourceDetailsArgs', 'InstanceSourceDetailsArgsDict']]] = None,
+                 shape_config: pulumi.Input[Optional[Union['InstanceShapeConfigArgs', 'InstanceShapeConfigArgsDict', 'outputs.InstanceShapeConfig']]] = None,
+                 source_details: pulumi.Input[Optional[Union['InstanceSourceDetailsArgs', 'InstanceSourceDetailsArgsDict', 'outputs.InstanceSourceDetails']]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  update_operation_constraint: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2167,16 +2167,16 @@ class Instance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            agent_config: pulumi.Input[Optional[Union['InstanceAgentConfigArgs', 'InstanceAgentConfigArgsDict']]] = None,
+            agent_config: pulumi.Input[Optional[Union['InstanceAgentConfigArgs', 'InstanceAgentConfigArgsDict', 'outputs.InstanceAgentConfig']]] = None,
             async_: pulumi.Input[Optional[_builtins.bool]] = None,
-            availability_config: pulumi.Input[Optional[Union['InstanceAvailabilityConfigArgs', 'InstanceAvailabilityConfigArgsDict']]] = None,
+            availability_config: pulumi.Input[Optional[Union['InstanceAvailabilityConfigArgs', 'InstanceAvailabilityConfigArgsDict', 'outputs.InstanceAvailabilityConfig']]] = None,
             availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
             boot_volume_id: pulumi.Input[Optional[_builtins.str]] = None,
             capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
             cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             compute_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-            create_vnic_details: pulumi.Input[Optional[Union['InstanceCreateVnicDetailsArgs', 'InstanceCreateVnicDetailsArgsDict']]] = None,
+            create_vnic_details: pulumi.Input[Optional[Union['InstanceCreateVnicDetailsArgs', 'InstanceCreateVnicDetailsArgsDict', 'outputs.InstanceCreateVnicDetails']]] = None,
             dedicated_vm_host_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2186,19 +2186,19 @@ class Instance(pulumi.CustomResource):
             hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
             image: pulumi.Input[Optional[_builtins.str]] = None,
             instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
-            instance_options: pulumi.Input[Optional[Union['InstanceInstanceOptionsArgs', 'InstanceInstanceOptionsArgsDict']]] = None,
+            instance_options: pulumi.Input[Optional[Union['InstanceInstanceOptionsArgs', 'InstanceInstanceOptionsArgsDict', 'outputs.InstanceInstanceOptions']]] = None,
             ipxe_script: pulumi.Input[Optional[_builtins.str]] = None,
             is_ai_enterprise_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_cross_numa_node: pulumi.Input[Optional[_builtins.bool]] = None,
             is_pv_encryption_in_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             launch_mode: pulumi.Input[Optional[_builtins.str]] = None,
-            launch_options: pulumi.Input[Optional[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict']]] = None,
-            launch_volume_attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]]] = None,
-            licensing_configs: pulumi.Input[Optional[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict']]] = None,
+            launch_options: pulumi.Input[Optional[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict', 'outputs.InstanceLaunchOptions']]] = None,
+            launch_volume_attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict', 'outputs.InstanceLaunchVolumeAttachment']]]]] = None,
+            licensing_configs: pulumi.Input[Optional[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict', 'outputs.InstanceLicensingConfigs']]] = None,
             metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            placement_constraint_details: pulumi.Input[Optional[Union['InstancePlacementConstraintDetailsArgs', 'InstancePlacementConstraintDetailsArgsDict']]] = None,
-            platform_config: pulumi.Input[Optional[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']]] = None,
-            preemptible_instance_config: pulumi.Input[Optional[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']]] = None,
+            placement_constraint_details: pulumi.Input[Optional[Union['InstancePlacementConstraintDetailsArgs', 'InstancePlacementConstraintDetailsArgsDict', 'outputs.InstancePlacementConstraintDetails']]] = None,
+            platform_config: pulumi.Input[Optional[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict', 'outputs.InstancePlatformConfig']]] = None,
+            preemptible_instance_config: pulumi.Input[Optional[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict', 'outputs.InstancePreemptibleInstanceConfig']]] = None,
             preserve_boot_volume: pulumi.Input[Optional[_builtins.bool]] = None,
             preserve_data_volumes_created_at_launch: pulumi.Input[Optional[_builtins.bool]] = None,
             private_ip: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2207,8 +2207,8 @@ class Instance(pulumi.CustomResource):
             security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             security_attributes_state: pulumi.Input[Optional[_builtins.str]] = None,
             shape: pulumi.Input[Optional[_builtins.str]] = None,
-            shape_config: pulumi.Input[Optional[Union['InstanceShapeConfigArgs', 'InstanceShapeConfigArgsDict']]] = None,
-            source_details: pulumi.Input[Optional[Union['InstanceSourceDetailsArgs', 'InstanceSourceDetailsArgsDict']]] = None,
+            shape_config: pulumi.Input[Optional[Union['InstanceShapeConfigArgs', 'InstanceShapeConfigArgsDict', 'outputs.InstanceShapeConfig']]] = None,
+            source_details: pulumi.Input[Optional[Union['InstanceSourceDetailsArgs', 'InstanceSourceDetailsArgsDict', 'outputs.InstanceSourceDetails']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -2222,20 +2222,20 @@ class Instance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['InstanceAgentConfigArgs', 'InstanceAgentConfigArgsDict']] agent_config: (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
+        :param pulumi.Input[Union['InstanceAgentConfigArgs', 'InstanceAgentConfigArgsDict', 'outputs.InstanceAgentConfig']] agent_config: (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
         :param pulumi.Input[_builtins.bool] async_: Whether Terraform creates and destroys the resource asynchronously. The default value is false.
                * If `async` is true, all the creation and deletion of instances are asynchronous
                * If `async` is false, all the creation and deletion of instances are synchronous as normal behavior
                
                > Please follow this guideline Terraform support asynchronous operation for more detail of this advanced option.
-        :param pulumi.Input[Union['InstanceAvailabilityConfigArgs', 'InstanceAvailabilityConfigArgsDict']] availability_config: (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
+        :param pulumi.Input[Union['InstanceAvailabilityConfigArgs', 'InstanceAvailabilityConfigArgsDict', 'outputs.InstanceAvailabilityConfig']] availability_config: (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] boot_volume_id: The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
         :param pulumi.Input[_builtins.str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The OCID of the cluster placement group of the instance.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[_builtins.str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
-        :param pulumi.Input[Union['InstanceCreateVnicDetailsArgs', 'InstanceCreateVnicDetailsArgsDict']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+        :param pulumi.Input[Union['InstanceCreateVnicDetailsArgs', 'InstanceCreateVnicDetailsArgsDict', 'outputs.InstanceCreateVnicDetails']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[_builtins.str] dedicated_vm_host_id: (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -2257,7 +2257,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param pulumi.Input[_builtins.str] image: Deprecated. Use `sourceDetails` with [InstanceSourceViaImageDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/InstanceSourceViaImageDetails) source type instead. If you specify values for both, the values must match.
         :param pulumi.Input[_builtins.str] instance_configuration_id: The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
-        :param pulumi.Input[Union['InstanceInstanceOptionsArgs', 'InstanceInstanceOptionsArgsDict']] instance_options: (Updatable) Optional mutable instance options
+        :param pulumi.Input[Union['InstanceInstanceOptionsArgs', 'InstanceInstanceOptionsArgsDict', 'outputs.InstanceInstanceOptions']] instance_options: (Updatable) Optional mutable instance options
         :param pulumi.Input[_builtins.str] ipxe_script: This is an advanced option.
                
                When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
@@ -2280,11 +2280,11 @@ class Instance(pulumi.CustomResource):
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
                * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
-        :param pulumi.Input[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict']] launch_options: (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
+        :param pulumi.Input[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict', 'outputs.InstanceLaunchOptions']] launch_options: (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict', 'outputs.InstanceLaunchVolumeAttachment']]]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
                
                **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
-        :param pulumi.Input[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict']] licensing_configs: (Updatable) List of licensing configurations associated with target launch values.
+        :param pulumi.Input[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict', 'outputs.InstanceLicensingConfigs']] licensing_configs: (Updatable) List of licensing configurations associated with target launch values.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
                
                A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
@@ -2318,8 +2318,8 @@ class Instance(pulumi.CustomResource):
                You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
                
                The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-        :param pulumi.Input[Union['InstancePlacementConstraintDetailsArgs', 'InstancePlacementConstraintDetailsArgsDict']] placement_constraint_details: Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
-        :param pulumi.Input[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']] platform_config: (Updatable) The platform configuration requested for the instance.
+        :param pulumi.Input[Union['InstancePlacementConstraintDetailsArgs', 'InstancePlacementConstraintDetailsArgsDict', 'outputs.InstancePlacementConstraintDetails']] placement_constraint_details: Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        :param pulumi.Input[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict', 'outputs.InstancePlatformConfig']] platform_config: (Updatable) The platform configuration requested for the instance.
                
                If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
                
@@ -2328,7 +2328,7 @@ class Instance(pulumi.CustomResource):
                For more information about shielded instances, see [Shielded Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/shielded-instances.htm).
                
                For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
-        :param pulumi.Input[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']] preemptible_instance_config: Configuration options for preemptible instances.
+        :param pulumi.Input[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict', 'outputs.InstancePreemptibleInstanceConfig']] preemptible_instance_config: Configuration options for preemptible instances.
         :param pulumi.Input[_builtins.bool] preserve_boot_volume: (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         :param pulumi.Input[_builtins.str] private_ip: The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
         :param pulumi.Input[_builtins.str] public_ip: The public IP address of instance VNIC (if enabled).
@@ -2338,12 +2338,12 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] shape: (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
                
                You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
-        :param pulumi.Input[Union['InstanceShapeConfigArgs', 'InstanceShapeConfigArgsDict']] shape_config: (Updatable) The shape configuration requested for the instance.
+        :param pulumi.Input[Union['InstanceShapeConfigArgs', 'InstanceShapeConfigArgsDict', 'outputs.InstanceShapeConfig']] shape_config: (Updatable) The shape configuration requested for the instance.
                
                If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
                
                Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
-        :param pulumi.Input[Union['InstanceSourceDetailsArgs', 'InstanceSourceDetailsArgsDict']] source_details: (Updatable)
+        :param pulumi.Input[Union['InstanceSourceDetailsArgs', 'InstanceSourceDetailsArgsDict', 'outputs.InstanceSourceDetails']] source_details: (Updatable)
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the instance. Could be set to RUNNING or STOPPED.
                
                ** IMPORTANT **

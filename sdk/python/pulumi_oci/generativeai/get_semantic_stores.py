@@ -120,7 +120,7 @@ class AwaitableGetSemanticStoresResult(GetSemanticStoresResult):
 def get_semantic_stores(compartment_id: Optional[_builtins.str] = None,
                         data_source_querying_connection_id: Optional[_builtins.str] = None,
                         display_name: Optional[_builtins.str] = None,
-                        filters: Optional[Sequence[Union['GetSemanticStoresFilterArgs', 'GetSemanticStoresFilterArgsDict']]] = None,
+                        filters: Optional[Sequence[Union['GetSemanticStoresFilterArgs', 'GetSemanticStoresFilterArgsDict', 'outputs.GetSemanticStoresFilterResult']]] = None,
                         id: Optional[_builtins.str] = None,
                         states: Optional[Sequence[_builtins.str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSemanticStoresResult:
@@ -170,7 +170,7 @@ def get_semantic_stores(compartment_id: Optional[_builtins.str] = None,
 def get_semantic_stores_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                data_source_querying_connection_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSemanticStoresFilterArgs', 'GetSemanticStoresFilterArgsDict']]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSemanticStoresFilterArgs', 'GetSemanticStoresFilterArgsDict', 'outputs.GetSemanticStoresFilterResult']]]]] = None,
                                id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSemanticStoresResult]:

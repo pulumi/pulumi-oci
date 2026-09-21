@@ -110,7 +110,7 @@ class AwaitableGetManagedMySqlDatabaseSqlDataResult(GetManagedMySqlDatabaseSqlDa
 
 def get_managed_my_sql_database_sql_data(end_time: Optional[_builtins.str] = None,
                                          filter_column: Optional[_builtins.str] = None,
-                                         filters: Optional[Sequence[Union['GetManagedMySqlDatabaseSqlDataFilterArgs', 'GetManagedMySqlDatabaseSqlDataFilterArgsDict']]] = None,
+                                         filters: Optional[Sequence[Union['GetManagedMySqlDatabaseSqlDataFilterArgs', 'GetManagedMySqlDatabaseSqlDataFilterArgsDict', 'outputs.GetManagedMySqlDatabaseSqlDataFilterResult']]] = None,
                                          managed_my_sql_database_id: Optional[_builtins.str] = None,
                                          start_time: Optional[_builtins.str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedMySqlDatabaseSqlDataResult:
@@ -172,7 +172,7 @@ def get_managed_my_sql_database_sql_data(end_time: Optional[_builtins.str] = Non
         start_time=pulumi.get(__ret__, 'start_time'))
 def get_managed_my_sql_database_sql_data_output(end_time: pulumi.Input[Optional[_builtins.str]] = None,
                                                 filter_column: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedMySqlDatabaseSqlDataFilterArgs', 'GetManagedMySqlDatabaseSqlDataFilterArgsDict']]]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedMySqlDatabaseSqlDataFilterArgs', 'GetManagedMySqlDatabaseSqlDataFilterArgsDict', 'outputs.GetManagedMySqlDatabaseSqlDataFilterResult']]]]] = None,
                                                 managed_my_sql_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                 start_time: pulumi.Input[Optional[_builtins.str]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedMySqlDatabaseSqlDataResult]:

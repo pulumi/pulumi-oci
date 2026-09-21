@@ -487,7 +487,7 @@ class OccMetricAlarm(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  frequency: pulumi.Input[Optional[_builtins.str]] = None,
                  is_active: pulumi.Input[Optional[_builtins.bool]] = None,
-                 resource_configuration: pulumi.Input[Optional[Union['OccMetricAlarmResourceConfigurationArgs', 'OccMetricAlarmResourceConfigurationArgsDict']]] = None,
+                 resource_configuration: pulumi.Input[Optional[Union['OccMetricAlarmResourceConfigurationArgs', 'OccMetricAlarmResourceConfigurationArgsDict', 'outputs.OccMetricAlarmResourceConfiguration']]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  subscribers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  threshold: pulumi.Input[Optional[_builtins.int]] = None,
@@ -554,7 +554,7 @@ class OccMetricAlarm(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] frequency: (Updatable) Frequency at which notifications should be sent.
         :param pulumi.Input[_builtins.bool] is_active: (Updatable) Alarm active status.
-        :param pulumi.Input[Union['OccMetricAlarmResourceConfigurationArgs', 'OccMetricAlarmResourceConfigurationArgsDict']] resource_configuration: Configuration for a given 'resource'
+        :param pulumi.Input[Union['OccMetricAlarmResourceConfigurationArgs', 'OccMetricAlarmResourceConfigurationArgsDict', 'outputs.OccMetricAlarmResourceConfiguration']] resource_configuration: Configuration for a given 'resource'
         :param pulumi.Input[_builtins.str] state: (Updatable) The current lifecycle state of the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subscribers: (Updatable) List of topic OCIDs for notifications.
         :param pulumi.Input[_builtins.int] threshold: (Updatable) Threshold at which alarm must be triggered.
@@ -643,7 +643,7 @@ class OccMetricAlarm(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  frequency: pulumi.Input[Optional[_builtins.str]] = None,
                  is_active: pulumi.Input[Optional[_builtins.bool]] = None,
-                 resource_configuration: pulumi.Input[Optional[Union['OccMetricAlarmResourceConfigurationArgs', 'OccMetricAlarmResourceConfigurationArgsDict']]] = None,
+                 resource_configuration: pulumi.Input[Optional[Union['OccMetricAlarmResourceConfigurationArgs', 'OccMetricAlarmResourceConfigurationArgsDict', 'outputs.OccMetricAlarmResourceConfiguration']]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  subscribers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  threshold: pulumi.Input[Optional[_builtins.int]] = None,
@@ -701,7 +701,7 @@ class OccMetricAlarm(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             frequency: pulumi.Input[Optional[_builtins.str]] = None,
             is_active: pulumi.Input[Optional[_builtins.bool]] = None,
-            resource_configuration: pulumi.Input[Optional[Union['OccMetricAlarmResourceConfigurationArgs', 'OccMetricAlarmResourceConfigurationArgsDict']]] = None,
+            resource_configuration: pulumi.Input[Optional[Union['OccMetricAlarmResourceConfigurationArgs', 'OccMetricAlarmResourceConfigurationArgsDict', 'outputs.OccMetricAlarmResourceConfiguration']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             subscribers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -723,7 +723,7 @@ class OccMetricAlarm(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] frequency: (Updatable) Frequency at which notifications should be sent.
         :param pulumi.Input[_builtins.bool] is_active: (Updatable) Alarm active status.
-        :param pulumi.Input[Union['OccMetricAlarmResourceConfigurationArgs', 'OccMetricAlarmResourceConfigurationArgsDict']] resource_configuration: Configuration for a given 'resource'
+        :param pulumi.Input[Union['OccMetricAlarmResourceConfigurationArgs', 'OccMetricAlarmResourceConfigurationArgsDict', 'outputs.OccMetricAlarmResourceConfiguration']] resource_configuration: Configuration for a given 'resource'
         :param pulumi.Input[_builtins.str] state: (Updatable) The current lifecycle state of the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subscribers: (Updatable) List of topic OCIDs for notifications.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`

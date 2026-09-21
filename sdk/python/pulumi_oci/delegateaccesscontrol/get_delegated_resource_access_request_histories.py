@@ -82,7 +82,7 @@ class AwaitableGetDelegatedResourceAccessRequestHistoriesResult(GetDelegatedReso
 
 
 def get_delegated_resource_access_request_histories(delegated_resource_access_request_id: Optional[_builtins.str] = None,
-                                                    filters: Optional[Sequence[Union['GetDelegatedResourceAccessRequestHistoriesFilterArgs', 'GetDelegatedResourceAccessRequestHistoriesFilterArgsDict']]] = None,
+                                                    filters: Optional[Sequence[Union['GetDelegatedResourceAccessRequestHistoriesFilterArgs', 'GetDelegatedResourceAccessRequestHistoriesFilterArgsDict', 'outputs.GetDelegatedResourceAccessRequestHistoriesFilterResult']]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDelegatedResourceAccessRequestHistoriesResult:
     """
     This data source provides the list of Delegated Resource Access Request Histories in Oracle Cloud Infrastructure Delegate Access Control service.
@@ -113,7 +113,7 @@ def get_delegated_resource_access_request_histories(delegated_resource_access_re
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_delegated_resource_access_request_histories_output(delegated_resource_access_request_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDelegatedResourceAccessRequestHistoriesFilterArgs', 'GetDelegatedResourceAccessRequestHistoriesFilterArgsDict']]]]] = None,
+                                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDelegatedResourceAccessRequestHistoriesFilterArgs', 'GetDelegatedResourceAccessRequestHistoriesFilterArgsDict', 'outputs.GetDelegatedResourceAccessRequestHistoriesFilterResult']]]]] = None,
                                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDelegatedResourceAccessRequestHistoriesResult]:
     """
     This data source provides the list of Delegated Resource Access Request Histories in Oracle Cloud Infrastructure Delegate Access Control service.

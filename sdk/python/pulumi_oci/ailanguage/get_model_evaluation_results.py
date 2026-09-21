@@ -81,7 +81,7 @@ class AwaitableGetModelEvaluationResultsResult(GetModelEvaluationResultsResult):
             model_id=self.model_id)
 
 
-def get_model_evaluation_results(filters: Optional[Sequence[Union['GetModelEvaluationResultsFilterArgs', 'GetModelEvaluationResultsFilterArgsDict']]] = None,
+def get_model_evaluation_results(filters: Optional[Sequence[Union['GetModelEvaluationResultsFilterArgs', 'GetModelEvaluationResultsFilterArgsDict', 'outputs.GetModelEvaluationResultsFilterResult']]] = None,
                                  model_id: Optional[_builtins.str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetModelEvaluationResultsResult:
     """
@@ -112,7 +112,7 @@ def get_model_evaluation_results(filters: Optional[Sequence[Union['GetModelEvalu
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         model_id=pulumi.get(__ret__, 'model_id'))
-def get_model_evaluation_results_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetModelEvaluationResultsFilterArgs', 'GetModelEvaluationResultsFilterArgsDict']]]]] = None,
+def get_model_evaluation_results_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetModelEvaluationResultsFilterArgs', 'GetModelEvaluationResultsFilterArgsDict', 'outputs.GetModelEvaluationResultsFilterResult']]]]] = None,
                                         model_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelEvaluationResultsResult]:
     """

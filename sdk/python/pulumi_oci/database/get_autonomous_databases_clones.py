@@ -133,7 +133,7 @@ def get_autonomous_databases_clones(autonomous_database_id: Optional[_builtins.s
                                     clone_type: Optional[_builtins.str] = None,
                                     compartment_id: Optional[_builtins.str] = None,
                                     display_name: Optional[_builtins.str] = None,
-                                    filters: Optional[Sequence[Union['GetAutonomousDatabasesClonesFilterArgs', 'GetAutonomousDatabasesClonesFilterArgsDict']]] = None,
+                                    filters: Optional[Sequence[Union['GetAutonomousDatabasesClonesFilterArgs', 'GetAutonomousDatabasesClonesFilterArgsDict', 'outputs.GetAutonomousDatabasesClonesFilterResult']]] = None,
                                     state: Optional[_builtins.str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabasesClonesResult:
     """
@@ -184,7 +184,7 @@ def get_autonomous_databases_clones_output(autonomous_database_id: pulumi.Input[
                                            clone_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDatabasesClonesFilterArgs', 'GetAutonomousDatabasesClonesFilterArgsDict']]]]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDatabasesClonesFilterArgs', 'GetAutonomousDatabasesClonesFilterArgsDict', 'outputs.GetAutonomousDatabasesClonesFilterResult']]]]] = None,
                                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabasesClonesResult]:
     """

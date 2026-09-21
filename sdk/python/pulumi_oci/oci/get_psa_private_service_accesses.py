@@ -113,7 +113,7 @@ class AwaitableGetPsaPrivateServiceAccessesResult(GetPsaPrivateServiceAccessesRe
 
 def get_psa_private_service_accesses(compartment_id: Optional[_builtins.str] = None,
                                      display_name: Optional[_builtins.str] = None,
-                                     filters: Optional[Sequence[Union['GetPsaPrivateServiceAccessesFilterArgs', 'GetPsaPrivateServiceAccessesFilterArgsDict']]] = None,
+                                     filters: Optional[Sequence[Union['GetPsaPrivateServiceAccessesFilterArgs', 'GetPsaPrivateServiceAccessesFilterArgsDict', 'outputs.GetPsaPrivateServiceAccessesFilterResult']]] = None,
                                      id: Optional[_builtins.str] = None,
                                      service_id: Optional[_builtins.str] = None,
                                      state: Optional[_builtins.str] = None,
@@ -144,7 +144,7 @@ def get_psa_private_service_accesses(compartment_id: Optional[_builtins.str] = N
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
 def get_psa_private_service_accesses_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPsaPrivateServiceAccessesFilterArgs', 'GetPsaPrivateServiceAccessesFilterArgsDict']]]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPsaPrivateServiceAccessesFilterArgs', 'GetPsaPrivateServiceAccessesFilterArgsDict', 'outputs.GetPsaPrivateServiceAccessesFilterResult']]]]] = None,
                                             id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             service_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

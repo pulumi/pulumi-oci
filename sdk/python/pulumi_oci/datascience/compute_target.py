@@ -357,7 +357,7 @@ class ComputeTarget(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 compute_configuration_details: pulumi.Input[Optional[Union['ComputeTargetComputeConfigurationDetailsArgs', 'ComputeTargetComputeConfigurationDetailsArgsDict']]] = None,
+                 compute_configuration_details: pulumi.Input[Optional[Union['ComputeTargetComputeConfigurationDetailsArgs', 'ComputeTargetComputeConfigurationDetailsArgsDict', 'outputs.ComputeTargetComputeConfigurationDetails']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -444,7 +444,7 @@ class ComputeTarget(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the compute target.
-        :param pulumi.Input[Union['ComputeTargetComputeConfigurationDetailsArgs', 'ComputeTargetComputeConfigurationDetailsArgsDict']] compute_configuration_details: (Updatable) Configuration details of the targeted compute.
+        :param pulumi.Input[Union['ComputeTargetComputeConfigurationDetailsArgs', 'ComputeTargetComputeConfigurationDetailsArgsDict', 'outputs.ComputeTargetComputeConfigurationDetails']] compute_configuration_details: (Updatable) Configuration details of the targeted compute.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the compute target.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the resource.
@@ -553,7 +553,7 @@ class ComputeTarget(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 compute_configuration_details: pulumi.Input[Optional[Union['ComputeTargetComputeConfigurationDetailsArgs', 'ComputeTargetComputeConfigurationDetailsArgsDict']]] = None,
+                 compute_configuration_details: pulumi.Input[Optional[Union['ComputeTargetComputeConfigurationDetailsArgs', 'ComputeTargetComputeConfigurationDetailsArgsDict', 'outputs.ComputeTargetComputeConfigurationDetails']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -595,8 +595,8 @@ class ComputeTarget(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            compute_configuration_details: pulumi.Input[Optional[Union['ComputeTargetComputeConfigurationDetailsArgs', 'ComputeTargetComputeConfigurationDetailsArgsDict']]] = None,
-            compute_target_system_datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeTargetComputeTargetSystemDataArgs', 'ComputeTargetComputeTargetSystemDataArgsDict']]]]] = None,
+            compute_configuration_details: pulumi.Input[Optional[Union['ComputeTargetComputeConfigurationDetailsArgs', 'ComputeTargetComputeConfigurationDetailsArgsDict', 'outputs.ComputeTargetComputeConfigurationDetails']]] = None,
+            compute_target_system_datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeTargetComputeTargetSystemDataArgs', 'ComputeTargetComputeTargetSystemDataArgsDict', 'outputs.ComputeTargetComputeTargetSystemData']]]]] = None,
             created_by: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -614,8 +614,8 @@ class ComputeTarget(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the compute target.
-        :param pulumi.Input[Union['ComputeTargetComputeConfigurationDetailsArgs', 'ComputeTargetComputeConfigurationDetailsArgsDict']] compute_configuration_details: (Updatable) Configuration details of the targeted compute.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeTargetComputeTargetSystemDataArgs', 'ComputeTargetComputeTargetSystemDataArgsDict']]]] compute_target_system_datas: System data of the compute target.
+        :param pulumi.Input[Union['ComputeTargetComputeConfigurationDetailsArgs', 'ComputeTargetComputeConfigurationDetailsArgsDict', 'outputs.ComputeTargetComputeConfigurationDetails']] compute_configuration_details: (Updatable) Configuration details of the targeted compute.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeTargetComputeTargetSystemDataArgs', 'ComputeTargetComputeTargetSystemDataArgsDict', 'outputs.ComputeTargetComputeTargetSystemData']]]] compute_target_system_datas: System data of the compute target.
         :param pulumi.Input[_builtins.str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the compute target.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the compute target.

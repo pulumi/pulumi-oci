@@ -82,7 +82,7 @@ class AwaitableGetOciCacheEngineOptionsResult(GetOciCacheEngineOptionsResult):
 
 
 def get_oci_cache_engine_options(compartment_id: Optional[_builtins.str] = None,
-                                 filters: Optional[Sequence[Union['GetOciCacheEngineOptionsFilterArgs', 'GetOciCacheEngineOptionsFilterArgsDict']]] = None,
+                                 filters: Optional[Sequence[Union['GetOciCacheEngineOptionsFilterArgs', 'GetOciCacheEngineOptionsFilterArgsDict', 'outputs.GetOciCacheEngineOptionsFilterResult']]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOciCacheEngineOptionsResult:
     """
     This data source provides the list of Oci Cache Engine Options in Oracle Cloud Infrastructure Redis service.
@@ -113,7 +113,7 @@ def get_oci_cache_engine_options(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         oci_cache_engine_options_collections=pulumi.get(__ret__, 'oci_cache_engine_options_collections'))
 def get_oci_cache_engine_options_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOciCacheEngineOptionsFilterArgs', 'GetOciCacheEngineOptionsFilterArgsDict']]]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOciCacheEngineOptionsFilterArgs', 'GetOciCacheEngineOptionsFilterArgsDict', 'outputs.GetOciCacheEngineOptionsFilterResult']]]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOciCacheEngineOptionsResult]:
     """
     This data source provides the list of Oci Cache Engine Options in Oracle Cloud Infrastructure Redis service.

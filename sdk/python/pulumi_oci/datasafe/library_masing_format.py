@@ -344,7 +344,7 @@ class LibraryMasingFormat(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 format_entries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LibraryMasingFormatFormatEntryArgs', 'LibraryMasingFormatFormatEntryArgsDict']]]]] = None,
+                 format_entries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LibraryMasingFormatFormatEntryArgs', 'LibraryMasingFormatFormatEntryArgsDict', 'outputs.LibraryMasingFormatFormatEntry']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  sensitive_type_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -375,7 +375,7 @@ class LibraryMasingFormat(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the library masking format.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the library masking format. The name does not have to be unique, and it's changeable.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['LibraryMasingFormatFormatEntryArgs', 'LibraryMasingFormatFormatEntryArgsDict']]]] format_entries: (Updatable) An array of format entries. The combined output of all the format entries is used for masking.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['LibraryMasingFormatFormatEntryArgs', 'LibraryMasingFormatFormatEntryArgsDict', 'outputs.LibraryMasingFormatFormatEntry']]]] format_entries: (Updatable) An array of format entries. The combined output of all the format entries is used for masking.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sensitive_type_ids: (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
                
@@ -428,7 +428,7 @@ class LibraryMasingFormat(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 format_entries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LibraryMasingFormatFormatEntryArgs', 'LibraryMasingFormatFormatEntryArgsDict']]]]] = None,
+                 format_entries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LibraryMasingFormatFormatEntryArgs', 'LibraryMasingFormatFormatEntryArgsDict', 'outputs.LibraryMasingFormatFormatEntry']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  sensitive_type_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -469,7 +469,7 @@ class LibraryMasingFormat(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            format_entries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LibraryMasingFormatFormatEntryArgs', 'LibraryMasingFormatFormatEntryArgsDict']]]]] = None,
+            format_entries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LibraryMasingFormatFormatEntryArgs', 'LibraryMasingFormatFormatEntryArgsDict', 'outputs.LibraryMasingFormatFormatEntry']]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             sensitive_type_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             source: pulumi.Input[Optional[_builtins.str]] = None,
@@ -487,7 +487,7 @@ class LibraryMasingFormat(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the library masking format.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the library masking format. The name does not have to be unique, and it's changeable.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['LibraryMasingFormatFormatEntryArgs', 'LibraryMasingFormatFormatEntryArgsDict']]]] format_entries: (Updatable) An array of format entries. The combined output of all the format entries is used for masking.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['LibraryMasingFormatFormatEntryArgs', 'LibraryMasingFormatFormatEntryArgsDict', 'outputs.LibraryMasingFormatFormatEntry']]]] format_entries: (Updatable) An array of format entries. The combined output of all the format entries is used for masking.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sensitive_type_ids: (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
                

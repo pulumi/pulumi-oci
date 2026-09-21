@@ -121,7 +121,7 @@ class BdsCapacityReport(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 shape_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsCapacityReportShapeAvailabilityArgs', 'BdsCapacityReportShapeAvailabilityArgsDict']]]]] = None,
+                 shape_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsCapacityReportShapeAvailabilityArgs', 'BdsCapacityReportShapeAvailabilityArgsDict', 'outputs.BdsCapacityReportShapeAvailability']]]]] = None,
                  __props__=None):
         """
         This resource provides the Bds Capacity Report resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -161,7 +161,7 @@ class BdsCapacityReport(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID for the compartment. This should always be the root compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BdsCapacityReportShapeAvailabilityArgs', 'BdsCapacityReportShapeAvailabilityArgsDict']]]] shape_availabilities: Information about the shapes in the capacity report.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BdsCapacityReportShapeAvailabilityArgs', 'BdsCapacityReportShapeAvailabilityArgsDict', 'outputs.BdsCapacityReportShapeAvailability']]]] shape_availabilities: Information about the shapes in the capacity report.
         """
         ...
     @overload
@@ -220,7 +220,7 @@ class BdsCapacityReport(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 shape_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsCapacityReportShapeAvailabilityArgs', 'BdsCapacityReportShapeAvailabilityArgsDict']]]]] = None,
+                 shape_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsCapacityReportShapeAvailabilityArgs', 'BdsCapacityReportShapeAvailabilityArgsDict', 'outputs.BdsCapacityReportShapeAvailability']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -248,7 +248,7 @@ class BdsCapacityReport(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            shape_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsCapacityReportShapeAvailabilityArgs', 'BdsCapacityReportShapeAvailabilityArgsDict']]]]] = None,
+            shape_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsCapacityReportShapeAvailabilityArgs', 'BdsCapacityReportShapeAvailabilityArgsDict', 'outputs.BdsCapacityReportShapeAvailability']]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'BdsCapacityReport':
         """
         Get an existing BdsCapacityReport resource's state with the given name, id, and optional extra
@@ -258,7 +258,7 @@ class BdsCapacityReport(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID for the compartment. This should always be the root compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BdsCapacityReportShapeAvailabilityArgs', 'BdsCapacityReportShapeAvailabilityArgsDict']]]] shape_availabilities: Information about the shapes in the capacity report.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BdsCapacityReportShapeAvailabilityArgs', 'BdsCapacityReportShapeAvailabilityArgsDict', 'outputs.BdsCapacityReportShapeAvailability']]]] shape_availabilities: Information about the shapes in the capacity report.
         :param pulumi.Input[_builtins.str] time_created: The time the report was created, shown as an RFC 3339 formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

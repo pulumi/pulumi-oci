@@ -98,7 +98,7 @@ class AwaitableGetProcessSetsResult(GetProcessSetsResult):
 
 def get_process_sets(compartment_id: Optional[_builtins.str] = None,
                      display_name: Optional[_builtins.str] = None,
-                     filters: Optional[Sequence[Union['GetProcessSetsFilterArgs', 'GetProcessSetsFilterArgsDict']]] = None,
+                     filters: Optional[Sequence[Union['GetProcessSetsFilterArgs', 'GetProcessSetsFilterArgsDict', 'outputs.GetProcessSetsFilterResult']]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProcessSetsResult:
     """
     This data source provides the list of Process Sets in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -134,7 +134,7 @@ def get_process_sets(compartment_id: Optional[_builtins.str] = None,
         process_set_collections=pulumi.get(__ret__, 'process_set_collections'))
 def get_process_sets_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProcessSetsFilterArgs', 'GetProcessSetsFilterArgsDict']]]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProcessSetsFilterArgs', 'GetProcessSetsFilterArgsDict', 'outputs.GetProcessSetsFilterResult']]]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProcessSetsResult]:
     """
     This data source provides the list of Process Sets in Oracle Cloud Infrastructure Stack Monitoring service.

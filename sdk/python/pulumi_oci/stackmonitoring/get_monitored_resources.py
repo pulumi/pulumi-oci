@@ -115,7 +115,7 @@ class AwaitableGetMonitoredResourcesResult(GetMonitoredResourcesResult):
 
 
 def get_monitored_resources(compartment_id: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetMonitoredResourcesFilterArgs', 'GetMonitoredResourcesFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetMonitoredResourcesFilterArgs', 'GetMonitoredResourcesFilterArgsDict', 'outputs.GetMonitoredResourcesFilterResult']]] = None,
                             name: Optional[_builtins.str] = None,
                             status: Optional[_builtins.str] = None,
                             work_request_id: Optional[_builtins.str] = None,
@@ -161,7 +161,7 @@ def get_monitored_resources(compartment_id: Optional[_builtins.str] = None,
         status=pulumi.get(__ret__, 'status'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
 def get_monitored_resources_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMonitoredResourcesFilterArgs', 'GetMonitoredResourcesFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMonitoredResourcesFilterArgs', 'GetMonitoredResourcesFilterArgsDict', 'outputs.GetMonitoredResourcesFilterResult']]]]] = None,
                                    name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    work_request_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

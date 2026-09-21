@@ -108,7 +108,7 @@ class AwaitableGetCloudDatabasesResult(GetCloudDatabasesResult):
 def get_cloud_databases(cloud_db_system_id: Optional[_builtins.str] = None,
                         compartment_id: Optional[_builtins.str] = None,
                         display_name: Optional[_builtins.str] = None,
-                        filters: Optional[Sequence[Union['GetCloudDatabasesFilterArgs', 'GetCloudDatabasesFilterArgsDict']]] = None,
+                        filters: Optional[Sequence[Union['GetCloudDatabasesFilterArgs', 'GetCloudDatabasesFilterArgsDict', 'outputs.GetCloudDatabasesFilterResult']]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudDatabasesResult:
     """
     This data source provides the list of Cloud Databases in Oracle Cloud Infrastructure Database Management service.
@@ -149,7 +149,7 @@ def get_cloud_databases(cloud_db_system_id: Optional[_builtins.str] = None,
 def get_cloud_databases_output(cloud_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
                                compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudDatabasesFilterArgs', 'GetCloudDatabasesFilterArgsDict']]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudDatabasesFilterArgs', 'GetCloudDatabasesFilterArgsDict', 'outputs.GetCloudDatabasesFilterResult']]]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudDatabasesResult]:
     """
     This data source provides the list of Cloud Databases in Oracle Cloud Infrastructure Database Management service.

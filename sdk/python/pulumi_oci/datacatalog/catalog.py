@@ -511,7 +511,7 @@ class Catalog(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CatalogLockArgs', 'CatalogLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CatalogLockArgs', 'CatalogLockArgsDict', 'outputs.CatalogLock']]]]] = None,
             number_of_objects: pulumi.Input[Optional[_builtins.int]] = None,
             service_api_url: pulumi.Input[Optional[_builtins.str]] = None,
             service_console_url: pulumi.Input[Optional[_builtins.str]] = None,
@@ -535,7 +535,7 @@ class Catalog(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Data catalog identifier.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CatalogLockArgs', 'CatalogLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CatalogLockArgs', 'CatalogLockArgsDict', 'outputs.CatalogLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.int] number_of_objects: The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
         :param pulumi.Input[_builtins.str] service_api_url: The REST front endpoint URL to the data catalog instance.
         :param pulumi.Input[_builtins.str] service_console_url: The console front endpoint URL to the data catalog instance.

@@ -718,17 +718,17 @@ class DatabaseToolsConnection(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 key_stores: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsConnectionKeyStoreArgs', 'DatabaseToolsConnectionKeyStoreArgsDict']]]]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsConnectionLockArgs', 'DatabaseToolsConnectionLockArgsDict']]]]] = None,
+                 key_stores: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsConnectionKeyStoreArgs', 'DatabaseToolsConnectionKeyStoreArgsDict', 'outputs.DatabaseToolsConnectionKeyStore']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsConnectionLockArgs', 'DatabaseToolsConnectionLockArgsDict', 'outputs.DatabaseToolsConnectionLock']]]]] = None,
                  private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 proxy_client: pulumi.Input[Optional[Union['DatabaseToolsConnectionProxyClientArgs', 'DatabaseToolsConnectionProxyClientArgsDict']]] = None,
-                 related_resource: pulumi.Input[Optional[Union['DatabaseToolsConnectionRelatedResourceArgs', 'DatabaseToolsConnectionRelatedResourceArgsDict']]] = None,
+                 proxy_client: pulumi.Input[Optional[Union['DatabaseToolsConnectionProxyClientArgs', 'DatabaseToolsConnectionProxyClientArgsDict', 'outputs.DatabaseToolsConnectionProxyClient']]] = None,
+                 related_resource: pulumi.Input[Optional[Union['DatabaseToolsConnectionRelatedResourceArgs', 'DatabaseToolsConnectionRelatedResourceArgsDict', 'outputs.DatabaseToolsConnectionRelatedResource']]] = None,
                  runtime_identity: pulumi.Input[Optional[_builtins.str]] = None,
                  runtime_support: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  url: pulumi.Input[Optional[_builtins.str]] = None,
                  user_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 user_password: pulumi.Input[Optional[Union['DatabaseToolsConnectionUserPasswordArgs', 'DatabaseToolsConnectionUserPasswordArgsDict']]] = None,
+                 user_password: pulumi.Input[Optional[Union['DatabaseToolsConnectionUserPasswordArgs', 'DatabaseToolsConnectionUserPasswordArgsDict', 'outputs.DatabaseToolsConnectionUserPassword']]] = None,
                  __props__=None):
         """
         This resource provides the Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
@@ -816,17 +816,17 @@ class DatabaseToolsConnection(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsConnectionKeyStoreArgs', 'DatabaseToolsConnectionKeyStoreArgsDict']]]] key_stores: (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsConnectionLockArgs', 'DatabaseToolsConnectionLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsConnectionKeyStoreArgs', 'DatabaseToolsConnectionKeyStoreArgsDict', 'outputs.DatabaseToolsConnectionKeyStore']]]] key_stores: (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsConnectionLockArgs', 'DatabaseToolsConnectionLockArgsDict', 'outputs.DatabaseToolsConnectionLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] private_endpoint_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
-        :param pulumi.Input[Union['DatabaseToolsConnectionProxyClientArgs', 'DatabaseToolsConnectionProxyClientArgsDict']] proxy_client: (Updatable) The proxy client information.
-        :param pulumi.Input[Union['DatabaseToolsConnectionRelatedResourceArgs', 'DatabaseToolsConnectionRelatedResourceArgsDict']] related_resource: (Updatable) The related resource
+        :param pulumi.Input[Union['DatabaseToolsConnectionProxyClientArgs', 'DatabaseToolsConnectionProxyClientArgsDict', 'outputs.DatabaseToolsConnectionProxyClient']] proxy_client: (Updatable) The proxy client information.
+        :param pulumi.Input[Union['DatabaseToolsConnectionRelatedResourceArgs', 'DatabaseToolsConnectionRelatedResourceArgsDict', 'outputs.DatabaseToolsConnectionRelatedResource']] related_resource: (Updatable) The related resource
         :param pulumi.Input[_builtins.str] runtime_identity: Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
         :param pulumi.Input[_builtins.str] runtime_support: Specifies whether this connection is supported by the Database Tools Runtime.
         :param pulumi.Input[_builtins.str] type: (Updatable) The Database Tools connection type.
         :param pulumi.Input[_builtins.str] url: (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
         :param pulumi.Input[_builtins.str] user_name: (Updatable) The database user name.
-        :param pulumi.Input[Union['DatabaseToolsConnectionUserPasswordArgs', 'DatabaseToolsConnectionUserPasswordArgsDict']] user_password: (Updatable) The database user password.
+        :param pulumi.Input[Union['DatabaseToolsConnectionUserPasswordArgs', 'DatabaseToolsConnectionUserPasswordArgsDict', 'outputs.DatabaseToolsConnectionUserPassword']] user_password: (Updatable) The database user password.
         """
         ...
     @overload
@@ -933,17 +933,17 @@ class DatabaseToolsConnection(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 key_stores: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsConnectionKeyStoreArgs', 'DatabaseToolsConnectionKeyStoreArgsDict']]]]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsConnectionLockArgs', 'DatabaseToolsConnectionLockArgsDict']]]]] = None,
+                 key_stores: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsConnectionKeyStoreArgs', 'DatabaseToolsConnectionKeyStoreArgsDict', 'outputs.DatabaseToolsConnectionKeyStore']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsConnectionLockArgs', 'DatabaseToolsConnectionLockArgsDict', 'outputs.DatabaseToolsConnectionLock']]]]] = None,
                  private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 proxy_client: pulumi.Input[Optional[Union['DatabaseToolsConnectionProxyClientArgs', 'DatabaseToolsConnectionProxyClientArgsDict']]] = None,
-                 related_resource: pulumi.Input[Optional[Union['DatabaseToolsConnectionRelatedResourceArgs', 'DatabaseToolsConnectionRelatedResourceArgsDict']]] = None,
+                 proxy_client: pulumi.Input[Optional[Union['DatabaseToolsConnectionProxyClientArgs', 'DatabaseToolsConnectionProxyClientArgsDict', 'outputs.DatabaseToolsConnectionProxyClient']]] = None,
+                 related_resource: pulumi.Input[Optional[Union['DatabaseToolsConnectionRelatedResourceArgs', 'DatabaseToolsConnectionRelatedResourceArgsDict', 'outputs.DatabaseToolsConnectionRelatedResource']]] = None,
                  runtime_identity: pulumi.Input[Optional[_builtins.str]] = None,
                  runtime_support: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  url: pulumi.Input[Optional[_builtins.str]] = None,
                  user_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 user_password: pulumi.Input[Optional[Union['DatabaseToolsConnectionUserPasswordArgs', 'DatabaseToolsConnectionUserPasswordArgsDict']]] = None,
+                 user_password: pulumi.Input[Optional[Union['DatabaseToolsConnectionUserPasswordArgs', 'DatabaseToolsConnectionUserPasswordArgsDict', 'outputs.DatabaseToolsConnectionUserPassword']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1000,12 +1000,12 @@ class DatabaseToolsConnection(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            key_stores: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsConnectionKeyStoreArgs', 'DatabaseToolsConnectionKeyStoreArgsDict']]]]] = None,
+            key_stores: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsConnectionKeyStoreArgs', 'DatabaseToolsConnectionKeyStoreArgsDict', 'outputs.DatabaseToolsConnectionKeyStore']]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsConnectionLockArgs', 'DatabaseToolsConnectionLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsConnectionLockArgs', 'DatabaseToolsConnectionLockArgsDict', 'outputs.DatabaseToolsConnectionLock']]]]] = None,
             private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
-            proxy_client: pulumi.Input[Optional[Union['DatabaseToolsConnectionProxyClientArgs', 'DatabaseToolsConnectionProxyClientArgsDict']]] = None,
-            related_resource: pulumi.Input[Optional[Union['DatabaseToolsConnectionRelatedResourceArgs', 'DatabaseToolsConnectionRelatedResourceArgsDict']]] = None,
+            proxy_client: pulumi.Input[Optional[Union['DatabaseToolsConnectionProxyClientArgs', 'DatabaseToolsConnectionProxyClientArgsDict', 'outputs.DatabaseToolsConnectionProxyClient']]] = None,
+            related_resource: pulumi.Input[Optional[Union['DatabaseToolsConnectionRelatedResourceArgs', 'DatabaseToolsConnectionRelatedResourceArgsDict', 'outputs.DatabaseToolsConnectionRelatedResource']]] = None,
             runtime_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
             runtime_identity: pulumi.Input[Optional[_builtins.str]] = None,
             runtime_support: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1016,7 +1016,7 @@ class DatabaseToolsConnection(pulumi.CustomResource):
             type: pulumi.Input[Optional[_builtins.str]] = None,
             url: pulumi.Input[Optional[_builtins.str]] = None,
             user_name: pulumi.Input[Optional[_builtins.str]] = None,
-            user_password: pulumi.Input[Optional[Union['DatabaseToolsConnectionUserPasswordArgs', 'DatabaseToolsConnectionUserPasswordArgsDict']]] = None) -> 'DatabaseToolsConnection':
+            user_password: pulumi.Input[Optional[Union['DatabaseToolsConnectionUserPasswordArgs', 'DatabaseToolsConnectionUserPasswordArgsDict', 'outputs.DatabaseToolsConnectionUserPassword']]] = None) -> 'DatabaseToolsConnection':
         """
         Get an existing DatabaseToolsConnection resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1031,12 +1031,12 @@ class DatabaseToolsConnection(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsConnectionKeyStoreArgs', 'DatabaseToolsConnectionKeyStoreArgsDict']]]] key_stores: (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsConnectionKeyStoreArgs', 'DatabaseToolsConnectionKeyStoreArgsDict', 'outputs.DatabaseToolsConnectionKeyStore']]]] key_stores: (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsConnectionLockArgs', 'DatabaseToolsConnectionLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsConnectionLockArgs', 'DatabaseToolsConnectionLockArgsDict', 'outputs.DatabaseToolsConnectionLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] private_endpoint_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
-        :param pulumi.Input[Union['DatabaseToolsConnectionProxyClientArgs', 'DatabaseToolsConnectionProxyClientArgsDict']] proxy_client: (Updatable) The proxy client information.
-        :param pulumi.Input[Union['DatabaseToolsConnectionRelatedResourceArgs', 'DatabaseToolsConnectionRelatedResourceArgsDict']] related_resource: (Updatable) The related resource
+        :param pulumi.Input[Union['DatabaseToolsConnectionProxyClientArgs', 'DatabaseToolsConnectionProxyClientArgsDict', 'outputs.DatabaseToolsConnectionProxyClient']] proxy_client: (Updatable) The proxy client information.
+        :param pulumi.Input[Union['DatabaseToolsConnectionRelatedResourceArgs', 'DatabaseToolsConnectionRelatedResourceArgsDict', 'outputs.DatabaseToolsConnectionRelatedResource']] related_resource: (Updatable) The related resource
         :param pulumi.Input[_builtins.str] runtime_endpoint: Specifies the Database Tools Runtime endpoint.
         :param pulumi.Input[_builtins.str] runtime_identity: Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
         :param pulumi.Input[_builtins.str] runtime_support: Specifies whether this connection is supported by the Database Tools Runtime.
@@ -1047,7 +1047,7 @@ class DatabaseToolsConnection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] type: (Updatable) The Database Tools connection type.
         :param pulumi.Input[_builtins.str] url: (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
         :param pulumi.Input[_builtins.str] user_name: (Updatable) The database user name.
-        :param pulumi.Input[Union['DatabaseToolsConnectionUserPasswordArgs', 'DatabaseToolsConnectionUserPasswordArgsDict']] user_password: (Updatable) The database user password.
+        :param pulumi.Input[Union['DatabaseToolsConnectionUserPasswordArgs', 'DatabaseToolsConnectionUserPasswordArgsDict', 'outputs.DatabaseToolsConnectionUserPassword']] user_password: (Updatable) The database user password.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

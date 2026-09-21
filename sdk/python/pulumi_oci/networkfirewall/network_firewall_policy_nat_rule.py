@@ -315,11 +315,11 @@ class NetworkFirewallPolicyNatRule(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: pulumi.Input[Optional[_builtins.str]] = None,
-                 condition: pulumi.Input[Optional[Union['NetworkFirewallPolicyNatRuleConditionArgs', 'NetworkFirewallPolicyNatRuleConditionArgsDict']]] = None,
+                 condition: pulumi.Input[Optional[Union['NetworkFirewallPolicyNatRuleConditionArgs', 'NetworkFirewallPolicyNatRuleConditionArgsDict', 'outputs.NetworkFirewallPolicyNatRuleCondition']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 position: pulumi.Input[Optional[Union['NetworkFirewallPolicyNatRulePositionArgs', 'NetworkFirewallPolicyNatRulePositionArgsDict']]] = None,
+                 position: pulumi.Input[Optional[Union['NetworkFirewallPolicyNatRulePositionArgs', 'NetworkFirewallPolicyNatRulePositionArgsDict', 'outputs.NetworkFirewallPolicyNatRulePosition']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -366,11 +366,11 @@ class NetworkFirewallPolicyNatRule(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: (Updatable) action:
                * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
-        :param pulumi.Input[Union['NetworkFirewallPolicyNatRuleConditionArgs', 'NetworkFirewallPolicyNatRuleConditionArgsDict']] condition: (Updatable) Match criteria used in NAT rule used on the firewall policy.
+        :param pulumi.Input[Union['NetworkFirewallPolicyNatRuleConditionArgs', 'NetworkFirewallPolicyNatRuleConditionArgsDict', 'outputs.NetworkFirewallPolicyNatRuleCondition']] condition: (Updatable) Match criteria used in NAT rule used on the firewall policy.
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of a NAT rule. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name for the NAT rule, must be unique within the policy.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[Union['NetworkFirewallPolicyNatRulePositionArgs', 'NetworkFirewallPolicyNatRulePositionArgsDict']] position: (Updatable) An object which defines the position of the rule.
+        :param pulumi.Input[Union['NetworkFirewallPolicyNatRulePositionArgs', 'NetworkFirewallPolicyNatRulePositionArgsDict', 'outputs.NetworkFirewallPolicyNatRulePosition']] position: (Updatable) An object which defines the position of the rule.
         :param pulumi.Input[_builtins.str] type: (Updatable) NAT type:
                * NATV4 - NATV4 type NAT.
                
@@ -439,11 +439,11 @@ class NetworkFirewallPolicyNatRule(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: pulumi.Input[Optional[_builtins.str]] = None,
-                 condition: pulumi.Input[Optional[Union['NetworkFirewallPolicyNatRuleConditionArgs', 'NetworkFirewallPolicyNatRuleConditionArgsDict']]] = None,
+                 condition: pulumi.Input[Optional[Union['NetworkFirewallPolicyNatRuleConditionArgs', 'NetworkFirewallPolicyNatRuleConditionArgsDict', 'outputs.NetworkFirewallPolicyNatRuleCondition']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 position: pulumi.Input[Optional[Union['NetworkFirewallPolicyNatRulePositionArgs', 'NetworkFirewallPolicyNatRulePositionArgsDict']]] = None,
+                 position: pulumi.Input[Optional[Union['NetworkFirewallPolicyNatRulePositionArgs', 'NetworkFirewallPolicyNatRulePositionArgsDict', 'outputs.NetworkFirewallPolicyNatRulePosition']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -482,12 +482,12 @@ class NetworkFirewallPolicyNatRule(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             action: pulumi.Input[Optional[_builtins.str]] = None,
-            condition: pulumi.Input[Optional[Union['NetworkFirewallPolicyNatRuleConditionArgs', 'NetworkFirewallPolicyNatRuleConditionArgsDict']]] = None,
+            condition: pulumi.Input[Optional[Union['NetworkFirewallPolicyNatRuleConditionArgs', 'NetworkFirewallPolicyNatRuleConditionArgsDict', 'outputs.NetworkFirewallPolicyNatRuleCondition']]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
             parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
-            position: pulumi.Input[Optional[Union['NetworkFirewallPolicyNatRulePositionArgs', 'NetworkFirewallPolicyNatRulePositionArgsDict']]] = None,
+            position: pulumi.Input[Optional[Union['NetworkFirewallPolicyNatRulePositionArgs', 'NetworkFirewallPolicyNatRulePositionArgsDict', 'outputs.NetworkFirewallPolicyNatRulePosition']]] = None,
             priority_order: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None) -> 'NetworkFirewallPolicyNatRule':
         """
@@ -499,12 +499,12 @@ class NetworkFirewallPolicyNatRule(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: (Updatable) action:
                * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
-        :param pulumi.Input[Union['NetworkFirewallPolicyNatRuleConditionArgs', 'NetworkFirewallPolicyNatRuleConditionArgsDict']] condition: (Updatable) Match criteria used in NAT rule used on the firewall policy.
+        :param pulumi.Input[Union['NetworkFirewallPolicyNatRuleConditionArgs', 'NetworkFirewallPolicyNatRuleConditionArgsDict', 'outputs.NetworkFirewallPolicyNatRuleCondition']] condition: (Updatable) Match criteria used in NAT rule used on the firewall policy.
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of a NAT rule. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name for the NAT rule, must be unique within the policy.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] parent_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall policy this NAT rule belongs to.
-        :param pulumi.Input[Union['NetworkFirewallPolicyNatRulePositionArgs', 'NetworkFirewallPolicyNatRulePositionArgsDict']] position: (Updatable) An object which defines the position of the rule.
+        :param pulumi.Input[Union['NetworkFirewallPolicyNatRulePositionArgs', 'NetworkFirewallPolicyNatRulePositionArgsDict', 'outputs.NetworkFirewallPolicyNatRulePosition']] position: (Updatable) An object which defines the position of the rule.
         :param pulumi.Input[_builtins.str] priority_order: The priority order in which this rule should be evaluated
         :param pulumi.Input[_builtins.str] type: (Updatable) NAT type:
                * NATV4 - NATV4 type NAT.

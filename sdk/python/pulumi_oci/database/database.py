@@ -918,7 +918,7 @@ class Database(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  data_guard_action: pulumi.Input[Optional[_builtins.str]] = None,
-                 database: pulumi.Input[Optional[Union['DatabaseDatabaseArgs', 'DatabaseDatabaseArgsDict']]] = None,
+                 database: pulumi.Input[Optional[Union['DatabaseDatabaseArgs', 'DatabaseDatabaseArgsDict', 'outputs.DatabaseDatabase']]] = None,
                  db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
                  db_version: pulumi.Input[Optional[_builtins.str]] = None,
                  key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -926,7 +926,7 @@ class Database(pulumi.CustomResource):
                  kms_key_migration: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_rotation: pulumi.Input[Optional[_builtins.int]] = None,
                  kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 managed_software_update_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseManagedSoftwareUpdateDetailArgs', 'DatabaseManagedSoftwareUpdateDetailArgsDict']]]]] = None,
+                 managed_software_update_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseManagedSoftwareUpdateDetailArgs', 'DatabaseManagedSoftwareUpdateDetailArgsDict', 'outputs.DatabaseManagedSoftwareUpdateDetail']]]]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
                  vault_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -947,7 +947,7 @@ class Database(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DatabaseDatabaseArgs', 'DatabaseDatabaseArgsDict']] database: (Updatable) Details for creating a database.
+        :param pulumi.Input[Union['DatabaseDatabaseArgs', 'DatabaseDatabaseArgsDict', 'outputs.DatabaseDatabase']] database: (Updatable) Details for creating a database.
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         :param pulumi.Input[_builtins.str] db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
@@ -957,7 +957,7 @@ class Database(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseManagedSoftwareUpdateDetailArgs', 'DatabaseManagedSoftwareUpdateDetailArgsDict']]]] managed_software_update_details: The database registered for Oracle Managed Database Software Updates.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseManagedSoftwareUpdateDetailArgs', 'DatabaseManagedSoftwareUpdateDetailArgsDict', 'outputs.DatabaseManagedSoftwareUpdateDetail']]]] managed_software_update_details: The database registered for Oracle Managed Database Software Updates.
         :param pulumi.Input[_builtins.str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         :param pulumi.Input[_builtins.str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
@@ -999,7 +999,7 @@ class Database(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  data_guard_action: pulumi.Input[Optional[_builtins.str]] = None,
-                 database: pulumi.Input[Optional[Union['DatabaseDatabaseArgs', 'DatabaseDatabaseArgsDict']]] = None,
+                 database: pulumi.Input[Optional[Union['DatabaseDatabaseArgs', 'DatabaseDatabaseArgsDict', 'outputs.DatabaseDatabase']]] = None,
                  db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
                  db_version: pulumi.Input[Optional[_builtins.str]] = None,
                  key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1007,7 +1007,7 @@ class Database(pulumi.CustomResource):
                  kms_key_migration: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_rotation: pulumi.Input[Optional[_builtins.int]] = None,
                  kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 managed_software_update_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseManagedSoftwareUpdateDetailArgs', 'DatabaseManagedSoftwareUpdateDetailArgsDict']]]]] = None,
+                 managed_software_update_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseManagedSoftwareUpdateDetailArgs', 'DatabaseManagedSoftwareUpdateDetailArgsDict', 'outputs.DatabaseManagedSoftwareUpdateDetail']]]]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
                  vault_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1079,13 +1079,13 @@ class Database(pulumi.CustomResource):
             action_trigger: pulumi.Input[Optional[_builtins.int]] = None,
             character_set: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseConnectionStringArgs', 'DatabaseConnectionStringArgsDict']]]]] = None,
+            connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseConnectionStringArgs', 'DatabaseConnectionStringArgsDict', 'outputs.DatabaseConnectionString']]]]] = None,
             data_guard_action: pulumi.Input[Optional[_builtins.str]] = None,
-            data_guard_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseDataGuardGroupArgs', 'DatabaseDataGuardGroupArgsDict']]]]] = None,
-            database: pulumi.Input[Optional[Union['DatabaseDatabaseArgs', 'DatabaseDatabaseArgsDict']]] = None,
-            database_management_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseDatabaseManagementConfigArgs', 'DatabaseDatabaseManagementConfigArgsDict']]]]] = None,
+            data_guard_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseDataGuardGroupArgs', 'DatabaseDataGuardGroupArgsDict', 'outputs.DatabaseDataGuardGroup']]]]] = None,
+            database: pulumi.Input[Optional[Union['DatabaseDatabaseArgs', 'DatabaseDatabaseArgsDict', 'outputs.DatabaseDatabase']]] = None,
+            database_management_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseDatabaseManagementConfigArgs', 'DatabaseDatabaseManagementConfigArgsDict', 'outputs.DatabaseDatabaseManagementConfig']]]]] = None,
             database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
-            db_backup_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseDbBackupConfigArgs', 'DatabaseDbBackupConfigArgsDict']]]]] = None,
+            db_backup_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseDbBackupConfigArgs', 'DatabaseDbBackupConfigArgsDict', 'outputs.DatabaseDbBackupConfig']]]]] = None,
             db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
             db_name: pulumi.Input[Optional[_builtins.str]] = None,
             db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1105,7 +1105,7 @@ class Database(pulumi.CustomResource):
             last_backup_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
             last_failed_backup_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            managed_software_update_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseManagedSoftwareUpdateDetailArgs', 'DatabaseManagedSoftwareUpdateDetailArgsDict']]]]] = None,
+            managed_software_update_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseManagedSoftwareUpdateDetailArgs', 'DatabaseManagedSoftwareUpdateDetailArgsDict', 'outputs.DatabaseManagedSoftwareUpdateDetail']]]]] = None,
             ncharacter_set: pulumi.Input[Optional[_builtins.str]] = None,
             patch_version: pulumi.Input[Optional[_builtins.str]] = None,
             pdb_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1113,7 +1113,7 @@ class Database(pulumi.CustomResource):
             source: pulumi.Input[Optional[_builtins.str]] = None,
             source_database_point_in_time_recovery_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            storage_size_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseStorageSizeDetailArgs', 'DatabaseStorageSizeDetailArgsDict']]]]] = None,
+            storage_size_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseStorageSizeDetailArgs', 'DatabaseStorageSizeDetailArgsDict', 'outputs.DatabaseStorageSizeDetail']]]]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             vault_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1127,14 +1127,14 @@ class Database(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] character_set: The character set for the database.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseConnectionStringArgs', 'DatabaseConnectionStringArgsDict']]]] connection_strings: The Connection strings used to connect to the Oracle Database.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseDataGuardGroupArgs', 'DatabaseDataGuardGroupArgsDict']]]] data_guard_groups: Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
-        :param pulumi.Input[Union['DatabaseDatabaseArgs', 'DatabaseDatabaseArgsDict']] database: (Updatable) Details for creating a database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseConnectionStringArgs', 'DatabaseConnectionStringArgsDict', 'outputs.DatabaseConnectionString']]]] connection_strings: The Connection strings used to connect to the Oracle Database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseDataGuardGroupArgs', 'DatabaseDataGuardGroupArgsDict', 'outputs.DatabaseDataGuardGroup']]]] data_guard_groups: Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
+        :param pulumi.Input[Union['DatabaseDatabaseArgs', 'DatabaseDatabaseArgsDict', 'outputs.DatabaseDatabase']] database: (Updatable) Details for creating a database.
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseDatabaseManagementConfigArgs', 'DatabaseDatabaseManagementConfigArgsDict']]]] database_management_configs: The configuration of the Database Management service.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseDatabaseManagementConfigArgs', 'DatabaseDatabaseManagementConfigArgsDict', 'outputs.DatabaseDatabaseManagementConfig']]]] database_management_configs: The configuration of the Database Management service.
         :param pulumi.Input[_builtins.str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseDbBackupConfigArgs', 'DatabaseDbBackupConfigArgsDict']]]] db_backup_configs: Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseDbBackupConfigArgs', 'DatabaseDbBackupConfigArgsDict', 'outputs.DatabaseDbBackupConfig']]]] db_backup_configs: Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
         :param pulumi.Input[_builtins.str] db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         :param pulumi.Input[_builtins.str] db_name: The database name.
         :param pulumi.Input[_builtins.str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
@@ -1154,14 +1154,14 @@ class Database(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] last_backup_timestamp: The date and time when the latest database backup was created.
         :param pulumi.Input[_builtins.str] last_failed_backup_timestamp: The date and time when the latest database backup failed.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseManagedSoftwareUpdateDetailArgs', 'DatabaseManagedSoftwareUpdateDetailArgsDict']]]] managed_software_update_details: The database registered for Oracle Managed Database Software Updates.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseManagedSoftwareUpdateDetailArgs', 'DatabaseManagedSoftwareUpdateDetailArgsDict', 'outputs.DatabaseManagedSoftwareUpdateDetail']]]] managed_software_update_details: The database registered for Oracle Managed Database Software Updates.
         :param pulumi.Input[_builtins.str] ncharacter_set: The national character set for the database.
         :param pulumi.Input[_builtins.str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param pulumi.Input[_builtins.str] sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
         :param pulumi.Input[_builtins.str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
         :param pulumi.Input[_builtins.str] source_database_point_in_time_recovery_timestamp: Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
         :param pulumi.Input[_builtins.str] state: The current state of the database.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseStorageSizeDetailArgs', 'DatabaseStorageSizeDetailArgsDict']]]] storage_size_details: The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseStorageSizeDetailArgs', 'DatabaseStorageSizeDetailArgsDict', 'outputs.DatabaseStorageSizeDetail']]]] storage_size_details: The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] time_created: The date and time the database was created.
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.

@@ -103,7 +103,7 @@ class AwaitableGetNamespaceParserActionsResult(GetNamespaceParserActionsResult):
 
 
 def get_namespace_parser_actions(action_display_text: Optional[_builtins.str] = None,
-                                 filters: Optional[Sequence[Union['GetNamespaceParserActionsFilterArgs', 'GetNamespaceParserActionsFilterArgsDict']]] = None,
+                                 filters: Optional[Sequence[Union['GetNamespaceParserActionsFilterArgs', 'GetNamespaceParserActionsFilterArgsDict', 'outputs.GetNamespaceParserActionsFilterResult']]] = None,
                                  name: Optional[_builtins.str] = None,
                                  namespace: Optional[_builtins.str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespaceParserActionsResult:
@@ -144,7 +144,7 @@ def get_namespace_parser_actions(action_display_text: Optional[_builtins.str] = 
         namespace=pulumi.get(__ret__, 'namespace'),
         parser_action_summary_collections=pulumi.get(__ret__, 'parser_action_summary_collections'))
 def get_namespace_parser_actions_output(action_display_text: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespaceParserActionsFilterArgs', 'GetNamespaceParserActionsFilterArgsDict']]]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespaceParserActionsFilterArgs', 'GetNamespaceParserActionsFilterArgsDict', 'outputs.GetNamespaceParserActionsFilterResult']]]]] = None,
                                         name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceParserActionsResult]:

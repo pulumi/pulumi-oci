@@ -112,7 +112,7 @@ class AwaitableGetAiModelsResult(GetAiModelsResult):
 
 
 def get_ai_models(compartment_id: Optional[_builtins.str] = None,
-                  filters: Optional[Sequence[Union['GetAiModelsFilterArgs', 'GetAiModelsFilterArgsDict']]] = None,
+                  filters: Optional[Sequence[Union['GetAiModelsFilterArgs', 'GetAiModelsFilterArgsDict', 'outputs.GetAiModelsFilterResult']]] = None,
                   provider_type: Optional[_builtins.str] = None,
                   region: Optional[_builtins.str] = None,
                   tenancy_id: Optional[_builtins.str] = None,
@@ -160,7 +160,7 @@ def get_ai_models(compartment_id: Optional[_builtins.str] = None,
         region=pulumi.get(__ret__, 'region'),
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'))
 def get_ai_models_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAiModelsFilterArgs', 'GetAiModelsFilterArgsDict']]]]] = None,
+                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAiModelsFilterArgs', 'GetAiModelsFilterArgsDict', 'outputs.GetAiModelsFilterResult']]]]] = None,
                          provider_type: pulumi.Input[Optional[_builtins.str]] = None,
                          region: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          tenancy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

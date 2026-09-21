@@ -563,16 +563,16 @@ class VbInstance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alternate_custom_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VbInstanceAlternateCustomEndpointArgs', 'VbInstanceAlternateCustomEndpointArgsDict']]]]] = None,
+                 alternate_custom_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VbInstanceAlternateCustomEndpointArgs', 'VbInstanceAlternateCustomEndpointArgsDict', 'outputs.VbInstanceAlternateCustomEndpoint']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  consumption_model: pulumi.Input[Optional[_builtins.str]] = None,
-                 custom_endpoint: pulumi.Input[Optional[Union['VbInstanceCustomEndpointArgs', 'VbInstanceCustomEndpointArgsDict']]] = None,
+                 custom_endpoint: pulumi.Input[Optional[Union['VbInstanceCustomEndpointArgs', 'VbInstanceCustomEndpointArgsDict', 'outputs.VbInstanceCustomEndpoint']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  idcs_open_id: pulumi.Input[Optional[_builtins.str]] = None,
                  is_visual_builder_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 network_endpoint_details: pulumi.Input[Optional[Union['VbInstanceNetworkEndpointDetailsArgs', 'VbInstanceNetworkEndpointDetailsArgsDict']]] = None,
+                 network_endpoint_details: pulumi.Input[Optional[Union['VbInstanceNetworkEndpointDetailsArgs', 'VbInstanceNetworkEndpointDetailsArgsDict', 'outputs.VbInstanceNetworkEndpointDetails']]] = None,
                  node_count: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
@@ -594,16 +594,16 @@ class VbInstance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VbInstanceAlternateCustomEndpointArgs', 'VbInstanceAlternateCustomEndpointArgsDict']]]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VbInstanceAlternateCustomEndpointArgs', 'VbInstanceAlternateCustomEndpointArgsDict', 'outputs.VbInstanceAlternateCustomEndpoint']]]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[_builtins.str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
-        :param pulumi.Input[Union['VbInstanceCustomEndpointArgs', 'VbInstanceCustomEndpointArgsDict']] custom_endpoint: (Updatable) Details for a custom endpoint for the vb instance (update).
+        :param pulumi.Input[Union['VbInstanceCustomEndpointArgs', 'VbInstanceCustomEndpointArgsDict', 'outputs.VbInstanceCustomEndpoint']] custom_endpoint: (Updatable) Details for a custom endpoint for the vb instance (update).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Vb Instance Identifier.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] idcs_open_id: (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
         :param pulumi.Input[_builtins.bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
-        :param pulumi.Input[Union['VbInstanceNetworkEndpointDetailsArgs', 'VbInstanceNetworkEndpointDetailsArgsDict']] network_endpoint_details: (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+        :param pulumi.Input[Union['VbInstanceNetworkEndpointDetailsArgs', 'VbInstanceNetworkEndpointDetailsArgsDict', 'outputs.VbInstanceNetworkEndpointDetails']] network_endpoint_details: (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
         :param pulumi.Input[_builtins.int] node_count: (Updatable) The number of Nodes
                
                ** IMPORTANT **
@@ -647,16 +647,16 @@ class VbInstance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alternate_custom_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VbInstanceAlternateCustomEndpointArgs', 'VbInstanceAlternateCustomEndpointArgsDict']]]]] = None,
+                 alternate_custom_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VbInstanceAlternateCustomEndpointArgs', 'VbInstanceAlternateCustomEndpointArgsDict', 'outputs.VbInstanceAlternateCustomEndpoint']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  consumption_model: pulumi.Input[Optional[_builtins.str]] = None,
-                 custom_endpoint: pulumi.Input[Optional[Union['VbInstanceCustomEndpointArgs', 'VbInstanceCustomEndpointArgsDict']]] = None,
+                 custom_endpoint: pulumi.Input[Optional[Union['VbInstanceCustomEndpointArgs', 'VbInstanceCustomEndpointArgsDict', 'outputs.VbInstanceCustomEndpoint']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  idcs_open_id: pulumi.Input[Optional[_builtins.str]] = None,
                  is_visual_builder_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 network_endpoint_details: pulumi.Input[Optional[Union['VbInstanceNetworkEndpointDetailsArgs', 'VbInstanceNetworkEndpointDetailsArgsDict']]] = None,
+                 network_endpoint_details: pulumi.Input[Optional[Union['VbInstanceNetworkEndpointDetailsArgs', 'VbInstanceNetworkEndpointDetailsArgsDict', 'outputs.VbInstanceNetworkEndpointDetails']]] = None,
                  node_count: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -706,10 +706,10 @@ class VbInstance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            alternate_custom_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VbInstanceAlternateCustomEndpointArgs', 'VbInstanceAlternateCustomEndpointArgsDict']]]]] = None,
+            alternate_custom_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VbInstanceAlternateCustomEndpointArgs', 'VbInstanceAlternateCustomEndpointArgsDict', 'outputs.VbInstanceAlternateCustomEndpoint']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             consumption_model: pulumi.Input[Optional[_builtins.str]] = None,
-            custom_endpoint: pulumi.Input[Optional[Union['VbInstanceCustomEndpointArgs', 'VbInstanceCustomEndpointArgsDict']]] = None,
+            custom_endpoint: pulumi.Input[Optional[Union['VbInstanceCustomEndpointArgs', 'VbInstanceCustomEndpointArgsDict', 'outputs.VbInstanceCustomEndpoint']]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -718,7 +718,7 @@ class VbInstance(pulumi.CustomResource):
             is_visual_builder_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             management_nat_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
             management_vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
-            network_endpoint_details: pulumi.Input[Optional[Union['VbInstanceNetworkEndpointDetailsArgs', 'VbInstanceNetworkEndpointDetailsArgsDict']]] = None,
+            network_endpoint_details: pulumi.Input[Optional[Union['VbInstanceNetworkEndpointDetailsArgs', 'VbInstanceNetworkEndpointDetailsArgsDict', 'outputs.VbInstanceNetworkEndpointDetails']]] = None,
             node_count: pulumi.Input[Optional[_builtins.int]] = None,
             service_nat_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
             service_vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -734,10 +734,10 @@ class VbInstance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VbInstanceAlternateCustomEndpointArgs', 'VbInstanceAlternateCustomEndpointArgsDict']]]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VbInstanceAlternateCustomEndpointArgs', 'VbInstanceAlternateCustomEndpointArgsDict', 'outputs.VbInstanceAlternateCustomEndpoint']]]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[_builtins.str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
-        :param pulumi.Input[Union['VbInstanceCustomEndpointArgs', 'VbInstanceCustomEndpointArgsDict']] custom_endpoint: (Updatable) Details for a custom endpoint for the vb instance (update).
+        :param pulumi.Input[Union['VbInstanceCustomEndpointArgs', 'VbInstanceCustomEndpointArgsDict', 'outputs.VbInstanceCustomEndpoint']] custom_endpoint: (Updatable) Details for a custom endpoint for the vb instance (update).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Vb Instance Identifier.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -746,7 +746,7 @@ class VbInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
         :param pulumi.Input[_builtins.str] management_nat_gateway_ip: The NAT gateway IP address for the VB management VCN
         :param pulumi.Input[_builtins.str] management_vcn_id: The Oracle Cloud ID (OCID) of the Visual Builder management VCN
-        :param pulumi.Input[Union['VbInstanceNetworkEndpointDetailsArgs', 'VbInstanceNetworkEndpointDetailsArgsDict']] network_endpoint_details: (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
+        :param pulumi.Input[Union['VbInstanceNetworkEndpointDetailsArgs', 'VbInstanceNetworkEndpointDetailsArgsDict', 'outputs.VbInstanceNetworkEndpointDetails']] network_endpoint_details: (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
         :param pulumi.Input[_builtins.int] node_count: (Updatable) The number of Nodes
                
                ** IMPORTANT **

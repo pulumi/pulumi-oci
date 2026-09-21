@@ -368,7 +368,7 @@ class ComputeCapacityReservation(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_reservation_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeCapacityReservationInstanceReservationConfigArgs', 'ComputeCapacityReservationInstanceReservationConfigArgsDict']]]]] = None,
+                 instance_reservation_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeCapacityReservationInstanceReservationConfigArgs', 'ComputeCapacityReservationInstanceReservationConfigArgsDict', 'outputs.ComputeCapacityReservationInstanceReservationConfig']]]]] = None,
                  is_default_reservation: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
@@ -432,7 +432,7 @@ class ComputeCapacityReservation(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeCapacityReservationInstanceReservationConfigArgs', 'ComputeCapacityReservationInstanceReservationConfigArgsDict']]]] instance_reservation_configs: (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 instance_reservation_configs field in Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeCapacityReservationInstanceReservationConfigArgs', 'ComputeCapacityReservationInstanceReservationConfigArgsDict', 'outputs.ComputeCapacityReservationInstanceReservationConfig']]]] instance_reservation_configs: (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 instance_reservation_configs field in Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
                
                To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
         :param pulumi.Input[_builtins.bool] is_default_reservation: (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
@@ -520,7 +520,7 @@ class ComputeCapacityReservation(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_reservation_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeCapacityReservationInstanceReservationConfigArgs', 'ComputeCapacityReservationInstanceReservationConfigArgsDict']]]]] = None,
+                 instance_reservation_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeCapacityReservationInstanceReservationConfigArgs', 'ComputeCapacityReservationInstanceReservationConfigArgsDict', 'outputs.ComputeCapacityReservationInstanceReservationConfig']]]]] = None,
                  is_default_reservation: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -564,7 +564,7 @@ class ComputeCapacityReservation(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            instance_reservation_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeCapacityReservationInstanceReservationConfigArgs', 'ComputeCapacityReservationInstanceReservationConfigArgsDict']]]]] = None,
+            instance_reservation_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeCapacityReservationInstanceReservationConfigArgs', 'ComputeCapacityReservationInstanceReservationConfigArgsDict', 'outputs.ComputeCapacityReservationInstanceReservationConfig']]]]] = None,
             is_default_reservation: pulumi.Input[Optional[_builtins.bool]] = None,
             reserved_instance_count: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -583,7 +583,7 @@ class ComputeCapacityReservation(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeCapacityReservationInstanceReservationConfigArgs', 'ComputeCapacityReservationInstanceReservationConfigArgsDict']]]] instance_reservation_configs: (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 instance_reservation_configs field in Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeCapacityReservationInstanceReservationConfigArgs', 'ComputeCapacityReservationInstanceReservationConfigArgsDict', 'outputs.ComputeCapacityReservationInstanceReservationConfig']]]] instance_reservation_configs: (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 instance_reservation_configs field in Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
                
                To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
         :param pulumi.Input[_builtins.bool] is_default_reservation: (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).

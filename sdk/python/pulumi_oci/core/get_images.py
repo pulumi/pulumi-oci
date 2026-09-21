@@ -161,7 +161,7 @@ class AwaitableGetImagesResult(GetImagesResult):
 
 def get_images(compartment_id: Optional[_builtins.str] = None,
                display_name: Optional[_builtins.str] = None,
-               filters: Optional[Sequence[Union['GetImagesFilterArgs', 'GetImagesFilterArgsDict']]] = None,
+               filters: Optional[Sequence[Union['GetImagesFilterArgs', 'GetImagesFilterArgsDict', 'outputs.GetImagesFilterResult']]] = None,
                operating_system: Optional[_builtins.str] = None,
                operating_system_version: Optional[_builtins.str] = None,
                shape: Optional[_builtins.str] = None,
@@ -237,7 +237,7 @@ def get_images(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_images_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetImagesFilterArgs', 'GetImagesFilterArgsDict']]]]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetImagesFilterArgs', 'GetImagesFilterArgsDict', 'outputs.GetImagesFilterResult']]]]] = None,
                       operating_system: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       operating_system_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       shape: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

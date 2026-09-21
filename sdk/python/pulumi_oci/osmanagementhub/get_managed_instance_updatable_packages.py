@@ -147,7 +147,7 @@ def get_managed_instance_updatable_packages(advisory_names: Optional[Sequence[_b
                                             compartment_id: Optional[_builtins.str] = None,
                                             display_name_contains: Optional[_builtins.str] = None,
                                             display_names: Optional[Sequence[_builtins.str]] = None,
-                                            filters: Optional[Sequence[Union['GetManagedInstanceUpdatablePackagesFilterArgs', 'GetManagedInstanceUpdatablePackagesFilterArgsDict']]] = None,
+                                            filters: Optional[Sequence[Union['GetManagedInstanceUpdatablePackagesFilterArgs', 'GetManagedInstanceUpdatablePackagesFilterArgsDict', 'outputs.GetManagedInstanceUpdatablePackagesFilterResult']]] = None,
                                             managed_instance_id: Optional[_builtins.str] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedInstanceUpdatablePackagesResult:
     """
@@ -208,7 +208,7 @@ def get_managed_instance_updatable_packages_output(advisory_names: pulumi.Input[
                                                    compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                    display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                    display_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
-                                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceUpdatablePackagesFilterArgs', 'GetManagedInstanceUpdatablePackagesFilterArgsDict']]]]] = None,
+                                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceUpdatablePackagesFilterArgs', 'GetManagedInstanceUpdatablePackagesFilterArgsDict', 'outputs.GetManagedInstanceUpdatablePackagesFilterResult']]]]] = None,
                                                    managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceUpdatablePackagesResult]:
     """

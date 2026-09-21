@@ -114,7 +114,7 @@ class AwaitableGetTargetDatabasesSchemasResult(GetTargetDatabasesSchemasResult):
             target_database_id=self.target_database_id)
 
 
-def get_target_databases_schemas(filters: Optional[Sequence[Union['GetTargetDatabasesSchemasFilterArgs', 'GetTargetDatabasesSchemasFilterArgsDict']]] = None,
+def get_target_databases_schemas(filters: Optional[Sequence[Union['GetTargetDatabasesSchemasFilterArgs', 'GetTargetDatabasesSchemasFilterArgsDict', 'outputs.GetTargetDatabasesSchemasFilterResult']]] = None,
                                  is_oracle_maintained: Optional[_builtins.bool] = None,
                                  schema_name_contains: Optional[_builtins.str] = None,
                                  schema_names: Optional[Sequence[_builtins.str]] = None,
@@ -160,7 +160,7 @@ def get_target_databases_schemas(filters: Optional[Sequence[Union['GetTargetData
         schema_names=pulumi.get(__ret__, 'schema_names'),
         schemas=pulumi.get(__ret__, 'schemas'),
         target_database_id=pulumi.get(__ret__, 'target_database_id'))
-def get_target_databases_schemas_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTargetDatabasesSchemasFilterArgs', 'GetTargetDatabasesSchemasFilterArgsDict']]]]] = None,
+def get_target_databases_schemas_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTargetDatabasesSchemasFilterArgs', 'GetTargetDatabasesSchemasFilterArgsDict', 'outputs.GetTargetDatabasesSchemasFilterResult']]]]] = None,
                                         is_oracle_maintained: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                         schema_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         schema_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,

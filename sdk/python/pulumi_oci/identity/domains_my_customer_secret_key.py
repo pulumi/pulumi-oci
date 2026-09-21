@@ -1057,8 +1057,8 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  status: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyCustomerSecretKeyTagArgs', 'DomainsMyCustomerSecretKeyTagArgsDict']]]]] = None,
-                 user: pulumi.Input[Optional[Union['DomainsMyCustomerSecretKeyUserArgs', 'DomainsMyCustomerSecretKeyUserArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyCustomerSecretKeyTagArgs', 'DomainsMyCustomerSecretKeyTagArgsDict', 'outputs.DomainsMyCustomerSecretKeyTag']]]]] = None,
+                 user: pulumi.Input[Optional[Union['DomainsMyCustomerSecretKeyUserArgs', 'DomainsMyCustomerSecretKeyUserArgsDict', 'outputs.DomainsMyCustomerSecretKeyUser']]] = None,
                  __props__=None):
         """
         This resource provides the My Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1173,7 +1173,7 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
                * returned: never
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyCustomerSecretKeyTagArgs', 'DomainsMyCustomerSecretKeyTagArgsDict']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyCustomerSecretKeyTagArgs', 'DomainsMyCustomerSecretKeyTagArgsDict', 'outputs.DomainsMyCustomerSecretKeyTag']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1184,7 +1184,7 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsMyCustomerSecretKeyUserArgs', 'DomainsMyCustomerSecretKeyUserArgsDict']] user: User linked to customer secret key
+        :param pulumi.Input[Union['DomainsMyCustomerSecretKeyUserArgs', 'DomainsMyCustomerSecretKeyUserArgsDict', 'outputs.DomainsMyCustomerSecretKeyUser']] user: User linked to customer secret key
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1270,8 +1270,8 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  status: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyCustomerSecretKeyTagArgs', 'DomainsMyCustomerSecretKeyTagArgsDict']]]]] = None,
-                 user: pulumi.Input[Optional[Union['DomainsMyCustomerSecretKeyUserArgs', 'DomainsMyCustomerSecretKeyUserArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyCustomerSecretKeyTagArgs', 'DomainsMyCustomerSecretKeyTagArgsDict', 'outputs.DomainsMyCustomerSecretKeyTag']]]]] = None,
+                 user: pulumi.Input[Optional[Union['DomainsMyCustomerSecretKeyUserArgs', 'DomainsMyCustomerSecretKeyUserArgsDict', 'outputs.DomainsMyCustomerSecretKeyUser']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1324,19 +1324,19 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             expires_on: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyCustomerSecretKeyIdcsCreatedByArgs', 'DomainsMyCustomerSecretKeyIdcsCreatedByArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyCustomerSecretKeyIdcsCreatedByArgs', 'DomainsMyCustomerSecretKeyIdcsCreatedByArgsDict', 'outputs.DomainsMyCustomerSecretKeyIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyCustomerSecretKeyIdcsLastModifiedByArgs', 'DomainsMyCustomerSecretKeyIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyCustomerSecretKeyIdcsLastModifiedByArgs', 'DomainsMyCustomerSecretKeyIdcsLastModifiedByArgsDict', 'outputs.DomainsMyCustomerSecretKeyIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyCustomerSecretKeyMetaArgs', 'DomainsMyCustomerSecretKeyMetaArgsDict']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyCustomerSecretKeyMetaArgs', 'DomainsMyCustomerSecretKeyMetaArgsDict', 'outputs.DomainsMyCustomerSecretKeyMeta']]]]] = None,
             ocid: pulumi.Input[Optional[_builtins.str]] = None,
             resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
             schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyCustomerSecretKeyTagArgs', 'DomainsMyCustomerSecretKeyTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyCustomerSecretKeyTagArgs', 'DomainsMyCustomerSecretKeyTagArgsDict', 'outputs.DomainsMyCustomerSecretKeyTag']]]]] = None,
             tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
-            user: pulumi.Input[Optional[Union['DomainsMyCustomerSecretKeyUserArgs', 'DomainsMyCustomerSecretKeyUserArgsDict']]] = None) -> 'DomainsMyCustomerSecretKey':
+            user: pulumi.Input[Optional[Union['DomainsMyCustomerSecretKeyUserArgs', 'DomainsMyCustomerSecretKeyUserArgsDict', 'outputs.DomainsMyCustomerSecretKeyUser']]] = None) -> 'DomainsMyCustomerSecretKey':
         """
         Get an existing DomainsMyCustomerSecretKey resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1415,7 +1415,7 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
                * returned: default
                * type: dateTime
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyCustomerSecretKeyIdcsCreatedByArgs', 'DomainsMyCustomerSecretKeyIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyCustomerSecretKeyIdcsCreatedByArgs', 'DomainsMyCustomerSecretKeyIdcsCreatedByArgsDict', 'outputs.DomainsMyCustomerSecretKeyIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1425,7 +1425,7 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyCustomerSecretKeyIdcsLastModifiedByArgs', 'DomainsMyCustomerSecretKeyIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyCustomerSecretKeyIdcsLastModifiedByArgs', 'DomainsMyCustomerSecretKeyIdcsLastModifiedByArgsDict', 'outputs.DomainsMyCustomerSecretKeyIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1455,7 +1455,7 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyCustomerSecretKeyMetaArgs', 'DomainsMyCustomerSecretKeyMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyCustomerSecretKeyMetaArgs', 'DomainsMyCustomerSecretKeyMetaArgsDict', 'outputs.DomainsMyCustomerSecretKeyMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1502,7 +1502,7 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
                * returned: never
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyCustomerSecretKeyTagArgs', 'DomainsMyCustomerSecretKeyTagArgsDict']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyCustomerSecretKeyTagArgs', 'DomainsMyCustomerSecretKeyTagArgsDict', 'outputs.DomainsMyCustomerSecretKeyTag']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1524,7 +1524,7 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsMyCustomerSecretKeyUserArgs', 'DomainsMyCustomerSecretKeyUserArgsDict']] user: User linked to customer secret key
+        :param pulumi.Input[Union['DomainsMyCustomerSecretKeyUserArgs', 'DomainsMyCustomerSecretKeyUserArgsDict', 'outputs.DomainsMyCustomerSecretKeyUser']] user: User linked to customer secret key
                
                **SCIM++ Properties:**
                * caseExact: false

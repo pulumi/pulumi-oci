@@ -81,7 +81,7 @@ class AwaitableGetSubscriptionLineItemsResult(GetSubscriptionLineItemsResult):
             subscription_line_item_collections=self.subscription_line_item_collections)
 
 
-def get_subscription_line_items(filters: Optional[Sequence[Union['GetSubscriptionLineItemsFilterArgs', 'GetSubscriptionLineItemsFilterArgsDict']]] = None,
+def get_subscription_line_items(filters: Optional[Sequence[Union['GetSubscriptionLineItemsFilterArgs', 'GetSubscriptionLineItemsFilterArgsDict', 'outputs.GetSubscriptionLineItemsFilterResult']]] = None,
                                 subscription_id: Optional[_builtins.str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSubscriptionLineItemsResult:
     """
@@ -112,7 +112,7 @@ def get_subscription_line_items(filters: Optional[Sequence[Union['GetSubscriptio
         id=pulumi.get(__ret__, 'id'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         subscription_line_item_collections=pulumi.get(__ret__, 'subscription_line_item_collections'))
-def get_subscription_line_items_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionLineItemsFilterArgs', 'GetSubscriptionLineItemsFilterArgsDict']]]]] = None,
+def get_subscription_line_items_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionLineItemsFilterArgs', 'GetSubscriptionLineItemsFilterArgsDict', 'outputs.GetSubscriptionLineItemsFilterResult']]]]] = None,
                                        subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionLineItemsResult]:
     """

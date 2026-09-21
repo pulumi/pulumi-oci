@@ -111,7 +111,7 @@ class AwaitableGetManagedDatabaseUserRolesResult(GetManagedDatabaseUserRolesResu
             user_name=self.user_name)
 
 
-def get_managed_database_user_roles(filters: Optional[Sequence[Union['GetManagedDatabaseUserRolesFilterArgs', 'GetManagedDatabaseUserRolesFilterArgsDict']]] = None,
+def get_managed_database_user_roles(filters: Optional[Sequence[Union['GetManagedDatabaseUserRolesFilterArgs', 'GetManagedDatabaseUserRolesFilterArgsDict', 'outputs.GetManagedDatabaseUserRolesFilterResult']]] = None,
                                     managed_database_id: Optional[_builtins.str] = None,
                                     name: Optional[_builtins.str] = None,
                                     opc_named_credential_id: Optional[_builtins.str] = None,
@@ -157,7 +157,7 @@ def get_managed_database_user_roles(filters: Optional[Sequence[Union['GetManaged
         opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         role_collections=pulumi.get(__ret__, 'role_collections'),
         user_name=pulumi.get(__ret__, 'user_name'))
-def get_managed_database_user_roles_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseUserRolesFilterArgs', 'GetManagedDatabaseUserRolesFilterArgsDict']]]]] = None,
+def get_managed_database_user_roles_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseUserRolesFilterArgs', 'GetManagedDatabaseUserRolesFilterArgsDict', 'outputs.GetManagedDatabaseUserRolesFilterResult']]]]] = None,
                                            managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

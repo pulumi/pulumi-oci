@@ -120,7 +120,7 @@ class AwaitableGetDedicatedVmHostInstancesResult(GetDedicatedVmHostInstancesResu
 def get_dedicated_vm_host_instances(availability_domain: Optional[_builtins.str] = None,
                                     compartment_id: Optional[_builtins.str] = None,
                                     dedicated_vm_host_id: Optional[_builtins.str] = None,
-                                    filters: Optional[Sequence[Union['GetDedicatedVmHostInstancesFilterArgs', 'GetDedicatedVmHostInstancesFilterArgsDict']]] = None,
+                                    filters: Optional[Sequence[Union['GetDedicatedVmHostInstancesFilterArgs', 'GetDedicatedVmHostInstancesFilterArgsDict', 'outputs.GetDedicatedVmHostInstancesFilterResult']]] = None,
                                     is_memory_encryption_enabled: Optional[_builtins.bool] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDedicatedVmHostInstancesResult:
     """
@@ -166,7 +166,7 @@ def get_dedicated_vm_host_instances(availability_domain: Optional[_builtins.str]
 def get_dedicated_vm_host_instances_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            dedicated_vm_host_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDedicatedVmHostInstancesFilterArgs', 'GetDedicatedVmHostInstancesFilterArgsDict']]]]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDedicatedVmHostInstancesFilterArgs', 'GetDedicatedVmHostInstancesFilterArgsDict', 'outputs.GetDedicatedVmHostInstancesFilterResult']]]]] = None,
                                            is_memory_encryption_enabled: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDedicatedVmHostInstancesResult]:
     """

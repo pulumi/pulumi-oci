@@ -110,7 +110,7 @@ class AwaitableGetCertificatesResult(GetCertificatesResult):
 
 def get_certificates(compartment_id: Optional[_builtins.str] = None,
                      display_name: Optional[_builtins.str] = None,
-                     filters: Optional[Sequence[Union['GetCertificatesFilterArgs', 'GetCertificatesFilterArgsDict']]] = None,
+                     filters: Optional[Sequence[Union['GetCertificatesFilterArgs', 'GetCertificatesFilterArgsDict', 'outputs.GetCertificatesFilterResult']]] = None,
                      state: Optional[_builtins.str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCertificatesResult:
     """
@@ -151,7 +151,7 @@ def get_certificates(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_certificates_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCertificatesFilterArgs', 'GetCertificatesFilterArgsDict']]]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCertificatesFilterArgs', 'GetCertificatesFilterArgsDict', 'outputs.GetCertificatesFilterResult']]]]] = None,
                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCertificatesResult]:
     """

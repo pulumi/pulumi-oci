@@ -82,7 +82,7 @@ class AwaitableGetDrgRouteDistributionStatementsResult(GetDrgRouteDistributionSt
 
 
 def get_drg_route_distribution_statements(drg_route_distribution_id: Optional[_builtins.str] = None,
-                                          filters: Optional[Sequence[Union['GetDrgRouteDistributionStatementsFilterArgs', 'GetDrgRouteDistributionStatementsFilterArgsDict']]] = None,
+                                          filters: Optional[Sequence[Union['GetDrgRouteDistributionStatementsFilterArgs', 'GetDrgRouteDistributionStatementsFilterArgsDict', 'outputs.GetDrgRouteDistributionStatementsFilterResult']]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDrgRouteDistributionStatementsResult:
     """
     This data source provides the list of Drg Route Distribution Statements in Oracle Cloud Infrastructure Core service.
@@ -113,7 +113,7 @@ def get_drg_route_distribution_statements(drg_route_distribution_id: Optional[_b
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_drg_route_distribution_statements_output(drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDrgRouteDistributionStatementsFilterArgs', 'GetDrgRouteDistributionStatementsFilterArgsDict']]]]] = None,
+                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDrgRouteDistributionStatementsFilterArgs', 'GetDrgRouteDistributionStatementsFilterArgsDict', 'outputs.GetDrgRouteDistributionStatementsFilterResult']]]]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDrgRouteDistributionStatementsResult]:
     """
     This data source provides the list of Drg Route Distribution Statements in Oracle Cloud Infrastructure Core service.

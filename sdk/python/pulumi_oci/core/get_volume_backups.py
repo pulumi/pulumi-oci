@@ -134,7 +134,7 @@ class AwaitableGetVolumeBackupsResult(GetVolumeBackupsResult):
 
 def get_volume_backups(compartment_id: Optional[_builtins.str] = None,
                        display_name: Optional[_builtins.str] = None,
-                       filters: Optional[Sequence[Union['GetVolumeBackupsFilterArgs', 'GetVolumeBackupsFilterArgsDict']]] = None,
+                       filters: Optional[Sequence[Union['GetVolumeBackupsFilterArgs', 'GetVolumeBackupsFilterArgsDict', 'outputs.GetVolumeBackupsFilterResult']]] = None,
                        source_volume_backup_id: Optional[_builtins.str] = None,
                        state: Optional[_builtins.str] = None,
                        volume_id: Optional[_builtins.str] = None,
@@ -185,7 +185,7 @@ def get_volume_backups(compartment_id: Optional[_builtins.str] = None,
         volume_id=pulumi.get(__ret__, 'volume_id'))
 def get_volume_backups_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVolumeBackupsFilterArgs', 'GetVolumeBackupsFilterArgsDict']]]]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVolumeBackupsFilterArgs', 'GetVolumeBackupsFilterArgsDict', 'outputs.GetVolumeBackupsFilterResult']]]]] = None,
                               source_volume_backup_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               volume_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

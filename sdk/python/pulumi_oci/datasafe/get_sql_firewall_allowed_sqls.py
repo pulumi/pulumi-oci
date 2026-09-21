@@ -114,7 +114,7 @@ class AwaitableGetSqlFirewallAllowedSqlsResult(GetSqlFirewallAllowedSqlsResult):
 def get_sql_firewall_allowed_sqls(access_level: Optional[_builtins.str] = None,
                                   compartment_id: Optional[_builtins.str] = None,
                                   compartment_id_in_subtree: Optional[_builtins.bool] = None,
-                                  filters: Optional[Sequence[Union['GetSqlFirewallAllowedSqlsFilterArgs', 'GetSqlFirewallAllowedSqlsFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetSqlFirewallAllowedSqlsFilterArgs', 'GetSqlFirewallAllowedSqlsFilterArgsDict', 'outputs.GetSqlFirewallAllowedSqlsFilterResult']]] = None,
                                   scim_query: Optional[_builtins.str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSqlFirewallAllowedSqlsResult:
     """
@@ -175,7 +175,7 @@ def get_sql_firewall_allowed_sqls(access_level: Optional[_builtins.str] = None,
 def get_sql_firewall_allowed_sqls_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSqlFirewallAllowedSqlsFilterArgs', 'GetSqlFirewallAllowedSqlsFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSqlFirewallAllowedSqlsFilterArgs', 'GetSqlFirewallAllowedSqlsFilterArgsDict', 'outputs.GetSqlFirewallAllowedSqlsFilterResult']]]]] = None,
                                          scim_query: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSqlFirewallAllowedSqlsResult]:
     """

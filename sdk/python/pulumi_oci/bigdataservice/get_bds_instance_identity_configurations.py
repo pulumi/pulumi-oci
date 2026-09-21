@@ -117,7 +117,7 @@ class AwaitableGetBdsInstanceIdentityConfigurationsResult(GetBdsInstanceIdentity
 def get_bds_instance_identity_configurations(bds_instance_id: Optional[_builtins.str] = None,
                                              compartment_id: Optional[_builtins.str] = None,
                                              display_name: Optional[_builtins.str] = None,
-                                             filters: Optional[Sequence[Union['GetBdsInstanceIdentityConfigurationsFilterArgs', 'GetBdsInstanceIdentityConfigurationsFilterArgsDict']]] = None,
+                                             filters: Optional[Sequence[Union['GetBdsInstanceIdentityConfigurationsFilterArgs', 'GetBdsInstanceIdentityConfigurationsFilterArgsDict', 'outputs.GetBdsInstanceIdentityConfigurationsFilterResult']]] = None,
                                              state: Optional[_builtins.str] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBdsInstanceIdentityConfigurationsResult:
     """
@@ -163,7 +163,7 @@ def get_bds_instance_identity_configurations(bds_instance_id: Optional[_builtins
 def get_bds_instance_identity_configurations_output(bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                     compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstanceIdentityConfigurationsFilterArgs', 'GetBdsInstanceIdentityConfigurationsFilterArgsDict']]]]] = None,
+                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstanceIdentityConfigurationsFilterArgs', 'GetBdsInstanceIdentityConfigurationsFilterArgsDict', 'outputs.GetBdsInstanceIdentityConfigurationsFilterResult']]]]] = None,
                                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceIdentityConfigurationsResult]:
     """

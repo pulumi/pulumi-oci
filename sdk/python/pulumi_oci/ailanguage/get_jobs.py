@@ -110,7 +110,7 @@ class AwaitableGetJobsResult(GetJobsResult):
 
 def get_jobs(compartment_id: Optional[_builtins.str] = None,
              display_name: Optional[_builtins.str] = None,
-             filters: Optional[Sequence[Union['GetJobsFilterArgs', 'GetJobsFilterArgsDict']]] = None,
+             filters: Optional[Sequence[Union['GetJobsFilterArgs', 'GetJobsFilterArgsDict', 'outputs.GetJobsFilterResult']]] = None,
              id: Optional[_builtins.str] = None,
              state: Optional[_builtins.str] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetJobsResult:
@@ -155,7 +155,7 @@ def get_jobs(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_jobs_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJobsFilterArgs', 'GetJobsFilterArgsDict']]]]] = None,
+                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJobsFilterArgs', 'GetJobsFilterArgsDict', 'outputs.GetJobsFilterResult']]]]] = None,
                     id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJobsResult]:

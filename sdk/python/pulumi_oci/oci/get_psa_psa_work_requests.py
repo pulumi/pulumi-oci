@@ -115,7 +115,7 @@ class AwaitableGetPsaPsaWorkRequestsResult(GetPsaPsaWorkRequestsResult):
 
 
 def get_psa_psa_work_requests(compartment_id: Optional[_builtins.str] = None,
-                              filters: Optional[Sequence[Union['GetPsaPsaWorkRequestsFilterArgs', 'GetPsaPsaWorkRequestsFilterArgsDict']]] = None,
+                              filters: Optional[Sequence[Union['GetPsaPsaWorkRequestsFilterArgs', 'GetPsaPsaWorkRequestsFilterArgsDict', 'outputs.GetPsaPsaWorkRequestsFilterResult']]] = None,
                               resource_id: Optional[_builtins.str] = None,
                               status: Optional[_builtins.str] = None,
                               work_request_id: Optional[_builtins.str] = None,
@@ -161,7 +161,7 @@ def get_psa_psa_work_requests(compartment_id: Optional[_builtins.str] = None,
         work_request_id=pulumi.get(__ret__, 'work_request_id'),
         work_request_summary_collections=pulumi.get(__ret__, 'work_request_summary_collections'))
 def get_psa_psa_work_requests_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPsaPsaWorkRequestsFilterArgs', 'GetPsaPsaWorkRequestsFilterArgsDict']]]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPsaPsaWorkRequestsFilterArgs', 'GetPsaPsaWorkRequestsFilterArgsDict', 'outputs.GetPsaPsaWorkRequestsFilterResult']]]]] = None,
                                      resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      work_request_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

@@ -158,7 +158,7 @@ def get_db_homes(backup_id: Optional[_builtins.str] = None,
                  db_system_id: Optional[_builtins.str] = None,
                  db_version: Optional[_builtins.str] = None,
                  display_name: Optional[_builtins.str] = None,
-                 filters: Optional[Sequence[Union['GetDbHomesFilterArgs', 'GetDbHomesFilterArgsDict']]] = None,
+                 filters: Optional[Sequence[Union['GetDbHomesFilterArgs', 'GetDbHomesFilterArgsDict', 'outputs.GetDbHomesFilterResult']]] = None,
                  state: Optional[_builtins.str] = None,
                  vm_cluster_id: Optional[_builtins.str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbHomesResult:
@@ -204,7 +204,7 @@ def get_db_homes_output(backup_id: pulumi.Input[Optional[Optional[_builtins.str]
                         db_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         db_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbHomesFilterArgs', 'GetDbHomesFilterArgsDict']]]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbHomesFilterArgs', 'GetDbHomesFilterArgsDict', 'outputs.GetDbHomesFilterResult']]]]] = None,
                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         vm_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbHomesResult]:

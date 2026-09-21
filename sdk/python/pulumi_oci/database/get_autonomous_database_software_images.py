@@ -122,7 +122,7 @@ class AwaitableGetAutonomousDatabaseSoftwareImagesResult(GetAutonomousDatabaseSo
 
 def get_autonomous_database_software_images(compartment_id: Optional[_builtins.str] = None,
                                             display_name: Optional[_builtins.str] = None,
-                                            filters: Optional[Sequence[Union['GetAutonomousDatabaseSoftwareImagesFilterArgs', 'GetAutonomousDatabaseSoftwareImagesFilterArgsDict']]] = None,
+                                            filters: Optional[Sequence[Union['GetAutonomousDatabaseSoftwareImagesFilterArgs', 'GetAutonomousDatabaseSoftwareImagesFilterArgsDict', 'outputs.GetAutonomousDatabaseSoftwareImagesFilterResult']]] = None,
                                             image_shape_family: Optional[_builtins.str] = None,
                                             state: Optional[_builtins.str] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabaseSoftwareImagesResult:
@@ -168,7 +168,7 @@ def get_autonomous_database_software_images(compartment_id: Optional[_builtins.s
         state=pulumi.get(__ret__, 'state'))
 def get_autonomous_database_software_images_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDatabaseSoftwareImagesFilterArgs', 'GetAutonomousDatabaseSoftwareImagesFilterArgsDict']]]]] = None,
+                                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDatabaseSoftwareImagesFilterArgs', 'GetAutonomousDatabaseSoftwareImagesFilterArgsDict', 'outputs.GetAutonomousDatabaseSoftwareImagesFilterResult']]]]] = None,
                                                    image_shape_family: pulumi.Input[Optional[_builtins.str]] = None,
                                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabaseSoftwareImagesResult]:

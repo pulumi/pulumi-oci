@@ -99,7 +99,7 @@ class AwaitableGetAnnouncementsResult(GetAnnouncementsResult):
             time_start=self.time_start)
 
 
-def get_announcements(filters: Optional[Sequence[Union['GetAnnouncementsFilterArgs', 'GetAnnouncementsFilterArgsDict']]] = None,
+def get_announcements(filters: Optional[Sequence[Union['GetAnnouncementsFilterArgs', 'GetAnnouncementsFilterArgsDict', 'outputs.GetAnnouncementsFilterResult']]] = None,
                       summary_contains: Optional[_builtins.str] = None,
                       time_end: Optional[_builtins.str] = None,
                       time_start: Optional[_builtins.str] = None,
@@ -140,7 +140,7 @@ def get_announcements(filters: Optional[Sequence[Union['GetAnnouncementsFilterAr
         summary_contains=pulumi.get(__ret__, 'summary_contains'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-def get_announcements_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAnnouncementsFilterArgs', 'GetAnnouncementsFilterArgsDict']]]]] = None,
+def get_announcements_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAnnouncementsFilterArgs', 'GetAnnouncementsFilterArgsDict', 'outputs.GetAnnouncementsFilterResult']]]]] = None,
                              summary_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              time_end: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              time_start: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

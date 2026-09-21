@@ -94,7 +94,7 @@ class AwaitableGetMonitoredResourceTasksResult(GetMonitoredResourceTasksResult):
 
 
 def get_monitored_resource_tasks(compartment_id: Optional[_builtins.str] = None,
-                                 filters: Optional[Sequence[Union['GetMonitoredResourceTasksFilterArgs', 'GetMonitoredResourceTasksFilterArgsDict']]] = None,
+                                 filters: Optional[Sequence[Union['GetMonitoredResourceTasksFilterArgs', 'GetMonitoredResourceTasksFilterArgsDict', 'outputs.GetMonitoredResourceTasksFilterResult']]] = None,
                                  status: Optional[_builtins.str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMonitoredResourceTasksResult:
     """
@@ -130,7 +130,7 @@ def get_monitored_resource_tasks(compartment_id: Optional[_builtins.str] = None,
         monitored_resource_tasks_collections=pulumi.get(__ret__, 'monitored_resource_tasks_collections'),
         status=pulumi.get(__ret__, 'status'))
 def get_monitored_resource_tasks_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMonitoredResourceTasksFilterArgs', 'GetMonitoredResourceTasksFilterArgsDict']]]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMonitoredResourceTasksFilterArgs', 'GetMonitoredResourceTasksFilterArgsDict', 'outputs.GetMonitoredResourceTasksFilterResult']]]]] = None,
                                         status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMonitoredResourceTasksResult]:
     """

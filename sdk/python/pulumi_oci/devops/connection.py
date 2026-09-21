@@ -509,7 +509,7 @@ class Connection(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 tls_verify_config: pulumi.Input[Optional[Union['ConnectionTlsVerifyConfigArgs', 'ConnectionTlsVerifyConfigArgsDict']]] = None,
+                 tls_verify_config: pulumi.Input[Optional[Union['ConnectionTlsVerifyConfigArgs', 'ConnectionTlsVerifyConfigArgsDict', 'outputs.ConnectionTlsVerifyConfig']]] = None,
                  username: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -567,7 +567,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Optional connection display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] project_id: The OCID of the DevOps project.
-        :param pulumi.Input[Union['ConnectionTlsVerifyConfigArgs', 'ConnectionTlsVerifyConfigArgsDict']] tls_verify_config: (Updatable) TLS configuration used by build service to verify TLS connection.
+        :param pulumi.Input[Union['ConnectionTlsVerifyConfigArgs', 'ConnectionTlsVerifyConfigArgsDict', 'outputs.ConnectionTlsVerifyConfig']] tls_verify_config: (Updatable) TLS configuration used by build service to verify TLS connection.
         :param pulumi.Input[_builtins.str] username: (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
                
                ** IMPORTANT **
@@ -647,7 +647,7 @@ class Connection(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 tls_verify_config: pulumi.Input[Optional[Union['ConnectionTlsVerifyConfigArgs', 'ConnectionTlsVerifyConfigArgsDict']]] = None,
+                 tls_verify_config: pulumi.Input[Optional[Union['ConnectionTlsVerifyConfigArgs', 'ConnectionTlsVerifyConfigArgsDict', 'outputs.ConnectionTlsVerifyConfig']]] = None,
                  username: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -700,13 +700,13 @@ class Connection(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            last_connection_validation_results: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionLastConnectionValidationResultArgs', 'ConnectionLastConnectionValidationResultArgsDict']]]]] = None,
+            last_connection_validation_results: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionLastConnectionValidationResultArgs', 'ConnectionLastConnectionValidationResultArgsDict', 'outputs.ConnectionLastConnectionValidationResult']]]]] = None,
             project_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
-            tls_verify_config: pulumi.Input[Optional[Union['ConnectionTlsVerifyConfigArgs', 'ConnectionTlsVerifyConfigArgsDict']]] = None,
+            tls_verify_config: pulumi.Input[Optional[Union['ConnectionTlsVerifyConfigArgs', 'ConnectionTlsVerifyConfigArgsDict', 'outputs.ConnectionTlsVerifyConfig']]] = None,
             username: pulumi.Input[Optional[_builtins.str]] = None) -> 'Connection':
         """
         Get an existing Connection resource's state with the given name, id, and optional extra
@@ -724,13 +724,13 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) Optional description about the connection.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Optional connection display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionLastConnectionValidationResultArgs', 'ConnectionLastConnectionValidationResultArgsDict']]]] last_connection_validation_results: The result of validating the credentials of a connection.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionLastConnectionValidationResultArgs', 'ConnectionLastConnectionValidationResultArgsDict', 'outputs.ConnectionLastConnectionValidationResult']]]] last_connection_validation_results: The result of validating the credentials of a connection.
         :param pulumi.Input[_builtins.str] project_id: The OCID of the DevOps project.
         :param pulumi.Input[_builtins.str] state: The current state of the connection.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[_builtins.str] time_updated: The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        :param pulumi.Input[Union['ConnectionTlsVerifyConfigArgs', 'ConnectionTlsVerifyConfigArgsDict']] tls_verify_config: (Updatable) TLS configuration used by build service to verify TLS connection.
+        :param pulumi.Input[Union['ConnectionTlsVerifyConfigArgs', 'ConnectionTlsVerifyConfigArgsDict', 'outputs.ConnectionTlsVerifyConfig']] tls_verify_config: (Updatable) TLS configuration used by build service to verify TLS connection.
         :param pulumi.Input[_builtins.str] username: (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
                
                ** IMPORTANT **

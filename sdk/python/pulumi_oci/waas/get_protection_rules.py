@@ -103,7 +103,7 @@ class AwaitableGetProtectionRulesResult(GetProtectionRulesResult):
 
 
 def get_protection_rules(actions: Optional[Sequence[_builtins.str]] = None,
-                         filters: Optional[Sequence[Union['GetProtectionRulesFilterArgs', 'GetProtectionRulesFilterArgsDict']]] = None,
+                         filters: Optional[Sequence[Union['GetProtectionRulesFilterArgs', 'GetProtectionRulesFilterArgsDict', 'outputs.GetProtectionRulesFilterResult']]] = None,
                          mod_security_rule_ids: Optional[Sequence[_builtins.str]] = None,
                          waas_policy_id: Optional[_builtins.str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProtectionRulesResult:
@@ -145,7 +145,7 @@ def get_protection_rules(actions: Optional[Sequence[_builtins.str]] = None,
         protection_rules=pulumi.get(__ret__, 'protection_rules'),
         waas_policy_id=pulumi.get(__ret__, 'waas_policy_id'))
 def get_protection_rules_output(actions: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
-                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProtectionRulesFilterArgs', 'GetProtectionRulesFilterArgsDict']]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProtectionRulesFilterArgs', 'GetProtectionRulesFilterArgsDict', 'outputs.GetProtectionRulesFilterResult']]]]] = None,
                                 mod_security_rule_ids: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                 waas_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectionRulesResult]:

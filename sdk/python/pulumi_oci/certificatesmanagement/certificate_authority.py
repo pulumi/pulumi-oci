@@ -516,9 +516,9 @@ class CertificateAuthority(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 certificate_authority_config: pulumi.Input[Optional[Union['CertificateAuthorityCertificateAuthorityConfigArgs', 'CertificateAuthorityCertificateAuthorityConfigArgsDict']]] = None,
-                 certificate_authority_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateAuthorityCertificateAuthorityRuleArgs', 'CertificateAuthorityCertificateAuthorityRuleArgsDict']]]]] = None,
-                 certificate_revocation_list_details: pulumi.Input[Optional[Union['CertificateAuthorityCertificateRevocationListDetailsArgs', 'CertificateAuthorityCertificateRevocationListDetailsArgsDict']]] = None,
+                 certificate_authority_config: pulumi.Input[Optional[Union['CertificateAuthorityCertificateAuthorityConfigArgs', 'CertificateAuthorityCertificateAuthorityConfigArgsDict', 'outputs.CertificateAuthorityCertificateAuthorityConfig']]] = None,
+                 certificate_authority_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateAuthorityCertificateAuthorityRuleArgs', 'CertificateAuthorityCertificateAuthorityRuleArgsDict', 'outputs.CertificateAuthorityCertificateAuthorityRule']]]]] = None,
+                 certificate_revocation_list_details: pulumi.Input[Optional[Union['CertificateAuthorityCertificateRevocationListDetailsArgs', 'CertificateAuthorityCertificateRevocationListDetailsArgsDict', 'outputs.CertificateAuthorityCertificateRevocationListDetails']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -546,9 +546,9 @@ class CertificateAuthority(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['CertificateAuthorityCertificateAuthorityConfigArgs', 'CertificateAuthorityCertificateAuthorityConfigArgsDict']] certificate_authority_config: (Updatable) The configuration details for creating a certificate authority (CA).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateAuthorityCertificateAuthorityRuleArgs', 'CertificateAuthorityCertificateAuthorityRuleArgsDict']]]] certificate_authority_rules: (Updatable) A list of rules that control how the CA is used and managed.
-        :param pulumi.Input[Union['CertificateAuthorityCertificateRevocationListDetailsArgs', 'CertificateAuthorityCertificateRevocationListDetailsArgsDict']] certificate_revocation_list_details: (Updatable) The details of the certificate revocation list (CRL).
+        :param pulumi.Input[Union['CertificateAuthorityCertificateAuthorityConfigArgs', 'CertificateAuthorityCertificateAuthorityConfigArgsDict', 'outputs.CertificateAuthorityCertificateAuthorityConfig']] certificate_authority_config: (Updatable) The configuration details for creating a certificate authority (CA).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateAuthorityCertificateAuthorityRuleArgs', 'CertificateAuthorityCertificateAuthorityRuleArgsDict', 'outputs.CertificateAuthorityCertificateAuthorityRule']]]] certificate_authority_rules: (Updatable) A list of rules that control how the CA is used and managed.
+        :param pulumi.Input[Union['CertificateAuthorityCertificateRevocationListDetailsArgs', 'CertificateAuthorityCertificateRevocationListDetailsArgsDict', 'outputs.CertificateAuthorityCertificateRevocationListDetails']] certificate_revocation_list_details: (Updatable) The details of the certificate revocation list (CRL).
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment in which you want to create the CA.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A brief description of the CA.
@@ -598,9 +598,9 @@ class CertificateAuthority(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 certificate_authority_config: pulumi.Input[Optional[Union['CertificateAuthorityCertificateAuthorityConfigArgs', 'CertificateAuthorityCertificateAuthorityConfigArgsDict']]] = None,
-                 certificate_authority_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateAuthorityCertificateAuthorityRuleArgs', 'CertificateAuthorityCertificateAuthorityRuleArgsDict']]]]] = None,
-                 certificate_revocation_list_details: pulumi.Input[Optional[Union['CertificateAuthorityCertificateRevocationListDetailsArgs', 'CertificateAuthorityCertificateRevocationListDetailsArgsDict']]] = None,
+                 certificate_authority_config: pulumi.Input[Optional[Union['CertificateAuthorityCertificateAuthorityConfigArgs', 'CertificateAuthorityCertificateAuthorityConfigArgsDict', 'outputs.CertificateAuthorityCertificateAuthorityConfig']]] = None,
+                 certificate_authority_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateAuthorityCertificateAuthorityRuleArgs', 'CertificateAuthorityCertificateAuthorityRuleArgsDict', 'outputs.CertificateAuthorityCertificateAuthorityRule']]]]] = None,
+                 certificate_revocation_list_details: pulumi.Input[Optional[Union['CertificateAuthorityCertificateRevocationListDetailsArgs', 'CertificateAuthorityCertificateRevocationListDetailsArgsDict', 'outputs.CertificateAuthorityCertificateRevocationListDetails']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -650,12 +650,12 @@ class CertificateAuthority(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            certificate_authority_config: pulumi.Input[Optional[Union['CertificateAuthorityCertificateAuthorityConfigArgs', 'CertificateAuthorityCertificateAuthorityConfigArgsDict']]] = None,
-            certificate_authority_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateAuthorityCertificateAuthorityRuleArgs', 'CertificateAuthorityCertificateAuthorityRuleArgsDict']]]]] = None,
-            certificate_revocation_list_details: pulumi.Input[Optional[Union['CertificateAuthorityCertificateRevocationListDetailsArgs', 'CertificateAuthorityCertificateRevocationListDetailsArgsDict']]] = None,
+            certificate_authority_config: pulumi.Input[Optional[Union['CertificateAuthorityCertificateAuthorityConfigArgs', 'CertificateAuthorityCertificateAuthorityConfigArgsDict', 'outputs.CertificateAuthorityCertificateAuthorityConfig']]] = None,
+            certificate_authority_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateAuthorityCertificateAuthorityRuleArgs', 'CertificateAuthorityCertificateAuthorityRuleArgsDict', 'outputs.CertificateAuthorityCertificateAuthorityRule']]]]] = None,
+            certificate_revocation_list_details: pulumi.Input[Optional[Union['CertificateAuthorityCertificateRevocationListDetailsArgs', 'CertificateAuthorityCertificateRevocationListDetailsArgsDict', 'outputs.CertificateAuthorityCertificateRevocationListDetails']]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             config_type: pulumi.Input[Optional[_builtins.str]] = None,
-            current_versions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateAuthorityCurrentVersionArgs', 'CertificateAuthorityCurrentVersionArgsDict']]]]] = None,
+            current_versions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateAuthorityCurrentVersionArgs', 'CertificateAuthorityCurrentVersionArgsDict', 'outputs.CertificateAuthorityCurrentVersion']]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             external_key_description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -666,7 +666,7 @@ class CertificateAuthority(pulumi.CustomResource):
             name: pulumi.Input[Optional[_builtins.str]] = None,
             signing_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            subjects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateAuthoritySubjectArgs', 'CertificateAuthoritySubjectArgsDict']]]]] = None,
+            subjects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateAuthoritySubjectArgs', 'CertificateAuthoritySubjectArgsDict', 'outputs.CertificateAuthoritySubject']]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None) -> 'CertificateAuthority':
         """
@@ -676,12 +676,12 @@ class CertificateAuthority(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['CertificateAuthorityCertificateAuthorityConfigArgs', 'CertificateAuthorityCertificateAuthorityConfigArgsDict']] certificate_authority_config: (Updatable) The configuration details for creating a certificate authority (CA).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateAuthorityCertificateAuthorityRuleArgs', 'CertificateAuthorityCertificateAuthorityRuleArgsDict']]]] certificate_authority_rules: (Updatable) A list of rules that control how the CA is used and managed.
-        :param pulumi.Input[Union['CertificateAuthorityCertificateRevocationListDetailsArgs', 'CertificateAuthorityCertificateRevocationListDetailsArgsDict']] certificate_revocation_list_details: (Updatable) The details of the certificate revocation list (CRL).
+        :param pulumi.Input[Union['CertificateAuthorityCertificateAuthorityConfigArgs', 'CertificateAuthorityCertificateAuthorityConfigArgsDict', 'outputs.CertificateAuthorityCertificateAuthorityConfig']] certificate_authority_config: (Updatable) The configuration details for creating a certificate authority (CA).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateAuthorityCertificateAuthorityRuleArgs', 'CertificateAuthorityCertificateAuthorityRuleArgsDict', 'outputs.CertificateAuthorityCertificateAuthorityRule']]]] certificate_authority_rules: (Updatable) A list of rules that control how the CA is used and managed.
+        :param pulumi.Input[Union['CertificateAuthorityCertificateRevocationListDetailsArgs', 'CertificateAuthorityCertificateRevocationListDetailsArgsDict', 'outputs.CertificateAuthorityCertificateRevocationListDetails']] certificate_revocation_list_details: (Updatable) The details of the certificate revocation list (CRL).
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment in which you want to create the CA.
         :param pulumi.Input[_builtins.str] config_type: The origin of the CA.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateAuthorityCurrentVersionArgs', 'CertificateAuthorityCurrentVersionArgsDict']]]] current_versions: The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateAuthorityCurrentVersionArgs', 'CertificateAuthorityCurrentVersionArgsDict', 'outputs.CertificateAuthorityCurrentVersion']]]] current_versions: The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A brief description of the CA.
         :param pulumi.Input[_builtins.str] external_key_description: (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
@@ -695,7 +695,7 @@ class CertificateAuthority(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] signing_algorithm: The algorithm used to sign public key certificates that the CA issues.
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the certificate authority.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateAuthoritySubjectArgs', 'CertificateAuthoritySubjectArgsDict']]]] subjects: The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateAuthoritySubjectArgs', 'CertificateAuthoritySubjectArgsDict', 'outputs.CertificateAuthoritySubject']]]] subjects: The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
         :param pulumi.Input[_builtins.str] time_created: A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_of_deletion: An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """

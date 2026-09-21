@@ -426,8 +426,8 @@ class IotIotFlowRuntime(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 log_config: pulumi.Input[Optional[Union['IotIotFlowRuntimeLogConfigArgs', 'IotIotFlowRuntimeLogConfigArgsDict']]] = None,
-                 network_config: pulumi.Input[Optional[Union['IotIotFlowRuntimeNetworkConfigArgs', 'IotIotFlowRuntimeNetworkConfigArgsDict']]] = None,
+                 log_config: pulumi.Input[Optional[Union['IotIotFlowRuntimeLogConfigArgs', 'IotIotFlowRuntimeLogConfigArgsDict', 'outputs.IotIotFlowRuntimeLogConfig']]] = None,
+                 network_config: pulumi.Input[Optional[Union['IotIotFlowRuntimeNetworkConfigArgs', 'IotIotFlowRuntimeNetworkConfigArgsDict', 'outputs.IotIotFlowRuntimeNetworkConfig']]] = None,
                  scale: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -488,8 +488,8 @@ class IotIotFlowRuntime(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
-        :param pulumi.Input[Union['IotIotFlowRuntimeLogConfigArgs', 'IotIotFlowRuntimeLogConfigArgsDict']] log_config: (Updatable) Logging configuration for an IoT flow runtime.
-        :param pulumi.Input[Union['IotIotFlowRuntimeNetworkConfigArgs', 'IotIotFlowRuntimeNetworkConfigArgsDict']] network_config: (Updatable) Network access configuration for an IoT flow runtime.
+        :param pulumi.Input[Union['IotIotFlowRuntimeLogConfigArgs', 'IotIotFlowRuntimeLogConfigArgsDict', 'outputs.IotIotFlowRuntimeLogConfig']] log_config: (Updatable) Logging configuration for an IoT flow runtime.
+        :param pulumi.Input[Union['IotIotFlowRuntimeNetworkConfigArgs', 'IotIotFlowRuntimeNetworkConfigArgsDict', 'outputs.IotIotFlowRuntimeNetworkConfig']] network_config: (Updatable) Network access configuration for an IoT flow runtime.
         :param pulumi.Input[_builtins.str] scale: (Updatable) The scale of the IoT flow runtime. Larger values allocate more CPU and memory for higher throughput and operational headroom. MEDIUM is the default value.
                
                ** IMPORTANT **
@@ -572,8 +572,8 @@ class IotIotFlowRuntime(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 log_config: pulumi.Input[Optional[Union['IotIotFlowRuntimeLogConfigArgs', 'IotIotFlowRuntimeLogConfigArgsDict']]] = None,
-                 network_config: pulumi.Input[Optional[Union['IotIotFlowRuntimeNetworkConfigArgs', 'IotIotFlowRuntimeNetworkConfigArgsDict']]] = None,
+                 log_config: pulumi.Input[Optional[Union['IotIotFlowRuntimeLogConfigArgs', 'IotIotFlowRuntimeLogConfigArgsDict', 'outputs.IotIotFlowRuntimeLogConfig']]] = None,
+                 network_config: pulumi.Input[Optional[Union['IotIotFlowRuntimeNetworkConfigArgs', 'IotIotFlowRuntimeNetworkConfigArgsDict', 'outputs.IotIotFlowRuntimeNetworkConfig']]] = None,
                  scale: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -619,8 +619,8 @@ class IotIotFlowRuntime(pulumi.CustomResource):
             flow_runtime_host: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
-            log_config: pulumi.Input[Optional[Union['IotIotFlowRuntimeLogConfigArgs', 'IotIotFlowRuntimeLogConfigArgsDict']]] = None,
-            network_config: pulumi.Input[Optional[Union['IotIotFlowRuntimeNetworkConfigArgs', 'IotIotFlowRuntimeNetworkConfigArgsDict']]] = None,
+            log_config: pulumi.Input[Optional[Union['IotIotFlowRuntimeLogConfigArgs', 'IotIotFlowRuntimeLogConfigArgsDict', 'outputs.IotIotFlowRuntimeLogConfig']]] = None,
+            network_config: pulumi.Input[Optional[Union['IotIotFlowRuntimeNetworkConfigArgs', 'IotIotFlowRuntimeNetworkConfigArgsDict', 'outputs.IotIotFlowRuntimeNetworkConfig']]] = None,
             scale: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -640,8 +640,8 @@ class IotIotFlowRuntime(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] flow_runtime_host: Hostname of the IoT flow runtime.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
-        :param pulumi.Input[Union['IotIotFlowRuntimeLogConfigArgs', 'IotIotFlowRuntimeLogConfigArgsDict']] log_config: (Updatable) Logging configuration for an IoT flow runtime.
-        :param pulumi.Input[Union['IotIotFlowRuntimeNetworkConfigArgs', 'IotIotFlowRuntimeNetworkConfigArgsDict']] network_config: (Updatable) Network access configuration for an IoT flow runtime.
+        :param pulumi.Input[Union['IotIotFlowRuntimeLogConfigArgs', 'IotIotFlowRuntimeLogConfigArgsDict', 'outputs.IotIotFlowRuntimeLogConfig']] log_config: (Updatable) Logging configuration for an IoT flow runtime.
+        :param pulumi.Input[Union['IotIotFlowRuntimeNetworkConfigArgs', 'IotIotFlowRuntimeNetworkConfigArgsDict', 'outputs.IotIotFlowRuntimeNetworkConfig']] network_config: (Updatable) Network access configuration for an IoT flow runtime.
         :param pulumi.Input[_builtins.str] scale: (Updatable) The scale of the IoT flow runtime. Larger values allocate more CPU and memory for higher throughput and operational headroom. MEDIUM is the default value.
                
                ** IMPORTANT **

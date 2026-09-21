@@ -132,7 +132,7 @@ class AwaitableGetBlockVolumeReplicasResult(GetBlockVolumeReplicasResult):
 def get_block_volume_replicas(availability_domain: Optional[_builtins.str] = None,
                               compartment_id: Optional[_builtins.str] = None,
                               display_name: Optional[_builtins.str] = None,
-                              filters: Optional[Sequence[Union['GetBlockVolumeReplicasFilterArgs', 'GetBlockVolumeReplicasFilterArgsDict']]] = None,
+                              filters: Optional[Sequence[Union['GetBlockVolumeReplicasFilterArgs', 'GetBlockVolumeReplicasFilterArgsDict', 'outputs.GetBlockVolumeReplicasFilterResult']]] = None,
                               state: Optional[_builtins.str] = None,
                               volume_group_replica_id: Optional[_builtins.str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBlockVolumeReplicasResult:
@@ -183,7 +183,7 @@ def get_block_volume_replicas(availability_domain: Optional[_builtins.str] = Non
 def get_block_volume_replicas_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBlockVolumeReplicasFilterArgs', 'GetBlockVolumeReplicasFilterArgsDict']]]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBlockVolumeReplicasFilterArgs', 'GetBlockVolumeReplicasFilterArgsDict', 'outputs.GetBlockVolumeReplicasFilterResult']]]]] = None,
                                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      volume_group_replica_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBlockVolumeReplicasResult]:

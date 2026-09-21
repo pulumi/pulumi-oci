@@ -82,7 +82,7 @@ class AwaitableGetComputeTargetShapesResult(GetComputeTargetShapesResult):
 
 
 def get_compute_target_shapes(compartment_id: Optional[_builtins.str] = None,
-                              filters: Optional[Sequence[Union['GetComputeTargetShapesFilterArgs', 'GetComputeTargetShapesFilterArgsDict']]] = None,
+                              filters: Optional[Sequence[Union['GetComputeTargetShapesFilterArgs', 'GetComputeTargetShapesFilterArgsDict', 'outputs.GetComputeTargetShapesFilterResult']]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeTargetShapesResult:
     """
     This data source provides the list of Compute Target Shapes in Oracle Cloud Infrastructure Data Science service.
@@ -113,7 +113,7 @@ def get_compute_target_shapes(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_compute_target_shapes_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeTargetShapesFilterArgs', 'GetComputeTargetShapesFilterArgsDict']]]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeTargetShapesFilterArgs', 'GetComputeTargetShapesFilterArgsDict', 'outputs.GetComputeTargetShapesFilterResult']]]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeTargetShapesResult]:
     """
     This data source provides the list of Compute Target Shapes in Oracle Cloud Infrastructure Data Science service.

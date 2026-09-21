@@ -117,7 +117,7 @@ class AwaitableGetResolverEndpointsResult(GetResolverEndpointsResult):
             state=self.state)
 
 
-def get_resolver_endpoints(filters: Optional[Sequence[Union['GetResolverEndpointsFilterArgs', 'GetResolverEndpointsFilterArgsDict']]] = None,
+def get_resolver_endpoints(filters: Optional[Sequence[Union['GetResolverEndpointsFilterArgs', 'GetResolverEndpointsFilterArgsDict', 'outputs.GetResolverEndpointsFilterResult']]] = None,
                            name: Optional[_builtins.str] = None,
                            resolver_id: Optional[_builtins.str] = None,
                            scope: Optional[_builtins.str] = None,
@@ -166,7 +166,7 @@ def get_resolver_endpoints(filters: Optional[Sequence[Union['GetResolverEndpoint
         resolver_id=pulumi.get(__ret__, 'resolver_id'),
         scope=pulumi.get(__ret__, 'scope'),
         state=pulumi.get(__ret__, 'state'))
-def get_resolver_endpoints_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetResolverEndpointsFilterArgs', 'GetResolverEndpointsFilterArgsDict']]]]] = None,
+def get_resolver_endpoints_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetResolverEndpointsFilterArgs', 'GetResolverEndpointsFilterArgsDict', 'outputs.GetResolverEndpointsFilterResult']]]]] = None,
                                   name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   resolver_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   scope: pulumi.Input[Optional[_builtins.str]] = None,

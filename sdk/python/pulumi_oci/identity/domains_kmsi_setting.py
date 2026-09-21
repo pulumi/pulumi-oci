@@ -1367,7 +1367,7 @@ class DomainsKmsiSetting(pulumi.CustomResource):
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsKmsiSettingTagArgs', 'DomainsKmsiSettingTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsKmsiSettingTagArgs', 'DomainsKmsiSettingTagArgsDict', 'outputs.DomainsKmsiSettingTag']]]]] = None,
                  token_validity_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  tou_prompt_disabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
@@ -1485,7 +1485,7 @@ class DomainsKmsiSetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsKmsiSettingTagArgs', 'DomainsKmsiSettingTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsKmsiSettingTagArgs', 'DomainsKmsiSettingTagArgsDict', 'outputs.DomainsKmsiSettingTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1574,7 +1574,7 @@ class DomainsKmsiSetting(pulumi.CustomResource):
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsKmsiSettingTagArgs', 'DomainsKmsiSettingTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsKmsiSettingTagArgs', 'DomainsKmsiSettingTagArgsDict', 'outputs.DomainsKmsiSettingTag']]]]] = None,
                  token_validity_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  tou_prompt_disabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
@@ -1635,9 +1635,9 @@ class DomainsKmsiSetting(pulumi.CustomResource):
             delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
             domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             external_id: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsKmsiSettingIdcsCreatedByArgs', 'DomainsKmsiSettingIdcsCreatedByArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsKmsiSettingIdcsCreatedByArgs', 'DomainsKmsiSettingIdcsCreatedByArgsDict', 'outputs.DomainsKmsiSettingIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsKmsiSettingIdcsLastModifiedByArgs', 'DomainsKmsiSettingIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsKmsiSettingIdcsLastModifiedByArgs', 'DomainsKmsiSettingIdcsLastModifiedByArgsDict', 'outputs.DomainsKmsiSettingIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             kmsi_feature_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1646,11 +1646,11 @@ class DomainsKmsiSetting(pulumi.CustomResource):
             last_enabled_on: pulumi.Input[Optional[_builtins.str]] = None,
             last_used_validity_in_days: pulumi.Input[Optional[_builtins.int]] = None,
             max_allowed_sessions: pulumi.Input[Optional[_builtins.int]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsKmsiSettingMetaArgs', 'DomainsKmsiSettingMetaArgsDict']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsKmsiSettingMetaArgs', 'DomainsKmsiSettingMetaArgsDict', 'outputs.DomainsKmsiSettingMeta']]]]] = None,
             ocid: pulumi.Input[Optional[_builtins.str]] = None,
             resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
             schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsKmsiSettingTagArgs', 'DomainsKmsiSettingTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsKmsiSettingTagArgs', 'DomainsKmsiSettingTagArgsDict', 'outputs.DomainsKmsiSettingTag']]]]] = None,
             tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             token_validity_in_days: pulumi.Input[Optional[_builtins.int]] = None,
             tou_prompt_disabled: pulumi.Input[Optional[_builtins.bool]] = None) -> 'DomainsKmsiSetting':
@@ -1707,7 +1707,7 @@ class DomainsKmsiSetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsKmsiSettingIdcsCreatedByArgs', 'DomainsKmsiSettingIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsKmsiSettingIdcsCreatedByArgs', 'DomainsKmsiSettingIdcsCreatedByArgsDict', 'outputs.DomainsKmsiSettingIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1717,7 +1717,7 @@ class DomainsKmsiSetting(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsKmsiSettingIdcsLastModifiedByArgs', 'DomainsKmsiSettingIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsKmsiSettingIdcsLastModifiedByArgs', 'DomainsKmsiSettingIdcsLastModifiedByArgsDict', 'outputs.DomainsKmsiSettingIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1805,7 +1805,7 @@ class DomainsKmsiSetting(pulumi.CustomResource):
                * idcsMaxValue: 10
                * idcsMinValue: 1
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsKmsiSettingMetaArgs', 'DomainsKmsiSettingMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsKmsiSettingMetaArgs', 'DomainsKmsiSettingMetaArgsDict', 'outputs.DomainsKmsiSettingMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1839,7 +1839,7 @@ class DomainsKmsiSetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsKmsiSettingTagArgs', 'DomainsKmsiSettingTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsKmsiSettingTagArgs', 'DomainsKmsiSettingTagArgsDict', 'outputs.DomainsKmsiSettingTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]

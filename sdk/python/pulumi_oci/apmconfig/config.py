@@ -951,26 +951,26 @@ class Config(pulumi.CustomResource):
                  agent_version: pulumi.Input[Optional[_builtins.str]] = None,
                  apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                  attach_install_dir: pulumi.Input[Optional[_builtins.str]] = None,
-                 config: pulumi.Input[Optional[Union['ConfigConfigArgs', 'ConfigConfigArgsDict']]] = None,
+                 config: pulumi.Input[Optional[Union['ConfigConfigArgs', 'ConfigConfigArgsDict', 'outputs.ConfigConfig']]] = None,
                  config_type: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigDimensionArgs', 'ConfigDimensionArgsDict']]]]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigDimensionArgs', 'ConfigDimensionArgsDict', 'outputs.ConfigDimension']]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  filter_id: pulumi.Input[Optional[_builtins.str]] = None,
                  filter_text: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  group: pulumi.Input[Optional[_builtins.str]] = None,
-                 in_use_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigInUseByArgs', 'ConfigInUseByArgsDict']]]]] = None,
+                 in_use_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigInUseByArgs', 'ConfigInUseByArgsDict', 'outputs.ConfigInUseBy']]]]] = None,
                  management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  match_agents_with_attribute_value: pulumi.Input[Optional[_builtins.str]] = None,
-                 metrics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigMetricArgs', 'ConfigMetricArgsDict']]]]] = None,
+                 metrics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigMetricArgs', 'ConfigMetricArgsDict', 'outputs.ConfigMetric']]]]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  opc_dry_run: pulumi.Input[Optional[_builtins.str]] = None,
                  options: pulumi.Input[Optional[_builtins.str]] = None,
-                 overrides: pulumi.Input[Optional[Union['ConfigOverridesArgs', 'ConfigOverridesArgsDict']]] = None,
+                 overrides: pulumi.Input[Optional[Union['ConfigOverridesArgs', 'ConfigOverridesArgsDict', 'outputs.ConfigOverrides']]] = None,
                  process_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigRuleArgs', 'ConfigRuleArgsDict']]]]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigRuleArgs', 'ConfigRuleArgsDict', 'outputs.ConfigRule']]]]] = None,
                  run_as_user: pulumi.Input[Optional[_builtins.str]] = None,
                  service_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -1060,26 +1060,26 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] agent_version: (Updatable) The version of the referenced agent bundle.
         :param pulumi.Input[_builtins.str] apm_domain_id: (Updatable) The APM Domain ID the request is intended for.
         :param pulumi.Input[_builtins.str] attach_install_dir: (Updatable) The directory owned by runAsUser.
-        :param pulumi.Input[Union['ConfigConfigArgs', 'ConfigConfigArgsDict']] config: (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `config_map`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit <some variable> and <some content> {{ <some variable> | default <some content> }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for <some variable> along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
+        :param pulumi.Input[Union['ConfigConfigArgs', 'ConfigConfigArgsDict', 'outputs.ConfigConfig']] config: (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `config_map`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit <some variable> and <some content> {{ <some variable> | default <some content> }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for <some variable> along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
         :param pulumi.Input[_builtins.str] config_type: (Updatable) The type of configuration item.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional string that describes what the options are intended or used for.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigDimensionArgs', 'ConfigDimensionArgsDict']]]] dimensions: (Updatable) A list of dimensions for the metric. This variable should not be used.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigDimensionArgs', 'ConfigDimensionArgsDict', 'outputs.ConfigDimension']]]] dimensions: (Updatable) A list of dimensions for the metric. This variable should not be used.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name by which a configuration entity is displayed to the end user.
         :param pulumi.Input[_builtins.str] filter_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
         :param pulumi.Input[_builtins.str] filter_text: (Updatable) The string that defines the Span Filter expression.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] group: (Updatable) A string that specifies the group that an OPTIONS item belongs to.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigInUseByArgs', 'ConfigInUseByArgsDict']]]] in_use_bies: The list of configuration items that reference the span filter.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigInUseByArgs', 'ConfigInUseByArgsDict', 'outputs.ConfigInUseBy']]]] in_use_bies: The list of configuration items that reference the span filter.
         :param pulumi.Input[_builtins.str] management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
         :param pulumi.Input[_builtins.str] match_agents_with_attribute_value: The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigMetricArgs', 'ConfigMetricArgsDict']]]] metrics: (Updatable) The list of metrics in this group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigMetricArgs', 'ConfigMetricArgsDict', 'outputs.ConfigMetric']]]] metrics: (Updatable) The list of metrics in this group.
         :param pulumi.Input[_builtins.str] namespace: (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
         :param pulumi.Input[_builtins.str] opc_dry_run: (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
         :param pulumi.Input[_builtins.str] options: (Updatable) The options are stored here as JSON.
-        :param pulumi.Input[Union['ConfigOverridesArgs', 'ConfigOverridesArgsDict']] overrides: (Updatable) Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+        :param pulumi.Input[Union['ConfigOverridesArgs', 'ConfigOverridesArgsDict', 'outputs.ConfigOverrides']] overrides: (Updatable) Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] process_filters: (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigRuleArgs', 'ConfigRuleArgsDict']]]] rules: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigRuleArgs', 'ConfigRuleArgsDict', 'outputs.ConfigRule']]]] rules: (Updatable)
         :param pulumi.Input[_builtins.str] run_as_user: (Updatable) The OS user that should be used to discover Java processes.
         :param pulumi.Input[_builtins.str] service_name: (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
                
@@ -1191,26 +1191,26 @@ class Config(pulumi.CustomResource):
                  agent_version: pulumi.Input[Optional[_builtins.str]] = None,
                  apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                  attach_install_dir: pulumi.Input[Optional[_builtins.str]] = None,
-                 config: pulumi.Input[Optional[Union['ConfigConfigArgs', 'ConfigConfigArgsDict']]] = None,
+                 config: pulumi.Input[Optional[Union['ConfigConfigArgs', 'ConfigConfigArgsDict', 'outputs.ConfigConfig']]] = None,
                  config_type: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigDimensionArgs', 'ConfigDimensionArgsDict']]]]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigDimensionArgs', 'ConfigDimensionArgsDict', 'outputs.ConfigDimension']]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  filter_id: pulumi.Input[Optional[_builtins.str]] = None,
                  filter_text: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  group: pulumi.Input[Optional[_builtins.str]] = None,
-                 in_use_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigInUseByArgs', 'ConfigInUseByArgsDict']]]]] = None,
+                 in_use_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigInUseByArgs', 'ConfigInUseByArgsDict', 'outputs.ConfigInUseBy']]]]] = None,
                  management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  match_agents_with_attribute_value: pulumi.Input[Optional[_builtins.str]] = None,
-                 metrics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigMetricArgs', 'ConfigMetricArgsDict']]]]] = None,
+                 metrics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigMetricArgs', 'ConfigMetricArgsDict', 'outputs.ConfigMetric']]]]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  opc_dry_run: pulumi.Input[Optional[_builtins.str]] = None,
                  options: pulumi.Input[Optional[_builtins.str]] = None,
-                 overrides: pulumi.Input[Optional[Union['ConfigOverridesArgs', 'ConfigOverridesArgsDict']]] = None,
+                 overrides: pulumi.Input[Optional[Union['ConfigOverridesArgs', 'ConfigOverridesArgsDict', 'outputs.ConfigOverrides']]] = None,
                  process_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigRuleArgs', 'ConfigRuleArgsDict']]]]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigRuleArgs', 'ConfigRuleArgsDict', 'outputs.ConfigRule']]]]] = None,
                  run_as_user: pulumi.Input[Optional[_builtins.str]] = None,
                  service_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -1270,29 +1270,29 @@ class Config(pulumi.CustomResource):
             agent_version: pulumi.Input[Optional[_builtins.str]] = None,
             apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
             attach_install_dir: pulumi.Input[Optional[_builtins.str]] = None,
-            config: pulumi.Input[Optional[Union['ConfigConfigArgs', 'ConfigConfigArgsDict']]] = None,
+            config: pulumi.Input[Optional[Union['ConfigConfigArgs', 'ConfigConfigArgsDict', 'outputs.ConfigConfig']]] = None,
             config_type: pulumi.Input[Optional[_builtins.str]] = None,
             created_by: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigDimensionArgs', 'ConfigDimensionArgsDict']]]]] = None,
+            dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigDimensionArgs', 'ConfigDimensionArgsDict', 'outputs.ConfigDimension']]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             etag: pulumi.Input[Optional[_builtins.str]] = None,
             filter_id: pulumi.Input[Optional[_builtins.str]] = None,
             filter_text: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             group: pulumi.Input[Optional[_builtins.str]] = None,
-            in_use_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigInUseByArgs', 'ConfigInUseByArgsDict']]]]] = None,
+            in_use_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigInUseByArgs', 'ConfigInUseByArgsDict', 'outputs.ConfigInUseBy']]]]] = None,
             management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
             match_agents_with_attribute_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             match_agents_with_attribute_value: pulumi.Input[Optional[_builtins.str]] = None,
-            metrics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigMetricArgs', 'ConfigMetricArgsDict']]]]] = None,
+            metrics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigMetricArgs', 'ConfigMetricArgsDict', 'outputs.ConfigMetric']]]]] = None,
             namespace: pulumi.Input[Optional[_builtins.str]] = None,
             opc_dry_run: pulumi.Input[Optional[_builtins.str]] = None,
             options: pulumi.Input[Optional[_builtins.str]] = None,
-            overrides: pulumi.Input[Optional[Union['ConfigOverridesArgs', 'ConfigOverridesArgsDict']]] = None,
+            overrides: pulumi.Input[Optional[Union['ConfigOverridesArgs', 'ConfigOverridesArgsDict', 'outputs.ConfigOverrides']]] = None,
             process_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigRuleArgs', 'ConfigRuleArgsDict']]]]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigRuleArgs', 'ConfigRuleArgsDict', 'outputs.ConfigRule']]]]] = None,
             run_as_user: pulumi.Input[Optional[_builtins.str]] = None,
             service_name: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1308,29 +1308,29 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] agent_version: (Updatable) The version of the referenced agent bundle.
         :param pulumi.Input[_builtins.str] apm_domain_id: (Updatable) The APM Domain ID the request is intended for.
         :param pulumi.Input[_builtins.str] attach_install_dir: (Updatable) The directory owned by runAsUser.
-        :param pulumi.Input[Union['ConfigConfigArgs', 'ConfigConfigArgsDict']] config: (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `config_map`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit <some variable> and <some content> {{ <some variable> | default <some content> }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for <some variable> along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
+        :param pulumi.Input[Union['ConfigConfigArgs', 'ConfigConfigArgsDict', 'outputs.ConfigConfig']] config: (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `config_map`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit <some variable> and <some content> {{ <some variable> | default <some content> }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for <some variable> along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
         :param pulumi.Input[_builtins.str] config_type: (Updatable) The type of configuration item.
         :param pulumi.Input[_builtins.str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional string that describes what the options are intended or used for.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigDimensionArgs', 'ConfigDimensionArgsDict']]]] dimensions: (Updatable) A list of dimensions for the metric. This variable should not be used.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigDimensionArgs', 'ConfigDimensionArgsDict', 'outputs.ConfigDimension']]]] dimensions: (Updatable) A list of dimensions for the metric. This variable should not be used.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name by which a configuration entity is displayed to the end user.
         :param pulumi.Input[_builtins.str] etag: For optimistic concurrency control. See `if-match`.
         :param pulumi.Input[_builtins.str] filter_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
         :param pulumi.Input[_builtins.str] filter_text: (Updatable) The string that defines the Span Filter expression.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] group: (Updatable) A string that specifies the group that an OPTIONS item belongs to.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigInUseByArgs', 'ConfigInUseByArgsDict']]]] in_use_bies: The list of configuration items that reference the span filter.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigInUseByArgs', 'ConfigInUseByArgsDict', 'outputs.ConfigInUseBy']]]] in_use_bies: The list of configuration items that reference the span filter.
         :param pulumi.Input[_builtins.str] management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] match_agents_with_attribute_keys: The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
         :param pulumi.Input[_builtins.str] match_agents_with_attribute_value: The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigMetricArgs', 'ConfigMetricArgsDict']]]] metrics: (Updatable) The list of metrics in this group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigMetricArgs', 'ConfigMetricArgsDict', 'outputs.ConfigMetric']]]] metrics: (Updatable) The list of metrics in this group.
         :param pulumi.Input[_builtins.str] namespace: (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
         :param pulumi.Input[_builtins.str] opc_dry_run: (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
         :param pulumi.Input[_builtins.str] options: (Updatable) The options are stored here as JSON.
-        :param pulumi.Input[Union['ConfigOverridesArgs', 'ConfigOverridesArgsDict']] overrides: (Updatable) Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+        :param pulumi.Input[Union['ConfigOverridesArgs', 'ConfigOverridesArgsDict', 'outputs.ConfigOverrides']] overrides: (Updatable) Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] process_filters: (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigRuleArgs', 'ConfigRuleArgsDict']]]] rules: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigRuleArgs', 'ConfigRuleArgsDict', 'outputs.ConfigRule']]]] rules: (Updatable)
         :param pulumi.Input[_builtins.str] run_as_user: (Updatable) The OS user that should be used to discover Java processes.
         :param pulumi.Input[_builtins.str] service_name: (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
                

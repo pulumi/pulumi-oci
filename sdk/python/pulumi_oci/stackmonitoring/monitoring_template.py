@@ -538,7 +538,7 @@ class MonitoringTemplate(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_alarms_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_split_notification_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoringTemplateMemberArgs', 'MonitoringTemplateMemberArgsDict']]]]] = None,
+                 members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoringTemplateMemberArgs', 'MonitoringTemplateMemberArgsDict', 'outputs.MonitoringTemplateMember']]]]] = None,
                  message_format: pulumi.Input[Optional[_builtins.str]] = None,
                  repeat_notification_duration: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -597,7 +597,7 @@ class MonitoringTemplate(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_alarms_enabled: (Updatable) Whether the alarm is enabled or disabled, it will be Enabled by default.
         :param pulumi.Input[_builtins.bool] is_split_notification_enabled: (Updatable) Whether the alarm notification is enabled or disabled, it will be Enabled by default.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoringTemplateMemberArgs', 'MonitoringTemplateMemberArgsDict']]]] members: (Updatable) List of members of this monitoring template
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoringTemplateMemberArgs', 'MonitoringTemplateMemberArgsDict', 'outputs.MonitoringTemplateMember']]]] members: (Updatable) List of members of this monitoring template
         :param pulumi.Input[_builtins.str] message_format: (Updatable) The format to use for alarm notifications.
         :param pulumi.Input[_builtins.str] repeat_notification_duration: (Updatable) The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum- PT1M. Maximum - P30D.
                
@@ -678,7 +678,7 @@ class MonitoringTemplate(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_alarms_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_split_notification_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoringTemplateMemberArgs', 'MonitoringTemplateMemberArgsDict']]]]] = None,
+                 members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoringTemplateMemberArgs', 'MonitoringTemplateMemberArgsDict', 'outputs.MonitoringTemplateMember']]]]] = None,
                  message_format: pulumi.Input[Optional[_builtins.str]] = None,
                  repeat_notification_duration: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -735,7 +735,7 @@ class MonitoringTemplate(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_alarms_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_split_notification_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoringTemplateMemberArgs', 'MonitoringTemplateMemberArgsDict']]]]] = None,
+            members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoringTemplateMemberArgs', 'MonitoringTemplateMemberArgsDict', 'outputs.MonitoringTemplateMember']]]]] = None,
             message_format: pulumi.Input[Optional[_builtins.str]] = None,
             repeat_notification_duration: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -761,7 +761,7 @@ class MonitoringTemplate(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_alarms_enabled: (Updatable) Whether the alarm is enabled or disabled, it will be Enabled by default.
         :param pulumi.Input[_builtins.bool] is_split_notification_enabled: (Updatable) Whether the alarm notification is enabled or disabled, it will be Enabled by default.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoringTemplateMemberArgs', 'MonitoringTemplateMemberArgsDict']]]] members: (Updatable) List of members of this monitoring template
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoringTemplateMemberArgs', 'MonitoringTemplateMemberArgsDict', 'outputs.MonitoringTemplateMember']]]] members: (Updatable) List of members of this monitoring template
         :param pulumi.Input[_builtins.str] message_format: (Updatable) The format to use for alarm notifications.
         :param pulumi.Input[_builtins.str] repeat_notification_duration: (Updatable) The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum- PT1M. Maximum - P30D.
                

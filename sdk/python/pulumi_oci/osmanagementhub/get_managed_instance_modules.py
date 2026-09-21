@@ -112,7 +112,7 @@ class AwaitableGetManagedInstanceModulesResult(GetManagedInstanceModulesResult):
 
 
 def get_managed_instance_modules(compartment_id: Optional[_builtins.str] = None,
-                                 filters: Optional[Sequence[Union['GetManagedInstanceModulesFilterArgs', 'GetManagedInstanceModulesFilterArgsDict']]] = None,
+                                 filters: Optional[Sequence[Union['GetManagedInstanceModulesFilterArgs', 'GetManagedInstanceModulesFilterArgsDict', 'outputs.GetManagedInstanceModulesFilterResult']]] = None,
                                  managed_instance_id: Optional[_builtins.str] = None,
                                  name: Optional[_builtins.str] = None,
                                  name_contains: Optional[_builtins.str] = None,
@@ -158,7 +158,7 @@ def get_managed_instance_modules(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         name_contains=pulumi.get(__ret__, 'name_contains'))
 def get_managed_instance_modules_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceModulesFilterArgs', 'GetManagedInstanceModulesFilterArgsDict']]]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceModulesFilterArgs', 'GetManagedInstanceModulesFilterArgsDict', 'outputs.GetManagedInstanceModulesFilterResult']]]]] = None,
                                         managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

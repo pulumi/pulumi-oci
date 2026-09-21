@@ -450,7 +450,7 @@ class UnifiedAuditPolicy(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UnifiedAuditPolicyConditionArgs', 'UnifiedAuditPolicyConditionArgsDict']]]]] = None,
+                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UnifiedAuditPolicyConditionArgs', 'UnifiedAuditPolicyConditionArgsDict', 'outputs.UnifiedAuditPolicyCondition']]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -508,7 +508,7 @@ class UnifiedAuditPolicy(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment in which to create the unified audit policy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UnifiedAuditPolicyConditionArgs', 'UnifiedAuditPolicyConditionArgsDict']]]] conditions: (Updatable) Lists the audit policy provisioning conditions.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UnifiedAuditPolicyConditionArgs', 'UnifiedAuditPolicyConditionArgsDict', 'outputs.UnifiedAuditPolicyCondition']]]] conditions: (Updatable) Lists the audit policy provisioning conditions.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the unified audit policy in Data Safe.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the unified audit policy in Data Safe. The name is modifiable and does not need to be unique.
@@ -588,7 +588,7 @@ class UnifiedAuditPolicy(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UnifiedAuditPolicyConditionArgs', 'UnifiedAuditPolicyConditionArgsDict']]]]] = None,
+                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UnifiedAuditPolicyConditionArgs', 'UnifiedAuditPolicyConditionArgsDict', 'outputs.UnifiedAuditPolicyCondition']]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -642,7 +642,7 @@ class UnifiedAuditPolicy(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UnifiedAuditPolicyConditionArgs', 'UnifiedAuditPolicyConditionArgsDict']]]]] = None,
+            conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UnifiedAuditPolicyConditionArgs', 'UnifiedAuditPolicyConditionArgsDict', 'outputs.UnifiedAuditPolicyCondition']]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -665,7 +665,7 @@ class UnifiedAuditPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment in which to create the unified audit policy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UnifiedAuditPolicyConditionArgs', 'UnifiedAuditPolicyConditionArgsDict']]]] conditions: (Updatable) Lists the audit policy provisioning conditions.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UnifiedAuditPolicyConditionArgs', 'UnifiedAuditPolicyConditionArgsDict', 'outputs.UnifiedAuditPolicyCondition']]]] conditions: (Updatable) Lists the audit policy provisioning conditions.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the unified audit policy in Data Safe.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the unified audit policy in Data Safe. The name is modifiable and does not need to be unique.

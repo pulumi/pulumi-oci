@@ -125,7 +125,7 @@ class AwaitableGetJobExecutionsStatusesResult(GetJobExecutionsStatusesResult):
 
 def get_job_executions_statuses(compartment_id: Optional[_builtins.str] = None,
                                 end_time: Optional[_builtins.str] = None,
-                                filters: Optional[Sequence[Union['GetJobExecutionsStatusesFilterArgs', 'GetJobExecutionsStatusesFilterArgsDict']]] = None,
+                                filters: Optional[Sequence[Union['GetJobExecutionsStatusesFilterArgs', 'GetJobExecutionsStatusesFilterArgsDict', 'outputs.GetJobExecutionsStatusesFilterResult']]] = None,
                                 id: Optional[_builtins.str] = None,
                                 managed_database_group_id: Optional[_builtins.str] = None,
                                 managed_database_id: Optional[_builtins.str] = None,
@@ -185,7 +185,7 @@ def get_job_executions_statuses(compartment_id: Optional[_builtins.str] = None,
         start_time=pulumi.get(__ret__, 'start_time'))
 def get_job_executions_statuses_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        end_time: pulumi.Input[Optional[_builtins.str]] = None,
-                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJobExecutionsStatusesFilterArgs', 'GetJobExecutionsStatusesFilterArgsDict']]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJobExecutionsStatusesFilterArgs', 'GetJobExecutionsStatusesFilterArgsDict', 'outputs.GetJobExecutionsStatusesFilterResult']]]]] = None,
                                        id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        managed_database_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        managed_database_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

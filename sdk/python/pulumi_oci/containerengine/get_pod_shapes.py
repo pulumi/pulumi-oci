@@ -104,7 +104,7 @@ class AwaitableGetPodShapesResult(GetPodShapesResult):
 
 def get_pod_shapes(availability_domain: Optional[_builtins.str] = None,
                    compartment_id: Optional[_builtins.str] = None,
-                   filters: Optional[Sequence[Union['GetPodShapesFilterArgs', 'GetPodShapesFilterArgsDict']]] = None,
+                   filters: Optional[Sequence[Union['GetPodShapesFilterArgs', 'GetPodShapesFilterArgsDict', 'outputs.GetPodShapesFilterResult']]] = None,
                    name: Optional[_builtins.str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPodShapesResult:
     """
@@ -145,7 +145,7 @@ def get_pod_shapes(availability_domain: Optional[_builtins.str] = None,
         pod_shapes=pulumi.get(__ret__, 'pod_shapes'))
 def get_pod_shapes_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPodShapesFilterArgs', 'GetPodShapesFilterArgsDict']]]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPodShapesFilterArgs', 'GetPodShapesFilterArgsDict', 'outputs.GetPodShapesFilterResult']]]]] = None,
                           name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPodShapesResult]:
     """

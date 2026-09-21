@@ -111,7 +111,7 @@ class AwaitableGetCloudDbHomesResult(GetCloudDbHomesResult):
 def get_cloud_db_homes(cloud_db_system_id: Optional[_builtins.str] = None,
                        compartment_id: Optional[_builtins.str] = None,
                        display_name: Optional[_builtins.str] = None,
-                       filters: Optional[Sequence[Union['GetCloudDbHomesFilterArgs', 'GetCloudDbHomesFilterArgsDict']]] = None,
+                       filters: Optional[Sequence[Union['GetCloudDbHomesFilterArgs', 'GetCloudDbHomesFilterArgsDict', 'outputs.GetCloudDbHomesFilterResult']]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudDbHomesResult:
     """
     This data source provides the list of Cloud Db Homes in Oracle Cloud Infrastructure Database Management service.
@@ -152,7 +152,7 @@ def get_cloud_db_homes(cloud_db_system_id: Optional[_builtins.str] = None,
 def get_cloud_db_homes_output(cloud_db_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudDbHomesFilterArgs', 'GetCloudDbHomesFilterArgsDict']]]]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudDbHomesFilterArgs', 'GetCloudDbHomesFilterArgsDict', 'outputs.GetCloudDbHomesFilterResult']]]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudDbHomesResult]:
     """
     This data source provides the list of Cloud Db Homes in Oracle Cloud Infrastructure Database Management service.

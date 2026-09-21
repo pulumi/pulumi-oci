@@ -168,7 +168,7 @@ def get_report_definitions(access_level: Optional[_builtins.str] = None,
                            compartment_id_in_subtree: Optional[_builtins.bool] = None,
                            data_source: Optional[_builtins.str] = None,
                            display_name: Optional[_builtins.str] = None,
-                           filters: Optional[Sequence[Union['GetReportDefinitionsFilterArgs', 'GetReportDefinitionsFilterArgsDict']]] = None,
+                           filters: Optional[Sequence[Union['GetReportDefinitionsFilterArgs', 'GetReportDefinitionsFilterArgsDict', 'outputs.GetReportDefinitionsFilterResult']]] = None,
                            is_seeded: Optional[_builtins.bool] = None,
                            state: Optional[_builtins.str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetReportDefinitionsResult:
@@ -236,7 +236,7 @@ def get_report_definitions_output(access_level: pulumi.Input[Optional[Optional[_
                                   compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                   data_source: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetReportDefinitionsFilterArgs', 'GetReportDefinitionsFilterArgsDict']]]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetReportDefinitionsFilterArgs', 'GetReportDefinitionsFilterArgsDict', 'outputs.GetReportDefinitionsFilterResult']]]]] = None,
                                   is_seeded: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReportDefinitionsResult]:

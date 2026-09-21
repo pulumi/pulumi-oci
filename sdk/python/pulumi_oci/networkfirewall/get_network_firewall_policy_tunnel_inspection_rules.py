@@ -100,7 +100,7 @@ class AwaitableGetNetworkFirewallPolicyTunnelInspectionRulesResult(GetNetworkFir
 
 
 def get_network_firewall_policy_tunnel_inspection_rules(display_name: Optional[_builtins.str] = None,
-                                                        filters: Optional[Sequence[Union['GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs', 'GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgsDict']]] = None,
+                                                        filters: Optional[Sequence[Union['GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs', 'GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgsDict', 'outputs.GetNetworkFirewallPolicyTunnelInspectionRulesFilterResult']]] = None,
                                                         network_firewall_policy_id: Optional[_builtins.str] = None,
                                                         tunnel_inspection_rule_priority_order: Optional[_builtins.int] = None,
                                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyTunnelInspectionRulesResult:
@@ -141,7 +141,7 @@ def get_network_firewall_policy_tunnel_inspection_rules(display_name: Optional[_
         tunnel_inspection_rule_priority_order=pulumi.get(__ret__, 'tunnel_inspection_rule_priority_order'),
         tunnel_inspection_rule_summary_collections=pulumi.get(__ret__, 'tunnel_inspection_rule_summary_collections'))
 def get_network_firewall_policy_tunnel_inspection_rules_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs', 'GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgsDict']]]]] = None,
+                                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs', 'GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgsDict', 'outputs.GetNetworkFirewallPolicyTunnelInspectionRulesFilterResult']]]]] = None,
                                                                network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                tunnel_inspection_rule_priority_order: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyTunnelInspectionRulesResult]:

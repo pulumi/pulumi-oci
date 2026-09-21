@@ -152,7 +152,7 @@ class AwaitableGetBaselineableMetricsResult(GetBaselineableMetricsResult):
 
 def get_baselineable_metrics(baselineable_metric_id: Optional[_builtins.str] = None,
                              compartment_id: Optional[_builtins.str] = None,
-                             filters: Optional[Sequence[Union['GetBaselineableMetricsFilterArgs', 'GetBaselineableMetricsFilterArgsDict']]] = None,
+                             filters: Optional[Sequence[Union['GetBaselineableMetricsFilterArgs', 'GetBaselineableMetricsFilterArgsDict', 'outputs.GetBaselineableMetricsFilterResult']]] = None,
                              is_out_of_box: Optional[_builtins.bool] = None,
                              metric_namespace: Optional[_builtins.str] = None,
                              name: Optional[_builtins.str] = None,
@@ -213,7 +213,7 @@ def get_baselineable_metrics(baselineable_metric_id: Optional[_builtins.str] = N
         resource_type=pulumi.get(__ret__, 'resource_type'))
 def get_baselineable_metrics_output(baselineable_metric_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBaselineableMetricsFilterArgs', 'GetBaselineableMetricsFilterArgsDict']]]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBaselineableMetricsFilterArgs', 'GetBaselineableMetricsFilterArgsDict', 'outputs.GetBaselineableMetricsFilterResult']]]]] = None,
                                     is_out_of_box: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                     metric_namespace: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

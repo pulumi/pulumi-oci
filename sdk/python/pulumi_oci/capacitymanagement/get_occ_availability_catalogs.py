@@ -123,7 +123,7 @@ class AwaitableGetOccAvailabilityCatalogsResult(GetOccAvailabilityCatalogsResult
 def get_occ_availability_catalogs(catalog_state: Optional[_builtins.str] = None,
                                   compartment_id: Optional[_builtins.str] = None,
                                   display_name: Optional[_builtins.str] = None,
-                                  filters: Optional[Sequence[Union['GetOccAvailabilityCatalogsFilterArgs', 'GetOccAvailabilityCatalogsFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetOccAvailabilityCatalogsFilterArgs', 'GetOccAvailabilityCatalogsFilterArgsDict', 'outputs.GetOccAvailabilityCatalogsFilterResult']]] = None,
                                   id: Optional[_builtins.str] = None,
                                   namespace: Optional[_builtins.str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOccAvailabilityCatalogsResult:
@@ -173,7 +173,7 @@ def get_occ_availability_catalogs(catalog_state: Optional[_builtins.str] = None,
 def get_occ_availability_catalogs_output(catalog_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOccAvailabilityCatalogsFilterArgs', 'GetOccAvailabilityCatalogsFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOccAvailabilityCatalogsFilterArgs', 'GetOccAvailabilityCatalogsFilterArgsDict', 'outputs.GetOccAvailabilityCatalogsFilterResult']]]]] = None,
                                          id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          namespace: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccAvailabilityCatalogsResult]:

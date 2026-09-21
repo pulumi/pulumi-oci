@@ -612,13 +612,13 @@ class OccCapacityRequest(pulumi.CustomResource):
                  date_expected_capacity_handover: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccCapacityRequestDetailArgs', 'OccCapacityRequestDetailArgsDict']]]]] = None,
+                 details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccCapacityRequestDetailArgs', 'OccCapacityRequestDetailArgsDict', 'outputs.OccCapacityRequestDetail']]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  occ_availability_catalog_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccCapacityRequestPatchOperationArgs', 'OccCapacityRequestPatchOperationArgsDict']]]]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccCapacityRequestPatchOperationArgs', 'OccCapacityRequestPatchOperationArgsDict', 'outputs.OccCapacityRequestPatchOperation']]]]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
                  request_state: pulumi.Input[Optional[_builtins.str]] = None,
                  request_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -700,13 +700,13 @@ class OccCapacityRequest(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] date_expected_capacity_handover: The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: Meaningful text about the capacity request.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OccCapacityRequestDetailArgs', 'OccCapacityRequestDetailArgsDict']]]] details: A list of different resources requested by the user.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OccCapacityRequestDetailArgs', 'OccCapacityRequestDetailArgsDict', 'outputs.OccCapacityRequestDetail']]]] details: A list of different resources requested by the user.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) An user-friendly name for the capacity request. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
         :param pulumi.Input[_builtins.str] namespace: The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
         :param pulumi.Input[_builtins.str] occ_availability_catalog_id: The OCID of the availability catalog against which capacity request is made.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OccCapacityRequestPatchOperationArgs', 'OccCapacityRequestPatchOperationArgsDict']]]] patch_operations: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OccCapacityRequestPatchOperationArgs', 'OccCapacityRequestPatchOperationArgsDict', 'outputs.OccCapacityRequestPatchOperation']]]] patch_operations: (Updatable)
         :param pulumi.Input[_builtins.str] region: The name of the region for which the capacity request is made.
         :param pulumi.Input[_builtins.str] request_state: (Updatable) The subset of request states available for creating the capacity request.
         :param pulumi.Input[_builtins.str] request_type: Type of Capacity Request(New or Transfer)
@@ -810,13 +810,13 @@ class OccCapacityRequest(pulumi.CustomResource):
                  date_expected_capacity_handover: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccCapacityRequestDetailArgs', 'OccCapacityRequestDetailArgsDict']]]]] = None,
+                 details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccCapacityRequestDetailArgs', 'OccCapacityRequestDetailArgsDict', 'outputs.OccCapacityRequestDetail']]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  occ_availability_catalog_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccCapacityRequestPatchOperationArgs', 'OccCapacityRequestPatchOperationArgsDict']]]]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccCapacityRequestPatchOperationArgs', 'OccCapacityRequestPatchOperationArgsDict', 'outputs.OccCapacityRequestPatchOperation']]]]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
                  request_state: pulumi.Input[Optional[_builtins.str]] = None,
                  request_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -878,14 +878,14 @@ class OccCapacityRequest(pulumi.CustomResource):
             date_expected_capacity_handover: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccCapacityRequestDetailArgs', 'OccCapacityRequestDetailArgsDict']]]]] = None,
+            details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccCapacityRequestDetailArgs', 'OccCapacityRequestDetailArgsDict', 'outputs.OccCapacityRequestDetail']]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             namespace: pulumi.Input[Optional[_builtins.str]] = None,
             occ_availability_catalog_id: pulumi.Input[Optional[_builtins.str]] = None,
             occ_customer_group_id: pulumi.Input[Optional[_builtins.str]] = None,
-            patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccCapacityRequestPatchOperationArgs', 'OccCapacityRequestPatchOperationArgsDict']]]]] = None,
+            patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccCapacityRequestPatchOperationArgs', 'OccCapacityRequestPatchOperationArgsDict', 'outputs.OccCapacityRequestPatchOperation']]]]] = None,
             region: pulumi.Input[Optional[_builtins.str]] = None,
             request_state: pulumi.Input[Optional[_builtins.str]] = None,
             request_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -905,14 +905,14 @@ class OccCapacityRequest(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] date_expected_capacity_handover: The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: Meaningful text about the capacity request.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OccCapacityRequestDetailArgs', 'OccCapacityRequestDetailArgsDict']]]] details: A list of different resources requested by the user.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OccCapacityRequestDetailArgs', 'OccCapacityRequestDetailArgsDict', 'outputs.OccCapacityRequestDetail']]]] details: A list of different resources requested by the user.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) An user-friendly name for the capacity request. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
         :param pulumi.Input[_builtins.str] namespace: The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
         :param pulumi.Input[_builtins.str] occ_availability_catalog_id: The OCID of the availability catalog against which capacity request is made.
         :param pulumi.Input[_builtins.str] occ_customer_group_id: The OCID of the customer group to which this customer belongs to.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OccCapacityRequestPatchOperationArgs', 'OccCapacityRequestPatchOperationArgsDict']]]] patch_operations: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OccCapacityRequestPatchOperationArgs', 'OccCapacityRequestPatchOperationArgsDict', 'outputs.OccCapacityRequestPatchOperation']]]] patch_operations: (Updatable)
         :param pulumi.Input[_builtins.str] region: The name of the region for which the capacity request is made.
         :param pulumi.Input[_builtins.str] request_state: (Updatable) The subset of request states available for creating the capacity request.
         :param pulumi.Input[_builtins.str] request_type: Type of Capacity Request(New or Transfer)

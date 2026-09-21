@@ -531,15 +531,15 @@ class Dataset(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  annotation_format: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 dataset_format_details: pulumi.Input[Optional[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict']]] = None,
-                 dataset_source_details: pulumi.Input[Optional[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict']]] = None,
+                 dataset_format_details: pulumi.Input[Optional[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict', 'outputs.DatasetDatasetFormatDetails']]] = None,
+                 dataset_source_details: pulumi.Input[Optional[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict', 'outputs.DatasetDatasetSourceDetails']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 initial_import_dataset_configuration: pulumi.Input[Optional[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict']]] = None,
-                 initial_record_generation_configuration: pulumi.Input[Optional[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict']]] = None,
-                 label_set: pulumi.Input[Optional[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict']]] = None,
+                 initial_import_dataset_configuration: pulumi.Input[Optional[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict', 'outputs.DatasetInitialImportDatasetConfiguration']]] = None,
+                 initial_record_generation_configuration: pulumi.Input[Optional[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict', 'outputs.DatasetInitialRecordGenerationConfiguration']]] = None,
+                 label_set: pulumi.Input[Optional[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict', 'outputs.DatasetLabelSet']]] = None,
                  labeling_instructions: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -614,15 +614,15 @@ class Dataset(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] annotation_format: The annotation format name required for labeling records.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment of the resource.
-        :param pulumi.Input[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict']] dataset_format_details: It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
-        :param pulumi.Input[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict']] dataset_source_details: This allows the customer to specify the source of the dataset.
+        :param pulumi.Input[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict', 'outputs.DatasetDatasetFormatDetails']] dataset_format_details: It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
+        :param pulumi.Input[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict', 'outputs.DatasetDatasetSourceDetails']] dataset_source_details: This allows the customer to specify the source of the dataset.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user provided description of the dataset
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-        :param pulumi.Input[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict']] initial_import_dataset_configuration: Initial import dataset configuration. Allows user to create dataset from existing dataset files.
-        :param pulumi.Input[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict']] initial_record_generation_configuration: The initial generate records configuration. It generates records from the dataset's source.
-        :param pulumi.Input[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict']] label_set: An ordered collection of labels that are unique by name.
+        :param pulumi.Input[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict', 'outputs.DatasetInitialImportDatasetConfiguration']] initial_import_dataset_configuration: Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+        :param pulumi.Input[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict', 'outputs.DatasetInitialRecordGenerationConfiguration']] initial_record_generation_configuration: The initial generate records configuration. It generates records from the dataset's source.
+        :param pulumi.Input[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict', 'outputs.DatasetLabelSet']] label_set: An ordered collection of labels that are unique by name.
         :param pulumi.Input[_builtins.str] labeling_instructions: (Updatable) The labeling instructions for human labelers in rich text format
                
                ** IMPORTANT **
@@ -719,15 +719,15 @@ class Dataset(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  annotation_format: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 dataset_format_details: pulumi.Input[Optional[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict']]] = None,
-                 dataset_source_details: pulumi.Input[Optional[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict']]] = None,
+                 dataset_format_details: pulumi.Input[Optional[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict', 'outputs.DatasetDatasetFormatDetails']]] = None,
+                 dataset_source_details: pulumi.Input[Optional[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict', 'outputs.DatasetDatasetSourceDetails']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 initial_import_dataset_configuration: pulumi.Input[Optional[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict']]] = None,
-                 initial_record_generation_configuration: pulumi.Input[Optional[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict']]] = None,
-                 label_set: pulumi.Input[Optional[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict']]] = None,
+                 initial_import_dataset_configuration: pulumi.Input[Optional[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict', 'outputs.DatasetInitialImportDatasetConfiguration']]] = None,
+                 initial_record_generation_configuration: pulumi.Input[Optional[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict', 'outputs.DatasetInitialRecordGenerationConfiguration']]] = None,
+                 label_set: pulumi.Input[Optional[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict', 'outputs.DatasetLabelSet']]] = None,
                  labeling_instructions: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -779,15 +779,15 @@ class Dataset(pulumi.CustomResource):
             additional_properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             annotation_format: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            dataset_format_details: pulumi.Input[Optional[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict']]] = None,
-            dataset_source_details: pulumi.Input[Optional[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict']]] = None,
+            dataset_format_details: pulumi.Input[Optional[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict', 'outputs.DatasetDatasetFormatDetails']]] = None,
+            dataset_source_details: pulumi.Input[Optional[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict', 'outputs.DatasetDatasetSourceDetails']]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            initial_import_dataset_configuration: pulumi.Input[Optional[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict']]] = None,
-            initial_record_generation_configuration: pulumi.Input[Optional[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict']]] = None,
-            label_set: pulumi.Input[Optional[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict']]] = None,
+            initial_import_dataset_configuration: pulumi.Input[Optional[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict', 'outputs.DatasetInitialImportDatasetConfiguration']]] = None,
+            initial_record_generation_configuration: pulumi.Input[Optional[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict', 'outputs.DatasetInitialRecordGenerationConfiguration']]] = None,
+            label_set: pulumi.Input[Optional[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict', 'outputs.DatasetLabelSet']]] = None,
             labeling_instructions: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_substate: pulumi.Input[Optional[_builtins.str]] = None,
@@ -804,15 +804,15 @@ class Dataset(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_properties: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] annotation_format: The annotation format name required for labeling records.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment of the resource.
-        :param pulumi.Input[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict']] dataset_format_details: It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
-        :param pulumi.Input[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict']] dataset_source_details: This allows the customer to specify the source of the dataset.
+        :param pulumi.Input[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict', 'outputs.DatasetDatasetFormatDetails']] dataset_format_details: It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
+        :param pulumi.Input[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict', 'outputs.DatasetDatasetSourceDetails']] dataset_source_details: This allows the customer to specify the source of the dataset.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user provided description of the dataset
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-        :param pulumi.Input[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict']] initial_import_dataset_configuration: Initial import dataset configuration. Allows user to create dataset from existing dataset files.
-        :param pulumi.Input[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict']] initial_record_generation_configuration: The initial generate records configuration. It generates records from the dataset's source.
-        :param pulumi.Input[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict']] label_set: An ordered collection of labels that are unique by name.
+        :param pulumi.Input[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict', 'outputs.DatasetInitialImportDatasetConfiguration']] initial_import_dataset_configuration: Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+        :param pulumi.Input[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict', 'outputs.DatasetInitialRecordGenerationConfiguration']] initial_record_generation_configuration: The initial generate records configuration. It generates records from the dataset's source.
+        :param pulumi.Input[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict', 'outputs.DatasetLabelSet']] label_set: An ordered collection of labels that are unique by name.
         :param pulumi.Input[_builtins.str] labeling_instructions: (Updatable) The labeling instructions for human labelers in rich text format
                
                ** IMPORTANT **

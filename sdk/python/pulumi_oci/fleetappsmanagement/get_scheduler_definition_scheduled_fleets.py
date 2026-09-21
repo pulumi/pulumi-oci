@@ -94,7 +94,7 @@ class AwaitableGetSchedulerDefinitionScheduledFleetsResult(GetSchedulerDefinitio
 
 
 def get_scheduler_definition_scheduled_fleets(display_name: Optional[_builtins.str] = None,
-                                              filters: Optional[Sequence[Union['GetSchedulerDefinitionScheduledFleetsFilterArgs', 'GetSchedulerDefinitionScheduledFleetsFilterArgsDict']]] = None,
+                                              filters: Optional[Sequence[Union['GetSchedulerDefinitionScheduledFleetsFilterArgs', 'GetSchedulerDefinitionScheduledFleetsFilterArgsDict', 'outputs.GetSchedulerDefinitionScheduledFleetsFilterResult']]] = None,
                                               scheduler_definition_id: Optional[_builtins.str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSchedulerDefinitionScheduledFleetsResult:
     """
@@ -130,7 +130,7 @@ def get_scheduler_definition_scheduled_fleets(display_name: Optional[_builtins.s
         scheduled_fleet_collections=pulumi.get(__ret__, 'scheduled_fleet_collections'),
         scheduler_definition_id=pulumi.get(__ret__, 'scheduler_definition_id'))
 def get_scheduler_definition_scheduled_fleets_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulerDefinitionScheduledFleetsFilterArgs', 'GetSchedulerDefinitionScheduledFleetsFilterArgsDict']]]]] = None,
+                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulerDefinitionScheduledFleetsFilterArgs', 'GetSchedulerDefinitionScheduledFleetsFilterArgsDict', 'outputs.GetSchedulerDefinitionScheduledFleetsFilterResult']]]]] = None,
                                                      scheduler_definition_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSchedulerDefinitionScheduledFleetsResult]:
     """

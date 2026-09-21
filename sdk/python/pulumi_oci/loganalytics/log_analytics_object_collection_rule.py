@@ -1013,7 +1013,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
                  object_name_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  os_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
                  os_namespace: pulumi.Input[Optional[_builtins.str]] = None,
-                 overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsObjectCollectionRuleOverrideArgs', 'LogAnalyticsObjectCollectionRuleOverrideArgsDict']]]]] = None,
+                 overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsObjectCollectionRuleOverrideArgs', 'LogAnalyticsObjectCollectionRuleOverrideArgsDict', 'outputs.LogAnalyticsObjectCollectionRuleOverride']]]]] = None,
                  poll_since: pulumi.Input[Optional[_builtins.str]] = None,
                  poll_till: pulumi.Input[Optional[_builtins.str]] = None,
                  stream_cursor_time: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1100,7 +1100,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] object_name_filters: (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
         :param pulumi.Input[_builtins.str] os_bucket_name: Name of the Object Storage bucket.
         :param pulumi.Input[_builtins.str] os_namespace: Object Storage namespace.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsObjectCollectionRuleOverrideArgs', 'LogAnalyticsObjectCollectionRuleOverrideArgsDict']]]] overrides: (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
+        :param pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsObjectCollectionRuleOverrideArgs', 'LogAnalyticsObjectCollectionRuleOverrideArgsDict', 'outputs.LogAnalyticsObjectCollectionRuleOverride']]]] overrides: (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
         :param pulumi.Input[_builtins.str] poll_since: The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
         :param pulumi.Input[_builtins.str] poll_till: The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
         :param pulumi.Input[_builtins.str] stream_cursor_time: (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
@@ -1209,7 +1209,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
                  object_name_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  os_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
                  os_namespace: pulumi.Input[Optional[_builtins.str]] = None,
-                 overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsObjectCollectionRuleOverrideArgs', 'LogAnalyticsObjectCollectionRuleOverrideArgsDict']]]]] = None,
+                 overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsObjectCollectionRuleOverrideArgs', 'LogAnalyticsObjectCollectionRuleOverrideArgsDict', 'outputs.LogAnalyticsObjectCollectionRuleOverride']]]]] = None,
                  poll_since: pulumi.Input[Optional[_builtins.str]] = None,
                  poll_till: pulumi.Input[Optional[_builtins.str]] = None,
                  stream_cursor_time: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1299,7 +1299,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             object_name_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             os_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
             os_namespace: pulumi.Input[Optional[_builtins.str]] = None,
-            overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsObjectCollectionRuleOverrideArgs', 'LogAnalyticsObjectCollectionRuleOverrideArgsDict']]]]] = None,
+            overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsObjectCollectionRuleOverrideArgs', 'LogAnalyticsObjectCollectionRuleOverrideArgsDict', 'outputs.LogAnalyticsObjectCollectionRuleOverride']]]]] = None,
             poll_since: pulumi.Input[Optional[_builtins.str]] = None,
             poll_till: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1338,7 +1338,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] object_name_filters: (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
         :param pulumi.Input[_builtins.str] os_bucket_name: Name of the Object Storage bucket.
         :param pulumi.Input[_builtins.str] os_namespace: Object Storage namespace.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsObjectCollectionRuleOverrideArgs', 'LogAnalyticsObjectCollectionRuleOverrideArgsDict']]]] overrides: (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
+        :param pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsObjectCollectionRuleOverrideArgs', 'LogAnalyticsObjectCollectionRuleOverrideArgsDict', 'outputs.LogAnalyticsObjectCollectionRuleOverride']]]] overrides: (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
         :param pulumi.Input[_builtins.str] poll_since: The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
         :param pulumi.Input[_builtins.str] poll_till: The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
         :param pulumi.Input[_builtins.str] state: The current state of the rule.

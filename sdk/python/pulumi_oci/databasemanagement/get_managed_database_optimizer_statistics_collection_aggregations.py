@@ -127,7 +127,7 @@ class AwaitableGetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult
 
 
 def get_managed_database_optimizer_statistics_collection_aggregations(end_time_less_than_or_equal_to: Optional[_builtins.str] = None,
-                                                                      filters: Optional[Sequence[Union['GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs', 'GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgsDict']]] = None,
+                                                                      filters: Optional[Sequence[Union['GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs', 'GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgsDict', 'outputs.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterResult']]] = None,
                                                                       group_type: Optional[_builtins.str] = None,
                                                                       limit: Optional[_builtins.int] = None,
                                                                       managed_database_id: Optional[_builtins.str] = None,
@@ -186,7 +186,7 @@ def get_managed_database_optimizer_statistics_collection_aggregations(end_time_l
         start_time_greater_than_or_equal_to=pulumi.get(__ret__, 'start_time_greater_than_or_equal_to'),
         task_type=pulumi.get(__ret__, 'task_type'))
 def get_managed_database_optimizer_statistics_collection_aggregations_output(end_time_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs', 'GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgsDict']]]]] = None,
+                                                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs', 'GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgsDict', 'outputs.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterResult']]]]] = None,
                                                                              group_type: pulumi.Input[Optional[_builtins.str]] = None,
                                                                              limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                                              managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,

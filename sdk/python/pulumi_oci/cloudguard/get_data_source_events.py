@@ -97,7 +97,7 @@ class AwaitableGetDataSourceEventsResult(GetDataSourceEventsResult):
 
 
 def get_data_source_events(data_source_id: Optional[_builtins.str] = None,
-                           filters: Optional[Sequence[Union['GetDataSourceEventsFilterArgs', 'GetDataSourceEventsFilterArgsDict']]] = None,
+                           filters: Optional[Sequence[Union['GetDataSourceEventsFilterArgs', 'GetDataSourceEventsFilterArgsDict', 'outputs.GetDataSourceEventsFilterResult']]] = None,
                            region: Optional[_builtins.str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDataSourceEventsResult:
     """
@@ -135,7 +135,7 @@ def get_data_source_events(data_source_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         region=pulumi.get(__ret__, 'region'))
 def get_data_source_events_output(data_source_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDataSourceEventsFilterArgs', 'GetDataSourceEventsFilterArgsDict']]]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDataSourceEventsFilterArgs', 'GetDataSourceEventsFilterArgsDict', 'outputs.GetDataSourceEventsFilterResult']]]]] = None,
                                   region: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataSourceEventsResult]:
     """

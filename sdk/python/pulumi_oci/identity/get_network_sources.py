@@ -109,7 +109,7 @@ class AwaitableGetNetworkSourcesResult(GetNetworkSourcesResult):
 
 
 def get_network_sources(compartment_id: Optional[_builtins.str] = None,
-                        filters: Optional[Sequence[Union['GetNetworkSourcesFilterArgs', 'GetNetworkSourcesFilterArgsDict']]] = None,
+                        filters: Optional[Sequence[Union['GetNetworkSourcesFilterArgs', 'GetNetworkSourcesFilterArgsDict', 'outputs.GetNetworkSourcesFilterResult']]] = None,
                         name: Optional[_builtins.str] = None,
                         state: Optional[_builtins.str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkSourcesResult:
@@ -152,7 +152,7 @@ def get_network_sources(compartment_id: Optional[_builtins.str] = None,
         network_sources=pulumi.get(__ret__, 'network_sources'),
         state=pulumi.get(__ret__, 'state'))
 def get_network_sources_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkSourcesFilterArgs', 'GetNetworkSourcesFilterArgsDict']]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkSourcesFilterArgs', 'GetNetworkSourcesFilterArgsDict', 'outputs.GetNetworkSourcesFilterResult']]]]] = None,
                                name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkSourcesResult]:

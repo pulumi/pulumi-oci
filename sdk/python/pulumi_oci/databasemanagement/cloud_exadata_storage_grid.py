@@ -488,7 +488,7 @@ class CloudExadataStorageGrid(pulumi.CustomResource):
             server_count: pulumi.Input[Optional[_builtins.float]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
-            storage_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataStorageGridStorageServerArgs', 'CloudExadataStorageGridStorageServerArgsDict']]]]] = None,
+            storage_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataStorageGridStorageServerArgs', 'CloudExadataStorageGridStorageServerArgsDict', 'outputs.CloudExadataStorageGridStorageServer']]]]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
@@ -515,7 +515,7 @@ class CloudExadataStorageGrid(pulumi.CustomResource):
         :param pulumi.Input[_builtins.float] server_count: The number of Exadata storage servers in the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the database resource.
         :param pulumi.Input[_builtins.str] status: The status of the Exadata resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataStorageGridStorageServerArgs', 'CloudExadataStorageGridStorageServerArgsDict']]]] storage_servers: A list of monitored Exadata storage servers.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataStorageGridStorageServerArgs', 'CloudExadataStorageGridStorageServerArgsDict', 'outputs.CloudExadataStorageGridStorageServer']]]] storage_servers: A list of monitored Exadata storage servers.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The timestamp of the creation of the Exadata resource.
         :param pulumi.Input[_builtins.str] time_updated: The timestamp of the last update of the Exadata resource.

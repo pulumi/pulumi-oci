@@ -697,12 +697,12 @@ class Secret(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 replication_config: pulumi.Input[Optional[Union['SecretReplicationConfigArgs', 'SecretReplicationConfigArgsDict']]] = None,
-                 rotation_config: pulumi.Input[Optional[Union['SecretRotationConfigArgs', 'SecretRotationConfigArgsDict']]] = None,
-                 secret_content: pulumi.Input[Optional[Union['SecretSecretContentArgs', 'SecretSecretContentArgsDict']]] = None,
-                 secret_generation_context: pulumi.Input[Optional[Union['SecretSecretGenerationContextArgs', 'SecretSecretGenerationContextArgsDict']]] = None,
+                 replication_config: pulumi.Input[Optional[Union['SecretReplicationConfigArgs', 'SecretReplicationConfigArgsDict', 'outputs.SecretReplicationConfig']]] = None,
+                 rotation_config: pulumi.Input[Optional[Union['SecretRotationConfigArgs', 'SecretRotationConfigArgsDict', 'outputs.SecretRotationConfig']]] = None,
+                 secret_content: pulumi.Input[Optional[Union['SecretSecretContentArgs', 'SecretSecretContentArgsDict', 'outputs.SecretSecretContent']]] = None,
+                 secret_generation_context: pulumi.Input[Optional[Union['SecretSecretGenerationContextArgs', 'SecretSecretGenerationContextArgsDict', 'outputs.SecretSecretGenerationContext']]] = None,
                  secret_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 secret_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecretSecretRuleArgs', 'SecretSecretRuleArgsDict']]]]] = None,
+                 secret_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecretSecretRuleArgs', 'SecretSecretRuleArgsDict', 'outputs.SecretSecretRule']]]]] = None,
                  vault_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -731,12 +731,12 @@ class Secret(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] key_id: The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
-        :param pulumi.Input[Union['SecretReplicationConfigArgs', 'SecretReplicationConfigArgsDict']] replication_config: (Updatable) Defines the configuration that enables cross-region secret replication.
-        :param pulumi.Input[Union['SecretRotationConfigArgs', 'SecretRotationConfigArgsDict']] rotation_config: (Updatable) Defines the frequency of the rotation and the information about the target system
-        :param pulumi.Input[Union['SecretSecretContentArgs', 'SecretSecretContentArgsDict']] secret_content: (Updatable) The content of the secret and metadata to help identify it.
-        :param pulumi.Input[Union['SecretSecretGenerationContextArgs', 'SecretSecretGenerationContextArgsDict']] secret_generation_context: (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+        :param pulumi.Input[Union['SecretReplicationConfigArgs', 'SecretReplicationConfigArgsDict', 'outputs.SecretReplicationConfig']] replication_config: (Updatable) Defines the configuration that enables cross-region secret replication.
+        :param pulumi.Input[Union['SecretRotationConfigArgs', 'SecretRotationConfigArgsDict', 'outputs.SecretRotationConfig']] rotation_config: (Updatable) Defines the frequency of the rotation and the information about the target system
+        :param pulumi.Input[Union['SecretSecretContentArgs', 'SecretSecretContentArgsDict', 'outputs.SecretSecretContent']] secret_content: (Updatable) The content of the secret and metadata to help identify it.
+        :param pulumi.Input[Union['SecretSecretGenerationContextArgs', 'SecretSecretGenerationContextArgsDict', 'outputs.SecretSecretGenerationContext']] secret_generation_context: (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
         :param pulumi.Input[_builtins.str] secret_name: A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SecretSecretRuleArgs', 'SecretSecretRuleArgsDict']]]] secret_rules: (Updatable) A list of rules to control how the secret is used and managed.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SecretSecretRuleArgs', 'SecretSecretRuleArgsDict', 'outputs.SecretSecretRule']]]] secret_rules: (Updatable) A list of rules to control how the secret is used and managed.
         :param pulumi.Input[_builtins.str] vault_id: The OCID of the vault where you want to create the secret.
                
                ** IMPORTANT **
@@ -787,12 +787,12 @@ class Secret(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 replication_config: pulumi.Input[Optional[Union['SecretReplicationConfigArgs', 'SecretReplicationConfigArgsDict']]] = None,
-                 rotation_config: pulumi.Input[Optional[Union['SecretRotationConfigArgs', 'SecretRotationConfigArgsDict']]] = None,
-                 secret_content: pulumi.Input[Optional[Union['SecretSecretContentArgs', 'SecretSecretContentArgsDict']]] = None,
-                 secret_generation_context: pulumi.Input[Optional[Union['SecretSecretGenerationContextArgs', 'SecretSecretGenerationContextArgsDict']]] = None,
+                 replication_config: pulumi.Input[Optional[Union['SecretReplicationConfigArgs', 'SecretReplicationConfigArgsDict', 'outputs.SecretReplicationConfig']]] = None,
+                 rotation_config: pulumi.Input[Optional[Union['SecretRotationConfigArgs', 'SecretRotationConfigArgsDict', 'outputs.SecretRotationConfig']]] = None,
+                 secret_content: pulumi.Input[Optional[Union['SecretSecretContentArgs', 'SecretSecretContentArgsDict', 'outputs.SecretSecretContent']]] = None,
+                 secret_generation_context: pulumi.Input[Optional[Union['SecretSecretGenerationContextArgs', 'SecretSecretGenerationContextArgsDict', 'outputs.SecretSecretGenerationContext']]] = None,
                  secret_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 secret_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecretSecretRuleArgs', 'SecretSecretRuleArgsDict']]]]] = None,
+                 secret_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecretSecretRuleArgs', 'SecretSecretRuleArgsDict', 'outputs.SecretSecretRule']]]]] = None,
                  vault_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -860,14 +860,14 @@ class Secret(pulumi.CustomResource):
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             next_rotation_time: pulumi.Input[Optional[_builtins.str]] = None,
-            replication_config: pulumi.Input[Optional[Union['SecretReplicationConfigArgs', 'SecretReplicationConfigArgsDict']]] = None,
-            rotation_config: pulumi.Input[Optional[Union['SecretRotationConfigArgs', 'SecretRotationConfigArgsDict']]] = None,
+            replication_config: pulumi.Input[Optional[Union['SecretReplicationConfigArgs', 'SecretReplicationConfigArgsDict', 'outputs.SecretReplicationConfig']]] = None,
+            rotation_config: pulumi.Input[Optional[Union['SecretRotationConfigArgs', 'SecretRotationConfigArgsDict', 'outputs.SecretRotationConfig']]] = None,
             rotation_status: pulumi.Input[Optional[_builtins.str]] = None,
-            secret_content: pulumi.Input[Optional[Union['SecretSecretContentArgs', 'SecretSecretContentArgsDict']]] = None,
-            secret_generation_context: pulumi.Input[Optional[Union['SecretSecretGenerationContextArgs', 'SecretSecretGenerationContextArgsDict']]] = None,
+            secret_content: pulumi.Input[Optional[Union['SecretSecretContentArgs', 'SecretSecretContentArgsDict', 'outputs.SecretSecretContent']]] = None,
+            secret_generation_context: pulumi.Input[Optional[Union['SecretSecretGenerationContextArgs', 'SecretSecretGenerationContextArgsDict', 'outputs.SecretSecretGenerationContext']]] = None,
             secret_name: pulumi.Input[Optional[_builtins.str]] = None,
-            secret_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecretSecretRuleArgs', 'SecretSecretRuleArgsDict']]]]] = None,
-            source_region_informations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecretSourceRegionInformationArgs', 'SecretSourceRegionInformationArgsDict']]]]] = None,
+            secret_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecretSecretRuleArgs', 'SecretSecretRuleArgsDict', 'outputs.SecretSecretRule']]]]] = None,
+            source_region_informations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecretSourceRegionInformationArgs', 'SecretSourceRegionInformationArgsDict', 'outputs.SecretSourceRegionInformation']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_of_current_version_expiry: pulumi.Input[Optional[_builtins.str]] = None,
@@ -893,14 +893,14 @@ class Secret(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state of the secret.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
         :param pulumi.Input[_builtins.str] next_rotation_time: A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        :param pulumi.Input[Union['SecretReplicationConfigArgs', 'SecretReplicationConfigArgsDict']] replication_config: (Updatable) Defines the configuration that enables cross-region secret replication.
-        :param pulumi.Input[Union['SecretRotationConfigArgs', 'SecretRotationConfigArgsDict']] rotation_config: (Updatable) Defines the frequency of the rotation and the information about the target system
+        :param pulumi.Input[Union['SecretReplicationConfigArgs', 'SecretReplicationConfigArgsDict', 'outputs.SecretReplicationConfig']] replication_config: (Updatable) Defines the configuration that enables cross-region secret replication.
+        :param pulumi.Input[Union['SecretRotationConfigArgs', 'SecretRotationConfigArgsDict', 'outputs.SecretRotationConfig']] rotation_config: (Updatable) Defines the frequency of the rotation and the information about the target system
         :param pulumi.Input[_builtins.str] rotation_status: Additional information about the status of the secret rotation
-        :param pulumi.Input[Union['SecretSecretContentArgs', 'SecretSecretContentArgsDict']] secret_content: (Updatable) The content of the secret and metadata to help identify it.
-        :param pulumi.Input[Union['SecretSecretGenerationContextArgs', 'SecretSecretGenerationContextArgsDict']] secret_generation_context: (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
+        :param pulumi.Input[Union['SecretSecretContentArgs', 'SecretSecretContentArgsDict', 'outputs.SecretSecretContent']] secret_content: (Updatable) The content of the secret and metadata to help identify it.
+        :param pulumi.Input[Union['SecretSecretGenerationContextArgs', 'SecretSecretGenerationContextArgsDict', 'outputs.SecretSecretGenerationContext']] secret_generation_context: (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
         :param pulumi.Input[_builtins.str] secret_name: A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SecretSecretRuleArgs', 'SecretSecretRuleArgsDict']]]] secret_rules: (Updatable) A list of rules to control how the secret is used and managed.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SecretSourceRegionInformationArgs', 'SecretSourceRegionInformationArgsDict']]]] source_region_informations: Details for the source that the source secret has.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SecretSecretRuleArgs', 'SecretSecretRuleArgsDict', 'outputs.SecretSecretRule']]]] secret_rules: (Updatable) A list of rules to control how the secret is used and managed.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SecretSourceRegionInformationArgs', 'SecretSourceRegionInformationArgsDict', 'outputs.SecretSourceRegionInformation']]]] source_region_informations: Details for the source that the source secret has.
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the secret.
         :param pulumi.Input[_builtins.str] time_created: A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_of_current_version_expiry: An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`

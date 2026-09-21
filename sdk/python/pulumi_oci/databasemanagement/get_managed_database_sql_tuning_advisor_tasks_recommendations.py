@@ -121,7 +121,7 @@ class AwaitableGetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult(GetM
 
 
 def get_managed_database_sql_tuning_advisor_tasks_recommendations(execution_id: Optional[_builtins.str] = None,
-                                                                  filters: Optional[Sequence[Union['GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs', 'GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgsDict']]] = None,
+                                                                  filters: Optional[Sequence[Union['GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs', 'GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgsDict', 'outputs.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterResult']]] = None,
                                                                   managed_database_id: Optional[_builtins.str] = None,
                                                                   opc_named_credential_id: Optional[_builtins.str] = None,
                                                                   sql_object_id: Optional[_builtins.str] = None,
@@ -173,7 +173,7 @@ def get_managed_database_sql_tuning_advisor_tasks_recommendations(execution_id: 
         sql_tuning_advisor_task_id=pulumi.get(__ret__, 'sql_tuning_advisor_task_id'),
         sql_tuning_advisor_task_recommendation_collections=pulumi.get(__ret__, 'sql_tuning_advisor_task_recommendation_collections'))
 def get_managed_database_sql_tuning_advisor_tasks_recommendations_output(execution_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs', 'GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgsDict']]]]] = None,
+                                                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs', 'GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgsDict', 'outputs.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterResult']]]]] = None,
                                                                          managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                          opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                          sql_object_id: pulumi.Input[Optional[_builtins.str]] = None,

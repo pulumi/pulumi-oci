@@ -346,7 +346,7 @@ class StreamGroup(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 stream_overlaps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamGroupStreamOverlapArgs', 'StreamGroupStreamOverlapArgsDict']]]]] = None,
+                 stream_overlaps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamGroupStreamOverlapArgs', 'StreamGroupStreamOverlapArgsDict', 'outputs.StreamGroupStreamOverlap']]]]] = None,
                  stream_source_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
@@ -391,7 +391,7 @@ class StreamGroup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A human-friendly name for the streamGroup.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Stream
-        :param pulumi.Input[Sequence[pulumi.Input[Union['StreamGroupStreamOverlapArgs', 'StreamGroupStreamOverlapArgsDict']]]] stream_overlaps: (Updatable) List of streamSource OCIDs where the streamSource overlaps in field of view.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StreamGroupStreamOverlapArgs', 'StreamGroupStreamOverlapArgsDict', 'outputs.StreamGroupStreamOverlap']]]] stream_overlaps: (Updatable) List of streamSource OCIDs where the streamSource overlaps in field of view.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] stream_source_ids: (Updatable) List of streamSource OCIDs associated with the stream group
                
                ** IMPORTANT **
@@ -458,7 +458,7 @@ class StreamGroup(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 stream_overlaps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamGroupStreamOverlapArgs', 'StreamGroupStreamOverlapArgsDict']]]]] = None,
+                 stream_overlaps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamGroupStreamOverlapArgs', 'StreamGroupStreamOverlapArgsDict', 'outputs.StreamGroupStreamOverlap']]]]] = None,
                  stream_source_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -498,7 +498,7 @@ class StreamGroup(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            stream_overlaps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamGroupStreamOverlapArgs', 'StreamGroupStreamOverlapArgsDict']]]]] = None,
+            stream_overlaps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamGroupStreamOverlapArgs', 'StreamGroupStreamOverlapArgsDict', 'outputs.StreamGroupStreamOverlap']]]]] = None,
             stream_source_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -516,7 +516,7 @@ class StreamGroup(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Stream
         :param pulumi.Input[_builtins.str] state: The current state of the streamGroup.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['StreamGroupStreamOverlapArgs', 'StreamGroupStreamOverlapArgsDict']]]] stream_overlaps: (Updatable) List of streamSource OCIDs where the streamSource overlaps in field of view.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StreamGroupStreamOverlapArgs', 'StreamGroupStreamOverlapArgsDict', 'outputs.StreamGroupStreamOverlap']]]] stream_overlaps: (Updatable) List of streamSource OCIDs where the streamSource overlaps in field of view.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] stream_source_ids: (Updatable) List of streamSource OCIDs associated with the stream group
                
                ** IMPORTANT **

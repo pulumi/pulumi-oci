@@ -467,7 +467,7 @@ class OnPremiseVantagePoint(pulumi.CustomResource):
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
-            workers_summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkersSummaryArgs', 'OnPremiseVantagePointWorkersSummaryArgsDict']]]]] = None) -> 'OnPremiseVantagePoint':
+            workers_summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkersSummaryArgs', 'OnPremiseVantagePointWorkersSummaryArgsDict', 'outputs.OnPremiseVantagePointWorkersSummary']]]]] = None) -> 'OnPremiseVantagePoint':
         """
         Get an existing OnPremiseVantagePoint resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -487,7 +487,7 @@ class OnPremiseVantagePoint(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkersSummaryArgs', 'OnPremiseVantagePointWorkersSummaryArgsDict']]]] workers_summaries: Details of the workers in a specific On-premise vantage point.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkersSummaryArgs', 'OnPremiseVantagePointWorkersSummaryArgsDict', 'outputs.OnPremiseVantagePointWorkersSummary']]]] workers_summaries: Details of the workers in a specific On-premise vantage point.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

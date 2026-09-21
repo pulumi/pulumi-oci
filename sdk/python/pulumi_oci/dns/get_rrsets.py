@@ -134,7 +134,7 @@ class AwaitableGetRrsetsResult(GetRrsetsResult):
 
 def get_rrsets(domain: Optional[_builtins.str] = None,
                domain_contains: Optional[_builtins.str] = None,
-               filters: Optional[Sequence[Union['GetRrsetsFilterArgs', 'GetRrsetsFilterArgsDict']]] = None,
+               filters: Optional[Sequence[Union['GetRrsetsFilterArgs', 'GetRrsetsFilterArgsDict', 'outputs.GetRrsetsFilterResult']]] = None,
                rtype: Optional[_builtins.str] = None,
                scope: Optional[_builtins.str] = None,
                view_id: Optional[_builtins.str] = None,
@@ -190,7 +190,7 @@ def get_rrsets(domain: Optional[_builtins.str] = None,
         zone_name_or_id=pulumi.get(__ret__, 'zone_name_or_id'))
 def get_rrsets_output(domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       domain_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRrsetsFilterArgs', 'GetRrsetsFilterArgsDict']]]]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRrsetsFilterArgs', 'GetRrsetsFilterArgsDict', 'outputs.GetRrsetsFilterResult']]]]] = None,
                       rtype: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       scope: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       view_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

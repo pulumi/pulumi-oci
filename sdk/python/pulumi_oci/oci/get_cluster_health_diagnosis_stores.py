@@ -120,7 +120,7 @@ class AwaitableGetClusterHealthDiagnosisStoresResult(GetClusterHealthDiagnosisSt
 def get_cluster_health_diagnosis_stores(compartment_id: Optional[_builtins.str] = None,
                                         diagnosis_store_id: Optional[_builtins.str] = None,
                                         display_name: Optional[_builtins.str] = None,
-                                        filters: Optional[Sequence[Union['GetClusterHealthDiagnosisStoresFilterArgs', 'GetClusterHealthDiagnosisStoresFilterArgsDict']]] = None,
+                                        filters: Optional[Sequence[Union['GetClusterHealthDiagnosisStoresFilterArgs', 'GetClusterHealthDiagnosisStoresFilterArgsDict', 'outputs.GetClusterHealthDiagnosisStoresFilterResult']]] = None,
                                         state: Optional[_builtins.str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetClusterHealthDiagnosisStoresResult:
     """
@@ -166,7 +166,7 @@ def get_cluster_health_diagnosis_stores(compartment_id: Optional[_builtins.str] 
 def get_cluster_health_diagnosis_stores_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                diagnosis_store_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetClusterHealthDiagnosisStoresFilterArgs', 'GetClusterHealthDiagnosisStoresFilterArgsDict']]]]] = None,
+                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetClusterHealthDiagnosisStoresFilterArgs', 'GetClusterHealthDiagnosisStoresFilterArgsDict', 'outputs.GetClusterHealthDiagnosisStoresFilterResult']]]]] = None,
                                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterHealthDiagnosisStoresResult]:
     """

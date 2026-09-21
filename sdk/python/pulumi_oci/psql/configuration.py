@@ -588,7 +588,7 @@ class Configuration(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compatible_shapes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 db_configuration_overrides: pulumi.Input[Optional[Union['ConfigurationDbConfigurationOverridesArgs', 'ConfigurationDbConfigurationOverridesArgsDict']]] = None,
+                 db_configuration_overrides: pulumi.Input[Optional[Union['ConfigurationDbConfigurationOverridesArgs', 'ConfigurationDbConfigurationOverridesArgsDict', 'outputs.ConfigurationDbConfigurationOverrides']]] = None,
                  db_version: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -652,7 +652,7 @@ class Configuration(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] compatible_shapes: (Updatable) Indicates the collection of compatible shapes for this configuration.
-        :param pulumi.Input[Union['ConfigurationDbConfigurationOverridesArgs', 'ConfigurationDbConfigurationOverridesArgsDict']] db_configuration_overrides: Configuration overrides for a PostgreSQL instance.
+        :param pulumi.Input[Union['ConfigurationDbConfigurationOverridesArgs', 'ConfigurationDbConfigurationOverridesArgsDict', 'outputs.ConfigurationDbConfigurationOverrides']] db_configuration_overrides: Configuration overrides for a PostgreSQL instance.
         :param pulumi.Input[_builtins.str] db_version: Version of the PostgreSQL database.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Details about the configuration set.
@@ -744,7 +744,7 @@ class Configuration(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compatible_shapes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 db_configuration_overrides: pulumi.Input[Optional[Union['ConfigurationDbConfigurationOverridesArgs', 'ConfigurationDbConfigurationOverridesArgsDict']]] = None,
+                 db_configuration_overrides: pulumi.Input[Optional[Union['ConfigurationDbConfigurationOverridesArgs', 'ConfigurationDbConfigurationOverridesArgsDict', 'outputs.ConfigurationDbConfigurationOverrides']]] = None,
                  db_version: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -804,8 +804,8 @@ class Configuration(pulumi.CustomResource):
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             compatible_shapes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             config_type: pulumi.Input[Optional[_builtins.str]] = None,
-            configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigurationConfigurationDetailArgs', 'ConfigurationConfigurationDetailArgsDict']]]]] = None,
-            db_configuration_overrides: pulumi.Input[Optional[Union['ConfigurationDbConfigurationOverridesArgs', 'ConfigurationDbConfigurationOverridesArgsDict']]] = None,
+            configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigurationConfigurationDetailArgs', 'ConfigurationConfigurationDetailArgsDict', 'outputs.ConfigurationConfigurationDetail']]]]] = None,
+            db_configuration_overrides: pulumi.Input[Optional[Union['ConfigurationDbConfigurationOverridesArgs', 'ConfigurationDbConfigurationOverridesArgsDict', 'outputs.ConfigurationDbConfigurationOverrides']]] = None,
             db_version: pulumi.Input[Optional[_builtins.str]] = None,
             default_config_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -830,8 +830,8 @@ class Configuration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] compatible_shapes: (Updatable) Indicates the collection of compatible shapes for this configuration.
         :param pulumi.Input[_builtins.str] config_type: The type of configuration. Either user-created or a default configuration.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigurationConfigurationDetailArgs', 'ConfigurationConfigurationDetailArgsDict']]]] configuration_details: List of configuration details.
-        :param pulumi.Input[Union['ConfigurationDbConfigurationOverridesArgs', 'ConfigurationDbConfigurationOverridesArgsDict']] db_configuration_overrides: Configuration overrides for a PostgreSQL instance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigurationConfigurationDetailArgs', 'ConfigurationConfigurationDetailArgsDict', 'outputs.ConfigurationConfigurationDetail']]]] configuration_details: List of configuration details.
+        :param pulumi.Input[Union['ConfigurationDbConfigurationOverridesArgs', 'ConfigurationDbConfigurationOverridesArgsDict', 'outputs.ConfigurationDbConfigurationOverrides']] db_configuration_overrides: Configuration overrides for a PostgreSQL instance.
         :param pulumi.Input[_builtins.str] db_version: Version of the PostgreSQL database.
         :param pulumi.Input[_builtins.str] default_config_id: The Default configuration used for this configuration.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`

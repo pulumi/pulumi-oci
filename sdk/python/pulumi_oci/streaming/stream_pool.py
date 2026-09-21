@@ -390,12 +390,12 @@ class StreamPool(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 custom_encryption_key: pulumi.Input[Optional[Union['StreamPoolCustomEncryptionKeyArgs', 'StreamPoolCustomEncryptionKeyArgsDict']]] = None,
+                 custom_encryption_key: pulumi.Input[Optional[Union['StreamPoolCustomEncryptionKeyArgs', 'StreamPoolCustomEncryptionKeyArgsDict', 'outputs.StreamPoolCustomEncryptionKey']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 kafka_settings: pulumi.Input[Optional[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict']]] = None,
+                 kafka_settings: pulumi.Input[Optional[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict', 'outputs.StreamPoolKafkaSettings']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 private_endpoint_settings: pulumi.Input[Optional[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict']]] = None,
+                 private_endpoint_settings: pulumi.Input[Optional[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict', 'outputs.StreamPoolPrivateEndpointSettings']]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
@@ -450,12 +450,12 @@ class StreamPool(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the stream.
-        :param pulumi.Input[Union['StreamPoolCustomEncryptionKeyArgs', 'StreamPoolCustomEncryptionKeyArgsDict']] custom_encryption_key: (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
+        :param pulumi.Input[Union['StreamPoolCustomEncryptionKeyArgs', 'StreamPoolCustomEncryptionKeyArgsDict', 'outputs.StreamPoolCustomEncryptionKey']] custom_encryption_key: (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict']] kafka_settings: (Updatable) Settings for the Kafka compatibility layer.
+        :param pulumi.Input[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict', 'outputs.StreamPoolKafkaSettings']] kafka_settings: (Updatable) Settings for the Kafka compatibility layer.
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
-        :param pulumi.Input[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict']] private_endpoint_settings: Optional parameters if a private stream pool is requested.
+        :param pulumi.Input[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict', 'outputs.StreamPoolPrivateEndpointSettings']] private_endpoint_settings: Optional parameters if a private stream pool is requested.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
                
                ** IMPORTANT **
@@ -532,12 +532,12 @@ class StreamPool(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 custom_encryption_key: pulumi.Input[Optional[Union['StreamPoolCustomEncryptionKeyArgs', 'StreamPoolCustomEncryptionKeyArgsDict']]] = None,
+                 custom_encryption_key: pulumi.Input[Optional[Union['StreamPoolCustomEncryptionKeyArgs', 'StreamPoolCustomEncryptionKeyArgsDict', 'outputs.StreamPoolCustomEncryptionKey']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 kafka_settings: pulumi.Input[Optional[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict']]] = None,
+                 kafka_settings: pulumi.Input[Optional[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict', 'outputs.StreamPoolKafkaSettings']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 private_endpoint_settings: pulumi.Input[Optional[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict']]] = None,
+                 private_endpoint_settings: pulumi.Input[Optional[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict', 'outputs.StreamPoolPrivateEndpointSettings']]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -574,15 +574,15 @@ class StreamPool(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            custom_encryption_key: pulumi.Input[Optional[Union['StreamPoolCustomEncryptionKeyArgs', 'StreamPoolCustomEncryptionKeyArgsDict']]] = None,
+            custom_encryption_key: pulumi.Input[Optional[Union['StreamPoolCustomEncryptionKeyArgs', 'StreamPoolCustomEncryptionKeyArgsDict', 'outputs.StreamPoolCustomEncryptionKey']]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             endpoint_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_private: pulumi.Input[Optional[_builtins.bool]] = None,
-            kafka_settings: pulumi.Input[Optional[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict']]] = None,
+            kafka_settings: pulumi.Input[Optional[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict', 'outputs.StreamPoolKafkaSettings']]] = None,
             lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            private_endpoint_settings: pulumi.Input[Optional[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict']]] = None,
+            private_endpoint_settings: pulumi.Input[Optional[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict', 'outputs.StreamPoolPrivateEndpointSettings']]] = None,
             security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'StreamPool':
@@ -594,15 +594,15 @@ class StreamPool(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the stream.
-        :param pulumi.Input[Union['StreamPoolCustomEncryptionKeyArgs', 'StreamPoolCustomEncryptionKeyArgsDict']] custom_encryption_key: (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
+        :param pulumi.Input[Union['StreamPoolCustomEncryptionKeyArgs', 'StreamPoolCustomEncryptionKeyArgsDict', 'outputs.StreamPoolCustomEncryptionKey']] custom_encryption_key: (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] endpoint_fqdn: The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_private: True if the stream pool is private, false otherwise. The associated endpoint and subnetId of a private stream pool can be retrieved through the [GetStreamPool](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool) API.
-        :param pulumi.Input[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict']] kafka_settings: (Updatable) Settings for the Kafka compatibility layer.
+        :param pulumi.Input[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict', 'outputs.StreamPoolKafkaSettings']] kafka_settings: (Updatable) Settings for the Kafka compatibility layer.
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Any additional details about the current state of the stream.
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
-        :param pulumi.Input[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict']] private_endpoint_settings: Optional parameters if a private stream pool is requested.
+        :param pulumi.Input[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict', 'outputs.StreamPoolPrivateEndpointSettings']] private_endpoint_settings: Optional parameters if a private stream pool is requested.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
                
                ** IMPORTANT **

@@ -616,20 +616,20 @@ class Fleet(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetCredentialArgs', 'FleetCredentialArgsDict']]]]] = None,
+                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetCredentialArgs', 'FleetCredentialArgsDict', 'outputs.FleetCredential']]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 details: pulumi.Input[Optional[Union['FleetDetailsArgs', 'FleetDetailsArgsDict']]] = None,
+                 details: pulumi.Input[Optional[Union['FleetDetailsArgs', 'FleetDetailsArgsDict', 'outputs.FleetDetails']]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  environment_type: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_target_auto_confirm: pulumi.Input[Optional[_builtins.bool]] = None,
-                 notification_preferences: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetNotificationPreferenceArgs', 'FleetNotificationPreferenceArgsDict']]]]] = None,
+                 notification_preferences: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetNotificationPreferenceArgs', 'FleetNotificationPreferenceArgsDict', 'outputs.FleetNotificationPreference']]]]] = None,
                  parent_fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  products: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetPropertyArgs', 'FleetPropertyArgsDict']]]]] = None,
-                 resource_selection: pulumi.Input[Optional[Union['FleetResourceSelectionArgs', 'FleetResourceSelectionArgsDict']]] = None,
-                 resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetResourceArgs', 'FleetResourceArgsDict']]]]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetPropertyArgs', 'FleetPropertyArgsDict', 'outputs.FleetProperty']]]]] = None,
+                 resource_selection: pulumi.Input[Optional[Union['FleetResourceSelectionArgs', 'FleetResourceSelectionArgsDict', 'outputs.FleetResourceSelection']]] = None,
+                 resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetResourceArgs', 'FleetResourceArgsDict', 'outputs.FleetResource']]]]] = None,
                  __props__=None):
         """
         This resource provides the Fleet resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -651,20 +651,20 @@ class Fleet(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) compartment OCID
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FleetCredentialArgs', 'FleetCredentialArgsDict']]]] credentials: Credentials associated with the Fleet.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FleetCredentialArgs', 'FleetCredentialArgsDict', 'outputs.FleetCredential']]]] credentials: Credentials associated with the Fleet.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
-        :param pulumi.Input[Union['FleetDetailsArgs', 'FleetDetailsArgsDict']] details: Fleet Type
+        :param pulumi.Input[Union['FleetDetailsArgs', 'FleetDetailsArgsDict', 'outputs.FleetDetails']] details: Fleet Type
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input[_builtins.str] environment_type: (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_target_auto_confirm: (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FleetNotificationPreferenceArgs', 'FleetNotificationPreferenceArgsDict']]]] notification_preferences: (Updatable) Notification Preferences associated with the Fleet.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FleetNotificationPreferenceArgs', 'FleetNotificationPreferenceArgsDict', 'outputs.FleetNotificationPreference']]]] notification_preferences: (Updatable) Notification Preferences associated with the Fleet.
         :param pulumi.Input[_builtins.str] parent_fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet that would be the parent for this fleet.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] products: (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FleetPropertyArgs', 'FleetPropertyArgsDict']]]] properties: Properties associated with the Fleet.
-        :param pulumi.Input[Union['FleetResourceSelectionArgs', 'FleetResourceSelectionArgsDict']] resource_selection: (Updatable) Resource Selection Type
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FleetResourceArgs', 'FleetResourceArgsDict']]]] resources: Resources associated with the Fleet if resourceSelectionType is MANUAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FleetPropertyArgs', 'FleetPropertyArgsDict', 'outputs.FleetProperty']]]] properties: Properties associated with the Fleet.
+        :param pulumi.Input[Union['FleetResourceSelectionArgs', 'FleetResourceSelectionArgsDict', 'outputs.FleetResourceSelection']] resource_selection: (Updatable) Resource Selection Type
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FleetResourceArgs', 'FleetResourceArgsDict', 'outputs.FleetResource']]]] resources: Resources associated with the Fleet if resourceSelectionType is MANUAL.
         """
         ...
     @overload
@@ -705,20 +705,20 @@ class Fleet(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetCredentialArgs', 'FleetCredentialArgsDict']]]]] = None,
+                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetCredentialArgs', 'FleetCredentialArgsDict', 'outputs.FleetCredential']]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 details: pulumi.Input[Optional[Union['FleetDetailsArgs', 'FleetDetailsArgsDict']]] = None,
+                 details: pulumi.Input[Optional[Union['FleetDetailsArgs', 'FleetDetailsArgsDict', 'outputs.FleetDetails']]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  environment_type: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_target_auto_confirm: pulumi.Input[Optional[_builtins.bool]] = None,
-                 notification_preferences: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetNotificationPreferenceArgs', 'FleetNotificationPreferenceArgsDict']]]]] = None,
+                 notification_preferences: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetNotificationPreferenceArgs', 'FleetNotificationPreferenceArgsDict', 'outputs.FleetNotificationPreference']]]]] = None,
                  parent_fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  products: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetPropertyArgs', 'FleetPropertyArgsDict']]]]] = None,
-                 resource_selection: pulumi.Input[Optional[Union['FleetResourceSelectionArgs', 'FleetResourceSelectionArgsDict']]] = None,
-                 resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetResourceArgs', 'FleetResourceArgsDict']]]]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetPropertyArgs', 'FleetPropertyArgsDict', 'outputs.FleetProperty']]]]] = None,
+                 resource_selection: pulumi.Input[Optional[Union['FleetResourceSelectionArgs', 'FleetResourceSelectionArgsDict', 'outputs.FleetResourceSelection']]] = None,
+                 resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetResourceArgs', 'FleetResourceArgsDict', 'outputs.FleetResource']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -766,22 +766,22 @@ class Fleet(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetCredentialArgs', 'FleetCredentialArgsDict']]]]] = None,
+            credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetCredentialArgs', 'FleetCredentialArgsDict', 'outputs.FleetCredential']]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            details: pulumi.Input[Optional[Union['FleetDetailsArgs', 'FleetDetailsArgsDict']]] = None,
+            details: pulumi.Input[Optional[Union['FleetDetailsArgs', 'FleetDetailsArgsDict', 'outputs.FleetDetails']]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             environment_type: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_target_auto_confirm: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            notification_preferences: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetNotificationPreferenceArgs', 'FleetNotificationPreferenceArgsDict']]]]] = None,
+            notification_preferences: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetNotificationPreferenceArgs', 'FleetNotificationPreferenceArgsDict', 'outputs.FleetNotificationPreference']]]]] = None,
             parent_fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
             products: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetPropertyArgs', 'FleetPropertyArgsDict']]]]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetPropertyArgs', 'FleetPropertyArgsDict', 'outputs.FleetProperty']]]]] = None,
             resource_region: pulumi.Input[Optional[_builtins.str]] = None,
-            resource_selection: pulumi.Input[Optional[Union['FleetResourceSelectionArgs', 'FleetResourceSelectionArgsDict']]] = None,
-            resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetResourceArgs', 'FleetResourceArgsDict']]]]] = None,
+            resource_selection: pulumi.Input[Optional[Union['FleetResourceSelectionArgs', 'FleetResourceSelectionArgsDict', 'outputs.FleetResourceSelection']]] = None,
+            resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetResourceArgs', 'FleetResourceArgsDict', 'outputs.FleetResource']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -794,22 +794,22 @@ class Fleet(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) compartment OCID
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FleetCredentialArgs', 'FleetCredentialArgsDict']]]] credentials: Credentials associated with the Fleet.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FleetCredentialArgs', 'FleetCredentialArgsDict', 'outputs.FleetCredential']]]] credentials: Credentials associated with the Fleet.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
-        :param pulumi.Input[Union['FleetDetailsArgs', 'FleetDetailsArgsDict']] details: Fleet Type
+        :param pulumi.Input[Union['FleetDetailsArgs', 'FleetDetailsArgsDict', 'outputs.FleetDetails']] details: Fleet Type
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input[_builtins.str] environment_type: (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_target_auto_confirm: (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FleetNotificationPreferenceArgs', 'FleetNotificationPreferenceArgsDict']]]] notification_preferences: (Updatable) Notification Preferences associated with the Fleet.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FleetNotificationPreferenceArgs', 'FleetNotificationPreferenceArgsDict', 'outputs.FleetNotificationPreference']]]] notification_preferences: (Updatable) Notification Preferences associated with the Fleet.
         :param pulumi.Input[_builtins.str] parent_fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet that would be the parent for this fleet.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] products: (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FleetPropertyArgs', 'FleetPropertyArgsDict']]]] properties: Properties associated with the Fleet.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FleetPropertyArgs', 'FleetPropertyArgsDict', 'outputs.FleetProperty']]]] properties: Properties associated with the Fleet.
         :param pulumi.Input[_builtins.str] resource_region: Associated region
-        :param pulumi.Input[Union['FleetResourceSelectionArgs', 'FleetResourceSelectionArgsDict']] resource_selection: (Updatable) Resource Selection Type
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FleetResourceArgs', 'FleetResourceArgsDict']]]] resources: Resources associated with the Fleet if resourceSelectionType is MANUAL.
+        :param pulumi.Input[Union['FleetResourceSelectionArgs', 'FleetResourceSelectionArgsDict', 'outputs.FleetResourceSelection']] resource_selection: (Updatable) Resource Selection Type
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FleetResourceArgs', 'FleetResourceArgsDict', 'outputs.FleetResource']]]] resources: Resources associated with the Fleet if resourceSelectionType is MANUAL.
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the Fleet.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.

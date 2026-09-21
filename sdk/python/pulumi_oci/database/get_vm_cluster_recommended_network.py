@@ -237,7 +237,7 @@ def get_vm_cluster_recommended_network(compartment_id: Optional[_builtins.str] =
                                        dr_scan_listener_port_tcp_ssl: Optional[_builtins.int] = None,
                                        exadata_infrastructure_id: Optional[_builtins.str] = None,
                                        freeform_tags: Optional[Mapping[str, _builtins.str]] = None,
-                                       networks: Optional[Sequence[Union['GetVmClusterRecommendedNetworkNetworkArgs', 'GetVmClusterRecommendedNetworkNetworkArgsDict']]] = None,
+                                       networks: Optional[Sequence[Union['GetVmClusterRecommendedNetworkNetworkArgs', 'GetVmClusterRecommendedNetworkNetworkArgsDict', 'outputs.GetVmClusterRecommendedNetworkNetworkResult']]] = None,
                                        ntps: Optional[Sequence[_builtins.str]] = None,
                                        scan_listener_port_tcp: Optional[_builtins.int] = None,
                                        scan_listener_port_tcp_ssl: Optional[_builtins.int] = None,
@@ -257,7 +257,7 @@ def get_vm_cluster_recommended_network(compartment_id: Optional[_builtins.str] =
     :param _builtins.int dr_scan_listener_port_tcp_ssl: The DR SCAN TCPIP SSL port. Default is 2484.
     :param _builtins.str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-    :param Sequence[Union['GetVmClusterRecommendedNetworkNetworkArgs', 'GetVmClusterRecommendedNetworkNetworkArgsDict']] networks: List of parameters for generation of the client and backup networks.
+    :param Sequence[Union['GetVmClusterRecommendedNetworkNetworkArgs', 'GetVmClusterRecommendedNetworkNetworkArgsDict', 'outputs.GetVmClusterRecommendedNetworkNetworkResult']] networks: List of parameters for generation of the client and backup networks.
     :param Sequence[_builtins.str] ntps: The list of NTP server IP addresses. Maximum of 3 allowed.
     :param _builtins.int scan_listener_port_tcp: The SCAN TCPIP port. Default is 1521.
     :param _builtins.int scan_listener_port_tcp_ssl: The SCAN TCPIP SSL port. Default is 2484.
@@ -306,7 +306,7 @@ def get_vm_cluster_recommended_network_output(compartment_id: pulumi.Input[Optio
                                               dr_scan_listener_port_tcp_ssl: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                               exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               freeform_tags: pulumi.Input[Optional[Optional[Mapping[str, _builtins.str]]]] = None,
-                                              networks: pulumi.Input[Optional[Sequence[Union['GetVmClusterRecommendedNetworkNetworkArgs', 'GetVmClusterRecommendedNetworkNetworkArgsDict']]]] = None,
+                                              networks: pulumi.Input[Optional[Sequence[Union['GetVmClusterRecommendedNetworkNetworkArgs', 'GetVmClusterRecommendedNetworkNetworkArgsDict', 'outputs.GetVmClusterRecommendedNetworkNetworkResult']]]] = None,
                                               ntps: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                               scan_listener_port_tcp: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                               scan_listener_port_tcp_ssl: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
@@ -326,7 +326,7 @@ def get_vm_cluster_recommended_network_output(compartment_id: pulumi.Input[Optio
     :param _builtins.int dr_scan_listener_port_tcp_ssl: The DR SCAN TCPIP SSL port. Default is 2484.
     :param _builtins.str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-    :param Sequence[Union['GetVmClusterRecommendedNetworkNetworkArgs', 'GetVmClusterRecommendedNetworkNetworkArgsDict']] networks: List of parameters for generation of the client and backup networks.
+    :param Sequence[Union['GetVmClusterRecommendedNetworkNetworkArgs', 'GetVmClusterRecommendedNetworkNetworkArgsDict', 'outputs.GetVmClusterRecommendedNetworkNetworkResult']] networks: List of parameters for generation of the client and backup networks.
     :param Sequence[_builtins.str] ntps: The list of NTP server IP addresses. Maximum of 3 allowed.
     :param _builtins.int scan_listener_port_tcp: The SCAN TCPIP port. Default is 1521.
     :param _builtins.int scan_listener_port_tcp_ssl: The SCAN TCPIP SSL port. Default is 2484.

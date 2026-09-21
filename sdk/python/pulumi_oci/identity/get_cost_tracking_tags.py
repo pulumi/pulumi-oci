@@ -85,7 +85,7 @@ class AwaitableGetCostTrackingTagsResult(GetCostTrackingTagsResult):
 
 
 def get_cost_tracking_tags(compartment_id: Optional[_builtins.str] = None,
-                           filters: Optional[Sequence[Union['GetCostTrackingTagsFilterArgs', 'GetCostTrackingTagsFilterArgsDict']]] = None,
+                           filters: Optional[Sequence[Union['GetCostTrackingTagsFilterArgs', 'GetCostTrackingTagsFilterArgsDict', 'outputs.GetCostTrackingTagsFilterResult']]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCostTrackingTagsResult:
     """
     This data source provides the list of Cost Tracking Tags in Oracle Cloud Infrastructure Identity service.
@@ -117,7 +117,7 @@ def get_cost_tracking_tags(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         tags=pulumi.get(__ret__, 'tags'))
 def get_cost_tracking_tags_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCostTrackingTagsFilterArgs', 'GetCostTrackingTagsFilterArgsDict']]]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCostTrackingTagsFilterArgs', 'GetCostTrackingTagsFilterArgsDict', 'outputs.GetCostTrackingTagsFilterResult']]]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCostTrackingTagsResult]:
     """
     This data source provides the list of Cost Tracking Tags in Oracle Cloud Infrastructure Identity service.

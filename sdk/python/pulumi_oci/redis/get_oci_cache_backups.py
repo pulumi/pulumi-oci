@@ -131,7 +131,7 @@ class AwaitableGetOciCacheBackupsResult(GetOciCacheBackupsResult):
 
 def get_oci_cache_backups(compartment_id: Optional[_builtins.str] = None,
                           display_name: Optional[_builtins.str] = None,
-                          filters: Optional[Sequence[Union['GetOciCacheBackupsFilterArgs', 'GetOciCacheBackupsFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetOciCacheBackupsFilterArgs', 'GetOciCacheBackupsFilterArgsDict', 'outputs.GetOciCacheBackupsFilterResult']]] = None,
                           oci_cache_backup_id: Optional[_builtins.str] = None,
                           source_cluster_id: Optional[_builtins.str] = None,
                           state: Optional[_builtins.str] = None,
@@ -182,7 +182,7 @@ def get_oci_cache_backups(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_oci_cache_backups_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOciCacheBackupsFilterArgs', 'GetOciCacheBackupsFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOciCacheBackupsFilterArgs', 'GetOciCacheBackupsFilterArgsDict', 'outputs.GetOciCacheBackupsFilterResult']]]]] = None,
                                  oci_cache_backup_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  source_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

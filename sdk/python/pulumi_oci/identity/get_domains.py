@@ -179,7 +179,7 @@ class AwaitableGetDomainsResult(GetDomainsResult):
 
 def get_domains(compartment_id: Optional[_builtins.str] = None,
                 display_name: Optional[_builtins.str] = None,
-                filters: Optional[Sequence[Union['GetDomainsFilterArgs', 'GetDomainsFilterArgsDict']]] = None,
+                filters: Optional[Sequence[Union['GetDomainsFilterArgs', 'GetDomainsFilterArgsDict', 'outputs.GetDomainsFilterResult']]] = None,
                 home_region_url: Optional[_builtins.str] = None,
                 is_hidden_on_login: Optional[_builtins.bool] = None,
                 license_type: Optional[_builtins.str] = None,
@@ -251,7 +251,7 @@ def get_domains(compartment_id: Optional[_builtins.str] = None,
         url=pulumi.get(__ret__, 'url'))
 def get_domains_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDomainsFilterArgs', 'GetDomainsFilterArgsDict']]]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDomainsFilterArgs', 'GetDomainsFilterArgsDict', 'outputs.GetDomainsFilterResult']]]]] = None,
                        home_region_url: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        is_hidden_on_login: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                        license_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

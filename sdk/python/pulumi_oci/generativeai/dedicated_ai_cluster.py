@@ -916,7 +916,7 @@ class DedicatedAiCluster(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            capacities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DedicatedAiClusterCapacityArgs', 'DedicatedAiClusterCapacityArgsDict']]]]] = None,
+            capacities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DedicatedAiClusterCapacityArgs', 'DedicatedAiClusterCapacityArgsDict', 'outputs.DedicatedAiClusterCapacity']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -937,7 +937,7 @@ class DedicatedAiCluster(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DedicatedAiClusterCapacityArgs', 'DedicatedAiClusterCapacityArgsDict']]]] capacities: The total capacity for a dedicated AI cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DedicatedAiClusterCapacityArgs', 'DedicatedAiClusterCapacityArgsDict', 'outputs.DedicatedAiClusterCapacity']]]] capacities: The total capacity for a dedicated AI cluster.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID to create the dedicated AI cluster in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the dedicated AI cluster.

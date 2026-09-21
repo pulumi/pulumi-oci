@@ -4502,14 +4502,14 @@ class Connection(pulumi.CustomResource):
                  account_key: pulumi.Input[Optional[_builtins.str]] = None,
                  account_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  account_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]]] = None,
-                 auth_details: pulumi.Input[Optional[Union['ConnectionAuthDetailsArgs', 'ConnectionAuthDetailsArgsDict']]] = None,
+                 additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict', 'outputs.ConnectionAdditionalAttribute']]]]] = None,
+                 auth_details: pulumi.Input[Optional[Union['ConnectionAuthDetailsArgs', 'ConnectionAuthDetailsArgsDict', 'outputs.ConnectionAuthDetails']]] = None,
                  authentication_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  authentication_type: pulumi.Input[Optional[_builtins.str]] = None,
                  azure_authority_host: pulumi.Input[Optional[_builtins.str]] = None,
                  azure_tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 bootstrap_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionBootstrapServerArgs', 'ConnectionBootstrapServerArgsDict']]]]] = None,
-                 catalog: pulumi.Input[Optional[Union['ConnectionCatalogArgs', 'ConnectionCatalogArgsDict']]] = None,
+                 bootstrap_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionBootstrapServerArgs', 'ConnectionBootstrapServerArgsDict', 'outputs.ConnectionBootstrapServer']]]]] = None,
+                 catalog: pulumi.Input[Optional[Union['ConnectionCatalogArgs', 'ConnectionCatalogArgsDict', 'outputs.ConnectionCatalog']]] = None,
                  client_id: pulumi.Input[Optional[_builtins.str]] = None,
                  client_secret: pulumi.Input[Optional[_builtins.str]] = None,
                  client_secret_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -4546,7 +4546,7 @@ class Connection(pulumi.CustomResource):
                  key_store_password: pulumi.Input[Optional[_builtins.str]] = None,
                  key_store_password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  key_store_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionLockArgs', 'ConnectionLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionLockArgs', 'ConnectionLockArgsDict', 'outputs.ConnectionLock']]]]] = None,
                  max_input_chars: pulumi.Input[Optional[_builtins.int]] = None,
                  model_key: pulumi.Input[Optional[_builtins.str]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -4589,7 +4589,7 @@ class Connection(pulumi.CustomResource):
                  ssl_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  ssl_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  ssl_server_certificate: pulumi.Input[Optional[_builtins.str]] = None,
-                 storage: pulumi.Input[Optional[Union['ConnectionStorageArgs', 'ConnectionStorageArgsDict']]] = None,
+                 storage: pulumi.Input[Optional[Union['ConnectionStorageArgs', 'ConnectionStorageArgsDict', 'outputs.ConnectionStorage']]] = None,
                  storage_credential_name: pulumi.Input[Optional[_builtins.str]] = None,
                  stream_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -4812,8 +4812,8 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         :param pulumi.Input[_builtins.str] account_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
         :param pulumi.Input[_builtins.str] account_name: (Updatable) Sets the Azure storage account name.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]] additional_attributes: (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
-        :param pulumi.Input[Union['ConnectionAuthDetailsArgs', 'ConnectionAuthDetailsArgsDict']] auth_details: (Updatable) The information about new authentication details for an AI Model connection.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict', 'outputs.ConnectionAdditionalAttribute']]]] additional_attributes: (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
+        :param pulumi.Input[Union['ConnectionAuthDetailsArgs', 'ConnectionAuthDetailsArgsDict', 'outputs.ConnectionAuthDetails']] auth_details: (Updatable) The information about new authentication details for an AI Model connection.
         :param pulumi.Input[_builtins.str] authentication_mode: (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
         :param pulumi.Input[_builtins.str] authentication_type: (Updatable) Used authentication mechanism to be provided for the following connection types:
                * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
@@ -4825,8 +4825,8 @@ class Connection(pulumi.CustomResource):
                * Azure China: https://login.chinacloudapi.cn/
                * Azure US Government: https://login.microsoftonline.us/
         :param pulumi.Input[_builtins.str] azure_tenant_id: (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionBootstrapServerArgs', 'ConnectionBootstrapServerArgsDict']]]] bootstrap_servers: (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
-        :param pulumi.Input[Union['ConnectionCatalogArgs', 'ConnectionCatalogArgsDict']] catalog: (Updatable) The information about a new catalog of given type used in an Iceberg connection.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionBootstrapServerArgs', 'ConnectionBootstrapServerArgsDict', 'outputs.ConnectionBootstrapServer']]]] bootstrap_servers: (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
+        :param pulumi.Input[Union['ConnectionCatalogArgs', 'ConnectionCatalogArgsDict', 'outputs.ConnectionCatalog']] catalog: (Updatable) The information about a new catalog of given type used in an Iceberg connection.
         :param pulumi.Input[_builtins.str] client_id: (Updatable)
                * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
                * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
@@ -4906,7 +4906,7 @@ class Connection(pulumi.CustomResource):
                * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
                  Note: When provided, 'keyStorePassword' field must not be provided.
         :param pulumi.Input[_builtins.str] key_store_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionLockArgs', 'ConnectionLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionLockArgs', 'ConnectionLockArgsDict', 'outputs.ConnectionLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.int] max_input_chars: (Updatable) Maximum number of input characters supported by this AI model connection.
         :param pulumi.Input[_builtins.str] model_key: (Updatable) AI model identifier.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
@@ -5011,7 +5011,7 @@ class Connection(pulumi.CustomResource):
                * MYSQL: SSL modes for MySQL.
                * POSTGRESQL: SSL modes for PostgreSQL.
         :param pulumi.Input[_builtins.str] ssl_server_certificate: (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-        :param pulumi.Input[Union['ConnectionStorageArgs', 'ConnectionStorageArgsDict']] storage: (Updatable) The information about a new storage of given type used in an Iceberg connection.
+        :param pulumi.Input[Union['ConnectionStorageArgs', 'ConnectionStorageArgsDict', 'outputs.ConnectionStorage']] storage: (Updatable) The information about a new storage of given type used in an Iceberg connection.
         :param pulumi.Input[_builtins.str] storage_credential_name: (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
         :param pulumi.Input[_builtins.str] stream_pool_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
@@ -5264,14 +5264,14 @@ class Connection(pulumi.CustomResource):
                  account_key: pulumi.Input[Optional[_builtins.str]] = None,
                  account_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  account_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]]] = None,
-                 auth_details: pulumi.Input[Optional[Union['ConnectionAuthDetailsArgs', 'ConnectionAuthDetailsArgsDict']]] = None,
+                 additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict', 'outputs.ConnectionAdditionalAttribute']]]]] = None,
+                 auth_details: pulumi.Input[Optional[Union['ConnectionAuthDetailsArgs', 'ConnectionAuthDetailsArgsDict', 'outputs.ConnectionAuthDetails']]] = None,
                  authentication_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  authentication_type: pulumi.Input[Optional[_builtins.str]] = None,
                  azure_authority_host: pulumi.Input[Optional[_builtins.str]] = None,
                  azure_tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 bootstrap_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionBootstrapServerArgs', 'ConnectionBootstrapServerArgsDict']]]]] = None,
-                 catalog: pulumi.Input[Optional[Union['ConnectionCatalogArgs', 'ConnectionCatalogArgsDict']]] = None,
+                 bootstrap_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionBootstrapServerArgs', 'ConnectionBootstrapServerArgsDict', 'outputs.ConnectionBootstrapServer']]]]] = None,
+                 catalog: pulumi.Input[Optional[Union['ConnectionCatalogArgs', 'ConnectionCatalogArgsDict', 'outputs.ConnectionCatalog']]] = None,
                  client_id: pulumi.Input[Optional[_builtins.str]] = None,
                  client_secret: pulumi.Input[Optional[_builtins.str]] = None,
                  client_secret_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -5308,7 +5308,7 @@ class Connection(pulumi.CustomResource):
                  key_store_password: pulumi.Input[Optional[_builtins.str]] = None,
                  key_store_password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  key_store_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionLockArgs', 'ConnectionLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionLockArgs', 'ConnectionLockArgsDict', 'outputs.ConnectionLock']]]]] = None,
                  max_input_chars: pulumi.Input[Optional[_builtins.int]] = None,
                  model_key: pulumi.Input[Optional[_builtins.str]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -5351,7 +5351,7 @@ class Connection(pulumi.CustomResource):
                  ssl_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  ssl_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  ssl_server_certificate: pulumi.Input[Optional[_builtins.str]] = None,
-                 storage: pulumi.Input[Optional[Union['ConnectionStorageArgs', 'ConnectionStorageArgsDict']]] = None,
+                 storage: pulumi.Input[Optional[Union['ConnectionStorageArgs', 'ConnectionStorageArgsDict', 'outputs.ConnectionStorage']]] = None,
                  storage_credential_name: pulumi.Input[Optional[_builtins.str]] = None,
                  stream_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -5530,14 +5530,14 @@ class Connection(pulumi.CustomResource):
             account_key: pulumi.Input[Optional[_builtins.str]] = None,
             account_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
             account_name: pulumi.Input[Optional[_builtins.str]] = None,
-            additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]]] = None,
-            auth_details: pulumi.Input[Optional[Union['ConnectionAuthDetailsArgs', 'ConnectionAuthDetailsArgsDict']]] = None,
+            additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict', 'outputs.ConnectionAdditionalAttribute']]]]] = None,
+            auth_details: pulumi.Input[Optional[Union['ConnectionAuthDetailsArgs', 'ConnectionAuthDetailsArgsDict', 'outputs.ConnectionAuthDetails']]] = None,
             authentication_mode: pulumi.Input[Optional[_builtins.str]] = None,
             authentication_type: pulumi.Input[Optional[_builtins.str]] = None,
             azure_authority_host: pulumi.Input[Optional[_builtins.str]] = None,
             azure_tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
-            bootstrap_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionBootstrapServerArgs', 'ConnectionBootstrapServerArgsDict']]]]] = None,
-            catalog: pulumi.Input[Optional[Union['ConnectionCatalogArgs', 'ConnectionCatalogArgsDict']]] = None,
+            bootstrap_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionBootstrapServerArgs', 'ConnectionBootstrapServerArgsDict', 'outputs.ConnectionBootstrapServer']]]]] = None,
+            catalog: pulumi.Input[Optional[Union['ConnectionCatalogArgs', 'ConnectionCatalogArgsDict', 'outputs.ConnectionCatalog']]] = None,
             client_id: pulumi.Input[Optional[_builtins.str]] = None,
             client_secret: pulumi.Input[Optional[_builtins.str]] = None,
             client_secret_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -5562,7 +5562,7 @@ class Connection(pulumi.CustomResource):
             fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             host: pulumi.Input[Optional[_builtins.str]] = None,
-            ingress_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionIngressIpArgs', 'ConnectionIngressIpArgsDict']]]]] = None,
+            ingress_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionIngressIpArgs', 'ConnectionIngressIpArgsDict', 'outputs.ConnectionIngressIp']]]]] = None,
             is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
             jndi_connection_factory: pulumi.Input[Optional[_builtins.str]] = None,
             jndi_initial_context_factory: pulumi.Input[Optional[_builtins.str]] = None,
@@ -5576,7 +5576,7 @@ class Connection(pulumi.CustomResource):
             key_store_password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
             key_store_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionLockArgs', 'ConnectionLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionLockArgs', 'ConnectionLockArgsDict', 'outputs.ConnectionLock']]]]] = None,
             max_input_chars: pulumi.Input[Optional[_builtins.int]] = None,
             model_key: pulumi.Input[Optional[_builtins.str]] = None,
             nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -5621,7 +5621,7 @@ class Connection(pulumi.CustomResource):
             ssl_mode: pulumi.Input[Optional[_builtins.str]] = None,
             ssl_server_certificate: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            storage: pulumi.Input[Optional[Union['ConnectionStorageArgs', 'ConnectionStorageArgsDict']]] = None,
+            storage: pulumi.Input[Optional[Union['ConnectionStorageArgs', 'ConnectionStorageArgsDict', 'outputs.ConnectionStorage']]] = None,
             storage_credential_name: pulumi.Input[Optional[_builtins.str]] = None,
             stream_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
             subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -5662,8 +5662,8 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         :param pulumi.Input[_builtins.str] account_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
         :param pulumi.Input[_builtins.str] account_name: (Updatable) Sets the Azure storage account name.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]] additional_attributes: (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
-        :param pulumi.Input[Union['ConnectionAuthDetailsArgs', 'ConnectionAuthDetailsArgsDict']] auth_details: (Updatable) The information about new authentication details for an AI Model connection.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict', 'outputs.ConnectionAdditionalAttribute']]]] additional_attributes: (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
+        :param pulumi.Input[Union['ConnectionAuthDetailsArgs', 'ConnectionAuthDetailsArgsDict', 'outputs.ConnectionAuthDetails']] auth_details: (Updatable) The information about new authentication details for an AI Model connection.
         :param pulumi.Input[_builtins.str] authentication_mode: (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
         :param pulumi.Input[_builtins.str] authentication_type: (Updatable) Used authentication mechanism to be provided for the following connection types:
                * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
@@ -5675,8 +5675,8 @@ class Connection(pulumi.CustomResource):
                * Azure China: https://login.chinacloudapi.cn/
                * Azure US Government: https://login.microsoftonline.us/
         :param pulumi.Input[_builtins.str] azure_tenant_id: (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionBootstrapServerArgs', 'ConnectionBootstrapServerArgsDict']]]] bootstrap_servers: (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
-        :param pulumi.Input[Union['ConnectionCatalogArgs', 'ConnectionCatalogArgsDict']] catalog: (Updatable) The information about a new catalog of given type used in an Iceberg connection.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionBootstrapServerArgs', 'ConnectionBootstrapServerArgsDict', 'outputs.ConnectionBootstrapServer']]]] bootstrap_servers: (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
+        :param pulumi.Input[Union['ConnectionCatalogArgs', 'ConnectionCatalogArgsDict', 'outputs.ConnectionCatalog']] catalog: (Updatable) The information about a new catalog of given type used in an Iceberg connection.
         :param pulumi.Input[_builtins.str] client_id: (Updatable)
                * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
                * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
@@ -5736,7 +5736,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] host: (Updatable) Host and port separated by colon. Example: `"server.example.com:1234"`
                
                For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionIngressIpArgs', 'ConnectionIngressIpArgsDict']]]] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionIngressIpArgs', 'ConnectionIngressIpArgsDict', 'outputs.ConnectionIngressIp']]]] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         :param pulumi.Input[_builtins.str] jndi_connection_factory: (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
         :param pulumi.Input[_builtins.str] jndi_initial_context_factory: (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
         :param pulumi.Input[_builtins.str] jndi_provider_url: (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
@@ -5758,7 +5758,7 @@ class Connection(pulumi.CustomResource):
                  Note: When provided, 'keyStorePassword' field must not be provided.
         :param pulumi.Input[_builtins.str] key_store_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
         :param pulumi.Input[_builtins.str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionLockArgs', 'ConnectionLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionLockArgs', 'ConnectionLockArgsDict', 'outputs.ConnectionLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.int] max_input_chars: (Updatable) Maximum number of input characters supported by this AI model connection.
         :param pulumi.Input[_builtins.str] model_key: (Updatable) AI model identifier.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
@@ -5865,7 +5865,7 @@ class Connection(pulumi.CustomResource):
                * POSTGRESQL: SSL modes for PostgreSQL.
         :param pulumi.Input[_builtins.str] ssl_server_certificate: (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         :param pulumi.Input[_builtins.str] state: Possible lifecycle states for connection.
-        :param pulumi.Input[Union['ConnectionStorageArgs', 'ConnectionStorageArgsDict']] storage: (Updatable) The information about a new storage of given type used in an Iceberg connection.
+        :param pulumi.Input[Union['ConnectionStorageArgs', 'ConnectionStorageArgsDict', 'outputs.ConnectionStorage']] storage: (Updatable) The information about a new storage of given type used in an Iceberg connection.
         :param pulumi.Input[_builtins.str] storage_credential_name: (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
         :param pulumi.Input[_builtins.str] stream_pool_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.

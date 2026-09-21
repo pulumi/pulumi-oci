@@ -155,7 +155,7 @@ class AwaitableGetDatabaseToolsConnectionsResult(GetDatabaseToolsConnectionsResu
 
 def get_database_tools_connections(compartment_id: Optional[_builtins.str] = None,
                                    display_name: Optional[_builtins.str] = None,
-                                   filters: Optional[Sequence[Union['GetDatabaseToolsConnectionsFilterArgs', 'GetDatabaseToolsConnectionsFilterArgsDict']]] = None,
+                                   filters: Optional[Sequence[Union['GetDatabaseToolsConnectionsFilterArgs', 'GetDatabaseToolsConnectionsFilterArgsDict', 'outputs.GetDatabaseToolsConnectionsFilterResult']]] = None,
                                    related_resource_identifier: Optional[_builtins.str] = None,
                                    runtime_identities: Optional[Sequence[_builtins.str]] = None,
                                    runtime_supports: Optional[Sequence[_builtins.str]] = None,
@@ -216,7 +216,7 @@ def get_database_tools_connections(compartment_id: Optional[_builtins.str] = Non
         types=pulumi.get(__ret__, 'types'))
 def get_database_tools_connections_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabaseToolsConnectionsFilterArgs', 'GetDatabaseToolsConnectionsFilterArgsDict']]]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabaseToolsConnectionsFilterArgs', 'GetDatabaseToolsConnectionsFilterArgsDict', 'outputs.GetDatabaseToolsConnectionsFilterResult']]]]] = None,
                                           related_resource_identifier: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           runtime_identities: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                           runtime_supports: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,

@@ -534,7 +534,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 backup_destination_details: pulumi.Input[Optional[Union['AutonomousDatabaseBackupBackupDestinationDetailsArgs', 'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict']]] = None,
+                 backup_destination_details: pulumi.Input[Optional[Union['AutonomousDatabaseBackupBackupDestinationDetailsArgs', 'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict', 'outputs.AutonomousDatabaseBackupBackupDestinationDetails']]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  is_long_term_backup: pulumi.Input[Optional[_builtins.bool]] = None,
                  retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
@@ -584,7 +584,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
-        :param pulumi.Input[Union['AutonomousDatabaseBackupBackupDestinationDetailsArgs', 'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict']] backup_destination_details: Backup destination details
+        :param pulumi.Input[Union['AutonomousDatabaseBackupBackupDestinationDetailsArgs', 'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict', 'outputs.AutonomousDatabaseBackupBackupDestinationDetails']] backup_destination_details: Backup destination details
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the backup. The name does not have to be unique.
         :param pulumi.Input[_builtins.bool] is_long_term_backup: Indicates whether the backup is long-term
         :param pulumi.Input[_builtins.int] retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
@@ -656,7 +656,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 backup_destination_details: pulumi.Input[Optional[Union['AutonomousDatabaseBackupBackupDestinationDetailsArgs', 'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict']]] = None,
+                 backup_destination_details: pulumi.Input[Optional[Union['AutonomousDatabaseBackupBackupDestinationDetailsArgs', 'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict', 'outputs.AutonomousDatabaseBackupBackupDestinationDetails']]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  is_long_term_backup: pulumi.Input[Optional[_builtins.bool]] = None,
                  retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
@@ -707,7 +707,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
-            backup_destination_details: pulumi.Input[Optional[Union['AutonomousDatabaseBackupBackupDestinationDetailsArgs', 'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict']]] = None,
+            backup_destination_details: pulumi.Input[Optional[Union['AutonomousDatabaseBackupBackupDestinationDetailsArgs', 'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict', 'outputs.AutonomousDatabaseBackupBackupDestinationDetails']]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             database_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
             db_version: pulumi.Input[Optional[_builtins.str]] = None,
@@ -724,7 +724,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
             region: pulumi.Input[Optional[_builtins.str]] = None,
             retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
             size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
-            source_database_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseBackupSourceDatabaseDetailArgs', 'AutonomousDatabaseBackupSourceDatabaseDetailArgsDict']]]]] = None,
+            source_database_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseBackupSourceDatabaseDetailArgs', 'AutonomousDatabaseBackupSourceDatabaseDetailArgsDict', 'outputs.AutonomousDatabaseBackupSourceDatabaseDetail']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_available_till: pulumi.Input[Optional[_builtins.str]] = None,
             time_ended: pulumi.Input[Optional[_builtins.str]] = None,
@@ -739,7 +739,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
-        :param pulumi.Input[Union['AutonomousDatabaseBackupBackupDestinationDetailsArgs', 'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict']] backup_destination_details: Backup destination details
+        :param pulumi.Input[Union['AutonomousDatabaseBackupBackupDestinationDetailsArgs', 'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict', 'outputs.AutonomousDatabaseBackupBackupDestinationDetails']] backup_destination_details: Backup destination details
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.float] database_size_in_tbs: The size of the database in terabytes at the time the backup was taken.
         :param pulumi.Input[_builtins.str] db_version: A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
@@ -759,7 +759,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.float] size_in_tbs: The backup size in terrabytes (TB).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseBackupSourceDatabaseDetailArgs', 'AutonomousDatabaseBackupSourceDatabaseDetailArgsDict']]]] source_database_details: Source Autonomous Database details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseBackupSourceDatabaseDetailArgs', 'AutonomousDatabaseBackupSourceDatabaseDetailArgsDict', 'outputs.AutonomousDatabaseBackupSourceDatabaseDetail']]]] source_database_details: Source Autonomous Database details.
         :param pulumi.Input[_builtins.str] state: The current state of the backup.
         :param pulumi.Input[_builtins.str] time_available_till: Timestamp until when the backup will be available
         :param pulumi.Input[_builtins.str] time_ended: The date and time the backup completed.

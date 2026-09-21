@@ -102,7 +102,7 @@ class AwaitableGetManagementAgentAvailableHistoriesResult(GetManagementAgentAvai
             time_availability_status_started_less_than=self.time_availability_status_started_less_than)
 
 
-def get_management_agent_available_histories(filters: Optional[Sequence[Union['GetManagementAgentAvailableHistoriesFilterArgs', 'GetManagementAgentAvailableHistoriesFilterArgsDict']]] = None,
+def get_management_agent_available_histories(filters: Optional[Sequence[Union['GetManagementAgentAvailableHistoriesFilterArgs', 'GetManagementAgentAvailableHistoriesFilterArgsDict', 'outputs.GetManagementAgentAvailableHistoriesFilterResult']]] = None,
                                              management_agent_id: Optional[_builtins.str] = None,
                                              time_availability_status_ended_greater_than: Optional[_builtins.str] = None,
                                              time_availability_status_started_less_than: Optional[_builtins.str] = None,
@@ -143,7 +143,7 @@ def get_management_agent_available_histories(filters: Optional[Sequence[Union['G
         management_agent_id=pulumi.get(__ret__, 'management_agent_id'),
         time_availability_status_ended_greater_than=pulumi.get(__ret__, 'time_availability_status_ended_greater_than'),
         time_availability_status_started_less_than=pulumi.get(__ret__, 'time_availability_status_started_less_than'))
-def get_management_agent_available_histories_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagementAgentAvailableHistoriesFilterArgs', 'GetManagementAgentAvailableHistoriesFilterArgsDict']]]]] = None,
+def get_management_agent_available_histories_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagementAgentAvailableHistoriesFilterArgs', 'GetManagementAgentAvailableHistoriesFilterArgsDict', 'outputs.GetManagementAgentAvailableHistoriesFilterResult']]]]] = None,
                                                     management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                     time_availability_status_ended_greater_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     time_availability_status_started_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

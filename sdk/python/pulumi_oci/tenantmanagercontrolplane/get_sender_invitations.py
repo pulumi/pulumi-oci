@@ -134,7 +134,7 @@ class AwaitableGetSenderInvitationsResult(GetSenderInvitationsResult):
 
 def get_sender_invitations(compartment_id: Optional[_builtins.str] = None,
                            display_name: Optional[_builtins.str] = None,
-                           filters: Optional[Sequence[Union['GetSenderInvitationsFilterArgs', 'GetSenderInvitationsFilterArgsDict']]] = None,
+                           filters: Optional[Sequence[Union['GetSenderInvitationsFilterArgs', 'GetSenderInvitationsFilterArgsDict', 'outputs.GetSenderInvitationsFilterResult']]] = None,
                            recipient_tenancy_id: Optional[_builtins.str] = None,
                            state: Optional[_builtins.str] = None,
                            status: Optional[_builtins.str] = None,
@@ -185,7 +185,7 @@ def get_sender_invitations(compartment_id: Optional[_builtins.str] = None,
         status=pulumi.get(__ret__, 'status'))
 def get_sender_invitations_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSenderInvitationsFilterArgs', 'GetSenderInvitationsFilterArgsDict']]]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSenderInvitationsFilterArgs', 'GetSenderInvitationsFilterArgsDict', 'outputs.GetSenderInvitationsFilterResult']]]]] = None,
                                   recipient_tenancy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

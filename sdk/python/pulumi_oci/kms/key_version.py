@@ -490,7 +490,7 @@ class KeyVersion(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            external_key_reference_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyVersionExternalKeyReferenceDetailArgs', 'KeyVersionExternalKeyReferenceDetailArgsDict']]]]] = None,
+            external_key_reference_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyVersionExternalKeyReferenceDetailArgs', 'KeyVersionExternalKeyReferenceDetailArgsDict', 'outputs.KeyVersionExternalKeyReferenceDetail']]]]] = None,
             external_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
             is_auto_rotated: pulumi.Input[Optional[_builtins.bool]] = None,
             is_primary: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -498,7 +498,7 @@ class KeyVersion(pulumi.CustomResource):
             key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
             management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
             public_key: pulumi.Input[Optional[_builtins.str]] = None,
-            replica_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyVersionReplicaDetailArgs', 'KeyVersionReplicaDetailArgsDict']]]]] = None,
+            replica_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyVersionReplicaDetailArgs', 'KeyVersionReplicaDetailArgsDict', 'outputs.KeyVersionReplicaDetail']]]]] = None,
             restored_from_key_id: pulumi.Input[Optional[_builtins.str]] = None,
             restored_from_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -513,14 +513,14 @@ class KeyVersion(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment that contains this key version.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['KeyVersionExternalKeyReferenceDetailArgs', 'KeyVersionExternalKeyReferenceDetailArgsDict']]]] external_key_reference_details: Key reference data to be returned to the customer as a response.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['KeyVersionExternalKeyReferenceDetailArgs', 'KeyVersionExternalKeyReferenceDetailArgsDict', 'outputs.KeyVersionExternalKeyReferenceDetail']]]] external_key_reference_details: Key reference data to be returned to the customer as a response.
         :param pulumi.Input[_builtins.str] external_key_version_id: Key version ID associated with the external key.
         :param pulumi.Input[_builtins.bool] is_auto_rotated: An optional property indicating whether this keyversion is generated from auto rotatation.
         :param pulumi.Input[_builtins.bool] is_primary: A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
         :param pulumi.Input[_builtins.str] key_id: The OCID of the key.
         :param pulumi.Input[_builtins.str] management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
         :param pulumi.Input[_builtins.str] public_key: The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
-        :param pulumi.Input[Sequence[pulumi.Input[Union['KeyVersionReplicaDetailArgs', 'KeyVersionReplicaDetailArgsDict']]]] replica_details: KeyVersion replica details
+        :param pulumi.Input[Sequence[pulumi.Input[Union['KeyVersionReplicaDetailArgs', 'KeyVersionReplicaDetailArgsDict', 'outputs.KeyVersionReplicaDetail']]]] replica_details: KeyVersion replica details
         :param pulumi.Input[_builtins.str] restored_from_key_version_id: The OCID of the key version from which this key version was restored.
         :param pulumi.Input[_builtins.str] state: The key version's current lifecycle state.  Example: `ENABLED`
         :param pulumi.Input[_builtins.str] time_created: The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: "2018-04-03T21:10:29.600Z"

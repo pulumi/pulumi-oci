@@ -348,7 +348,7 @@ class TargetDatabaseGroup(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 matching_criteria: pulumi.Input[Optional[Union['TargetDatabaseGroupMatchingCriteriaArgs', 'TargetDatabaseGroupMatchingCriteriaArgsDict']]] = None,
+                 matching_criteria: pulumi.Input[Optional[Union['TargetDatabaseGroupMatchingCriteriaArgs', 'TargetDatabaseGroupMatchingCriteriaArgsDict', 'outputs.TargetDatabaseGroupMatchingCriteria']]] = None,
                  __props__=None):
         """
         This resource provides the Target Database Group resource in Oracle Cloud Infrastructure Data Safe service.
@@ -410,7 +410,7 @@ class TargetDatabaseGroup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of the target database group (optional).
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name of the target database group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['TargetDatabaseGroupMatchingCriteriaArgs', 'TargetDatabaseGroupMatchingCriteriaArgsDict']] matching_criteria: (Updatable) Criteria to either include or exclude target databases from the target database group. These criteria can be based on compartments or tags or a list of target databases. See examples below for more details. Include: Target databases will be added to the target database group if they match at least one of the include criteria. Exclude: Target databases that will be excluded from the target database group (even if they match any of the include criteria).
+        :param pulumi.Input[Union['TargetDatabaseGroupMatchingCriteriaArgs', 'TargetDatabaseGroupMatchingCriteriaArgsDict', 'outputs.TargetDatabaseGroupMatchingCriteria']] matching_criteria: (Updatable) Criteria to either include or exclude target databases from the target database group. These criteria can be based on compartments or tags or a list of target databases. See examples below for more details. Include: Target databases will be added to the target database group if they match at least one of the include criteria. Exclude: Target databases that will be excluded from the target database group (even if they match any of the include criteria).
         """
         ...
     @overload
@@ -491,7 +491,7 @@ class TargetDatabaseGroup(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 matching_criteria: pulumi.Input[Optional[Union['TargetDatabaseGroupMatchingCriteriaArgs', 'TargetDatabaseGroupMatchingCriteriaArgsDict']]] = None,
+                 matching_criteria: pulumi.Input[Optional[Union['TargetDatabaseGroupMatchingCriteriaArgs', 'TargetDatabaseGroupMatchingCriteriaArgsDict', 'outputs.TargetDatabaseGroupMatchingCriteria']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -536,7 +536,7 @@ class TargetDatabaseGroup(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            matching_criteria: pulumi.Input[Optional[Union['TargetDatabaseGroupMatchingCriteriaArgs', 'TargetDatabaseGroupMatchingCriteriaArgsDict']]] = None,
+            matching_criteria: pulumi.Input[Optional[Union['TargetDatabaseGroupMatchingCriteriaArgs', 'TargetDatabaseGroupMatchingCriteriaArgsDict', 'outputs.TargetDatabaseGroupMatchingCriteria']]] = None,
             membership_count: pulumi.Input[Optional[_builtins.int]] = None,
             membership_update_time: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -556,7 +556,7 @@ class TargetDatabaseGroup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name of the target database group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: Details for the lifecycle status of the target database group.
-        :param pulumi.Input[Union['TargetDatabaseGroupMatchingCriteriaArgs', 'TargetDatabaseGroupMatchingCriteriaArgsDict']] matching_criteria: (Updatable) Criteria to either include or exclude target databases from the target database group. These criteria can be based on compartments or tags or a list of target databases. See examples below for more details. Include: Target databases will be added to the target database group if they match at least one of the include criteria. Exclude: Target databases that will be excluded from the target database group (even if they match any of the include criteria).
+        :param pulumi.Input[Union['TargetDatabaseGroupMatchingCriteriaArgs', 'TargetDatabaseGroupMatchingCriteriaArgsDict', 'outputs.TargetDatabaseGroupMatchingCriteria']] matching_criteria: (Updatable) Criteria to either include or exclude target databases from the target database group. These criteria can be based on compartments or tags or a list of target databases. See examples below for more details. Include: Target databases will be added to the target database group if they match at least one of the include criteria. Exclude: Target databases that will be excluded from the target database group (even if they match any of the include criteria).
         :param pulumi.Input[_builtins.int] membership_count: The number of target databases in the specified target database group.
         :param pulumi.Input[_builtins.str] membership_update_time: Time when the members of the target database group were last changed, i.e. the list was refreshed, a target database was added or removed.
         :param pulumi.Input[_builtins.str] state: The lifecycle status of the target database group.

@@ -475,14 +475,14 @@ class ApiPlatformApiPlatformInstance(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            idcs_apps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiPlatformApiPlatformInstanceIdcsAppArgs', 'ApiPlatformApiPlatformInstanceIdcsAppArgsDict']]]]] = None,
+            idcs_apps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiPlatformApiPlatformInstanceIdcsAppArgs', 'ApiPlatformApiPlatformInstanceIdcsAppArgsDict', 'outputs.ApiPlatformApiPlatformInstanceIdcsApp']]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
-            uris: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiPlatformApiPlatformInstanceUriArgs', 'ApiPlatformApiPlatformInstanceUriArgsDict']]]]] = None) -> 'ApiPlatformApiPlatformInstance':
+            uris: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiPlatformApiPlatformInstanceUriArgs', 'ApiPlatformApiPlatformInstanceUriArgsDict', 'outputs.ApiPlatformApiPlatformInstanceUri']]]]] = None) -> 'ApiPlatformApiPlatformInstance':
         """
         Get an existing ApiPlatformApiPlatformInstance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -494,7 +494,7 @@ class ApiPlatformApiPlatformInstance(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) User-provided changeable and non-unique description of the instance
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiPlatformApiPlatformInstanceIdcsAppArgs', 'ApiPlatformApiPlatformInstanceIdcsAppArgsDict']]]] idcs_apps: IDCS app associated with the instance, that can be used to manage the roles of the users
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiPlatformApiPlatformInstanceIdcsAppArgs', 'ApiPlatformApiPlatformInstanceIdcsAppArgsDict', 'outputs.ApiPlatformApiPlatformInstanceIdcsApp']]]] idcs_apps: IDCS app associated with the instance, that can be used to manage the roles of the users
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the instance in more detail. For example, can be used to provide actionable information for a resource in the Failed state
         :param pulumi.Input[_builtins.str] name: A regionally unique, non-changeable instance name provided by the user during creation
                
@@ -504,7 +504,7 @@ class ApiPlatformApiPlatformInstance(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The date and time the instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_updated: The date and time the instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiPlatformApiPlatformInstanceUriArgs', 'ApiPlatformApiPlatformInstanceUriArgsDict']]]] uris: Service URIs pertaining to the instance
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiPlatformApiPlatformInstanceUriArgs', 'ApiPlatformApiPlatformInstanceUriArgsDict', 'outputs.ApiPlatformApiPlatformInstanceUri']]]] uris: Service URIs pertaining to the instance
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

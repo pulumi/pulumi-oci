@@ -138,8 +138,8 @@ class ManagedInstanceSwitchSnapChannelManagement(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 snap_details: pulumi.Input[Optional[Union['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgsDict']]] = None,
-                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgsDict']]] = None,
+                 snap_details: pulumi.Input[Optional[Union['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgsDict', 'outputs.ManagedInstanceSwitchSnapChannelManagementSnapDetails']]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails']]] = None,
                  __props__=None):
         """
         This resource provides the Managed Instance Switch Snap Channel Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -179,8 +179,8 @@ class ManagedInstanceSwitchSnapChannelManagement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
-        :param pulumi.Input[Union['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgsDict']] snap_details: Provides the information used to switch a snap channel.
-        :param pulumi.Input[Union['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgsDict', 'outputs.ManagedInstanceSwitchSnapChannelManagementSnapDetails']] snap_details: Provides the information used to switch a snap channel.
+        :param pulumi.Input[Union['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails']] work_request_details: Provides the name and description of the job.
         """
         ...
     @overload
@@ -239,8 +239,8 @@ class ManagedInstanceSwitchSnapChannelManagement(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 snap_details: pulumi.Input[Optional[Union['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgsDict']]] = None,
-                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgsDict']]] = None,
+                 snap_details: pulumi.Input[Optional[Union['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgsDict', 'outputs.ManagedInstanceSwitchSnapChannelManagementSnapDetails']]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -266,8 +266,8 @@ class ManagedInstanceSwitchSnapChannelManagement(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
-            snap_details: pulumi.Input[Optional[Union['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgsDict']]] = None,
-            work_request_details: pulumi.Input[Optional[Union['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceSwitchSnapChannelManagement':
+            snap_details: pulumi.Input[Optional[Union['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgsDict', 'outputs.ManagedInstanceSwitchSnapChannelManagementSnapDetails']]] = None,
+            work_request_details: pulumi.Input[Optional[Union['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails']]] = None) -> 'ManagedInstanceSwitchSnapChannelManagement':
         """
         Get an existing ManagedInstanceSwitchSnapChannelManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -276,8 +276,8 @@ class ManagedInstanceSwitchSnapChannelManagement(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
-        :param pulumi.Input[Union['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgsDict']] snap_details: Provides the information used to switch a snap channel.
-        :param pulumi.Input[Union['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgsDict', 'outputs.ManagedInstanceSwitchSnapChannelManagementSnapDetails']] snap_details: Provides the information used to switch a snap channel.
+        :param pulumi.Input[Union['ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs', 'ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails']] work_request_details: Provides the name and description of the job.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

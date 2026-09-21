@@ -300,7 +300,7 @@ class SecurityAttribute(pulumi.CustomResource):
                  is_retired: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  security_attribute_namespace_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 validator: pulumi.Input[Optional[Union['SecurityAttributeValidatorArgs', 'SecurityAttributeValidatorArgsDict']]] = None,
+                 validator: pulumi.Input[Optional[Union['SecurityAttributeValidatorArgs', 'SecurityAttributeValidatorArgsDict', 'outputs.SecurityAttributeValidator']]] = None,
                  __props__=None):
         """
         This resource provides the Security Attribute resource in Oracle Cloud Infrastructure Security Attribute service.
@@ -354,7 +354,7 @@ class SecurityAttribute(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_retired: Indicates whether the security attribute is retired. See [Managing Security Attribute Namespaces](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
         :param pulumi.Input[_builtins.str] name: The name you assign to the security attribute during creation. This is the security attribute key. The name must be unique within the namespace and cannot be changed.
         :param pulumi.Input[_builtins.str] security_attribute_namespace_id: The OCID of the security attribute namespace.
-        :param pulumi.Input[Union['SecurityAttributeValidatorArgs', 'SecurityAttributeValidatorArgsDict']] validator: (Updatable) Validates a security attribute value. Each validator performs validation steps in addition to the standard validation for security attribute values. For more information, see [Limits on Security Attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm).
+        :param pulumi.Input[Union['SecurityAttributeValidatorArgs', 'SecurityAttributeValidatorArgsDict', 'outputs.SecurityAttributeValidator']] validator: (Updatable) Validates a security attribute value. Each validator performs validation steps in addition to the standard validation for security attribute values. For more information, see [Limits on Security Attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm).
                
                If you define a validator after a value has been set for a security attribute, then any updates that attempt to change the value must pass the additional validation defined by the current rule. Previously set values (even those that would fail the current validation) are not updated. You can still update other attributes to resources that contain a non-valid security attribute.
                
@@ -431,7 +431,7 @@ class SecurityAttribute(pulumi.CustomResource):
                  is_retired: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  security_attribute_namespace_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 validator: pulumi.Input[Optional[Union['SecurityAttributeValidatorArgs', 'SecurityAttributeValidatorArgsDict']]] = None,
+                 validator: pulumi.Input[Optional[Union['SecurityAttributeValidatorArgs', 'SecurityAttributeValidatorArgsDict', 'outputs.SecurityAttributeValidator']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -474,7 +474,7 @@ class SecurityAttribute(pulumi.CustomResource):
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
-            validator: pulumi.Input[Optional[Union['SecurityAttributeValidatorArgs', 'SecurityAttributeValidatorArgsDict']]] = None) -> 'SecurityAttribute':
+            validator: pulumi.Input[Optional[Union['SecurityAttributeValidatorArgs', 'SecurityAttributeValidatorArgsDict', 'outputs.SecurityAttributeValidator']]] = None) -> 'SecurityAttribute':
         """
         Get an existing SecurityAttribute resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -491,7 +491,7 @@ class SecurityAttribute(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The security attribute's current state. After creating a security attribute, make sure its `lifecycleState` is ACTIVE before using it. After retiring a security attribute, make sure its `lifecycleState` is INACTIVE before using it. If you delete a security attribute, you cannot delete another security attribute until the deleted security attribute's `lifecycleState` changes from DELETING to DELETED.
         :param pulumi.Input[_builtins.str] time_created: Date and time the security attribute was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] type: The data type of the security attribute.
-        :param pulumi.Input[Union['SecurityAttributeValidatorArgs', 'SecurityAttributeValidatorArgsDict']] validator: (Updatable) Validates a security attribute value. Each validator performs validation steps in addition to the standard validation for security attribute values. For more information, see [Limits on Security Attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm).
+        :param pulumi.Input[Union['SecurityAttributeValidatorArgs', 'SecurityAttributeValidatorArgsDict', 'outputs.SecurityAttributeValidator']] validator: (Updatable) Validates a security attribute value. Each validator performs validation steps in addition to the standard validation for security attribute values. For more information, see [Limits on Security Attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm).
                
                If you define a validator after a value has been set for a security attribute, then any updates that attempt to change the value must pass the additional validation defined by the current rule. Previously set values (even those that would fail the current validation) are not updated. You can still update other attributes to resources that contain a non-valid security attribute.
                

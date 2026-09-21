@@ -109,7 +109,7 @@ class AwaitableGetCommitmentsResult(GetCommitmentsResult):
 
 
 def get_commitments(compartment_id: Optional[_builtins.str] = None,
-                    filters: Optional[Sequence[Union['GetCommitmentsFilterArgs', 'GetCommitmentsFilterArgsDict']]] = None,
+                    filters: Optional[Sequence[Union['GetCommitmentsFilterArgs', 'GetCommitmentsFilterArgsDict', 'outputs.GetCommitmentsFilterResult']]] = None,
                     subscribed_service_id: Optional[_builtins.str] = None,
                     x_one_gateway_subscription_id: Optional[_builtins.str] = None,
                     x_one_origin_region: Optional[_builtins.str] = None,
@@ -155,7 +155,7 @@ def get_commitments(compartment_id: Optional[_builtins.str] = None,
         x_one_gateway_subscription_id=pulumi.get(__ret__, 'x_one_gateway_subscription_id'),
         x_one_origin_region=pulumi.get(__ret__, 'x_one_origin_region'))
 def get_commitments_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCommitmentsFilterArgs', 'GetCommitmentsFilterArgsDict']]]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCommitmentsFilterArgs', 'GetCommitmentsFilterArgsDict', 'outputs.GetCommitmentsFilterResult']]]]] = None,
                            subscribed_service_id: pulumi.Input[Optional[_builtins.str]] = None,
                            x_one_gateway_subscription_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            x_one_origin_region: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

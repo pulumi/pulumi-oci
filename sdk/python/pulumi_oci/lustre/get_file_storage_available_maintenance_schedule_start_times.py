@@ -102,7 +102,7 @@ class AwaitableGetFileStorageAvailableMaintenanceScheduleStartTimesResult(GetFil
 def get_file_storage_available_maintenance_schedule_start_times(availability_domain: Optional[_builtins.str] = None,
                                                                 compartment_id: Optional[_builtins.str] = None,
                                                                 day_of_week: Optional[_builtins.str] = None,
-                                                                filters: Optional[Sequence[Union['GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgs', 'GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgsDict']]] = None,
+                                                                filters: Optional[Sequence[Union['GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgs', 'GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgsDict', 'outputs.GetFileStorageAvailableMaintenanceScheduleStartTimesFilterResult']]] = None,
                                                                 id: Optional[_builtins.str] = None,
                                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFileStorageAvailableMaintenanceScheduleStartTimesResult:
     """
@@ -147,7 +147,7 @@ def get_file_storage_available_maintenance_schedule_start_times(availability_dom
 def get_file_storage_available_maintenance_schedule_start_times_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                        compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                        day_of_week: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgs', 'GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgsDict']]]]] = None,
+                                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgs', 'GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgsDict', 'outputs.GetFileStorageAvailableMaintenanceScheduleStartTimesFilterResult']]]]] = None,
                                                                        id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFileStorageAvailableMaintenanceScheduleStartTimesResult]:
     """

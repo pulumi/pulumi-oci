@@ -85,7 +85,7 @@ class AwaitableGetOrganizationsResult(GetOrganizationsResult):
 
 
 def get_organizations(compartment_id: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetOrganizationsFilterArgs', 'GetOrganizationsFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetOrganizationsFilterArgs', 'GetOrganizationsFilterArgsDict', 'outputs.GetOrganizationsFilterResult']]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOrganizationsResult:
     """
     This data source provides the list of Organizations in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
@@ -116,7 +116,7 @@ def get_organizations(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         organization_collections=pulumi.get(__ret__, 'organization_collections'))
 def get_organizations_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOrganizationsFilterArgs', 'GetOrganizationsFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOrganizationsFilterArgs', 'GetOrganizationsFilterArgsDict', 'outputs.GetOrganizationsFilterResult']]]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOrganizationsResult]:
     """
     This data source provides the list of Organizations in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.

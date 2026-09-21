@@ -1389,7 +1389,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
                  cloud_control_plane_server2: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_count: pulumi.Input[Optional[_builtins.int]] = None,
-                 contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInfrastructureContactArgs', 'ExadataInfrastructureContactArgsDict']]]]] = None,
+                 contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInfrastructureContactArgs', 'ExadataInfrastructureContactArgsDict', 'outputs.ExadataInfrastructureContact']]]]] = None,
                  corporate_proxy: pulumi.Input[Optional[_builtins.str]] = None,
                  create_async: pulumi.Input[Optional[_builtins.bool]] = None,
                  database_server_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1401,11 +1401,11 @@ class ExadataInfrastructure(pulumi.CustomResource):
                  infini_band_network_cidr: pulumi.Input[Optional[_builtins.str]] = None,
                  is_cps_offline_report_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_multi_rack_deployment: pulumi.Input[Optional[_builtins.bool]] = None,
-                 maintenance_version_preferences: pulumi.Input[Optional[Union['ExadataInfrastructureMaintenanceVersionPreferencesArgs', 'ExadataInfrastructureMaintenanceVersionPreferencesArgsDict']]] = None,
-                 maintenance_window: pulumi.Input[Optional[Union['ExadataInfrastructureMaintenanceWindowArgs', 'ExadataInfrastructureMaintenanceWindowArgsDict']]] = None,
+                 maintenance_version_preferences: pulumi.Input[Optional[Union['ExadataInfrastructureMaintenanceVersionPreferencesArgs', 'ExadataInfrastructureMaintenanceVersionPreferencesArgsDict', 'outputs.ExadataInfrastructureMaintenanceVersionPreferences']]] = None,
+                 maintenance_window: pulumi.Input[Optional[Union['ExadataInfrastructureMaintenanceWindowArgs', 'ExadataInfrastructureMaintenanceWindowArgsDict', 'outputs.ExadataInfrastructureMaintenanceWindow']]] = None,
                  multi_rack_configuration_file: pulumi.Input[Optional[_builtins.str]] = None,
                  netmask: pulumi.Input[Optional[_builtins.str]] = None,
-                 network_bonding_mode_details: pulumi.Input[Optional[Union['ExadataInfrastructureNetworkBondingModeDetailsArgs', 'ExadataInfrastructureNetworkBondingModeDetailsArgsDict']]] = None,
+                 network_bonding_mode_details: pulumi.Input[Optional[Union['ExadataInfrastructureNetworkBondingModeDetailsArgs', 'ExadataInfrastructureNetworkBondingModeDetailsArgsDict', 'outputs.ExadataInfrastructureNetworkBondingModeDetails']]] = None,
                  ntp_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_count: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1507,7 +1507,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cloud_control_plane_server2: (Updatable) The IP address for the second control plane server.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.int] compute_count: The number of compute servers for the Exadata infrastructure.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadataInfrastructureContactArgs', 'ExadataInfrastructureContactArgsDict']]]] contacts: (Updatable) The list of contacts for the Exadata infrastructure.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadataInfrastructureContactArgs', 'ExadataInfrastructureContactArgsDict', 'outputs.ExadataInfrastructureContact']]]] contacts: (Updatable) The list of contacts for the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] corporate_proxy: (Updatable) The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible for enhanced security.
         :param pulumi.Input[_builtins.str] database_server_type: The database server type of the Exadata infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -1518,12 +1518,12 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] infini_band_network_cidr: (Updatable) The CIDR block for the Exadata InfiniBand interconnect.
         :param pulumi.Input[_builtins.bool] is_cps_offline_report_enabled: (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
         :param pulumi.Input[_builtins.bool] is_multi_rack_deployment: (Updatable) Indicates if deployment is Multi-Rack or not.
-        :param pulumi.Input[Union['ExadataInfrastructureMaintenanceVersionPreferencesArgs', 'ExadataInfrastructureMaintenanceVersionPreferencesArgsDict']] maintenance_version_preferences: (Updatable) The preferences for target versions of future maintenance runs.
+        :param pulumi.Input[Union['ExadataInfrastructureMaintenanceVersionPreferencesArgs', 'ExadataInfrastructureMaintenanceVersionPreferencesArgsDict', 'outputs.ExadataInfrastructureMaintenanceVersionPreferences']] maintenance_version_preferences: (Updatable) The preferences for target versions of future maintenance runs.
                Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans. If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
-        :param pulumi.Input[Union['ExadataInfrastructureMaintenanceWindowArgs', 'ExadataInfrastructureMaintenanceWindowArgsDict']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Union['ExadataInfrastructureMaintenanceWindowArgs', 'ExadataInfrastructureMaintenanceWindowArgsDict', 'outputs.ExadataInfrastructureMaintenanceWindow']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.str] multi_rack_configuration_file: (Updatable) The base64 encoded Multi-Rack configuration json file.
         :param pulumi.Input[_builtins.str] netmask: (Updatable) The netmask for the control plane network.
-        :param pulumi.Input[Union['ExadataInfrastructureNetworkBondingModeDetailsArgs', 'ExadataInfrastructureNetworkBondingModeDetailsArgsDict']] network_bonding_mode_details: (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
+        :param pulumi.Input[Union['ExadataInfrastructureNetworkBondingModeDetailsArgs', 'ExadataInfrastructureNetworkBondingModeDetailsArgsDict', 'outputs.ExadataInfrastructureNetworkBondingModeDetails']] network_bonding_mode_details: (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ntp_servers: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
         :param pulumi.Input[_builtins.str] shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         :param pulumi.Input[_builtins.int] storage_count: The number of storage servers for the Exadata infrastructure.
@@ -1641,7 +1641,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
                  cloud_control_plane_server2: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_count: pulumi.Input[Optional[_builtins.int]] = None,
-                 contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInfrastructureContactArgs', 'ExadataInfrastructureContactArgsDict']]]]] = None,
+                 contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInfrastructureContactArgs', 'ExadataInfrastructureContactArgsDict', 'outputs.ExadataInfrastructureContact']]]]] = None,
                  corporate_proxy: pulumi.Input[Optional[_builtins.str]] = None,
                  create_async: pulumi.Input[Optional[_builtins.bool]] = None,
                  database_server_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1653,11 +1653,11 @@ class ExadataInfrastructure(pulumi.CustomResource):
                  infini_band_network_cidr: pulumi.Input[Optional[_builtins.str]] = None,
                  is_cps_offline_report_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_multi_rack_deployment: pulumi.Input[Optional[_builtins.bool]] = None,
-                 maintenance_version_preferences: pulumi.Input[Optional[Union['ExadataInfrastructureMaintenanceVersionPreferencesArgs', 'ExadataInfrastructureMaintenanceVersionPreferencesArgsDict']]] = None,
-                 maintenance_window: pulumi.Input[Optional[Union['ExadataInfrastructureMaintenanceWindowArgs', 'ExadataInfrastructureMaintenanceWindowArgsDict']]] = None,
+                 maintenance_version_preferences: pulumi.Input[Optional[Union['ExadataInfrastructureMaintenanceVersionPreferencesArgs', 'ExadataInfrastructureMaintenanceVersionPreferencesArgsDict', 'outputs.ExadataInfrastructureMaintenanceVersionPreferences']]] = None,
+                 maintenance_window: pulumi.Input[Optional[Union['ExadataInfrastructureMaintenanceWindowArgs', 'ExadataInfrastructureMaintenanceWindowArgsDict', 'outputs.ExadataInfrastructureMaintenanceWindow']]] = None,
                  multi_rack_configuration_file: pulumi.Input[Optional[_builtins.str]] = None,
                  netmask: pulumi.Input[Optional[_builtins.str]] = None,
-                 network_bonding_mode_details: pulumi.Input[Optional[Union['ExadataInfrastructureNetworkBondingModeDetailsArgs', 'ExadataInfrastructureNetworkBondingModeDetailsArgsDict']]] = None,
+                 network_bonding_mode_details: pulumi.Input[Optional[Union['ExadataInfrastructureNetworkBondingModeDetailsArgs', 'ExadataInfrastructureNetworkBondingModeDetailsArgsDict', 'outputs.ExadataInfrastructureNetworkBondingModeDetails']]] = None,
                  ntp_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_count: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1773,7 +1773,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             compute_count: pulumi.Input[Optional[_builtins.int]] = None,
             compute_model: pulumi.Input[Optional[_builtins.str]] = None,
-            contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInfrastructureContactArgs', 'ExadataInfrastructureContactArgsDict']]]]] = None,
+            contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInfrastructureContactArgs', 'ExadataInfrastructureContactArgsDict', 'outputs.ExadataInfrastructureContact']]]]] = None,
             corporate_proxy: pulumi.Input[Optional[_builtins.str]] = None,
             cpus_enabled: pulumi.Input[Optional[_builtins.int]] = None,
             create_async: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1782,11 +1782,11 @@ class ExadataInfrastructure(pulumi.CustomResource):
             database_server_type: pulumi.Input[Optional[_builtins.str]] = None,
             db_node_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
             db_server_version: pulumi.Input[Optional[_builtins.str]] = None,
-            defined_file_system_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInfrastructureDefinedFileSystemConfigurationArgs', 'ExadataInfrastructureDefinedFileSystemConfigurationArgsDict']]]]] = None,
+            defined_file_system_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInfrastructureDefinedFileSystemConfigurationArgs', 'ExadataInfrastructureDefinedFileSystemConfigurationArgsDict', 'outputs.ExadataInfrastructureDefinedFileSystemConfiguration']]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             dns_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            exascale_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInfrastructureExascaleConfigArgs', 'ExadataInfrastructureExascaleConfigArgsDict']]]]] = None,
+            exascale_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInfrastructureExascaleConfigArgs', 'ExadataInfrastructureExascaleConfigArgsDict', 'outputs.ExadataInfrastructureExascaleConfig']]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             gateway: pulumi.Input[Optional[_builtins.str]] = None,
             infini_band_network_cidr: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1795,8 +1795,8 @@ class ExadataInfrastructure(pulumi.CustomResource):
             is_scheduling_policy_associated: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             maintenance_slo_status: pulumi.Input[Optional[_builtins.str]] = None,
-            maintenance_version_preferences: pulumi.Input[Optional[Union['ExadataInfrastructureMaintenanceVersionPreferencesArgs', 'ExadataInfrastructureMaintenanceVersionPreferencesArgsDict']]] = None,
-            maintenance_window: pulumi.Input[Optional[Union['ExadataInfrastructureMaintenanceWindowArgs', 'ExadataInfrastructureMaintenanceWindowArgsDict']]] = None,
+            maintenance_version_preferences: pulumi.Input[Optional[Union['ExadataInfrastructureMaintenanceVersionPreferencesArgs', 'ExadataInfrastructureMaintenanceVersionPreferencesArgsDict', 'outputs.ExadataInfrastructureMaintenanceVersionPreferences']]] = None,
+            maintenance_window: pulumi.Input[Optional[Union['ExadataInfrastructureMaintenanceWindowArgs', 'ExadataInfrastructureMaintenanceWindowArgsDict', 'outputs.ExadataInfrastructureMaintenanceWindow']]] = None,
             max_cpu_count: pulumi.Input[Optional[_builtins.int]] = None,
             max_data_storage_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
             max_db_node_storage_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1805,7 +1805,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             monthly_db_server_version: pulumi.Input[Optional[_builtins.str]] = None,
             multi_rack_configuration_file: pulumi.Input[Optional[_builtins.str]] = None,
             netmask: pulumi.Input[Optional[_builtins.str]] = None,
-            network_bonding_mode_details: pulumi.Input[Optional[Union['ExadataInfrastructureNetworkBondingModeDetailsArgs', 'ExadataInfrastructureNetworkBondingModeDetailsArgsDict']]] = None,
+            network_bonding_mode_details: pulumi.Input[Optional[Union['ExadataInfrastructureNetworkBondingModeDetailsArgs', 'ExadataInfrastructureNetworkBondingModeDetailsArgsDict', 'outputs.ExadataInfrastructureNetworkBondingModeDetails']]] = None,
             ntp_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             rack_serial_number: pulumi.Input[Optional[_builtins.str]] = None,
             shape: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1838,7 +1838,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.int] compute_count: The number of compute servers for the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadataInfrastructureContactArgs', 'ExadataInfrastructureContactArgsDict']]]] contacts: (Updatable) The list of contacts for the Exadata infrastructure.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadataInfrastructureContactArgs', 'ExadataInfrastructureContactArgsDict', 'outputs.ExadataInfrastructureContact']]]] contacts: (Updatable) The list of contacts for the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] corporate_proxy: (Updatable) The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible for enhanced security.
         :param pulumi.Input[_builtins.int] cpus_enabled: The number of enabled CPU cores.
         :param pulumi.Input[_builtins.str] csi_number: The CSI Number of the Exadata infrastructure.
@@ -1846,11 +1846,11 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] database_server_type: The database server type of the Exadata infrastructure.
         :param pulumi.Input[_builtins.int] db_node_storage_size_in_gbs: The local node storage allocated in GBs.
         :param pulumi.Input[_builtins.str] db_server_version: The software version of the database servers (dom0) in the Exadata infrastructure.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadataInfrastructureDefinedFileSystemConfigurationArgs', 'ExadataInfrastructureDefinedFileSystemConfigurationArgsDict']]]] defined_file_system_configurations: Details of the file system configuration of the Exadata infrastructure.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadataInfrastructureDefinedFileSystemConfigurationArgs', 'ExadataInfrastructureDefinedFileSystemConfigurationArgsDict', 'outputs.ExadataInfrastructureDefinedFileSystemConfiguration']]]] defined_file_system_configurations: Details of the file system configuration of the Exadata infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dns_servers: (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadataInfrastructureExascaleConfigArgs', 'ExadataInfrastructureExascaleConfigArgsDict']]]] exascale_configs: The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadataInfrastructureExascaleConfigArgs', 'ExadataInfrastructureExascaleConfigArgsDict', 'outputs.ExadataInfrastructureExascaleConfig']]]] exascale_configs: The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] gateway: (Updatable) The gateway for the control plane network.
         :param pulumi.Input[_builtins.str] infini_band_network_cidr: (Updatable) The CIDR block for the Exadata InfiniBand interconnect.
@@ -1859,9 +1859,9 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_scheduling_policy_associated: If true, the infrastructure is using granular maintenance scheduling preference.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] maintenance_slo_status: A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
-        :param pulumi.Input[Union['ExadataInfrastructureMaintenanceVersionPreferencesArgs', 'ExadataInfrastructureMaintenanceVersionPreferencesArgsDict']] maintenance_version_preferences: (Updatable) The preferences for target versions of future maintenance runs.
+        :param pulumi.Input[Union['ExadataInfrastructureMaintenanceVersionPreferencesArgs', 'ExadataInfrastructureMaintenanceVersionPreferencesArgsDict', 'outputs.ExadataInfrastructureMaintenanceVersionPreferences']] maintenance_version_preferences: (Updatable) The preferences for target versions of future maintenance runs.
                Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans. If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
-        :param pulumi.Input[Union['ExadataInfrastructureMaintenanceWindowArgs', 'ExadataInfrastructureMaintenanceWindowArgsDict']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Union['ExadataInfrastructureMaintenanceWindowArgs', 'ExadataInfrastructureMaintenanceWindowArgsDict', 'outputs.ExadataInfrastructureMaintenanceWindow']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.int] max_cpu_count: The total number of CPU cores available.
         :param pulumi.Input[_builtins.float] max_data_storage_in_tbs: The total available DATA disk group size.
         :param pulumi.Input[_builtins.int] max_db_node_storage_in_gbs: The total local node storage available in GBs.
@@ -1870,7 +1870,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] monthly_db_server_version: The monthly software version of the database servers (dom0) in the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] multi_rack_configuration_file: (Updatable) The base64 encoded Multi-Rack configuration json file.
         :param pulumi.Input[_builtins.str] netmask: (Updatable) The netmask for the control plane network.
-        :param pulumi.Input[Union['ExadataInfrastructureNetworkBondingModeDetailsArgs', 'ExadataInfrastructureNetworkBondingModeDetailsArgsDict']] network_bonding_mode_details: (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
+        :param pulumi.Input[Union['ExadataInfrastructureNetworkBondingModeDetailsArgs', 'ExadataInfrastructureNetworkBondingModeDetailsArgsDict', 'outputs.ExadataInfrastructureNetworkBondingModeDetails']] network_bonding_mode_details: (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ntp_servers: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
         :param pulumi.Input[_builtins.str] rack_serial_number: The serial number for the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.

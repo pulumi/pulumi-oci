@@ -175,7 +175,7 @@ class AwaitableGetPatchesResult(GetPatchesResult):
 
 
 def get_patches(compartment_id: Optional[_builtins.str] = None,
-                filters: Optional[Sequence[Union['GetPatchesFilterArgs', 'GetPatchesFilterArgsDict']]] = None,
+                filters: Optional[Sequence[Union['GetPatchesFilterArgs', 'GetPatchesFilterArgsDict', 'outputs.GetPatchesFilterResult']]] = None,
                 id: Optional[_builtins.str] = None,
                 name: Optional[_builtins.str] = None,
                 patch_type_id: Optional[_builtins.str] = None,
@@ -256,7 +256,7 @@ def get_patches(compartment_id: Optional[_builtins.str] = None,
         type=pulumi.get(__ret__, 'type'),
         version=pulumi.get(__ret__, 'version'))
 def get_patches_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPatchesFilterArgs', 'GetPatchesFilterArgsDict']]]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPatchesFilterArgs', 'GetPatchesFilterArgsDict', 'outputs.GetPatchesFilterResult']]]]] = None,
                        id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        patch_type_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

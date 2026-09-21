@@ -150,7 +150,7 @@ def get_at_customer_ccc_infrastructures(access_level: Optional[_builtins.str] = 
                                         compartment_id_in_subtree: Optional[_builtins.bool] = None,
                                         display_name: Optional[_builtins.str] = None,
                                         display_name_contains: Optional[_builtins.str] = None,
-                                        filters: Optional[Sequence[Union['GetAtCustomerCccInfrastructuresFilterArgs', 'GetAtCustomerCccInfrastructuresFilterArgsDict']]] = None,
+                                        filters: Optional[Sequence[Union['GetAtCustomerCccInfrastructuresFilterArgs', 'GetAtCustomerCccInfrastructuresFilterArgsDict', 'outputs.GetAtCustomerCccInfrastructuresFilterResult']]] = None,
                                         state: Optional[_builtins.str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAtCustomerCccInfrastructuresResult:
     """
@@ -211,7 +211,7 @@ def get_at_customer_ccc_infrastructures_output(access_level: pulumi.Input[Option
                                                compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAtCustomerCccInfrastructuresFilterArgs', 'GetAtCustomerCccInfrastructuresFilterArgsDict']]]]] = None,
+                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAtCustomerCccInfrastructuresFilterArgs', 'GetAtCustomerCccInfrastructuresFilterArgsDict', 'outputs.GetAtCustomerCccInfrastructuresFilterResult']]]]] = None,
                                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAtCustomerCccInfrastructuresResult]:
     """

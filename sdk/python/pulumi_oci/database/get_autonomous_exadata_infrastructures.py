@@ -123,7 +123,7 @@ class AwaitableGetAutonomousExadataInfrastructuresResult(GetAutonomousExadataInf
 def get_autonomous_exadata_infrastructures(availability_domain: Optional[_builtins.str] = None,
                                            compartment_id: Optional[_builtins.str] = None,
                                            display_name: Optional[_builtins.str] = None,
-                                           filters: Optional[Sequence[Union['GetAutonomousExadataInfrastructuresFilterArgs', 'GetAutonomousExadataInfrastructuresFilterArgsDict']]] = None,
+                                           filters: Optional[Sequence[Union['GetAutonomousExadataInfrastructuresFilterArgs', 'GetAutonomousExadataInfrastructuresFilterArgsDict', 'outputs.GetAutonomousExadataInfrastructuresFilterResult']]] = None,
                                            state: Optional[_builtins.str] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousExadataInfrastructuresResult:
     """
@@ -169,7 +169,7 @@ def get_autonomous_exadata_infrastructures(availability_domain: Optional[_builti
 def get_autonomous_exadata_infrastructures_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousExadataInfrastructuresFilterArgs', 'GetAutonomousExadataInfrastructuresFilterArgsDict']]]]] = None,
+                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousExadataInfrastructuresFilterArgs', 'GetAutonomousExadataInfrastructuresFilterArgsDict', 'outputs.GetAutonomousExadataInfrastructuresFilterResult']]]]] = None,
                                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousExadataInfrastructuresResult]:
     """

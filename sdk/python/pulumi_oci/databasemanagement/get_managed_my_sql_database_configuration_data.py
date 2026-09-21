@@ -81,7 +81,7 @@ class AwaitableGetManagedMySqlDatabaseConfigurationDataResult(GetManagedMySqlDat
             my_sql_configuration_data_collections=self.my_sql_configuration_data_collections)
 
 
-def get_managed_my_sql_database_configuration_data(filters: Optional[Sequence[Union['GetManagedMySqlDatabaseConfigurationDataFilterArgs', 'GetManagedMySqlDatabaseConfigurationDataFilterArgsDict']]] = None,
+def get_managed_my_sql_database_configuration_data(filters: Optional[Sequence[Union['GetManagedMySqlDatabaseConfigurationDataFilterArgs', 'GetManagedMySqlDatabaseConfigurationDataFilterArgsDict', 'outputs.GetManagedMySqlDatabaseConfigurationDataFilterResult']]] = None,
                                                    managed_my_sql_database_id: Optional[_builtins.str] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedMySqlDatabaseConfigurationDataResult:
     """
@@ -114,7 +114,7 @@ def get_managed_my_sql_database_configuration_data(filters: Optional[Sequence[Un
         id=pulumi.get(__ret__, 'id'),
         managed_my_sql_database_id=pulumi.get(__ret__, 'managed_my_sql_database_id'),
         my_sql_configuration_data_collections=pulumi.get(__ret__, 'my_sql_configuration_data_collections'))
-def get_managed_my_sql_database_configuration_data_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedMySqlDatabaseConfigurationDataFilterArgs', 'GetManagedMySqlDatabaseConfigurationDataFilterArgsDict']]]]] = None,
+def get_managed_my_sql_database_configuration_data_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedMySqlDatabaseConfigurationDataFilterArgs', 'GetManagedMySqlDatabaseConfigurationDataFilterArgsDict', 'outputs.GetManagedMySqlDatabaseConfigurationDataFilterResult']]]]] = None,
                                                           managed_my_sql_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedMySqlDatabaseConfigurationDataResult]:
     """

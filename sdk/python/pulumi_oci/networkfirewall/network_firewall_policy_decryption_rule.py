@@ -376,12 +376,12 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: pulumi.Input[Optional[_builtins.str]] = None,
-                 condition: pulumi.Input[Optional[Union['NetworkFirewallPolicyDecryptionRuleConditionArgs', 'NetworkFirewallPolicyDecryptionRuleConditionArgsDict']]] = None,
+                 condition: pulumi.Input[Optional[Union['NetworkFirewallPolicyDecryptionRuleConditionArgs', 'NetworkFirewallPolicyDecryptionRuleConditionArgsDict', 'outputs.NetworkFirewallPolicyDecryptionRuleCondition']]] = None,
                  decryption_profile: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 position: pulumi.Input[Optional[Union['NetworkFirewallPolicyDecryptionRulePositionArgs', 'NetworkFirewallPolicyDecryptionRulePositionArgsDict']]] = None,
+                 position: pulumi.Input[Optional[Union['NetworkFirewallPolicyDecryptionRulePositionArgs', 'NetworkFirewallPolicyDecryptionRulePositionArgsDict', 'outputs.NetworkFirewallPolicyDecryptionRulePosition']]] = None,
                  priority_order: pulumi.Input[Optional[_builtins.str]] = None,
                  secret: pulumi.Input[Optional[_builtins.str]] = None,
                  secrets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -435,12 +435,12 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] action: (Updatable) Action:
                * NO_DECRYPT - Matching traffic is not decrypted.
                * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
-        :param pulumi.Input[Union['NetworkFirewallPolicyDecryptionRuleConditionArgs', 'NetworkFirewallPolicyDecryptionRuleConditionArgsDict']] condition: (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
+        :param pulumi.Input[Union['NetworkFirewallPolicyDecryptionRuleConditionArgs', 'NetworkFirewallPolicyDecryptionRuleConditionArgsDict', 'outputs.NetworkFirewallPolicyDecryptionRuleCondition']] condition: (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
         :param pulumi.Input[_builtins.str] decryption_profile: (Updatable) The name of the decryption profile to use.
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the decryption rule. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name for the decryption rule, must be unique within the policy.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[Union['NetworkFirewallPolicyDecryptionRulePositionArgs', 'NetworkFirewallPolicyDecryptionRulePositionArgsDict']] position: (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
+        :param pulumi.Input[Union['NetworkFirewallPolicyDecryptionRulePositionArgs', 'NetworkFirewallPolicyDecryptionRulePositionArgsDict', 'outputs.NetworkFirewallPolicyDecryptionRulePosition']] position: (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
         :param pulumi.Input[_builtins.str] secret: (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] secrets: (Updatable) An array of mapped secrets. Its `type` must match that of the specified decryption profile.
         """
@@ -510,12 +510,12 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: pulumi.Input[Optional[_builtins.str]] = None,
-                 condition: pulumi.Input[Optional[Union['NetworkFirewallPolicyDecryptionRuleConditionArgs', 'NetworkFirewallPolicyDecryptionRuleConditionArgsDict']]] = None,
+                 condition: pulumi.Input[Optional[Union['NetworkFirewallPolicyDecryptionRuleConditionArgs', 'NetworkFirewallPolicyDecryptionRuleConditionArgsDict', 'outputs.NetworkFirewallPolicyDecryptionRuleCondition']]] = None,
                  decryption_profile: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 position: pulumi.Input[Optional[Union['NetworkFirewallPolicyDecryptionRulePositionArgs', 'NetworkFirewallPolicyDecryptionRulePositionArgsDict']]] = None,
+                 position: pulumi.Input[Optional[Union['NetworkFirewallPolicyDecryptionRulePositionArgs', 'NetworkFirewallPolicyDecryptionRulePositionArgsDict', 'outputs.NetworkFirewallPolicyDecryptionRulePosition']]] = None,
                  priority_order: pulumi.Input[Optional[_builtins.str]] = None,
                  secret: pulumi.Input[Optional[_builtins.str]] = None,
                  secrets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -556,13 +556,13 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             action: pulumi.Input[Optional[_builtins.str]] = None,
-            condition: pulumi.Input[Optional[Union['NetworkFirewallPolicyDecryptionRuleConditionArgs', 'NetworkFirewallPolicyDecryptionRuleConditionArgsDict']]] = None,
+            condition: pulumi.Input[Optional[Union['NetworkFirewallPolicyDecryptionRuleConditionArgs', 'NetworkFirewallPolicyDecryptionRuleConditionArgsDict', 'outputs.NetworkFirewallPolicyDecryptionRuleCondition']]] = None,
             decryption_profile: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
             parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
-            position: pulumi.Input[Optional[Union['NetworkFirewallPolicyDecryptionRulePositionArgs', 'NetworkFirewallPolicyDecryptionRulePositionArgsDict']]] = None,
+            position: pulumi.Input[Optional[Union['NetworkFirewallPolicyDecryptionRulePositionArgs', 'NetworkFirewallPolicyDecryptionRulePositionArgsDict', 'outputs.NetworkFirewallPolicyDecryptionRulePosition']]] = None,
             priority_order: pulumi.Input[Optional[_builtins.str]] = None,
             secret: pulumi.Input[Optional[_builtins.str]] = None,
             secrets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'NetworkFirewallPolicyDecryptionRule':
@@ -576,13 +576,13 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] action: (Updatable) Action:
                * NO_DECRYPT - Matching traffic is not decrypted.
                * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
-        :param pulumi.Input[Union['NetworkFirewallPolicyDecryptionRuleConditionArgs', 'NetworkFirewallPolicyDecryptionRuleConditionArgsDict']] condition: (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
+        :param pulumi.Input[Union['NetworkFirewallPolicyDecryptionRuleConditionArgs', 'NetworkFirewallPolicyDecryptionRuleConditionArgsDict', 'outputs.NetworkFirewallPolicyDecryptionRuleCondition']] condition: (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
         :param pulumi.Input[_builtins.str] decryption_profile: (Updatable) The name of the decryption profile to use.
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the decryption rule. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name for the decryption rule, must be unique within the policy.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] parent_resource_id: OCID of the Network Firewall Policy this decryption rule belongs to.
-        :param pulumi.Input[Union['NetworkFirewallPolicyDecryptionRulePositionArgs', 'NetworkFirewallPolicyDecryptionRulePositionArgsDict']] position: (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
+        :param pulumi.Input[Union['NetworkFirewallPolicyDecryptionRulePositionArgs', 'NetworkFirewallPolicyDecryptionRulePositionArgsDict', 'outputs.NetworkFirewallPolicyDecryptionRulePosition']] position: (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
         :param pulumi.Input[_builtins.str] secret: (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] secrets: (Updatable) An array of mapped secrets. Its `type` must match that of the specified decryption profile.
         """

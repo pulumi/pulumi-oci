@@ -772,10 +772,10 @@ class Volume(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autotune_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeAutotunePolicyArgs', 'VolumeAutotunePolicyArgsDict']]]]] = None,
+                 autotune_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeAutotunePolicyArgs', 'VolumeAutotunePolicyArgsDict', 'outputs.VolumeAutotunePolicy']]]]] = None,
                  availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 block_volume_replicas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeBlockVolumeReplicaArgs', 'VolumeBlockVolumeReplicaArgsDict']]]]] = None,
+                 block_volume_replicas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeBlockVolumeReplicaArgs', 'VolumeBlockVolumeReplicaArgsDict', 'outputs.VolumeBlockVolumeReplica']]]]] = None,
                  block_volume_replicas_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
                  cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -787,7 +787,7 @@ class Volume(pulumi.CustomResource):
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
                  size_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
-                 source_details: pulumi.Input[Optional[Union['VolumeSourceDetailsArgs', 'VolumeSourceDetailsArgsDict']]] = None,
+                 source_details: pulumi.Input[Optional[Union['VolumeSourceDetailsArgs', 'VolumeSourceDetailsArgsDict', 'outputs.VolumeSourceDetails']]] = None,
                  volume_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vpus_per_gb: pulumi.Input[Optional[_builtins.str]] = None,
                  xrc_kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -868,10 +868,10 @@ class Volume(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeAutotunePolicyArgs', 'VolumeAutotunePolicyArgsDict']]]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeAutotunePolicyArgs', 'VolumeAutotunePolicyArgsDict', 'outputs.VolumeAutotunePolicy']]]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a volume.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeBlockVolumeReplicaArgs', 'VolumeBlockVolumeReplicaArgsDict']]]] block_volume_replicas: (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeBlockVolumeReplicaArgs', 'VolumeBlockVolumeReplicaArgsDict', 'outputs.VolumeBlockVolumeReplica']]]] block_volume_replicas: (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The clusterPlacementGroup Id of the volume for volume placement.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the volume.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -882,7 +882,7 @@ class Volume(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param pulumi.Input[_builtins.str] size_in_gbs: (Updatable) The size of the volume in GBs.
         :param pulumi.Input[_builtins.str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
-        :param pulumi.Input[Union['VolumeSourceDetailsArgs', 'VolumeSourceDetailsArgsDict']] source_details: Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
+        :param pulumi.Input[Union['VolumeSourceDetailsArgs', 'VolumeSourceDetailsArgsDict', 'outputs.VolumeSourceDetails']] source_details: Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
         :param pulumi.Input[_builtins.str] volume_backup_id: The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
         :param pulumi.Input[_builtins.str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
                
@@ -987,10 +987,10 @@ class Volume(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autotune_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeAutotunePolicyArgs', 'VolumeAutotunePolicyArgsDict']]]]] = None,
+                 autotune_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeAutotunePolicyArgs', 'VolumeAutotunePolicyArgsDict', 'outputs.VolumeAutotunePolicy']]]]] = None,
                  availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 block_volume_replicas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeBlockVolumeReplicaArgs', 'VolumeBlockVolumeReplicaArgsDict']]]]] = None,
+                 block_volume_replicas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeBlockVolumeReplicaArgs', 'VolumeBlockVolumeReplicaArgsDict', 'outputs.VolumeBlockVolumeReplica']]]]] = None,
                  block_volume_replicas_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
                  cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1002,7 +1002,7 @@ class Volume(pulumi.CustomResource):
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
                  size_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
-                 source_details: pulumi.Input[Optional[Union['VolumeSourceDetailsArgs', 'VolumeSourceDetailsArgsDict']]] = None,
+                 source_details: pulumi.Input[Optional[Union['VolumeSourceDetailsArgs', 'VolumeSourceDetailsArgsDict', 'outputs.VolumeSourceDetails']]] = None,
                  volume_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vpus_per_gb: pulumi.Input[Optional[_builtins.str]] = None,
                  xrc_kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1055,10 +1055,10 @@ class Volume(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             auto_tuned_vpus_per_gb: pulumi.Input[Optional[_builtins.str]] = None,
-            autotune_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeAutotunePolicyArgs', 'VolumeAutotunePolicyArgsDict']]]]] = None,
+            autotune_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeAutotunePolicyArgs', 'VolumeAutotunePolicyArgsDict', 'outputs.VolumeAutotunePolicy']]]]] = None,
             availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
             backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-            block_volume_replicas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeBlockVolumeReplicaArgs', 'VolumeBlockVolumeReplicaArgsDict']]]]] = None,
+            block_volume_replicas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeBlockVolumeReplicaArgs', 'VolumeBlockVolumeReplicaArgsDict', 'outputs.VolumeBlockVolumeReplica']]]]] = None,
             block_volume_replicas_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
             cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1071,7 +1071,7 @@ class Volume(pulumi.CustomResource):
             kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
             size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
             size_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
-            source_details: pulumi.Input[Optional[Union['VolumeSourceDetailsArgs', 'VolumeSourceDetailsArgsDict']]] = None,
+            source_details: pulumi.Input[Optional[Union['VolumeSourceDetailsArgs', 'VolumeSourceDetailsArgsDict', 'outputs.VolumeSourceDetails']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1087,10 +1087,10 @@ class Volume(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] auto_tuned_vpus_per_gb: The number of Volume Performance Units per GB that this volume is effectively tuned to.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeAutotunePolicyArgs', 'VolumeAutotunePolicyArgsDict']]]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeAutotunePolicyArgs', 'VolumeAutotunePolicyArgsDict', 'outputs.VolumeAutotunePolicy']]]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a volume.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeBlockVolumeReplicaArgs', 'VolumeBlockVolumeReplicaArgsDict']]]] block_volume_replicas: (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeBlockVolumeReplicaArgs', 'VolumeBlockVolumeReplicaArgsDict', 'outputs.VolumeBlockVolumeReplica']]]] block_volume_replicas: (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The clusterPlacementGroup Id of the volume for volume placement.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the volume.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -1102,7 +1102,7 @@ class Volume(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param pulumi.Input[_builtins.str] size_in_gbs: (Updatable) The size of the volume in GBs.
         :param pulumi.Input[_builtins.str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
-        :param pulumi.Input[Union['VolumeSourceDetailsArgs', 'VolumeSourceDetailsArgsDict']] source_details: Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
+        :param pulumi.Input[Union['VolumeSourceDetailsArgs', 'VolumeSourceDetailsArgsDict', 'outputs.VolumeSourceDetails']] source_details: Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
         :param pulumi.Input[_builtins.str] state: The current state of a volume.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] time_created: The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

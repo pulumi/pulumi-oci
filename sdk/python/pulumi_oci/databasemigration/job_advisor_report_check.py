@@ -306,9 +306,9 @@ class JobAdvisorReportCheck(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             advisor_report_check_id: pulumi.Input[Optional[_builtins.str]] = None,
             is_reviewed: pulumi.Input[Optional[_builtins.bool]] = None,
-            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobAdvisorReportCheckItemArgs', 'JobAdvisorReportCheckItemArgsDict']]]]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobAdvisorReportCheckItemArgs', 'JobAdvisorReportCheckItemArgsDict', 'outputs.JobAdvisorReportCheckItem']]]]] = None,
             job_id: pulumi.Input[Optional[_builtins.str]] = None,
-            summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobAdvisorReportCheckSummaryArgs', 'JobAdvisorReportCheckSummaryArgsDict']]]]] = None) -> 'JobAdvisorReportCheck':
+            summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobAdvisorReportCheckSummaryArgs', 'JobAdvisorReportCheckSummaryArgsDict', 'outputs.JobAdvisorReportCheckSummary']]]]] = None) -> 'JobAdvisorReportCheck':
         """
         Get an existing JobAdvisorReportCheck resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -318,12 +318,12 @@ class JobAdvisorReportCheck(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] advisor_report_check_id: The ID of the advisor check
         :param pulumi.Input[_builtins.bool] is_reviewed: (Updatable) User flag for advisor report check.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['JobAdvisorReportCheckItemArgs', 'JobAdvisorReportCheckItemArgsDict']]]] items: Array of advisor check items.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['JobAdvisorReportCheckItemArgs', 'JobAdvisorReportCheckItemArgsDict', 'outputs.JobAdvisorReportCheckItem']]]] items: Array of advisor check items.
         :param pulumi.Input[_builtins.str] job_id: The OCID of the job
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[Union['JobAdvisorReportCheckSummaryArgs', 'JobAdvisorReportCheckSummaryArgsDict']]]] summaries: Pre-Migration extended advisor report summary.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['JobAdvisorReportCheckSummaryArgs', 'JobAdvisorReportCheckSummaryArgsDict', 'outputs.JobAdvisorReportCheckSummary']]]] summaries: Pre-Migration extended advisor report summary.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

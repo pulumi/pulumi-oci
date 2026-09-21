@@ -123,7 +123,7 @@ class AwaitableGetDeployStagesResult(GetDeployStagesResult):
 def get_deploy_stages(compartment_id: Optional[_builtins.str] = None,
                       deploy_pipeline_id: Optional[_builtins.str] = None,
                       display_name: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetDeployStagesFilterArgs', 'GetDeployStagesFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetDeployStagesFilterArgs', 'GetDeployStagesFilterArgsDict', 'outputs.GetDeployStagesFilterResult']]] = None,
                       id: Optional[_builtins.str] = None,
                       state: Optional[_builtins.str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeployStagesResult:
@@ -173,7 +173,7 @@ def get_deploy_stages(compartment_id: Optional[_builtins.str] = None,
 def get_deploy_stages_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              deploy_pipeline_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDeployStagesFilterArgs', 'GetDeployStagesFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDeployStagesFilterArgs', 'GetDeployStagesFilterArgsDict', 'outputs.GetDeployStagesFilterResult']]]]] = None,
                              id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeployStagesResult]:

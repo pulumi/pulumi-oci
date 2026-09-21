@@ -668,12 +668,12 @@ class Assessment(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentExcludeObjectArgs', 'AssessmentExcludeObjectArgsDict']]]]] = None,
+                 exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentExcludeObjectArgs', 'AssessmentExcludeObjectArgsDict', 'outputs.AssessmentExcludeObject']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 include_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentIncludeObjectArgs', 'AssessmentIncludeObjectArgsDict']]]]] = None,
+                 include_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentIncludeObjectArgs', 'AssessmentIncludeObjectArgsDict', 'outputs.AssessmentIncludeObject']]]]] = None,
                  network_speed_megabit_per_second: pulumi.Input[Optional[_builtins.str]] = None,
-                 source_database_connection: pulumi.Input[Optional[Union['AssessmentSourceDatabaseConnectionArgs', 'AssessmentSourceDatabaseConnectionArgsDict']]] = None,
-                 target_database_connection: pulumi.Input[Optional[Union['AssessmentTargetDatabaseConnectionArgs', 'AssessmentTargetDatabaseConnectionArgsDict']]] = None,
+                 source_database_connection: pulumi.Input[Optional[Union['AssessmentSourceDatabaseConnectionArgs', 'AssessmentSourceDatabaseConnectionArgsDict', 'outputs.AssessmentSourceDatabaseConnection']]] = None,
+                 target_database_connection: pulumi.Input[Optional[Union['AssessmentTargetDatabaseConnectionArgs', 'AssessmentTargetDatabaseConnectionArgsDict', 'outputs.AssessmentTargetDatabaseConnection']]] = None,
                  __props__=None):
         """
         This resource provides the Assessment resource in Oracle Cloud Infrastructure Database Migration service.
@@ -753,12 +753,12 @@ class Assessment(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AssessmentExcludeObjectArgs', 'AssessmentExcludeObjectArgsDict']]]] exclude_objects: Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AssessmentExcludeObjectArgs', 'AssessmentExcludeObjectArgsDict', 'outputs.AssessmentExcludeObject']]]] exclude_objects: Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AssessmentIncludeObjectArgs', 'AssessmentIncludeObjectArgsDict']]]] include_objects: Database objects to include from migration, cannot be specified alongside 'excludeObjects'
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AssessmentIncludeObjectArgs', 'AssessmentIncludeObjectArgsDict', 'outputs.AssessmentIncludeObject']]]] include_objects: Database objects to include from migration, cannot be specified alongside 'excludeObjects'
         :param pulumi.Input[_builtins.str] network_speed_megabit_per_second: (Updatable) A network speed in Megabits per second.
-        :param pulumi.Input[Union['AssessmentSourceDatabaseConnectionArgs', 'AssessmentSourceDatabaseConnectionArgsDict']] source_database_connection: (Updatable) Source Assessment Connection object
-        :param pulumi.Input[Union['AssessmentTargetDatabaseConnectionArgs', 'AssessmentTargetDatabaseConnectionArgsDict']] target_database_connection: (Updatable) Target Assessment Connection object
+        :param pulumi.Input[Union['AssessmentSourceDatabaseConnectionArgs', 'AssessmentSourceDatabaseConnectionArgsDict', 'outputs.AssessmentSourceDatabaseConnection']] source_database_connection: (Updatable) Source Assessment Connection object
+        :param pulumi.Input[Union['AssessmentTargetDatabaseConnectionArgs', 'AssessmentTargetDatabaseConnectionArgsDict', 'outputs.AssessmentTargetDatabaseConnection']] target_database_connection: (Updatable) Target Assessment Connection object
         """
         ...
     @overload
@@ -857,12 +857,12 @@ class Assessment(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentExcludeObjectArgs', 'AssessmentExcludeObjectArgsDict']]]]] = None,
+                 exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentExcludeObjectArgs', 'AssessmentExcludeObjectArgsDict', 'outputs.AssessmentExcludeObject']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 include_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentIncludeObjectArgs', 'AssessmentIncludeObjectArgsDict']]]]] = None,
+                 include_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentIncludeObjectArgs', 'AssessmentIncludeObjectArgsDict', 'outputs.AssessmentIncludeObject']]]]] = None,
                  network_speed_megabit_per_second: pulumi.Input[Optional[_builtins.str]] = None,
-                 source_database_connection: pulumi.Input[Optional[Union['AssessmentSourceDatabaseConnectionArgs', 'AssessmentSourceDatabaseConnectionArgsDict']]] = None,
-                 target_database_connection: pulumi.Input[Optional[Union['AssessmentTargetDatabaseConnectionArgs', 'AssessmentTargetDatabaseConnectionArgsDict']]] = None,
+                 source_database_connection: pulumi.Input[Optional[Union['AssessmentSourceDatabaseConnectionArgs', 'AssessmentSourceDatabaseConnectionArgsDict', 'outputs.AssessmentSourceDatabaseConnection']]] = None,
+                 target_database_connection: pulumi.Input[Optional[Union['AssessmentTargetDatabaseConnectionArgs', 'AssessmentTargetDatabaseConnectionArgsDict', 'outputs.AssessmentTargetDatabaseConnection']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -932,16 +932,16 @@ class Assessment(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentExcludeObjectArgs', 'AssessmentExcludeObjectArgsDict']]]]] = None,
+            exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentExcludeObjectArgs', 'AssessmentExcludeObjectArgsDict', 'outputs.AssessmentExcludeObject']]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            include_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentIncludeObjectArgs', 'AssessmentIncludeObjectArgsDict']]]]] = None,
+            include_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentIncludeObjectArgs', 'AssessmentIncludeObjectArgsDict', 'outputs.AssessmentIncludeObject']]]]] = None,
             is_cdb_supported: pulumi.Input[Optional[_builtins.bool]] = None,
             migration_id: pulumi.Input[Optional[_builtins.str]] = None,
             network_speed_megabit_per_second: pulumi.Input[Optional[_builtins.str]] = None,
-            source_database_connection: pulumi.Input[Optional[Union['AssessmentSourceDatabaseConnectionArgs', 'AssessmentSourceDatabaseConnectionArgsDict']]] = None,
+            source_database_connection: pulumi.Input[Optional[Union['AssessmentSourceDatabaseConnectionArgs', 'AssessmentSourceDatabaseConnectionArgsDict', 'outputs.AssessmentSourceDatabaseConnection']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            target_database_connection: pulumi.Input[Optional[Union['AssessmentTargetDatabaseConnectionArgs', 'AssessmentTargetDatabaseConnectionArgsDict']]] = None,
+            target_database_connection: pulumi.Input[Optional[Union['AssessmentTargetDatabaseConnectionArgs', 'AssessmentTargetDatabaseConnectionArgsDict', 'outputs.AssessmentTargetDatabaseConnection']]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'Assessment':
         """
@@ -962,16 +962,16 @@ class Assessment(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AssessmentExcludeObjectArgs', 'AssessmentExcludeObjectArgsDict']]]] exclude_objects: Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AssessmentExcludeObjectArgs', 'AssessmentExcludeObjectArgsDict', 'outputs.AssessmentExcludeObject']]]] exclude_objects: Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AssessmentIncludeObjectArgs', 'AssessmentIncludeObjectArgsDict']]]] include_objects: Database objects to include from migration, cannot be specified alongside 'excludeObjects'
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AssessmentIncludeObjectArgs', 'AssessmentIncludeObjectArgsDict', 'outputs.AssessmentIncludeObject']]]] include_objects: Database objects to include from migration, cannot be specified alongside 'excludeObjects'
         :param pulumi.Input[_builtins.bool] is_cdb_supported: True if CDB should be defined, false otherwise.
         :param pulumi.Input[_builtins.str] migration_id: The OCID of the resource being referenced.
         :param pulumi.Input[_builtins.str] network_speed_megabit_per_second: (Updatable) A network speed in Megabits per second.
-        :param pulumi.Input[Union['AssessmentSourceDatabaseConnectionArgs', 'AssessmentSourceDatabaseConnectionArgsDict']] source_database_connection: (Updatable) Source Assessment Connection object
+        :param pulumi.Input[Union['AssessmentSourceDatabaseConnectionArgs', 'AssessmentSourceDatabaseConnectionArgsDict', 'outputs.AssessmentSourceDatabaseConnection']] source_database_connection: (Updatable) Source Assessment Connection object
         :param pulumi.Input[_builtins.str] state: The current state of the Assessment resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Union['AssessmentTargetDatabaseConnectionArgs', 'AssessmentTargetDatabaseConnectionArgsDict']] target_database_connection: (Updatable) Target Assessment Connection object
+        :param pulumi.Input[Union['AssessmentTargetDatabaseConnectionArgs', 'AssessmentTargetDatabaseConnectionArgsDict', 'outputs.AssessmentTargetDatabaseConnection']] target_database_connection: (Updatable) Target Assessment Connection object
         :param pulumi.Input[_builtins.str] time_created: An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[_builtins.str] time_updated: An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
         """

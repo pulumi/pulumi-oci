@@ -500,10 +500,10 @@ class Target(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
-                 target_detector_recipes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetTargetDetectorRecipeArgs', 'TargetTargetDetectorRecipeArgsDict']]]]] = None,
+                 target_detector_recipes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetTargetDetectorRecipeArgs', 'TargetTargetDetectorRecipeArgsDict', 'outputs.TargetTargetDetectorRecipe']]]]] = None,
                  target_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
                  target_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 target_responder_recipes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetTargetResponderRecipeArgs', 'TargetTargetResponderRecipeArgsDict']]]]] = None,
+                 target_responder_recipes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetTargetResponderRecipeArgs', 'TargetTargetResponderRecipeArgsDict', 'outputs.TargetTargetResponderRecipe']]]]] = None,
                  __props__=None):
         """
         This resource provides the Target resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -584,10 +584,10 @@ class Target(pulumi.CustomResource):
                
                Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] state: (Updatable) The enablement state of the detector rule
-        :param pulumi.Input[Sequence[pulumi.Input[Union['TargetTargetDetectorRecipeArgs', 'TargetTargetDetectorRecipeArgsDict']]]] target_detector_recipes: (Updatable) List of detector recipes to attach to target
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TargetTargetDetectorRecipeArgs', 'TargetTargetDetectorRecipeArgsDict', 'outputs.TargetTargetDetectorRecipe']]]] target_detector_recipes: (Updatable) List of detector recipes to attach to target
         :param pulumi.Input[_builtins.str] target_resource_id: Resource ID which the target uses to monitor
         :param pulumi.Input[_builtins.str] target_resource_type: Type of resource that target support (COMPARTMENT/FACLOUD)
-        :param pulumi.Input[Sequence[pulumi.Input[Union['TargetTargetResponderRecipeArgs', 'TargetTargetResponderRecipeArgsDict']]]] target_responder_recipes: (Updatable) List of responder recipes to attach to target
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TargetTargetResponderRecipeArgs', 'TargetTargetResponderRecipeArgsDict', 'outputs.TargetTargetResponderRecipe']]]] target_responder_recipes: (Updatable) List of responder recipes to attach to target
         """
         ...
     @overload
@@ -681,10 +681,10 @@ class Target(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
-                 target_detector_recipes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetTargetDetectorRecipeArgs', 'TargetTargetDetectorRecipeArgsDict']]]]] = None,
+                 target_detector_recipes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetTargetDetectorRecipeArgs', 'TargetTargetDetectorRecipeArgsDict', 'outputs.TargetTargetDetectorRecipe']]]]] = None,
                  target_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
                  target_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 target_responder_recipes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetTargetResponderRecipeArgs', 'TargetTargetResponderRecipeArgsDict']]]]] = None,
+                 target_responder_recipes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetTargetResponderRecipeArgs', 'TargetTargetResponderRecipeArgsDict', 'outputs.TargetTargetResponderRecipe']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -739,11 +739,11 @@ class Target(pulumi.CustomResource):
             recipe_count: pulumi.Input[Optional[_builtins.int]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            target_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetTargetDetailArgs', 'TargetTargetDetailArgsDict']]]]] = None,
-            target_detector_recipes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetTargetDetectorRecipeArgs', 'TargetTargetDetectorRecipeArgsDict']]]]] = None,
+            target_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetTargetDetailArgs', 'TargetTargetDetailArgsDict', 'outputs.TargetTargetDetail']]]]] = None,
+            target_detector_recipes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetTargetDetectorRecipeArgs', 'TargetTargetDetectorRecipeArgsDict', 'outputs.TargetTargetDetectorRecipe']]]]] = None,
             target_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
             target_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
-            target_responder_recipes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetTargetResponderRecipeArgs', 'TargetTargetResponderRecipeArgsDict']]]]] = None,
+            target_responder_recipes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetTargetResponderRecipeArgs', 'TargetTargetResponderRecipeArgsDict', 'outputs.TargetTargetResponderRecipe']]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'Target':
         """
@@ -769,11 +769,11 @@ class Target(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] recipe_count: Total number of recipes attached to target
         :param pulumi.Input[_builtins.str] state: (Updatable) The enablement state of the detector rule
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['TargetTargetDetailArgs', 'TargetTargetDetailArgsDict']]]] target_details: Details specific to the target type.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['TargetTargetDetectorRecipeArgs', 'TargetTargetDetectorRecipeArgsDict']]]] target_detector_recipes: (Updatable) List of detector recipes to attach to target
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TargetTargetDetailArgs', 'TargetTargetDetailArgsDict', 'outputs.TargetTargetDetail']]]] target_details: Details specific to the target type.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TargetTargetDetectorRecipeArgs', 'TargetTargetDetectorRecipeArgsDict', 'outputs.TargetTargetDetectorRecipe']]]] target_detector_recipes: (Updatable) List of detector recipes to attach to target
         :param pulumi.Input[_builtins.str] target_resource_id: Resource ID which the target uses to monitor
         :param pulumi.Input[_builtins.str] target_resource_type: Type of resource that target support (COMPARTMENT/FACLOUD)
-        :param pulumi.Input[Sequence[pulumi.Input[Union['TargetTargetResponderRecipeArgs', 'TargetTargetResponderRecipeArgsDict']]]] target_responder_recipes: (Updatable) List of responder recipes to attach to target
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TargetTargetResponderRecipeArgs', 'TargetTargetResponderRecipeArgsDict', 'outputs.TargetTargetResponderRecipe']]]] target_responder_recipes: (Updatable) List of responder recipes to attach to target
         :param pulumi.Input[_builtins.str] time_created: The date and time the target was created. Format defined by RFC3339.
         :param pulumi.Input[_builtins.str] time_updated: The date and time the target was last updated. Format defined by RFC3339.
         """

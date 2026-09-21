@@ -380,8 +380,8 @@ class DynamicSet(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  match_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 matching_rule: pulumi.Input[Optional[Union['DynamicSetMatchingRuleArgs', 'DynamicSetMatchingRuleArgsDict']]] = None,
-                 target_compartments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DynamicSetTargetCompartmentArgs', 'DynamicSetTargetCompartmentArgsDict']]]]] = None,
+                 matching_rule: pulumi.Input[Optional[Union['DynamicSetMatchingRuleArgs', 'DynamicSetMatchingRuleArgsDict', 'outputs.DynamicSetMatchingRule']]] = None,
+                 target_compartments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DynamicSetTargetCompartmentArgs', 'DynamicSetTargetCompartmentArgsDict', 'outputs.DynamicSetTargetCompartment']]]]] = None,
                  __props__=None):
         """
         This resource provides the Dynamic Set resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -448,8 +448,8 @@ class DynamicSet(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) User-friendly name for the dynamic set.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] match_type: (Updatable) Include either any or all attributes.
-        :param pulumi.Input[Union['DynamicSetMatchingRuleArgs', 'DynamicSetMatchingRuleArgsDict']] matching_rule: (Updatable) An object that defines the set of rules that identifies the target instances in a dynamic set.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DynamicSetTargetCompartmentArgs', 'DynamicSetTargetCompartmentArgsDict']]]] target_compartments: (Updatable) The list of compartment details.
+        :param pulumi.Input[Union['DynamicSetMatchingRuleArgs', 'DynamicSetMatchingRuleArgsDict', 'outputs.DynamicSetMatchingRule']] matching_rule: (Updatable) An object that defines the set of rules that identifies the target instances in a dynamic set.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DynamicSetTargetCompartmentArgs', 'DynamicSetTargetCompartmentArgsDict', 'outputs.DynamicSetTargetCompartment']]]] target_compartments: (Updatable) The list of compartment details.
         """
         ...
     @overload
@@ -535,8 +535,8 @@ class DynamicSet(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  match_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 matching_rule: pulumi.Input[Optional[Union['DynamicSetMatchingRuleArgs', 'DynamicSetMatchingRuleArgsDict']]] = None,
-                 target_compartments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DynamicSetTargetCompartmentArgs', 'DynamicSetTargetCompartmentArgsDict']]]]] = None,
+                 matching_rule: pulumi.Input[Optional[Union['DynamicSetMatchingRuleArgs', 'DynamicSetMatchingRuleArgsDict', 'outputs.DynamicSetMatchingRule']]] = None,
+                 target_compartments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DynamicSetTargetCompartmentArgs', 'DynamicSetTargetCompartmentArgsDict', 'outputs.DynamicSetTargetCompartment']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -583,11 +583,11 @@ class DynamicSet(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             match_type: pulumi.Input[Optional[_builtins.str]] = None,
-            matching_rule: pulumi.Input[Optional[Union['DynamicSetMatchingRuleArgs', 'DynamicSetMatchingRuleArgsDict']]] = None,
+            matching_rule: pulumi.Input[Optional[Union['DynamicSetMatchingRuleArgs', 'DynamicSetMatchingRuleArgsDict', 'outputs.DynamicSetMatchingRule']]] = None,
             scheduled_job_count: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            target_compartments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DynamicSetTargetCompartmentArgs', 'DynamicSetTargetCompartmentArgsDict']]]]] = None,
+            target_compartments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DynamicSetTargetCompartmentArgs', 'DynamicSetTargetCompartmentArgsDict', 'outputs.DynamicSetTargetCompartment']]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'DynamicSet':
         """
@@ -603,11 +603,11 @@ class DynamicSet(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) User-friendly name for the dynamic set.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] match_type: (Updatable) Include either any or all attributes.
-        :param pulumi.Input[Union['DynamicSetMatchingRuleArgs', 'DynamicSetMatchingRuleArgsDict']] matching_rule: (Updatable) An object that defines the set of rules that identifies the target instances in a dynamic set.
+        :param pulumi.Input[Union['DynamicSetMatchingRuleArgs', 'DynamicSetMatchingRuleArgsDict', 'outputs.DynamicSetMatchingRule']] matching_rule: (Updatable) An object that defines the set of rules that identifies the target instances in a dynamic set.
         :param pulumi.Input[_builtins.str] scheduled_job_count: Number of scheduled jobs currently targeting this dynamic set.
         :param pulumi.Input[_builtins.str] state: The current state of the event.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DynamicSetTargetCompartmentArgs', 'DynamicSetTargetCompartmentArgsDict']]]] target_compartments: (Updatable) The list of compartment details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DynamicSetTargetCompartmentArgs', 'DynamicSetTargetCompartmentArgsDict', 'outputs.DynamicSetTargetCompartment']]]] target_compartments: (Updatable) The list of compartment details.
         :param pulumi.Input[_builtins.str] time_created: The date and time the dynamic set was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[_builtins.str] time_updated: The date and time the dynamic set was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """

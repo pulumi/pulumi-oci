@@ -98,7 +98,7 @@ class AwaitableGetManagementSavedSearchesResult(GetManagementSavedSearchesResult
 
 def get_management_saved_searches(compartment_id: Optional[_builtins.str] = None,
                                   display_name: Optional[_builtins.str] = None,
-                                  filters: Optional[Sequence[Union['GetManagementSavedSearchesFilterArgs', 'GetManagementSavedSearchesFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetManagementSavedSearchesFilterArgs', 'GetManagementSavedSearchesFilterArgsDict', 'outputs.GetManagementSavedSearchesFilterResult']]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementSavedSearchesResult:
     """
     This data source provides the list of Management Saved Searches in Oracle Cloud Infrastructure Management Dashboard service.
@@ -134,7 +134,7 @@ def get_management_saved_searches(compartment_id: Optional[_builtins.str] = None
         management_saved_search_collections=pulumi.get(__ret__, 'management_saved_search_collections'))
 def get_management_saved_searches_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagementSavedSearchesFilterArgs', 'GetManagementSavedSearchesFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagementSavedSearchesFilterArgs', 'GetManagementSavedSearchesFilterArgsDict', 'outputs.GetManagementSavedSearchesFilterResult']]]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementSavedSearchesResult]:
     """
     This data source provides the list of Management Saved Searches in Oracle Cloud Infrastructure Management Dashboard service.

@@ -175,7 +175,7 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
                  enable_external_pluggable_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
                  external_pluggable_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  feature: pulumi.Input[Optional[_builtins.str]] = None,
-                 feature_details: pulumi.Input[Optional[Union['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs', 'ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
+                 feature_details: pulumi.Input[Optional[Union['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs', 'ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgsDict', 'outputs.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetails']]] = None,
                  __props__=None):
         """
         This resource provides the Externalpluggabledatabase External Pluggable Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
@@ -213,7 +213,7 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] external_pluggable_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external pluggable database.
-        :param pulumi.Input[Union['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs', 'ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgsDict']] feature_details: The details required to enable the specified Database Management feature.
+        :param pulumi.Input[Union['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs', 'ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgsDict', 'outputs.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetails']] feature_details: The details required to enable the specified Database Management feature.
         """
         ...
     @overload
@@ -268,7 +268,7 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
                  enable_external_pluggable_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
                  external_pluggable_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  feature: pulumi.Input[Optional[_builtins.str]] = None,
-                 feature_details: pulumi.Input[Optional[Union['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs', 'ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
+                 feature_details: pulumi.Input[Optional[Union['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs', 'ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgsDict', 'outputs.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetails']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -299,7 +299,7 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
             enable_external_pluggable_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
             external_pluggable_database_id: pulumi.Input[Optional[_builtins.str]] = None,
             feature: pulumi.Input[Optional[_builtins.str]] = None,
-            feature_details: pulumi.Input[Optional[Union['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs', 'ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgsDict']]] = None) -> 'ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement':
+            feature_details: pulumi.Input[Optional[Union['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs', 'ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgsDict', 'outputs.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetails']]] = None) -> 'ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement':
         """
         Get an existing ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -312,7 +312,7 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] external_pluggable_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external pluggable database.
-        :param pulumi.Input[Union['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs', 'ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgsDict']] feature_details: The details required to enable the specified Database Management feature.
+        :param pulumi.Input[Union['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs', 'ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgsDict', 'outputs.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetails']] feature_details: The details required to enable the specified Database Management feature.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

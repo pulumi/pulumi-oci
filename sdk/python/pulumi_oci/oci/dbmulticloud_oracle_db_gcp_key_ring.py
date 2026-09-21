@@ -681,7 +681,7 @@ class DbmulticloudOracleDbGcpKeyRing(pulumi.CustomResource):
             location: pulumi.Input[Optional[_builtins.str]] = None,
             oracle_db_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
             properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            replication_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgs', 'DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgsDict']]]]] = None,
+            replication_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgs', 'DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgsDict', 'outputs.DbmulticloudOracleDbGcpKeyRingReplicationMetadata']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             target_region: pulumi.Input[Optional[_builtins.str]] = None,
@@ -704,7 +704,7 @@ class DbmulticloudOracleDbGcpKeyRing(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] location: Location of the GCP Key Ring resource.
         :param pulumi.Input[_builtins.str] oracle_db_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the Oracle DB GCP Identity Connector resource resides.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: Oracle DB GCP Key Ring resource's properties.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgs', 'DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgsDict']]]] replication_metadatas: Replication metadata, it has information about replication and target region.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgs', 'DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgsDict', 'outputs.DbmulticloudOracleDbGcpKeyRingReplicationMetadata']]]] replication_metadatas: Replication metadata, it has information about replication and target region.
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the Oracle DB GCP Key Ring resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] target_region: The target region, where resource is replicated.

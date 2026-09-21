@@ -109,7 +109,7 @@ class AwaitableGetCostAlertSubscriptionsResult(GetCostAlertSubscriptionsResult):
 
 
 def get_cost_alert_subscriptions(compartment_id: Optional[_builtins.str] = None,
-                                 filters: Optional[Sequence[Union['GetCostAlertSubscriptionsFilterArgs', 'GetCostAlertSubscriptionsFilterArgsDict']]] = None,
+                                 filters: Optional[Sequence[Union['GetCostAlertSubscriptionsFilterArgs', 'GetCostAlertSubscriptionsFilterArgsDict', 'outputs.GetCostAlertSubscriptionsFilterResult']]] = None,
                                  name: Optional[_builtins.str] = None,
                                  state: Optional[_builtins.str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCostAlertSubscriptionsResult:
@@ -150,7 +150,7 @@ def get_cost_alert_subscriptions(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
 def get_cost_alert_subscriptions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCostAlertSubscriptionsFilterArgs', 'GetCostAlertSubscriptionsFilterArgsDict']]]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCostAlertSubscriptionsFilterArgs', 'GetCostAlertSubscriptionsFilterArgsDict', 'outputs.GetCostAlertSubscriptionsFilterResult']]]]] = None,
                                         name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCostAlertSubscriptionsResult]:

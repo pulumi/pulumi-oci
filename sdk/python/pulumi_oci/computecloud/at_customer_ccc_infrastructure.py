@@ -703,8 +703,8 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            infrastructure_inventories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AtCustomerCccInfrastructureInfrastructureInventoryArgs', 'AtCustomerCccInfrastructureInfrastructureInventoryArgsDict']]]]] = None,
-            infrastructure_network_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs', 'AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgsDict']]]]] = None,
+            infrastructure_inventories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AtCustomerCccInfrastructureInfrastructureInventoryArgs', 'AtCustomerCccInfrastructureInfrastructureInventoryArgsDict', 'outputs.AtCustomerCccInfrastructureInfrastructureInventory']]]]] = None,
+            infrastructure_network_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs', 'AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgsDict', 'outputs.AtCustomerCccInfrastructureInfrastructureNetworkConfiguration']]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             provisioning_fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
             provisioning_pin: pulumi.Input[Optional[_builtins.str]] = None,
@@ -714,7 +714,7 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
-            upgrade_informations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AtCustomerCccInfrastructureUpgradeInformationArgs', 'AtCustomerCccInfrastructureUpgradeInformationArgsDict']]]]] = None) -> 'AtCustomerCccInfrastructure':
+            upgrade_informations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AtCustomerCccInfrastructureUpgradeInformationArgs', 'AtCustomerCccInfrastructureUpgradeInformationArgsDict', 'outputs.AtCustomerCccInfrastructureUpgradeInformation']]]]] = None) -> 'AtCustomerCccInfrastructure':
         """
         Get an existing AtCustomerCccInfrastructure resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -730,8 +730,8 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AtCustomerCccInfrastructureInfrastructureInventoryArgs', 'AtCustomerCccInfrastructureInfrastructureInventoryArgsDict']]]] infrastructure_inventories: Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs', 'AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgsDict']]]] infrastructure_network_configurations: Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AtCustomerCccInfrastructureInfrastructureInventoryArgs', 'AtCustomerCccInfrastructureInfrastructureInventoryArgsDict', 'outputs.AtCustomerCccInfrastructureInfrastructureInventory']]]] infrastructure_inventories: Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs', 'AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgsDict', 'outputs.AtCustomerCccInfrastructureInfrastructureNetworkConfiguration']]]] infrastructure_network_configurations: Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current lifecycle state in more detail. For example, this can be used to provide actionable information for a resource that is in a Failed state.
         :param pulumi.Input[_builtins.str] provisioning_fingerprint: Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
         :param pulumi.Input[_builtins.str] provisioning_pin: Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
@@ -744,7 +744,7 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AtCustomerCccInfrastructureUpgradeInformationArgs', 'AtCustomerCccInfrastructureUpgradeInformationArgsDict']]]] upgrade_informations: Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AtCustomerCccInfrastructureUpgradeInformationArgs', 'AtCustomerCccInfrastructureUpgradeInformationArgsDict', 'outputs.AtCustomerCccInfrastructureUpgradeInformation']]]] upgrade_informations: Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

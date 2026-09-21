@@ -94,7 +94,7 @@ class AwaitableGetExadbVmClusterUpdateHistoryEntriesResult(GetExadbVmClusterUpda
 
 
 def get_exadb_vm_cluster_update_history_entries(exadb_vm_cluster_id: Optional[_builtins.str] = None,
-                                                filters: Optional[Sequence[Union['GetExadbVmClusterUpdateHistoryEntriesFilterArgs', 'GetExadbVmClusterUpdateHistoryEntriesFilterArgsDict']]] = None,
+                                                filters: Optional[Sequence[Union['GetExadbVmClusterUpdateHistoryEntriesFilterArgs', 'GetExadbVmClusterUpdateHistoryEntriesFilterArgsDict', 'outputs.GetExadbVmClusterUpdateHistoryEntriesFilterResult']]] = None,
                                                 update_type: Optional[_builtins.str] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExadbVmClusterUpdateHistoryEntriesResult:
     """
@@ -130,7 +130,7 @@ def get_exadb_vm_cluster_update_history_entries(exadb_vm_cluster_id: Optional[_b
         id=pulumi.get(__ret__, 'id'),
         update_type=pulumi.get(__ret__, 'update_type'))
 def get_exadb_vm_cluster_update_history_entries_output(exadb_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExadbVmClusterUpdateHistoryEntriesFilterArgs', 'GetExadbVmClusterUpdateHistoryEntriesFilterArgsDict']]]]] = None,
+                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExadbVmClusterUpdateHistoryEntriesFilterArgs', 'GetExadbVmClusterUpdateHistoryEntriesFilterArgsDict', 'outputs.GetExadbVmClusterUpdateHistoryEntriesFilterResult']]]]] = None,
                                                        update_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExadbVmClusterUpdateHistoryEntriesResult]:
     """

@@ -97,7 +97,7 @@ class AwaitableGetBaselineableMetricsEvaluateResult(GetBaselineableMetricsEvalua
 
 
 def get_baselineable_metrics_evaluate(baselineable_metric_id: Optional[_builtins.str] = None,
-                                      items: Optional[Sequence[Union['GetBaselineableMetricsEvaluateItemArgs', 'GetBaselineableMetricsEvaluateItemArgsDict']]] = None,
+                                      items: Optional[Sequence[Union['GetBaselineableMetricsEvaluateItemArgs', 'GetBaselineableMetricsEvaluateItemArgsDict', 'outputs.GetBaselineableMetricsEvaluateItemResult']]] = None,
                                       resource_id: Optional[_builtins.str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBaselineableMetricsEvaluateResult:
     """
@@ -128,7 +128,7 @@ def get_baselineable_metrics_evaluate(baselineable_metric_id: Optional[_builtins
 
 
     :param _builtins.str baselineable_metric_id: Identifier for the metric
-    :param Sequence[Union['GetBaselineableMetricsEvaluateItemArgs', 'GetBaselineableMetricsEvaluateItemArgsDict']] items: List of Metric data
+    :param Sequence[Union['GetBaselineableMetricsEvaluateItemArgs', 'GetBaselineableMetricsEvaluateItemArgsDict', 'outputs.GetBaselineableMetricsEvaluateItemResult']] items: List of Metric data
     :param _builtins.str resource_id: OCID of the resource
     """
     __args__ = dict()
@@ -145,7 +145,7 @@ def get_baselineable_metrics_evaluate(baselineable_metric_id: Optional[_builtins
         items=pulumi.get(__ret__, 'items'),
         resource_id=pulumi.get(__ret__, 'resource_id'))
 def get_baselineable_metrics_evaluate_output(baselineable_metric_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                             items: pulumi.Input[Optional[Sequence[Union['GetBaselineableMetricsEvaluateItemArgs', 'GetBaselineableMetricsEvaluateItemArgsDict']]]] = None,
+                                             items: pulumi.Input[Optional[Sequence[Union['GetBaselineableMetricsEvaluateItemArgs', 'GetBaselineableMetricsEvaluateItemArgsDict', 'outputs.GetBaselineableMetricsEvaluateItemResult']]]] = None,
                                              resource_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBaselineableMetricsEvaluateResult]:
     """
@@ -176,7 +176,7 @@ def get_baselineable_metrics_evaluate_output(baselineable_metric_id: pulumi.Inpu
 
 
     :param _builtins.str baselineable_metric_id: Identifier for the metric
-    :param Sequence[Union['GetBaselineableMetricsEvaluateItemArgs', 'GetBaselineableMetricsEvaluateItemArgsDict']] items: List of Metric data
+    :param Sequence[Union['GetBaselineableMetricsEvaluateItemArgs', 'GetBaselineableMetricsEvaluateItemArgsDict', 'outputs.GetBaselineableMetricsEvaluateItemResult']] items: List of Metric data
     :param _builtins.str resource_id: OCID of the resource
     """
     __args__ = dict()

@@ -475,7 +475,7 @@ class DrgAttachment(pulumi.CustomResource):
                  drg_route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
                  export_drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 network_details: pulumi.Input[Optional[Union['DrgAttachmentNetworkDetailsArgs', 'DrgAttachmentNetworkDetailsArgsDict']]] = None,
+                 network_details: pulumi.Input[Optional[Union['DrgAttachmentNetworkDetailsArgs', 'DrgAttachmentNetworkDetailsArgsDict', 'outputs.DrgAttachmentNetworkDetails']]] = None,
                  remove_export_drg_route_distribution_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
                  route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -518,7 +518,7 @@ class DrgAttachment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] export_drg_route_distribution_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
                This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, remove_export_drg_route_distribution_trigger needs to be used.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['DrgAttachmentNetworkDetailsArgs', 'DrgAttachmentNetworkDetailsArgsDict']] network_details: (Updatable)
+        :param pulumi.Input[Union['DrgAttachmentNetworkDetailsArgs', 'DrgAttachmentNetworkDetailsArgsDict', 'outputs.DrgAttachmentNetworkDetails']] network_details: (Updatable)
         :param pulumi.Input[_builtins.bool] remove_export_drg_route_distribution_trigger: (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
                
                ** IMPORTANT **
@@ -585,7 +585,7 @@ class DrgAttachment(pulumi.CustomResource):
                  drg_route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
                  export_drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 network_details: pulumi.Input[Optional[Union['DrgAttachmentNetworkDetailsArgs', 'DrgAttachmentNetworkDetailsArgsDict']]] = None,
+                 network_details: pulumi.Input[Optional[Union['DrgAttachmentNetworkDetailsArgs', 'DrgAttachmentNetworkDetailsArgsDict', 'outputs.DrgAttachmentNetworkDetails']]] = None,
                  remove_export_drg_route_distribution_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
                  route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -632,7 +632,7 @@ class DrgAttachment(pulumi.CustomResource):
             export_drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_cross_tenancy: pulumi.Input[Optional[_builtins.bool]] = None,
-            network_details: pulumi.Input[Optional[Union['DrgAttachmentNetworkDetailsArgs', 'DrgAttachmentNetworkDetailsArgsDict']]] = None,
+            network_details: pulumi.Input[Optional[Union['DrgAttachmentNetworkDetailsArgs', 'DrgAttachmentNetworkDetailsArgsDict', 'outputs.DrgAttachmentNetworkDetails']]] = None,
             remove_export_drg_route_distribution_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
             route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -656,7 +656,7 @@ class DrgAttachment(pulumi.CustomResource):
                This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, remove_export_drg_route_distribution_trigger needs to be used.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_cross_tenancy: Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
-        :param pulumi.Input[Union['DrgAttachmentNetworkDetailsArgs', 'DrgAttachmentNetworkDetailsArgsDict']] network_details: (Updatable)
+        :param pulumi.Input[Union['DrgAttachmentNetworkDetailsArgs', 'DrgAttachmentNetworkDetailsArgsDict', 'outputs.DrgAttachmentNetworkDetails']] network_details: (Updatable)
         :param pulumi.Input[_builtins.bool] remove_export_drg_route_distribution_trigger: (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
                
                ** IMPORTANT **

@@ -352,7 +352,7 @@ class ServiceGateway(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGatewayServiceArgs', 'ServiceGatewayServiceArgsDict']]]]] = None,
+                 services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGatewayServiceArgs', 'ServiceGatewayServiceArgsDict', 'outputs.ServiceGatewayService']]]]] = None,
                  vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -416,7 +416,7 @@ class ServiceGateway(pulumi.CustomResource):
                If you don't specify a route table here, the service gateway is created without an associated route table. The Networking service does NOT automatically associate the attached VCN's default route table with the service gateway.
                
                For information about why you would associate a route table with a service gateway, see [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ServiceGatewayServiceArgs', 'ServiceGatewayServiceArgsDict']]]] services: (Updatable) List of the OCIDs of the [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) objects to enable for the service gateway. This list can be empty if you don't want to enable any `Service` objects when you create the gateway. You can enable a `Service` object later by using either [AttachServiceId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/AttachServiceId) or [UpdateServiceGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/UpdateServiceGateway).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ServiceGatewayServiceArgs', 'ServiceGatewayServiceArgsDict', 'outputs.ServiceGatewayService']]]] services: (Updatable) List of the OCIDs of the [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) objects to enable for the service gateway. This list can be empty if you don't want to enable any `Service` objects when you create the gateway. You can enable a `Service` object later by using either [AttachServiceId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/AttachServiceId) or [UpdateServiceGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/UpdateServiceGateway).
                
                For each enabled `Service`, make sure there's a route rule with the `Service` object's `cidrBlock` as the rule's destination and the service gateway as the rule's target. See [Route Table](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/RouteTable/).
         :param pulumi.Input[_builtins.str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
@@ -500,7 +500,7 @@ class ServiceGateway(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGatewayServiceArgs', 'ServiceGatewayServiceArgsDict']]]]] = None,
+                 services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGatewayServiceArgs', 'ServiceGatewayServiceArgsDict', 'outputs.ServiceGatewayService']]]]] = None,
                  vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -543,7 +543,7 @@ class ServiceGateway(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
-            services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGatewayServiceArgs', 'ServiceGatewayServiceArgsDict']]]]] = None,
+            services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGatewayServiceArgs', 'ServiceGatewayServiceArgsDict', 'outputs.ServiceGatewayService']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             vcn_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ServiceGateway':
@@ -564,7 +564,7 @@ class ServiceGateway(pulumi.CustomResource):
                If you don't specify a route table here, the service gateway is created without an associated route table. The Networking service does NOT automatically associate the attached VCN's default route table with the service gateway.
                
                For information about why you would associate a route table with a service gateway, see [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ServiceGatewayServiceArgs', 'ServiceGatewayServiceArgsDict']]]] services: (Updatable) List of the OCIDs of the [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) objects to enable for the service gateway. This list can be empty if you don't want to enable any `Service` objects when you create the gateway. You can enable a `Service` object later by using either [AttachServiceId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/AttachServiceId) or [UpdateServiceGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/UpdateServiceGateway).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ServiceGatewayServiceArgs', 'ServiceGatewayServiceArgsDict', 'outputs.ServiceGatewayService']]]] services: (Updatable) List of the OCIDs of the [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) objects to enable for the service gateway. This list can be empty if you don't want to enable any `Service` objects when you create the gateway. You can enable a `Service` object later by using either [AttachServiceId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/AttachServiceId) or [UpdateServiceGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/UpdateServiceGateway).
                
                For each enabled `Service`, make sure there's a route rule with the `Service` object's `cidrBlock` as the rule's destination and the service gateway as the rule's target. See [Route Table](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/RouteTable/).
         :param pulumi.Input[_builtins.str] state: The service gateway's current state.

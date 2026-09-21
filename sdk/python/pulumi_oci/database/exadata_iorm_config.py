@@ -180,7 +180,7 @@ class ExadataIormConfig(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 db_plans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataIormConfigDbPlanArgs', 'ExadataIormConfigDbPlanArgsDict']]]]] = None,
+                 db_plans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataIormConfigDbPlanArgs', 'ExadataIormConfigDbPlanArgsDict', 'outputs.ExadataIormConfigDbPlan']]]]] = None,
                  db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
                  objective: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -221,7 +221,7 @@ class ExadataIormConfig(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadataIormConfigDbPlanArgs', 'ExadataIormConfigDbPlanArgsDict']]]] db_plans: (Updatable) Array of IORM Setting for all the database in this Exadata DB System
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadataIormConfigDbPlanArgs', 'ExadataIormConfigDbPlanArgsDict', 'outputs.ExadataIormConfigDbPlan']]]] db_plans: (Updatable) Array of IORM Setting for all the database in this Exadata DB System
         :param pulumi.Input[_builtins.str] db_system_id: (Updatable) The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] objective: (Updatable) Value for the IORM objective Default is "Auto"
                
@@ -284,7 +284,7 @@ class ExadataIormConfig(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 db_plans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataIormConfigDbPlanArgs', 'ExadataIormConfigDbPlanArgsDict']]]]] = None,
+                 db_plans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataIormConfigDbPlanArgs', 'ExadataIormConfigDbPlanArgsDict', 'outputs.ExadataIormConfigDbPlan']]]]] = None,
                  db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
                  objective: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -315,7 +315,7 @@ class ExadataIormConfig(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            db_plans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataIormConfigDbPlanArgs', 'ExadataIormConfigDbPlanArgsDict']]]]] = None,
+            db_plans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataIormConfigDbPlanArgs', 'ExadataIormConfigDbPlanArgsDict', 'outputs.ExadataIormConfigDbPlan']]]]] = None,
             db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             objective: pulumi.Input[Optional[_builtins.str]] = None,
@@ -327,7 +327,7 @@ class ExadataIormConfig(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadataIormConfigDbPlanArgs', 'ExadataIormConfigDbPlanArgsDict']]]] db_plans: (Updatable) Array of IORM Setting for all the database in this Exadata DB System
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadataIormConfigDbPlanArgs', 'ExadataIormConfigDbPlanArgsDict', 'outputs.ExadataIormConfigDbPlan']]]] db_plans: (Updatable) Array of IORM Setting for all the database in this Exadata DB System
         :param pulumi.Input[_builtins.str] db_system_id: (Updatable) The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current `lifecycleState`.
         :param pulumi.Input[_builtins.str] objective: (Updatable) Value for the IORM objective Default is "Auto"

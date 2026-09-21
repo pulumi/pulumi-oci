@@ -422,7 +422,7 @@ class CloudDbSystemConnector(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  agent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  cloud_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 connection_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudDbSystemConnectorConnectionInfoArgs', 'CloudDbSystemConnectorConnectionInfoArgsDict']]]]] = None,
+                 connection_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudDbSystemConnectorConnectionInfoArgs', 'CloudDbSystemConnectorConnectionInfoArgsDict', 'outputs.CloudDbSystemConnectorConnectionInfo']]]]] = None,
                  connector_type: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -461,7 +461,7 @@ class CloudDbSystemConnector(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
         :param pulumi.Input[_builtins.str] cloud_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudDbSystemConnectorConnectionInfoArgs', 'CloudDbSystemConnectorConnectionInfoArgsDict']]]] connection_infos: The connection details required to connect to a cloud DB system component.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudDbSystemConnectorConnectionInfoArgs', 'CloudDbSystemConnectorConnectionInfoArgsDict', 'outputs.CloudDbSystemConnectorConnectionInfo']]]] connection_infos: The connection details required to connect to a cloud DB system component.
         :param pulumi.Input[_builtins.str] connector_type: (Updatable) The type of connector.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the cloud connector. The name does not have to be unique.
@@ -522,7 +522,7 @@ class CloudDbSystemConnector(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  agent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  cloud_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 connection_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudDbSystemConnectorConnectionInfoArgs', 'CloudDbSystemConnectorConnectionInfoArgsDict']]]]] = None,
+                 connection_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudDbSystemConnectorConnectionInfoArgs', 'CloudDbSystemConnectorConnectionInfoArgsDict', 'outputs.CloudDbSystemConnectorConnectionInfo']]]]] = None,
                  connector_type: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -570,7 +570,7 @@ class CloudDbSystemConnector(pulumi.CustomResource):
             cloud_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             connection_failure_message: pulumi.Input[Optional[_builtins.str]] = None,
-            connection_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudDbSystemConnectorConnectionInfoArgs', 'CloudDbSystemConnectorConnectionInfoArgsDict']]]]] = None,
+            connection_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudDbSystemConnectorConnectionInfoArgs', 'CloudDbSystemConnectorConnectionInfoArgsDict', 'outputs.CloudDbSystemConnectorConnectionInfo']]]]] = None,
             connection_status: pulumi.Input[Optional[_builtins.str]] = None,
             connector_type: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -593,7 +593,7 @@ class CloudDbSystemConnector(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cloud_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudDbSystemConnectorConnectionInfoArgs', 'CloudDbSystemConnectorConnectionInfoArgsDict']]]] connection_infos: The connection details required to connect to a cloud DB system component.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudDbSystemConnectorConnectionInfoArgs', 'CloudDbSystemConnectorConnectionInfoArgsDict', 'outputs.CloudDbSystemConnectorConnectionInfo']]]] connection_infos: The connection details required to connect to a cloud DB system component.
         :param pulumi.Input[_builtins.str] connection_status: The status of connectivity to the cloud DB system component.
         :param pulumi.Input[_builtins.str] connector_type: (Updatable) The type of connector.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`

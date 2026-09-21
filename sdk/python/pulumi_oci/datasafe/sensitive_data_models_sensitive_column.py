@@ -843,7 +843,7 @@ class SensitiveDataModelsSensitiveColumn(pulumi.CustomResource):
             column_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             column_name: pulumi.Input[Optional[_builtins.str]] = None,
             confidence_level: pulumi.Input[Optional[_builtins.str]] = None,
-            confidence_level_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs', 'SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgsDict']]]]] = None,
+            confidence_level_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs', 'SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgsDict', 'outputs.SensitiveDataModelsSensitiveColumnConfidenceLevelDetail']]]]] = None,
             data_type: pulumi.Input[Optional[_builtins.str]] = None,
             db_defined_child_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             estimated_data_value_count: pulumi.Input[Optional[_builtins.str]] = None,
@@ -874,7 +874,7 @@ class SensitiveDataModelsSensitiveColumn(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] column_groups: The composite key groups to which the sensitive column belongs. If the column is part of a composite key, it's assigned a column group. It helps identify and manage referential relationships that involve composite keys.
         :param pulumi.Input[_builtins.str] column_name: The name of the sensitive column.
         :param pulumi.Input[_builtins.str] confidence_level: The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs', 'SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgsDict']]]] confidence_level_details: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs', 'SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgsDict', 'outputs.SensitiveDataModelsSensitiveColumnConfidenceLevelDetail']]]] confidence_level_details: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
         :param pulumi.Input[_builtins.str] data_type: (Updatable) The data type of the sensitive column.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] db_defined_child_column_keys: (Updatable) Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
         :param pulumi.Input[_builtins.str] estimated_data_value_count: The estimated number of data values the column has in the associated database.

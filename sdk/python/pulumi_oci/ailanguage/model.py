@@ -443,10 +443,10 @@ class Model(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 model_details: pulumi.Input[Optional[Union['ModelModelDetailsArgs', 'ModelModelDetailsArgsDict']]] = None,
+                 model_details: pulumi.Input[Optional[Union['ModelModelDetailsArgs', 'ModelModelDetailsArgsDict', 'outputs.ModelModelDetails']]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 test_strategy: pulumi.Input[Optional[Union['ModelTestStrategyArgs', 'ModelTestStrategyArgsDict']]] = None,
-                 training_dataset: pulumi.Input[Optional[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
+                 test_strategy: pulumi.Input[Optional[Union['ModelTestStrategyArgs', 'ModelTestStrategyArgsDict', 'outputs.ModelTestStrategy']]] = None,
+                 training_dataset: pulumi.Input[Optional[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict', 'outputs.ModelTrainingDataset']]] = None,
                  __props__=None):
         """
         This resource provides the Model resource in Oracle Cloud Infrastructure Ai Language service.
@@ -533,10 +533,10 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the a model.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Union['ModelModelDetailsArgs', 'ModelModelDetailsArgsDict']] model_details: Possible model types
+        :param pulumi.Input[Union['ModelModelDetailsArgs', 'ModelModelDetailsArgsDict', 'outputs.ModelModelDetails']] model_details: Possible model types
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-        :param pulumi.Input[Union['ModelTestStrategyArgs', 'ModelTestStrategyArgsDict']] test_strategy: Possible strategy as testing and validation(optional) dataset.
-        :param pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']] training_dataset: Possible data set type
+        :param pulumi.Input[Union['ModelTestStrategyArgs', 'ModelTestStrategyArgsDict', 'outputs.ModelTestStrategy']] test_strategy: Possible strategy as testing and validation(optional) dataset.
+        :param pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict', 'outputs.ModelTrainingDataset']] training_dataset: Possible data set type
         """
         ...
     @overload
@@ -642,10 +642,10 @@ class Model(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 model_details: pulumi.Input[Optional[Union['ModelModelDetailsArgs', 'ModelModelDetailsArgsDict']]] = None,
+                 model_details: pulumi.Input[Optional[Union['ModelModelDetailsArgs', 'ModelModelDetailsArgsDict', 'outputs.ModelModelDetails']]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 test_strategy: pulumi.Input[Optional[Union['ModelTestStrategyArgs', 'ModelTestStrategyArgsDict']]] = None,
-                 training_dataset: pulumi.Input[Optional[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
+                 test_strategy: pulumi.Input[Optional[Union['ModelTestStrategyArgs', 'ModelTestStrategyArgsDict', 'outputs.ModelTestStrategy']]] = None,
+                 training_dataset: pulumi.Input[Optional[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict', 'outputs.ModelTrainingDataset']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -693,17 +693,17 @@ class Model(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            evaluation_results: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelEvaluationResultArgs', 'ModelEvaluationResultArgsDict']]]]] = None,
+            evaluation_results: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelEvaluationResultArgs', 'ModelEvaluationResultArgsDict', 'outputs.ModelEvaluationResult']]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            model_details: pulumi.Input[Optional[Union['ModelModelDetailsArgs', 'ModelModelDetailsArgsDict']]] = None,
+            model_details: pulumi.Input[Optional[Union['ModelModelDetailsArgs', 'ModelModelDetailsArgsDict', 'outputs.ModelModelDetails']]] = None,
             project_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            test_strategy: pulumi.Input[Optional[Union['ModelTestStrategyArgs', 'ModelTestStrategyArgsDict']]] = None,
+            test_strategy: pulumi.Input[Optional[Union['ModelTestStrategyArgs', 'ModelTestStrategyArgsDict', 'outputs.ModelTestStrategy']]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
-            training_dataset: pulumi.Input[Optional[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
+            training_dataset: pulumi.Input[Optional[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict', 'outputs.ModelTrainingDataset']]] = None,
             version: pulumi.Input[Optional[_builtins.str]] = None) -> 'Model':
         """
         Get an existing Model resource's state with the given name, id, and optional extra
@@ -716,17 +716,17 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the a model.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelEvaluationResultArgs', 'ModelEvaluationResultArgsDict']]]] evaluation_results: model training results of different models
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelEvaluationResultArgs', 'ModelEvaluationResultArgsDict', 'outputs.ModelEvaluationResult']]]] evaluation_results: model training results of different models
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
-        :param pulumi.Input[Union['ModelModelDetailsArgs', 'ModelModelDetailsArgsDict']] model_details: Possible model types
+        :param pulumi.Input[Union['ModelModelDetailsArgs', 'ModelModelDetailsArgsDict', 'outputs.ModelModelDetails']] model_details: Possible model types
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
         :param pulumi.Input[_builtins.str] state: The state of the model.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Union['ModelTestStrategyArgs', 'ModelTestStrategyArgsDict']] test_strategy: Possible strategy as testing and validation(optional) dataset.
+        :param pulumi.Input[Union['ModelTestStrategyArgs', 'ModelTestStrategyArgsDict', 'outputs.ModelTestStrategy']] test_strategy: Possible strategy as testing and validation(optional) dataset.
         :param pulumi.Input[_builtins.str] time_created: The time the the model was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time the model was updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']] training_dataset: Possible data set type
+        :param pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict', 'outputs.ModelTrainingDataset']] training_dataset: Possible data set type
         :param pulumi.Input[_builtins.str] version: For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

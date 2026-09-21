@@ -148,7 +148,7 @@ class AwaitableGetAccessRequestsResult(GetAccessRequestsResult):
 
 
 def get_access_requests(compartment_id: Optional[_builtins.str] = None,
-                        filters: Optional[Sequence[Union['GetAccessRequestsFilterArgs', 'GetAccessRequestsFilterArgsDict']]] = None,
+                        filters: Optional[Sequence[Union['GetAccessRequestsFilterArgs', 'GetAccessRequestsFilterArgsDict', 'outputs.GetAccessRequestsFilterResult']]] = None,
                         num_days: Optional[_builtins.int] = None,
                         resource_name: Optional[_builtins.str] = None,
                         resource_type: Optional[_builtins.str] = None,
@@ -208,7 +208,7 @@ def get_access_requests(compartment_id: Optional[_builtins.str] = None,
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
 def get_access_requests_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAccessRequestsFilterArgs', 'GetAccessRequestsFilterArgsDict']]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAccessRequestsFilterArgs', 'GetAccessRequestsFilterArgsDict', 'outputs.GetAccessRequestsFilterResult']]]]] = None,
                                num_days: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                resource_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

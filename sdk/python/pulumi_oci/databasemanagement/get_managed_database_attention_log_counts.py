@@ -147,7 +147,7 @@ class AwaitableGetManagedDatabaseAttentionLogCountsResult(GetManagedDatabaseAtte
             urgency_filter=self.urgency_filter)
 
 
-def get_managed_database_attention_log_counts(filters: Optional[Sequence[Union['GetManagedDatabaseAttentionLogCountsFilterArgs', 'GetManagedDatabaseAttentionLogCountsFilterArgsDict']]] = None,
+def get_managed_database_attention_log_counts(filters: Optional[Sequence[Union['GetManagedDatabaseAttentionLogCountsFilterArgs', 'GetManagedDatabaseAttentionLogCountsFilterArgsDict', 'outputs.GetManagedDatabaseAttentionLogCountsFilterResult']]] = None,
                                               group_by: Optional[_builtins.str] = None,
                                               is_regular_expression: Optional[_builtins.bool] = None,
                                               log_search_text: Optional[_builtins.str] = None,
@@ -213,7 +213,7 @@ def get_managed_database_attention_log_counts(filters: Optional[Sequence[Union['
         time_less_than_or_equal_to=pulumi.get(__ret__, 'time_less_than_or_equal_to'),
         type_filter=pulumi.get(__ret__, 'type_filter'),
         urgency_filter=pulumi.get(__ret__, 'urgency_filter'))
-def get_managed_database_attention_log_counts_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseAttentionLogCountsFilterArgs', 'GetManagedDatabaseAttentionLogCountsFilterArgsDict']]]]] = None,
+def get_managed_database_attention_log_counts_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseAttentionLogCountsFilterArgs', 'GetManagedDatabaseAttentionLogCountsFilterArgsDict', 'outputs.GetManagedDatabaseAttentionLogCountsFilterResult']]]]] = None,
                                                      group_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                      is_regular_expression: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                                      log_search_text: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

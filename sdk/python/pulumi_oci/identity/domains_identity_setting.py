@@ -1442,16 +1442,16 @@ class DomainsIdentitySetting(pulumi.CustomResource):
                  external_id: pulumi.Input[Optional[_builtins.str]] = None,
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  identity_setting_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 my_profile: pulumi.Input[Optional[Union['DomainsIdentitySettingMyProfileArgs', 'DomainsIdentitySettingMyProfileArgsDict']]] = None,
+                 my_profile: pulumi.Input[Optional[Union['DomainsIdentitySettingMyProfileArgs', 'DomainsIdentitySettingMyProfileArgsDict', 'outputs.DomainsIdentitySettingMyProfile']]] = None,
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
-                 posix_gid: pulumi.Input[Optional[Union['DomainsIdentitySettingPosixGidArgs', 'DomainsIdentitySettingPosixGidArgsDict']]] = None,
-                 posix_uid: pulumi.Input[Optional[Union['DomainsIdentitySettingPosixUidArgs', 'DomainsIdentitySettingPosixUidArgsDict']]] = None,
+                 posix_gid: pulumi.Input[Optional[Union['DomainsIdentitySettingPosixGidArgs', 'DomainsIdentitySettingPosixGidArgsDict', 'outputs.DomainsIdentitySettingPosixGid']]] = None,
+                 posix_uid: pulumi.Input[Optional[Union['DomainsIdentitySettingPosixUidArgs', 'DomainsIdentitySettingPosixUidArgsDict', 'outputs.DomainsIdentitySettingPosixUid']]] = None,
                  primary_email_required: pulumi.Input[Optional[_builtins.bool]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  return_inactive_over_locked_message: pulumi.Input[Optional[_builtins.bool]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentitySettingTagArgs', 'DomainsIdentitySettingTagArgsDict']]]]] = None,
-                 tokens: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentitySettingTokenArgs', 'DomainsIdentitySettingTokenArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentitySettingTagArgs', 'DomainsIdentitySettingTagArgsDict', 'outputs.DomainsIdentitySettingTag']]]]] = None,
+                 tokens: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentitySettingTokenArgs', 'DomainsIdentitySettingTokenArgsDict', 'outputs.DomainsIdentitySettingToken']]]]] = None,
                  user_allowed_to_set_recovery_email: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
@@ -1500,7 +1500,7 @@ class DomainsIdentitySetting(pulumi.CustomResource):
                * uniqueness: none
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[_builtins.str] identity_setting_id: ID of the resource
-        :param pulumi.Input[Union['DomainsIdentitySettingMyProfileArgs', 'DomainsIdentitySettingMyProfileArgsDict']] my_profile: (Updatable) Whether to allow users to update their own profile.
+        :param pulumi.Input[Union['DomainsIdentitySettingMyProfileArgs', 'DomainsIdentitySettingMyProfileArgsDict', 'outputs.DomainsIdentitySettingMyProfile']] my_profile: (Updatable) Whether to allow users to update their own profile.
                
                **Added In:** 2207040824
                
@@ -1521,7 +1521,7 @@ class DomainsIdentitySetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: global
-        :param pulumi.Input[Union['DomainsIdentitySettingPosixGidArgs', 'DomainsIdentitySettingPosixGidArgsDict']] posix_gid: (Updatable) A list of Posix Gid settings.
+        :param pulumi.Input[Union['DomainsIdentitySettingPosixGidArgs', 'DomainsIdentitySettingPosixGidArgsDict', 'outputs.DomainsIdentitySettingPosixGid']] posix_gid: (Updatable) A list of Posix Gid settings.
                
                **Added In:** 17.4.6
                
@@ -1531,7 +1531,7 @@ class DomainsIdentitySetting(pulumi.CustomResource):
                * required: false
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsIdentitySettingPosixUidArgs', 'DomainsIdentitySettingPosixUidArgsDict']] posix_uid: (Updatable) A list of Posix Uid settings.
+        :param pulumi.Input[Union['DomainsIdentitySettingPosixUidArgs', 'DomainsIdentitySettingPosixUidArgsDict', 'outputs.DomainsIdentitySettingPosixUid']] posix_uid: (Updatable) A list of Posix Uid settings.
                
                **Added In:** 17.4.6
                
@@ -1575,7 +1575,7 @@ class DomainsIdentitySetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentitySettingTagArgs', 'DomainsIdentitySettingTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentitySettingTagArgs', 'DomainsIdentitySettingTagArgsDict', 'outputs.DomainsIdentitySettingTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1586,7 +1586,7 @@ class DomainsIdentitySetting(pulumi.CustomResource):
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentitySettingTokenArgs', 'DomainsIdentitySettingTokenArgsDict']]]] tokens: (Updatable) A list of tokens and their expiry length.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentitySettingTokenArgs', 'DomainsIdentitySettingTokenArgsDict', 'outputs.DomainsIdentitySettingToken']]]] tokens: (Updatable) A list of tokens and their expiry length.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1654,16 +1654,16 @@ class DomainsIdentitySetting(pulumi.CustomResource):
                  external_id: pulumi.Input[Optional[_builtins.str]] = None,
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  identity_setting_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 my_profile: pulumi.Input[Optional[Union['DomainsIdentitySettingMyProfileArgs', 'DomainsIdentitySettingMyProfileArgsDict']]] = None,
+                 my_profile: pulumi.Input[Optional[Union['DomainsIdentitySettingMyProfileArgs', 'DomainsIdentitySettingMyProfileArgsDict', 'outputs.DomainsIdentitySettingMyProfile']]] = None,
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
-                 posix_gid: pulumi.Input[Optional[Union['DomainsIdentitySettingPosixGidArgs', 'DomainsIdentitySettingPosixGidArgsDict']]] = None,
-                 posix_uid: pulumi.Input[Optional[Union['DomainsIdentitySettingPosixUidArgs', 'DomainsIdentitySettingPosixUidArgsDict']]] = None,
+                 posix_gid: pulumi.Input[Optional[Union['DomainsIdentitySettingPosixGidArgs', 'DomainsIdentitySettingPosixGidArgsDict', 'outputs.DomainsIdentitySettingPosixGid']]] = None,
+                 posix_uid: pulumi.Input[Optional[Union['DomainsIdentitySettingPosixUidArgs', 'DomainsIdentitySettingPosixUidArgsDict', 'outputs.DomainsIdentitySettingPosixUid']]] = None,
                  primary_email_required: pulumi.Input[Optional[_builtins.bool]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  return_inactive_over_locked_message: pulumi.Input[Optional[_builtins.bool]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentitySettingTagArgs', 'DomainsIdentitySettingTagArgsDict']]]]] = None,
-                 tokens: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentitySettingTokenArgs', 'DomainsIdentitySettingTokenArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentitySettingTagArgs', 'DomainsIdentitySettingTagArgsDict', 'outputs.DomainsIdentitySettingTag']]]]] = None,
+                 tokens: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentitySettingTokenArgs', 'DomainsIdentitySettingTokenArgsDict', 'outputs.DomainsIdentitySettingToken']]]]] = None,
                  user_allowed_to_set_recovery_email: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -1726,25 +1726,25 @@ class DomainsIdentitySetting(pulumi.CustomResource):
             domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             emit_locked_message_when_user_is_locked: pulumi.Input[Optional[_builtins.bool]] = None,
             external_id: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentitySettingIdcsCreatedByArgs', 'DomainsIdentitySettingIdcsCreatedByArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentitySettingIdcsCreatedByArgs', 'DomainsIdentitySettingIdcsCreatedByArgsDict', 'outputs.DomainsIdentitySettingIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentitySettingIdcsLastModifiedByArgs', 'DomainsIdentitySettingIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentitySettingIdcsLastModifiedByArgs', 'DomainsIdentitySettingIdcsLastModifiedByArgsDict', 'outputs.DomainsIdentitySettingIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             identity_setting_id: pulumi.Input[Optional[_builtins.str]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentitySettingMetaArgs', 'DomainsIdentitySettingMetaArgsDict']]]]] = None,
-            my_profile: pulumi.Input[Optional[Union['DomainsIdentitySettingMyProfileArgs', 'DomainsIdentitySettingMyProfileArgsDict']]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentitySettingMetaArgs', 'DomainsIdentitySettingMetaArgsDict', 'outputs.DomainsIdentitySettingMeta']]]]] = None,
+            my_profile: pulumi.Input[Optional[Union['DomainsIdentitySettingMyProfileArgs', 'DomainsIdentitySettingMyProfileArgsDict', 'outputs.DomainsIdentitySettingMyProfile']]] = None,
             ocid: pulumi.Input[Optional[_builtins.str]] = None,
-            posix_gid: pulumi.Input[Optional[Union['DomainsIdentitySettingPosixGidArgs', 'DomainsIdentitySettingPosixGidArgsDict']]] = None,
-            posix_uid: pulumi.Input[Optional[Union['DomainsIdentitySettingPosixUidArgs', 'DomainsIdentitySettingPosixUidArgsDict']]] = None,
+            posix_gid: pulumi.Input[Optional[Union['DomainsIdentitySettingPosixGidArgs', 'DomainsIdentitySettingPosixGidArgsDict', 'outputs.DomainsIdentitySettingPosixGid']]] = None,
+            posix_uid: pulumi.Input[Optional[Union['DomainsIdentitySettingPosixUidArgs', 'DomainsIdentitySettingPosixUidArgsDict', 'outputs.DomainsIdentitySettingPosixUid']]] = None,
             primary_email_required: pulumi.Input[Optional[_builtins.bool]] = None,
             remove_invalid_emails: pulumi.Input[Optional[_builtins.bool]] = None,
             resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
             return_inactive_over_locked_message: pulumi.Input[Optional[_builtins.bool]] = None,
             schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentitySettingTagArgs', 'DomainsIdentitySettingTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentitySettingTagArgs', 'DomainsIdentitySettingTagArgsDict', 'outputs.DomainsIdentitySettingTag']]]]] = None,
             tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
-            tokens: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentitySettingTokenArgs', 'DomainsIdentitySettingTokenArgsDict']]]]] = None,
+            tokens: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentitySettingTokenArgs', 'DomainsIdentitySettingTokenArgsDict', 'outputs.DomainsIdentitySettingToken']]]]] = None,
             user_allowed_to_set_recovery_email: pulumi.Input[Optional[_builtins.bool]] = None) -> 'DomainsIdentitySetting':
         """
         Get an existing DomainsIdentitySetting resource's state with the given name, id, and optional extra
@@ -1811,7 +1811,7 @@ class DomainsIdentitySetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentitySettingIdcsCreatedByArgs', 'DomainsIdentitySettingIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentitySettingIdcsCreatedByArgs', 'DomainsIdentitySettingIdcsCreatedByArgsDict', 'outputs.DomainsIdentitySettingIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1821,7 +1821,7 @@ class DomainsIdentitySetting(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentitySettingIdcsLastModifiedByArgs', 'DomainsIdentitySettingIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentitySettingIdcsLastModifiedByArgs', 'DomainsIdentitySettingIdcsLastModifiedByArgsDict', 'outputs.DomainsIdentitySettingIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1852,7 +1852,7 @@ class DomainsIdentitySetting(pulumi.CustomResource):
                * type: string
                * uniqueness: none
         :param pulumi.Input[_builtins.str] identity_setting_id: ID of the resource
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentitySettingMetaArgs', 'DomainsIdentitySettingMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentitySettingMetaArgs', 'DomainsIdentitySettingMetaArgsDict', 'outputs.DomainsIdentitySettingMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1863,7 +1863,7 @@ class DomainsIdentitySetting(pulumi.CustomResource):
                * returned: default
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
                * type: complex
-        :param pulumi.Input[Union['DomainsIdentitySettingMyProfileArgs', 'DomainsIdentitySettingMyProfileArgsDict']] my_profile: (Updatable) Whether to allow users to update their own profile.
+        :param pulumi.Input[Union['DomainsIdentitySettingMyProfileArgs', 'DomainsIdentitySettingMyProfileArgsDict', 'outputs.DomainsIdentitySettingMyProfile']] my_profile: (Updatable) Whether to allow users to update their own profile.
                
                **Added In:** 2207040824
                
@@ -1884,7 +1884,7 @@ class DomainsIdentitySetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: global
-        :param pulumi.Input[Union['DomainsIdentitySettingPosixGidArgs', 'DomainsIdentitySettingPosixGidArgsDict']] posix_gid: (Updatable) A list of Posix Gid settings.
+        :param pulumi.Input[Union['DomainsIdentitySettingPosixGidArgs', 'DomainsIdentitySettingPosixGidArgsDict', 'outputs.DomainsIdentitySettingPosixGid']] posix_gid: (Updatable) A list of Posix Gid settings.
                
                **Added In:** 17.4.6
                
@@ -1894,7 +1894,7 @@ class DomainsIdentitySetting(pulumi.CustomResource):
                * required: false
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsIdentitySettingPosixUidArgs', 'DomainsIdentitySettingPosixUidArgsDict']] posix_uid: (Updatable) A list of Posix Uid settings.
+        :param pulumi.Input[Union['DomainsIdentitySettingPosixUidArgs', 'DomainsIdentitySettingPosixUidArgsDict', 'outputs.DomainsIdentitySettingPosixUid']] posix_uid: (Updatable) A list of Posix Uid settings.
                
                **Added In:** 17.4.6
                
@@ -1950,7 +1950,7 @@ class DomainsIdentitySetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentitySettingTagArgs', 'DomainsIdentitySettingTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentitySettingTagArgs', 'DomainsIdentitySettingTagArgsDict', 'outputs.DomainsIdentitySettingTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1972,7 +1972,7 @@ class DomainsIdentitySetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentitySettingTokenArgs', 'DomainsIdentitySettingTokenArgsDict']]]] tokens: (Updatable) A list of tokens and their expiry length.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentitySettingTokenArgs', 'DomainsIdentitySettingTokenArgsDict', 'outputs.DomainsIdentitySettingToken']]]] tokens: (Updatable) A list of tokens and their expiry length.
                
                **SCIM++ Properties:**
                * caseExact: false

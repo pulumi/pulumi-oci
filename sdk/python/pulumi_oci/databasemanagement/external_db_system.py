@@ -393,12 +393,12 @@ class ExternalDbSystem(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 database_management_config: pulumi.Input[Optional[Union['ExternalDbSystemDatabaseManagementConfigArgs', 'ExternalDbSystemDatabaseManagementConfigArgsDict']]] = None,
+                 database_management_config: pulumi.Input[Optional[Union['ExternalDbSystemDatabaseManagementConfigArgs', 'ExternalDbSystemDatabaseManagementConfigArgsDict', 'outputs.ExternalDbSystemDatabaseManagementConfig']]] = None,
                  db_system_discovery_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 stack_monitoring_config: pulumi.Input[Optional[Union['ExternalDbSystemStackMonitoringConfigArgs', 'ExternalDbSystemStackMonitoringConfigArgsDict']]] = None,
+                 stack_monitoring_config: pulumi.Input[Optional[Union['ExternalDbSystemStackMonitoringConfigArgs', 'ExternalDbSystemStackMonitoringConfigArgsDict', 'outputs.ExternalDbSystemStackMonitoringConfig']]] = None,
                  __props__=None):
         """
         This resource provides the External Db System resource in Oracle Cloud Infrastructure Database Management service.
@@ -445,12 +445,12 @@ class ExternalDbSystem(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        :param pulumi.Input[Union['ExternalDbSystemDatabaseManagementConfigArgs', 'ExternalDbSystemDatabaseManagementConfigArgsDict']] database_management_config: The details required to enable Database Management for an external DB system.
+        :param pulumi.Input[Union['ExternalDbSystemDatabaseManagementConfigArgs', 'ExternalDbSystemDatabaseManagementConfigArgsDict', 'outputs.ExternalDbSystemDatabaseManagementConfig']] database_management_config: The details required to enable Database Management for an external DB system.
         :param pulumi.Input[_builtins.str] db_system_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['ExternalDbSystemStackMonitoringConfigArgs', 'ExternalDbSystemStackMonitoringConfigArgsDict']] stack_monitoring_config: The details of the associated service that will be enabled or disabled for an external DB System.
+        :param pulumi.Input[Union['ExternalDbSystemStackMonitoringConfigArgs', 'ExternalDbSystemStackMonitoringConfigArgsDict', 'outputs.ExternalDbSystemStackMonitoringConfig']] stack_monitoring_config: The details of the associated service that will be enabled or disabled for an external DB System.
         """
         ...
     @overload
@@ -516,12 +516,12 @@ class ExternalDbSystem(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 database_management_config: pulumi.Input[Optional[Union['ExternalDbSystemDatabaseManagementConfigArgs', 'ExternalDbSystemDatabaseManagementConfigArgsDict']]] = None,
+                 database_management_config: pulumi.Input[Optional[Union['ExternalDbSystemDatabaseManagementConfigArgs', 'ExternalDbSystemDatabaseManagementConfigArgsDict', 'outputs.ExternalDbSystemDatabaseManagementConfig']]] = None,
                  db_system_discovery_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 stack_monitoring_config: pulumi.Input[Optional[Union['ExternalDbSystemStackMonitoringConfigArgs', 'ExternalDbSystemStackMonitoringConfigArgsDict']]] = None,
+                 stack_monitoring_config: pulumi.Input[Optional[Union['ExternalDbSystemStackMonitoringConfigArgs', 'ExternalDbSystemStackMonitoringConfigArgsDict', 'outputs.ExternalDbSystemStackMonitoringConfig']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -561,7 +561,7 @@ class ExternalDbSystem(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            database_management_config: pulumi.Input[Optional[Union['ExternalDbSystemDatabaseManagementConfigArgs', 'ExternalDbSystemDatabaseManagementConfigArgsDict']]] = None,
+            database_management_config: pulumi.Input[Optional[Union['ExternalDbSystemDatabaseManagementConfigArgs', 'ExternalDbSystemDatabaseManagementConfigArgsDict', 'outputs.ExternalDbSystemDatabaseManagementConfig']]] = None,
             db_system_discovery_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             discovery_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -570,7 +570,7 @@ class ExternalDbSystem(pulumi.CustomResource):
             home_directory: pulumi.Input[Optional[_builtins.str]] = None,
             is_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            stack_monitoring_config: pulumi.Input[Optional[Union['ExternalDbSystemStackMonitoringConfigArgs', 'ExternalDbSystemStackMonitoringConfigArgsDict']]] = None,
+            stack_monitoring_config: pulumi.Input[Optional[Union['ExternalDbSystemStackMonitoringConfigArgs', 'ExternalDbSystemStackMonitoringConfigArgsDict', 'outputs.ExternalDbSystemStackMonitoringConfig']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -583,7 +583,7 @@ class ExternalDbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        :param pulumi.Input[Union['ExternalDbSystemDatabaseManagementConfigArgs', 'ExternalDbSystemDatabaseManagementConfigArgsDict']] database_management_config: The details required to enable Database Management for an external DB system.
+        :param pulumi.Input[Union['ExternalDbSystemDatabaseManagementConfigArgs', 'ExternalDbSystemDatabaseManagementConfigArgsDict', 'outputs.ExternalDbSystemDatabaseManagementConfig']] database_management_config: The details required to enable Database Management for an external DB system.
         :param pulumi.Input[_builtins.str] db_system_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] discovery_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
@@ -592,7 +592,7 @@ class ExternalDbSystem(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] home_directory: The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
         :param pulumi.Input[_builtins.bool] is_cluster: Indicates whether the DB system is a cluster DB system or not.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[Union['ExternalDbSystemStackMonitoringConfigArgs', 'ExternalDbSystemStackMonitoringConfigArgsDict']] stack_monitoring_config: The details of the associated service that will be enabled or disabled for an external DB System.
+        :param pulumi.Input[Union['ExternalDbSystemStackMonitoringConfigArgs', 'ExternalDbSystemStackMonitoringConfigArgsDict', 'outputs.ExternalDbSystemStackMonitoringConfig']] stack_monitoring_config: The details of the associated service that will be enabled or disabled for an external DB System.
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the external DB system resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The date and time the external DB system was created.

@@ -122,7 +122,7 @@ class AwaitableGetIotIotFlowRuntimesResult(GetIotIotFlowRuntimesResult):
 
 def get_iot_iot_flow_runtimes(compartment_id: Optional[_builtins.str] = None,
                               display_name: Optional[_builtins.str] = None,
-                              filters: Optional[Sequence[Union['GetIotIotFlowRuntimesFilterArgs', 'GetIotIotFlowRuntimesFilterArgsDict']]] = None,
+                              filters: Optional[Sequence[Union['GetIotIotFlowRuntimesFilterArgs', 'GetIotIotFlowRuntimesFilterArgsDict', 'outputs.GetIotIotFlowRuntimesFilterResult']]] = None,
                               id: Optional[_builtins.str] = None,
                               iot_domain_id: Optional[_builtins.str] = None,
                               state: Optional[_builtins.str] = None,
@@ -172,7 +172,7 @@ def get_iot_iot_flow_runtimes(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_iot_iot_flow_runtimes_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIotIotFlowRuntimesFilterArgs', 'GetIotIotFlowRuntimesFilterArgsDict']]]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIotIotFlowRuntimesFilterArgs', 'GetIotIotFlowRuntimesFilterArgsDict', 'outputs.GetIotIotFlowRuntimesFilterResult']]]]] = None,
                                      id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      iot_domain_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

@@ -91,7 +91,7 @@ class AwaitableGetListingTaxesResult(GetListingTaxesResult):
 
 
 def get_listing_taxes(compartment_id: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetListingTaxesFilterArgs', 'GetListingTaxesFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetListingTaxesFilterArgs', 'GetListingTaxesFilterArgsDict', 'outputs.GetListingTaxesFilterResult']]] = None,
                       listing_id: Optional[_builtins.str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetListingTaxesResult:
     """
@@ -127,7 +127,7 @@ def get_listing_taxes(compartment_id: Optional[_builtins.str] = None,
         listing_id=pulumi.get(__ret__, 'listing_id'),
         taxes=pulumi.get(__ret__, 'taxes'))
 def get_listing_taxes_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetListingTaxesFilterArgs', 'GetListingTaxesFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetListingTaxesFilterArgs', 'GetListingTaxesFilterArgsDict', 'outputs.GetListingTaxesFilterResult']]]]] = None,
                              listing_id: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListingTaxesResult]:
     """

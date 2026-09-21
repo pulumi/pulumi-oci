@@ -97,7 +97,7 @@ class AwaitableGetInstanceConsoleConnectionsResult(GetInstanceConsoleConnections
 
 
 def get_instance_console_connections(compartment_id: Optional[_builtins.str] = None,
-                                     filters: Optional[Sequence[Union['GetInstanceConsoleConnectionsFilterArgs', 'GetInstanceConsoleConnectionsFilterArgsDict']]] = None,
+                                     filters: Optional[Sequence[Union['GetInstanceConsoleConnectionsFilterArgs', 'GetInstanceConsoleConnectionsFilterArgsDict', 'outputs.GetInstanceConsoleConnectionsFilterResult']]] = None,
                                      instance_id: Optional[_builtins.str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInstanceConsoleConnectionsResult:
     """
@@ -135,7 +135,7 @@ def get_instance_console_connections(compartment_id: Optional[_builtins.str] = N
         instance_console_connections=pulumi.get(__ret__, 'instance_console_connections'),
         instance_id=pulumi.get(__ret__, 'instance_id'))
 def get_instance_console_connections_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstanceConsoleConnectionsFilterArgs', 'GetInstanceConsoleConnectionsFilterArgsDict']]]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstanceConsoleConnectionsFilterArgs', 'GetInstanceConsoleConnectionsFilterArgsDict', 'outputs.GetInstanceConsoleConnectionsFilterResult']]]]] = None,
                                             instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstanceConsoleConnectionsResult]:
     """

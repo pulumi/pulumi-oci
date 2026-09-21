@@ -97,7 +97,7 @@ class AwaitableGetBucketSummariesResult(GetBucketSummariesResult):
 
 
 def get_bucket_summaries(compartment_id: Optional[_builtins.str] = None,
-                         filters: Optional[Sequence[Union['GetBucketSummariesFilterArgs', 'GetBucketSummariesFilterArgsDict']]] = None,
+                         filters: Optional[Sequence[Union['GetBucketSummariesFilterArgs', 'GetBucketSummariesFilterArgsDict', 'outputs.GetBucketSummariesFilterResult']]] = None,
                          namespace: Optional[_builtins.str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBucketSummariesResult:
     """
@@ -141,7 +141,7 @@ def get_bucket_summaries(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         namespace=pulumi.get(__ret__, 'namespace'))
 def get_bucket_summaries_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBucketSummariesFilterArgs', 'GetBucketSummariesFilterArgsDict']]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBucketSummariesFilterArgs', 'GetBucketSummariesFilterArgsDict', 'outputs.GetBucketSummariesFilterResult']]]]] = None,
                                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBucketSummariesResult]:
     """

@@ -102,7 +102,7 @@ class AwaitableGetAssessmentAssessorCheckAffectedObjectsResult(GetAssessmentAsse
 def get_assessment_assessor_check_affected_objects(assessment_id: Optional[_builtins.str] = None,
                                                    assessor_name: Optional[_builtins.str] = None,
                                                    check_name: Optional[_builtins.str] = None,
-                                                   filters: Optional[Sequence[Union['GetAssessmentAssessorCheckAffectedObjectsFilterArgs', 'GetAssessmentAssessorCheckAffectedObjectsFilterArgsDict']]] = None,
+                                                   filters: Optional[Sequence[Union['GetAssessmentAssessorCheckAffectedObjectsFilterArgs', 'GetAssessmentAssessorCheckAffectedObjectsFilterArgsDict', 'outputs.GetAssessmentAssessorCheckAffectedObjectsFilterResult']]] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAssessmentAssessorCheckAffectedObjectsResult:
     """
     This data source provides the list of Assessment Assessor Check Affected Objects in Oracle Cloud Infrastructure Database Migration service.
@@ -143,7 +143,7 @@ def get_assessment_assessor_check_affected_objects(assessment_id: Optional[_buil
 def get_assessment_assessor_check_affected_objects_output(assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                           assessor_name: pulumi.Input[Optional[_builtins.str]] = None,
                                                           check_name: pulumi.Input[Optional[_builtins.str]] = None,
-                                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAssessmentAssessorCheckAffectedObjectsFilterArgs', 'GetAssessmentAssessorCheckAffectedObjectsFilterArgsDict']]]]] = None,
+                                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAssessmentAssessorCheckAffectedObjectsFilterArgs', 'GetAssessmentAssessorCheckAffectedObjectsFilterArgsDict', 'outputs.GetAssessmentAssessorCheckAffectedObjectsFilterResult']]]]] = None,
                                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAssessmentAssessorCheckAffectedObjectsResult]:
     """
     This data source provides the list of Assessment Assessor Check Affected Objects in Oracle Cloud Infrastructure Database Migration service.

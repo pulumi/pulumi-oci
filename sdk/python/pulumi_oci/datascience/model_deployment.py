@@ -451,13 +451,13 @@ class ModelDeployment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 category_log_details: pulumi.Input[Optional[Union['ModelDeploymentCategoryLogDetailsArgs', 'ModelDeploymentCategoryLogDetailsArgsDict']]] = None,
+                 category_log_details: pulumi.Input[Optional[Union['ModelDeploymentCategoryLogDetailsArgs', 'ModelDeploymentCategoryLogDetailsArgsDict', 'outputs.ModelDeploymentCategoryLogDetails']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 model_deployment_configuration_details: pulumi.Input[Optional[Union['ModelDeploymentModelDeploymentConfigurationDetailsArgs', 'ModelDeploymentModelDeploymentConfigurationDetailsArgsDict']]] = None,
+                 model_deployment_configuration_details: pulumi.Input[Optional[Union['ModelDeploymentModelDeploymentConfigurationDetailsArgs', 'ModelDeploymentModelDeploymentConfigurationDetailsArgsDict', 'outputs.ModelDeploymentModelDeploymentConfigurationDetails']]] = None,
                  opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -481,13 +481,13 @@ class ModelDeployment(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ModelDeploymentCategoryLogDetailsArgs', 'ModelDeploymentCategoryLogDetailsArgsDict']] category_log_details: (Updatable) The log details for each category.
+        :param pulumi.Input[Union['ModelDeploymentCategoryLogDetailsArgs', 'ModelDeploymentCategoryLogDetailsArgsDict', 'outputs.ModelDeploymentCategoryLogDetails']] category_log_details: (Updatable) The log details for each category.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the model deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the model deployment.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['ModelDeploymentModelDeploymentConfigurationDetailsArgs', 'ModelDeploymentModelDeploymentConfigurationDetailsArgsDict']] model_deployment_configuration_details: (Updatable) The model deployment configuration details.
+        :param pulumi.Input[Union['ModelDeploymentModelDeploymentConfigurationDetailsArgs', 'ModelDeploymentModelDeploymentConfigurationDetailsArgsDict', 'outputs.ModelDeploymentModelDeploymentConfigurationDetails']] model_deployment_configuration_details: (Updatable) The model deployment configuration details.
         :param pulumi.Input[_builtins.str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
@@ -533,13 +533,13 @@ class ModelDeployment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 category_log_details: pulumi.Input[Optional[Union['ModelDeploymentCategoryLogDetailsArgs', 'ModelDeploymentCategoryLogDetailsArgsDict']]] = None,
+                 category_log_details: pulumi.Input[Optional[Union['ModelDeploymentCategoryLogDetailsArgs', 'ModelDeploymentCategoryLogDetailsArgsDict', 'outputs.ModelDeploymentCategoryLogDetails']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 model_deployment_configuration_details: pulumi.Input[Optional[Union['ModelDeploymentModelDeploymentConfigurationDetailsArgs', 'ModelDeploymentModelDeploymentConfigurationDetailsArgsDict']]] = None,
+                 model_deployment_configuration_details: pulumi.Input[Optional[Union['ModelDeploymentModelDeploymentConfigurationDetailsArgs', 'ModelDeploymentModelDeploymentConfigurationDetailsArgsDict', 'outputs.ModelDeploymentModelDeploymentConfigurationDetails']]] = None,
                  opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -583,7 +583,7 @@ class ModelDeployment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            category_log_details: pulumi.Input[Optional[Union['ModelDeploymentCategoryLogDetailsArgs', 'ModelDeploymentCategoryLogDetailsArgsDict']]] = None,
+            category_log_details: pulumi.Input[Optional[Union['ModelDeploymentCategoryLogDetailsArgs', 'ModelDeploymentCategoryLogDetailsArgsDict', 'outputs.ModelDeploymentCategoryLogDetails']]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             created_by: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -591,8 +591,8 @@ class ModelDeployment(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            model_deployment_configuration_details: pulumi.Input[Optional[Union['ModelDeploymentModelDeploymentConfigurationDetailsArgs', 'ModelDeploymentModelDeploymentConfigurationDetailsArgsDict']]] = None,
-            model_deployment_system_datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelDeploymentModelDeploymentSystemDataArgs', 'ModelDeploymentModelDeploymentSystemDataArgsDict']]]]] = None,
+            model_deployment_configuration_details: pulumi.Input[Optional[Union['ModelDeploymentModelDeploymentConfigurationDetailsArgs', 'ModelDeploymentModelDeploymentConfigurationDetailsArgsDict', 'outputs.ModelDeploymentModelDeploymentConfigurationDetails']]] = None,
+            model_deployment_system_datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelDeploymentModelDeploymentSystemDataArgs', 'ModelDeploymentModelDeploymentSystemDataArgsDict', 'outputs.ModelDeploymentModelDeploymentSystemData']]]]] = None,
             model_deployment_url: pulumi.Input[Optional[_builtins.str]] = None,
             opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
             project_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -605,7 +605,7 @@ class ModelDeployment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ModelDeploymentCategoryLogDetailsArgs', 'ModelDeploymentCategoryLogDetailsArgsDict']] category_log_details: (Updatable) The log details for each category.
+        :param pulumi.Input[Union['ModelDeploymentCategoryLogDetailsArgs', 'ModelDeploymentCategoryLogDetailsArgsDict', 'outputs.ModelDeploymentCategoryLogDetails']] category_log_details: (Updatable) The log details for each category.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the model deployment.
         :param pulumi.Input[_builtins.str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -613,8 +613,8 @@ class ModelDeployment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the state of the model deployment.
-        :param pulumi.Input[Union['ModelDeploymentModelDeploymentConfigurationDetailsArgs', 'ModelDeploymentModelDeploymentConfigurationDetailsArgsDict']] model_deployment_configuration_details: (Updatable) The model deployment configuration details.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelDeploymentModelDeploymentSystemDataArgs', 'ModelDeploymentModelDeploymentSystemDataArgsDict']]]] model_deployment_system_datas: Model deployment system data.
+        :param pulumi.Input[Union['ModelDeploymentModelDeploymentConfigurationDetailsArgs', 'ModelDeploymentModelDeploymentConfigurationDetailsArgsDict', 'outputs.ModelDeploymentModelDeploymentConfigurationDetails']] model_deployment_configuration_details: (Updatable) The model deployment configuration details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelDeploymentModelDeploymentSystemDataArgs', 'ModelDeploymentModelDeploymentSystemDataArgsDict', 'outputs.ModelDeploymentModelDeploymentSystemData']]]] model_deployment_system_datas: Model deployment system data.
         :param pulumi.Input[_builtins.str] model_deployment_url: The URL to interact with the model deployment.
         :param pulumi.Input[_builtins.str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.

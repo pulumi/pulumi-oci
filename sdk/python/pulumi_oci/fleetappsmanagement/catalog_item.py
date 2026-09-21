@@ -629,7 +629,7 @@ class CatalogItem(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 catalog_source_payload: pulumi.Input[Optional[Union['CatalogItemCatalogSourcePayloadArgs', 'CatalogItemCatalogSourcePayloadArgsDict']]] = None,
+                 catalog_source_payload: pulumi.Input[Optional[Union['CatalogItemCatalogSourcePayloadArgs', 'CatalogItemCatalogSourcePayloadArgsDict', 'outputs.CatalogItemCatalogSourcePayload']]] = None,
                  clone_catalog_item_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  config_source_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -707,7 +707,7 @@ class CatalogItem(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['CatalogItemCatalogSourcePayloadArgs', 'CatalogItemCatalogSourcePayloadArgsDict']] catalog_source_payload: Catalog source payload.
+        :param pulumi.Input[Union['CatalogItemCatalogSourcePayloadArgs', 'CatalogItemCatalogSourcePayloadArgsDict', 'outputs.CatalogItemCatalogSourcePayload']] catalog_source_payload: Catalog source payload.
         :param pulumi.Input[_builtins.int] clone_catalog_item_trigger: (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] config_source_type: Config source type Eg: STACK_TEMPLATE_CATALOG_SOURCE, PAR_CATALOG_SOURCE, GIT_CATALOG_SOURCE, MARKETPLACE_CATALOG_SOURCE.
@@ -804,7 +804,7 @@ class CatalogItem(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 catalog_source_payload: pulumi.Input[Optional[Union['CatalogItemCatalogSourcePayloadArgs', 'CatalogItemCatalogSourcePayloadArgsDict']]] = None,
+                 catalog_source_payload: pulumi.Input[Optional[Union['CatalogItemCatalogSourcePayloadArgs', 'CatalogItemCatalogSourcePayloadArgsDict', 'outputs.CatalogItemCatalogSourcePayload']]] = None,
                  clone_catalog_item_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  config_source_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -870,8 +870,8 @@ class CatalogItem(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            catalog_result_payloads: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CatalogItemCatalogResultPayloadArgs', 'CatalogItemCatalogResultPayloadArgsDict']]]]] = None,
-            catalog_source_payload: pulumi.Input[Optional[Union['CatalogItemCatalogSourcePayloadArgs', 'CatalogItemCatalogSourcePayloadArgsDict']]] = None,
+            catalog_result_payloads: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CatalogItemCatalogResultPayloadArgs', 'CatalogItemCatalogResultPayloadArgsDict', 'outputs.CatalogItemCatalogResultPayload']]]]] = None,
+            catalog_source_payload: pulumi.Input[Optional[Union['CatalogItemCatalogSourcePayloadArgs', 'CatalogItemCatalogSourcePayloadArgsDict', 'outputs.CatalogItemCatalogSourcePayload']]] = None,
             clone_catalog_item_trigger: pulumi.Input[Optional[_builtins.int]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             config_source_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -900,8 +900,8 @@ class CatalogItem(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CatalogItemCatalogResultPayloadArgs', 'CatalogItemCatalogResultPayloadArgsDict']]]] catalog_result_payloads: Catalog result payload.
-        :param pulumi.Input[Union['CatalogItemCatalogSourcePayloadArgs', 'CatalogItemCatalogSourcePayloadArgsDict']] catalog_source_payload: Catalog source payload.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CatalogItemCatalogResultPayloadArgs', 'CatalogItemCatalogResultPayloadArgsDict', 'outputs.CatalogItemCatalogResultPayload']]]] catalog_result_payloads: Catalog result payload.
+        :param pulumi.Input[Union['CatalogItemCatalogSourcePayloadArgs', 'CatalogItemCatalogSourcePayloadArgsDict', 'outputs.CatalogItemCatalogSourcePayload']] catalog_source_payload: Catalog source payload.
         :param pulumi.Input[_builtins.int] clone_catalog_item_trigger: (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] config_source_type: Config source type Eg: STACK_TEMPLATE_CATALOG_SOURCE, PAR_CATALOG_SOURCE, GIT_CATALOG_SOURCE, MARKETPLACE_CATALOG_SOURCE.

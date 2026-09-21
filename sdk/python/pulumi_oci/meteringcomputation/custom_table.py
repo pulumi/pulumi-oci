@@ -148,7 +148,7 @@ class CustomTable(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 saved_custom_table: pulumi.Input[Optional[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict']]] = None,
+                 saved_custom_table: pulumi.Input[Optional[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict', 'outputs.CustomTableSavedCustomTable']]] = None,
                  saved_report_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -194,7 +194,7 @@ class CustomTable(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID.
-        :param pulumi.Input[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict']] saved_custom_table: (Updatable) The custom table for Cost Analysis UI rendering.
+        :param pulumi.Input[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict', 'outputs.CustomTableSavedCustomTable']] saved_custom_table: (Updatable) The custom table for Cost Analysis UI rendering.
         :param pulumi.Input[_builtins.str] saved_report_id: The associated saved report OCID.
                
                ** IMPORTANT **
@@ -262,7 +262,7 @@ class CustomTable(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 saved_custom_table: pulumi.Input[Optional[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict']]] = None,
+                 saved_custom_table: pulumi.Input[Optional[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict', 'outputs.CustomTableSavedCustomTable']]] = None,
                  saved_report_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -293,7 +293,7 @@ class CustomTable(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            saved_custom_table: pulumi.Input[Optional[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict']]] = None,
+            saved_custom_table: pulumi.Input[Optional[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict', 'outputs.CustomTableSavedCustomTable']]] = None,
             saved_report_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'CustomTable':
         """
         Get an existing CustomTable resource's state with the given name, id, and optional extra
@@ -303,7 +303,7 @@ class CustomTable(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID.
-        :param pulumi.Input[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict']] saved_custom_table: (Updatable) The custom table for Cost Analysis UI rendering.
+        :param pulumi.Input[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict', 'outputs.CustomTableSavedCustomTable']] saved_custom_table: (Updatable) The custom table for Cost Analysis UI rendering.
         :param pulumi.Input[_builtins.str] saved_report_id: The associated saved report OCID.
                
                ** IMPORTANT **

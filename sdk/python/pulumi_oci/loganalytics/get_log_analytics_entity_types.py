@@ -127,7 +127,7 @@ class AwaitableGetLogAnalyticsEntityTypesResult(GetLogAnalyticsEntityTypesResult
 
 
 def get_log_analytics_entity_types(cloud_type: Optional[_builtins.str] = None,
-                                   filters: Optional[Sequence[Union['GetLogAnalyticsEntityTypesFilterArgs', 'GetLogAnalyticsEntityTypesFilterArgsDict']]] = None,
+                                   filters: Optional[Sequence[Union['GetLogAnalyticsEntityTypesFilterArgs', 'GetLogAnalyticsEntityTypesFilterArgsDict', 'outputs.GetLogAnalyticsEntityTypesFilterResult']]] = None,
                                    name: Optional[_builtins.str] = None,
                                    name_contains: Optional[_builtins.str] = None,
                                    namespace: Optional[_builtins.str] = None,
@@ -178,7 +178,7 @@ def get_log_analytics_entity_types(cloud_type: Optional[_builtins.str] = None,
         namespace=pulumi.get(__ret__, 'namespace'),
         state=pulumi.get(__ret__, 'state'))
 def get_log_analytics_entity_types_output(cloud_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLogAnalyticsEntityTypesFilterArgs', 'GetLogAnalyticsEntityTypesFilterArgsDict']]]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLogAnalyticsEntityTypesFilterArgs', 'GetLogAnalyticsEntityTypesFilterArgsDict', 'outputs.GetLogAnalyticsEntityTypesFilterResult']]]]] = None,
                                           name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           namespace: pulumi.Input[Optional[_builtins.str]] = None,

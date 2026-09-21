@@ -90,7 +90,7 @@ class AwaitableGetInternalOccHandoverResourceBlockDetailsResult(GetInternalOccHa
             occ_handover_resource_block_id=self.occ_handover_resource_block_id)
 
 
-def get_internal_occ_handover_resource_block_details(filters: Optional[Sequence[Union['GetInternalOccHandoverResourceBlockDetailsFilterArgs', 'GetInternalOccHandoverResourceBlockDetailsFilterArgsDict']]] = None,
+def get_internal_occ_handover_resource_block_details(filters: Optional[Sequence[Union['GetInternalOccHandoverResourceBlockDetailsFilterArgs', 'GetInternalOccHandoverResourceBlockDetailsFilterArgsDict', 'outputs.GetInternalOccHandoverResourceBlockDetailsFilterResult']]] = None,
                                                      host_id: Optional[_builtins.str] = None,
                                                      occ_handover_resource_block_id: Optional[_builtins.str] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInternalOccHandoverResourceBlockDetailsResult:
@@ -126,7 +126,7 @@ def get_internal_occ_handover_resource_block_details(filters: Optional[Sequence[
         id=pulumi.get(__ret__, 'id'),
         occ_handover_resource_block_detail_collections=pulumi.get(__ret__, 'occ_handover_resource_block_detail_collections'),
         occ_handover_resource_block_id=pulumi.get(__ret__, 'occ_handover_resource_block_id'))
-def get_internal_occ_handover_resource_block_details_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInternalOccHandoverResourceBlockDetailsFilterArgs', 'GetInternalOccHandoverResourceBlockDetailsFilterArgsDict']]]]] = None,
+def get_internal_occ_handover_resource_block_details_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInternalOccHandoverResourceBlockDetailsFilterArgs', 'GetInternalOccHandoverResourceBlockDetailsFilterArgsDict', 'outputs.GetInternalOccHandoverResourceBlockDetailsFilterResult']]]]] = None,
                                                             host_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                             occ_handover_resource_block_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInternalOccHandoverResourceBlockDetailsResult]:

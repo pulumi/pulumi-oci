@@ -368,7 +368,7 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
             email_address: pulumi.Input[Optional[_builtins.str]] = None,
             first_name: pulumi.Input[Optional[_builtins.str]] = None,
             fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FusionEnvironmentAdminUserItemArgs', 'FusionEnvironmentAdminUserItemArgsDict']]]]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FusionEnvironmentAdminUserItemArgs', 'FusionEnvironmentAdminUserItemArgsDict', 'outputs.FusionEnvironmentAdminUserItem']]]]] = None,
             last_name: pulumi.Input[Optional[_builtins.str]] = None,
             username: pulumi.Input[Optional[_builtins.str]] = None) -> 'FusionEnvironmentAdminUser':
         """
@@ -381,7 +381,7 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] email_address: The email address for the administrator.
         :param pulumi.Input[_builtins.str] first_name: The administrator's first name.
         :param pulumi.Input[_builtins.str] fusion_environment_id: unique FusionEnvironment identifier
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentAdminUserItemArgs', 'FusionEnvironmentAdminUserItemArgsDict']]]] items: A page of AdminUserSummary objects.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentAdminUserItemArgs', 'FusionEnvironmentAdminUserItemArgsDict', 'outputs.FusionEnvironmentAdminUserItem']]]] items: A page of AdminUserSummary objects.
         :param pulumi.Input[_builtins.str] last_name: The administrator's last name.
         :param pulumi.Input[_builtins.str] username: The username for the administrator.
                

@@ -82,7 +82,7 @@ class AwaitableGetCrossConnectLocationsResult(GetCrossConnectLocationsResult):
 
 
 def get_cross_connect_locations(compartment_id: Optional[_builtins.str] = None,
-                                filters: Optional[Sequence[Union['GetCrossConnectLocationsFilterArgs', 'GetCrossConnectLocationsFilterArgsDict']]] = None,
+                                filters: Optional[Sequence[Union['GetCrossConnectLocationsFilterArgs', 'GetCrossConnectLocationsFilterArgsDict', 'outputs.GetCrossConnectLocationsFilterResult']]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCrossConnectLocationsResult:
     """
     This data source provides the list of Cross Connect Locations in Oracle Cloud Infrastructure Core service.
@@ -114,7 +114,7 @@ def get_cross_connect_locations(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_cross_connect_locations_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCrossConnectLocationsFilterArgs', 'GetCrossConnectLocationsFilterArgsDict']]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCrossConnectLocationsFilterArgs', 'GetCrossConnectLocationsFilterArgsDict', 'outputs.GetCrossConnectLocationsFilterResult']]]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCrossConnectLocationsResult]:
     """
     This data source provides the list of Cross Connect Locations in Oracle Cloud Infrastructure Core service.

@@ -92,7 +92,7 @@ class AwaitableGetContainerInstanceShapesResult(GetContainerInstanceShapesResult
 
 def get_container_instance_shapes(availability_domain: Optional[_builtins.str] = None,
                                   compartment_id: Optional[_builtins.str] = None,
-                                  filters: Optional[Sequence[Union['GetContainerInstanceShapesFilterArgs', 'GetContainerInstanceShapesFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetContainerInstanceShapesFilterArgs', 'GetContainerInstanceShapesFilterArgsDict', 'outputs.GetContainerInstanceShapesFilterResult']]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetContainerInstanceShapesResult:
     """
     This data source provides the list of Container Instance Shapes in Oracle Cloud Infrastructure Container Instances service.
@@ -128,7 +128,7 @@ def get_container_instance_shapes(availability_domain: Optional[_builtins.str] =
         id=pulumi.get(__ret__, 'id'))
 def get_container_instance_shapes_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetContainerInstanceShapesFilterArgs', 'GetContainerInstanceShapesFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetContainerInstanceShapesFilterArgs', 'GetContainerInstanceShapesFilterArgsDict', 'outputs.GetContainerInstanceShapesFilterResult']]]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetContainerInstanceShapesResult]:
     """
     This data source provides the list of Container Instance Shapes in Oracle Cloud Infrastructure Container Instances service.

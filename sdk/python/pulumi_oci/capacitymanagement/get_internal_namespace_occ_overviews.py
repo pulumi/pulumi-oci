@@ -130,7 +130,7 @@ class AwaitableGetInternalNamespaceOccOverviewsResult(GetInternalNamespaceOccOve
 
 
 def get_internal_namespace_occ_overviews(compartment_id: Optional[_builtins.str] = None,
-                                         filters: Optional[Sequence[Union['GetInternalNamespaceOccOverviewsFilterArgs', 'GetInternalNamespaceOccOverviewsFilterArgsDict']]] = None,
+                                         filters: Optional[Sequence[Union['GetInternalNamespaceOccOverviewsFilterArgs', 'GetInternalNamespaceOccOverviewsFilterArgsDict', 'outputs.GetInternalNamespaceOccOverviewsFilterResult']]] = None,
                                          from_: Optional[_builtins.str] = None,
                                          namespace: Optional[_builtins.str] = None,
                                          occ_customer_group_id: Optional[_builtins.str] = None,
@@ -186,7 +186,7 @@ def get_internal_namespace_occ_overviews(compartment_id: Optional[_builtins.str]
         to=pulumi.get(__ret__, 'to'),
         workload_type=pulumi.get(__ret__, 'workload_type'))
 def get_internal_namespace_occ_overviews_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInternalNamespaceOccOverviewsFilterArgs', 'GetInternalNamespaceOccOverviewsFilterArgsDict']]]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInternalNamespaceOccOverviewsFilterArgs', 'GetInternalNamespaceOccOverviewsFilterArgsDict', 'outputs.GetInternalNamespaceOccOverviewsFilterResult']]]]] = None,
                                                 from_: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                                 occ_customer_group_id: pulumi.Input[Optional[_builtins.str]] = None,

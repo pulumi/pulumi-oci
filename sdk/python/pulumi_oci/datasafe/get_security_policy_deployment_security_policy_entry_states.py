@@ -130,7 +130,7 @@ class AwaitableGetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult(GetSec
 
 
 def get_security_policy_deployment_security_policy_entry_states(deployment_status: Optional[_builtins.str] = None,
-                                                                filters: Optional[Sequence[Union['GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs', 'GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgsDict']]] = None,
+                                                                filters: Optional[Sequence[Union['GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs', 'GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgsDict', 'outputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterResult']]] = None,
                                                                 security_policy_deployment_id: Optional[_builtins.str] = None,
                                                                 security_policy_entry_id: Optional[_builtins.str] = None,
                                                                 security_policy_entry_type: Optional[_builtins.str] = None,
@@ -183,7 +183,7 @@ def get_security_policy_deployment_security_policy_entry_states(deployment_statu
         security_policy_entry_type=pulumi.get(__ret__, 'security_policy_entry_type'),
         target_id=pulumi.get(__ret__, 'target_id'))
 def get_security_policy_deployment_security_policy_entry_states_output(deployment_status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs', 'GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgsDict']]]]] = None,
+                                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs', 'GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgsDict', 'outputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterResult']]]]] = None,
                                                                        security_policy_deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                        security_policy_entry_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                        security_policy_entry_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

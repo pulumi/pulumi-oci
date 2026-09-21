@@ -373,8 +373,8 @@ class OccDemandSignal(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_active: pulumi.Input[Optional[_builtins.bool]] = None,
                  occ_demand_signal_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 occ_demand_signals: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccDemandSignalOccDemandSignalArgs', 'OccDemandSignalOccDemandSignalArgsDict']]]]] = None,
-                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccDemandSignalPatchOperationArgs', 'OccDemandSignalPatchOperationArgsDict']]]]] = None,
+                 occ_demand_signals: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccDemandSignalOccDemandSignalArgs', 'OccDemandSignalOccDemandSignalArgsDict', 'outputs.OccDemandSignalOccDemandSignal']]]]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccDemandSignalPatchOperationArgs', 'OccDemandSignalPatchOperationArgsDict', 'outputs.OccDemandSignalPatchOperation']]]]] = None,
                  __props__=None):
         """
         This resource provides the Occ Demand Signal resource in Oracle Cloud Infrastructure Demand Signal service.
@@ -439,8 +439,8 @@ class OccDemandSignal(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_active: (Updatable) Indicator of whether to share the data with Oracle.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OccDemandSignalOccDemandSignalArgs', 'OccDemandSignalOccDemandSignalArgsDict']]]] occ_demand_signals: The OccDemandSignal data.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OccDemandSignalPatchOperationArgs', 'OccDemandSignalPatchOperationArgsDict']]]] patch_operations: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OccDemandSignalOccDemandSignalArgs', 'OccDemandSignalOccDemandSignalArgsDict', 'outputs.OccDemandSignalOccDemandSignal']]]] occ_demand_signals: The OccDemandSignal data.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OccDemandSignalPatchOperationArgs', 'OccDemandSignalPatchOperationArgsDict', 'outputs.OccDemandSignalPatchOperation']]]] patch_operations: (Updatable)
         """
         ...
     @overload
@@ -525,8 +525,8 @@ class OccDemandSignal(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_active: pulumi.Input[Optional[_builtins.bool]] = None,
                  occ_demand_signal_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 occ_demand_signals: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccDemandSignalOccDemandSignalArgs', 'OccDemandSignalOccDemandSignalArgsDict']]]]] = None,
-                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccDemandSignalPatchOperationArgs', 'OccDemandSignalPatchOperationArgsDict']]]]] = None,
+                 occ_demand_signals: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccDemandSignalOccDemandSignalArgs', 'OccDemandSignalOccDemandSignalArgsDict', 'outputs.OccDemandSignalOccDemandSignal']]]]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccDemandSignalPatchOperationArgs', 'OccDemandSignalPatchOperationArgsDict', 'outputs.OccDemandSignalPatchOperation']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -572,8 +572,8 @@ class OccDemandSignal(pulumi.CustomResource):
             is_active: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             occ_demand_signal_id: pulumi.Input[Optional[_builtins.str]] = None,
-            occ_demand_signals: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccDemandSignalOccDemandSignalArgs', 'OccDemandSignalOccDemandSignalArgsDict']]]]] = None,
-            patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccDemandSignalPatchOperationArgs', 'OccDemandSignalPatchOperationArgsDict']]]]] = None,
+            occ_demand_signals: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccDemandSignalOccDemandSignalArgs', 'OccDemandSignalOccDemandSignalArgsDict', 'outputs.OccDemandSignalOccDemandSignal']]]]] = None,
+            patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OccDemandSignalPatchOperationArgs', 'OccDemandSignalPatchOperationArgsDict', 'outputs.OccDemandSignalPatchOperation']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -591,8 +591,8 @@ class OccDemandSignal(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_active: (Updatable) Indicator of whether to share the data with Oracle.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the OccDemandSignal in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OccDemandSignalOccDemandSignalArgs', 'OccDemandSignalOccDemandSignalArgsDict']]]] occ_demand_signals: The OccDemandSignal data.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OccDemandSignalPatchOperationArgs', 'OccDemandSignalPatchOperationArgsDict']]]] patch_operations: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OccDemandSignalOccDemandSignalArgs', 'OccDemandSignalOccDemandSignalArgsDict', 'outputs.OccDemandSignalOccDemandSignal']]]] occ_demand_signals: The OccDemandSignal data.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OccDemandSignalPatchOperationArgs', 'OccDemandSignalPatchOperationArgsDict', 'outputs.OccDemandSignalPatchOperation']]]] patch_operations: (Updatable)
         :param pulumi.Input[_builtins.str] state: The current state of the OccDemandSignal.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The date and time the OccDemandSignal was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`

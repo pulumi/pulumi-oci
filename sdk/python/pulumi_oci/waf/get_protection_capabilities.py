@@ -142,7 +142,7 @@ class AwaitableGetProtectionCapabilitiesResult(GetProtectionCapabilitiesResult):
 
 def get_protection_capabilities(compartment_id: Optional[_builtins.str] = None,
                                 display_name: Optional[_builtins.str] = None,
-                                filters: Optional[Sequence[Union['GetProtectionCapabilitiesFilterArgs', 'GetProtectionCapabilitiesFilterArgsDict']]] = None,
+                                filters: Optional[Sequence[Union['GetProtectionCapabilitiesFilterArgs', 'GetProtectionCapabilitiesFilterArgsDict', 'outputs.GetProtectionCapabilitiesFilterResult']]] = None,
                                 group_tags: Optional[Sequence[_builtins.str]] = None,
                                 is_latest_versions: Optional[Sequence[_builtins.bool]] = None,
                                 key: Optional[_builtins.str] = None,
@@ -198,7 +198,7 @@ def get_protection_capabilities(compartment_id: Optional[_builtins.str] = None,
         type=pulumi.get(__ret__, 'type'))
 def get_protection_capabilities_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProtectionCapabilitiesFilterArgs', 'GetProtectionCapabilitiesFilterArgsDict']]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProtectionCapabilitiesFilterArgs', 'GetProtectionCapabilitiesFilterArgsDict', 'outputs.GetProtectionCapabilitiesFilterResult']]]]] = None,
                                        group_tags: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                        is_latest_versions: pulumi.Input[Optional[Optional[Sequence[_builtins.bool]]]] = None,
                                        key: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

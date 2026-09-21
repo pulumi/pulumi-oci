@@ -100,7 +100,7 @@ class AwaitableGetNetworkFirewallPolicySecurityRulesResult(GetNetworkFirewallPol
 
 
 def get_network_firewall_policy_security_rules(display_name: Optional[_builtins.str] = None,
-                                               filters: Optional[Sequence[Union['GetNetworkFirewallPolicySecurityRulesFilterArgs', 'GetNetworkFirewallPolicySecurityRulesFilterArgsDict']]] = None,
+                                               filters: Optional[Sequence[Union['GetNetworkFirewallPolicySecurityRulesFilterArgs', 'GetNetworkFirewallPolicySecurityRulesFilterArgsDict', 'outputs.GetNetworkFirewallPolicySecurityRulesFilterResult']]] = None,
                                                network_firewall_policy_id: Optional[_builtins.str] = None,
                                                security_rule_priority_order: Optional[_builtins.int] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicySecurityRulesResult:
@@ -141,7 +141,7 @@ def get_network_firewall_policy_security_rules(display_name: Optional[_builtins.
         security_rule_priority_order=pulumi.get(__ret__, 'security_rule_priority_order'),
         security_rule_summary_collections=pulumi.get(__ret__, 'security_rule_summary_collections'))
 def get_network_firewall_policy_security_rules_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPolicySecurityRulesFilterArgs', 'GetNetworkFirewallPolicySecurityRulesFilterArgsDict']]]]] = None,
+                                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPolicySecurityRulesFilterArgs', 'GetNetworkFirewallPolicySecurityRulesFilterArgsDict', 'outputs.GetNetworkFirewallPolicySecurityRulesFilterResult']]]]] = None,
                                                       network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                       security_rule_priority_order: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicySecurityRulesResult]:

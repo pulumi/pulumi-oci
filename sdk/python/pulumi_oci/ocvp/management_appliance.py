@@ -466,8 +466,8 @@ class ManagementAppliance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 configuration: pulumi.Input[Optional[Union['ManagementApplianceConfigurationArgs', 'ManagementApplianceConfigurationArgsDict']]] = None,
-                 connections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementApplianceConnectionArgs', 'ManagementApplianceConnectionArgsDict']]]]] = None,
+                 configuration: pulumi.Input[Optional[Union['ManagementApplianceConfigurationArgs', 'ManagementApplianceConfigurationArgsDict', 'outputs.ManagementApplianceConfiguration']]] = None,
+                 connections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementApplianceConnectionArgs', 'ManagementApplianceConnectionArgsDict', 'outputs.ManagementApplianceConnection']]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -521,8 +521,8 @@ class ManagementAppliance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ManagementApplianceConfigurationArgs', 'ManagementApplianceConfigurationArgsDict']] configuration: (Updatable) Configuration of management appliance.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementApplianceConnectionArgs', 'ManagementApplianceConnectionArgsDict']]]] connections: (Updatable) Array of connections for management appliance.
+        :param pulumi.Input[Union['ManagementApplianceConfigurationArgs', 'ManagementApplianceConfigurationArgsDict', 'outputs.ManagementApplianceConfiguration']] configuration: (Updatable) Configuration of management appliance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementApplianceConnectionArgs', 'ManagementApplianceConnectionArgsDict', 'outputs.ManagementApplianceConnection']]]] connections: (Updatable) Array of connections for management appliance.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the management appliance. It must be unique, start with a letter, and contain only letters, digits, whitespaces, dashes and underscores. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -598,8 +598,8 @@ class ManagementAppliance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 configuration: pulumi.Input[Optional[Union['ManagementApplianceConfigurationArgs', 'ManagementApplianceConfigurationArgsDict']]] = None,
-                 connections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementApplianceConnectionArgs', 'ManagementApplianceConnectionArgsDict']]]]] = None,
+                 configuration: pulumi.Input[Optional[Union['ManagementApplianceConfigurationArgs', 'ManagementApplianceConfigurationArgsDict', 'outputs.ManagementApplianceConfiguration']]] = None,
+                 connections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementApplianceConnectionArgs', 'ManagementApplianceConnectionArgsDict', 'outputs.ManagementApplianceConnection']]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -653,12 +653,12 @@ class ManagementAppliance(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             compute_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
-            configuration: pulumi.Input[Optional[Union['ManagementApplianceConfigurationArgs', 'ManagementApplianceConfigurationArgsDict']]] = None,
-            connections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementApplianceConnectionArgs', 'ManagementApplianceConnectionArgsDict']]]]] = None,
+            configuration: pulumi.Input[Optional[Union['ManagementApplianceConfigurationArgs', 'ManagementApplianceConfigurationArgsDict', 'outputs.ManagementApplianceConfiguration']]] = None,
+            connections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementApplianceConnectionArgs', 'ManagementApplianceConnectionArgsDict', 'outputs.ManagementApplianceConnection']]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            heartbeat_connection_states: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementApplianceHeartbeatConnectionStateArgs', 'ManagementApplianceHeartbeatConnectionStateArgsDict']]]]] = None,
+            heartbeat_connection_states: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementApplianceHeartbeatConnectionStateArgs', 'ManagementApplianceHeartbeatConnectionStateArgsDict', 'outputs.ManagementApplianceHeartbeatConnectionState']]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
             plugin_version: pulumi.Input[Optional[_builtins.str]] = None,
@@ -679,12 +679,12 @@ class ManagementAppliance(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of compartment in OCI, that this appliance is going to be created in.
         :param pulumi.Input[_builtins.str] compute_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of compute instance of management appliance in OCI.
-        :param pulumi.Input[Union['ManagementApplianceConfigurationArgs', 'ManagementApplianceConfigurationArgsDict']] configuration: (Updatable) Configuration of management appliance.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementApplianceConnectionArgs', 'ManagementApplianceConnectionArgsDict']]]] connections: (Updatable) Array of connections for management appliance.
+        :param pulumi.Input[Union['ManagementApplianceConfigurationArgs', 'ManagementApplianceConfigurationArgsDict', 'outputs.ManagementApplianceConfiguration']] configuration: (Updatable) Configuration of management appliance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementApplianceConnectionArgs', 'ManagementApplianceConnectionArgsDict', 'outputs.ManagementApplianceConnection']]]] connections: (Updatable) Array of connections for management appliance.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the management appliance. It must be unique, start with a letter, and contain only letters, digits, whitespaces, dashes and underscores. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementApplianceHeartbeatConnectionStateArgs', 'ManagementApplianceHeartbeatConnectionStateArgsDict']]]] heartbeat_connection_states: Current states of connections.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementApplianceHeartbeatConnectionStateArgs', 'ManagementApplianceHeartbeatConnectionStateArgsDict', 'outputs.ManagementApplianceHeartbeatConnectionState']]]] heartbeat_connection_states: Current states of connections.
         :param pulumi.Input[_builtins.str] lifecycle_details: Information about current lifecycleState. For FAILED and NEEDS_ATTENTION contains explanations. For other states may contain some details about their progress.
         :param pulumi.Input[_builtins.str] management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management agent, that this appliance is running in.
         :param pulumi.Input[_builtins.str] plugin_version: Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.

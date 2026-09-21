@@ -344,7 +344,7 @@ class NamedCredential(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamedCredentialPropertyArgs', 'NamedCredentialPropertyArgsDict']]]]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamedCredentialPropertyArgs', 'NamedCredentialPropertyArgsDict', 'outputs.NamedCredentialProperty']]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -425,7 +425,7 @@ class NamedCredential(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] management_agent_id: The Management Agent parent resource to associate this named credential with.  This is the ManagementAgent resource OCID.
         :param pulumi.Input[_builtins.str] name: Identifier for Named Credential. This is unique for the Management Agent.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NamedCredentialPropertyArgs', 'NamedCredentialPropertyArgsDict']]]] properties: (Updatable) Properties for the named credential
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NamedCredentialPropertyArgs', 'NamedCredentialPropertyArgsDict', 'outputs.NamedCredentialProperty']]]] properties: (Updatable) Properties for the named credential
         :param pulumi.Input[_builtins.str] type: The type of the Named Credential.
                
                ** IMPORTANT **
@@ -528,7 +528,7 @@ class NamedCredential(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamedCredentialPropertyArgs', 'NamedCredentialPropertyArgsDict']]]]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamedCredentialPropertyArgs', 'NamedCredentialPropertyArgsDict', 'outputs.NamedCredentialProperty']]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -571,7 +571,7 @@ class NamedCredential(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamedCredentialPropertyArgs', 'NamedCredentialPropertyArgsDict']]]]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamedCredentialPropertyArgs', 'NamedCredentialPropertyArgsDict', 'outputs.NamedCredentialProperty']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -589,7 +589,7 @@ class NamedCredential(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] management_agent_id: The Management Agent parent resource to associate this named credential with.  This is the ManagementAgent resource OCID.
         :param pulumi.Input[_builtins.str] name: Identifier for Named Credential. This is unique for the Management Agent.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NamedCredentialPropertyArgs', 'NamedCredentialPropertyArgsDict']]]] properties: (Updatable) Properties for the named credential
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NamedCredentialPropertyArgs', 'NamedCredentialPropertyArgsDict', 'outputs.NamedCredentialProperty']]]] properties: (Updatable) Properties for the named credential
         :param pulumi.Input[_builtins.str] state: The current state of the named credential
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time the Named Credential was created. An RFC3339 formatted datetime string

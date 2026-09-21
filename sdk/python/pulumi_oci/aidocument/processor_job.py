@@ -296,9 +296,9 @@ class ProcessorJob(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 input_location: pulumi.Input[Optional[Union['ProcessorJobInputLocationArgs', 'ProcessorJobInputLocationArgsDict']]] = None,
-                 output_location: pulumi.Input[Optional[Union['ProcessorJobOutputLocationArgs', 'ProcessorJobOutputLocationArgsDict']]] = None,
-                 processor_config: pulumi.Input[Optional[Union['ProcessorJobProcessorConfigArgs', 'ProcessorJobProcessorConfigArgsDict']]] = None,
+                 input_location: pulumi.Input[Optional[Union['ProcessorJobInputLocationArgs', 'ProcessorJobInputLocationArgsDict', 'outputs.ProcessorJobInputLocation']]] = None,
+                 output_location: pulumi.Input[Optional[Union['ProcessorJobOutputLocationArgs', 'ProcessorJobOutputLocationArgsDict', 'outputs.ProcessorJobOutputLocation']]] = None,
+                 processor_config: pulumi.Input[Optional[Union['ProcessorJobProcessorConfigArgs', 'ProcessorJobProcessorConfigArgsDict', 'outputs.ProcessorJobProcessorConfig']]] = None,
                  __props__=None):
         """
         This resource provides the Processor Job resource in Oracle Cloud Infrastructure Ai Document service.
@@ -368,9 +368,9 @@ class ProcessorJob(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment identifier.
         :param pulumi.Input[_builtins.str] display_name: The display name of the processor job.
-        :param pulumi.Input[Union['ProcessorJobInputLocationArgs', 'ProcessorJobInputLocationArgsDict']] input_location: The location of the inputs.
-        :param pulumi.Input[Union['ProcessorJobOutputLocationArgs', 'ProcessorJobOutputLocationArgsDict']] output_location: The object storage location where to store analysis results.
-        :param pulumi.Input[Union['ProcessorJobProcessorConfigArgs', 'ProcessorJobProcessorConfigArgsDict']] processor_config: The configuration of a processor.
+        :param pulumi.Input[Union['ProcessorJobInputLocationArgs', 'ProcessorJobInputLocationArgsDict', 'outputs.ProcessorJobInputLocation']] input_location: The location of the inputs.
+        :param pulumi.Input[Union['ProcessorJobOutputLocationArgs', 'ProcessorJobOutputLocationArgsDict', 'outputs.ProcessorJobOutputLocation']] output_location: The object storage location where to store analysis results.
+        :param pulumi.Input[Union['ProcessorJobProcessorConfigArgs', 'ProcessorJobProcessorConfigArgsDict', 'outputs.ProcessorJobProcessorConfig']] processor_config: The configuration of a processor.
         """
         ...
     @overload
@@ -459,9 +459,9 @@ class ProcessorJob(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 input_location: pulumi.Input[Optional[Union['ProcessorJobInputLocationArgs', 'ProcessorJobInputLocationArgsDict']]] = None,
-                 output_location: pulumi.Input[Optional[Union['ProcessorJobOutputLocationArgs', 'ProcessorJobOutputLocationArgsDict']]] = None,
-                 processor_config: pulumi.Input[Optional[Union['ProcessorJobProcessorConfigArgs', 'ProcessorJobProcessorConfigArgsDict']]] = None,
+                 input_location: pulumi.Input[Optional[Union['ProcessorJobInputLocationArgs', 'ProcessorJobInputLocationArgsDict', 'outputs.ProcessorJobInputLocation']]] = None,
+                 output_location: pulumi.Input[Optional[Union['ProcessorJobOutputLocationArgs', 'ProcessorJobOutputLocationArgsDict', 'outputs.ProcessorJobOutputLocation']]] = None,
+                 processor_config: pulumi.Input[Optional[Union['ProcessorJobProcessorConfigArgs', 'ProcessorJobProcessorConfigArgsDict', 'outputs.ProcessorJobProcessorConfig']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -502,11 +502,11 @@ class ProcessorJob(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            input_location: pulumi.Input[Optional[Union['ProcessorJobInputLocationArgs', 'ProcessorJobInputLocationArgsDict']]] = None,
+            input_location: pulumi.Input[Optional[Union['ProcessorJobInputLocationArgs', 'ProcessorJobInputLocationArgsDict', 'outputs.ProcessorJobInputLocation']]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            output_location: pulumi.Input[Optional[Union['ProcessorJobOutputLocationArgs', 'ProcessorJobOutputLocationArgsDict']]] = None,
+            output_location: pulumi.Input[Optional[Union['ProcessorJobOutputLocationArgs', 'ProcessorJobOutputLocationArgsDict', 'outputs.ProcessorJobOutputLocation']]] = None,
             percent_complete: pulumi.Input[Optional[_builtins.float]] = None,
-            processor_config: pulumi.Input[Optional[Union['ProcessorJobProcessorConfigArgs', 'ProcessorJobProcessorConfigArgsDict']]] = None,
+            processor_config: pulumi.Input[Optional[Union['ProcessorJobProcessorConfigArgs', 'ProcessorJobProcessorConfigArgsDict', 'outputs.ProcessorJobProcessorConfig']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_accepted: pulumi.Input[Optional[_builtins.str]] = None,
             time_finished: pulumi.Input[Optional[_builtins.str]] = None,
@@ -520,11 +520,11 @@ class ProcessorJob(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment identifier.
         :param pulumi.Input[_builtins.str] display_name: The display name of the processor job.
-        :param pulumi.Input[Union['ProcessorJobInputLocationArgs', 'ProcessorJobInputLocationArgsDict']] input_location: The location of the inputs.
+        :param pulumi.Input[Union['ProcessorJobInputLocationArgs', 'ProcessorJobInputLocationArgsDict', 'outputs.ProcessorJobInputLocation']] input_location: The location of the inputs.
         :param pulumi.Input[_builtins.str] lifecycle_details: The detailed status of FAILED state.
-        :param pulumi.Input[Union['ProcessorJobOutputLocationArgs', 'ProcessorJobOutputLocationArgsDict']] output_location: The object storage location where to store analysis results.
+        :param pulumi.Input[Union['ProcessorJobOutputLocationArgs', 'ProcessorJobOutputLocationArgsDict', 'outputs.ProcessorJobOutputLocation']] output_location: The object storage location where to store analysis results.
         :param pulumi.Input[_builtins.float] percent_complete: How much progress the operation has made, compared to the total amount of work to be performed.
-        :param pulumi.Input[Union['ProcessorJobProcessorConfigArgs', 'ProcessorJobProcessorConfigArgsDict']] processor_config: The configuration of a processor.
+        :param pulumi.Input[Union['ProcessorJobProcessorConfigArgs', 'ProcessorJobProcessorConfigArgsDict', 'outputs.ProcessorJobProcessorConfig']] processor_config: The configuration of a processor.
         :param pulumi.Input[_builtins.str] state: The current state of the processor job.
         :param pulumi.Input[_builtins.str] time_accepted: The job acceptance time.
         :param pulumi.Input[_builtins.str] time_finished: The job finish time.

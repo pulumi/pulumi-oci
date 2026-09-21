@@ -176,7 +176,7 @@ class AwaitableGetHistoriesResult(GetHistoriesResult):
 
 def get_histories(compartment_id: Optional[_builtins.str] = None,
                   compartment_id_in_subtree: Optional[_builtins.bool] = None,
-                  filters: Optional[Sequence[Union['GetHistoriesFilterArgs', 'GetHistoriesFilterArgsDict']]] = None,
+                  filters: Optional[Sequence[Union['GetHistoriesFilterArgs', 'GetHistoriesFilterArgsDict', 'outputs.GetHistoriesFilterResult']]] = None,
                   include_resource_metadata: Optional[_builtins.bool] = None,
                   name: Optional[_builtins.str] = None,
                   recommendation_id: Optional[_builtins.str] = None,
@@ -250,7 +250,7 @@ def get_histories(compartment_id: Optional[_builtins.str] = None,
         status=pulumi.get(__ret__, 'status'))
 def get_histories_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                          compartment_id_in_subtree: pulumi.Input[Optional[_builtins.bool]] = None,
-                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetHistoriesFilterArgs', 'GetHistoriesFilterArgsDict']]]]] = None,
+                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetHistoriesFilterArgs', 'GetHistoriesFilterArgsDict', 'outputs.GetHistoriesFilterResult']]]]] = None,
                          include_resource_metadata: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                          name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          recommendation_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

@@ -100,7 +100,7 @@ class AwaitableGetNetworkFirewallPolicyNatRulesResult(GetNetworkFirewallPolicyNa
 
 
 def get_network_firewall_policy_nat_rules(display_name: Optional[_builtins.str] = None,
-                                          filters: Optional[Sequence[Union['GetNetworkFirewallPolicyNatRulesFilterArgs', 'GetNetworkFirewallPolicyNatRulesFilterArgsDict']]] = None,
+                                          filters: Optional[Sequence[Union['GetNetworkFirewallPolicyNatRulesFilterArgs', 'GetNetworkFirewallPolicyNatRulesFilterArgsDict', 'outputs.GetNetworkFirewallPolicyNatRulesFilterResult']]] = None,
                                           nat_rule_priority_order: Optional[_builtins.int] = None,
                                           network_firewall_policy_id: Optional[_builtins.str] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyNatRulesResult:
@@ -141,7 +141,7 @@ def get_network_firewall_policy_nat_rules(display_name: Optional[_builtins.str] 
         nat_rule_priority_order=pulumi.get(__ret__, 'nat_rule_priority_order'),
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'))
 def get_network_firewall_policy_nat_rules_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPolicyNatRulesFilterArgs', 'GetNetworkFirewallPolicyNatRulesFilterArgsDict']]]]] = None,
+                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPolicyNatRulesFilterArgs', 'GetNetworkFirewallPolicyNatRulesFilterArgsDict', 'outputs.GetNetworkFirewallPolicyNatRulesFilterResult']]]]] = None,
                                                  nat_rule_priority_order: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                  network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyNatRulesResult]:

@@ -117,7 +117,7 @@ class AwaitableGetTaskSchedulesResult(GetTaskSchedulesResult):
             task_schedule_name_contains=self.task_schedule_name_contains)
 
 
-def get_task_schedules(filters: Optional[Sequence[Union['GetTaskSchedulesFilterArgs', 'GetTaskSchedulesFilterArgsDict']]] = None,
+def get_task_schedules(filters: Optional[Sequence[Union['GetTaskSchedulesFilterArgs', 'GetTaskSchedulesFilterArgsDict', 'outputs.GetTaskSchedulesFilterResult']]] = None,
                        fleet_id: Optional[_builtins.str] = None,
                        id: Optional[_builtins.str] = None,
                        managed_instance_id: Optional[_builtins.str] = None,
@@ -167,7 +167,7 @@ def get_task_schedules(filters: Optional[Sequence[Union['GetTaskSchedulesFilterA
         name=pulumi.get(__ret__, 'name'),
         task_schedule_collections=pulumi.get(__ret__, 'task_schedule_collections'),
         task_schedule_name_contains=pulumi.get(__ret__, 'task_schedule_name_contains'))
-def get_task_schedules_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTaskSchedulesFilterArgs', 'GetTaskSchedulesFilterArgsDict']]]]] = None,
+def get_task_schedules_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTaskSchedulesFilterArgs', 'GetTaskSchedulesFilterArgsDict', 'outputs.GetTaskSchedulesFilterResult']]]]] = None,
                               fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
                               id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               managed_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

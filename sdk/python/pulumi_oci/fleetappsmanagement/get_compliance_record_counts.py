@@ -92,7 +92,7 @@ class AwaitableGetComplianceRecordCountsResult(GetComplianceRecordCountsResult):
 
 def get_compliance_record_counts(compartment_id: Optional[_builtins.str] = None,
                                  compartment_id_in_subtree: Optional[_builtins.bool] = None,
-                                 filters: Optional[Sequence[Union['GetComplianceRecordCountsFilterArgs', 'GetComplianceRecordCountsFilterArgsDict']]] = None,
+                                 filters: Optional[Sequence[Union['GetComplianceRecordCountsFilterArgs', 'GetComplianceRecordCountsFilterArgsDict', 'outputs.GetComplianceRecordCountsFilterResult']]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComplianceRecordCountsResult:
     """
     This data source provides the list of Compliance Record Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -128,7 +128,7 @@ def get_compliance_record_counts(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'))
 def get_compliance_record_counts_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
-                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComplianceRecordCountsFilterArgs', 'GetComplianceRecordCountsFilterArgsDict']]]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComplianceRecordCountsFilterArgs', 'GetComplianceRecordCountsFilterArgsDict', 'outputs.GetComplianceRecordCountsFilterResult']]]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComplianceRecordCountsResult]:
     """
     This data source provides the list of Compliance Record Counts in Oracle Cloud Infrastructure Fleet Apps Management service.

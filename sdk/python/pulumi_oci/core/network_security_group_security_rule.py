@@ -479,14 +479,14 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
                  destination: pulumi.Input[Optional[_builtins.str]] = None,
                  destination_type: pulumi.Input[Optional[_builtins.str]] = None,
                  direction: pulumi.Input[Optional[_builtins.str]] = None,
-                 icmp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs', 'NetworkSecurityGroupSecurityRuleIcmpOptionsArgsDict']]] = None,
+                 icmp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs', 'NetworkSecurityGroupSecurityRuleIcmpOptionsArgsDict', 'outputs.NetworkSecurityGroupSecurityRuleIcmpOptions']]] = None,
                  network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  protocol: pulumi.Input[Optional[_builtins.str]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
                  source_type: pulumi.Input[Optional[_builtins.str]] = None,
                  stateless: pulumi.Input[Optional[_builtins.bool]] = None,
-                 tcp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleTcpOptionsArgs', 'NetworkSecurityGroupSecurityRuleTcpOptionsArgsDict']]] = None,
-                 udp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleUdpOptionsArgs', 'NetworkSecurityGroupSecurityRuleUdpOptionsArgsDict']]] = None,
+                 tcp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleTcpOptionsArgs', 'NetworkSecurityGroupSecurityRuleTcpOptionsArgsDict', 'outputs.NetworkSecurityGroupSecurityRuleTcpOptions']]] = None,
+                 udp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleUdpOptionsArgs', 'NetworkSecurityGroupSecurityRuleUdpOptionsArgsDict', 'outputs.NetworkSecurityGroupSecurityRuleUdpOptions']]] = None,
                  __props__=None):
         """
         This resource provides the Network Security Group Security Rule resource in Oracle Cloud Infrastructure Core service.
@@ -553,7 +553,7 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] destination: Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
         :param pulumi.Input[_builtins.str] destination_type: Type of destination for the rule. Required if `direction` = `EGRESS`.
         :param pulumi.Input[_builtins.str] direction: Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
-        :param pulumi.Input[Union['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs', 'NetworkSecurityGroupSecurityRuleIcmpOptionsArgsDict']] icmp_options: Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
+        :param pulumi.Input[Union['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs', 'NetworkSecurityGroupSecurityRuleIcmpOptionsArgsDict', 'outputs.NetworkSecurityGroupSecurityRuleIcmpOptions']] icmp_options: Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
                * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
                * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
         :param pulumi.Input[_builtins.str] network_security_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
@@ -564,8 +564,8 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
                * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
                * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param pulumi.Input[_builtins.bool] stateless: A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
-        :param pulumi.Input[Union['NetworkSecurityGroupSecurityRuleTcpOptionsArgs', 'NetworkSecurityGroupSecurityRuleTcpOptionsArgsDict']] tcp_options: Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
-        :param pulumi.Input[Union['NetworkSecurityGroupSecurityRuleUdpOptionsArgs', 'NetworkSecurityGroupSecurityRuleUdpOptionsArgsDict']] udp_options: Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+        :param pulumi.Input[Union['NetworkSecurityGroupSecurityRuleTcpOptionsArgs', 'NetworkSecurityGroupSecurityRuleTcpOptionsArgsDict', 'outputs.NetworkSecurityGroupSecurityRuleTcpOptions']] tcp_options: Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+        :param pulumi.Input[Union['NetworkSecurityGroupSecurityRuleUdpOptionsArgs', 'NetworkSecurityGroupSecurityRuleUdpOptionsArgsDict', 'outputs.NetworkSecurityGroupSecurityRuleUdpOptions']] udp_options: Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
         """
         ...
     @overload
@@ -651,14 +651,14 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
                  destination: pulumi.Input[Optional[_builtins.str]] = None,
                  destination_type: pulumi.Input[Optional[_builtins.str]] = None,
                  direction: pulumi.Input[Optional[_builtins.str]] = None,
-                 icmp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs', 'NetworkSecurityGroupSecurityRuleIcmpOptionsArgsDict']]] = None,
+                 icmp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs', 'NetworkSecurityGroupSecurityRuleIcmpOptionsArgsDict', 'outputs.NetworkSecurityGroupSecurityRuleIcmpOptions']]] = None,
                  network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  protocol: pulumi.Input[Optional[_builtins.str]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
                  source_type: pulumi.Input[Optional[_builtins.str]] = None,
                  stateless: pulumi.Input[Optional[_builtins.bool]] = None,
-                 tcp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleTcpOptionsArgs', 'NetworkSecurityGroupSecurityRuleTcpOptionsArgsDict']]] = None,
-                 udp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleUdpOptionsArgs', 'NetworkSecurityGroupSecurityRuleUdpOptionsArgsDict']]] = None,
+                 tcp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleTcpOptionsArgs', 'NetworkSecurityGroupSecurityRuleTcpOptionsArgsDict', 'outputs.NetworkSecurityGroupSecurityRuleTcpOptions']]] = None,
+                 udp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleUdpOptionsArgs', 'NetworkSecurityGroupSecurityRuleUdpOptionsArgsDict', 'outputs.NetworkSecurityGroupSecurityRuleUdpOptions']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -702,16 +702,16 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
             destination: pulumi.Input[Optional[_builtins.str]] = None,
             destination_type: pulumi.Input[Optional[_builtins.str]] = None,
             direction: pulumi.Input[Optional[_builtins.str]] = None,
-            icmp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs', 'NetworkSecurityGroupSecurityRuleIcmpOptionsArgsDict']]] = None,
+            icmp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs', 'NetworkSecurityGroupSecurityRuleIcmpOptionsArgsDict', 'outputs.NetworkSecurityGroupSecurityRuleIcmpOptions']]] = None,
             is_valid: pulumi.Input[Optional[_builtins.bool]] = None,
             network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
             protocol: pulumi.Input[Optional[_builtins.str]] = None,
             source: pulumi.Input[Optional[_builtins.str]] = None,
             source_type: pulumi.Input[Optional[_builtins.str]] = None,
             stateless: pulumi.Input[Optional[_builtins.bool]] = None,
-            tcp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleTcpOptionsArgs', 'NetworkSecurityGroupSecurityRuleTcpOptionsArgsDict']]] = None,
+            tcp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleTcpOptionsArgs', 'NetworkSecurityGroupSecurityRuleTcpOptionsArgsDict', 'outputs.NetworkSecurityGroupSecurityRuleTcpOptions']]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
-            udp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleUdpOptionsArgs', 'NetworkSecurityGroupSecurityRuleUdpOptionsArgsDict']]] = None) -> 'NetworkSecurityGroupSecurityRule':
+            udp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleUdpOptionsArgs', 'NetworkSecurityGroupSecurityRuleUdpOptionsArgsDict', 'outputs.NetworkSecurityGroupSecurityRuleUdpOptions']]] = None) -> 'NetworkSecurityGroupSecurityRule':
         """
         Get an existing NetworkSecurityGroupSecurityRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -723,7 +723,7 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] destination: Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
         :param pulumi.Input[_builtins.str] destination_type: Type of destination for the rule. Required if `direction` = `EGRESS`.
         :param pulumi.Input[_builtins.str] direction: Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
-        :param pulumi.Input[Union['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs', 'NetworkSecurityGroupSecurityRuleIcmpOptionsArgsDict']] icmp_options: Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
+        :param pulumi.Input[Union['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs', 'NetworkSecurityGroupSecurityRuleIcmpOptionsArgsDict', 'outputs.NetworkSecurityGroupSecurityRuleIcmpOptions']] icmp_options: Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
                * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
                * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
         :param pulumi.Input[_builtins.bool] is_valid: Whether the rule is valid. The value is `True` when the rule is first created. If the rule's `source` or `destination` is a network security group, the value changes to `False` if that network security group is deleted.
@@ -735,9 +735,9 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
                * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
                * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param pulumi.Input[_builtins.bool] stateless: A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
-        :param pulumi.Input[Union['NetworkSecurityGroupSecurityRuleTcpOptionsArgs', 'NetworkSecurityGroupSecurityRuleTcpOptionsArgsDict']] tcp_options: Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+        :param pulumi.Input[Union['NetworkSecurityGroupSecurityRuleTcpOptionsArgs', 'NetworkSecurityGroupSecurityRuleTcpOptionsArgsDict', 'outputs.NetworkSecurityGroupSecurityRuleTcpOptions']] tcp_options: Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         :param pulumi.Input[_builtins.str] time_created: The date and time the security rule was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[Union['NetworkSecurityGroupSecurityRuleUdpOptionsArgs', 'NetworkSecurityGroupSecurityRuleUdpOptionsArgsDict']] udp_options: Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+        :param pulumi.Input[Union['NetworkSecurityGroupSecurityRuleUdpOptionsArgs', 'NetworkSecurityGroupSecurityRuleUdpOptionsArgsDict', 'outputs.NetworkSecurityGroupSecurityRuleUdpOptions']] udp_options: Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

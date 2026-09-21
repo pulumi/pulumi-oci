@@ -82,7 +82,7 @@ class AwaitableGetTagStandardTagNamespaceTemplatesResult(GetTagStandardTagNamesp
 
 
 def get_tag_standard_tag_namespace_templates(compartment_id: Optional[_builtins.str] = None,
-                                             filters: Optional[Sequence[Union['GetTagStandardTagNamespaceTemplatesFilterArgs', 'GetTagStandardTagNamespaceTemplatesFilterArgsDict']]] = None,
+                                             filters: Optional[Sequence[Union['GetTagStandardTagNamespaceTemplatesFilterArgs', 'GetTagStandardTagNamespaceTemplatesFilterArgsDict', 'outputs.GetTagStandardTagNamespaceTemplatesFilterResult']]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTagStandardTagNamespaceTemplatesResult:
     """
     This data source provides the list of Tag Standard Tag Namespace Templates in Oracle Cloud Infrastructure Identity service.
@@ -113,7 +113,7 @@ def get_tag_standard_tag_namespace_templates(compartment_id: Optional[_builtins.
         id=pulumi.get(__ret__, 'id'),
         standard_tag_namespace_templates=pulumi.get(__ret__, 'standard_tag_namespace_templates'))
 def get_tag_standard_tag_namespace_templates_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTagStandardTagNamespaceTemplatesFilterArgs', 'GetTagStandardTagNamespaceTemplatesFilterArgsDict']]]]] = None,
+                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTagStandardTagNamespaceTemplatesFilterArgs', 'GetTagStandardTagNamespaceTemplatesFilterArgsDict', 'outputs.GetTagStandardTagNamespaceTemplatesFilterResult']]]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTagStandardTagNamespaceTemplatesResult]:
     """
     This data source provides the list of Tag Standard Tag Namespace Templates in Oracle Cloud Infrastructure Identity service.

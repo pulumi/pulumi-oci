@@ -585,9 +585,9 @@ class ModelGroup(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 member_model_entries: pulumi.Input[Optional[Union['ModelGroupMemberModelEntriesArgs', 'ModelGroupMemberModelEntriesArgsDict']]] = None,
-                 model_group_clone_source_details: pulumi.Input[Optional[Union['ModelGroupModelGroupCloneSourceDetailsArgs', 'ModelGroupModelGroupCloneSourceDetailsArgsDict']]] = None,
-                 model_group_details: pulumi.Input[Optional[Union['ModelGroupModelGroupDetailsArgs', 'ModelGroupModelGroupDetailsArgsDict']]] = None,
+                 member_model_entries: pulumi.Input[Optional[Union['ModelGroupMemberModelEntriesArgs', 'ModelGroupMemberModelEntriesArgsDict', 'outputs.ModelGroupMemberModelEntries']]] = None,
+                 model_group_clone_source_details: pulumi.Input[Optional[Union['ModelGroupModelGroupCloneSourceDetailsArgs', 'ModelGroupModelGroupCloneSourceDetailsArgsDict', 'outputs.ModelGroupModelGroupCloneSourceDetails']]] = None,
+                 model_group_details: pulumi.Input[Optional[Union['ModelGroupModelGroupDetailsArgs', 'ModelGroupModelGroupDetailsArgsDict', 'outputs.ModelGroupModelGroupDetails']]] = None,
                  model_group_version_history_id: pulumi.Input[Optional[_builtins.str]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
                  version_label: pulumi.Input[Optional[_builtins.str]] = None,
@@ -686,9 +686,9 @@ class ModelGroup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the modelGroup.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My ModelGroup`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['ModelGroupMemberModelEntriesArgs', 'ModelGroupMemberModelEntriesArgsDict']] member_model_entries: List of member models (inferenceKey & modelId) to be associated with the model group.
-        :param pulumi.Input[Union['ModelGroupModelGroupCloneSourceDetailsArgs', 'ModelGroupModelGroupCloneSourceDetailsArgsDict']] model_group_clone_source_details: Model Group clone source details.
-        :param pulumi.Input[Union['ModelGroupModelGroupDetailsArgs', 'ModelGroupModelGroupDetailsArgsDict']] model_group_details: The model group details.
+        :param pulumi.Input[Union['ModelGroupMemberModelEntriesArgs', 'ModelGroupMemberModelEntriesArgsDict', 'outputs.ModelGroupMemberModelEntries']] member_model_entries: List of member models (inferenceKey & modelId) to be associated with the model group.
+        :param pulumi.Input[Union['ModelGroupModelGroupCloneSourceDetailsArgs', 'ModelGroupModelGroupCloneSourceDetailsArgsDict', 'outputs.ModelGroupModelGroupCloneSourceDetails']] model_group_clone_source_details: Model Group clone source details.
+        :param pulumi.Input[Union['ModelGroupModelGroupDetailsArgs', 'ModelGroupModelGroupDetailsArgsDict', 'outputs.ModelGroupModelGroupDetails']] model_group_details: The model group details.
         :param pulumi.Input[_builtins.str] model_group_version_history_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group version history to which the modelGroup is associated.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the modelGroup.
         :param pulumi.Input[_builtins.str] version_label: (Updatable) An additional description of the lifecycle state of the model group.
@@ -809,9 +809,9 @@ class ModelGroup(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 member_model_entries: pulumi.Input[Optional[Union['ModelGroupMemberModelEntriesArgs', 'ModelGroupMemberModelEntriesArgsDict']]] = None,
-                 model_group_clone_source_details: pulumi.Input[Optional[Union['ModelGroupModelGroupCloneSourceDetailsArgs', 'ModelGroupModelGroupCloneSourceDetailsArgsDict']]] = None,
-                 model_group_details: pulumi.Input[Optional[Union['ModelGroupModelGroupDetailsArgs', 'ModelGroupModelGroupDetailsArgsDict']]] = None,
+                 member_model_entries: pulumi.Input[Optional[Union['ModelGroupMemberModelEntriesArgs', 'ModelGroupMemberModelEntriesArgsDict', 'outputs.ModelGroupMemberModelEntries']]] = None,
+                 model_group_clone_source_details: pulumi.Input[Optional[Union['ModelGroupModelGroupCloneSourceDetailsArgs', 'ModelGroupModelGroupCloneSourceDetailsArgsDict', 'outputs.ModelGroupModelGroupCloneSourceDetails']]] = None,
+                 model_group_details: pulumi.Input[Optional[Union['ModelGroupModelGroupDetailsArgs', 'ModelGroupModelGroupDetailsArgsDict', 'outputs.ModelGroupModelGroupDetails']]] = None,
                  model_group_version_history_id: pulumi.Input[Optional[_builtins.str]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
                  version_label: pulumi.Input[Optional[_builtins.str]] = None,
@@ -869,9 +869,9 @@ class ModelGroup(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            member_model_entries: pulumi.Input[Optional[Union['ModelGroupMemberModelEntriesArgs', 'ModelGroupMemberModelEntriesArgsDict']]] = None,
-            model_group_clone_source_details: pulumi.Input[Optional[Union['ModelGroupModelGroupCloneSourceDetailsArgs', 'ModelGroupModelGroupCloneSourceDetailsArgsDict']]] = None,
-            model_group_details: pulumi.Input[Optional[Union['ModelGroupModelGroupDetailsArgs', 'ModelGroupModelGroupDetailsArgsDict']]] = None,
+            member_model_entries: pulumi.Input[Optional[Union['ModelGroupMemberModelEntriesArgs', 'ModelGroupMemberModelEntriesArgsDict', 'outputs.ModelGroupMemberModelEntries']]] = None,
+            model_group_clone_source_details: pulumi.Input[Optional[Union['ModelGroupModelGroupCloneSourceDetailsArgs', 'ModelGroupModelGroupCloneSourceDetailsArgsDict', 'outputs.ModelGroupModelGroupCloneSourceDetails']]] = None,
+            model_group_details: pulumi.Input[Optional[Union['ModelGroupModelGroupDetailsArgs', 'ModelGroupModelGroupDetailsArgsDict', 'outputs.ModelGroupModelGroupDetails']]] = None,
             model_group_version_history_id: pulumi.Input[Optional[_builtins.str]] = None,
             model_group_version_history_name: pulumi.Input[Optional[_builtins.str]] = None,
             project_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -897,9 +897,9 @@ class ModelGroup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My ModelGroup`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the lifecycle state of the model group.
-        :param pulumi.Input[Union['ModelGroupMemberModelEntriesArgs', 'ModelGroupMemberModelEntriesArgsDict']] member_model_entries: List of member models (inferenceKey & modelId) to be associated with the model group.
-        :param pulumi.Input[Union['ModelGroupModelGroupCloneSourceDetailsArgs', 'ModelGroupModelGroupCloneSourceDetailsArgsDict']] model_group_clone_source_details: Model Group clone source details.
-        :param pulumi.Input[Union['ModelGroupModelGroupDetailsArgs', 'ModelGroupModelGroupDetailsArgsDict']] model_group_details: The model group details.
+        :param pulumi.Input[Union['ModelGroupMemberModelEntriesArgs', 'ModelGroupMemberModelEntriesArgsDict', 'outputs.ModelGroupMemberModelEntries']] member_model_entries: List of member models (inferenceKey & modelId) to be associated with the model group.
+        :param pulumi.Input[Union['ModelGroupModelGroupCloneSourceDetailsArgs', 'ModelGroupModelGroupCloneSourceDetailsArgsDict', 'outputs.ModelGroupModelGroupCloneSourceDetails']] model_group_clone_source_details: Model Group clone source details.
+        :param pulumi.Input[Union['ModelGroupModelGroupDetailsArgs', 'ModelGroupModelGroupDetailsArgsDict', 'outputs.ModelGroupModelGroupDetails']] model_group_details: The model group details.
         :param pulumi.Input[_builtins.str] model_group_version_history_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group version history to which the modelGroup is associated.
         :param pulumi.Input[_builtins.str] model_group_version_history_name: The name of the model group version history to which the model group is associated.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the modelGroup.

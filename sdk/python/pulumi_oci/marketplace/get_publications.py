@@ -127,7 +127,7 @@ class AwaitableGetPublicationsResult(GetPublicationsResult):
 
 
 def get_publications(compartment_id: Optional[_builtins.str] = None,
-                     filters: Optional[Sequence[Union['GetPublicationsFilterArgs', 'GetPublicationsFilterArgsDict']]] = None,
+                     filters: Optional[Sequence[Union['GetPublicationsFilterArgs', 'GetPublicationsFilterArgsDict', 'outputs.GetPublicationsFilterResult']]] = None,
                      listing_type: Optional[_builtins.str] = None,
                      names: Optional[Sequence[_builtins.str]] = None,
                      operating_systems: Optional[Sequence[_builtins.str]] = None,
@@ -178,7 +178,7 @@ def get_publications(compartment_id: Optional[_builtins.str] = None,
         publication_id=pulumi.get(__ret__, 'publication_id'),
         publications=pulumi.get(__ret__, 'publications'))
 def get_publications_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPublicationsFilterArgs', 'GetPublicationsFilterArgsDict']]]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPublicationsFilterArgs', 'GetPublicationsFilterArgsDict', 'outputs.GetPublicationsFilterResult']]]]] = None,
                             listing_type: pulumi.Input[Optional[_builtins.str]] = None,
                             names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                             operating_systems: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,

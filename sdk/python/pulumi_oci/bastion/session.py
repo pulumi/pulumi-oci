@@ -361,10 +361,10 @@ class Session(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  bastion_id: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 key_details: pulumi.Input[Optional[Union['SessionKeyDetailsArgs', 'SessionKeyDetailsArgsDict']]] = None,
+                 key_details: pulumi.Input[Optional[Union['SessionKeyDetailsArgs', 'SessionKeyDetailsArgsDict', 'outputs.SessionKeyDetails']]] = None,
                  key_type: pulumi.Input[Optional[_builtins.str]] = None,
                  session_ttl_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
-                 target_resource_details: pulumi.Input[Optional[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict']]] = None,
+                 target_resource_details: pulumi.Input[Optional[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict', 'outputs.SessionTargetResourceDetails']]] = None,
                  __props__=None):
         """
         This resource provides the Session resource in Oracle Cloud Infrastructure Bastion service.
@@ -411,10 +411,10 @@ class Session(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bastion_id: The unique identifier (OCID) of the bastion on which to create this session.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name of the session.
-        :param pulumi.Input[Union['SessionKeyDetailsArgs', 'SessionKeyDetailsArgsDict']] key_details: Public key details for a bastion session.
+        :param pulumi.Input[Union['SessionKeyDetailsArgs', 'SessionKeyDetailsArgsDict', 'outputs.SessionKeyDetails']] key_details: Public key details for a bastion session.
         :param pulumi.Input[_builtins.str] key_type: The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
         :param pulumi.Input[_builtins.int] session_ttl_in_seconds: The amount of time the session can remain active.
-        :param pulumi.Input[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict']] target_resource_details: Details about a bastion session's target resource.
+        :param pulumi.Input[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict', 'outputs.SessionTargetResourceDetails']] target_resource_details: Details about a bastion session's target resource.
         """
         ...
     @overload
@@ -480,10 +480,10 @@ class Session(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  bastion_id: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 key_details: pulumi.Input[Optional[Union['SessionKeyDetailsArgs', 'SessionKeyDetailsArgsDict']]] = None,
+                 key_details: pulumi.Input[Optional[Union['SessionKeyDetailsArgs', 'SessionKeyDetailsArgsDict', 'outputs.SessionKeyDetails']]] = None,
                  key_type: pulumi.Input[Optional[_builtins.str]] = None,
                  session_ttl_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
-                 target_resource_details: pulumi.Input[Optional[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict']]] = None,
+                 target_resource_details: pulumi.Input[Optional[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict', 'outputs.SessionTargetResourceDetails']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -528,13 +528,13 @@ class Session(pulumi.CustomResource):
             bastion_public_host_key_info: pulumi.Input[Optional[_builtins.str]] = None,
             bastion_user_name: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            key_details: pulumi.Input[Optional[Union['SessionKeyDetailsArgs', 'SessionKeyDetailsArgsDict']]] = None,
+            key_details: pulumi.Input[Optional[Union['SessionKeyDetailsArgs', 'SessionKeyDetailsArgsDict', 'outputs.SessionKeyDetails']]] = None,
             key_type: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             session_ttl_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
             ssh_metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            target_resource_details: pulumi.Input[Optional[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict']]] = None,
+            target_resource_details: pulumi.Input[Optional[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict', 'outputs.SessionTargetResourceDetails']]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'Session':
         """
@@ -549,13 +549,13 @@ class Session(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] bastion_public_host_key_info: The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
         :param pulumi.Input[_builtins.str] bastion_user_name: The username that the session uses to connect to the target resource.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name of the session.
-        :param pulumi.Input[Union['SessionKeyDetailsArgs', 'SessionKeyDetailsArgsDict']] key_details: Public key details for a bastion session.
+        :param pulumi.Input[Union['SessionKeyDetailsArgs', 'SessionKeyDetailsArgsDict', 'outputs.SessionKeyDetails']] key_details: Public key details for a bastion session.
         :param pulumi.Input[_builtins.str] key_type: The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current session state in more detail.
         :param pulumi.Input[_builtins.int] session_ttl_in_seconds: The amount of time the session can remain active.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] ssh_metadata: The connection message for the session.
         :param pulumi.Input[_builtins.str] state: The current state of the session.
-        :param pulumi.Input[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict']] target_resource_details: Details about a bastion session's target resource.
+        :param pulumi.Input[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict', 'outputs.SessionTargetResourceDetails']] target_resource_details: Details about a bastion session's target resource.
         :param pulumi.Input[_builtins.str] time_created: The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_updated: The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         """

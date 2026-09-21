@@ -210,7 +210,7 @@ class AwaitableGetManagedDatabaseSqlPlanBaselinesResult(GetManagedDatabaseSqlPla
             sql_text=self.sql_text)
 
 
-def get_managed_database_sql_plan_baselines(filters: Optional[Sequence[Union['GetManagedDatabaseSqlPlanBaselinesFilterArgs', 'GetManagedDatabaseSqlPlanBaselinesFilterArgsDict']]] = None,
+def get_managed_database_sql_plan_baselines(filters: Optional[Sequence[Union['GetManagedDatabaseSqlPlanBaselinesFilterArgs', 'GetManagedDatabaseSqlPlanBaselinesFilterArgsDict', 'outputs.GetManagedDatabaseSqlPlanBaselinesFilterResult']]] = None,
                                             is_accepted: Optional[_builtins.bool] = None,
                                             is_adaptive: Optional[_builtins.bool] = None,
                                             is_auto_purged: Optional[_builtins.bool] = None,
@@ -285,7 +285,7 @@ def get_managed_database_sql_plan_baselines(filters: Optional[Sequence[Union['Ge
         sql_handle=pulumi.get(__ret__, 'sql_handle'),
         sql_plan_baseline_collections=pulumi.get(__ret__, 'sql_plan_baseline_collections'),
         sql_text=pulumi.get(__ret__, 'sql_text'))
-def get_managed_database_sql_plan_baselines_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseSqlPlanBaselinesFilterArgs', 'GetManagedDatabaseSqlPlanBaselinesFilterArgsDict']]]]] = None,
+def get_managed_database_sql_plan_baselines_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseSqlPlanBaselinesFilterArgs', 'GetManagedDatabaseSqlPlanBaselinesFilterArgsDict', 'outputs.GetManagedDatabaseSqlPlanBaselinesFilterResult']]]]] = None,
                                                    is_accepted: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                                    is_adaptive: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                                    is_auto_purged: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,

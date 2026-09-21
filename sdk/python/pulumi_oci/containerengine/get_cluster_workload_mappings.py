@@ -85,7 +85,7 @@ class AwaitableGetClusterWorkloadMappingsResult(GetClusterWorkloadMappingsResult
 
 
 def get_cluster_workload_mappings(cluster_id: Optional[_builtins.str] = None,
-                                  filters: Optional[Sequence[Union['GetClusterWorkloadMappingsFilterArgs', 'GetClusterWorkloadMappingsFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetClusterWorkloadMappingsFilterArgs', 'GetClusterWorkloadMappingsFilterArgsDict', 'outputs.GetClusterWorkloadMappingsFilterResult']]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetClusterWorkloadMappingsResult:
     """
     This data source provides the list of Cluster Workload Mappings in Oracle Cloud Infrastructure Container Engine service.
@@ -116,7 +116,7 @@ def get_cluster_workload_mappings(cluster_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         workload_mappings=pulumi.get(__ret__, 'workload_mappings'))
 def get_cluster_workload_mappings_output(cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetClusterWorkloadMappingsFilterArgs', 'GetClusterWorkloadMappingsFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetClusterWorkloadMappingsFilterArgs', 'GetClusterWorkloadMappingsFilterArgsDict', 'outputs.GetClusterWorkloadMappingsFilterResult']]]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterWorkloadMappingsResult]:
     """
     This data source provides the list of Cluster Workload Mappings in Oracle Cloud Infrastructure Container Engine service.

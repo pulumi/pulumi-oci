@@ -554,7 +554,7 @@ class NetworkFirewall(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  ipv4address: pulumi.Input[Optional[_builtins.str]] = None,
                  ipv6address: pulumi.Input[Optional[_builtins.str]] = None,
-                 nat_configuration: pulumi.Input[Optional[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict']]] = None,
+                 nat_configuration: pulumi.Input[Optional[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict', 'outputs.NetworkFirewallNatConfiguration']]] = None,
                  network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -615,7 +615,7 @@ class NetworkFirewall(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] ipv4address: IPv4 address for the Network Firewall.
         :param pulumi.Input[_builtins.str] ipv6address: IPv6 address for the Network Firewall.
-        :param pulumi.Input[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict']] nat_configuration: (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
+        :param pulumi.Input[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict', 'outputs.NetworkFirewallNatConfiguration']] nat_configuration: (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_security_group_ids: (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
@@ -698,7 +698,7 @@ class NetworkFirewall(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  ipv4address: pulumi.Input[Optional[_builtins.str]] = None,
                  ipv6address: pulumi.Input[Optional[_builtins.str]] = None,
-                 nat_configuration: pulumi.Input[Optional[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict']]] = None,
+                 nat_configuration: pulumi.Input[Optional[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict', 'outputs.NetworkFirewallNatConfiguration']]] = None,
                  network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -755,7 +755,7 @@ class NetworkFirewall(pulumi.CustomResource):
             ipv4address: pulumi.Input[Optional[_builtins.str]] = None,
             ipv6address: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            nat_configuration: pulumi.Input[Optional[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict']]] = None,
+            nat_configuration: pulumi.Input[Optional[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict', 'outputs.NetworkFirewallNatConfiguration']]] = None,
             network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
             network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -780,7 +780,7 @@ class NetworkFirewall(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] ipv4address: IPv4 address for the Network Firewall.
         :param pulumi.Input[_builtins.str] ipv6address: IPv6 address for the Network Firewall.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
-        :param pulumi.Input[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict']] nat_configuration: (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
+        :param pulumi.Input[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict', 'outputs.NetworkFirewallNatConfiguration']] nat_configuration: (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_security_group_ids: (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}

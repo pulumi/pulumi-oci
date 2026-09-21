@@ -119,7 +119,7 @@ class AwaitableGetUserAssessmentPasswordExpiryDateAnalyticsResult(GetUserAssessm
 
 def get_user_assessment_password_expiry_date_analytics(access_level: Optional[_builtins.str] = None,
                                                        compartment_id_in_subtree: Optional[_builtins.bool] = None,
-                                                       filters: Optional[Sequence[Union['GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgs', 'GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgsDict']]] = None,
+                                                       filters: Optional[Sequence[Union['GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgs', 'GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgsDict', 'outputs.GetUserAssessmentPasswordExpiryDateAnalyticsFilterResult']]] = None,
                                                        time_password_expiry_less_than: Optional[_builtins.str] = None,
                                                        user_assessment_id: Optional[_builtins.str] = None,
                                                        user_category: Optional[_builtins.str] = None,
@@ -180,7 +180,7 @@ def get_user_assessment_password_expiry_date_analytics(access_level: Optional[_b
         user_category=pulumi.get(__ret__, 'user_category'))
 def get_user_assessment_password_expiry_date_analytics_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                               compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
-                                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgs', 'GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgsDict']]]]] = None,
+                                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgs', 'GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgsDict', 'outputs.GetUserAssessmentPasswordExpiryDateAnalyticsFilterResult']]]]] = None,
                                                               time_password_expiry_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                               user_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                               user_category: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

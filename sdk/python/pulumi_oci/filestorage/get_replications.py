@@ -133,7 +133,7 @@ def get_replications(availability_domain: Optional[_builtins.str] = None,
                      compartment_id: Optional[_builtins.str] = None,
                      display_name: Optional[_builtins.str] = None,
                      file_system_id: Optional[_builtins.str] = None,
-                     filters: Optional[Sequence[Union['GetReplicationsFilterArgs', 'GetReplicationsFilterArgsDict']]] = None,
+                     filters: Optional[Sequence[Union['GetReplicationsFilterArgs', 'GetReplicationsFilterArgsDict', 'outputs.GetReplicationsFilterResult']]] = None,
                      id: Optional[_builtins.str] = None,
                      state: Optional[_builtins.str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetReplicationsResult:
@@ -188,7 +188,7 @@ def get_replications_output(availability_domain: pulumi.Input[Optional[_builtins
                             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             file_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetReplicationsFilterArgs', 'GetReplicationsFilterArgsDict']]]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetReplicationsFilterArgs', 'GetReplicationsFilterArgsDict', 'outputs.GetReplicationsFilterResult']]]]] = None,
                             id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReplicationsResult]:

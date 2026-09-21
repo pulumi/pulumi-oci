@@ -94,7 +94,7 @@ class AwaitableGetCommitmentsResult(GetCommitmentsResult):
 
 
 def get_commitments(compartment_id: Optional[_builtins.str] = None,
-                    filters: Optional[Sequence[Union['GetCommitmentsFilterArgs', 'GetCommitmentsFilterArgsDict']]] = None,
+                    filters: Optional[Sequence[Union['GetCommitmentsFilterArgs', 'GetCommitmentsFilterArgsDict', 'outputs.GetCommitmentsFilterResult']]] = None,
                     subscribed_service_id: Optional[_builtins.str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCommitmentsResult:
     """
@@ -130,7 +130,7 @@ def get_commitments(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         subscribed_service_id=pulumi.get(__ret__, 'subscribed_service_id'))
 def get_commitments_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCommitmentsFilterArgs', 'GetCommitmentsFilterArgsDict']]]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCommitmentsFilterArgs', 'GetCommitmentsFilterArgsDict', 'outputs.GetCommitmentsFilterResult']]]]] = None,
                            subscribed_service_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCommitmentsResult]:
     """

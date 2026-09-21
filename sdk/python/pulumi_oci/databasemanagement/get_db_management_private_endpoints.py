@@ -145,7 +145,7 @@ class AwaitableGetDbManagementPrivateEndpointsResult(GetDbManagementPrivateEndpo
 
 
 def get_db_management_private_endpoints(compartment_id: Optional[_builtins.str] = None,
-                                        filters: Optional[Sequence[Union['GetDbManagementPrivateEndpointsFilterArgs', 'GetDbManagementPrivateEndpointsFilterArgsDict']]] = None,
+                                        filters: Optional[Sequence[Union['GetDbManagementPrivateEndpointsFilterArgs', 'GetDbManagementPrivateEndpointsFilterArgsDict', 'outputs.GetDbManagementPrivateEndpointsFilterResult']]] = None,
                                         is_cluster: Optional[_builtins.bool] = None,
                                         is_dns_resolution_enabled: Optional[_builtins.bool] = None,
                                         name: Optional[_builtins.str] = None,
@@ -201,7 +201,7 @@ def get_db_management_private_endpoints(compartment_id: Optional[_builtins.str] 
         state=pulumi.get(__ret__, 'state'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
 def get_db_management_private_endpoints_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbManagementPrivateEndpointsFilterArgs', 'GetDbManagementPrivateEndpointsFilterArgsDict']]]]] = None,
+                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbManagementPrivateEndpointsFilterArgs', 'GetDbManagementPrivateEndpointsFilterArgsDict', 'outputs.GetDbManagementPrivateEndpointsFilterResult']]]]] = None,
                                                is_cluster: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                                is_dns_resolution_enabled: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                                name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

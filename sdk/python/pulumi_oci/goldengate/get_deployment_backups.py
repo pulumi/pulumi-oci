@@ -123,7 +123,7 @@ class AwaitableGetDeploymentBackupsResult(GetDeploymentBackupsResult):
 def get_deployment_backups(compartment_id: Optional[_builtins.str] = None,
                            deployment_id: Optional[_builtins.str] = None,
                            display_name: Optional[_builtins.str] = None,
-                           filters: Optional[Sequence[Union['GetDeploymentBackupsFilterArgs', 'GetDeploymentBackupsFilterArgsDict']]] = None,
+                           filters: Optional[Sequence[Union['GetDeploymentBackupsFilterArgs', 'GetDeploymentBackupsFilterArgsDict', 'outputs.GetDeploymentBackupsFilterResult']]] = None,
                            state: Optional[_builtins.str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeploymentBackupsResult:
     """
@@ -169,7 +169,7 @@ def get_deployment_backups(compartment_id: Optional[_builtins.str] = None,
 def get_deployment_backups_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   deployment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDeploymentBackupsFilterArgs', 'GetDeploymentBackupsFilterArgsDict']]]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDeploymentBackupsFilterArgs', 'GetDeploymentBackupsFilterArgsDict', 'outputs.GetDeploymentBackupsFilterResult']]]]] = None,
                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentBackupsResult]:
     """

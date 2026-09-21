@@ -1353,9 +1353,9 @@ class DomainsNotificationSetting(pulumi.CustomResource):
                  attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
-                 event_settings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsNotificationSettingEventSettingArgs', 'DomainsNotificationSettingEventSettingArgsDict']]]]] = None,
+                 event_settings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsNotificationSettingEventSettingArgs', 'DomainsNotificationSettingEventSettingArgsDict', 'outputs.DomainsNotificationSettingEventSetting']]]]] = None,
                  external_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 from_email_address: pulumi.Input[Optional[Union['DomainsNotificationSettingFromEmailAddressArgs', 'DomainsNotificationSettingFromEmailAddressArgsDict']]] = None,
+                 from_email_address: pulumi.Input[Optional[Union['DomainsNotificationSettingFromEmailAddressArgs', 'DomainsNotificationSettingFromEmailAddressArgsDict', 'outputs.DomainsNotificationSettingFromEmailAddress']]] = None,
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  notification_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  notification_setting_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1364,7 +1364,7 @@ class DomainsNotificationSetting(pulumi.CustomResource):
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  send_notification_to_old_and_new_primary_emails_when_admin_changes_primary_email: pulumi.Input[Optional[_builtins.bool]] = None,
                  send_notifications_to_secondary_email: pulumi.Input[Optional[_builtins.bool]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsNotificationSettingTagArgs', 'DomainsNotificationSettingTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsNotificationSettingTagArgs', 'DomainsNotificationSettingTagArgsDict', 'outputs.DomainsNotificationSettingTag']]]]] = None,
                  test_mode_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  test_recipients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -1390,7 +1390,7 @@ class DomainsNotificationSetting(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[_builtins.str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[_builtins.str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsNotificationSettingEventSettingArgs', 'DomainsNotificationSettingEventSettingArgsDict']]]] event_settings: (Updatable) Event settings
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsNotificationSettingEventSettingArgs', 'DomainsNotificationSettingEventSettingArgsDict', 'outputs.DomainsNotificationSettingEventSetting']]]] event_settings: (Updatable) Event settings
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1412,7 +1412,7 @@ class DomainsNotificationSetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsNotificationSettingFromEmailAddressArgs', 'DomainsNotificationSettingFromEmailAddressArgsDict']] from_email_address: (Updatable) From email address to be used in the notification emails
+        :param pulumi.Input[Union['DomainsNotificationSettingFromEmailAddressArgs', 'DomainsNotificationSettingFromEmailAddressArgsDict', 'outputs.DomainsNotificationSettingFromEmailAddress']] from_email_address: (Updatable) From email address to be used in the notification emails
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1482,7 +1482,7 @@ class DomainsNotificationSetting(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsNotificationSettingTagArgs', 'DomainsNotificationSettingTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsNotificationSettingTagArgs', 'DomainsNotificationSettingTagArgsDict', 'outputs.DomainsNotificationSettingTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1560,9 +1560,9 @@ class DomainsNotificationSetting(pulumi.CustomResource):
                  attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
-                 event_settings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsNotificationSettingEventSettingArgs', 'DomainsNotificationSettingEventSettingArgsDict']]]]] = None,
+                 event_settings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsNotificationSettingEventSettingArgs', 'DomainsNotificationSettingEventSettingArgsDict', 'outputs.DomainsNotificationSettingEventSetting']]]]] = None,
                  external_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 from_email_address: pulumi.Input[Optional[Union['DomainsNotificationSettingFromEmailAddressArgs', 'DomainsNotificationSettingFromEmailAddressArgsDict']]] = None,
+                 from_email_address: pulumi.Input[Optional[Union['DomainsNotificationSettingFromEmailAddressArgs', 'DomainsNotificationSettingFromEmailAddressArgsDict', 'outputs.DomainsNotificationSettingFromEmailAddress']]] = None,
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  notification_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  notification_setting_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1571,7 +1571,7 @@ class DomainsNotificationSetting(pulumi.CustomResource):
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  send_notification_to_old_and_new_primary_emails_when_admin_changes_primary_email: pulumi.Input[Optional[_builtins.bool]] = None,
                  send_notifications_to_secondary_email: pulumi.Input[Optional[_builtins.bool]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsNotificationSettingTagArgs', 'DomainsNotificationSettingTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsNotificationSettingTagArgs', 'DomainsNotificationSettingTagArgsDict', 'outputs.DomainsNotificationSettingTag']]]]] = None,
                  test_mode_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  test_recipients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -1637,15 +1637,15 @@ class DomainsNotificationSetting(pulumi.CustomResource):
             compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
             domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
-            event_settings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsNotificationSettingEventSettingArgs', 'DomainsNotificationSettingEventSettingArgsDict']]]]] = None,
+            event_settings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsNotificationSettingEventSettingArgs', 'DomainsNotificationSettingEventSettingArgsDict', 'outputs.DomainsNotificationSettingEventSetting']]]]] = None,
             external_id: pulumi.Input[Optional[_builtins.str]] = None,
-            from_email_address: pulumi.Input[Optional[Union['DomainsNotificationSettingFromEmailAddressArgs', 'DomainsNotificationSettingFromEmailAddressArgsDict']]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsNotificationSettingIdcsCreatedByArgs', 'DomainsNotificationSettingIdcsCreatedByArgsDict']]]]] = None,
+            from_email_address: pulumi.Input[Optional[Union['DomainsNotificationSettingFromEmailAddressArgs', 'DomainsNotificationSettingFromEmailAddressArgsDict', 'outputs.DomainsNotificationSettingFromEmailAddress']]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsNotificationSettingIdcsCreatedByArgs', 'DomainsNotificationSettingIdcsCreatedByArgsDict', 'outputs.DomainsNotificationSettingIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsNotificationSettingIdcsLastModifiedByArgs', 'DomainsNotificationSettingIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsNotificationSettingIdcsLastModifiedByArgs', 'DomainsNotificationSettingIdcsLastModifiedByArgsDict', 'outputs.DomainsNotificationSettingIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsNotificationSettingMetaArgs', 'DomainsNotificationSettingMetaArgsDict']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsNotificationSettingMetaArgs', 'DomainsNotificationSettingMetaArgsDict', 'outputs.DomainsNotificationSettingMeta']]]]] = None,
             notification_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             notification_setting_id: pulumi.Input[Optional[_builtins.str]] = None,
             ocid: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1653,7 +1653,7 @@ class DomainsNotificationSetting(pulumi.CustomResource):
             schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             send_notification_to_old_and_new_primary_emails_when_admin_changes_primary_email: pulumi.Input[Optional[_builtins.bool]] = None,
             send_notifications_to_secondary_email: pulumi.Input[Optional[_builtins.bool]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsNotificationSettingTagArgs', 'DomainsNotificationSettingTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsNotificationSettingTagArgs', 'DomainsNotificationSettingTagArgsDict', 'outputs.DomainsNotificationSettingTag']]]]] = None,
             tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             test_mode_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             test_recipients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'DomainsNotificationSetting':
@@ -1700,7 +1700,7 @@ class DomainsNotificationSetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsNotificationSettingEventSettingArgs', 'DomainsNotificationSettingEventSettingArgsDict']]]] event_settings: (Updatable) Event settings
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsNotificationSettingEventSettingArgs', 'DomainsNotificationSettingEventSettingArgsDict', 'outputs.DomainsNotificationSettingEventSetting']]]] event_settings: (Updatable) Event settings
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1722,7 +1722,7 @@ class DomainsNotificationSetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsNotificationSettingFromEmailAddressArgs', 'DomainsNotificationSettingFromEmailAddressArgsDict']] from_email_address: (Updatable) From email address to be used in the notification emails
+        :param pulumi.Input[Union['DomainsNotificationSettingFromEmailAddressArgs', 'DomainsNotificationSettingFromEmailAddressArgsDict', 'outputs.DomainsNotificationSettingFromEmailAddress']] from_email_address: (Updatable) From email address to be used in the notification emails
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1732,7 +1732,7 @@ class DomainsNotificationSetting(pulumi.CustomResource):
                * returned: always
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsNotificationSettingIdcsCreatedByArgs', 'DomainsNotificationSettingIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsNotificationSettingIdcsCreatedByArgs', 'DomainsNotificationSettingIdcsCreatedByArgsDict', 'outputs.DomainsNotificationSettingIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1742,7 +1742,7 @@ class DomainsNotificationSetting(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsNotificationSettingIdcsLastModifiedByArgs', 'DomainsNotificationSettingIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsNotificationSettingIdcsLastModifiedByArgs', 'DomainsNotificationSettingIdcsLastModifiedByArgsDict', 'outputs.DomainsNotificationSettingIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1772,7 +1772,7 @@ class DomainsNotificationSetting(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsNotificationSettingMetaArgs', 'DomainsNotificationSettingMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsNotificationSettingMetaArgs', 'DomainsNotificationSettingMetaArgsDict', 'outputs.DomainsNotificationSettingMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1842,7 +1842,7 @@ class DomainsNotificationSetting(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsNotificationSettingTagArgs', 'DomainsNotificationSettingTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsNotificationSettingTagArgs', 'DomainsNotificationSettingTagArgsDict', 'outputs.DomainsNotificationSettingTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]

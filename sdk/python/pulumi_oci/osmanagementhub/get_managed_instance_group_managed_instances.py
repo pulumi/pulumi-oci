@@ -136,7 +136,7 @@ def get_managed_instance_group_managed_instances(compartment_id: Optional[_built
                                                  compartment_id_in_subtree: Optional[_builtins.bool] = None,
                                                  display_name_contains: Optional[_builtins.str] = None,
                                                  display_names: Optional[Sequence[_builtins.str]] = None,
-                                                 filters: Optional[Sequence[Union['GetManagedInstanceGroupManagedInstancesFilterArgs', 'GetManagedInstanceGroupManagedInstancesFilterArgsDict']]] = None,
+                                                 filters: Optional[Sequence[Union['GetManagedInstanceGroupManagedInstancesFilterArgs', 'GetManagedInstanceGroupManagedInstancesFilterArgsDict', 'outputs.GetManagedInstanceGroupManagedInstancesFilterResult']]] = None,
                                                  managed_instance_group_id: Optional[_builtins.str] = None,
                                                  managed_instance_id: Optional[_builtins.str] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedInstanceGroupManagedInstancesResult:
@@ -192,7 +192,7 @@ def get_managed_instance_group_managed_instances_output(compartment_id: pulumi.I
                                                         compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                                         display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                         display_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
-                                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceGroupManagedInstancesFilterArgs', 'GetManagedInstanceGroupManagedInstancesFilterArgsDict']]]]] = None,
+                                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceGroupManagedInstancesFilterArgs', 'GetManagedInstanceGroupManagedInstancesFilterArgsDict', 'outputs.GetManagedInstanceGroupManagedInstancesFilterResult']]]]] = None,
                                                         managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                         managed_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceGroupManagedInstancesResult]:

@@ -110,7 +110,7 @@ class AwaitableGetSchedulingPoliciesResult(GetSchedulingPoliciesResult):
 
 def get_scheduling_policies(compartment_id: Optional[_builtins.str] = None,
                             display_name: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetSchedulingPoliciesFilterArgs', 'GetSchedulingPoliciesFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetSchedulingPoliciesFilterArgs', 'GetSchedulingPoliciesFilterArgsDict', 'outputs.GetSchedulingPoliciesFilterResult']]] = None,
                             state: Optional[_builtins.str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSchedulingPoliciesResult:
     """
@@ -151,7 +151,7 @@ def get_scheduling_policies(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_scheduling_policies_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulingPoliciesFilterArgs', 'GetSchedulingPoliciesFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulingPoliciesFilterArgs', 'GetSchedulingPoliciesFilterArgsDict', 'outputs.GetSchedulingPoliciesFilterResult']]]]] = None,
                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSchedulingPoliciesResult]:
     """

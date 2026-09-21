@@ -97,7 +97,7 @@ class AwaitableGetAppCatalogSubscriptionsResult(GetAppCatalogSubscriptionsResult
 
 
 def get_app_catalog_subscriptions(compartment_id: Optional[_builtins.str] = None,
-                                  filters: Optional[Sequence[Union['GetAppCatalogSubscriptionsFilterArgs', 'GetAppCatalogSubscriptionsFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetAppCatalogSubscriptionsFilterArgs', 'GetAppCatalogSubscriptionsFilterArgsDict', 'outputs.GetAppCatalogSubscriptionsFilterResult']]] = None,
                                   listing_id: Optional[_builtins.str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppCatalogSubscriptionsResult:
     """
@@ -133,7 +133,7 @@ def get_app_catalog_subscriptions(compartment_id: Optional[_builtins.str] = None
         id=pulumi.get(__ret__, 'id'),
         listing_id=pulumi.get(__ret__, 'listing_id'))
 def get_app_catalog_subscriptions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAppCatalogSubscriptionsFilterArgs', 'GetAppCatalogSubscriptionsFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAppCatalogSubscriptionsFilterArgs', 'GetAppCatalogSubscriptionsFilterArgsDict', 'outputs.GetAppCatalogSubscriptionsFilterResult']]]]] = None,
                                          listing_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppCatalogSubscriptionsResult]:
     """

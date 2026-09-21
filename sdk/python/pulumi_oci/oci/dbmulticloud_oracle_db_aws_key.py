@@ -759,7 +759,7 @@ class DbmulticloudOracleDbAwsKey(pulumi.CustomResource):
             location: pulumi.Input[Optional[_builtins.str]] = None,
             oracle_db_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
             properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            replication_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAwsKeyReplicationMetadataArgs', 'DbmulticloudOracleDbAwsKeyReplicationMetadataArgsDict']]]]] = None,
+            replication_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAwsKeyReplicationMetadataArgs', 'DbmulticloudOracleDbAwsKeyReplicationMetadataArgsDict', 'outputs.DbmulticloudOracleDbAwsKeyReplicationMetadata']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             target_region: pulumi.Input[Optional[_builtins.str]] = None,
@@ -784,7 +784,7 @@ class DbmulticloudOracleDbAwsKey(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] location: AWS Key resource Location.
         :param pulumi.Input[_builtins.str] oracle_db_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: AWS Key resource's properties.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAwsKeyReplicationMetadataArgs', 'DbmulticloudOracleDbAwsKeyReplicationMetadataArgsDict']]]] replication_metadatas: Replication metadata, it has information about replication and target region.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAwsKeyReplicationMetadataArgs', 'DbmulticloudOracleDbAwsKeyReplicationMetadataArgsDict', 'outputs.DbmulticloudOracleDbAwsKeyReplicationMetadata']]]] replication_metadatas: Replication metadata, it has information about replication and target region.
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the Oracle DB AWS Key resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] target_region: The target region, where resource is replicated.

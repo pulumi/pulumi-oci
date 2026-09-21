@@ -110,7 +110,7 @@ class AwaitableGetComputeImageCapabilitySchemasResult(GetComputeImageCapabilityS
 
 def get_compute_image_capability_schemas(compartment_id: Optional[_builtins.str] = None,
                                          display_name: Optional[_builtins.str] = None,
-                                         filters: Optional[Sequence[Union['GetComputeImageCapabilitySchemasFilterArgs', 'GetComputeImageCapabilitySchemasFilterArgsDict']]] = None,
+                                         filters: Optional[Sequence[Union['GetComputeImageCapabilitySchemasFilterArgs', 'GetComputeImageCapabilitySchemasFilterArgsDict', 'outputs.GetComputeImageCapabilitySchemasFilterResult']]] = None,
                                          image_id: Optional[_builtins.str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeImageCapabilitySchemasResult:
     """
@@ -151,7 +151,7 @@ def get_compute_image_capability_schemas(compartment_id: Optional[_builtins.str]
         image_id=pulumi.get(__ret__, 'image_id'))
 def get_compute_image_capability_schemas_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeImageCapabilitySchemasFilterArgs', 'GetComputeImageCapabilitySchemasFilterArgsDict']]]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeImageCapabilitySchemasFilterArgs', 'GetComputeImageCapabilitySchemasFilterArgsDict', 'outputs.GetComputeImageCapabilitySchemasFilterResult']]]]] = None,
                                                 image_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeImageCapabilitySchemasResult]:
     """

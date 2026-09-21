@@ -340,7 +340,7 @@ class KeyStore(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 type_details: pulumi.Input[Optional[Union['KeyStoreTypeDetailsArgs', 'KeyStoreTypeDetailsArgsDict']]] = None,
+                 type_details: pulumi.Input[Optional[Union['KeyStoreTypeDetailsArgs', 'KeyStoreTypeDetailsArgsDict', 'outputs.KeyStoreTypeDetails']]] = None,
                  __props__=None):
         """
         This resource provides the Key Store resource in Oracle Cloud Infrastructure Database service.
@@ -387,7 +387,7 @@ class KeyStore(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the key store. The name does not need to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['KeyStoreTypeDetailsArgs', 'KeyStoreTypeDetailsArgsDict']] type_details: (Updatable) Key store type details.
+        :param pulumi.Input[Union['KeyStoreTypeDetailsArgs', 'KeyStoreTypeDetailsArgsDict', 'outputs.KeyStoreTypeDetails']] type_details: (Updatable) Key store type details.
         """
         ...
     @overload
@@ -454,7 +454,7 @@ class KeyStore(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 type_details: pulumi.Input[Optional[Union['KeyStoreTypeDetailsArgs', 'KeyStoreTypeDetailsArgsDict']]] = None,
+                 type_details: pulumi.Input[Optional[Union['KeyStoreTypeDetailsArgs', 'KeyStoreTypeDetailsArgsDict', 'outputs.KeyStoreTypeDetails']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -493,9 +493,9 @@ class KeyStore(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            associated_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyStoreAssociatedDatabaseArgs', 'KeyStoreAssociatedDatabaseArgsDict']]]]] = None,
+            associated_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyStoreAssociatedDatabaseArgs', 'KeyStoreAssociatedDatabaseArgsDict', 'outputs.KeyStoreAssociatedDatabase']]]]] = None,
             associated_long_term_backup_count: pulumi.Input[Optional[_builtins.int]] = None,
-            associated_long_term_backups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyStoreAssociatedLongTermBackupArgs', 'KeyStoreAssociatedLongTermBackupArgsDict']]]]] = None,
+            associated_long_term_backups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyStoreAssociatedLongTermBackupArgs', 'KeyStoreAssociatedLongTermBackupArgsDict', 'outputs.KeyStoreAssociatedLongTermBackup']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             confirm_details_trigger: pulumi.Input[Optional[_builtins.int]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -505,7 +505,7 @@ class KeyStore(pulumi.CustomResource):
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
-            type_details: pulumi.Input[Optional[Union['KeyStoreTypeDetailsArgs', 'KeyStoreTypeDetailsArgsDict']]] = None) -> 'KeyStore':
+            type_details: pulumi.Input[Optional[Union['KeyStoreTypeDetailsArgs', 'KeyStoreTypeDetailsArgsDict', 'outputs.KeyStoreTypeDetails']]] = None) -> 'KeyStore':
         """
         Get an existing KeyStore resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -513,9 +513,9 @@ class KeyStore(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['KeyStoreAssociatedDatabaseArgs', 'KeyStoreAssociatedDatabaseArgsDict']]]] associated_databases: List of databases associated with the key store.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['KeyStoreAssociatedDatabaseArgs', 'KeyStoreAssociatedDatabaseArgsDict', 'outputs.KeyStoreAssociatedDatabase']]]] associated_databases: List of databases associated with the key store.
         :param pulumi.Input[_builtins.int] associated_long_term_backup_count: Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['KeyStoreAssociatedLongTermBackupArgs', 'KeyStoreAssociatedLongTermBackupArgsDict']]]] associated_long_term_backups: List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['KeyStoreAssociatedLongTermBackupArgs', 'KeyStoreAssociatedLongTermBackupArgsDict', 'outputs.KeyStoreAssociatedLongTermBackup']]]] associated_long_term_backups: List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the key store. The name does not need to be unique.
@@ -524,7 +524,7 @@ class KeyStore(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The current state of the key store.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] time_created: The date and time that the key store was created.
-        :param pulumi.Input[Union['KeyStoreTypeDetailsArgs', 'KeyStoreTypeDetailsArgsDict']] type_details: (Updatable) Key store type details.
+        :param pulumi.Input[Union['KeyStoreTypeDetailsArgs', 'KeyStoreTypeDetailsArgsDict', 'outputs.KeyStoreTypeDetails']] type_details: (Updatable) Key store type details.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

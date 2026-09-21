@@ -1050,7 +1050,7 @@ class DomainsIdentityProofingProviderTemplate(pulumi.CustomResource):
                  attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
-                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateConfigurationArgs', 'DomainsIdentityProofingProviderTemplateConfigurationArgsDict']]]]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateConfigurationArgs', 'DomainsIdentityProofingProviderTemplateConfigurationArgsDict', 'outputs.DomainsIdentityProofingProviderTemplateConfiguration']]]]] = None,
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  identity_proofing_provider_template_provider: pulumi.Input[Optional[_builtins.str]] = None,
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1105,7 +1105,7 @@ class DomainsIdentityProofingProviderTemplate(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[_builtins.str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[_builtins.str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateConfigurationArgs', 'DomainsIdentityProofingProviderTemplateConfigurationArgsDict']]]] configurations: (Updatable) Proofing Provider Configuration Template.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateConfigurationArgs', 'DomainsIdentityProofingProviderTemplateConfigurationArgsDict', 'outputs.DomainsIdentityProofingProviderTemplateConfiguration']]]] configurations: (Updatable) Proofing Provider Configuration Template.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [name]
@@ -1239,7 +1239,7 @@ class DomainsIdentityProofingProviderTemplate(pulumi.CustomResource):
                  attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
-                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateConfigurationArgs', 'DomainsIdentityProofingProviderTemplateConfigurationArgsDict']]]]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateConfigurationArgs', 'DomainsIdentityProofingProviderTemplateConfigurationArgsDict', 'outputs.DomainsIdentityProofingProviderTemplateConfiguration']]]]] = None,
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  identity_proofing_provider_template_provider: pulumi.Input[Optional[_builtins.str]] = None,
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1303,19 +1303,19 @@ class DomainsIdentityProofingProviderTemplate(pulumi.CustomResource):
             attributes: pulumi.Input[Optional[_builtins.str]] = None,
             authorization: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
-            configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateConfigurationArgs', 'DomainsIdentityProofingProviderTemplateConfigurationArgsDict']]]]] = None,
+            configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateConfigurationArgs', 'DomainsIdentityProofingProviderTemplateConfigurationArgsDict', 'outputs.DomainsIdentityProofingProviderTemplateConfiguration']]]]] = None,
             delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
             domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateIdcsCreatedByArgs', 'DomainsIdentityProofingProviderTemplateIdcsCreatedByArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateIdcsCreatedByArgs', 'DomainsIdentityProofingProviderTemplateIdcsCreatedByArgsDict', 'outputs.DomainsIdentityProofingProviderTemplateIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateIdcsLastModifiedByArgs', 'DomainsIdentityProofingProviderTemplateIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateIdcsLastModifiedByArgs', 'DomainsIdentityProofingProviderTemplateIdcsLastModifiedByArgsDict', 'outputs.DomainsIdentityProofingProviderTemplateIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_locked_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateIdcsLockedByArgs', 'DomainsIdentityProofingProviderTemplateIdcsLockedByArgsDict']]]]] = None,
+            idcs_locked_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateIdcsLockedByArgs', 'DomainsIdentityProofingProviderTemplateIdcsLockedByArgsDict', 'outputs.DomainsIdentityProofingProviderTemplateIdcsLockedBy']]]]] = None,
             idcs_locked_on: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_locked_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             identity_proofing_provider_template_provider: pulumi.Input[Optional[_builtins.str]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateMetaArgs', 'DomainsIdentityProofingProviderTemplateMetaArgsDict']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateMetaArgs', 'DomainsIdentityProofingProviderTemplateMetaArgsDict', 'outputs.DomainsIdentityProofingProviderTemplateMeta']]]]] = None,
             ocid: pulumi.Input[Optional[_builtins.str]] = None,
             resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
             schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -1343,7 +1343,7 @@ class DomainsIdentityProofingProviderTemplate(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateConfigurationArgs', 'DomainsIdentityProofingProviderTemplateConfigurationArgsDict']]]] configurations: (Updatable) Proofing Provider Configuration Template.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateConfigurationArgs', 'DomainsIdentityProofingProviderTemplateConfigurationArgsDict', 'outputs.DomainsIdentityProofingProviderTemplateConfiguration']]]] configurations: (Updatable) Proofing Provider Configuration Template.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [name]
@@ -1374,7 +1374,7 @@ class DomainsIdentityProofingProviderTemplate(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateIdcsCreatedByArgs', 'DomainsIdentityProofingProviderTemplateIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateIdcsCreatedByArgs', 'DomainsIdentityProofingProviderTemplateIdcsCreatedByArgsDict', 'outputs.DomainsIdentityProofingProviderTemplateIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1384,7 +1384,7 @@ class DomainsIdentityProofingProviderTemplate(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateIdcsLastModifiedByArgs', 'DomainsIdentityProofingProviderTemplateIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateIdcsLastModifiedByArgs', 'DomainsIdentityProofingProviderTemplateIdcsLastModifiedByArgsDict', 'outputs.DomainsIdentityProofingProviderTemplateIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1404,7 +1404,7 @@ class DomainsIdentityProofingProviderTemplate(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateIdcsLockedByArgs', 'DomainsIdentityProofingProviderTemplateIdcsLockedByArgsDict']]]] idcs_locked_bies: (Updatable) The User or App who locked the Resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateIdcsLockedByArgs', 'DomainsIdentityProofingProviderTemplateIdcsLockedByArgsDict', 'outputs.DomainsIdentityProofingProviderTemplateIdcsLockedBy']]]] idcs_locked_bies: (Updatable) The User or App who locked the Resource.
                
                **SCIM++ Properties:**
                * idcsSearchable: false
@@ -1455,7 +1455,7 @@ class DomainsIdentityProofingProviderTemplate(pulumi.CustomResource):
                * returned: always
                * type: string
                * uniqueness: global
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateMetaArgs', 'DomainsIdentityProofingProviderTemplateMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderTemplateMetaArgs', 'DomainsIdentityProofingProviderTemplateMetaArgsDict', 'outputs.DomainsIdentityProofingProviderTemplateMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false

@@ -103,7 +103,7 @@ class AwaitableGetProtectionCapabilityGroupTagsResult(GetProtectionCapabilityGro
 
 
 def get_protection_capability_group_tags(compartment_id: Optional[_builtins.str] = None,
-                                         filters: Optional[Sequence[Union['GetProtectionCapabilityGroupTagsFilterArgs', 'GetProtectionCapabilityGroupTagsFilterArgsDict']]] = None,
+                                         filters: Optional[Sequence[Union['GetProtectionCapabilityGroupTagsFilterArgs', 'GetProtectionCapabilityGroupTagsFilterArgsDict', 'outputs.GetProtectionCapabilityGroupTagsFilterResult']]] = None,
                                          name: Optional[_builtins.str] = None,
                                          type: Optional[_builtins.str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProtectionCapabilityGroupTagsResult:
@@ -144,7 +144,7 @@ def get_protection_capability_group_tags(compartment_id: Optional[_builtins.str]
         protection_capability_group_tag_collections=pulumi.get(__ret__, 'protection_capability_group_tag_collections'),
         type=pulumi.get(__ret__, 'type'))
 def get_protection_capability_group_tags_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProtectionCapabilityGroupTagsFilterArgs', 'GetProtectionCapabilityGroupTagsFilterArgsDict']]]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProtectionCapabilityGroupTagsFilterArgs', 'GetProtectionCapabilityGroupTagsFilterArgsDict', 'outputs.GetProtectionCapabilityGroupTagsFilterResult']]]]] = None,
                                                 name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectionCapabilityGroupTagsResult]:

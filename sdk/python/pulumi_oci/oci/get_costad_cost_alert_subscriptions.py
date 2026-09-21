@@ -109,7 +109,7 @@ class AwaitableGetCostadCostAlertSubscriptionsResult(GetCostadCostAlertSubscript
 
 
 def get_costad_cost_alert_subscriptions(compartment_id: Optional[_builtins.str] = None,
-                                        filters: Optional[Sequence[Union['GetCostadCostAlertSubscriptionsFilterArgs', 'GetCostadCostAlertSubscriptionsFilterArgsDict']]] = None,
+                                        filters: Optional[Sequence[Union['GetCostadCostAlertSubscriptionsFilterArgs', 'GetCostadCostAlertSubscriptionsFilterArgsDict', 'outputs.GetCostadCostAlertSubscriptionsFilterResult']]] = None,
                                         name: Optional[_builtins.str] = None,
                                         state: Optional[_builtins.str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCostadCostAlertSubscriptionsResult:
@@ -150,7 +150,7 @@ def get_costad_cost_alert_subscriptions(compartment_id: Optional[_builtins.str] 
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
 def get_costad_cost_alert_subscriptions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCostadCostAlertSubscriptionsFilterArgs', 'GetCostadCostAlertSubscriptionsFilterArgsDict']]]]] = None,
+                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCostadCostAlertSubscriptionsFilterArgs', 'GetCostadCostAlertSubscriptionsFilterArgsDict', 'outputs.GetCostadCostAlertSubscriptionsFilterResult']]]]] = None,
                                                name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCostadCostAlertSubscriptionsResult]:

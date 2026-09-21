@@ -409,7 +409,7 @@ class BatchBatchTaskProfile(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 extended_information: pulumi.Input[Optional[Union['BatchBatchTaskProfileExtendedInformationArgs', 'BatchBatchTaskProfileExtendedInformationArgsDict']]] = None,
+                 extended_information: pulumi.Input[Optional[Union['BatchBatchTaskProfileExtendedInformationArgs', 'BatchBatchTaskProfileExtendedInformationArgsDict', 'outputs.BatchBatchTaskProfileExtendedInformation']]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  min_disk_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
                  min_memory_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
@@ -463,7 +463,7 @@ class BatchBatchTaskProfile(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The batch task profile description.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchtaskprofile20250914115623.
-        :param pulumi.Input[Union['BatchBatchTaskProfileExtendedInformationArgs', 'BatchBatchTaskProfileExtendedInformationArgsDict']] extended_information: Extended information for the task profile.
+        :param pulumi.Input[Union['BatchBatchTaskProfileExtendedInformationArgs', 'BatchBatchTaskProfileExtendedInformationArgsDict', 'outputs.BatchBatchTaskProfileExtendedInformation']] extended_information: Extended information for the task profile.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.int] min_disk_size_in_gbs: The minimum required size of disk space in GBs.
         :param pulumi.Input[_builtins.int] min_memory_in_gbs: The minimum required memory.
@@ -539,7 +539,7 @@ class BatchBatchTaskProfile(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 extended_information: pulumi.Input[Optional[Union['BatchBatchTaskProfileExtendedInformationArgs', 'BatchBatchTaskProfileExtendedInformationArgsDict']]] = None,
+                 extended_information: pulumi.Input[Optional[Union['BatchBatchTaskProfileExtendedInformationArgs', 'BatchBatchTaskProfileExtendedInformationArgsDict', 'outputs.BatchBatchTaskProfileExtendedInformation']]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  min_disk_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
                  min_memory_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
@@ -582,7 +582,7 @@ class BatchBatchTaskProfile(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            extended_information: pulumi.Input[Optional[Union['BatchBatchTaskProfileExtendedInformationArgs', 'BatchBatchTaskProfileExtendedInformationArgsDict']]] = None,
+            extended_information: pulumi.Input[Optional[Union['BatchBatchTaskProfileExtendedInformationArgs', 'BatchBatchTaskProfileExtendedInformationArgsDict', 'outputs.BatchBatchTaskProfileExtendedInformation']]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             min_disk_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
             min_memory_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
@@ -602,7 +602,7 @@ class BatchBatchTaskProfile(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The batch task profile description.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchtaskprofile20250914115623.
-        :param pulumi.Input[Union['BatchBatchTaskProfileExtendedInformationArgs', 'BatchBatchTaskProfileExtendedInformationArgsDict']] extended_information: Extended information for the task profile.
+        :param pulumi.Input[Union['BatchBatchTaskProfileExtendedInformationArgs', 'BatchBatchTaskProfileExtendedInformationArgsDict', 'outputs.BatchBatchTaskProfileExtendedInformation']] extended_information: Extended information for the task profile.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.int] min_disk_size_in_gbs: The minimum required size of disk space in GBs.
         :param pulumi.Input[_builtins.int] min_memory_in_gbs: The minimum required memory.

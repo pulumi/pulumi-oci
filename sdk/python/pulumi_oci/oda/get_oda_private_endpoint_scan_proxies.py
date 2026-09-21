@@ -93,7 +93,7 @@ class AwaitableGetOdaPrivateEndpointScanProxiesResult(GetOdaPrivateEndpointScanP
             state=self.state)
 
 
-def get_oda_private_endpoint_scan_proxies(filters: Optional[Sequence[Union['GetOdaPrivateEndpointScanProxiesFilterArgs', 'GetOdaPrivateEndpointScanProxiesFilterArgsDict']]] = None,
+def get_oda_private_endpoint_scan_proxies(filters: Optional[Sequence[Union['GetOdaPrivateEndpointScanProxiesFilterArgs', 'GetOdaPrivateEndpointScanProxiesFilterArgsDict', 'outputs.GetOdaPrivateEndpointScanProxiesFilterResult']]] = None,
                                           oda_private_endpoint_id: Optional[_builtins.str] = None,
                                           state: Optional[_builtins.str] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOdaPrivateEndpointScanProxiesResult:
@@ -134,7 +134,7 @@ def get_oda_private_endpoint_scan_proxies(filters: Optional[Sequence[Union['GetO
         oda_private_endpoint_id=pulumi.get(__ret__, 'oda_private_endpoint_id'),
         oda_private_endpoint_scan_proxy_collections=pulumi.get(__ret__, 'oda_private_endpoint_scan_proxy_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_oda_private_endpoint_scan_proxies_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOdaPrivateEndpointScanProxiesFilterArgs', 'GetOdaPrivateEndpointScanProxiesFilterArgsDict']]]]] = None,
+def get_oda_private_endpoint_scan_proxies_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOdaPrivateEndpointScanProxiesFilterArgs', 'GetOdaPrivateEndpointScanProxiesFilterArgsDict', 'outputs.GetOdaPrivateEndpointScanProxiesFilterResult']]]]] = None,
                                                  oda_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOdaPrivateEndpointScanProxiesResult]:

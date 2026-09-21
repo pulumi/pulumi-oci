@@ -95,7 +95,7 @@ class AwaitableGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsResult(GetRun
 
 def get_runtime_database_tools_database_api_gateway_config_pools(database_tools_database_api_gateway_config_id: Optional[_builtins.str] = None,
                                                                  display_name: Optional[_builtins.str] = None,
-                                                                 filters: Optional[Sequence[Union['GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArgs', 'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArgsDict']]] = None,
+                                                                 filters: Optional[Sequence[Union['GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArgs', 'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArgsDict', 'outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterResult']]] = None,
                                                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsResult:
     """
     This data source provides the list of Database Tools Database Api Gateway Config Pools in Oracle Cloud Infrastructure Database Tools Runtime service.
@@ -131,7 +131,7 @@ def get_runtime_database_tools_database_api_gateway_config_pools(database_tools_
         id=pulumi.get(__ret__, 'id'))
 def get_runtime_database_tools_database_api_gateway_config_pools_output(database_tools_database_api_gateway_config_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArgs', 'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArgsDict']]]]] = None,
+                                                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArgs', 'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArgsDict', 'outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterResult']]]]] = None,
                                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsResult]:
     """
     This data source provides the list of Database Tools Database Api Gateway Config Pools in Oracle Cloud Infrastructure Database Tools Runtime service.

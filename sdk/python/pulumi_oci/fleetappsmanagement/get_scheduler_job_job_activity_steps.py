@@ -132,7 +132,7 @@ class AwaitableGetSchedulerJobJobActivityStepsResult(GetSchedulerJobJobActivityS
             target_name=self.target_name)
 
 
-def get_scheduler_job_job_activity_steps(filters: Optional[Sequence[Union['GetSchedulerJobJobActivityStepsFilterArgs', 'GetSchedulerJobJobActivityStepsFilterArgsDict']]] = None,
+def get_scheduler_job_job_activity_steps(filters: Optional[Sequence[Union['GetSchedulerJobJobActivityStepsFilterArgs', 'GetSchedulerJobJobActivityStepsFilterArgsDict', 'outputs.GetSchedulerJobJobActivityStepsFilterResult']]] = None,
                                          job_activity_id: Optional[_builtins.str] = None,
                                          resource_task_id: Optional[_builtins.str] = None,
                                          scheduler_job_id: Optional[_builtins.str] = None,
@@ -188,7 +188,7 @@ def get_scheduler_job_job_activity_steps(filters: Optional[Sequence[Union['GetSc
         step_collections=pulumi.get(__ret__, 'step_collections'),
         step_name=pulumi.get(__ret__, 'step_name'),
         target_name=pulumi.get(__ret__, 'target_name'))
-def get_scheduler_job_job_activity_steps_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulerJobJobActivityStepsFilterArgs', 'GetSchedulerJobJobActivityStepsFilterArgsDict']]]]] = None,
+def get_scheduler_job_job_activity_steps_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulerJobJobActivityStepsFilterArgs', 'GetSchedulerJobJobActivityStepsFilterArgsDict', 'outputs.GetSchedulerJobJobActivityStepsFilterResult']]]]] = None,
                                                 job_activity_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                 resource_task_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 scheduler_job_id: pulumi.Input[Optional[_builtins.str]] = None,

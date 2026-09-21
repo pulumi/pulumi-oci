@@ -123,7 +123,7 @@ class AwaitableGetFilesystemSnapshotPoliciesResult(GetFilesystemSnapshotPolicies
 def get_filesystem_snapshot_policies(availability_domain: Optional[_builtins.str] = None,
                                      compartment_id: Optional[_builtins.str] = None,
                                      display_name: Optional[_builtins.str] = None,
-                                     filters: Optional[Sequence[Union['GetFilesystemSnapshotPoliciesFilterArgs', 'GetFilesystemSnapshotPoliciesFilterArgsDict']]] = None,
+                                     filters: Optional[Sequence[Union['GetFilesystemSnapshotPoliciesFilterArgs', 'GetFilesystemSnapshotPoliciesFilterArgsDict', 'outputs.GetFilesystemSnapshotPoliciesFilterResult']]] = None,
                                      id: Optional[_builtins.str] = None,
                                      state: Optional[_builtins.str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFilesystemSnapshotPoliciesResult:
@@ -173,7 +173,7 @@ def get_filesystem_snapshot_policies(availability_domain: Optional[_builtins.str
 def get_filesystem_snapshot_policies_output(availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
                                             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFilesystemSnapshotPoliciesFilterArgs', 'GetFilesystemSnapshotPoliciesFilterArgsDict']]]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFilesystemSnapshotPoliciesFilterArgs', 'GetFilesystemSnapshotPoliciesFilterArgsDict', 'outputs.GetFilesystemSnapshotPoliciesFilterResult']]]]] = None,
                                             id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFilesystemSnapshotPoliciesResult]:

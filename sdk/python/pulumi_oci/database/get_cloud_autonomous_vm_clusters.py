@@ -136,7 +136,7 @@ def get_cloud_autonomous_vm_clusters(availability_domain: Optional[_builtins.str
                                      cloud_exadata_infrastructure_id: Optional[_builtins.str] = None,
                                      compartment_id: Optional[_builtins.str] = None,
                                      display_name: Optional[_builtins.str] = None,
-                                     filters: Optional[Sequence[Union['GetCloudAutonomousVmClustersFilterArgs', 'GetCloudAutonomousVmClustersFilterArgsDict']]] = None,
+                                     filters: Optional[Sequence[Union['GetCloudAutonomousVmClustersFilterArgs', 'GetCloudAutonomousVmClustersFilterArgsDict', 'outputs.GetCloudAutonomousVmClustersFilterResult']]] = None,
                                      state: Optional[_builtins.str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudAutonomousVmClustersResult:
     """
@@ -187,7 +187,7 @@ def get_cloud_autonomous_vm_clusters_output(availability_domain: pulumi.Input[Op
                                             cloud_exadata_infrastructure_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudAutonomousVmClustersFilterArgs', 'GetCloudAutonomousVmClustersFilterArgsDict']]]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudAutonomousVmClustersFilterArgs', 'GetCloudAutonomousVmClustersFilterArgsDict', 'outputs.GetCloudAutonomousVmClustersFilterResult']]]]] = None,
                                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudAutonomousVmClustersResult]:
     """

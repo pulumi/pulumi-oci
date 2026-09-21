@@ -107,7 +107,7 @@ class AwaitableGetLogGroupsResult(GetLogGroupsResult):
 
 def get_log_groups(compartment_id: Optional[_builtins.str] = None,
                    display_name: Optional[_builtins.str] = None,
-                   filters: Optional[Sequence[Union['GetLogGroupsFilterArgs', 'GetLogGroupsFilterArgsDict']]] = None,
+                   filters: Optional[Sequence[Union['GetLogGroupsFilterArgs', 'GetLogGroupsFilterArgsDict', 'outputs.GetLogGroupsFilterResult']]] = None,
                    is_compartment_id_in_subtree: Optional[_builtins.bool] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogGroupsResult:
     """
@@ -148,7 +148,7 @@ def get_log_groups(compartment_id: Optional[_builtins.str] = None,
         log_groups=pulumi.get(__ret__, 'log_groups'))
 def get_log_groups_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLogGroupsFilterArgs', 'GetLogGroupsFilterArgsDict']]]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLogGroupsFilterArgs', 'GetLogGroupsFilterArgsDict', 'outputs.GetLogGroupsFilterResult']]]]] = None,
                           is_compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogGroupsResult]:
     """

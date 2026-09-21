@@ -139,7 +139,7 @@ class AwaitableGetWorkspaceApplicationSchedulesResult(GetWorkspaceApplicationSch
 
 
 def get_workspace_application_schedules(application_key: Optional[_builtins.str] = None,
-                                        filters: Optional[Sequence[Union['GetWorkspaceApplicationSchedulesFilterArgs', 'GetWorkspaceApplicationSchedulesFilterArgsDict']]] = None,
+                                        filters: Optional[Sequence[Union['GetWorkspaceApplicationSchedulesFilterArgs', 'GetWorkspaceApplicationSchedulesFilterArgsDict', 'outputs.GetWorkspaceApplicationSchedulesFilterResult']]] = None,
                                         identifiers: Optional[Sequence[_builtins.str]] = None,
                                         keys: Optional[Sequence[_builtins.str]] = None,
                                         name: Optional[_builtins.str] = None,
@@ -195,7 +195,7 @@ def get_workspace_application_schedules(application_key: Optional[_builtins.str]
         types=pulumi.get(__ret__, 'types'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
 def get_workspace_application_schedules_output(application_key: pulumi.Input[Optional[_builtins.str]] = None,
-                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkspaceApplicationSchedulesFilterArgs', 'GetWorkspaceApplicationSchedulesFilterArgsDict']]]]] = None,
+                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkspaceApplicationSchedulesFilterArgs', 'GetWorkspaceApplicationSchedulesFilterArgsDict', 'outputs.GetWorkspaceApplicationSchedulesFilterResult']]]]] = None,
                                                identifiers: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                                keys: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                                name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

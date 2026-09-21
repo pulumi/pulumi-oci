@@ -96,7 +96,7 @@ class AwaitableGetFusionEnvironmentDataMaskingActivitiesResult(GetFusionEnvironm
             state=self.state)
 
 
-def get_fusion_environment_data_masking_activities(filters: Optional[Sequence[Union['GetFusionEnvironmentDataMaskingActivitiesFilterArgs', 'GetFusionEnvironmentDataMaskingActivitiesFilterArgsDict']]] = None,
+def get_fusion_environment_data_masking_activities(filters: Optional[Sequence[Union['GetFusionEnvironmentDataMaskingActivitiesFilterArgs', 'GetFusionEnvironmentDataMaskingActivitiesFilterArgsDict', 'outputs.GetFusionEnvironmentDataMaskingActivitiesFilterResult']]] = None,
                                                    fusion_environment_id: Optional[_builtins.str] = None,
                                                    state: Optional[_builtins.str] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFusionEnvironmentDataMaskingActivitiesResult:
@@ -132,7 +132,7 @@ def get_fusion_environment_data_masking_activities(filters: Optional[Sequence[Un
         fusion_environment_id=pulumi.get(__ret__, 'fusion_environment_id'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_fusion_environment_data_masking_activities_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFusionEnvironmentDataMaskingActivitiesFilterArgs', 'GetFusionEnvironmentDataMaskingActivitiesFilterArgsDict']]]]] = None,
+def get_fusion_environment_data_masking_activities_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFusionEnvironmentDataMaskingActivitiesFilterArgs', 'GetFusionEnvironmentDataMaskingActivitiesFilterArgsDict', 'outputs.GetFusionEnvironmentDataMaskingActivitiesFilterResult']]]]] = None,
                                                           fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentDataMaskingActivitiesResult]:

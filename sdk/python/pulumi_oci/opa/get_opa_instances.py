@@ -110,7 +110,7 @@ class AwaitableGetOpaInstancesResult(GetOpaInstancesResult):
 
 def get_opa_instances(compartment_id: Optional[_builtins.str] = None,
                       display_name: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetOpaInstancesFilterArgs', 'GetOpaInstancesFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetOpaInstancesFilterArgs', 'GetOpaInstancesFilterArgsDict', 'outputs.GetOpaInstancesFilterResult']]] = None,
                       id: Optional[_builtins.str] = None,
                       state: Optional[_builtins.str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOpaInstancesResult:
@@ -155,7 +155,7 @@ def get_opa_instances(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_opa_instances_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOpaInstancesFilterArgs', 'GetOpaInstancesFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOpaInstancesFilterArgs', 'GetOpaInstancesFilterArgsDict', 'outputs.GetOpaInstancesFilterResult']]]]] = None,
                              id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOpaInstancesResult]:

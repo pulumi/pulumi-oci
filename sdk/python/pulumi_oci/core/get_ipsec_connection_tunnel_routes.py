@@ -103,7 +103,7 @@ class AwaitableGetIpsecConnectionTunnelRoutesResult(GetIpsecConnectionTunnelRout
 
 
 def get_ipsec_connection_tunnel_routes(advertiser: Optional[_builtins.str] = None,
-                                       filters: Optional[Sequence[Union['GetIpsecConnectionTunnelRoutesFilterArgs', 'GetIpsecConnectionTunnelRoutesFilterArgsDict']]] = None,
+                                       filters: Optional[Sequence[Union['GetIpsecConnectionTunnelRoutesFilterArgs', 'GetIpsecConnectionTunnelRoutesFilterArgsDict', 'outputs.GetIpsecConnectionTunnelRoutesFilterResult']]] = None,
                                        ipsec_id: Optional[_builtins.str] = None,
                                        tunnel_id: Optional[_builtins.str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIpsecConnectionTunnelRoutesResult:
@@ -144,7 +144,7 @@ def get_ipsec_connection_tunnel_routes(advertiser: Optional[_builtins.str] = Non
         tunnel_id=pulumi.get(__ret__, 'tunnel_id'),
         tunnel_routes=pulumi.get(__ret__, 'tunnel_routes'))
 def get_ipsec_connection_tunnel_routes_output(advertiser: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIpsecConnectionTunnelRoutesFilterArgs', 'GetIpsecConnectionTunnelRoutesFilterArgsDict']]]]] = None,
+                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIpsecConnectionTunnelRoutesFilterArgs', 'GetIpsecConnectionTunnelRoutesFilterArgsDict', 'outputs.GetIpsecConnectionTunnelRoutesFilterResult']]]]] = None,
                                               ipsec_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               tunnel_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIpsecConnectionTunnelRoutesResult]:

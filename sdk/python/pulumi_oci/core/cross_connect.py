@@ -703,9 +703,9 @@ class CrossConnect(pulumi.CustomResource):
                  is_active: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_interface_hold_timer_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_qos_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 loa_properties: pulumi.Input[Optional[Union['CrossConnectLoaPropertiesArgs', 'CrossConnectLoaPropertiesArgsDict']]] = None,
+                 loa_properties: pulumi.Input[Optional[Union['CrossConnectLoaPropertiesArgs', 'CrossConnectLoaPropertiesArgsDict', 'outputs.CrossConnectLoaProperties']]] = None,
                  location_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 macsec_properties: pulumi.Input[Optional[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict']]] = None,
+                 macsec_properties: pulumi.Input[Optional[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict', 'outputs.CrossConnectMacsecProperties']]] = None,
                  near_cross_connect_or_cross_connect_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  oci_physical_device_name: pulumi.Input[Optional[_builtins.str]] = None,
                  port_speed_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -799,9 +799,9 @@ class CrossConnect(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_active: (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
         :param pulumi.Input[_builtins.bool] is_interface_hold_timer_enabled: (Updatable) The flag to enable or disable the down timer for the interface.
         :param pulumi.Input[_builtins.bool] is_qos_enabled: When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
-        :param pulumi.Input[Union['CrossConnectLoaPropertiesArgs', 'CrossConnectLoaPropertiesArgsDict']] loa_properties: (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
+        :param pulumi.Input[Union['CrossConnectLoaPropertiesArgs', 'CrossConnectLoaPropertiesArgsDict', 'outputs.CrossConnectLoaProperties']] loa_properties: (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
         :param pulumi.Input[_builtins.str] location_name: The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
-        :param pulumi.Input[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict']] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
+        :param pulumi.Input[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict', 'outputs.CrossConnectMacsecProperties']] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
         :param pulumi.Input[_builtins.str] near_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         :param pulumi.Input[_builtins.str] oci_physical_device_name: The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
         :param pulumi.Input[_builtins.str] port_speed_shape_name: The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps`
@@ -917,9 +917,9 @@ class CrossConnect(pulumi.CustomResource):
                  is_active: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_interface_hold_timer_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_qos_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 loa_properties: pulumi.Input[Optional[Union['CrossConnectLoaPropertiesArgs', 'CrossConnectLoaPropertiesArgsDict']]] = None,
+                 loa_properties: pulumi.Input[Optional[Union['CrossConnectLoaPropertiesArgs', 'CrossConnectLoaPropertiesArgsDict', 'outputs.CrossConnectLoaProperties']]] = None,
                  location_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 macsec_properties: pulumi.Input[Optional[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict']]] = None,
+                 macsec_properties: pulumi.Input[Optional[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict', 'outputs.CrossConnectMacsecProperties']]] = None,
                  near_cross_connect_or_cross_connect_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  oci_physical_device_name: pulumi.Input[Optional[_builtins.str]] = None,
                  port_speed_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -982,9 +982,9 @@ class CrossConnect(pulumi.CustomResource):
             is_active: pulumi.Input[Optional[_builtins.bool]] = None,
             is_interface_hold_timer_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_qos_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            loa_properties: pulumi.Input[Optional[Union['CrossConnectLoaPropertiesArgs', 'CrossConnectLoaPropertiesArgsDict']]] = None,
+            loa_properties: pulumi.Input[Optional[Union['CrossConnectLoaPropertiesArgs', 'CrossConnectLoaPropertiesArgsDict', 'outputs.CrossConnectLoaProperties']]] = None,
             location_name: pulumi.Input[Optional[_builtins.str]] = None,
-            macsec_properties: pulumi.Input[Optional[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict']]] = None,
+            macsec_properties: pulumi.Input[Optional[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict', 'outputs.CrossConnectMacsecProperties']]] = None,
             near_cross_connect_or_cross_connect_group_id: pulumi.Input[Optional[_builtins.str]] = None,
             oci_logical_device_name: pulumi.Input[Optional[_builtins.str]] = None,
             oci_physical_device_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1011,9 +1011,9 @@ class CrossConnect(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_active: (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
         :param pulumi.Input[_builtins.bool] is_interface_hold_timer_enabled: (Updatable) The flag to enable or disable the down timer for the interface.
         :param pulumi.Input[_builtins.bool] is_qos_enabled: When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
-        :param pulumi.Input[Union['CrossConnectLoaPropertiesArgs', 'CrossConnectLoaPropertiesArgsDict']] loa_properties: (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
+        :param pulumi.Input[Union['CrossConnectLoaPropertiesArgs', 'CrossConnectLoaPropertiesArgsDict', 'outputs.CrossConnectLoaProperties']] loa_properties: (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
         :param pulumi.Input[_builtins.str] location_name: The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
-        :param pulumi.Input[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict']] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
+        :param pulumi.Input[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict', 'outputs.CrossConnectMacsecProperties']] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
         :param pulumi.Input[_builtins.str] near_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         :param pulumi.Input[_builtins.str] oci_logical_device_name: The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
         :param pulumi.Input[_builtins.str] oci_physical_device_name: The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.

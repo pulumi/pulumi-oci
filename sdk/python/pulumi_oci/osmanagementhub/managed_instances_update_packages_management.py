@@ -139,7 +139,7 @@ class ManagedInstancesUpdatePackagesManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  update_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: pulumi.Input[Optional[Union['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs', 'ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgsDict']]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs', 'ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstancesUpdatePackagesManagementWorkRequestDetails']]] = None,
                  __props__=None):
         """
         This resource provides the Managed Instances Update Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -177,7 +177,7 @@ class ManagedInstancesUpdatePackagesManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] update_types: The types of updates to be applied.
-        :param pulumi.Input[Union['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs', 'ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs', 'ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstancesUpdatePackagesManagementWorkRequestDetails']] work_request_details: Provides the name and description of the job.
         """
         ...
     @overload
@@ -234,7 +234,7 @@ class ManagedInstancesUpdatePackagesManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  update_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: pulumi.Input[Optional[Union['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs', 'ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgsDict']]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs', 'ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstancesUpdatePackagesManagementWorkRequestDetails']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -261,7 +261,7 @@ class ManagedInstancesUpdatePackagesManagement(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             update_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            work_request_details: pulumi.Input[Optional[Union['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs', 'ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstancesUpdatePackagesManagement':
+            work_request_details: pulumi.Input[Optional[Union['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs', 'ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstancesUpdatePackagesManagementWorkRequestDetails']]] = None) -> 'ManagedInstancesUpdatePackagesManagement':
         """
         Get an existing ManagedInstancesUpdatePackagesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -271,7 +271,7 @@ class ManagedInstancesUpdatePackagesManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] update_types: The types of updates to be applied.
-        :param pulumi.Input[Union['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs', 'ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs', 'ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstancesUpdatePackagesManagementWorkRequestDetails']] work_request_details: Provides the name and description of the job.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

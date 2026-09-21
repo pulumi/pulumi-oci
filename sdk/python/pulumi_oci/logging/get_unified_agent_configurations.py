@@ -137,7 +137,7 @@ class AwaitableGetUnifiedAgentConfigurationsResult(GetUnifiedAgentConfigurations
 
 def get_unified_agent_configurations(compartment_id: Optional[_builtins.str] = None,
                                      display_name: Optional[_builtins.str] = None,
-                                     filters: Optional[Sequence[Union['GetUnifiedAgentConfigurationsFilterArgs', 'GetUnifiedAgentConfigurationsFilterArgsDict']]] = None,
+                                     filters: Optional[Sequence[Union['GetUnifiedAgentConfigurationsFilterArgs', 'GetUnifiedAgentConfigurationsFilterArgsDict', 'outputs.GetUnifiedAgentConfigurationsFilterResult']]] = None,
                                      group_id: Optional[_builtins.str] = None,
                                      is_compartment_id_in_subtree: Optional[_builtins.bool] = None,
                                      log_id: Optional[_builtins.str] = None,
@@ -193,7 +193,7 @@ def get_unified_agent_configurations(compartment_id: Optional[_builtins.str] = N
         unified_agent_configuration_collections=pulumi.get(__ret__, 'unified_agent_configuration_collections'))
 def get_unified_agent_configurations_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUnifiedAgentConfigurationsFilterArgs', 'GetUnifiedAgentConfigurationsFilterArgsDict']]]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUnifiedAgentConfigurationsFilterArgs', 'GetUnifiedAgentConfigurationsFilterArgsDict', 'outputs.GetUnifiedAgentConfigurationsFilterResult']]]]] = None,
                                             group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             is_compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                             log_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

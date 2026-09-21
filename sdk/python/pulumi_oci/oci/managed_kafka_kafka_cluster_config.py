@@ -284,7 +284,7 @@ class ManagedKafkaKafkaClusterConfig(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 latest_config: pulumi.Input[Optional[Union['ManagedKafkaKafkaClusterConfigLatestConfigArgs', 'ManagedKafkaKafkaClusterConfigLatestConfigArgsDict']]] = None,
+                 latest_config: pulumi.Input[Optional[Union['ManagedKafkaKafkaClusterConfigLatestConfigArgs', 'ManagedKafkaKafkaClusterConfigLatestConfigArgsDict', 'outputs.ManagedKafkaKafkaClusterConfigLatestConfig']]] = None,
                  __props__=None):
         """
         This resource provides the Kafka Cluster Config resource in Oracle Cloud Infrastructure Managed Kafka service.
@@ -332,7 +332,7 @@ class ManagedKafkaKafkaClusterConfig(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['ManagedKafkaKafkaClusterConfigLatestConfigArgs', 'ManagedKafkaKafkaClusterConfigLatestConfigArgsDict']] latest_config: (Updatable) A shared configuration object used by 0 or more kafka clusters.
+        :param pulumi.Input[Union['ManagedKafkaKafkaClusterConfigLatestConfigArgs', 'ManagedKafkaKafkaClusterConfigLatestConfigArgsDict', 'outputs.ManagedKafkaKafkaClusterConfigLatestConfig']] latest_config: (Updatable) A shared configuration object used by 0 or more kafka clusters.
         """
         ...
     @overload
@@ -399,7 +399,7 @@ class ManagedKafkaKafkaClusterConfig(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 latest_config: pulumi.Input[Optional[Union['ManagedKafkaKafkaClusterConfigLatestConfigArgs', 'ManagedKafkaKafkaClusterConfigLatestConfigArgsDict']]] = None,
+                 latest_config: pulumi.Input[Optional[Union['ManagedKafkaKafkaClusterConfigLatestConfigArgs', 'ManagedKafkaKafkaClusterConfigLatestConfigArgsDict', 'outputs.ManagedKafkaKafkaClusterConfigLatestConfig']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -437,7 +437,7 @@ class ManagedKafkaKafkaClusterConfig(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            latest_config: pulumi.Input[Optional[Union['ManagedKafkaKafkaClusterConfigLatestConfigArgs', 'ManagedKafkaKafkaClusterConfigLatestConfigArgsDict']]] = None,
+            latest_config: pulumi.Input[Optional[Union['ManagedKafkaKafkaClusterConfigLatestConfigArgs', 'ManagedKafkaKafkaClusterConfigLatestConfigArgsDict', 'outputs.ManagedKafkaKafkaClusterConfigLatestConfig']]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -454,7 +454,7 @@ class ManagedKafkaKafkaClusterConfig(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['ManagedKafkaKafkaClusterConfigLatestConfigArgs', 'ManagedKafkaKafkaClusterConfigLatestConfigArgsDict']] latest_config: (Updatable) A shared configuration object used by 0 or more kafka clusters.
+        :param pulumi.Input[Union['ManagedKafkaKafkaClusterConfigLatestConfigArgs', 'ManagedKafkaKafkaClusterConfigLatestConfigArgsDict', 'outputs.ManagedKafkaKafkaClusterConfigLatestConfig']] latest_config: (Updatable) A shared configuration object used by 0 or more kafka clusters.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the KafkaClusterConfig in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input[_builtins.str] state: The current state of the KafkaClusterConfig.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`

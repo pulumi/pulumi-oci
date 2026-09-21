@@ -133,7 +133,7 @@ def get_db_connection_bundles(associated_resource_id: Optional[_builtins.str] = 
                               compartment_id: Optional[_builtins.str] = None,
                               db_connection_bundle_type: Optional[_builtins.str] = None,
                               display_name: Optional[_builtins.str] = None,
-                              filters: Optional[Sequence[Union['GetDbConnectionBundlesFilterArgs', 'GetDbConnectionBundlesFilterArgsDict']]] = None,
+                              filters: Optional[Sequence[Union['GetDbConnectionBundlesFilterArgs', 'GetDbConnectionBundlesFilterArgsDict', 'outputs.GetDbConnectionBundlesFilterResult']]] = None,
                               state: Optional[_builtins.str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbConnectionBundlesResult:
     """
@@ -184,7 +184,7 @@ def get_db_connection_bundles_output(associated_resource_id: pulumi.Input[Option
                                      compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      db_connection_bundle_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbConnectionBundlesFilterArgs', 'GetDbConnectionBundlesFilterArgsDict']]]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbConnectionBundlesFilterArgs', 'GetDbConnectionBundlesFilterArgsDict', 'outputs.GetDbConnectionBundlesFilterResult']]]]] = None,
                                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbConnectionBundlesResult]:
     """

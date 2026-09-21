@@ -117,7 +117,7 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsPreferencesManagementItemArgs', 'LogAnalyticsPreferencesManagementItemArgsDict']]]]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsPreferencesManagementItemArgs', 'LogAnalyticsPreferencesManagementItemArgsDict', 'outputs.LogAnalyticsPreferencesManagementItem']]]]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -149,7 +149,7 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsPreferencesManagementItemArgs', 'LogAnalyticsPreferencesManagementItemArgsDict']]]] items: An array of tenant preference details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsPreferencesManagementItemArgs', 'LogAnalyticsPreferencesManagementItemArgsDict', 'outputs.LogAnalyticsPreferencesManagementItem']]]] items: An array of tenant preference details.
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
                
                ** IMPORTANT **
@@ -203,7 +203,7 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsPreferencesManagementItemArgs', 'LogAnalyticsPreferencesManagementItemArgsDict']]]]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsPreferencesManagementItemArgs', 'LogAnalyticsPreferencesManagementItemArgsDict', 'outputs.LogAnalyticsPreferencesManagementItem']]]]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -228,7 +228,7 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsPreferencesManagementItemArgs', 'LogAnalyticsPreferencesManagementItemArgsDict']]]]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsPreferencesManagementItemArgs', 'LogAnalyticsPreferencesManagementItemArgsDict', 'outputs.LogAnalyticsPreferencesManagementItem']]]]] = None,
             namespace: pulumi.Input[Optional[_builtins.str]] = None) -> 'LogAnalyticsPreferencesManagement':
         """
         Get an existing LogAnalyticsPreferencesManagement resource's state with the given name, id, and optional extra
@@ -237,7 +237,7 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsPreferencesManagementItemArgs', 'LogAnalyticsPreferencesManagementItemArgsDict']]]] items: An array of tenant preference details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsPreferencesManagementItemArgs', 'LogAnalyticsPreferencesManagementItemArgsDict', 'outputs.LogAnalyticsPreferencesManagementItem']]]] items: An array of tenant preference details.
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
                
                ** IMPORTANT **

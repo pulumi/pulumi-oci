@@ -108,7 +108,7 @@ class AwaitableGetComputeCapacityReservationInstancesResult(GetComputeCapacityRe
 def get_compute_capacity_reservation_instances(availability_domain: Optional[_builtins.str] = None,
                                                capacity_reservation_id: Optional[_builtins.str] = None,
                                                compartment_id: Optional[_builtins.str] = None,
-                                               filters: Optional[Sequence[Union['GetComputeCapacityReservationInstancesFilterArgs', 'GetComputeCapacityReservationInstancesFilterArgsDict']]] = None,
+                                               filters: Optional[Sequence[Union['GetComputeCapacityReservationInstancesFilterArgs', 'GetComputeCapacityReservationInstancesFilterArgsDict', 'outputs.GetComputeCapacityReservationInstancesFilterResult']]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeCapacityReservationInstancesResult:
     """
     This data source provides the list of Compute Capacity Reservation Instances in Oracle Cloud Infrastructure Core service.
@@ -149,7 +149,7 @@ def get_compute_capacity_reservation_instances(availability_domain: Optional[_bu
 def get_compute_capacity_reservation_instances_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                       capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                       compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeCapacityReservationInstancesFilterArgs', 'GetComputeCapacityReservationInstancesFilterArgsDict']]]]] = None,
+                                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeCapacityReservationInstancesFilterArgs', 'GetComputeCapacityReservationInstancesFilterArgsDict', 'outputs.GetComputeCapacityReservationInstancesFilterResult']]]]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeCapacityReservationInstancesResult]:
     """
     This data source provides the list of Compute Capacity Reservation Instances in Oracle Cloud Infrastructure Core service.

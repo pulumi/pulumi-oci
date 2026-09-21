@@ -425,7 +425,7 @@ class Migration(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_completed: pulumi.Input[Optional[_builtins.bool]] = None,
-                 migration_config: pulumi.Input[Optional[Union['MigrationMigrationConfigArgs', 'MigrationMigrationConfigArgsDict']]] = None,
+                 migration_config: pulumi.Input[Optional[Union['MigrationMigrationConfigArgs', 'MigrationMigrationConfigArgsDict', 'outputs.MigrationMigrationConfig']]] = None,
                  migration_type: pulumi.Input[Optional[_builtins.str]] = None,
                  replication_schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -478,7 +478,7 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Migration identifier
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_completed: (Updatable) Indicates whether migration is marked as complete.
-        :param pulumi.Input[Union['MigrationMigrationConfigArgs', 'MigrationMigrationConfigArgsDict']] migration_config: (Updatable) Configuration for a Migration Project.
+        :param pulumi.Input[Union['MigrationMigrationConfigArgs', 'MigrationMigrationConfigArgsDict', 'outputs.MigrationMigrationConfig']] migration_config: (Updatable) Configuration for a Migration Project.
         :param pulumi.Input[_builtins.str] migration_type: (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
         :param pulumi.Input[_builtins.str] replication_schedule_id: (Updatable) Replication schedule identifier
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
@@ -553,7 +553,7 @@ class Migration(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_completed: pulumi.Input[Optional[_builtins.bool]] = None,
-                 migration_config: pulumi.Input[Optional[Union['MigrationMigrationConfigArgs', 'MigrationMigrationConfigArgsDict']]] = None,
+                 migration_config: pulumi.Input[Optional[Union['MigrationMigrationConfigArgs', 'MigrationMigrationConfigArgsDict', 'outputs.MigrationMigrationConfig']]] = None,
                  migration_type: pulumi.Input[Optional[_builtins.str]] = None,
                  replication_schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -600,7 +600,7 @@ class Migration(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_completed: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            migration_config: pulumi.Input[Optional[Union['MigrationMigrationConfigArgs', 'MigrationMigrationConfigArgsDict']]] = None,
+            migration_config: pulumi.Input[Optional[Union['MigrationMigrationConfigArgs', 'MigrationMigrationConfigArgsDict', 'outputs.MigrationMigrationConfig']]] = None,
             migration_type: pulumi.Input[Optional[_builtins.str]] = None,
             replication_schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
             security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -621,7 +621,7 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_completed: (Updatable) Indicates whether migration is marked as complete.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Union['MigrationMigrationConfigArgs', 'MigrationMigrationConfigArgsDict']] migration_config: (Updatable) Configuration for a Migration Project.
+        :param pulumi.Input[Union['MigrationMigrationConfigArgs', 'MigrationMigrationConfigArgsDict', 'outputs.MigrationMigrationConfig']] migration_config: (Updatable) Configuration for a Migration Project.
         :param pulumi.Input[_builtins.str] migration_type: (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
         :param pulumi.Input[_builtins.str] replication_schedule_id: (Updatable) Replication schedule identifier
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`

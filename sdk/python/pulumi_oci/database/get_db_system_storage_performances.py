@@ -113,7 +113,7 @@ class AwaitableGetDbSystemStoragePerformancesResult(GetDbSystemStoragePerformanc
 
 def get_db_system_storage_performances(compartment_id: Optional[_builtins.str] = None,
                                        database_edition: Optional[_builtins.str] = None,
-                                       filters: Optional[Sequence[Union['GetDbSystemStoragePerformancesFilterArgs', 'GetDbSystemStoragePerformancesFilterArgsDict']]] = None,
+                                       filters: Optional[Sequence[Union['GetDbSystemStoragePerformancesFilterArgs', 'GetDbSystemStoragePerformancesFilterArgsDict', 'outputs.GetDbSystemStoragePerformancesFilterResult']]] = None,
                                        shape_type: Optional[_builtins.str] = None,
                                        storage_management: Optional[_builtins.str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbSystemStoragePerformancesResult:
@@ -166,7 +166,7 @@ def get_db_system_storage_performances(compartment_id: Optional[_builtins.str] =
         storage_management=pulumi.get(__ret__, 'storage_management'))
 def get_db_system_storage_performances_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                               database_edition: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemStoragePerformancesFilterArgs', 'GetDbSystemStoragePerformancesFilterArgsDict']]]]] = None,
+                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemStoragePerformancesFilterArgs', 'GetDbSystemStoragePerformancesFilterArgsDict', 'outputs.GetDbSystemStoragePerformancesFilterResult']]]]] = None,
                                               shape_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                               storage_management: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemStoragePerformancesResult]:

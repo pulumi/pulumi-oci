@@ -81,7 +81,7 @@ class AwaitableGetVaultReplicasResult(GetVaultReplicasResult):
             vault_replicas=self.vault_replicas)
 
 
-def get_vault_replicas(filters: Optional[Sequence[Union['GetVaultReplicasFilterArgs', 'GetVaultReplicasFilterArgsDict']]] = None,
+def get_vault_replicas(filters: Optional[Sequence[Union['GetVaultReplicasFilterArgs', 'GetVaultReplicasFilterArgsDict', 'outputs.GetVaultReplicasFilterResult']]] = None,
                        vault_id: Optional[_builtins.str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVaultReplicasResult:
     """
@@ -117,7 +117,7 @@ def get_vault_replicas(filters: Optional[Sequence[Union['GetVaultReplicasFilterA
         id=pulumi.get(__ret__, 'id'),
         vault_id=pulumi.get(__ret__, 'vault_id'),
         vault_replicas=pulumi.get(__ret__, 'vault_replicas'))
-def get_vault_replicas_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVaultReplicasFilterArgs', 'GetVaultReplicasFilterArgsDict']]]]] = None,
+def get_vault_replicas_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVaultReplicasFilterArgs', 'GetVaultReplicasFilterArgsDict', 'outputs.GetVaultReplicasFilterResult']]]]] = None,
                               vault_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVaultReplicasResult]:
     """

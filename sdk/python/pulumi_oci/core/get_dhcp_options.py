@@ -122,7 +122,7 @@ class AwaitableGetDhcpOptionsResult(GetDhcpOptionsResult):
 
 def get_dhcp_options(compartment_id: Optional[_builtins.str] = None,
                      display_name: Optional[_builtins.str] = None,
-                     filters: Optional[Sequence[Union['GetDhcpOptionsFilterArgs', 'GetDhcpOptionsFilterArgsDict']]] = None,
+                     filters: Optional[Sequence[Union['GetDhcpOptionsFilterArgs', 'GetDhcpOptionsFilterArgsDict', 'outputs.GetDhcpOptionsFilterResult']]] = None,
                      state: Optional[_builtins.str] = None,
                      vcn_id: Optional[_builtins.str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDhcpOptionsResult:
@@ -171,7 +171,7 @@ def get_dhcp_options(compartment_id: Optional[_builtins.str] = None,
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
 def get_dhcp_options_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDhcpOptionsFilterArgs', 'GetDhcpOptionsFilterArgsDict']]]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDhcpOptionsFilterArgs', 'GetDhcpOptionsFilterArgsDict', 'outputs.GetDhcpOptionsFilterResult']]]]] = None,
                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             vcn_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDhcpOptionsResult]:

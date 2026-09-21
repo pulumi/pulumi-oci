@@ -104,7 +104,7 @@ class AwaitableGetDefinedMonitoringTemplatesResult(GetDefinedMonitoringTemplates
 
 def get_defined_monitoring_templates(compartment_id: Optional[_builtins.str] = None,
                                      display_name: Optional[_builtins.str] = None,
-                                     filters: Optional[Sequence[Union['GetDefinedMonitoringTemplatesFilterArgs', 'GetDefinedMonitoringTemplatesFilterArgsDict']]] = None,
+                                     filters: Optional[Sequence[Union['GetDefinedMonitoringTemplatesFilterArgs', 'GetDefinedMonitoringTemplatesFilterArgsDict', 'outputs.GetDefinedMonitoringTemplatesFilterResult']]] = None,
                                      resource_types: Optional[Sequence[_builtins.str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDefinedMonitoringTemplatesResult:
     """
@@ -145,7 +145,7 @@ def get_defined_monitoring_templates(compartment_id: Optional[_builtins.str] = N
         resource_types=pulumi.get(__ret__, 'resource_types'))
 def get_defined_monitoring_templates_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDefinedMonitoringTemplatesFilterArgs', 'GetDefinedMonitoringTemplatesFilterArgsDict']]]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDefinedMonitoringTemplatesFilterArgs', 'GetDefinedMonitoringTemplatesFilterArgsDict', 'outputs.GetDefinedMonitoringTemplatesFilterResult']]]]] = None,
                                             resource_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDefinedMonitoringTemplatesResult]:
     """

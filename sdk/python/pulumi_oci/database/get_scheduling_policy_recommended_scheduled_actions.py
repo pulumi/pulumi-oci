@@ -99,7 +99,7 @@ class AwaitableGetSchedulingPolicyRecommendedScheduledActionsResult(GetSchedulin
             scheduling_policy_target_resource_id=self.scheduling_policy_target_resource_id)
 
 
-def get_scheduling_policy_recommended_scheduled_actions(filters: Optional[Sequence[Union['GetSchedulingPolicyRecommendedScheduledActionsFilterArgs', 'GetSchedulingPolicyRecommendedScheduledActionsFilterArgsDict']]] = None,
+def get_scheduling_policy_recommended_scheduled_actions(filters: Optional[Sequence[Union['GetSchedulingPolicyRecommendedScheduledActionsFilterArgs', 'GetSchedulingPolicyRecommendedScheduledActionsFilterArgsDict', 'outputs.GetSchedulingPolicyRecommendedScheduledActionsFilterResult']]] = None,
                                                         plan_intent: Optional[_builtins.str] = None,
                                                         scheduling_policy_id: Optional[_builtins.str] = None,
                                                         scheduling_policy_target_resource_id: Optional[_builtins.str] = None,
@@ -140,7 +140,7 @@ def get_scheduling_policy_recommended_scheduled_actions(filters: Optional[Sequen
         recommended_scheduled_actions_collections=pulumi.get(__ret__, 'recommended_scheduled_actions_collections'),
         scheduling_policy_id=pulumi.get(__ret__, 'scheduling_policy_id'),
         scheduling_policy_target_resource_id=pulumi.get(__ret__, 'scheduling_policy_target_resource_id'))
-def get_scheduling_policy_recommended_scheduled_actions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulingPolicyRecommendedScheduledActionsFilterArgs', 'GetSchedulingPolicyRecommendedScheduledActionsFilterArgsDict']]]]] = None,
+def get_scheduling_policy_recommended_scheduled_actions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulingPolicyRecommendedScheduledActionsFilterArgs', 'GetSchedulingPolicyRecommendedScheduledActionsFilterArgsDict', 'outputs.GetSchedulingPolicyRecommendedScheduledActionsFilterResult']]]]] = None,
                                                                plan_intent: pulumi.Input[Optional[_builtins.str]] = None,
                                                                scheduling_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                scheduling_policy_target_resource_id: pulumi.Input[Optional[_builtins.str]] = None,

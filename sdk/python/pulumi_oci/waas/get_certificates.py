@@ -131,7 +131,7 @@ class AwaitableGetCertificatesResult(GetCertificatesResult):
 
 def get_certificates(compartment_id: Optional[_builtins.str] = None,
                      display_names: Optional[Sequence[_builtins.str]] = None,
-                     filters: Optional[Sequence[Union['GetCertificatesFilterArgs', 'GetCertificatesFilterArgsDict']]] = None,
+                     filters: Optional[Sequence[Union['GetCertificatesFilterArgs', 'GetCertificatesFilterArgsDict', 'outputs.GetCertificatesFilterResult']]] = None,
                      ids: Optional[Sequence[_builtins.str]] = None,
                      states: Optional[Sequence[_builtins.str]] = None,
                      time_created_greater_than_or_equal_to: Optional[_builtins.str] = None,
@@ -187,7 +187,7 @@ def get_certificates(compartment_id: Optional[_builtins.str] = None,
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
 def get_certificates_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                             display_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
-                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCertificatesFilterArgs', 'GetCertificatesFilterArgsDict']]]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCertificatesFilterArgs', 'GetCertificatesFilterArgsDict', 'outputs.GetCertificatesFilterResult']]]]] = None,
                             ids: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                             states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                             time_created_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

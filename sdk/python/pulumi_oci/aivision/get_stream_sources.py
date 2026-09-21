@@ -110,7 +110,7 @@ class AwaitableGetStreamSourcesResult(GetStreamSourcesResult):
 
 def get_stream_sources(compartment_id: Optional[_builtins.str] = None,
                        display_name: Optional[_builtins.str] = None,
-                       filters: Optional[Sequence[Union['GetStreamSourcesFilterArgs', 'GetStreamSourcesFilterArgsDict']]] = None,
+                       filters: Optional[Sequence[Union['GetStreamSourcesFilterArgs', 'GetStreamSourcesFilterArgsDict', 'outputs.GetStreamSourcesFilterResult']]] = None,
                        id: Optional[_builtins.str] = None,
                        state: Optional[_builtins.str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetStreamSourcesResult:
@@ -155,7 +155,7 @@ def get_stream_sources(compartment_id: Optional[_builtins.str] = None,
         stream_source_collections=pulumi.get(__ret__, 'stream_source_collections'))
 def get_stream_sources_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetStreamSourcesFilterArgs', 'GetStreamSourcesFilterArgsDict']]]]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetStreamSourcesFilterArgs', 'GetStreamSourcesFilterArgsDict', 'outputs.GetStreamSourcesFilterResult']]]]] = None,
                               id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStreamSourcesResult]:

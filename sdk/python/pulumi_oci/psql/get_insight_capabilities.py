@@ -72,7 +72,7 @@ class AwaitableGetInsightCapabilitiesResult(GetInsightCapabilitiesResult):
             insight_capability_collections=self.insight_capability_collections)
 
 
-def get_insight_capabilities(filters: Optional[Sequence[Union['GetInsightCapabilitiesFilterArgs', 'GetInsightCapabilitiesFilterArgsDict']]] = None,
+def get_insight_capabilities(filters: Optional[Sequence[Union['GetInsightCapabilitiesFilterArgs', 'GetInsightCapabilitiesFilterArgsDict', 'outputs.GetInsightCapabilitiesFilterResult']]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInsightCapabilitiesResult:
     """
     This data source provides the list of Insight Capabilities in Oracle Cloud Infrastructure Psql service.
@@ -102,7 +102,7 @@ def get_insight_capabilities(filters: Optional[Sequence[Union['GetInsightCapabil
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         insight_capability_collections=pulumi.get(__ret__, 'insight_capability_collections'))
-def get_insight_capabilities_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInsightCapabilitiesFilterArgs', 'GetInsightCapabilitiesFilterArgsDict']]]]] = None,
+def get_insight_capabilities_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInsightCapabilitiesFilterArgs', 'GetInsightCapabilitiesFilterArgsDict', 'outputs.GetInsightCapabilitiesFilterResult']]]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInsightCapabilitiesResult]:
     """
     This data source provides the list of Insight Capabilities in Oracle Cloud Infrastructure Psql service.

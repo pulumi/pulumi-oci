@@ -629,7 +629,7 @@ class Vcn(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 byoipv6cidr_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VcnByoipv6cidrDetailArgs', 'VcnByoipv6cidrDetailArgsDict']]]]] = None,
+                 byoipv6cidr_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VcnByoipv6cidrDetailArgs', 'VcnByoipv6cidrDetailArgsDict', 'outputs.VcnByoipv6cidrDetail']]]]] = None,
                  cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
                  cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -728,7 +728,7 @@ class Vcn(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VcnByoipv6cidrDetailArgs', 'VcnByoipv6cidrDetailArgsDict']]]] byoipv6cidr_details: The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VcnByoipv6cidrDetailArgs', 'VcnByoipv6cidrDetailArgsDict', 'outputs.VcnByoipv6cidrDetail']]]] byoipv6cidr_details: The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
         :param pulumi.Input[_builtins.str] cidr_block: **Deprecated.** Do *not* set this value. Use `cidr_blocks` instead. Example: `10.0.0.0/16`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cidr_blocks: (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
                * The CIDR blocks must be valid.
@@ -865,7 +865,7 @@ class Vcn(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 byoipv6cidr_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VcnByoipv6cidrDetailArgs', 'VcnByoipv6cidrDetailArgsDict']]]]] = None,
+                 byoipv6cidr_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VcnByoipv6cidrDetailArgs', 'VcnByoipv6cidrDetailArgsDict', 'outputs.VcnByoipv6cidrDetail']]]]] = None,
                  cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
                  cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -919,7 +919,7 @@ class Vcn(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             byoipv6cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            byoipv6cidr_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VcnByoipv6cidrDetailArgs', 'VcnByoipv6cidrDetailArgsDict']]]]] = None,
+            byoipv6cidr_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VcnByoipv6cidrDetailArgs', 'VcnByoipv6cidrDetailArgsDict', 'outputs.VcnByoipv6cidrDetail']]]]] = None,
             cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
             cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -946,7 +946,7 @@ class Vcn(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] byoipv6cidr_blocks: The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VcnByoipv6cidrDetailArgs', 'VcnByoipv6cidrDetailArgsDict']]]] byoipv6cidr_details: The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VcnByoipv6cidrDetailArgs', 'VcnByoipv6cidrDetailArgsDict', 'outputs.VcnByoipv6cidrDetail']]]] byoipv6cidr_details: The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
         :param pulumi.Input[_builtins.str] cidr_block: **Deprecated.** Do *not* set this value. Use `cidr_blocks` instead. Example: `10.0.0.0/16`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cidr_blocks: (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
                * The CIDR blocks must be valid.

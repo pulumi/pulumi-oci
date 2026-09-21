@@ -308,7 +308,7 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
                  bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
                  enable_operation_certificate_management: pulumi.Input[Optional[_builtins.bool]] = None,
-                 host_cert_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs', 'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict']]]]] = None,
+                 host_cert_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs', 'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict', 'outputs.BdsInstanceOperationCertificateManagementsManagementHostCertDetail']]]]] = None,
                  renew_operation_certificate_management: pulumi.Input[Optional[_builtins.bool]] = None,
                  root_certificate: pulumi.Input[Optional[_builtins.str]] = None,
                  server_key_password: pulumi.Input[Optional[_builtins.str]] = None,
@@ -349,7 +349,7 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
         :param pulumi.Input[_builtins.bool] enable_operation_certificate_management: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs', 'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict']]]] host_cert_details: List of leaf certificates to use for services on each host. If custom host certificate is provided the root certificate becomes required.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs', 'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict', 'outputs.BdsInstanceOperationCertificateManagementsManagementHostCertDetail']]]] host_cert_details: List of leaf certificates to use for services on each host. If custom host certificate is provided the root certificate becomes required.
         :param pulumi.Input[_builtins.bool] renew_operation_certificate_management: (Updatable) A required field when set to `true` calls renew action and when set to `false` defaults to enable_operation_certificate_management's value action.
                
                ** IMPORTANT **
@@ -412,7 +412,7 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
                  bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
                  enable_operation_certificate_management: pulumi.Input[Optional[_builtins.bool]] = None,
-                 host_cert_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs', 'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict']]]]] = None,
+                 host_cert_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs', 'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict', 'outputs.BdsInstanceOperationCertificateManagementsManagementHostCertDetail']]]]] = None,
                  renew_operation_certificate_management: pulumi.Input[Optional[_builtins.bool]] = None,
                  root_certificate: pulumi.Input[Optional[_builtins.str]] = None,
                  server_key_password: pulumi.Input[Optional[_builtins.str]] = None,
@@ -459,7 +459,7 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
             bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
             cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
             enable_operation_certificate_management: pulumi.Input[Optional[_builtins.bool]] = None,
-            host_cert_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs', 'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict']]]]] = None,
+            host_cert_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs', 'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict', 'outputs.BdsInstanceOperationCertificateManagementsManagementHostCertDetail']]]]] = None,
             renew_operation_certificate_management: pulumi.Input[Optional[_builtins.bool]] = None,
             root_certificate: pulumi.Input[Optional[_builtins.str]] = None,
             server_key_password: pulumi.Input[Optional[_builtins.str]] = None,
@@ -474,7 +474,7 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
         :param pulumi.Input[_builtins.bool] enable_operation_certificate_management: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs', 'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict']]]] host_cert_details: List of leaf certificates to use for services on each host. If custom host certificate is provided the root certificate becomes required.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs', 'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict', 'outputs.BdsInstanceOperationCertificateManagementsManagementHostCertDetail']]]] host_cert_details: List of leaf certificates to use for services on each host. If custom host certificate is provided the root certificate becomes required.
         :param pulumi.Input[_builtins.bool] renew_operation_certificate_management: (Updatable) A required field when set to `true` calls renew action and when set to `false` defaults to enable_operation_certificate_management's value action.
                
                ** IMPORTANT **

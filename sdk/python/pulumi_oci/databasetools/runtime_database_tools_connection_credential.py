@@ -441,7 +441,7 @@ class RuntimeDatabaseToolsConnectionCredential(pulumi.CustomResource):
             key_type: pulumi.Input[Optional[_builtins.str]] = None,
             owner: pulumi.Input[Optional[_builtins.str]] = None,
             password: pulumi.Input[Optional[_builtins.str]] = None,
-            related_resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs', 'RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgsDict']]]]] = None,
+            related_resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs', 'RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgsDict', 'outputs.RuntimeDatabaseToolsConnectionCredentialRelatedResource']]]]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
             user_name: pulumi.Input[Optional[_builtins.str]] = None,
             windows_domain: pulumi.Input[Optional[_builtins.str]] = None) -> 'RuntimeDatabaseToolsConnectionCredential':
@@ -458,7 +458,7 @@ class RuntimeDatabaseToolsConnectionCredential(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] key_type: Indicates whether this refers to a public synonym or not.
         :param pulumi.Input[_builtins.str] owner: Owner of the credential
         :param pulumi.Input[_builtins.str] password: (Updatable) The password for the new credential.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs', 'RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgsDict']]]] related_resources: A related resource for a credential.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs', 'RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgsDict', 'outputs.RuntimeDatabaseToolsConnectionCredentialRelatedResource']]]] related_resources: A related resource for a credential.
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of credential.
         :param pulumi.Input[_builtins.str] user_name: (Updatable) The username for the new credential.
                

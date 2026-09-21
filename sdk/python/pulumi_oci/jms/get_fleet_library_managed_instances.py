@@ -148,7 +148,7 @@ class AwaitableGetFleetLibraryManagedInstancesResult(GetFleetLibraryManagedInsta
 
 
 def get_fleet_library_managed_instances(application_id: Optional[_builtins.str] = None,
-                                        filters: Optional[Sequence[Union['GetFleetLibraryManagedInstancesFilterArgs', 'GetFleetLibraryManagedInstancesFilterArgsDict']]] = None,
+                                        filters: Optional[Sequence[Union['GetFleetLibraryManagedInstancesFilterArgs', 'GetFleetLibraryManagedInstancesFilterArgsDict', 'outputs.GetFleetLibraryManagedInstancesFilterResult']]] = None,
                                         fleet_id: Optional[_builtins.str] = None,
                                         host_name: Optional[_builtins.str] = None,
                                         hostname_contains: Optional[_builtins.str] = None,
@@ -214,7 +214,7 @@ def get_fleet_library_managed_instances(application_id: Optional[_builtins.str] 
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
 def get_fleet_library_managed_instances_output(application_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetLibraryManagedInstancesFilterArgs', 'GetFleetLibraryManagedInstancesFilterArgsDict']]]]] = None,
+                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetLibraryManagedInstancesFilterArgs', 'GetFleetLibraryManagedInstancesFilterArgsDict', 'outputs.GetFleetLibraryManagedInstancesFilterResult']]]]] = None,
                                                fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                host_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                hostname_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

@@ -119,7 +119,7 @@ class AwaitableGetControlsResult(GetControlsResult):
 
 def get_controls(compartment_id: Optional[_builtins.str] = None,
                  display_name: Optional[_builtins.str] = None,
-                 filters: Optional[Sequence[Union['GetControlsFilterArgs', 'GetControlsFilterArgsDict']]] = None,
+                 filters: Optional[Sequence[Union['GetControlsFilterArgs', 'GetControlsFilterArgsDict', 'outputs.GetControlsFilterResult']]] = None,
                  resource_type: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetControlsResult:
@@ -165,7 +165,7 @@ def get_controls(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_controls_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetControlsFilterArgs', 'GetControlsFilterArgsDict']]]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetControlsFilterArgs', 'GetControlsFilterArgsDict', 'outputs.GetControlsFilterResult']]]]] = None,
                         resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetControlsResult]:

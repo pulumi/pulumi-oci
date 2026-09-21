@@ -123,7 +123,7 @@ class AwaitableGetCaptureFiltersResult(GetCaptureFiltersResult):
 def get_capture_filters(compartment_id: Optional[_builtins.str] = None,
                         display_name: Optional[_builtins.str] = None,
                         filter_type: Optional[_builtins.str] = None,
-                        filters: Optional[Sequence[Union['GetCaptureFiltersFilterArgs', 'GetCaptureFiltersFilterArgsDict']]] = None,
+                        filters: Optional[Sequence[Union['GetCaptureFiltersFilterArgs', 'GetCaptureFiltersFilterArgsDict', 'outputs.GetCaptureFiltersFilterResult']]] = None,
                         state: Optional[_builtins.str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCaptureFiltersResult:
     """
@@ -169,7 +169,7 @@ def get_capture_filters(compartment_id: Optional[_builtins.str] = None,
 def get_capture_filters_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                filter_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCaptureFiltersFilterArgs', 'GetCaptureFiltersFilterArgsDict']]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCaptureFiltersFilterArgs', 'GetCaptureFiltersFilterArgsDict', 'outputs.GetCaptureFiltersFilterResult']]]]] = None,
                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCaptureFiltersResult]:
     """

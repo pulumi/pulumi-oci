@@ -814,7 +814,7 @@ class UserAssessment(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             ignored_assessment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ignored_targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserAssessmentIgnoredTargetArgs', 'UserAssessmentIgnoredTargetArgsDict']]]]] = None,
+            ignored_targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserAssessmentIgnoredTargetArgs', 'UserAssessmentIgnoredTargetArgsDict', 'outputs.UserAssessmentIgnoredTarget']]]]] = None,
             is_assessment_scheduled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_baseline: pulumi.Input[Optional[_builtins.bool]] = None,
             is_deviated_from_baseline: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -847,7 +847,7 @@ class UserAssessment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the user assessment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ignored_assessment_ids: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UserAssessmentIgnoredTargetArgs', 'UserAssessmentIgnoredTargetArgsDict']]]] ignored_targets: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UserAssessmentIgnoredTargetArgs', 'UserAssessmentIgnoredTargetArgsDict', 'outputs.UserAssessmentIgnoredTarget']]]] ignored_targets: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
         :param pulumi.Input[_builtins.bool] is_assessment_scheduled: (Updatable) Indicates whether the assessment is scheduled to run.
         :param pulumi.Input[_builtins.bool] is_baseline: Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
         :param pulumi.Input[_builtins.bool] is_deviated_from_baseline: Indicates if the user assessment deviates from the baseline.

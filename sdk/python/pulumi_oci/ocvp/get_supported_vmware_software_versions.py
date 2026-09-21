@@ -112,7 +112,7 @@ class AwaitableGetSupportedVmwareSoftwareVersionsResult(GetSupportedVmwareSoftwa
 
 
 def get_supported_vmware_software_versions(compartment_id: Optional[_builtins.str] = None,
-                                           filters: Optional[Sequence[Union['GetSupportedVmwareSoftwareVersionsFilterArgs', 'GetSupportedVmwareSoftwareVersionsFilterArgsDict']]] = None,
+                                           filters: Optional[Sequence[Union['GetSupportedVmwareSoftwareVersionsFilterArgs', 'GetSupportedVmwareSoftwareVersionsFilterArgsDict', 'outputs.GetSupportedVmwareSoftwareVersionsFilterResult']]] = None,
                                            host_shape_name: Optional[_builtins.str] = None,
                                            version: Optional[_builtins.str] = None,
                                            version_to_upgrade: Optional[_builtins.str] = None,
@@ -159,7 +159,7 @@ def get_supported_vmware_software_versions(compartment_id: Optional[_builtins.st
         version=pulumi.get(__ret__, 'version'),
         version_to_upgrade=pulumi.get(__ret__, 'version_to_upgrade'))
 def get_supported_vmware_software_versions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSupportedVmwareSoftwareVersionsFilterArgs', 'GetSupportedVmwareSoftwareVersionsFilterArgsDict']]]]] = None,
+                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSupportedVmwareSoftwareVersionsFilterArgs', 'GetSupportedVmwareSoftwareVersionsFilterArgsDict', 'outputs.GetSupportedVmwareSoftwareVersionsFilterResult']]]]] = None,
                                                   host_shape_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   version_to_upgrade: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

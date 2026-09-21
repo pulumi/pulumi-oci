@@ -140,7 +140,7 @@ class AwaitableGetModelDeploymentModelStatesResult(GetModelDeploymentModelStates
 
 def get_model_deployment_model_states(compartment_id: Optional[_builtins.str] = None,
                                       display_name: Optional[_builtins.str] = None,
-                                      filters: Optional[Sequence[Union['GetModelDeploymentModelStatesFilterArgs', 'GetModelDeploymentModelStatesFilterArgsDict']]] = None,
+                                      filters: Optional[Sequence[Union['GetModelDeploymentModelStatesFilterArgs', 'GetModelDeploymentModelStatesFilterArgsDict', 'outputs.GetModelDeploymentModelStatesFilterResult']]] = None,
                                       inference_key: Optional[_builtins.str] = None,
                                       model_deployment_id: Optional[_builtins.str] = None,
                                       model_id: Optional[_builtins.str] = None,
@@ -196,7 +196,7 @@ def get_model_deployment_model_states(compartment_id: Optional[_builtins.str] = 
         project_id=pulumi.get(__ret__, 'project_id'))
 def get_model_deployment_model_states_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetModelDeploymentModelStatesFilterArgs', 'GetModelDeploymentModelStatesFilterArgsDict']]]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetModelDeploymentModelStatesFilterArgs', 'GetModelDeploymentModelStatesFilterArgsDict', 'outputs.GetModelDeploymentModelStatesFilterResult']]]]] = None,
                                              inference_key: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              model_deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              model_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

@@ -477,7 +477,7 @@ class DbmulticloudOracleDbAwsIdentityConnector(pulumi.CustomResource):
                  issuer_url: pulumi.Input[Optional[_builtins.str]] = None,
                  oidc_scope: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 service_role_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs', 'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgsDict']]]]] = None,
+                 service_role_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs', 'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgsDict', 'outputs.DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail']]]]] = None,
                  __props__=None):
         """
         This resource provides the Oracle Db Aws Identity Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
@@ -536,7 +536,7 @@ class DbmulticloudOracleDbAwsIdentityConnector(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] issuer_url: (Updatable) OIDC token issuer Url.
         :param pulumi.Input[_builtins.str] oidc_scope: (Updatable) Oracle Cloud Infrastructure IAM Domain scope for issuer URL.
         :param pulumi.Input[_builtins.str] resource_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the AWS VM Cluster resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs', 'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgsDict']]]] service_role_details: (Updatable) Service role details and respective Amazon resource nam of Role.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs', 'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgsDict', 'outputs.DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail']]]] service_role_details: (Updatable) Service role details and respective Amazon resource nam of Role.
         """
         ...
     @overload
@@ -614,7 +614,7 @@ class DbmulticloudOracleDbAwsIdentityConnector(pulumi.CustomResource):
                  issuer_url: pulumi.Input[Optional[_builtins.str]] = None,
                  oidc_scope: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 service_role_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs', 'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgsDict']]]]] = None,
+                 service_role_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs', 'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgsDict', 'outputs.DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -675,7 +675,7 @@ class DbmulticloudOracleDbAwsIdentityConnector(pulumi.CustomResource):
             lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
             oidc_scope: pulumi.Input[Optional[_builtins.str]] = None,
             resource_id: pulumi.Input[Optional[_builtins.str]] = None,
-            service_role_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs', 'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgsDict']]]]] = None,
+            service_role_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs', 'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgsDict', 'outputs.DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -698,7 +698,7 @@ class DbmulticloudOracleDbAwsIdentityConnector(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Description of the current lifecycle state in more detail.
         :param pulumi.Input[_builtins.str] oidc_scope: (Updatable) Oracle Cloud Infrastructure IAM Domain scope for issuer URL.
         :param pulumi.Input[_builtins.str] resource_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the AWS VM Cluster resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs', 'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgsDict']]]] service_role_details: (Updatable) Service role details and respective Amazon resource nam of Role.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs', 'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgsDict', 'outputs.DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail']]]] service_role_details: (Updatable) Service role details and respective Amazon resource nam of Role.
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the AWS Identity Connector resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: Time when the Oracle DB AWS Identity Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.

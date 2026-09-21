@@ -92,7 +92,7 @@ class AwaitableGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsResult(G
 
 def get_runtime_database_tools_connection_credential_public_synonyms(credential_key: Optional[_builtins.str] = None,
                                                                      database_tools_connection_id: Optional[_builtins.str] = None,
-                                                                     filters: Optional[Sequence[Union['GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArgs', 'GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArgsDict']]] = None,
+                                                                     filters: Optional[Sequence[Union['GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArgs', 'GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArgsDict', 'outputs.GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterResult']]] = None,
                                                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsResult:
     """
     This data source provides the list of Database Tools Connection Credential Public Synonyms in Oracle Cloud Infrastructure Database Tools Runtime service.
@@ -128,7 +128,7 @@ def get_runtime_database_tools_connection_credential_public_synonyms(credential_
         id=pulumi.get(__ret__, 'id'))
 def get_runtime_database_tools_connection_credential_public_synonyms_output(credential_key: pulumi.Input[Optional[_builtins.str]] = None,
                                                                             database_tools_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArgs', 'GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArgsDict']]]]] = None,
+                                                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArgs', 'GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArgsDict', 'outputs.GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterResult']]]]] = None,
                                                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsResult]:
     """
     This data source provides the list of Database Tools Connection Credential Public Synonyms in Oracle Cloud Infrastructure Database Tools Runtime service.

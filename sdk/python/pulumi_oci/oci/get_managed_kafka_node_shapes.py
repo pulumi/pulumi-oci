@@ -94,7 +94,7 @@ class AwaitableGetManagedKafkaNodeShapesResult(GetManagedKafkaNodeShapesResult):
 
 
 def get_managed_kafka_node_shapes(compartment_id: Optional[_builtins.str] = None,
-                                  filters: Optional[Sequence[Union['GetManagedKafkaNodeShapesFilterArgs', 'GetManagedKafkaNodeShapesFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetManagedKafkaNodeShapesFilterArgs', 'GetManagedKafkaNodeShapesFilterArgsDict', 'outputs.GetManagedKafkaNodeShapesFilterResult']]] = None,
                                   name: Optional[_builtins.str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedKafkaNodeShapesResult:
     """
@@ -130,7 +130,7 @@ def get_managed_kafka_node_shapes(compartment_id: Optional[_builtins.str] = None
         name=pulumi.get(__ret__, 'name'),
         node_shape_collections=pulumi.get(__ret__, 'node_shape_collections'))
 def get_managed_kafka_node_shapes_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedKafkaNodeShapesFilterArgs', 'GetManagedKafkaNodeShapesFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedKafkaNodeShapesFilterArgs', 'GetManagedKafkaNodeShapesFilterArgsDict', 'outputs.GetManagedKafkaNodeShapesFilterResult']]]]] = None,
                                          name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedKafkaNodeShapesResult]:
     """

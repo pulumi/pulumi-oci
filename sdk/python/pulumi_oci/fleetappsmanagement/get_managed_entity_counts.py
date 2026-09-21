@@ -92,7 +92,7 @@ class AwaitableGetManagedEntityCountsResult(GetManagedEntityCountsResult):
 
 def get_managed_entity_counts(compartment_id: Optional[_builtins.str] = None,
                               compartment_id_in_subtree: Optional[_builtins.bool] = None,
-                              filters: Optional[Sequence[Union['GetManagedEntityCountsFilterArgs', 'GetManagedEntityCountsFilterArgsDict']]] = None,
+                              filters: Optional[Sequence[Union['GetManagedEntityCountsFilterArgs', 'GetManagedEntityCountsFilterArgsDict', 'outputs.GetManagedEntityCountsFilterResult']]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedEntityCountsResult:
     """
     This data source provides the list of Managed Entity Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -128,7 +128,7 @@ def get_managed_entity_counts(compartment_id: Optional[_builtins.str] = None,
         managed_entity_aggregation_collections=pulumi.get(__ret__, 'managed_entity_aggregation_collections'))
 def get_managed_entity_counts_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
-                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedEntityCountsFilterArgs', 'GetManagedEntityCountsFilterArgsDict']]]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedEntityCountsFilterArgs', 'GetManagedEntityCountsFilterArgsDict', 'outputs.GetManagedEntityCountsFilterResult']]]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedEntityCountsResult]:
     """
     This data source provides the list of Managed Entity Counts in Oracle Cloud Infrastructure Fleet Apps Management service.

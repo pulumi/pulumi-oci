@@ -867,28 +867,28 @@ class WorkspaceTask(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  api_call_mode: pulumi.Input[Optional[_builtins.str]] = None,
-                 auth_config: pulumi.Input[Optional[Union['WorkspaceTaskAuthConfigArgs', 'WorkspaceTaskAuthConfigArgsDict']]] = None,
-                 cancel_rest_call_config: pulumi.Input[Optional[Union['WorkspaceTaskCancelRestCallConfigArgs', 'WorkspaceTaskCancelRestCallConfigArgsDict']]] = None,
-                 config_provider_delegate: pulumi.Input[Optional[Union['WorkspaceTaskConfigProviderDelegateArgs', 'WorkspaceTaskConfigProviderDelegateArgsDict']]] = None,
+                 auth_config: pulumi.Input[Optional[Union['WorkspaceTaskAuthConfigArgs', 'WorkspaceTaskAuthConfigArgsDict', 'outputs.WorkspaceTaskAuthConfig']]] = None,
+                 cancel_rest_call_config: pulumi.Input[Optional[Union['WorkspaceTaskCancelRestCallConfigArgs', 'WorkspaceTaskCancelRestCallConfigArgsDict', 'outputs.WorkspaceTaskCancelRestCallConfig']]] = None,
+                 config_provider_delegate: pulumi.Input[Optional[Union['WorkspaceTaskConfigProviderDelegateArgs', 'WorkspaceTaskConfigProviderDelegateArgsDict', 'outputs.WorkspaceTaskConfigProviderDelegate']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 execute_rest_call_config: pulumi.Input[Optional[Union['WorkspaceTaskExecuteRestCallConfigArgs', 'WorkspaceTaskExecuteRestCallConfigArgsDict']]] = None,
+                 execute_rest_call_config: pulumi.Input[Optional[Union['WorkspaceTaskExecuteRestCallConfigArgs', 'WorkspaceTaskExecuteRestCallConfigArgsDict', 'outputs.WorkspaceTaskExecuteRestCallConfig']]] = None,
                  identifier: pulumi.Input[Optional[_builtins.str]] = None,
-                 input_ports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskInputPortArgs', 'WorkspaceTaskInputPortArgsDict']]]]] = None,
+                 input_ports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskInputPortArgs', 'WorkspaceTaskInputPortArgsDict', 'outputs.WorkspaceTaskInputPort']]]]] = None,
                  is_single_load: pulumi.Input[Optional[_builtins.bool]] = None,
                  key: pulumi.Input[Optional[_builtins.str]] = None,
                  model_type: pulumi.Input[Optional[_builtins.str]] = None,
                  model_version: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  object_status: pulumi.Input[Optional[_builtins.int]] = None,
-                 op_config_values: pulumi.Input[Optional[Union['WorkspaceTaskOpConfigValuesArgs', 'WorkspaceTaskOpConfigValuesArgsDict']]] = None,
+                 op_config_values: pulumi.Input[Optional[Union['WorkspaceTaskOpConfigValuesArgs', 'WorkspaceTaskOpConfigValuesArgsDict', 'outputs.WorkspaceTaskOpConfigValues']]] = None,
                  operation: pulumi.Input[Optional[_builtins.str]] = None,
-                 output_ports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskOutputPortArgs', 'WorkspaceTaskOutputPortArgsDict']]]]] = None,
+                 output_ports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskOutputPortArgs', 'WorkspaceTaskOutputPortArgsDict', 'outputs.WorkspaceTaskOutputPort']]]]] = None,
                  parallel_load_limit: pulumi.Input[Optional[_builtins.int]] = None,
-                 parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskParameterArgs', 'WorkspaceTaskParameterArgsDict']]]]] = None,
-                 parent_ref: pulumi.Input[Optional[Union['WorkspaceTaskParentRefArgs', 'WorkspaceTaskParentRefArgsDict']]] = None,
-                 poll_rest_call_config: pulumi.Input[Optional[Union['WorkspaceTaskPollRestCallConfigArgs', 'WorkspaceTaskPollRestCallConfigArgsDict']]] = None,
-                 registry_metadata: pulumi.Input[Optional[Union['WorkspaceTaskRegistryMetadataArgs', 'WorkspaceTaskRegistryMetadataArgsDict']]] = None,
-                 typed_expressions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskTypedExpressionArgs', 'WorkspaceTaskTypedExpressionArgsDict']]]]] = None,
+                 parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskParameterArgs', 'WorkspaceTaskParameterArgsDict', 'outputs.WorkspaceTaskParameter']]]]] = None,
+                 parent_ref: pulumi.Input[Optional[Union['WorkspaceTaskParentRefArgs', 'WorkspaceTaskParentRefArgsDict', 'outputs.WorkspaceTaskParentRef']]] = None,
+                 poll_rest_call_config: pulumi.Input[Optional[Union['WorkspaceTaskPollRestCallConfigArgs', 'WorkspaceTaskPollRestCallConfigArgsDict', 'outputs.WorkspaceTaskPollRestCallConfig']]] = None,
+                 registry_metadata: pulumi.Input[Optional[Union['WorkspaceTaskRegistryMetadataArgs', 'WorkspaceTaskRegistryMetadataArgsDict', 'outputs.WorkspaceTaskRegistryMetadata']]] = None,
+                 typed_expressions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskTypedExpressionArgs', 'WorkspaceTaskTypedExpressionArgsDict', 'outputs.WorkspaceTaskTypedExpression']]]]] = None,
                  workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -1616,28 +1616,28 @@ class WorkspaceTask(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] api_call_mode: (Updatable) The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
-        :param pulumi.Input[Union['WorkspaceTaskAuthConfigArgs', 'WorkspaceTaskAuthConfigArgsDict']] auth_config: (Updatable) Authentication configuration for Generic REST invocation.
-        :param pulumi.Input[Union['WorkspaceTaskCancelRestCallConfigArgs', 'WorkspaceTaskCancelRestCallConfigArgsDict']] cancel_rest_call_config: (Updatable) The REST API configuration for cancelling the task.
-        :param pulumi.Input[Union['WorkspaceTaskConfigProviderDelegateArgs', 'WorkspaceTaskConfigProviderDelegateArgsDict']] config_provider_delegate: (Updatable) The type to create a config provider.
+        :param pulumi.Input[Union['WorkspaceTaskAuthConfigArgs', 'WorkspaceTaskAuthConfigArgsDict', 'outputs.WorkspaceTaskAuthConfig']] auth_config: (Updatable) Authentication configuration for Generic REST invocation.
+        :param pulumi.Input[Union['WorkspaceTaskCancelRestCallConfigArgs', 'WorkspaceTaskCancelRestCallConfigArgsDict', 'outputs.WorkspaceTaskCancelRestCallConfig']] cancel_rest_call_config: (Updatable) The REST API configuration for cancelling the task.
+        :param pulumi.Input[Union['WorkspaceTaskConfigProviderDelegateArgs', 'WorkspaceTaskConfigProviderDelegateArgsDict', 'outputs.WorkspaceTaskConfigProviderDelegate']] config_provider_delegate: (Updatable) The type to create a config provider.
         :param pulumi.Input[_builtins.str] description: (Updatable) Detailed description for the object.
-        :param pulumi.Input[Union['WorkspaceTaskExecuteRestCallConfigArgs', 'WorkspaceTaskExecuteRestCallConfigArgsDict']] execute_rest_call_config: (Updatable) The REST API configuration for execution.
+        :param pulumi.Input[Union['WorkspaceTaskExecuteRestCallConfigArgs', 'WorkspaceTaskExecuteRestCallConfigArgsDict', 'outputs.WorkspaceTaskExecuteRestCallConfig']] execute_rest_call_config: (Updatable) The REST API configuration for execution.
         :param pulumi.Input[_builtins.str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskInputPortArgs', 'WorkspaceTaskInputPortArgsDict']]]] input_ports: (Updatable) An array of input ports.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskInputPortArgs', 'WorkspaceTaskInputPortArgsDict', 'outputs.WorkspaceTaskInputPort']]]] input_ports: (Updatable) An array of input ports.
         :param pulumi.Input[_builtins.bool] is_single_load: (Updatable) Defines whether Data Loader task is used for single load or multiple
         :param pulumi.Input[_builtins.str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         :param pulumi.Input[_builtins.str] model_type: (Updatable) The type of the task.
         :param pulumi.Input[_builtins.str] model_version: (Updatable) The object's model version.
         :param pulumi.Input[_builtins.str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[_builtins.int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param pulumi.Input[Union['WorkspaceTaskOpConfigValuesArgs', 'WorkspaceTaskOpConfigValuesArgsDict']] op_config_values: (Updatable) Configuration values can be string, objects, or parameters.
+        :param pulumi.Input[Union['WorkspaceTaskOpConfigValuesArgs', 'WorkspaceTaskOpConfigValuesArgsDict', 'outputs.WorkspaceTaskOpConfigValues']] op_config_values: (Updatable) Configuration values can be string, objects, or parameters.
         :param pulumi.Input[_builtins.str] operation: (Updatable) Describes the shape of the execution result
-        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskOutputPortArgs', 'WorkspaceTaskOutputPortArgsDict']]]] output_ports: (Updatable) An array of output ports.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskOutputPortArgs', 'WorkspaceTaskOutputPortArgsDict', 'outputs.WorkspaceTaskOutputPort']]]] output_ports: (Updatable) An array of output ports.
         :param pulumi.Input[_builtins.int] parallel_load_limit: (Updatable) Defines the number of entities being loaded in parallel at a time for a Data Loader task
-        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskParameterArgs', 'WorkspaceTaskParameterArgsDict']]]] parameters: (Updatable) An array of parameters.
-        :param pulumi.Input[Union['WorkspaceTaskParentRefArgs', 'WorkspaceTaskParentRefArgsDict']] parent_ref: (Updatable) A reference to the object's parent.
-        :param pulumi.Input[Union['WorkspaceTaskPollRestCallConfigArgs', 'WorkspaceTaskPollRestCallConfigArgsDict']] poll_rest_call_config: (Updatable) The REST API configuration for polling.
-        :param pulumi.Input[Union['WorkspaceTaskRegistryMetadataArgs', 'WorkspaceTaskRegistryMetadataArgsDict']] registry_metadata: (Updatable) Information about the object and its parent.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskTypedExpressionArgs', 'WorkspaceTaskTypedExpressionArgsDict']]]] typed_expressions: (Updatable) List of typed expressions.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskParameterArgs', 'WorkspaceTaskParameterArgsDict', 'outputs.WorkspaceTaskParameter']]]] parameters: (Updatable) An array of parameters.
+        :param pulumi.Input[Union['WorkspaceTaskParentRefArgs', 'WorkspaceTaskParentRefArgsDict', 'outputs.WorkspaceTaskParentRef']] parent_ref: (Updatable) A reference to the object's parent.
+        :param pulumi.Input[Union['WorkspaceTaskPollRestCallConfigArgs', 'WorkspaceTaskPollRestCallConfigArgsDict', 'outputs.WorkspaceTaskPollRestCallConfig']] poll_rest_call_config: (Updatable) The REST API configuration for polling.
+        :param pulumi.Input[Union['WorkspaceTaskRegistryMetadataArgs', 'WorkspaceTaskRegistryMetadataArgsDict', 'outputs.WorkspaceTaskRegistryMetadata']] registry_metadata: (Updatable) Information about the object and its parent.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskTypedExpressionArgs', 'WorkspaceTaskTypedExpressionArgsDict', 'outputs.WorkspaceTaskTypedExpression']]]] typed_expressions: (Updatable) List of typed expressions.
         :param pulumi.Input[_builtins.str] workspace_id: The workspace ID.
                
                ** IMPORTANT **
@@ -2387,28 +2387,28 @@ class WorkspaceTask(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  api_call_mode: pulumi.Input[Optional[_builtins.str]] = None,
-                 auth_config: pulumi.Input[Optional[Union['WorkspaceTaskAuthConfigArgs', 'WorkspaceTaskAuthConfigArgsDict']]] = None,
-                 cancel_rest_call_config: pulumi.Input[Optional[Union['WorkspaceTaskCancelRestCallConfigArgs', 'WorkspaceTaskCancelRestCallConfigArgsDict']]] = None,
-                 config_provider_delegate: pulumi.Input[Optional[Union['WorkspaceTaskConfigProviderDelegateArgs', 'WorkspaceTaskConfigProviderDelegateArgsDict']]] = None,
+                 auth_config: pulumi.Input[Optional[Union['WorkspaceTaskAuthConfigArgs', 'WorkspaceTaskAuthConfigArgsDict', 'outputs.WorkspaceTaskAuthConfig']]] = None,
+                 cancel_rest_call_config: pulumi.Input[Optional[Union['WorkspaceTaskCancelRestCallConfigArgs', 'WorkspaceTaskCancelRestCallConfigArgsDict', 'outputs.WorkspaceTaskCancelRestCallConfig']]] = None,
+                 config_provider_delegate: pulumi.Input[Optional[Union['WorkspaceTaskConfigProviderDelegateArgs', 'WorkspaceTaskConfigProviderDelegateArgsDict', 'outputs.WorkspaceTaskConfigProviderDelegate']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 execute_rest_call_config: pulumi.Input[Optional[Union['WorkspaceTaskExecuteRestCallConfigArgs', 'WorkspaceTaskExecuteRestCallConfigArgsDict']]] = None,
+                 execute_rest_call_config: pulumi.Input[Optional[Union['WorkspaceTaskExecuteRestCallConfigArgs', 'WorkspaceTaskExecuteRestCallConfigArgsDict', 'outputs.WorkspaceTaskExecuteRestCallConfig']]] = None,
                  identifier: pulumi.Input[Optional[_builtins.str]] = None,
-                 input_ports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskInputPortArgs', 'WorkspaceTaskInputPortArgsDict']]]]] = None,
+                 input_ports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskInputPortArgs', 'WorkspaceTaskInputPortArgsDict', 'outputs.WorkspaceTaskInputPort']]]]] = None,
                  is_single_load: pulumi.Input[Optional[_builtins.bool]] = None,
                  key: pulumi.Input[Optional[_builtins.str]] = None,
                  model_type: pulumi.Input[Optional[_builtins.str]] = None,
                  model_version: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  object_status: pulumi.Input[Optional[_builtins.int]] = None,
-                 op_config_values: pulumi.Input[Optional[Union['WorkspaceTaskOpConfigValuesArgs', 'WorkspaceTaskOpConfigValuesArgsDict']]] = None,
+                 op_config_values: pulumi.Input[Optional[Union['WorkspaceTaskOpConfigValuesArgs', 'WorkspaceTaskOpConfigValuesArgsDict', 'outputs.WorkspaceTaskOpConfigValues']]] = None,
                  operation: pulumi.Input[Optional[_builtins.str]] = None,
-                 output_ports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskOutputPortArgs', 'WorkspaceTaskOutputPortArgsDict']]]]] = None,
+                 output_ports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskOutputPortArgs', 'WorkspaceTaskOutputPortArgsDict', 'outputs.WorkspaceTaskOutputPort']]]]] = None,
                  parallel_load_limit: pulumi.Input[Optional[_builtins.int]] = None,
-                 parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskParameterArgs', 'WorkspaceTaskParameterArgsDict']]]]] = None,
-                 parent_ref: pulumi.Input[Optional[Union['WorkspaceTaskParentRefArgs', 'WorkspaceTaskParentRefArgsDict']]] = None,
-                 poll_rest_call_config: pulumi.Input[Optional[Union['WorkspaceTaskPollRestCallConfigArgs', 'WorkspaceTaskPollRestCallConfigArgsDict']]] = None,
-                 registry_metadata: pulumi.Input[Optional[Union['WorkspaceTaskRegistryMetadataArgs', 'WorkspaceTaskRegistryMetadataArgsDict']]] = None,
-                 typed_expressions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskTypedExpressionArgs', 'WorkspaceTaskTypedExpressionArgsDict']]]]] = None,
+                 parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskParameterArgs', 'WorkspaceTaskParameterArgsDict', 'outputs.WorkspaceTaskParameter']]]]] = None,
+                 parent_ref: pulumi.Input[Optional[Union['WorkspaceTaskParentRefArgs', 'WorkspaceTaskParentRefArgsDict', 'outputs.WorkspaceTaskParentRef']]] = None,
+                 poll_rest_call_config: pulumi.Input[Optional[Union['WorkspaceTaskPollRestCallConfigArgs', 'WorkspaceTaskPollRestCallConfigArgsDict', 'outputs.WorkspaceTaskPollRestCallConfig']]] = None,
+                 registry_metadata: pulumi.Input[Optional[Union['WorkspaceTaskRegistryMetadataArgs', 'WorkspaceTaskRegistryMetadataArgsDict', 'outputs.WorkspaceTaskRegistryMetadata']]] = None,
+                 typed_expressions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskTypedExpressionArgs', 'WorkspaceTaskTypedExpressionArgsDict', 'outputs.WorkspaceTaskTypedExpression']]]]] = None,
                  workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -2465,31 +2465,31 @@ class WorkspaceTask(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             api_call_mode: pulumi.Input[Optional[_builtins.str]] = None,
-            auth_config: pulumi.Input[Optional[Union['WorkspaceTaskAuthConfigArgs', 'WorkspaceTaskAuthConfigArgsDict']]] = None,
-            cancel_rest_call_config: pulumi.Input[Optional[Union['WorkspaceTaskCancelRestCallConfigArgs', 'WorkspaceTaskCancelRestCallConfigArgsDict']]] = None,
-            config_provider_delegate: pulumi.Input[Optional[Union['WorkspaceTaskConfigProviderDelegateArgs', 'WorkspaceTaskConfigProviderDelegateArgsDict']]] = None,
+            auth_config: pulumi.Input[Optional[Union['WorkspaceTaskAuthConfigArgs', 'WorkspaceTaskAuthConfigArgsDict', 'outputs.WorkspaceTaskAuthConfig']]] = None,
+            cancel_rest_call_config: pulumi.Input[Optional[Union['WorkspaceTaskCancelRestCallConfigArgs', 'WorkspaceTaskCancelRestCallConfigArgsDict', 'outputs.WorkspaceTaskCancelRestCallConfig']]] = None,
+            config_provider_delegate: pulumi.Input[Optional[Union['WorkspaceTaskConfigProviderDelegateArgs', 'WorkspaceTaskConfigProviderDelegateArgsDict', 'outputs.WorkspaceTaskConfigProviderDelegate']]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            execute_rest_call_config: pulumi.Input[Optional[Union['WorkspaceTaskExecuteRestCallConfigArgs', 'WorkspaceTaskExecuteRestCallConfigArgsDict']]] = None,
+            execute_rest_call_config: pulumi.Input[Optional[Union['WorkspaceTaskExecuteRestCallConfigArgs', 'WorkspaceTaskExecuteRestCallConfigArgsDict', 'outputs.WorkspaceTaskExecuteRestCallConfig']]] = None,
             identifier: pulumi.Input[Optional[_builtins.str]] = None,
-            input_ports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskInputPortArgs', 'WorkspaceTaskInputPortArgsDict']]]]] = None,
+            input_ports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskInputPortArgs', 'WorkspaceTaskInputPortArgsDict', 'outputs.WorkspaceTaskInputPort']]]]] = None,
             is_single_load: pulumi.Input[Optional[_builtins.bool]] = None,
             key: pulumi.Input[Optional[_builtins.str]] = None,
             key_map: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskMetadataArgs', 'WorkspaceTaskMetadataArgsDict']]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskMetadataArgs', 'WorkspaceTaskMetadataArgsDict', 'outputs.WorkspaceTaskMetadata']]]]] = None,
             model_type: pulumi.Input[Optional[_builtins.str]] = None,
             model_version: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             object_status: pulumi.Input[Optional[_builtins.int]] = None,
             object_version: pulumi.Input[Optional[_builtins.int]] = None,
-            op_config_values: pulumi.Input[Optional[Union['WorkspaceTaskOpConfigValuesArgs', 'WorkspaceTaskOpConfigValuesArgsDict']]] = None,
+            op_config_values: pulumi.Input[Optional[Union['WorkspaceTaskOpConfigValuesArgs', 'WorkspaceTaskOpConfigValuesArgsDict', 'outputs.WorkspaceTaskOpConfigValues']]] = None,
             operation: pulumi.Input[Optional[_builtins.str]] = None,
-            output_ports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskOutputPortArgs', 'WorkspaceTaskOutputPortArgsDict']]]]] = None,
+            output_ports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskOutputPortArgs', 'WorkspaceTaskOutputPortArgsDict', 'outputs.WorkspaceTaskOutputPort']]]]] = None,
             parallel_load_limit: pulumi.Input[Optional[_builtins.int]] = None,
-            parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskParameterArgs', 'WorkspaceTaskParameterArgsDict']]]]] = None,
-            parent_ref: pulumi.Input[Optional[Union['WorkspaceTaskParentRefArgs', 'WorkspaceTaskParentRefArgsDict']]] = None,
-            poll_rest_call_config: pulumi.Input[Optional[Union['WorkspaceTaskPollRestCallConfigArgs', 'WorkspaceTaskPollRestCallConfigArgsDict']]] = None,
-            registry_metadata: pulumi.Input[Optional[Union['WorkspaceTaskRegistryMetadataArgs', 'WorkspaceTaskRegistryMetadataArgsDict']]] = None,
-            typed_expressions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskTypedExpressionArgs', 'WorkspaceTaskTypedExpressionArgsDict']]]]] = None,
+            parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskParameterArgs', 'WorkspaceTaskParameterArgsDict', 'outputs.WorkspaceTaskParameter']]]]] = None,
+            parent_ref: pulumi.Input[Optional[Union['WorkspaceTaskParentRefArgs', 'WorkspaceTaskParentRefArgsDict', 'outputs.WorkspaceTaskParentRef']]] = None,
+            poll_rest_call_config: pulumi.Input[Optional[Union['WorkspaceTaskPollRestCallConfigArgs', 'WorkspaceTaskPollRestCallConfigArgsDict', 'outputs.WorkspaceTaskPollRestCallConfig']]] = None,
+            registry_metadata: pulumi.Input[Optional[Union['WorkspaceTaskRegistryMetadataArgs', 'WorkspaceTaskRegistryMetadataArgsDict', 'outputs.WorkspaceTaskRegistryMetadata']]] = None,
+            typed_expressions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceTaskTypedExpressionArgs', 'WorkspaceTaskTypedExpressionArgsDict', 'outputs.WorkspaceTaskTypedExpression']]]]] = None,
             workspace_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'WorkspaceTask':
         """
         Get an existing WorkspaceTask resource's state with the given name, id, and optional extra
@@ -2499,31 +2499,31 @@ class WorkspaceTask(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] api_call_mode: (Updatable) The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
-        :param pulumi.Input[Union['WorkspaceTaskAuthConfigArgs', 'WorkspaceTaskAuthConfigArgsDict']] auth_config: (Updatable) Authentication configuration for Generic REST invocation.
-        :param pulumi.Input[Union['WorkspaceTaskCancelRestCallConfigArgs', 'WorkspaceTaskCancelRestCallConfigArgsDict']] cancel_rest_call_config: (Updatable) The REST API configuration for cancelling the task.
-        :param pulumi.Input[Union['WorkspaceTaskConfigProviderDelegateArgs', 'WorkspaceTaskConfigProviderDelegateArgsDict']] config_provider_delegate: (Updatable) The type to create a config provider.
+        :param pulumi.Input[Union['WorkspaceTaskAuthConfigArgs', 'WorkspaceTaskAuthConfigArgsDict', 'outputs.WorkspaceTaskAuthConfig']] auth_config: (Updatable) Authentication configuration for Generic REST invocation.
+        :param pulumi.Input[Union['WorkspaceTaskCancelRestCallConfigArgs', 'WorkspaceTaskCancelRestCallConfigArgsDict', 'outputs.WorkspaceTaskCancelRestCallConfig']] cancel_rest_call_config: (Updatable) The REST API configuration for cancelling the task.
+        :param pulumi.Input[Union['WorkspaceTaskConfigProviderDelegateArgs', 'WorkspaceTaskConfigProviderDelegateArgsDict', 'outputs.WorkspaceTaskConfigProviderDelegate']] config_provider_delegate: (Updatable) The type to create a config provider.
         :param pulumi.Input[_builtins.str] description: (Updatable) Detailed description for the object.
-        :param pulumi.Input[Union['WorkspaceTaskExecuteRestCallConfigArgs', 'WorkspaceTaskExecuteRestCallConfigArgsDict']] execute_rest_call_config: (Updatable) The REST API configuration for execution.
+        :param pulumi.Input[Union['WorkspaceTaskExecuteRestCallConfigArgs', 'WorkspaceTaskExecuteRestCallConfigArgsDict', 'outputs.WorkspaceTaskExecuteRestCallConfig']] execute_rest_call_config: (Updatable) The REST API configuration for execution.
         :param pulumi.Input[_builtins.str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskInputPortArgs', 'WorkspaceTaskInputPortArgsDict']]]] input_ports: (Updatable) An array of input ports.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskInputPortArgs', 'WorkspaceTaskInputPortArgsDict', 'outputs.WorkspaceTaskInputPort']]]] input_ports: (Updatable) An array of input ports.
         :param pulumi.Input[_builtins.bool] is_single_load: (Updatable) Defines whether Data Loader task is used for single load or multiple
         :param pulumi.Input[_builtins.str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskMetadataArgs', 'WorkspaceTaskMetadataArgsDict']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskMetadataArgs', 'WorkspaceTaskMetadataArgsDict', 'outputs.WorkspaceTaskMetadata']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param pulumi.Input[_builtins.str] model_type: (Updatable) The type of the task.
         :param pulumi.Input[_builtins.str] model_version: (Updatable) The object's model version.
         :param pulumi.Input[_builtins.str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[_builtins.int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[_builtins.int] object_version: This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
-        :param pulumi.Input[Union['WorkspaceTaskOpConfigValuesArgs', 'WorkspaceTaskOpConfigValuesArgsDict']] op_config_values: (Updatable) Configuration values can be string, objects, or parameters.
+        :param pulumi.Input[Union['WorkspaceTaskOpConfigValuesArgs', 'WorkspaceTaskOpConfigValuesArgsDict', 'outputs.WorkspaceTaskOpConfigValues']] op_config_values: (Updatable) Configuration values can be string, objects, or parameters.
         :param pulumi.Input[_builtins.str] operation: (Updatable) Describes the shape of the execution result
-        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskOutputPortArgs', 'WorkspaceTaskOutputPortArgsDict']]]] output_ports: (Updatable) An array of output ports.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskOutputPortArgs', 'WorkspaceTaskOutputPortArgsDict', 'outputs.WorkspaceTaskOutputPort']]]] output_ports: (Updatable) An array of output ports.
         :param pulumi.Input[_builtins.int] parallel_load_limit: (Updatable) Defines the number of entities being loaded in parallel at a time for a Data Loader task
-        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskParameterArgs', 'WorkspaceTaskParameterArgsDict']]]] parameters: (Updatable) An array of parameters.
-        :param pulumi.Input[Union['WorkspaceTaskParentRefArgs', 'WorkspaceTaskParentRefArgsDict']] parent_ref: (Updatable) A reference to the object's parent.
-        :param pulumi.Input[Union['WorkspaceTaskPollRestCallConfigArgs', 'WorkspaceTaskPollRestCallConfigArgsDict']] poll_rest_call_config: (Updatable) The REST API configuration for polling.
-        :param pulumi.Input[Union['WorkspaceTaskRegistryMetadataArgs', 'WorkspaceTaskRegistryMetadataArgsDict']] registry_metadata: (Updatable) Information about the object and its parent.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskTypedExpressionArgs', 'WorkspaceTaskTypedExpressionArgsDict']]]] typed_expressions: (Updatable) List of typed expressions.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskParameterArgs', 'WorkspaceTaskParameterArgsDict', 'outputs.WorkspaceTaskParameter']]]] parameters: (Updatable) An array of parameters.
+        :param pulumi.Input[Union['WorkspaceTaskParentRefArgs', 'WorkspaceTaskParentRefArgsDict', 'outputs.WorkspaceTaskParentRef']] parent_ref: (Updatable) A reference to the object's parent.
+        :param pulumi.Input[Union['WorkspaceTaskPollRestCallConfigArgs', 'WorkspaceTaskPollRestCallConfigArgsDict', 'outputs.WorkspaceTaskPollRestCallConfig']] poll_rest_call_config: (Updatable) The REST API configuration for polling.
+        :param pulumi.Input[Union['WorkspaceTaskRegistryMetadataArgs', 'WorkspaceTaskRegistryMetadataArgsDict', 'outputs.WorkspaceTaskRegistryMetadata']] registry_metadata: (Updatable) Information about the object and its parent.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskTypedExpressionArgs', 'WorkspaceTaskTypedExpressionArgsDict', 'outputs.WorkspaceTaskTypedExpression']]]] typed_expressions: (Updatable) List of typed expressions.
         :param pulumi.Input[_builtins.str] workspace_id: The workspace ID.
                
                ** IMPORTANT **

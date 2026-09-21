@@ -131,7 +131,7 @@ class AwaitableGetMigrationPlansResult(GetMigrationPlansResult):
 
 def get_migration_plans(compartment_id: Optional[_builtins.str] = None,
                         display_name: Optional[_builtins.str] = None,
-                        filters: Optional[Sequence[Union['GetMigrationPlansFilterArgs', 'GetMigrationPlansFilterArgsDict']]] = None,
+                        filters: Optional[Sequence[Union['GetMigrationPlansFilterArgs', 'GetMigrationPlansFilterArgsDict', 'outputs.GetMigrationPlansFilterResult']]] = None,
                         migration_id: Optional[_builtins.str] = None,
                         migration_plan_id: Optional[_builtins.str] = None,
                         state: Optional[_builtins.str] = None,
@@ -182,7 +182,7 @@ def get_migration_plans(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_migration_plans_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMigrationPlansFilterArgs', 'GetMigrationPlansFilterArgsDict']]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMigrationPlansFilterArgs', 'GetMigrationPlansFilterArgsDict', 'outputs.GetMigrationPlansFilterResult']]]]] = None,
                                migration_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                migration_plan_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

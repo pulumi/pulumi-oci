@@ -110,7 +110,7 @@ class AwaitableGetSelfSubscriptionsResult(GetSelfSubscriptionsResult):
 
 def get_self_subscriptions(compartment_id: Optional[_builtins.str] = None,
                            display_name: Optional[_builtins.str] = None,
-                           filters: Optional[Sequence[Union['GetSelfSubscriptionsFilterArgs', 'GetSelfSubscriptionsFilterArgsDict']]] = None,
+                           filters: Optional[Sequence[Union['GetSelfSubscriptionsFilterArgs', 'GetSelfSubscriptionsFilterArgsDict', 'outputs.GetSelfSubscriptionsFilterResult']]] = None,
                            id: Optional[_builtins.str] = None,
                            lifecycle_details: Optional[_builtins.str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSelfSubscriptionsResult:
@@ -156,7 +156,7 @@ def get_self_subscriptions(compartment_id: Optional[_builtins.str] = None,
         subscription_collections=pulumi.get(__ret__, 'subscription_collections'))
 def get_self_subscriptions_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSelfSubscriptionsFilterArgs', 'GetSelfSubscriptionsFilterArgsDict']]]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSelfSubscriptionsFilterArgs', 'GetSelfSubscriptionsFilterArgsDict', 'outputs.GetSelfSubscriptionsFilterResult']]]]] = None,
                                   id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   lifecycle_details: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSelfSubscriptionsResult]:

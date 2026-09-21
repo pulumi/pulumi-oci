@@ -110,7 +110,7 @@ class AwaitableGetHttpMonitorsResult(GetHttpMonitorsResult):
 
 def get_http_monitors(compartment_id: Optional[_builtins.str] = None,
                       display_name: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetHttpMonitorsFilterArgs', 'GetHttpMonitorsFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetHttpMonitorsFilterArgs', 'GetHttpMonitorsFilterArgsDict', 'outputs.GetHttpMonitorsFilterResult']]] = None,
                       home_region: Optional[_builtins.str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetHttpMonitorsResult:
     """
@@ -151,7 +151,7 @@ def get_http_monitors(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'))
 def get_http_monitors_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetHttpMonitorsFilterArgs', 'GetHttpMonitorsFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetHttpMonitorsFilterArgs', 'GetHttpMonitorsFilterArgsDict', 'outputs.GetHttpMonitorsFilterResult']]]]] = None,
                              home_region: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHttpMonitorsResult]:
     """

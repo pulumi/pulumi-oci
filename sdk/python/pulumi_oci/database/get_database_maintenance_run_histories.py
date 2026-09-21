@@ -143,7 +143,7 @@ class AwaitableGetDatabaseMaintenanceRunHistoriesResult(GetDatabaseMaintenanceRu
 
 def get_database_maintenance_run_histories(availability_domain: Optional[_builtins.str] = None,
                                            compartment_id: Optional[_builtins.str] = None,
-                                           filters: Optional[Sequence[Union['GetDatabaseMaintenanceRunHistoriesFilterArgs', 'GetDatabaseMaintenanceRunHistoriesFilterArgsDict']]] = None,
+                                           filters: Optional[Sequence[Union['GetDatabaseMaintenanceRunHistoriesFilterArgs', 'GetDatabaseMaintenanceRunHistoriesFilterArgsDict', 'outputs.GetDatabaseMaintenanceRunHistoriesFilterResult']]] = None,
                                            maintenance_type: Optional[_builtins.str] = None,
                                            state: Optional[_builtins.str] = None,
                                            target_resource_id: Optional[_builtins.str] = None,
@@ -199,7 +199,7 @@ def get_database_maintenance_run_histories(availability_domain: Optional[_builti
         target_resource_type=pulumi.get(__ret__, 'target_resource_type'))
 def get_database_maintenance_run_histories_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabaseMaintenanceRunHistoriesFilterArgs', 'GetDatabaseMaintenanceRunHistoriesFilterArgsDict']]]]] = None,
+                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabaseMaintenanceRunHistoriesFilterArgs', 'GetDatabaseMaintenanceRunHistoriesFilterArgsDict', 'outputs.GetDatabaseMaintenanceRunHistoriesFilterResult']]]]] = None,
                                                   maintenance_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   target_resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

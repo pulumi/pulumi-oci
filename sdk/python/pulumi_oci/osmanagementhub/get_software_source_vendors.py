@@ -94,7 +94,7 @@ class AwaitableGetSoftwareSourceVendorsResult(GetSoftwareSourceVendorsResult):
 
 
 def get_software_source_vendors(compartment_id: Optional[_builtins.str] = None,
-                                filters: Optional[Sequence[Union['GetSoftwareSourceVendorsFilterArgs', 'GetSoftwareSourceVendorsFilterArgsDict']]] = None,
+                                filters: Optional[Sequence[Union['GetSoftwareSourceVendorsFilterArgs', 'GetSoftwareSourceVendorsFilterArgsDict', 'outputs.GetSoftwareSourceVendorsFilterResult']]] = None,
                                 name: Optional[_builtins.str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSoftwareSourceVendorsResult:
     """
@@ -131,7 +131,7 @@ def get_software_source_vendors(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         software_source_vendor_collections=pulumi.get(__ret__, 'software_source_vendor_collections'))
 def get_software_source_vendors_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSoftwareSourceVendorsFilterArgs', 'GetSoftwareSourceVendorsFilterArgsDict']]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSoftwareSourceVendorsFilterArgs', 'GetSoftwareSourceVendorsFilterArgsDict', 'outputs.GetSoftwareSourceVendorsFilterResult']]]]] = None,
                                        name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSoftwareSourceVendorsResult]:
     """

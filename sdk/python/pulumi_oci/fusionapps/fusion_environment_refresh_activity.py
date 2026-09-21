@@ -444,7 +444,7 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
             is_data_masking_opted: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             refresh_activity_id: pulumi.Input[Optional[_builtins.str]] = None,
-            refresh_issue_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs', 'FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgsDict']]]]] = None,
+            refresh_issue_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs', 'FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgsDict', 'outputs.FusionEnvironmentRefreshActivityRefreshIssueDetailsList']]]]] = None,
             service_availability: pulumi.Input[Optional[_builtins.str]] = None,
             source_fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -464,7 +464,7 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[_builtins.bool] is_data_masking_opted: Represents if the customer opted for Data Masking or not during refreshActivity.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs', 'FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgsDict']]]] refresh_issue_details_lists: Details of refresh investigation information, each item represents a different issue.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs', 'FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgsDict', 'outputs.FusionEnvironmentRefreshActivityRefreshIssueDetailsList']]]] refresh_issue_details_lists: Details of refresh investigation information, each item represents a different issue.
         :param pulumi.Input[_builtins.str] service_availability: Service availability / impact during refresh activity execution up down
         :param pulumi.Input[_builtins.str] source_fusion_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
         :param pulumi.Input[_builtins.str] state: The current state of the refreshActivity.

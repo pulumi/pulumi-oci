@@ -82,7 +82,7 @@ class AwaitableGetModelDeploymentShapesResult(GetModelDeploymentShapesResult):
 
 
 def get_model_deployment_shapes(compartment_id: Optional[_builtins.str] = None,
-                                filters: Optional[Sequence[Union['GetModelDeploymentShapesFilterArgs', 'GetModelDeploymentShapesFilterArgsDict']]] = None,
+                                filters: Optional[Sequence[Union['GetModelDeploymentShapesFilterArgs', 'GetModelDeploymentShapesFilterArgsDict', 'outputs.GetModelDeploymentShapesFilterResult']]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetModelDeploymentShapesResult:
     """
     This data source provides the list of Model Deployment Shapes in Oracle Cloud Infrastructure Datascience service.
@@ -113,7 +113,7 @@ def get_model_deployment_shapes(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         model_deployment_shapes=pulumi.get(__ret__, 'model_deployment_shapes'))
 def get_model_deployment_shapes_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetModelDeploymentShapesFilterArgs', 'GetModelDeploymentShapesFilterArgsDict']]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetModelDeploymentShapesFilterArgs', 'GetModelDeploymentShapesFilterArgsDict', 'outputs.GetModelDeploymentShapesFilterResult']]]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelDeploymentShapesResult]:
     """
     This data source provides the list of Model Deployment Shapes in Oracle Cloud Infrastructure Datascience service.

@@ -84,7 +84,7 @@ class AwaitableGetCustomerSecretKeysResult(GetCustomerSecretKeysResult):
             user_id=self.user_id)
 
 
-def get_customer_secret_keys(filters: Optional[Sequence[Union['GetCustomerSecretKeysFilterArgs', 'GetCustomerSecretKeysFilterArgsDict']]] = None,
+def get_customer_secret_keys(filters: Optional[Sequence[Union['GetCustomerSecretKeysFilterArgs', 'GetCustomerSecretKeysFilterArgsDict', 'outputs.GetCustomerSecretKeysFilterResult']]] = None,
                              user_id: Optional[_builtins.str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCustomerSecretKeysResult:
     """
@@ -116,7 +116,7 @@ def get_customer_secret_keys(filters: Optional[Sequence[Union['GetCustomerSecret
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         user_id=pulumi.get(__ret__, 'user_id'))
-def get_customer_secret_keys_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCustomerSecretKeysFilterArgs', 'GetCustomerSecretKeysFilterArgsDict']]]]] = None,
+def get_customer_secret_keys_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCustomerSecretKeysFilterArgs', 'GetCustomerSecretKeysFilterArgsDict', 'outputs.GetCustomerSecretKeysFilterResult']]]]] = None,
                                     user_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCustomerSecretKeysResult]:
     """

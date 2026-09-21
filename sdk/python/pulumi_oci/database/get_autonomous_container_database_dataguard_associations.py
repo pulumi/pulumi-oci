@@ -85,7 +85,7 @@ class AwaitableGetAutonomousContainerDatabaseDataguardAssociationsResult(GetAuto
 
 
 def get_autonomous_container_database_dataguard_associations(autonomous_container_database_id: Optional[_builtins.str] = None,
-                                                             filters: Optional[Sequence[Union['GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs', 'GetAutonomousContainerDatabaseDataguardAssociationsFilterArgsDict']]] = None,
+                                                             filters: Optional[Sequence[Union['GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs', 'GetAutonomousContainerDatabaseDataguardAssociationsFilterArgsDict', 'outputs.GetAutonomousContainerDatabaseDataguardAssociationsFilterResult']]] = None,
                                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousContainerDatabaseDataguardAssociationsResult:
     """
     This data source provides the list of Autonomous Container Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
@@ -116,7 +116,7 @@ def get_autonomous_container_database_dataguard_associations(autonomous_containe
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_autonomous_container_database_dataguard_associations_output(autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs', 'GetAutonomousContainerDatabaseDataguardAssociationsFilterArgsDict']]]]] = None,
+                                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs', 'GetAutonomousContainerDatabaseDataguardAssociationsFilterArgsDict', 'outputs.GetAutonomousContainerDatabaseDataguardAssociationsFilterResult']]]]] = None,
                                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousContainerDatabaseDataguardAssociationsResult]:
     """
     This data source provides the list of Autonomous Container Database Dataguard Associations in Oracle Cloud Infrastructure Database service.

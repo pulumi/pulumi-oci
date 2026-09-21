@@ -130,7 +130,7 @@ class AwaitableGetJavaReleasesResult(GetJavaReleasesResult):
 
 
 def get_java_releases(family_version: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetJavaReleasesFilterArgs', 'GetJavaReleasesFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetJavaReleasesFilterArgs', 'GetJavaReleasesFilterArgsDict', 'outputs.GetJavaReleasesFilterResult']]] = None,
                       jre_security_status: Optional[_builtins.str] = None,
                       license_type: Optional[_builtins.str] = None,
                       release_type: Optional[_builtins.str] = None,
@@ -181,7 +181,7 @@ def get_java_releases(family_version: Optional[_builtins.str] = None,
         release_type=pulumi.get(__ret__, 'release_type'),
         release_version=pulumi.get(__ret__, 'release_version'))
 def get_java_releases_output(family_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJavaReleasesFilterArgs', 'GetJavaReleasesFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJavaReleasesFilterArgs', 'GetJavaReleasesFilterArgsDict', 'outputs.GetJavaReleasesFilterResult']]]]] = None,
                              jre_security_status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              license_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              release_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

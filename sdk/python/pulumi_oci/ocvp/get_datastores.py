@@ -133,7 +133,7 @@ def get_datastores(cluster_id: Optional[_builtins.str] = None,
                    compartment_id: Optional[_builtins.str] = None,
                    datastore_id: Optional[_builtins.str] = None,
                    display_name: Optional[_builtins.str] = None,
-                   filters: Optional[Sequence[Union['GetDatastoresFilterArgs', 'GetDatastoresFilterArgsDict']]] = None,
+                   filters: Optional[Sequence[Union['GetDatastoresFilterArgs', 'GetDatastoresFilterArgsDict', 'outputs.GetDatastoresFilterResult']]] = None,
                    state: Optional[_builtins.str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatastoresResult:
     """
@@ -185,7 +185,7 @@ def get_datastores_output(cluster_id: pulumi.Input[Optional[Optional[_builtins.s
                           compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                           datastore_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatastoresFilterArgs', 'GetDatastoresFilterArgsDict']]]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatastoresFilterArgs', 'GetDatastoresFilterArgsDict', 'outputs.GetDatastoresFilterResult']]]]] = None,
                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatastoresResult]:
     """

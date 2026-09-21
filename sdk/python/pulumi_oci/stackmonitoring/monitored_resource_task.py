@@ -316,7 +316,7 @@ class MonitoredResourceTask(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 task_details: pulumi.Input[Optional[Union['MonitoredResourceTaskTaskDetailsArgs', 'MonitoredResourceTaskTaskDetailsArgsDict']]] = None,
+                 task_details: pulumi.Input[Optional[Union['MonitoredResourceTaskTaskDetailsArgs', 'MonitoredResourceTaskTaskDetailsArgsDict', 'outputs.MonitoredResourceTaskTaskDetails']]] = None,
                  __props__=None):
         """
         This resource provides the Monitored Resource Task resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -417,7 +417,7 @@ class MonitoredResourceTask(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] name: Name of the task. If not provided by default the following names will be taken Oracle Cloud Infrastructure tasks - namespace plus timestamp.
-        :param pulumi.Input[Union['MonitoredResourceTaskTaskDetailsArgs', 'MonitoredResourceTaskTaskDetailsArgsDict']] task_details: The request details for the performing the task.
+        :param pulumi.Input[Union['MonitoredResourceTaskTaskDetailsArgs', 'MonitoredResourceTaskTaskDetailsArgsDict', 'outputs.MonitoredResourceTaskTaskDetails']] task_details: The request details for the performing the task.
         """
         ...
     @overload
@@ -537,7 +537,7 @@ class MonitoredResourceTask(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 task_details: pulumi.Input[Optional[Union['MonitoredResourceTaskTaskDetailsArgs', 'MonitoredResourceTaskTaskDetailsArgsDict']]] = None,
+                 task_details: pulumi.Input[Optional[Union['MonitoredResourceTaskTaskDetailsArgs', 'MonitoredResourceTaskTaskDetailsArgsDict', 'outputs.MonitoredResourceTaskTaskDetails']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -579,7 +579,7 @@ class MonitoredResourceTask(pulumi.CustomResource):
             name: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            task_details: pulumi.Input[Optional[Union['MonitoredResourceTaskTaskDetailsArgs', 'MonitoredResourceTaskTaskDetailsArgsDict']]] = None,
+            task_details: pulumi.Input[Optional[Union['MonitoredResourceTaskTaskDetailsArgs', 'MonitoredResourceTaskTaskDetailsArgsDict', 'outputs.MonitoredResourceTaskTaskDetails']]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
@@ -598,7 +598,7 @@ class MonitoredResourceTask(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: Name of the task. If not provided by default the following names will be taken Oracle Cloud Infrastructure tasks - namespace plus timestamp.
         :param pulumi.Input[_builtins.str] state: The current state of the stack monitoring resource task.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Union['MonitoredResourceTaskTaskDetailsArgs', 'MonitoredResourceTaskTaskDetailsArgsDict']] task_details: The request details for the performing the task.
+        :param pulumi.Input[Union['MonitoredResourceTaskTaskDetailsArgs', 'MonitoredResourceTaskTaskDetailsArgsDict', 'outputs.MonitoredResourceTaskTaskDetails']] task_details: The request details for the performing the task.
         :param pulumi.Input[_builtins.str] tenant_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
         :param pulumi.Input[_builtins.str] time_created: The date and time when the stack monitoring resource task was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         :param pulumi.Input[_builtins.str] time_updated: The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.

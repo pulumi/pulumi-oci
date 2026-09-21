@@ -133,7 +133,7 @@ class AwaitableGetAggregatedComputedUsagesResult(GetAggregatedComputedUsagesResu
 
 
 def get_aggregated_computed_usages(compartment_id: Optional[_builtins.str] = None,
-                                   filters: Optional[Sequence[Union['GetAggregatedComputedUsagesFilterArgs', 'GetAggregatedComputedUsagesFilterArgsDict']]] = None,
+                                   filters: Optional[Sequence[Union['GetAggregatedComputedUsagesFilterArgs', 'GetAggregatedComputedUsagesFilterArgsDict', 'outputs.GetAggregatedComputedUsagesFilterResult']]] = None,
                                    grouping: Optional[_builtins.str] = None,
                                    parent_product: Optional[_builtins.str] = None,
                                    subscription_id: Optional[_builtins.str] = None,
@@ -175,7 +175,7 @@ def get_aggregated_computed_usages(compartment_id: Optional[_builtins.str] = Non
         time_from=pulumi.get(__ret__, 'time_from'),
         time_to=pulumi.get(__ret__, 'time_to'))
 def get_aggregated_computed_usages_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAggregatedComputedUsagesFilterArgs', 'GetAggregatedComputedUsagesFilterArgsDict']]]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAggregatedComputedUsagesFilterArgs', 'GetAggregatedComputedUsagesFilterArgsDict', 'outputs.GetAggregatedComputedUsagesFilterResult']]]]] = None,
                                           grouping: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           parent_product: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           subscription_id: pulumi.Input[Optional[_builtins.str]] = None,

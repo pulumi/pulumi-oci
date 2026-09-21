@@ -152,7 +152,7 @@ class AwaitableGetInstanceMaintenanceEventsResult(GetInstanceMaintenanceEventsRe
 
 def get_instance_maintenance_events(compartment_id: Optional[_builtins.str] = None,
                                     correlation_token: Optional[_builtins.str] = None,
-                                    filters: Optional[Sequence[Union['GetInstanceMaintenanceEventsFilterArgs', 'GetInstanceMaintenanceEventsFilterArgsDict']]] = None,
+                                    filters: Optional[Sequence[Union['GetInstanceMaintenanceEventsFilterArgs', 'GetInstanceMaintenanceEventsFilterArgsDict', 'outputs.GetInstanceMaintenanceEventsFilterResult']]] = None,
                                     instance_action: Optional[_builtins.str] = None,
                                     instance_id: Optional[_builtins.str] = None,
                                     state: Optional[_builtins.str] = None,
@@ -213,7 +213,7 @@ def get_instance_maintenance_events(compartment_id: Optional[_builtins.str] = No
         time_window_start_less_than_or_equal_to=pulumi.get(__ret__, 'time_window_start_less_than_or_equal_to'))
 def get_instance_maintenance_events_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            correlation_token: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstanceMaintenanceEventsFilterArgs', 'GetInstanceMaintenanceEventsFilterArgsDict']]]]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstanceMaintenanceEventsFilterArgs', 'GetInstanceMaintenanceEventsFilterArgsDict', 'outputs.GetInstanceMaintenanceEventsFilterResult']]]]] = None,
                                            instance_action: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

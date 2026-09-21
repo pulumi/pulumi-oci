@@ -108,7 +108,7 @@ class AwaitableGetIpv6sResult(GetIpv6sResult):
             vnic_id=self.vnic_id)
 
 
-def get_ipv6s(filters: Optional[Sequence[Union['GetIpv6sFilterArgs', 'GetIpv6sFilterArgsDict']]] = None,
+def get_ipv6s(filters: Optional[Sequence[Union['GetIpv6sFilterArgs', 'GetIpv6sFilterArgsDict', 'outputs.GetIpv6sFilterResult']]] = None,
               ip_address: Optional[_builtins.str] = None,
               subnet_id: Optional[_builtins.str] = None,
               vnic_id: Optional[_builtins.str] = None,
@@ -156,7 +156,7 @@ def get_ipv6s(filters: Optional[Sequence[Union['GetIpv6sFilterArgs', 'GetIpv6sFi
         ipv6s=pulumi.get(__ret__, 'ipv6s'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         vnic_id=pulumi.get(__ret__, 'vnic_id'))
-def get_ipv6s_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIpv6sFilterArgs', 'GetIpv6sFilterArgsDict']]]]] = None,
+def get_ipv6s_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIpv6sFilterArgs', 'GetIpv6sFilterArgsDict', 'outputs.GetIpv6sFilterResult']]]]] = None,
                      ip_address: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      subnet_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      vnic_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

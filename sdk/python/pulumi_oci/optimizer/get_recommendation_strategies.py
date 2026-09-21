@@ -113,7 +113,7 @@ class AwaitableGetRecommendationStrategiesResult(GetRecommendationStrategiesResu
 
 def get_recommendation_strategies(compartment_id: Optional[_builtins.str] = None,
                                   compartment_id_in_subtree: Optional[_builtins.bool] = None,
-                                  filters: Optional[Sequence[Union['GetRecommendationStrategiesFilterArgs', 'GetRecommendationStrategiesFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetRecommendationStrategiesFilterArgs', 'GetRecommendationStrategiesFilterArgsDict', 'outputs.GetRecommendationStrategiesFilterResult']]] = None,
                                   name: Optional[_builtins.str] = None,
                                   recommendation_name: Optional[_builtins.str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRecommendationStrategiesResult:
@@ -161,7 +161,7 @@ def get_recommendation_strategies(compartment_id: Optional[_builtins.str] = None
         recommendation_strategy_collections=pulumi.get(__ret__, 'recommendation_strategy_collections'))
 def get_recommendation_strategies_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          compartment_id_in_subtree: pulumi.Input[Optional[_builtins.bool]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRecommendationStrategiesFilterArgs', 'GetRecommendationStrategiesFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRecommendationStrategiesFilterArgs', 'GetRecommendationStrategiesFilterArgsDict', 'outputs.GetRecommendationStrategiesFilterResult']]]]] = None,
                                          name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          recommendation_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecommendationStrategiesResult]:

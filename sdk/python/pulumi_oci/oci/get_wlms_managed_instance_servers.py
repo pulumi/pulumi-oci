@@ -96,7 +96,7 @@ class AwaitableGetWlmsManagedInstanceServersResult(GetWlmsManagedInstanceServers
             server_collections=self.server_collections)
 
 
-def get_wlms_managed_instance_servers(filters: Optional[Sequence[Union['GetWlmsManagedInstanceServersFilterArgs', 'GetWlmsManagedInstanceServersFilterArgsDict']]] = None,
+def get_wlms_managed_instance_servers(filters: Optional[Sequence[Union['GetWlmsManagedInstanceServersFilterArgs', 'GetWlmsManagedInstanceServersFilterArgsDict', 'outputs.GetWlmsManagedInstanceServersFilterResult']]] = None,
                                       managed_instance_id: Optional[_builtins.str] = None,
                                       name: Optional[_builtins.str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWlmsManagedInstanceServersResult:
@@ -132,7 +132,7 @@ def get_wlms_managed_instance_servers(filters: Optional[Sequence[Union['GetWlmsM
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
         name=pulumi.get(__ret__, 'name'),
         server_collections=pulumi.get(__ret__, 'server_collections'))
-def get_wlms_managed_instance_servers_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWlmsManagedInstanceServersFilterArgs', 'GetWlmsManagedInstanceServersFilterArgsDict']]]]] = None,
+def get_wlms_managed_instance_servers_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWlmsManagedInstanceServersFilterArgs', 'GetWlmsManagedInstanceServersFilterArgsDict', 'outputs.GetWlmsManagedInstanceServersFilterResult']]]]] = None,
                                              managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWlmsManagedInstanceServersResult]:

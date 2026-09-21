@@ -81,7 +81,7 @@ class AwaitableGetFusionEnvironmentTimeAvailableForRefreshsResult(GetFusionEnvir
             time_available_for_refresh_collections=self.time_available_for_refresh_collections)
 
 
-def get_fusion_environment_time_available_for_refreshs(filters: Optional[Sequence[Union['GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs', 'GetFusionEnvironmentTimeAvailableForRefreshsFilterArgsDict']]] = None,
+def get_fusion_environment_time_available_for_refreshs(filters: Optional[Sequence[Union['GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs', 'GetFusionEnvironmentTimeAvailableForRefreshsFilterArgsDict', 'outputs.GetFusionEnvironmentTimeAvailableForRefreshsFilterResult']]] = None,
                                                        fusion_environment_id: Optional[_builtins.str] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFusionEnvironmentTimeAvailableForRefreshsResult:
     """
@@ -112,7 +112,7 @@ def get_fusion_environment_time_available_for_refreshs(filters: Optional[Sequenc
         fusion_environment_id=pulumi.get(__ret__, 'fusion_environment_id'),
         id=pulumi.get(__ret__, 'id'),
         time_available_for_refresh_collections=pulumi.get(__ret__, 'time_available_for_refresh_collections'))
-def get_fusion_environment_time_available_for_refreshs_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs', 'GetFusionEnvironmentTimeAvailableForRefreshsFilterArgsDict']]]]] = None,
+def get_fusion_environment_time_available_for_refreshs_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs', 'GetFusionEnvironmentTimeAvailableForRefreshsFilterArgsDict', 'outputs.GetFusionEnvironmentTimeAvailableForRefreshsFilterResult']]]]] = None,
                                                               fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentTimeAvailableForRefreshsResult]:
     """

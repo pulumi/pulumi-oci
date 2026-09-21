@@ -110,7 +110,7 @@ class AwaitableGetJavaFamiliesResult(GetJavaFamiliesResult):
 
 def get_java_families(display_name: Optional[_builtins.str] = None,
                       family_version: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetJavaFamiliesFilterArgs', 'GetJavaFamiliesFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetJavaFamiliesFilterArgs', 'GetJavaFamiliesFilterArgsDict', 'outputs.GetJavaFamiliesFilterResult']]] = None,
                       is_supported_version: Optional[_builtins.bool] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetJavaFamiliesResult:
     """
@@ -152,7 +152,7 @@ def get_java_families(display_name: Optional[_builtins.str] = None,
         java_family_collections=pulumi.get(__ret__, 'java_family_collections'))
 def get_java_families_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              family_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJavaFamiliesFilterArgs', 'GetJavaFamiliesFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJavaFamiliesFilterArgs', 'GetJavaFamiliesFilterArgsDict', 'outputs.GetJavaFamiliesFilterResult']]]]] = None,
                              is_supported_version: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJavaFamiliesResult]:
     """

@@ -403,12 +403,12 @@ class RunbookVersion(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 execution_workflow_details: pulumi.Input[Optional[Union['RunbookVersionExecutionWorkflowDetailsArgs', 'RunbookVersionExecutionWorkflowDetailsArgsDict']]] = None,
+                 execution_workflow_details: pulumi.Input[Optional[Union['RunbookVersionExecutionWorkflowDetailsArgs', 'RunbookVersionExecutionWorkflowDetailsArgsDict', 'outputs.RunbookVersionExecutionWorkflowDetails']]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunbookVersionGroupArgs', 'RunbookVersionGroupArgsDict']]]]] = None,
-                 rollback_workflow_details: pulumi.Input[Optional[Union['RunbookVersionRollbackWorkflowDetailsArgs', 'RunbookVersionRollbackWorkflowDetailsArgsDict']]] = None,
+                 groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunbookVersionGroupArgs', 'RunbookVersionGroupArgsDict', 'outputs.RunbookVersionGroup']]]]] = None,
+                 rollback_workflow_details: pulumi.Input[Optional[Union['RunbookVersionRollbackWorkflowDetailsArgs', 'RunbookVersionRollbackWorkflowDetailsArgsDict', 'outputs.RunbookVersionRollbackWorkflowDetails']]] = None,
                  runbook_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunbookVersionTaskArgs', 'RunbookVersionTaskArgsDict']]]]] = None,
+                 tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunbookVersionTaskArgs', 'RunbookVersionTaskArgsDict', 'outputs.RunbookVersionTask']]]]] = None,
                  __props__=None):
         """
         This resource provides the Runbook Version resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -437,14 +437,14 @@ class RunbookVersion(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
                `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Union['RunbookVersionExecutionWorkflowDetailsArgs', 'RunbookVersionExecutionWorkflowDetailsArgsDict']] execution_workflow_details: (Updatable) Execution Workflow details.
+        :param pulumi.Input[Union['RunbookVersionExecutionWorkflowDetailsArgs', 'RunbookVersionExecutionWorkflowDetailsArgsDict', 'outputs.RunbookVersionExecutionWorkflowDetails']] execution_workflow_details: (Updatable) Execution Workflow details.
                <<<<<<< ours
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists
                for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RunbookVersionGroupArgs', 'RunbookVersionGroupArgsDict']]]] groups: (Updatable) The groups of the runbook.
-        :param pulumi.Input[Union['RunbookVersionRollbackWorkflowDetailsArgs', 'RunbookVersionRollbackWorkflowDetailsArgsDict']] rollback_workflow_details: (Updatable) Rollback Workflow details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RunbookVersionGroupArgs', 'RunbookVersionGroupArgsDict', 'outputs.RunbookVersionGroup']]]] groups: (Updatable) The groups of the runbook.
+        :param pulumi.Input[Union['RunbookVersionRollbackWorkflowDetailsArgs', 'RunbookVersionRollbackWorkflowDetailsArgsDict', 'outputs.RunbookVersionRollbackWorkflowDetails']] rollback_workflow_details: (Updatable) Rollback Workflow details.
         :param pulumi.Input[_builtins.str] runbook_id: The OCID of the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RunbookVersionTaskArgs', 'RunbookVersionTaskArgsDict']]]] tasks: (Updatable) A set of tasks to execute in the runbook.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RunbookVersionTaskArgs', 'RunbookVersionTaskArgsDict', 'outputs.RunbookVersionTask']]]] tasks: (Updatable) A set of tasks to execute in the runbook.
                <<<<<<< ours
         """
         ...
@@ -492,12 +492,12 @@ class RunbookVersion(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 execution_workflow_details: pulumi.Input[Optional[Union['RunbookVersionExecutionWorkflowDetailsArgs', 'RunbookVersionExecutionWorkflowDetailsArgsDict']]] = None,
+                 execution_workflow_details: pulumi.Input[Optional[Union['RunbookVersionExecutionWorkflowDetailsArgs', 'RunbookVersionExecutionWorkflowDetailsArgsDict', 'outputs.RunbookVersionExecutionWorkflowDetails']]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunbookVersionGroupArgs', 'RunbookVersionGroupArgsDict']]]]] = None,
-                 rollback_workflow_details: pulumi.Input[Optional[Union['RunbookVersionRollbackWorkflowDetailsArgs', 'RunbookVersionRollbackWorkflowDetailsArgsDict']]] = None,
+                 groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunbookVersionGroupArgs', 'RunbookVersionGroupArgsDict', 'outputs.RunbookVersionGroup']]]]] = None,
+                 rollback_workflow_details: pulumi.Input[Optional[Union['RunbookVersionRollbackWorkflowDetailsArgs', 'RunbookVersionRollbackWorkflowDetailsArgsDict', 'outputs.RunbookVersionRollbackWorkflowDetails']]] = None,
                  runbook_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunbookVersionTaskArgs', 'RunbookVersionTaskArgsDict']]]]] = None,
+                 tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunbookVersionTaskArgs', 'RunbookVersionTaskArgsDict', 'outputs.RunbookVersionTask']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -542,17 +542,17 @@ class RunbookVersion(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            execution_workflow_details: pulumi.Input[Optional[Union['RunbookVersionExecutionWorkflowDetailsArgs', 'RunbookVersionExecutionWorkflowDetailsArgsDict']]] = None,
+            execution_workflow_details: pulumi.Input[Optional[Union['RunbookVersionExecutionWorkflowDetailsArgs', 'RunbookVersionExecutionWorkflowDetailsArgsDict', 'outputs.RunbookVersionExecutionWorkflowDetails']]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunbookVersionGroupArgs', 'RunbookVersionGroupArgsDict']]]]] = None,
+            groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunbookVersionGroupArgs', 'RunbookVersionGroupArgsDict', 'outputs.RunbookVersionGroup']]]]] = None,
             is_latest: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            rollback_workflow_details: pulumi.Input[Optional[Union['RunbookVersionRollbackWorkflowDetailsArgs', 'RunbookVersionRollbackWorkflowDetailsArgsDict']]] = None,
+            rollback_workflow_details: pulumi.Input[Optional[Union['RunbookVersionRollbackWorkflowDetailsArgs', 'RunbookVersionRollbackWorkflowDetailsArgsDict', 'outputs.RunbookVersionRollbackWorkflowDetails']]] = None,
             runbook_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunbookVersionTaskArgs', 'RunbookVersionTaskArgsDict']]]]] = None,
+            tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunbookVersionTaskArgs', 'RunbookVersionTaskArgsDict', 'outputs.RunbookVersionTask']]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'RunbookVersion':
         """
@@ -564,20 +564,20 @@ class RunbookVersion(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
                `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Union['RunbookVersionExecutionWorkflowDetailsArgs', 'RunbookVersionExecutionWorkflowDetailsArgsDict']] execution_workflow_details: (Updatable) Execution Workflow details.
+        :param pulumi.Input[Union['RunbookVersionExecutionWorkflowDetailsArgs', 'RunbookVersionExecutionWorkflowDetailsArgsDict', 'outputs.RunbookVersionExecutionWorkflowDetails']] execution_workflow_details: (Updatable) Execution Workflow details.
                <<<<<<< ours
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists
                for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RunbookVersionGroupArgs', 'RunbookVersionGroupArgsDict']]]] groups: (Updatable) The groups of the runbook.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RunbookVersionGroupArgs', 'RunbookVersionGroupArgsDict', 'outputs.RunbookVersionGroup']]]] groups: (Updatable) The groups of the runbook.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide
                actionable information for a resource in Failed state.
         :param pulumi.Input[_builtins.str] name: The name of the task
-        :param pulumi.Input[Union['RunbookVersionRollbackWorkflowDetailsArgs', 'RunbookVersionRollbackWorkflowDetailsArgsDict']] rollback_workflow_details: (Updatable) Rollback Workflow details.
+        :param pulumi.Input[Union['RunbookVersionRollbackWorkflowDetailsArgs', 'RunbookVersionRollbackWorkflowDetailsArgsDict', 'outputs.RunbookVersionRollbackWorkflowDetails']] rollback_workflow_details: (Updatable) Rollback Workflow details.
         :param pulumi.Input[_builtins.str] runbook_id: The OCID of the resource.
         :param pulumi.Input[_builtins.str] state: The current state of the FleetResource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example:
                `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RunbookVersionTaskArgs', 'RunbookVersionTaskArgsDict']]]] tasks: (Updatable) A set of tasks to execute in the runbook.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RunbookVersionTaskArgs', 'RunbookVersionTaskArgsDict', 'outputs.RunbookVersionTask']]]] tasks: (Updatable) A set of tasks to execute in the runbook.
                <<<<<<< ours
         :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.

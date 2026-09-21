@@ -110,7 +110,7 @@ class AwaitableGetAnnouncementSubscriptionsResult(GetAnnouncementSubscriptionsRe
 
 def get_announcement_subscriptions(compartment_id: Optional[_builtins.str] = None,
                                    display_name: Optional[_builtins.str] = None,
-                                   filters: Optional[Sequence[Union['GetAnnouncementSubscriptionsFilterArgs', 'GetAnnouncementSubscriptionsFilterArgsDict']]] = None,
+                                   filters: Optional[Sequence[Union['GetAnnouncementSubscriptionsFilterArgs', 'GetAnnouncementSubscriptionsFilterArgsDict', 'outputs.GetAnnouncementSubscriptionsFilterResult']]] = None,
                                    id: Optional[_builtins.str] = None,
                                    state: Optional[_builtins.str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAnnouncementSubscriptionsResult:
@@ -157,7 +157,7 @@ def get_announcement_subscriptions(compartment_id: Optional[_builtins.str] = Non
         state=pulumi.get(__ret__, 'state'))
 def get_announcement_subscriptions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAnnouncementSubscriptionsFilterArgs', 'GetAnnouncementSubscriptionsFilterArgsDict']]]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAnnouncementSubscriptionsFilterArgs', 'GetAnnouncementSubscriptionsFilterArgsDict', 'outputs.GetAnnouncementSubscriptionsFilterResult']]]]] = None,
                                           id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAnnouncementSubscriptionsResult]:

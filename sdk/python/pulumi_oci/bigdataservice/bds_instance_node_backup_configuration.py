@@ -326,7 +326,7 @@ class BdsInstanceNodeBackupConfiguration(pulumi.CustomResource):
                  backup_type: pulumi.Input[Optional[_builtins.str]] = None,
                  bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgsDict']]] = None,
+                 level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgsDict', 'outputs.BdsInstanceNodeBackupConfigurationLevelTypeDetails']]] = None,
                  number_of_backups_to_retain: pulumi.Input[Optional[_builtins.int]] = None,
                  schedule: pulumi.Input[Optional[_builtins.str]] = None,
                  timezone: pulumi.Input[Optional[_builtins.str]] = None,
@@ -373,7 +373,7 @@ class BdsInstanceNodeBackupConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] backup_type: (Updatable) Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
-        :param pulumi.Input[Union['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgsDict']] level_type_details: (Updatable) Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+        :param pulumi.Input[Union['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgsDict', 'outputs.BdsInstanceNodeBackupConfigurationLevelTypeDetails']] level_type_details: (Updatable) Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
         :param pulumi.Input[_builtins.int] number_of_backups_to_retain: (Updatable) Number of backup copies to retain.
         :param pulumi.Input[_builtins.str] schedule: (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger the backup process. Currently only DAILY, WEEKLY and MONTHLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR. Other fields are not supported.
         :param pulumi.Input[_builtins.str] timezone: (Updatable) The time zone of the execution schedule, in IANA time zone database name format
@@ -442,7 +442,7 @@ class BdsInstanceNodeBackupConfiguration(pulumi.CustomResource):
                  backup_type: pulumi.Input[Optional[_builtins.str]] = None,
                  bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgsDict']]] = None,
+                 level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgsDict', 'outputs.BdsInstanceNodeBackupConfigurationLevelTypeDetails']]] = None,
                  number_of_backups_to_retain: pulumi.Input[Optional[_builtins.int]] = None,
                  schedule: pulumi.Input[Optional[_builtins.str]] = None,
                  timezone: pulumi.Input[Optional[_builtins.str]] = None,
@@ -484,7 +484,7 @@ class BdsInstanceNodeBackupConfiguration(pulumi.CustomResource):
             backup_type: pulumi.Input[Optional[_builtins.str]] = None,
             bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgsDict']]] = None,
+            level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgsDict', 'outputs.BdsInstanceNodeBackupConfigurationLevelTypeDetails']]] = None,
             number_of_backups_to_retain: pulumi.Input[Optional[_builtins.int]] = None,
             schedule: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -501,7 +501,7 @@ class BdsInstanceNodeBackupConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] backup_type: (Updatable) Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
-        :param pulumi.Input[Union['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgsDict']] level_type_details: (Updatable) Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+        :param pulumi.Input[Union['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgsDict', 'outputs.BdsInstanceNodeBackupConfigurationLevelTypeDetails']] level_type_details: (Updatable) Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
         :param pulumi.Input[_builtins.int] number_of_backups_to_retain: (Updatable) Number of backup copies to retain.
         :param pulumi.Input[_builtins.str] schedule: (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger the backup process. Currently only DAILY, WEEKLY and MONTHLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR. Other fields are not supported.
         :param pulumi.Input[_builtins.str] state: The state of the NodeBackupConfiguration.

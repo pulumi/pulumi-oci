@@ -745,7 +745,7 @@ class OdaInstance(pulumi.CustomResource):
             imported_package_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             is_role_based_access: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_sub_state: pulumi.Input[Optional[_builtins.str]] = None,
-            restricted_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OdaInstanceRestrictedOperationArgs', 'OdaInstanceRestrictedOperationArgsDict']]]]] = None,
+            restricted_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OdaInstanceRestrictedOperationArgs', 'OdaInstanceRestrictedOperationArgsDict', 'outputs.OdaInstanceRestrictedOperation']]]]] = None,
             shape_name: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             state_message: pulumi.Input[Optional[_builtins.str]] = None,
@@ -774,7 +774,7 @@ class OdaInstance(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] imported_package_names: A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
         :param pulumi.Input[_builtins.bool] is_role_based_access: Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
         :param pulumi.Input[_builtins.str] lifecycle_sub_state: The current sub-state of the Digital Assistant instance.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OdaInstanceRestrictedOperationArgs', 'OdaInstanceRestrictedOperationArgsDict']]]] restricted_operations: A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OdaInstanceRestrictedOperationArgs', 'OdaInstanceRestrictedOperationArgsDict', 'outputs.OdaInstanceRestrictedOperation']]]] restricted_operations: A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
         :param pulumi.Input[_builtins.str] shape_name: Shape or size of the instance.
                
                ** IMPORTANT **

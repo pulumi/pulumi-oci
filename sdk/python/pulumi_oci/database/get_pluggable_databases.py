@@ -119,7 +119,7 @@ class AwaitableGetPluggableDatabasesResult(GetPluggableDatabasesResult):
 
 def get_pluggable_databases(compartment_id: Optional[_builtins.str] = None,
                             database_id: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetPluggableDatabasesFilterArgs', 'GetPluggableDatabasesFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetPluggableDatabasesFilterArgs', 'GetPluggableDatabasesFilterArgsDict', 'outputs.GetPluggableDatabasesFilterResult']]] = None,
                             pdb_name: Optional[_builtins.str] = None,
                             state: Optional[_builtins.str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPluggableDatabasesResult:
@@ -165,7 +165,7 @@ def get_pluggable_databases(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_pluggable_databases_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    database_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPluggableDatabasesFilterArgs', 'GetPluggableDatabasesFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPluggableDatabasesFilterArgs', 'GetPluggableDatabasesFilterArgsDict', 'outputs.GetPluggableDatabasesFilterResult']]]]] = None,
                                    pdb_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPluggableDatabasesResult]:

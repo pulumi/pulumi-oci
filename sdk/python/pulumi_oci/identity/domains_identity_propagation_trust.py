@@ -2334,18 +2334,18 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                  attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
-                 ca_cert_chain: pulumi.Input[Optional[Union['DomainsIdentityPropagationTrustCaCertChainArgs', 'DomainsIdentityPropagationTrustCaCertChainArgsDict']]] = None,
+                 ca_cert_chain: pulumi.Input[Optional[Union['DomainsIdentityPropagationTrustCaCertChainArgs', 'DomainsIdentityPropagationTrustCaCertChainArgsDict', 'outputs.DomainsIdentityPropagationTrustCaCertChain']]] = None,
                  claim_propagations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 claim_validations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustClaimValidationArgs', 'DomainsIdentityPropagationTrustClaimValidationArgsDict']]]]] = None,
+                 claim_validations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustClaimValidationArgs', 'DomainsIdentityPropagationTrustClaimValidationArgsDict', 'outputs.DomainsIdentityPropagationTrustClaimValidation']]]]] = None,
                  client_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
                  client_claim_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  clock_skew_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  impersonating_resource: pulumi.Input[Optional[_builtins.str]] = None,
-                 impersonation_service_users: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustImpersonationServiceUserArgs', 'DomainsIdentityPropagationTrustImpersonationServiceUserArgsDict']]]]] = None,
+                 impersonation_service_users: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustImpersonationServiceUserArgs', 'DomainsIdentityPropagationTrustImpersonationServiceUserArgsDict', 'outputs.DomainsIdentityPropagationTrustImpersonationServiceUser']]]]] = None,
                  issuer: pulumi.Input[Optional[_builtins.str]] = None,
-                 keytab: pulumi.Input[Optional[Union['DomainsIdentityPropagationTrustKeytabArgs', 'DomainsIdentityPropagationTrustKeytabArgsDict']]] = None,
+                 keytab: pulumi.Input[Optional[Union['DomainsIdentityPropagationTrustKeytabArgs', 'DomainsIdentityPropagationTrustKeytabArgsDict', 'outputs.DomainsIdentityPropagationTrustKeytab']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  oauth_clients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2356,7 +2356,7 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                  subject_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
                  subject_mapping_attribute: pulumi.Input[Optional[_builtins.str]] = None,
                  subject_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustTagArgs', 'DomainsIdentityPropagationTrustTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustTagArgs', 'DomainsIdentityPropagationTrustTagArgsDict', 'outputs.DomainsIdentityPropagationTrustTag']]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -2467,7 +2467,7 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[_builtins.str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[_builtins.str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[Union['DomainsIdentityPropagationTrustCaCertChainArgs', 'DomainsIdentityPropagationTrustCaCertChainArgsDict']] ca_cert_chain: (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+        :param pulumi.Input[Union['DomainsIdentityPropagationTrustCaCertChainArgs', 'DomainsIdentityPropagationTrustCaCertChainArgsDict', 'outputs.DomainsIdentityPropagationTrustCaCertChain']] ca_cert_chain: (Updatable) Certificate trust store. This is required if identity propagation type is X509.
                
                **Added In:** 2508041610
                
@@ -2491,7 +2491,7 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustClaimValidationArgs', 'DomainsIdentityPropagationTrustClaimValidationArgsDict']]]] claim_validations: (Updatable) A list of claim validations
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustClaimValidationArgs', 'DomainsIdentityPropagationTrustClaimValidationArgsDict', 'outputs.DomainsIdentityPropagationTrustClaimValidation']]]] claim_validations: (Updatable) A list of claim validations
                
                **Added In:** 2509172316
                
@@ -2563,7 +2563,7 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                * uniqueness: none
                * caseExact: true
                * idcsSearchable: false
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustImpersonationServiceUserArgs', 'DomainsIdentityPropagationTrustImpersonationServiceUserArgsDict']]]] impersonation_service_users: (Updatable) The Impersonating Principal.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustImpersonationServiceUserArgs', 'DomainsIdentityPropagationTrustImpersonationServiceUserArgsDict', 'outputs.DomainsIdentityPropagationTrustImpersonationServiceUser']]]] impersonation_service_users: (Updatable) The Impersonating Principal.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [rule, value]
@@ -2585,7 +2585,7 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                * caseExact: true
                * idcsSearchable: true
                * uniqueness: server
-        :param pulumi.Input[Union['DomainsIdentityPropagationTrustKeytabArgs', 'DomainsIdentityPropagationTrustKeytabArgsDict']] keytab: (Updatable) The keytab stored in the tenancy's Vault. This is required if the identity propagation type is 'SPNEGO'.
+        :param pulumi.Input[Union['DomainsIdentityPropagationTrustKeytabArgs', 'DomainsIdentityPropagationTrustKeytabArgsDict', 'outputs.DomainsIdentityPropagationTrustKeytab']] keytab: (Updatable) The keytab stored in the tenancy's Vault. This is required if the identity propagation type is 'SPNEGO'.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [secretOcid]
@@ -2692,7 +2692,7 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustTagArgs', 'DomainsIdentityPropagationTrustTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustTagArgs', 'DomainsIdentityPropagationTrustTagArgsDict', 'outputs.DomainsIdentityPropagationTrustTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -2817,18 +2817,18 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                  attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
-                 ca_cert_chain: pulumi.Input[Optional[Union['DomainsIdentityPropagationTrustCaCertChainArgs', 'DomainsIdentityPropagationTrustCaCertChainArgsDict']]] = None,
+                 ca_cert_chain: pulumi.Input[Optional[Union['DomainsIdentityPropagationTrustCaCertChainArgs', 'DomainsIdentityPropagationTrustCaCertChainArgsDict', 'outputs.DomainsIdentityPropagationTrustCaCertChain']]] = None,
                  claim_propagations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 claim_validations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustClaimValidationArgs', 'DomainsIdentityPropagationTrustClaimValidationArgsDict']]]]] = None,
+                 claim_validations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustClaimValidationArgs', 'DomainsIdentityPropagationTrustClaimValidationArgsDict', 'outputs.DomainsIdentityPropagationTrustClaimValidation']]]]] = None,
                  client_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
                  client_claim_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  clock_skew_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  impersonating_resource: pulumi.Input[Optional[_builtins.str]] = None,
-                 impersonation_service_users: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustImpersonationServiceUserArgs', 'DomainsIdentityPropagationTrustImpersonationServiceUserArgsDict']]]]] = None,
+                 impersonation_service_users: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustImpersonationServiceUserArgs', 'DomainsIdentityPropagationTrustImpersonationServiceUserArgsDict', 'outputs.DomainsIdentityPropagationTrustImpersonationServiceUser']]]]] = None,
                  issuer: pulumi.Input[Optional[_builtins.str]] = None,
-                 keytab: pulumi.Input[Optional[Union['DomainsIdentityPropagationTrustKeytabArgs', 'DomainsIdentityPropagationTrustKeytabArgsDict']]] = None,
+                 keytab: pulumi.Input[Optional[Union['DomainsIdentityPropagationTrustKeytabArgs', 'DomainsIdentityPropagationTrustKeytabArgsDict', 'outputs.DomainsIdentityPropagationTrustKeytab']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  oauth_clients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2839,7 +2839,7 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                  subject_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
                  subject_mapping_attribute: pulumi.Input[Optional[_builtins.str]] = None,
                  subject_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustTagArgs', 'DomainsIdentityPropagationTrustTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustTagArgs', 'DomainsIdentityPropagationTrustTagArgsDict', 'outputs.DomainsIdentityPropagationTrustTag']]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -2913,9 +2913,9 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
             attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             attributes: pulumi.Input[Optional[_builtins.str]] = None,
             authorization: pulumi.Input[Optional[_builtins.str]] = None,
-            ca_cert_chain: pulumi.Input[Optional[Union['DomainsIdentityPropagationTrustCaCertChainArgs', 'DomainsIdentityPropagationTrustCaCertChainArgsDict']]] = None,
+            ca_cert_chain: pulumi.Input[Optional[Union['DomainsIdentityPropagationTrustCaCertChainArgs', 'DomainsIdentityPropagationTrustCaCertChainArgsDict', 'outputs.DomainsIdentityPropagationTrustCaCertChain']]] = None,
             claim_propagations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            claim_validations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustClaimValidationArgs', 'DomainsIdentityPropagationTrustClaimValidationArgsDict']]]]] = None,
+            claim_validations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustClaimValidationArgs', 'DomainsIdentityPropagationTrustClaimValidationArgsDict', 'outputs.DomainsIdentityPropagationTrustClaimValidation']]]]] = None,
             client_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
             client_claim_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             clock_skew_seconds: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2923,16 +2923,16 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
             delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustIdcsCreatedByArgs', 'DomainsIdentityPropagationTrustIdcsCreatedByArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustIdcsCreatedByArgs', 'DomainsIdentityPropagationTrustIdcsCreatedByArgsDict', 'outputs.DomainsIdentityPropagationTrustIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustIdcsLastModifiedByArgs', 'DomainsIdentityPropagationTrustIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustIdcsLastModifiedByArgs', 'DomainsIdentityPropagationTrustIdcsLastModifiedByArgsDict', 'outputs.DomainsIdentityPropagationTrustIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             impersonating_resource: pulumi.Input[Optional[_builtins.str]] = None,
-            impersonation_service_users: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustImpersonationServiceUserArgs', 'DomainsIdentityPropagationTrustImpersonationServiceUserArgsDict']]]]] = None,
+            impersonation_service_users: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustImpersonationServiceUserArgs', 'DomainsIdentityPropagationTrustImpersonationServiceUserArgsDict', 'outputs.DomainsIdentityPropagationTrustImpersonationServiceUser']]]]] = None,
             issuer: pulumi.Input[Optional[_builtins.str]] = None,
-            keytab: pulumi.Input[Optional[Union['DomainsIdentityPropagationTrustKeytabArgs', 'DomainsIdentityPropagationTrustKeytabArgsDict']]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustMetaArgs', 'DomainsIdentityPropagationTrustMetaArgsDict']]]]] = None,
+            keytab: pulumi.Input[Optional[Union['DomainsIdentityPropagationTrustKeytabArgs', 'DomainsIdentityPropagationTrustKeytabArgsDict', 'outputs.DomainsIdentityPropagationTrustKeytab']]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustMetaArgs', 'DomainsIdentityPropagationTrustMetaArgsDict', 'outputs.DomainsIdentityPropagationTrustMeta']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             oauth_clients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             ocid: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2943,7 +2943,7 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
             subject_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
             subject_mapping_attribute: pulumi.Input[Optional[_builtins.str]] = None,
             subject_type: pulumi.Input[Optional[_builtins.str]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustTagArgs', 'DomainsIdentityPropagationTrustTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustTagArgs', 'DomainsIdentityPropagationTrustTagArgsDict', 'outputs.DomainsIdentityPropagationTrustTag']]]]] = None,
             tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None) -> 'DomainsIdentityPropagationTrust':
         """
@@ -2987,7 +2987,7 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[_builtins.str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[_builtins.str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[Union['DomainsIdentityPropagationTrustCaCertChainArgs', 'DomainsIdentityPropagationTrustCaCertChainArgsDict']] ca_cert_chain: (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+        :param pulumi.Input[Union['DomainsIdentityPropagationTrustCaCertChainArgs', 'DomainsIdentityPropagationTrustCaCertChainArgsDict', 'outputs.DomainsIdentityPropagationTrustCaCertChain']] ca_cert_chain: (Updatable) Certificate trust store. This is required if identity propagation type is X509.
                
                **Added In:** 2508041610
                
@@ -3011,7 +3011,7 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustClaimValidationArgs', 'DomainsIdentityPropagationTrustClaimValidationArgsDict']]]] claim_validations: (Updatable) A list of claim validations
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustClaimValidationArgs', 'DomainsIdentityPropagationTrustClaimValidationArgsDict', 'outputs.DomainsIdentityPropagationTrustClaimValidation']]]] claim_validations: (Updatable) A list of claim validations
                
                **Added In:** 2509172316
                
@@ -3102,7 +3102,7 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustIdcsCreatedByArgs', 'DomainsIdentityPropagationTrustIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustIdcsCreatedByArgs', 'DomainsIdentityPropagationTrustIdcsCreatedByArgsDict', 'outputs.DomainsIdentityPropagationTrustIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -3112,7 +3112,7 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustIdcsLastModifiedByArgs', 'DomainsIdentityPropagationTrustIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustIdcsLastModifiedByArgs', 'DomainsIdentityPropagationTrustIdcsLastModifiedByArgsDict', 'outputs.DomainsIdentityPropagationTrustIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -3155,7 +3155,7 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                * uniqueness: none
                * caseExact: true
                * idcsSearchable: false
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustImpersonationServiceUserArgs', 'DomainsIdentityPropagationTrustImpersonationServiceUserArgsDict']]]] impersonation_service_users: (Updatable) The Impersonating Principal.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustImpersonationServiceUserArgs', 'DomainsIdentityPropagationTrustImpersonationServiceUserArgsDict', 'outputs.DomainsIdentityPropagationTrustImpersonationServiceUser']]]] impersonation_service_users: (Updatable) The Impersonating Principal.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [rule, value]
@@ -3177,7 +3177,7 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                * caseExact: true
                * idcsSearchable: true
                * uniqueness: server
-        :param pulumi.Input[Union['DomainsIdentityPropagationTrustKeytabArgs', 'DomainsIdentityPropagationTrustKeytabArgsDict']] keytab: (Updatable) The keytab stored in the tenancy's Vault. This is required if the identity propagation type is 'SPNEGO'.
+        :param pulumi.Input[Union['DomainsIdentityPropagationTrustKeytabArgs', 'DomainsIdentityPropagationTrustKeytabArgsDict', 'outputs.DomainsIdentityPropagationTrustKeytab']] keytab: (Updatable) The keytab stored in the tenancy's Vault. This is required if the identity propagation type is 'SPNEGO'.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [secretOcid]
@@ -3188,7 +3188,7 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustMetaArgs', 'DomainsIdentityPropagationTrustMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustMetaArgs', 'DomainsIdentityPropagationTrustMetaArgsDict', 'outputs.DomainsIdentityPropagationTrustMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -3295,7 +3295,7 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustTagArgs', 'DomainsIdentityPropagationTrustTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustTagArgs', 'DomainsIdentityPropagationTrustTagArgsDict', 'outputs.DomainsIdentityPropagationTrustTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]

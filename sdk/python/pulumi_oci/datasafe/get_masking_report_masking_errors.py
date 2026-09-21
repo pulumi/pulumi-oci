@@ -93,7 +93,7 @@ class AwaitableGetMaskingReportMaskingErrorsResult(GetMaskingReportMaskingErrors
             step_name=self.step_name)
 
 
-def get_masking_report_masking_errors(filters: Optional[Sequence[Union['GetMaskingReportMaskingErrorsFilterArgs', 'GetMaskingReportMaskingErrorsFilterArgsDict']]] = None,
+def get_masking_report_masking_errors(filters: Optional[Sequence[Union['GetMaskingReportMaskingErrorsFilterArgs', 'GetMaskingReportMaskingErrorsFilterArgsDict', 'outputs.GetMaskingReportMaskingErrorsFilterResult']]] = None,
                                       masking_report_id: Optional[_builtins.str] = None,
                                       step_name: Optional[_builtins.str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMaskingReportMaskingErrorsResult:
@@ -129,7 +129,7 @@ def get_masking_report_masking_errors(filters: Optional[Sequence[Union['GetMaski
         masking_error_collections=pulumi.get(__ret__, 'masking_error_collections'),
         masking_report_id=pulumi.get(__ret__, 'masking_report_id'),
         step_name=pulumi.get(__ret__, 'step_name'))
-def get_masking_report_masking_errors_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingReportMaskingErrorsFilterArgs', 'GetMaskingReportMaskingErrorsFilterArgsDict']]]]] = None,
+def get_masking_report_masking_errors_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingReportMaskingErrorsFilterArgs', 'GetMaskingReportMaskingErrorsFilterArgsDict', 'outputs.GetMaskingReportMaskingErrorsFilterResult']]]]] = None,
                                              masking_report_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              step_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingReportMaskingErrorsResult]:

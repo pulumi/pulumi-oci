@@ -82,7 +82,7 @@ class AwaitableGetDbHomePatchesResult(GetDbHomePatchesResult):
 
 
 def get_db_home_patches(db_home_id: Optional[_builtins.str] = None,
-                        filters: Optional[Sequence[Union['GetDbHomePatchesFilterArgs', 'GetDbHomePatchesFilterArgsDict']]] = None,
+                        filters: Optional[Sequence[Union['GetDbHomePatchesFilterArgs', 'GetDbHomePatchesFilterArgsDict', 'outputs.GetDbHomePatchesFilterResult']]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbHomePatchesResult:
     """
     This data source provides the list of Db Home Patches in Oracle Cloud Infrastructure Database service.
@@ -113,7 +113,7 @@ def get_db_home_patches(db_home_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         patches=pulumi.get(__ret__, 'patches'))
 def get_db_home_patches_output(db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
-                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbHomePatchesFilterArgs', 'GetDbHomePatchesFilterArgsDict']]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbHomePatchesFilterArgs', 'GetDbHomePatchesFilterArgsDict', 'outputs.GetDbHomePatchesFilterResult']]]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbHomePatchesResult]:
     """
     This data source provides the list of Db Home Patches in Oracle Cloud Infrastructure Database service.

@@ -118,7 +118,7 @@ class AwaitableGetLogAnalyticsObjectCollectionRulesResult(GetLogAnalyticsObjectC
 
 
 def get_log_analytics_object_collection_rules(compartment_id: Optional[_builtins.str] = None,
-                                              filters: Optional[Sequence[Union['GetLogAnalyticsObjectCollectionRulesFilterArgs', 'GetLogAnalyticsObjectCollectionRulesFilterArgsDict']]] = None,
+                                              filters: Optional[Sequence[Union['GetLogAnalyticsObjectCollectionRulesFilterArgs', 'GetLogAnalyticsObjectCollectionRulesFilterArgsDict', 'outputs.GetLogAnalyticsObjectCollectionRulesFilterResult']]] = None,
                                               name: Optional[_builtins.str] = None,
                                               namespace: Optional[_builtins.str] = None,
                                               state: Optional[_builtins.str] = None,
@@ -164,7 +164,7 @@ def get_log_analytics_object_collection_rules(compartment_id: Optional[_builtins
         namespace=pulumi.get(__ret__, 'namespace'),
         state=pulumi.get(__ret__, 'state'))
 def get_log_analytics_object_collection_rules_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLogAnalyticsObjectCollectionRulesFilterArgs', 'GetLogAnalyticsObjectCollectionRulesFilterArgsDict']]]]] = None,
+                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLogAnalyticsObjectCollectionRulesFilterArgs', 'GetLogAnalyticsObjectCollectionRulesFilterArgsDict', 'outputs.GetLogAnalyticsObjectCollectionRulesFilterResult']]]]] = None,
                                                      name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                      namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

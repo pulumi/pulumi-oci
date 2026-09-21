@@ -111,7 +111,7 @@ class AwaitableGetCloudAsmsResult(GetCloudAsmsResult):
 def get_cloud_asms(cloud_db_system_id: Optional[_builtins.str] = None,
                    compartment_id: Optional[_builtins.str] = None,
                    display_name: Optional[_builtins.str] = None,
-                   filters: Optional[Sequence[Union['GetCloudAsmsFilterArgs', 'GetCloudAsmsFilterArgsDict']]] = None,
+                   filters: Optional[Sequence[Union['GetCloudAsmsFilterArgs', 'GetCloudAsmsFilterArgsDict', 'outputs.GetCloudAsmsFilterResult']]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudAsmsResult:
     """
     This data source provides the list of Cloud Asms in Oracle Cloud Infrastructure Database Management service.
@@ -152,7 +152,7 @@ def get_cloud_asms(cloud_db_system_id: Optional[_builtins.str] = None,
 def get_cloud_asms_output(cloud_db_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudAsmsFilterArgs', 'GetCloudAsmsFilterArgsDict']]]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudAsmsFilterArgs', 'GetCloudAsmsFilterArgsDict', 'outputs.GetCloudAsmsFilterResult']]]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudAsmsResult]:
     """
     This data source provides the list of Cloud Asms in Oracle Cloud Infrastructure Database Management service.

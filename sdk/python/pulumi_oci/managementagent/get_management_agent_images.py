@@ -112,7 +112,7 @@ class AwaitableGetManagementAgentImagesResult(GetManagementAgentImagesResult):
 
 
 def get_management_agent_images(compartment_id: Optional[_builtins.str] = None,
-                                filters: Optional[Sequence[Union['GetManagementAgentImagesFilterArgs', 'GetManagementAgentImagesFilterArgsDict']]] = None,
+                                filters: Optional[Sequence[Union['GetManagementAgentImagesFilterArgs', 'GetManagementAgentImagesFilterArgsDict', 'outputs.GetManagementAgentImagesFilterResult']]] = None,
                                 install_type: Optional[_builtins.str] = None,
                                 name: Optional[_builtins.str] = None,
                                 state: Optional[_builtins.str] = None,
@@ -158,7 +158,7 @@ def get_management_agent_images(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
 def get_management_agent_images_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagementAgentImagesFilterArgs', 'GetManagementAgentImagesFilterArgsDict']]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagementAgentImagesFilterArgs', 'GetManagementAgentImagesFilterArgsDict', 'outputs.GetManagementAgentImagesFilterResult']]]]] = None,
                                        install_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

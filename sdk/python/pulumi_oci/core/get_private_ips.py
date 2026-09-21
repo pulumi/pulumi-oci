@@ -146,7 +146,7 @@ class AwaitableGetPrivateIpsResult(GetPrivateIpsResult):
             vnic_id=self.vnic_id)
 
 
-def get_private_ips(filters: Optional[Sequence[Union['GetPrivateIpsFilterArgs', 'GetPrivateIpsFilterArgsDict']]] = None,
+def get_private_ips(filters: Optional[Sequence[Union['GetPrivateIpsFilterArgs', 'GetPrivateIpsFilterArgsDict', 'outputs.GetPrivateIpsFilterResult']]] = None,
                     ip_address: Optional[_builtins.str] = None,
                     ip_state: Optional[_builtins.str] = None,
                     lifetime: Optional[_builtins.str] = None,
@@ -234,7 +234,7 @@ def get_private_ips(filters: Optional[Sequence[Union['GetPrivateIpsFilterArgs', 
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         vlan_id=pulumi.get(__ret__, 'vlan_id'),
         vnic_id=pulumi.get(__ret__, 'vnic_id'))
-def get_private_ips_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPrivateIpsFilterArgs', 'GetPrivateIpsFilterArgsDict']]]]] = None,
+def get_private_ips_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPrivateIpsFilterArgs', 'GetPrivateIpsFilterArgsDict', 'outputs.GetPrivateIpsFilterResult']]]]] = None,
                            ip_address: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            ip_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            lifetime: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

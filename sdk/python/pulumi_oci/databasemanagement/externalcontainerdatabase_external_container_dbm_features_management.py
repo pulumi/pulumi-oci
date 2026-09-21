@@ -200,7 +200,7 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
                  enable_external_container_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
                  external_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  feature: pulumi.Input[Optional[_builtins.str]] = None,
-                 feature_details: pulumi.Input[Optional[Union['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
+                 feature_details: pulumi.Input[Optional[Union['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict', 'outputs.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails']]] = None,
                  __props__=None):
         """
         This resource provides the Externalcontainerdatabase External Container Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
@@ -241,7 +241,7 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] external_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external container database.
-        :param pulumi.Input[Union['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict']] feature_details: The details required to enable the specified Database Management feature.
+        :param pulumi.Input[Union['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict', 'outputs.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails']] feature_details: The details required to enable the specified Database Management feature.
         """
         ...
     @overload
@@ -300,7 +300,7 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
                  enable_external_container_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
                  external_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  feature: pulumi.Input[Optional[_builtins.str]] = None,
-                 feature_details: pulumi.Input[Optional[Union['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
+                 feature_details: pulumi.Input[Optional[Union['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict', 'outputs.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -333,7 +333,7 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
             enable_external_container_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
             external_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
             feature: pulumi.Input[Optional[_builtins.str]] = None,
-            feature_details: pulumi.Input[Optional[Union['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict']]] = None) -> 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement':
+            feature_details: pulumi.Input[Optional[Union['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict', 'outputs.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails']]] = None) -> 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement':
         """
         Get an existing ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -346,7 +346,7 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] external_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external container database.
-        :param pulumi.Input[Union['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict']] feature_details: The details required to enable the specified Database Management feature.
+        :param pulumi.Input[Union['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict', 'outputs.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails']] feature_details: The details required to enable the specified Database Management feature.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

@@ -114,7 +114,7 @@ class AwaitableGetSqlCollectionLogInsightsResult(GetSqlCollectionLogInsightsResu
             time_started=self.time_started)
 
 
-def get_sql_collection_log_insights(filters: Optional[Sequence[Union['GetSqlCollectionLogInsightsFilterArgs', 'GetSqlCollectionLogInsightsFilterArgsDict']]] = None,
+def get_sql_collection_log_insights(filters: Optional[Sequence[Union['GetSqlCollectionLogInsightsFilterArgs', 'GetSqlCollectionLogInsightsFilterArgsDict', 'outputs.GetSqlCollectionLogInsightsFilterResult']]] = None,
                                     group_by: Optional[_builtins.str] = None,
                                     sql_collection_id: Optional[_builtins.str] = None,
                                     time_ended: Optional[_builtins.str] = None,
@@ -160,7 +160,7 @@ def get_sql_collection_log_insights(filters: Optional[Sequence[Union['GetSqlColl
         sql_collection_log_insights_collections=pulumi.get(__ret__, 'sql_collection_log_insights_collections'),
         time_ended=pulumi.get(__ret__, 'time_ended'),
         time_started=pulumi.get(__ret__, 'time_started'))
-def get_sql_collection_log_insights_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSqlCollectionLogInsightsFilterArgs', 'GetSqlCollectionLogInsightsFilterArgsDict']]]]] = None,
+def get_sql_collection_log_insights_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSqlCollectionLogInsightsFilterArgs', 'GetSqlCollectionLogInsightsFilterArgsDict', 'outputs.GetSqlCollectionLogInsightsFilterResult']]]]] = None,
                                            group_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            sql_collection_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            time_ended: pulumi.Input[Optional[_builtins.str]] = None,

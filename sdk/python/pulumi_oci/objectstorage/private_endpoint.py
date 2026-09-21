@@ -553,7 +553,7 @@ class PrivateEndpoint(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PrivateEndpointAccessTargetArgs', 'PrivateEndpointAccessTargetArgsDict']]]]] = None,
+                 access_targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PrivateEndpointAccessTargetArgs', 'PrivateEndpointAccessTargetArgsDict', 'outputs.PrivateEndpointAccessTarget']]]]] = None,
                  additional_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -606,7 +606,7 @@ class PrivateEndpoint(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PrivateEndpointAccessTargetArgs', 'PrivateEndpointAccessTargetArgsDict']]]] access_targets: (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartment_id and bucket.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PrivateEndpointAccessTargetArgs', 'PrivateEndpointAccessTargetArgsDict', 'outputs.PrivateEndpointAccessTarget']]]] access_targets: (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartment_id and bucket.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] additional_prefixes: A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn's are added to the customer VCN's DNS record.
         :param pulumi.Input[_builtins.str] compartment_id: The ID of the compartment in which to create the private endpoint.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -680,7 +680,7 @@ class PrivateEndpoint(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PrivateEndpointAccessTargetArgs', 'PrivateEndpointAccessTargetArgsDict']]]]] = None,
+                 access_targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PrivateEndpointAccessTargetArgs', 'PrivateEndpointAccessTargetArgsDict', 'outputs.PrivateEndpointAccessTarget']]]]] = None,
                  additional_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -741,7 +741,7 @@ class PrivateEndpoint(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PrivateEndpointAccessTargetArgs', 'PrivateEndpointAccessTargetArgsDict']]]]] = None,
+            access_targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PrivateEndpointAccessTargetArgs', 'PrivateEndpointAccessTargetArgsDict', 'outputs.PrivateEndpointAccessTarget']]]]] = None,
             additional_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             created_by: pulumi.Input[Optional[_builtins.str]] = None,
@@ -766,7 +766,7 @@ class PrivateEndpoint(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PrivateEndpointAccessTargetArgs', 'PrivateEndpointAccessTargetArgsDict']]]] access_targets: (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartment_id and bucket.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PrivateEndpointAccessTargetArgs', 'PrivateEndpointAccessTargetArgsDict', 'outputs.PrivateEndpointAccessTarget']]]] access_targets: (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartment_id and bucket.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] additional_prefixes: A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn's are added to the customer VCN's DNS record.
         :param pulumi.Input[_builtins.str] compartment_id: The ID of the compartment in which to create the private endpoint.
         :param pulumi.Input[_builtins.str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.

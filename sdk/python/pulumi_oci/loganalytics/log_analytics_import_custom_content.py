@@ -384,7 +384,7 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            change_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsImportCustomContentChangeListArgs', 'LogAnalyticsImportCustomContentChangeListArgsDict']]]]] = None,
+            change_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsImportCustomContentChangeListArgs', 'LogAnalyticsImportCustomContentChangeListArgsDict', 'outputs.LogAnalyticsImportCustomContentChangeList']]]]] = None,
             content_name: pulumi.Input[Optional[_builtins.str]] = None,
             expect: pulumi.Input[Optional[_builtins.str]] = None,
             field_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -400,7 +400,7 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsImportCustomContentChangeListArgs', 'LogAnalyticsImportCustomContentChangeListArgsDict']]]] change_lists: LogAnalyticsImportCustomChangeList
+        :param pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsImportCustomContentChangeListArgs', 'LogAnalyticsImportCustomContentChangeListArgsDict', 'outputs.LogAnalyticsImportCustomContentChangeList']]]] change_lists: LogAnalyticsImportCustomChangeList
         :param pulumi.Input[_builtins.str] content_name: The content name.
         :param pulumi.Input[_builtins.str] expect: A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
                

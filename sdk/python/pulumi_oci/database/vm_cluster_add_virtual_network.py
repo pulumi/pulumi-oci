@@ -672,7 +672,7 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 db_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkDbServerArgs', 'VmClusterAddVirtualNetworkDbServerArgsDict']]]]] = None,
+                 db_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkDbServerArgs', 'VmClusterAddVirtualNetworkDbServerArgsDict', 'outputs.VmClusterAddVirtualNetworkDbServer']]]]] = None,
                  vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -709,7 +709,7 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkDbServerArgs', 'VmClusterAddVirtualNetworkDbServerArgsDict']]]] db_servers: The list of Exacc DB servers for the cluster to be added.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkDbServerArgs', 'VmClusterAddVirtualNetworkDbServerArgsDict', 'outputs.VmClusterAddVirtualNetworkDbServer']]]] db_servers: The list of Exacc DB servers for the cluster to be added.
         :param pulumi.Input[_builtins.str] vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
                
                ** IMPORTANT **
@@ -768,7 +768,7 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 db_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkDbServerArgs', 'VmClusterAddVirtualNetworkDbServerArgsDict']]]]] = None,
+                 db_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkDbServerArgs', 'VmClusterAddVirtualNetworkDbServerArgsDict', 'outputs.VmClusterAddVirtualNetworkDbServer']]]]] = None,
                  vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -831,21 +831,21 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
-            cloud_automation_update_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgs', 'VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgsDict']]]]] = None,
+            cloud_automation_update_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgs', 'VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgsDict', 'outputs.VmClusterAddVirtualNetworkCloudAutomationUpdateDetail']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             compute_model: pulumi.Input[Optional[_builtins.str]] = None,
             cpus_enabled: pulumi.Input[Optional[_builtins.int]] = None,
-            data_collection_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkDataCollectionOptionArgs', 'VmClusterAddVirtualNetworkDataCollectionOptionArgsDict']]]]] = None,
+            data_collection_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkDataCollectionOptionArgs', 'VmClusterAddVirtualNetworkDataCollectionOptionArgsDict', 'outputs.VmClusterAddVirtualNetworkDataCollectionOption']]]]] = None,
             data_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
             data_storage_size_in_gb: pulumi.Input[Optional[_builtins.float]] = None,
             data_storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
             db_node_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
-            db_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkDbServerArgs', 'VmClusterAddVirtualNetworkDbServerArgsDict']]]]] = None,
+            db_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkDbServerArgs', 'VmClusterAddVirtualNetworkDbServerArgsDict', 'outputs.VmClusterAddVirtualNetworkDbServer']]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
             exascale_db_storage_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
-            file_system_configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgs', 'VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgsDict']]]]] = None,
+            file_system_configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgs', 'VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgsDict', 'outputs.VmClusterAddVirtualNetworkFileSystemConfigurationDetail']]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             gi_version: pulumi.Input[Optional[_builtins.str]] = None,
             is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -875,21 +875,21 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain that the VM cluster is located in.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgs', 'VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgsDict']]]] cloud_automation_update_details: Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgs', 'VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgsDict', 'outputs.VmClusterAddVirtualNetworkCloudAutomationUpdateDetail']]]] cloud_automation_update_details: Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param pulumi.Input[_builtins.int] cpus_enabled: The number of enabled CPU cores.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkDataCollectionOptionArgs', 'VmClusterAddVirtualNetworkDataCollectionOptionArgsDict']]]] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkDataCollectionOptionArgs', 'VmClusterAddVirtualNetworkDataCollectionOptionArgsDict', 'outputs.VmClusterAddVirtualNetworkDataCollectionOption']]]] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[_builtins.int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         :param pulumi.Input[_builtins.float] data_storage_size_in_gb: Size of the DATA disk group in GBs.
         :param pulumi.Input[_builtins.float] data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
         :param pulumi.Input[_builtins.int] db_node_storage_size_in_gbs: The local node storage allocated in GBs.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkDbServerArgs', 'VmClusterAddVirtualNetworkDbServerArgsDict']]]] db_servers: The list of Exacc DB servers for the cluster to be added.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkDbServerArgs', 'VmClusterAddVirtualNetworkDbServerArgsDict', 'outputs.VmClusterAddVirtualNetworkDbServer']]]] db_servers: The list of Exacc DB servers for the cluster to be added.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
         :param pulumi.Input[_builtins.str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] exascale_db_storage_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgs', 'VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgsDict']]]] file_system_configuration_details: Details of the file system configuration of the VM cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgs', 'VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgsDict', 'outputs.VmClusterAddVirtualNetworkFileSystemConfigurationDetail']]]] file_system_configuration_details: Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] gi_version: The Oracle Grid Infrastructure software version for the VM cluster.
         :param pulumi.Input[_builtins.bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.

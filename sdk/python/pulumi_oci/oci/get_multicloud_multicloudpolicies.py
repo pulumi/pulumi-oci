@@ -125,7 +125,7 @@ class AwaitableGetMulticloudMulticloudpoliciesResult(GetMulticloudMulticloudpoli
 
 def get_multicloud_multicloudpolicies(compartment_id: Optional[_builtins.str] = None,
                                       display_name: Optional[_builtins.str] = None,
-                                      filters: Optional[Sequence[Union['GetMulticloudMulticloudpoliciesFilterArgs', 'GetMulticloudMulticloudpoliciesFilterArgsDict']]] = None,
+                                      filters: Optional[Sequence[Union['GetMulticloudMulticloudpoliciesFilterArgs', 'GetMulticloudMulticloudpoliciesFilterArgsDict', 'outputs.GetMulticloudMulticloudpoliciesFilterResult']]] = None,
                                       is_force_refresh: Optional[_builtins.bool] = None,
                                       limit: Optional[_builtins.int] = None,
                                       subscription_id: Optional[_builtins.str] = None,
@@ -174,7 +174,7 @@ def get_multicloud_multicloudpolicies(compartment_id: Optional[_builtins.str] = 
         subscription_id=pulumi.get(__ret__, 'subscription_id'))
 def get_multicloud_multicloudpolicies_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMulticloudMulticloudpoliciesFilterArgs', 'GetMulticloudMulticloudpoliciesFilterArgsDict']]]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMulticloudMulticloudpoliciesFilterArgs', 'GetMulticloudMulticloudpoliciesFilterArgsDict', 'outputs.GetMulticloudMulticloudpoliciesFilterResult']]]]] = None,
                                              is_force_refresh: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                              limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                              subscription_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

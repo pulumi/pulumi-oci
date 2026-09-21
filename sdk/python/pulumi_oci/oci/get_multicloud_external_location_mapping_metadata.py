@@ -109,7 +109,7 @@ class AwaitableGetMulticloudExternalLocationMappingMetadataResult(GetMulticloudE
 
 
 def get_multicloud_external_location_mapping_metadata(compartment_id: Optional[_builtins.str] = None,
-                                                      filters: Optional[Sequence[Union['GetMulticloudExternalLocationMappingMetadataFilterArgs', 'GetMulticloudExternalLocationMappingMetadataFilterArgsDict']]] = None,
+                                                      filters: Optional[Sequence[Union['GetMulticloudExternalLocationMappingMetadataFilterArgs', 'GetMulticloudExternalLocationMappingMetadataFilterArgsDict', 'outputs.GetMulticloudExternalLocationMappingMetadataFilterResult']]] = None,
                                                       limit: Optional[_builtins.int] = None,
                                                       subscription_id: Optional[_builtins.str] = None,
                                                       subscription_service_names: Optional[Sequence[_builtins.str]] = None,
@@ -159,7 +159,7 @@ def get_multicloud_external_location_mapping_metadata(compartment_id: Optional[_
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         subscription_service_names=pulumi.get(__ret__, 'subscription_service_names'))
 def get_multicloud_external_location_mapping_metadata_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMulticloudExternalLocationMappingMetadataFilterArgs', 'GetMulticloudExternalLocationMappingMetadataFilterArgsDict']]]]] = None,
+                                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMulticloudExternalLocationMappingMetadataFilterArgs', 'GetMulticloudExternalLocationMappingMetadataFilterArgsDict', 'outputs.GetMulticloudExternalLocationMappingMetadataFilterResult']]]]] = None,
                                                              limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                              subscription_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                              subscription_service_names: pulumi.Input[Optional[Sequence[_builtins.str]]] = None,

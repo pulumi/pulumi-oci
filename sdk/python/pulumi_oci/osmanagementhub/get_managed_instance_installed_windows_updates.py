@@ -123,7 +123,7 @@ class AwaitableGetManagedInstanceInstalledWindowsUpdatesResult(GetManagedInstanc
 def get_managed_instance_installed_windows_updates(compartment_id: Optional[_builtins.str] = None,
                                                    display_name: Optional[_builtins.str] = None,
                                                    display_name_contains: Optional[_builtins.str] = None,
-                                                   filters: Optional[Sequence[Union['GetManagedInstanceInstalledWindowsUpdatesFilterArgs', 'GetManagedInstanceInstalledWindowsUpdatesFilterArgsDict']]] = None,
+                                                   filters: Optional[Sequence[Union['GetManagedInstanceInstalledWindowsUpdatesFilterArgs', 'GetManagedInstanceInstalledWindowsUpdatesFilterArgsDict', 'outputs.GetManagedInstanceInstalledWindowsUpdatesFilterResult']]] = None,
                                                    managed_instance_id: Optional[_builtins.str] = None,
                                                    names: Optional[Sequence[_builtins.str]] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedInstanceInstalledWindowsUpdatesResult:
@@ -174,7 +174,7 @@ def get_managed_instance_installed_windows_updates(compartment_id: Optional[_bui
 def get_managed_instance_installed_windows_updates_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                           display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceInstalledWindowsUpdatesFilterArgs', 'GetManagedInstanceInstalledWindowsUpdatesFilterArgsDict']]]]] = None,
+                                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceInstalledWindowsUpdatesFilterArgs', 'GetManagedInstanceInstalledWindowsUpdatesFilterArgsDict', 'outputs.GetManagedInstanceInstalledWindowsUpdatesFilterResult']]]]] = None,
                                                           managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                           names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceInstalledWindowsUpdatesResult]:

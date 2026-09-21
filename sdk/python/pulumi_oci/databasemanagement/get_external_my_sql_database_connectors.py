@@ -97,7 +97,7 @@ class AwaitableGetExternalMySqlDatabaseConnectorsResult(GetExternalMySqlDatabase
 
 
 def get_external_my_sql_database_connectors(compartment_id: Optional[_builtins.str] = None,
-                                            filters: Optional[Sequence[Union['GetExternalMySqlDatabaseConnectorsFilterArgs', 'GetExternalMySqlDatabaseConnectorsFilterArgsDict']]] = None,
+                                            filters: Optional[Sequence[Union['GetExternalMySqlDatabaseConnectorsFilterArgs', 'GetExternalMySqlDatabaseConnectorsFilterArgsDict', 'outputs.GetExternalMySqlDatabaseConnectorsFilterResult']]] = None,
                                             name: Optional[_builtins.str] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalMySqlDatabaseConnectorsResult:
     """
@@ -135,7 +135,7 @@ def get_external_my_sql_database_connectors(compartment_id: Optional[_builtins.s
         my_sql_connector_collections=pulumi.get(__ret__, 'my_sql_connector_collections'),
         name=pulumi.get(__ret__, 'name'))
 def get_external_my_sql_database_connectors_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalMySqlDatabaseConnectorsFilterArgs', 'GetExternalMySqlDatabaseConnectorsFilterArgsDict']]]]] = None,
+                                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalMySqlDatabaseConnectorsFilterArgs', 'GetExternalMySqlDatabaseConnectorsFilterArgsDict', 'outputs.GetExternalMySqlDatabaseConnectorsFilterResult']]]]] = None,
                                                    name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalMySqlDatabaseConnectorsResult]:
     """

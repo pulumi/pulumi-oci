@@ -105,7 +105,7 @@ class AwaitableGetDedicatedVmHostInstanceShapesResult(GetDedicatedVmHostInstance
 def get_dedicated_vm_host_instance_shapes(availability_domain: Optional[_builtins.str] = None,
                                           compartment_id: Optional[_builtins.str] = None,
                                           dedicated_vm_host_shape: Optional[_builtins.str] = None,
-                                          filters: Optional[Sequence[Union['GetDedicatedVmHostInstanceShapesFilterArgs', 'GetDedicatedVmHostInstanceShapesFilterArgsDict']]] = None,
+                                          filters: Optional[Sequence[Union['GetDedicatedVmHostInstanceShapesFilterArgs', 'GetDedicatedVmHostInstanceShapesFilterArgsDict', 'outputs.GetDedicatedVmHostInstanceShapesFilterResult']]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDedicatedVmHostInstanceShapesResult:
     """
     This data source provides the list of Dedicated Vm Host Instance Shapes in Oracle Cloud Infrastructure Core service.
@@ -147,7 +147,7 @@ def get_dedicated_vm_host_instance_shapes(availability_domain: Optional[_builtin
 def get_dedicated_vm_host_instance_shapes_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                  dedicated_vm_host_shape: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDedicatedVmHostInstanceShapesFilterArgs', 'GetDedicatedVmHostInstanceShapesFilterArgsDict']]]]] = None,
+                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDedicatedVmHostInstanceShapesFilterArgs', 'GetDedicatedVmHostInstanceShapesFilterArgsDict', 'outputs.GetDedicatedVmHostInstanceShapesFilterResult']]]]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDedicatedVmHostInstanceShapesResult]:
     """
     This data source provides the list of Dedicated Vm Host Instance Shapes in Oracle Cloud Infrastructure Core service.

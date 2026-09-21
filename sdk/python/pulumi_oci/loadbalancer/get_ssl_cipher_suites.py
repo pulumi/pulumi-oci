@@ -81,7 +81,7 @@ class AwaitableGetSslCipherSuitesResult(GetSslCipherSuitesResult):
             ssl_cipher_suites=self.ssl_cipher_suites)
 
 
-def get_ssl_cipher_suites(filters: Optional[Sequence[Union['GetSslCipherSuitesFilterArgs', 'GetSslCipherSuitesFilterArgsDict']]] = None,
+def get_ssl_cipher_suites(filters: Optional[Sequence[Union['GetSslCipherSuitesFilterArgs', 'GetSslCipherSuitesFilterArgsDict', 'outputs.GetSslCipherSuitesFilterResult']]] = None,
                           load_balancer_id: Optional[_builtins.str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSslCipherSuitesResult:
     """
@@ -112,7 +112,7 @@ def get_ssl_cipher_suites(filters: Optional[Sequence[Union['GetSslCipherSuitesFi
         id=pulumi.get(__ret__, 'id'),
         load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'),
         ssl_cipher_suites=pulumi.get(__ret__, 'ssl_cipher_suites'))
-def get_ssl_cipher_suites_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSslCipherSuitesFilterArgs', 'GetSslCipherSuitesFilterArgsDict']]]]] = None,
+def get_ssl_cipher_suites_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSslCipherSuitesFilterArgs', 'GetSslCipherSuitesFilterArgsDict', 'outputs.GetSslCipherSuitesFilterResult']]]]] = None,
                                  load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSslCipherSuitesResult]:
     """

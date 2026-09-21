@@ -119,7 +119,7 @@ class AwaitableGetOpensearchClusterPipelinesResult(GetOpensearchClusterPipelines
 
 def get_opensearch_cluster_pipelines(compartment_id: Optional[_builtins.str] = None,
                                      display_name: Optional[_builtins.str] = None,
-                                     filters: Optional[Sequence[Union['GetOpensearchClusterPipelinesFilterArgs', 'GetOpensearchClusterPipelinesFilterArgsDict']]] = None,
+                                     filters: Optional[Sequence[Union['GetOpensearchClusterPipelinesFilterArgs', 'GetOpensearchClusterPipelinesFilterArgsDict', 'outputs.GetOpensearchClusterPipelinesFilterResult']]] = None,
                                      id: Optional[_builtins.str] = None,
                                      pipeline_component_id: Optional[_builtins.str] = None,
                                      state: Optional[_builtins.str] = None,
@@ -169,7 +169,7 @@ def get_opensearch_cluster_pipelines(compartment_id: Optional[_builtins.str] = N
         state=pulumi.get(__ret__, 'state'))
 def get_opensearch_cluster_pipelines_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOpensearchClusterPipelinesFilterArgs', 'GetOpensearchClusterPipelinesFilterArgsDict']]]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOpensearchClusterPipelinesFilterArgs', 'GetOpensearchClusterPipelinesFilterArgsDict', 'outputs.GetOpensearchClusterPipelinesFilterResult']]]]] = None,
                                             id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             pipeline_component_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

@@ -115,7 +115,7 @@ class AwaitableGetAgentInstallersResult(GetAgentInstallersResult):
 
 
 def get_agent_installers(compartment_id: Optional[_builtins.str] = None,
-                         filters: Optional[Sequence[Union['GetAgentInstallersFilterArgs', 'GetAgentInstallersFilterArgsDict']]] = None,
+                         filters: Optional[Sequence[Union['GetAgentInstallersFilterArgs', 'GetAgentInstallersFilterArgsDict', 'outputs.GetAgentInstallersFilterResult']]] = None,
                          fleet_id: Optional[_builtins.str] = None,
                          os_family: Optional[_builtins.str] = None,
                          platform_architecture: Optional[_builtins.str] = None,
@@ -161,7 +161,7 @@ def get_agent_installers(compartment_id: Optional[_builtins.str] = None,
         os_family=pulumi.get(__ret__, 'os_family'),
         platform_architecture=pulumi.get(__ret__, 'platform_architecture'))
 def get_agent_installers_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAgentInstallersFilterArgs', 'GetAgentInstallersFilterArgsDict']]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAgentInstallersFilterArgs', 'GetAgentInstallersFilterArgsDict', 'outputs.GetAgentInstallersFilterResult']]]]] = None,
                                 fleet_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 os_family: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 platform_architecture: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

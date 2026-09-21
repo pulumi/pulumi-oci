@@ -115,7 +115,7 @@ class AwaitableGetJavaDownloadsJavaLicenseAcceptanceRecordsResult(GetJavaDownloa
 
 
 def get_java_downloads_java_license_acceptance_records(compartment_id: Optional[_builtins.str] = None,
-                                                       filters: Optional[Sequence[Union['GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs', 'GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgsDict']]] = None,
+                                                       filters: Optional[Sequence[Union['GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs', 'GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgsDict', 'outputs.GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterResult']]] = None,
                                                        id: Optional[_builtins.str] = None,
                                                        license_type: Optional[_builtins.str] = None,
                                                        search_by_user: Optional[_builtins.str] = None,
@@ -165,7 +165,7 @@ def get_java_downloads_java_license_acceptance_records(compartment_id: Optional[
         search_by_user=pulumi.get(__ret__, 'search_by_user'),
         status=pulumi.get(__ret__, 'status'))
 def get_java_downloads_java_license_acceptance_records_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs', 'GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgsDict']]]]] = None,
+                                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs', 'GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgsDict', 'outputs.GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterResult']]]]] = None,
                                                               id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                               license_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                               search_by_user: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

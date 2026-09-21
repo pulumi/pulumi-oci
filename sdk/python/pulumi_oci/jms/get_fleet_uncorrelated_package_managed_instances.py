@@ -130,7 +130,7 @@ class AwaitableGetFleetUncorrelatedPackageManagedInstancesResult(GetFleetUncorre
 
 
 def get_fleet_uncorrelated_package_managed_instances(application_id: Optional[_builtins.str] = None,
-                                                     filters: Optional[Sequence[Union['GetFleetUncorrelatedPackageManagedInstancesFilterArgs', 'GetFleetUncorrelatedPackageManagedInstancesFilterArgsDict']]] = None,
+                                                     filters: Optional[Sequence[Union['GetFleetUncorrelatedPackageManagedInstancesFilterArgs', 'GetFleetUncorrelatedPackageManagedInstancesFilterArgsDict', 'outputs.GetFleetUncorrelatedPackageManagedInstancesFilterResult']]] = None,
                                                      fleet_id: Optional[_builtins.str] = None,
                                                      managed_instance_id: Optional[_builtins.str] = None,
                                                      package_name: Optional[_builtins.str] = None,
@@ -186,7 +186,7 @@ def get_fleet_uncorrelated_package_managed_instances(application_id: Optional[_b
         time_start=pulumi.get(__ret__, 'time_start'),
         uncorrelated_package_managed_instance_usage_collections=pulumi.get(__ret__, 'uncorrelated_package_managed_instance_usage_collections'))
 def get_fleet_uncorrelated_package_managed_instances_output(application_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetUncorrelatedPackageManagedInstancesFilterArgs', 'GetFleetUncorrelatedPackageManagedInstancesFilterArgsDict']]]]] = None,
+                                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetUncorrelatedPackageManagedInstancesFilterArgs', 'GetFleetUncorrelatedPackageManagedInstancesFilterArgsDict', 'outputs.GetFleetUncorrelatedPackageManagedInstancesFilterResult']]]]] = None,
                                                             fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                             managed_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                             package_name: pulumi.Input[Optional[_builtins.str]] = None,

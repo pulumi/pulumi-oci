@@ -92,7 +92,7 @@ class AwaitableGetDataKeysResult(GetDataKeysResult):
 
 def get_data_keys(apm_domain_id: Optional[_builtins.str] = None,
                   data_key_type: Optional[_builtins.str] = None,
-                  filters: Optional[Sequence[Union['GetDataKeysFilterArgs', 'GetDataKeysFilterArgsDict']]] = None,
+                  filters: Optional[Sequence[Union['GetDataKeysFilterArgs', 'GetDataKeysFilterArgsDict', 'outputs.GetDataKeysFilterResult']]] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDataKeysResult:
     """
     This data source provides the list of Data Keys in Oracle Cloud Infrastructure Apm service.
@@ -129,7 +129,7 @@ def get_data_keys(apm_domain_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'))
 def get_data_keys_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                          data_key_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDataKeysFilterArgs', 'GetDataKeysFilterArgsDict']]]]] = None,
+                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDataKeysFilterArgs', 'GetDataKeysFilterArgsDict', 'outputs.GetDataKeysFilterResult']]]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataKeysResult]:
     """
     This data source provides the list of Data Keys in Oracle Cloud Infrastructure Apm service.

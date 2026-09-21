@@ -642,17 +642,17 @@ class DatabaseToolsMcpServer(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  access_token_expiry_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 custom_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerCustomRoleArgs', 'DatabaseToolsMcpServerCustomRoleArgsDict']]]]] = None,
+                 custom_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerCustomRoleArgs', 'DatabaseToolsMcpServerCustomRoleArgsDict', 'outputs.DatabaseToolsMcpServerCustomRole']]]]] = None,
                  database_tools_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerLockArgs', 'DatabaseToolsMcpServerLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerLockArgs', 'DatabaseToolsMcpServerLockArgsDict', 'outputs.DatabaseToolsMcpServerLock']]]]] = None,
                  refresh_token_expiry_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  runtime_identity: pulumi.Input[Optional[_builtins.str]] = None,
-                 storage: pulumi.Input[Optional[Union['DatabaseToolsMcpServerStorageArgs', 'DatabaseToolsMcpServerStorageArgsDict']]] = None,
+                 storage: pulumi.Input[Optional[Union['DatabaseToolsMcpServerStorageArgs', 'DatabaseToolsMcpServerStorageArgsDict', 'outputs.DatabaseToolsMcpServerStorage']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -717,17 +717,17 @@ class DatabaseToolsMcpServer(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] access_token_expiry_in_seconds: (Updatable) Access token expiry in seconds
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools MCP server.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerCustomRoleArgs', 'DatabaseToolsMcpServerCustomRoleArgsDict']]]] custom_roles: (Updatable) Custom Roles associated with the MCP Server.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerCustomRoleArgs', 'DatabaseToolsMcpServerCustomRoleArgsDict', 'outputs.DatabaseToolsMcpServerCustomRole']]]] custom_roles: (Updatable) Custom Roles associated with the MCP Server.
         :param pulumi.Input[_builtins.str] database_tools_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Database Tools connection.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A human-readable description of the Database Tools MCP server.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated identity domain.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerLockArgs', 'DatabaseToolsMcpServerLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerLockArgs', 'DatabaseToolsMcpServerLockArgsDict', 'outputs.DatabaseToolsMcpServerLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.int] refresh_token_expiry_in_seconds: (Updatable) Refresh token expiry in seconds
         :param pulumi.Input[_builtins.str] runtime_identity: Specifies the identity used by the Database Tools MCP server to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
-        :param pulumi.Input[Union['DatabaseToolsMcpServerStorageArgs', 'DatabaseToolsMcpServerStorageArgsDict']] storage: (Updatable) The storage option used when running a tool asynchronously.
+        :param pulumi.Input[Union['DatabaseToolsMcpServerStorageArgs', 'DatabaseToolsMcpServerStorageArgsDict', 'outputs.DatabaseToolsMcpServerStorage']] storage: (Updatable) The storage option used when running a tool asynchronously.
         :param pulumi.Input[_builtins.str] type: (Updatable) The Database Tools MCP server type.
                
                ** IMPORTANT **
@@ -814,17 +814,17 @@ class DatabaseToolsMcpServer(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  access_token_expiry_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 custom_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerCustomRoleArgs', 'DatabaseToolsMcpServerCustomRoleArgsDict']]]]] = None,
+                 custom_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerCustomRoleArgs', 'DatabaseToolsMcpServerCustomRoleArgsDict', 'outputs.DatabaseToolsMcpServerCustomRole']]]]] = None,
                  database_tools_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerLockArgs', 'DatabaseToolsMcpServerLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerLockArgs', 'DatabaseToolsMcpServerLockArgsDict', 'outputs.DatabaseToolsMcpServerLock']]]]] = None,
                  refresh_token_expiry_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  runtime_identity: pulumi.Input[Optional[_builtins.str]] = None,
-                 storage: pulumi.Input[Optional[Union['DatabaseToolsMcpServerStorageArgs', 'DatabaseToolsMcpServerStorageArgsDict']]] = None,
+                 storage: pulumi.Input[Optional[Union['DatabaseToolsMcpServerStorageArgs', 'DatabaseToolsMcpServerStorageArgsDict', 'outputs.DatabaseToolsMcpServerStorage']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -881,24 +881,24 @@ class DatabaseToolsMcpServer(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             access_token_expiry_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
-            built_in_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerBuiltInRoleArgs', 'DatabaseToolsMcpServerBuiltInRoleArgsDict']]]]] = None,
+            built_in_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerBuiltInRoleArgs', 'DatabaseToolsMcpServerBuiltInRoleArgsDict', 'outputs.DatabaseToolsMcpServerBuiltInRole']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            custom_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerCustomRoleArgs', 'DatabaseToolsMcpServerCustomRoleArgsDict']]]]] = None,
+            custom_roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerCustomRoleArgs', 'DatabaseToolsMcpServerCustomRoleArgsDict', 'outputs.DatabaseToolsMcpServerCustomRole']]]]] = None,
             database_tools_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             domain_app_id: pulumi.Input[Optional[_builtins.str]] = None,
             domain_id: pulumi.Input[Optional[_builtins.str]] = None,
-            endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerEndpointArgs', 'DatabaseToolsMcpServerEndpointArgsDict']]]]] = None,
+            endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerEndpointArgs', 'DatabaseToolsMcpServerEndpointArgsDict', 'outputs.DatabaseToolsMcpServerEndpoint']]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerLockArgs', 'DatabaseToolsMcpServerLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerLockArgs', 'DatabaseToolsMcpServerLockArgsDict', 'outputs.DatabaseToolsMcpServerLock']]]]] = None,
             refresh_token_expiry_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
-            related_resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerRelatedResourceArgs', 'DatabaseToolsMcpServerRelatedResourceArgsDict']]]]] = None,
+            related_resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerRelatedResourceArgs', 'DatabaseToolsMcpServerRelatedResourceArgsDict', 'outputs.DatabaseToolsMcpServerRelatedResource']]]]] = None,
             runtime_identity: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            storage: pulumi.Input[Optional[Union['DatabaseToolsMcpServerStorageArgs', 'DatabaseToolsMcpServerStorageArgsDict']]] = None,
+            storage: pulumi.Input[Optional[Union['DatabaseToolsMcpServerStorageArgs', 'DatabaseToolsMcpServerStorageArgsDict', 'outputs.DatabaseToolsMcpServerStorage']]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
@@ -911,24 +911,24 @@ class DatabaseToolsMcpServer(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] access_token_expiry_in_seconds: (Updatable) Access token expiry in seconds
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerBuiltInRoleArgs', 'DatabaseToolsMcpServerBuiltInRoleArgsDict']]]] built_in_roles: Built-in roles associated with the MCP Server.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerBuiltInRoleArgs', 'DatabaseToolsMcpServerBuiltInRoleArgsDict', 'outputs.DatabaseToolsMcpServerBuiltInRole']]]] built_in_roles: Built-in roles associated with the MCP Server.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools MCP server.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerCustomRoleArgs', 'DatabaseToolsMcpServerCustomRoleArgsDict']]]] custom_roles: (Updatable) Custom Roles associated with the MCP Server.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerCustomRoleArgs', 'DatabaseToolsMcpServerCustomRoleArgsDict', 'outputs.DatabaseToolsMcpServerCustomRole']]]] custom_roles: (Updatable) Custom Roles associated with the MCP Server.
         :param pulumi.Input[_builtins.str] database_tools_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Database Tools connection.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A human-readable description of the Database Tools MCP server.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] domain_app_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated domain application (Oracle Cloud Service).
         :param pulumi.Input[_builtins.str] domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated identity domain.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerEndpointArgs', 'DatabaseToolsMcpServerEndpointArgsDict']]]] endpoints: Invoke endpoints for the MCP server.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerEndpointArgs', 'DatabaseToolsMcpServerEndpointArgsDict', 'outputs.DatabaseToolsMcpServerEndpoint']]]] endpoints: Invoke endpoints for the MCP server.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerLockArgs', 'DatabaseToolsMcpServerLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerLockArgs', 'DatabaseToolsMcpServerLockArgsDict', 'outputs.DatabaseToolsMcpServerLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.int] refresh_token_expiry_in_seconds: (Updatable) Refresh token expiry in seconds
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerRelatedResourceArgs', 'DatabaseToolsMcpServerRelatedResourceArgsDict']]]] related_resources: A related resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpServerRelatedResourceArgs', 'DatabaseToolsMcpServerRelatedResourceArgsDict', 'outputs.DatabaseToolsMcpServerRelatedResource']]]] related_resources: A related resource
         :param pulumi.Input[_builtins.str] runtime_identity: Specifies the identity used by the Database Tools MCP server to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
         :param pulumi.Input[_builtins.str] state: The current state of the Database Tools MCP server.
-        :param pulumi.Input[Union['DatabaseToolsMcpServerStorageArgs', 'DatabaseToolsMcpServerStorageArgsDict']] storage: (Updatable) The storage option used when running a tool asynchronously.
+        :param pulumi.Input[Union['DatabaseToolsMcpServerStorageArgs', 'DatabaseToolsMcpServerStorageArgsDict', 'outputs.DatabaseToolsMcpServerStorage']] storage: (Updatable) The storage option used when running a tool asynchronously.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time the Database Tools MCP server was updated. An RFC3339 formatted datetime string.

@@ -122,7 +122,7 @@ class AwaitableGetModelsResult(GetModelsResult):
 
 def get_models(compartment_id: Optional[_builtins.str] = None,
                display_name: Optional[_builtins.str] = None,
-               filters: Optional[Sequence[Union['GetModelsFilterArgs', 'GetModelsFilterArgsDict']]] = None,
+               filters: Optional[Sequence[Union['GetModelsFilterArgs', 'GetModelsFilterArgsDict', 'outputs.GetModelsFilterResult']]] = None,
                id: Optional[_builtins.str] = None,
                project_id: Optional[_builtins.str] = None,
                state: Optional[_builtins.str] = None,
@@ -161,7 +161,7 @@ def get_models(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_models_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetModelsFilterArgs', 'GetModelsFilterArgsDict']]]]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetModelsFilterArgs', 'GetModelsFilterArgsDict', 'outputs.GetModelsFilterResult']]]]] = None,
                       id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       project_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

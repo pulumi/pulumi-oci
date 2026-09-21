@@ -184,7 +184,7 @@ class AwaitableGetInstallationSitesResult(GetInstallationSitesResult):
 
 
 def get_installation_sites(application_id: Optional[_builtins.str] = None,
-                           filters: Optional[Sequence[Union['GetInstallationSitesFilterArgs', 'GetInstallationSitesFilterArgsDict']]] = None,
+                           filters: Optional[Sequence[Union['GetInstallationSitesFilterArgs', 'GetInstallationSitesFilterArgsDict', 'outputs.GetInstallationSitesFilterResult']]] = None,
                            fleet_id: Optional[_builtins.str] = None,
                            installation_path: Optional[_builtins.str] = None,
                            jre_distribution: Optional[_builtins.str] = None,
@@ -270,7 +270,7 @@ def get_installation_sites(application_id: Optional[_builtins.str] = None,
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
 def get_installation_sites_output(application_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstallationSitesFilterArgs', 'GetInstallationSitesFilterArgsDict']]]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstallationSitesFilterArgs', 'GetInstallationSitesFilterArgsDict', 'outputs.GetInstallationSitesFilterResult']]]]] = None,
                                   fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   installation_path: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   jre_distribution: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

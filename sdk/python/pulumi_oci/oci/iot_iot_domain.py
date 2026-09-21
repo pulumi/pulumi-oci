@@ -528,7 +528,7 @@ class IotIotDomain(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            data_retention_periods_in_days: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IotIotDomainDataRetentionPeriodsInDayArgs', 'IotIotDomainDataRetentionPeriodsInDayArgsDict']]]]] = None,
+            data_retention_periods_in_days: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IotIotDomainDataRetentionPeriodsInDayArgs', 'IotIotDomainDataRetentionPeriodsInDayArgsDict', 'outputs.IotIotDomainDataRetentionPeriodsInDay']]]]] = None,
             db_allow_listed_identity_group_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             db_allowed_identity_domain_host: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -549,7 +549,7 @@ class IotIotDomain(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment corresponding to the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IotIotDomainDataRetentionPeriodsInDayArgs', 'IotIotDomainDataRetentionPeriodsInDayArgsDict']]]] data_retention_periods_in_days: Data Retention periods
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IotIotDomainDataRetentionPeriodsInDayArgs', 'IotIotDomainDataRetentionPeriodsInDayArgsDict', 'outputs.IotIotDomainDataRetentionPeriodsInDay']]]] data_retention_periods_in_days: Data Retention periods
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] db_allow_listed_identity_group_names: List of IAM groups of form described in [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/mnqmn/#GUID-3634D6C9-A7F1-4875-9925-BAEA2D3C5197) that are allowed to directly connect to the data host.
         :param pulumi.Input[_builtins.str] db_allowed_identity_domain_host: Host name of identity domain that is used for authenticating connect to data host via ORDS.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`

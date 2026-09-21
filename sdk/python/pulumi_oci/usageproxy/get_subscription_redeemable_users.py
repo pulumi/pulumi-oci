@@ -90,7 +90,7 @@ class AwaitableGetSubscriptionRedeemableUsersResult(GetSubscriptionRedeemableUse
             tenancy_id=self.tenancy_id)
 
 
-def get_subscription_redeemable_users(filters: Optional[Sequence[Union['GetSubscriptionRedeemableUsersFilterArgs', 'GetSubscriptionRedeemableUsersFilterArgsDict']]] = None,
+def get_subscription_redeemable_users(filters: Optional[Sequence[Union['GetSubscriptionRedeemableUsersFilterArgs', 'GetSubscriptionRedeemableUsersFilterArgsDict', 'outputs.GetSubscriptionRedeemableUsersFilterResult']]] = None,
                                       subscription_id: Optional[_builtins.str] = None,
                                       tenancy_id: Optional[_builtins.str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSubscriptionRedeemableUsersResult:
@@ -126,7 +126,7 @@ def get_subscription_redeemable_users(filters: Optional[Sequence[Union['GetSubsc
         redeemable_user_collections=pulumi.get(__ret__, 'redeemable_user_collections'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'))
-def get_subscription_redeemable_users_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionRedeemableUsersFilterArgs', 'GetSubscriptionRedeemableUsersFilterArgsDict']]]]] = None,
+def get_subscription_redeemable_users_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionRedeemableUsersFilterArgs', 'GetSubscriptionRedeemableUsersFilterArgsDict', 'outputs.GetSubscriptionRedeemableUsersFilterResult']]]]] = None,
                                              subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionRedeemableUsersResult]:

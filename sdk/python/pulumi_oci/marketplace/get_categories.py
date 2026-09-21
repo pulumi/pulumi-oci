@@ -82,7 +82,7 @@ class AwaitableGetCategoriesResult(GetCategoriesResult):
 
 
 def get_categories(compartment_id: Optional[_builtins.str] = None,
-                   filters: Optional[Sequence[Union['GetCategoriesFilterArgs', 'GetCategoriesFilterArgsDict']]] = None,
+                   filters: Optional[Sequence[Union['GetCategoriesFilterArgs', 'GetCategoriesFilterArgsDict', 'outputs.GetCategoriesFilterResult']]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCategoriesResult:
     """
     This data source provides the list of Categories in Oracle Cloud Infrastructure Marketplace service.
@@ -114,7 +114,7 @@ def get_categories(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_categories_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCategoriesFilterArgs', 'GetCategoriesFilterArgsDict']]]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCategoriesFilterArgs', 'GetCategoriesFilterArgsDict', 'outputs.GetCategoriesFilterResult']]]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCategoriesResult]:
     """
     This data source provides the list of Categories in Oracle Cloud Infrastructure Marketplace service.

@@ -128,7 +128,7 @@ class AwaitableGetSchedulesResult(GetSchedulesResult):
 
 def get_schedules(compartment_id: Optional[_builtins.str] = None,
                   display_name: Optional[_builtins.str] = None,
-                  filters: Optional[Sequence[Union['GetSchedulesFilterArgs', 'GetSchedulesFilterArgsDict']]] = None,
+                  filters: Optional[Sequence[Union['GetSchedulesFilterArgs', 'GetSchedulesFilterArgsDict', 'outputs.GetSchedulesFilterResult']]] = None,
                   resource_id: Optional[_builtins.str] = None,
                   schedule_id: Optional[_builtins.str] = None,
                   state: Optional[_builtins.str] = None,
@@ -177,7 +177,7 @@ def get_schedules(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_schedules_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulesFilterArgs', 'GetSchedulesFilterArgsDict']]]]] = None,
+                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulesFilterArgs', 'GetSchedulesFilterArgsDict', 'outputs.GetSchedulesFilterResult']]]]] = None,
                          resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          schedule_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

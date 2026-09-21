@@ -91,7 +91,7 @@ class AwaitableGetNetworkFirewallPolicyAddressListsResult(GetNetworkFirewallPoli
 
 
 def get_network_firewall_policy_address_lists(display_name: Optional[_builtins.str] = None,
-                                              filters: Optional[Sequence[Union['GetNetworkFirewallPolicyAddressListsFilterArgs', 'GetNetworkFirewallPolicyAddressListsFilterArgsDict']]] = None,
+                                              filters: Optional[Sequence[Union['GetNetworkFirewallPolicyAddressListsFilterArgs', 'GetNetworkFirewallPolicyAddressListsFilterArgsDict', 'outputs.GetNetworkFirewallPolicyAddressListsFilterResult']]] = None,
                                               network_firewall_policy_id: Optional[_builtins.str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyAddressListsResult:
     """
@@ -127,7 +127,7 @@ def get_network_firewall_policy_address_lists(display_name: Optional[_builtins.s
         id=pulumi.get(__ret__, 'id'),
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'))
 def get_network_firewall_policy_address_lists_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPolicyAddressListsFilterArgs', 'GetNetworkFirewallPolicyAddressListsFilterArgsDict']]]]] = None,
+                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPolicyAddressListsFilterArgs', 'GetNetworkFirewallPolicyAddressListsFilterArgsDict', 'outputs.GetNetworkFirewallPolicyAddressListsFilterResult']]]]] = None,
                                                      network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyAddressListsResult]:
     """

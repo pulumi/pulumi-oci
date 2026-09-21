@@ -648,16 +648,16 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bgp_session_info: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementBgpSessionInfoArgs', 'IpsecConnectionTunnelManagementBgpSessionInfoArgsDict']]] = None,
+                 bgp_session_info: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementBgpSessionInfoArgs', 'IpsecConnectionTunnelManagementBgpSessionInfoArgsDict', 'outputs.IpsecConnectionTunnelManagementBgpSessionInfo']]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 dpd_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IpsecConnectionTunnelManagementDpdConfigArgs', 'IpsecConnectionTunnelManagementDpdConfigArgsDict']]]]] = None,
-                 encryption_domain_config: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs', 'IpsecConnectionTunnelManagementEncryptionDomainConfigArgsDict']]] = None,
+                 dpd_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IpsecConnectionTunnelManagementDpdConfigArgs', 'IpsecConnectionTunnelManagementDpdConfigArgsDict', 'outputs.IpsecConnectionTunnelManagementDpdConfig']]]]] = None,
+                 encryption_domain_config: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs', 'IpsecConnectionTunnelManagementEncryptionDomainConfigArgsDict', 'outputs.IpsecConnectionTunnelManagementEncryptionDomainConfig']]] = None,
                  ike_version: pulumi.Input[Optional[_builtins.str]] = None,
                  ipsec_id: pulumi.Input[Optional[_builtins.str]] = None,
                  nat_translation_enabled: pulumi.Input[Optional[_builtins.str]] = None,
                  oracle_can_initiate: pulumi.Input[Optional[_builtins.str]] = None,
-                 phase_one_details: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementPhaseOneDetailsArgs', 'IpsecConnectionTunnelManagementPhaseOneDetailsArgsDict']]] = None,
-                 phase_two_details: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs', 'IpsecConnectionTunnelManagementPhaseTwoDetailsArgsDict']]] = None,
+                 phase_one_details: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementPhaseOneDetailsArgs', 'IpsecConnectionTunnelManagementPhaseOneDetailsArgsDict', 'outputs.IpsecConnectionTunnelManagementPhaseOneDetails']]] = None,
+                 phase_two_details: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs', 'IpsecConnectionTunnelManagementPhaseTwoDetailsArgsDict', 'outputs.IpsecConnectionTunnelManagementPhaseTwoDetails']]] = None,
                  routing: pulumi.Input[Optional[_builtins.str]] = None,
                  shared_secret: pulumi.Input[Optional[_builtins.str]] = None,
                  tunnel_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -711,11 +711,11 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['IpsecConnectionTunnelManagementBgpSessionInfoArgs', 'IpsecConnectionTunnelManagementBgpSessionInfoArgsDict']] bgp_session_info: Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+        :param pulumi.Input[Union['IpsecConnectionTunnelManagementBgpSessionInfoArgs', 'IpsecConnectionTunnelManagementBgpSessionInfoArgsDict', 'outputs.IpsecConnectionTunnelManagementBgpSessionInfo']] bgp_session_info: Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
                
                If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Union['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs', 'IpsecConnectionTunnelManagementEncryptionDomainConfigArgsDict']] encryption_domain_config: Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
+        :param pulumi.Input[Union['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs', 'IpsecConnectionTunnelManagementEncryptionDomainConfigArgsDict', 'outputs.IpsecConnectionTunnelManagementEncryptionDomainConfig']] encryption_domain_config: Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
         :param pulumi.Input[_builtins.str] ike_version: Internet Key Exchange protocol version.
         :param pulumi.Input[_builtins.str] ipsec_id: The OCID of the IPSec connection.
         :param pulumi.Input[_builtins.str] nat_translation_enabled: By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
@@ -724,10 +724,10 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
                
                The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
         :param pulumi.Input[_builtins.str] oracle_can_initiate: Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
-        :param pulumi.Input[Union['IpsecConnectionTunnelManagementPhaseOneDetailsArgs', 'IpsecConnectionTunnelManagementPhaseOneDetailsArgsDict']] phase_one_details: Configuration details for IKE phase one (ISAKMP) configuration parameters.
+        :param pulumi.Input[Union['IpsecConnectionTunnelManagementPhaseOneDetailsArgs', 'IpsecConnectionTunnelManagementPhaseOneDetailsArgsDict', 'outputs.IpsecConnectionTunnelManagementPhaseOneDetails']] phase_one_details: Configuration details for IKE phase one (ISAKMP) configuration parameters.
                
                See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
-        :param pulumi.Input[Union['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs', 'IpsecConnectionTunnelManagementPhaseTwoDetailsArgsDict']] phase_two_details: Configuration details for IPSec phase two configuration parameters.
+        :param pulumi.Input[Union['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs', 'IpsecConnectionTunnelManagementPhaseTwoDetailsArgsDict', 'outputs.IpsecConnectionTunnelManagementPhaseTwoDetails']] phase_two_details: Configuration details for IPSec phase two configuration parameters.
                
                See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
         :param pulumi.Input[_builtins.str] routing: The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
@@ -802,16 +802,16 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bgp_session_info: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementBgpSessionInfoArgs', 'IpsecConnectionTunnelManagementBgpSessionInfoArgsDict']]] = None,
+                 bgp_session_info: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementBgpSessionInfoArgs', 'IpsecConnectionTunnelManagementBgpSessionInfoArgsDict', 'outputs.IpsecConnectionTunnelManagementBgpSessionInfo']]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 dpd_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IpsecConnectionTunnelManagementDpdConfigArgs', 'IpsecConnectionTunnelManagementDpdConfigArgsDict']]]]] = None,
-                 encryption_domain_config: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs', 'IpsecConnectionTunnelManagementEncryptionDomainConfigArgsDict']]] = None,
+                 dpd_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IpsecConnectionTunnelManagementDpdConfigArgs', 'IpsecConnectionTunnelManagementDpdConfigArgsDict', 'outputs.IpsecConnectionTunnelManagementDpdConfig']]]]] = None,
+                 encryption_domain_config: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs', 'IpsecConnectionTunnelManagementEncryptionDomainConfigArgsDict', 'outputs.IpsecConnectionTunnelManagementEncryptionDomainConfig']]] = None,
                  ike_version: pulumi.Input[Optional[_builtins.str]] = None,
                  ipsec_id: pulumi.Input[Optional[_builtins.str]] = None,
                  nat_translation_enabled: pulumi.Input[Optional[_builtins.str]] = None,
                  oracle_can_initiate: pulumi.Input[Optional[_builtins.str]] = None,
-                 phase_one_details: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementPhaseOneDetailsArgs', 'IpsecConnectionTunnelManagementPhaseOneDetailsArgsDict']]] = None,
-                 phase_two_details: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs', 'IpsecConnectionTunnelManagementPhaseTwoDetailsArgsDict']]] = None,
+                 phase_one_details: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementPhaseOneDetailsArgs', 'IpsecConnectionTunnelManagementPhaseOneDetailsArgsDict', 'outputs.IpsecConnectionTunnelManagementPhaseOneDetails']]] = None,
+                 phase_two_details: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs', 'IpsecConnectionTunnelManagementPhaseTwoDetailsArgsDict', 'outputs.IpsecConnectionTunnelManagementPhaseTwoDetails']]] = None,
                  routing: pulumi.Input[Optional[_builtins.str]] = None,
                  shared_secret: pulumi.Input[Optional[_builtins.str]] = None,
                  tunnel_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -864,20 +864,20 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             associated_virtual_circuits: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            bgp_session_info: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementBgpSessionInfoArgs', 'IpsecConnectionTunnelManagementBgpSessionInfoArgsDict']]] = None,
+            bgp_session_info: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementBgpSessionInfoArgs', 'IpsecConnectionTunnelManagementBgpSessionInfoArgsDict', 'outputs.IpsecConnectionTunnelManagementBgpSessionInfo']]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             cpe_ip: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            dpd_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IpsecConnectionTunnelManagementDpdConfigArgs', 'IpsecConnectionTunnelManagementDpdConfigArgsDict']]]]] = None,
+            dpd_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IpsecConnectionTunnelManagementDpdConfigArgs', 'IpsecConnectionTunnelManagementDpdConfigArgsDict', 'outputs.IpsecConnectionTunnelManagementDpdConfig']]]]] = None,
             dpd_mode: pulumi.Input[Optional[_builtins.str]] = None,
             dpd_timeout_in_sec: pulumi.Input[Optional[_builtins.int]] = None,
-            encryption_domain_config: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs', 'IpsecConnectionTunnelManagementEncryptionDomainConfigArgsDict']]] = None,
+            encryption_domain_config: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs', 'IpsecConnectionTunnelManagementEncryptionDomainConfigArgsDict', 'outputs.IpsecConnectionTunnelManagementEncryptionDomainConfig']]] = None,
             ike_version: pulumi.Input[Optional[_builtins.str]] = None,
             ipsec_id: pulumi.Input[Optional[_builtins.str]] = None,
             nat_translation_enabled: pulumi.Input[Optional[_builtins.str]] = None,
             oracle_can_initiate: pulumi.Input[Optional[_builtins.str]] = None,
-            phase_one_details: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementPhaseOneDetailsArgs', 'IpsecConnectionTunnelManagementPhaseOneDetailsArgsDict']]] = None,
-            phase_two_details: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs', 'IpsecConnectionTunnelManagementPhaseTwoDetailsArgsDict']]] = None,
+            phase_one_details: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementPhaseOneDetailsArgs', 'IpsecConnectionTunnelManagementPhaseOneDetailsArgsDict', 'outputs.IpsecConnectionTunnelManagementPhaseOneDetails']]] = None,
+            phase_two_details: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs', 'IpsecConnectionTunnelManagementPhaseTwoDetailsArgsDict', 'outputs.IpsecConnectionTunnelManagementPhaseTwoDetails']]] = None,
             routing: pulumi.Input[Optional[_builtins.str]] = None,
             shared_secret: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -894,7 +894,7 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] associated_virtual_circuits: The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
-        :param pulumi.Input[Union['IpsecConnectionTunnelManagementBgpSessionInfoArgs', 'IpsecConnectionTunnelManagementBgpSessionInfoArgsDict']] bgp_session_info: Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+        :param pulumi.Input[Union['IpsecConnectionTunnelManagementBgpSessionInfoArgs', 'IpsecConnectionTunnelManagementBgpSessionInfoArgsDict', 'outputs.IpsecConnectionTunnelManagementBgpSessionInfo']] bgp_session_info: Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
                
                If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
@@ -902,7 +902,7 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] dpd_mode: Dead peer detection (DPD) mode set on the Oracle side of the connection.
         :param pulumi.Input[_builtins.int] dpd_timeout_in_sec: DPD timeout in seconds.
-        :param pulumi.Input[Union['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs', 'IpsecConnectionTunnelManagementEncryptionDomainConfigArgsDict']] encryption_domain_config: Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
+        :param pulumi.Input[Union['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs', 'IpsecConnectionTunnelManagementEncryptionDomainConfigArgsDict', 'outputs.IpsecConnectionTunnelManagementEncryptionDomainConfig']] encryption_domain_config: Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
         :param pulumi.Input[_builtins.str] ike_version: Internet Key Exchange protocol version.
         :param pulumi.Input[_builtins.str] ipsec_id: The OCID of the IPSec connection.
         :param pulumi.Input[_builtins.str] nat_translation_enabled: By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
@@ -911,10 +911,10 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
                
                The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
         :param pulumi.Input[_builtins.str] oracle_can_initiate: Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
-        :param pulumi.Input[Union['IpsecConnectionTunnelManagementPhaseOneDetailsArgs', 'IpsecConnectionTunnelManagementPhaseOneDetailsArgsDict']] phase_one_details: Configuration details for IKE phase one (ISAKMP) configuration parameters.
+        :param pulumi.Input[Union['IpsecConnectionTunnelManagementPhaseOneDetailsArgs', 'IpsecConnectionTunnelManagementPhaseOneDetailsArgsDict', 'outputs.IpsecConnectionTunnelManagementPhaseOneDetails']] phase_one_details: Configuration details for IKE phase one (ISAKMP) configuration parameters.
                
                See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
-        :param pulumi.Input[Union['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs', 'IpsecConnectionTunnelManagementPhaseTwoDetailsArgsDict']] phase_two_details: Configuration details for IPSec phase two configuration parameters.
+        :param pulumi.Input[Union['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs', 'IpsecConnectionTunnelManagementPhaseTwoDetailsArgsDict', 'outputs.IpsecConnectionTunnelManagementPhaseTwoDetails']] phase_two_details: Configuration details for IPSec phase two configuration parameters.
                
                See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
         :param pulumi.Input[_builtins.str] routing: The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).

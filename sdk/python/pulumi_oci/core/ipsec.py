@@ -499,7 +499,7 @@ class Ipsec(pulumi.CustomResource):
                  drg_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  static_routes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tunnel_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IpsecTunnelConfigurationArgs', 'IpsecTunnelConfigurationArgsDict']]]]] = None,
+                 tunnel_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IpsecTunnelConfigurationArgs', 'IpsecTunnelConfigurationArgsDict', 'outputs.IpsecTunnelConfiguration']]]]] = None,
                  __props__=None):
         """
         This resource provides the Ip Sec Connection resource in Oracle Cloud Infrastructure Core service.
@@ -622,7 +622,7 @@ class Ipsec(pulumi.CustomResource):
                Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
                
                Example: `10.0.1.0/24`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IpsecTunnelConfigurationArgs', 'IpsecTunnelConfigurationArgsDict']]]] tunnel_configurations: (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IpsecTunnelConfigurationArgs', 'IpsecTunnelConfigurationArgsDict', 'outputs.IpsecTunnelConfiguration']]]] tunnel_configurations: (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
                
                Example: `tunnel_configuration {
                oracle_tunnel_ip = "10.1.5.5"
@@ -761,7 +761,7 @@ class Ipsec(pulumi.CustomResource):
                  drg_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  static_routes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tunnel_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IpsecTunnelConfigurationArgs', 'IpsecTunnelConfigurationArgsDict']]]]] = None,
+                 tunnel_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IpsecTunnelConfigurationArgs', 'IpsecTunnelConfigurationArgsDict', 'outputs.IpsecTunnelConfiguration']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -814,7 +814,7 @@ class Ipsec(pulumi.CustomResource):
             static_routes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             transport_type: pulumi.Input[Optional[_builtins.str]] = None,
-            tunnel_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IpsecTunnelConfigurationArgs', 'IpsecTunnelConfigurationArgsDict']]]]] = None) -> 'Ipsec':
+            tunnel_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IpsecTunnelConfigurationArgs', 'IpsecTunnelConfigurationArgsDict', 'outputs.IpsecTunnelConfiguration']]]]] = None) -> 'Ipsec':
         """
         Get an existing Ipsec resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -846,7 +846,7 @@ class Ipsec(pulumi.CustomResource):
                Example: `10.0.1.0/24`
         :param pulumi.Input[_builtins.str] time_created: The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] transport_type: The transport type used for the IPSec connection.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IpsecTunnelConfigurationArgs', 'IpsecTunnelConfigurationArgsDict']]]] tunnel_configurations: (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IpsecTunnelConfigurationArgs', 'IpsecTunnelConfigurationArgsDict', 'outputs.IpsecTunnelConfiguration']]]] tunnel_configurations: (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
                
                Example: `tunnel_configuration {
                oracle_tunnel_ip = "10.1.5.5"

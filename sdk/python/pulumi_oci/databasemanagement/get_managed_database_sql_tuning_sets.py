@@ -114,7 +114,7 @@ class AwaitableGetManagedDatabaseSqlTuningSetsResult(GetManagedDatabaseSqlTuning
             sql_tuning_set_collections=self.sql_tuning_set_collections)
 
 
-def get_managed_database_sql_tuning_sets(filters: Optional[Sequence[Union['GetManagedDatabaseSqlTuningSetsFilterArgs', 'GetManagedDatabaseSqlTuningSetsFilterArgsDict']]] = None,
+def get_managed_database_sql_tuning_sets(filters: Optional[Sequence[Union['GetManagedDatabaseSqlTuningSetsFilterArgs', 'GetManagedDatabaseSqlTuningSetsFilterArgsDict', 'outputs.GetManagedDatabaseSqlTuningSetsFilterResult']]] = None,
                                          managed_database_id: Optional[_builtins.str] = None,
                                          name_contains: Optional[_builtins.str] = None,
                                          opc_named_credential_id: Optional[_builtins.str] = None,
@@ -160,7 +160,7 @@ def get_managed_database_sql_tuning_sets(filters: Optional[Sequence[Union['GetMa
         opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         owner=pulumi.get(__ret__, 'owner'),
         sql_tuning_set_collections=pulumi.get(__ret__, 'sql_tuning_set_collections'))
-def get_managed_database_sql_tuning_sets_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseSqlTuningSetsFilterArgs', 'GetManagedDatabaseSqlTuningSetsFilterArgsDict']]]]] = None,
+def get_managed_database_sql_tuning_sets_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseSqlTuningSetsFilterArgs', 'GetManagedDatabaseSqlTuningSetsFilterArgsDict', 'outputs.GetManagedDatabaseSqlTuningSetsFilterResult']]]]] = None,
                                                 managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                 name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

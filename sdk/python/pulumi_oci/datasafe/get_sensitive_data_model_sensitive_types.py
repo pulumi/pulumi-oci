@@ -93,7 +93,7 @@ class AwaitableGetSensitiveDataModelSensitiveTypesResult(GetSensitiveDataModelSe
             sensitive_type_id=self.sensitive_type_id)
 
 
-def get_sensitive_data_model_sensitive_types(filters: Optional[Sequence[Union['GetSensitiveDataModelSensitiveTypesFilterArgs', 'GetSensitiveDataModelSensitiveTypesFilterArgsDict']]] = None,
+def get_sensitive_data_model_sensitive_types(filters: Optional[Sequence[Union['GetSensitiveDataModelSensitiveTypesFilterArgs', 'GetSensitiveDataModelSensitiveTypesFilterArgsDict', 'outputs.GetSensitiveDataModelSensitiveTypesFilterResult']]] = None,
                                              sensitive_data_model_id: Optional[_builtins.str] = None,
                                              sensitive_type_id: Optional[_builtins.str] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSensitiveDataModelSensitiveTypesResult:
@@ -129,7 +129,7 @@ def get_sensitive_data_model_sensitive_types(filters: Optional[Sequence[Union['G
         sensitive_data_model_id=pulumi.get(__ret__, 'sensitive_data_model_id'),
         sensitive_data_model_sensitive_type_collections=pulumi.get(__ret__, 'sensitive_data_model_sensitive_type_collections'),
         sensitive_type_id=pulumi.get(__ret__, 'sensitive_type_id'))
-def get_sensitive_data_model_sensitive_types_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSensitiveDataModelSensitiveTypesFilterArgs', 'GetSensitiveDataModelSensitiveTypesFilterArgsDict']]]]] = None,
+def get_sensitive_data_model_sensitive_types_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSensitiveDataModelSensitiveTypesFilterArgs', 'GetSensitiveDataModelSensitiveTypesFilterArgsDict', 'outputs.GetSensitiveDataModelSensitiveTypesFilterResult']]]]] = None,
                                                     sensitive_data_model_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                     sensitive_type_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSensitiveDataModelSensitiveTypesResult]:

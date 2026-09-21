@@ -301,7 +301,7 @@ class HttpRedirect(pulumi.CustomResource):
                  domain: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  response_code: pulumi.Input[Optional[_builtins.int]] = None,
-                 target: pulumi.Input[Optional[Union['HttpRedirectTargetArgs', 'HttpRedirectTargetArgsDict']]] = None,
+                 target: pulumi.Input[Optional[Union['HttpRedirectTargetArgs', 'HttpRedirectTargetArgsDict', 'outputs.HttpRedirectTarget']]] = None,
                  __props__=None):
         """
         This resource provides the Http Redirect resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -354,7 +354,7 @@ class HttpRedirect(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] domain: The domain from which traffic will be redirected.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.int] response_code: (Updatable) The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
-        :param pulumi.Input[Union['HttpRedirectTargetArgs', 'HttpRedirectTargetArgsDict']] target: (Updatable) The redirect target object including all the redirect data.
+        :param pulumi.Input[Union['HttpRedirectTargetArgs', 'HttpRedirectTargetArgsDict', 'outputs.HttpRedirectTarget']] target: (Updatable) The redirect target object including all the redirect data.
         """
         ...
     @overload
@@ -426,7 +426,7 @@ class HttpRedirect(pulumi.CustomResource):
                  domain: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  response_code: pulumi.Input[Optional[_builtins.int]] = None,
-                 target: pulumi.Input[Optional[Union['HttpRedirectTargetArgs', 'HttpRedirectTargetArgsDict']]] = None,
+                 target: pulumi.Input[Optional[Union['HttpRedirectTargetArgs', 'HttpRedirectTargetArgsDict', 'outputs.HttpRedirectTarget']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -468,7 +468,7 @@ class HttpRedirect(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             response_code: pulumi.Input[Optional[_builtins.int]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            target: pulumi.Input[Optional[Union['HttpRedirectTargetArgs', 'HttpRedirectTargetArgsDict']]] = None,
+            target: pulumi.Input[Optional[Union['HttpRedirectTargetArgs', 'HttpRedirectTargetArgsDict', 'outputs.HttpRedirectTarget']]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'HttpRedirect':
         """
         Get an existing HttpRedirect resource's state with the given name, id, and optional extra
@@ -484,7 +484,7 @@ class HttpRedirect(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.int] response_code: (Updatable) The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the HTTP Redirect.
-        :param pulumi.Input[Union['HttpRedirectTargetArgs', 'HttpRedirectTargetArgsDict']] target: (Updatable) The redirect target object including all the redirect data.
+        :param pulumi.Input[Union['HttpRedirectTargetArgs', 'HttpRedirectTargetArgsDict', 'outputs.HttpRedirectTarget']] target: (Updatable) The redirect target object including all the redirect data.
         :param pulumi.Input[_builtins.str] time_created: The date and time the policy was created, expressed in RFC 3339 timestamp format.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

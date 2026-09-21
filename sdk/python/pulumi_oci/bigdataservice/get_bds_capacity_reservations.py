@@ -110,7 +110,7 @@ class AwaitableGetBdsCapacityReservationsResult(GetBdsCapacityReservationsResult
 
 def get_bds_capacity_reservations(compartment_id: Optional[_builtins.str] = None,
                                   display_name: Optional[_builtins.str] = None,
-                                  filters: Optional[Sequence[Union['GetBdsCapacityReservationsFilterArgs', 'GetBdsCapacityReservationsFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetBdsCapacityReservationsFilterArgs', 'GetBdsCapacityReservationsFilterArgsDict', 'outputs.GetBdsCapacityReservationsFilterResult']]] = None,
                                   state: Optional[_builtins.str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBdsCapacityReservationsResult:
     """
@@ -151,7 +151,7 @@ def get_bds_capacity_reservations(compartment_id: Optional[_builtins.str] = None
         state=pulumi.get(__ret__, 'state'))
 def get_bds_capacity_reservations_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsCapacityReservationsFilterArgs', 'GetBdsCapacityReservationsFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsCapacityReservationsFilterArgs', 'GetBdsCapacityReservationsFilterArgsDict', 'outputs.GetBdsCapacityReservationsFilterResult']]]]] = None,
                                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsCapacityReservationsResult]:
     """

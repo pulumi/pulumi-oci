@@ -341,7 +341,7 @@ class DedicatedVantagePoint(pulumi.CustomResource):
                  apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 dvp_stack_details: pulumi.Input[Optional[Union['DedicatedVantagePointDvpStackDetailsArgs', 'DedicatedVantagePointDvpStackDetailsArgsDict']]] = None,
+                 dvp_stack_details: pulumi.Input[Optional[Union['DedicatedVantagePointDvpStackDetailsArgs', 'DedicatedVantagePointDvpStackDetailsArgsDict', 'outputs.DedicatedVantagePointDvpStackDetails']]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
                  status: pulumi.Input[Optional[_builtins.str]] = None,
@@ -393,7 +393,7 @@ class DedicatedVantagePoint(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
-        :param pulumi.Input[Union['DedicatedVantagePointDvpStackDetailsArgs', 'DedicatedVantagePointDvpStackDetailsArgsDict']] dvp_stack_details: (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
+        :param pulumi.Input[Union['DedicatedVantagePointDvpStackDetailsArgs', 'DedicatedVantagePointDvpStackDetailsArgsDict', 'outputs.DedicatedVantagePointDvpStackDetails']] dvp_stack_details: (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] region: (Updatable) Name of the region.
         :param pulumi.Input[_builtins.str] status: (Updatable) Status of the dedicated vantage point.
@@ -467,7 +467,7 @@ class DedicatedVantagePoint(pulumi.CustomResource):
                  apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 dvp_stack_details: pulumi.Input[Optional[Union['DedicatedVantagePointDvpStackDetailsArgs', 'DedicatedVantagePointDvpStackDetailsArgsDict']]] = None,
+                 dvp_stack_details: pulumi.Input[Optional[Union['DedicatedVantagePointDvpStackDetailsArgs', 'DedicatedVantagePointDvpStackDetailsArgsDict', 'outputs.DedicatedVantagePointDvpStackDetails']]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
                  status: pulumi.Input[Optional[_builtins.str]] = None,
@@ -512,9 +512,9 @@ class DedicatedVantagePoint(pulumi.CustomResource):
             apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            dvp_stack_details: pulumi.Input[Optional[Union['DedicatedVantagePointDvpStackDetailsArgs', 'DedicatedVantagePointDvpStackDetailsArgsDict']]] = None,
+            dvp_stack_details: pulumi.Input[Optional[Union['DedicatedVantagePointDvpStackDetailsArgs', 'DedicatedVantagePointDvpStackDetailsArgsDict', 'outputs.DedicatedVantagePointDvpStackDetails']]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            monitor_status_count_maps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DedicatedVantagePointMonitorStatusCountMapArgs', 'DedicatedVantagePointMonitorStatusCountMapArgsDict']]]]] = None,
+            monitor_status_count_maps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DedicatedVantagePointMonitorStatusCountMapArgs', 'DedicatedVantagePointMonitorStatusCountMapArgsDict', 'outputs.DedicatedVantagePointMonitorStatusCountMap']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             region: pulumi.Input[Optional[_builtins.str]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
@@ -530,9 +530,9 @@ class DedicatedVantagePoint(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
-        :param pulumi.Input[Union['DedicatedVantagePointDvpStackDetailsArgs', 'DedicatedVantagePointDvpStackDetailsArgsDict']] dvp_stack_details: (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
+        :param pulumi.Input[Union['DedicatedVantagePointDvpStackDetailsArgs', 'DedicatedVantagePointDvpStackDetailsArgsDict', 'outputs.DedicatedVantagePointDvpStackDetails']] dvp_stack_details: (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DedicatedVantagePointMonitorStatusCountMapArgs', 'DedicatedVantagePointMonitorStatusCountMapArgsDict']]]] monitor_status_count_maps: Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DedicatedVantagePointMonitorStatusCountMapArgs', 'DedicatedVantagePointMonitorStatusCountMapArgsDict', 'outputs.DedicatedVantagePointMonitorStatusCountMap']]]] monitor_status_count_maps: Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
         :param pulumi.Input[_builtins.str] name: Unique permanent name of the dedicated vantage point. This is the same as the displayName.
         :param pulumi.Input[_builtins.str] region: (Updatable) Name of the region.
         :param pulumi.Input[_builtins.str] status: (Updatable) Status of the dedicated vantage point.

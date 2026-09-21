@@ -1271,7 +1271,7 @@ class AddressActionVerification(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             address_key: pulumi.Input[Optional[_builtins.str]] = None,
-            addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressActionVerificationAddressArgs', 'AddressActionVerificationAddressArgsDict']]]]] = None,
+            addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressActionVerificationAddressArgs', 'AddressActionVerificationAddressArgsDict', 'outputs.AddressActionVerificationAddress']]]]] = None,
             city: pulumi.Input[Optional[_builtins.str]] = None,
             company_name: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1309,7 +1309,7 @@ class AddressActionVerification(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] address_key: Address identifier.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AddressActionVerificationAddressArgs', 'AddressActionVerificationAddressArgsDict']]]] addresses: Address details model.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AddressActionVerificationAddressArgs', 'AddressActionVerificationAddressArgsDict', 'outputs.AddressActionVerificationAddress']]]] addresses: Address details model.
         :param pulumi.Input[_builtins.str] city: Name of the city.
         :param pulumi.Input[_builtins.str] company_name: Name of the customer company.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

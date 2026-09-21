@@ -458,13 +458,13 @@ class DbNodeSnapshot(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             mount_dbnode_id: pulumi.Input[Optional[_builtins.str]] = None,
-            mount_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbNodeSnapshotMountPointArgs', 'DbNodeSnapshotMountPointArgsDict']]]]] = None,
+            mount_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbNodeSnapshotMountPointArgs', 'DbNodeSnapshotMountPointArgsDict', 'outputs.DbNodeSnapshotMountPoint']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             source_dbnode_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
-            volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbNodeSnapshotVolumeArgs', 'DbNodeSnapshotVolumeArgsDict']]]]] = None) -> 'DbNodeSnapshot':
+            volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbNodeSnapshotVolumeArgs', 'DbNodeSnapshotVolumeArgsDict', 'outputs.DbNodeSnapshotVolume']]]]] = None) -> 'DbNodeSnapshot':
         """
         Get an existing DbNodeSnapshot resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -482,13 +482,13 @@ class DbNodeSnapshot(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DbNodeSnapshotMountPointArgs', 'DbNodeSnapshotMountPointArgsDict']]]] mount_points: Details of the mount points
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbNodeSnapshotMountPointArgs', 'DbNodeSnapshotMountPointArgsDict', 'outputs.DbNodeSnapshotMountPoint']]]] mount_points: Details of the mount points
         :param pulumi.Input[_builtins.str] name: Volume Name
         :param pulumi.Input[_builtins.str] source_dbnode_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node.
         :param pulumi.Input[_builtins.str] state: The current state of the Exadata Database Node Snapshot.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] time_created: The date and time that the Exadata Database Node Snapshot was created.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DbNodeSnapshotVolumeArgs', 'DbNodeSnapshotVolumeArgsDict']]]] volumes: Details of the volumes
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbNodeSnapshotVolumeArgs', 'DbNodeSnapshotVolumeArgsDict', 'outputs.DbNodeSnapshotVolume']]]] volumes: Details of the volumes
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

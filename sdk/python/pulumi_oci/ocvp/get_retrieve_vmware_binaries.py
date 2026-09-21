@@ -81,7 +81,7 @@ class AwaitableGetRetrieveVmwareBinariesResult(GetRetrieveVmwareBinariesResult):
             sddc_id=self.sddc_id)
 
 
-def get_retrieve_vmware_binaries(filters: Optional[Sequence[Union['GetRetrieveVmwareBinariesFilterArgs', 'GetRetrieveVmwareBinariesFilterArgsDict']]] = None,
+def get_retrieve_vmware_binaries(filters: Optional[Sequence[Union['GetRetrieveVmwareBinariesFilterArgs', 'GetRetrieveVmwareBinariesFilterArgsDict', 'outputs.GetRetrieveVmwareBinariesFilterResult']]] = None,
                                  sddc_id: Optional[_builtins.str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRetrieveVmwareBinariesResult:
     """
@@ -97,7 +97,7 @@ def get_retrieve_vmware_binaries(filters: Optional[Sequence[Union['GetRetrieveVm
     ```
 
 
-    :param Sequence[Union['GetRetrieveVmwareBinariesFilterArgs', 'GetRetrieveVmwareBinariesFilterArgsDict']] filters: One or more name/value filters to apply to the returned items.
+    :param Sequence[Union['GetRetrieveVmwareBinariesFilterArgs', 'GetRetrieveVmwareBinariesFilterArgsDict', 'outputs.GetRetrieveVmwareBinariesFilterResult']] filters: One or more name/value filters to apply to the returned items.
     :param _builtins.str sddc_id: The [OCID](https://www.terraform.io/Content/General/Concepts/identifiers.htm) of the SDDC.
     """
     __args__ = dict()
@@ -111,7 +111,7 @@ def get_retrieve_vmware_binaries(filters: Optional[Sequence[Union['GetRetrieveVm
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'),
         sddc_id=pulumi.get(__ret__, 'sddc_id'))
-def get_retrieve_vmware_binaries_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRetrieveVmwareBinariesFilterArgs', 'GetRetrieveVmwareBinariesFilterArgsDict']]]]] = None,
+def get_retrieve_vmware_binaries_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRetrieveVmwareBinariesFilterArgs', 'GetRetrieveVmwareBinariesFilterArgsDict', 'outputs.GetRetrieveVmwareBinariesFilterResult']]]]] = None,
                                         sddc_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRetrieveVmwareBinariesResult]:
     """
@@ -127,7 +127,7 @@ def get_retrieve_vmware_binaries_output(filters: pulumi.Input[Optional[Optional[
     ```
 
 
-    :param Sequence[Union['GetRetrieveVmwareBinariesFilterArgs', 'GetRetrieveVmwareBinariesFilterArgsDict']] filters: One or more name/value filters to apply to the returned items.
+    :param Sequence[Union['GetRetrieveVmwareBinariesFilterArgs', 'GetRetrieveVmwareBinariesFilterArgsDict', 'outputs.GetRetrieveVmwareBinariesFilterResult']] filters: One or more name/value filters to apply to the returned items.
     :param _builtins.str sddc_id: The [OCID](https://www.terraform.io/Content/General/Concepts/identifiers.htm) of the SDDC.
     """
     __args__ = dict()

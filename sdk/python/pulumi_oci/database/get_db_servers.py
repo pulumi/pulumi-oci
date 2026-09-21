@@ -123,7 +123,7 @@ class AwaitableGetDbServersResult(GetDbServersResult):
 def get_db_servers(compartment_id: Optional[_builtins.str] = None,
                    display_name: Optional[_builtins.str] = None,
                    exadata_infrastructure_id: Optional[_builtins.str] = None,
-                   filters: Optional[Sequence[Union['GetDbServersFilterArgs', 'GetDbServersFilterArgsDict']]] = None,
+                   filters: Optional[Sequence[Union['GetDbServersFilterArgs', 'GetDbServersFilterArgsDict', 'outputs.GetDbServersFilterResult']]] = None,
                    state: Optional[_builtins.str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbServersResult:
     """
@@ -169,7 +169,7 @@ def get_db_servers(compartment_id: Optional[_builtins.str] = None,
 def get_db_servers_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
-                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbServersFilterArgs', 'GetDbServersFilterArgsDict']]]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbServersFilterArgs', 'GetDbServersFilterArgsDict', 'outputs.GetDbServersFilterResult']]]]] = None,
                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbServersResult]:
     """

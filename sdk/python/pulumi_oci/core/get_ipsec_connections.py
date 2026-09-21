@@ -111,7 +111,7 @@ class AwaitableGetIpsecConnectionsResult(GetIpsecConnectionsResult):
 def get_ipsec_connections(compartment_id: Optional[_builtins.str] = None,
                           cpe_id: Optional[_builtins.str] = None,
                           drg_id: Optional[_builtins.str] = None,
-                          filters: Optional[Sequence[Union['GetIpsecConnectionsFilterArgs', 'GetIpsecConnectionsFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetIpsecConnectionsFilterArgs', 'GetIpsecConnectionsFilterArgsDict', 'outputs.GetIpsecConnectionsFilterResult']]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIpsecConnectionsResult:
     """
     This data source provides the list of Ip Sec Connections in Oracle Cloud Infrastructure Core service.
@@ -153,7 +153,7 @@ def get_ipsec_connections(compartment_id: Optional[_builtins.str] = None,
 def get_ipsec_connections_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  cpe_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  drg_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIpsecConnectionsFilterArgs', 'GetIpsecConnectionsFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIpsecConnectionsFilterArgs', 'GetIpsecConnectionsFilterArgsDict', 'outputs.GetIpsecConnectionsFilterResult']]]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIpsecConnectionsResult]:
     """
     This data source provides the list of Ip Sec Connections in Oracle Cloud Infrastructure Core service.

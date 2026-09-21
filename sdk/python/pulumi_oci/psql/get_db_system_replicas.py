@@ -82,7 +82,7 @@ class AwaitableGetDbSystemReplicasResult(GetDbSystemReplicasResult):
 
 
 def get_db_system_replicas(db_system_id: Optional[_builtins.str] = None,
-                           filters: Optional[Sequence[Union['GetDbSystemReplicasFilterArgs', 'GetDbSystemReplicasFilterArgsDict']]] = None,
+                           filters: Optional[Sequence[Union['GetDbSystemReplicasFilterArgs', 'GetDbSystemReplicasFilterArgsDict', 'outputs.GetDbSystemReplicasFilterResult']]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbSystemReplicasResult:
     """
     This data source provides the list of Db System Replicas in Oracle Cloud Infrastructure Psql service.
@@ -113,7 +113,7 @@ def get_db_system_replicas(db_system_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_db_system_replicas_output(db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemReplicasFilterArgs', 'GetDbSystemReplicasFilterArgsDict']]]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemReplicasFilterArgs', 'GetDbSystemReplicasFilterArgsDict', 'outputs.GetDbSystemReplicasFilterResult']]]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemReplicasResult]:
     """
     This data source provides the list of Db System Replicas in Oracle Cloud Infrastructure Psql service.

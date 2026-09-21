@@ -113,7 +113,7 @@ class AwaitableGetManagementStationMirrorsResult(GetManagementStationMirrorsResu
 
 def get_management_station_mirrors(display_name: Optional[_builtins.str] = None,
                                    display_name_contains: Optional[_builtins.str] = None,
-                                   filters: Optional[Sequence[Union['GetManagementStationMirrorsFilterArgs', 'GetManagementStationMirrorsFilterArgsDict']]] = None,
+                                   filters: Optional[Sequence[Union['GetManagementStationMirrorsFilterArgs', 'GetManagementStationMirrorsFilterArgsDict', 'outputs.GetManagementStationMirrorsFilterResult']]] = None,
                                    management_station_id: Optional[_builtins.str] = None,
                                    mirror_states: Optional[Sequence[_builtins.str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementStationMirrorsResult:
@@ -159,7 +159,7 @@ def get_management_station_mirrors(display_name: Optional[_builtins.str] = None,
         mirrors_collections=pulumi.get(__ret__, 'mirrors_collections'))
 def get_management_station_mirrors_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagementStationMirrorsFilterArgs', 'GetManagementStationMirrorsFilterArgsDict']]]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagementStationMirrorsFilterArgs', 'GetManagementStationMirrorsFilterArgsDict', 'outputs.GetManagementStationMirrorsFilterResult']]]]] = None,
                                           management_station_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           mirror_states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementStationMirrorsResult]:

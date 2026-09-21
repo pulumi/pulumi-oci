@@ -105,7 +105,7 @@ class AwaitableGetDeploymentVersionsResult(GetDeploymentVersionsResult):
 def get_deployment_versions(compartment_id: Optional[_builtins.str] = None,
                             deployment_id: Optional[_builtins.str] = None,
                             deployment_type: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetDeploymentVersionsFilterArgs', 'GetDeploymentVersionsFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetDeploymentVersionsFilterArgs', 'GetDeploymentVersionsFilterArgsDict', 'outputs.GetDeploymentVersionsFilterResult']]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeploymentVersionsResult:
     """
     This data source provides the list of Deployment Versions in Oracle Cloud Infrastructure Golden Gate service.
@@ -146,7 +146,7 @@ def get_deployment_versions(compartment_id: Optional[_builtins.str] = None,
 def get_deployment_versions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    deployment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    deployment_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDeploymentVersionsFilterArgs', 'GetDeploymentVersionsFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDeploymentVersionsFilterArgs', 'GetDeploymentVersionsFilterArgsDict', 'outputs.GetDeploymentVersionsFilterResult']]]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentVersionsResult]:
     """
     This data source provides the list of Deployment Versions in Oracle Cloud Infrastructure Golden Gate service.

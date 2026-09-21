@@ -123,7 +123,7 @@ class AwaitableGetSddcsResult(GetSddcsResult):
 def get_sddcs(compartment_id: Optional[_builtins.str] = None,
               compute_availability_domain: Optional[_builtins.str] = None,
               display_name: Optional[_builtins.str] = None,
-              filters: Optional[Sequence[Union['GetSddcsFilterArgs', 'GetSddcsFilterArgsDict']]] = None,
+              filters: Optional[Sequence[Union['GetSddcsFilterArgs', 'GetSddcsFilterArgsDict', 'outputs.GetSddcsFilterResult']]] = None,
               state: Optional[_builtins.str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSddcsResult:
     """
@@ -170,7 +170,7 @@ def get_sddcs(compartment_id: Optional[_builtins.str] = None,
 def get_sddcs_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                      compute_availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSddcsFilterArgs', 'GetSddcsFilterArgsDict']]]]] = None,
+                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSddcsFilterArgs', 'GetSddcsFilterArgsDict', 'outputs.GetSddcsFilterResult']]]]] = None,
                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSddcsResult]:
     """

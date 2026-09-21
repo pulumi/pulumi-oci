@@ -147,7 +147,7 @@ class AwaitableGetDbSystemMaintenanceEventsResult(GetDbSystemMaintenanceEventsRe
 
 
 def get_db_system_maintenance_events(db_system_id: Optional[_builtins.str] = None,
-                                     filters: Optional[Sequence[Union['GetDbSystemMaintenanceEventsFilterArgs', 'GetDbSystemMaintenanceEventsFilterArgsDict']]] = None,
+                                     filters: Optional[Sequence[Union['GetDbSystemMaintenanceEventsFilterArgs', 'GetDbSystemMaintenanceEventsFilterArgsDict', 'outputs.GetDbSystemMaintenanceEventsFilterResult']]] = None,
                                      maintenance_action: Optional[_builtins.str] = None,
                                      maintenance_status: Optional[_builtins.str] = None,
                                      maintenance_type: Optional[_builtins.str] = None,
@@ -203,7 +203,7 @@ def get_db_system_maintenance_events(db_system_id: Optional[_builtins.str] = Non
         mysql_version_after_maintenance=pulumi.get(__ret__, 'mysql_version_after_maintenance'),
         mysql_version_before_maintenance=pulumi.get(__ret__, 'mysql_version_before_maintenance'))
 def get_db_system_maintenance_events_output(db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemMaintenanceEventsFilterArgs', 'GetDbSystemMaintenanceEventsFilterArgsDict']]]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemMaintenanceEventsFilterArgs', 'GetDbSystemMaintenanceEventsFilterArgsDict', 'outputs.GetDbSystemMaintenanceEventsFilterResult']]]]] = None,
                                             maintenance_action: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             maintenance_status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             maintenance_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

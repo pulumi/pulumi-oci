@@ -118,7 +118,7 @@ class AwaitableGetMigrationAssetsResult(GetMigrationAssetsResult):
 
 
 def get_migration_assets(display_name: Optional[_builtins.str] = None,
-                         filters: Optional[Sequence[Union['GetMigrationAssetsFilterArgs', 'GetMigrationAssetsFilterArgsDict']]] = None,
+                         filters: Optional[Sequence[Union['GetMigrationAssetsFilterArgs', 'GetMigrationAssetsFilterArgsDict', 'outputs.GetMigrationAssetsFilterResult']]] = None,
                          migration_asset_id: Optional[_builtins.str] = None,
                          migration_id: Optional[_builtins.str] = None,
                          state: Optional[_builtins.str] = None,
@@ -164,7 +164,7 @@ def get_migration_assets(display_name: Optional[_builtins.str] = None,
         migration_id=pulumi.get(__ret__, 'migration_id'),
         state=pulumi.get(__ret__, 'state'))
 def get_migration_assets_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMigrationAssetsFilterArgs', 'GetMigrationAssetsFilterArgsDict']]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMigrationAssetsFilterArgs', 'GetMigrationAssetsFilterArgsDict', 'outputs.GetMigrationAssetsFilterResult']]]]] = None,
                                 migration_asset_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 migration_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

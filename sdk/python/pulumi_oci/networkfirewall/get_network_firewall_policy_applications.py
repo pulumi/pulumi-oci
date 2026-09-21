@@ -91,7 +91,7 @@ class AwaitableGetNetworkFirewallPolicyApplicationsResult(GetNetworkFirewallPoli
 
 
 def get_network_firewall_policy_applications(display_name: Optional[_builtins.str] = None,
-                                             filters: Optional[Sequence[Union['GetNetworkFirewallPolicyApplicationsFilterArgs', 'GetNetworkFirewallPolicyApplicationsFilterArgsDict']]] = None,
+                                             filters: Optional[Sequence[Union['GetNetworkFirewallPolicyApplicationsFilterArgs', 'GetNetworkFirewallPolicyApplicationsFilterArgsDict', 'outputs.GetNetworkFirewallPolicyApplicationsFilterResult']]] = None,
                                              network_firewall_policy_id: Optional[_builtins.str] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyApplicationsResult:
     """
@@ -127,7 +127,7 @@ def get_network_firewall_policy_applications(display_name: Optional[_builtins.st
         id=pulumi.get(__ret__, 'id'),
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'))
 def get_network_firewall_policy_applications_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPolicyApplicationsFilterArgs', 'GetNetworkFirewallPolicyApplicationsFilterArgsDict']]]]] = None,
+                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPolicyApplicationsFilterArgs', 'GetNetworkFirewallPolicyApplicationsFilterArgsDict', 'outputs.GetNetworkFirewallPolicyApplicationsFilterResult']]]]] = None,
                                                     network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyApplicationsResult]:
     """

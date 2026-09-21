@@ -925,11 +925,11 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
                  number_of_retries: pulumi.Input[Optional[_builtins.int]] = None,
                  object_status: pulumi.Input[Optional[_builtins.int]] = None,
                  object_version: pulumi.Input[Optional[_builtins.int]] = None,
-                 parent_ref: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleParentRefArgs', 'WorkspaceApplicationTaskScheduleParentRefArgsDict']]] = None,
-                 registry_metadata: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleRegistryMetadataArgs', 'WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict']]] = None,
+                 parent_ref: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleParentRefArgs', 'WorkspaceApplicationTaskScheduleParentRefArgsDict', 'outputs.WorkspaceApplicationTaskScheduleParentRef']]] = None,
+                 registry_metadata: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleRegistryMetadataArgs', 'WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict', 'outputs.WorkspaceApplicationTaskScheduleRegistryMetadata']]] = None,
                  retry_delay: pulumi.Input[Optional[_builtins.float]] = None,
                  retry_delay_unit: pulumi.Input[Optional[_builtins.str]] = None,
-                 schedule_ref: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleScheduleRefArgs', 'WorkspaceApplicationTaskScheduleScheduleRefArgsDict']]] = None,
+                 schedule_ref: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleScheduleRefArgs', 'WorkspaceApplicationTaskScheduleScheduleRefArgsDict', 'outputs.WorkspaceApplicationTaskScheduleScheduleRef']]] = None,
                  start_time_millis: pulumi.Input[Optional[_builtins.str]] = None,
                  workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -1067,11 +1067,11 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] number_of_retries: (Updatable) The number of retries.
         :param pulumi.Input[_builtins.int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[_builtins.int] object_version: (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
-        :param pulumi.Input[Union['WorkspaceApplicationTaskScheduleParentRefArgs', 'WorkspaceApplicationTaskScheduleParentRefArgsDict']] parent_ref: (Updatable) A reference to the object's parent.
-        :param pulumi.Input[Union['WorkspaceApplicationTaskScheduleRegistryMetadataArgs', 'WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict']] registry_metadata: (Updatable) Information about the object and its parent.
+        :param pulumi.Input[Union['WorkspaceApplicationTaskScheduleParentRefArgs', 'WorkspaceApplicationTaskScheduleParentRefArgsDict', 'outputs.WorkspaceApplicationTaskScheduleParentRef']] parent_ref: (Updatable) A reference to the object's parent.
+        :param pulumi.Input[Union['WorkspaceApplicationTaskScheduleRegistryMetadataArgs', 'WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict', 'outputs.WorkspaceApplicationTaskScheduleRegistryMetadata']] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[_builtins.float] retry_delay: (Updatable) The retry delay, the unit for measurement is in the property retry delay unit.
         :param pulumi.Input[_builtins.str] retry_delay_unit: (Updatable) The unit for the retry delay.
-        :param pulumi.Input[Union['WorkspaceApplicationTaskScheduleScheduleRefArgs', 'WorkspaceApplicationTaskScheduleScheduleRefArgsDict']] schedule_ref: (Updatable) The schedule object
+        :param pulumi.Input[Union['WorkspaceApplicationTaskScheduleScheduleRefArgs', 'WorkspaceApplicationTaskScheduleScheduleRefArgsDict', 'outputs.WorkspaceApplicationTaskScheduleScheduleRef']] schedule_ref: (Updatable) The schedule object
         :param pulumi.Input[_builtins.str] start_time_millis: (Updatable) The start time in milliseconds.
         :param pulumi.Input[_builtins.str] workspace_id: The workspace ID.
                
@@ -1232,11 +1232,11 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
                  number_of_retries: pulumi.Input[Optional[_builtins.int]] = None,
                  object_status: pulumi.Input[Optional[_builtins.int]] = None,
                  object_version: pulumi.Input[Optional[_builtins.int]] = None,
-                 parent_ref: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleParentRefArgs', 'WorkspaceApplicationTaskScheduleParentRefArgsDict']]] = None,
-                 registry_metadata: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleRegistryMetadataArgs', 'WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict']]] = None,
+                 parent_ref: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleParentRefArgs', 'WorkspaceApplicationTaskScheduleParentRefArgsDict', 'outputs.WorkspaceApplicationTaskScheduleParentRef']]] = None,
+                 registry_metadata: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleRegistryMetadataArgs', 'WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict', 'outputs.WorkspaceApplicationTaskScheduleRegistryMetadata']]] = None,
                  retry_delay: pulumi.Input[Optional[_builtins.float]] = None,
                  retry_delay_unit: pulumi.Input[Optional[_builtins.str]] = None,
-                 schedule_ref: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleScheduleRefArgs', 'WorkspaceApplicationTaskScheduleScheduleRefArgsDict']]] = None,
+                 schedule_ref: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleScheduleRefArgs', 'WorkspaceApplicationTaskScheduleScheduleRefArgsDict', 'outputs.WorkspaceApplicationTaskScheduleScheduleRef']]] = None,
                  start_time_millis: pulumi.Input[Optional[_builtins.str]] = None,
                  workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -1305,8 +1305,8 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
             is_concurrent_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
             is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             key: pulumi.Input[Optional[_builtins.str]] = None,
-            last_run_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationTaskScheduleLastRunDetailArgs', 'WorkspaceApplicationTaskScheduleLastRunDetailArgsDict']]]]] = None,
-            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationTaskScheduleMetadataArgs', 'WorkspaceApplicationTaskScheduleMetadataArgsDict']]]]] = None,
+            last_run_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationTaskScheduleLastRunDetailArgs', 'WorkspaceApplicationTaskScheduleLastRunDetailArgsDict', 'outputs.WorkspaceApplicationTaskScheduleLastRunDetail']]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationTaskScheduleMetadataArgs', 'WorkspaceApplicationTaskScheduleMetadataArgsDict', 'outputs.WorkspaceApplicationTaskScheduleMetadata']]]]] = None,
             model_type: pulumi.Input[Optional[_builtins.str]] = None,
             model_version: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1314,12 +1314,12 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
             number_of_retries: pulumi.Input[Optional[_builtins.int]] = None,
             object_status: pulumi.Input[Optional[_builtins.int]] = None,
             object_version: pulumi.Input[Optional[_builtins.int]] = None,
-            parent_ref: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleParentRefArgs', 'WorkspaceApplicationTaskScheduleParentRefArgsDict']]] = None,
-            registry_metadata: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleRegistryMetadataArgs', 'WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict']]] = None,
+            parent_ref: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleParentRefArgs', 'WorkspaceApplicationTaskScheduleParentRefArgsDict', 'outputs.WorkspaceApplicationTaskScheduleParentRef']]] = None,
+            registry_metadata: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleRegistryMetadataArgs', 'WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict', 'outputs.WorkspaceApplicationTaskScheduleRegistryMetadata']]] = None,
             retry_attempts: pulumi.Input[Optional[_builtins.int]] = None,
             retry_delay: pulumi.Input[Optional[_builtins.float]] = None,
             retry_delay_unit: pulumi.Input[Optional[_builtins.str]] = None,
-            schedule_ref: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleScheduleRefArgs', 'WorkspaceApplicationTaskScheduleScheduleRefArgsDict']]] = None,
+            schedule_ref: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleScheduleRefArgs', 'WorkspaceApplicationTaskScheduleScheduleRefArgsDict', 'outputs.WorkspaceApplicationTaskScheduleScheduleRef']]] = None,
             start_time_millis: pulumi.Input[Optional[_builtins.str]] = None,
             workspace_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'WorkspaceApplicationTaskSchedule':
         """
@@ -1341,20 +1341,20 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_concurrent_allowed: (Updatable) Whether the same task can be executed concurrently.
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether the task schedule is enabled.
         :param pulumi.Input[_builtins.str] key: (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationTaskScheduleLastRunDetailArgs', 'WorkspaceApplicationTaskScheduleLastRunDetailArgsDict']]]] last_run_details: The last run details for the task run.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationTaskScheduleMetadataArgs', 'WorkspaceApplicationTaskScheduleMetadataArgsDict']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationTaskScheduleLastRunDetailArgs', 'WorkspaceApplicationTaskScheduleLastRunDetailArgsDict', 'outputs.WorkspaceApplicationTaskScheduleLastRunDetail']]]] last_run_details: The last run details for the task run.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationTaskScheduleMetadataArgs', 'WorkspaceApplicationTaskScheduleMetadataArgsDict', 'outputs.WorkspaceApplicationTaskScheduleMetadata']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param pulumi.Input[_builtins.str] model_type: The type of the object.
         :param pulumi.Input[_builtins.str] model_version: (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
         :param pulumi.Input[_builtins.str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[_builtins.int] number_of_retries: (Updatable) The number of retries.
         :param pulumi.Input[_builtins.int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[_builtins.int] object_version: (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
-        :param pulumi.Input[Union['WorkspaceApplicationTaskScheduleParentRefArgs', 'WorkspaceApplicationTaskScheduleParentRefArgsDict']] parent_ref: (Updatable) A reference to the object's parent.
-        :param pulumi.Input[Union['WorkspaceApplicationTaskScheduleRegistryMetadataArgs', 'WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict']] registry_metadata: (Updatable) Information about the object and its parent.
+        :param pulumi.Input[Union['WorkspaceApplicationTaskScheduleParentRefArgs', 'WorkspaceApplicationTaskScheduleParentRefArgsDict', 'outputs.WorkspaceApplicationTaskScheduleParentRef']] parent_ref: (Updatable) A reference to the object's parent.
+        :param pulumi.Input[Union['WorkspaceApplicationTaskScheduleRegistryMetadataArgs', 'WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict', 'outputs.WorkspaceApplicationTaskScheduleRegistryMetadata']] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[_builtins.int] retry_attempts: The number of retry attempts.
         :param pulumi.Input[_builtins.float] retry_delay: (Updatable) The retry delay, the unit for measurement is in the property retry delay unit.
         :param pulumi.Input[_builtins.str] retry_delay_unit: (Updatable) The unit for the retry delay.
-        :param pulumi.Input[Union['WorkspaceApplicationTaskScheduleScheduleRefArgs', 'WorkspaceApplicationTaskScheduleScheduleRefArgsDict']] schedule_ref: (Updatable) The schedule object
+        :param pulumi.Input[Union['WorkspaceApplicationTaskScheduleScheduleRefArgs', 'WorkspaceApplicationTaskScheduleScheduleRefArgsDict', 'outputs.WorkspaceApplicationTaskScheduleScheduleRef']] schedule_ref: (Updatable) The schedule object
         :param pulumi.Input[_builtins.str] start_time_millis: (Updatable) The start time in milliseconds.
         :param pulumi.Input[_builtins.str] workspace_id: The workspace ID.
                

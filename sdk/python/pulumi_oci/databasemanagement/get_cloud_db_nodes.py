@@ -111,7 +111,7 @@ class AwaitableGetCloudDbNodesResult(GetCloudDbNodesResult):
 def get_cloud_db_nodes(cloud_db_system_id: Optional[_builtins.str] = None,
                        compartment_id: Optional[_builtins.str] = None,
                        display_name: Optional[_builtins.str] = None,
-                       filters: Optional[Sequence[Union['GetCloudDbNodesFilterArgs', 'GetCloudDbNodesFilterArgsDict']]] = None,
+                       filters: Optional[Sequence[Union['GetCloudDbNodesFilterArgs', 'GetCloudDbNodesFilterArgsDict', 'outputs.GetCloudDbNodesFilterResult']]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudDbNodesResult:
     """
     This data source provides the list of Cloud Db Nodes in Oracle Cloud Infrastructure Database Management service.
@@ -152,7 +152,7 @@ def get_cloud_db_nodes(cloud_db_system_id: Optional[_builtins.str] = None,
 def get_cloud_db_nodes_output(cloud_db_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudDbNodesFilterArgs', 'GetCloudDbNodesFilterArgsDict']]]]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudDbNodesFilterArgs', 'GetCloudDbNodesFilterArgsDict', 'outputs.GetCloudDbNodesFilterResult']]]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudDbNodesResult]:
     """
     This data source provides the list of Cloud Db Nodes in Oracle Cloud Infrastructure Database Management service.

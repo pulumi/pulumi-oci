@@ -72,7 +72,7 @@ class AwaitableGetBdsClusterVersionsResult(GetBdsClusterVersionsResult):
             id=self.id)
 
 
-def get_bds_cluster_versions(filters: Optional[Sequence[Union['GetBdsClusterVersionsFilterArgs', 'GetBdsClusterVersionsFilterArgsDict']]] = None,
+def get_bds_cluster_versions(filters: Optional[Sequence[Union['GetBdsClusterVersionsFilterArgs', 'GetBdsClusterVersionsFilterArgsDict', 'outputs.GetBdsClusterVersionsFilterResult']]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBdsClusterVersionsResult:
     """
     This data source provides the list of Bds Cluster Versions in Oracle Cloud Infrastructure Big Data Service service.
@@ -97,7 +97,7 @@ def get_bds_cluster_versions(filters: Optional[Sequence[Union['GetBdsClusterVers
         bds_cluster_versions=pulumi.get(__ret__, 'bds_cluster_versions'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_bds_cluster_versions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsClusterVersionsFilterArgs', 'GetBdsClusterVersionsFilterArgsDict']]]]] = None,
+def get_bds_cluster_versions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsClusterVersionsFilterArgs', 'GetBdsClusterVersionsFilterArgsDict', 'outputs.GetBdsClusterVersionsFilterResult']]]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsClusterVersionsResult]:
     """
     This data source provides the list of Bds Cluster Versions in Oracle Cloud Infrastructure Big Data Service service.

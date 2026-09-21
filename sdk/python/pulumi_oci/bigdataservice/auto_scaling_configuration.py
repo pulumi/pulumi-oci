@@ -400,8 +400,8 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  node_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 policy: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]] = None,
-                 policy_details: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict']]] = None,
+                 policy: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict', 'outputs.AutoScalingConfigurationPolicy']]] = None,
+                 policy_details: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict', 'outputs.AutoScalingConfigurationPolicyDetails']]] = None,
                  secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -474,8 +474,8 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether the autoscale configuration is enabled.
         :param pulumi.Input[_builtins.str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
-        :param pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
-        :param pulumi.Input[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict']] policy_details: (Updatable) Policy definition for the autoscale configuration.
+        :param pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict', 'outputs.AutoScalingConfigurationPolicy']] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
+        :param pulumi.Input[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict', 'outputs.AutoScalingConfigurationPolicyDetails']] policy_details: (Updatable) Policy definition for the autoscale configuration.
                
                An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
                
@@ -580,8 +580,8 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  node_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 policy: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]] = None,
-                 policy_details: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict']]] = None,
+                 policy: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict', 'outputs.AutoScalingConfigurationPolicy']]] = None,
+                 policy_details: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict', 'outputs.AutoScalingConfigurationPolicyDetails']]] = None,
                  secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -626,8 +626,8 @@ class AutoScalingConfiguration(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             node_type: pulumi.Input[Optional[_builtins.str]] = None,
-            policy: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]] = None,
-            policy_details: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict']]] = None,
+            policy: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict', 'outputs.AutoScalingConfigurationPolicy']]] = None,
+            policy_details: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict', 'outputs.AutoScalingConfigurationPolicyDetails']]] = None,
             secret_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -644,8 +644,8 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether the autoscale configuration is enabled.
         :param pulumi.Input[_builtins.str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
-        :param pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
-        :param pulumi.Input[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict']] policy_details: (Updatable) Policy definition for the autoscale configuration.
+        :param pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict', 'outputs.AutoScalingConfigurationPolicy']] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
+        :param pulumi.Input[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict', 'outputs.AutoScalingConfigurationPolicyDetails']] policy_details: (Updatable) Policy definition for the autoscale configuration.
                
                An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
                

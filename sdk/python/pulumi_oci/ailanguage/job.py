@@ -473,10 +473,10 @@ class Job(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 input_configuration: pulumi.Input[Optional[Union['JobInputConfigurationArgs', 'JobInputConfigurationArgsDict']]] = None,
-                 input_location: pulumi.Input[Optional[Union['JobInputLocationArgs', 'JobInputLocationArgsDict']]] = None,
-                 model_metadata_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobModelMetadataDetailArgs', 'JobModelMetadataDetailArgsDict']]]]] = None,
-                 output_location: pulumi.Input[Optional[Union['JobOutputLocationArgs', 'JobOutputLocationArgsDict']]] = None,
+                 input_configuration: pulumi.Input[Optional[Union['JobInputConfigurationArgs', 'JobInputConfigurationArgsDict', 'outputs.JobInputConfiguration']]] = None,
+                 input_location: pulumi.Input[Optional[Union['JobInputLocationArgs', 'JobInputLocationArgsDict', 'outputs.JobInputLocation']]] = None,
+                 model_metadata_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobModelMetadataDetailArgs', 'JobModelMetadataDetailArgsDict', 'outputs.JobModelMetadataDetail']]]]] = None,
+                 output_location: pulumi.Input[Optional[Union['JobOutputLocationArgs', 'JobOutputLocationArgsDict', 'outputs.JobOutputLocation']]] = None,
                  __props__=None):
         """
         This resource provides the Job resource in Oracle Cloud Infrastructure Ai Language service.
@@ -536,10 +536,10 @@ class Job(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the job.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the job.
-        :param pulumi.Input[Union['JobInputConfigurationArgs', 'JobInputConfigurationArgsDict']] input_configuration: input documents configuration by default TXT files will be processed and this behaviour will not change in future after adding new types
-        :param pulumi.Input[Union['JobInputLocationArgs', 'JobInputLocationArgsDict']] input_location: document location and other meta data about documents For TXT only ObjectStoragePrefixLocation supported For CSV only ObjectStorageFileNameLocation is supported For this release only one file is supported for ObjectStorageFileNameLocation i.e CSV file type
-        :param pulumi.Input[Sequence[pulumi.Input[Union['JobModelMetadataDetailArgs', 'JobModelMetadataDetailArgsDict']]]] model_metadata_details: training model details For this release only one model is allowed to be input here. One of the three modelType, ModelId, endpointId should be given other wise error will be thrown from API
-        :param pulumi.Input[Union['JobOutputLocationArgs', 'JobOutputLocationArgsDict']] output_location: Object storage output location to write inference results
+        :param pulumi.Input[Union['JobInputConfigurationArgs', 'JobInputConfigurationArgsDict', 'outputs.JobInputConfiguration']] input_configuration: input documents configuration by default TXT files will be processed and this behaviour will not change in future after adding new types
+        :param pulumi.Input[Union['JobInputLocationArgs', 'JobInputLocationArgsDict', 'outputs.JobInputLocation']] input_location: document location and other meta data about documents For TXT only ObjectStoragePrefixLocation supported For CSV only ObjectStorageFileNameLocation is supported For this release only one file is supported for ObjectStorageFileNameLocation i.e CSV file type
+        :param pulumi.Input[Sequence[pulumi.Input[Union['JobModelMetadataDetailArgs', 'JobModelMetadataDetailArgsDict', 'outputs.JobModelMetadataDetail']]]] model_metadata_details: training model details For this release only one model is allowed to be input here. One of the three modelType, ModelId, endpointId should be given other wise error will be thrown from API
+        :param pulumi.Input[Union['JobOutputLocationArgs', 'JobOutputLocationArgsDict', 'outputs.JobOutputLocation']] output_location: Object storage output location to write inference results
         """
         ...
     @overload
@@ -618,10 +618,10 @@ class Job(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 input_configuration: pulumi.Input[Optional[Union['JobInputConfigurationArgs', 'JobInputConfigurationArgsDict']]] = None,
-                 input_location: pulumi.Input[Optional[Union['JobInputLocationArgs', 'JobInputLocationArgsDict']]] = None,
-                 model_metadata_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobModelMetadataDetailArgs', 'JobModelMetadataDetailArgsDict']]]]] = None,
-                 output_location: pulumi.Input[Optional[Union['JobOutputLocationArgs', 'JobOutputLocationArgsDict']]] = None,
+                 input_configuration: pulumi.Input[Optional[Union['JobInputConfigurationArgs', 'JobInputConfigurationArgsDict', 'outputs.JobInputConfiguration']]] = None,
+                 input_location: pulumi.Input[Optional[Union['JobInputLocationArgs', 'JobInputLocationArgsDict', 'outputs.JobInputLocation']]] = None,
+                 model_metadata_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobModelMetadataDetailArgs', 'JobModelMetadataDetailArgsDict', 'outputs.JobModelMetadataDetail']]]]] = None,
+                 output_location: pulumi.Input[Optional[Union['JobOutputLocationArgs', 'JobOutputLocationArgsDict', 'outputs.JobOutputLocation']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -675,11 +675,11 @@ class Job(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             failed_documents: pulumi.Input[Optional[_builtins.int]] = None,
-            input_configuration: pulumi.Input[Optional[Union['JobInputConfigurationArgs', 'JobInputConfigurationArgsDict']]] = None,
-            input_location: pulumi.Input[Optional[Union['JobInputLocationArgs', 'JobInputLocationArgsDict']]] = None,
+            input_configuration: pulumi.Input[Optional[Union['JobInputConfigurationArgs', 'JobInputConfigurationArgsDict', 'outputs.JobInputConfiguration']]] = None,
+            input_location: pulumi.Input[Optional[Union['JobInputLocationArgs', 'JobInputLocationArgsDict', 'outputs.JobInputLocation']]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            model_metadata_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobModelMetadataDetailArgs', 'JobModelMetadataDetailArgsDict']]]]] = None,
-            output_location: pulumi.Input[Optional[Union['JobOutputLocationArgs', 'JobOutputLocationArgsDict']]] = None,
+            model_metadata_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobModelMetadataDetailArgs', 'JobModelMetadataDetailArgsDict', 'outputs.JobModelMetadataDetail']]]]] = None,
+            output_location: pulumi.Input[Optional[Union['JobOutputLocationArgs', 'JobOutputLocationArgsDict', 'outputs.JobOutputLocation']]] = None,
             pending_documents: pulumi.Input[Optional[_builtins.int]] = None,
             percent_complete: pulumi.Input[Optional[_builtins.int]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -702,11 +702,11 @@ class Job(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the job.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the job.
         :param pulumi.Input[_builtins.int] failed_documents: Number of documents failed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
-        :param pulumi.Input[Union['JobInputConfigurationArgs', 'JobInputConfigurationArgsDict']] input_configuration: input documents configuration by default TXT files will be processed and this behaviour will not change in future after adding new types
-        :param pulumi.Input[Union['JobInputLocationArgs', 'JobInputLocationArgsDict']] input_location: document location and other meta data about documents For TXT only ObjectStoragePrefixLocation supported For CSV only ObjectStorageFileNameLocation is supported For this release only one file is supported for ObjectStorageFileNameLocation i.e CSV file type
+        :param pulumi.Input[Union['JobInputConfigurationArgs', 'JobInputConfigurationArgsDict', 'outputs.JobInputConfiguration']] input_configuration: input documents configuration by default TXT files will be processed and this behaviour will not change in future after adding new types
+        :param pulumi.Input[Union['JobInputLocationArgs', 'JobInputLocationArgsDict', 'outputs.JobInputLocation']] input_location: document location and other meta data about documents For TXT only ObjectStoragePrefixLocation supported For CSV only ObjectStorageFileNameLocation is supported For this release only one file is supported for ObjectStorageFileNameLocation i.e CSV file type
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['JobModelMetadataDetailArgs', 'JobModelMetadataDetailArgsDict']]]] model_metadata_details: training model details For this release only one model is allowed to be input here. One of the three modelType, ModelId, endpointId should be given other wise error will be thrown from API
-        :param pulumi.Input[Union['JobOutputLocationArgs', 'JobOutputLocationArgsDict']] output_location: Object storage output location to write inference results
+        :param pulumi.Input[Sequence[pulumi.Input[Union['JobModelMetadataDetailArgs', 'JobModelMetadataDetailArgsDict', 'outputs.JobModelMetadataDetail']]]] model_metadata_details: training model details For this release only one model is allowed to be input here. One of the three modelType, ModelId, endpointId should be given other wise error will be thrown from API
+        :param pulumi.Input[Union['JobOutputLocationArgs', 'JobOutputLocationArgsDict', 'outputs.JobOutputLocation']] output_location: Object storage output location to write inference results
         :param pulumi.Input[_builtins.int] pending_documents: Number of documents still to process. For CSV this signifies number of rows and for TXT this signifies number of files.
         :param pulumi.Input[_builtins.int] percent_complete: How much progress the operation has made, vs the total amount of work that must be performed.
         :param pulumi.Input[_builtins.str] state: The current state of the Job.

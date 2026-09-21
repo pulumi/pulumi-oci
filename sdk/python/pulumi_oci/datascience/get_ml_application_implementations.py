@@ -140,7 +140,7 @@ class AwaitableGetMlApplicationImplementationsResult(GetMlApplicationImplementat
 
 def get_ml_application_implementations(compartment_id: Optional[_builtins.str] = None,
                                        compartment_id_in_subtree: Optional[_builtins.bool] = None,
-                                       filters: Optional[Sequence[Union['GetMlApplicationImplementationsFilterArgs', 'GetMlApplicationImplementationsFilterArgsDict']]] = None,
+                                       filters: Optional[Sequence[Union['GetMlApplicationImplementationsFilterArgs', 'GetMlApplicationImplementationsFilterArgsDict', 'outputs.GetMlApplicationImplementationsFilterResult']]] = None,
                                        ml_application_id: Optional[_builtins.str] = None,
                                        ml_application_implementation_id: Optional[_builtins.str] = None,
                                        name: Optional[_builtins.str] = None,
@@ -196,7 +196,7 @@ def get_ml_application_implementations(compartment_id: Optional[_builtins.str] =
         state=pulumi.get(__ret__, 'state'))
 def get_ml_application_implementations_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
-                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMlApplicationImplementationsFilterArgs', 'GetMlApplicationImplementationsFilterArgsDict']]]]] = None,
+                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMlApplicationImplementationsFilterArgs', 'GetMlApplicationImplementationsFilterArgsDict', 'outputs.GetMlApplicationImplementationsFilterResult']]]]] = None,
                                               ml_application_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                               ml_application_implementation_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                               name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

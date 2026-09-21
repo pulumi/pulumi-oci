@@ -143,7 +143,7 @@ class AwaitableGetDbmulticloudOracleDbAzureBlobMountsResult(GetDbmulticloudOracl
 
 def get_dbmulticloud_oracle_db_azure_blob_mounts(compartment_id: Optional[_builtins.str] = None,
                                                  display_name: Optional[_builtins.str] = None,
-                                                 filters: Optional[Sequence[Union['GetDbmulticloudOracleDbAzureBlobMountsFilterArgs', 'GetDbmulticloudOracleDbAzureBlobMountsFilterArgsDict']]] = None,
+                                                 filters: Optional[Sequence[Union['GetDbmulticloudOracleDbAzureBlobMountsFilterArgs', 'GetDbmulticloudOracleDbAzureBlobMountsFilterArgsDict', 'outputs.GetDbmulticloudOracleDbAzureBlobMountsFilterResult']]] = None,
                                                  oracle_db_azure_blob_container_id: Optional[_builtins.str] = None,
                                                  oracle_db_azure_blob_mount_id: Optional[_builtins.str] = None,
                                                  oracle_db_azure_connector_id: Optional[_builtins.str] = None,
@@ -199,7 +199,7 @@ def get_dbmulticloud_oracle_db_azure_blob_mounts(compartment_id: Optional[_built
         state=pulumi.get(__ret__, 'state'))
 def get_dbmulticloud_oracle_db_azure_blob_mounts_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbmulticloudOracleDbAzureBlobMountsFilterArgs', 'GetDbmulticloudOracleDbAzureBlobMountsFilterArgsDict']]]]] = None,
+                                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbmulticloudOracleDbAzureBlobMountsFilterArgs', 'GetDbmulticloudOracleDbAzureBlobMountsFilterArgsDict', 'outputs.GetDbmulticloudOracleDbAzureBlobMountsFilterResult']]]]] = None,
                                                         oracle_db_azure_blob_container_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                         oracle_db_azure_blob_mount_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                         oracle_db_azure_connector_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

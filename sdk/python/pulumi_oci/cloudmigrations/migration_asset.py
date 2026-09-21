@@ -543,7 +543,7 @@ class MigrationAsset(pulumi.CustomResource):
                  migration_asset_depends_ons: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  migration_id: pulumi.Input[Optional[_builtins.str]] = None,
                  replication_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 replication_location_detail: pulumi.Input[Optional[Union['MigrationAssetReplicationLocationDetailArgs', 'MigrationAssetReplicationLocationDetailArgsDict']]] = None,
+                 replication_location_detail: pulumi.Input[Optional[Union['MigrationAssetReplicationLocationDetailArgs', 'MigrationAssetReplicationLocationDetailArgsDict', 'outputs.MigrationAssetReplicationLocationDetail']]] = None,
                  replication_schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
                  snap_shot_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -571,7 +571,7 @@ class MigrationAsset(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] inventory_asset_id: OCID of an asset for an inventory.
         :param pulumi.Input[_builtins.str] migration_id: OCID of the associated migration.
         :param pulumi.Input[_builtins.str] replication_compartment_id: Replication compartment identifier
-        :param pulumi.Input[Union['MigrationAssetReplicationLocationDetailArgs', 'MigrationAssetReplicationLocationDetailArgsDict']] replication_location_detail: Replication location detail where the snapshots reside
+        :param pulumi.Input[Union['MigrationAssetReplicationLocationDetailArgs', 'MigrationAssetReplicationLocationDetailArgsDict', 'outputs.MigrationAssetReplicationLocationDetail']] replication_location_detail: Replication location detail where the snapshots reside
         :param pulumi.Input[_builtins.str] replication_schedule_id: (Updatable) Replication schedule identifier
         :param pulumi.Input[_builtins.str] snap_shot_bucket_name: Name of snapshot bucket
                
@@ -622,7 +622,7 @@ class MigrationAsset(pulumi.CustomResource):
                  migration_asset_depends_ons: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  migration_id: pulumi.Input[Optional[_builtins.str]] = None,
                  replication_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 replication_location_detail: pulumi.Input[Optional[Union['MigrationAssetReplicationLocationDetailArgs', 'MigrationAssetReplicationLocationDetailArgsDict']]] = None,
+                 replication_location_detail: pulumi.Input[Optional[Union['MigrationAssetReplicationLocationDetailArgs', 'MigrationAssetReplicationLocationDetailArgsDict', 'outputs.MigrationAssetReplicationLocationDetail']]] = None,
                  replication_schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
                  snap_shot_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -688,7 +688,7 @@ class MigrationAsset(pulumi.CustomResource):
             notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             parent_snapshot: pulumi.Input[Optional[_builtins.str]] = None,
             replication_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            replication_location_detail: pulumi.Input[Optional[Union['MigrationAssetReplicationLocationDetailArgs', 'MigrationAssetReplicationLocationDetailArgsDict']]] = None,
+            replication_location_detail: pulumi.Input[Optional[Union['MigrationAssetReplicationLocationDetailArgs', 'MigrationAssetReplicationLocationDetailArgsDict', 'outputs.MigrationAssetReplicationLocationDetail']]] = None,
             replication_schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
             snap_shot_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
             snapshots: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -716,7 +716,7 @@ class MigrationAsset(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notifications: List of notifications
         :param pulumi.Input[_builtins.str] parent_snapshot: The parent snapshot of the migration asset to be used by the replication task.
         :param pulumi.Input[_builtins.str] replication_compartment_id: Replication compartment identifier
-        :param pulumi.Input[Union['MigrationAssetReplicationLocationDetailArgs', 'MigrationAssetReplicationLocationDetailArgsDict']] replication_location_detail: Replication location detail where the snapshots reside
+        :param pulumi.Input[Union['MigrationAssetReplicationLocationDetailArgs', 'MigrationAssetReplicationLocationDetailArgsDict', 'outputs.MigrationAssetReplicationLocationDetail']] replication_location_detail: Replication location detail where the snapshots reside
         :param pulumi.Input[_builtins.str] replication_schedule_id: (Updatable) Replication schedule identifier
         :param pulumi.Input[_builtins.str] snap_shot_bucket_name: Name of snapshot bucket
                

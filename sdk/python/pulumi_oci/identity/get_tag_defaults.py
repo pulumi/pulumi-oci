@@ -109,7 +109,7 @@ class AwaitableGetTagDefaultsResult(GetTagDefaultsResult):
 
 
 def get_tag_defaults(compartment_id: Optional[_builtins.str] = None,
-                     filters: Optional[Sequence[Union['GetTagDefaultsFilterArgs', 'GetTagDefaultsFilterArgsDict']]] = None,
+                     filters: Optional[Sequence[Union['GetTagDefaultsFilterArgs', 'GetTagDefaultsFilterArgsDict', 'outputs.GetTagDefaultsFilterResult']]] = None,
                      id: Optional[_builtins.str] = None,
                      state: Optional[_builtins.str] = None,
                      tag_definition_id: Optional[_builtins.str] = None,
@@ -154,7 +154,7 @@ def get_tag_defaults(compartment_id: Optional[_builtins.str] = None,
         tag_defaults=pulumi.get(__ret__, 'tag_defaults'),
         tag_definition_id=pulumi.get(__ret__, 'tag_definition_id'))
 def get_tag_defaults_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTagDefaultsFilterArgs', 'GetTagDefaultsFilterArgsDict']]]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTagDefaultsFilterArgs', 'GetTagDefaultsFilterArgsDict', 'outputs.GetTagDefaultsFilterResult']]]]] = None,
                             id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             tag_definition_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

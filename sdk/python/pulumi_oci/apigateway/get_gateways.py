@@ -123,7 +123,7 @@ class AwaitableGetGatewaysResult(GetGatewaysResult):
 def get_gateways(certificate_id: Optional[_builtins.str] = None,
                  compartment_id: Optional[_builtins.str] = None,
                  display_name: Optional[_builtins.str] = None,
-                 filters: Optional[Sequence[Union['GetGatewaysFilterArgs', 'GetGatewaysFilterArgsDict']]] = None,
+                 filters: Optional[Sequence[Union['GetGatewaysFilterArgs', 'GetGatewaysFilterArgsDict', 'outputs.GetGatewaysFilterResult']]] = None,
                  state: Optional[_builtins.str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGatewaysResult:
     """
@@ -169,7 +169,7 @@ def get_gateways(certificate_id: Optional[_builtins.str] = None,
 def get_gateways_output(certificate_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetGatewaysFilterArgs', 'GetGatewaysFilterArgsDict']]]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetGatewaysFilterArgs', 'GetGatewaysFilterArgsDict', 'outputs.GetGatewaysFilterResult']]]]] = None,
                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGatewaysResult]:
     """

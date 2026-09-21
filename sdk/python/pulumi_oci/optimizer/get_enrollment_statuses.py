@@ -109,7 +109,7 @@ class AwaitableGetEnrollmentStatusesResult(GetEnrollmentStatusesResult):
 
 
 def get_enrollment_statuses(compartment_id: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetEnrollmentStatusesFilterArgs', 'GetEnrollmentStatusesFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetEnrollmentStatusesFilterArgs', 'GetEnrollmentStatusesFilterArgsDict', 'outputs.GetEnrollmentStatusesFilterResult']]] = None,
                             state: Optional[_builtins.str] = None,
                             status: Optional[_builtins.str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEnrollmentStatusesResult:
@@ -150,7 +150,7 @@ def get_enrollment_statuses(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         status=pulumi.get(__ret__, 'status'))
 def get_enrollment_statuses_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetEnrollmentStatusesFilterArgs', 'GetEnrollmentStatusesFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetEnrollmentStatusesFilterArgs', 'GetEnrollmentStatusesFilterArgsDict', 'outputs.GetEnrollmentStatusesFilterResult']]]]] = None,
                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEnrollmentStatusesResult]:

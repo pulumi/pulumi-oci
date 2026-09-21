@@ -123,7 +123,7 @@ class AwaitableGetExecutionWindowsResult(GetExecutionWindowsResult):
 def get_execution_windows(compartment_id: Optional[_builtins.str] = None,
                           display_name: Optional[_builtins.str] = None,
                           execution_resource_id: Optional[_builtins.str] = None,
-                          filters: Optional[Sequence[Union['GetExecutionWindowsFilterArgs', 'GetExecutionWindowsFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetExecutionWindowsFilterArgs', 'GetExecutionWindowsFilterArgsDict', 'outputs.GetExecutionWindowsFilterResult']]] = None,
                           state: Optional[_builtins.str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExecutionWindowsResult:
     """
@@ -169,7 +169,7 @@ def get_execution_windows(compartment_id: Optional[_builtins.str] = None,
 def get_execution_windows_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  execution_resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExecutionWindowsFilterArgs', 'GetExecutionWindowsFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExecutionWindowsFilterArgs', 'GetExecutionWindowsFilterArgsDict', 'outputs.GetExecutionWindowsFilterResult']]]]] = None,
                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExecutionWindowsResult]:
     """

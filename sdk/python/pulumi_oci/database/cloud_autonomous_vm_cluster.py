@@ -1628,7 +1628,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_mtls_enabled_vm_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
-                 maintenance_window_details: pulumi.Input[Optional[Union['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs', 'CloudAutonomousVmClusterMaintenanceWindowDetailsArgsDict']]] = None,
+                 maintenance_window_details: pulumi.Input[Optional[Union['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs', 'CloudAutonomousVmClusterMaintenanceWindowDetailsArgsDict', 'outputs.CloudAutonomousVmClusterMaintenanceWindowDetails']]] = None,
                  memory_per_oracle_compute_unit_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  opc_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1731,7 +1731,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
                
                This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
-        :param pulumi.Input[Union['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs', 'CloudAutonomousVmClusterMaintenanceWindowDetailsArgsDict']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Union['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs', 'CloudAutonomousVmClusterMaintenanceWindowDetailsArgsDict', 'outputs.CloudAutonomousVmClusterMaintenanceWindowDetails']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
@@ -1855,7 +1855,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_mtls_enabled_vm_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
-                 maintenance_window_details: pulumi.Input[Optional[Union['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs', 'CloudAutonomousVmClusterMaintenanceWindowDetailsArgsDict']]] = None,
+                 maintenance_window_details: pulumi.Input[Optional[Union['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs', 'CloudAutonomousVmClusterMaintenanceWindowDetailsArgsDict', 'outputs.CloudAutonomousVmClusterMaintenanceWindowDetails']]] = None,
                  memory_per_oracle_compute_unit_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  opc_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1995,13 +1995,13 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             last_update_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
             license_model: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            maintenance_window_details: pulumi.Input[Optional[Union['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs', 'CloudAutonomousVmClusterMaintenanceWindowDetailsArgsDict']]] = None,
-            maintenance_windows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudAutonomousVmClusterMaintenanceWindowArgs', 'CloudAutonomousVmClusterMaintenanceWindowArgsDict']]]]] = None,
+            maintenance_window_details: pulumi.Input[Optional[Union['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs', 'CloudAutonomousVmClusterMaintenanceWindowDetailsArgsDict', 'outputs.CloudAutonomousVmClusterMaintenanceWindowDetails']]] = None,
+            maintenance_windows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudAutonomousVmClusterMaintenanceWindowArgs', 'CloudAutonomousVmClusterMaintenanceWindowArgsDict', 'outputs.CloudAutonomousVmClusterMaintenanceWindow']]]]] = None,
             max_acds_lowest_scaled_value: pulumi.Input[Optional[_builtins.int]] = None,
             memory_per_compute_unit_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
             memory_per_oracle_compute_unit_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
             memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
-            multi_cloud_identity_connector_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs', 'CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgsDict']]]]] = None,
+            multi_cloud_identity_connector_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs', 'CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgsDict', 'outputs.CloudAutonomousVmClusterMultiCloudIdentityConnectorConfig']]]]] = None,
             next_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
             node_count: pulumi.Input[Optional[_builtins.int]] = None,
             non_provisionable_autonomous_container_databases: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2072,13 +2072,13 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
                
                This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[Union['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs', 'CloudAutonomousVmClusterMaintenanceWindowDetailsArgsDict']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudAutonomousVmClusterMaintenanceWindowArgs', 'CloudAutonomousVmClusterMaintenanceWindowArgsDict']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Union['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs', 'CloudAutonomousVmClusterMaintenanceWindowDetailsArgsDict', 'outputs.CloudAutonomousVmClusterMaintenanceWindowDetails']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudAutonomousVmClusterMaintenanceWindowArgs', 'CloudAutonomousVmClusterMaintenanceWindowArgsDict', 'outputs.CloudAutonomousVmClusterMaintenanceWindow']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.int] max_acds_lowest_scaled_value: The lowest value to which maximum number of ACDs can be scaled down.
         :param pulumi.Input[_builtins.float] memory_per_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: The memory allocated in GBs.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs', 'CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgsDict']]]] multi_cloud_identity_connector_configs: Details of the multi cloud identity connectors of the VM cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs', 'CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgsDict', 'outputs.CloudAutonomousVmClusterMultiCloudIdentityConnectorConfig']]]] multi_cloud_identity_connector_configs: Details of the multi cloud identity connectors of the VM cluster.
         :param pulumi.Input[_builtins.str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[_builtins.int] node_count: The number of database servers in the cloud VM cluster.
         :param pulumi.Input[_builtins.int] non_provisionable_autonomous_container_databases: The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.

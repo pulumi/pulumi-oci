@@ -101,7 +101,7 @@ class AwaitableGetInvoiceLineComputedUsagesResult(GetInvoiceLineComputedUsagesRe
 
 def get_invoice_line_computed_usages(compartment_id: Optional[_builtins.str] = None,
                                      fields: Optional[Sequence[_builtins.str]] = None,
-                                     filters: Optional[Sequence[Union['GetInvoiceLineComputedUsagesFilterArgs', 'GetInvoiceLineComputedUsagesFilterArgsDict']]] = None,
+                                     filters: Optional[Sequence[Union['GetInvoiceLineComputedUsagesFilterArgs', 'GetInvoiceLineComputedUsagesFilterArgsDict', 'outputs.GetInvoiceLineComputedUsagesFilterResult']]] = None,
                                      invoice_line_id: Optional[_builtins.str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInvoiceLineComputedUsagesResult:
     """
@@ -142,7 +142,7 @@ def get_invoice_line_computed_usages(compartment_id: Optional[_builtins.str] = N
         invoiceline_computed_usages=pulumi.get(__ret__, 'invoiceline_computed_usages'))
 def get_invoice_line_computed_usages_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             fields: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
-                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInvoiceLineComputedUsagesFilterArgs', 'GetInvoiceLineComputedUsagesFilterArgsDict']]]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInvoiceLineComputedUsagesFilterArgs', 'GetInvoiceLineComputedUsagesFilterArgsDict', 'outputs.GetInvoiceLineComputedUsagesFilterResult']]]]] = None,
                                             invoice_line_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInvoiceLineComputedUsagesResult]:
     """

@@ -373,7 +373,7 @@ class CostadCostAnomalyMonitor(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 cost_alert_subscription_map: pulumi.Input[Optional[Union['CostadCostAnomalyMonitorCostAlertSubscriptionMapArgs', 'CostadCostAnomalyMonitorCostAlertSubscriptionMapArgsDict']]] = None,
+                 cost_alert_subscription_map: pulumi.Input[Optional[Union['CostadCostAnomalyMonitorCostAlertSubscriptionMapArgs', 'CostadCostAnomalyMonitorCostAlertSubscriptionMapArgsDict', 'outputs.CostadCostAnomalyMonitorCostAlertSubscriptionMap']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -425,7 +425,7 @@ class CostadCostAnomalyMonitor(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[Union['CostadCostAnomalyMonitorCostAlertSubscriptionMapArgs', 'CostadCostAnomalyMonitorCostAlertSubscriptionMapArgsDict']] cost_alert_subscription_map: (Updatable) The mapping of cost monitor to alert subscription along with thresholds.
+        :param pulumi.Input[Union['CostadCostAnomalyMonitorCostAlertSubscriptionMapArgs', 'CostadCostAnomalyMonitorCostAlertSubscriptionMapArgsDict', 'outputs.CostadCostAnomalyMonitorCostAlertSubscriptionMap']] cost_alert_subscription_map: (Updatable) The mapping of cost monitor to alert subscription along with thresholds.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the cost anomaly monitor.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -499,7 +499,7 @@ class CostadCostAnomalyMonitor(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 cost_alert_subscription_map: pulumi.Input[Optional[Union['CostadCostAnomalyMonitorCostAlertSubscriptionMapArgs', 'CostadCostAnomalyMonitorCostAlertSubscriptionMapArgsDict']]] = None,
+                 cost_alert_subscription_map: pulumi.Input[Optional[Union['CostadCostAnomalyMonitorCostAlertSubscriptionMapArgs', 'CostadCostAnomalyMonitorCostAlertSubscriptionMapArgsDict', 'outputs.CostadCostAnomalyMonitorCostAlertSubscriptionMap']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -542,7 +542,7 @@ class CostadCostAnomalyMonitor(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            cost_alert_subscription_map: pulumi.Input[Optional[Union['CostadCostAnomalyMonitorCostAlertSubscriptionMapArgs', 'CostadCostAnomalyMonitorCostAlertSubscriptionMapArgsDict']]] = None,
+            cost_alert_subscription_map: pulumi.Input[Optional[Union['CostadCostAnomalyMonitorCostAlertSubscriptionMapArgs', 'CostadCostAnomalyMonitorCostAlertSubscriptionMapArgsDict', 'outputs.CostadCostAnomalyMonitorCostAlertSubscriptionMap']]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -562,7 +562,7 @@ class CostadCostAnomalyMonitor(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[Union['CostadCostAnomalyMonitorCostAlertSubscriptionMapArgs', 'CostadCostAnomalyMonitorCostAlertSubscriptionMapArgsDict']] cost_alert_subscription_map: (Updatable) The mapping of cost monitor to alert subscription along with thresholds.
+        :param pulumi.Input[Union['CostadCostAnomalyMonitorCostAlertSubscriptionMapArgs', 'CostadCostAnomalyMonitorCostAlertSubscriptionMapArgsDict', 'outputs.CostadCostAnomalyMonitorCostAlertSubscriptionMap']] cost_alert_subscription_map: (Updatable) The mapping of cost monitor to alert subscription along with thresholds.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the cost anomaly monitor.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`

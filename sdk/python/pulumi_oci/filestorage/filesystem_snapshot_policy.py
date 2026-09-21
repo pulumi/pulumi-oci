@@ -410,9 +410,9 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyLockArgs', 'FilesystemSnapshotPolicyLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyLockArgs', 'FilesystemSnapshotPolicyLockArgsDict', 'outputs.FilesystemSnapshotPolicyLock']]]]] = None,
                  policy_prefix: pulumi.Input[Optional[_builtins.str]] = None,
-                 schedules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyScheduleArgs', 'FilesystemSnapshotPolicyScheduleArgsDict']]]]] = None,
+                 schedules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyScheduleArgs', 'FilesystemSnapshotPolicyScheduleArgsDict', 'outputs.FilesystemSnapshotPolicySchedule']]]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -484,9 +484,9 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyLockArgs', 'FilesystemSnapshotPolicyLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyLockArgs', 'FilesystemSnapshotPolicyLockArgsDict', 'outputs.FilesystemSnapshotPolicyLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] policy_prefix: (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyScheduleArgs', 'FilesystemSnapshotPolicyScheduleArgsDict']]]] schedules: (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyScheduleArgs', 'FilesystemSnapshotPolicyScheduleArgsDict', 'outputs.FilesystemSnapshotPolicySchedule']]]] schedules: (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
                
                If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ```--schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]'```
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`.
@@ -583,9 +583,9 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyLockArgs', 'FilesystemSnapshotPolicyLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyLockArgs', 'FilesystemSnapshotPolicyLockArgsDict', 'outputs.FilesystemSnapshotPolicyLock']]]]] = None,
                  policy_prefix: pulumi.Input[Optional[_builtins.str]] = None,
-                 schedules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyScheduleArgs', 'FilesystemSnapshotPolicyScheduleArgsDict']]]]] = None,
+                 schedules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyScheduleArgs', 'FilesystemSnapshotPolicyScheduleArgsDict', 'outputs.FilesystemSnapshotPolicySchedule']]]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -628,9 +628,9 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyLockArgs', 'FilesystemSnapshotPolicyLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyLockArgs', 'FilesystemSnapshotPolicyLockArgsDict', 'outputs.FilesystemSnapshotPolicyLock']]]]] = None,
             policy_prefix: pulumi.Input[Optional[_builtins.str]] = None,
-            schedules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyScheduleArgs', 'FilesystemSnapshotPolicyScheduleArgsDict']]]]] = None,
+            schedules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyScheduleArgs', 'FilesystemSnapshotPolicyScheduleArgsDict', 'outputs.FilesystemSnapshotPolicySchedule']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'FilesystemSnapshotPolicy':
@@ -646,9 +646,9 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyLockArgs', 'FilesystemSnapshotPolicyLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyLockArgs', 'FilesystemSnapshotPolicyLockArgsDict', 'outputs.FilesystemSnapshotPolicyLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] policy_prefix: (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyScheduleArgs', 'FilesystemSnapshotPolicyScheduleArgsDict']]]] schedules: (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyScheduleArgs', 'FilesystemSnapshotPolicyScheduleArgsDict', 'outputs.FilesystemSnapshotPolicySchedule']]]] schedules: (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
                
                If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ```--schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]'```
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`.

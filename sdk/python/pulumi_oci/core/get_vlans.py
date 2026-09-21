@@ -122,7 +122,7 @@ class AwaitableGetVlansResult(GetVlansResult):
 
 def get_vlans(compartment_id: Optional[_builtins.str] = None,
               display_name: Optional[_builtins.str] = None,
-              filters: Optional[Sequence[Union['GetVlansFilterArgs', 'GetVlansFilterArgsDict']]] = None,
+              filters: Optional[Sequence[Union['GetVlansFilterArgs', 'GetVlansFilterArgsDict', 'outputs.GetVlansFilterResult']]] = None,
               state: Optional[_builtins.str] = None,
               vcn_id: Optional[_builtins.str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVlansResult:
@@ -168,7 +168,7 @@ def get_vlans(compartment_id: Optional[_builtins.str] = None,
         vlans=pulumi.get(__ret__, 'vlans'))
 def get_vlans_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVlansFilterArgs', 'GetVlansFilterArgsDict']]]]] = None,
+                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVlansFilterArgs', 'GetVlansFilterArgsDict', 'outputs.GetVlansFilterResult']]]]] = None,
                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      vcn_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVlansResult]:

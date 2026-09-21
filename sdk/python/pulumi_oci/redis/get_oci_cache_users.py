@@ -109,7 +109,7 @@ class AwaitableGetOciCacheUsersResult(GetOciCacheUsersResult):
 
 
 def get_oci_cache_users(compartment_id: Optional[_builtins.str] = None,
-                        filters: Optional[Sequence[Union['GetOciCacheUsersFilterArgs', 'GetOciCacheUsersFilterArgsDict']]] = None,
+                        filters: Optional[Sequence[Union['GetOciCacheUsersFilterArgs', 'GetOciCacheUsersFilterArgsDict', 'outputs.GetOciCacheUsersFilterResult']]] = None,
                         name: Optional[_builtins.str] = None,
                         state: Optional[_builtins.str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOciCacheUsersResult:
@@ -150,7 +150,7 @@ def get_oci_cache_users(compartment_id: Optional[_builtins.str] = None,
         oci_cache_user_collections=pulumi.get(__ret__, 'oci_cache_user_collections'),
         state=pulumi.get(__ret__, 'state'))
 def get_oci_cache_users_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOciCacheUsersFilterArgs', 'GetOciCacheUsersFilterArgsDict']]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOciCacheUsersFilterArgs', 'GetOciCacheUsersFilterArgsDict', 'outputs.GetOciCacheUsersFilterResult']]]]] = None,
                                name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOciCacheUsersResult]:

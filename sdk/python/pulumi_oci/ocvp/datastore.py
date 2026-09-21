@@ -538,7 +538,7 @@ class Datastore(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
-            block_volume_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatastoreBlockVolumeDetailArgs', 'DatastoreBlockVolumeDetailArgsDict']]]]] = None,
+            block_volume_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatastoreBlockVolumeDetailArgs', 'DatastoreBlockVolumeDetailArgsDict', 'outputs.DatastoreBlockVolumeDetail']]]]] = None,
             block_volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             capacity_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
             cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -559,7 +559,7 @@ class Datastore(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain to create the Datastore in.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatastoreBlockVolumeDetailArgs', 'DatastoreBlockVolumeDetailArgsDict']]]] block_volume_details: The list of Block Volume details that belong to the datastore.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatastoreBlockVolumeDetailArgs', 'DatastoreBlockVolumeDetailArgsDict', 'outputs.DatastoreBlockVolumeDetail']]]] block_volume_details: The list of Block Volume details that belong to the datastore.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] block_volume_ids: The List of Block volume [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s that belong to the Datastore.
         :param pulumi.Input[_builtins.float] capacity_in_gbs: Total size of the datastore in GB.
         :param pulumi.Input[_builtins.str] cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware Cluster that Datastore is attached to.

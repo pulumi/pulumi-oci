@@ -110,7 +110,7 @@ class AwaitableGetWlmsManagedInstancesResult(GetWlmsManagedInstancesResult):
 
 def get_wlms_managed_instances(compartment_id: Optional[_builtins.str] = None,
                                display_name: Optional[_builtins.str] = None,
-                               filters: Optional[Sequence[Union['GetWlmsManagedInstancesFilterArgs', 'GetWlmsManagedInstancesFilterArgsDict']]] = None,
+                               filters: Optional[Sequence[Union['GetWlmsManagedInstancesFilterArgs', 'GetWlmsManagedInstancesFilterArgsDict', 'outputs.GetWlmsManagedInstancesFilterResult']]] = None,
                                id: Optional[_builtins.str] = None,
                                plugin_status: Optional[_builtins.str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWlmsManagedInstancesResult:
@@ -155,7 +155,7 @@ def get_wlms_managed_instances(compartment_id: Optional[_builtins.str] = None,
         plugin_status=pulumi.get(__ret__, 'plugin_status'))
 def get_wlms_managed_instances_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWlmsManagedInstancesFilterArgs', 'GetWlmsManagedInstancesFilterArgsDict']]]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWlmsManagedInstancesFilterArgs', 'GetWlmsManagedInstancesFilterArgsDict', 'outputs.GetWlmsManagedInstancesFilterResult']]]]] = None,
                                       id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       plugin_status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWlmsManagedInstancesResult]:

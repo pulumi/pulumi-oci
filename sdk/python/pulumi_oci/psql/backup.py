@@ -524,7 +524,7 @@ class Backup(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  retention_period: pulumi.Input[Optional[_builtins.int]] = None,
-                 source_backup_details: pulumi.Input[Optional[Union['BackupSourceBackupDetailsArgs', 'BackupSourceBackupDetailsArgsDict']]] = None,
+                 source_backup_details: pulumi.Input[Optional[Union['BackupSourceBackupDetailsArgs', 'BackupSourceBackupDetailsArgsDict', 'outputs.BackupSourceBackupDetails']]] = None,
                  __props__=None):
         """
         This resource provides the Backup resource in Oracle Cloud Infrastructure Psql service.
@@ -575,7 +575,7 @@ class Backup(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Union['BackupSourceBackupDetailsArgs', 'BackupSourceBackupDetailsArgsDict']] source_backup_details: Information about the Source Backup associated with a backup.
+        :param pulumi.Input[Union['BackupSourceBackupDetailsArgs', 'BackupSourceBackupDetailsArgsDict', 'outputs.BackupSourceBackupDetails']] source_backup_details: Information about the Source Backup associated with a backup.
         """
         ...
     @overload
@@ -642,7 +642,7 @@ class Backup(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  retention_period: pulumi.Input[Optional[_builtins.int]] = None,
-                 source_backup_details: pulumi.Input[Optional[Union['BackupSourceBackupDetailsArgs', 'BackupSourceBackupDetailsArgsDict']]] = None,
+                 source_backup_details: pulumi.Input[Optional[Union['BackupSourceBackupDetailsArgs', 'BackupSourceBackupDetailsArgsDict', 'outputs.BackupSourceBackupDetails']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -687,8 +687,8 @@ class Backup(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             backup_size: pulumi.Input[Optional[_builtins.int]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            copy_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BackupCopyStatusArgs', 'BackupCopyStatusArgsDict']]]]] = None,
-            db_system_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BackupDbSystemDetailArgs', 'BackupDbSystemDetailArgsDict']]]]] = None,
+            copy_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BackupCopyStatusArgs', 'BackupCopyStatusArgsDict', 'outputs.BackupCopyStatus']]]]] = None,
+            db_system_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BackupDbSystemDetailArgs', 'BackupDbSystemDetailArgsDict', 'outputs.BackupDbSystemDetail']]]]] = None,
             db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -699,7 +699,7 @@ class Backup(pulumi.CustomResource):
             last_completed_request_token: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             retention_period: pulumi.Input[Optional[_builtins.int]] = None,
-            source_backup_details: pulumi.Input[Optional[Union['BackupSourceBackupDetailsArgs', 'BackupSourceBackupDetailsArgsDict']]] = None,
+            source_backup_details: pulumi.Input[Optional[Union['BackupSourceBackupDetailsArgs', 'BackupSourceBackupDetailsArgsDict', 'outputs.BackupSourceBackupDetails']]] = None,
             source_type: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -715,8 +715,8 @@ class Backup(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] backup_size: The size of the backup, in gigabytes.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BackupCopyStatusArgs', 'BackupCopyStatusArgsDict']]]] copy_statuses: List of status for Backup Copy
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BackupDbSystemDetailArgs', 'BackupDbSystemDetailArgsDict']]]] db_system_details: Information about the database system associated with a backup.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BackupCopyStatusArgs', 'BackupCopyStatusArgsDict', 'outputs.BackupCopyStatus']]]] copy_statuses: List of status for Backup Copy
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BackupDbSystemDetailArgs', 'BackupDbSystemDetailArgsDict', 'outputs.BackupDbSystemDetail']]]] db_system_details: Information about the database system associated with a backup.
         :param pulumi.Input[_builtins.str] db_system_id: The ID of the database system.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A description for the backup.
@@ -730,7 +730,7 @@ class Backup(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Union['BackupSourceBackupDetailsArgs', 'BackupSourceBackupDetailsArgsDict']] source_backup_details: Information about the Source Backup associated with a backup.
+        :param pulumi.Input[Union['BackupSourceBackupDetailsArgs', 'BackupSourceBackupDetailsArgsDict', 'outputs.BackupSourceBackupDetails']] source_backup_details: Information about the Source Backup associated with a backup.
         :param pulumi.Input[_builtins.str] source_type: Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
         :param pulumi.Input[_builtins.str] state: The current state of the backup.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`

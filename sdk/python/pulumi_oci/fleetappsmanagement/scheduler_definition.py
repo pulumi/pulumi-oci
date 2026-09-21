@@ -487,14 +487,14 @@ class SchedulerDefinition(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SchedulerDefinitionActionGroupArgs', 'SchedulerDefinitionActionGroupArgsDict']]]]] = None,
+                 action_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SchedulerDefinitionActionGroupArgs', 'SchedulerDefinitionActionGroupArgsDict', 'outputs.SchedulerDefinitionActionGroup']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 run_books: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SchedulerDefinitionRunBookArgs', 'SchedulerDefinitionRunBookArgsDict']]]]] = None,
-                 schedule: pulumi.Input[Optional[Union['SchedulerDefinitionScheduleArgs', 'SchedulerDefinitionScheduleArgsDict']]] = None,
+                 run_books: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SchedulerDefinitionRunBookArgs', 'SchedulerDefinitionRunBookArgsDict', 'outputs.SchedulerDefinitionRunBook']]]]] = None,
+                 schedule: pulumi.Input[Optional[Union['SchedulerDefinitionScheduleArgs', 'SchedulerDefinitionScheduleArgsDict', 'outputs.SchedulerDefinitionSchedule']]] = None,
                  __props__=None):
         """
         This resource provides the Scheduler Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -567,14 +567,14 @@ class SchedulerDefinition(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SchedulerDefinitionActionGroupArgs', 'SchedulerDefinitionActionGroupArgsDict']]]] action_groups: (Updatable) Action Groups associated with the Schedule.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SchedulerDefinitionActionGroupArgs', 'SchedulerDefinitionActionGroupArgsDict', 'outputs.SchedulerDefinitionActionGroup']]]] action_groups: (Updatable) Action Groups associated with the Schedule.
         :param pulumi.Input[_builtins.str] compartment_id: Compartment OCID
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SchedulerDefinitionRunBookArgs', 'SchedulerDefinitionRunBookArgsDict']]]] run_books: (Updatable) Runbooks.
-        :param pulumi.Input[Union['SchedulerDefinitionScheduleArgs', 'SchedulerDefinitionScheduleArgsDict']] schedule: (Updatable) Schedule Information.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SchedulerDefinitionRunBookArgs', 'SchedulerDefinitionRunBookArgsDict', 'outputs.SchedulerDefinitionRunBook']]]] run_books: (Updatable) Runbooks.
+        :param pulumi.Input[Union['SchedulerDefinitionScheduleArgs', 'SchedulerDefinitionScheduleArgsDict', 'outputs.SchedulerDefinitionSchedule']] schedule: (Updatable) Schedule Information.
         """
         ...
     @overload
@@ -666,14 +666,14 @@ class SchedulerDefinition(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SchedulerDefinitionActionGroupArgs', 'SchedulerDefinitionActionGroupArgsDict']]]]] = None,
+                 action_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SchedulerDefinitionActionGroupArgs', 'SchedulerDefinitionActionGroupArgsDict', 'outputs.SchedulerDefinitionActionGroup']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 run_books: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SchedulerDefinitionRunBookArgs', 'SchedulerDefinitionRunBookArgsDict']]]]] = None,
-                 schedule: pulumi.Input[Optional[Union['SchedulerDefinitionScheduleArgs', 'SchedulerDefinitionScheduleArgsDict']]] = None,
+                 run_books: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SchedulerDefinitionRunBookArgs', 'SchedulerDefinitionRunBookArgsDict', 'outputs.SchedulerDefinitionRunBook']]]]] = None,
+                 schedule: pulumi.Input[Optional[Union['SchedulerDefinitionScheduleArgs', 'SchedulerDefinitionScheduleArgsDict', 'outputs.SchedulerDefinitionSchedule']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -719,7 +719,7 @@ class SchedulerDefinition(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SchedulerDefinitionActionGroupArgs', 'SchedulerDefinitionActionGroupArgsDict']]]]] = None,
+            action_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SchedulerDefinitionActionGroupArgs', 'SchedulerDefinitionActionGroupArgsDict', 'outputs.SchedulerDefinitionActionGroup']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             count_of_affected_action_groups: pulumi.Input[Optional[_builtins.int]] = None,
             count_of_affected_resources: pulumi.Input[Optional[_builtins.int]] = None,
@@ -732,8 +732,8 @@ class SchedulerDefinition(pulumi.CustomResource):
             lifecycle_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             products: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             resource_region: pulumi.Input[Optional[_builtins.str]] = None,
-            run_books: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SchedulerDefinitionRunBookArgs', 'SchedulerDefinitionRunBookArgsDict']]]]] = None,
-            schedule: pulumi.Input[Optional[Union['SchedulerDefinitionScheduleArgs', 'SchedulerDefinitionScheduleArgsDict']]] = None,
+            run_books: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SchedulerDefinitionRunBookArgs', 'SchedulerDefinitionRunBookArgsDict', 'outputs.SchedulerDefinitionRunBook']]]]] = None,
+            schedule: pulumi.Input[Optional[Union['SchedulerDefinitionScheduleArgs', 'SchedulerDefinitionScheduleArgsDict', 'outputs.SchedulerDefinitionSchedule']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -746,7 +746,7 @@ class SchedulerDefinition(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SchedulerDefinitionActionGroupArgs', 'SchedulerDefinitionActionGroupArgsDict']]]] action_groups: (Updatable) Action Groups associated with the Schedule.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SchedulerDefinitionActionGroupArgs', 'SchedulerDefinitionActionGroupArgsDict', 'outputs.SchedulerDefinitionActionGroup']]]] action_groups: (Updatable) Action Groups associated with the Schedule.
         :param pulumi.Input[_builtins.str] compartment_id: Compartment OCID
         :param pulumi.Input[_builtins.int] count_of_affected_action_groups: Count of Action Groups affected by the Schedule.
         :param pulumi.Input[_builtins.int] count_of_affected_resources: Count of Resources affected by the Schedule.
@@ -759,8 +759,8 @@ class SchedulerDefinition(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] lifecycle_operations: All LifeCycle Operations that are part of the schedule.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] products: All products that are part of the schedule for PRODUCT ActionGroup Type.
         :param pulumi.Input[_builtins.str] resource_region: Associated region
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SchedulerDefinitionRunBookArgs', 'SchedulerDefinitionRunBookArgsDict']]]] run_books: (Updatable) Runbooks.
-        :param pulumi.Input[Union['SchedulerDefinitionScheduleArgs', 'SchedulerDefinitionScheduleArgsDict']] schedule: (Updatable) Schedule Information.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SchedulerDefinitionRunBookArgs', 'SchedulerDefinitionRunBookArgsDict', 'outputs.SchedulerDefinitionRunBook']]]] run_books: (Updatable) Runbooks.
+        :param pulumi.Input[Union['SchedulerDefinitionScheduleArgs', 'SchedulerDefinitionScheduleArgsDict', 'outputs.SchedulerDefinitionSchedule']] schedule: (Updatable) Schedule Information.
         :param pulumi.Input[_builtins.str] state: The current state of the SchedulerDefinition.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.

@@ -121,7 +121,7 @@ class AwaitableGetIdentityProvidersResult(GetIdentityProvidersResult):
 
 
 def get_identity_providers(compartment_id: Optional[_builtins.str] = None,
-                           filters: Optional[Sequence[Union['GetIdentityProvidersFilterArgs', 'GetIdentityProvidersFilterArgsDict']]] = None,
+                           filters: Optional[Sequence[Union['GetIdentityProvidersFilterArgs', 'GetIdentityProvidersFilterArgsDict', 'outputs.GetIdentityProvidersFilterResult']]] = None,
                            name: Optional[_builtins.str] = None,
                            protocol: Optional[_builtins.str] = None,
                            state: Optional[_builtins.str] = None,
@@ -172,7 +172,7 @@ def get_identity_providers(compartment_id: Optional[_builtins.str] = None,
         protocol=pulumi.get(__ret__, 'protocol'),
         state=pulumi.get(__ret__, 'state'))
 def get_identity_providers_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIdentityProvidersFilterArgs', 'GetIdentityProvidersFilterArgsDict']]]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIdentityProvidersFilterArgs', 'GetIdentityProvidersFilterArgsDict', 'outputs.GetIdentityProvidersFilterResult']]]]] = None,
                                   name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   protocol: pulumi.Input[Optional[_builtins.str]] = None,
                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

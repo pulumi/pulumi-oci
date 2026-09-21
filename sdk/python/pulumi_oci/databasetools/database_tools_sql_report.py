@@ -502,18 +502,18 @@ class DatabaseToolsSqlReport(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 columns: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportColumnArgs', 'DatabaseToolsSqlReportColumnArgsDict']]]]] = None,
+                 columns: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportColumnArgs', 'DatabaseToolsSqlReportColumnArgsDict', 'outputs.DatabaseToolsSqlReportColumn']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  instructions: pulumi.Input[Optional[_builtins.str]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportLockArgs', 'DatabaseToolsSqlReportLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportLockArgs', 'DatabaseToolsSqlReportLockArgsDict', 'outputs.DatabaseToolsSqlReportLock']]]]] = None,
                  purpose: pulumi.Input[Optional[_builtins.str]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
-                 variables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportVariableArgs', 'DatabaseToolsSqlReportVariableArgsDict']]]]] = None,
+                 variables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportVariableArgs', 'DatabaseToolsSqlReportVariableArgsDict', 'outputs.DatabaseToolsSqlReportVariable']]]]] = None,
                  __props__=None):
         """
         This resource provides the Database Tools Sql Report resource in Oracle Cloud Infrastructure Database Tools service.
@@ -572,18 +572,18 @@ class DatabaseToolsSqlReport(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportColumnArgs', 'DatabaseToolsSqlReportColumnArgsDict']]]] columns: (Updatable) Descriptive information on columns referenced in the Database Tools SQL Report source.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportColumnArgs', 'DatabaseToolsSqlReportColumnArgsDict', 'outputs.DatabaseToolsSqlReportColumn']]]] columns: (Updatable) Descriptive information on columns referenced in the Database Tools SQL Report source.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools SQL report.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A description of the SQL report.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] instructions: (Updatable) Instructions on how to use the SQL report. Step-by-step guidance for an AI agent on how to execute or fill in parameters for the report.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportLockArgs', 'DatabaseToolsSqlReportLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportLockArgs', 'DatabaseToolsSqlReportLockArgsDict', 'outputs.DatabaseToolsSqlReportLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] purpose: (Updatable) Purpose of the Database Tools SQL report. Scenario or conditions describing when or why this report should be used. Provides selection criteria to AI agents to improve report selection accuracy.
         :param pulumi.Input[_builtins.str] source: (Updatable) SQL query executed to generate the report.
         :param pulumi.Input[_builtins.str] type: (Updatable) The Database Tools SQL report type.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportVariableArgs', 'DatabaseToolsSqlReportVariableArgsDict']]]] variables: (Updatable) Variables referenced in the Database Tools SQL Report source.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportVariableArgs', 'DatabaseToolsSqlReportVariableArgsDict', 'outputs.DatabaseToolsSqlReportVariable']]]] variables: (Updatable) Variables referenced in the Database Tools SQL Report source.
         """
         ...
     @overload
@@ -661,18 +661,18 @@ class DatabaseToolsSqlReport(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 columns: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportColumnArgs', 'DatabaseToolsSqlReportColumnArgsDict']]]]] = None,
+                 columns: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportColumnArgs', 'DatabaseToolsSqlReportColumnArgsDict', 'outputs.DatabaseToolsSqlReportColumn']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  instructions: pulumi.Input[Optional[_builtins.str]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportLockArgs', 'DatabaseToolsSqlReportLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportLockArgs', 'DatabaseToolsSqlReportLockArgsDict', 'outputs.DatabaseToolsSqlReportLock']]]]] = None,
                  purpose: pulumi.Input[Optional[_builtins.str]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
-                 variables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportVariableArgs', 'DatabaseToolsSqlReportVariableArgsDict']]]]] = None,
+                 variables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportVariableArgs', 'DatabaseToolsSqlReportVariableArgsDict', 'outputs.DatabaseToolsSqlReportVariable']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -717,7 +717,7 @@ class DatabaseToolsSqlReport(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            columns: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportColumnArgs', 'DatabaseToolsSqlReportColumnArgsDict']]]]] = None,
+            columns: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportColumnArgs', 'DatabaseToolsSqlReportColumnArgsDict', 'outputs.DatabaseToolsSqlReportColumn']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -725,7 +725,7 @@ class DatabaseToolsSqlReport(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             instructions: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportLockArgs', 'DatabaseToolsSqlReportLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportLockArgs', 'DatabaseToolsSqlReportLockArgsDict', 'outputs.DatabaseToolsSqlReportLock']]]]] = None,
             purpose: pulumi.Input[Optional[_builtins.str]] = None,
             source: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -733,7 +733,7 @@ class DatabaseToolsSqlReport(pulumi.CustomResource):
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
-            variables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportVariableArgs', 'DatabaseToolsSqlReportVariableArgsDict']]]]] = None) -> 'DatabaseToolsSqlReport':
+            variables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportVariableArgs', 'DatabaseToolsSqlReportVariableArgsDict', 'outputs.DatabaseToolsSqlReportVariable']]]]] = None) -> 'DatabaseToolsSqlReport':
         """
         Get an existing DatabaseToolsSqlReport resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -741,7 +741,7 @@ class DatabaseToolsSqlReport(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportColumnArgs', 'DatabaseToolsSqlReportColumnArgsDict']]]] columns: (Updatable) Descriptive information on columns referenced in the Database Tools SQL Report source.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportColumnArgs', 'DatabaseToolsSqlReportColumnArgsDict', 'outputs.DatabaseToolsSqlReportColumn']]]] columns: (Updatable) Descriptive information on columns referenced in the Database Tools SQL Report source.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools SQL report.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A description of the SQL report.
@@ -749,7 +749,7 @@ class DatabaseToolsSqlReport(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] instructions: (Updatable) Instructions on how to use the SQL report. Step-by-step guidance for an AI agent on how to execute or fill in parameters for the report.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportLockArgs', 'DatabaseToolsSqlReportLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportLockArgs', 'DatabaseToolsSqlReportLockArgsDict', 'outputs.DatabaseToolsSqlReportLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] purpose: (Updatable) Purpose of the Database Tools SQL report. Scenario or conditions describing when or why this report should be used. Provides selection criteria to AI agents to improve report selection accuracy.
         :param pulumi.Input[_builtins.str] source: (Updatable) SQL query executed to generate the report.
         :param pulumi.Input[_builtins.str] state: The current state of the Database Tools SQL report.
@@ -757,7 +757,7 @@ class DatabaseToolsSqlReport(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: The time the Database Tools SQL report was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time the Database Tools SQL report was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] type: (Updatable) The Database Tools SQL report type.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportVariableArgs', 'DatabaseToolsSqlReportVariableArgsDict']]]] variables: (Updatable) Variables referenced in the Database Tools SQL Report source.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsSqlReportVariableArgs', 'DatabaseToolsSqlReportVariableArgsDict', 'outputs.DatabaseToolsSqlReportVariable']]]] variables: (Updatable) Variables referenced in the Database Tools SQL Report source.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

@@ -722,14 +722,14 @@ class DatabaseToolsMcpToolset(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  generative_ai_semantic_store_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetLockArgs', 'DatabaseToolsMcpToolsetLockArgsDict']]]]] = None,
-                 reports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetReportArgs', 'DatabaseToolsMcpToolsetReportArgsDict']]]]] = None,
-                 source: pulumi.Input[Optional[Union['DatabaseToolsMcpToolsetSourceArgs', 'DatabaseToolsMcpToolsetSourceArgsDict']]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetLockArgs', 'DatabaseToolsMcpToolsetLockArgsDict', 'outputs.DatabaseToolsMcpToolsetLock']]]]] = None,
+                 reports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetReportArgs', 'DatabaseToolsMcpToolsetReportArgsDict', 'outputs.DatabaseToolsMcpToolsetReport']]]]] = None,
+                 source: pulumi.Input[Optional[Union['DatabaseToolsMcpToolsetSourceArgs', 'DatabaseToolsMcpToolsetSourceArgsDict', 'outputs.DatabaseToolsMcpToolsetSource']]] = None,
                  tool_description: pulumi.Input[Optional[_builtins.str]] = None,
                  tool_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 tools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetToolArgs', 'DatabaseToolsMcpToolsetToolArgsDict']]]]] = None,
+                 tools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetToolArgs', 'DatabaseToolsMcpToolsetToolArgsDict', 'outputs.DatabaseToolsMcpToolsetTool']]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
-                 variables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetVariableArgs', 'DatabaseToolsMcpToolsetVariableArgsDict']]]]] = None,
+                 variables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetVariableArgs', 'DatabaseToolsMcpToolsetVariableArgsDict', 'outputs.DatabaseToolsMcpToolsetVariable']]]]] = None,
                  version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
@@ -812,14 +812,14 @@ class DatabaseToolsMcpToolset(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] generative_ai_semantic_store_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Generative AI Semantic Store.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetLockArgs', 'DatabaseToolsMcpToolsetLockArgsDict']]]] locks: Locks associated with this resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetReportArgs', 'DatabaseToolsMcpToolsetReportArgsDict']]]] reports: (Updatable) List of Database Tools SQL Reports
-        :param pulumi.Input[Union['DatabaseToolsMcpToolsetSourceArgs', 'DatabaseToolsMcpToolsetSourceArgsDict']] source: (Updatable) The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetLockArgs', 'DatabaseToolsMcpToolsetLockArgsDict', 'outputs.DatabaseToolsMcpToolsetLock']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetReportArgs', 'DatabaseToolsMcpToolsetReportArgsDict', 'outputs.DatabaseToolsMcpToolsetReport']]]] reports: (Updatable) List of Database Tools SQL Reports
+        :param pulumi.Input[Union['DatabaseToolsMcpToolsetSourceArgs', 'DatabaseToolsMcpToolsetSourceArgsDict', 'outputs.DatabaseToolsMcpToolsetSource']] source: (Updatable) The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
         :param pulumi.Input[_builtins.str] tool_description: (Updatable) Instructions describing how to use the MCP toolset and its features. This can be used to improve the LLM's understanding of the tool.
         :param pulumi.Input[_builtins.str] tool_name: (Updatable) Name of the tool returned by the MCP Server
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetToolArgs', 'DatabaseToolsMcpToolsetToolArgsDict']]]] tools: (Updatable) List of Database Tools CUSTOMIZABLE_REPORTING_TOOLS toolset tool configurations
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetToolArgs', 'DatabaseToolsMcpToolsetToolArgsDict', 'outputs.DatabaseToolsMcpToolsetTool']]]] tools: (Updatable) List of Database Tools CUSTOMIZABLE_REPORTING_TOOLS toolset tool configurations
         :param pulumi.Input[_builtins.str] type: (Updatable) The Database Tools MCP Toolset type.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetVariableArgs', 'DatabaseToolsMcpToolsetVariableArgsDict']]]] variables: (Updatable) The variables to use with the query
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetVariableArgs', 'DatabaseToolsMcpToolsetVariableArgsDict', 'outputs.DatabaseToolsMcpToolsetVariable']]]] variables: (Updatable) The variables to use with the query
         :param pulumi.Input[_builtins.int] version: (Updatable) The MCP toolset version
                
                ** IMPORTANT **
@@ -922,14 +922,14 @@ class DatabaseToolsMcpToolset(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  generative_ai_semantic_store_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetLockArgs', 'DatabaseToolsMcpToolsetLockArgsDict']]]]] = None,
-                 reports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetReportArgs', 'DatabaseToolsMcpToolsetReportArgsDict']]]]] = None,
-                 source: pulumi.Input[Optional[Union['DatabaseToolsMcpToolsetSourceArgs', 'DatabaseToolsMcpToolsetSourceArgsDict']]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetLockArgs', 'DatabaseToolsMcpToolsetLockArgsDict', 'outputs.DatabaseToolsMcpToolsetLock']]]]] = None,
+                 reports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetReportArgs', 'DatabaseToolsMcpToolsetReportArgsDict', 'outputs.DatabaseToolsMcpToolsetReport']]]]] = None,
+                 source: pulumi.Input[Optional[Union['DatabaseToolsMcpToolsetSourceArgs', 'DatabaseToolsMcpToolsetSourceArgsDict', 'outputs.DatabaseToolsMcpToolsetSource']]] = None,
                  tool_description: pulumi.Input[Optional[_builtins.str]] = None,
                  tool_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 tools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetToolArgs', 'DatabaseToolsMcpToolsetToolArgsDict']]]]] = None,
+                 tools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetToolArgs', 'DatabaseToolsMcpToolsetToolArgsDict', 'outputs.DatabaseToolsMcpToolsetTool']]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
-                 variables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetVariableArgs', 'DatabaseToolsMcpToolsetVariableArgsDict']]]]] = None,
+                 variables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetVariableArgs', 'DatabaseToolsMcpToolsetVariableArgsDict', 'outputs.DatabaseToolsMcpToolsetVariable']]]]] = None,
                  version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -993,18 +993,18 @@ class DatabaseToolsMcpToolset(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             generative_ai_semantic_store_id: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetLockArgs', 'DatabaseToolsMcpToolsetLockArgsDict']]]]] = None,
-            reports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetReportArgs', 'DatabaseToolsMcpToolsetReportArgsDict']]]]] = None,
-            source: pulumi.Input[Optional[Union['DatabaseToolsMcpToolsetSourceArgs', 'DatabaseToolsMcpToolsetSourceArgsDict']]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetLockArgs', 'DatabaseToolsMcpToolsetLockArgsDict', 'outputs.DatabaseToolsMcpToolsetLock']]]]] = None,
+            reports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetReportArgs', 'DatabaseToolsMcpToolsetReportArgsDict', 'outputs.DatabaseToolsMcpToolsetReport']]]]] = None,
+            source: pulumi.Input[Optional[Union['DatabaseToolsMcpToolsetSourceArgs', 'DatabaseToolsMcpToolsetSourceArgsDict', 'outputs.DatabaseToolsMcpToolsetSource']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
             tool_description: pulumi.Input[Optional[_builtins.str]] = None,
             tool_name: pulumi.Input[Optional[_builtins.str]] = None,
-            tools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetToolArgs', 'DatabaseToolsMcpToolsetToolArgsDict']]]]] = None,
+            tools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetToolArgs', 'DatabaseToolsMcpToolsetToolArgsDict', 'outputs.DatabaseToolsMcpToolsetTool']]]]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
-            variables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetVariableArgs', 'DatabaseToolsMcpToolsetVariableArgsDict']]]]] = None,
+            variables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetVariableArgs', 'DatabaseToolsMcpToolsetVariableArgsDict', 'outputs.DatabaseToolsMcpToolsetVariable']]]]] = None,
             version: pulumi.Input[Optional[_builtins.int]] = None) -> 'DatabaseToolsMcpToolset':
         """
         Get an existing DatabaseToolsMcpToolset resource's state with the given name, id, and optional extra
@@ -1025,18 +1025,18 @@ class DatabaseToolsMcpToolset(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] generative_ai_semantic_store_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Generative AI Semantic Store.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetLockArgs', 'DatabaseToolsMcpToolsetLockArgsDict']]]] locks: Locks associated with this resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetReportArgs', 'DatabaseToolsMcpToolsetReportArgsDict']]]] reports: (Updatable) List of Database Tools SQL Reports
-        :param pulumi.Input[Union['DatabaseToolsMcpToolsetSourceArgs', 'DatabaseToolsMcpToolsetSourceArgsDict']] source: (Updatable) The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetLockArgs', 'DatabaseToolsMcpToolsetLockArgsDict', 'outputs.DatabaseToolsMcpToolsetLock']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetReportArgs', 'DatabaseToolsMcpToolsetReportArgsDict', 'outputs.DatabaseToolsMcpToolsetReport']]]] reports: (Updatable) List of Database Tools SQL Reports
+        :param pulumi.Input[Union['DatabaseToolsMcpToolsetSourceArgs', 'DatabaseToolsMcpToolsetSourceArgsDict', 'outputs.DatabaseToolsMcpToolsetSource']] source: (Updatable) The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
         :param pulumi.Input[_builtins.str] state: The current state of the Database Tools MCP Toolset.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time the Database Tools MCP server was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] tool_description: (Updatable) Instructions describing how to use the MCP toolset and its features. This can be used to improve the LLM's understanding of the tool.
         :param pulumi.Input[_builtins.str] tool_name: (Updatable) Name of the tool returned by the MCP Server
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetToolArgs', 'DatabaseToolsMcpToolsetToolArgsDict']]]] tools: (Updatable) List of Database Tools CUSTOMIZABLE_REPORTING_TOOLS toolset tool configurations
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetToolArgs', 'DatabaseToolsMcpToolsetToolArgsDict', 'outputs.DatabaseToolsMcpToolsetTool']]]] tools: (Updatable) List of Database Tools CUSTOMIZABLE_REPORTING_TOOLS toolset tool configurations
         :param pulumi.Input[_builtins.str] type: (Updatable) The Database Tools MCP Toolset type.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetVariableArgs', 'DatabaseToolsMcpToolsetVariableArgsDict']]]] variables: (Updatable) The variables to use with the query
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetVariableArgs', 'DatabaseToolsMcpToolsetVariableArgsDict', 'outputs.DatabaseToolsMcpToolsetVariable']]]] variables: (Updatable) The variables to use with the query
         :param pulumi.Input[_builtins.int] version: (Updatable) The MCP toolset version
                
                ** IMPORTANT **

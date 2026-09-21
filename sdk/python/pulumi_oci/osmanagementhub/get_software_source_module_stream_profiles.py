@@ -117,7 +117,7 @@ class AwaitableGetSoftwareSourceModuleStreamProfilesResult(GetSoftwareSourceModu
             stream_name=self.stream_name)
 
 
-def get_software_source_module_stream_profiles(filters: Optional[Sequence[Union['GetSoftwareSourceModuleStreamProfilesFilterArgs', 'GetSoftwareSourceModuleStreamProfilesFilterArgsDict']]] = None,
+def get_software_source_module_stream_profiles(filters: Optional[Sequence[Union['GetSoftwareSourceModuleStreamProfilesFilterArgs', 'GetSoftwareSourceModuleStreamProfilesFilterArgsDict', 'outputs.GetSoftwareSourceModuleStreamProfilesFilterResult']]] = None,
                                                module_name: Optional[_builtins.str] = None,
                                                name: Optional[_builtins.str] = None,
                                                software_source_id: Optional[_builtins.str] = None,
@@ -164,7 +164,7 @@ def get_software_source_module_stream_profiles(filters: Optional[Sequence[Union[
         name=pulumi.get(__ret__, 'name'),
         software_source_id=pulumi.get(__ret__, 'software_source_id'),
         stream_name=pulumi.get(__ret__, 'stream_name'))
-def get_software_source_module_stream_profiles_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSoftwareSourceModuleStreamProfilesFilterArgs', 'GetSoftwareSourceModuleStreamProfilesFilterArgsDict']]]]] = None,
+def get_software_source_module_stream_profiles_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSoftwareSourceModuleStreamProfilesFilterArgs', 'GetSoftwareSourceModuleStreamProfilesFilterArgsDict', 'outputs.GetSoftwareSourceModuleStreamProfilesFilterResult']]]]] = None,
                                                       module_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                       name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                       software_source_id: pulumi.Input[Optional[_builtins.str]] = None,

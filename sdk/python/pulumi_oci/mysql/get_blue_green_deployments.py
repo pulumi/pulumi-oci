@@ -134,7 +134,7 @@ class AwaitableGetBlueGreenDeploymentsResult(GetBlueGreenDeploymentsResult):
 
 def get_blue_green_deployments(compartment_id: Optional[_builtins.str] = None,
                                display_name: Optional[_builtins.str] = None,
-                               filters: Optional[Sequence[Union['GetBlueGreenDeploymentsFilterArgs', 'GetBlueGreenDeploymentsFilterArgsDict']]] = None,
+                               filters: Optional[Sequence[Union['GetBlueGreenDeploymentsFilterArgs', 'GetBlueGreenDeploymentsFilterArgsDict', 'outputs.GetBlueGreenDeploymentsFilterResult']]] = None,
                                source_db_system_id: Optional[_builtins.str] = None,
                                state: Optional[_builtins.str] = None,
                                target_db_system_id: Optional[_builtins.str] = None,
@@ -185,7 +185,7 @@ def get_blue_green_deployments(compartment_id: Optional[_builtins.str] = None,
         target_db_system_id=pulumi.get(__ret__, 'target_db_system_id'))
 def get_blue_green_deployments_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBlueGreenDeploymentsFilterArgs', 'GetBlueGreenDeploymentsFilterArgsDict']]]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBlueGreenDeploymentsFilterArgs', 'GetBlueGreenDeploymentsFilterArgsDict', 'outputs.GetBlueGreenDeploymentsFilterResult']]]]] = None,
                                       source_db_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       target_db_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

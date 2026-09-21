@@ -82,7 +82,7 @@ class AwaitableGetLinkFeaturesResult(GetLinkFeaturesResult):
 
 
 def get_link_features(compartment_id: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetLinkFeaturesFilterArgs', 'GetLinkFeaturesFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetLinkFeaturesFilterArgs', 'GetLinkFeaturesFilterArgsDict', 'outputs.GetLinkFeaturesFilterResult']]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLinkFeaturesResult:
     """
     This data source provides the list of Link Features in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
@@ -113,7 +113,7 @@ def get_link_features(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         link_features_collections=pulumi.get(__ret__, 'link_features_collections'))
 def get_link_features_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLinkFeaturesFilterArgs', 'GetLinkFeaturesFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLinkFeaturesFilterArgs', 'GetLinkFeaturesFilterArgsDict', 'outputs.GetLinkFeaturesFilterResult']]]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLinkFeaturesResult]:
     """
     This data source provides the list of Link Features in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.

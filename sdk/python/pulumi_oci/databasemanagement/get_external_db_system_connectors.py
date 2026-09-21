@@ -111,7 +111,7 @@ class AwaitableGetExternalDbSystemConnectorsResult(GetExternalDbSystemConnectors
 def get_external_db_system_connectors(compartment_id: Optional[_builtins.str] = None,
                                       display_name: Optional[_builtins.str] = None,
                                       external_db_system_id: Optional[_builtins.str] = None,
-                                      filters: Optional[Sequence[Union['GetExternalDbSystemConnectorsFilterArgs', 'GetExternalDbSystemConnectorsFilterArgsDict']]] = None,
+                                      filters: Optional[Sequence[Union['GetExternalDbSystemConnectorsFilterArgs', 'GetExternalDbSystemConnectorsFilterArgsDict', 'outputs.GetExternalDbSystemConnectorsFilterResult']]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalDbSystemConnectorsResult:
     """
     This data source provides the list of External Db System Connectors in Oracle Cloud Infrastructure Database Management service.
@@ -152,7 +152,7 @@ def get_external_db_system_connectors(compartment_id: Optional[_builtins.str] = 
 def get_external_db_system_connectors_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              external_db_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalDbSystemConnectorsFilterArgs', 'GetExternalDbSystemConnectorsFilterArgsDict']]]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalDbSystemConnectorsFilterArgs', 'GetExternalDbSystemConnectorsFilterArgsDict', 'outputs.GetExternalDbSystemConnectorsFilterResult']]]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalDbSystemConnectorsResult]:
     """
     This data source provides the list of External Db System Connectors in Oracle Cloud Infrastructure Database Management service.

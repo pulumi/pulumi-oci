@@ -182,7 +182,7 @@ class AwaitableGetListingsResult(GetListingsResult):
 
 def get_listings(categories: Optional[Sequence[_builtins.str]] = None,
                  compartment_id: Optional[_builtins.str] = None,
-                 filters: Optional[Sequence[Union['GetListingsFilterArgs', 'GetListingsFilterArgsDict']]] = None,
+                 filters: Optional[Sequence[Union['GetListingsFilterArgs', 'GetListingsFilterArgsDict', 'outputs.GetListingsFilterResult']]] = None,
                  image_id: Optional[_builtins.str] = None,
                  is_featured: Optional[_builtins.bool] = None,
                  listing_id: Optional[_builtins.str] = None,
@@ -277,7 +277,7 @@ def get_listings(categories: Optional[Sequence[_builtins.str]] = None,
         publisher_id=pulumi.get(__ret__, 'publisher_id'))
 def get_listings_output(categories: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                         compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetListingsFilterArgs', 'GetListingsFilterArgsDict']]]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetListingsFilterArgs', 'GetListingsFilterArgsDict', 'outputs.GetListingsFilterResult']]]]] = None,
                         image_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         is_featured: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                         listing_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

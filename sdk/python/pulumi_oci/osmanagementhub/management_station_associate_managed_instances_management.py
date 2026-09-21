@@ -138,7 +138,7 @@ class ManagementStationAssociateManagedInstancesManagement(pulumi.CustomResource
                  opts: Optional[pulumi.ResourceOptions] = None,
                  managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  management_station_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 work_request_details: pulumi.Input[Optional[Union['ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs', 'ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgsDict']]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs', 'ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgsDict', 'outputs.ManagementStationAssociateManagedInstancesManagementWorkRequestDetails']]] = None,
                  __props__=None):
         """
         This resource provides the Management Station Associate Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -176,7 +176,7 @@ class ManagementStationAssociateManagedInstancesManagement(pulumi.CustomResource
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instances: List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to associate to the management station.
         :param pulumi.Input[_builtins.str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
-        :param pulumi.Input[Union['ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs', 'ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs', 'ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgsDict', 'outputs.ManagementStationAssociateManagedInstancesManagementWorkRequestDetails']] work_request_details: Provides the name and description of the job.
         """
         ...
     @overload
@@ -233,7 +233,7 @@ class ManagementStationAssociateManagedInstancesManagement(pulumi.CustomResource
                  opts: Optional[pulumi.ResourceOptions] = None,
                  managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  management_station_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 work_request_details: pulumi.Input[Optional[Union['ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs', 'ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgsDict']]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs', 'ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgsDict', 'outputs.ManagementStationAssociateManagedInstancesManagementWorkRequestDetails']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -262,7 +262,7 @@ class ManagementStationAssociateManagedInstancesManagement(pulumi.CustomResource
             opts: Optional[pulumi.ResourceOptions] = None,
             managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             management_station_id: pulumi.Input[Optional[_builtins.str]] = None,
-            work_request_details: pulumi.Input[Optional[Union['ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs', 'ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagementStationAssociateManagedInstancesManagement':
+            work_request_details: pulumi.Input[Optional[Union['ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs', 'ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgsDict', 'outputs.ManagementStationAssociateManagedInstancesManagementWorkRequestDetails']]] = None) -> 'ManagementStationAssociateManagedInstancesManagement':
         """
         Get an existing ManagementStationAssociateManagedInstancesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -272,7 +272,7 @@ class ManagementStationAssociateManagedInstancesManagement(pulumi.CustomResource
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instances: List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to associate to the management station.
         :param pulumi.Input[_builtins.str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
-        :param pulumi.Input[Union['ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs', 'ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs', 'ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgsDict', 'outputs.ManagementStationAssociateManagedInstancesManagementWorkRequestDetails']] work_request_details: Provides the name and description of the job.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

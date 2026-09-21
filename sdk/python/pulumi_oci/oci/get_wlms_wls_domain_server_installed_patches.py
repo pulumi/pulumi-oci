@@ -90,7 +90,7 @@ class AwaitableGetWlmsWlsDomainServerInstalledPatchesResult(GetWlmsWlsDomainServ
             wls_domain_id=self.wls_domain_id)
 
 
-def get_wlms_wls_domain_server_installed_patches(filters: Optional[Sequence[Union['GetWlmsWlsDomainServerInstalledPatchesFilterArgs', 'GetWlmsWlsDomainServerInstalledPatchesFilterArgsDict']]] = None,
+def get_wlms_wls_domain_server_installed_patches(filters: Optional[Sequence[Union['GetWlmsWlsDomainServerInstalledPatchesFilterArgs', 'GetWlmsWlsDomainServerInstalledPatchesFilterArgsDict', 'outputs.GetWlmsWlsDomainServerInstalledPatchesFilterResult']]] = None,
                                                  server_id: Optional[_builtins.str] = None,
                                                  wls_domain_id: Optional[_builtins.str] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWlmsWlsDomainServerInstalledPatchesResult:
@@ -128,7 +128,7 @@ def get_wlms_wls_domain_server_installed_patches(filters: Optional[Sequence[Unio
         installed_patch_collections=pulumi.get(__ret__, 'installed_patch_collections'),
         server_id=pulumi.get(__ret__, 'server_id'),
         wls_domain_id=pulumi.get(__ret__, 'wls_domain_id'))
-def get_wlms_wls_domain_server_installed_patches_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWlmsWlsDomainServerInstalledPatchesFilterArgs', 'GetWlmsWlsDomainServerInstalledPatchesFilterArgsDict']]]]] = None,
+def get_wlms_wls_domain_server_installed_patches_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWlmsWlsDomainServerInstalledPatchesFilterArgs', 'GetWlmsWlsDomainServerInstalledPatchesFilterArgsDict', 'outputs.GetWlmsWlsDomainServerInstalledPatchesFilterResult']]]]] = None,
                                                         server_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                         wls_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWlmsWlsDomainServerInstalledPatchesResult]:

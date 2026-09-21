@@ -94,7 +94,7 @@ class AwaitableGetDiscoveryJobLogsResult(GetDiscoveryJobLogsResult):
 
 
 def get_discovery_job_logs(discovery_job_id: Optional[_builtins.str] = None,
-                           filters: Optional[Sequence[Union['GetDiscoveryJobLogsFilterArgs', 'GetDiscoveryJobLogsFilterArgsDict']]] = None,
+                           filters: Optional[Sequence[Union['GetDiscoveryJobLogsFilterArgs', 'GetDiscoveryJobLogsFilterArgsDict', 'outputs.GetDiscoveryJobLogsFilterResult']]] = None,
                            log_type: Optional[_builtins.str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDiscoveryJobLogsResult:
     """
@@ -130,7 +130,7 @@ def get_discovery_job_logs(discovery_job_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         log_type=pulumi.get(__ret__, 'log_type'))
 def get_discovery_job_logs_output(discovery_job_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDiscoveryJobLogsFilterArgs', 'GetDiscoveryJobLogsFilterArgsDict']]]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDiscoveryJobLogsFilterArgs', 'GetDiscoveryJobLogsFilterArgsDict', 'outputs.GetDiscoveryJobLogsFilterResult']]]]] = None,
                                   log_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDiscoveryJobLogsResult]:
     """

@@ -105,7 +105,7 @@ class AwaitableGetCloudExadataStorageConnectorsResult(GetCloudExadataStorageConn
 def get_cloud_exadata_storage_connectors(cloud_exadata_infrastructure_id: Optional[_builtins.str] = None,
                                          compartment_id: Optional[_builtins.str] = None,
                                          display_name: Optional[_builtins.str] = None,
-                                         filters: Optional[Sequence[Union['GetCloudExadataStorageConnectorsFilterArgs', 'GetCloudExadataStorageConnectorsFilterArgsDict']]] = None,
+                                         filters: Optional[Sequence[Union['GetCloudExadataStorageConnectorsFilterArgs', 'GetCloudExadataStorageConnectorsFilterArgsDict', 'outputs.GetCloudExadataStorageConnectorsFilterResult']]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudExadataStorageConnectorsResult:
     """
     This data source provides the list of Cloud Exadata Storage Connectors in Oracle Cloud Infrastructure Database Management service.
@@ -146,7 +146,7 @@ def get_cloud_exadata_storage_connectors(cloud_exadata_infrastructure_id: Option
 def get_cloud_exadata_storage_connectors_output(cloud_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudExadataStorageConnectorsFilterArgs', 'GetCloudExadataStorageConnectorsFilterArgsDict']]]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudExadataStorageConnectorsFilterArgs', 'GetCloudExadataStorageConnectorsFilterArgsDict', 'outputs.GetCloudExadataStorageConnectorsFilterResult']]]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudExadataStorageConnectorsResult]:
     """
     This data source provides the list of Cloud Exadata Storage Connectors in Oracle Cloud Infrastructure Database Management service.

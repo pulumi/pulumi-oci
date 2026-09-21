@@ -884,7 +884,7 @@ class Provision(pulumi.CustomResource):
             config_catalog_item_listing_id: pulumi.Input[Optional[_builtins.str]] = None,
             config_catalog_item_listing_version: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            deployed_resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProvisionDeployedResourceArgs', 'ProvisionDeployedResourceArgsDict']]]]] = None,
+            deployed_resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProvisionDeployedResourceArgs', 'ProvisionDeployedResourceArgsDict', 'outputs.ProvisionDeployedResource']]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -898,7 +898,7 @@ class Provision(pulumi.CustomResource):
             stack_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            tf_outputs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProvisionTfOutputArgs', 'ProvisionTfOutputArgsDict']]]]] = None,
+            tf_outputs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProvisionTfOutputArgs', 'ProvisionTfOutputArgsDict', 'outputs.ProvisionTfOutput']]]]] = None,
             tf_variable_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             tf_variable_current_user_id: pulumi.Input[Optional[_builtins.str]] = None,
             tf_variable_region_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -918,7 +918,7 @@ class Provision(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] config_catalog_item_listing_id: A listing ID of the Catalog Item in the Catalog.
         :param pulumi.Input[_builtins.str] config_catalog_item_listing_version: A listing version of the Catalog Item in the Catalog.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ProvisionDeployedResourceArgs', 'ProvisionDeployedResourceArgsDict']]]] deployed_resources: The deployed resources and their summary
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ProvisionDeployedResourceArgs', 'ProvisionDeployedResourceArgsDict', 'outputs.ProvisionDeployedResource']]]] deployed_resources: The deployed resources and their summary
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -932,7 +932,7 @@ class Provision(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] stack_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RMS Stack.
         :param pulumi.Input[_builtins.str] state: The current state of the FamProvision.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ProvisionTfOutputArgs', 'ProvisionTfOutputArgsDict']]]] tf_outputs: Outputs from the pulumi up job
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ProvisionTfOutputArgs', 'ProvisionTfOutputArgsDict', 'outputs.ProvisionTfOutput']]]] tf_outputs: Outputs from the pulumi up job
         :param pulumi.Input[_builtins.str] tf_variable_compartment_id: An optional variable added to a list of RMS variables for createStack API. Overrides the one supplied in configuration file.
         :param pulumi.Input[_builtins.str] tf_variable_current_user_id: An optional variable added to a list of RMS variables for createStack API. Overrides the one supplied in configuration file.
         :param pulumi.Input[_builtins.str] tf_variable_region_id: A mandatory variable added to a list of RMS variables for createStack API. Overrides the one supplied in configuration file.

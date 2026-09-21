@@ -407,9 +407,9 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
             association_type: pulumi.Input[Optional[_builtins.str]] = None,
             category: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            destination_resource_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs', 'MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgsDict']]]]] = None,
+            destination_resource_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs', 'MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgsDict', 'outputs.MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail']]]]] = None,
             destination_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
-            source_resource_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs', 'MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgsDict']]]]] = None,
+            source_resource_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs', 'MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgsDict', 'outputs.MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail']]]]] = None,
             source_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'MonitoredResourcesAssociateMonitoredResource':
@@ -426,9 +426,9 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
                * User created using API (USER_API)
                * User created using tags (USER_TAG_ASSOC).
         :param pulumi.Input[_builtins.str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs', 'MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgsDict']]]] destination_resource_details: Association Resource Details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs', 'MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgsDict', 'outputs.MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail']]]] destination_resource_details: Association Resource Details.
         :param pulumi.Input[_builtins.str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs', 'MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgsDict']]]] source_resource_details: Association Resource Details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs', 'MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgsDict', 'outputs.MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail']]]] source_resource_details: Association Resource Details.
         :param pulumi.Input[_builtins.str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
                
                ** IMPORTANT **

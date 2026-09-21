@@ -82,7 +82,7 @@ class AwaitableGetAiProvidersResult(GetAiProvidersResult):
 
 
 def get_ai_providers(compartment_id: Optional[_builtins.str] = None,
-                     filters: Optional[Sequence[Union['GetAiProvidersFilterArgs', 'GetAiProvidersFilterArgsDict']]] = None,
+                     filters: Optional[Sequence[Union['GetAiProvidersFilterArgs', 'GetAiProvidersFilterArgsDict', 'outputs.GetAiProvidersFilterResult']]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAiProvidersResult:
     """
     This data source provides the list of Ai Providers in Oracle Cloud Infrastructure Golden Gate service.
@@ -113,7 +113,7 @@ def get_ai_providers(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_ai_providers_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAiProvidersFilterArgs', 'GetAiProvidersFilterArgsDict']]]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAiProvidersFilterArgs', 'GetAiProvidersFilterArgsDict', 'outputs.GetAiProvidersFilterResult']]]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAiProvidersResult]:
     """
     This data source provides the list of Ai Providers in Oracle Cloud Infrastructure Golden Gate service.

@@ -111,7 +111,7 @@ class AwaitableGetManagedDatabaseUserDataAccessContainersResult(GetManagedDataba
             user_name=self.user_name)
 
 
-def get_managed_database_user_data_access_containers(filters: Optional[Sequence[Union['GetManagedDatabaseUserDataAccessContainersFilterArgs', 'GetManagedDatabaseUserDataAccessContainersFilterArgsDict']]] = None,
+def get_managed_database_user_data_access_containers(filters: Optional[Sequence[Union['GetManagedDatabaseUserDataAccessContainersFilterArgs', 'GetManagedDatabaseUserDataAccessContainersFilterArgsDict', 'outputs.GetManagedDatabaseUserDataAccessContainersFilterResult']]] = None,
                                                      managed_database_id: Optional[_builtins.str] = None,
                                                      name: Optional[_builtins.str] = None,
                                                      opc_named_credential_id: Optional[_builtins.str] = None,
@@ -157,7 +157,7 @@ def get_managed_database_user_data_access_containers(filters: Optional[Sequence[
         name=pulumi.get(__ret__, 'name'),
         opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         user_name=pulumi.get(__ret__, 'user_name'))
-def get_managed_database_user_data_access_containers_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseUserDataAccessContainersFilterArgs', 'GetManagedDatabaseUserDataAccessContainersFilterArgsDict']]]]] = None,
+def get_managed_database_user_data_access_containers_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseUserDataAccessContainersFilterArgs', 'GetManagedDatabaseUserDataAccessContainersFilterArgsDict', 'outputs.GetManagedDatabaseUserDataAccessContainersFilterResult']]]]] = None,
                                                             managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                             name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                             opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

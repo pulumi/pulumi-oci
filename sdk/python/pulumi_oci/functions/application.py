@@ -516,14 +516,14 @@ class Application(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 image_policy_config: pulumi.Input[Optional[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict']]] = None,
-                 logging: pulumi.Input[Optional[Union['ApplicationLoggingArgs', 'ApplicationLoggingArgsDict']]] = None,
+                 image_policy_config: pulumi.Input[Optional[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict', 'outputs.ApplicationImagePolicyConfig']]] = None,
+                 logging: pulumi.Input[Optional[Union['ApplicationLoggingArgs', 'ApplicationLoggingArgsDict', 'outputs.ApplicationLogging']]] = None,
                  network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  syslog_url: pulumi.Input[Optional[_builtins.str]] = None,
-                 trace_config: pulumi.Input[Optional[Union['ApplicationTraceConfigArgs', 'ApplicationTraceConfigArgsDict']]] = None,
+                 trace_config: pulumi.Input[Optional[Union['ApplicationTraceConfigArgs', 'ApplicationTraceConfigArgsDict', 'outputs.ApplicationTraceConfig']]] = None,
                  __props__=None):
         """
         This resource provides the Application resource in Oracle Cloud Infrastructure Functions service.
@@ -589,14 +589,14 @@ class Application(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: The display name of the application. The display name must be unique within the compartment containing the application. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict']] image_policy_config: (Updatable) Define the image signature verification policy for an application.
-        :param pulumi.Input[Union['ApplicationLoggingArgs', 'ApplicationLoggingArgsDict']] logging: (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+        :param pulumi.Input[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict', 'outputs.ApplicationImagePolicyConfig']] image_policy_config: (Updatable) Define the image signature verification policy for an application.
+        :param pulumi.Input[Union['ApplicationLoggingArgs', 'ApplicationLoggingArgsDict', 'outputs.ApplicationLogging']] logging: (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_security_group_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] shape: Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnet_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
         :param pulumi.Input[_builtins.str] syslog_url: (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
-        :param pulumi.Input[Union['ApplicationTraceConfigArgs', 'ApplicationTraceConfigArgsDict']] trace_config: (Updatable) Define the tracing configuration for an application.
+        :param pulumi.Input[Union['ApplicationTraceConfigArgs', 'ApplicationTraceConfigArgsDict', 'outputs.ApplicationTraceConfig']] trace_config: (Updatable) Define the tracing configuration for an application.
         """
         ...
     @overload
@@ -679,14 +679,14 @@ class Application(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 image_policy_config: pulumi.Input[Optional[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict']]] = None,
-                 logging: pulumi.Input[Optional[Union['ApplicationLoggingArgs', 'ApplicationLoggingArgsDict']]] = None,
+                 image_policy_config: pulumi.Input[Optional[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict', 'outputs.ApplicationImagePolicyConfig']]] = None,
+                 logging: pulumi.Input[Optional[Union['ApplicationLoggingArgs', 'ApplicationLoggingArgsDict', 'outputs.ApplicationLogging']]] = None,
                  network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  syslog_url: pulumi.Input[Optional[_builtins.str]] = None,
-                 trace_config: pulumi.Input[Optional[Union['ApplicationTraceConfigArgs', 'ApplicationTraceConfigArgsDict']]] = None,
+                 trace_config: pulumi.Input[Optional[Union['ApplicationTraceConfigArgs', 'ApplicationTraceConfigArgsDict', 'outputs.ApplicationTraceConfig']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -733,8 +733,8 @@ class Application(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            image_policy_config: pulumi.Input[Optional[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict']]] = None,
-            logging: pulumi.Input[Optional[Union['ApplicationLoggingArgs', 'ApplicationLoggingArgsDict']]] = None,
+            image_policy_config: pulumi.Input[Optional[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict', 'outputs.ApplicationImagePolicyConfig']]] = None,
+            logging: pulumi.Input[Optional[Union['ApplicationLoggingArgs', 'ApplicationLoggingArgsDict', 'outputs.ApplicationLogging']]] = None,
             network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             shape: pulumi.Input[Optional[_builtins.str]] = None,
@@ -743,7 +743,7 @@ class Application(pulumi.CustomResource):
             syslog_url: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
-            trace_config: pulumi.Input[Optional[Union['ApplicationTraceConfigArgs', 'ApplicationTraceConfigArgsDict']]] = None) -> 'Application':
+            trace_config: pulumi.Input[Optional[Union['ApplicationTraceConfigArgs', 'ApplicationTraceConfigArgsDict', 'outputs.ApplicationTraceConfig']]] = None) -> 'Application':
         """
         Get an existing Application resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -758,8 +758,8 @@ class Application(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: The display name of the application. The display name must be unique within the compartment containing the application. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict']] image_policy_config: (Updatable) Define the image signature verification policy for an application.
-        :param pulumi.Input[Union['ApplicationLoggingArgs', 'ApplicationLoggingArgsDict']] logging: (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+        :param pulumi.Input[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict', 'outputs.ApplicationImagePolicyConfig']] image_policy_config: (Updatable) Define the image signature verification policy for an application.
+        :param pulumi.Input[Union['ApplicationLoggingArgs', 'ApplicationLoggingArgsDict', 'outputs.ApplicationLogging']] logging: (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_security_group_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] shape: Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
@@ -768,7 +768,7 @@ class Application(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] syslog_url: (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
         :param pulumi.Input[_builtins.str] time_created: The time the application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
         :param pulumi.Input[_builtins.str] time_updated: The time the application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-09-12T22:47:12.613Z`
-        :param pulumi.Input[Union['ApplicationTraceConfigArgs', 'ApplicationTraceConfigArgsDict']] trace_config: (Updatable) Define the tracing configuration for an application.
+        :param pulumi.Input[Union['ApplicationTraceConfigArgs', 'ApplicationTraceConfigArgsDict', 'outputs.ApplicationTraceConfig']] trace_config: (Updatable) Define the tracing configuration for an application.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

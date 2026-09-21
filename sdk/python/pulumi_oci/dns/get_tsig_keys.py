@@ -109,7 +109,7 @@ class AwaitableGetTsigKeysResult(GetTsigKeysResult):
 
 
 def get_tsig_keys(compartment_id: Optional[_builtins.str] = None,
-                  filters: Optional[Sequence[Union['GetTsigKeysFilterArgs', 'GetTsigKeysFilterArgsDict']]] = None,
+                  filters: Optional[Sequence[Union['GetTsigKeysFilterArgs', 'GetTsigKeysFilterArgsDict', 'outputs.GetTsigKeysFilterResult']]] = None,
                   id: Optional[_builtins.str] = None,
                   name: Optional[_builtins.str] = None,
                   state: Optional[_builtins.str] = None,
@@ -154,7 +154,7 @@ def get_tsig_keys(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         tsig_keys=pulumi.get(__ret__, 'tsig_keys'))
 def get_tsig_keys_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTsigKeysFilterArgs', 'GetTsigKeysFilterArgsDict']]]]] = None,
+                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTsigKeysFilterArgs', 'GetTsigKeysFilterArgsDict', 'outputs.GetTsigKeysFilterResult']]]]] = None,
                          id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

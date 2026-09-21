@@ -111,7 +111,7 @@ class AwaitableGetExternalDbHomesResult(GetExternalDbHomesResult):
 def get_external_db_homes(compartment_id: Optional[_builtins.str] = None,
                           display_name: Optional[_builtins.str] = None,
                           external_db_system_id: Optional[_builtins.str] = None,
-                          filters: Optional[Sequence[Union['GetExternalDbHomesFilterArgs', 'GetExternalDbHomesFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetExternalDbHomesFilterArgs', 'GetExternalDbHomesFilterArgsDict', 'outputs.GetExternalDbHomesFilterResult']]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalDbHomesResult:
     """
     This data source provides the list of External Db Homes in Oracle Cloud Infrastructure Database Management service.
@@ -152,7 +152,7 @@ def get_external_db_homes(compartment_id: Optional[_builtins.str] = None,
 def get_external_db_homes_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  external_db_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalDbHomesFilterArgs', 'GetExternalDbHomesFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalDbHomesFilterArgs', 'GetExternalDbHomesFilterArgsDict', 'outputs.GetExternalDbHomesFilterResult']]]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalDbHomesResult]:
     """
     This data source provides the list of External Db Homes in Oracle Cloud Infrastructure Database Management service.

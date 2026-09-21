@@ -110,7 +110,7 @@ class AwaitableGetOccmDemandSignalsResult(GetOccmDemandSignalsResult):
 
 def get_occm_demand_signals(compartment_id: Optional[_builtins.str] = None,
                             display_name: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetOccmDemandSignalsFilterArgs', 'GetOccmDemandSignalsFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetOccmDemandSignalsFilterArgs', 'GetOccmDemandSignalsFilterArgsDict', 'outputs.GetOccmDemandSignalsFilterResult']]] = None,
                             id: Optional[_builtins.str] = None,
                             lifecycle_details: Optional[_builtins.str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOccmDemandSignalsResult:
@@ -155,7 +155,7 @@ def get_occm_demand_signals(compartment_id: Optional[_builtins.str] = None,
         occm_demand_signal_collections=pulumi.get(__ret__, 'occm_demand_signal_collections'))
 def get_occm_demand_signals_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOccmDemandSignalsFilterArgs', 'GetOccmDemandSignalsFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOccmDemandSignalsFilterArgs', 'GetOccmDemandSignalsFilterArgsDict', 'outputs.GetOccmDemandSignalsFilterResult']]]]] = None,
                                    id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    lifecycle_details: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccmDemandSignalsResult]:

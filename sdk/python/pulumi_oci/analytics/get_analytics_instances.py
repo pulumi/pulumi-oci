@@ -135,7 +135,7 @@ class AwaitableGetAnalyticsInstancesResult(GetAnalyticsInstancesResult):
 def get_analytics_instances(capacity_type: Optional[_builtins.str] = None,
                             compartment_id: Optional[_builtins.str] = None,
                             feature_set: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetAnalyticsInstancesFilterArgs', 'GetAnalyticsInstancesFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetAnalyticsInstancesFilterArgs', 'GetAnalyticsInstancesFilterArgsDict', 'outputs.GetAnalyticsInstancesFilterResult']]] = None,
                             name: Optional[_builtins.str] = None,
                             state: Optional[_builtins.str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAnalyticsInstancesResult:
@@ -186,7 +186,7 @@ def get_analytics_instances(capacity_type: Optional[_builtins.str] = None,
 def get_analytics_instances_output(capacity_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    feature_set: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAnalyticsInstancesFilterArgs', 'GetAnalyticsInstancesFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAnalyticsInstancesFilterArgs', 'GetAnalyticsInstancesFilterArgsDict', 'outputs.GetAnalyticsInstancesFilterResult']]]]] = None,
                                    name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAnalyticsInstancesResult]:

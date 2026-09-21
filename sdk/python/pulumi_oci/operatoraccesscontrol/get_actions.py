@@ -115,7 +115,7 @@ class AwaitableGetActionsResult(GetActionsResult):
 
 
 def get_actions(compartment_id: Optional[_builtins.str] = None,
-                filters: Optional[Sequence[Union['GetActionsFilterArgs', 'GetActionsFilterArgsDict']]] = None,
+                filters: Optional[Sequence[Union['GetActionsFilterArgs', 'GetActionsFilterArgsDict', 'outputs.GetActionsFilterResult']]] = None,
                 name: Optional[_builtins.str] = None,
                 resource_type: Optional[_builtins.str] = None,
                 state: Optional[_builtins.str] = None,
@@ -161,7 +161,7 @@ def get_actions(compartment_id: Optional[_builtins.str] = None,
         resource_type=pulumi.get(__ret__, 'resource_type'),
         state=pulumi.get(__ret__, 'state'))
 def get_actions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetActionsFilterArgs', 'GetActionsFilterArgsDict']]]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetActionsFilterArgs', 'GetActionsFilterArgsDict', 'outputs.GetActionsFilterResult']]]]] = None,
                        name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

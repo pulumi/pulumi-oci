@@ -116,7 +116,7 @@ class AwaitableGetBdsInstanceApiKeysResult(GetBdsInstanceApiKeysResult):
 
 def get_bds_instance_api_keys(bds_instance_id: Optional[_builtins.str] = None,
                               display_name: Optional[_builtins.str] = None,
-                              filters: Optional[Sequence[Union['GetBdsInstanceApiKeysFilterArgs', 'GetBdsInstanceApiKeysFilterArgsDict']]] = None,
+                              filters: Optional[Sequence[Union['GetBdsInstanceApiKeysFilterArgs', 'GetBdsInstanceApiKeysFilterArgsDict', 'outputs.GetBdsInstanceApiKeysFilterResult']]] = None,
                               state: Optional[_builtins.str] = None,
                               user_id: Optional[_builtins.str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBdsInstanceApiKeysResult:
@@ -159,7 +159,7 @@ def get_bds_instance_api_keys(bds_instance_id: Optional[_builtins.str] = None,
         user_id=pulumi.get(__ret__, 'user_id'))
 def get_bds_instance_api_keys_output(bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstanceApiKeysFilterArgs', 'GetBdsInstanceApiKeysFilterArgsDict']]]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstanceApiKeysFilterArgs', 'GetBdsInstanceApiKeysFilterArgsDict', 'outputs.GetBdsInstanceApiKeysFilterResult']]]]] = None,
                                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      user_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceApiKeysResult]:

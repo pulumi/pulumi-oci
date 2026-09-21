@@ -122,7 +122,7 @@ class AwaitableGetBudgetsResult(GetBudgetsResult):
 
 def get_budgets(compartment_id: Optional[_builtins.str] = None,
                 display_name: Optional[_builtins.str] = None,
-                filters: Optional[Sequence[Union['GetBudgetsFilterArgs', 'GetBudgetsFilterArgsDict']]] = None,
+                filters: Optional[Sequence[Union['GetBudgetsFilterArgs', 'GetBudgetsFilterArgsDict', 'outputs.GetBudgetsFilterResult']]] = None,
                 state: Optional[_builtins.str] = None,
                 target_type: Optional[_builtins.str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBudgetsResult:
@@ -177,7 +177,7 @@ def get_budgets(compartment_id: Optional[_builtins.str] = None,
         target_type=pulumi.get(__ret__, 'target_type'))
 def get_budgets_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBudgetsFilterArgs', 'GetBudgetsFilterArgsDict']]]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBudgetsFilterArgs', 'GetBudgetsFilterArgsDict', 'outputs.GetBudgetsFilterResult']]]]] = None,
                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        target_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBudgetsResult]:

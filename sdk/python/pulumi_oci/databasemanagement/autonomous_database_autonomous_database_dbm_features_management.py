@@ -150,7 +150,7 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
                  opts: Optional[pulumi.ResourceOptions] = None,
                  autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  enable_autonomous_database_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
-                 feature_details: pulumi.Input[Optional[Union['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
+                 feature_details: pulumi.Input[Optional[Union['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgsDict', 'outputs.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetails']]] = None,
                  __props__=None):
         """
         This resource provides the Autonomous Database Autonomous Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
@@ -204,7 +204,7 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgsDict']] feature_details: The details required to enable the specified Database Management feature for an Autonomous Database.
+        :param pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgsDict', 'outputs.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetails']] feature_details: The details required to enable the specified Database Management feature for an Autonomous Database.
         """
         ...
     @overload
@@ -274,7 +274,7 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
                  opts: Optional[pulumi.ResourceOptions] = None,
                  autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  enable_autonomous_database_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
-                 feature_details: pulumi.Input[Optional[Union['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
+                 feature_details: pulumi.Input[Optional[Union['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgsDict', 'outputs.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetails']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -303,7 +303,7 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
             opts: Optional[pulumi.ResourceOptions] = None,
             autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
             enable_autonomous_database_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
-            feature_details: pulumi.Input[Optional[Union['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None) -> 'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement':
+            feature_details: pulumi.Input[Optional[Union['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgsDict', 'outputs.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetails']]] = None) -> 'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement':
         """
         Get an existing AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -316,7 +316,7 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgsDict']] feature_details: The details required to enable the specified Database Management feature for an Autonomous Database.
+        :param pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgsDict', 'outputs.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetails']] feature_details: The details required to enable the specified Database Management feature for an Autonomous Database.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

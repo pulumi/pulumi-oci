@@ -132,7 +132,7 @@ class AwaitableGetAcceptedAgreementsResult(GetAcceptedAgreementsResult):
 def get_accepted_agreements(accepted_agreement_id: Optional[_builtins.str] = None,
                             compartment_id: Optional[_builtins.str] = None,
                             display_name: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetAcceptedAgreementsFilterArgs', 'GetAcceptedAgreementsFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetAcceptedAgreementsFilterArgs', 'GetAcceptedAgreementsFilterArgsDict', 'outputs.GetAcceptedAgreementsFilterResult']]] = None,
                             listing_id: Optional[_builtins.str] = None,
                             package_version: Optional[_builtins.str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAcceptedAgreementsResult:
@@ -184,7 +184,7 @@ def get_accepted_agreements(accepted_agreement_id: Optional[_builtins.str] = Non
 def get_accepted_agreements_output(accepted_agreement_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAcceptedAgreementsFilterArgs', 'GetAcceptedAgreementsFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAcceptedAgreementsFilterArgs', 'GetAcceptedAgreementsFilterArgsDict', 'outputs.GetAcceptedAgreementsFilterResult']]]]] = None,
                                    listing_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    package_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAcceptedAgreementsResult]:

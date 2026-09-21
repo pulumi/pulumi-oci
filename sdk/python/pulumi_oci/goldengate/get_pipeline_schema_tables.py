@@ -115,7 +115,7 @@ class AwaitableGetPipelineSchemaTablesResult(GetPipelineSchemaTablesResult):
 
 
 def get_pipeline_schema_tables(display_name: Optional[_builtins.str] = None,
-                               filters: Optional[Sequence[Union['GetPipelineSchemaTablesFilterArgs', 'GetPipelineSchemaTablesFilterArgsDict']]] = None,
+                               filters: Optional[Sequence[Union['GetPipelineSchemaTablesFilterArgs', 'GetPipelineSchemaTablesFilterArgsDict', 'outputs.GetPipelineSchemaTablesFilterResult']]] = None,
                                pipeline_id: Optional[_builtins.str] = None,
                                source_schema_name: Optional[_builtins.str] = None,
                                target_schema_name: Optional[_builtins.str] = None,
@@ -161,7 +161,7 @@ def get_pipeline_schema_tables(display_name: Optional[_builtins.str] = None,
         source_schema_name=pulumi.get(__ret__, 'source_schema_name'),
         target_schema_name=pulumi.get(__ret__, 'target_schema_name'))
 def get_pipeline_schema_tables_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPipelineSchemaTablesFilterArgs', 'GetPipelineSchemaTablesFilterArgsDict']]]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPipelineSchemaTablesFilterArgs', 'GetPipelineSchemaTablesFilterArgsDict', 'outputs.GetPipelineSchemaTablesFilterResult']]]]] = None,
                                       pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       source_schema_name: pulumi.Input[Optional[_builtins.str]] = None,
                                       target_schema_name: pulumi.Input[Optional[_builtins.str]] = None,

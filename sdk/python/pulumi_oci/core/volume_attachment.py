@@ -858,7 +858,7 @@ class VolumeAttachment(pulumi.CustomResource):
             is_shareable: pulumi.Input[Optional[_builtins.bool]] = None,
             is_volume_created_during_launch: pulumi.Input[Optional[_builtins.bool]] = None,
             iscsi_login_state: pulumi.Input[Optional[_builtins.str]] = None,
-            multipath_devices: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeAttachmentMultipathDeviceArgs', 'VolumeAttachmentMultipathDeviceArgsDict']]]]] = None,
+            multipath_devices: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeAttachmentMultipathDeviceArgs', 'VolumeAttachmentMultipathDeviceArgsDict', 'outputs.VolumeAttachmentMultipathDevice']]]]] = None,
             port: pulumi.Input[Optional[_builtins.int]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -890,7 +890,7 @@ class VolumeAttachment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
         :param pulumi.Input[_builtins.bool] is_volume_created_during_launch: Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
         :param pulumi.Input[_builtins.str] iscsi_login_state: The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeAttachmentMultipathDeviceArgs', 'VolumeAttachmentMultipathDeviceArgsDict']]]] multipath_devices: A list of secondary multipath devices
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeAttachmentMultipathDeviceArgs', 'VolumeAttachmentMultipathDeviceArgsDict', 'outputs.VolumeAttachmentMultipathDevice']]]] multipath_devices: A list of secondary multipath devices
         :param pulumi.Input[_builtins.int] port: The volume's iSCSI port, usually port 860 or 3260.  Example: `3260`
         :param pulumi.Input[_builtins.str] state: The current state of the volume attachment.
         :param pulumi.Input[_builtins.str] time_created: The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`

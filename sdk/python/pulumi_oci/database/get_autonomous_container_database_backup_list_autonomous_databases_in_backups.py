@@ -104,7 +104,7 @@ class AwaitableGetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBack
 
 def get_autonomous_container_database_backup_list_autonomous_databases_in_backups(autonomous_container_database_id: Optional[_builtins.str] = None,
                                                                                   compartment_id: Optional[_builtins.str] = None,
-                                                                                  filters: Optional[Sequence[Union['GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsFilterArgs', 'GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsFilterArgsDict']]] = None,
+                                                                                  filters: Optional[Sequence[Union['GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsFilterArgs', 'GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsFilterArgsDict', 'outputs.GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsFilterResult']]] = None,
                                                                                   time_stamp_requested: Optional[_builtins.str] = None,
                                                                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsResult:
     """
@@ -145,7 +145,7 @@ def get_autonomous_container_database_backup_list_autonomous_databases_in_backup
         time_stamp_requested=pulumi.get(__ret__, 'time_stamp_requested'))
 def get_autonomous_container_database_backup_list_autonomous_databases_in_backups_output(autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                                          compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsFilterArgs', 'GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsFilterArgsDict']]]]] = None,
+                                                                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsFilterArgs', 'GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsFilterArgsDict', 'outputs.GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsFilterResult']]]]] = None,
                                                                                          time_stamp_requested: pulumi.Input[Optional[_builtins.str]] = None,
                                                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsResult]:
     """

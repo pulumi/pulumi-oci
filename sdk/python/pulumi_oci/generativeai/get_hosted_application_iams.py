@@ -110,7 +110,7 @@ class AwaitableGetHostedApplicationIamsResult(GetHostedApplicationIamsResult):
 
 def get_hosted_application_iams(compartment_id: Optional[_builtins.str] = None,
                                 display_name: Optional[_builtins.str] = None,
-                                filters: Optional[Sequence[Union['GetHostedApplicationIamsFilterArgs', 'GetHostedApplicationIamsFilterArgsDict']]] = None,
+                                filters: Optional[Sequence[Union['GetHostedApplicationIamsFilterArgs', 'GetHostedApplicationIamsFilterArgsDict', 'outputs.GetHostedApplicationIamsFilterResult']]] = None,
                                 id: Optional[_builtins.str] = None,
                                 state: Optional[_builtins.str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetHostedApplicationIamsResult:
@@ -155,7 +155,7 @@ def get_hosted_application_iams(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_hosted_application_iams_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetHostedApplicationIamsFilterArgs', 'GetHostedApplicationIamsFilterArgsDict']]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetHostedApplicationIamsFilterArgs', 'GetHostedApplicationIamsFilterArgsDict', 'outputs.GetHostedApplicationIamsFilterResult']]]]] = None,
                                        id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHostedApplicationIamsResult]:

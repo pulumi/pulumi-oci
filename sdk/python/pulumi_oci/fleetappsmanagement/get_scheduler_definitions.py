@@ -185,7 +185,7 @@ class AwaitableGetSchedulerDefinitionsResult(GetSchedulerDefinitionsResult):
 
 def get_scheduler_definitions(compartment_id: Optional[_builtins.str] = None,
                               display_name: Optional[_builtins.str] = None,
-                              filters: Optional[Sequence[Union['GetSchedulerDefinitionsFilterArgs', 'GetSchedulerDefinitionsFilterArgsDict']]] = None,
+                              filters: Optional[Sequence[Union['GetSchedulerDefinitionsFilterArgs', 'GetSchedulerDefinitionsFilterArgsDict', 'outputs.GetSchedulerDefinitionsFilterResult']]] = None,
                               fleet_id: Optional[_builtins.str] = None,
                               id: Optional[_builtins.str] = None,
                               maintenance_window_id: Optional[_builtins.str] = None,
@@ -266,7 +266,7 @@ def get_scheduler_definitions(compartment_id: Optional[_builtins.str] = None,
         time_scheduled_less_than=pulumi.get(__ret__, 'time_scheduled_less_than'))
 def get_scheduler_definitions_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulerDefinitionsFilterArgs', 'GetSchedulerDefinitionsFilterArgsDict']]]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulerDefinitionsFilterArgs', 'GetSchedulerDefinitionsFilterArgsDict', 'outputs.GetSchedulerDefinitionsFilterResult']]]]] = None,
                                      fleet_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      maintenance_window_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

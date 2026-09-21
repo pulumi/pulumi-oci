@@ -110,7 +110,7 @@ class AwaitableGetBdsInstancesResult(GetBdsInstancesResult):
 
 def get_bds_instances(compartment_id: Optional[_builtins.str] = None,
                       display_name: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetBdsInstancesFilterArgs', 'GetBdsInstancesFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetBdsInstancesFilterArgs', 'GetBdsInstancesFilterArgsDict', 'outputs.GetBdsInstancesFilterResult']]] = None,
                       state: Optional[_builtins.str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBdsInstancesResult:
     """
@@ -151,7 +151,7 @@ def get_bds_instances(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_bds_instances_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstancesFilterArgs', 'GetBdsInstancesFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstancesFilterArgs', 'GetBdsInstancesFilterArgsDict', 'outputs.GetBdsInstancesFilterResult']]]]] = None,
                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstancesResult]:
     """

@@ -515,7 +515,7 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 adw_admin_password: pulumi.Input[Optional[Union['ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs', 'ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict']]] = None,
+                 adw_admin_password: pulumi.Input[Optional[Union['ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs', 'ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict', 'outputs.ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_count: pulumi.Input[Optional[_builtins.int]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -574,7 +574,7 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs', 'ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict']] adw_admin_password: Details for the ADW Admin password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.  Example: `{"passwordType":"PLAIN_TEXT","password":"..."}` Example: `{"passwordType":"VAULT_SECRET","secretId":"ocid..."}`
+        :param pulumi.Input[Union['ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs', 'ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict', 'outputs.ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword']] adw_admin_password: Details for the ADW Admin password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.  Example: `{"passwordType":"PLAIN_TEXT","password":"..."}` Example: `{"passwordType":"VAULT_SECRET","secretId":"ocid..."}`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the ResourceAnalyticsInstance in.
         :param pulumi.Input[_builtins.int] compute_count: The compute amount (CPUs) available to the Autonomous Database.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -655,7 +655,7 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 adw_admin_password: pulumi.Input[Optional[Union['ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs', 'ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict']]] = None,
+                 adw_admin_password: pulumi.Input[Optional[Union['ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs', 'ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict', 'outputs.ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_count: pulumi.Input[Optional[_builtins.int]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -709,7 +709,7 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            adw_admin_password: pulumi.Input[Optional[Union['ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs', 'ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict']]] = None,
+            adw_admin_password: pulumi.Input[Optional[Union['ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs', 'ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict', 'outputs.ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword']]] = None,
             adw_id: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             compute_count: pulumi.Input[Optional[_builtins.int]] = None,
@@ -734,7 +734,7 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs', 'ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict']] adw_admin_password: Details for the ADW Admin password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.  Example: `{"passwordType":"PLAIN_TEXT","password":"..."}` Example: `{"passwordType":"VAULT_SECRET","secretId":"ocid..."}`
+        :param pulumi.Input[Union['ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs', 'ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict', 'outputs.ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword']] adw_admin_password: Details for the ADW Admin password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.  Example: `{"passwordType":"PLAIN_TEXT","password":"..."}` Example: `{"passwordType":"VAULT_SECRET","secretId":"ocid..."}`
         :param pulumi.Input[_builtins.str] adw_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the created ADW instance.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the ResourceAnalyticsInstance in.
         :param pulumi.Input[_builtins.int] compute_count: The compute amount (CPUs) available to the Autonomous Database.

@@ -81,7 +81,7 @@ class AwaitableGetManagedKafkaKafkaClusterConfigVersionsResult(GetManagedKafkaKa
             kafka_cluster_config_version_collections=self.kafka_cluster_config_version_collections)
 
 
-def get_managed_kafka_kafka_cluster_config_versions(filters: Optional[Sequence[Union['GetManagedKafkaKafkaClusterConfigVersionsFilterArgs', 'GetManagedKafkaKafkaClusterConfigVersionsFilterArgsDict']]] = None,
+def get_managed_kafka_kafka_cluster_config_versions(filters: Optional[Sequence[Union['GetManagedKafkaKafkaClusterConfigVersionsFilterArgs', 'GetManagedKafkaKafkaClusterConfigVersionsFilterArgsDict', 'outputs.GetManagedKafkaKafkaClusterConfigVersionsFilterResult']]] = None,
                                                     kafka_cluster_config_id: Optional[_builtins.str] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedKafkaKafkaClusterConfigVersionsResult:
     """
@@ -112,7 +112,7 @@ def get_managed_kafka_kafka_cluster_config_versions(filters: Optional[Sequence[U
         id=pulumi.get(__ret__, 'id'),
         kafka_cluster_config_id=pulumi.get(__ret__, 'kafka_cluster_config_id'),
         kafka_cluster_config_version_collections=pulumi.get(__ret__, 'kafka_cluster_config_version_collections'))
-def get_managed_kafka_kafka_cluster_config_versions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedKafkaKafkaClusterConfigVersionsFilterArgs', 'GetManagedKafkaKafkaClusterConfigVersionsFilterArgsDict']]]]] = None,
+def get_managed_kafka_kafka_cluster_config_versions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedKafkaKafkaClusterConfigVersionsFilterArgs', 'GetManagedKafkaKafkaClusterConfigVersionsFilterArgsDict', 'outputs.GetManagedKafkaKafkaClusterConfigVersionsFilterResult']]]]] = None,
                                                            kafka_cluster_config_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedKafkaKafkaClusterConfigVersionsResult]:
     """

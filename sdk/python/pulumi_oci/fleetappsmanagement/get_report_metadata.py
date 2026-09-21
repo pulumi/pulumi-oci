@@ -91,7 +91,7 @@ class AwaitableGetReportMetadataResult(GetReportMetadataResult):
 
 
 def get_report_metadata(compartment_id: Optional[_builtins.str] = None,
-                        filters: Optional[Sequence[Union['GetReportMetadataFilterArgs', 'GetReportMetadataFilterArgsDict']]] = None,
+                        filters: Optional[Sequence[Union['GetReportMetadataFilterArgs', 'GetReportMetadataFilterArgsDict', 'outputs.GetReportMetadataFilterResult']]] = None,
                         report_name: Optional[_builtins.str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetReportMetadataResult:
     """
@@ -127,7 +127,7 @@ def get_report_metadata(compartment_id: Optional[_builtins.str] = None,
         report_metadata_collections=pulumi.get(__ret__, 'report_metadata_collections'),
         report_name=pulumi.get(__ret__, 'report_name'))
 def get_report_metadata_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetReportMetadataFilterArgs', 'GetReportMetadataFilterArgsDict']]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetReportMetadataFilterArgs', 'GetReportMetadataFilterArgsDict', 'outputs.GetReportMetadataFilterResult']]]]] = None,
                                report_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReportMetadataResult]:
     """

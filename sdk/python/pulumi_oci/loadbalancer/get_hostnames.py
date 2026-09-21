@@ -81,7 +81,7 @@ class AwaitableGetHostnamesResult(GetHostnamesResult):
             load_balancer_id=self.load_balancer_id)
 
 
-def get_hostnames(filters: Optional[Sequence[Union['GetHostnamesFilterArgs', 'GetHostnamesFilterArgsDict']]] = None,
+def get_hostnames(filters: Optional[Sequence[Union['GetHostnamesFilterArgs', 'GetHostnamesFilterArgsDict', 'outputs.GetHostnamesFilterResult']]] = None,
                   load_balancer_id: Optional[_builtins.str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetHostnamesResult:
     """
@@ -112,7 +112,7 @@ def get_hostnames(filters: Optional[Sequence[Union['GetHostnamesFilterArgs', 'Ge
         hostnames=pulumi.get(__ret__, 'hostnames'),
         id=pulumi.get(__ret__, 'id'),
         load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'))
-def get_hostnames_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetHostnamesFilterArgs', 'GetHostnamesFilterArgsDict']]]]] = None,
+def get_hostnames_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetHostnamesFilterArgs', 'GetHostnamesFilterArgsDict', 'outputs.GetHostnamesFilterResult']]]]] = None,
                          load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHostnamesResult]:
     """

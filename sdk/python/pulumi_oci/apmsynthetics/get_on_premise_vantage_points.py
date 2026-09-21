@@ -107,7 +107,7 @@ class AwaitableGetOnPremiseVantagePointsResult(GetOnPremiseVantagePointsResult):
 
 def get_on_premise_vantage_points(apm_domain_id: Optional[_builtins.str] = None,
                                   display_name: Optional[_builtins.str] = None,
-                                  filters: Optional[Sequence[Union['GetOnPremiseVantagePointsFilterArgs', 'GetOnPremiseVantagePointsFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetOnPremiseVantagePointsFilterArgs', 'GetOnPremiseVantagePointsFilterArgsDict', 'outputs.GetOnPremiseVantagePointsFilterResult']]] = None,
                                   name: Optional[_builtins.str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOnPremiseVantagePointsResult:
     """
@@ -148,7 +148,7 @@ def get_on_premise_vantage_points(apm_domain_id: Optional[_builtins.str] = None,
         on_premise_vantage_point_collections=pulumi.get(__ret__, 'on_premise_vantage_point_collections'))
 def get_on_premise_vantage_points_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOnPremiseVantagePointsFilterArgs', 'GetOnPremiseVantagePointsFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOnPremiseVantagePointsFilterArgs', 'GetOnPremiseVantagePointsFilterArgsDict', 'outputs.GetOnPremiseVantagePointsFilterResult']]]]] = None,
                                          name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOnPremiseVantagePointsResult]:
     """

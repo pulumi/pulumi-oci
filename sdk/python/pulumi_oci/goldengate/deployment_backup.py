@@ -608,7 +608,7 @@ class DeploymentBackup(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_metadata_only: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentBackupLockArgs', 'DeploymentBackupLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentBackupLockArgs', 'DeploymentBackupLockArgsDict', 'outputs.DeploymentBackupLock']]]]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  object: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -664,7 +664,7 @@ class DeploymentBackup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: An object's Display Name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_metadata_only: Parameter to allow users to create backup without trails
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentBackupLockArgs', 'DeploymentBackupLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentBackupLockArgs', 'DeploymentBackupLockArgsDict', 'outputs.DeploymentBackupLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] namespace: Name of namespace that serves as a container for all of your buckets
         :param pulumi.Input[_builtins.str] object: Name of the object to be uploaded to object storage
                
@@ -743,7 +743,7 @@ class DeploymentBackup(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_metadata_only: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentBackupLockArgs', 'DeploymentBackupLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentBackupLockArgs', 'DeploymentBackupLockArgsDict', 'outputs.DeploymentBackupLock']]]]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  object: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -814,7 +814,7 @@ class DeploymentBackup(pulumi.CustomResource):
             is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
             is_metadata_only: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentBackupLockArgs', 'DeploymentBackupLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentBackupLockArgs', 'DeploymentBackupLockArgsDict', 'outputs.DeploymentBackupLock']]]]] = None,
             namespace: pulumi.Input[Optional[_builtins.str]] = None,
             object: pulumi.Input[Optional[_builtins.str]] = None,
             ogg_version: pulumi.Input[Optional[_builtins.str]] = None,
@@ -844,7 +844,7 @@ class DeploymentBackup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_automatic: True if this object is automatically created
         :param pulumi.Input[_builtins.bool] is_metadata_only: Parameter to allow users to create backup without trails
         :param pulumi.Input[_builtins.str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentBackupLockArgs', 'DeploymentBackupLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentBackupLockArgs', 'DeploymentBackupLockArgsDict', 'outputs.DeploymentBackupLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] namespace: Name of namespace that serves as a container for all of your buckets
         :param pulumi.Input[_builtins.str] object: Name of the object to be uploaded to object storage
                

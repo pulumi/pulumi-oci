@@ -118,7 +118,7 @@ class AwaitableGetIndexesResult(GetIndexesResult):
 
 
 def get_indexes(compartment_id: Optional[_builtins.str] = None,
-                filters: Optional[Sequence[Union['GetIndexesFilterArgs', 'GetIndexesFilterArgsDict']]] = None,
+                filters: Optional[Sequence[Union['GetIndexesFilterArgs', 'GetIndexesFilterArgsDict', 'outputs.GetIndexesFilterResult']]] = None,
                 name: Optional[_builtins.str] = None,
                 state: Optional[_builtins.str] = None,
                 table_name_or_id: Optional[_builtins.str] = None,
@@ -164,7 +164,7 @@ def get_indexes(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         table_name_or_id=pulumi.get(__ret__, 'table_name_or_id'))
 def get_indexes_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIndexesFilterArgs', 'GetIndexesFilterArgsDict']]]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIndexesFilterArgs', 'GetIndexesFilterArgsDict', 'outputs.GetIndexesFilterResult']]]]] = None,
                        name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        table_name_or_id: pulumi.Input[Optional[_builtins.str]] = None,

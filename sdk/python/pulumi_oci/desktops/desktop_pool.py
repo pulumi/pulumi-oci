@@ -986,24 +986,24 @@ class DesktopPool(pulumi.CustomResource):
                  are_privileged_users: pulumi.Input[Optional[_builtins.bool]] = None,
                  are_volumes_preserved: pulumi.Input[Optional[_builtins.bool]] = None,
                  availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
-                 availability_policy: pulumi.Input[Optional[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict']]] = None,
+                 availability_policy: pulumi.Input[Optional[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict', 'outputs.DesktopPoolAvailabilityPolicy']]] = None,
                  boot_volume_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  contact_details: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 device_policy: pulumi.Input[Optional[Union['DesktopPoolDevicePolicyArgs', 'DesktopPoolDevicePolicyArgsDict']]] = None,
+                 device_policy: pulumi.Input[Optional[Union['DesktopPoolDevicePolicyArgs', 'DesktopPoolDevicePolicyArgsDict', 'outputs.DesktopPoolDevicePolicy']]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 image: pulumi.Input[Optional[Union['DesktopPoolImageArgs', 'DesktopPoolImageArgsDict']]] = None,
+                 image: pulumi.Input[Optional[Union['DesktopPoolImageArgs', 'DesktopPoolImageArgsDict', 'outputs.DesktopPoolImage']]] = None,
                  is_storage_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  maximum_size: pulumi.Input[Optional[_builtins.int]] = None,
-                 network_configuration: pulumi.Input[Optional[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']]] = None,
+                 network_configuration: pulumi.Input[Optional[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict', 'outputs.DesktopPoolNetworkConfiguration']]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 private_access_details: pulumi.Input[Optional[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']]] = None,
+                 private_access_details: pulumi.Input[Optional[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict', 'outputs.DesktopPoolPrivateAccessDetails']]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 session_lifecycle_actions: pulumi.Input[Optional[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict']]] = None,
-                 shape_config: pulumi.Input[Optional[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']]] = None,
+                 session_lifecycle_actions: pulumi.Input[Optional[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict', 'outputs.DesktopPoolSessionLifecycleActions']]] = None,
+                 shape_config: pulumi.Input[Optional[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict', 'outputs.DesktopPoolShapeConfig']]] = None,
                  shape_name: pulumi.Input[Optional[_builtins.str]] = None,
                  standby_size: pulumi.Input[Optional[_builtins.int]] = None,
                  storage_backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1037,24 +1037,24 @@ class DesktopPool(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the desktop pool.
-        :param pulumi.Input[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict']] availability_policy: (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
+        :param pulumi.Input[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict', 'outputs.DesktopPoolAvailabilityPolicy']] availability_policy: (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
         :param pulumi.Input[_builtins.int] boot_volume_size_in_gbs: (Updatable) The size in GBs of the boot volume for the desktop pool.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment which will contain the desktop pool.
         :param pulumi.Input[_builtins.str] contact_details: (Updatable) Contact information of the desktop pool administrator. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user friendly description providing additional information about the resource. Avoid entering confidential information.
-        :param pulumi.Input[Union['DesktopPoolDevicePolicyArgs', 'DesktopPoolDevicePolicyArgsDict']] device_policy: (Updatable) Provides the settings for desktop and client device options, such as audio in and out, client drive mapping, and clipboard access.
+        :param pulumi.Input[Union['DesktopPoolDevicePolicyArgs', 'DesktopPoolDevicePolicyArgsDict', 'outputs.DesktopPoolDevicePolicy']] device_policy: (Updatable) Provides the settings for desktop and client device options, such as audio in and out, client drive mapping, and clipboard access.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user friendly display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['DesktopPoolImageArgs', 'DesktopPoolImageArgsDict']] image: (Updatable) Provides information about the desktop image.
+        :param pulumi.Input[Union['DesktopPoolImageArgs', 'DesktopPoolImageArgsDict', 'outputs.DesktopPoolImage']] image: (Updatable) Provides information about the desktop image.
         :param pulumi.Input[_builtins.bool] is_storage_enabled: Indicates whether storage is enabled for the desktop pool.
         :param pulumi.Input[_builtins.int] maximum_size: (Updatable) The maximum number of desktops permitted in the desktop pool.
-        :param pulumi.Input[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']] network_configuration: (Updatable) Provides information about the network configuration of the desktop pool.
+        :param pulumi.Input[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict', 'outputs.DesktopPoolNetworkConfiguration']] network_configuration: (Updatable) Provides information about the network configuration of the desktop pool.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: A list of network security groups for the private access.
-        :param pulumi.Input[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']] private_access_details: (Updatable) The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        :param pulumi.Input[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict', 'outputs.DesktopPoolPrivateAccessDetails']] private_access_details: (Updatable) The details of the desktop's private access network connectivity to be set up for the desktop pool.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
-        :param pulumi.Input[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict']] session_lifecycle_actions: The details of action to be triggered in case of inactivity or disconnect
-        :param pulumi.Input[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']] shape_config: The compute instance shape configuration requested for each desktop in the desktop pool.
+        :param pulumi.Input[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict', 'outputs.DesktopPoolSessionLifecycleActions']] session_lifecycle_actions: The details of action to be triggered in case of inactivity or disconnect
+        :param pulumi.Input[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict', 'outputs.DesktopPoolShapeConfig']] shape_config: The compute instance shape configuration requested for each desktop in the desktop pool.
         :param pulumi.Input[_builtins.str] shape_name: The shape of the desktop pool.
         :param pulumi.Input[_builtins.int] standby_size: (Updatable) The maximum number of standby desktops available in the desktop pool.
         :param pulumi.Input[_builtins.str] storage_backup_policy_id: The backup policy OCID of the storage.
@@ -1104,24 +1104,24 @@ class DesktopPool(pulumi.CustomResource):
                  are_privileged_users: pulumi.Input[Optional[_builtins.bool]] = None,
                  are_volumes_preserved: pulumi.Input[Optional[_builtins.bool]] = None,
                  availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
-                 availability_policy: pulumi.Input[Optional[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict']]] = None,
+                 availability_policy: pulumi.Input[Optional[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict', 'outputs.DesktopPoolAvailabilityPolicy']]] = None,
                  boot_volume_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  contact_details: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 device_policy: pulumi.Input[Optional[Union['DesktopPoolDevicePolicyArgs', 'DesktopPoolDevicePolicyArgsDict']]] = None,
+                 device_policy: pulumi.Input[Optional[Union['DesktopPoolDevicePolicyArgs', 'DesktopPoolDevicePolicyArgsDict', 'outputs.DesktopPoolDevicePolicy']]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 image: pulumi.Input[Optional[Union['DesktopPoolImageArgs', 'DesktopPoolImageArgsDict']]] = None,
+                 image: pulumi.Input[Optional[Union['DesktopPoolImageArgs', 'DesktopPoolImageArgsDict', 'outputs.DesktopPoolImage']]] = None,
                  is_storage_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  maximum_size: pulumi.Input[Optional[_builtins.int]] = None,
-                 network_configuration: pulumi.Input[Optional[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']]] = None,
+                 network_configuration: pulumi.Input[Optional[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict', 'outputs.DesktopPoolNetworkConfiguration']]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 private_access_details: pulumi.Input[Optional[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']]] = None,
+                 private_access_details: pulumi.Input[Optional[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict', 'outputs.DesktopPoolPrivateAccessDetails']]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 session_lifecycle_actions: pulumi.Input[Optional[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict']]] = None,
-                 shape_config: pulumi.Input[Optional[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']]] = None,
+                 session_lifecycle_actions: pulumi.Input[Optional[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict', 'outputs.DesktopPoolSessionLifecycleActions']]] = None,
+                 shape_config: pulumi.Input[Optional[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict', 'outputs.DesktopPoolShapeConfig']]] = None,
                  shape_name: pulumi.Input[Optional[_builtins.str]] = None,
                  standby_size: pulumi.Input[Optional[_builtins.int]] = None,
                  storage_backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1213,24 +1213,24 @@ class DesktopPool(pulumi.CustomResource):
             are_privileged_users: pulumi.Input[Optional[_builtins.bool]] = None,
             are_volumes_preserved: pulumi.Input[Optional[_builtins.bool]] = None,
             availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
-            availability_policy: pulumi.Input[Optional[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict']]] = None,
+            availability_policy: pulumi.Input[Optional[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict', 'outputs.DesktopPoolAvailabilityPolicy']]] = None,
             boot_volume_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             contact_details: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            device_policy: pulumi.Input[Optional[Union['DesktopPoolDevicePolicyArgs', 'DesktopPoolDevicePolicyArgsDict']]] = None,
+            device_policy: pulumi.Input[Optional[Union['DesktopPoolDevicePolicyArgs', 'DesktopPoolDevicePolicyArgsDict', 'outputs.DesktopPoolDevicePolicy']]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            image: pulumi.Input[Optional[Union['DesktopPoolImageArgs', 'DesktopPoolImageArgsDict']]] = None,
+            image: pulumi.Input[Optional[Union['DesktopPoolImageArgs', 'DesktopPoolImageArgsDict', 'outputs.DesktopPoolImage']]] = None,
             is_storage_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             maximum_size: pulumi.Input[Optional[_builtins.int]] = None,
-            network_configuration: pulumi.Input[Optional[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']]] = None,
+            network_configuration: pulumi.Input[Optional[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict', 'outputs.DesktopPoolNetworkConfiguration']]] = None,
             nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            private_access_details: pulumi.Input[Optional[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']]] = None,
+            private_access_details: pulumi.Input[Optional[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict', 'outputs.DesktopPoolPrivateAccessDetails']]] = None,
             security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            session_lifecycle_actions: pulumi.Input[Optional[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict']]] = None,
-            shape_config: pulumi.Input[Optional[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']]] = None,
+            session_lifecycle_actions: pulumi.Input[Optional[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict', 'outputs.DesktopPoolSessionLifecycleActions']]] = None,
+            shape_config: pulumi.Input[Optional[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict', 'outputs.DesktopPoolShapeConfig']]] = None,
             shape_name: pulumi.Input[Optional[_builtins.str]] = None,
             standby_size: pulumi.Input[Optional[_builtins.int]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1254,24 +1254,24 @@ class DesktopPool(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the desktop pool.
-        :param pulumi.Input[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict']] availability_policy: (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
+        :param pulumi.Input[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict', 'outputs.DesktopPoolAvailabilityPolicy']] availability_policy: (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
         :param pulumi.Input[_builtins.int] boot_volume_size_in_gbs: (Updatable) The size in GBs of the boot volume for the desktop pool.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment which will contain the desktop pool.
         :param pulumi.Input[_builtins.str] contact_details: (Updatable) Contact information of the desktop pool administrator. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user friendly description providing additional information about the resource. Avoid entering confidential information.
-        :param pulumi.Input[Union['DesktopPoolDevicePolicyArgs', 'DesktopPoolDevicePolicyArgsDict']] device_policy: (Updatable) Provides the settings for desktop and client device options, such as audio in and out, client drive mapping, and clipboard access.
+        :param pulumi.Input[Union['DesktopPoolDevicePolicyArgs', 'DesktopPoolDevicePolicyArgsDict', 'outputs.DesktopPoolDevicePolicy']] device_policy: (Updatable) Provides the settings for desktop and client device options, such as audio in and out, client drive mapping, and clipboard access.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user friendly display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['DesktopPoolImageArgs', 'DesktopPoolImageArgsDict']] image: (Updatable) Provides information about the desktop image.
+        :param pulumi.Input[Union['DesktopPoolImageArgs', 'DesktopPoolImageArgsDict', 'outputs.DesktopPoolImage']] image: (Updatable) Provides information about the desktop image.
         :param pulumi.Input[_builtins.bool] is_storage_enabled: Indicates whether storage is enabled for the desktop pool.
         :param pulumi.Input[_builtins.int] maximum_size: (Updatable) The maximum number of desktops permitted in the desktop pool.
-        :param pulumi.Input[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']] network_configuration: (Updatable) Provides information about the network configuration of the desktop pool.
+        :param pulumi.Input[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict', 'outputs.DesktopPoolNetworkConfiguration']] network_configuration: (Updatable) Provides information about the network configuration of the desktop pool.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: A list of network security groups for the private access.
-        :param pulumi.Input[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']] private_access_details: (Updatable) The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        :param pulumi.Input[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict', 'outputs.DesktopPoolPrivateAccessDetails']] private_access_details: (Updatable) The details of the desktop's private access network connectivity to be set up for the desktop pool.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
-        :param pulumi.Input[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict']] session_lifecycle_actions: The details of action to be triggered in case of inactivity or disconnect
-        :param pulumi.Input[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']] shape_config: The compute instance shape configuration requested for each desktop in the desktop pool.
+        :param pulumi.Input[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict', 'outputs.DesktopPoolSessionLifecycleActions']] session_lifecycle_actions: The details of action to be triggered in case of inactivity or disconnect
+        :param pulumi.Input[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict', 'outputs.DesktopPoolShapeConfig']] shape_config: The compute instance shape configuration requested for each desktop in the desktop pool.
         :param pulumi.Input[_builtins.str] shape_name: The shape of the desktop pool.
         :param pulumi.Input[_builtins.int] standby_size: (Updatable) The maximum number of standby desktops available in the desktop pool.
         :param pulumi.Input[_builtins.str] state: The current state of the desktop pool.

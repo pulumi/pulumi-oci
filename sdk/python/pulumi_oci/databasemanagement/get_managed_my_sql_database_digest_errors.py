@@ -91,7 +91,7 @@ class AwaitableGetManagedMySqlDatabaseDigestErrorsResult(GetManagedMySqlDatabase
 
 
 def get_managed_my_sql_database_digest_errors(digest: Optional[_builtins.str] = None,
-                                              filters: Optional[Sequence[Union['GetManagedMySqlDatabaseDigestErrorsFilterArgs', 'GetManagedMySqlDatabaseDigestErrorsFilterArgsDict']]] = None,
+                                              filters: Optional[Sequence[Union['GetManagedMySqlDatabaseDigestErrorsFilterArgs', 'GetManagedMySqlDatabaseDigestErrorsFilterArgsDict', 'outputs.GetManagedMySqlDatabaseDigestErrorsFilterResult']]] = None,
                                               managed_my_sql_database_id: Optional[_builtins.str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedMySqlDatabaseDigestErrorsResult:
     """
@@ -128,7 +128,7 @@ def get_managed_my_sql_database_digest_errors(digest: Optional[_builtins.str] = 
         managed_my_sql_database_id=pulumi.get(__ret__, 'managed_my_sql_database_id'),
         my_sql_digest_errors_collections=pulumi.get(__ret__, 'my_sql_digest_errors_collections'))
 def get_managed_my_sql_database_digest_errors_output(digest: pulumi.Input[Optional[_builtins.str]] = None,
-                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedMySqlDatabaseDigestErrorsFilterArgs', 'GetManagedMySqlDatabaseDigestErrorsFilterArgsDict']]]]] = None,
+                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedMySqlDatabaseDigestErrorsFilterArgs', 'GetManagedMySqlDatabaseDigestErrorsFilterArgsDict', 'outputs.GetManagedMySqlDatabaseDigestErrorsFilterResult']]]]] = None,
                                                      managed_my_sql_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedMySqlDatabaseDigestErrorsResult]:
     """

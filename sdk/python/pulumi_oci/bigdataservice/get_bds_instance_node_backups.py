@@ -119,7 +119,7 @@ class AwaitableGetBdsInstanceNodeBackupsResult(GetBdsInstanceNodeBackupsResult):
 
 def get_bds_instance_node_backups(bds_instance_id: Optional[_builtins.str] = None,
                                   display_name: Optional[_builtins.str] = None,
-                                  filters: Optional[Sequence[Union['GetBdsInstanceNodeBackupsFilterArgs', 'GetBdsInstanceNodeBackupsFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetBdsInstanceNodeBackupsFilterArgs', 'GetBdsInstanceNodeBackupsFilterArgsDict', 'outputs.GetBdsInstanceNodeBackupsFilterResult']]] = None,
                                   node_host_name: Optional[_builtins.str] = None,
                                   state: Optional[_builtins.str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBdsInstanceNodeBackupsResult:
@@ -165,7 +165,7 @@ def get_bds_instance_node_backups(bds_instance_id: Optional[_builtins.str] = Non
         state=pulumi.get(__ret__, 'state'))
 def get_bds_instance_node_backups_output(bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstanceNodeBackupsFilterArgs', 'GetBdsInstanceNodeBackupsFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstanceNodeBackupsFilterArgs', 'GetBdsInstanceNodeBackupsFilterArgsDict', 'outputs.GetBdsInstanceNodeBackupsFilterResult']]]]] = None,
                                          node_host_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceNodeBackupsResult]:

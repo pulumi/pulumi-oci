@@ -475,7 +475,7 @@ class PrivateEndpoint(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  max_host_count: pulumi.Input[Optional[_builtins.int]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 scan_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PrivateEndpointScanDetailArgs', 'PrivateEndpointScanDetailArgsDict']]]]] = None,
+                 scan_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PrivateEndpointScanDetailArgs', 'PrivateEndpointScanDetailArgsDict', 'outputs.PrivateEndpointScanDetail']]]]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -535,7 +535,7 @@ class PrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.int] max_host_count: (Updatable) The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) An array of network security group OCIDs.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PrivateEndpointScanDetailArgs', 'PrivateEndpointScanDetailArgsDict']]]] scan_details: (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PrivateEndpointScanDetailArgs', 'PrivateEndpointScanDetailArgsDict', 'outputs.PrivateEndpointScanDetail']]]] scan_details: (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of a subnet.
                
                ** IMPORTANT **
@@ -617,7 +617,7 @@ class PrivateEndpoint(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  max_host_count: pulumi.Input[Optional[_builtins.int]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 scan_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PrivateEndpointScanDetailArgs', 'PrivateEndpointScanDetailArgsDict']]]]] = None,
+                 scan_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PrivateEndpointScanDetailArgs', 'PrivateEndpointScanDetailArgsDict', 'outputs.PrivateEndpointScanDetail']]]]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -671,7 +671,7 @@ class PrivateEndpoint(pulumi.CustomResource):
             nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             owner_principal_id: pulumi.Input[Optional[_builtins.str]] = None,
             owner_user_name: pulumi.Input[Optional[_builtins.str]] = None,
-            scan_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PrivateEndpointScanDetailArgs', 'PrivateEndpointScanDetailArgsDict']]]]] = None,
+            scan_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PrivateEndpointScanDetailArgs', 'PrivateEndpointScanDetailArgsDict', 'outputs.PrivateEndpointScanDetail']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -694,7 +694,7 @@ class PrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) An array of network security group OCIDs.
         :param pulumi.Input[_builtins.str] owner_principal_id: The OCID of the user who created the resource.
         :param pulumi.Input[_builtins.str] owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PrivateEndpointScanDetailArgs', 'PrivateEndpointScanDetailArgsDict']]]] scan_details: (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PrivateEndpointScanDetailArgs', 'PrivateEndpointScanDetailArgsDict', 'outputs.PrivateEndpointScanDetail']]]] scan_details: (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
         :param pulumi.Input[_builtins.str] state: The current state of this private endpoint.
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of a subnet.
                

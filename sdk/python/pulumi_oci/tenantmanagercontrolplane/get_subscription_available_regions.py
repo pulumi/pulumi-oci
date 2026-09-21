@@ -81,7 +81,7 @@ class AwaitableGetSubscriptionAvailableRegionsResult(GetSubscriptionAvailableReg
             subscription_id=self.subscription_id)
 
 
-def get_subscription_available_regions(filters: Optional[Sequence[Union['GetSubscriptionAvailableRegionsFilterArgs', 'GetSubscriptionAvailableRegionsFilterArgsDict']]] = None,
+def get_subscription_available_regions(filters: Optional[Sequence[Union['GetSubscriptionAvailableRegionsFilterArgs', 'GetSubscriptionAvailableRegionsFilterArgsDict', 'outputs.GetSubscriptionAvailableRegionsFilterResult']]] = None,
                                        subscription_id: Optional[_builtins.str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSubscriptionAvailableRegionsResult:
     """
@@ -112,7 +112,7 @@ def get_subscription_available_regions(filters: Optional[Sequence[Union['GetSubs
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'))
-def get_subscription_available_regions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionAvailableRegionsFilterArgs', 'GetSubscriptionAvailableRegionsFilterArgsDict']]]]] = None,
+def get_subscription_available_regions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionAvailableRegionsFilterArgs', 'GetSubscriptionAvailableRegionsFilterArgsDict', 'outputs.GetSubscriptionAvailableRegionsFilterResult']]]]] = None,
                                               subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionAvailableRegionsResult]:
     """

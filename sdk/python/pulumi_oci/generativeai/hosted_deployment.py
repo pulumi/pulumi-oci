@@ -324,7 +324,7 @@ class HostedDeployment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active_artifact: pulumi.Input[Optional[Union['HostedDeploymentActiveArtifactArgs', 'HostedDeploymentActiveArtifactArgsDict']]] = None,
+                 active_artifact: pulumi.Input[Optional[Union['HostedDeploymentActiveArtifactArgs', 'HostedDeploymentActiveArtifactArgsDict', 'outputs.HostedDeploymentActiveArtifact']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -350,7 +350,7 @@ class HostedDeployment(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['HostedDeploymentActiveArtifactArgs', 'HostedDeploymentActiveArtifactArgsDict']] active_artifact: (Updatable) Container/artifact configuration for the deployment.
+        :param pulumi.Input[Union['HostedDeploymentActiveArtifactArgs', 'HostedDeploymentActiveArtifactArgsDict', 'outputs.HostedDeploymentActiveArtifact']] active_artifact: (Updatable) Container/artifact configuration for the deployment.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID to create the hosted deployment in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Does not have to be unique, and it's changeable.
@@ -398,7 +398,7 @@ class HostedDeployment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active_artifact: pulumi.Input[Optional[Union['HostedDeploymentActiveArtifactArgs', 'HostedDeploymentActiveArtifactArgsDict']]] = None,
+                 active_artifact: pulumi.Input[Optional[Union['HostedDeploymentActiveArtifactArgs', 'HostedDeploymentActiveArtifactArgsDict', 'outputs.HostedDeploymentActiveArtifact']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -438,8 +438,8 @@ class HostedDeployment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            active_artifact: pulumi.Input[Optional[Union['HostedDeploymentActiveArtifactArgs', 'HostedDeploymentActiveArtifactArgsDict']]] = None,
-            artifacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HostedDeploymentArtifactArgs', 'HostedDeploymentArtifactArgsDict']]]]] = None,
+            active_artifact: pulumi.Input[Optional[Union['HostedDeploymentActiveArtifactArgs', 'HostedDeploymentActiveArtifactArgsDict', 'outputs.HostedDeploymentActiveArtifact']]] = None,
+            artifacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HostedDeploymentArtifactArgs', 'HostedDeploymentArtifactArgsDict', 'outputs.HostedDeploymentArtifact']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -456,8 +456,8 @@ class HostedDeployment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['HostedDeploymentActiveArtifactArgs', 'HostedDeploymentActiveArtifactArgsDict']] active_artifact: (Updatable) Container/artifact configuration for the deployment.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['HostedDeploymentArtifactArgs', 'HostedDeploymentArtifactArgsDict']]]] artifacts: array of Artifacts.
+        :param pulumi.Input[Union['HostedDeploymentActiveArtifactArgs', 'HostedDeploymentActiveArtifactArgsDict', 'outputs.HostedDeploymentActiveArtifact']] active_artifact: (Updatable) Container/artifact configuration for the deployment.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['HostedDeploymentArtifactArgs', 'HostedDeploymentArtifactArgsDict', 'outputs.HostedDeploymentArtifact']]]] artifacts: array of Artifacts.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID to create the hosted deployment in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Does not have to be unique, and it's changeable.

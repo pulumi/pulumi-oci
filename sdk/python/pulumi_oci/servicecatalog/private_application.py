@@ -408,7 +408,7 @@ class PrivateApplication(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  logo_file_base64encoded: pulumi.Input[Optional[_builtins.str]] = None,
                  long_description: pulumi.Input[Optional[_builtins.str]] = None,
-                 package_details: pulumi.Input[Optional[Union['PrivateApplicationPackageDetailsArgs', 'PrivateApplicationPackageDetailsArgsDict']]] = None,
+                 package_details: pulumi.Input[Optional[Union['PrivateApplicationPackageDetailsArgs', 'PrivateApplicationPackageDetailsArgsDict', 'outputs.PrivateApplicationPackageDetails']]] = None,
                  short_description: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -461,7 +461,7 @@ class PrivateApplication(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] logo_file_base64encoded: (Updatable) Base64-encoded logo to use as the private application icon. Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
         :param pulumi.Input[_builtins.str] long_description: (Updatable) A long description of the private application.
-        :param pulumi.Input[Union['PrivateApplicationPackageDetailsArgs', 'PrivateApplicationPackageDetailsArgsDict']] package_details: A base object for creating a private application package.
+        :param pulumi.Input[Union['PrivateApplicationPackageDetailsArgs', 'PrivateApplicationPackageDetailsArgsDict', 'outputs.PrivateApplicationPackageDetails']] package_details: A base object for creating a private application package.
         :param pulumi.Input[_builtins.str] short_description: (Updatable) A short description of the private application.
                
                ** IMPORTANT **
@@ -536,7 +536,7 @@ class PrivateApplication(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  logo_file_base64encoded: pulumi.Input[Optional[_builtins.str]] = None,
                  long_description: pulumi.Input[Optional[_builtins.str]] = None,
-                 package_details: pulumi.Input[Optional[Union['PrivateApplicationPackageDetailsArgs', 'PrivateApplicationPackageDetailsArgsDict']]] = None,
+                 package_details: pulumi.Input[Optional[Union['PrivateApplicationPackageDetailsArgs', 'PrivateApplicationPackageDetailsArgsDict', 'outputs.PrivateApplicationPackageDetails']]] = None,
                  short_description: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -584,9 +584,9 @@ class PrivateApplication(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             logo_file_base64encoded: pulumi.Input[Optional[_builtins.str]] = None,
-            logos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PrivateApplicationLogoArgs', 'PrivateApplicationLogoArgsDict']]]]] = None,
+            logos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PrivateApplicationLogoArgs', 'PrivateApplicationLogoArgsDict', 'outputs.PrivateApplicationLogo']]]]] = None,
             long_description: pulumi.Input[Optional[_builtins.str]] = None,
-            package_details: pulumi.Input[Optional[Union['PrivateApplicationPackageDetailsArgs', 'PrivateApplicationPackageDetailsArgsDict']]] = None,
+            package_details: pulumi.Input[Optional[Union['PrivateApplicationPackageDetailsArgs', 'PrivateApplicationPackageDetailsArgsDict', 'outputs.PrivateApplicationPackageDetails']]] = None,
             package_type: pulumi.Input[Optional[_builtins.str]] = None,
             short_description: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -605,9 +605,9 @@ class PrivateApplication(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name of the private application.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] logo_file_base64encoded: (Updatable) Base64-encoded logo to use as the private application icon. Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PrivateApplicationLogoArgs', 'PrivateApplicationLogoArgsDict']]]] logos: The model for uploaded binary data, like logos and images.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PrivateApplicationLogoArgs', 'PrivateApplicationLogoArgsDict', 'outputs.PrivateApplicationLogo']]]] logos: The model for uploaded binary data, like logos and images.
         :param pulumi.Input[_builtins.str] long_description: (Updatable) A long description of the private application.
-        :param pulumi.Input[Union['PrivateApplicationPackageDetailsArgs', 'PrivateApplicationPackageDetailsArgsDict']] package_details: A base object for creating a private application package.
+        :param pulumi.Input[Union['PrivateApplicationPackageDetailsArgs', 'PrivateApplicationPackageDetailsArgsDict', 'outputs.PrivateApplicationPackageDetails']] package_details: A base object for creating a private application package.
         :param pulumi.Input[_builtins.str] package_type: Type of packages within this private application.
         :param pulumi.Input[_builtins.str] short_description: (Updatable) A short description of the private application.
                

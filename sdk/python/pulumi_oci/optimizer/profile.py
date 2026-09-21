@@ -392,10 +392,10 @@ class Profile(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 levels_configuration: pulumi.Input[Optional[Union['ProfileLevelsConfigurationArgs', 'ProfileLevelsConfigurationArgsDict']]] = None,
+                 levels_configuration: pulumi.Input[Optional[Union['ProfileLevelsConfigurationArgs', 'ProfileLevelsConfigurationArgsDict', 'outputs.ProfileLevelsConfiguration']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 target_compartments: pulumi.Input[Optional[Union['ProfileTargetCompartmentsArgs', 'ProfileTargetCompartmentsArgsDict']]] = None,
-                 target_tags: pulumi.Input[Optional[Union['ProfileTargetTagsArgs', 'ProfileTargetTagsArgsDict']]] = None,
+                 target_compartments: pulumi.Input[Optional[Union['ProfileTargetCompartmentsArgs', 'ProfileTargetCompartmentsArgsDict', 'outputs.ProfileTargetCompartments']]] = None,
+                 target_tags: pulumi.Input[Optional[Union['ProfileTargetTagsArgs', 'ProfileTargetTagsArgsDict', 'outputs.ProfileTargetTags']]] = None,
                  __props__=None):
         """
         This resource provides the Profile resource in Oracle Cloud Infrastructure Optimizer service.
@@ -457,10 +457,10 @@ class Profile(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Text describing the profile. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Union['ProfileLevelsConfigurationArgs', 'ProfileLevelsConfigurationArgsDict']] levels_configuration: (Updatable) A list of configuration levels for each recommendation.
+        :param pulumi.Input[Union['ProfileLevelsConfigurationArgs', 'ProfileLevelsConfigurationArgsDict', 'outputs.ProfileLevelsConfiguration']] levels_configuration: (Updatable) A list of configuration levels for each recommendation.
         :param pulumi.Input[_builtins.str] name: (Updatable) The name assigned to the profile. Avoid entering confidential information.
-        :param pulumi.Input[Union['ProfileTargetCompartmentsArgs', 'ProfileTargetCompartmentsArgsDict']] target_compartments: (Updatable) Optional. The compartments specified in the profile override for a recommendation.
-        :param pulumi.Input[Union['ProfileTargetTagsArgs', 'ProfileTargetTagsArgsDict']] target_tags: (Updatable) Optional. The tags specified in the profile override for a recommendation.
+        :param pulumi.Input[Union['ProfileTargetCompartmentsArgs', 'ProfileTargetCompartmentsArgsDict', 'outputs.ProfileTargetCompartments']] target_compartments: (Updatable) Optional. The compartments specified in the profile override for a recommendation.
+        :param pulumi.Input[Union['ProfileTargetTagsArgs', 'ProfileTargetTagsArgsDict', 'outputs.ProfileTargetTags']] target_tags: (Updatable) Optional. The tags specified in the profile override for a recommendation.
         """
         ...
     @overload
@@ -541,10 +541,10 @@ class Profile(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 levels_configuration: pulumi.Input[Optional[Union['ProfileLevelsConfigurationArgs', 'ProfileLevelsConfigurationArgsDict']]] = None,
+                 levels_configuration: pulumi.Input[Optional[Union['ProfileLevelsConfigurationArgs', 'ProfileLevelsConfigurationArgsDict', 'outputs.ProfileLevelsConfiguration']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 target_compartments: pulumi.Input[Optional[Union['ProfileTargetCompartmentsArgs', 'ProfileTargetCompartmentsArgsDict']]] = None,
-                 target_tags: pulumi.Input[Optional[Union['ProfileTargetTagsArgs', 'ProfileTargetTagsArgsDict']]] = None,
+                 target_compartments: pulumi.Input[Optional[Union['ProfileTargetCompartmentsArgs', 'ProfileTargetCompartmentsArgsDict', 'outputs.ProfileTargetCompartments']]] = None,
+                 target_tags: pulumi.Input[Optional[Union['ProfileTargetTagsArgs', 'ProfileTargetTagsArgsDict', 'outputs.ProfileTargetTags']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -588,12 +588,12 @@ class Profile(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            levels_configuration: pulumi.Input[Optional[Union['ProfileLevelsConfigurationArgs', 'ProfileLevelsConfigurationArgsDict']]] = None,
+            levels_configuration: pulumi.Input[Optional[Union['ProfileLevelsConfigurationArgs', 'ProfileLevelsConfigurationArgsDict', 'outputs.ProfileLevelsConfiguration']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            target_compartments: pulumi.Input[Optional[Union['ProfileTargetCompartmentsArgs', 'ProfileTargetCompartmentsArgsDict']]] = None,
-            target_tags: pulumi.Input[Optional[Union['ProfileTargetTagsArgs', 'ProfileTargetTagsArgsDict']]] = None,
+            target_compartments: pulumi.Input[Optional[Union['ProfileTargetCompartmentsArgs', 'ProfileTargetCompartmentsArgsDict', 'outputs.ProfileTargetCompartments']]] = None,
+            target_tags: pulumi.Input[Optional[Union['ProfileTargetTagsArgs', 'ProfileTargetTagsArgsDict', 'outputs.ProfileTargetTags']]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'Profile':
         """
@@ -608,11 +608,11 @@ class Profile(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Text describing the profile. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Union['ProfileLevelsConfigurationArgs', 'ProfileLevelsConfigurationArgsDict']] levels_configuration: (Updatable) A list of configuration levels for each recommendation.
+        :param pulumi.Input[Union['ProfileLevelsConfigurationArgs', 'ProfileLevelsConfigurationArgsDict', 'outputs.ProfileLevelsConfiguration']] levels_configuration: (Updatable) A list of configuration levels for each recommendation.
         :param pulumi.Input[_builtins.str] name: (Updatable) The name assigned to the profile. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] state: The profile's current state.
-        :param pulumi.Input[Union['ProfileTargetCompartmentsArgs', 'ProfileTargetCompartmentsArgsDict']] target_compartments: (Updatable) Optional. The compartments specified in the profile override for a recommendation.
-        :param pulumi.Input[Union['ProfileTargetTagsArgs', 'ProfileTargetTagsArgsDict']] target_tags: (Updatable) Optional. The tags specified in the profile override for a recommendation.
+        :param pulumi.Input[Union['ProfileTargetCompartmentsArgs', 'ProfileTargetCompartmentsArgsDict', 'outputs.ProfileTargetCompartments']] target_compartments: (Updatable) Optional. The compartments specified in the profile override for a recommendation.
+        :param pulumi.Input[Union['ProfileTargetTagsArgs', 'ProfileTargetTagsArgsDict', 'outputs.ProfileTargetTags']] target_tags: (Updatable) Optional. The tags specified in the profile override for a recommendation.
         :param pulumi.Input[_builtins.str] time_created: The date and time the profile was created, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] time_updated: The date and time the profile was last updated, in the format defined by RFC3339.
         """

@@ -121,7 +121,7 @@ class AwaitableGetUsagelimitsResult(GetUsagelimitsResult):
 
 
 def get_usagelimits(compartment_id: Optional[_builtins.str] = None,
-                    filters: Optional[Sequence[Union['GetUsagelimitsFilterArgs', 'GetUsagelimitsFilterArgsDict']]] = None,
+                    filters: Optional[Sequence[Union['GetUsagelimitsFilterArgs', 'GetUsagelimitsFilterArgsDict', 'outputs.GetUsagelimitsFilterResult']]] = None,
                     limit_type: Optional[_builtins.str] = None,
                     resource_type: Optional[_builtins.str] = None,
                     service_type: Optional[_builtins.str] = None,
@@ -172,7 +172,7 @@ def get_usagelimits(compartment_id: Optional[_builtins.str] = None,
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         usage_limit_collections=pulumi.get(__ret__, 'usage_limit_collections'))
 def get_usagelimits_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUsagelimitsFilterArgs', 'GetUsagelimitsFilterArgsDict']]]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUsagelimitsFilterArgs', 'GetUsagelimitsFilterArgsDict', 'outputs.GetUsagelimitsFilterResult']]]]] = None,
                            limit_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            service_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

@@ -1148,7 +1148,7 @@ class DomainsSecurityQuestionSetting(pulumi.CustomResource):
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  security_question_setting_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSecurityQuestionSettingTagArgs', 'DomainsSecurityQuestionSettingTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSecurityQuestionSettingTagArgs', 'DomainsSecurityQuestionSettingTagArgsDict', 'outputs.DomainsSecurityQuestionSettingTag']]]]] = None,
                  __props__=None):
         """
         This resource provides the Security Question Setting resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1255,7 +1255,7 @@ class DomainsSecurityQuestionSetting(pulumi.CustomResource):
                * type: string
                * uniqueness: none
         :param pulumi.Input[_builtins.str] security_question_setting_id: ID of the resource
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSecurityQuestionSettingTagArgs', 'DomainsSecurityQuestionSettingTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSecurityQuestionSettingTagArgs', 'DomainsSecurityQuestionSettingTagArgsDict', 'outputs.DomainsSecurityQuestionSettingTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1318,7 +1318,7 @@ class DomainsSecurityQuestionSetting(pulumi.CustomResource):
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  security_question_setting_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSecurityQuestionSettingTagArgs', 'DomainsSecurityQuestionSettingTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSecurityQuestionSettingTagArgs', 'DomainsSecurityQuestionSettingTagArgsDict', 'outputs.DomainsSecurityQuestionSettingTag']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1382,13 +1382,13 @@ class DomainsSecurityQuestionSetting(pulumi.CustomResource):
             delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
             domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             external_id: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSecurityQuestionSettingIdcsCreatedByArgs', 'DomainsSecurityQuestionSettingIdcsCreatedByArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSecurityQuestionSettingIdcsCreatedByArgs', 'DomainsSecurityQuestionSettingIdcsCreatedByArgsDict', 'outputs.DomainsSecurityQuestionSettingIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSecurityQuestionSettingIdcsLastModifiedByArgs', 'DomainsSecurityQuestionSettingIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSecurityQuestionSettingIdcsLastModifiedByArgs', 'DomainsSecurityQuestionSettingIdcsLastModifiedByArgsDict', 'outputs.DomainsSecurityQuestionSettingIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             max_field_length: pulumi.Input[Optional[_builtins.int]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSecurityQuestionSettingMetaArgs', 'DomainsSecurityQuestionSettingMetaArgsDict']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSecurityQuestionSettingMetaArgs', 'DomainsSecurityQuestionSettingMetaArgsDict', 'outputs.DomainsSecurityQuestionSettingMeta']]]]] = None,
             min_answer_length: pulumi.Input[Optional[_builtins.int]] = None,
             num_questions_to_ans: pulumi.Input[Optional[_builtins.int]] = None,
             num_questions_to_setup: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1396,7 +1396,7 @@ class DomainsSecurityQuestionSetting(pulumi.CustomResource):
             resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
             schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             security_question_setting_id: pulumi.Input[Optional[_builtins.str]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSecurityQuestionSettingTagArgs', 'DomainsSecurityQuestionSettingTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSecurityQuestionSettingTagArgs', 'DomainsSecurityQuestionSettingTagArgsDict', 'outputs.DomainsSecurityQuestionSettingTag']]]]] = None,
             tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None) -> 'DomainsSecurityQuestionSetting':
         """
         Get an existing DomainsSecurityQuestionSetting resource's state with the given name, id, and optional extra
@@ -1451,7 +1451,7 @@ class DomainsSecurityQuestionSetting(pulumi.CustomResource):
                * mutability: readWrite
                * returned: default
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSecurityQuestionSettingIdcsCreatedByArgs', 'DomainsSecurityQuestionSettingIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSecurityQuestionSettingIdcsCreatedByArgs', 'DomainsSecurityQuestionSettingIdcsCreatedByArgsDict', 'outputs.DomainsSecurityQuestionSettingIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1461,7 +1461,7 @@ class DomainsSecurityQuestionSetting(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSecurityQuestionSettingIdcsLastModifiedByArgs', 'DomainsSecurityQuestionSettingIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSecurityQuestionSettingIdcsLastModifiedByArgs', 'DomainsSecurityQuestionSettingIdcsLastModifiedByArgsDict', 'outputs.DomainsSecurityQuestionSettingIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1503,7 +1503,7 @@ class DomainsSecurityQuestionSetting(pulumi.CustomResource):
                * uniqueness: none
                * idcsMinValue: 5
                * idcsMaxValue: 100
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSecurityQuestionSettingMetaArgs', 'DomainsSecurityQuestionSettingMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSecurityQuestionSettingMetaArgs', 'DomainsSecurityQuestionSettingMetaArgsDict', 'outputs.DomainsSecurityQuestionSettingMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1574,7 +1574,7 @@ class DomainsSecurityQuestionSetting(pulumi.CustomResource):
                * type: string
                * uniqueness: none
         :param pulumi.Input[_builtins.str] security_question_setting_id: ID of the resource
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSecurityQuestionSettingTagArgs', 'DomainsSecurityQuestionSettingTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSecurityQuestionSettingTagArgs', 'DomainsSecurityQuestionSettingTagArgsDict', 'outputs.DomainsSecurityQuestionSettingTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]

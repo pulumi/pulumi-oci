@@ -106,7 +106,7 @@ class AwaitableGetPreauthrequestsResult(GetPreauthrequestsResult):
 
 
 def get_preauthrequests(bucket: Optional[_builtins.str] = None,
-                        filters: Optional[Sequence[Union['GetPreauthrequestsFilterArgs', 'GetPreauthrequestsFilterArgsDict']]] = None,
+                        filters: Optional[Sequence[Union['GetPreauthrequestsFilterArgs', 'GetPreauthrequestsFilterArgsDict', 'outputs.GetPreauthrequestsFilterResult']]] = None,
                         namespace: Optional[_builtins.str] = None,
                         object_name_prefix: Optional[_builtins.str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPreauthrequestsResult:
@@ -147,7 +147,7 @@ def get_preauthrequests(bucket: Optional[_builtins.str] = None,
         object_name_prefix=pulumi.get(__ret__, 'object_name_prefix'),
         preauthenticated_requests=pulumi.get(__ret__, 'preauthenticated_requests'))
 def get_preauthrequests_output(bucket: pulumi.Input[Optional[_builtins.str]] = None,
-                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPreauthrequestsFilterArgs', 'GetPreauthrequestsFilterArgsDict']]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPreauthrequestsFilterArgs', 'GetPreauthrequestsFilterArgsDict', 'outputs.GetPreauthrequestsFilterResult']]]]] = None,
                                namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                object_name_prefix: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPreauthrequestsResult]:

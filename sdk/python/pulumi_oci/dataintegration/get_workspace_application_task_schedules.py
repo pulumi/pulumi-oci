@@ -151,7 +151,7 @@ class AwaitableGetWorkspaceApplicationTaskSchedulesResult(GetWorkspaceApplicatio
 
 
 def get_workspace_application_task_schedules(application_key: Optional[_builtins.str] = None,
-                                             filters: Optional[Sequence[Union['GetWorkspaceApplicationTaskSchedulesFilterArgs', 'GetWorkspaceApplicationTaskSchedulesFilterArgsDict']]] = None,
+                                             filters: Optional[Sequence[Union['GetWorkspaceApplicationTaskSchedulesFilterArgs', 'GetWorkspaceApplicationTaskSchedulesFilterArgsDict', 'outputs.GetWorkspaceApplicationTaskSchedulesFilterResult']]] = None,
                                              identifiers: Optional[Sequence[_builtins.str]] = None,
                                              is_enabled: Optional[_builtins.bool] = None,
                                              keys: Optional[Sequence[_builtins.str]] = None,
@@ -212,7 +212,7 @@ def get_workspace_application_task_schedules(application_key: Optional[_builtins
         types=pulumi.get(__ret__, 'types'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
 def get_workspace_application_task_schedules_output(application_key: pulumi.Input[Optional[_builtins.str]] = None,
-                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkspaceApplicationTaskSchedulesFilterArgs', 'GetWorkspaceApplicationTaskSchedulesFilterArgsDict']]]]] = None,
+                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkspaceApplicationTaskSchedulesFilterArgs', 'GetWorkspaceApplicationTaskSchedulesFilterArgsDict', 'outputs.GetWorkspaceApplicationTaskSchedulesFilterResult']]]]] = None,
                                                     identifiers: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                                     is_enabled: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                                     keys: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,

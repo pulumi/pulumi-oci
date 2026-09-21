@@ -328,12 +328,12 @@ class TargetDatabasePeerTargetDatabase(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 database_details: pulumi.Input[Optional[Union['TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs', 'TargetDatabasePeerTargetDatabaseDatabaseDetailsArgsDict']]] = None,
+                 database_details: pulumi.Input[Optional[Union['TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs', 'TargetDatabasePeerTargetDatabaseDatabaseDetailsArgsDict', 'outputs.TargetDatabasePeerTargetDatabaseDatabaseDetails']]] = None,
                  dataguard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  target_database_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 tls_config: pulumi.Input[Optional[Union['TargetDatabasePeerTargetDatabaseTlsConfigArgs', 'TargetDatabasePeerTargetDatabaseTlsConfigArgsDict']]] = None,
+                 tls_config: pulumi.Input[Optional[Union['TargetDatabasePeerTargetDatabaseTlsConfigArgs', 'TargetDatabasePeerTargetDatabaseTlsConfigArgsDict', 'outputs.TargetDatabasePeerTargetDatabaseTlsConfig']]] = None,
                  __props__=None):
         """
         This resource provides the Target Database Peer Target Database resource in Oracle Cloud Infrastructure Data Safe service.
@@ -386,12 +386,12 @@ class TargetDatabasePeerTargetDatabase(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs', 'TargetDatabasePeerTargetDatabaseDatabaseDetailsArgsDict']] database_details: (Updatable) Details of the database for the registration in Data Safe.
+        :param pulumi.Input[Union['TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs', 'TargetDatabasePeerTargetDatabaseDatabaseDetailsArgsDict', 'outputs.TargetDatabasePeerTargetDatabaseDatabaseDetails']] database_details: (Updatable) Details of the database for the registration in Data Safe.
         :param pulumi.Input[_builtins.str] dataguard_association_id: The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the peer target database in Data Safe.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
         :param pulumi.Input[_builtins.str] target_database_id: The OCID of the Data Safe target database.
-        :param pulumi.Input[Union['TargetDatabasePeerTargetDatabaseTlsConfigArgs', 'TargetDatabasePeerTargetDatabaseTlsConfigArgsDict']] tls_config: (Updatable) The details required to establish a TLS enabled connection.
+        :param pulumi.Input[Union['TargetDatabasePeerTargetDatabaseTlsConfigArgs', 'TargetDatabasePeerTargetDatabaseTlsConfigArgsDict', 'outputs.TargetDatabasePeerTargetDatabaseTlsConfig']] tls_config: (Updatable) The details required to establish a TLS enabled connection.
         """
         ...
     @overload
@@ -463,12 +463,12 @@ class TargetDatabasePeerTargetDatabase(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 database_details: pulumi.Input[Optional[Union['TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs', 'TargetDatabasePeerTargetDatabaseDatabaseDetailsArgsDict']]] = None,
+                 database_details: pulumi.Input[Optional[Union['TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs', 'TargetDatabasePeerTargetDatabaseDatabaseDetailsArgsDict', 'outputs.TargetDatabasePeerTargetDatabaseDatabaseDetails']]] = None,
                  dataguard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  target_database_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 tls_config: pulumi.Input[Optional[Union['TargetDatabasePeerTargetDatabaseTlsConfigArgs', 'TargetDatabasePeerTargetDatabaseTlsConfigArgsDict']]] = None,
+                 tls_config: pulumi.Input[Optional[Union['TargetDatabasePeerTargetDatabaseTlsConfigArgs', 'TargetDatabasePeerTargetDatabaseTlsConfigArgsDict', 'outputs.TargetDatabasePeerTargetDatabaseTlsConfig']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -504,7 +504,7 @@ class TargetDatabasePeerTargetDatabase(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            database_details: pulumi.Input[Optional[Union['TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs', 'TargetDatabasePeerTargetDatabaseDatabaseDetailsArgsDict']]] = None,
+            database_details: pulumi.Input[Optional[Union['TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs', 'TargetDatabasePeerTargetDatabaseDatabaseDetailsArgsDict', 'outputs.TargetDatabasePeerTargetDatabaseDatabaseDetails']]] = None,
             database_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
             dataguard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -515,7 +515,7 @@ class TargetDatabasePeerTargetDatabase(pulumi.CustomResource):
             state: pulumi.Input[Optional[_builtins.str]] = None,
             target_database_id: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
-            tls_config: pulumi.Input[Optional[Union['TargetDatabasePeerTargetDatabaseTlsConfigArgs', 'TargetDatabasePeerTargetDatabaseTlsConfigArgsDict']]] = None) -> 'TargetDatabasePeerTargetDatabase':
+            tls_config: pulumi.Input[Optional[Union['TargetDatabasePeerTargetDatabaseTlsConfigArgs', 'TargetDatabasePeerTargetDatabaseTlsConfigArgsDict', 'outputs.TargetDatabasePeerTargetDatabaseTlsConfig']]] = None) -> 'TargetDatabasePeerTargetDatabase':
         """
         Get an existing TargetDatabasePeerTargetDatabase resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -523,7 +523,7 @@ class TargetDatabasePeerTargetDatabase(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs', 'TargetDatabasePeerTargetDatabaseDatabaseDetailsArgsDict']] database_details: (Updatable) Details of the database for the registration in Data Safe.
+        :param pulumi.Input[Union['TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs', 'TargetDatabasePeerTargetDatabaseDatabaseDetailsArgsDict', 'outputs.TargetDatabasePeerTargetDatabaseDatabaseDetails']] database_details: (Updatable) Details of the database for the registration in Data Safe.
         :param pulumi.Input[_builtins.str] database_unique_name: Unique name of the database associated to the peer target database.
         :param pulumi.Input[_builtins.str] dataguard_association_id: The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the peer target database in Data Safe.
@@ -534,7 +534,7 @@ class TargetDatabasePeerTargetDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The current state of the peer target database in Data Safe.
         :param pulumi.Input[_builtins.str] target_database_id: The OCID of the Data Safe target database.
         :param pulumi.Input[_builtins.str] time_created: The date and time of the peer target database registration in Data Safe.
-        :param pulumi.Input[Union['TargetDatabasePeerTargetDatabaseTlsConfigArgs', 'TargetDatabasePeerTargetDatabaseTlsConfigArgsDict']] tls_config: (Updatable) The details required to establish a TLS enabled connection.
+        :param pulumi.Input[Union['TargetDatabasePeerTargetDatabaseTlsConfigArgs', 'TargetDatabasePeerTargetDatabaseTlsConfigArgsDict', 'outputs.TargetDatabasePeerTargetDatabaseTlsConfig']] tls_config: (Updatable) The details required to establish a TLS enabled connection.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

@@ -363,7 +363,7 @@ class Tag(pulumi.CustomResource):
                  is_retired: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  tag_namespace_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 validator: pulumi.Input[Optional[Union['TagValidatorArgs', 'TagValidatorArgsDict']]] = None,
+                 validator: pulumi.Input[Optional[Union['TagValidatorArgs', 'TagValidatorArgsDict', 'outputs.TagValidator']]] = None,
                  __props__=None):
         """
         This resource provides the Tag resource in Oracle Cloud Infrastructure Identity service.
@@ -439,7 +439,7 @@ class Tag(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] name: The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
         :param pulumi.Input[_builtins.str] tag_namespace_id: The OCID of the tag namespace.
-        :param pulumi.Input[Union['TagValidatorArgs', 'TagValidatorArgsDict']] validator: (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
+        :param pulumi.Input[Union['TagValidatorArgs', 'TagValidatorArgsDict', 'outputs.TagValidator']] validator: (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
                
                If you define a validator after a value has been set for a defined tag, then any updates that attempt to change the value must pass the additional validation defined by the current rule. Previously set values (even those that would fail the current validation) are not updated. You can still update other attributes to resources that contain a non-valid defined tag.
                
@@ -535,7 +535,7 @@ class Tag(pulumi.CustomResource):
                  is_retired: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  tag_namespace_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 validator: pulumi.Input[Optional[Union['TagValidatorArgs', 'TagValidatorArgsDict']]] = None,
+                 validator: pulumi.Input[Optional[Union['TagValidatorArgs', 'TagValidatorArgsDict', 'outputs.TagValidator']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -578,7 +578,7 @@ class Tag(pulumi.CustomResource):
             state: pulumi.Input[Optional[_builtins.str]] = None,
             tag_namespace_id: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
-            validator: pulumi.Input[Optional[Union['TagValidatorArgs', 'TagValidatorArgsDict']]] = None) -> 'Tag':
+            validator: pulumi.Input[Optional[Union['TagValidatorArgs', 'TagValidatorArgsDict', 'outputs.TagValidator']]] = None) -> 'Tag':
         """
         Get an existing Tag resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -598,7 +598,7 @@ class Tag(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
         :param pulumi.Input[_builtins.str] tag_namespace_id: The OCID of the tag namespace.
         :param pulumi.Input[_builtins.str] time_created: Date and time the tag was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[Union['TagValidatorArgs', 'TagValidatorArgsDict']] validator: (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
+        :param pulumi.Input[Union['TagValidatorArgs', 'TagValidatorArgsDict', 'outputs.TagValidator']] validator: (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
                
                If you define a validator after a value has been set for a defined tag, then any updates that attempt to change the value must pass the additional validation defined by the current rule. Previously set values (even those that would fail the current validation) are not updated. You can still update other attributes to resources that contain a non-valid defined tag.
                

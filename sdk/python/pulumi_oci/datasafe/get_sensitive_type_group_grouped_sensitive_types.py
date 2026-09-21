@@ -93,7 +93,7 @@ class AwaitableGetSensitiveTypeGroupGroupedSensitiveTypesResult(GetSensitiveType
             sensitive_type_id=self.sensitive_type_id)
 
 
-def get_sensitive_type_group_grouped_sensitive_types(filters: Optional[Sequence[Union['GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgs', 'GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgsDict']]] = None,
+def get_sensitive_type_group_grouped_sensitive_types(filters: Optional[Sequence[Union['GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgs', 'GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgsDict', 'outputs.GetSensitiveTypeGroupGroupedSensitiveTypesFilterResult']]] = None,
                                                      sensitive_type_group_id: Optional[_builtins.str] = None,
                                                      sensitive_type_id: Optional[_builtins.str] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSensitiveTypeGroupGroupedSensitiveTypesResult:
@@ -129,7 +129,7 @@ def get_sensitive_type_group_grouped_sensitive_types(filters: Optional[Sequence[
         id=pulumi.get(__ret__, 'id'),
         sensitive_type_group_id=pulumi.get(__ret__, 'sensitive_type_group_id'),
         sensitive_type_id=pulumi.get(__ret__, 'sensitive_type_id'))
-def get_sensitive_type_group_grouped_sensitive_types_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgs', 'GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgsDict']]]]] = None,
+def get_sensitive_type_group_grouped_sensitive_types_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgs', 'GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgsDict', 'outputs.GetSensitiveTypeGroupGroupedSensitiveTypesFilterResult']]]]] = None,
                                                             sensitive_type_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                             sensitive_type_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSensitiveTypeGroupGroupedSensitiveTypesResult]:

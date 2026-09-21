@@ -105,7 +105,7 @@ class AwaitableGetIdentityProviderGroupsResult(GetIdentityProviderGroupsResult):
             state=self.state)
 
 
-def get_identity_provider_groups(filters: Optional[Sequence[Union['GetIdentityProviderGroupsFilterArgs', 'GetIdentityProviderGroupsFilterArgsDict']]] = None,
+def get_identity_provider_groups(filters: Optional[Sequence[Union['GetIdentityProviderGroupsFilterArgs', 'GetIdentityProviderGroupsFilterArgsDict', 'outputs.GetIdentityProviderGroupsFilterResult']]] = None,
                                  identity_provider_id: Optional[_builtins.str] = None,
                                  name: Optional[_builtins.str] = None,
                                  state: Optional[_builtins.str] = None,
@@ -148,7 +148,7 @@ def get_identity_provider_groups(filters: Optional[Sequence[Union['GetIdentityPr
         identity_provider_id=pulumi.get(__ret__, 'identity_provider_id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-def get_identity_provider_groups_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIdentityProviderGroupsFilterArgs', 'GetIdentityProviderGroupsFilterArgsDict']]]]] = None,
+def get_identity_provider_groups_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIdentityProviderGroupsFilterArgs', 'GetIdentityProviderGroupsFilterArgsDict', 'outputs.GetIdentityProviderGroupsFilterResult']]]]] = None,
                                         identity_provider_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

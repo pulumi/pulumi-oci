@@ -123,7 +123,7 @@ class AwaitableGetAgentToolsResult(GetAgentToolsResult):
 def get_agent_tools(agent_id: Optional[_builtins.str] = None,
                     compartment_id: Optional[_builtins.str] = None,
                     display_name: Optional[_builtins.str] = None,
-                    filters: Optional[Sequence[Union['GetAgentToolsFilterArgs', 'GetAgentToolsFilterArgsDict']]] = None,
+                    filters: Optional[Sequence[Union['GetAgentToolsFilterArgs', 'GetAgentToolsFilterArgsDict', 'outputs.GetAgentToolsFilterResult']]] = None,
                     state: Optional[_builtins.str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAgentToolsResult:
     """
@@ -169,7 +169,7 @@ def get_agent_tools(agent_id: Optional[_builtins.str] = None,
 def get_agent_tools_output(agent_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAgentToolsFilterArgs', 'GetAgentToolsFilterArgsDict']]]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAgentToolsFilterArgs', 'GetAgentToolsFilterArgsDict', 'outputs.GetAgentToolsFilterResult']]]]] = None,
                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentToolsResult]:
     """

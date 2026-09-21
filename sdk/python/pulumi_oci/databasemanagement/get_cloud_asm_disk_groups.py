@@ -91,7 +91,7 @@ class AwaitableGetCloudAsmDiskGroupsResult(GetCloudAsmDiskGroupsResult):
 
 
 def get_cloud_asm_disk_groups(cloud_asm_id: Optional[_builtins.str] = None,
-                              filters: Optional[Sequence[Union['GetCloudAsmDiskGroupsFilterArgs', 'GetCloudAsmDiskGroupsFilterArgsDict']]] = None,
+                              filters: Optional[Sequence[Union['GetCloudAsmDiskGroupsFilterArgs', 'GetCloudAsmDiskGroupsFilterArgsDict', 'outputs.GetCloudAsmDiskGroupsFilterResult']]] = None,
                               opc_named_credential_id: Optional[_builtins.str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudAsmDiskGroupsResult:
     """
@@ -127,7 +127,7 @@ def get_cloud_asm_disk_groups(cloud_asm_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'))
 def get_cloud_asm_disk_groups_output(cloud_asm_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudAsmDiskGroupsFilterArgs', 'GetCloudAsmDiskGroupsFilterArgsDict']]]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudAsmDiskGroupsFilterArgs', 'GetCloudAsmDiskGroupsFilterArgsDict', 'outputs.GetCloudAsmDiskGroupsFilterResult']]]]] = None,
                                      opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudAsmDiskGroupsResult]:
     """

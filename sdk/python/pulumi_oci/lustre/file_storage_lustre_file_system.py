@@ -763,18 +763,18 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
                  capacity_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
                  cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 date_time_details: pulumi.Input[Optional[Union['FileStorageLustreFileSystemDateTimeDetailsArgs', 'FileStorageLustreFileSystemDateTimeDetailsArgsDict']]] = None,
+                 date_time_details: pulumi.Input[Optional[Union['FileStorageLustreFileSystemDateTimeDetailsArgs', 'FileStorageLustreFileSystemDateTimeDetailsArgsDict', 'outputs.FileStorageLustreFileSystemDateTimeDetails']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  file_system_description: pulumi.Input[Optional[_builtins.str]] = None,
                  file_system_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 maintenance_window: pulumi.Input[Optional[Union['FileStorageLustreFileSystemMaintenanceWindowArgs', 'FileStorageLustreFileSystemMaintenanceWindowArgsDict']]] = None,
+                 maintenance_window: pulumi.Input[Optional[Union['FileStorageLustreFileSystemMaintenanceWindowArgs', 'FileStorageLustreFileSystemMaintenanceWindowArgsDict', 'outputs.FileStorageLustreFileSystemMaintenanceWindow']]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  override_maintenance_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  performance_tier: pulumi.Input[Optional[_builtins.str]] = None,
-                 root_squash_configuration: pulumi.Input[Optional[Union['FileStorageLustreFileSystemRootSquashConfigurationArgs', 'FileStorageLustreFileSystemRootSquashConfigurationArgsDict']]] = None,
+                 root_squash_configuration: pulumi.Input[Optional[Union['FileStorageLustreFileSystemRootSquashConfigurationArgs', 'FileStorageLustreFileSystemRootSquashConfigurationArgsDict', 'outputs.FileStorageLustreFileSystemRootSquashConfiguration']]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -843,14 +843,14 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] file_system_name: The Lustre file system name. This is used in mount commands and other aspects of the client command line interface. The file system name is limited to 8 characters. Allowed characters are lower and upper case English letters, numbers, and '_'. If you have multiple Lustre file systems mounted on the same clients, this name can help distinguish them.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
-        :param pulumi.Input[Union['FileStorageLustreFileSystemMaintenanceWindowArgs', 'FileStorageLustreFileSystemMaintenanceWindowArgsDict']] maintenance_window: (Updatable) The preferred day and time to perform maintenance.
+        :param pulumi.Input[Union['FileStorageLustreFileSystemMaintenanceWindowArgs', 'FileStorageLustreFileSystemMaintenanceWindowArgsDict', 'outputs.FileStorageLustreFileSystemMaintenanceWindow']] maintenance_window: (Updatable) The preferred day and time to perform maintenance.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         :param pulumi.Input[_builtins.int] override_maintenance_trigger: (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] performance_tier: The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
-        :param pulumi.Input[Union['FileStorageLustreFileSystemRootSquashConfigurationArgs', 'FileStorageLustreFileSystemRootSquashConfigurationArgsDict']] root_squash_configuration: (Updatable) An administrative feature that allows you to restrict root level access from clients that try to access your Lustre file system as root.
+        :param pulumi.Input[Union['FileStorageLustreFileSystemRootSquashConfigurationArgs', 'FileStorageLustreFileSystemRootSquashConfigurationArgsDict', 'outputs.FileStorageLustreFileSystemRootSquashConfiguration']] root_squash_configuration: (Updatable) An administrative feature that allows you to restrict root level access from clients that try to access your Lustre file system as root.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -932,18 +932,18 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
                  capacity_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
                  cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 date_time_details: pulumi.Input[Optional[Union['FileStorageLustreFileSystemDateTimeDetailsArgs', 'FileStorageLustreFileSystemDateTimeDetailsArgsDict']]] = None,
+                 date_time_details: pulumi.Input[Optional[Union['FileStorageLustreFileSystemDateTimeDetailsArgs', 'FileStorageLustreFileSystemDateTimeDetailsArgsDict', 'outputs.FileStorageLustreFileSystemDateTimeDetails']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  file_system_description: pulumi.Input[Optional[_builtins.str]] = None,
                  file_system_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 maintenance_window: pulumi.Input[Optional[Union['FileStorageLustreFileSystemMaintenanceWindowArgs', 'FileStorageLustreFileSystemMaintenanceWindowArgsDict']]] = None,
+                 maintenance_window: pulumi.Input[Optional[Union['FileStorageLustreFileSystemMaintenanceWindowArgs', 'FileStorageLustreFileSystemMaintenanceWindowArgsDict', 'outputs.FileStorageLustreFileSystemMaintenanceWindow']]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  override_maintenance_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  performance_tier: pulumi.Input[Optional[_builtins.str]] = None,
-                 root_squash_configuration: pulumi.Input[Optional[Union['FileStorageLustreFileSystemRootSquashConfigurationArgs', 'FileStorageLustreFileSystemRootSquashConfigurationArgsDict']]] = None,
+                 root_squash_configuration: pulumi.Input[Optional[Union['FileStorageLustreFileSystemRootSquashConfigurationArgs', 'FileStorageLustreFileSystemRootSquashConfigurationArgsDict', 'outputs.FileStorageLustreFileSystemRootSquashConfiguration']]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -1012,7 +1012,7 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
             capacity_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
             cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            date_time_details: pulumi.Input[Optional[Union['FileStorageLustreFileSystemDateTimeDetailsArgs', 'FileStorageLustreFileSystemDateTimeDetailsArgsDict']]] = None,
+            date_time_details: pulumi.Input[Optional[Union['FileStorageLustreFileSystemDateTimeDetailsArgs', 'FileStorageLustreFileSystemDateTimeDetailsArgsDict', 'outputs.FileStorageLustreFileSystemDateTimeDetails']]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             file_system_description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1021,14 +1021,14 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
             kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             lnet: pulumi.Input[Optional[_builtins.str]] = None,
-            maintenance_window: pulumi.Input[Optional[Union['FileStorageLustreFileSystemMaintenanceWindowArgs', 'FileStorageLustreFileSystemMaintenanceWindowArgsDict']]] = None,
-            maintenance_window_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileStorageLustreFileSystemMaintenanceWindowMetadataArgs', 'FileStorageLustreFileSystemMaintenanceWindowMetadataArgsDict']]]]] = None,
+            maintenance_window: pulumi.Input[Optional[Union['FileStorageLustreFileSystemMaintenanceWindowArgs', 'FileStorageLustreFileSystemMaintenanceWindowArgsDict', 'outputs.FileStorageLustreFileSystemMaintenanceWindow']]] = None,
+            maintenance_window_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileStorageLustreFileSystemMaintenanceWindowMetadataArgs', 'FileStorageLustreFileSystemMaintenanceWindowMetadataArgsDict', 'outputs.FileStorageLustreFileSystemMaintenanceWindowMetadata']]]]] = None,
             major_version: pulumi.Input[Optional[_builtins.str]] = None,
             management_service_address: pulumi.Input[Optional[_builtins.str]] = None,
             nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             override_maintenance_trigger: pulumi.Input[Optional[_builtins.int]] = None,
             performance_tier: pulumi.Input[Optional[_builtins.str]] = None,
-            root_squash_configuration: pulumi.Input[Optional[Union['FileStorageLustreFileSystemRootSquashConfigurationArgs', 'FileStorageLustreFileSystemRootSquashConfigurationArgsDict']]] = None,
+            root_squash_configuration: pulumi.Input[Optional[Union['FileStorageLustreFileSystemRootSquashConfigurationArgs', 'FileStorageLustreFileSystemRootSquashConfigurationArgsDict', 'outputs.FileStorageLustreFileSystemRootSquashConfiguration']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1054,8 +1054,8 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the Lustre file system in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input[_builtins.str] lnet: Type of network used by clients to mount the file system.   Example: `tcp`
-        :param pulumi.Input[Union['FileStorageLustreFileSystemMaintenanceWindowArgs', 'FileStorageLustreFileSystemMaintenanceWindowArgsDict']] maintenance_window: (Updatable) The preferred day and time to perform maintenance.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FileStorageLustreFileSystemMaintenanceWindowMetadataArgs', 'FileStorageLustreFileSystemMaintenanceWindowMetadataArgsDict']]]] maintenance_window_metadatas: The meta-data for maintenance window.
+        :param pulumi.Input[Union['FileStorageLustreFileSystemMaintenanceWindowArgs', 'FileStorageLustreFileSystemMaintenanceWindowArgsDict', 'outputs.FileStorageLustreFileSystemMaintenanceWindow']] maintenance_window: (Updatable) The preferred day and time to perform maintenance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FileStorageLustreFileSystemMaintenanceWindowMetadataArgs', 'FileStorageLustreFileSystemMaintenanceWindowMetadataArgsDict', 'outputs.FileStorageLustreFileSystemMaintenanceWindowMetadata']]]] maintenance_window_metadatas: The meta-data for maintenance window.
         :param pulumi.Input[_builtins.str] major_version: Major version of Lustre running in the Lustre file system.  Example: `2.15`
         :param pulumi.Input[_builtins.str] management_service_address: The IPv4 address of MGS (Lustre Management Service) used by clients to mount the file system. For example '10.0.0.4'.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
@@ -1064,7 +1064,7 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] performance_tier: The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
-        :param pulumi.Input[Union['FileStorageLustreFileSystemRootSquashConfigurationArgs', 'FileStorageLustreFileSystemRootSquashConfigurationArgsDict']] root_squash_configuration: (Updatable) An administrative feature that allows you to restrict root level access from clients that try to access your Lustre file system as root.
+        :param pulumi.Input[Union['FileStorageLustreFileSystemRootSquashConfigurationArgs', 'FileStorageLustreFileSystemRootSquashConfigurationArgsDict', 'outputs.FileStorageLustreFileSystemRootSquashConfiguration']] root_squash_configuration: (Updatable) An administrative feature that allows you to restrict root level access from clients that try to access your Lustre file system as root.
         :param pulumi.Input[_builtins.str] state: The current state of the Lustre file system.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`

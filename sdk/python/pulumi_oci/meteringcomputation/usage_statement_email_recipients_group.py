@@ -189,7 +189,7 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  email_recipients_group_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 recipients_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageStatementEmailRecipientsGroupRecipientsListArgs', 'UsageStatementEmailRecipientsGroupRecipientsListArgsDict']]]]] = None,
+                 recipients_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageStatementEmailRecipientsGroupRecipientsListArgs', 'UsageStatementEmailRecipientsGroupRecipientsListArgsDict', 'outputs.UsageStatementEmailRecipientsGroupRecipientsList']]]]] = None,
                  subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -229,7 +229,7 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The customer tenancy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UsageStatementEmailRecipientsGroupRecipientsListArgs', 'UsageStatementEmailRecipientsGroupRecipientsListArgsDict']]]] recipients_lists: (Updatable) The list of recipients that will receive usage statement emails.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UsageStatementEmailRecipientsGroupRecipientsListArgs', 'UsageStatementEmailRecipientsGroupRecipientsListArgsDict', 'outputs.UsageStatementEmailRecipientsGroupRecipientsList']]]] recipients_lists: (Updatable) The list of recipients that will receive usage statement emails.
         :param pulumi.Input[_builtins.str] subscription_id: The usage statement subscription unique OCID.
                
                ** IMPORTANT **
@@ -292,7 +292,7 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  email_recipients_group_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 recipients_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageStatementEmailRecipientsGroupRecipientsListArgs', 'UsageStatementEmailRecipientsGroupRecipientsListArgsDict']]]]] = None,
+                 recipients_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageStatementEmailRecipientsGroupRecipientsListArgs', 'UsageStatementEmailRecipientsGroupRecipientsListArgsDict', 'outputs.UsageStatementEmailRecipientsGroupRecipientsList']]]]] = None,
                  subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -326,7 +326,7 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             email_recipients_group_id: pulumi.Input[Optional[_builtins.str]] = None,
-            recipients_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageStatementEmailRecipientsGroupRecipientsListArgs', 'UsageStatementEmailRecipientsGroupRecipientsListArgsDict']]]]] = None,
+            recipients_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageStatementEmailRecipientsGroupRecipientsListArgs', 'UsageStatementEmailRecipientsGroupRecipientsListArgsDict', 'outputs.UsageStatementEmailRecipientsGroupRecipientsList']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             subscription_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'UsageStatementEmailRecipientsGroup':
         """
@@ -337,7 +337,7 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The customer tenancy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UsageStatementEmailRecipientsGroupRecipientsListArgs', 'UsageStatementEmailRecipientsGroupRecipientsListArgsDict']]]] recipients_lists: (Updatable) The list of recipients that will receive usage statement emails.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UsageStatementEmailRecipientsGroupRecipientsListArgs', 'UsageStatementEmailRecipientsGroupRecipientsListArgsDict', 'outputs.UsageStatementEmailRecipientsGroupRecipientsList']]]] recipients_lists: (Updatable) The list of recipients that will receive usage statement emails.
         :param pulumi.Input[_builtins.str] state: The email recipients group lifecycle state.
         :param pulumi.Input[_builtins.str] subscription_id: The usage statement subscription unique OCID.
                

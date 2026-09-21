@@ -122,7 +122,7 @@ class AwaitableGetDeployArtifactsResult(GetDeployArtifactsResult):
 
 def get_deploy_artifacts(compartment_id: Optional[_builtins.str] = None,
                          display_name: Optional[_builtins.str] = None,
-                         filters: Optional[Sequence[Union['GetDeployArtifactsFilterArgs', 'GetDeployArtifactsFilterArgsDict']]] = None,
+                         filters: Optional[Sequence[Union['GetDeployArtifactsFilterArgs', 'GetDeployArtifactsFilterArgsDict', 'outputs.GetDeployArtifactsFilterResult']]] = None,
                          id: Optional[_builtins.str] = None,
                          project_id: Optional[_builtins.str] = None,
                          state: Optional[_builtins.str] = None,
@@ -172,7 +172,7 @@ def get_deploy_artifacts(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_deploy_artifacts_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDeployArtifactsFilterArgs', 'GetDeployArtifactsFilterArgsDict']]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDeployArtifactsFilterArgs', 'GetDeployArtifactsFilterArgsDict', 'outputs.GetDeployArtifactsFilterResult']]]]] = None,
                                 id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 project_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

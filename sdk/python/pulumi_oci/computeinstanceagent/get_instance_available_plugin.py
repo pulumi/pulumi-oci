@@ -112,7 +112,7 @@ class AwaitableGetInstanceAvailablePluginResult(GetInstanceAvailablePluginResult
 
 
 def get_instance_available_plugin(compartment_id: Optional[_builtins.str] = None,
-                                  filters: Optional[Sequence[Union['GetInstanceAvailablePluginFilterArgs', 'GetInstanceAvailablePluginFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetInstanceAvailablePluginFilterArgs', 'GetInstanceAvailablePluginFilterArgsDict', 'outputs.GetInstanceAvailablePluginFilterResult']]] = None,
                                   name: Optional[_builtins.str] = None,
                                   os_name: Optional[_builtins.str] = None,
                                   os_version: Optional[_builtins.str] = None,
@@ -166,7 +166,7 @@ def get_instance_available_plugin(compartment_id: Optional[_builtins.str] = None
         os_name=pulumi.get(__ret__, 'os_name'),
         os_version=pulumi.get(__ret__, 'os_version'))
 def get_instance_available_plugin_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstanceAvailablePluginFilterArgs', 'GetInstanceAvailablePluginFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstanceAvailablePluginFilterArgs', 'GetInstanceAvailablePluginFilterArgsDict', 'outputs.GetInstanceAvailablePluginFilterResult']]]]] = None,
                                          name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          os_name: pulumi.Input[Optional[_builtins.str]] = None,
                                          os_version: pulumi.Input[Optional[_builtins.str]] = None,

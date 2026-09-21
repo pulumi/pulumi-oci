@@ -603,8 +603,8 @@ class Schedule(pulumi.CustomResource):
                  local_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  recurrence_details: pulumi.Input[Optional[_builtins.str]] = None,
                  recurrence_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 resource_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict']]]]] = None,
-                 resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduleResourceArgs', 'ScheduleResourceArgsDict']]]]] = None,
+                 resource_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict', 'outputs.ScheduleResourceFilter']]]]] = None,
+                 resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduleResourceArgs', 'ScheduleResourceArgsDict', 'outputs.ScheduleResource']]]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  time_ends: pulumi.Input[Optional[_builtins.str]] = None,
                  time_starts: pulumi.Input[Optional[_builtins.str]] = None,
@@ -679,8 +679,8 @@ class Schedule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] local_time_zone: (Updatable) IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
         :param pulumi.Input[_builtins.str] recurrence_details: (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
         :param pulumi.Input[_builtins.str] recurrence_type: (Updatable) Type of recurrence of a schedule
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict']]]] resource_filters: (Updatable) This is a list of resources filters.  The schedule will be applied to resources matching all of them.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceArgs', 'ScheduleResourceArgsDict']]]] resources: (Updatable) This is the list of resources to which the scheduled operation is applied.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict', 'outputs.ScheduleResourceFilter']]]] resource_filters: (Updatable) This is a list of resources filters.  The schedule will be applied to resources matching all of them.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceArgs', 'ScheduleResourceArgsDict', 'outputs.ScheduleResource']]]] resources: (Updatable) This is the list of resources to which the scheduled operation is applied.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
@@ -777,8 +777,8 @@ class Schedule(pulumi.CustomResource):
                  local_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  recurrence_details: pulumi.Input[Optional[_builtins.str]] = None,
                  recurrence_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 resource_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict']]]]] = None,
-                 resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduleResourceArgs', 'ScheduleResourceArgsDict']]]]] = None,
+                 resource_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict', 'outputs.ScheduleResourceFilter']]]]] = None,
+                 resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduleResourceArgs', 'ScheduleResourceArgsDict', 'outputs.ScheduleResource']]]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  time_ends: pulumi.Input[Optional[_builtins.str]] = None,
                  time_starts: pulumi.Input[Optional[_builtins.str]] = None,
@@ -839,8 +839,8 @@ class Schedule(pulumi.CustomResource):
             local_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
             recurrence_details: pulumi.Input[Optional[_builtins.str]] = None,
             recurrence_type: pulumi.Input[Optional[_builtins.str]] = None,
-            resource_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict']]]]] = None,
-            resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduleResourceArgs', 'ScheduleResourceArgsDict']]]]] = None,
+            resource_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict', 'outputs.ScheduleResourceFilter']]]]] = None,
+            resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduleResourceArgs', 'ScheduleResourceArgsDict', 'outputs.ScheduleResource']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -866,8 +866,8 @@ class Schedule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] local_time_zone: (Updatable) IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
         :param pulumi.Input[_builtins.str] recurrence_details: (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
         :param pulumi.Input[_builtins.str] recurrence_type: (Updatable) Type of recurrence of a schedule
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict']]]] resource_filters: (Updatable) This is a list of resources filters.  The schedule will be applied to resources matching all of them.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceArgs', 'ScheduleResourceArgsDict']]]] resources: (Updatable) This is the list of resources to which the scheduled operation is applied.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict', 'outputs.ScheduleResourceFilter']]]] resource_filters: (Updatable) This is a list of resources filters.  The schedule will be applied to resources matching all of them.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceArgs', 'ScheduleResourceArgsDict', 'outputs.ScheduleResource']]]] resources: (Updatable) This is the list of resources to which the scheduled operation is applied.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **

@@ -652,17 +652,17 @@ class Certificate(pulumi.CustomResource):
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            extensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateExtensionArgs', 'CertificateExtensionArgsDict']]]]] = None,
+            extensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateExtensionArgs', 'CertificateExtensionArgsDict', 'outputs.CertificateExtension']]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_trust_verification_disabled: pulumi.Input[Optional[_builtins.bool]] = None,
             issued_by: pulumi.Input[Optional[_builtins.str]] = None,
-            issuer_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateIssuerNameArgs', 'CertificateIssuerNameArgsDict']]]]] = None,
+            issuer_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateIssuerNameArgs', 'CertificateIssuerNameArgsDict', 'outputs.CertificateIssuerName']]]]] = None,
             private_key_data: pulumi.Input[Optional[_builtins.str]] = None,
-            public_key_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificatePublicKeyInfoArgs', 'CertificatePublicKeyInfoArgsDict']]]]] = None,
+            public_key_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificatePublicKeyInfoArgs', 'CertificatePublicKeyInfoArgsDict', 'outputs.CertificatePublicKeyInfo']]]]] = None,
             serial_number: pulumi.Input[Optional[_builtins.str]] = None,
             signature_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            subject_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateSubjectNameArgs', 'CertificateSubjectNameArgsDict']]]]] = None,
+            subject_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateSubjectNameArgs', 'CertificateSubjectNameArgsDict', 'outputs.CertificateSubjectName']]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_not_valid_after: pulumi.Input[Optional[_builtins.str]] = None,
             time_not_valid_before: pulumi.Input[Optional[_builtins.str]] = None,
@@ -682,19 +682,19 @@ class Certificate(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the SSL certificate.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateExtensionArgs', 'CertificateExtensionArgsDict']]]] extensions: Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateExtensionArgs', 'CertificateExtensionArgsDict', 'outputs.CertificateExtension']]]] extensions: Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_trust_verification_disabled: Set to `true` if the SSL certificate is self-signed.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateIssuerNameArgs', 'CertificateIssuerNameArgsDict']]]] issuer_names: The issuer of the certificate.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateIssuerNameArgs', 'CertificateIssuerNameArgsDict', 'outputs.CertificateIssuerName']]]] issuer_names: The issuer of the certificate.
         :param pulumi.Input[_builtins.str] private_key_data: The private key of the SSL certificate.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificatePublicKeyInfoArgs', 'CertificatePublicKeyInfoArgsDict']]]] public_key_infos: Information about the public key and the algorithm used by the public key.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificatePublicKeyInfoArgs', 'CertificatePublicKeyInfoArgsDict', 'outputs.CertificatePublicKeyInfo']]]] public_key_infos: Information about the public key and the algorithm used by the public key.
         :param pulumi.Input[_builtins.str] serial_number: A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
         :param pulumi.Input[_builtins.str] signature_algorithm: The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the SSL certificate.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateSubjectNameArgs', 'CertificateSubjectNameArgsDict']]]] subject_names: The entity to be secured by the certificate.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateSubjectNameArgs', 'CertificateSubjectNameArgsDict', 'outputs.CertificateSubjectName']]]] subject_names: The entity to be secured by the certificate.
         :param pulumi.Input[_builtins.str] time_created: The date and time the certificate was created, expressed in RFC 3339 timestamp format.
         :param pulumi.Input[_builtins.str] time_not_valid_after: The date and time the certificate will expire, expressed in RFC 3339 timestamp format.
         :param pulumi.Input[_builtins.str] time_not_valid_before: The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.

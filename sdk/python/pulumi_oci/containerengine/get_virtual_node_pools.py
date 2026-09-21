@@ -123,7 +123,7 @@ class AwaitableGetVirtualNodePoolsResult(GetVirtualNodePoolsResult):
 def get_virtual_node_pools(cluster_id: Optional[_builtins.str] = None,
                            compartment_id: Optional[_builtins.str] = None,
                            display_name: Optional[_builtins.str] = None,
-                           filters: Optional[Sequence[Union['GetVirtualNodePoolsFilterArgs', 'GetVirtualNodePoolsFilterArgsDict']]] = None,
+                           filters: Optional[Sequence[Union['GetVirtualNodePoolsFilterArgs', 'GetVirtualNodePoolsFilterArgsDict', 'outputs.GetVirtualNodePoolsFilterResult']]] = None,
                            states: Optional[Sequence[_builtins.str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVirtualNodePoolsResult:
     """
@@ -159,7 +159,7 @@ def get_virtual_node_pools(cluster_id: Optional[_builtins.str] = None,
 def get_virtual_node_pools_output(cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVirtualNodePoolsFilterArgs', 'GetVirtualNodePoolsFilterArgsDict']]]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVirtualNodePoolsFilterArgs', 'GetVirtualNodePoolsFilterArgsDict', 'outputs.GetVirtualNodePoolsFilterResult']]]]] = None,
                                   states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVirtualNodePoolsResult]:
     """

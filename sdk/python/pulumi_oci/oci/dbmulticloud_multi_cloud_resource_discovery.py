@@ -558,7 +558,7 @@ class DbmulticloudMultiCloudResourceDiscovery(pulumi.CustomResource):
             lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
             oracle_db_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
             resource_type: pulumi.Input[Optional[_builtins.str]] = None,
-            resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudMultiCloudResourceDiscoveryResourceArgs', 'DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict']]]]] = None,
+            resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudMultiCloudResourceDiscoveryResourceArgs', 'DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict', 'outputs.DbmulticloudMultiCloudResourceDiscoveryResource']]]]] = None,
             resources_filter: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -579,7 +579,7 @@ class DbmulticloudMultiCloudResourceDiscovery(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Description of the current lifecycle state in more detail.
         :param pulumi.Input[_builtins.str] oracle_db_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
         :param pulumi.Input[_builtins.str] resource_type: (Updatable) Resource Type to discover.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudMultiCloudResourceDiscoveryResourceArgs', 'DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict']]]] resources: List of All Discovered resources.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudMultiCloudResourceDiscoveryResourceArgs', 'DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict', 'outputs.DbmulticloudMultiCloudResourceDiscoveryResource']]]] resources: List of All Discovered resources.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] resources_filter: Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{"keyRing": "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}` or `{"keyRing": "dbmci-keyring"}` Azure Example `{"keyVault": "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}` or `{"keyVault": "orp7HSM001"}`
                
                ** IMPORTANT **

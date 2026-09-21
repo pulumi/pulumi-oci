@@ -172,7 +172,7 @@ class DynamicSetRebootManagement(pulumi.CustomResource):
                  dynamic_set_id: pulumi.Input[Optional[_builtins.str]] = None,
                  managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  reboot_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
-                 work_request_details: pulumi.Input[Optional[Union['DynamicSetRebootManagementWorkRequestDetailsArgs', 'DynamicSetRebootManagementWorkRequestDetailsArgsDict']]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['DynamicSetRebootManagementWorkRequestDetailsArgs', 'DynamicSetRebootManagementWorkRequestDetailsArgsDict', 'outputs.DynamicSetRebootManagementWorkRequestDetails']]] = None,
                  __props__=None):
         """
         This resource provides the Dynamic Set Reboot Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -212,7 +212,7 @@ class DynamicSetRebootManagement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] dynamic_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instances: The list of managed instance OCIDs to be attached/detached.
         :param pulumi.Input[_builtins.int] reboot_timeout_in_mins: The number of minutes the service waits for the reboot to complete. If the instances in the group don't reboot  within this time, the reboot job status is set to failed.
-        :param pulumi.Input[Union['DynamicSetRebootManagementWorkRequestDetailsArgs', 'DynamicSetRebootManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['DynamicSetRebootManagementWorkRequestDetailsArgs', 'DynamicSetRebootManagementWorkRequestDetailsArgsDict', 'outputs.DynamicSetRebootManagementWorkRequestDetails']] work_request_details: Provides the name and description of the job.
         """
         ...
     @overload
@@ -271,7 +271,7 @@ class DynamicSetRebootManagement(pulumi.CustomResource):
                  dynamic_set_id: pulumi.Input[Optional[_builtins.str]] = None,
                  managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  reboot_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
-                 work_request_details: pulumi.Input[Optional[Union['DynamicSetRebootManagementWorkRequestDetailsArgs', 'DynamicSetRebootManagementWorkRequestDetailsArgsDict']]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['DynamicSetRebootManagementWorkRequestDetailsArgs', 'DynamicSetRebootManagementWorkRequestDetailsArgsDict', 'outputs.DynamicSetRebootManagementWorkRequestDetails']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -300,7 +300,7 @@ class DynamicSetRebootManagement(pulumi.CustomResource):
             dynamic_set_id: pulumi.Input[Optional[_builtins.str]] = None,
             managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             reboot_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
-            work_request_details: pulumi.Input[Optional[Union['DynamicSetRebootManagementWorkRequestDetailsArgs', 'DynamicSetRebootManagementWorkRequestDetailsArgsDict']]] = None) -> 'DynamicSetRebootManagement':
+            work_request_details: pulumi.Input[Optional[Union['DynamicSetRebootManagementWorkRequestDetailsArgs', 'DynamicSetRebootManagementWorkRequestDetailsArgsDict', 'outputs.DynamicSetRebootManagementWorkRequestDetails']]] = None) -> 'DynamicSetRebootManagement':
         """
         Get an existing DynamicSetRebootManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -311,7 +311,7 @@ class DynamicSetRebootManagement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] dynamic_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instances: The list of managed instance OCIDs to be attached/detached.
         :param pulumi.Input[_builtins.int] reboot_timeout_in_mins: The number of minutes the service waits for the reboot to complete. If the instances in the group don't reboot  within this time, the reboot job status is set to failed.
-        :param pulumi.Input[Union['DynamicSetRebootManagementWorkRequestDetailsArgs', 'DynamicSetRebootManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['DynamicSetRebootManagementWorkRequestDetailsArgs', 'DynamicSetRebootManagementWorkRequestDetailsArgsDict', 'outputs.DynamicSetRebootManagementWorkRequestDetails']] work_request_details: Provides the name and description of the job.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

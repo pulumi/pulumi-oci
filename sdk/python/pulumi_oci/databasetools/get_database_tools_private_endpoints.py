@@ -135,7 +135,7 @@ class AwaitableGetDatabaseToolsPrivateEndpointsResult(GetDatabaseToolsPrivateEnd
 def get_database_tools_private_endpoints(compartment_id: Optional[_builtins.str] = None,
                                          display_name: Optional[_builtins.str] = None,
                                          endpoint_service_id: Optional[_builtins.str] = None,
-                                         filters: Optional[Sequence[Union['GetDatabaseToolsPrivateEndpointsFilterArgs', 'GetDatabaseToolsPrivateEndpointsFilterArgsDict']]] = None,
+                                         filters: Optional[Sequence[Union['GetDatabaseToolsPrivateEndpointsFilterArgs', 'GetDatabaseToolsPrivateEndpointsFilterArgsDict', 'outputs.GetDatabaseToolsPrivateEndpointsFilterResult']]] = None,
                                          state: Optional[_builtins.str] = None,
                                          subnet_id: Optional[_builtins.str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabaseToolsPrivateEndpointsResult:
@@ -186,7 +186,7 @@ def get_database_tools_private_endpoints(compartment_id: Optional[_builtins.str]
 def get_database_tools_private_endpoints_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 endpoint_service_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabaseToolsPrivateEndpointsFilterArgs', 'GetDatabaseToolsPrivateEndpointsFilterArgsDict']]]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabaseToolsPrivateEndpointsFilterArgs', 'GetDatabaseToolsPrivateEndpointsFilterArgsDict', 'outputs.GetDatabaseToolsPrivateEndpointsFilterResult']]]]] = None,
                                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 subnet_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseToolsPrivateEndpointsResult]:

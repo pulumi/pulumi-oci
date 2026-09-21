@@ -755,14 +755,14 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             resource_type: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
-            storage_grids: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataInfrastructureStorageGridArgs', 'CloudExadataInfrastructureStorageGridArgsDict']]]]] = None,
+            storage_grids: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataInfrastructureStorageGridArgs', 'CloudExadataInfrastructureStorageGridArgsDict', 'outputs.CloudExadataInfrastructureStorageGrid']]]]] = None,
             storage_server_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
             version: pulumi.Input[Optional[_builtins.str]] = None,
             vm_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            vm_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataInfrastructureVmClusterArgs', 'CloudExadataInfrastructureVmClusterArgsDict']]]]] = None) -> 'CloudExadataInfrastructure':
+            vm_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataInfrastructureVmClusterArgs', 'CloudExadataInfrastructureVmClusterArgsDict', 'outputs.CloudExadataInfrastructureVmCluster']]]]] = None) -> 'CloudExadataInfrastructure':
         """
         Get an existing CloudExadataInfrastructure resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -785,7 +785,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] resource_type: The type of Exadata resource.
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the database resource.
         :param pulumi.Input[_builtins.str] status: The status of the Exadata resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureStorageGridArgs', 'CloudExadataInfrastructureStorageGridArgsDict']]]] storage_grids: The Exadata storage server grid of the Exadata infrastructure.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureStorageGridArgs', 'CloudExadataInfrastructureStorageGridArgsDict', 'outputs.CloudExadataInfrastructureStorageGrid']]]] storage_grids: The Exadata storage server grid of the Exadata infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] storage_server_names: (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the VM Clusters are included.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The timestamp of the creation of the Exadata resource.
@@ -795,7 +795,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureVmClusterArgs', 'CloudExadataInfrastructureVmClusterArgsDict']]]] vm_clusters: The list of VM Clusters in the Exadata infrastructure.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureVmClusterArgs', 'CloudExadataInfrastructureVmClusterArgsDict', 'outputs.CloudExadataInfrastructureVmCluster']]]] vm_clusters: The list of VM Clusters in the Exadata infrastructure.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

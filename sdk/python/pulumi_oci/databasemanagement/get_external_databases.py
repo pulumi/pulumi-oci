@@ -118,7 +118,7 @@ def get_external_databases(compartment_id: Optional[_builtins.str] = None,
                            display_name: Optional[_builtins.str] = None,
                            external_database_id: Optional[_builtins.str] = None,
                            external_db_system_id: Optional[_builtins.str] = None,
-                           filters: Optional[Sequence[Union['GetExternalDatabasesFilterArgs', 'GetExternalDatabasesFilterArgsDict']]] = None,
+                           filters: Optional[Sequence[Union['GetExternalDatabasesFilterArgs', 'GetExternalDatabasesFilterArgsDict', 'outputs.GetExternalDatabasesFilterResult']]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalDatabasesResult:
     """
     This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
@@ -164,7 +164,7 @@ def get_external_databases_output(compartment_id: pulumi.Input[Optional[Optional
                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   external_database_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   external_db_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalDatabasesFilterArgs', 'GetExternalDatabasesFilterArgsDict']]]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalDatabasesFilterArgs', 'GetExternalDatabasesFilterArgsDict', 'outputs.GetExternalDatabasesFilterResult']]]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalDatabasesResult]:
     """
     This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.

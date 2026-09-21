@@ -81,7 +81,7 @@ class AwaitableGetIpsecConnectionTunnelsResult(GetIpsecConnectionTunnelsResult):
             ipsec_id=self.ipsec_id)
 
 
-def get_ipsec_connection_tunnels(filters: Optional[Sequence[Union['GetIpsecConnectionTunnelsFilterArgs', 'GetIpsecConnectionTunnelsFilterArgsDict']]] = None,
+def get_ipsec_connection_tunnels(filters: Optional[Sequence[Union['GetIpsecConnectionTunnelsFilterArgs', 'GetIpsecConnectionTunnelsFilterArgsDict', 'outputs.GetIpsecConnectionTunnelsFilterResult']]] = None,
                                  ipsec_id: Optional[_builtins.str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIpsecConnectionTunnelsResult:
     """
@@ -112,7 +112,7 @@ def get_ipsec_connection_tunnels(filters: Optional[Sequence[Union['GetIpsecConne
         id=pulumi.get(__ret__, 'id'),
         ip_sec_connection_tunnels=pulumi.get(__ret__, 'ip_sec_connection_tunnels'),
         ipsec_id=pulumi.get(__ret__, 'ipsec_id'))
-def get_ipsec_connection_tunnels_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIpsecConnectionTunnelsFilterArgs', 'GetIpsecConnectionTunnelsFilterArgsDict']]]]] = None,
+def get_ipsec_connection_tunnels_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIpsecConnectionTunnelsFilterArgs', 'GetIpsecConnectionTunnelsFilterArgsDict', 'outputs.GetIpsecConnectionTunnelsFilterResult']]]]] = None,
                                         ipsec_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIpsecConnectionTunnelsResult]:
     """

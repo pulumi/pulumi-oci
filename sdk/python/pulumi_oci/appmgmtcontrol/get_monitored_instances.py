@@ -98,7 +98,7 @@ class AwaitableGetMonitoredInstancesResult(GetMonitoredInstancesResult):
 
 def get_monitored_instances(compartment_id: Optional[_builtins.str] = None,
                             display_name: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetMonitoredInstancesFilterArgs', 'GetMonitoredInstancesFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetMonitoredInstancesFilterArgs', 'GetMonitoredInstancesFilterArgsDict', 'outputs.GetMonitoredInstancesFilterResult']]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMonitoredInstancesResult:
     """
     This data source provides the list of Monitored Instances in Oracle Cloud Infrastructure Appmgmt Control service.
@@ -134,7 +134,7 @@ def get_monitored_instances(compartment_id: Optional[_builtins.str] = None,
         monitored_instance_collections=pulumi.get(__ret__, 'monitored_instance_collections'))
 def get_monitored_instances_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMonitoredInstancesFilterArgs', 'GetMonitoredInstancesFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMonitoredInstancesFilterArgs', 'GetMonitoredInstancesFilterArgsDict', 'outputs.GetMonitoredInstancesFilterResult']]]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMonitoredInstancesResult]:
     """
     This data source provides the list of Monitored Instances in Oracle Cloud Infrastructure Appmgmt Control service.

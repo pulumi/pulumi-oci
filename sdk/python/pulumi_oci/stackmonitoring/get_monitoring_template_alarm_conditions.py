@@ -149,7 +149,7 @@ class AwaitableGetMonitoringTemplateAlarmConditionsResult(GetMonitoringTemplateA
 
 def get_monitoring_template_alarm_conditions(alarm_condition_id: Optional[_builtins.str] = None,
                                              compartment_id: Optional[_builtins.str] = None,
-                                             filters: Optional[Sequence[Union['GetMonitoringTemplateAlarmConditionsFilterArgs', 'GetMonitoringTemplateAlarmConditionsFilterArgsDict']]] = None,
+                                             filters: Optional[Sequence[Union['GetMonitoringTemplateAlarmConditionsFilterArgs', 'GetMonitoringTemplateAlarmConditionsFilterArgsDict', 'outputs.GetMonitoringTemplateAlarmConditionsFilterResult']]] = None,
                                              metric_names: Optional[Sequence[_builtins.str]] = None,
                                              monitoring_template_id: Optional[_builtins.str] = None,
                                              resource_types: Optional[Sequence[_builtins.str]] = None,
@@ -206,7 +206,7 @@ def get_monitoring_template_alarm_conditions(alarm_condition_id: Optional[_built
         status=pulumi.get(__ret__, 'status'))
 def get_monitoring_template_alarm_conditions_output(alarm_condition_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                     compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMonitoringTemplateAlarmConditionsFilterArgs', 'GetMonitoringTemplateAlarmConditionsFilterArgsDict']]]]] = None,
+                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMonitoringTemplateAlarmConditionsFilterArgs', 'GetMonitoringTemplateAlarmConditionsFilterArgsDict', 'outputs.GetMonitoringTemplateAlarmConditionsFilterResult']]]]] = None,
                                                     metric_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                                     monitoring_template_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                     resource_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,

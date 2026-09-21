@@ -84,7 +84,7 @@ class AwaitableGetImageShapesResult(GetImageShapesResult):
             image_shape_compatibilities=self.image_shape_compatibilities)
 
 
-def get_image_shapes(filters: Optional[Sequence[Union['GetImageShapesFilterArgs', 'GetImageShapesFilterArgsDict']]] = None,
+def get_image_shapes(filters: Optional[Sequence[Union['GetImageShapesFilterArgs', 'GetImageShapesFilterArgsDict', 'outputs.GetImageShapesFilterResult']]] = None,
                      image_id: Optional[_builtins.str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetImageShapesResult:
     """
@@ -115,7 +115,7 @@ def get_image_shapes(filters: Optional[Sequence[Union['GetImageShapesFilterArgs'
         id=pulumi.get(__ret__, 'id'),
         image_id=pulumi.get(__ret__, 'image_id'),
         image_shape_compatibilities=pulumi.get(__ret__, 'image_shape_compatibilities'))
-def get_image_shapes_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetImageShapesFilterArgs', 'GetImageShapesFilterArgsDict']]]]] = None,
+def get_image_shapes_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetImageShapesFilterArgs', 'GetImageShapesFilterArgsDict', 'outputs.GetImageShapesFilterResult']]]]] = None,
                             image_id: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImageShapesResult]:
     """

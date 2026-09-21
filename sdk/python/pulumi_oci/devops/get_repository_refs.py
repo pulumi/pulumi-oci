@@ -121,7 +121,7 @@ class AwaitableGetRepositoryRefsResult(GetRepositoryRefsResult):
 
 
 def get_repository_refs(commit_id: Optional[_builtins.str] = None,
-                        filters: Optional[Sequence[Union['GetRepositoryRefsFilterArgs', 'GetRepositoryRefsFilterArgsDict']]] = None,
+                        filters: Optional[Sequence[Union['GetRepositoryRefsFilterArgs', 'GetRepositoryRefsFilterArgsDict', 'outputs.GetRepositoryRefsFilterResult']]] = None,
                         ref_name: Optional[_builtins.str] = None,
                         ref_type: Optional[_builtins.str] = None,
                         repository_id: Optional[_builtins.str] = None,
@@ -167,7 +167,7 @@ def get_repository_refs(commit_id: Optional[_builtins.str] = None,
         repository_id=pulumi.get(__ret__, 'repository_id'),
         repository_ref_collections=pulumi.get(__ret__, 'repository_ref_collections'))
 def get_repository_refs_output(commit_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRepositoryRefsFilterArgs', 'GetRepositoryRefsFilterArgsDict']]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRepositoryRefsFilterArgs', 'GetRepositoryRefsFilterArgsDict', 'outputs.GetRepositoryRefsFilterResult']]]]] = None,
                                ref_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                ref_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                repository_id: pulumi.Input[Optional[_builtins.str]] = None,

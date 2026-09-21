@@ -131,7 +131,7 @@ class AwaitableGetDbmulticloudOracleDbAzureKeysResult(GetDbmulticloudOracleDbAzu
 
 def get_dbmulticloud_oracle_db_azure_keys(compartment_id: Optional[_builtins.str] = None,
                                           display_name: Optional[_builtins.str] = None,
-                                          filters: Optional[Sequence[Union['GetDbmulticloudOracleDbAzureKeysFilterArgs', 'GetDbmulticloudOracleDbAzureKeysFilterArgsDict']]] = None,
+                                          filters: Optional[Sequence[Union['GetDbmulticloudOracleDbAzureKeysFilterArgs', 'GetDbmulticloudOracleDbAzureKeysFilterArgsDict', 'outputs.GetDbmulticloudOracleDbAzureKeysFilterResult']]] = None,
                                           oracle_db_azure_key_id: Optional[_builtins.str] = None,
                                           oracle_db_azure_vault_id: Optional[_builtins.str] = None,
                                           state: Optional[_builtins.str] = None,
@@ -182,7 +182,7 @@ def get_dbmulticloud_oracle_db_azure_keys(compartment_id: Optional[_builtins.str
         state=pulumi.get(__ret__, 'state'))
 def get_dbmulticloud_oracle_db_azure_keys_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbmulticloudOracleDbAzureKeysFilterArgs', 'GetDbmulticloudOracleDbAzureKeysFilterArgsDict']]]]] = None,
+                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbmulticloudOracleDbAzureKeysFilterArgs', 'GetDbmulticloudOracleDbAzureKeysFilterArgsDict', 'outputs.GetDbmulticloudOracleDbAzureKeysFilterResult']]]]] = None,
                                                  oracle_db_azure_key_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                  oracle_db_azure_vault_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

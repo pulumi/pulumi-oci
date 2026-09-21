@@ -112,7 +112,7 @@ class AwaitableGetManagedInstanceSnapsResult(GetManagedInstanceSnapsResult):
 
 
 def get_managed_instance_snaps(compartment_id: Optional[_builtins.str] = None,
-                               filters: Optional[Sequence[Union['GetManagedInstanceSnapsFilterArgs', 'GetManagedInstanceSnapsFilterArgsDict']]] = None,
+                               filters: Optional[Sequence[Union['GetManagedInstanceSnapsFilterArgs', 'GetManagedInstanceSnapsFilterArgsDict', 'outputs.GetManagedInstanceSnapsFilterResult']]] = None,
                                managed_instance_id: Optional[_builtins.str] = None,
                                name: Optional[_builtins.str] = None,
                                name_contains: Optional[_builtins.str] = None,
@@ -158,7 +158,7 @@ def get_managed_instance_snaps(compartment_id: Optional[_builtins.str] = None,
         name_contains=pulumi.get(__ret__, 'name_contains'),
         snap_collections=pulumi.get(__ret__, 'snap_collections'))
 def get_managed_instance_snaps_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceSnapsFilterArgs', 'GetManagedInstanceSnapsFilterArgsDict']]]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceSnapsFilterArgs', 'GetManagedInstanceSnapsFilterArgsDict', 'outputs.GetManagedInstanceSnapsFilterResult']]]]] = None,
                                       managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

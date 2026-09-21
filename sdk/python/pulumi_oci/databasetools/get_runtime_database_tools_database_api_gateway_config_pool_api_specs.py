@@ -104,7 +104,7 @@ class AwaitableGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsResult
 
 def get_runtime_database_tools_database_api_gateway_config_pool_api_specs(database_tools_database_api_gateway_config_id: Optional[_builtins.str] = None,
                                                                           display_name: Optional[_builtins.str] = None,
-                                                                          filters: Optional[Sequence[Union['GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArgs', 'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArgsDict']]] = None,
+                                                                          filters: Optional[Sequence[Union['GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArgs', 'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArgsDict', 'outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterResult']]] = None,
                                                                           pool_key: Optional[_builtins.str] = None,
                                                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsResult:
     """
@@ -145,7 +145,7 @@ def get_runtime_database_tools_database_api_gateway_config_pool_api_specs(databa
         pool_key=pulumi.get(__ret__, 'pool_key'))
 def get_runtime_database_tools_database_api_gateway_config_pool_api_specs_output(database_tools_database_api_gateway_config_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArgs', 'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArgsDict']]]]] = None,
+                                                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArgs', 'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArgsDict', 'outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterResult']]]]] = None,
                                                                                  pool_key: pulumi.Input[Optional[_builtins.str]] = None,
                                                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsResult]:
     """

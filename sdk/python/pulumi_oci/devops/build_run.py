@@ -406,8 +406,8 @@ class BuildRun(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  build_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 build_run_arguments: pulumi.Input[Optional[Union['BuildRunBuildRunArgumentsArgs', 'BuildRunBuildRunArgumentsArgsDict']]] = None,
-                 commit_info: pulumi.Input[Optional[Union['BuildRunCommitInfoArgs', 'BuildRunCommitInfoArgsDict']]] = None,
+                 build_run_arguments: pulumi.Input[Optional[Union['BuildRunBuildRunArgumentsArgs', 'BuildRunBuildRunArgumentsArgsDict', 'outputs.BuildRunBuildRunArguments']]] = None,
+                 commit_info: pulumi.Input[Optional[Union['BuildRunCommitInfoArgs', 'BuildRunCommitInfoArgsDict', 'outputs.BuildRunCommitInfo']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -460,8 +460,8 @@ class BuildRun(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] build_pipeline_id: The OCID of the build pipeline.
-        :param pulumi.Input[Union['BuildRunBuildRunArgumentsArgs', 'BuildRunBuildRunArgumentsArgsDict']] build_run_arguments: Specifies list of arguments passed along with the build run.
-        :param pulumi.Input[Union['BuildRunCommitInfoArgs', 'BuildRunCommitInfoArgsDict']] commit_info: Commit details that need to be used for the build run.
+        :param pulumi.Input[Union['BuildRunBuildRunArgumentsArgs', 'BuildRunBuildRunArgumentsArgsDict', 'outputs.BuildRunBuildRunArguments']] build_run_arguments: Specifies list of arguments passed along with the build run.
+        :param pulumi.Input[Union['BuildRunCommitInfoArgs', 'BuildRunCommitInfoArgsDict', 'outputs.BuildRunCommitInfo']] commit_info: Commit details that need to be used for the build run.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
@@ -536,8 +536,8 @@ class BuildRun(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  build_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 build_run_arguments: pulumi.Input[Optional[Union['BuildRunBuildRunArgumentsArgs', 'BuildRunBuildRunArgumentsArgsDict']]] = None,
-                 commit_info: pulumi.Input[Optional[Union['BuildRunCommitInfoArgs', 'BuildRunCommitInfoArgsDict']]] = None,
+                 build_run_arguments: pulumi.Input[Optional[Union['BuildRunBuildRunArgumentsArgs', 'BuildRunBuildRunArgumentsArgsDict', 'outputs.BuildRunBuildRunArguments']]] = None,
+                 commit_info: pulumi.Input[Optional[Union['BuildRunCommitInfoArgs', 'BuildRunCommitInfoArgsDict', 'outputs.BuildRunCommitInfo']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -578,12 +578,12 @@ class BuildRun(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            build_outputs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BuildRunBuildOutputArgs', 'BuildRunBuildOutputArgsDict']]]]] = None,
+            build_outputs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BuildRunBuildOutputArgs', 'BuildRunBuildOutputArgsDict', 'outputs.BuildRunBuildOutput']]]]] = None,
             build_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
-            build_run_arguments: pulumi.Input[Optional[Union['BuildRunBuildRunArgumentsArgs', 'BuildRunBuildRunArgumentsArgsDict']]] = None,
-            build_run_progresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BuildRunBuildRunProgressArgs', 'BuildRunBuildRunProgressArgsDict']]]]] = None,
-            build_run_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BuildRunBuildRunSourceArgs', 'BuildRunBuildRunSourceArgsDict']]]]] = None,
-            commit_info: pulumi.Input[Optional[Union['BuildRunCommitInfoArgs', 'BuildRunCommitInfoArgsDict']]] = None,
+            build_run_arguments: pulumi.Input[Optional[Union['BuildRunBuildRunArgumentsArgs', 'BuildRunBuildRunArgumentsArgsDict', 'outputs.BuildRunBuildRunArguments']]] = None,
+            build_run_progresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BuildRunBuildRunProgressArgs', 'BuildRunBuildRunProgressArgsDict', 'outputs.BuildRunBuildRunProgress']]]]] = None,
+            build_run_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BuildRunBuildRunSourceArgs', 'BuildRunBuildRunSourceArgsDict', 'outputs.BuildRunBuildRunSource']]]]] = None,
+            commit_info: pulumi.Input[Optional[Union['BuildRunCommitInfoArgs', 'BuildRunCommitInfoArgsDict', 'outputs.BuildRunCommitInfo']]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -601,12 +601,12 @@ class BuildRun(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BuildRunBuildOutputArgs', 'BuildRunBuildOutputArgsDict']]]] build_outputs: Outputs from the build.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BuildRunBuildOutputArgs', 'BuildRunBuildOutputArgsDict', 'outputs.BuildRunBuildOutput']]]] build_outputs: Outputs from the build.
         :param pulumi.Input[_builtins.str] build_pipeline_id: The OCID of the build pipeline.
-        :param pulumi.Input[Union['BuildRunBuildRunArgumentsArgs', 'BuildRunBuildRunArgumentsArgsDict']] build_run_arguments: Specifies list of arguments passed along with the build run.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BuildRunBuildRunProgressArgs', 'BuildRunBuildRunProgressArgsDict']]]] build_run_progresses: The run progress details of a build run.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BuildRunBuildRunSourceArgs', 'BuildRunBuildRunSourceArgsDict']]]] build_run_sources: The source from which the build run is triggered.
-        :param pulumi.Input[Union['BuildRunCommitInfoArgs', 'BuildRunCommitInfoArgsDict']] commit_info: Commit details that need to be used for the build run.
+        :param pulumi.Input[Union['BuildRunBuildRunArgumentsArgs', 'BuildRunBuildRunArgumentsArgsDict', 'outputs.BuildRunBuildRunArguments']] build_run_arguments: Specifies list of arguments passed along with the build run.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BuildRunBuildRunProgressArgs', 'BuildRunBuildRunProgressArgsDict', 'outputs.BuildRunBuildRunProgress']]]] build_run_progresses: The run progress details of a build run.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BuildRunBuildRunSourceArgs', 'BuildRunBuildRunSourceArgsDict', 'outputs.BuildRunBuildRunSource']]]] build_run_sources: The source from which the build run is triggered.
+        :param pulumi.Input[Union['BuildRunCommitInfoArgs', 'BuildRunCommitInfoArgsDict', 'outputs.BuildRunCommitInfo']] commit_info: Commit details that need to be used for the build run.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment where the build is running.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.

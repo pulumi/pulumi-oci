@@ -81,7 +81,7 @@ class AwaitableGetIamWorkRequestLogsResult(GetIamWorkRequestLogsResult):
             id=self.id)
 
 
-def get_iam_work_request_logs(filters: Optional[Sequence[Union['GetIamWorkRequestLogsFilterArgs', 'GetIamWorkRequestLogsFilterArgsDict']]] = None,
+def get_iam_work_request_logs(filters: Optional[Sequence[Union['GetIamWorkRequestLogsFilterArgs', 'GetIamWorkRequestLogsFilterArgsDict', 'outputs.GetIamWorkRequestLogsFilterResult']]] = None,
                               iam_work_request_id: Optional[_builtins.str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamWorkRequestLogsResult:
     """
@@ -116,7 +116,7 @@ def get_iam_work_request_logs(filters: Optional[Sequence[Union['GetIamWorkReques
         iam_work_request_id=pulumi.get(__ret__, 'iam_work_request_id'),
         iam_work_request_logs=pulumi.get(__ret__, 'iam_work_request_logs'),
         id=pulumi.get(__ret__, 'id'))
-def get_iam_work_request_logs_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIamWorkRequestLogsFilterArgs', 'GetIamWorkRequestLogsFilterArgsDict']]]]] = None,
+def get_iam_work_request_logs_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIamWorkRequestLogsFilterArgs', 'GetIamWorkRequestLogsFilterArgsDict', 'outputs.GetIamWorkRequestLogsFilterResult']]]]] = None,
                                      iam_work_request_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamWorkRequestLogsResult]:
     """

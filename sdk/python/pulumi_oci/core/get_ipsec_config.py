@@ -105,7 +105,7 @@ class AwaitableGetIpsecConfigResult(GetIpsecConfigResult):
             tunnels=self.tunnels)
 
 
-def get_ipsec_config(filters: Optional[Sequence[Union['GetIpsecConfigFilterArgs', 'GetIpsecConfigFilterArgsDict']]] = None,
+def get_ipsec_config(filters: Optional[Sequence[Union['GetIpsecConfigFilterArgs', 'GetIpsecConfigFilterArgsDict', 'outputs.GetIpsecConfigFilterResult']]] = None,
                      ipsec_id: Optional[_builtins.str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIpsecConfigResult:
     """
@@ -141,7 +141,7 @@ def get_ipsec_config(filters: Optional[Sequence[Union['GetIpsecConfigFilterArgs'
         ipsec_id=pulumi.get(__ret__, 'ipsec_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         tunnels=pulumi.get(__ret__, 'tunnels'))
-def get_ipsec_config_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIpsecConfigFilterArgs', 'GetIpsecConfigFilterArgsDict']]]]] = None,
+def get_ipsec_config_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIpsecConfigFilterArgs', 'GetIpsecConfigFilterArgsDict', 'outputs.GetIpsecConfigFilterResult']]]]] = None,
                             ipsec_id: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIpsecConfigResult]:
     """

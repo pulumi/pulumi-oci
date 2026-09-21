@@ -1077,10 +1077,10 @@ class DatabaseInsight(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 connection_credential_details: pulumi.Input[Optional[Union['DatabaseInsightConnectionCredentialDetailsArgs', 'DatabaseInsightConnectionCredentialDetailsArgsDict']]] = None,
-                 connection_details: pulumi.Input[Optional[Union['DatabaseInsightConnectionDetailsArgs', 'DatabaseInsightConnectionDetailsArgsDict']]] = None,
+                 connection_credential_details: pulumi.Input[Optional[Union['DatabaseInsightConnectionCredentialDetailsArgs', 'DatabaseInsightConnectionCredentialDetailsArgsDict', 'outputs.DatabaseInsightConnectionCredentialDetails']]] = None,
+                 connection_details: pulumi.Input[Optional[Union['DatabaseInsightConnectionDetailsArgs', 'DatabaseInsightConnectionDetailsArgsDict', 'outputs.DatabaseInsightConnectionDetails']]] = None,
                  connector_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 credential_details: pulumi.Input[Optional[Union['DatabaseInsightCredentialDetailsArgs', 'DatabaseInsightCredentialDetailsArgsDict']]] = None,
+                 credential_details: pulumi.Input[Optional[Union['DatabaseInsightCredentialDetailsArgs', 'DatabaseInsightCredentialDetailsArgsDict', 'outputs.DatabaseInsightCredentialDetails']]] = None,
                  database_connection_status_details: pulumi.Input[Optional[_builtins.str]] = None,
                  database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
                  database_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1121,10 +1121,10 @@ class DatabaseInsight(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier of database
-        :param pulumi.Input[Union['DatabaseInsightConnectionCredentialDetailsArgs', 'DatabaseInsightConnectionCredentialDetailsArgsDict']] connection_credential_details: User credential details to connect to the database.
-        :param pulumi.Input[Union['DatabaseInsightConnectionDetailsArgs', 'DatabaseInsightConnectionDetailsArgsDict']] connection_details: Connection details to connect to the database. HostName, protocol, and port should be specified.
+        :param pulumi.Input[Union['DatabaseInsightConnectionCredentialDetailsArgs', 'DatabaseInsightConnectionCredentialDetailsArgsDict', 'outputs.DatabaseInsightConnectionCredentialDetails']] connection_credential_details: User credential details to connect to the database.
+        :param pulumi.Input[Union['DatabaseInsightConnectionDetailsArgs', 'DatabaseInsightConnectionDetailsArgsDict', 'outputs.DatabaseInsightConnectionDetails']] connection_details: Connection details to connect to the database. HostName, protocol, and port should be specified.
         :param pulumi.Input[_builtins.str] connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
-        :param pulumi.Input[Union['DatabaseInsightCredentialDetailsArgs', 'DatabaseInsightCredentialDetailsArgsDict']] credential_details: User credential details to connect to the database.
+        :param pulumi.Input[Union['DatabaseInsightCredentialDetailsArgs', 'DatabaseInsightCredentialDetailsArgsDict', 'outputs.DatabaseInsightCredentialDetails']] credential_details: User credential details to connect to the database.
         :param pulumi.Input[_builtins.str] database_connection_status_details: A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
         :param pulumi.Input[_builtins.str] database_connector_id: (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
         :param pulumi.Input[_builtins.str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
@@ -1187,10 +1187,10 @@ class DatabaseInsight(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 connection_credential_details: pulumi.Input[Optional[Union['DatabaseInsightConnectionCredentialDetailsArgs', 'DatabaseInsightConnectionCredentialDetailsArgsDict']]] = None,
-                 connection_details: pulumi.Input[Optional[Union['DatabaseInsightConnectionDetailsArgs', 'DatabaseInsightConnectionDetailsArgsDict']]] = None,
+                 connection_credential_details: pulumi.Input[Optional[Union['DatabaseInsightConnectionCredentialDetailsArgs', 'DatabaseInsightConnectionCredentialDetailsArgsDict', 'outputs.DatabaseInsightConnectionCredentialDetails']]] = None,
+                 connection_details: pulumi.Input[Optional[Union['DatabaseInsightConnectionDetailsArgs', 'DatabaseInsightConnectionDetailsArgsDict', 'outputs.DatabaseInsightConnectionDetails']]] = None,
                  connector_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 credential_details: pulumi.Input[Optional[Union['DatabaseInsightCredentialDetailsArgs', 'DatabaseInsightCredentialDetailsArgsDict']]] = None,
+                 credential_details: pulumi.Input[Optional[Union['DatabaseInsightCredentialDetailsArgs', 'DatabaseInsightCredentialDetailsArgsDict', 'outputs.DatabaseInsightCredentialDetails']]] = None,
                  database_connection_status_details: pulumi.Input[Optional[_builtins.str]] = None,
                  database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
                  database_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1274,10 +1274,10 @@ class DatabaseInsight(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            connection_credential_details: pulumi.Input[Optional[Union['DatabaseInsightConnectionCredentialDetailsArgs', 'DatabaseInsightConnectionCredentialDetailsArgsDict']]] = None,
-            connection_details: pulumi.Input[Optional[Union['DatabaseInsightConnectionDetailsArgs', 'DatabaseInsightConnectionDetailsArgsDict']]] = None,
+            connection_credential_details: pulumi.Input[Optional[Union['DatabaseInsightConnectionCredentialDetailsArgs', 'DatabaseInsightConnectionCredentialDetailsArgsDict', 'outputs.DatabaseInsightConnectionCredentialDetails']]] = None,
+            connection_details: pulumi.Input[Optional[Union['DatabaseInsightConnectionDetailsArgs', 'DatabaseInsightConnectionDetailsArgsDict', 'outputs.DatabaseInsightConnectionDetails']]] = None,
             connector_id: pulumi.Input[Optional[_builtins.str]] = None,
-            credential_details: pulumi.Input[Optional[Union['DatabaseInsightCredentialDetailsArgs', 'DatabaseInsightCredentialDetailsArgsDict']]] = None,
+            credential_details: pulumi.Input[Optional[Union['DatabaseInsightCredentialDetailsArgs', 'DatabaseInsightCredentialDetailsArgsDict', 'outputs.DatabaseInsightCredentialDetails']]] = None,
             database_connection_status_details: pulumi.Input[Optional[_builtins.str]] = None,
             database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
             database_display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1321,10 +1321,10 @@ class DatabaseInsight(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier of database
-        :param pulumi.Input[Union['DatabaseInsightConnectionCredentialDetailsArgs', 'DatabaseInsightConnectionCredentialDetailsArgsDict']] connection_credential_details: User credential details to connect to the database.
-        :param pulumi.Input[Union['DatabaseInsightConnectionDetailsArgs', 'DatabaseInsightConnectionDetailsArgsDict']] connection_details: Connection details to connect to the database. HostName, protocol, and port should be specified.
+        :param pulumi.Input[Union['DatabaseInsightConnectionCredentialDetailsArgs', 'DatabaseInsightConnectionCredentialDetailsArgsDict', 'outputs.DatabaseInsightConnectionCredentialDetails']] connection_credential_details: User credential details to connect to the database.
+        :param pulumi.Input[Union['DatabaseInsightConnectionDetailsArgs', 'DatabaseInsightConnectionDetailsArgsDict', 'outputs.DatabaseInsightConnectionDetails']] connection_details: Connection details to connect to the database. HostName, protocol, and port should be specified.
         :param pulumi.Input[_builtins.str] connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
-        :param pulumi.Input[Union['DatabaseInsightCredentialDetailsArgs', 'DatabaseInsightCredentialDetailsArgsDict']] credential_details: User credential details to connect to the database.
+        :param pulumi.Input[Union['DatabaseInsightCredentialDetailsArgs', 'DatabaseInsightCredentialDetailsArgsDict', 'outputs.DatabaseInsightCredentialDetails']] credential_details: User credential details to connect to the database.
         :param pulumi.Input[_builtins.str] database_connection_status_details: A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
         :param pulumi.Input[_builtins.str] database_connector_id: (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
         :param pulumi.Input[_builtins.str] database_display_name: Display name of database

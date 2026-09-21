@@ -829,7 +829,7 @@ class AuditProfile(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             audit_collected_volume: pulumi.Input[Optional[_builtins.str]] = None,
-            audit_trails: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuditProfileAuditTrailArgs', 'AuditProfileAuditTrailArgsDict']]]]] = None,
+            audit_trails: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuditProfileAuditTrailArgs', 'AuditProfileAuditTrailArgsDict', 'outputs.AuditProfileAuditTrail']]]]] = None,
             change_retention_trigger: pulumi.Input[Optional[_builtins.int]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -859,7 +859,7 @@ class AuditProfile(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] audit_collected_volume: Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AuditProfileAuditTrailArgs', 'AuditProfileAuditTrailArgsDict']]]] audit_trails: Contains the list of available audit trails on the target database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AuditProfileAuditTrailArgs', 'AuditProfileAuditTrailArgsDict', 'outputs.AuditProfileAuditTrail']]]] audit_trails: Contains the list of available audit trails on the target database.
         :param pulumi.Input[_builtins.int] change_retention_trigger: (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
                
                ** IMPORTANT **

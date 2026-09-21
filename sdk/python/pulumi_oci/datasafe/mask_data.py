@@ -111,7 +111,7 @@ class MaskData(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 target_credentials: pulumi.Input[Optional[Union['MaskDataTargetCredentialsArgs', 'MaskDataTargetCredentialsArgsDict']]] = None,
+                 target_credentials: pulumi.Input[Optional[Union['MaskDataTargetCredentialsArgs', 'MaskDataTargetCredentialsArgsDict', 'outputs.MaskDataTargetCredentials']]] = None,
                  target_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -145,7 +145,7 @@ class MaskData(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 target_credentials: pulumi.Input[Optional[Union['MaskDataTargetCredentialsArgs', 'MaskDataTargetCredentialsArgsDict']]] = None,
+                 target_credentials: pulumi.Input[Optional[Union['MaskDataTargetCredentialsArgs', 'MaskDataTargetCredentialsArgsDict', 'outputs.MaskDataTargetCredentials']]] = None,
                  target_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -174,7 +174,7 @@ class MaskData(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-            target_credentials: pulumi.Input[Optional[Union['MaskDataTargetCredentialsArgs', 'MaskDataTargetCredentialsArgsDict']]] = None,
+            target_credentials: pulumi.Input[Optional[Union['MaskDataTargetCredentialsArgs', 'MaskDataTargetCredentialsArgsDict', 'outputs.MaskDataTargetCredentials']]] = None,
             target_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'MaskData':
         """
         Get an existing MaskData resource's state with the given name, id, and optional extra

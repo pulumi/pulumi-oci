@@ -234,9 +234,9 @@ class DefaultSecurityList(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 egress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultSecurityListEgressSecurityRuleArgs', 'DefaultSecurityListEgressSecurityRuleArgsDict']]]]] = None,
+                 egress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultSecurityListEgressSecurityRuleArgs', 'DefaultSecurityListEgressSecurityRuleArgsDict', 'outputs.DefaultSecurityListEgressSecurityRule']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ingress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultSecurityListIngressSecurityRuleArgs', 'DefaultSecurityListIngressSecurityRuleArgsDict']]]]] = None,
+                 ingress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultSecurityListIngressSecurityRuleArgs', 'DefaultSecurityListIngressSecurityRuleArgsDict', 'outputs.DefaultSecurityListIngressSecurityRule']]]]] = None,
                  manage_default_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -272,9 +272,9 @@ class DefaultSecurityList(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 egress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultSecurityListEgressSecurityRuleArgs', 'DefaultSecurityListEgressSecurityRuleArgsDict']]]]] = None,
+                 egress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultSecurityListEgressSecurityRuleArgs', 'DefaultSecurityListEgressSecurityRuleArgsDict', 'outputs.DefaultSecurityListEgressSecurityRule']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ingress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultSecurityListIngressSecurityRuleArgs', 'DefaultSecurityListIngressSecurityRuleArgsDict']]]]] = None,
+                 ingress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultSecurityListIngressSecurityRuleArgs', 'DefaultSecurityListIngressSecurityRuleArgsDict', 'outputs.DefaultSecurityListIngressSecurityRule']]]]] = None,
                  manage_default_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -309,9 +309,9 @@ class DefaultSecurityList(pulumi.CustomResource):
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            egress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultSecurityListEgressSecurityRuleArgs', 'DefaultSecurityListEgressSecurityRuleArgsDict']]]]] = None,
+            egress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultSecurityListEgressSecurityRuleArgs', 'DefaultSecurityListEgressSecurityRuleArgsDict', 'outputs.DefaultSecurityListEgressSecurityRule']]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            ingress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultSecurityListIngressSecurityRuleArgs', 'DefaultSecurityListIngressSecurityRuleArgsDict']]]]] = None,
+            ingress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DefaultSecurityListIngressSecurityRuleArgs', 'DefaultSecurityListIngressSecurityRuleArgsDict', 'outputs.DefaultSecurityListIngressSecurityRule']]]]] = None,
             manage_default_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'DefaultSecurityList':

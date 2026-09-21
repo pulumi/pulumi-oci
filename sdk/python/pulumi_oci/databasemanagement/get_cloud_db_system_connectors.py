@@ -111,7 +111,7 @@ class AwaitableGetCloudDbSystemConnectorsResult(GetCloudDbSystemConnectorsResult
 def get_cloud_db_system_connectors(cloud_db_system_id: Optional[_builtins.str] = None,
                                    compartment_id: Optional[_builtins.str] = None,
                                    display_name: Optional[_builtins.str] = None,
-                                   filters: Optional[Sequence[Union['GetCloudDbSystemConnectorsFilterArgs', 'GetCloudDbSystemConnectorsFilterArgsDict']]] = None,
+                                   filters: Optional[Sequence[Union['GetCloudDbSystemConnectorsFilterArgs', 'GetCloudDbSystemConnectorsFilterArgsDict', 'outputs.GetCloudDbSystemConnectorsFilterResult']]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudDbSystemConnectorsResult:
     """
     This data source provides the list of Cloud Db System Connectors in Oracle Cloud Infrastructure Database Management service.
@@ -152,7 +152,7 @@ def get_cloud_db_system_connectors(cloud_db_system_id: Optional[_builtins.str] =
 def get_cloud_db_system_connectors_output(cloud_db_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudDbSystemConnectorsFilterArgs', 'GetCloudDbSystemConnectorsFilterArgsDict']]]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudDbSystemConnectorsFilterArgs', 'GetCloudDbSystemConnectorsFilterArgsDict', 'outputs.GetCloudDbSystemConnectorsFilterResult']]]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudDbSystemConnectorsResult]:
     """
     This data source provides the list of Cloud Db System Connectors in Oracle Cloud Infrastructure Database Management service.

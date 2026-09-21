@@ -98,7 +98,7 @@ class AwaitableGetExternalDbSystemDiscoveriesResult(GetExternalDbSystemDiscoveri
 
 def get_external_db_system_discoveries(compartment_id: Optional[_builtins.str] = None,
                                        display_name: Optional[_builtins.str] = None,
-                                       filters: Optional[Sequence[Union['GetExternalDbSystemDiscoveriesFilterArgs', 'GetExternalDbSystemDiscoveriesFilterArgsDict']]] = None,
+                                       filters: Optional[Sequence[Union['GetExternalDbSystemDiscoveriesFilterArgs', 'GetExternalDbSystemDiscoveriesFilterArgsDict', 'outputs.GetExternalDbSystemDiscoveriesFilterResult']]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalDbSystemDiscoveriesResult:
     """
     This data source provides the list of External Db System Discoveries in Oracle Cloud Infrastructure Database Management service.
@@ -134,7 +134,7 @@ def get_external_db_system_discoveries(compartment_id: Optional[_builtins.str] =
         id=pulumi.get(__ret__, 'id'))
 def get_external_db_system_discoveries_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalDbSystemDiscoveriesFilterArgs', 'GetExternalDbSystemDiscoveriesFilterArgsDict']]]]] = None,
+                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalDbSystemDiscoveriesFilterArgs', 'GetExternalDbSystemDiscoveriesFilterArgsDict', 'outputs.GetExternalDbSystemDiscoveriesFilterResult']]]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalDbSystemDiscoveriesResult]:
     """
     This data source provides the list of External Db System Discoveries in Oracle Cloud Infrastructure Database Management service.

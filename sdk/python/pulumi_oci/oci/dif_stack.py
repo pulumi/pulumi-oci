@@ -750,21 +750,21 @@ class DifStack(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 adbs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackAdbArgs', 'DifStackAdbArgsDict']]]]] = None,
+                 adbs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackAdbArgs', 'DifStackAdbArgsDict', 'outputs.DifStackAdb']]]]] = None,
                  add_service_trigger: pulumi.Input[Optional[_builtins.int]] = None,
-                 aidataplatforms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackAidataplatformArgs', 'DifStackAidataplatformArgsDict']]]]] = None,
+                 aidataplatforms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackAidataplatformArgs', 'DifStackAidataplatformArgsDict', 'outputs.DifStackAidataplatform']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 dataflows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackDataflowArgs', 'DifStackDataflowArgsDict']]]]] = None,
+                 dataflows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackDataflowArgs', 'DifStackDataflowArgsDict', 'outputs.DifStackDataflow']]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  deploy_artifacts_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 genais: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackGenaiArgs', 'DifStackGenaiArgsDict']]]]] = None,
-                 ggcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackGgcArgs', 'DifStackGgcArgsDict']]]]] = None,
+                 genais: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackGenaiArgs', 'DifStackGenaiArgsDict', 'outputs.DifStackGenai']]]]] = None,
+                 ggcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackGgcArgs', 'DifStackGgcArgsDict', 'outputs.DifStackGgc']]]]] = None,
                  notification_email: pulumi.Input[Optional[_builtins.str]] = None,
-                 objectstorages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackObjectstorageArgs', 'DifStackObjectstorageArgsDict']]]]] = None,
-                 okes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackOkeArgs', 'DifStackOkeArgsDict']]]]] = None,
-                 omks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackOmkArgs', 'DifStackOmkArgsDict']]]]] = None,
+                 objectstorages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackObjectstorageArgs', 'DifStackObjectstorageArgsDict', 'outputs.DifStackObjectstorage']]]]] = None,
+                 okes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackOkeArgs', 'DifStackOkeArgsDict', 'outputs.DifStackOke']]]]] = None,
+                 omks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackOmkArgs', 'DifStackOmkArgsDict', 'outputs.DifStackOmk']]]]] = None,
                  services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  stack_templates: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -942,11 +942,11 @@ class DifStack(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackAdbArgs', 'DifStackAdbArgsDict']]]] adbs: (Updatable) ADB details if adb is included in the services.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackAdbArgs', 'DifStackAdbArgsDict', 'outputs.DifStackAdb']]]] adbs: (Updatable) ADB details if adb is included in the services.
         :param pulumi.Input[_builtins.int] add_service_trigger: (Updatable) An optional property when incremented triggers Add Service. Could be set to any integer value.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackAidataplatformArgs', 'DifStackAidataplatformArgsDict']]]] aidataplatforms: AI Data Platform Details if aidataplatform is included in services.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackAidataplatformArgs', 'DifStackAidataplatformArgsDict', 'outputs.DifStackAidataplatform']]]] aidataplatforms: AI Data Platform Details if aidataplatform is included in services.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the Stack in.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackDataflowArgs', 'DifStackDataflowArgsDict']]]] dataflows: (Updatable) DATAFLOW details if dataflow is included in the services.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackDataflowArgs', 'DifStackDataflowArgsDict', 'outputs.DifStackDataflow']]]] dataflows: (Updatable) DATAFLOW details if dataflow is included in the services.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.int] deploy_artifacts_trigger: (Updatable) An optional property when incremented triggers Deploy Artifacts. Could be set to any integer value.
                
@@ -961,12 +961,12 @@ class DifStack(pulumi.CustomResource):
                - Additions to services/templates or service blocks require increasing add_service_trigger. Deletions are not permitted.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Should be unique per compartment. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackGenaiArgs', 'DifStackGenaiArgsDict']]]] genais: (Updatable) GenAi Details if genai is included in services.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackGgcArgs', 'DifStackGgcArgsDict']]]] ggcs: (Updatable) GGCS details if ggcs is included in the services.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackGenaiArgs', 'DifStackGenaiArgsDict', 'outputs.DifStackGenai']]]] genais: (Updatable) GenAi Details if genai is included in services.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackGgcArgs', 'DifStackGgcArgsDict', 'outputs.DifStackGgc']]]] ggcs: (Updatable) GGCS details if ggcs is included in the services.
         :param pulumi.Input[_builtins.str] notification_email: email id to which the stack notifications would be sent.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackObjectstorageArgs', 'DifStackObjectstorageArgsDict']]]] objectstorages: (Updatable) Object Storage Details if object storage is included in services.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackOkeArgs', 'DifStackOkeArgsDict']]]] okes: OKE Details if oke is included in services.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackOmkArgs', 'DifStackOmkArgsDict']]]] omks: OMK Details if omk is included in services.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackObjectstorageArgs', 'DifStackObjectstorageArgsDict', 'outputs.DifStackObjectstorage']]]] objectstorages: (Updatable) Object Storage Details if object storage is included in services.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackOkeArgs', 'DifStackOkeArgsDict', 'outputs.DifStackOke']]]] okes: OKE Details if oke is included in services.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackOmkArgs', 'DifStackOmkArgsDict', 'outputs.DifStackOmk']]]] omks: OMK Details if omk is included in services.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] services: (Updatable) List of services to be onboarded for the stack.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] stack_templates: (Updatable) List of templates to be onboarded for the stack.
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) Subnet id for the Private Endpoint creation for artifact deployment.
@@ -1163,21 +1163,21 @@ class DifStack(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 adbs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackAdbArgs', 'DifStackAdbArgsDict']]]]] = None,
+                 adbs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackAdbArgs', 'DifStackAdbArgsDict', 'outputs.DifStackAdb']]]]] = None,
                  add_service_trigger: pulumi.Input[Optional[_builtins.int]] = None,
-                 aidataplatforms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackAidataplatformArgs', 'DifStackAidataplatformArgsDict']]]]] = None,
+                 aidataplatforms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackAidataplatformArgs', 'DifStackAidataplatformArgsDict', 'outputs.DifStackAidataplatform']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 dataflows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackDataflowArgs', 'DifStackDataflowArgsDict']]]]] = None,
+                 dataflows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackDataflowArgs', 'DifStackDataflowArgsDict', 'outputs.DifStackDataflow']]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  deploy_artifacts_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 genais: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackGenaiArgs', 'DifStackGenaiArgsDict']]]]] = None,
-                 ggcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackGgcArgs', 'DifStackGgcArgsDict']]]]] = None,
+                 genais: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackGenaiArgs', 'DifStackGenaiArgsDict', 'outputs.DifStackGenai']]]]] = None,
+                 ggcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackGgcArgs', 'DifStackGgcArgsDict', 'outputs.DifStackGgc']]]]] = None,
                  notification_email: pulumi.Input[Optional[_builtins.str]] = None,
-                 objectstorages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackObjectstorageArgs', 'DifStackObjectstorageArgsDict']]]]] = None,
-                 okes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackOkeArgs', 'DifStackOkeArgsDict']]]]] = None,
-                 omks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackOmkArgs', 'DifStackOmkArgsDict']]]]] = None,
+                 objectstorages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackObjectstorageArgs', 'DifStackObjectstorageArgsDict', 'outputs.DifStackObjectstorage']]]]] = None,
+                 okes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackOkeArgs', 'DifStackOkeArgsDict', 'outputs.DifStackOke']]]]] = None,
+                 omks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackOmkArgs', 'DifStackOmkArgsDict', 'outputs.DifStackOmk']]]]] = None,
                  services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  stack_templates: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1232,23 +1232,23 @@ class DifStack(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            adbs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackAdbArgs', 'DifStackAdbArgsDict']]]]] = None,
+            adbs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackAdbArgs', 'DifStackAdbArgsDict', 'outputs.DifStackAdb']]]]] = None,
             add_service_trigger: pulumi.Input[Optional[_builtins.int]] = None,
-            aidataplatforms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackAidataplatformArgs', 'DifStackAidataplatformArgsDict']]]]] = None,
+            aidataplatforms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackAidataplatformArgs', 'DifStackAidataplatformArgsDict', 'outputs.DifStackAidataplatform']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            dataflows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackDataflowArgs', 'DifStackDataflowArgsDict']]]]] = None,
+            dataflows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackDataflowArgs', 'DifStackDataflowArgsDict', 'outputs.DifStackDataflow']]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             deploy_artifacts_trigger: pulumi.Input[Optional[_builtins.int]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            genais: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackGenaiArgs', 'DifStackGenaiArgsDict']]]]] = None,
-            ggcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackGgcArgs', 'DifStackGgcArgsDict']]]]] = None,
+            genais: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackGenaiArgs', 'DifStackGenaiArgsDict', 'outputs.DifStackGenai']]]]] = None,
+            ggcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackGgcArgs', 'DifStackGgcArgsDict', 'outputs.DifStackGgc']]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             notification_email: pulumi.Input[Optional[_builtins.str]] = None,
-            objectstorages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackObjectstorageArgs', 'DifStackObjectstorageArgsDict']]]]] = None,
-            okes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackOkeArgs', 'DifStackOkeArgsDict']]]]] = None,
-            omks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackOmkArgs', 'DifStackOmkArgsDict']]]]] = None,
-            service_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackServiceDetailArgs', 'DifStackServiceDetailArgsDict']]]]] = None,
+            objectstorages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackObjectstorageArgs', 'DifStackObjectstorageArgsDict', 'outputs.DifStackObjectstorage']]]]] = None,
+            okes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackOkeArgs', 'DifStackOkeArgsDict', 'outputs.DifStackOke']]]]] = None,
+            omks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackOmkArgs', 'DifStackOmkArgsDict', 'outputs.DifStackOmk']]]]] = None,
+            service_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackServiceDetailArgs', 'DifStackServiceDetailArgsDict', 'outputs.DifStackServiceDetail']]]]] = None,
             services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             stack_templates: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1263,11 +1263,11 @@ class DifStack(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackAdbArgs', 'DifStackAdbArgsDict']]]] adbs: (Updatable) ADB details if adb is included in the services.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackAdbArgs', 'DifStackAdbArgsDict', 'outputs.DifStackAdb']]]] adbs: (Updatable) ADB details if adb is included in the services.
         :param pulumi.Input[_builtins.int] add_service_trigger: (Updatable) An optional property when incremented triggers Add Service. Could be set to any integer value.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackAidataplatformArgs', 'DifStackAidataplatformArgsDict']]]] aidataplatforms: AI Data Platform Details if aidataplatform is included in services.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackAidataplatformArgs', 'DifStackAidataplatformArgsDict', 'outputs.DifStackAidataplatform']]]] aidataplatforms: AI Data Platform Details if aidataplatform is included in services.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the Stack in.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackDataflowArgs', 'DifStackDataflowArgsDict']]]] dataflows: (Updatable) DATAFLOW details if dataflow is included in the services.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackDataflowArgs', 'DifStackDataflowArgsDict', 'outputs.DifStackDataflow']]]] dataflows: (Updatable) DATAFLOW details if dataflow is included in the services.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.int] deploy_artifacts_trigger: (Updatable) An optional property when incremented triggers Deploy Artifacts. Could be set to any integer value.
                
@@ -1282,14 +1282,14 @@ class DifStack(pulumi.CustomResource):
                - Additions to services/templates or service blocks require increasing add_service_trigger. Deletions are not permitted.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Should be unique per compartment. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackGenaiArgs', 'DifStackGenaiArgsDict']]]] genais: (Updatable) GenAi Details if genai is included in services.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackGgcArgs', 'DifStackGgcArgsDict']]]] ggcs: (Updatable) GGCS details if ggcs is included in the services.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackGenaiArgs', 'DifStackGenaiArgsDict', 'outputs.DifStackGenai']]]] genais: (Updatable) GenAi Details if genai is included in services.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackGgcArgs', 'DifStackGgcArgsDict', 'outputs.DifStackGgc']]]] ggcs: (Updatable) GGCS details if ggcs is included in the services.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the Stack in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input[_builtins.str] notification_email: email id to which the stack notifications would be sent.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackObjectstorageArgs', 'DifStackObjectstorageArgsDict']]]] objectstorages: (Updatable) Object Storage Details if object storage is included in services.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackOkeArgs', 'DifStackOkeArgsDict']]]] okes: OKE Details if oke is included in services.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackOmkArgs', 'DifStackOmkArgsDict']]]] omks: OMK Details if omk is included in services.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackServiceDetailArgs', 'DifStackServiceDetailArgsDict']]]] service_details: Details of the service onboarded for the data intelligence stack.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackObjectstorageArgs', 'DifStackObjectstorageArgsDict', 'outputs.DifStackObjectstorage']]]] objectstorages: (Updatable) Object Storage Details if object storage is included in services.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackOkeArgs', 'DifStackOkeArgsDict', 'outputs.DifStackOke']]]] okes: OKE Details if oke is included in services.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackOmkArgs', 'DifStackOmkArgsDict', 'outputs.DifStackOmk']]]] omks: OMK Details if omk is included in services.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackServiceDetailArgs', 'DifStackServiceDetailArgsDict', 'outputs.DifStackServiceDetail']]]] service_details: Details of the service onboarded for the data intelligence stack.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] services: (Updatable) List of services to be onboarded for the stack.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] stack_templates: (Updatable) List of templates to be onboarded for the stack.
         :param pulumi.Input[_builtins.str] state: The current state of the Stack.

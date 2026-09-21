@@ -109,7 +109,7 @@ class AwaitableGetConsumerGroupsResult(GetConsumerGroupsResult):
 
 
 def get_consumer_groups(display_name: Optional[_builtins.str] = None,
-                        filters: Optional[Sequence[Union['GetConsumerGroupsFilterArgs', 'GetConsumerGroupsFilterArgsDict']]] = None,
+                        filters: Optional[Sequence[Union['GetConsumerGroupsFilterArgs', 'GetConsumerGroupsFilterArgsDict', 'outputs.GetConsumerGroupsFilterResult']]] = None,
                         id: Optional[_builtins.str] = None,
                         queue_id: Optional[_builtins.str] = None,
                         state: Optional[_builtins.str] = None,
@@ -154,7 +154,7 @@ def get_consumer_groups(display_name: Optional[_builtins.str] = None,
         queue_id=pulumi.get(__ret__, 'queue_id'),
         state=pulumi.get(__ret__, 'state'))
 def get_consumer_groups_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConsumerGroupsFilterArgs', 'GetConsumerGroupsFilterArgsDict']]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConsumerGroupsFilterArgs', 'GetConsumerGroupsFilterArgsDict', 'outputs.GetConsumerGroupsFilterResult']]]]] = None,
                                id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                queue_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

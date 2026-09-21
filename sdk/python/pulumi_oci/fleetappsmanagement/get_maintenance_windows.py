@@ -119,7 +119,7 @@ class AwaitableGetMaintenanceWindowsResult(GetMaintenanceWindowsResult):
 
 def get_maintenance_windows(compartment_id: Optional[_builtins.str] = None,
                             display_name: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetMaintenanceWindowsFilterArgs', 'GetMaintenanceWindowsFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetMaintenanceWindowsFilterArgs', 'GetMaintenanceWindowsFilterArgsDict', 'outputs.GetMaintenanceWindowsFilterResult']]] = None,
                             id: Optional[_builtins.str] = None,
                             state: Optional[_builtins.str] = None,
                             time_schedule_start_greater_than_or_equal_to: Optional[_builtins.str] = None,
@@ -170,7 +170,7 @@ def get_maintenance_windows(compartment_id: Optional[_builtins.str] = None,
         time_schedule_start_greater_than_or_equal_to=pulumi.get(__ret__, 'time_schedule_start_greater_than_or_equal_to'))
 def get_maintenance_windows_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaintenanceWindowsFilterArgs', 'GetMaintenanceWindowsFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaintenanceWindowsFilterArgs', 'GetMaintenanceWindowsFilterArgsDict', 'outputs.GetMaintenanceWindowsFilterResult']]]]] = None,
                                    id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    time_schedule_start_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

@@ -107,7 +107,7 @@ class AwaitableGetPrivateApplicationsResult(GetPrivateApplicationsResult):
 
 def get_private_applications(compartment_id: Optional[_builtins.str] = None,
                              display_name: Optional[_builtins.str] = None,
-                             filters: Optional[Sequence[Union['GetPrivateApplicationsFilterArgs', 'GetPrivateApplicationsFilterArgsDict']]] = None,
+                             filters: Optional[Sequence[Union['GetPrivateApplicationsFilterArgs', 'GetPrivateApplicationsFilterArgsDict', 'outputs.GetPrivateApplicationsFilterResult']]] = None,
                              private_application_id: Optional[_builtins.str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPrivateApplicationsResult:
     """
@@ -148,7 +148,7 @@ def get_private_applications(compartment_id: Optional[_builtins.str] = None,
         private_application_id=pulumi.get(__ret__, 'private_application_id'))
 def get_private_applications_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPrivateApplicationsFilterArgs', 'GetPrivateApplicationsFilterArgsDict']]]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPrivateApplicationsFilterArgs', 'GetPrivateApplicationsFilterArgsDict', 'outputs.GetPrivateApplicationsFilterResult']]]]] = None,
                                     private_application_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateApplicationsResult]:
     """

@@ -1235,10 +1235,10 @@ class VmCluster(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cloud_automation_update_details: pulumi.Input[Optional[Union['VmClusterCloudAutomationUpdateDetailsArgs', 'VmClusterCloudAutomationUpdateDetailsArgsDict']]] = None,
+                 cloud_automation_update_details: pulumi.Input[Optional[Union['VmClusterCloudAutomationUpdateDetailsArgs', 'VmClusterCloudAutomationUpdateDetailsArgsDict', 'outputs.VmClusterCloudAutomationUpdateDetails']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
-                 data_collection_options: pulumi.Input[Optional[Union['VmClusterDataCollectionOptionsArgs', 'VmClusterDataCollectionOptionsArgsDict']]] = None,
+                 data_collection_options: pulumi.Input[Optional[Union['VmClusterDataCollectionOptionsArgs', 'VmClusterDataCollectionOptionsArgsDict', 'outputs.VmClusterDataCollectionOptions']]] = None,
                  data_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
                  data_storage_size_in_gb: pulumi.Input[Optional[_builtins.float]] = None,
                  data_storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
@@ -1248,7 +1248,7 @@ class VmCluster(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
                  exascale_db_storage_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 file_system_configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterFileSystemConfigurationDetailArgs', 'VmClusterFileSystemConfigurationDetailArgsDict']]]]] = None,
+                 file_system_configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterFileSystemConfigurationDetailArgs', 'VmClusterFileSystemConfigurationDetailArgsDict', 'outputs.VmClusterFileSystemConfigurationDetail']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  gi_version: pulumi.Input[Optional[_builtins.str]] = None,
                  is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1261,7 +1261,7 @@ class VmCluster(pulumi.CustomResource):
                  ssh_public_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  system_version: pulumi.Input[Optional[_builtins.str]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
-                 update_details: pulumi.Input[Optional[Union['VmClusterUpdateDetailsArgs', 'VmClusterUpdateDetailsArgsDict']]] = None,
+                 update_details: pulumi.Input[Optional[Union['VmClusterUpdateDetailsArgs', 'VmClusterUpdateDetailsArgsDict', 'outputs.VmClusterUpdateDetails']]] = None,
                  vm_backup_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1348,10 +1348,10 @@ class VmCluster(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['VmClusterCloudAutomationUpdateDetailsArgs', 'VmClusterCloudAutomationUpdateDetailsArgsDict']] cloud_automation_update_details: (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        :param pulumi.Input[Union['VmClusterCloudAutomationUpdateDetailsArgs', 'VmClusterCloudAutomationUpdateDetailsArgsDict', 'outputs.VmClusterCloudAutomationUpdateDetails']] cloud_automation_update_details: (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `cpu_core_count` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
-        :param pulumi.Input[Union['VmClusterDataCollectionOptionsArgs', 'VmClusterDataCollectionOptionsArgsDict']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[Union['VmClusterDataCollectionOptionsArgs', 'VmClusterDataCollectionOptionsArgsDict', 'outputs.VmClusterDataCollectionOptions']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[_builtins.int] data_storage_percentage: (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         :param pulumi.Input[_builtins.float] data_storage_size_in_gb: (Updatable) The data disk group size to be allocated in GBs.
         :param pulumi.Input[_builtins.float] data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated in TBs.
@@ -1361,7 +1361,7 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the VM cluster. The name does not need to be unique.
         :param pulumi.Input[_builtins.str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] exascale_db_storage_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterFileSystemConfigurationDetailArgs', 'VmClusterFileSystemConfigurationDetailArgsDict']]]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterFileSystemConfigurationDetailArgs', 'VmClusterFileSystemConfigurationDetailArgsDict', 'outputs.VmClusterFileSystemConfigurationDetail']]]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] gi_version: The Oracle Grid Infrastructure software version for the VM cluster.
         :param pulumi.Input[_builtins.bool] is_local_backup_enabled: (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
@@ -1373,7 +1373,7 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.
         :param pulumi.Input[_builtins.str] system_version: Operating system version of the image.
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-        :param pulumi.Input[Union['VmClusterUpdateDetailsArgs', 'VmClusterUpdateDetailsArgsDict']] update_details: (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `update_mode` for DomU live update modes or regular full OS update mode.
+        :param pulumi.Input[Union['VmClusterUpdateDetailsArgs', 'VmClusterUpdateDetailsArgsDict', 'outputs.VmClusterUpdateDetails']] update_details: (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `update_mode` for DomU live update modes or regular full OS update mode.
         :param pulumi.Input[_builtins.str] vm_backup_storage_type: (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
         :param pulumi.Input[_builtins.str] vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         :param pulumi.Input[_builtins.str] vm_cluster_type: The vmcluster type for the VM cluster/Cloud VM cluster.
@@ -1482,10 +1482,10 @@ class VmCluster(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cloud_automation_update_details: pulumi.Input[Optional[Union['VmClusterCloudAutomationUpdateDetailsArgs', 'VmClusterCloudAutomationUpdateDetailsArgsDict']]] = None,
+                 cloud_automation_update_details: pulumi.Input[Optional[Union['VmClusterCloudAutomationUpdateDetailsArgs', 'VmClusterCloudAutomationUpdateDetailsArgsDict', 'outputs.VmClusterCloudAutomationUpdateDetails']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
-                 data_collection_options: pulumi.Input[Optional[Union['VmClusterDataCollectionOptionsArgs', 'VmClusterDataCollectionOptionsArgsDict']]] = None,
+                 data_collection_options: pulumi.Input[Optional[Union['VmClusterDataCollectionOptionsArgs', 'VmClusterDataCollectionOptionsArgsDict', 'outputs.VmClusterDataCollectionOptions']]] = None,
                  data_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
                  data_storage_size_in_gb: pulumi.Input[Optional[_builtins.float]] = None,
                  data_storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
@@ -1495,7 +1495,7 @@ class VmCluster(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
                  exascale_db_storage_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 file_system_configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterFileSystemConfigurationDetailArgs', 'VmClusterFileSystemConfigurationDetailArgsDict']]]]] = None,
+                 file_system_configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterFileSystemConfigurationDetailArgs', 'VmClusterFileSystemConfigurationDetailArgsDict', 'outputs.VmClusterFileSystemConfigurationDetail']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  gi_version: pulumi.Input[Optional[_builtins.str]] = None,
                  is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1508,7 +1508,7 @@ class VmCluster(pulumi.CustomResource):
                  ssh_public_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  system_version: pulumi.Input[Optional[_builtins.str]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
-                 update_details: pulumi.Input[Optional[Union['VmClusterUpdateDetailsArgs', 'VmClusterUpdateDetailsArgsDict']]] = None,
+                 update_details: pulumi.Input[Optional[Union['VmClusterUpdateDetailsArgs', 'VmClusterUpdateDetailsArgsDict', 'outputs.VmClusterUpdateDetails']]] = None,
                  vm_backup_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1591,12 +1591,12 @@ class VmCluster(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
-            cloud_automation_update_details: pulumi.Input[Optional[Union['VmClusterCloudAutomationUpdateDetailsArgs', 'VmClusterCloudAutomationUpdateDetailsArgsDict']]] = None,
+            cloud_automation_update_details: pulumi.Input[Optional[Union['VmClusterCloudAutomationUpdateDetailsArgs', 'VmClusterCloudAutomationUpdateDetailsArgsDict', 'outputs.VmClusterCloudAutomationUpdateDetails']]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             compute_model: pulumi.Input[Optional[_builtins.str]] = None,
             cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
             cpus_enabled: pulumi.Input[Optional[_builtins.int]] = None,
-            data_collection_options: pulumi.Input[Optional[Union['VmClusterDataCollectionOptionsArgs', 'VmClusterDataCollectionOptionsArgsDict']]] = None,
+            data_collection_options: pulumi.Input[Optional[Union['VmClusterDataCollectionOptionsArgs', 'VmClusterDataCollectionOptionsArgsDict', 'outputs.VmClusterDataCollectionOptions']]] = None,
             data_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
             data_storage_size_in_gb: pulumi.Input[Optional[_builtins.float]] = None,
             data_storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
@@ -1606,7 +1606,7 @@ class VmCluster(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
             exascale_db_storage_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
-            file_system_configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterFileSystemConfigurationDetailArgs', 'VmClusterFileSystemConfigurationDetailArgsDict']]]]] = None,
+            file_system_configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterFileSystemConfigurationDetailArgs', 'VmClusterFileSystemConfigurationDetailArgsDict', 'outputs.VmClusterFileSystemConfigurationDetail']]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             gi_version: pulumi.Input[Optional[_builtins.str]] = None,
             is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1614,7 +1614,7 @@ class VmCluster(pulumi.CustomResource):
             last_patch_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
             license_model: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            live_image_version_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterLiveImageVersionDetailArgs', 'VmClusterLiveImageVersionDetailArgsDict']]]]] = None,
+            live_image_version_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterLiveImageVersionDetailArgs', 'VmClusterLiveImageVersionDetailArgsDict', 'outputs.VmClusterLiveImageVersionDetail']]]]] = None,
             memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
             ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
             ocpus_enabled: pulumi.Input[Optional[_builtins.float]] = None,
@@ -1629,7 +1629,7 @@ class VmCluster(pulumi.CustomResource):
             system_version: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_zone: pulumi.Input[Optional[_builtins.str]] = None,
-            update_details: pulumi.Input[Optional[Union['VmClusterUpdateDetailsArgs', 'VmClusterUpdateDetailsArgsDict']]] = None,
+            update_details: pulumi.Input[Optional[Union['VmClusterUpdateDetailsArgs', 'VmClusterUpdateDetailsArgsDict', 'outputs.VmClusterUpdateDetails']]] = None,
             vm_backup_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
             vm_cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
             vm_cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1642,12 +1642,12 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain that the VM cluster is located in.
-        :param pulumi.Input[Union['VmClusterCloudAutomationUpdateDetailsArgs', 'VmClusterCloudAutomationUpdateDetailsArgsDict']] cloud_automation_update_details: (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        :param pulumi.Input[Union['VmClusterCloudAutomationUpdateDetailsArgs', 'VmClusterCloudAutomationUpdateDetailsArgsDict', 'outputs.VmClusterCloudAutomationUpdateDetails']] cloud_automation_update_details: (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `cpu_core_count` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
         :param pulumi.Input[_builtins.int] cpus_enabled: The number of enabled CPU cores.
-        :param pulumi.Input[Union['VmClusterDataCollectionOptionsArgs', 'VmClusterDataCollectionOptionsArgsDict']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[Union['VmClusterDataCollectionOptionsArgs', 'VmClusterDataCollectionOptionsArgsDict', 'outputs.VmClusterDataCollectionOptions']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[_builtins.int] data_storage_percentage: (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         :param pulumi.Input[_builtins.float] data_storage_size_in_gb: (Updatable) The data disk group size to be allocated in GBs.
         :param pulumi.Input[_builtins.float] data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated in TBs.
@@ -1657,7 +1657,7 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the VM cluster. The name does not need to be unique.
         :param pulumi.Input[_builtins.str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] exascale_db_storage_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterFileSystemConfigurationDetailArgs', 'VmClusterFileSystemConfigurationDetailArgsDict']]]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterFileSystemConfigurationDetailArgs', 'VmClusterFileSystemConfigurationDetailArgsDict', 'outputs.VmClusterFileSystemConfigurationDetail']]]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] gi_version: The Oracle Grid Infrastructure software version for the VM cluster.
         :param pulumi.Input[_builtins.bool] is_local_backup_enabled: (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
@@ -1665,7 +1665,7 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] last_patch_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterLiveImageVersionDetailArgs', 'VmClusterLiveImageVersionDetailArgsDict']]]] live_image_version_details: Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterLiveImageVersionDetailArgs', 'VmClusterLiveImageVersionDetailArgsDict', 'outputs.VmClusterLiveImageVersionDetail']]]] live_image_version_details: Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: (Updatable) The memory to be allocated in GBs.
         :param pulumi.Input[_builtins.str] oracle_linux_version: Oracle Linux version for the respective Exadata Image.
         :param pulumi.Input[_builtins.int] reco_storage_percentage: (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
@@ -1678,7 +1678,7 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] system_version: Operating system version of the image.
         :param pulumi.Input[_builtins.str] time_created: The date and time that the VM cluster was created.
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-        :param pulumi.Input[Union['VmClusterUpdateDetailsArgs', 'VmClusterUpdateDetailsArgsDict']] update_details: (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `update_mode` for DomU live update modes or regular full OS update mode.
+        :param pulumi.Input[Union['VmClusterUpdateDetailsArgs', 'VmClusterUpdateDetailsArgsDict', 'outputs.VmClusterUpdateDetails']] update_details: (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `update_mode` for DomU live update modes or regular full OS update mode.
         :param pulumi.Input[_builtins.str] vm_backup_storage_type: (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
         :param pulumi.Input[_builtins.str] vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         :param pulumi.Input[_builtins.str] vm_cluster_type: The vmcluster type for the VM cluster/Cloud VM cluster.

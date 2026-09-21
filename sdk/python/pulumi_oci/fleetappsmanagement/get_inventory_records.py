@@ -122,7 +122,7 @@ class AwaitableGetInventoryRecordsResult(GetInventoryRecordsResult):
 
 def get_inventory_records(compartment_id: Optional[_builtins.str] = None,
                           compartment_id_in_subtree: Optional[_builtins.bool] = None,
-                          filters: Optional[Sequence[Union['GetInventoryRecordsFilterArgs', 'GetInventoryRecordsFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetInventoryRecordsFilterArgs', 'GetInventoryRecordsFilterArgsDict', 'outputs.GetInventoryRecordsFilterResult']]] = None,
                           fleet_id: Optional[_builtins.str] = None,
                           is_details_required: Optional[_builtins.bool] = None,
                           resource_id: Optional[_builtins.str] = None,
@@ -173,7 +173,7 @@ def get_inventory_records(compartment_id: Optional[_builtins.str] = None,
         resource_id=pulumi.get(__ret__, 'resource_id'))
 def get_inventory_records_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInventoryRecordsFilterArgs', 'GetInventoryRecordsFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInventoryRecordsFilterArgs', 'GetInventoryRecordsFilterArgsDict', 'outputs.GetInventoryRecordsFilterResult']]]]] = None,
                                  fleet_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  is_details_required: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                  resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

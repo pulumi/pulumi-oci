@@ -82,7 +82,7 @@ class AwaitableGetProtocolsResult(GetProtocolsResult):
 
 
 def get_protocols(compartment_id: Optional[_builtins.str] = None,
-                  filters: Optional[Sequence[Union['GetProtocolsFilterArgs', 'GetProtocolsFilterArgsDict']]] = None,
+                  filters: Optional[Sequence[Union['GetProtocolsFilterArgs', 'GetProtocolsFilterArgsDict', 'outputs.GetProtocolsFilterResult']]] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProtocolsResult:
     """
     This data source provides the list of Load Balancer Protocols in Oracle Cloud Infrastructure Load Balancer service.
@@ -113,7 +113,7 @@ def get_protocols(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         protocols=pulumi.get(__ret__, 'protocols'))
 def get_protocols_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProtocolsFilterArgs', 'GetProtocolsFilterArgsDict']]]]] = None,
+                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProtocolsFilterArgs', 'GetProtocolsFilterArgsDict', 'outputs.GetProtocolsFilterResult']]]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtocolsResult]:
     """
     This data source provides the list of Load Balancer Protocols in Oracle Cloud Infrastructure Load Balancer service.

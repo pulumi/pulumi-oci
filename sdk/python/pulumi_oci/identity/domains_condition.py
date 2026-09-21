@@ -1251,7 +1251,7 @@ class DomainsCondition(pulumi.CustomResource):
                  operator: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsConditionTagArgs', 'DomainsConditionTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsConditionTagArgs', 'DomainsConditionTagArgsDict', 'outputs.DomainsConditionTag']]]]] = None,
                  __props__=None):
         """
         This resource provides the Condition resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1402,7 +1402,7 @@ class DomainsCondition(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsConditionTagArgs', 'DomainsConditionTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsConditionTagArgs', 'DomainsConditionTagArgsDict', 'outputs.DomainsConditionTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1494,7 +1494,7 @@ class DomainsCondition(pulumi.CustomResource):
                  operator: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsConditionTagArgs', 'DomainsConditionTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsConditionTagArgs', 'DomainsConditionTagArgsDict', 'outputs.DomainsConditionTag']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1559,18 +1559,18 @@ class DomainsCondition(pulumi.CustomResource):
             domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             evaluate_condition_if: pulumi.Input[Optional[_builtins.str]] = None,
             external_id: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsConditionIdcsCreatedByArgs', 'DomainsConditionIdcsCreatedByArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsConditionIdcsCreatedByArgs', 'DomainsConditionIdcsCreatedByArgsDict', 'outputs.DomainsConditionIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsConditionIdcsLastModifiedByArgs', 'DomainsConditionIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsConditionIdcsLastModifiedByArgs', 'DomainsConditionIdcsLastModifiedByArgsDict', 'outputs.DomainsConditionIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsConditionMetaArgs', 'DomainsConditionMetaArgsDict']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsConditionMetaArgs', 'DomainsConditionMetaArgsDict', 'outputs.DomainsConditionMeta']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             ocid: pulumi.Input[Optional[_builtins.str]] = None,
             operator: pulumi.Input[Optional[_builtins.str]] = None,
             resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
             schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsConditionTagArgs', 'DomainsConditionTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsConditionTagArgs', 'DomainsConditionTagArgsDict', 'outputs.DomainsConditionTag']]]]] = None,
             tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None) -> 'DomainsCondition':
         """
         Get an existing DomainsCondition resource's state with the given name, id, and optional extra
@@ -1671,7 +1671,7 @@ class DomainsCondition(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsConditionIdcsCreatedByArgs', 'DomainsConditionIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsConditionIdcsCreatedByArgs', 'DomainsConditionIdcsCreatedByArgsDict', 'outputs.DomainsConditionIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1681,7 +1681,7 @@ class DomainsCondition(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsConditionIdcsLastModifiedByArgs', 'DomainsConditionIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsConditionIdcsLastModifiedByArgs', 'DomainsConditionIdcsLastModifiedByArgsDict', 'outputs.DomainsConditionIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1711,7 +1711,7 @@ class DomainsCondition(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsConditionMetaArgs', 'DomainsConditionMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsConditionMetaArgs', 'DomainsConditionMetaArgsDict', 'outputs.DomainsConditionMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1765,7 +1765,7 @@ class DomainsCondition(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsConditionTagArgs', 'DomainsConditionTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsConditionTagArgs', 'DomainsConditionTagArgsDict', 'outputs.DomainsConditionTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]

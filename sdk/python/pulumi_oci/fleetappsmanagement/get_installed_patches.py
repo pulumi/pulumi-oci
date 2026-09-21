@@ -136,7 +136,7 @@ class AwaitableGetInstalledPatchesResult(GetInstalledPatchesResult):
 
 
 def get_installed_patches(compartment_id: Optional[_builtins.str] = None,
-                          filters: Optional[Sequence[Union['GetInstalledPatchesFilterArgs', 'GetInstalledPatchesFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetInstalledPatchesFilterArgs', 'GetInstalledPatchesFilterArgsDict', 'outputs.GetInstalledPatchesFilterResult']]] = None,
                           patch_level: Optional[_builtins.str] = None,
                           patch_type: Optional[_builtins.str] = None,
                           severity: Optional[_builtins.str] = None,
@@ -193,7 +193,7 @@ def get_installed_patches(compartment_id: Optional[_builtins.str] = None,
         target_id=pulumi.get(__ret__, 'target_id'),
         target_name=pulumi.get(__ret__, 'target_name'))
 def get_installed_patches_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstalledPatchesFilterArgs', 'GetInstalledPatchesFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstalledPatchesFilterArgs', 'GetInstalledPatchesFilterArgsDict', 'outputs.GetInstalledPatchesFilterResult']]]]] = None,
                                  patch_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  patch_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  severity: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

@@ -380,10 +380,10 @@ class SecurityPolicyConfig(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 firewall_config: pulumi.Input[Optional[Union['SecurityPolicyConfigFirewallConfigArgs', 'SecurityPolicyConfigFirewallConfigArgsDict']]] = None,
+                 firewall_config: pulumi.Input[Optional[Union['SecurityPolicyConfigFirewallConfigArgs', 'SecurityPolicyConfigFirewallConfigArgsDict', 'outputs.SecurityPolicyConfigFirewallConfig']]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 unified_audit_policy_config: pulumi.Input[Optional[Union['SecurityPolicyConfigUnifiedAuditPolicyConfigArgs', 'SecurityPolicyConfigUnifiedAuditPolicyConfigArgsDict']]] = None,
+                 unified_audit_policy_config: pulumi.Input[Optional[Union['SecurityPolicyConfigUnifiedAuditPolicyConfigArgs', 'SecurityPolicyConfigUnifiedAuditPolicyConfigArgsDict', 'outputs.SecurityPolicyConfigUnifiedAuditPolicyConfig']]] = None,
                  __props__=None):
         """
         This resource provides the Security Policy Config resource in Oracle Cloud Infrastructure Data Safe service.
@@ -435,10 +435,10 @@ class SecurityPolicyConfig(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the security policy.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the security policy configuration. The name does not have to be unique, and it is changeable.
-        :param pulumi.Input[Union['SecurityPolicyConfigFirewallConfigArgs', 'SecurityPolicyConfigFirewallConfigArgsDict']] firewall_config: (Updatable) Details to update the SQL Firewall configuration.
+        :param pulumi.Input[Union['SecurityPolicyConfigFirewallConfigArgs', 'SecurityPolicyConfigFirewallConfigArgsDict', 'outputs.SecurityPolicyConfigFirewallConfig']] firewall_config: (Updatable) Details to update the SQL Firewall configuration.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] security_policy_id: The OCID of the security policy corresponding to the security policy configuration.
-        :param pulumi.Input[Union['SecurityPolicyConfigUnifiedAuditPolicyConfigArgs', 'SecurityPolicyConfigUnifiedAuditPolicyConfigArgsDict']] unified_audit_policy_config: (Updatable) The unified audit policy related configurations.
+        :param pulumi.Input[Union['SecurityPolicyConfigUnifiedAuditPolicyConfigArgs', 'SecurityPolicyConfigUnifiedAuditPolicyConfigArgsDict', 'outputs.SecurityPolicyConfigUnifiedAuditPolicyConfig']] unified_audit_policy_config: (Updatable) The unified audit policy related configurations.
         """
         ...
     @overload
@@ -509,10 +509,10 @@ class SecurityPolicyConfig(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 firewall_config: pulumi.Input[Optional[Union['SecurityPolicyConfigFirewallConfigArgs', 'SecurityPolicyConfigFirewallConfigArgsDict']]] = None,
+                 firewall_config: pulumi.Input[Optional[Union['SecurityPolicyConfigFirewallConfigArgs', 'SecurityPolicyConfigFirewallConfigArgsDict', 'outputs.SecurityPolicyConfigFirewallConfig']]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 unified_audit_policy_config: pulumi.Input[Optional[Union['SecurityPolicyConfigUnifiedAuditPolicyConfigArgs', 'SecurityPolicyConfigUnifiedAuditPolicyConfigArgsDict']]] = None,
+                 unified_audit_policy_config: pulumi.Input[Optional[Union['SecurityPolicyConfigUnifiedAuditPolicyConfigArgs', 'SecurityPolicyConfigUnifiedAuditPolicyConfigArgsDict', 'outputs.SecurityPolicyConfigUnifiedAuditPolicyConfig']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -553,7 +553,7 @@ class SecurityPolicyConfig(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            firewall_config: pulumi.Input[Optional[Union['SecurityPolicyConfigFirewallConfigArgs', 'SecurityPolicyConfigFirewallConfigArgsDict']]] = None,
+            firewall_config: pulumi.Input[Optional[Union['SecurityPolicyConfigFirewallConfigArgs', 'SecurityPolicyConfigFirewallConfigArgsDict', 'outputs.SecurityPolicyConfigFirewallConfig']]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -561,7 +561,7 @@ class SecurityPolicyConfig(pulumi.CustomResource):
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
-            unified_audit_policy_config: pulumi.Input[Optional[Union['SecurityPolicyConfigUnifiedAuditPolicyConfigArgs', 'SecurityPolicyConfigUnifiedAuditPolicyConfigArgsDict']]] = None) -> 'SecurityPolicyConfig':
+            unified_audit_policy_config: pulumi.Input[Optional[Union['SecurityPolicyConfigUnifiedAuditPolicyConfigArgs', 'SecurityPolicyConfigUnifiedAuditPolicyConfigArgsDict', 'outputs.SecurityPolicyConfigUnifiedAuditPolicyConfig']]] = None) -> 'SecurityPolicyConfig':
         """
         Get an existing SecurityPolicyConfig resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -573,7 +573,7 @@ class SecurityPolicyConfig(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the security policy.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the security policy configuration. The name does not have to be unique, and it is changeable.
-        :param pulumi.Input[Union['SecurityPolicyConfigFirewallConfigArgs', 'SecurityPolicyConfigFirewallConfigArgsDict']] firewall_config: (Updatable) Details to update the SQL Firewall configuration.
+        :param pulumi.Input[Union['SecurityPolicyConfigFirewallConfigArgs', 'SecurityPolicyConfigFirewallConfigArgsDict', 'outputs.SecurityPolicyConfigFirewallConfig']] firewall_config: (Updatable) Details to update the SQL Firewall configuration.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the current state of the security policy configuration.
         :param pulumi.Input[_builtins.str] security_policy_id: The OCID of the security policy corresponding to the security policy configuration.
@@ -581,7 +581,7 @@ class SecurityPolicyConfig(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time the security policy configuration was created, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] time_updated: The date and time the security policy configuration was last updated, in the format defined by RFC3339.
-        :param pulumi.Input[Union['SecurityPolicyConfigUnifiedAuditPolicyConfigArgs', 'SecurityPolicyConfigUnifiedAuditPolicyConfigArgsDict']] unified_audit_policy_config: (Updatable) The unified audit policy related configurations.
+        :param pulumi.Input[Union['SecurityPolicyConfigUnifiedAuditPolicyConfigArgs', 'SecurityPolicyConfigUnifiedAuditPolicyConfigArgsDict', 'outputs.SecurityPolicyConfigUnifiedAuditPolicyConfig']] unified_audit_policy_config: (Updatable) The unified audit policy related configurations.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

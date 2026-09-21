@@ -920,8 +920,8 @@ class DomainsMyApiKey(pulumi.CustomResource):
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyApiKeyTagArgs', 'DomainsMyApiKeyTagArgsDict']]]]] = None,
-                 user: pulumi.Input[Optional[Union['DomainsMyApiKeyUserArgs', 'DomainsMyApiKeyUserArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyApiKeyTagArgs', 'DomainsMyApiKeyTagArgsDict', 'outputs.DomainsMyApiKeyTag']]]]] = None,
+                 user: pulumi.Input[Optional[Union['DomainsMyApiKeyUserArgs', 'DomainsMyApiKeyUserArgsDict', 'outputs.DomainsMyApiKeyUser']]] = None,
                  __props__=None):
         """
         This resource provides the My Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1013,7 +1013,7 @@ class DomainsMyApiKey(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyApiKeyTagArgs', 'DomainsMyApiKeyTagArgsDict']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyApiKeyTagArgs', 'DomainsMyApiKeyTagArgsDict', 'outputs.DomainsMyApiKeyTag']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1024,7 +1024,7 @@ class DomainsMyApiKey(pulumi.CustomResource):
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsMyApiKeyUserArgs', 'DomainsMyApiKeyUserArgsDict']] user: The user linked to the API key.
+        :param pulumi.Input[Union['DomainsMyApiKeyUserArgs', 'DomainsMyApiKeyUserArgsDict', 'outputs.DomainsMyApiKeyUser']] user: The user linked to the API key.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1106,8 +1106,8 @@ class DomainsMyApiKey(pulumi.CustomResource):
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyApiKeyTagArgs', 'DomainsMyApiKeyTagArgsDict']]]]] = None,
-                 user: pulumi.Input[Optional[Union['DomainsMyApiKeyUserArgs', 'DomainsMyApiKeyUserArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyApiKeyTagArgs', 'DomainsMyApiKeyTagArgsDict', 'outputs.DomainsMyApiKeyTag']]]]] = None,
+                 user: pulumi.Input[Optional[Union['DomainsMyApiKeyUserArgs', 'DomainsMyApiKeyUserArgsDict', 'outputs.DomainsMyApiKeyUser']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1158,19 +1158,19 @@ class DomainsMyApiKey(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyApiKeyIdcsCreatedByArgs', 'DomainsMyApiKeyIdcsCreatedByArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyApiKeyIdcsCreatedByArgs', 'DomainsMyApiKeyIdcsCreatedByArgsDict', 'outputs.DomainsMyApiKeyIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyApiKeyIdcsLastModifiedByArgs', 'DomainsMyApiKeyIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyApiKeyIdcsLastModifiedByArgs', 'DomainsMyApiKeyIdcsLastModifiedByArgsDict', 'outputs.DomainsMyApiKeyIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             key: pulumi.Input[Optional[_builtins.str]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyApiKeyMetaArgs', 'DomainsMyApiKeyMetaArgsDict']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyApiKeyMetaArgs', 'DomainsMyApiKeyMetaArgsDict', 'outputs.DomainsMyApiKeyMeta']]]]] = None,
             ocid: pulumi.Input[Optional[_builtins.str]] = None,
             resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
             schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyApiKeyTagArgs', 'DomainsMyApiKeyTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyApiKeyTagArgs', 'DomainsMyApiKeyTagArgsDict', 'outputs.DomainsMyApiKeyTag']]]]] = None,
             tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
-            user: pulumi.Input[Optional[Union['DomainsMyApiKeyUserArgs', 'DomainsMyApiKeyUserArgsDict']]] = None) -> 'DomainsMyApiKey':
+            user: pulumi.Input[Optional[Union['DomainsMyApiKeyUserArgs', 'DomainsMyApiKeyUserArgsDict', 'outputs.DomainsMyApiKeyUser']]] = None) -> 'DomainsMyApiKey':
         """
         Get an existing DomainsMyApiKey resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1233,7 +1233,7 @@ class DomainsMyApiKey(pulumi.CustomResource):
                * mutability: readOnly
                * required: true
                * returned: default
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyApiKeyIdcsCreatedByArgs', 'DomainsMyApiKeyIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyApiKeyIdcsCreatedByArgs', 'DomainsMyApiKeyIdcsCreatedByArgsDict', 'outputs.DomainsMyApiKeyIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1243,7 +1243,7 @@ class DomainsMyApiKey(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyApiKeyIdcsLastModifiedByArgs', 'DomainsMyApiKeyIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyApiKeyIdcsLastModifiedByArgs', 'DomainsMyApiKeyIdcsLastModifiedByArgsDict', 'outputs.DomainsMyApiKeyIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1284,7 +1284,7 @@ class DomainsMyApiKey(pulumi.CustomResource):
                * mutability: immutable
                * required: true
                * returned: default
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyApiKeyMetaArgs', 'DomainsMyApiKeyMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyApiKeyMetaArgs', 'DomainsMyApiKeyMetaArgsDict', 'outputs.DomainsMyApiKeyMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1318,7 +1318,7 @@ class DomainsMyApiKey(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyApiKeyTagArgs', 'DomainsMyApiKeyTagArgsDict']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyApiKeyTagArgs', 'DomainsMyApiKeyTagArgsDict', 'outputs.DomainsMyApiKeyTag']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1340,7 +1340,7 @@ class DomainsMyApiKey(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsMyApiKeyUserArgs', 'DomainsMyApiKeyUserArgsDict']] user: The user linked to the API key.
+        :param pulumi.Input[Union['DomainsMyApiKeyUserArgs', 'DomainsMyApiKeyUserArgsDict', 'outputs.DomainsMyApiKeyUser']] user: The user linked to the API key.
                
                **SCIM++ Properties:**
                * caseExact: false

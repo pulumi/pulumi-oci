@@ -144,7 +144,7 @@ def get_compute_gpu_memory_clusters(availability_domain: Optional[_builtins.str]
                                     compute_gpu_memory_cluster_id: Optional[_builtins.str] = None,
                                     compute_gpu_memory_fabric_id: Optional[_builtins.str] = None,
                                     display_name: Optional[_builtins.str] = None,
-                                    filters: Optional[Sequence[Union['GetComputeGpuMemoryClustersFilterArgs', 'GetComputeGpuMemoryClustersFilterArgsDict']]] = None,
+                                    filters: Optional[Sequence[Union['GetComputeGpuMemoryClustersFilterArgs', 'GetComputeGpuMemoryClustersFilterArgsDict', 'outputs.GetComputeGpuMemoryClustersFilterResult']]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeGpuMemoryClustersResult:
     """
     This data source provides the list of Compute Gpu Memory Clusters in Oracle Cloud Infrastructure Core service.
@@ -200,7 +200,7 @@ def get_compute_gpu_memory_clusters_output(availability_domain: pulumi.Input[Opt
                                            compute_gpu_memory_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            compute_gpu_memory_fabric_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeGpuMemoryClustersFilterArgs', 'GetComputeGpuMemoryClustersFilterArgsDict']]]]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeGpuMemoryClustersFilterArgs', 'GetComputeGpuMemoryClustersFilterArgsDict', 'outputs.GetComputeGpuMemoryClustersFilterResult']]]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeGpuMemoryClustersResult]:
     """
     This data source provides the list of Compute Gpu Memory Clusters in Oracle Cloud Infrastructure Core service.

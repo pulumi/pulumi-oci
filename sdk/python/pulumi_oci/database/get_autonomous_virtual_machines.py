@@ -110,7 +110,7 @@ class AwaitableGetAutonomousVirtualMachinesResult(GetAutonomousVirtualMachinesRe
 
 def get_autonomous_virtual_machines(autonomous_vm_cluster_id: Optional[_builtins.str] = None,
                                     compartment_id: Optional[_builtins.str] = None,
-                                    filters: Optional[Sequence[Union['GetAutonomousVirtualMachinesFilterArgs', 'GetAutonomousVirtualMachinesFilterArgsDict']]] = None,
+                                    filters: Optional[Sequence[Union['GetAutonomousVirtualMachinesFilterArgs', 'GetAutonomousVirtualMachinesFilterArgsDict', 'outputs.GetAutonomousVirtualMachinesFilterResult']]] = None,
                                     state: Optional[_builtins.str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousVirtualMachinesResult:
     """
@@ -151,7 +151,7 @@ def get_autonomous_virtual_machines(autonomous_vm_cluster_id: Optional[_builtins
         state=pulumi.get(__ret__, 'state'))
 def get_autonomous_virtual_machines_output(autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousVirtualMachinesFilterArgs', 'GetAutonomousVirtualMachinesFilterArgsDict']]]]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousVirtualMachinesFilterArgs', 'GetAutonomousVirtualMachinesFilterArgsDict', 'outputs.GetAutonomousVirtualMachinesFilterResult']]]]] = None,
                                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousVirtualMachinesResult]:
     """

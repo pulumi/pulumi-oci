@@ -150,7 +150,7 @@ class PathRouteSet(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 path_routes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PathRouteSetPathRouteArgs', 'PathRouteSetPathRouteArgsDict']]]]] = None,
+                 path_routes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PathRouteSetPathRouteArgs', 'PathRouteSetPathRouteArgsDict', 'outputs.PathRouteSetPathRoute']]]]] = None,
                  __props__=None):
         """
         This resource provides the Path Route Set resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -192,7 +192,7 @@ class PathRouteSet(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
         :param pulumi.Input[_builtins.str] name: The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PathRouteSetPathRouteArgs', 'PathRouteSetPathRouteArgsDict']]]] path_routes: (Updatable) The set of path route rules.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PathRouteSetPathRouteArgs', 'PathRouteSetPathRouteArgsDict', 'outputs.PathRouteSetPathRoute']]]] path_routes: (Updatable) The set of path route rules.
         """
         ...
     @overload
@@ -253,7 +253,7 @@ class PathRouteSet(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 path_routes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PathRouteSetPathRouteArgs', 'PathRouteSetPathRouteArgsDict']]]]] = None,
+                 path_routes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PathRouteSetPathRouteArgs', 'PathRouteSetPathRouteArgsDict', 'outputs.PathRouteSetPathRoute']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -283,7 +283,7 @@ class PathRouteSet(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            path_routes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PathRouteSetPathRouteArgs', 'PathRouteSetPathRouteArgsDict']]]]] = None,
+            path_routes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PathRouteSetPathRouteArgs', 'PathRouteSetPathRouteArgsDict', 'outputs.PathRouteSetPathRoute']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None) -> 'PathRouteSet':
         """
         Get an existing PathRouteSet resource's state with the given name, id, and optional extra
@@ -294,7 +294,7 @@ class PathRouteSet(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
         :param pulumi.Input[_builtins.str] name: The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PathRouteSetPathRouteArgs', 'PathRouteSetPathRouteArgsDict']]]] path_routes: (Updatable) The set of path route rules.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PathRouteSetPathRouteArgs', 'PathRouteSetPathRouteArgsDict', 'outputs.PathRouteSetPathRoute']]]] path_routes: (Updatable) The set of path route rules.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

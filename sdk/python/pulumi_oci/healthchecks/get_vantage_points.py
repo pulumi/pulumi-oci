@@ -97,7 +97,7 @@ class AwaitableGetVantagePointsResult(GetVantagePointsResult):
 
 
 def get_vantage_points(display_name: Optional[_builtins.str] = None,
-                       filters: Optional[Sequence[Union['GetVantagePointsFilterArgs', 'GetVantagePointsFilterArgsDict']]] = None,
+                       filters: Optional[Sequence[Union['GetVantagePointsFilterArgs', 'GetVantagePointsFilterArgsDict', 'outputs.GetVantagePointsFilterResult']]] = None,
                        name: Optional[_builtins.str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVantagePointsResult:
     """
@@ -133,7 +133,7 @@ def get_vantage_points(display_name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
 def get_vantage_points_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVantagePointsFilterArgs', 'GetVantagePointsFilterArgsDict']]]]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVantagePointsFilterArgs', 'GetVantagePointsFilterArgsDict', 'outputs.GetVantagePointsFilterResult']]]]] = None,
                               name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVantagePointsResult]:
     """

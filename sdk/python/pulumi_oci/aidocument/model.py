@@ -800,7 +800,7 @@ class Model(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 component_models: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict']]]]] = None,
+                 component_models: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict', 'outputs.ModelComponentModel']]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -808,16 +808,16 @@ class Model(pulumi.CustomResource):
                  inference_units: pulumi.Input[Optional[_builtins.int]] = None,
                  is_quick_mode: pulumi.Input[Optional[_builtins.bool]] = None,
                  language: pulumi.Input[Optional[_builtins.str]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelLockArgs', 'ModelLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelLockArgs', 'ModelLockArgsDict', 'outputs.ModelLock']]]]] = None,
                  max_training_time_in_hours: pulumi.Input[Optional[_builtins.float]] = None,
                  model_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 model_sub_type: pulumi.Input[Optional[Union['ModelModelSubTypeArgs', 'ModelModelSubTypeArgsDict']]] = None,
+                 model_sub_type: pulumi.Input[Optional[Union['ModelModelSubTypeArgs', 'ModelModelSubTypeArgsDict', 'outputs.ModelModelSubType']]] = None,
                  model_type: pulumi.Input[Optional[_builtins.str]] = None,
                  model_version: pulumi.Input[Optional[_builtins.str]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 testing_dataset: pulumi.Input[Optional[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']]] = None,
-                 training_dataset: pulumi.Input[Optional[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
-                 validation_dataset: pulumi.Input[Optional[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']]] = None,
+                 testing_dataset: pulumi.Input[Optional[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict', 'outputs.ModelTestingDataset']]] = None,
+                 training_dataset: pulumi.Input[Optional[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict', 'outputs.ModelTrainingDataset']]] = None,
+                 validation_dataset: pulumi.Input[Optional[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict', 'outputs.ModelValidationDataset']]] = None,
                  __props__=None):
         """
         This resource provides the Model resource in Oracle Cloud Infrastructure Ai Document service.
@@ -841,7 +841,7 @@ class Model(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment identifier.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict']]]] component_models: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict', 'outputs.ModelComponentModel']]]] component_models: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the model.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A human-friendly name for the model, which can be changed.
@@ -849,15 +849,15 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] inference_units: (Updatable) Number of replicas required for this model.
         :param pulumi.Input[_builtins.bool] is_quick_mode: Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
         :param pulumi.Input[_builtins.str] language: The document language for model training, abbreviated according to the BCP 47 syntax.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelLockArgs', 'ModelLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelLockArgs', 'ModelLockArgsDict', 'outputs.ModelLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.float] max_training_time_in_hours: The maximum model training time in hours, expressed as a decimal fraction.
-        :param pulumi.Input[Union['ModelModelSubTypeArgs', 'ModelModelSubTypeArgsDict']] model_sub_type: Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+        :param pulumi.Input[Union['ModelModelSubTypeArgs', 'ModelModelSubTypeArgsDict', 'outputs.ModelModelSubType']] model_sub_type: Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
         :param pulumi.Input[_builtins.str] model_type: The type of the Document model.
         :param pulumi.Input[_builtins.str] model_version: The model version
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
-        :param pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']] testing_dataset: The base entity which is the input for creating and training a model.
-        :param pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']] training_dataset: The base entity which is the input for creating and training a model.
-        :param pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']] validation_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict', 'outputs.ModelTestingDataset']] testing_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict', 'outputs.ModelTrainingDataset']] training_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict', 'outputs.ModelValidationDataset']] validation_dataset: The base entity which is the input for creating and training a model.
         """
         ...
     @overload
@@ -900,7 +900,7 @@ class Model(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 component_models: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict']]]]] = None,
+                 component_models: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict', 'outputs.ModelComponentModel']]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -908,16 +908,16 @@ class Model(pulumi.CustomResource):
                  inference_units: pulumi.Input[Optional[_builtins.int]] = None,
                  is_quick_mode: pulumi.Input[Optional[_builtins.bool]] = None,
                  language: pulumi.Input[Optional[_builtins.str]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelLockArgs', 'ModelLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelLockArgs', 'ModelLockArgsDict', 'outputs.ModelLock']]]]] = None,
                  max_training_time_in_hours: pulumi.Input[Optional[_builtins.float]] = None,
                  model_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 model_sub_type: pulumi.Input[Optional[Union['ModelModelSubTypeArgs', 'ModelModelSubTypeArgsDict']]] = None,
+                 model_sub_type: pulumi.Input[Optional[Union['ModelModelSubTypeArgs', 'ModelModelSubTypeArgsDict', 'outputs.ModelModelSubType']]] = None,
                  model_type: pulumi.Input[Optional[_builtins.str]] = None,
                  model_version: pulumi.Input[Optional[_builtins.str]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 testing_dataset: pulumi.Input[Optional[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']]] = None,
-                 training_dataset: pulumi.Input[Optional[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
-                 validation_dataset: pulumi.Input[Optional[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']]] = None,
+                 testing_dataset: pulumi.Input[Optional[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict', 'outputs.ModelTestingDataset']]] = None,
+                 training_dataset: pulumi.Input[Optional[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict', 'outputs.ModelTrainingDataset']]] = None,
+                 validation_dataset: pulumi.Input[Optional[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict', 'outputs.ModelValidationDataset']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -973,7 +973,7 @@ class Model(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            component_models: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict']]]]] = None,
+            component_models: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict', 'outputs.ModelComponentModel']]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -984,23 +984,23 @@ class Model(pulumi.CustomResource):
             labels: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             language: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelLockArgs', 'ModelLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelLockArgs', 'ModelLockArgsDict', 'outputs.ModelLock']]]]] = None,
             max_training_time_in_hours: pulumi.Input[Optional[_builtins.float]] = None,
-            metrics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelMetricArgs', 'ModelMetricArgsDict']]]]] = None,
+            metrics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelMetricArgs', 'ModelMetricArgsDict', 'outputs.ModelMetric']]]]] = None,
             model_id: pulumi.Input[Optional[_builtins.str]] = None,
-            model_sub_type: pulumi.Input[Optional[Union['ModelModelSubTypeArgs', 'ModelModelSubTypeArgsDict']]] = None,
+            model_sub_type: pulumi.Input[Optional[Union['ModelModelSubTypeArgs', 'ModelModelSubTypeArgsDict', 'outputs.ModelModelSubType']]] = None,
             model_type: pulumi.Input[Optional[_builtins.str]] = None,
             model_version: pulumi.Input[Optional[_builtins.str]] = None,
             project_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
-            testing_dataset: pulumi.Input[Optional[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']]] = None,
+            testing_dataset: pulumi.Input[Optional[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict', 'outputs.ModelTestingDataset']]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
             trained_time_in_hours: pulumi.Input[Optional[_builtins.float]] = None,
-            training_dataset: pulumi.Input[Optional[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
-            validation_dataset: pulumi.Input[Optional[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']]] = None) -> 'Model':
+            training_dataset: pulumi.Input[Optional[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict', 'outputs.ModelTrainingDataset']]] = None,
+            validation_dataset: pulumi.Input[Optional[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict', 'outputs.ModelValidationDataset']]] = None) -> 'Model':
         """
         Get an existing Model resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1009,7 +1009,7 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment identifier.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict']]]] component_models: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict', 'outputs.ModelComponentModel']]]] component_models: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the model.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A human-friendly name for the model, which can be changed.
@@ -1020,22 +1020,22 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] labels: The collection of labels used to train the custom model.
         :param pulumi.Input[_builtins.str] language: The document language for model training, abbreviated according to the BCP 47 syntax.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail, that can provide actionable information if training failed.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelLockArgs', 'ModelLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelLockArgs', 'ModelLockArgsDict', 'outputs.ModelLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.float] max_training_time_in_hours: The maximum model training time in hours, expressed as a decimal fraction.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelMetricArgs', 'ModelMetricArgsDict']]]] metrics: Trained Model Metrics.
-        :param pulumi.Input[Union['ModelModelSubTypeArgs', 'ModelModelSubTypeArgsDict']] model_sub_type: Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelMetricArgs', 'ModelMetricArgsDict', 'outputs.ModelMetric']]]] metrics: Trained Model Metrics.
+        :param pulumi.Input[Union['ModelModelSubTypeArgs', 'ModelModelSubTypeArgsDict', 'outputs.ModelModelSubType']] model_sub_type: Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
         :param pulumi.Input[_builtins.str] model_type: The type of the Document model.
         :param pulumi.Input[_builtins.str] model_version: The model version
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
         :param pulumi.Input[_builtins.str] state: The current state of the model.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         :param pulumi.Input[_builtins.str] tenancy_id: The tenancy id of the model.
-        :param pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']] testing_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict', 'outputs.ModelTestingDataset']] testing_dataset: The base entity which is the input for creating and training a model.
         :param pulumi.Input[_builtins.str] time_created: When the model was created, as an RFC3339 datetime string.
         :param pulumi.Input[_builtins.str] time_updated: When the model was updated, as an RFC3339 datetime string.
         :param pulumi.Input[_builtins.float] trained_time_in_hours: The total hours actually used for model training.
-        :param pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']] training_dataset: The base entity which is the input for creating and training a model.
-        :param pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']] validation_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict', 'outputs.ModelTrainingDataset']] training_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict', 'outputs.ModelValidationDataset']] validation_dataset: The base entity which is the input for creating and training a model.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

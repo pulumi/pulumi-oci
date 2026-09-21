@@ -117,7 +117,7 @@ class AwaitableGetMaskingPolicyMaskingObjectsResult(GetMaskingPolicyMaskingObjec
             schema_names=self.schema_names)
 
 
-def get_masking_policy_masking_objects(filters: Optional[Sequence[Union['GetMaskingPolicyMaskingObjectsFilterArgs', 'GetMaskingPolicyMaskingObjectsFilterArgsDict']]] = None,
+def get_masking_policy_masking_objects(filters: Optional[Sequence[Union['GetMaskingPolicyMaskingObjectsFilterArgs', 'GetMaskingPolicyMaskingObjectsFilterArgsDict', 'outputs.GetMaskingPolicyMaskingObjectsFilterResult']]] = None,
                                        masking_policy_id: Optional[_builtins.str] = None,
                                        object_types: Optional[Sequence[_builtins.str]] = None,
                                        objects: Optional[Sequence[_builtins.str]] = None,
@@ -163,7 +163,7 @@ def get_masking_policy_masking_objects(filters: Optional[Sequence[Union['GetMask
         object_types=pulumi.get(__ret__, 'object_types'),
         objects=pulumi.get(__ret__, 'objects'),
         schema_names=pulumi.get(__ret__, 'schema_names'))
-def get_masking_policy_masking_objects_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingPolicyMaskingObjectsFilterArgs', 'GetMaskingPolicyMaskingObjectsFilterArgsDict']]]]] = None,
+def get_masking_policy_masking_objects_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingPolicyMaskingObjectsFilterArgs', 'GetMaskingPolicyMaskingObjectsFilterArgsDict', 'outputs.GetMaskingPolicyMaskingObjectsFilterResult']]]]] = None,
                                               masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               object_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                               objects: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,

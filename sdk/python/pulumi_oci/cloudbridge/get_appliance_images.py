@@ -95,7 +95,7 @@ class AwaitableGetApplianceImagesResult(GetApplianceImagesResult):
 
 def get_appliance_images(compartment_id: Optional[_builtins.str] = None,
                          display_name: Optional[_builtins.str] = None,
-                         filters: Optional[Sequence[Union['GetApplianceImagesFilterArgs', 'GetApplianceImagesFilterArgsDict']]] = None,
+                         filters: Optional[Sequence[Union['GetApplianceImagesFilterArgs', 'GetApplianceImagesFilterArgsDict', 'outputs.GetApplianceImagesFilterResult']]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApplianceImagesResult:
     """
     This data source provides the list of Appliance Images in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -131,7 +131,7 @@ def get_appliance_images(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'))
 def get_appliance_images_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetApplianceImagesFilterArgs', 'GetApplianceImagesFilterArgsDict']]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetApplianceImagesFilterArgs', 'GetApplianceImagesFilterArgsDict', 'outputs.GetApplianceImagesFilterResult']]]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApplianceImagesResult]:
     """
     This data source provides the list of Appliance Images in Oracle Cloud Infrastructure Cloud Bridge service.

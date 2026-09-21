@@ -118,7 +118,7 @@ class AwaitableGetSubscriptionMappingsResult(GetSubscriptionMappingsResult):
 
 
 def get_subscription_mappings(compartment_id: Optional[_builtins.str] = None,
-                              filters: Optional[Sequence[Union['GetSubscriptionMappingsFilterArgs', 'GetSubscriptionMappingsFilterArgsDict']]] = None,
+                              filters: Optional[Sequence[Union['GetSubscriptionMappingsFilterArgs', 'GetSubscriptionMappingsFilterArgsDict', 'outputs.GetSubscriptionMappingsFilterResult']]] = None,
                               state: Optional[_builtins.str] = None,
                               subscription_id: Optional[_builtins.str] = None,
                               subscription_mapping_id: Optional[_builtins.str] = None,
@@ -164,7 +164,7 @@ def get_subscription_mappings(compartment_id: Optional[_builtins.str] = None,
         subscription_mapping_collections=pulumi.get(__ret__, 'subscription_mapping_collections'),
         subscription_mapping_id=pulumi.get(__ret__, 'subscription_mapping_id'))
 def get_subscription_mappings_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionMappingsFilterArgs', 'GetSubscriptionMappingsFilterArgsDict']]]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionMappingsFilterArgs', 'GetSubscriptionMappingsFilterArgsDict', 'outputs.GetSubscriptionMappingsFilterResult']]]]] = None,
                                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      subscription_mapping_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

@@ -529,7 +529,7 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 credential_details: pulumi.Input[Optional[Union['PluggableDatabaseManagementsManagementCredentialDetailsArgs', 'PluggableDatabaseManagementsManagementCredentialDetailsArgsDict']]] = None,
+                 credential_details: pulumi.Input[Optional[Union['PluggableDatabaseManagementsManagementCredentialDetailsArgs', 'PluggableDatabaseManagementsManagementCredentialDetailsArgsDict', 'outputs.PluggableDatabaseManagementsManagementCredentialDetails']]] = None,
                  enable_pluggabledatabasemanagement: pulumi.Input[Optional[_builtins.bool]] = None,
                  pluggable_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  port: pulumi.Input[Optional[_builtins.int]] = None,
@@ -570,7 +570,7 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['PluggableDatabaseManagementsManagementCredentialDetailsArgs', 'PluggableDatabaseManagementsManagementCredentialDetailsArgsDict']] credential_details: Data for the credential used to connect to the database.
+        :param pulumi.Input[Union['PluggableDatabaseManagementsManagementCredentialDetailsArgs', 'PluggableDatabaseManagementsManagementCredentialDetailsArgsDict', 'outputs.PluggableDatabaseManagementsManagementCredentialDetails']] credential_details: Data for the credential used to connect to the database.
         :param pulumi.Input[_builtins.bool] enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                ** IMPORTANT **
@@ -633,7 +633,7 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 credential_details: pulumi.Input[Optional[Union['PluggableDatabaseManagementsManagementCredentialDetailsArgs', 'PluggableDatabaseManagementsManagementCredentialDetailsArgsDict']]] = None,
+                 credential_details: pulumi.Input[Optional[Union['PluggableDatabaseManagementsManagementCredentialDetailsArgs', 'PluggableDatabaseManagementsManagementCredentialDetailsArgsDict', 'outputs.PluggableDatabaseManagementsManagementCredentialDetails']]] = None,
                  enable_pluggabledatabasemanagement: pulumi.Input[Optional[_builtins.bool]] = None,
                  pluggable_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  port: pulumi.Input[Optional[_builtins.int]] = None,
@@ -693,9 +693,9 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PluggableDatabaseManagementsManagementConnectionStringArgs', 'PluggableDatabaseManagementsManagementConnectionStringArgsDict']]]]] = None,
+            connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PluggableDatabaseManagementsManagementConnectionStringArgs', 'PluggableDatabaseManagementsManagementConnectionStringArgsDict', 'outputs.PluggableDatabaseManagementsManagementConnectionString']]]]] = None,
             container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
-            credential_details: pulumi.Input[Optional[Union['PluggableDatabaseManagementsManagementCredentialDetailsArgs', 'PluggableDatabaseManagementsManagementCredentialDetailsArgsDict']]] = None,
+            credential_details: pulumi.Input[Optional[Union['PluggableDatabaseManagementsManagementCredentialDetailsArgs', 'PluggableDatabaseManagementsManagementCredentialDetailsArgsDict', 'outputs.PluggableDatabaseManagementsManagementCredentialDetails']]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             enable_pluggabledatabasemanagement: pulumi.Input[Optional[_builtins.bool]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -704,7 +704,7 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
             open_mode: pulumi.Input[Optional[_builtins.str]] = None,
             pdb_name: pulumi.Input[Optional[_builtins.str]] = None,
             pluggable_database_id: pulumi.Input[Optional[_builtins.str]] = None,
-            pluggable_database_management_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgs', 'PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgsDict']]]]] = None,
+            pluggable_database_management_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgs', 'PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgsDict', 'outputs.PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig']]]]] = None,
             port: pulumi.Input[Optional[_builtins.int]] = None,
             private_end_point_id: pulumi.Input[Optional[_builtins.str]] = None,
             protocol: pulumi.Input[Optional[_builtins.str]] = None,
@@ -721,9 +721,9 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PluggableDatabaseManagementsManagementConnectionStringArgs', 'PluggableDatabaseManagementsManagementConnectionStringArgsDict']]]] connection_strings: Connection strings to connect to an Oracle Pluggable Database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PluggableDatabaseManagementsManagementConnectionStringArgs', 'PluggableDatabaseManagementsManagementConnectionStringArgsDict', 'outputs.PluggableDatabaseManagementsManagementConnectionString']]]] connection_strings: Connection strings to connect to an Oracle Pluggable Database.
         :param pulumi.Input[_builtins.str] container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
-        :param pulumi.Input[Union['PluggableDatabaseManagementsManagementCredentialDetailsArgs', 'PluggableDatabaseManagementsManagementCredentialDetailsArgsDict']] credential_details: Data for the credential used to connect to the database.
+        :param pulumi.Input[Union['PluggableDatabaseManagementsManagementCredentialDetailsArgs', 'PluggableDatabaseManagementsManagementCredentialDetailsArgsDict', 'outputs.PluggableDatabaseManagementsManagementCredentialDetails']] credential_details: Data for the credential used to connect to the database.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.bool] enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
@@ -735,7 +735,7 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] open_mode: The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
         :param pulumi.Input[_builtins.str] pdb_name: The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
         :param pulumi.Input[_builtins.str] pluggable_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgs', 'PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgsDict']]]] pluggable_database_management_configs: The configuration of the Pluggable Database Management service.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgs', 'PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgsDict', 'outputs.PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig']]]] pluggable_database_management_configs: The configuration of the Pluggable Database Management service.
         :param pulumi.Input[_builtins.int] port: The port used to connect to the pluggable database.
         :param pulumi.Input[_builtins.str] private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         :param pulumi.Input[_builtins.str] protocol: Protocol used by the database connection.

@@ -94,7 +94,7 @@ class AwaitableGetExternalMySqlDatabasesResult(GetExternalMySqlDatabasesResult):
 
 
 def get_external_my_sql_databases(compartment_id: Optional[_builtins.str] = None,
-                                  filters: Optional[Sequence[Union['GetExternalMySqlDatabasesFilterArgs', 'GetExternalMySqlDatabasesFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetExternalMySqlDatabasesFilterArgs', 'GetExternalMySqlDatabasesFilterArgsDict', 'outputs.GetExternalMySqlDatabasesFilterResult']]] = None,
                                   name: Optional[_builtins.str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalMySqlDatabasesResult:
     """
@@ -132,7 +132,7 @@ def get_external_my_sql_databases(compartment_id: Optional[_builtins.str] = None
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
 def get_external_my_sql_databases_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalMySqlDatabasesFilterArgs', 'GetExternalMySqlDatabasesFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalMySqlDatabasesFilterArgs', 'GetExternalMySqlDatabasesFilterArgsDict', 'outputs.GetExternalMySqlDatabasesFilterResult']]]]] = None,
                                          name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalMySqlDatabasesResult]:
     """

@@ -815,7 +815,7 @@ class ScheduledJob(pulumi.CustomResource):
                  managed_compartment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  managed_instance_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  managed_instance_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduledJobOperationArgs', 'ScheduledJobOperationArgsDict']]]]] = None,
+                 operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduledJobOperationArgs', 'ScheduledJobOperationArgsDict', 'outputs.ScheduledJobOperation']]]]] = None,
                  recurring_rule: pulumi.Input[Optional[_builtins.str]] = None,
                  retry_intervals: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
                  schedule_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -936,7 +936,7 @@ class ScheduledJob(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_compartment_ids: The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set  isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must  supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds, or dynamicSetIds.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instance_group_ids: The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instance_ids: The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or  managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduledJobOperationArgs', 'ScheduledJobOperationArgsDict']]]] operations: (Updatable) The list of operations this scheduled job needs to perform. A scheduled job supports only one operation type, unless it is one of the following:
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduledJobOperationArgs', 'ScheduledJobOperationArgsDict', 'outputs.ScheduledJobOperation']]]] operations: (Updatable) The list of operations this scheduled job needs to perform. A scheduled job supports only one operation type, unless it is one of the following:
                * UPDATE_PACKAGES
                * UPDATE_ALL
                * UPDATE_SECURITY
@@ -1087,7 +1087,7 @@ class ScheduledJob(pulumi.CustomResource):
                  managed_compartment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  managed_instance_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  managed_instance_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduledJobOperationArgs', 'ScheduledJobOperationArgsDict']]]]] = None,
+                 operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduledJobOperationArgs', 'ScheduledJobOperationArgsDict', 'outputs.ScheduledJobOperation']]]]] = None,
                  recurring_rule: pulumi.Input[Optional[_builtins.str]] = None,
                  retry_intervals: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
                  schedule_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1160,7 +1160,7 @@ class ScheduledJob(pulumi.CustomResource):
             managed_compartment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             managed_instance_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             managed_instance_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduledJobOperationArgs', 'ScheduledJobOperationArgsDict']]]]] = None,
+            operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduledJobOperationArgs', 'ScheduledJobOperationArgsDict', 'outputs.ScheduledJobOperation']]]]] = None,
             recurring_rule: pulumi.Input[Optional[_builtins.str]] = None,
             retry_intervals: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
             schedule_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1193,7 +1193,7 @@ class ScheduledJob(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_compartment_ids: The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set  isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must  supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds, or dynamicSetIds.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instance_group_ids: The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instance_ids: The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or  managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduledJobOperationArgs', 'ScheduledJobOperationArgsDict']]]] operations: (Updatable) The list of operations this scheduled job needs to perform. A scheduled job supports only one operation type, unless it is one of the following:
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduledJobOperationArgs', 'ScheduledJobOperationArgsDict', 'outputs.ScheduledJobOperation']]]] operations: (Updatable) The list of operations this scheduled job needs to perform. A scheduled job supports only one operation type, unless it is one of the following:
                * UPDATE_PACKAGES
                * UPDATE_ALL
                * UPDATE_SECURITY

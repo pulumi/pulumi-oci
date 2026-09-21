@@ -423,10 +423,10 @@ class Connector(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 source: pulumi.Input[Optional[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']]] = None,
+                 source: pulumi.Input[Optional[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict', 'outputs.ConnectorSource']]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
-                 target: pulumi.Input[Optional[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict']]] = None,
-                 tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectorTaskArgs', 'ConnectorTaskArgsDict']]]]] = None,
+                 target: pulumi.Input[Optional[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict', 'outputs.ConnectorTarget']]] = None,
+                 tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectorTaskArgs', 'ConnectorTaskArgsDict', 'outputs.ConnectorTask']]]]] = None,
                  __props__=None):
         """
         This resource provides the Service Connector resource in Oracle Cloud Infrastructure Service Connector Hub service.
@@ -550,13 +550,13 @@ class Connector(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the resource. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']] source: (Updatable)
+        :param pulumi.Input[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict', 'outputs.ConnectorSource']] source: (Updatable)
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict']] target: (Updatable)
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectorTaskArgs', 'ConnectorTaskArgsDict']]]] tasks: (Updatable) The list of tasks.
+        :param pulumi.Input[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict', 'outputs.ConnectorTarget']] target: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectorTaskArgs', 'ConnectorTaskArgsDict', 'outputs.ConnectorTask']]]] tasks: (Updatable) The list of tasks.
         """
         ...
     @overload
@@ -699,10 +699,10 @@ class Connector(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 source: pulumi.Input[Optional[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']]] = None,
+                 source: pulumi.Input[Optional[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict', 'outputs.ConnectorSource']]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
-                 target: pulumi.Input[Optional[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict']]] = None,
-                 tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectorTaskArgs', 'ConnectorTaskArgsDict']]]]] = None,
+                 target: pulumi.Input[Optional[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict', 'outputs.ConnectorTarget']]] = None,
+                 tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectorTaskArgs', 'ConnectorTaskArgsDict', 'outputs.ConnectorTask']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -751,11 +751,11 @@ class Connector(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             lifecyle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            source: pulumi.Input[Optional[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']]] = None,
+            source: pulumi.Input[Optional[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict', 'outputs.ConnectorSource']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            target: pulumi.Input[Optional[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict']]] = None,
-            tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectorTaskArgs', 'ConnectorTaskArgsDict']]]]] = None,
+            target: pulumi.Input[Optional[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict', 'outputs.ConnectorTarget']]] = None,
+            tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectorTaskArgs', 'ConnectorTaskArgsDict', 'outputs.ConnectorTask']]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'Connector':
         """
@@ -772,14 +772,14 @@ class Connector(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
         :param pulumi.Input[_builtins.str] lifecyle_details: *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
-        :param pulumi.Input[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']] source: (Updatable)
+        :param pulumi.Input[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict', 'outputs.ConnectorSource']] source: (Updatable)
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-        :param pulumi.Input[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict']] target: (Updatable)
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectorTaskArgs', 'ConnectorTaskArgsDict']]]] tasks: (Updatable) The list of tasks.
+        :param pulumi.Input[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict', 'outputs.ConnectorTarget']] target: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectorTaskArgs', 'ConnectorTaskArgsDict', 'outputs.ConnectorTask']]]] tasks: (Updatable) The list of tasks.
         :param pulumi.Input[_builtins.str] time_created: The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_updated: The date and time when the connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         """

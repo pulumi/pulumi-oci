@@ -110,7 +110,7 @@ class AwaitableGetBootVolumesResult(GetBootVolumesResult):
 
 def get_boot_volumes(availability_domain: Optional[_builtins.str] = None,
                      compartment_id: Optional[_builtins.str] = None,
-                     filters: Optional[Sequence[Union['GetBootVolumesFilterArgs', 'GetBootVolumesFilterArgsDict']]] = None,
+                     filters: Optional[Sequence[Union['GetBootVolumesFilterArgs', 'GetBootVolumesFilterArgsDict', 'outputs.GetBootVolumesFilterResult']]] = None,
                      volume_group_id: Optional[_builtins.str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBootVolumesResult:
     """
@@ -151,7 +151,7 @@ def get_boot_volumes(availability_domain: Optional[_builtins.str] = None,
         volume_group_id=pulumi.get(__ret__, 'volume_group_id'))
 def get_boot_volumes_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBootVolumesFilterArgs', 'GetBootVolumesFilterArgsDict']]]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBootVolumesFilterArgs', 'GetBootVolumesFilterArgsDict', 'outputs.GetBootVolumesFilterResult']]]]] = None,
                             volume_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBootVolumesResult]:
     """

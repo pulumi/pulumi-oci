@@ -164,7 +164,7 @@ class AwaitableGetMaintenanceRunsResult(GetMaintenanceRunsResult):
 
 def get_maintenance_runs(availability_domain: Optional[_builtins.str] = None,
                          compartment_id: Optional[_builtins.str] = None,
-                         filters: Optional[Sequence[Union['GetMaintenanceRunsFilterArgs', 'GetMaintenanceRunsFilterArgsDict']]] = None,
+                         filters: Optional[Sequence[Union['GetMaintenanceRunsFilterArgs', 'GetMaintenanceRunsFilterArgsDict', 'outputs.GetMaintenanceRunsFilterResult']]] = None,
                          is_local_adg: Optional[_builtins.bool] = None,
                          maintenance_subtype: Optional[_builtins.str] = None,
                          maintenance_type: Optional[_builtins.str] = None,
@@ -230,7 +230,7 @@ def get_maintenance_runs(availability_domain: Optional[_builtins.str] = None,
         target_resource_type=pulumi.get(__ret__, 'target_resource_type'))
 def get_maintenance_runs_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaintenanceRunsFilterArgs', 'GetMaintenanceRunsFilterArgsDict']]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaintenanceRunsFilterArgs', 'GetMaintenanceRunsFilterArgsDict', 'outputs.GetMaintenanceRunsFilterResult']]]]] = None,
                                 is_local_adg: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                 maintenance_subtype: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 maintenance_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

@@ -82,7 +82,7 @@ class AwaitableGetDbSystemComputePerformancesResult(GetDbSystemComputePerformanc
 
 
 def get_db_system_compute_performances(db_system_shape: Optional[_builtins.str] = None,
-                                       filters: Optional[Sequence[Union['GetDbSystemComputePerformancesFilterArgs', 'GetDbSystemComputePerformancesFilterArgsDict']]] = None,
+                                       filters: Optional[Sequence[Union['GetDbSystemComputePerformancesFilterArgs', 'GetDbSystemComputePerformancesFilterArgsDict', 'outputs.GetDbSystemComputePerformancesFilterResult']]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbSystemComputePerformancesResult:
     """
     This data source provides the list of Db System Compute Performances in Oracle Cloud Infrastructure Database service.
@@ -113,7 +113,7 @@ def get_db_system_compute_performances(db_system_shape: Optional[_builtins.str] 
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_db_system_compute_performances_output(db_system_shape: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemComputePerformancesFilterArgs', 'GetDbSystemComputePerformancesFilterArgsDict']]]]] = None,
+                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemComputePerformancesFilterArgs', 'GetDbSystemComputePerformancesFilterArgsDict', 'outputs.GetDbSystemComputePerformancesFilterResult']]]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemComputePerformancesResult]:
     """
     This data source provides the list of Db System Compute Performances in Oracle Cloud Infrastructure Database service.

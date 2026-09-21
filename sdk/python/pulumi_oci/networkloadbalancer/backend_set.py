@@ -404,7 +404,7 @@ class BackendSet(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  are_operationally_active_backends_preferred: pulumi.Input[Optional[_builtins.bool]] = None,
-                 health_checker: pulumi.Input[Optional[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict']]] = None,
+                 health_checker: pulumi.Input[Optional[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict', 'outputs.BackendSetHealthChecker']]] = None,
                  ip_version: pulumi.Input[Optional[_builtins.str]] = None,
                  is_fail_open: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_instant_failover_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -471,7 +471,7 @@ class BackendSet(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] are_operationally_active_backends_preferred: (Updatable) If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
-        :param pulumi.Input[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
+        :param pulumi.Input[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict', 'outputs.BackendSetHealthChecker']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
         :param pulumi.Input[_builtins.str] ip_version: (Updatable) IP version associated with the backend set.
         :param pulumi.Input[_builtins.bool] is_fail_open: (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
         :param pulumi.Input[_builtins.bool] is_instant_failover_enabled: (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
@@ -564,7 +564,7 @@ class BackendSet(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  are_operationally_active_backends_preferred: pulumi.Input[Optional[_builtins.bool]] = None,
-                 health_checker: pulumi.Input[Optional[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict']]] = None,
+                 health_checker: pulumi.Input[Optional[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict', 'outputs.BackendSetHealthChecker']]] = None,
                  ip_version: pulumi.Input[Optional[_builtins.str]] = None,
                  is_fail_open: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_instant_failover_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -610,8 +610,8 @@ class BackendSet(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             are_operationally_active_backends_preferred: pulumi.Input[Optional[_builtins.bool]] = None,
-            backends: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BackendSetBackendArgs', 'BackendSetBackendArgsDict']]]]] = None,
-            health_checker: pulumi.Input[Optional[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict']]] = None,
+            backends: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BackendSetBackendArgs', 'BackendSetBackendArgsDict', 'outputs.BackendSetBackend']]]]] = None,
+            health_checker: pulumi.Input[Optional[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict', 'outputs.BackendSetHealthChecker']]] = None,
             ip_version: pulumi.Input[Optional[_builtins.str]] = None,
             is_fail_open: pulumi.Input[Optional[_builtins.bool]] = None,
             is_instant_failover_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -628,8 +628,8 @@ class BackendSet(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] are_operationally_active_backends_preferred: (Updatable) If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['BackendSetBackendArgs', 'BackendSetBackendArgsDict']]]] backends: (Updatable) An array of backends to be associated with the backend set.
-        :param pulumi.Input[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BackendSetBackendArgs', 'BackendSetBackendArgsDict', 'outputs.BackendSetBackend']]]] backends: (Updatable) An array of backends to be associated with the backend set.
+        :param pulumi.Input[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict', 'outputs.BackendSetHealthChecker']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
         :param pulumi.Input[_builtins.str] ip_version: (Updatable) IP version associated with the backend set.
         :param pulumi.Input[_builtins.bool] is_fail_open: (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
         :param pulumi.Input[_builtins.bool] is_instant_failover_enabled: (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.

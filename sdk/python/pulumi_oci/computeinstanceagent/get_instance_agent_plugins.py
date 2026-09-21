@@ -115,7 +115,7 @@ class AwaitableGetInstanceAgentPluginsResult(GetInstanceAgentPluginsResult):
 
 
 def get_instance_agent_plugins(compartment_id: Optional[_builtins.str] = None,
-                               filters: Optional[Sequence[Union['GetInstanceAgentPluginsFilterArgs', 'GetInstanceAgentPluginsFilterArgsDict']]] = None,
+                               filters: Optional[Sequence[Union['GetInstanceAgentPluginsFilterArgs', 'GetInstanceAgentPluginsFilterArgsDict', 'outputs.GetInstanceAgentPluginsFilterResult']]] = None,
                                instanceagent_id: Optional[_builtins.str] = None,
                                name: Optional[_builtins.str] = None,
                                status: Optional[_builtins.str] = None,
@@ -161,7 +161,7 @@ def get_instance_agent_plugins(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         status=pulumi.get(__ret__, 'status'))
 def get_instance_agent_plugins_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstanceAgentPluginsFilterArgs', 'GetInstanceAgentPluginsFilterArgsDict']]]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstanceAgentPluginsFilterArgs', 'GetInstanceAgentPluginsFilterArgsDict', 'outputs.GetInstanceAgentPluginsFilterResult']]]]] = None,
                                       instanceagent_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

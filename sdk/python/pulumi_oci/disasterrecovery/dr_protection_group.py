@@ -451,14 +451,14 @@ class DrProtectionGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 association: pulumi.Input[Optional[Union['DrProtectionGroupAssociationArgs', 'DrProtectionGroupAssociationArgsDict']]] = None,
+                 association: pulumi.Input[Optional[Union['DrProtectionGroupAssociationArgs', 'DrProtectionGroupAssociationArgsDict', 'outputs.DrProtectionGroupAssociation']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  disassociate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 log_location: pulumi.Input[Optional[Union['DrProtectionGroupLogLocationArgs', 'DrProtectionGroupLogLocationArgsDict']]] = None,
-                 members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DrProtectionGroupMemberArgs', 'DrProtectionGroupMemberArgsDict']]]]] = None,
+                 log_location: pulumi.Input[Optional[Union['DrProtectionGroupLogLocationArgs', 'DrProtectionGroupLogLocationArgsDict', 'outputs.DrProtectionGroupLogLocation']]] = None,
+                 members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DrProtectionGroupMemberArgs', 'DrProtectionGroupMemberArgsDict', 'outputs.DrProtectionGroupMember']]]]] = None,
                  __props__=None):
         """
         This resource provides the Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
@@ -659,7 +659,7 @@ class DrProtectionGroup(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DrProtectionGroupAssociationArgs', 'DrProtectionGroupAssociationArgsDict']] association: The details for associating a DR protection group with a peer DR protection group.
+        :param pulumi.Input[Union['DrProtectionGroupAssociationArgs', 'DrProtectionGroupAssociationArgsDict', 'outputs.DrProtectionGroupAssociation']] association: The details for associating a DR protection group with a peer DR protection group.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.int] disassociate_trigger: (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
@@ -668,8 +668,8 @@ class DrProtectionGroup(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['DrProtectionGroupLogLocationArgs', 'DrProtectionGroupLogLocationArgsDict']] log_location: (Updatable) The details for creating an object storage log location for a DR protection group.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DrProtectionGroupMemberArgs', 'DrProtectionGroupMemberArgsDict']]]] members: (Updatable) A list of DR protection group members.
+        :param pulumi.Input[Union['DrProtectionGroupLogLocationArgs', 'DrProtectionGroupLogLocationArgsDict', 'outputs.DrProtectionGroupLogLocation']] log_location: (Updatable) The details for creating an object storage log location for a DR protection group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DrProtectionGroupMemberArgs', 'DrProtectionGroupMemberArgsDict', 'outputs.DrProtectionGroupMember']]]] members: (Updatable) A list of DR protection group members.
         """
         ...
     @overload
@@ -889,14 +889,14 @@ class DrProtectionGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 association: pulumi.Input[Optional[Union['DrProtectionGroupAssociationArgs', 'DrProtectionGroupAssociationArgsDict']]] = None,
+                 association: pulumi.Input[Optional[Union['DrProtectionGroupAssociationArgs', 'DrProtectionGroupAssociationArgsDict', 'outputs.DrProtectionGroupAssociation']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  disassociate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 log_location: pulumi.Input[Optional[Union['DrProtectionGroupLogLocationArgs', 'DrProtectionGroupLogLocationArgsDict']]] = None,
-                 members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DrProtectionGroupMemberArgs', 'DrProtectionGroupMemberArgsDict']]]]] = None,
+                 log_location: pulumi.Input[Optional[Union['DrProtectionGroupLogLocationArgs', 'DrProtectionGroupLogLocationArgsDict', 'outputs.DrProtectionGroupLogLocation']]] = None,
+                 members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DrProtectionGroupMemberArgs', 'DrProtectionGroupMemberArgsDict', 'outputs.DrProtectionGroupMember']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -939,7 +939,7 @@ class DrProtectionGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            association: pulumi.Input[Optional[Union['DrProtectionGroupAssociationArgs', 'DrProtectionGroupAssociationArgsDict']]] = None,
+            association: pulumi.Input[Optional[Union['DrProtectionGroupAssociationArgs', 'DrProtectionGroupAssociationArgsDict', 'outputs.DrProtectionGroupAssociation']]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             disassociate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
@@ -947,8 +947,8 @@ class DrProtectionGroup(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             life_cycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_sub_state: pulumi.Input[Optional[_builtins.str]] = None,
-            log_location: pulumi.Input[Optional[Union['DrProtectionGroupLogLocationArgs', 'DrProtectionGroupLogLocationArgsDict']]] = None,
-            members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DrProtectionGroupMemberArgs', 'DrProtectionGroupMemberArgsDict']]]]] = None,
+            log_location: pulumi.Input[Optional[Union['DrProtectionGroupLogLocationArgs', 'DrProtectionGroupLogLocationArgsDict', 'outputs.DrProtectionGroupLogLocation']]] = None,
+            members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DrProtectionGroupMemberArgs', 'DrProtectionGroupMemberArgsDict', 'outputs.DrProtectionGroupMember']]]]] = None,
             peer_id: pulumi.Input[Optional[_builtins.str]] = None,
             peer_region: pulumi.Input[Optional[_builtins.str]] = None,
             role: pulumi.Input[Optional[_builtins.str]] = None,
@@ -963,7 +963,7 @@ class DrProtectionGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DrProtectionGroupAssociationArgs', 'DrProtectionGroupAssociationArgsDict']] association: The details for associating a DR protection group with a peer DR protection group.
+        :param pulumi.Input[Union['DrProtectionGroupAssociationArgs', 'DrProtectionGroupAssociationArgsDict', 'outputs.DrProtectionGroupAssociation']] association: The details for associating a DR protection group with a peer DR protection group.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.int] disassociate_trigger: (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
@@ -974,8 +974,8 @@ class DrProtectionGroup(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] life_cycle_details: A message describing the DR protection group's current state in more detail.
         :param pulumi.Input[_builtins.str] lifecycle_sub_state: The current sub-state of the DR protection group.
-        :param pulumi.Input[Union['DrProtectionGroupLogLocationArgs', 'DrProtectionGroupLogLocationArgsDict']] log_location: (Updatable) The details for creating an object storage log location for a DR protection group.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DrProtectionGroupMemberArgs', 'DrProtectionGroupMemberArgsDict']]]] members: (Updatable) A list of DR protection group members.
+        :param pulumi.Input[Union['DrProtectionGroupLogLocationArgs', 'DrProtectionGroupLogLocationArgsDict', 'outputs.DrProtectionGroupLogLocation']] log_location: (Updatable) The details for creating an object storage log location for a DR protection group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DrProtectionGroupMemberArgs', 'DrProtectionGroupMemberArgsDict', 'outputs.DrProtectionGroupMember']]]] members: (Updatable) A list of DR protection group members.
         :param pulumi.Input[_builtins.str] peer_id: The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         :param pulumi.Input[_builtins.str] peer_region: The region of the peer DR protection group.  Example: `us-ashburn-1`
         :param pulumi.Input[_builtins.str] role: The role of the DR protection group.

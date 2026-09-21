@@ -102,7 +102,7 @@ class AwaitableGetManagedDatabaseUsersResult(GetManagedDatabaseUsersResult):
             user_collections=self.user_collections)
 
 
-def get_managed_database_users(filters: Optional[Sequence[Union['GetManagedDatabaseUsersFilterArgs', 'GetManagedDatabaseUsersFilterArgsDict']]] = None,
+def get_managed_database_users(filters: Optional[Sequence[Union['GetManagedDatabaseUsersFilterArgs', 'GetManagedDatabaseUsersFilterArgsDict', 'outputs.GetManagedDatabaseUsersFilterResult']]] = None,
                                managed_database_id: Optional[_builtins.str] = None,
                                name: Optional[_builtins.str] = None,
                                opc_named_credential_id: Optional[_builtins.str] = None,
@@ -143,7 +143,7 @@ def get_managed_database_users(filters: Optional[Sequence[Union['GetManagedDatab
         name=pulumi.get(__ret__, 'name'),
         opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         user_collections=pulumi.get(__ret__, 'user_collections'))
-def get_managed_database_users_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseUsersFilterArgs', 'GetManagedDatabaseUsersFilterArgsDict']]]]] = None,
+def get_managed_database_users_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseUsersFilterArgs', 'GetManagedDatabaseUsersFilterArgsDict', 'outputs.GetManagedDatabaseUsersFilterResult']]]]] = None,
                                       managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

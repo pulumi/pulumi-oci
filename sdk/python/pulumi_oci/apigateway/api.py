@@ -389,7 +389,7 @@ class Api(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiLockArgs', 'ApiLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiLockArgs', 'ApiLockArgsDict', 'outputs.ApiLock']]]]] = None,
                  __props__=None):
         """
         This resource provides the Api resource in Oracle Cloud Infrastructure API Gateway service.
@@ -437,7 +437,7 @@ class Api(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiLockArgs', 'ApiLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiLockArgs', 'ApiLockArgsDict', 'outputs.ApiLock']]]] locks: Locks associated with this resource.
         """
         ...
     @overload
@@ -505,7 +505,7 @@ class Api(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiLockArgs', 'ApiLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiLockArgs', 'ApiLockArgsDict', 'outputs.ApiLock']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -548,13 +548,13 @@ class Api(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiLockArgs', 'ApiLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiLockArgs', 'ApiLockArgsDict', 'outputs.ApiLock']]]]] = None,
             specification_type: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
-            validation_results: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiValidationResultArgs', 'ApiValidationResultArgsDict']]]]] = None) -> 'Api':
+            validation_results: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiValidationResultArgs', 'ApiValidationResultArgsDict', 'outputs.ApiValidationResult']]]]] = None) -> 'Api':
         """
         Get an existing Api resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -575,13 +575,13 @@ class Api(pulumi.CustomResource):
                * 'Error' the document has been validated and contains errors
                * 'Failed' the document validation failed
                * 'Canceled' the document validation was canceled
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiLockArgs', 'ApiLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiLockArgs', 'ApiLockArgsDict', 'outputs.ApiLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] specification_type: Type of API Specification file.
         :param pulumi.Input[_builtins.str] state: The current state of the API.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiValidationResultArgs', 'ApiValidationResultArgsDict']]]] validation_results: Status of each feature available from the API.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiValidationResultArgs', 'ApiValidationResultArgsDict', 'outputs.ApiValidationResult']]]] validation_results: Status of each feature available from the API.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

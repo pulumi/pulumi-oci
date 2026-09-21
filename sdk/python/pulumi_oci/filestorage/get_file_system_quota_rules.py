@@ -119,7 +119,7 @@ class AwaitableGetFileSystemQuotaRulesResult(GetFileSystemQuotaRulesResult):
 
 def get_file_system_quota_rules(are_violators_only: Optional[_builtins.bool] = None,
                                 file_system_id: Optional[_builtins.str] = None,
-                                filters: Optional[Sequence[Union['GetFileSystemQuotaRulesFilterArgs', 'GetFileSystemQuotaRulesFilterArgsDict']]] = None,
+                                filters: Optional[Sequence[Union['GetFileSystemQuotaRulesFilterArgs', 'GetFileSystemQuotaRulesFilterArgsDict', 'outputs.GetFileSystemQuotaRulesFilterResult']]] = None,
                                 principal_id: Optional[_builtins.int] = None,
                                 principal_type: Optional[_builtins.str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFileSystemQuotaRulesResult:
@@ -165,7 +165,7 @@ def get_file_system_quota_rules(are_violators_only: Optional[_builtins.bool] = N
         quota_rules=pulumi.get(__ret__, 'quota_rules'))
 def get_file_system_quota_rules_output(are_violators_only: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                        file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFileSystemQuotaRulesFilterArgs', 'GetFileSystemQuotaRulesFilterArgsDict']]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFileSystemQuotaRulesFilterArgs', 'GetFileSystemQuotaRulesFilterArgsDict', 'outputs.GetFileSystemQuotaRulesFilterResult']]]]] = None,
                                        principal_id: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                        principal_type: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFileSystemQuotaRulesResult]:

@@ -278,7 +278,7 @@ class Index(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  is_if_not_exists: pulumi.Input[Optional[_builtins.bool]] = None,
-                 keys: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IndexKeyArgs', 'IndexKeyArgsDict']]]]] = None,
+                 keys: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IndexKeyArgs', 'IndexKeyArgsDict', 'outputs.IndexKey']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  table_name_or_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -321,7 +321,7 @@ class Index(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
         :param pulumi.Input[_builtins.bool] is_if_not_exists: If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IndexKeyArgs', 'IndexKeyArgsDict']]]] keys: A set of keys for a secondary index.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IndexKeyArgs', 'IndexKeyArgsDict', 'outputs.IndexKey']]]] keys: A set of keys for a secondary index.
         :param pulumi.Input[_builtins.str] name: Index name.
         :param pulumi.Input[_builtins.str] table_name_or_id: A table name within the compartment, or a table OCID.
                
@@ -386,7 +386,7 @@ class Index(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  is_if_not_exists: pulumi.Input[Optional[_builtins.bool]] = None,
-                 keys: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IndexKeyArgs', 'IndexKeyArgsDict']]]]] = None,
+                 keys: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IndexKeyArgs', 'IndexKeyArgsDict', 'outputs.IndexKey']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  table_name_or_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -423,7 +423,7 @@ class Index(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             is_if_not_exists: pulumi.Input[Optional[_builtins.bool]] = None,
-            keys: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IndexKeyArgs', 'IndexKeyArgsDict']]]]] = None,
+            keys: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IndexKeyArgs', 'IndexKeyArgsDict', 'outputs.IndexKey']]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -439,7 +439,7 @@ class Index(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
         :param pulumi.Input[_builtins.bool] is_if_not_exists: If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['IndexKeyArgs', 'IndexKeyArgsDict']]]] keys: A set of keys for a secondary index.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IndexKeyArgs', 'IndexKeyArgsDict', 'outputs.IndexKey']]]] keys: A set of keys for a secondary index.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail.
         :param pulumi.Input[_builtins.str] name: Index name.
         :param pulumi.Input[_builtins.str] state: The state of an index.

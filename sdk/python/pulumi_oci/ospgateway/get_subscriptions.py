@@ -91,7 +91,7 @@ class AwaitableGetSubscriptionsResult(GetSubscriptionsResult):
 
 
 def get_subscriptions(compartment_id: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetSubscriptionsFilterArgs', 'GetSubscriptionsFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetSubscriptionsFilterArgs', 'GetSubscriptionsFilterArgsDict', 'outputs.GetSubscriptionsFilterResult']]] = None,
                       osp_home_region: Optional[_builtins.str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSubscriptionsResult:
     """
@@ -127,7 +127,7 @@ def get_subscriptions(compartment_id: Optional[_builtins.str] = None,
         osp_home_region=pulumi.get(__ret__, 'osp_home_region'),
         subscription_collections=pulumi.get(__ret__, 'subscription_collections'))
 def get_subscriptions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionsFilterArgs', 'GetSubscriptionsFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionsFilterArgs', 'GetSubscriptionsFilterArgsDict', 'outputs.GetSubscriptionsFilterResult']]]]] = None,
                              osp_home_region: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionsResult]:
     """

@@ -659,7 +659,7 @@ class ProtectedDatabase(pulumi.CustomResource):
                  is_redo_logs_shipped: pulumi.Input[Optional[_builtins.bool]] = None,
                  password: pulumi.Input[Optional[_builtins.str]] = None,
                  protection_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 recovery_service_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict']]]]] = None,
+                 recovery_service_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict', 'outputs.ProtectedDatabaseRecoveryServiceSubnet']]]]] = None,
                  subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -722,7 +722,7 @@ class ProtectedDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_redo_logs_shipped: (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
         :param pulumi.Input[_builtins.str] password: (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
         :param pulumi.Input[_builtins.str] protection_policy_id: (Updatable) The OCID of the protection policy associated with the protected database.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict']]]] recovery_service_subnets: (Updatable) List of recovery service subnet resources associated with the protected database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict', 'outputs.ProtectedDatabaseRecoveryServiceSubnet']]]] recovery_service_subnets: (Updatable) List of recovery service subnet resources associated with the protected database.
         :param pulumi.Input[_builtins.str] subscription_id: (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
                
                ** IMPORTANT **
@@ -805,7 +805,7 @@ class ProtectedDatabase(pulumi.CustomResource):
                  is_redo_logs_shipped: pulumi.Input[Optional[_builtins.bool]] = None,
                  password: pulumi.Input[Optional[_builtins.str]] = None,
                  protection_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 recovery_service_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict']]]]] = None,
+                 recovery_service_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict', 'outputs.ProtectedDatabaseRecoveryServiceSubnet']]]]] = None,
                  subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -877,11 +877,11 @@ class ProtectedDatabase(pulumi.CustomResource):
             is_read_only_resource: pulumi.Input[Optional[_builtins.bool]] = None,
             is_redo_logs_shipped: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            metrics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectedDatabaseMetricArgs', 'ProtectedDatabaseMetricArgsDict']]]]] = None,
+            metrics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectedDatabaseMetricArgs', 'ProtectedDatabaseMetricArgsDict', 'outputs.ProtectedDatabaseMetric']]]]] = None,
             password: pulumi.Input[Optional[_builtins.str]] = None,
             policy_locked_date_time: pulumi.Input[Optional[_builtins.str]] = None,
             protection_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
-            recovery_service_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict']]]]] = None,
+            recovery_service_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict', 'outputs.ProtectedDatabaseRecoveryServiceSubnet']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -910,11 +910,11 @@ class ProtectedDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_read_only_resource: Indicates whether the protected database is created by Recovery Service or created manually. Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to <b>FALSE</b> for a user-defined protected database.
         :param pulumi.Input[_builtins.bool] is_redo_logs_shipped: (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
         :param pulumi.Input[_builtins.str] lifecycle_details: Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ProtectedDatabaseMetricArgs', 'ProtectedDatabaseMetricArgsDict']]]] metrics: Backup performance and storage utilization metrics for the protected database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ProtectedDatabaseMetricArgs', 'ProtectedDatabaseMetricArgsDict', 'outputs.ProtectedDatabaseMetric']]]] metrics: Backup performance and storage utilization metrics for the protected database.
         :param pulumi.Input[_builtins.str] password: (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
         :param pulumi.Input[_builtins.str] policy_locked_date_time: An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
         :param pulumi.Input[_builtins.str] protection_policy_id: (Updatable) The OCID of the protection policy associated with the protected database.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict']]]] recovery_service_subnets: (Updatable) List of recovery service subnet resources associated with the protected database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict', 'outputs.ProtectedDatabaseRecoveryServiceSubnet']]]] recovery_service_subnets: (Updatable) List of recovery service subnet resources associated with the protected database.
         :param pulumi.Input[_builtins.str] state: The current state of the Protected Database.
         :param pulumi.Input[_builtins.str] subscription_id: (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
                

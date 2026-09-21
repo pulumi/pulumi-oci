@@ -105,7 +105,7 @@ class AwaitableGetRemediationRunApplicationDependencyRecommendationsResult(GetRe
             remediation_run_id=self.remediation_run_id)
 
 
-def get_remediation_run_application_dependency_recommendations(filters: Optional[Sequence[Union['GetRemediationRunApplicationDependencyRecommendationsFilterArgs', 'GetRemediationRunApplicationDependencyRecommendationsFilterArgsDict']]] = None,
+def get_remediation_run_application_dependency_recommendations(filters: Optional[Sequence[Union['GetRemediationRunApplicationDependencyRecommendationsFilterArgs', 'GetRemediationRunApplicationDependencyRecommendationsFilterArgsDict', 'outputs.GetRemediationRunApplicationDependencyRecommendationsFilterResult']]] = None,
                                                                gav: Optional[_builtins.str] = None,
                                                                purl: Optional[_builtins.str] = None,
                                                                remediation_run_id: Optional[_builtins.str] = None,
@@ -146,7 +146,7 @@ def get_remediation_run_application_dependency_recommendations(filters: Optional
         id=pulumi.get(__ret__, 'id'),
         purl=pulumi.get(__ret__, 'purl'),
         remediation_run_id=pulumi.get(__ret__, 'remediation_run_id'))
-def get_remediation_run_application_dependency_recommendations_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRemediationRunApplicationDependencyRecommendationsFilterArgs', 'GetRemediationRunApplicationDependencyRecommendationsFilterArgsDict']]]]] = None,
+def get_remediation_run_application_dependency_recommendations_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRemediationRunApplicationDependencyRecommendationsFilterArgs', 'GetRemediationRunApplicationDependencyRecommendationsFilterArgsDict', 'outputs.GetRemediationRunApplicationDependencyRecommendationsFilterResult']]]]] = None,
                                                                       gav: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                       purl: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                       remediation_run_id: pulumi.Input[Optional[_builtins.str]] = None,

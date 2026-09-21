@@ -84,7 +84,7 @@ class AwaitableGetAuthTokensResult(GetAuthTokensResult):
             user_id=self.user_id)
 
 
-def get_auth_tokens(filters: Optional[Sequence[Union['GetAuthTokensFilterArgs', 'GetAuthTokensFilterArgsDict']]] = None,
+def get_auth_tokens(filters: Optional[Sequence[Union['GetAuthTokensFilterArgs', 'GetAuthTokensFilterArgsDict', 'outputs.GetAuthTokensFilterResult']]] = None,
                     user_id: Optional[_builtins.str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuthTokensResult:
     """
@@ -116,7 +116,7 @@ def get_auth_tokens(filters: Optional[Sequence[Union['GetAuthTokensFilterArgs', 
         id=pulumi.get(__ret__, 'id'),
         tokens=pulumi.get(__ret__, 'tokens'),
         user_id=pulumi.get(__ret__, 'user_id'))
-def get_auth_tokens_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAuthTokensFilterArgs', 'GetAuthTokensFilterArgsDict']]]]] = None,
+def get_auth_tokens_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAuthTokensFilterArgs', 'GetAuthTokensFilterArgsDict', 'outputs.GetAuthTokensFilterResult']]]]] = None,
                            user_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuthTokensResult]:
     """

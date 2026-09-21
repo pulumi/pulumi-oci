@@ -1296,7 +1296,7 @@ class DomainsOauthPartnerCertificate(pulumi.CustomResource):
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateTagArgs', 'DomainsOauthPartnerCertificateTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateTagArgs', 'DomainsOauthPartnerCertificateTagArgsDict', 'outputs.DomainsOauthPartnerCertificateTag']]]]] = None,
                  x509base64certificate: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -1427,7 +1427,7 @@ class DomainsOauthPartnerCertificate(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateTagArgs', 'DomainsOauthPartnerCertificateTagArgsDict']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateTagArgs', 'DomainsOauthPartnerCertificateTagArgsDict', 'outputs.DomainsOauthPartnerCertificateTag']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1526,7 +1526,7 @@ class DomainsOauthPartnerCertificate(pulumi.CustomResource):
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateTagArgs', 'DomainsOauthPartnerCertificateTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateTagArgs', 'DomainsOauthPartnerCertificateTagArgsDict', 'outputs.DomainsOauthPartnerCertificateTag']]]]] = None,
                  x509base64certificate: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -1589,22 +1589,22 @@ class DomainsOauthPartnerCertificate(pulumi.CustomResource):
             delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
             domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             external_id: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateIdcsCreatedByArgs', 'DomainsOauthPartnerCertificateIdcsCreatedByArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateIdcsCreatedByArgs', 'DomainsOauthPartnerCertificateIdcsCreatedByArgsDict', 'outputs.DomainsOauthPartnerCertificateIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateIdcsLastModifiedByArgs', 'DomainsOauthPartnerCertificateIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateIdcsLastModifiedByArgs', 'DomainsOauthPartnerCertificateIdcsLastModifiedByArgsDict', 'outputs.DomainsOauthPartnerCertificateIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
             key_store_name: pulumi.Input[Optional[_builtins.str]] = None,
             key_store_password: pulumi.Input[Optional[_builtins.str]] = None,
             map: pulumi.Input[Optional[_builtins.str]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateMetaArgs', 'DomainsOauthPartnerCertificateMetaArgsDict']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateMetaArgs', 'DomainsOauthPartnerCertificateMetaArgsDict', 'outputs.DomainsOauthPartnerCertificateMeta']]]]] = None,
             ocid: pulumi.Input[Optional[_builtins.str]] = None,
             resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
             schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             sha1thumbprint: pulumi.Input[Optional[_builtins.str]] = None,
             sha256thumbprint: pulumi.Input[Optional[_builtins.str]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateTagArgs', 'DomainsOauthPartnerCertificateTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateTagArgs', 'DomainsOauthPartnerCertificateTagArgsDict', 'outputs.DomainsOauthPartnerCertificateTag']]]]] = None,
             tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             x509base64certificate: pulumi.Input[Optional[_builtins.str]] = None) -> 'DomainsOauthPartnerCertificate':
         """
@@ -1689,7 +1689,7 @@ class DomainsOauthPartnerCertificate(pulumi.CustomResource):
                * mutability: readWrite
                * returned: default
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateIdcsCreatedByArgs', 'DomainsOauthPartnerCertificateIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateIdcsCreatedByArgs', 'DomainsOauthPartnerCertificateIdcsCreatedByArgsDict', 'outputs.DomainsOauthPartnerCertificateIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1699,7 +1699,7 @@ class DomainsOauthPartnerCertificate(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateIdcsLastModifiedByArgs', 'DomainsOauthPartnerCertificateIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateIdcsLastModifiedByArgs', 'DomainsOauthPartnerCertificateIdcsLastModifiedByArgsDict', 'outputs.DomainsOauthPartnerCertificateIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1767,7 +1767,7 @@ class DomainsOauthPartnerCertificate(pulumi.CustomResource):
                * caseExact: false
                * returned: always
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateMetaArgs', 'DomainsOauthPartnerCertificateMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateMetaArgs', 'DomainsOauthPartnerCertificateMetaArgsDict', 'outputs.DomainsOauthPartnerCertificateMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1821,7 +1821,7 @@ class DomainsOauthPartnerCertificate(pulumi.CustomResource):
                * returned: default
                * idcsSearchable: true
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateTagArgs', 'DomainsOauthPartnerCertificateTagArgsDict']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateTagArgs', 'DomainsOauthPartnerCertificateTagArgsDict', 'outputs.DomainsOauthPartnerCertificateTag']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]

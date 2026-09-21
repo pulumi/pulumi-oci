@@ -72,7 +72,7 @@ class AwaitableGetNetworkLoadBalancersProtocolsResult(GetNetworkLoadBalancersPro
             network_load_balancers_protocol_collections=self.network_load_balancers_protocol_collections)
 
 
-def get_network_load_balancers_protocols(filters: Optional[Sequence[Union['GetNetworkLoadBalancersProtocolsFilterArgs', 'GetNetworkLoadBalancersProtocolsFilterArgsDict']]] = None,
+def get_network_load_balancers_protocols(filters: Optional[Sequence[Union['GetNetworkLoadBalancersProtocolsFilterArgs', 'GetNetworkLoadBalancersProtocolsFilterArgsDict', 'outputs.GetNetworkLoadBalancersProtocolsFilterResult']]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkLoadBalancersProtocolsResult:
     """
     This data source provides the list of Network Load Balancers Protocols in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -98,7 +98,7 @@ def get_network_load_balancers_protocols(filters: Optional[Sequence[Union['GetNe
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         network_load_balancers_protocol_collections=pulumi.get(__ret__, 'network_load_balancers_protocol_collections'))
-def get_network_load_balancers_protocols_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkLoadBalancersProtocolsFilterArgs', 'GetNetworkLoadBalancersProtocolsFilterArgsDict']]]]] = None,
+def get_network_load_balancers_protocols_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkLoadBalancersProtocolsFilterArgs', 'GetNetworkLoadBalancersProtocolsFilterArgsDict', 'outputs.GetNetworkLoadBalancersProtocolsFilterResult']]]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkLoadBalancersProtocolsResult]:
     """
     This data source provides the list of Network Load Balancers Protocols in Oracle Cloud Infrastructure Network Load Balancer service.

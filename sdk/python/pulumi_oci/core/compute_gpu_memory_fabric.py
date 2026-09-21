@@ -526,7 +526,7 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 memory_fabric_preferences: pulumi.Input[Optional[Union['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs', 'ComputeGpuMemoryFabricMemoryFabricPreferencesArgsDict']]] = None,
+                 memory_fabric_preferences: pulumi.Input[Optional[Union['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs', 'ComputeGpuMemoryFabricMemoryFabricPreferencesArgsDict', 'outputs.ComputeGpuMemoryFabricMemoryFabricPreferences']]] = None,
                  __props__=None):
         """
         This resource provides the Compute Gpu Memory Fabric resource in Oracle Cloud Infrastructure Core service.
@@ -553,7 +553,7 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs', 'ComputeGpuMemoryFabricMemoryFabricPreferencesArgsDict']] memory_fabric_preferences: (Updatable) The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
+        :param pulumi.Input[Union['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs', 'ComputeGpuMemoryFabricMemoryFabricPreferencesArgsDict', 'outputs.ComputeGpuMemoryFabricMemoryFabricPreferences']] memory_fabric_preferences: (Updatable) The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
         """
         ...
     @overload
@@ -599,7 +599,7 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 memory_fabric_preferences: pulumi.Input[Optional[Union['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs', 'ComputeGpuMemoryFabricMemoryFabricPreferencesArgsDict']]] = None,
+                 memory_fabric_preferences: pulumi.Input[Optional[Union['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs', 'ComputeGpuMemoryFabricMemoryFabricPreferencesArgsDict', 'outputs.ComputeGpuMemoryFabricMemoryFabricPreferences']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -662,7 +662,7 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             healthy_host_count: pulumi.Input[Optional[_builtins.str]] = None,
             host_platform_name: pulumi.Input[Optional[_builtins.str]] = None,
-            memory_fabric_preferences: pulumi.Input[Optional[Union['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs', 'ComputeGpuMemoryFabricMemoryFabricPreferencesArgsDict']]] = None,
+            memory_fabric_preferences: pulumi.Input[Optional[Union['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs', 'ComputeGpuMemoryFabricMemoryFabricPreferencesArgsDict', 'outputs.ComputeGpuMemoryFabricMemoryFabricPreferences']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             switch_platform_name: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -693,7 +693,7 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] healthy_host_count: The total number of healthy bare metal hosts located in this compute GPU memory fabric.
         :param pulumi.Input[_builtins.str] host_platform_name: The host platform identifier used for bundle queries
-        :param pulumi.Input[Union['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs', 'ComputeGpuMemoryFabricMemoryFabricPreferencesArgsDict']] memory_fabric_preferences: (Updatable) The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
+        :param pulumi.Input[Union['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs', 'ComputeGpuMemoryFabricMemoryFabricPreferencesArgsDict', 'outputs.ComputeGpuMemoryFabricMemoryFabricPreferences']] memory_fabric_preferences: (Updatable) The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the GPU memory fabric
         :param pulumi.Input[_builtins.str] switch_platform_name: The switch platform identifier used for bundle queries
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`

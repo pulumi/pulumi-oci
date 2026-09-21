@@ -764,9 +764,9 @@ class MountTarget(pulumi.CustomResource):
                  idmap_type: pulumi.Input[Optional[_builtins.str]] = None,
                  ip_address: pulumi.Input[Optional[_builtins.str]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 kerberos: pulumi.Input[Optional[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict']]] = None,
-                 ldap_idmap: pulumi.Input[Optional[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict']]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict']]]]] = None,
+                 kerberos: pulumi.Input[Optional[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict', 'outputs.MountTargetKerberos']]] = None,
+                 ldap_idmap: pulumi.Input[Optional[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict', 'outputs.MountTargetLdapIdmap']]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict', 'outputs.MountTargetLock']]]]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  requested_throughput: pulumi.Input[Optional[_builtins.str]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -888,9 +888,9 @@ class MountTarget(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] idmap_type: (Updatable) The method used to map a Unix UID to secondary groups, if any.
         :param pulumi.Input[_builtins.str] ip_address: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
         :param pulumi.Input[_builtins.bool] is_lock_override: (Updatable) Whether to override locks (if any exist).
-        :param pulumi.Input[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict']] kerberos: (Updatable) Kerberos details needed to create configuration.
-        :param pulumi.Input[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict']] ldap_idmap: (Updatable) Mount target details about the LDAP ID mapping configuration.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict', 'outputs.MountTargetKerberos']] kerberos: (Updatable) Kerberos details needed to create configuration.
+        :param pulumi.Input[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict', 'outputs.MountTargetLdapIdmap']] ldap_idmap: (Updatable) Mount target details about the LDAP ID mapping configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict', 'outputs.MountTargetLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         :param pulumi.Input[_builtins.str] requested_throughput: (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
@@ -1026,9 +1026,9 @@ class MountTarget(pulumi.CustomResource):
                  idmap_type: pulumi.Input[Optional[_builtins.str]] = None,
                  ip_address: pulumi.Input[Optional[_builtins.str]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 kerberos: pulumi.Input[Optional[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict']]] = None,
-                 ldap_idmap: pulumi.Input[Optional[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict']]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict']]]]] = None,
+                 kerberos: pulumi.Input[Optional[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict', 'outputs.MountTargetKerberos']]] = None,
+                 ldap_idmap: pulumi.Input[Optional[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict', 'outputs.MountTargetLdapIdmap']]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict', 'outputs.MountTargetLock']]]]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  requested_throughput: pulumi.Input[Optional[_builtins.str]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1094,10 +1094,10 @@ class MountTarget(pulumi.CustomResource):
             idmap_type: pulumi.Input[Optional[_builtins.str]] = None,
             ip_address: pulumi.Input[Optional[_builtins.str]] = None,
             is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-            kerberos: pulumi.Input[Optional[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict']]] = None,
-            ldap_idmap: pulumi.Input[Optional[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict']]] = None,
+            kerberos: pulumi.Input[Optional[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict', 'outputs.MountTargetKerberos']]] = None,
+            ldap_idmap: pulumi.Input[Optional[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict', 'outputs.MountTargetLdapIdmap']]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict', 'outputs.MountTargetLock']]]]] = None,
             mount_target_ipv6ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             observed_throughput: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1135,10 +1135,10 @@ class MountTarget(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] idmap_type: (Updatable) The method used to map a Unix UID to secondary groups, if any.
         :param pulumi.Input[_builtins.str] ip_address: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
         :param pulumi.Input[_builtins.bool] is_lock_override: (Updatable) Whether to override locks (if any exist).
-        :param pulumi.Input[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict']] kerberos: (Updatable) Kerberos details needed to create configuration.
-        :param pulumi.Input[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict']] ldap_idmap: (Updatable) Mount target details about the LDAP ID mapping configuration.
+        :param pulumi.Input[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict', 'outputs.MountTargetKerberos']] kerberos: (Updatable) Kerberos details needed to create configuration.
+        :param pulumi.Input[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict', 'outputs.MountTargetLdapIdmap']] ldap_idmap: (Updatable) Mount target details about the LDAP ID mapping configuration.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current 'lifecycleState'.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict', 'outputs.MountTargetLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] mount_target_ipv6ids: The OCIDs of the IPv6 addresses associated with this mount target.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         :param pulumi.Input[_builtins.str] observed_throughput: Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).

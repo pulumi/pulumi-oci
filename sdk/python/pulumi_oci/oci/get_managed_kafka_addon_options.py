@@ -94,7 +94,7 @@ class AwaitableGetManagedKafkaAddonOptionsResult(GetManagedKafkaAddonOptionsResu
 
 
 def get_managed_kafka_addon_options(compartment_id: Optional[_builtins.str] = None,
-                                    filters: Optional[Sequence[Union['GetManagedKafkaAddonOptionsFilterArgs', 'GetManagedKafkaAddonOptionsFilterArgsDict']]] = None,
+                                    filters: Optional[Sequence[Union['GetManagedKafkaAddonOptionsFilterArgs', 'GetManagedKafkaAddonOptionsFilterArgsDict', 'outputs.GetManagedKafkaAddonOptionsFilterResult']]] = None,
                                     name: Optional[_builtins.str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedKafkaAddonOptionsResult:
     """
@@ -130,7 +130,7 @@ def get_managed_kafka_addon_options(compartment_id: Optional[_builtins.str] = No
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
 def get_managed_kafka_addon_options_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedKafkaAddonOptionsFilterArgs', 'GetManagedKafkaAddonOptionsFilterArgsDict']]]]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedKafkaAddonOptionsFilterArgs', 'GetManagedKafkaAddonOptionsFilterArgsDict', 'outputs.GetManagedKafkaAddonOptionsFilterResult']]]]] = None,
                                            name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedKafkaAddonOptionsResult]:
     """

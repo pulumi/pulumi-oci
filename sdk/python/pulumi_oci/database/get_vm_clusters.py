@@ -135,7 +135,7 @@ class AwaitableGetVmClustersResult(GetVmClustersResult):
 def get_vm_clusters(compartment_id: Optional[_builtins.str] = None,
                     display_name: Optional[_builtins.str] = None,
                     exadata_infrastructure_id: Optional[_builtins.str] = None,
-                    filters: Optional[Sequence[Union['GetVmClustersFilterArgs', 'GetVmClustersFilterArgsDict']]] = None,
+                    filters: Optional[Sequence[Union['GetVmClustersFilterArgs', 'GetVmClustersFilterArgsDict', 'outputs.GetVmClustersFilterResult']]] = None,
                     state: Optional[_builtins.str] = None,
                     vm_cluster_type: Optional[_builtins.str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVmClustersResult:
@@ -187,7 +187,7 @@ def get_vm_clusters(compartment_id: Optional[_builtins.str] = None,
 def get_vm_clusters_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            exadata_infrastructure_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVmClustersFilterArgs', 'GetVmClustersFilterArgsDict']]]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVmClustersFilterArgs', 'GetVmClustersFilterArgsDict', 'outputs.GetVmClustersFilterResult']]]]] = None,
                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            vm_cluster_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmClustersResult]:

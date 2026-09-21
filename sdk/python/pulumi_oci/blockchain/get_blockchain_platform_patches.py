@@ -82,7 +82,7 @@ class AwaitableGetBlockchainPlatformPatchesResult(GetBlockchainPlatformPatchesRe
 
 
 def get_blockchain_platform_patches(blockchain_platform_id: Optional[_builtins.str] = None,
-                                    filters: Optional[Sequence[Union['GetBlockchainPlatformPatchesFilterArgs', 'GetBlockchainPlatformPatchesFilterArgsDict']]] = None,
+                                    filters: Optional[Sequence[Union['GetBlockchainPlatformPatchesFilterArgs', 'GetBlockchainPlatformPatchesFilterArgsDict', 'outputs.GetBlockchainPlatformPatchesFilterResult']]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBlockchainPlatformPatchesResult:
     """
     This data source provides the list of Blockchain Platform Patches in Oracle Cloud Infrastructure Blockchain service.
@@ -113,7 +113,7 @@ def get_blockchain_platform_patches(blockchain_platform_id: Optional[_builtins.s
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_blockchain_platform_patches_output(blockchain_platform_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBlockchainPlatformPatchesFilterArgs', 'GetBlockchainPlatformPatchesFilterArgsDict']]]]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBlockchainPlatformPatchesFilterArgs', 'GetBlockchainPlatformPatchesFilterArgsDict', 'outputs.GetBlockchainPlatformPatchesFilterResult']]]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBlockchainPlatformPatchesResult]:
     """
     This data source provides the list of Blockchain Platform Patches in Oracle Cloud Infrastructure Blockchain service.

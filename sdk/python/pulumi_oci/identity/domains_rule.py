@@ -1450,19 +1450,19 @@ class DomainsRule(pulumi.CustomResource):
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
                  condition: pulumi.Input[Optional[_builtins.str]] = None,
-                 condition_group: pulumi.Input[Optional[Union['DomainsRuleConditionGroupArgs', 'DomainsRuleConditionGroupArgsDict']]] = None,
+                 condition_group: pulumi.Input[Optional[Union['DomainsRuleConditionGroupArgs', 'DomainsRuleConditionGroupArgsDict', 'outputs.DomainsRuleConditionGroup']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  external_id: pulumi.Input[Optional[_builtins.str]] = None,
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  locked: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
-                 policy_type: pulumi.Input[Optional[Union['DomainsRulePolicyTypeArgs', 'DomainsRulePolicyTypeArgsDict']]] = None,
+                 policy_type: pulumi.Input[Optional[Union['DomainsRulePolicyTypeArgs', 'DomainsRulePolicyTypeArgsDict', 'outputs.DomainsRulePolicyType']]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
-                 returns: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsRuleReturnArgs', 'DomainsRuleReturnArgsDict']]]]] = None,
+                 returns: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsRuleReturnArgs', 'DomainsRuleReturnArgsDict', 'outputs.DomainsRuleReturn']]]]] = None,
                  rule_groovy: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsRuleTagArgs', 'DomainsRuleTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsRuleTagArgs', 'DomainsRuleTagArgsDict', 'outputs.DomainsRuleTag']]]]] = None,
                  __props__=None):
         """
         This resource provides the Rule resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1548,7 +1548,7 @@ class DomainsRule(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsRuleConditionGroupArgs', 'DomainsRuleConditionGroupArgsDict']] condition_group: (Updatable) Condition or ConditionGroup assigned to the rule
+        :param pulumi.Input[Union['DomainsRuleConditionGroupArgs', 'DomainsRuleConditionGroupArgsDict', 'outputs.DomainsRuleConditionGroup']] condition_group: (Updatable) Condition or ConditionGroup assigned to the rule
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1612,7 +1612,7 @@ class DomainsRule(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: global
-        :param pulumi.Input[Union['DomainsRulePolicyTypeArgs', 'DomainsRulePolicyTypeArgsDict']] policy_type: (Updatable) PolicyType on which the policy is based
+        :param pulumi.Input[Union['DomainsRulePolicyTypeArgs', 'DomainsRulePolicyTypeArgsDict', 'outputs.DomainsRulePolicyType']] policy_type: (Updatable) PolicyType on which the policy is based
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1623,7 +1623,7 @@ class DomainsRule(pulumi.CustomResource):
                * type: complex
                * uniqueness: none
         :param pulumi.Input[_builtins.str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsRuleReturnArgs', 'DomainsRuleReturnArgsDict']]]] returns: (Updatable) The return values are the then portion of a Rule
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsRuleReturnArgs', 'DomainsRuleReturnArgsDict', 'outputs.DomainsRuleReturn']]]] returns: (Updatable) The return values are the then portion of a Rule
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [name]
@@ -1656,7 +1656,7 @@ class DomainsRule(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsRuleTagArgs', 'DomainsRuleTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsRuleTagArgs', 'DomainsRuleTagArgsDict', 'outputs.DomainsRuleTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1751,19 +1751,19 @@ class DomainsRule(pulumi.CustomResource):
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
                  condition: pulumi.Input[Optional[_builtins.str]] = None,
-                 condition_group: pulumi.Input[Optional[Union['DomainsRuleConditionGroupArgs', 'DomainsRuleConditionGroupArgsDict']]] = None,
+                 condition_group: pulumi.Input[Optional[Union['DomainsRuleConditionGroupArgs', 'DomainsRuleConditionGroupArgsDict', 'outputs.DomainsRuleConditionGroup']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  external_id: pulumi.Input[Optional[_builtins.str]] = None,
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  locked: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  ocid: pulumi.Input[Optional[_builtins.str]] = None,
-                 policy_type: pulumi.Input[Optional[Union['DomainsRulePolicyTypeArgs', 'DomainsRulePolicyTypeArgsDict']]] = None,
+                 policy_type: pulumi.Input[Optional[Union['DomainsRulePolicyTypeArgs', 'DomainsRulePolicyTypeArgsDict', 'outputs.DomainsRulePolicyType']]] = None,
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
-                 returns: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsRuleReturnArgs', 'DomainsRuleReturnArgsDict']]]]] = None,
+                 returns: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsRuleReturnArgs', 'DomainsRuleReturnArgsDict', 'outputs.DomainsRuleReturn']]]]] = None,
                  rule_groovy: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsRuleTagArgs', 'DomainsRuleTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsRuleTagArgs', 'DomainsRuleTagArgsDict', 'outputs.DomainsRuleTag']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1826,26 +1826,26 @@ class DomainsRule(pulumi.CustomResource):
             authorization: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             condition: pulumi.Input[Optional[_builtins.str]] = None,
-            condition_group: pulumi.Input[Optional[Union['DomainsRuleConditionGroupArgs', 'DomainsRuleConditionGroupArgsDict']]] = None,
+            condition_group: pulumi.Input[Optional[Union['DomainsRuleConditionGroupArgs', 'DomainsRuleConditionGroupArgsDict', 'outputs.DomainsRuleConditionGroup']]] = None,
             delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             external_id: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsRuleIdcsCreatedByArgs', 'DomainsRuleIdcsCreatedByArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsRuleIdcsCreatedByArgs', 'DomainsRuleIdcsCreatedByArgsDict', 'outputs.DomainsRuleIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsRuleIdcsLastModifiedByArgs', 'DomainsRuleIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsRuleIdcsLastModifiedByArgs', 'DomainsRuleIdcsLastModifiedByArgsDict', 'outputs.DomainsRuleIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             locked: pulumi.Input[Optional[_builtins.bool]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsRuleMetaArgs', 'DomainsRuleMetaArgsDict']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsRuleMetaArgs', 'DomainsRuleMetaArgsDict', 'outputs.DomainsRuleMeta']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             ocid: pulumi.Input[Optional[_builtins.str]] = None,
-            policy_type: pulumi.Input[Optional[Union['DomainsRulePolicyTypeArgs', 'DomainsRulePolicyTypeArgsDict']]] = None,
+            policy_type: pulumi.Input[Optional[Union['DomainsRulePolicyTypeArgs', 'DomainsRulePolicyTypeArgsDict', 'outputs.DomainsRulePolicyType']]] = None,
             resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
-            returns: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsRuleReturnArgs', 'DomainsRuleReturnArgsDict']]]]] = None,
+            returns: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsRuleReturnArgs', 'DomainsRuleReturnArgsDict', 'outputs.DomainsRuleReturn']]]]] = None,
             rule_groovy: pulumi.Input[Optional[_builtins.str]] = None,
             schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsRuleTagArgs', 'DomainsRuleTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsRuleTagArgs', 'DomainsRuleTagArgsDict', 'outputs.DomainsRuleTag']]]]] = None,
             tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None) -> 'DomainsRule':
         """
         Get an existing DomainsRule resource's state with the given name, id, and optional extra
@@ -1891,7 +1891,7 @@ class DomainsRule(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsRuleConditionGroupArgs', 'DomainsRuleConditionGroupArgsDict']] condition_group: (Updatable) Condition or ConditionGroup assigned to the rule
+        :param pulumi.Input[Union['DomainsRuleConditionGroupArgs', 'DomainsRuleConditionGroupArgsDict', 'outputs.DomainsRuleConditionGroup']] condition_group: (Updatable) Condition or ConditionGroup assigned to the rule
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1944,7 +1944,7 @@ class DomainsRule(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsRuleIdcsCreatedByArgs', 'DomainsRuleIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsRuleIdcsCreatedByArgs', 'DomainsRuleIdcsCreatedByArgsDict', 'outputs.DomainsRuleIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1954,7 +1954,7 @@ class DomainsRule(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsRuleIdcsLastModifiedByArgs', 'DomainsRuleIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsRuleIdcsLastModifiedByArgs', 'DomainsRuleIdcsLastModifiedByArgsDict', 'outputs.DomainsRuleIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1994,7 +1994,7 @@ class DomainsRule(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsRuleMetaArgs', 'DomainsRuleMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsRuleMetaArgs', 'DomainsRuleMetaArgsDict', 'outputs.DomainsRuleMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -2027,7 +2027,7 @@ class DomainsRule(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: global
-        :param pulumi.Input[Union['DomainsRulePolicyTypeArgs', 'DomainsRulePolicyTypeArgsDict']] policy_type: (Updatable) PolicyType on which the policy is based
+        :param pulumi.Input[Union['DomainsRulePolicyTypeArgs', 'DomainsRulePolicyTypeArgsDict', 'outputs.DomainsRulePolicyType']] policy_type: (Updatable) PolicyType on which the policy is based
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -2038,7 +2038,7 @@ class DomainsRule(pulumi.CustomResource):
                * type: complex
                * uniqueness: none
         :param pulumi.Input[_builtins.str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsRuleReturnArgs', 'DomainsRuleReturnArgsDict']]]] returns: (Updatable) The return values are the then portion of a Rule
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsRuleReturnArgs', 'DomainsRuleReturnArgsDict', 'outputs.DomainsRuleReturn']]]] returns: (Updatable) The return values are the then portion of a Rule
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [name]
@@ -2071,7 +2071,7 @@ class DomainsRule(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsRuleTagArgs', 'DomainsRuleTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsRuleTagArgs', 'DomainsRuleTagArgsDict', 'outputs.DomainsRuleTag']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]

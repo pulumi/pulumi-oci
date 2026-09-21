@@ -84,7 +84,7 @@ class AwaitableGetScheduledRunsResult(GetScheduledRunsResult):
             scheduled_run_collections=self.scheduled_run_collections)
 
 
-def get_scheduled_runs(filters: Optional[Sequence[Union['GetScheduledRunsFilterArgs', 'GetScheduledRunsFilterArgsDict']]] = None,
+def get_scheduled_runs(filters: Optional[Sequence[Union['GetScheduledRunsFilterArgs', 'GetScheduledRunsFilterArgsDict', 'outputs.GetScheduledRunsFilterResult']]] = None,
                        schedule_id: Optional[_builtins.str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetScheduledRunsResult:
     """
@@ -115,7 +115,7 @@ def get_scheduled_runs(filters: Optional[Sequence[Union['GetScheduledRunsFilterA
         id=pulumi.get(__ret__, 'id'),
         schedule_id=pulumi.get(__ret__, 'schedule_id'),
         scheduled_run_collections=pulumi.get(__ret__, 'scheduled_run_collections'))
-def get_scheduled_runs_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetScheduledRunsFilterArgs', 'GetScheduledRunsFilterArgsDict']]]]] = None,
+def get_scheduled_runs_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetScheduledRunsFilterArgs', 'GetScheduledRunsFilterArgsDict', 'outputs.GetScheduledRunsFilterResult']]]]] = None,
                               schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScheduledRunsResult]:
     """

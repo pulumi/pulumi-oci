@@ -172,7 +172,7 @@ def get_connections(assignable_deployment_id: Optional[_builtins.str] = None,
                     connection_type_not_equal_tos: Optional[Sequence[_builtins.str]] = None,
                     connection_types: Optional[Sequence[_builtins.str]] = None,
                     display_name: Optional[_builtins.str] = None,
-                    filters: Optional[Sequence[Union['GetConnectionsFilterArgs', 'GetConnectionsFilterArgsDict']]] = None,
+                    filters: Optional[Sequence[Union['GetConnectionsFilterArgs', 'GetConnectionsFilterArgsDict', 'outputs.GetConnectionsFilterResult']]] = None,
                     state: Optional[_builtins.str] = None,
                     technology_types: Optional[Sequence[_builtins.str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConnectionsResult:
@@ -243,7 +243,7 @@ def get_connections_output(assignable_deployment_id: pulumi.Input[Optional[Optio
                            connection_type_not_equal_tos: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                            connection_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConnectionsFilterArgs', 'GetConnectionsFilterArgsDict']]]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConnectionsFilterArgs', 'GetConnectionsFilterArgsDict', 'outputs.GetConnectionsFilterResult']]]]] = None,
                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            technology_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectionsResult]:

@@ -110,7 +110,7 @@ class AwaitableGetOdaPrivateEndpointsResult(GetOdaPrivateEndpointsResult):
 
 def get_oda_private_endpoints(compartment_id: Optional[_builtins.str] = None,
                               display_name: Optional[_builtins.str] = None,
-                              filters: Optional[Sequence[Union['GetOdaPrivateEndpointsFilterArgs', 'GetOdaPrivateEndpointsFilterArgsDict']]] = None,
+                              filters: Optional[Sequence[Union['GetOdaPrivateEndpointsFilterArgs', 'GetOdaPrivateEndpointsFilterArgsDict', 'outputs.GetOdaPrivateEndpointsFilterResult']]] = None,
                               state: Optional[_builtins.str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOdaPrivateEndpointsResult:
     """
@@ -156,7 +156,7 @@ def get_oda_private_endpoints(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_oda_private_endpoints_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOdaPrivateEndpointsFilterArgs', 'GetOdaPrivateEndpointsFilterArgsDict']]]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOdaPrivateEndpointsFilterArgs', 'GetOdaPrivateEndpointsFilterArgsDict', 'outputs.GetOdaPrivateEndpointsFilterResult']]]]] = None,
                                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOdaPrivateEndpointsResult]:
     """

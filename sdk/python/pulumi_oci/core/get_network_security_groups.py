@@ -131,7 +131,7 @@ class AwaitableGetNetworkSecurityGroupsResult(GetNetworkSecurityGroupsResult):
 
 def get_network_security_groups(compartment_id: Optional[_builtins.str] = None,
                                 display_name: Optional[_builtins.str] = None,
-                                filters: Optional[Sequence[Union['GetNetworkSecurityGroupsFilterArgs', 'GetNetworkSecurityGroupsFilterArgsDict']]] = None,
+                                filters: Optional[Sequence[Union['GetNetworkSecurityGroupsFilterArgs', 'GetNetworkSecurityGroupsFilterArgsDict', 'outputs.GetNetworkSecurityGroupsFilterResult']]] = None,
                                 state: Optional[_builtins.str] = None,
                                 vcn_id: Optional[_builtins.str] = None,
                                 vlan_id: Optional[_builtins.str] = None,
@@ -183,7 +183,7 @@ def get_network_security_groups(compartment_id: Optional[_builtins.str] = None,
         vlan_id=pulumi.get(__ret__, 'vlan_id'))
 def get_network_security_groups_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkSecurityGroupsFilterArgs', 'GetNetworkSecurityGroupsFilterArgsDict']]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkSecurityGroupsFilterArgs', 'GetNetworkSecurityGroupsFilterArgsDict', 'outputs.GetNetworkSecurityGroupsFilterResult']]]]] = None,
                                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        vcn_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        vlan_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

@@ -101,7 +101,7 @@ class AwaitableGetDbSystemShapesResult(GetDbSystemShapesResult):
 
 def get_db_system_shapes(availability_domain: Optional[_builtins.str] = None,
                          compartment_id: Optional[_builtins.str] = None,
-                         filters: Optional[Sequence[Union['GetDbSystemShapesFilterArgs', 'GetDbSystemShapesFilterArgsDict']]] = None,
+                         filters: Optional[Sequence[Union['GetDbSystemShapesFilterArgs', 'GetDbSystemShapesFilterArgsDict', 'outputs.GetDbSystemShapesFilterResult']]] = None,
                          shape_attribute: Optional[_builtins.str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbSystemShapesResult:
     """
@@ -142,7 +142,7 @@ def get_db_system_shapes(availability_domain: Optional[_builtins.str] = None,
         shape_attribute=pulumi.get(__ret__, 'shape_attribute'))
 def get_db_system_shapes_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemShapesFilterArgs', 'GetDbSystemShapesFilterArgsDict']]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemShapesFilterArgs', 'GetDbSystemShapesFilterArgsDict', 'outputs.GetDbSystemShapesFilterResult']]]]] = None,
                                 shape_attribute: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemShapesResult]:
     """

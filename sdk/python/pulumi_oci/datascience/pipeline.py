@@ -568,19 +568,19 @@ class Pipeline(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 configuration_details: pulumi.Input[Optional[Union['PipelineConfigurationDetailsArgs', 'PipelineConfigurationDetailsArgsDict']]] = None,
+                 configuration_details: pulumi.Input[Optional[Union['PipelineConfigurationDetailsArgs', 'PipelineConfigurationDetailsArgsDict', 'outputs.PipelineConfigurationDetails']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  delete_related_pipeline_runs: pulumi.Input[Optional[_builtins.bool]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 infrastructure_configuration_details: pulumi.Input[Optional[Union['PipelineInfrastructureConfigurationDetailsArgs', 'PipelineInfrastructureConfigurationDetailsArgsDict']]] = None,
-                 log_configuration_details: pulumi.Input[Optional[Union['PipelineLogConfigurationDetailsArgs', 'PipelineLogConfigurationDetailsArgsDict']]] = None,
+                 infrastructure_configuration_details: pulumi.Input[Optional[Union['PipelineInfrastructureConfigurationDetailsArgs', 'PipelineInfrastructureConfigurationDetailsArgsDict', 'outputs.PipelineInfrastructureConfigurationDetails']]] = None,
+                 log_configuration_details: pulumi.Input[Optional[Union['PipelineLogConfigurationDetailsArgs', 'PipelineLogConfigurationDetailsArgsDict', 'outputs.PipelineLogConfigurationDetails']]] = None,
                  parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 step_artifacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStepArtifactArgs', 'PipelineStepArtifactArgsDict']]]]] = None,
-                 step_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStepDetailArgs', 'PipelineStepDetailArgsDict']]]]] = None,
-                 storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStorageMountConfigurationDetailsListArgs', 'PipelineStorageMountConfigurationDetailsListArgsDict']]]]] = None,
+                 step_artifacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStepArtifactArgs', 'PipelineStepArtifactArgsDict', 'outputs.PipelineStepArtifact']]]]] = None,
+                 step_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStepDetailArgs', 'PipelineStepDetailArgsDict', 'outputs.PipelineStepDetail']]]]] = None,
+                 storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStorageMountConfigurationDetailsListArgs', 'PipelineStorageMountConfigurationDetailsListArgsDict', 'outputs.PipelineStorageMountConfigurationDetailsList']]]]] = None,
                  __props__=None):
         """
         This resource provides the Pipeline resource in Oracle Cloud Infrastructure Data Science service.
@@ -602,17 +602,17 @@ class Pipeline(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
-        :param pulumi.Input[Union['PipelineConfigurationDetailsArgs', 'PipelineConfigurationDetailsArgsDict']] configuration_details: (Updatable) The configuration details of a pipeline.
+        :param pulumi.Input[Union['PipelineConfigurationDetailsArgs', 'PipelineConfigurationDetailsArgsDict', 'outputs.PipelineConfigurationDetails']] configuration_details: (Updatable) The configuration details of a pipeline.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the pipeline.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['PipelineInfrastructureConfigurationDetailsArgs', 'PipelineInfrastructureConfigurationDetailsArgsDict']] infrastructure_configuration_details: (Updatable) The infrastructure configuration details of a pipeline or a step.
-        :param pulumi.Input[Union['PipelineLogConfigurationDetailsArgs', 'PipelineLogConfigurationDetailsArgsDict']] log_configuration_details: (Updatable) The pipeline log configuration details.
+        :param pulumi.Input[Union['PipelineInfrastructureConfigurationDetailsArgs', 'PipelineInfrastructureConfigurationDetailsArgsDict', 'outputs.PipelineInfrastructureConfigurationDetails']] infrastructure_configuration_details: (Updatable) The infrastructure configuration details of a pipeline or a step.
+        :param pulumi.Input[Union['PipelineLogConfigurationDetailsArgs', 'PipelineLogConfigurationDetailsArgsDict', 'outputs.PipelineLogConfigurationDetails']] log_configuration_details: (Updatable) The pipeline log configuration details.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] parameters: (Updatable) Parameters used in the pipeline.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineStepDetailArgs', 'PipelineStepDetailArgsDict']]]] step_details: (Updatable) Array of step details for each step.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineStorageMountConfigurationDetailsListArgs', 'PipelineStorageMountConfigurationDetailsListArgsDict']]]] storage_mount_configuration_details_lists: (Updatable) The storage mount details to mount to the instance running the pipeline step.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineStepDetailArgs', 'PipelineStepDetailArgsDict', 'outputs.PipelineStepDetail']]]] step_details: (Updatable) Array of step details for each step.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineStorageMountConfigurationDetailsListArgs', 'PipelineStorageMountConfigurationDetailsListArgsDict', 'outputs.PipelineStorageMountConfigurationDetailsList']]]] storage_mount_configuration_details_lists: (Updatable) The storage mount details to mount to the instance running the pipeline step.
         """
         ...
     @overload
@@ -653,19 +653,19 @@ class Pipeline(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 configuration_details: pulumi.Input[Optional[Union['PipelineConfigurationDetailsArgs', 'PipelineConfigurationDetailsArgsDict']]] = None,
+                 configuration_details: pulumi.Input[Optional[Union['PipelineConfigurationDetailsArgs', 'PipelineConfigurationDetailsArgsDict', 'outputs.PipelineConfigurationDetails']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  delete_related_pipeline_runs: pulumi.Input[Optional[_builtins.bool]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 infrastructure_configuration_details: pulumi.Input[Optional[Union['PipelineInfrastructureConfigurationDetailsArgs', 'PipelineInfrastructureConfigurationDetailsArgsDict']]] = None,
-                 log_configuration_details: pulumi.Input[Optional[Union['PipelineLogConfigurationDetailsArgs', 'PipelineLogConfigurationDetailsArgsDict']]] = None,
+                 infrastructure_configuration_details: pulumi.Input[Optional[Union['PipelineInfrastructureConfigurationDetailsArgs', 'PipelineInfrastructureConfigurationDetailsArgsDict', 'outputs.PipelineInfrastructureConfigurationDetails']]] = None,
+                 log_configuration_details: pulumi.Input[Optional[Union['PipelineLogConfigurationDetailsArgs', 'PipelineLogConfigurationDetailsArgsDict', 'outputs.PipelineLogConfigurationDetails']]] = None,
                  parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 step_artifacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStepArtifactArgs', 'PipelineStepArtifactArgsDict']]]]] = None,
-                 step_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStepDetailArgs', 'PipelineStepDetailArgsDict']]]]] = None,
-                 storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStorageMountConfigurationDetailsListArgs', 'PipelineStorageMountConfigurationDetailsListArgsDict']]]]] = None,
+                 step_artifacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStepArtifactArgs', 'PipelineStepArtifactArgsDict', 'outputs.PipelineStepArtifact']]]]] = None,
+                 step_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStepDetailArgs', 'PipelineStepDetailArgsDict', 'outputs.PipelineStepDetail']]]]] = None,
+                 storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStorageMountConfigurationDetailsListArgs', 'PipelineStorageMountConfigurationDetailsListArgsDict', 'outputs.PipelineStorageMountConfigurationDetailsList']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -712,22 +712,22 @@ class Pipeline(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            configuration_details: pulumi.Input[Optional[Union['PipelineConfigurationDetailsArgs', 'PipelineConfigurationDetailsArgsDict']]] = None,
+            configuration_details: pulumi.Input[Optional[Union['PipelineConfigurationDetailsArgs', 'PipelineConfigurationDetailsArgsDict', 'outputs.PipelineConfigurationDetails']]] = None,
             created_by: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             delete_related_pipeline_runs: pulumi.Input[Optional[_builtins.bool]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            infrastructure_configuration_details: pulumi.Input[Optional[Union['PipelineInfrastructureConfigurationDetailsArgs', 'PipelineInfrastructureConfigurationDetailsArgsDict']]] = None,
+            infrastructure_configuration_details: pulumi.Input[Optional[Union['PipelineInfrastructureConfigurationDetailsArgs', 'PipelineInfrastructureConfigurationDetailsArgsDict', 'outputs.PipelineInfrastructureConfigurationDetails']]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            log_configuration_details: pulumi.Input[Optional[Union['PipelineLogConfigurationDetailsArgs', 'PipelineLogConfigurationDetailsArgsDict']]] = None,
+            log_configuration_details: pulumi.Input[Optional[Union['PipelineLogConfigurationDetailsArgs', 'PipelineLogConfigurationDetailsArgsDict', 'outputs.PipelineLogConfigurationDetails']]] = None,
             parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             project_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            step_artifacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStepArtifactArgs', 'PipelineStepArtifactArgsDict']]]]] = None,
-            step_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStepDetailArgs', 'PipelineStepDetailArgsDict']]]]] = None,
-            storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStorageMountConfigurationDetailsListArgs', 'PipelineStorageMountConfigurationDetailsListArgsDict']]]]] = None,
+            step_artifacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStepArtifactArgs', 'PipelineStepArtifactArgsDict', 'outputs.PipelineStepArtifact']]]]] = None,
+            step_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStepDetailArgs', 'PipelineStepDetailArgsDict', 'outputs.PipelineStepDetail']]]]] = None,
+            storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStorageMountConfigurationDetailsListArgs', 'PipelineStorageMountConfigurationDetailsListArgsDict', 'outputs.PipelineStorageMountConfigurationDetailsList']]]]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'Pipeline':
@@ -739,20 +739,20 @@ class Pipeline(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
-        :param pulumi.Input[Union['PipelineConfigurationDetailsArgs', 'PipelineConfigurationDetailsArgsDict']] configuration_details: (Updatable) The configuration details of a pipeline.
+        :param pulumi.Input[Union['PipelineConfigurationDetailsArgs', 'PipelineConfigurationDetailsArgsDict', 'outputs.PipelineConfigurationDetails']] configuration_details: (Updatable) The configuration details of a pipeline.
         :param pulumi.Input[_builtins.str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the pipeline.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['PipelineInfrastructureConfigurationDetailsArgs', 'PipelineInfrastructureConfigurationDetailsArgsDict']] infrastructure_configuration_details: (Updatable) The infrastructure configuration details of a pipeline or a step.
+        :param pulumi.Input[Union['PipelineInfrastructureConfigurationDetailsArgs', 'PipelineInfrastructureConfigurationDetailsArgsDict', 'outputs.PipelineInfrastructureConfigurationDetails']] infrastructure_configuration_details: (Updatable) The infrastructure configuration details of a pipeline or a step.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        :param pulumi.Input[Union['PipelineLogConfigurationDetailsArgs', 'PipelineLogConfigurationDetailsArgsDict']] log_configuration_details: (Updatable) The pipeline log configuration details.
+        :param pulumi.Input[Union['PipelineLogConfigurationDetailsArgs', 'PipelineLogConfigurationDetailsArgsDict', 'outputs.PipelineLogConfigurationDetails']] log_configuration_details: (Updatable) The pipeline log configuration details.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] parameters: (Updatable) Parameters used in the pipeline.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
         :param pulumi.Input[_builtins.str] state: The current state of the pipeline.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineStepDetailArgs', 'PipelineStepDetailArgsDict']]]] step_details: (Updatable) Array of step details for each step.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineStorageMountConfigurationDetailsListArgs', 'PipelineStorageMountConfigurationDetailsListArgsDict']]]] storage_mount_configuration_details_lists: (Updatable) The storage mount details to mount to the instance running the pipeline step.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineStepDetailArgs', 'PipelineStepDetailArgsDict', 'outputs.PipelineStepDetail']]]] step_details: (Updatable) Array of step details for each step.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineStorageMountConfigurationDetailsListArgs', 'PipelineStorageMountConfigurationDetailsListArgsDict', 'outputs.PipelineStorageMountConfigurationDetailsList']]]] storage_mount_configuration_details_lists: (Updatable) The storage mount details to mount to the instance running the pipeline step.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
         :param pulumi.Input[_builtins.str] time_updated: The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z

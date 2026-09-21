@@ -139,7 +139,7 @@ def get_onprem_connectors(access_level: Optional[_builtins.str] = None,
                           compartment_id: Optional[_builtins.str] = None,
                           compartment_id_in_subtree: Optional[_builtins.bool] = None,
                           display_name: Optional[_builtins.str] = None,
-                          filters: Optional[Sequence[Union['GetOnpremConnectorsFilterArgs', 'GetOnpremConnectorsFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetOnpremConnectorsFilterArgs', 'GetOnpremConnectorsFilterArgsDict', 'outputs.GetOnpremConnectorsFilterResult']]] = None,
                           on_prem_connector_id: Optional[_builtins.str] = None,
                           state: Optional[_builtins.str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOnpremConnectorsResult:
@@ -195,7 +195,7 @@ def get_onprem_connectors_output(access_level: pulumi.Input[Optional[Optional[_b
                                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOnpremConnectorsFilterArgs', 'GetOnpremConnectorsFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOnpremConnectorsFilterArgs', 'GetOnpremConnectorsFilterArgsDict', 'outputs.GetOnpremConnectorsFilterResult']]]]] = None,
                                  on_prem_connector_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOnpremConnectorsResult]:

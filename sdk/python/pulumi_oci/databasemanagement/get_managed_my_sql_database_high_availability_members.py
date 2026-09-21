@@ -81,7 +81,7 @@ class AwaitableGetManagedMySqlDatabaseHighAvailabilityMembersResult(GetManagedMy
             managed_my_sql_database_id=self.managed_my_sql_database_id)
 
 
-def get_managed_my_sql_database_high_availability_members(filters: Optional[Sequence[Union['GetManagedMySqlDatabaseHighAvailabilityMembersFilterArgs', 'GetManagedMySqlDatabaseHighAvailabilityMembersFilterArgsDict']]] = None,
+def get_managed_my_sql_database_high_availability_members(filters: Optional[Sequence[Union['GetManagedMySqlDatabaseHighAvailabilityMembersFilterArgs', 'GetManagedMySqlDatabaseHighAvailabilityMembersFilterArgsDict', 'outputs.GetManagedMySqlDatabaseHighAvailabilityMembersFilterResult']]] = None,
                                                           managed_my_sql_database_id: Optional[_builtins.str] = None,
                                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedMySqlDatabaseHighAvailabilityMembersResult:
     """
@@ -113,7 +113,7 @@ def get_managed_my_sql_database_high_availability_members(filters: Optional[Sequ
         id=pulumi.get(__ret__, 'id'),
         managed_my_sql_database_high_availability_member_collections=pulumi.get(__ret__, 'managed_my_sql_database_high_availability_member_collections'),
         managed_my_sql_database_id=pulumi.get(__ret__, 'managed_my_sql_database_id'))
-def get_managed_my_sql_database_high_availability_members_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedMySqlDatabaseHighAvailabilityMembersFilterArgs', 'GetManagedMySqlDatabaseHighAvailabilityMembersFilterArgsDict']]]]] = None,
+def get_managed_my_sql_database_high_availability_members_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedMySqlDatabaseHighAvailabilityMembersFilterArgs', 'GetManagedMySqlDatabaseHighAvailabilityMembersFilterArgsDict', 'outputs.GetManagedMySqlDatabaseHighAvailabilityMembersFilterResult']]]]] = None,
                                                                  managed_my_sql_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedMySqlDatabaseHighAvailabilityMembersResult]:
     """

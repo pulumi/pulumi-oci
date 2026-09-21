@@ -355,7 +355,7 @@ class OciCacheConfigSet(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 configuration_details: pulumi.Input[Optional[Union['OciCacheConfigSetConfigurationDetailsArgs', 'OciCacheConfigSetConfigurationDetailsArgsDict']]] = None,
+                 configuration_details: pulumi.Input[Optional[Union['OciCacheConfigSetConfigurationDetailsArgs', 'OciCacheConfigSetConfigurationDetailsArgsDict', 'outputs.OciCacheConfigSetConfigurationDetails']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -407,7 +407,7 @@ class OciCacheConfigSet(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Oracle Cloud Infrastructure Cache Config Set.
-        :param pulumi.Input[Union['OciCacheConfigSetConfigurationDetailsArgs', 'OciCacheConfigSetConfigurationDetailsArgsDict']] configuration_details: List of Oracle Cloud Infrastructure Cache Config Set Values.
+        :param pulumi.Input[Union['OciCacheConfigSetConfigurationDetailsArgs', 'OciCacheConfigSetConfigurationDetailsArgsDict', 'outputs.OciCacheConfigSetConfigurationDetails']] configuration_details: List of Oracle Cloud Infrastructure Cache Config Set Values.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Description for the custom Oracle Cloud Infrastructure Cache Config Set.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -481,7 +481,7 @@ class OciCacheConfigSet(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 configuration_details: pulumi.Input[Optional[Union['OciCacheConfigSetConfigurationDetailsArgs', 'OciCacheConfigSetConfigurationDetailsArgsDict']]] = None,
+                 configuration_details: pulumi.Input[Optional[Union['OciCacheConfigSetConfigurationDetailsArgs', 'OciCacheConfigSetConfigurationDetailsArgsDict', 'outputs.OciCacheConfigSetConfigurationDetails']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -527,7 +527,7 @@ class OciCacheConfigSet(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            configuration_details: pulumi.Input[Optional[Union['OciCacheConfigSetConfigurationDetailsArgs', 'OciCacheConfigSetConfigurationDetailsArgsDict']]] = None,
+            configuration_details: pulumi.Input[Optional[Union['OciCacheConfigSetConfigurationDetailsArgs', 'OciCacheConfigSetConfigurationDetailsArgsDict', 'outputs.OciCacheConfigSetConfigurationDetails']]] = None,
             default_config_set_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -546,7 +546,7 @@ class OciCacheConfigSet(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Oracle Cloud Infrastructure Cache Config Set.
-        :param pulumi.Input[Union['OciCacheConfigSetConfigurationDetailsArgs', 'OciCacheConfigSetConfigurationDetailsArgsDict']] configuration_details: List of Oracle Cloud Infrastructure Cache Config Set Values.
+        :param pulumi.Input[Union['OciCacheConfigSetConfigurationDetailsArgs', 'OciCacheConfigSetConfigurationDetailsArgsDict', 'outputs.OciCacheConfigSetConfigurationDetails']] configuration_details: List of Oracle Cloud Infrastructure Cache Config Set Values.
         :param pulumi.Input[_builtins.str] default_config_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the default Oracle Cloud Infrastructure Cache Config Set which the custom Oracle Cloud Infrastructure Cache Config Set is based upon.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Description for the custom Oracle Cloud Infrastructure Cache Config Set.

@@ -84,7 +84,7 @@ class AwaitableGetApiKeysResult(GetApiKeysResult):
             user_id=self.user_id)
 
 
-def get_api_keys(filters: Optional[Sequence[Union['GetApiKeysFilterArgs', 'GetApiKeysFilterArgsDict']]] = None,
+def get_api_keys(filters: Optional[Sequence[Union['GetApiKeysFilterArgs', 'GetApiKeysFilterArgsDict', 'outputs.GetApiKeysFilterResult']]] = None,
                  user_id: Optional[_builtins.str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApiKeysResult:
     """
@@ -118,7 +118,7 @@ def get_api_keys(filters: Optional[Sequence[Union['GetApiKeysFilterArgs', 'GetAp
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         user_id=pulumi.get(__ret__, 'user_id'))
-def get_api_keys_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetApiKeysFilterArgs', 'GetApiKeysFilterArgsDict']]]]] = None,
+def get_api_keys_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetApiKeysFilterArgs', 'GetApiKeysFilterArgsDict', 'outputs.GetApiKeysFilterResult']]]]] = None,
                         user_id: pulumi.Input[Optional[_builtins.str]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApiKeysResult]:
     """

@@ -82,7 +82,7 @@ class AwaitableGetAssessmentObjectTypesResult(GetAssessmentObjectTypesResult):
 
 
 def get_assessment_object_types(connection_type: Optional[_builtins.str] = None,
-                                filters: Optional[Sequence[Union['GetAssessmentObjectTypesFilterArgs', 'GetAssessmentObjectTypesFilterArgsDict']]] = None,
+                                filters: Optional[Sequence[Union['GetAssessmentObjectTypesFilterArgs', 'GetAssessmentObjectTypesFilterArgsDict', 'outputs.GetAssessmentObjectTypesFilterResult']]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAssessmentObjectTypesResult:
     """
     This data source provides the list of Assessment Object Types in Oracle Cloud Infrastructure Database Migration service.
@@ -113,7 +113,7 @@ def get_assessment_object_types(connection_type: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_assessment_object_types_output(connection_type: pulumi.Input[Optional[_builtins.str]] = None,
-                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAssessmentObjectTypesFilterArgs', 'GetAssessmentObjectTypesFilterArgsDict']]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAssessmentObjectTypesFilterArgs', 'GetAssessmentObjectTypesFilterArgsDict', 'outputs.GetAssessmentObjectTypesFilterResult']]]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAssessmentObjectTypesResult]:
     """
     This data source provides the list of Assessment Object Types in Oracle Cloud Infrastructure Database Migration service.

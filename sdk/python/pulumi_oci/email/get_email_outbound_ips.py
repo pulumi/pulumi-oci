@@ -119,7 +119,7 @@ class AwaitableGetEmailOutboundIpsResult(GetEmailOutboundIpsResult):
 
 def get_email_outbound_ips(assignment_state: Optional[_builtins.str] = None,
                            compartment_id: Optional[_builtins.str] = None,
-                           filters: Optional[Sequence[Union['GetEmailOutboundIpsFilterArgs', 'GetEmailOutboundIpsFilterArgsDict']]] = None,
+                           filters: Optional[Sequence[Union['GetEmailOutboundIpsFilterArgs', 'GetEmailOutboundIpsFilterArgsDict', 'outputs.GetEmailOutboundIpsFilterResult']]] = None,
                            outbound_ip: Optional[_builtins.str] = None,
                            state: Optional[_builtins.str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEmailOutboundIpsResult:
@@ -165,7 +165,7 @@ def get_email_outbound_ips(assignment_state: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_email_outbound_ips_output(assignment_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetEmailOutboundIpsFilterArgs', 'GetEmailOutboundIpsFilterArgsDict']]]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetEmailOutboundIpsFilterArgs', 'GetEmailOutboundIpsFilterArgsDict', 'outputs.GetEmailOutboundIpsFilterResult']]]]] = None,
                                   outbound_ip: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEmailOutboundIpsResult]:

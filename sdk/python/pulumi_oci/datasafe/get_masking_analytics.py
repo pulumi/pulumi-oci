@@ -143,7 +143,7 @@ class AwaitableGetMaskingAnalyticsResult(GetMaskingAnalyticsResult):
 
 def get_masking_analytics(compartment_id: Optional[_builtins.str] = None,
                           compartment_id_in_subtree: Optional[_builtins.bool] = None,
-                          filters: Optional[Sequence[Union['GetMaskingAnalyticsFilterArgs', 'GetMaskingAnalyticsFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetMaskingAnalyticsFilterArgs', 'GetMaskingAnalyticsFilterArgsDict', 'outputs.GetMaskingAnalyticsFilterResult']]] = None,
                           group_by: Optional[_builtins.str] = None,
                           masking_policy_id: Optional[_builtins.str] = None,
                           sensitive_type_id: Optional[_builtins.str] = None,
@@ -206,7 +206,7 @@ def get_masking_analytics(compartment_id: Optional[_builtins.str] = None,
         target_id=pulumi.get(__ret__, 'target_id'))
 def get_masking_analytics_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingAnalyticsFilterArgs', 'GetMaskingAnalyticsFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingAnalyticsFilterArgs', 'GetMaskingAnalyticsFilterArgsDict', 'outputs.GetMaskingAnalyticsFilterResult']]]]] = None,
                                  group_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  masking_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  sensitive_type_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

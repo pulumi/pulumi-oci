@@ -82,7 +82,7 @@ class AwaitableGetDeploymentEnvironmentsResult(GetDeploymentEnvironmentsResult):
 
 
 def get_deployment_environments(compartment_id: Optional[_builtins.str] = None,
-                                filters: Optional[Sequence[Union['GetDeploymentEnvironmentsFilterArgs', 'GetDeploymentEnvironmentsFilterArgsDict']]] = None,
+                                filters: Optional[Sequence[Union['GetDeploymentEnvironmentsFilterArgs', 'GetDeploymentEnvironmentsFilterArgsDict', 'outputs.GetDeploymentEnvironmentsFilterResult']]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeploymentEnvironmentsResult:
     """
     This data source provides the list of Deployment Environments in Oracle Cloud Infrastructure Golden Gate service.
@@ -113,7 +113,7 @@ def get_deployment_environments(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_deployment_environments_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDeploymentEnvironmentsFilterArgs', 'GetDeploymentEnvironmentsFilterArgsDict']]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDeploymentEnvironmentsFilterArgs', 'GetDeploymentEnvironmentsFilterArgsDict', 'outputs.GetDeploymentEnvironmentsFilterResult']]]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentEnvironmentsResult]:
     """
     This data source provides the list of Deployment Environments in Oracle Cloud Infrastructure Golden Gate service.

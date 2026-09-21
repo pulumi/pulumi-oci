@@ -82,7 +82,7 @@ class AwaitableGetAutonomousDatabaseRefreshableClonesResult(GetAutonomousDatabas
 
 
 def get_autonomous_database_refreshable_clones(autonomous_database_id: Optional[_builtins.str] = None,
-                                               filters: Optional[Sequence[Union['GetAutonomousDatabaseRefreshableClonesFilterArgs', 'GetAutonomousDatabaseRefreshableClonesFilterArgsDict']]] = None,
+                                               filters: Optional[Sequence[Union['GetAutonomousDatabaseRefreshableClonesFilterArgs', 'GetAutonomousDatabaseRefreshableClonesFilterArgsDict', 'outputs.GetAutonomousDatabaseRefreshableClonesFilterResult']]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabaseRefreshableClonesResult:
     """
     This data source provides the list of Autonomous Database Refreshable Clones in Oracle Cloud Infrastructure Database service.
@@ -113,7 +113,7 @@ def get_autonomous_database_refreshable_clones(autonomous_database_id: Optional[
         id=pulumi.get(__ret__, 'id'),
         refreshable_clone_collections=pulumi.get(__ret__, 'refreshable_clone_collections'))
 def get_autonomous_database_refreshable_clones_output(autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDatabaseRefreshableClonesFilterArgs', 'GetAutonomousDatabaseRefreshableClonesFilterArgsDict']]]]] = None,
+                                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDatabaseRefreshableClonesFilterArgs', 'GetAutonomousDatabaseRefreshableClonesFilterArgsDict', 'outputs.GetAutonomousDatabaseRefreshableClonesFilterResult']]]]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabaseRefreshableClonesResult]:
     """
     This data source provides the list of Autonomous Database Refreshable Clones in Oracle Cloud Infrastructure Database service.

@@ -105,7 +105,7 @@ class AwaitableGetManagedKafkaKafkaClusterAddonsResult(GetManagedKafkaKafkaClust
             state=self.state)
 
 
-def get_managed_kafka_kafka_cluster_addons(filters: Optional[Sequence[Union['GetManagedKafkaKafkaClusterAddonsFilterArgs', 'GetManagedKafkaKafkaClusterAddonsFilterArgsDict']]] = None,
+def get_managed_kafka_kafka_cluster_addons(filters: Optional[Sequence[Union['GetManagedKafkaKafkaClusterAddonsFilterArgs', 'GetManagedKafkaKafkaClusterAddonsFilterArgsDict', 'outputs.GetManagedKafkaKafkaClusterAddonsFilterResult']]] = None,
                                            kafka_cluster_id: Optional[_builtins.str] = None,
                                            name: Optional[_builtins.str] = None,
                                            state: Optional[_builtins.str] = None,
@@ -146,7 +146,7 @@ def get_managed_kafka_kafka_cluster_addons(filters: Optional[Sequence[Union['Get
         kafka_cluster_id=pulumi.get(__ret__, 'kafka_cluster_id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-def get_managed_kafka_kafka_cluster_addons_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedKafkaKafkaClusterAddonsFilterArgs', 'GetManagedKafkaKafkaClusterAddonsFilterArgsDict']]]]] = None,
+def get_managed_kafka_kafka_cluster_addons_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedKafkaKafkaClusterAddonsFilterArgs', 'GetManagedKafkaKafkaClusterAddonsFilterArgsDict', 'outputs.GetManagedKafkaKafkaClusterAddonsFilterResult']]]]] = None,
                                                   kafka_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                   name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

@@ -109,7 +109,7 @@ class AwaitableGetBillingScheduleResult(GetBillingScheduleResult):
 
 
 def get_billing_schedule(compartment_id: Optional[_builtins.str] = None,
-                         filters: Optional[Sequence[Union['GetBillingScheduleFilterArgs', 'GetBillingScheduleFilterArgsDict']]] = None,
+                         filters: Optional[Sequence[Union['GetBillingScheduleFilterArgs', 'GetBillingScheduleFilterArgsDict', 'outputs.GetBillingScheduleFilterResult']]] = None,
                          subscribed_service_id: Optional[_builtins.str] = None,
                          subscription_id: Optional[_builtins.str] = None,
                          x_one_origin_region: Optional[_builtins.str] = None,
@@ -156,7 +156,7 @@ def get_billing_schedule(compartment_id: Optional[_builtins.str] = None,
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         x_one_origin_region=pulumi.get(__ret__, 'x_one_origin_region'))
 def get_billing_schedule_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBillingScheduleFilterArgs', 'GetBillingScheduleFilterArgsDict']]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBillingScheduleFilterArgs', 'GetBillingScheduleFilterArgsDict', 'outputs.GetBillingScheduleFilterResult']]]]] = None,
                                 subscribed_service_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 x_one_origin_region: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

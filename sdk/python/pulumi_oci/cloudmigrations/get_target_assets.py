@@ -118,7 +118,7 @@ class AwaitableGetTargetAssetsResult(GetTargetAssetsResult):
 
 
 def get_target_assets(display_name: Optional[_builtins.str] = None,
-                      filters: Optional[Sequence[Union['GetTargetAssetsFilterArgs', 'GetTargetAssetsFilterArgsDict']]] = None,
+                      filters: Optional[Sequence[Union['GetTargetAssetsFilterArgs', 'GetTargetAssetsFilterArgsDict', 'outputs.GetTargetAssetsFilterResult']]] = None,
                       migration_plan_id: Optional[_builtins.str] = None,
                       state: Optional[_builtins.str] = None,
                       target_asset_id: Optional[_builtins.str] = None,
@@ -164,7 +164,7 @@ def get_target_assets(display_name: Optional[_builtins.str] = None,
         target_asset_collections=pulumi.get(__ret__, 'target_asset_collections'),
         target_asset_id=pulumi.get(__ret__, 'target_asset_id'))
 def get_target_assets_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTargetAssetsFilterArgs', 'GetTargetAssetsFilterArgsDict']]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTargetAssetsFilterArgs', 'GetTargetAssetsFilterArgsDict', 'outputs.GetTargetAssetsFilterResult']]]]] = None,
                              migration_plan_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              target_asset_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

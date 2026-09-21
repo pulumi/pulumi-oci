@@ -122,7 +122,7 @@ class AwaitableGetInternalOccmDemandSignalsResult(GetInternalOccmDemandSignalsRe
 
 def get_internal_occm_demand_signals(compartment_id: Optional[_builtins.str] = None,
                                      display_name: Optional[_builtins.str] = None,
-                                     filters: Optional[Sequence[Union['GetInternalOccmDemandSignalsFilterArgs', 'GetInternalOccmDemandSignalsFilterArgsDict']]] = None,
+                                     filters: Optional[Sequence[Union['GetInternalOccmDemandSignalsFilterArgs', 'GetInternalOccmDemandSignalsFilterArgsDict', 'outputs.GetInternalOccmDemandSignalsFilterResult']]] = None,
                                      id: Optional[_builtins.str] = None,
                                      lifecycle_details: Optional[_builtins.str] = None,
                                      occ_customer_group_id: Optional[_builtins.str] = None,
@@ -172,7 +172,7 @@ def get_internal_occm_demand_signals(compartment_id: Optional[_builtins.str] = N
         occ_customer_group_id=pulumi.get(__ret__, 'occ_customer_group_id'))
 def get_internal_occm_demand_signals_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInternalOccmDemandSignalsFilterArgs', 'GetInternalOccmDemandSignalsFilterArgsDict']]]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInternalOccmDemandSignalsFilterArgs', 'GetInternalOccmDemandSignalsFilterArgsDict', 'outputs.GetInternalOccmDemandSignalsFilterResult']]]]] = None,
                                             id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             lifecycle_details: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             occ_customer_group_id: pulumi.Input[Optional[_builtins.str]] = None,

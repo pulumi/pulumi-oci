@@ -97,7 +97,7 @@ class AwaitableGetJavaDownloadsJavaLicensesResult(GetJavaDownloadsJavaLicensesRe
 
 
 def get_java_downloads_java_licenses(display_name: Optional[_builtins.str] = None,
-                                     filters: Optional[Sequence[Union['GetJavaDownloadsJavaLicensesFilterArgs', 'GetJavaDownloadsJavaLicensesFilterArgsDict']]] = None,
+                                     filters: Optional[Sequence[Union['GetJavaDownloadsJavaLicensesFilterArgs', 'GetJavaDownloadsJavaLicensesFilterArgsDict', 'outputs.GetJavaDownloadsJavaLicensesFilterResult']]] = None,
                                      license_type: Optional[_builtins.str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetJavaDownloadsJavaLicensesResult:
     """
@@ -133,7 +133,7 @@ def get_java_downloads_java_licenses(display_name: Optional[_builtins.str] = Non
         java_license_collections=pulumi.get(__ret__, 'java_license_collections'),
         license_type=pulumi.get(__ret__, 'license_type'))
 def get_java_downloads_java_licenses_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJavaDownloadsJavaLicensesFilterArgs', 'GetJavaDownloadsJavaLicensesFilterArgsDict']]]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJavaDownloadsJavaLicensesFilterArgs', 'GetJavaDownloadsJavaLicensesFilterArgsDict', 'outputs.GetJavaDownloadsJavaLicensesFilterResult']]]]] = None,
                                             license_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJavaDownloadsJavaLicensesResult]:
     """

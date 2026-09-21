@@ -152,7 +152,7 @@ class AwaitableGetMetricExtensionsResult(GetMetricExtensionsResult):
 
 def get_metric_extensions(compartment_id: Optional[_builtins.str] = None,
                           enabled_on_resource_id: Optional[_builtins.str] = None,
-                          filters: Optional[Sequence[Union['GetMetricExtensionsFilterArgs', 'GetMetricExtensionsFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetMetricExtensionsFilterArgs', 'GetMetricExtensionsFilterArgsDict', 'outputs.GetMetricExtensionsFilterResult']]] = None,
                           metric_extension_id: Optional[_builtins.str] = None,
                           name: Optional[_builtins.str] = None,
                           resource_type: Optional[_builtins.str] = None,
@@ -213,7 +213,7 @@ def get_metric_extensions(compartment_id: Optional[_builtins.str] = None,
         status=pulumi.get(__ret__, 'status'))
 def get_metric_extensions_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  enabled_on_resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMetricExtensionsFilterArgs', 'GetMetricExtensionsFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMetricExtensionsFilterArgs', 'GetMetricExtensionsFilterArgsDict', 'outputs.GetMetricExtensionsFilterResult']]]]] = None,
                                  metric_extension_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

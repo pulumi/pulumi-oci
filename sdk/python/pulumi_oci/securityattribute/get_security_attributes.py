@@ -96,7 +96,7 @@ class AwaitableGetSecurityAttributesResult(GetSecurityAttributesResult):
             state=self.state)
 
 
-def get_security_attributes(filters: Optional[Sequence[Union['GetSecurityAttributesFilterArgs', 'GetSecurityAttributesFilterArgsDict']]] = None,
+def get_security_attributes(filters: Optional[Sequence[Union['GetSecurityAttributesFilterArgs', 'GetSecurityAttributesFilterArgsDict', 'outputs.GetSecurityAttributesFilterResult']]] = None,
                             security_attribute_namespace_id: Optional[_builtins.str] = None,
                             state: Optional[_builtins.str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityAttributesResult:
@@ -132,7 +132,7 @@ def get_security_attributes(filters: Optional[Sequence[Union['GetSecurityAttribu
         security_attribute_namespace_id=pulumi.get(__ret__, 'security_attribute_namespace_id'),
         security_attributes=pulumi.get(__ret__, 'security_attributes'),
         state=pulumi.get(__ret__, 'state'))
-def get_security_attributes_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityAttributesFilterArgs', 'GetSecurityAttributesFilterArgsDict']]]]] = None,
+def get_security_attributes_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityAttributesFilterArgs', 'GetSecurityAttributesFilterArgsDict', 'outputs.GetSecurityAttributesFilterResult']]]]] = None,
                                    security_attribute_namespace_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAttributesResult]:

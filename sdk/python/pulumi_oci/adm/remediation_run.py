@@ -510,7 +510,7 @@ class RemediationRun(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             remediation_recipe_id: pulumi.Input[Optional[_builtins.str]] = None,
             remediation_run_source: pulumi.Input[Optional[_builtins.str]] = None,
-            stages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RemediationRunStageArgs', 'RemediationRunStageArgsDict']]]]] = None,
+            stages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RemediationRunStageArgs', 'RemediationRunStageArgsDict', 'outputs.RemediationRunStage']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -534,7 +534,7 @@ class RemediationRun(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] remediation_run_source: The source that triggered the Remediation Recipe.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RemediationRunStageArgs', 'RemediationRunStageArgsDict']]]] stages: The list of remediation run stage summaries.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RemediationRunStageArgs', 'RemediationRunStageArgsDict', 'outputs.RemediationRunStage']]]] stages: The list of remediation run stage summaries.
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the remediation run.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).

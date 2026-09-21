@@ -1002,8 +1002,8 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  status: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMySmtpCredentialTagArgs', 'DomainsMySmtpCredentialTagArgsDict']]]]] = None,
-                 user: pulumi.Input[Optional[Union['DomainsMySmtpCredentialUserArgs', 'DomainsMySmtpCredentialUserArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMySmtpCredentialTagArgs', 'DomainsMySmtpCredentialTagArgsDict', 'outputs.DomainsMySmtpCredentialTag']]]]] = None,
+                 user: pulumi.Input[Optional[Union['DomainsMySmtpCredentialUserArgs', 'DomainsMySmtpCredentialUserArgsDict', 'outputs.DomainsMySmtpCredentialUser']]] = None,
                  __props__=None):
         """
         This resource provides the My Smtp Credential resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1109,7 +1109,7 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
                * returned: never
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMySmtpCredentialTagArgs', 'DomainsMySmtpCredentialTagArgsDict']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMySmtpCredentialTagArgs', 'DomainsMySmtpCredentialTagArgsDict', 'outputs.DomainsMySmtpCredentialTag']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1120,7 +1120,7 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsMySmtpCredentialUserArgs', 'DomainsMySmtpCredentialUserArgsDict']] user: User linked to smtp credential
+        :param pulumi.Input[Union['DomainsMySmtpCredentialUserArgs', 'DomainsMySmtpCredentialUserArgsDict', 'outputs.DomainsMySmtpCredentialUser']] user: User linked to smtp credential
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1204,8 +1204,8 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
                  resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
                  schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  status: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMySmtpCredentialTagArgs', 'DomainsMySmtpCredentialTagArgsDict']]]]] = None,
-                 user: pulumi.Input[Optional[Union['DomainsMySmtpCredentialUserArgs', 'DomainsMySmtpCredentialUserArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMySmtpCredentialTagArgs', 'DomainsMySmtpCredentialTagArgsDict', 'outputs.DomainsMySmtpCredentialTag']]]]] = None,
+                 user: pulumi.Input[Optional[Union['DomainsMySmtpCredentialUserArgs', 'DomainsMySmtpCredentialUserArgsDict', 'outputs.DomainsMySmtpCredentialUser']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1255,19 +1255,19 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
             expires_on: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMySmtpCredentialIdcsCreatedByArgs', 'DomainsMySmtpCredentialIdcsCreatedByArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMySmtpCredentialIdcsCreatedByArgs', 'DomainsMySmtpCredentialIdcsCreatedByArgsDict', 'outputs.DomainsMySmtpCredentialIdcsCreatedBy']]]]] = None,
             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMySmtpCredentialIdcsLastModifiedByArgs', 'DomainsMySmtpCredentialIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMySmtpCredentialIdcsLastModifiedByArgs', 'DomainsMySmtpCredentialIdcsLastModifiedByArgsDict', 'outputs.DomainsMySmtpCredentialIdcsLastModifiedBy']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMySmtpCredentialMetaArgs', 'DomainsMySmtpCredentialMetaArgsDict']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMySmtpCredentialMetaArgs', 'DomainsMySmtpCredentialMetaArgsDict', 'outputs.DomainsMySmtpCredentialMeta']]]]] = None,
             ocid: pulumi.Input[Optional[_builtins.str]] = None,
             resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
             schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMySmtpCredentialTagArgs', 'DomainsMySmtpCredentialTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMySmtpCredentialTagArgs', 'DomainsMySmtpCredentialTagArgsDict', 'outputs.DomainsMySmtpCredentialTag']]]]] = None,
             tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
-            user: pulumi.Input[Optional[Union['DomainsMySmtpCredentialUserArgs', 'DomainsMySmtpCredentialUserArgsDict']]] = None,
+            user: pulumi.Input[Optional[Union['DomainsMySmtpCredentialUserArgs', 'DomainsMySmtpCredentialUserArgsDict', 'outputs.DomainsMySmtpCredentialUser']]] = None,
             user_name: pulumi.Input[Optional[_builtins.str]] = None) -> 'DomainsMySmtpCredential':
         """
         Get an existing DomainsMySmtpCredential resource's state with the given name, id, and optional extra
@@ -1331,7 +1331,7 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
                * returned: default
                * type: dateTime
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMySmtpCredentialIdcsCreatedByArgs', 'DomainsMySmtpCredentialIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMySmtpCredentialIdcsCreatedByArgs', 'DomainsMySmtpCredentialIdcsCreatedByArgsDict', 'outputs.DomainsMySmtpCredentialIdcsCreatedBy']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1341,7 +1341,7 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMySmtpCredentialIdcsLastModifiedByArgs', 'DomainsMySmtpCredentialIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMySmtpCredentialIdcsLastModifiedByArgs', 'DomainsMySmtpCredentialIdcsLastModifiedByArgsDict', 'outputs.DomainsMySmtpCredentialIdcsLastModifiedBy']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1371,7 +1371,7 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMySmtpCredentialMetaArgs', 'DomainsMySmtpCredentialMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMySmtpCredentialMetaArgs', 'DomainsMySmtpCredentialMetaArgsDict', 'outputs.DomainsMySmtpCredentialMeta']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1418,7 +1418,7 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
                * returned: never
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMySmtpCredentialTagArgs', 'DomainsMySmtpCredentialTagArgsDict']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMySmtpCredentialTagArgs', 'DomainsMySmtpCredentialTagArgsDict', 'outputs.DomainsMySmtpCredentialTag']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1440,7 +1440,7 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Union['DomainsMySmtpCredentialUserArgs', 'DomainsMySmtpCredentialUserArgsDict']] user: User linked to smtp credential
+        :param pulumi.Input[Union['DomainsMySmtpCredentialUserArgs', 'DomainsMySmtpCredentialUserArgsDict', 'outputs.DomainsMySmtpCredentialUser']] user: User linked to smtp credential
                
                **SCIM++ Properties:**
                * caseExact: false

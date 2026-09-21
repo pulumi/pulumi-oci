@@ -122,7 +122,7 @@ class AwaitableGetAppAccelerationsResult(GetAppAccelerationsResult):
 
 def get_app_accelerations(compartment_id: Optional[_builtins.str] = None,
                           display_name: Optional[_builtins.str] = None,
-                          filters: Optional[Sequence[Union['GetAppAccelerationsFilterArgs', 'GetAppAccelerationsFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetAppAccelerationsFilterArgs', 'GetAppAccelerationsFilterArgsDict', 'outputs.GetAppAccelerationsFilterResult']]] = None,
                           id: Optional[_builtins.str] = None,
                           states: Optional[Sequence[_builtins.str]] = None,
                           web_app_acceleration_policy_id: Optional[_builtins.str] = None,
@@ -172,7 +172,7 @@ def get_app_accelerations(compartment_id: Optional[_builtins.str] = None,
         web_app_acceleration_policy_id=pulumi.get(__ret__, 'web_app_acceleration_policy_id'))
 def get_app_accelerations_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAppAccelerationsFilterArgs', 'GetAppAccelerationsFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAppAccelerationsFilterArgs', 'GetAppAccelerationsFilterArgsDict', 'outputs.GetAppAccelerationsFilterResult']]]]] = None,
                                  id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                  web_app_acceleration_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

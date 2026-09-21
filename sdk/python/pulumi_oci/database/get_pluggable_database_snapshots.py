@@ -134,7 +134,7 @@ class AwaitableGetPluggableDatabaseSnapshotsResult(GetPluggableDatabaseSnapshots
 
 def get_pluggable_database_snapshots(cluster_id: Optional[_builtins.str] = None,
                                      compartment_id: Optional[_builtins.str] = None,
-                                     filters: Optional[Sequence[Union['GetPluggableDatabaseSnapshotsFilterArgs', 'GetPluggableDatabaseSnapshotsFilterArgsDict']]] = None,
+                                     filters: Optional[Sequence[Union['GetPluggableDatabaseSnapshotsFilterArgs', 'GetPluggableDatabaseSnapshotsFilterArgsDict', 'outputs.GetPluggableDatabaseSnapshotsFilterResult']]] = None,
                                      name: Optional[_builtins.str] = None,
                                      pluggable_database_id: Optional[_builtins.str] = None,
                                      state: Optional[_builtins.str] = None,
@@ -185,7 +185,7 @@ def get_pluggable_database_snapshots(cluster_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_pluggable_database_snapshots_output(cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPluggableDatabaseSnapshotsFilterArgs', 'GetPluggableDatabaseSnapshotsFilterArgsDict']]]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPluggableDatabaseSnapshotsFilterArgs', 'GetPluggableDatabaseSnapshotsFilterArgsDict', 'outputs.GetPluggableDatabaseSnapshotsFilterResult']]]]] = None,
                                             name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             pluggable_database_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

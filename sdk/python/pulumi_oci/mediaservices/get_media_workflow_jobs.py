@@ -122,7 +122,7 @@ class AwaitableGetMediaWorkflowJobsResult(GetMediaWorkflowJobsResult):
 
 def get_media_workflow_jobs(compartment_id: Optional[_builtins.str] = None,
                             display_name: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetMediaWorkflowJobsFilterArgs', 'GetMediaWorkflowJobsFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetMediaWorkflowJobsFilterArgs', 'GetMediaWorkflowJobsFilterArgsDict', 'outputs.GetMediaWorkflowJobsFilterResult']]] = None,
                             id: Optional[_builtins.str] = None,
                             media_workflow_id: Optional[_builtins.str] = None,
                             state: Optional[_builtins.str] = None,
@@ -172,7 +172,7 @@ def get_media_workflow_jobs(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_media_workflow_jobs_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMediaWorkflowJobsFilterArgs', 'GetMediaWorkflowJobsFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMediaWorkflowJobsFilterArgs', 'GetMediaWorkflowJobsFilterArgsDict', 'outputs.GetMediaWorkflowJobsFilterResult']]]]] = None,
                                    id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    media_workflow_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

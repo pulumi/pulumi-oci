@@ -623,8 +623,8 @@ class Zone(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  dnssec_state: pulumi.Input[Optional[_builtins.str]] = None,
-                 external_downstreams: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict']]]]] = None,
-                 external_masters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict']]]]] = None,
+                 external_downstreams: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict', 'outputs.ZoneExternalDownstream']]]]] = None,
+                 external_masters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict', 'outputs.ZoneExternalMaster']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  resolution_mode: pulumi.Input[Optional[_builtins.str]] = None,
@@ -699,8 +699,8 @@ class Zone(pulumi.CustomResource):
                Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
                
                For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict']]]] external_downstreams: (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict']]]] external_masters: (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict', 'outputs.ZoneExternalDownstream']]]] external_downstreams: (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict', 'outputs.ZoneExternalMaster']]]] external_masters: (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
                **Example:** `{"Department": "Finance"}`
@@ -787,8 +787,8 @@ class Zone(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  dnssec_state: pulumi.Input[Optional[_builtins.str]] = None,
-                 external_downstreams: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict']]]]] = None,
-                 external_masters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict']]]]] = None,
+                 external_downstreams: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict', 'outputs.ZoneExternalDownstream']]]]] = None,
+                 external_masters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict', 'outputs.ZoneExternalMaster']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  resolution_mode: pulumi.Input[Optional[_builtins.str]] = None,
@@ -840,14 +840,14 @@ class Zone(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            dnssec_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneDnssecConfigArgs', 'ZoneDnssecConfigArgsDict']]]]] = None,
+            dnssec_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneDnssecConfigArgs', 'ZoneDnssecConfigArgsDict', 'outputs.ZoneDnssecConfig']]]]] = None,
             dnssec_state: pulumi.Input[Optional[_builtins.str]] = None,
-            external_downstreams: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict']]]]] = None,
-            external_masters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict']]]]] = None,
+            external_downstreams: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict', 'outputs.ZoneExternalDownstream']]]]] = None,
+            external_masters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict', 'outputs.ZoneExternalMaster']]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_protected: pulumi.Input[Optional[_builtins.bool]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            nameservers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneNameserverArgs', 'ZoneNameserverArgsDict']]]]] = None,
+            nameservers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneNameserverArgs', 'ZoneNameserverArgsDict', 'outputs.ZoneNameserver']]]]] = None,
             resolution_mode: pulumi.Input[Optional[_builtins.str]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None,
             self: pulumi.Input[Optional[_builtins.str]] = None,
@@ -856,7 +856,7 @@ class Zone(pulumi.CustomResource):
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             version: pulumi.Input[Optional[_builtins.str]] = None,
             view_id: pulumi.Input[Optional[_builtins.str]] = None,
-            zone_transfer_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneZoneTransferServerArgs', 'ZoneZoneTransferServerArgsDict']]]]] = None,
+            zone_transfer_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneZoneTransferServerArgs', 'ZoneZoneTransferServerArgsDict', 'outputs.ZoneZoneTransferServer']]]]] = None,
             zone_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'Zone':
         """
         Get an existing Zone resource's state with the given name, id, and optional extra
@@ -869,7 +869,7 @@ class Zone(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
                **Example:** `{"Operations": {"CostCenter": "42"}}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneDnssecConfigArgs', 'ZoneDnssecConfigArgsDict']]]] dnssec_configs: DNSSEC configuration data.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneDnssecConfigArgs', 'ZoneDnssecConfigArgsDict', 'outputs.ZoneDnssecConfig']]]] dnssec_configs: DNSSEC configuration data.
         :param pulumi.Input[_builtins.str] dnssec_state: (Updatable) The state of DNSSEC on the zone.
                
                For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent trust anchor) must also have DNSSEC correctly set up. After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the `KskDnssecKeyVersion` data. You can find the DS data in the `dsData` attribute of the `KskDnssecKeyVersion`. Then, use the `PromoteZoneDnssecKeyVersion` operation to promote the `KskDnssecKeyVersion`.
@@ -883,14 +883,14 @@ class Zone(pulumi.CustomResource):
                Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
                
                For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict']]]] external_downstreams: (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict']]]] external_masters: (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict', 'outputs.ZoneExternalDownstream']]]] external_downstreams: (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict', 'outputs.ZoneExternalMaster']]]] external_masters: (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param pulumi.Input[_builtins.str] name: The name of the zone.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneNameserverArgs', 'ZoneNameserverArgsDict']]]] nameservers: The authoritative nameservers for the zone.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneNameserverArgs', 'ZoneNameserverArgsDict', 'outputs.ZoneNameserver']]]] nameservers: The authoritative nameservers for the zone.
         :param pulumi.Input[_builtins.str] resolution_mode: (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] self: The canonical absolute URL of the resource.
@@ -899,7 +899,7 @@ class Zone(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         :param pulumi.Input[_builtins.str] version: Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
         :param pulumi.Input[_builtins.str] view_id: The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneZoneTransferServerArgs', 'ZoneZoneTransferServerArgsDict']]]] zone_transfer_servers: The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneZoneTransferServerArgs', 'ZoneZoneTransferServerArgsDict', 'outputs.ZoneZoneTransferServer']]]] zone_transfer_servers: The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
         :param pulumi.Input[_builtins.str] zone_type: The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
                
                ** IMPORTANT **

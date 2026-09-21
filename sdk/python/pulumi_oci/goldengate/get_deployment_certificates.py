@@ -97,7 +97,7 @@ class AwaitableGetDeploymentCertificatesResult(GetDeploymentCertificatesResult):
 
 
 def get_deployment_certificates(deployment_id: Optional[_builtins.str] = None,
-                                filters: Optional[Sequence[Union['GetDeploymentCertificatesFilterArgs', 'GetDeploymentCertificatesFilterArgsDict']]] = None,
+                                filters: Optional[Sequence[Union['GetDeploymentCertificatesFilterArgs', 'GetDeploymentCertificatesFilterArgsDict', 'outputs.GetDeploymentCertificatesFilterResult']]] = None,
                                 state: Optional[_builtins.str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeploymentCertificatesResult:
     """
@@ -133,7 +133,7 @@ def get_deployment_certificates(deployment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
 def get_deployment_certificates_output(deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDeploymentCertificatesFilterArgs', 'GetDeploymentCertificatesFilterArgsDict']]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDeploymentCertificatesFilterArgs', 'GetDeploymentCertificatesFilterArgsDict', 'outputs.GetDeploymentCertificatesFilterResult']]]]] = None,
                                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentCertificatesResult]:
     """

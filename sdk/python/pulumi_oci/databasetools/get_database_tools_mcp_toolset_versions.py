@@ -105,7 +105,7 @@ class AwaitableGetDatabaseToolsMcpToolsetVersionsResult(GetDatabaseToolsMcpTools
 def get_database_tools_mcp_toolset_versions(compartment_id: Optional[_builtins.str] = None,
                                             database_tools_mcp_server_id: Optional[_builtins.str] = None,
                                             display_name: Optional[_builtins.str] = None,
-                                            filters: Optional[Sequence[Union['GetDatabaseToolsMcpToolsetVersionsFilterArgs', 'GetDatabaseToolsMcpToolsetVersionsFilterArgsDict']]] = None,
+                                            filters: Optional[Sequence[Union['GetDatabaseToolsMcpToolsetVersionsFilterArgs', 'GetDatabaseToolsMcpToolsetVersionsFilterArgsDict', 'outputs.GetDatabaseToolsMcpToolsetVersionsFilterResult']]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabaseToolsMcpToolsetVersionsResult:
     """
     This data source provides the list of Database Tools Mcp Toolset Versions in Oracle Cloud Infrastructure Database Tools service.
@@ -146,7 +146,7 @@ def get_database_tools_mcp_toolset_versions(compartment_id: Optional[_builtins.s
 def get_database_tools_mcp_toolset_versions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                    database_tools_mcp_server_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabaseToolsMcpToolsetVersionsFilterArgs', 'GetDatabaseToolsMcpToolsetVersionsFilterArgsDict']]]]] = None,
+                                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabaseToolsMcpToolsetVersionsFilterArgs', 'GetDatabaseToolsMcpToolsetVersionsFilterArgsDict', 'outputs.GetDatabaseToolsMcpToolsetVersionsFilterResult']]]]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseToolsMcpToolsetVersionsResult]:
     """
     This data source provides the list of Database Tools Mcp Toolset Versions in Oracle Cloud Infrastructure Database Tools service.

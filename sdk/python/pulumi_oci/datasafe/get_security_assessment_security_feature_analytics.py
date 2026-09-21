@@ -111,7 +111,7 @@ class AwaitableGetSecurityAssessmentSecurityFeatureAnalyticsResult(GetSecurityAs
 def get_security_assessment_security_feature_analytics(access_level: Optional[_builtins.str] = None,
                                                        compartment_id: Optional[_builtins.str] = None,
                                                        compartment_id_in_subtree: Optional[_builtins.bool] = None,
-                                                       filters: Optional[Sequence[Union['GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgs', 'GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgsDict']]] = None,
+                                                       filters: Optional[Sequence[Union['GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgs', 'GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgsDict', 'outputs.GetSecurityAssessmentSecurityFeatureAnalyticsFilterResult']]] = None,
                                                        target_id: Optional[_builtins.str] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityAssessmentSecurityFeatureAnalyticsResult:
     """
@@ -164,7 +164,7 @@ def get_security_assessment_security_feature_analytics(access_level: Optional[_b
 def get_security_assessment_security_feature_analytics_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                               compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                               compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
-                                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgs', 'GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgsDict']]]]] = None,
+                                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgs', 'GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgsDict', 'outputs.GetSecurityAssessmentSecurityFeatureAnalyticsFilterResult']]]]] = None,
                                                               target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAssessmentSecurityFeatureAnalyticsResult]:
     """

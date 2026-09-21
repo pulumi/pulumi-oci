@@ -94,7 +94,7 @@ class AwaitableGetIamWorkRequestsResult(GetIamWorkRequestsResult):
 
 
 def get_iam_work_requests(compartment_id: Optional[_builtins.str] = None,
-                          filters: Optional[Sequence[Union['GetIamWorkRequestsFilterArgs', 'GetIamWorkRequestsFilterArgsDict']]] = None,
+                          filters: Optional[Sequence[Union['GetIamWorkRequestsFilterArgs', 'GetIamWorkRequestsFilterArgsDict', 'outputs.GetIamWorkRequestsFilterResult']]] = None,
                           resource_identifier: Optional[_builtins.str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamWorkRequestsResult:
     """
@@ -133,7 +133,7 @@ def get_iam_work_requests(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         resource_identifier=pulumi.get(__ret__, 'resource_identifier'))
 def get_iam_work_requests_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIamWorkRequestsFilterArgs', 'GetIamWorkRequestsFilterArgsDict']]]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIamWorkRequestsFilterArgs', 'GetIamWorkRequestsFilterArgsDict', 'outputs.GetIamWorkRequestsFilterResult']]]]] = None,
                                  resource_identifier: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamWorkRequestsResult]:
     """

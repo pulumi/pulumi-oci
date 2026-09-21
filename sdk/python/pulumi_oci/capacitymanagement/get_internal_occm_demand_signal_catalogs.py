@@ -110,7 +110,7 @@ class AwaitableGetInternalOccmDemandSignalCatalogsResult(GetInternalOccmDemandSi
 
 def get_internal_occm_demand_signal_catalogs(compartment_id: Optional[_builtins.str] = None,
                                              display_name: Optional[_builtins.str] = None,
-                                             filters: Optional[Sequence[Union['GetInternalOccmDemandSignalCatalogsFilterArgs', 'GetInternalOccmDemandSignalCatalogsFilterArgsDict']]] = None,
+                                             filters: Optional[Sequence[Union['GetInternalOccmDemandSignalCatalogsFilterArgs', 'GetInternalOccmDemandSignalCatalogsFilterArgsDict', 'outputs.GetInternalOccmDemandSignalCatalogsFilterResult']]] = None,
                                              occ_customer_group_id: Optional[_builtins.str] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInternalOccmDemandSignalCatalogsResult:
     """
@@ -151,7 +151,7 @@ def get_internal_occm_demand_signal_catalogs(compartment_id: Optional[_builtins.
         occm_demand_signal_catalog_collections=pulumi.get(__ret__, 'occm_demand_signal_catalog_collections'))
 def get_internal_occm_demand_signal_catalogs_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInternalOccmDemandSignalCatalogsFilterArgs', 'GetInternalOccmDemandSignalCatalogsFilterArgsDict']]]]] = None,
+                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInternalOccmDemandSignalCatalogsFilterArgs', 'GetInternalOccmDemandSignalCatalogsFilterArgsDict', 'outputs.GetInternalOccmDemandSignalCatalogsFilterResult']]]]] = None,
                                                     occ_customer_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInternalOccmDemandSignalCatalogsResult]:
     """

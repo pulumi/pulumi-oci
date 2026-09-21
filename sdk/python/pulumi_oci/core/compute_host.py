@@ -678,7 +678,7 @@ class ComputeHost(pulumi.CustomResource):
             compute_host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
             compute_host_id: pulumi.Input[Optional[_builtins.str]] = None,
             configuration_action_type: pulumi.Input[Optional[_builtins.str]] = None,
-            configuration_datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeHostConfigurationDataArgs', 'ComputeHostConfigurationDataArgsDict']]]]] = None,
+            configuration_datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeHostConfigurationDataArgs', 'ComputeHostConfigurationDataArgsDict', 'outputs.ComputeHostConfigurationData']]]]] = None,
             configuration_state: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -694,7 +694,7 @@ class ComputeHost(pulumi.CustomResource):
             local_block_id: pulumi.Input[Optional[_builtins.str]] = None,
             network_block_id: pulumi.Input[Optional[_builtins.str]] = None,
             platform: pulumi.Input[Optional[_builtins.str]] = None,
-            recycle_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeHostRecycleDetailArgs', 'ComputeHostRecycleDetailArgsDict']]]]] = None,
+            recycle_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeHostRecycleDetailArgs', 'ComputeHostRecycleDetailArgsDict', 'outputs.ComputeHostRecycleDetail']]]]] = None,
             shape: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_configuration_check: pulumi.Input[Optional[_builtins.str]] = None,
@@ -714,7 +714,7 @@ class ComputeHost(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compute_host_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
         :param pulumi.Input[_builtins.str] compute_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host.
         :param pulumi.Input[_builtins.str] configuration_action_type: (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeHostConfigurationDataArgs', 'ComputeHostConfigurationDataArgsDict']]]] configuration_datas: Compute Host Configuration Data
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeHostConfigurationDataArgs', 'ComputeHostConfigurationDataArgsDict', 'outputs.ComputeHostConfigurationData']]]] configuration_datas: Compute Host Configuration Data
         :param pulumi.Input[_builtins.str] configuration_state: Configuration state of the Compute Bare Metal Host.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -730,7 +730,7 @@ class ComputeHost(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] local_block_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
         :param pulumi.Input[_builtins.str] network_block_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
         :param pulumi.Input[_builtins.str] platform: The platform of the host
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeHostRecycleDetailArgs', 'ComputeHostRecycleDetailArgsDict']]]] recycle_details: Shows details about the last recycle performed on this host.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeHostRecycleDetailArgs', 'ComputeHostRecycleDetailArgsDict', 'outputs.ComputeHostRecycleDetail']]]] recycle_details: Shows details about the last recycle performed on this host.
         :param pulumi.Input[_builtins.str] shape: The shape of host
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the host
         :param pulumi.Input[_builtins.str] time_configuration_check: The date and time that the compute bare metal host configuration check was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`

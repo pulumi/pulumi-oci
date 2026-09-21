@@ -81,7 +81,7 @@ class AwaitableGetLoadBalancerRoutingPoliciesResult(GetLoadBalancerRoutingPolici
             routing_policies=self.routing_policies)
 
 
-def get_load_balancer_routing_policies(filters: Optional[Sequence[Union['GetLoadBalancerRoutingPoliciesFilterArgs', 'GetLoadBalancerRoutingPoliciesFilterArgsDict']]] = None,
+def get_load_balancer_routing_policies(filters: Optional[Sequence[Union['GetLoadBalancerRoutingPoliciesFilterArgs', 'GetLoadBalancerRoutingPoliciesFilterArgsDict', 'outputs.GetLoadBalancerRoutingPoliciesFilterResult']]] = None,
                                        load_balancer_id: Optional[_builtins.str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLoadBalancerRoutingPoliciesResult:
     """
@@ -112,7 +112,7 @@ def get_load_balancer_routing_policies(filters: Optional[Sequence[Union['GetLoad
         id=pulumi.get(__ret__, 'id'),
         load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'),
         routing_policies=pulumi.get(__ret__, 'routing_policies'))
-def get_load_balancer_routing_policies_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLoadBalancerRoutingPoliciesFilterArgs', 'GetLoadBalancerRoutingPoliciesFilterArgsDict']]]]] = None,
+def get_load_balancer_routing_policies_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLoadBalancerRoutingPoliciesFilterArgs', 'GetLoadBalancerRoutingPoliciesFilterArgsDict', 'outputs.GetLoadBalancerRoutingPoliciesFilterResult']]]]] = None,
                                               load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLoadBalancerRoutingPoliciesResult]:
     """

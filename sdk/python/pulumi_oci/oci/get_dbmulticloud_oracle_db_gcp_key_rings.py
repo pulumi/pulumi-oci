@@ -128,7 +128,7 @@ class AwaitableGetDbmulticloudOracleDbGcpKeyRingsResult(GetDbmulticloudOracleDbG
 
 def get_dbmulticloud_oracle_db_gcp_key_rings(compartment_id: Optional[_builtins.str] = None,
                                              display_name: Optional[_builtins.str] = None,
-                                             filters: Optional[Sequence[Union['GetDbmulticloudOracleDbGcpKeyRingsFilterArgs', 'GetDbmulticloudOracleDbGcpKeyRingsFilterArgsDict']]] = None,
+                                             filters: Optional[Sequence[Union['GetDbmulticloudOracleDbGcpKeyRingsFilterArgs', 'GetDbmulticloudOracleDbGcpKeyRingsFilterArgsDict', 'outputs.GetDbmulticloudOracleDbGcpKeyRingsFilterResult']]] = None,
                                              oracle_db_gcp_connector_id: Optional[_builtins.str] = None,
                                              oracle_db_gcp_key_ring_id: Optional[_builtins.str] = None,
                                              state: Optional[_builtins.str] = None,
@@ -179,7 +179,7 @@ def get_dbmulticloud_oracle_db_gcp_key_rings(compartment_id: Optional[_builtins.
         state=pulumi.get(__ret__, 'state'))
 def get_dbmulticloud_oracle_db_gcp_key_rings_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbmulticloudOracleDbGcpKeyRingsFilterArgs', 'GetDbmulticloudOracleDbGcpKeyRingsFilterArgsDict']]]]] = None,
+                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbmulticloudOracleDbGcpKeyRingsFilterArgs', 'GetDbmulticloudOracleDbGcpKeyRingsFilterArgsDict', 'outputs.GetDbmulticloudOracleDbGcpKeyRingsFilterResult']]]]] = None,
                                                     oracle_db_gcp_connector_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     oracle_db_gcp_key_ring_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

@@ -111,7 +111,7 @@ class AwaitableGetExternalAsmInstancesResult(GetExternalAsmInstancesResult):
 def get_external_asm_instances(compartment_id: Optional[_builtins.str] = None,
                                display_name: Optional[_builtins.str] = None,
                                external_asm_id: Optional[_builtins.str] = None,
-                               filters: Optional[Sequence[Union['GetExternalAsmInstancesFilterArgs', 'GetExternalAsmInstancesFilterArgsDict']]] = None,
+                               filters: Optional[Sequence[Union['GetExternalAsmInstancesFilterArgs', 'GetExternalAsmInstancesFilterArgsDict', 'outputs.GetExternalAsmInstancesFilterResult']]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalAsmInstancesResult:
     """
     This data source provides the list of External Asm Instances in Oracle Cloud Infrastructure Database Management service.
@@ -152,7 +152,7 @@ def get_external_asm_instances(compartment_id: Optional[_builtins.str] = None,
 def get_external_asm_instances_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       external_asm_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalAsmInstancesFilterArgs', 'GetExternalAsmInstancesFilterArgsDict']]]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalAsmInstancesFilterArgs', 'GetExternalAsmInstancesFilterArgsDict', 'outputs.GetExternalAsmInstancesFilterResult']]]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalAsmInstancesResult]:
     """
     This data source provides the list of External Asm Instances in Oracle Cloud Infrastructure Database Management service.

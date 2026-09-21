@@ -170,7 +170,7 @@ class Osn(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  ad: pulumi.Input[Optional[_builtins.str]] = None,
                  blockchain_platform_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 ocpu_allocation_param: pulumi.Input[Optional[Union['OsnOcpuAllocationParamArgs', 'OsnOcpuAllocationParamArgsDict']]] = None,
+                 ocpu_allocation_param: pulumi.Input[Optional[Union['OsnOcpuAllocationParamArgs', 'OsnOcpuAllocationParamArgsDict', 'outputs.OsnOcpuAllocationParam']]] = None,
                  __props__=None):
         """
         This resource provides the Osn resource in Oracle Cloud Infrastructure Blockchain service.
@@ -207,7 +207,7 @@ class Osn(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ad: Availability Domain to place new OSN
         :param pulumi.Input[_builtins.str] blockchain_platform_id: Unique service identifier.
-        :param pulumi.Input[Union['OsnOcpuAllocationParamArgs', 'OsnOcpuAllocationParamArgsDict']] ocpu_allocation_param: (Updatable) OCPU allocation parameter
+        :param pulumi.Input[Union['OsnOcpuAllocationParamArgs', 'OsnOcpuAllocationParamArgsDict', 'outputs.OsnOcpuAllocationParam']] ocpu_allocation_param: (Updatable) OCPU allocation parameter
         """
         ...
     @overload
@@ -263,7 +263,7 @@ class Osn(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  ad: pulumi.Input[Optional[_builtins.str]] = None,
                  blockchain_platform_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 ocpu_allocation_param: pulumi.Input[Optional[Union['OsnOcpuAllocationParamArgs', 'OsnOcpuAllocationParamArgsDict']]] = None,
+                 ocpu_allocation_param: pulumi.Input[Optional[Union['OsnOcpuAllocationParamArgs', 'OsnOcpuAllocationParamArgsDict', 'outputs.OsnOcpuAllocationParam']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -294,7 +294,7 @@ class Osn(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             ad: pulumi.Input[Optional[_builtins.str]] = None,
             blockchain_platform_id: pulumi.Input[Optional[_builtins.str]] = None,
-            ocpu_allocation_param: pulumi.Input[Optional[Union['OsnOcpuAllocationParamArgs', 'OsnOcpuAllocationParamArgsDict']]] = None,
+            ocpu_allocation_param: pulumi.Input[Optional[Union['OsnOcpuAllocationParamArgs', 'OsnOcpuAllocationParamArgsDict', 'outputs.OsnOcpuAllocationParam']]] = None,
             osn_key: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None) -> 'Osn':
         """
@@ -306,7 +306,7 @@ class Osn(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ad: Availability Domain to place new OSN
         :param pulumi.Input[_builtins.str] blockchain_platform_id: Unique service identifier.
-        :param pulumi.Input[Union['OsnOcpuAllocationParamArgs', 'OsnOcpuAllocationParamArgsDict']] ocpu_allocation_param: (Updatable) OCPU allocation parameter
+        :param pulumi.Input[Union['OsnOcpuAllocationParamArgs', 'OsnOcpuAllocationParamArgsDict', 'outputs.OsnOcpuAllocationParam']] ocpu_allocation_param: (Updatable) OCPU allocation parameter
         :param pulumi.Input[_builtins.str] osn_key: OSN identifier
         :param pulumi.Input[_builtins.str] state: The current state of the OSN.
         """

@@ -593,8 +593,8 @@ class DataccVmClusterNetwork(pulumi.CustomResource):
                  listener_port_ssl: pulumi.Input[Optional[_builtins.int]] = None,
                  node_count: pulumi.Input[Optional[_builtins.int]] = None,
                  ntp_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 scans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccVmClusterNetworkScanArgs', 'DataccVmClusterNetworkScanArgsDict']]]]] = None,
-                 vm_networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccVmClusterNetworkVmNetworkArgs', 'DataccVmClusterNetworkVmNetworkArgsDict']]]]] = None,
+                 scans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccVmClusterNetworkScanArgs', 'DataccVmClusterNetworkScanArgsDict', 'outputs.DataccVmClusterNetworkScan']]]]] = None,
+                 vm_networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccVmClusterNetworkVmNetworkArgs', 'DataccVmClusterNetworkVmNetworkArgsDict', 'outputs.DataccVmClusterNetworkVmNetwork']]]]] = None,
                  __props__=None):
         """
         This resource provides the Vm Cluster Network resource in Oracle Cloud Infrastructure Datacc service.
@@ -668,8 +668,8 @@ class DataccVmClusterNetwork(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] listener_port_ssl: (Updatable) The listener TCP/IP SSL port. Default is 2484.
         :param pulumi.Input[_builtins.int] node_count: Count of virtual machines in this VM cluster.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ntp_servers: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DataccVmClusterNetworkScanArgs', 'DataccVmClusterNetworkScanArgsDict']]]] scans: (Updatable) The SCAN details.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DataccVmClusterNetworkVmNetworkArgs', 'DataccVmClusterNetworkVmNetworkArgsDict']]]] vm_networks: (Updatable) Details of the client and backup networks.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DataccVmClusterNetworkScanArgs', 'DataccVmClusterNetworkScanArgsDict', 'outputs.DataccVmClusterNetworkScan']]]] scans: (Updatable) The SCAN details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DataccVmClusterNetworkVmNetworkArgs', 'DataccVmClusterNetworkVmNetworkArgsDict', 'outputs.DataccVmClusterNetworkVmNetwork']]]] vm_networks: (Updatable) Details of the client and backup networks.
         """
         ...
     @overload
@@ -762,8 +762,8 @@ class DataccVmClusterNetwork(pulumi.CustomResource):
                  listener_port_ssl: pulumi.Input[Optional[_builtins.int]] = None,
                  node_count: pulumi.Input[Optional[_builtins.int]] = None,
                  ntp_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 scans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccVmClusterNetworkScanArgs', 'DataccVmClusterNetworkScanArgsDict']]]]] = None,
-                 vm_networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccVmClusterNetworkVmNetworkArgs', 'DataccVmClusterNetworkVmNetworkArgsDict']]]]] = None,
+                 scans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccVmClusterNetworkScanArgs', 'DataccVmClusterNetworkScanArgsDict', 'outputs.DataccVmClusterNetworkScan']]]]] = None,
+                 vm_networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccVmClusterNetworkVmNetworkArgs', 'DataccVmClusterNetworkVmNetworkArgsDict', 'outputs.DataccVmClusterNetworkVmNetwork']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -827,12 +827,12 @@ class DataccVmClusterNetwork(pulumi.CustomResource):
             listener_port_ssl: pulumi.Input[Optional[_builtins.int]] = None,
             node_count: pulumi.Input[Optional[_builtins.int]] = None,
             ntp_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            scans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccVmClusterNetworkScanArgs', 'DataccVmClusterNetworkScanArgsDict']]]]] = None,
+            scans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccVmClusterNetworkScanArgs', 'DataccVmClusterNetworkScanArgsDict', 'outputs.DataccVmClusterNetworkScan']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
-            vm_networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccVmClusterNetworkVmNetworkArgs', 'DataccVmClusterNetworkVmNetworkArgsDict']]]]] = None) -> 'DataccVmClusterNetwork':
+            vm_networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccVmClusterNetworkVmNetworkArgs', 'DataccVmClusterNetworkVmNetworkArgsDict', 'outputs.DataccVmClusterNetworkVmNetwork']]]]] = None) -> 'DataccVmClusterNetwork':
         """
         Get an existing DataccVmClusterNetwork resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -855,12 +855,12 @@ class DataccVmClusterNetwork(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] listener_port_ssl: (Updatable) The listener TCP/IP SSL port. Default is 2484.
         :param pulumi.Input[_builtins.int] node_count: Count of virtual machines in this VM cluster.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ntp_servers: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DataccVmClusterNetworkScanArgs', 'DataccVmClusterNetworkScanArgsDict']]]] scans: (Updatable) The SCAN details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DataccVmClusterNetworkScanArgs', 'DataccVmClusterNetworkScanArgsDict', 'outputs.DataccVmClusterNetworkScan']]]] scans: (Updatable) The SCAN details.
         :param pulumi.Input[_builtins.str] state: The current state of the virtual machine cluster network.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time that the VM cluster network was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time that the VM cluster network was last updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DataccVmClusterNetworkVmNetworkArgs', 'DataccVmClusterNetworkVmNetworkArgsDict']]]] vm_networks: (Updatable) Details of the client and backup networks.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DataccVmClusterNetworkVmNetworkArgs', 'DataccVmClusterNetworkVmNetworkArgsDict', 'outputs.DataccVmClusterNetworkVmNetwork']]]] vm_networks: (Updatable) Details of the client and backup networks.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

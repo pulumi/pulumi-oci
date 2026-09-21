@@ -135,7 +135,7 @@ class DataPatch(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: pulumi.Input[Optional[_builtins.str]] = None,
-                 data_patch_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataPatchDataPatchOptionArgs', 'DataPatchDataPatchOptionArgsDict']]]]] = None,
+                 data_patch_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataPatchDataPatchOptionArgs', 'DataPatchDataPatchOptionArgsDict', 'outputs.DataPatchDataPatchOption']]]]] = None,
                  database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  pluggable_databases: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -170,7 +170,7 @@ class DataPatch(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: pulumi.Input[Optional[_builtins.str]] = None,
-                 data_patch_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataPatchDataPatchOptionArgs', 'DataPatchDataPatchOptionArgsDict']]]]] = None,
+                 data_patch_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataPatchDataPatchOptionArgs', 'DataPatchDataPatchOptionArgsDict', 'outputs.DataPatchDataPatchOption']]]]] = None,
                  database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  pluggable_databases: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -201,7 +201,7 @@ class DataPatch(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             action: pulumi.Input[Optional[_builtins.str]] = None,
-            data_patch_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataPatchDataPatchOptionArgs', 'DataPatchDataPatchOptionArgsDict']]]]] = None,
+            data_patch_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataPatchDataPatchOptionArgs', 'DataPatchDataPatchOptionArgsDict', 'outputs.DataPatchDataPatchOption']]]]] = None,
             database_id: pulumi.Input[Optional[_builtins.str]] = None,
             pluggable_databases: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'DataPatch':
         """

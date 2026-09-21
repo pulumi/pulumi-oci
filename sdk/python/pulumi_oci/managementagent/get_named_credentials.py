@@ -120,7 +120,7 @@ class AwaitableGetNamedCredentialsResult(GetNamedCredentialsResult):
             types=self.types)
 
 
-def get_named_credentials(filters: Optional[Sequence[Union['GetNamedCredentialsFilterArgs', 'GetNamedCredentialsFilterArgsDict']]] = None,
+def get_named_credentials(filters: Optional[Sequence[Union['GetNamedCredentialsFilterArgs', 'GetNamedCredentialsFilterArgsDict', 'outputs.GetNamedCredentialsFilterResult']]] = None,
                           ids: Optional[Sequence[_builtins.str]] = None,
                           management_agent_id: Optional[_builtins.str] = None,
                           names: Optional[Sequence[_builtins.str]] = None,
@@ -170,7 +170,7 @@ def get_named_credentials(filters: Optional[Sequence[Union['GetNamedCredentialsF
         names=pulumi.get(__ret__, 'names'),
         states=pulumi.get(__ret__, 'states'),
         types=pulumi.get(__ret__, 'types'))
-def get_named_credentials_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamedCredentialsFilterArgs', 'GetNamedCredentialsFilterArgsDict']]]]] = None,
+def get_named_credentials_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamedCredentialsFilterArgs', 'GetNamedCredentialsFilterArgsDict', 'outputs.GetNamedCredentialsFilterResult']]]]] = None,
                                  ids: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                  management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,

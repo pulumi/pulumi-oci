@@ -122,7 +122,7 @@ class AwaitableGetRepositoriesResult(GetRepositoriesResult):
 
 def get_repositories(compartment_id: Optional[_builtins.str] = None,
                      display_name: Optional[_builtins.str] = None,
-                     filters: Optional[Sequence[Union['GetRepositoriesFilterArgs', 'GetRepositoriesFilterArgsDict']]] = None,
+                     filters: Optional[Sequence[Union['GetRepositoriesFilterArgs', 'GetRepositoriesFilterArgsDict', 'outputs.GetRepositoriesFilterResult']]] = None,
                      id: Optional[_builtins.str] = None,
                      is_immutable: Optional[_builtins.bool] = None,
                      state: Optional[_builtins.str] = None,
@@ -172,7 +172,7 @@ def get_repositories(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_repositories_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRepositoriesFilterArgs', 'GetRepositoriesFilterArgsDict']]]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRepositoriesFilterArgs', 'GetRepositoriesFilterArgsDict', 'outputs.GetRepositoriesFilterResult']]]]] = None,
                             id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             is_immutable: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

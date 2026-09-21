@@ -117,7 +117,7 @@ class AwaitableGetSensitiveDataModelSensitiveObjectsResult(GetSensitiveDataModel
             sensitive_object_collections=self.sensitive_object_collections)
 
 
-def get_sensitive_data_model_sensitive_objects(filters: Optional[Sequence[Union['GetSensitiveDataModelSensitiveObjectsFilterArgs', 'GetSensitiveDataModelSensitiveObjectsFilterArgsDict']]] = None,
+def get_sensitive_data_model_sensitive_objects(filters: Optional[Sequence[Union['GetSensitiveDataModelSensitiveObjectsFilterArgs', 'GetSensitiveDataModelSensitiveObjectsFilterArgsDict', 'outputs.GetSensitiveDataModelSensitiveObjectsFilterResult']]] = None,
                                                object_types: Optional[Sequence[_builtins.str]] = None,
                                                objects: Optional[Sequence[_builtins.str]] = None,
                                                schema_names: Optional[Sequence[_builtins.str]] = None,
@@ -163,7 +163,7 @@ def get_sensitive_data_model_sensitive_objects(filters: Optional[Sequence[Union[
         schema_names=pulumi.get(__ret__, 'schema_names'),
         sensitive_data_model_id=pulumi.get(__ret__, 'sensitive_data_model_id'),
         sensitive_object_collections=pulumi.get(__ret__, 'sensitive_object_collections'))
-def get_sensitive_data_model_sensitive_objects_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSensitiveDataModelSensitiveObjectsFilterArgs', 'GetSensitiveDataModelSensitiveObjectsFilterArgsDict']]]]] = None,
+def get_sensitive_data_model_sensitive_objects_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSensitiveDataModelSensitiveObjectsFilterArgs', 'GetSensitiveDataModelSensitiveObjectsFilterArgsDict', 'outputs.GetSensitiveDataModelSensitiveObjectsFilterResult']]]]] = None,
                                                       object_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                                       objects: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                                       schema_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,

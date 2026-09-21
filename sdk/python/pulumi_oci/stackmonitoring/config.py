@@ -564,19 +564,19 @@ class Config(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_configurations: pulumi.Input[Optional[Union['ConfigAdditionalConfigurationsArgs', 'ConfigAdditionalConfigurationsArgsDict']]] = None,
+                 additional_configurations: pulumi.Input[Optional[Union['ConfigAdditionalConfigurationsArgs', 'ConfigAdditionalConfigurationsArgsDict', 'outputs.ConfigAdditionalConfigurations']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  config_type: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 dynamic_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigDynamicGroupArgs', 'ConfigDynamicGroupArgsDict']]]]] = None,
+                 dynamic_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigDynamicGroupArgs', 'ConfigDynamicGroupArgsDict', 'outputs.ConfigDynamicGroup']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_manually_onboarded: pulumi.Input[Optional[_builtins.bool]] = None,
                  license: pulumi.Input[Optional[_builtins.str]] = None,
                  policy_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  resource_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 user_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigUserGroupArgs', 'ConfigUserGroupArgsDict']]]]] = None,
+                 user_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigUserGroupArgs', 'ConfigUserGroupArgsDict', 'outputs.ConfigUserGroup']]]]] = None,
                  version: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -625,19 +625,19 @@ class Config(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ConfigAdditionalConfigurationsArgs', 'ConfigAdditionalConfigurationsArgsDict']] additional_configurations: (Updatable) Property Details
+        :param pulumi.Input[Union['ConfigAdditionalConfigurationsArgs', 'ConfigAdditionalConfigurationsArgsDict', 'outputs.ConfigAdditionalConfigurations']] additional_configurations: (Updatable) Property Details
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment in which the configuration is created.
         :param pulumi.Input[_builtins.str] config_type: The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the configuration.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigDynamicGroupArgs', 'ConfigDynamicGroupArgsDict']]]] dynamic_groups: (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigDynamicGroupArgs', 'ConfigDynamicGroupArgsDict', 'outputs.ConfigDynamicGroup']]]] dynamic_groups: (Updatable) List of dynamic groups dedicated for Stack Monitoring.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
         :param pulumi.Input[_builtins.bool] is_manually_onboarded: (Updatable) True if customer decides marks configuration as manually configured.
         :param pulumi.Input[_builtins.str] license: (Updatable) License edition.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] policy_names: (Updatable) List of policy names assigned for onboarding
         :param pulumi.Input[_builtins.str] resource_type: The type of resource to configure for automatic promotion.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigUserGroupArgs', 'ConfigUserGroupArgsDict']]]] user_groups: (Updatable) List of user groups dedicated for Stack Monitoring.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigUserGroupArgs', 'ConfigUserGroupArgsDict', 'outputs.ConfigUserGroup']]]] user_groups: (Updatable) List of user groups dedicated for Stack Monitoring.
         :param pulumi.Input[_builtins.str] version: (Updatable) Assigned version to given onboard configuration.
                
                ** IMPORTANT **
@@ -708,19 +708,19 @@ class Config(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_configurations: pulumi.Input[Optional[Union['ConfigAdditionalConfigurationsArgs', 'ConfigAdditionalConfigurationsArgsDict']]] = None,
+                 additional_configurations: pulumi.Input[Optional[Union['ConfigAdditionalConfigurationsArgs', 'ConfigAdditionalConfigurationsArgsDict', 'outputs.ConfigAdditionalConfigurations']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  config_type: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 dynamic_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigDynamicGroupArgs', 'ConfigDynamicGroupArgsDict']]]]] = None,
+                 dynamic_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigDynamicGroupArgs', 'ConfigDynamicGroupArgsDict', 'outputs.ConfigDynamicGroup']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_manually_onboarded: pulumi.Input[Optional[_builtins.bool]] = None,
                  license: pulumi.Input[Optional[_builtins.str]] = None,
                  policy_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  resource_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 user_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigUserGroupArgs', 'ConfigUserGroupArgsDict']]]]] = None,
+                 user_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigUserGroupArgs', 'ConfigUserGroupArgsDict', 'outputs.ConfigUserGroup']]]]] = None,
                  version: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -763,12 +763,12 @@ class Config(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_configurations: pulumi.Input[Optional[Union['ConfigAdditionalConfigurationsArgs', 'ConfigAdditionalConfigurationsArgsDict']]] = None,
+            additional_configurations: pulumi.Input[Optional[Union['ConfigAdditionalConfigurationsArgs', 'ConfigAdditionalConfigurationsArgsDict', 'outputs.ConfigAdditionalConfigurations']]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             config_type: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            dynamic_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigDynamicGroupArgs', 'ConfigDynamicGroupArgsDict']]]]] = None,
+            dynamic_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigDynamicGroupArgs', 'ConfigDynamicGroupArgsDict', 'outputs.ConfigDynamicGroup']]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_manually_onboarded: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -779,7 +779,7 @@ class Config(pulumi.CustomResource):
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
-            user_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigUserGroupArgs', 'ConfigUserGroupArgsDict']]]]] = None,
+            user_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigUserGroupArgs', 'ConfigUserGroupArgsDict', 'outputs.ConfigUserGroup']]]]] = None,
             version: pulumi.Input[Optional[_builtins.str]] = None) -> 'Config':
         """
         Get an existing Config resource's state with the given name, id, and optional extra
@@ -788,12 +788,12 @@ class Config(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ConfigAdditionalConfigurationsArgs', 'ConfigAdditionalConfigurationsArgsDict']] additional_configurations: (Updatable) Property Details
+        :param pulumi.Input[Union['ConfigAdditionalConfigurationsArgs', 'ConfigAdditionalConfigurationsArgsDict', 'outputs.ConfigAdditionalConfigurations']] additional_configurations: (Updatable) Property Details
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment in which the configuration is created.
         :param pulumi.Input[_builtins.str] config_type: The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the configuration.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigDynamicGroupArgs', 'ConfigDynamicGroupArgsDict']]]] dynamic_groups: (Updatable) List of dynamic groups dedicated for Stack Monitoring.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigDynamicGroupArgs', 'ConfigDynamicGroupArgsDict', 'outputs.ConfigDynamicGroup']]]] dynamic_groups: (Updatable) List of dynamic groups dedicated for Stack Monitoring.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
         :param pulumi.Input[_builtins.bool] is_manually_onboarded: (Updatable) True if customer decides marks configuration as manually configured.
@@ -804,7 +804,7 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time the configuration was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time the Config was updated.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigUserGroupArgs', 'ConfigUserGroupArgsDict']]]] user_groups: (Updatable) List of user groups dedicated for Stack Monitoring.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigUserGroupArgs', 'ConfigUserGroupArgsDict', 'outputs.ConfigUserGroup']]]] user_groups: (Updatable) List of user groups dedicated for Stack Monitoring.
         :param pulumi.Input[_builtins.str] version: (Updatable) Assigned version to given onboard configuration.
                
                ** IMPORTANT **

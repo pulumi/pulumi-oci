@@ -82,7 +82,7 @@ class AwaitableGetAutonomousDatabasePeersResult(GetAutonomousDatabasePeersResult
 
 
 def get_autonomous_database_peers(autonomous_database_id: Optional[_builtins.str] = None,
-                                  filters: Optional[Sequence[Union['GetAutonomousDatabasePeersFilterArgs', 'GetAutonomousDatabasePeersFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetAutonomousDatabasePeersFilterArgs', 'GetAutonomousDatabasePeersFilterArgsDict', 'outputs.GetAutonomousDatabasePeersFilterResult']]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabasePeersResult:
     """
     This data source provides the list of Autonomous Database Peers in Oracle Cloud Infrastructure Database service.
@@ -113,7 +113,7 @@ def get_autonomous_database_peers(autonomous_database_id: Optional[_builtins.str
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
 def get_autonomous_database_peers_output(autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDatabasePeersFilterArgs', 'GetAutonomousDatabasePeersFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDatabasePeersFilterArgs', 'GetAutonomousDatabasePeersFilterArgsDict', 'outputs.GetAutonomousDatabasePeersFilterResult']]]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabasePeersResult]:
     """
     This data source provides the list of Autonomous Database Peers in Oracle Cloud Infrastructure Database service.

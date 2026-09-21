@@ -142,7 +142,7 @@ def get_dr_plans(display_name: Optional[_builtins.str] = None,
                  dr_plan_id: Optional[_builtins.str] = None,
                  dr_plan_type: Optional[_builtins.str] = None,
                  dr_protection_group_id: Optional[_builtins.str] = None,
-                 filters: Optional[Sequence[Union['GetDrPlansFilterArgs', 'GetDrPlansFilterArgsDict']]] = None,
+                 filters: Optional[Sequence[Union['GetDrPlansFilterArgs', 'GetDrPlansFilterArgsDict', 'outputs.GetDrPlansFilterResult']]] = None,
                  lifecycle_sub_state: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDrPlansResult:
@@ -198,7 +198,7 @@ def get_dr_plans_output(display_name: pulumi.Input[Optional[Optional[_builtins.s
                         dr_plan_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         dr_plan_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         dr_protection_group_id: pulumi.Input[Optional[_builtins.str]] = None,
-                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDrPlansFilterArgs', 'GetDrPlansFilterArgsDict']]]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDrPlansFilterArgs', 'GetDrPlansFilterArgsDict', 'outputs.GetDrPlansFilterResult']]]]] = None,
                         lifecycle_sub_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDrPlansResult]:

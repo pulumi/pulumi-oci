@@ -119,7 +119,7 @@ class AwaitableGetMigrationsResult(GetMigrationsResult):
 
 def get_migrations(compartment_id: Optional[_builtins.str] = None,
                    display_name: Optional[_builtins.str] = None,
-                   filters: Optional[Sequence[Union['GetMigrationsFilterArgs', 'GetMigrationsFilterArgsDict']]] = None,
+                   filters: Optional[Sequence[Union['GetMigrationsFilterArgs', 'GetMigrationsFilterArgsDict', 'outputs.GetMigrationsFilterResult']]] = None,
                    migration_id: Optional[_builtins.str] = None,
                    state: Optional[_builtins.str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMigrationsResult:
@@ -165,7 +165,7 @@ def get_migrations(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_migrations_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMigrationsFilterArgs', 'GetMigrationsFilterArgsDict']]]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMigrationsFilterArgs', 'GetMigrationsFilterArgsDict', 'outputs.GetMigrationsFilterResult']]]]] = None,
                           migration_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMigrationsResult]:

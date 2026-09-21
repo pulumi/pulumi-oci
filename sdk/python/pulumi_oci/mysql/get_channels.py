@@ -145,7 +145,7 @@ def get_channels(channel_id: Optional[_builtins.str] = None,
                  compartment_id: Optional[_builtins.str] = None,
                  db_system_id: Optional[_builtins.str] = None,
                  display_name: Optional[_builtins.str] = None,
-                 filters: Optional[Sequence[Union['GetChannelsFilterArgs', 'GetChannelsFilterArgsDict']]] = None,
+                 filters: Optional[Sequence[Union['GetChannelsFilterArgs', 'GetChannelsFilterArgsDict', 'outputs.GetChannelsFilterResult']]] = None,
                  is_enabled: Optional[_builtins.bool] = None,
                  state: Optional[_builtins.str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetChannelsResult:
@@ -201,7 +201,7 @@ def get_channels_output(channel_id: pulumi.Input[Optional[Optional[_builtins.str
                         compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                         db_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetChannelsFilterArgs', 'GetChannelsFilterArgsDict']]]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetChannelsFilterArgs', 'GetChannelsFilterArgsDict', 'outputs.GetChannelsFilterResult']]]]] = None,
                         is_enabled: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetChannelsResult]:

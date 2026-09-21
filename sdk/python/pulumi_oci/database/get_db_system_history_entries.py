@@ -82,7 +82,7 @@ class AwaitableGetDbSystemHistoryEntriesResult(GetDbSystemHistoryEntriesResult):
 
 
 def get_db_system_history_entries(db_system_id: Optional[_builtins.str] = None,
-                                  filters: Optional[Sequence[Union['GetDbSystemHistoryEntriesFilterArgs', 'GetDbSystemHistoryEntriesFilterArgsDict']]] = None,
+                                  filters: Optional[Sequence[Union['GetDbSystemHistoryEntriesFilterArgs', 'GetDbSystemHistoryEntriesFilterArgsDict', 'outputs.GetDbSystemHistoryEntriesFilterResult']]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbSystemHistoryEntriesResult:
     """
     This data source provides the list of Db System Patch History Entries in Oracle Cloud Infrastructure Database service.
@@ -113,7 +113,7 @@ def get_db_system_history_entries(db_system_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         patch_history_entries=pulumi.get(__ret__, 'patch_history_entries'))
 def get_db_system_history_entries_output(db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemHistoryEntriesFilterArgs', 'GetDbSystemHistoryEntriesFilterArgsDict']]]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemHistoryEntriesFilterArgs', 'GetDbSystemHistoryEntriesFilterArgsDict', 'outputs.GetDbSystemHistoryEntriesFilterResult']]]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemHistoryEntriesResult]:
     """
     This data source provides the list of Db System Patch History Entries in Oracle Cloud Infrastructure Database service.

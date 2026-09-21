@@ -140,7 +140,7 @@ class AwaitableGetProtectionPoliciesResult(GetProtectionPoliciesResult):
 
 def get_protection_policies(compartment_id: Optional[_builtins.str] = None,
                             display_name: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetProtectionPoliciesFilterArgs', 'GetProtectionPoliciesFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetProtectionPoliciesFilterArgs', 'GetProtectionPoliciesFilterArgsDict', 'outputs.GetProtectionPoliciesFilterResult']]] = None,
                             must_enforce_cloud_locality: Optional[_builtins.bool] = None,
                             owner: Optional[_builtins.str] = None,
                             protection_policy_id: Optional[_builtins.str] = None,
@@ -196,7 +196,7 @@ def get_protection_policies(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_protection_policies_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProtectionPoliciesFilterArgs', 'GetProtectionPoliciesFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProtectionPoliciesFilterArgs', 'GetProtectionPoliciesFilterArgsDict', 'outputs.GetProtectionPoliciesFilterResult']]]]] = None,
                                    must_enforce_cloud_locality: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                    owner: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    protection_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

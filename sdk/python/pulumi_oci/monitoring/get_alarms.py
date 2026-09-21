@@ -120,7 +120,7 @@ class AwaitableGetAlarmsResult(GetAlarmsResult):
 def get_alarms(compartment_id: Optional[_builtins.str] = None,
                compartment_id_in_subtree: Optional[_builtins.bool] = None,
                display_name: Optional[_builtins.str] = None,
-               filters: Optional[Sequence[Union['GetAlarmsFilterArgs', 'GetAlarmsFilterArgsDict']]] = None,
+               filters: Optional[Sequence[Union['GetAlarmsFilterArgs', 'GetAlarmsFilterArgsDict', 'outputs.GetAlarmsFilterResult']]] = None,
                state: Optional[_builtins.str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAlarmsResult:
     """
@@ -174,7 +174,7 @@ def get_alarms(compartment_id: Optional[_builtins.str] = None,
 def get_alarms_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                       compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAlarmsFilterArgs', 'GetAlarmsFilterArgsDict']]]]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAlarmsFilterArgs', 'GetAlarmsFilterArgsDict', 'outputs.GetAlarmsFilterResult']]]]] = None,
                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAlarmsResult]:
     """

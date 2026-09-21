@@ -702,7 +702,7 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
             additional_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             database_compartments: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            database_systems: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalExadataInfrastructureDatabaseSystemArgs', 'ExternalExadataInfrastructureDatabaseSystemArgsDict']]]]] = None,
+            database_systems: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalExadataInfrastructureDatabaseSystemArgs', 'ExternalExadataInfrastructureDatabaseSystemArgsDict', 'outputs.ExternalExadataInfrastructureDatabaseSystem']]]]] = None,
             db_system_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             discovery_key: pulumi.Input[Optional[_builtins.str]] = None,
@@ -714,7 +714,7 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
             rack_size: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
-            storage_grids: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalExadataInfrastructureStorageGridArgs', 'ExternalExadataInfrastructureStorageGridArgsDict']]]]] = None,
+            storage_grids: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalExadataInfrastructureStorageGridArgs', 'ExternalExadataInfrastructureStorageGridArgsDict', 'outputs.ExternalExadataInfrastructureStorageGrid']]]]] = None,
             storage_server_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -730,7 +730,7 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] database_compartments: The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalExadataInfrastructureDatabaseSystemArgs', 'ExternalExadataInfrastructureDatabaseSystemArgsDict']]]] database_systems: A list of DB systems.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalExadataInfrastructureDatabaseSystemArgs', 'ExternalExadataInfrastructureDatabaseSystemArgsDict', 'outputs.ExternalExadataInfrastructureDatabaseSystem']]]] database_systems: A list of DB systems.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] db_system_ids: (Updatable) The list of DB systems in the Exadata infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] discovery_key: (Updatable) The unique key of the discovery request.
@@ -742,7 +742,7 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] rack_size: The rack size of the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the database resource.
         :param pulumi.Input[_builtins.str] status: The status of the Exadata resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalExadataInfrastructureStorageGridArgs', 'ExternalExadataInfrastructureStorageGridArgsDict']]]] storage_grids: The Exadata storage server grid of the Exadata infrastructure.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalExadataInfrastructureStorageGridArgs', 'ExternalExadataInfrastructureStorageGridArgsDict', 'outputs.ExternalExadataInfrastructureStorageGrid']]]] storage_grids: The Exadata storage server grid of the Exadata infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] storage_server_names: (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
                
                ** IMPORTANT **

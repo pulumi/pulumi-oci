@@ -100,7 +100,7 @@ class AwaitableGetResourceQuotasResult(GetResourceQuotasResult):
 
 
 def get_resource_quotas(compartment_id: Optional[_builtins.str] = None,
-                        filters: Optional[Sequence[Union['GetResourceQuotasFilterArgs', 'GetResourceQuotasFilterArgsDict']]] = None,
+                        filters: Optional[Sequence[Union['GetResourceQuotasFilterArgs', 'GetResourceQuotasFilterArgsDict', 'outputs.GetResourceQuotasFilterResult']]] = None,
                         service_entitlement: Optional[_builtins.str] = None,
                         service_name: Optional[_builtins.str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetResourceQuotasResult:
@@ -142,7 +142,7 @@ def get_resource_quotas(compartment_id: Optional[_builtins.str] = None,
         service_entitlement=pulumi.get(__ret__, 'service_entitlement'),
         service_name=pulumi.get(__ret__, 'service_name'))
 def get_resource_quotas_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetResourceQuotasFilterArgs', 'GetResourceQuotasFilterArgsDict']]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetResourceQuotasFilterArgs', 'GetResourceQuotasFilterArgsDict', 'outputs.GetResourceQuotasFilterResult']]]]] = None,
                                service_entitlement: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                service_name: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResourceQuotasResult]:

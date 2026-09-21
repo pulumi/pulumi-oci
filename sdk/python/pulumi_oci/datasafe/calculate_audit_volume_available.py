@@ -319,7 +319,7 @@ class CalculateAuditVolumeAvailable(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             audit_collection_start_time: pulumi.Input[Optional[_builtins.str]] = None,
             audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
-            available_audit_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculateAuditVolumeAvailableAvailableAuditVolumeArgs', 'CalculateAuditVolumeAvailableAvailableAuditVolumeArgsDict']]]]] = None,
+            available_audit_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculateAuditVolumeAvailableAvailableAuditVolumeArgs', 'CalculateAuditVolumeAvailableAvailableAuditVolumeArgsDict', 'outputs.CalculateAuditVolumeAvailableAvailableAuditVolume']]]]] = None,
             database_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
             trail_locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'CalculateAuditVolumeAvailable':
         """
@@ -331,7 +331,7 @@ class CalculateAuditVolumeAvailable(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] audit_collection_start_time: The date from which the audit trail must start collecting data in UTC, in the format defined by RFC3339. If not specified, this will default to the date based on the retention period.
         :param pulumi.Input[_builtins.str] audit_profile_id: The OCID of the audit.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CalculateAuditVolumeAvailableAvailableAuditVolumeArgs', 'CalculateAuditVolumeAvailableAvailableAuditVolumeArgsDict']]]] available_audit_volumes: List of available audit volumes.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CalculateAuditVolumeAvailableAvailableAuditVolumeArgs', 'CalculateAuditVolumeAvailableAvailableAuditVolumeArgsDict', 'outputs.CalculateAuditVolumeAvailableAvailableAuditVolume']]]] available_audit_volumes: List of available audit volumes.
         :param pulumi.Input[_builtins.str] database_unique_name: Unique name of the database associated to the peer target database.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] trail_locations: The trail locations for which the audit data volume has to be calculated.
                

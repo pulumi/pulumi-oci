@@ -88,7 +88,7 @@ class AwaitableGetSupportedCloudRegionsResult(GetSupportedCloudRegionsResult):
 
 
 def get_supported_cloud_regions(asset_source_type: Optional[_builtins.str] = None,
-                                filters: Optional[Sequence[Union['GetSupportedCloudRegionsFilterArgs', 'GetSupportedCloudRegionsFilterArgsDict']]] = None,
+                                filters: Optional[Sequence[Union['GetSupportedCloudRegionsFilterArgs', 'GetSupportedCloudRegionsFilterArgsDict', 'outputs.GetSupportedCloudRegionsFilterResult']]] = None,
                                 name_contains: Optional[_builtins.str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSupportedCloudRegionsResult:
     """
@@ -108,7 +108,7 @@ def get_supported_cloud_regions(asset_source_type: Optional[_builtins.str] = Non
         name_contains=pulumi.get(__ret__, 'name_contains'),
         supported_cloud_region_collections=pulumi.get(__ret__, 'supported_cloud_region_collections'))
 def get_supported_cloud_regions_output(asset_source_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSupportedCloudRegionsFilterArgs', 'GetSupportedCloudRegionsFilterArgsDict']]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSupportedCloudRegionsFilterArgs', 'GetSupportedCloudRegionsFilterArgsDict', 'outputs.GetSupportedCloudRegionsFilterResult']]]]] = None,
                                        name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSupportedCloudRegionsResult]:
     """

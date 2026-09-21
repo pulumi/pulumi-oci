@@ -136,7 +136,7 @@ def get_cloud_db_systems(compartment_id: Optional[_builtins.str] = None,
                          dbaas_parent_infrastructure_id: Optional[_builtins.str] = None,
                          deployment_type: Optional[_builtins.str] = None,
                          display_name: Optional[_builtins.str] = None,
-                         filters: Optional[Sequence[Union['GetCloudDbSystemsFilterArgs', 'GetCloudDbSystemsFilterArgsDict']]] = None,
+                         filters: Optional[Sequence[Union['GetCloudDbSystemsFilterArgs', 'GetCloudDbSystemsFilterArgsDict', 'outputs.GetCloudDbSystemsFilterResult']]] = None,
                          state: Optional[_builtins.str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudDbSystemsResult:
     """
@@ -187,7 +187,7 @@ def get_cloud_db_systems_output(compartment_id: pulumi.Input[Optional[_builtins.
                                 dbaas_parent_infrastructure_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 deployment_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudDbSystemsFilterArgs', 'GetCloudDbSystemsFilterArgsDict']]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudDbSystemsFilterArgs', 'GetCloudDbSystemsFilterArgsDict', 'outputs.GetCloudDbSystemsFilterResult']]]]] = None,
                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudDbSystemsResult]:
     """

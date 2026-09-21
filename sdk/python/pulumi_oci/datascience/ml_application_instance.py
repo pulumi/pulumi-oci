@@ -483,9 +483,9 @@ class MlApplicationInstance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auth_configuration: pulumi.Input[Optional[Union['MlApplicationInstanceAuthConfigurationArgs', 'MlApplicationInstanceAuthConfigurationArgsDict']]] = None,
+                 auth_configuration: pulumi.Input[Optional[Union['MlApplicationInstanceAuthConfigurationArgs', 'MlApplicationInstanceAuthConfigurationArgsDict', 'outputs.MlApplicationInstanceAuthConfiguration']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MlApplicationInstanceConfigurationArgs', 'MlApplicationInstanceConfigurationArgsDict']]]]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MlApplicationInstanceConfigurationArgs', 'MlApplicationInstanceConfigurationArgsDict', 'outputs.MlApplicationInstanceConfiguration']]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -539,9 +539,9 @@ class MlApplicationInstance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['MlApplicationInstanceAuthConfigurationArgs', 'MlApplicationInstanceAuthConfigurationArgsDict']] auth_configuration: AuthN/Z configuration for online prediction
+        :param pulumi.Input[Union['MlApplicationInstanceAuthConfigurationArgs', 'MlApplicationInstanceAuthConfigurationArgsDict', 'outputs.MlApplicationInstanceAuthConfiguration']] auth_configuration: AuthN/Z configuration for online prediction
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the MlApplicationInstance is created.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MlApplicationInstanceConfigurationArgs', 'MlApplicationInstanceConfigurationArgsDict']]]] configurations: (Updatable) Data that are used for provisioning of the given MlApplicationInstance. These are validated against configurationSchema defined in referenced MlApplicationImplementation.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MlApplicationInstanceConfigurationArgs', 'MlApplicationInstanceConfigurationArgsDict', 'outputs.MlApplicationInstanceConfiguration']]]] configurations: (Updatable) Data that are used for provisioning of the given MlApplicationInstance. These are validated against configurationSchema defined in referenced MlApplicationImplementation.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: The name of MlApplicationInstance. System will generate displayName when not provided.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -617,9 +617,9 @@ class MlApplicationInstance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auth_configuration: pulumi.Input[Optional[Union['MlApplicationInstanceAuthConfigurationArgs', 'MlApplicationInstanceAuthConfigurationArgsDict']]] = None,
+                 auth_configuration: pulumi.Input[Optional[Union['MlApplicationInstanceAuthConfigurationArgs', 'MlApplicationInstanceAuthConfigurationArgsDict', 'outputs.MlApplicationInstanceAuthConfiguration']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MlApplicationInstanceConfigurationArgs', 'MlApplicationInstanceConfigurationArgsDict']]]]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MlApplicationInstanceConfigurationArgs', 'MlApplicationInstanceConfigurationArgsDict', 'outputs.MlApplicationInstanceConfiguration']]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -669,9 +669,9 @@ class MlApplicationInstance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            auth_configuration: pulumi.Input[Optional[Union['MlApplicationInstanceAuthConfigurationArgs', 'MlApplicationInstanceAuthConfigurationArgsDict']]] = None,
+            auth_configuration: pulumi.Input[Optional[Union['MlApplicationInstanceAuthConfigurationArgs', 'MlApplicationInstanceAuthConfigurationArgsDict', 'outputs.MlApplicationInstanceAuthConfiguration']]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-            configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MlApplicationInstanceConfigurationArgs', 'MlApplicationInstanceConfigurationArgsDict']]]]] = None,
+            configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MlApplicationInstanceConfigurationArgs', 'MlApplicationInstanceConfigurationArgsDict', 'outputs.MlApplicationInstanceConfiguration']]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -682,7 +682,7 @@ class MlApplicationInstance(pulumi.CustomResource):
             ml_application_implementation_id: pulumi.Input[Optional[_builtins.str]] = None,
             ml_application_implementation_name: pulumi.Input[Optional[_builtins.str]] = None,
             ml_application_name: pulumi.Input[Optional[_builtins.str]] = None,
-            prediction_endpoint_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MlApplicationInstancePredictionEndpointDetailArgs', 'MlApplicationInstancePredictionEndpointDetailArgsDict']]]]] = None,
+            prediction_endpoint_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MlApplicationInstancePredictionEndpointDetailArgs', 'MlApplicationInstancePredictionEndpointDetailArgsDict', 'outputs.MlApplicationInstancePredictionEndpointDetail']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -694,9 +694,9 @@ class MlApplicationInstance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['MlApplicationInstanceAuthConfigurationArgs', 'MlApplicationInstanceAuthConfigurationArgsDict']] auth_configuration: AuthN/Z configuration for online prediction
+        :param pulumi.Input[Union['MlApplicationInstanceAuthConfigurationArgs', 'MlApplicationInstanceAuthConfigurationArgsDict', 'outputs.MlApplicationInstanceAuthConfiguration']] auth_configuration: AuthN/Z configuration for online prediction
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the MlApplicationInstance is created.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MlApplicationInstanceConfigurationArgs', 'MlApplicationInstanceConfigurationArgsDict']]]] configurations: (Updatable) Data that are used for provisioning of the given MlApplicationInstance. These are validated against configurationSchema defined in referenced MlApplicationImplementation.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MlApplicationInstanceConfigurationArgs', 'MlApplicationInstanceConfigurationArgsDict', 'outputs.MlApplicationInstanceConfiguration']]]] configurations: (Updatable) Data that are used for provisioning of the given MlApplicationInstance. These are validated against configurationSchema defined in referenced MlApplicationImplementation.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: The name of MlApplicationInstance. System will generate displayName when not provided.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -710,7 +710,7 @@ class MlApplicationInstance(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] ml_application_implementation_name: The name of Ml Application Implementation (based on mlApplicationImplementationId)
         :param pulumi.Input[_builtins.str] ml_application_name: The name of ML Application (based on mlApplicationId).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MlApplicationInstancePredictionEndpointDetailArgs', 'MlApplicationInstancePredictionEndpointDetailArgsDict']]]] prediction_endpoint_details: Prediction endpoint related information.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MlApplicationInstancePredictionEndpointDetailArgs', 'MlApplicationInstancePredictionEndpointDetailArgsDict', 'outputs.MlApplicationInstancePredictionEndpointDetail']]]] prediction_endpoint_details: Prediction endpoint related information.
         :param pulumi.Input[_builtins.str] state: The current state of the MlApplicationInstance.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time the the MlApplication was created. An RFC3339 formatted datetime string

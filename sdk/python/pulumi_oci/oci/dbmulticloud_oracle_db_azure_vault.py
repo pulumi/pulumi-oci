@@ -738,7 +738,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
             oracle_db_azure_resource_group: pulumi.Input[Optional[_builtins.str]] = None,
             oracle_db_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
             properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            replication_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureVaultReplicationMetadataArgs', 'DbmulticloudOracleDbAzureVaultReplicationMetadataArgsDict']]]]] = None,
+            replication_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureVaultReplicationMetadataArgs', 'DbmulticloudOracleDbAzureVaultReplicationMetadataArgsDict', 'outputs.DbmulticloudOracleDbAzureVaultReplicationMetadata']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             target_region: pulumi.Input[Optional[_builtins.str]] = None,
@@ -763,7 +763,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] oracle_db_azure_resource_group: (Updatable) Oracle DB Azure resource group name.
         :param pulumi.Input[_builtins.str] oracle_db_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) resource's properties.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureVaultReplicationMetadataArgs', 'DbmulticloudOracleDbAzureVaultReplicationMetadataArgsDict']]]] replication_metadatas: Replication metadata, it has information about replication and target region.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureVaultReplicationMetadataArgs', 'DbmulticloudOracleDbAzureVaultReplicationMetadataArgsDict', 'outputs.DbmulticloudOracleDbAzureVaultReplicationMetadata']]]] replication_metadatas: Replication metadata, it has information about replication and target region.
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the Oracle DB Azure Vault resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] target_region: The target region, where resource is replicated.

@@ -82,7 +82,7 @@ class AwaitableGetMarketplaceMetadataPublicKeysResult(GetMarketplaceMetadataPubl
 
 
 def get_marketplace_metadata_public_keys(compartment_id: Optional[_builtins.str] = None,
-                                         filters: Optional[Sequence[Union['GetMarketplaceMetadataPublicKeysFilterArgs', 'GetMarketplaceMetadataPublicKeysFilterArgsDict']]] = None,
+                                         filters: Optional[Sequence[Union['GetMarketplaceMetadataPublicKeysFilterArgs', 'GetMarketplaceMetadataPublicKeysFilterArgsDict', 'outputs.GetMarketplaceMetadataPublicKeysFilterResult']]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMarketplaceMetadataPublicKeysResult:
     """
     This data source provides the list of Marketplace Metadata Public Keys in Oracle Cloud Infrastructure Marketplace service.
@@ -113,7 +113,7 @@ def get_marketplace_metadata_public_keys(compartment_id: Optional[_builtins.str]
         id=pulumi.get(__ret__, 'id'),
         marketplace_metadata_public_keys=pulumi.get(__ret__, 'marketplace_metadata_public_keys'))
 def get_marketplace_metadata_public_keys_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMarketplaceMetadataPublicKeysFilterArgs', 'GetMarketplaceMetadataPublicKeysFilterArgsDict']]]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMarketplaceMetadataPublicKeysFilterArgs', 'GetMarketplaceMetadataPublicKeysFilterArgsDict', 'outputs.GetMarketplaceMetadataPublicKeysFilterResult']]]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMarketplaceMetadataPublicKeysResult]:
     """
     This data source provides the list of Marketplace Metadata Public Keys in Oracle Cloud Infrastructure Marketplace service.

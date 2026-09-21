@@ -118,7 +118,7 @@ class AwaitableGetMaintenanceWindowsResult(GetMaintenanceWindowsResult):
 
 
 def get_maintenance_windows(compartment_id: Optional[_builtins.str] = None,
-                            filters: Optional[Sequence[Union['GetMaintenanceWindowsFilterArgs', 'GetMaintenanceWindowsFilterArgsDict']]] = None,
+                            filters: Optional[Sequence[Union['GetMaintenanceWindowsFilterArgs', 'GetMaintenanceWindowsFilterArgsDict', 'outputs.GetMaintenanceWindowsFilterResult']]] = None,
                             lifecycle_details: Optional[_builtins.str] = None,
                             name: Optional[_builtins.str] = None,
                             status: Optional[_builtins.str] = None,
@@ -164,7 +164,7 @@ def get_maintenance_windows(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         status=pulumi.get(__ret__, 'status'))
 def get_maintenance_windows_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaintenanceWindowsFilterArgs', 'GetMaintenanceWindowsFilterArgsDict']]]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaintenanceWindowsFilterArgs', 'GetMaintenanceWindowsFilterArgsDict', 'outputs.GetMaintenanceWindowsFilterResult']]]]] = None,
                                    lifecycle_details: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,

@@ -312,7 +312,7 @@ class DhcpOptions(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  domain_name_type: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DhcpOptionsOptionArgs', 'DhcpOptionsOptionArgsDict']]]]] = None,
+                 options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DhcpOptionsOptionArgs', 'DhcpOptionsOptionArgsDict', 'outputs.DhcpOptionsOption']]]]] = None,
                  vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -410,7 +410,7 @@ class DhcpOptions(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] domain_name_type: (Updatable) The search domain name type of DHCP options
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DhcpOptionsOptionArgs', 'DhcpOptionsOptionArgsDict']]]] options: (Updatable) A set of DHCP options.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DhcpOptionsOptionArgs', 'DhcpOptionsOptionArgsDict', 'outputs.DhcpOptionsOption']]]] options: (Updatable) A set of DHCP options.
         :param pulumi.Input[_builtins.str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the set of DHCP options belongs to.
                
                ** IMPORTANT **
@@ -530,7 +530,7 @@ class DhcpOptions(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  domain_name_type: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DhcpOptionsOptionArgs', 'DhcpOptionsOptionArgsDict']]]]] = None,
+                 options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DhcpOptionsOptionArgs', 'DhcpOptionsOptionArgsDict', 'outputs.DhcpOptionsOption']]]]] = None,
                  vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -571,7 +571,7 @@ class DhcpOptions(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             domain_name_type: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DhcpOptionsOptionArgs', 'DhcpOptionsOptionArgsDict']]]]] = None,
+            options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DhcpOptionsOptionArgs', 'DhcpOptionsOptionArgsDict', 'outputs.DhcpOptionsOption']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             vcn_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'DhcpOptions':
@@ -587,7 +587,7 @@ class DhcpOptions(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] domain_name_type: (Updatable) The search domain name type of DHCP options
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DhcpOptionsOptionArgs', 'DhcpOptionsOptionArgsDict']]]] options: (Updatable) A set of DHCP options.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DhcpOptionsOptionArgs', 'DhcpOptionsOptionArgsDict', 'outputs.DhcpOptionsOption']]]] options: (Updatable) A set of DHCP options.
         :param pulumi.Input[_builtins.str] state: The current state of the set of DHCP options.
         :param pulumi.Input[_builtins.str] time_created: Date and time the set of DHCP options was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the set of DHCP options belongs to.

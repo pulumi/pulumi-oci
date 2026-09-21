@@ -575,7 +575,7 @@ class Replica(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_delete_protected: pulumi.Input[Optional[_builtins.bool]] = None,
-                 replica_overrides: pulumi.Input[Optional[Union['ReplicaReplicaOverridesArgs', 'ReplicaReplicaOverridesArgsDict']]] = None,
+                 replica_overrides: pulumi.Input[Optional[Union['ReplicaReplicaOverridesArgs', 'ReplicaReplicaOverridesArgsDict', 'outputs.ReplicaReplicaOverrides']]] = None,
                  __props__=None):
         """
         This resource provides the Replica resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -638,7 +638,7 @@ class Replica(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the read replica. It does not have to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_delete_protected: (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-        :param pulumi.Input[Union['ReplicaReplicaOverridesArgs', 'ReplicaReplicaOverridesArgsDict']] replica_overrides: (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
+        :param pulumi.Input[Union['ReplicaReplicaOverridesArgs', 'ReplicaReplicaOverridesArgsDict', 'outputs.ReplicaReplicaOverrides']] replica_overrides: (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
         """
         ...
     @overload
@@ -720,7 +720,7 @@ class Replica(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_delete_protected: pulumi.Input[Optional[_builtins.bool]] = None,
-                 replica_overrides: pulumi.Input[Optional[Union['ReplicaReplicaOverridesArgs', 'ReplicaReplicaOverridesArgsDict']]] = None,
+                 replica_overrides: pulumi.Input[Optional[Union['ReplicaReplicaOverridesArgs', 'ReplicaReplicaOverridesArgsDict', 'outputs.ReplicaReplicaOverrides']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -775,7 +775,7 @@ class Replica(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            encrypt_datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReplicaEncryptDataArgs', 'ReplicaEncryptDataArgsDict']]]]] = None,
+            encrypt_datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReplicaEncryptDataArgs', 'ReplicaEncryptDataArgsDict', 'outputs.ReplicaEncryptData']]]]] = None,
             fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             ip_address: pulumi.Input[Optional[_builtins.str]] = None,
@@ -786,12 +786,12 @@ class Replica(pulumi.CustomResource):
             nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             port: pulumi.Input[Optional[_builtins.int]] = None,
             port_x: pulumi.Input[Optional[_builtins.int]] = None,
-            replica_overrides: pulumi.Input[Optional[Union['ReplicaReplicaOverridesArgs', 'ReplicaReplicaOverridesArgsDict']]] = None,
-            secure_connections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReplicaSecureConnectionArgs', 'ReplicaSecureConnectionArgsDict']]]]] = None,
+            replica_overrides: pulumi.Input[Optional[Union['ReplicaReplicaOverridesArgs', 'ReplicaReplicaOverridesArgsDict', 'outputs.ReplicaReplicaOverrides']]] = None,
+            secure_connections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReplicaSecureConnectionArgs', 'ReplicaSecureConnectionArgsDict', 'outputs.ReplicaSecureConnection']]]]] = None,
             security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             shape_name: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            telemetry_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReplicaTelemetryConfigurationArgs', 'ReplicaTelemetryConfigurationArgsDict']]]]] = None,
+            telemetry_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReplicaTelemetryConfigurationArgs', 'ReplicaTelemetryConfigurationArgsDict', 'outputs.ReplicaTelemetryConfiguration']]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'Replica':
         """
@@ -808,7 +808,7 @@ class Replica(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) User provided description of the read replica.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the read replica. It does not have to be unique.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ReplicaEncryptDataArgs', 'ReplicaEncryptDataArgsDict']]]] encrypt_datas: Encrypt data details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ReplicaEncryptDataArgs', 'ReplicaEncryptDataArgsDict', 'outputs.ReplicaEncryptData']]]] encrypt_datas: Encrypt data details.
         :param pulumi.Input[_builtins.str] fault_domain: The name of the Fault Domain the read replica is located in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] ip_address: The IP address the read replica is configured to listen on.
@@ -819,12 +819,12 @@ class Replica(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: Network Security Group OCIDs used for the VNIC attachment.
         :param pulumi.Input[_builtins.int] port: The port the read replica is configured to listen on.
         :param pulumi.Input[_builtins.int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
-        :param pulumi.Input[Union['ReplicaReplicaOverridesArgs', 'ReplicaReplicaOverridesArgsDict']] replica_overrides: (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ReplicaSecureConnectionArgs', 'ReplicaSecureConnectionArgsDict']]]] secure_connections: Secure connection configuration details.
+        :param pulumi.Input[Union['ReplicaReplicaOverridesArgs', 'ReplicaReplicaOverridesArgsDict', 'outputs.ReplicaReplicaOverrides']] replica_overrides: (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ReplicaSecureConnectionArgs', 'ReplicaSecureConnectionArgsDict', 'outputs.ReplicaSecureConnection']]]] secure_connections: Secure connection configuration details.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] shape_name: The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param pulumi.Input[_builtins.str] state: The state of the read replica.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ReplicaTelemetryConfigurationArgs', 'ReplicaTelemetryConfigurationArgsDict']]]] telemetry_configurations: Telemetry configuration details of a DB System or a read replica.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ReplicaTelemetryConfigurationArgs', 'ReplicaTelemetryConfigurationArgsDict', 'outputs.ReplicaTelemetryConfiguration']]]] telemetry_configurations: Telemetry configuration details of a DB System or a read replica.
         :param pulumi.Input[_builtins.str] time_created: The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[_builtins.str] time_updated: The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """

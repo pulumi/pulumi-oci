@@ -242,9 +242,9 @@ class SensitiveDataModelReferentialRelation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 child: pulumi.Input[Optional[Union['SensitiveDataModelReferentialRelationChildArgs', 'SensitiveDataModelReferentialRelationChildArgsDict']]] = None,
+                 child: pulumi.Input[Optional[Union['SensitiveDataModelReferentialRelationChildArgs', 'SensitiveDataModelReferentialRelationChildArgsDict', 'outputs.SensitiveDataModelReferentialRelationChild']]] = None,
                  is_sensitive: pulumi.Input[Optional[_builtins.bool]] = None,
-                 parent: pulumi.Input[Optional[Union['SensitiveDataModelReferentialRelationParentArgs', 'SensitiveDataModelReferentialRelationParentArgsDict']]] = None,
+                 parent: pulumi.Input[Optional[Union['SensitiveDataModelReferentialRelationParentArgs', 'SensitiveDataModelReferentialRelationParentArgsDict', 'outputs.SensitiveDataModelReferentialRelationParent']]] = None,
                  relation_type: pulumi.Input[Optional[_builtins.str]] = None,
                  sensitive_data_model_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -295,9 +295,9 @@ class SensitiveDataModelReferentialRelation(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['SensitiveDataModelReferentialRelationChildArgs', 'SensitiveDataModelReferentialRelationChildArgsDict']] child: columnsInfo object has details of column group with schema details.
+        :param pulumi.Input[Union['SensitiveDataModelReferentialRelationChildArgs', 'SensitiveDataModelReferentialRelationChildArgsDict', 'outputs.SensitiveDataModelReferentialRelationChild']] child: columnsInfo object has details of column group with schema details.
         :param pulumi.Input[_builtins.bool] is_sensitive: Add to sensitive data model if passed true. If false is passed, then the columns will not be added in the sensitive data model as sensitive columns and  if sensitive type OCIDs are assigned to the columns, then the sensitive type OCIDs will not be retained.
-        :param pulumi.Input[Union['SensitiveDataModelReferentialRelationParentArgs', 'SensitiveDataModelReferentialRelationParentArgsDict']] parent: columnsInfo object has details of column group with schema details.
+        :param pulumi.Input[Union['SensitiveDataModelReferentialRelationParentArgs', 'SensitiveDataModelReferentialRelationParentArgsDict', 'outputs.SensitiveDataModelReferentialRelationParent']] parent: columnsInfo object has details of column group with schema details.
         :param pulumi.Input[_builtins.str] relation_type: The type of referential relationship the sensitive column has with its parent.  DB_DEFINED indicates that the relationship is defined in the database dictionary.  APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
         :param pulumi.Input[_builtins.str] sensitive_data_model_id: The OCID of the sensitive data model.
                
@@ -370,9 +370,9 @@ class SensitiveDataModelReferentialRelation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 child: pulumi.Input[Optional[Union['SensitiveDataModelReferentialRelationChildArgs', 'SensitiveDataModelReferentialRelationChildArgsDict']]] = None,
+                 child: pulumi.Input[Optional[Union['SensitiveDataModelReferentialRelationChildArgs', 'SensitiveDataModelReferentialRelationChildArgsDict', 'outputs.SensitiveDataModelReferentialRelationChild']]] = None,
                  is_sensitive: pulumi.Input[Optional[_builtins.bool]] = None,
-                 parent: pulumi.Input[Optional[Union['SensitiveDataModelReferentialRelationParentArgs', 'SensitiveDataModelReferentialRelationParentArgsDict']]] = None,
+                 parent: pulumi.Input[Optional[Union['SensitiveDataModelReferentialRelationParentArgs', 'SensitiveDataModelReferentialRelationParentArgsDict', 'outputs.SensitiveDataModelReferentialRelationParent']]] = None,
                  relation_type: pulumi.Input[Optional[_builtins.str]] = None,
                  sensitive_data_model_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -409,10 +409,10 @@ class SensitiveDataModelReferentialRelation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            child: pulumi.Input[Optional[Union['SensitiveDataModelReferentialRelationChildArgs', 'SensitiveDataModelReferentialRelationChildArgsDict']]] = None,
+            child: pulumi.Input[Optional[Union['SensitiveDataModelReferentialRelationChildArgs', 'SensitiveDataModelReferentialRelationChildArgsDict', 'outputs.SensitiveDataModelReferentialRelationChild']]] = None,
             is_sensitive: pulumi.Input[Optional[_builtins.bool]] = None,
             key: pulumi.Input[Optional[_builtins.str]] = None,
-            parent: pulumi.Input[Optional[Union['SensitiveDataModelReferentialRelationParentArgs', 'SensitiveDataModelReferentialRelationParentArgsDict']]] = None,
+            parent: pulumi.Input[Optional[Union['SensitiveDataModelReferentialRelationParentArgs', 'SensitiveDataModelReferentialRelationParentArgsDict', 'outputs.SensitiveDataModelReferentialRelationParent']]] = None,
             relation_type: pulumi.Input[Optional[_builtins.str]] = None,
             sensitive_data_model_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None) -> 'SensitiveDataModelReferentialRelation':
@@ -423,10 +423,10 @@ class SensitiveDataModelReferentialRelation(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['SensitiveDataModelReferentialRelationChildArgs', 'SensitiveDataModelReferentialRelationChildArgsDict']] child: columnsInfo object has details of column group with schema details.
+        :param pulumi.Input[Union['SensitiveDataModelReferentialRelationChildArgs', 'SensitiveDataModelReferentialRelationChildArgsDict', 'outputs.SensitiveDataModelReferentialRelationChild']] child: columnsInfo object has details of column group with schema details.
         :param pulumi.Input[_builtins.bool] is_sensitive: Add to sensitive data model if passed true. If false is passed, then the columns will not be added in the sensitive data model as sensitive columns and  if sensitive type OCIDs are assigned to the columns, then the sensitive type OCIDs will not be retained.
         :param pulumi.Input[_builtins.str] key: The unique key that identifies the referential relation. It's numeric and unique within a sensitive data model.
-        :param pulumi.Input[Union['SensitiveDataModelReferentialRelationParentArgs', 'SensitiveDataModelReferentialRelationParentArgsDict']] parent: columnsInfo object has details of column group with schema details.
+        :param pulumi.Input[Union['SensitiveDataModelReferentialRelationParentArgs', 'SensitiveDataModelReferentialRelationParentArgsDict', 'outputs.SensitiveDataModelReferentialRelationParent']] parent: columnsInfo object has details of column group with schema details.
         :param pulumi.Input[_builtins.str] relation_type: The type of referential relationship the sensitive column has with its parent.  DB_DEFINED indicates that the relationship is defined in the database dictionary.  APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
         :param pulumi.Input[_builtins.str] sensitive_data_model_id: The OCID of the sensitive data model.
                

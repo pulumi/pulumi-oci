@@ -122,7 +122,7 @@ class AwaitableGetDatabaseToolsSqlReportsResult(GetDatabaseToolsSqlReportsResult
 
 def get_database_tools_sql_reports(compartment_id: Optional[_builtins.str] = None,
                                    display_name: Optional[_builtins.str] = None,
-                                   filters: Optional[Sequence[Union['GetDatabaseToolsSqlReportsFilterArgs', 'GetDatabaseToolsSqlReportsFilterArgsDict']]] = None,
+                                   filters: Optional[Sequence[Union['GetDatabaseToolsSqlReportsFilterArgs', 'GetDatabaseToolsSqlReportsFilterArgsDict', 'outputs.GetDatabaseToolsSqlReportsFilterResult']]] = None,
                                    state: Optional[_builtins.str] = None,
                                    types: Optional[Sequence[_builtins.str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabaseToolsSqlReportsResult:
@@ -168,7 +168,7 @@ def get_database_tools_sql_reports(compartment_id: Optional[_builtins.str] = Non
         types=pulumi.get(__ret__, 'types'))
 def get_database_tools_sql_reports_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabaseToolsSqlReportsFilterArgs', 'GetDatabaseToolsSqlReportsFilterArgsDict']]]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabaseToolsSqlReportsFilterArgs', 'GetDatabaseToolsSqlReportsFilterArgsDict', 'outputs.GetDatabaseToolsSqlReportsFilterResult']]]]] = None,
                                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseToolsSqlReportsResult]:

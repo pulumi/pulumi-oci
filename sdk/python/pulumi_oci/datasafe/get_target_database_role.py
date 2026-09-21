@@ -115,7 +115,7 @@ class AwaitableGetTargetDatabaseRoleResult(GetTargetDatabaseRoleResult):
 
 
 def get_target_database_role(authentication_type: Optional[_builtins.str] = None,
-                             filters: Optional[Sequence[Union['GetTargetDatabaseRoleFilterArgs', 'GetTargetDatabaseRoleFilterArgsDict']]] = None,
+                             filters: Optional[Sequence[Union['GetTargetDatabaseRoleFilterArgs', 'GetTargetDatabaseRoleFilterArgsDict', 'outputs.GetTargetDatabaseRoleFilterResult']]] = None,
                              is_oracle_maintained: Optional[_builtins.bool] = None,
                              role_name_contains: Optional[_builtins.str] = None,
                              role_names: Optional[Sequence[_builtins.str]] = None,
@@ -144,7 +144,7 @@ def get_target_database_role(authentication_type: Optional[_builtins.str] = None
         roles=pulumi.get(__ret__, 'roles'),
         target_database_id=pulumi.get(__ret__, 'target_database_id'))
 def get_target_database_role_output(authentication_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTargetDatabaseRoleFilterArgs', 'GetTargetDatabaseRoleFilterArgsDict']]]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTargetDatabaseRoleFilterArgs', 'GetTargetDatabaseRoleFilterArgsDict', 'outputs.GetTargetDatabaseRoleFilterResult']]]]] = None,
                                     is_oracle_maintained: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                     role_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     role_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,

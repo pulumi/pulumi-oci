@@ -311,9 +311,9 @@ class SecurityList(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 egress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityListEgressSecurityRuleArgs', 'SecurityListEgressSecurityRuleArgsDict']]]]] = None,
+                 egress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityListEgressSecurityRuleArgs', 'SecurityListEgressSecurityRuleArgsDict', 'outputs.SecurityListEgressSecurityRule']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ingress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityListIngressSecurityRuleArgs', 'SecurityListIngressSecurityRuleArgsDict']]]]] = None,
+                 ingress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityListIngressSecurityRuleArgs', 'SecurityListIngressSecurityRuleArgsDict', 'outputs.SecurityListIngressSecurityRule']]]]] = None,
                  vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -425,9 +425,9 @@ class SecurityList(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the security list.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityListEgressSecurityRuleArgs', 'SecurityListEgressSecurityRuleArgsDict']]]] egress_security_rules: (Updatable) Rules for allowing egress IP packets.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityListEgressSecurityRuleArgs', 'SecurityListEgressSecurityRuleArgsDict', 'outputs.SecurityListEgressSecurityRule']]]] egress_security_rules: (Updatable) Rules for allowing egress IP packets.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityListIngressSecurityRuleArgs', 'SecurityListIngressSecurityRuleArgsDict']]]] ingress_security_rules: (Updatable) Rules for allowing ingress IP packets.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityListIngressSecurityRuleArgs', 'SecurityListIngressSecurityRuleArgsDict', 'outputs.SecurityListIngressSecurityRule']]]] ingress_security_rules: (Updatable) Rules for allowing ingress IP packets.
         :param pulumi.Input[_builtins.str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.
                
                ** IMPORTANT **
@@ -561,9 +561,9 @@ class SecurityList(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 egress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityListEgressSecurityRuleArgs', 'SecurityListEgressSecurityRuleArgsDict']]]]] = None,
+                 egress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityListEgressSecurityRuleArgs', 'SecurityListEgressSecurityRuleArgsDict', 'outputs.SecurityListEgressSecurityRule']]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ingress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityListIngressSecurityRuleArgs', 'SecurityListIngressSecurityRuleArgsDict']]]]] = None,
+                 ingress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityListIngressSecurityRuleArgs', 'SecurityListIngressSecurityRuleArgsDict', 'outputs.SecurityListIngressSecurityRule']]]]] = None,
                  vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -600,9 +600,9 @@ class SecurityList(pulumi.CustomResource):
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            egress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityListEgressSecurityRuleArgs', 'SecurityListEgressSecurityRuleArgsDict']]]]] = None,
+            egress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityListEgressSecurityRuleArgs', 'SecurityListEgressSecurityRuleArgsDict', 'outputs.SecurityListEgressSecurityRule']]]]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            ingress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityListIngressSecurityRuleArgs', 'SecurityListIngressSecurityRuleArgsDict']]]]] = None,
+            ingress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityListIngressSecurityRuleArgs', 'SecurityListIngressSecurityRuleArgsDict', 'outputs.SecurityListIngressSecurityRule']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             vcn_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'SecurityList':
@@ -616,9 +616,9 @@ class SecurityList(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the security list.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityListEgressSecurityRuleArgs', 'SecurityListEgressSecurityRuleArgsDict']]]] egress_security_rules: (Updatable) Rules for allowing egress IP packets.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityListEgressSecurityRuleArgs', 'SecurityListEgressSecurityRuleArgsDict', 'outputs.SecurityListEgressSecurityRule']]]] egress_security_rules: (Updatable) Rules for allowing egress IP packets.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityListIngressSecurityRuleArgs', 'SecurityListIngressSecurityRuleArgsDict']]]] ingress_security_rules: (Updatable) Rules for allowing ingress IP packets.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityListIngressSecurityRuleArgs', 'SecurityListIngressSecurityRuleArgsDict', 'outputs.SecurityListIngressSecurityRule']]]] ingress_security_rules: (Updatable) Rules for allowing ingress IP packets.
         :param pulumi.Input[_builtins.str] state: The security list's current state.
         :param pulumi.Input[_builtins.str] time_created: The date and time the security list was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.

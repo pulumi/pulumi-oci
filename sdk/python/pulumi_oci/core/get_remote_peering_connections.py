@@ -98,7 +98,7 @@ class AwaitableGetRemotePeeringConnectionsResult(GetRemotePeeringConnectionsResu
 
 def get_remote_peering_connections(compartment_id: Optional[_builtins.str] = None,
                                    drg_id: Optional[_builtins.str] = None,
-                                   filters: Optional[Sequence[Union['GetRemotePeeringConnectionsFilterArgs', 'GetRemotePeeringConnectionsFilterArgsDict']]] = None,
+                                   filters: Optional[Sequence[Union['GetRemotePeeringConnectionsFilterArgs', 'GetRemotePeeringConnectionsFilterArgsDict', 'outputs.GetRemotePeeringConnectionsFilterResult']]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRemotePeeringConnectionsResult:
     """
     This data source provides the list of Remote Peering Connections in Oracle Cloud Infrastructure Core service.
@@ -135,7 +135,7 @@ def get_remote_peering_connections(compartment_id: Optional[_builtins.str] = Non
         remote_peering_connections=pulumi.get(__ret__, 'remote_peering_connections'))
 def get_remote_peering_connections_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           drg_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRemotePeeringConnectionsFilterArgs', 'GetRemotePeeringConnectionsFilterArgsDict']]]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRemotePeeringConnectionsFilterArgs', 'GetRemotePeeringConnectionsFilterArgsDict', 'outputs.GetRemotePeeringConnectionsFilterResult']]]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRemotePeeringConnectionsResult]:
     """
     This data source provides the list of Remote Peering Connections in Oracle Cloud Infrastructure Core service.

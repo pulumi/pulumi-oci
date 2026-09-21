@@ -324,7 +324,7 @@ class SchedulingPolicy(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  cadence: pulumi.Input[Optional[_builtins.str]] = None,
-                 cadence_start_month: pulumi.Input[Optional[Union['SchedulingPolicyCadenceStartMonthArgs', 'SchedulingPolicyCadenceStartMonthArgsDict']]] = None,
+                 cadence_start_month: pulumi.Input[Optional[Union['SchedulingPolicyCadenceStartMonthArgs', 'SchedulingPolicyCadenceStartMonthArgsDict', 'outputs.SchedulingPolicyCadenceStartMonth']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -366,7 +366,7 @@ class SchedulingPolicy(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cadence: (Updatable) The cadence period.
-        :param pulumi.Input[Union['SchedulingPolicyCadenceStartMonthArgs', 'SchedulingPolicyCadenceStartMonthArgsDict']] cadence_start_month: (Updatable) Start of the month to be followed during the cadence period.
+        :param pulumi.Input[Union['SchedulingPolicyCadenceStartMonthArgs', 'SchedulingPolicyCadenceStartMonthArgsDict', 'outputs.SchedulingPolicyCadenceStartMonth']] cadence_start_month: (Updatable) Start of the month to be followed during the cadence period.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the Scheduling Policy. The name does not need to be unique.
@@ -430,7 +430,7 @@ class SchedulingPolicy(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  cadence: pulumi.Input[Optional[_builtins.str]] = None,
-                 cadence_start_month: pulumi.Input[Optional[Union['SchedulingPolicyCadenceStartMonthArgs', 'SchedulingPolicyCadenceStartMonthArgsDict']]] = None,
+                 cadence_start_month: pulumi.Input[Optional[Union['SchedulingPolicyCadenceStartMonthArgs', 'SchedulingPolicyCadenceStartMonthArgsDict', 'outputs.SchedulingPolicyCadenceStartMonth']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -472,7 +472,7 @@ class SchedulingPolicy(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             cadence: pulumi.Input[Optional[_builtins.str]] = None,
-            cadence_start_month: pulumi.Input[Optional[Union['SchedulingPolicyCadenceStartMonthArgs', 'SchedulingPolicyCadenceStartMonthArgsDict']]] = None,
+            cadence_start_month: pulumi.Input[Optional[Union['SchedulingPolicyCadenceStartMonthArgs', 'SchedulingPolicyCadenceStartMonthArgsDict', 'outputs.SchedulingPolicyCadenceStartMonth']]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -490,7 +490,7 @@ class SchedulingPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cadence: (Updatable) The cadence period.
-        :param pulumi.Input[Union['SchedulingPolicyCadenceStartMonthArgs', 'SchedulingPolicyCadenceStartMonthArgsDict']] cadence_start_month: (Updatable) Start of the month to be followed during the cadence period.
+        :param pulumi.Input[Union['SchedulingPolicyCadenceStartMonthArgs', 'SchedulingPolicyCadenceStartMonthArgsDict', 'outputs.SchedulingPolicyCadenceStartMonth']] cadence_start_month: (Updatable) Start of the month to be followed during the cadence period.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the Scheduling Policy. The name does not need to be unique.

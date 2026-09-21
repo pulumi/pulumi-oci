@@ -685,8 +685,8 @@ class WorkspaceApplication(pulumi.CustomResource):
                  model_version: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  object_status: pulumi.Input[Optional[_builtins.int]] = None,
-                 registry_metadata: pulumi.Input[Optional[Union['WorkspaceApplicationRegistryMetadataArgs', 'WorkspaceApplicationRegistryMetadataArgsDict']]] = None,
-                 source_application_info: pulumi.Input[Optional[Union['WorkspaceApplicationSourceApplicationInfoArgs', 'WorkspaceApplicationSourceApplicationInfoArgsDict']]] = None,
+                 registry_metadata: pulumi.Input[Optional[Union['WorkspaceApplicationRegistryMetadataArgs', 'WorkspaceApplicationRegistryMetadataArgsDict', 'outputs.WorkspaceApplicationRegistryMetadata']]] = None,
+                 source_application_info: pulumi.Input[Optional[Union['WorkspaceApplicationSourceApplicationInfoArgs', 'WorkspaceApplicationSourceApplicationInfoArgsDict', 'outputs.WorkspaceApplicationSourceApplicationInfo']]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -756,8 +756,8 @@ class WorkspaceApplication(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] model_version: (Updatable) The object's model version.
         :param pulumi.Input[_builtins.str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[_builtins.int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param pulumi.Input[Union['WorkspaceApplicationRegistryMetadataArgs', 'WorkspaceApplicationRegistryMetadataArgsDict']] registry_metadata: Information about the object and its parent.
-        :param pulumi.Input[Union['WorkspaceApplicationSourceApplicationInfoArgs', 'WorkspaceApplicationSourceApplicationInfoArgsDict']] source_application_info: The information about the application.
+        :param pulumi.Input[Union['WorkspaceApplicationRegistryMetadataArgs', 'WorkspaceApplicationRegistryMetadataArgsDict', 'outputs.WorkspaceApplicationRegistryMetadata']] registry_metadata: Information about the object and its parent.
+        :param pulumi.Input[Union['WorkspaceApplicationSourceApplicationInfoArgs', 'WorkspaceApplicationSourceApplicationInfoArgsDict', 'outputs.WorkspaceApplicationSourceApplicationInfo']] source_application_info: The information about the application.
         :param pulumi.Input[_builtins.str] state: (Updatable) The current state of the workspace.
         :param pulumi.Input[_builtins.str] workspace_id: The workspace ID.
                
@@ -849,8 +849,8 @@ class WorkspaceApplication(pulumi.CustomResource):
                  model_version: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  object_status: pulumi.Input[Optional[_builtins.int]] = None,
-                 registry_metadata: pulumi.Input[Optional[Union['WorkspaceApplicationRegistryMetadataArgs', 'WorkspaceApplicationRegistryMetadataArgsDict']]] = None,
-                 source_application_info: pulumi.Input[Optional[Union['WorkspaceApplicationSourceApplicationInfoArgs', 'WorkspaceApplicationSourceApplicationInfoArgsDict']]] = None,
+                 registry_metadata: pulumi.Input[Optional[Union['WorkspaceApplicationRegistryMetadataArgs', 'WorkspaceApplicationRegistryMetadataArgsDict', 'outputs.WorkspaceApplicationRegistryMetadata']]] = None,
+                 source_application_info: pulumi.Input[Optional[Union['WorkspaceApplicationSourceApplicationInfoArgs', 'WorkspaceApplicationSourceApplicationInfoArgsDict', 'outputs.WorkspaceApplicationSourceApplicationInfo']]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -906,23 +906,23 @@ class WorkspaceApplication(pulumi.CustomResource):
             application_version: pulumi.Input[Optional[_builtins.int]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            dependent_object_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationDependentObjectMetadataArgs', 'WorkspaceApplicationDependentObjectMetadataArgsDict']]]]] = None,
+            dependent_object_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationDependentObjectMetadataArgs', 'WorkspaceApplicationDependentObjectMetadataArgsDict', 'outputs.WorkspaceApplicationDependentObjectMetadata']]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             identifier: pulumi.Input[Optional[_builtins.str]] = None,
             key: pulumi.Input[Optional[_builtins.str]] = None,
             key_map: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationMetadataArgs', 'WorkspaceApplicationMetadataArgsDict']]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationMetadataArgs', 'WorkspaceApplicationMetadataArgsDict', 'outputs.WorkspaceApplicationMetadata']]]]] = None,
             model_type: pulumi.Input[Optional[_builtins.str]] = None,
             model_version: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             object_status: pulumi.Input[Optional[_builtins.int]] = None,
             object_version: pulumi.Input[Optional[_builtins.int]] = None,
-            parent_reves: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationParentRefArgs', 'WorkspaceApplicationParentRefArgsDict']]]]] = None,
-            published_object_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationPublishedObjectMetadataArgs', 'WorkspaceApplicationPublishedObjectMetadataArgsDict']]]]] = None,
-            registry_metadata: pulumi.Input[Optional[Union['WorkspaceApplicationRegistryMetadataArgs', 'WorkspaceApplicationRegistryMetadataArgsDict']]] = None,
-            source_application_info: pulumi.Input[Optional[Union['WorkspaceApplicationSourceApplicationInfoArgs', 'WorkspaceApplicationSourceApplicationInfoArgsDict']]] = None,
+            parent_reves: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationParentRefArgs', 'WorkspaceApplicationParentRefArgsDict', 'outputs.WorkspaceApplicationParentRef']]]]] = None,
+            published_object_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationPublishedObjectMetadataArgs', 'WorkspaceApplicationPublishedObjectMetadataArgsDict', 'outputs.WorkspaceApplicationPublishedObjectMetadata']]]]] = None,
+            registry_metadata: pulumi.Input[Optional[Union['WorkspaceApplicationRegistryMetadataArgs', 'WorkspaceApplicationRegistryMetadataArgsDict', 'outputs.WorkspaceApplicationRegistryMetadata']]] = None,
+            source_application_info: pulumi.Input[Optional[Union['WorkspaceApplicationSourceApplicationInfoArgs', 'WorkspaceApplicationSourceApplicationInfoArgsDict', 'outputs.WorkspaceApplicationSourceApplicationInfo']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_patched: pulumi.Input[Optional[_builtins.str]] = None,
@@ -938,23 +938,23 @@ class WorkspaceApplication(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] application_version: The source application version of the application.
         :param pulumi.Input[_builtins.str] compartment_id: OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationDependentObjectMetadataArgs', 'WorkspaceApplicationDependentObjectMetadataArgsDict']]]] dependent_object_metadatas: A list of dependent objects in this patch.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationDependentObjectMetadataArgs', 'WorkspaceApplicationDependentObjectMetadataArgsDict', 'outputs.WorkspaceApplicationDependentObjectMetadata']]]] dependent_object_metadatas: A list of dependent objects in this patch.
         :param pulumi.Input[_builtins.str] description: (Updatable) Detailed description for the object.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[_builtins.str] key: (Updatable) Currently not used on application creation. Reserved for future.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationMetadataArgs', 'WorkspaceApplicationMetadataArgsDict']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationMetadataArgs', 'WorkspaceApplicationMetadataArgsDict', 'outputs.WorkspaceApplicationMetadata']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param pulumi.Input[_builtins.str] model_type: (Updatable) The type of the application.
         :param pulumi.Input[_builtins.str] model_version: (Updatable) The object's model version.
         :param pulumi.Input[_builtins.str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[_builtins.int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[_builtins.int] object_version: The object version.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationParentRefArgs', 'WorkspaceApplicationParentRefArgsDict']]]] parent_reves: A reference to the object's parent.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationPublishedObjectMetadataArgs', 'WorkspaceApplicationPublishedObjectMetadataArgsDict']]]] published_object_metadatas: A list of objects that are published or unpublished in this patch.
-        :param pulumi.Input[Union['WorkspaceApplicationRegistryMetadataArgs', 'WorkspaceApplicationRegistryMetadataArgsDict']] registry_metadata: Information about the object and its parent.
-        :param pulumi.Input[Union['WorkspaceApplicationSourceApplicationInfoArgs', 'WorkspaceApplicationSourceApplicationInfoArgsDict']] source_application_info: The information about the application.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationParentRefArgs', 'WorkspaceApplicationParentRefArgsDict', 'outputs.WorkspaceApplicationParentRef']]]] parent_reves: A reference to the object's parent.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationPublishedObjectMetadataArgs', 'WorkspaceApplicationPublishedObjectMetadataArgsDict', 'outputs.WorkspaceApplicationPublishedObjectMetadata']]]] published_object_metadatas: A list of objects that are published or unpublished in this patch.
+        :param pulumi.Input[Union['WorkspaceApplicationRegistryMetadataArgs', 'WorkspaceApplicationRegistryMetadataArgsDict', 'outputs.WorkspaceApplicationRegistryMetadata']] registry_metadata: Information about the object and its parent.
+        :param pulumi.Input[Union['WorkspaceApplicationSourceApplicationInfoArgs', 'WorkspaceApplicationSourceApplicationInfoArgsDict', 'outputs.WorkspaceApplicationSourceApplicationInfo']] source_application_info: The information about the application.
         :param pulumi.Input[_builtins.str] state: (Updatable) The current state of the workspace.
         :param pulumi.Input[_builtins.str] time_created: The date and time the application was created, in the timestamp format defined by RFC3339.
         :param pulumi.Input[_builtins.str] time_patched: The date and time the application was patched, in the timestamp format defined by RFC3339.

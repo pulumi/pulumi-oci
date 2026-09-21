@@ -635,7 +635,7 @@ class Gateway(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ca_bundles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GatewayCaBundleArgs', 'GatewayCaBundleArgsDict']]]]] = None,
+                 ca_bundles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GatewayCaBundleArgs', 'GatewayCaBundleArgsDict', 'outputs.GatewayCaBundle']]]]] = None,
                  certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -643,12 +643,12 @@ class Gateway(pulumi.CustomResource):
                  endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  ip_mode: pulumi.Input[Optional[_builtins.str]] = None,
-                 ipv4address_configuration: pulumi.Input[Optional[Union['GatewayIpv4addressConfigurationArgs', 'GatewayIpv4addressConfigurationArgsDict']]] = None,
-                 ipv6address_configuration: pulumi.Input[Optional[Union['GatewayIpv6addressConfigurationArgs', 'GatewayIpv6addressConfigurationArgsDict']]] = None,
+                 ipv4address_configuration: pulumi.Input[Optional[Union['GatewayIpv4addressConfigurationArgs', 'GatewayIpv4addressConfigurationArgsDict', 'outputs.GatewayIpv4addressConfiguration']]] = None,
+                 ipv6address_configuration: pulumi.Input[Optional[Union['GatewayIpv6addressConfigurationArgs', 'GatewayIpv6addressConfigurationArgsDict', 'outputs.GatewayIpv6addressConfiguration']]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GatewayLockArgs', 'GatewayLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GatewayLockArgs', 'GatewayLockArgsDict', 'outputs.GatewayLock']]]]] = None,
                  network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 response_cache_details: pulumi.Input[Optional[Union['GatewayResponseCacheDetailsArgs', 'GatewayResponseCacheDetailsArgsDict']]] = None,
+                 response_cache_details: pulumi.Input[Optional[Union['GatewayResponseCacheDetailsArgs', 'GatewayResponseCacheDetailsArgsDict', 'outputs.GatewayResponseCacheDetails']]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -722,7 +722,7 @@ class Gateway(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['GatewayCaBundleArgs', 'GatewayCaBundleArgsDict']]]] ca_bundles: (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['GatewayCaBundleArgs', 'GatewayCaBundleArgsDict', 'outputs.GatewayCaBundle']]]] ca_bundles: (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
         :param pulumi.Input[_builtins.str] certificate_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource which can be empty string.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -730,11 +730,11 @@ class Gateway(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] endpoint_type: Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be accessible on a private IP address on the subnet.  Example: `PUBLIC` or `PRIVATE`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] ip_mode: Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
-        :param pulumi.Input[Union['GatewayIpv4addressConfigurationArgs', 'GatewayIpv4addressConfigurationArgsDict']] ipv4address_configuration: IPv4 address configuration details that should be used when creating the gateway.
-        :param pulumi.Input[Union['GatewayIpv6addressConfigurationArgs', 'GatewayIpv6addressConfigurationArgsDict']] ipv6address_configuration: IPv6 address configuration details that should be used when creating the gateway.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['GatewayLockArgs', 'GatewayLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Union['GatewayIpv4addressConfigurationArgs', 'GatewayIpv4addressConfigurationArgsDict', 'outputs.GatewayIpv4addressConfiguration']] ipv4address_configuration: IPv4 address configuration details that should be used when creating the gateway.
+        :param pulumi.Input[Union['GatewayIpv6addressConfigurationArgs', 'GatewayIpv6addressConfigurationArgsDict', 'outputs.GatewayIpv6addressConfiguration']] ipv6address_configuration: IPv6 address configuration details that should be used when creating the gateway.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['GatewayLockArgs', 'GatewayLockArgsDict', 'outputs.GatewayLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_security_group_ids: (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
-        :param pulumi.Input[Union['GatewayResponseCacheDetailsArgs', 'GatewayResponseCacheDetailsArgsDict']] response_cache_details: (Updatable) Base Gateway response cache.
+        :param pulumi.Input[Union['GatewayResponseCacheDetailsArgs', 'GatewayResponseCacheDetailsArgsDict', 'outputs.GatewayResponseCacheDetails']] response_cache_details: (Updatable) Base Gateway response cache.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which related resources are created.
                
                ** IMPORTANT **
@@ -830,7 +830,7 @@ class Gateway(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ca_bundles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GatewayCaBundleArgs', 'GatewayCaBundleArgsDict']]]]] = None,
+                 ca_bundles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GatewayCaBundleArgs', 'GatewayCaBundleArgsDict', 'outputs.GatewayCaBundle']]]]] = None,
                  certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -838,12 +838,12 @@ class Gateway(pulumi.CustomResource):
                  endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  ip_mode: pulumi.Input[Optional[_builtins.str]] = None,
-                 ipv4address_configuration: pulumi.Input[Optional[Union['GatewayIpv4addressConfigurationArgs', 'GatewayIpv4addressConfigurationArgsDict']]] = None,
-                 ipv6address_configuration: pulumi.Input[Optional[Union['GatewayIpv6addressConfigurationArgs', 'GatewayIpv6addressConfigurationArgsDict']]] = None,
+                 ipv4address_configuration: pulumi.Input[Optional[Union['GatewayIpv4addressConfigurationArgs', 'GatewayIpv4addressConfigurationArgsDict', 'outputs.GatewayIpv4addressConfiguration']]] = None,
+                 ipv6address_configuration: pulumi.Input[Optional[Union['GatewayIpv6addressConfigurationArgs', 'GatewayIpv6addressConfigurationArgsDict', 'outputs.GatewayIpv6addressConfiguration']]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
-                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GatewayLockArgs', 'GatewayLockArgsDict']]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GatewayLockArgs', 'GatewayLockArgsDict', 'outputs.GatewayLock']]]]] = None,
                  network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 response_cache_details: pulumi.Input[Optional[Union['GatewayResponseCacheDetailsArgs', 'GatewayResponseCacheDetailsArgsDict']]] = None,
+                 response_cache_details: pulumi.Input[Optional[Union['GatewayResponseCacheDetailsArgs', 'GatewayResponseCacheDetailsArgsDict', 'outputs.GatewayResponseCacheDetails']]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -892,7 +892,7 @@ class Gateway(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            ca_bundles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GatewayCaBundleArgs', 'GatewayCaBundleArgsDict']]]]] = None,
+            ca_bundles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GatewayCaBundleArgs', 'GatewayCaBundleArgsDict', 'outputs.GatewayCaBundle']]]]] = None,
             certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -900,15 +900,15 @@ class Gateway(pulumi.CustomResource):
             endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             hostname: pulumi.Input[Optional[_builtins.str]] = None,
-            ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GatewayIpAddressArgs', 'GatewayIpAddressArgsDict']]]]] = None,
+            ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GatewayIpAddressArgs', 'GatewayIpAddressArgsDict', 'outputs.GatewayIpAddress']]]]] = None,
             ip_mode: pulumi.Input[Optional[_builtins.str]] = None,
-            ipv4address_configuration: pulumi.Input[Optional[Union['GatewayIpv4addressConfigurationArgs', 'GatewayIpv4addressConfigurationArgsDict']]] = None,
-            ipv6address_configuration: pulumi.Input[Optional[Union['GatewayIpv6addressConfigurationArgs', 'GatewayIpv6addressConfigurationArgsDict']]] = None,
+            ipv4address_configuration: pulumi.Input[Optional[Union['GatewayIpv4addressConfigurationArgs', 'GatewayIpv4addressConfigurationArgsDict', 'outputs.GatewayIpv4addressConfiguration']]] = None,
+            ipv6address_configuration: pulumi.Input[Optional[Union['GatewayIpv6addressConfigurationArgs', 'GatewayIpv6addressConfigurationArgsDict', 'outputs.GatewayIpv6addressConfiguration']]] = None,
             is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
-            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GatewayLockArgs', 'GatewayLockArgsDict']]]]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GatewayLockArgs', 'GatewayLockArgsDict', 'outputs.GatewayLock']]]]] = None,
             network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            response_cache_details: pulumi.Input[Optional[Union['GatewayResponseCacheDetailsArgs', 'GatewayResponseCacheDetailsArgsDict']]] = None,
+            response_cache_details: pulumi.Input[Optional[Union['GatewayResponseCacheDetailsArgs', 'GatewayResponseCacheDetailsArgsDict', 'outputs.GatewayResponseCacheDetails']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -921,7 +921,7 @@ class Gateway(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['GatewayCaBundleArgs', 'GatewayCaBundleArgsDict']]]] ca_bundles: (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['GatewayCaBundleArgs', 'GatewayCaBundleArgsDict', 'outputs.GatewayCaBundle']]]] ca_bundles: (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
         :param pulumi.Input[_builtins.str] certificate_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource which can be empty string.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -929,14 +929,14 @@ class Gateway(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] endpoint_type: Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be accessible on a private IP address on the subnet.  Example: `PUBLIC` or `PRIVATE`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] hostname: The hostname for APIs deployed on the gateway.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['GatewayIpAddressArgs', 'GatewayIpAddressArgsDict']]]] ip_addresses: An array of IP addresses associated with the gateway.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['GatewayIpAddressArgs', 'GatewayIpAddressArgsDict', 'outputs.GatewayIpAddress']]]] ip_addresses: An array of IP addresses associated with the gateway.
         :param pulumi.Input[_builtins.str] ip_mode: Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
-        :param pulumi.Input[Union['GatewayIpv4addressConfigurationArgs', 'GatewayIpv4addressConfigurationArgsDict']] ipv4address_configuration: IPv4 address configuration details that should be used when creating the gateway.
-        :param pulumi.Input[Union['GatewayIpv6addressConfigurationArgs', 'GatewayIpv6addressConfigurationArgsDict']] ipv6address_configuration: IPv6 address configuration details that should be used when creating the gateway.
+        :param pulumi.Input[Union['GatewayIpv4addressConfigurationArgs', 'GatewayIpv4addressConfigurationArgsDict', 'outputs.GatewayIpv4addressConfiguration']] ipv4address_configuration: IPv4 address configuration details that should be used when creating the gateway.
+        :param pulumi.Input[Union['GatewayIpv6addressConfigurationArgs', 'GatewayIpv6addressConfigurationArgsDict', 'outputs.GatewayIpv6addressConfiguration']] ipv6address_configuration: IPv6 address configuration details that should be used when creating the gateway.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['GatewayLockArgs', 'GatewayLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['GatewayLockArgs', 'GatewayLockArgsDict', 'outputs.GatewayLock']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_security_group_ids: (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
-        :param pulumi.Input[Union['GatewayResponseCacheDetailsArgs', 'GatewayResponseCacheDetailsArgsDict']] response_cache_details: (Updatable) Base Gateway response cache.
+        :param pulumi.Input[Union['GatewayResponseCacheDetailsArgs', 'GatewayResponseCacheDetailsArgsDict', 'outputs.GatewayResponseCacheDetails']] response_cache_details: (Updatable) Base Gateway response cache.
         :param pulumi.Input[_builtins.str] state: The current state of the gateway.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which related resources are created.
                

@@ -84,7 +84,7 @@ class AwaitableGetProblemEntitiesResult(GetProblemEntitiesResult):
             problem_id=self.problem_id)
 
 
-def get_problem_entities(filters: Optional[Sequence[Union['GetProblemEntitiesFilterArgs', 'GetProblemEntitiesFilterArgsDict']]] = None,
+def get_problem_entities(filters: Optional[Sequence[Union['GetProblemEntitiesFilterArgs', 'GetProblemEntitiesFilterArgsDict', 'outputs.GetProblemEntitiesFilterResult']]] = None,
                          problem_id: Optional[_builtins.str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProblemEntitiesResult:
     """
@@ -116,7 +116,7 @@ def get_problem_entities(filters: Optional[Sequence[Union['GetProblemEntitiesFil
         id=pulumi.get(__ret__, 'id'),
         problem_entity_collections=pulumi.get(__ret__, 'problem_entity_collections'),
         problem_id=pulumi.get(__ret__, 'problem_id'))
-def get_problem_entities_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProblemEntitiesFilterArgs', 'GetProblemEntitiesFilterArgsDict']]]]] = None,
+def get_problem_entities_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProblemEntitiesFilterArgs', 'GetProblemEntitiesFilterArgsDict', 'outputs.GetProblemEntitiesFilterResult']]]]] = None,
                                 problem_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProblemEntitiesResult]:
     """
